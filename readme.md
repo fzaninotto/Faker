@@ -6,76 +6,84 @@ Faker is heavily inspired by Perl's [Data::Faker](http://search.cpan.org/~jasonk
 
 Faker requires PHP >= 5.3.
 
-## Usage
+## Basic Usage
 
-Faker offers a `Generator` object for all data generation. Prior to using a generator, you must add providers to it, to give the generator the ability to generate certain types of data. Here is the usual setup:
-
-```php
-<?php
-$generator = new Faker\Generator();
-$generator->addProvider(new Faker\Provider\Name($generator));
-$generator->addProvider(new Faker\Provider\Address($generator));
-$generator->addProvider(new Faker\Provider\PhoneNumber($generator));
-$generator->addProvider(new Faker\Provider\Company($generator));
-$generator->addProvider(new Faker\Provider\Lorem($generator));
-```
-
-Once it's initialized, a `Generator` object generates data by calling the type of data you want as a property.
+Faker provides a factory method to create a `Faker\Generator` object. This object generates data by calling the type of data you want as a property.
 
 ```php
 <?php
-echo $generator->name; 
+require_once '/path/to/Faker/src/Factory.php';
+$faker = Faker\Factory::create();
+
+echo $faker->name; 
   // 'Lucy Cechtelar';
-echo $generator->address;
+echo $faker->address;
   // "426 Jordy Lodge
   // Cartwrightshire, SC 88120-6700"
-echo $generator->lorem;
-  // Sint velit eveniet. Rerum atque repellat voluptatem quia rerum. Numquam excepturi beatae sint laudantium consequatur. Magni occaecati itaque sint et sit tempore. Nesciunt amet quidem. Iusto deleniti cum autem ad quia aperiam.
-  // A consectetur quos aliquam. In iste aliquid et aut similique suscipit. Consequatur qui quaerat iste minus hic expedita. Consequuntur error magni et laboriosam. Aut aspernatur voluptatem sit aliquam. Dolores voluptatum est.
+echo $faker->lorem;
+  // Sint velit eveniet. Rerum atque repellat voluptatem quia rerum. Numquam excepturi 
+  // beatae sint laudantium consequatur. Magni occaecati itaque sint et sit tempore. Nesciunt
+  // amet quidem. Iusto deleniti cum autem ad quia aperiam.
+  // A consectetur quos aliquam. In iste aliquid et aut similique suscipit. Consequatur qui 
+  // quaerat iste minus hic expedita. Consequuntur error magni et laboriosam. Aut aspernatur
+  // voluptatem sit aliquam. Dolores voluptatum est.
   // Aut molestias et maxime. Fugit autem facilis quos vero. Eius quibusdam possimus est.
-Ea quaerat et quisquam. Deleniti sunt quam. Adipisci consequatur id in occaecati. Et sint et. Ut ducimus quod nemo ab voluptatum.
+  // Ea quaerat et quisquam. Deleniti sunt quam. Adipisci consequatur id in occaecati. 
+  // Et sint et. Ut ducimus quod nemo ab voluptatum.
 ```
 
 ## Providers
 
-Bundled providers offer many data types:
+As a matter of fact, a `Faker\Generator` alone can't do much generation. It needs `Faker\Provider` objects to delegate the data generation to them. `Faker\Factory` actually creates a `Faker\Generator` bundled with the default providers. Here is what happens under the hood:
 
-* Address
-* Company
-* Lorem
-* Name
-* PhoneNumber
+```php
+<?php
+$faker = new Faker\Generator();
+$faker->addProvider(new Faker\Provider\Name($faker));
+$faker->addProvider(new Faker\Provider\Address($faker));
+$faker->addProvider(new Faker\Provider\PhoneNumber($faker));
+$faker->addProvider(new Faker\Provider\Company($faker));
+$faker->addProvider(new Faker\Provider\Lorem($faker));
+````
+
+Whenever you try to access a property on the `$faker` object, the generator looks for a method with the same name in all the providers attached to it. For instance, calling `$faker->name` triggers a call to `Faker\Provider\Name::name()`.
+
+That means that you can esily add your own providers to a `Faker\Generator`, or replace the ones bundled by defautl with a localized version. Just have a look at the existing providers to see how you can design powerful data generators in no time.
 
 ## Real Life Usage
 
 The following script generates a valid XML document:
 
 ```php
+<?php
+require_once '/path/to/Faker/src/Factory.php';
+$faker = Faker\Factory::create();
+?>
 <?xml version="1.0" encoding="UTF-8"?>
 <contacts>
 <?php for ($i=0; $i < 10; $i++): ?>
-  <contact firstName="<?php echo $generator->firstName ?>" lastName="<?php echo $generator->lastName ?>">
-    <phone number="<?php echo $generator->phoneNumber ?>"/>
+  <contact firstName="<?php echo $faker->firstName ?>" lastName="<?php echo $faker->lastName ?>">
+    <phone number="<?php echo $faker->phoneNumber ?>"/>
 <?php if (mt_rand(0,5) == 0): ?>
-    <countryOfBirth><?php echo $generator->country ?></countryOfBirth>
+    <countryOfBirth><?php echo $faker->country ?></countryOfBirth>
 <?php endif; ?>
     <address>
-      <street><?php echo $generator->streetAddress ?></street>
-      <city><?php echo $generator->city ?></city>
-      <postcode><?php echo $generator->postcode ?></postcode>
-      <state><?php echo $generator->state ?></state>
+      <street><?php echo $faker->streetAddress ?></street>
+      <city><?php echo $faker->city ?></city>
+      <postcode><?php echo $faker->postcode ?></postcode>
+      <state><?php echo $faker->state ?></state>
     </address>
-    <company name="<?php echo $generator->company ?>" catchPhrase="<?php echo $generator->catchPhrase ?>">
+    <company name="<?php echo $faker->company ?>" catchPhrase="<?php echo $faker->catchPhrase ?>">
 <?php if (mt_rand(0,2) == 0): ?>
-      <offer><?php echo $generator->bs ?></offer>
+      <offer><?php echo $faker->bs ?></offer>
 <?php endif; ?>
 <?php if (mt_rand(0,3) == 0): ?>
-      <director name="<?php echo $generator->name ?>"/>
+      <director name="<?php echo $faker->name ?>"/>
 <?php endif; ?>
     </company>
 <?php if (mt_rand(0,5) == 0): ?>
     <details>
-    <![CDATA[<?php echo $generator->lorem(3) ?>]]>
+    <![CDATA[<?php echo $faker->lorem(3) ?>]]>
     </details>
 <?php endif; ?>
   </contact>
@@ -83,7 +91,7 @@ The following script generates a valid XML document:
 </contacts>
 ```
 
-When you run this script, you end up with a document looking like:
+Running this script produces a document looking like:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -238,13 +246,25 @@ Est voluptate explicabo voluptatibus officia aut sequi. Eveniet vero voluptas qu
 
 Faker is released under the MIT Licence.
 
-Copyright (c) 2011 François Zaninotto
-Portions Copyright (c) 2008 Caius Durling
-Portions Copyright (c) 2008 Adam Royle
-Portions Copyright (c) 2008 Fiona Burrows
+Copyright (c) 2011 François Zaninotto  
+Portions Copyright (c) 2008 Caius Durling  
+Portions Copyright (c) 2008 Adam Royle  
+Portions Copyright (c) 2008 Fiona Burrows  
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.

@@ -1,18 +1,6 @@
 <?php
-
-require_once __DIR__ . '/../src/Generator.php';
-require_once __DIR__ . '/../src/Provider/Name.php';
-require_once __DIR__ . '/../src/Provider/Address.php';
-require_once __DIR__ . '/../src/Provider/PhoneNumber.php';
-require_once __DIR__ . '/../src/Provider/Company.php';
-require_once __DIR__ . '/../src/Provider/Lorem.php';
-
-$generator = new Faker\Generator();
-$generator->addProvider(new Faker\Provider\Name($generator));
-$generator->addProvider(new Faker\Provider\Address($generator));
-$generator->addProvider(new Faker\Provider\PhoneNumber($generator));
-$generator->addProvider(new Faker\Provider\Company($generator));
-$generator->addProvider(new Faker\Provider\Lorem($generator));
+require_once __DIR__ . '/../src/Factory.php';
+$generator = Faker\Factory::create();
 ?>
 <?xml version="1.0" encoding="UTF-8"?>
 <contacts>
