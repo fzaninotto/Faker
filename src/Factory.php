@@ -42,12 +42,10 @@ class Factory
 	{
 		$providerName = $locale ? sprintf('Provider\%s\%s', $locale, $provider) : sprintf('Provider\%s', $provider);
 		$providerClass = 'Faker\\' . $providerName;
-		echo $providerClass, "\n";
 		if (class_exists($providerClass)) {
 			return $providerClass;
 		}
 		$providerClassPath = __DIR__ . '/' . str_replace('\\', '/', $providerName) . '.php';
-		echo $providerClassPath, "\n";
 		if (file_exists($providerClassPath)) {
 			require $providerClassPath;
 			return $providerClass;

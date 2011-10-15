@@ -8,12 +8,12 @@ Faker requires PHP >= 5.3.
 
 ## Basic Usage
 
-Faker provides a factory method to create a `Faker\Generator` object. This object generates data by calling the type of data you want as a property.
+Use `Faker\Factory::create()` to create and initialize a faker generator, which can generate data by accessing properties named after the type of data you want.
 
 ```php
 <?php
 require_once '/path/to/Faker/src/Factory.php';
-$faker = Faker\Factory::create();
+$faker = Faker\Factory::create(); // $faker is a Faker\Generator instance
 
 echo $faker->name; 
   // 'Lucy Cechtelar';
@@ -31,59 +31,83 @@ echo $faker->lorem;
   // Ea quaerat et quisquam. Deleniti sunt quam. Adipisci consequatur id in occaecati. 
   // Et sint et. Ut ducimus quod nemo ab voluptatum.
 ```
+
+**Tip**: Even if this example shows a property access, each call to `$faker->name` yields a different (random) result. This is because Faker uses `__get()` magic, and forwards `Faker\Generator->$property` calls to `Faker\Generator->format($property)`.
+
 ## Formatters
 
-Here is a list of the bundled formatters in the default locale.
-
+Each of the generator properties (like `name`, `address`, and `lorem`) are called "formatters". A faker generator has many of them, packaged in "providers". Here is a list of the bundled formatters in the default locale.
 
 ### `Faker\Provider\Lorem`
 
-    lorem()              // 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'  
-    paragraph()          // 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'  
-    paragraphs()         // array($paragraph1, $paragraph2, $paragraph3)  
-    sentence()           // 'Lorem ipsum dolor sit amet.'  
-    sentences()          // array('Lorem ipsum dolor sit amet.', 'Consectetur adipisicing eli.')  
-    word()               // 'Lorem'  
-    words()              // array('Lorem', 'ipsum', 'dolor')  
+    lorem()              // 'Fuga totam reiciendis qui architecto fugiat. (...) Voluptas optio quos sed.'  
+    paragraph()          // 'Sed a nam et sint autem. Aut officia aut. Blanditiis et ducimus.'  
+    paragraphs()         // array('Amet et est.', (...) 'Rerum exercitationem est.')  
+    sentence()           // 'Sit vitae voluptas sint non.'  
+    sentences()          // array('Ut optio quos qui illo error nihil.', ('Vero a officia id corporis incidunt.' (...), 'Provident esse hic eligendi quos culpa ut.')  
+    word()               // 'aut'  
+    words()              // array('porro', 'sed', 'magni')  
 
 ### `Faker\Provider\en_US\Address`
 
-    address()            // '791 Crist Parks, Sashabury, IL 86039-9874'  
-    buildingNumber()     // '791'  
-    city()               // 'Sashabury'  
-    cityPrefix()         // 'East'  
-    citySuffix()         // 'town'  
-    country()            // 'Japan'  
-    postcode()           // 86039-9874  
-    secondaryAddress()   // 'Appt. 350'  
-    state()              // 'California'  
-    stateAbbr()          // 'CA'  
-    streetAddress()      // '791 Crist Parks'  
-    streetName()         // 'Crist Parks'  
-    streetSuffix()       // 'Avenue'  
+    address()            // '8888 Cummings Vista Apt. 101, Susanbury, NY 95473'  
+    buildingNumber()     // '484'  
+    city()               // 'West Judge'  
+    cityPrefix()         // 'Lake'  
+    citySuffix()         // 'borough'  
+    country()            // 'Falkland Islands (Malvinas)'  
+    postcode()           // '17916'  
+    secondaryAddress()   // 'Suite 961'  
+    state()              // 'NewMexico'  
+    stateAbbr()          // 'OH'  
+    streetAddress()      // '439 Karley Loaf Suite 897'  
+    streetName()         // 'Keegan Trail'  
+    streetSuffix()       // 'Keys'  
 
 ### `Faker\Provider\en_US\Company`
 
-    bs()                 // 'integrate extensible convergence'  
-    catchPhrase()        // 'Robust full-range hub'  
-    company()            // 'Acme Ltd'  
-    companySuffix()      // 'Ltd'  
+    bs()                 // 'e-enable robust architectures'  
+    catchPhrase()        // 'Monitored regional contingency'  
+    company()            // 'Bogan-Treutel'  
+    companySuffix()      // 'and Sons'  
 
 ### `Faker\Provider\en_US\Name`
 
-    firstName()          // 'John'  
-    lastName()           // 'Doe'  
-    name()               // 'John Doe'  
-    prefix()             // 'Mrs.'  
-    suffix()             // 'PhD'  
+    firstName()          // 'Maynard'  
+    lastName()           // 'Zulauf'  
+    name()               // 'Dr. Zane Stroman'  
+    prefix()             // 'Ms.'  
+    suffix()             // 'Jr.'  
 
 ### `Faker\Provider\en_US\PhoneNumber`
 
-    phoneNumber()        // '555-123-546' 
+    phoneNumber()        // '132-149-0269x3767'
 
-## Providers
+## Localization
 
-As a matter of fact, a `Faker\Generator` alone can't do much generation. It needs `Faker\Provider` objects to delegate the data generation to them. `Faker\Factory::create()` actually creates a `Faker\Generator` bundled with the default providers. Here is what happens under the hood:
+`Faker\Factory` can take a locale as an argument, to return localized data. If no localized provider is found, the factory fallbacks to the default locale.
+
+```php
+$faker = Faker\Factory::create('fr_FR'); // create a French faker
+echo $faker->name; // 'Jean Dupont'
+```
+
+## Seeding the Generator
+
+You may want to get always the same generated data - for instance when using Faker for unit testing purposes. The generator offers a `seed()` method, which seeds the random number generator. Calling the same script twice with the same seed produces the same results.
+
+```php
+<?php
+require_once '/path/to/Faker/src/Factory.php';
+$faker = Faker\Factory::create();
+$faker->seed(1234);
+
+echo $faker->name; // 'Jess Mraz I';
+```
+
+## Faker Internals: Understanding Providers
+
+A `Faker\Generator` alone can't do much generation. It needs `Faker\Provider` objects to delegate the data generation to them. `Faker\Factory::create()` actually creates a `Faker\Generator` bundled with the default providers. Here is what happens under the hood:
 
 ```php
 <?php
@@ -98,15 +122,6 @@ $faker->addProvider(new Faker\Provider\en_US\Lorem($faker));
 Whenever you try to access a property on the `$faker` object, the generator looks for a method with the same name in all the providers attached to it. For instance, calling `$faker->name` triggers a call to `Faker\Provider\Name::name()`.
 
 That means that you can esily add your own providers to a `Faker\Generator`. Just have a look at the existing providers to see how you can design powerful data generators in no time.
-
-## Localization
-
-`Faker\Factory` can take a locale as an argument, to return localized data. If no localized provider is found, the factory fallbacks to the default locale.
-
-```php
-$faker = Faker\Factory::create('fr_FR'); // create a French faker
-echo $faker->name; // 'Jean Dupont'
-```
 
 ## Real Life Usage
 

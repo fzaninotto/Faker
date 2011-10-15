@@ -84,7 +84,7 @@ class Lorem extends \Faker\Provider\Base
 	 * @param integer $nb how many paragraphs to return
 	 * @return array
 	 */
-	public function paragraphs($nb)
+	public function paragraphs($nb = 3)
 	{
 		$paragraphs = array();
 		for ($i=0; $i < $nb; $i++) {

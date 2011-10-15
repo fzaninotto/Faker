@@ -25,9 +25,8 @@ class Documentor
 				}
 				$example = $this->generator->format($methodName);
 				if (is_array($example)) {
-					$example = 'array('. join(', ', $example) . ')';
-				}
-				if (is_string($example)) {
+					$example = "array('". join("', '", $example) . "')";
+				} elseif (is_string($example)) {
 					$example = var_export($example, true);
 				}
 				$formatters[$providerClass][$methodName] = $example;

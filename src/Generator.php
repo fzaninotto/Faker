@@ -17,6 +17,11 @@ class Generator
 		return $this->providers;
 	}
 	
+	public function seed($seed = null)
+	{
+		mt_srand($seed);
+	}
+	
 	public function format($formatter, $arguments = array())
 	{
 		return call_user_func_array($this->getFormatter($formatter), $arguments);
