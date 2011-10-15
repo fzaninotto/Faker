@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider;
+namespace Faker\Provider\en_US;
 
 class Name
 {

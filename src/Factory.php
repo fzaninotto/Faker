@@ -3,23 +3,54 @@
 namespace Faker;
 
 require_once __DIR__ . '/Generator.php';
-require_once __DIR__ . '/Provider/Name.php';
-require_once __DIR__ . '/Provider/Address.php';
-require_once __DIR__ . '/Provider/PhoneNumber.php';
-require_once __DIR__ . '/Provider/Company.php';
-require_once __DIR__ . '/Provider/Lorem.php';
 
 class Factory
 {
-	public static function create()
+	const DEFAULT_LOCALE = 'en_US';
+	
+	protected static $defaultProviders = array('Name', 'Address', 'PhoneNumber', 'Company', 'Lorem');
+	
+	public static function create($locale = self::DEFAULT_LOCALE)
 	{
 		$generator = new Generator();
-		$generator->addProvider(new Provider\Name($generator));
-		$generator->addProvider(new Provider\Address($generator));
-		$generator->addProvider(new Provider\PhoneNumber($generator));
-		$generator->addProvider(new Provider\Company($generator));
-		$generator->addProvider(new Provider\Lorem($generator));
+		foreach (static::$defaultProviders as $provider) {
+			$providerClassName = self::getProviderClassname($provider, $locale);
+			$generator->addProvider(new $providerClassName($generator));
+		}
 		
 		return $generator;
+	}
+	
+	protected function getProviderClassname($provider, $locale = '')
+	{
+		if ($providerClass = self::findProviderClassname($provider, $locale)) {
+			return $providerClass;
+		}
+		// fallback to default locale
+		if ($providerClass = self::findProviderClassname($provider, static::DEFAULT_LOCALE)) {
+			return $providerClass;
+		}
+		// fallback to no locale
+		$providerClass = self::findProviderClassname($provider);
+		if (class_exists($providerClass)) {
+			return $providerClass;
+		}
+		throw new \InvalidArgumentException(sprintf('Unable to find provider "%s" with locale "%s"', $provider, $locale));
+	}
+
+	protected static function findProviderClassname($provider, $locale = '')
+	{
+		$providerName = $locale ? sprintf('Provider\%s\%s', $locale, $provider) : sprintf('Provider\%s', $provider);
+		$providerClass = 'Faker\\' . $providerName;
+		echo $providerClass, "\n";
+		if (class_exists($providerClass)) {
+			return $providerClass;
+		}
+		$providerClassPath = __DIR__ . '/' . str_replace('\\', '/', $providerName) . '.php';
+		echo $providerClassPath, "\n";
+		if (file_exists($providerClassPath)) {
+			require $providerClassPath;
+			return $providerClass;
+		}
 	}
 }
