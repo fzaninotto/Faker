@@ -2,7 +2,9 @@
 
 namespace Faker\Provider\en_US;
 
-class PhoneNumber
+require_once __DIR__ . '/../Base/PhoneNumber.php';
+
+class PhoneNumber extends \Faker\Provider\Base\PhoneNumber
 {
 	protected static $formats = array(
 		'+##(#)##########',
@@ -30,16 +32,4 @@ class PhoneNumber
 		'1-###-###-####x#####',
 		'###.###.####x#####'
 	);
-	
-	protected $generator;
-	
-	public function __construct($generator)
-	{
-		$this->generator = $generator;
-	}
-	
-	public function phoneNumber()
-	{
-		return $this->generator->numerify(self::$formats[array_rand(self::$formats)]);
-	}
 }

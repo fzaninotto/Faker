@@ -2,7 +2,9 @@
 
 namespace Faker\Provider\en_US;
 
-class Address
+require_once __DIR__ . '/../Base/Address.php';
+
+class Address extends \Faker\Provider\Base\Address
 {
 	protected static $cityPrefix = array('North', 'East', 'West', 'South', 'New', 'Lake', 'Port');
 	protected static $citySuffix = array('town', 'ton', 'land', 'ville', 'berg', 'burgh', 'borough', 'bury', 'view', 'port', 'mouth', 'stad', 'furt', 'chester', 'mouth', 'fort', 'haven', 'side', 'shire');
@@ -65,81 +67,31 @@ class Address
 	
 	protected $generator;
 	
-	public function __construct($generator)
-	{
-		$this->generator = $generator;
-	}
-
 	public static function cityPrefix()
 	{
-		return self::$cityPrefix[array_rand(self::$cityPrefix)];
-	}
-
-	public static function citySuffix()
-	{
-		return self::$citySuffix[array_rand(self::$citySuffix)];
-	}
-
-	public function buildingNumber()
-	{
-		$format = self::$buildingNumber[array_rand(self::$buildingNumber)];
-		return $this->generator->numerify($format);
-	}
-
-	public static function streetSuffix()
-	{
-		return self::$streetSuffix[array_rand(self::$streetSuffix)];
-	}
-
-	public function city()
-	{
-		$format = self::$cityFormats[array_rand(self::$cityFormats)];
-		return $this->generator->parse($format);
-	}
-	
-	public function streetName()
-	{
-		$format = self::$streetNameFormats[array_rand(self::$streetNameFormats)];
-		return $this->generator->parse($format);
-	}
-	
-	public function streetAddress()
-	{
-		$format = self::$streetAddressFormats[array_rand(self::$streetAddressFormats)];
-		return $this->generator->numerify($this->generator->parse($format));
+		return static::$cityPrefix[array_rand(static::$cityPrefix)];
 	}
 	
 	public function secondaryAddress()
 	{
-		$format = self::$secondaryAddress[array_rand(self::$secondaryAddress)];
+		$format = static::$secondaryAddress[array_rand(static::$secondaryAddress)];
 		return $this->generator->numerify($format);
 	}
 
 	public function postcode()
 	{
-		$format = self::$postcode[array_rand(self::$postcode)];
+		$format = static::$postcode[array_rand(static::$postcode)];
 		return $this->generator->numerify($format);
 	}
 
 	public static function state()
 	{
-		return self::$state[array_rand(self::$state)];
+		return static::$state[array_rand(static::$state)];
 	}
 	
 	public static function stateAbbr()
 	{
-		return self::$stateAbbr[array_rand(self::$stateAbbr)];
-	}
-	
-	public function address()
-	{
-		$format = self::$addressFormats[array_rand(self::$addressFormats)];
-		return $this->generator->parse($format);
-	}
-
-	public static function country()
-	{
-		return self::$country[array_rand(self::$country)];
+		return static::$stateAbbr[array_rand(static::$stateAbbr)];
 	}
 	
 }

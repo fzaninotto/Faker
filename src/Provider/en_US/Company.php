@@ -2,7 +2,9 @@
 
 namespace Faker\Provider\en_US;
 
-class Company
+require_once __DIR__ . '/../Base/Company.php';
+
+class Company extends \Faker\Provider\Base\Company
 {
 	protected static $formats = array(
 		'{{lastName}} {{companySuffix}}',
@@ -36,28 +38,10 @@ class Company
 
 	protected static $companySuffix = array('Inc','and Sons','LLC','Group','PLC','Ltd');
 
-	protected $generator;
-	
-	public function __construct($generator)
-	{
-		$this->generator = $generator;
-	}
-
-	public function company()
-	{
-		$format = self::$formats[array_rand(self::$formats)];
-		return $this->generator->parse($format);
-	}
-	
-	public function companySuffix()
-	{
-		return self::$companySuffix[array_rand(self::$companySuffix)];;
-	}
-	
 	public function catchPhrase()
 	{
 		$result = array();
-		foreach (self::$catchPhraseWords as &$word) {
+		foreach (static::$catchPhraseWords as &$word) {
 			$result[] = $this->generator->randomElement($word);
 		}
 		
@@ -67,7 +51,7 @@ class Company
 	public function bs()
 	{
 		$result = array();
-		foreach (self::$bsWords as &$word) {
+		foreach (static::$bsWords as &$word) {
 			$result[] = $this->generator->randomElement($word);
 		}
 		
