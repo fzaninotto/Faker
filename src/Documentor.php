@@ -19,16 +19,18 @@ class Documentor
 			$formatters[$providerClass] = array();
 			$refl = new \ReflectionObject($provider);
 			foreach ($refl->getMethods(\ReflectionMethod::IS_PUBLIC) as $reflmethod) {
-				if ($reflmethod->name == '__construct') {
+				$methodName = $reflmethod->name;
+				if ($methodName == '__construct') {
 					continue;
 				}
-				$comment = $reflmethod->getDocComment();
-				if (preg_match('/^\s+\*\s+@example\s+(.*)$/mi', $comment, $matches)) {
-					$example = $matches[1];
-				} else {
-					$example = '';
+				$example = $this->generator->format($methodName);
+				if (is_array($example)) {
+					$example = 'array('. join(', ', $example) . ')';
 				}
-				$formatters[$providerClass][$reflmethod->name] = $example;
+				if (is_string($example)) {
+					$example = var_export($example, true);
+				}
+				$formatters[$providerClass][$methodName] = $example;
 			}
 			ksort($formatters[$providerClass]);
 		}
