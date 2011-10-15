@@ -2,9 +2,9 @@
 
 namespace Faker\Provider\en_US;
 
-require_once __DIR__ . '/../Base/Address.php';
+require_once __DIR__ . '/../Address.php';
 
-class Address extends \Faker\Provider\Base\Address
+class Address extends \Faker\Provider\Address
 {
 	protected static $cityPrefix = array('North', 'East', 'West', 'South', 'New', 'Lake', 'Port');
 	protected static $citySuffix = array('town', 'ton', 'land', 'ville', 'berg', 'burgh', 'borough', 'bury', 'view', 'port', 'mouth', 'stad', 'furt', 'chester', 'mouth', 'fort', 'haven', 'side', 'shire');

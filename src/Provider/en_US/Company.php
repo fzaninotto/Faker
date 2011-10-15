@@ -2,9 +2,9 @@
 
 namespace Faker\Provider\en_US;
 
-require_once __DIR__ . '/../Base/Company.php';
+require_once __DIR__ . '/../Company.php';
 
-class Company extends \Faker\Provider\Base\Company
+class Company extends \Faker\Provider\Company
 {
 	protected static $formats = array(
 		'{{lastName}} {{companySuffix}}',
