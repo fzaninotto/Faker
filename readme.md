@@ -38,13 +38,27 @@ echo $faker->lorem;
 
 Each of the generator properties (like `name`, `address`, and `lorem`) are called "formatters". A faker generator has many of them, packaged in "providers". Here is a list of the bundled formatters in the default locale.
 
+### `Faker\Provider\Internet`
+
+    domainName()         // 'mueller.info'  
+    domainWord()         // 'von'  
+    email()              // 'cshields@rosenbaum.com'  
+    freeEmail()          // 'dayna55@gmail.com'  
+    freeEmailDomain()    // 'yahoo.com'  
+    ipv4()               // '237.149.115.38'  
+    ipv6()               // '35cd:186d:3e23:2986:ef9f:5b41:42a4:e6f1'  
+    safeEmail()          // 'nbatz@example.org'  
+    tld()                // 'info'  
+    url()                // 'http://www.runolfsdottir.com/'  
+    userName()           // 'tremblay.haylie'  
+
 ### `Faker\Provider\Lorem`
 
-    lorem()              // 'Fuga totam reiciendis qui architecto fugiat. (...) Voluptas optio quos sed.'  
+    lorem()              // 'Fuga totam reiciendis qui architecto fugiat. (...)'  
     paragraph()          // 'Sed a nam et sint autem. Aut officia aut. Blanditiis et ducimus.'  
-    paragraphs()         // array('Amet et est.', (...) 'Rerum exercitationem est.')  
+    paragraphs()         // array('Amet et est. (...)', 'Sequi cum culpa rem. Rerum exercitationem est.')  
     sentence()           // 'Sit vitae voluptas sint non.'  
-    sentences()          // array('Ut optio quos qui illo error nihil.', ('Vero a officia id corporis incidunt.' (...), 'Provident esse hic eligendi quos culpa ut.')  
+    sentences()          // array('Ut optio quos qui illo error nihil.', 'Vero a officia id corporis incidunt.', 'Provident esse hic eligendi quos culpa ut.')  
     word()               // 'aut'  
     words()              // array('porro', 'sed', 'magni')  
 
@@ -81,8 +95,8 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
 ### `Faker\Provider\en_US\PhoneNumber`
 
-    phoneNumber()        // '132-149-0269x3767'
-
+    phoneNumber()        // '132-149-0269x3767' 
+    
 ## Localization
 
 `Faker\Factory` can take a locale as an argument, to return localized data. If no localized provider is found, the factory fallbacks to the default locale.
