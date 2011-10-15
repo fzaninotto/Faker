@@ -39,16 +39,22 @@ As a matter of fact, a `Faker\Generator` alone can't do much generation. It need
 ```php
 <?php
 $faker = new Faker\Generator();
-$faker->addProvider(new Faker\Provider\Name($faker));
-$faker->addProvider(new Faker\Provider\Address($faker));
-$faker->addProvider(new Faker\Provider\PhoneNumber($faker));
-$faker->addProvider(new Faker\Provider\Company($faker));
-$faker->addProvider(new Faker\Provider\Lorem($faker));
+$faker->addProvider(new Faker\Provider\en_US\Name($faker));
+$faker->addProvider(new Faker\Provider\en_US\Address($faker));
+$faker->addProvider(new Faker\Provider\en_US\PhoneNumber($faker));
+$faker->addProvider(new Faker\Provider\en_US\Company($faker));
+$faker->addProvider(new Faker\Provider\en_US\Lorem($faker));
 ````
 
 Whenever you try to access a property on the `$faker` object, the generator looks for a method with the same name in all the providers attached to it. For instance, calling `$faker->name` triggers a call to `Faker\Provider\Name::name()`.
 
-That means that you can esily add your own providers to a `Faker\Generator`, or replace the ones bundled by defautl with a localized version. Just have a look at the existing providers to see how you can design powerful data generators in no time.
+That means that you can esily add your own providers to a `Faker\Generator`. Just have a look at the existing providers to see how you can design powerful data generators in no time.
+
+`Faker\Factory` can take a locale as an argument, to return localized data. If no localized provider is found, the factory returns a provider with the default locale.
+
+```php
+$faker = Faker\Factory::create('fr_FR'); // create a French faker
+```
 
 ## Real Life Usage
 
