@@ -26,7 +26,9 @@ $generator = Faker\Factory::create();
     </company>
 <?php if (mt_rand(0,5) == 0): ?>
     <details>
-    <![CDATA[<?php echo $generator->lorem(3) ?>]]>
+<![CDATA[
+<?php echo $generator->lorem(3) ?> 
+]]>
     </details>
 <?php endif; ?>
   </contact>

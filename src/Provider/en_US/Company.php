@@ -42,7 +42,7 @@ class Company extends \Faker\Provider\Company
 	{
 		$result = array();
 		foreach (static::$catchPhraseWords as &$word) {
-			$result[] = $this->generator->randomElement($word);
+			$result[] = static::randomElement($word);
 		}
 		
 		return join($result, ' ');
@@ -52,7 +52,7 @@ class Company extends \Faker\Provider\Company
 	{
 		$result = array();
 		foreach (static::$bsWords as &$word) {
-			$result[] = $this->generator->randomElement($word);
+			$result[] = static::randomElement($word);
 		}
 		
 		return join($result, ' ');

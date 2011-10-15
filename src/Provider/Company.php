@@ -2,7 +2,9 @@
 
 namespace Faker\Provider;
 
-class Company
+require_once __DIR__ . '/Base.php';
+
+class Company extends \Faker\Provider\Base
 {
 	protected static $formats = array(
 		'{{lastName}} {{companySuffix}}',
@@ -10,22 +12,15 @@ class Company
 
 	protected static $companySuffix = array('Ltd');
 
-	protected $generator;
-	
-	public function __construct($generator)
-	{
-		$this->generator = $generator;
-	}
-
 	public function company()
 	{
-		$format = static::$formats[array_rand(static::$formats)];
+		$format = static::randomElement(static::$formats);
 		return $this->generator->parse($format);
 	}
 	
-	public function companySuffix()
+	public static function companySuffix()
 	{
-		return static::$companySuffix[array_rand(static::$companySuffix)];;
+		return static::randomElement(static::$companySuffix);
 	}
 	
 }

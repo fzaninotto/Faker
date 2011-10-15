@@ -79,11 +79,11 @@ class Name extends \Faker\Provider\Name
 	
 	public static function prefix()
 	{
-		return static::$prefix[array_rand(static::$prefix)];
+		return static::randomElement(static::$prefix);
 	}
 	
 	public static function suffix()
 	{
-		return static::$suffix[array_rand(static::$suffix)];
+		return static::randomElement(static::$suffix);
 	}
 }

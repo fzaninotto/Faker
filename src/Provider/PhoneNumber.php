@@ -2,19 +2,14 @@
 
 namespace Faker\Provider;
 
-class PhoneNumber
+require_once __DIR__ . '/Base.php';
+
+class PhoneNumber extends \Faker\Provider\Base
 {
 	protected static $formats = array('###-###-###');
 	
-	protected $generator;
-	
-	public function __construct($generator)
+	public static function phoneNumber()
 	{
-		$this->generator = $generator;
-	}
-	
-	public function phoneNumber()
-	{
-		return $this->generator->numerify(static::$formats[array_rand(static::$formats)]);
+		return static::numerify(static::randomElement(static::$formats));
 	}
 }
