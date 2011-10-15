@@ -76,12 +76,18 @@ class Name extends \Faker\Provider\Name
 	private static $prefix = array('Mr.','Mrs.','Ms.','Miss','Dr.');
 	
 	private static $suffix = array('Jr.','Sr.','I','II','III','IV','V','MD','DDS','PhD','DVM');
-	
+
+	/**
+	 * @example 'Mrs.'
+	 */
 	public static function prefix()
 	{
 		return static::randomElement(static::$prefix);
 	}
-	
+
+	/**
+	 * @example 'PhD'
+	 */
 	public static function suffix()
 	{
 		return static::randomElement(static::$suffix);

@@ -64,22 +64,34 @@ class Address extends \Faker\Provider\Address
 		"{{streetAddress}}\n{{city}}, {{stateAbbr}} {{postcode}}",
 	);
 	protected static $secondaryAddressFormats = array('Apt. ###', 'Suite ###');
-	
+
+	/**
+	 * @example 'East'
+	 */
 	public static function cityPrefix()
 	{
 		return static::randomElement(static::$cityPrefix);
 	}
-	
+
+	/**
+	 * @example 'Appt. 350'
+	 */
 	public static function secondaryAddress()
 	{
 		return static::numerify(static::randomElement(static::$secondaryAddressFormats));
 	}
 
+	/**
+	 * @example 'California'
+	 */
 	public static function state()
 	{
 		return static::randomElement(static::$state);
 	}
-	
+
+	/**
+	 * @example 'CA'
+	 */	
 	public static function stateAbbr()
 	{
 		return static::randomElement(static::$stateAbbr);

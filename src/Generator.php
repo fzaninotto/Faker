@@ -12,6 +12,11 @@ class Generator
 		$this->providers[]= $providers;
 	}
 	
+	public function getProviders()
+	{
+		return $this->providers;
+	}
+	
 	public function format($formatter, $arguments = array())
 	{
 		return call_user_func_array($this->getFormatter($formatter), $arguments);

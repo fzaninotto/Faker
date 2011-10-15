@@ -38,6 +38,9 @@ class Company extends \Faker\Provider\Company
 
 	protected static $companySuffix = array('Inc','and Sons','LLC','Group','PLC','Ltd');
 
+	/**
+	 * @example 'Robust full-range hub'
+	 */
 	public function catchPhrase()
 	{
 		$result = array();
@@ -47,7 +50,10 @@ class Company extends \Faker\Provider\Company
 		
 		return join($result, ' ');
 	}
-	
+
+	/**
+	 * @example 'integrate extensible convergence'
+	 */
 	public function bs()
 	{
 		$result = array();
