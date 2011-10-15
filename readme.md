@@ -35,42 +35,52 @@ echo $faker->lorem;
 
 Here is a list of the bundled formatters in the default locale.
 
-### Lorem
- * `lorem()`            // 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'  
- * `paragraph()`        // 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'  
- * `paragraphs()`       // array($paragraph1, $paragraph2, $paragraph3)  
- * `sentence()`         // 'Lorem ipsum dolor sit amet.'  
- * `sentences()`        // array('Lorem ipsum dolor sit amet.', 'Consectetur adipisicing eli.')  
- * `word()`             // 'Lorem'  
- * `words()`            // array('Lorem', 'ipsum', 'dolor')  
-### Address
- * `address()`          // '791 Crist Parks, Sashabury, IL 86039-9874'  
- * `buildingNumber()`   // '791'  
- * `city()`             // 'Sashabury'  
- * `cityPrefix()`       // 'East'  
- * `citySuffix()`       // 'town'  
- * `country()`          // 'Japan'  
- * `postcode()`         // 86039-9874  
- * `secondaryAddress()` // 'Appt. 350'  
- * `state()`            // 'California'  
- * `stateAbbr()`        // 'CA'  
- * `streetAddress()`    // '791 Crist Parks'  
- * `streetName()`       // 'Crist Parks'  
- * `streetSuffix()`     // 'Avenue'  
-### Company
- * `bs()`               // 'integrate extensible convergence'  
- * `catchPhrase()`      // 'Robust full-range hub'  
- * `company()`          // 'Acme Ltd'  
- * `companySuffix()`    // 'Ltd'  
-### Name
- * `firstName()`        // 'John'  
- * `lastName()`         // 'Doe'  
- * `name()`             // 'John Doe'  
- * `prefix()`           // 'Mrs.'  
- * `suffix()`           // 'PhD'  
-### PhoneNumber
- * `phoneNumber()`      // '555-123-546'
- 
+
+### `Faker\Provider\Lorem`
+
+    lorem()              // 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'  
+    paragraph()          // 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'  
+    paragraphs()         // array($paragraph1, $paragraph2, $paragraph3)  
+    sentence()           // 'Lorem ipsum dolor sit amet.'  
+    sentences()          // array('Lorem ipsum dolor sit amet.', 'Consectetur adipisicing eli.')  
+    word()               // 'Lorem'  
+    words()              // array('Lorem', 'ipsum', 'dolor')  
+
+### `Faker\Provider\en_US\Address`
+
+    address()            // '791 Crist Parks, Sashabury, IL 86039-9874'  
+    buildingNumber()     // '791'  
+    city()               // 'Sashabury'  
+    cityPrefix()         // 'East'  
+    citySuffix()         // 'town'  
+    country()            // 'Japan'  
+    postcode()           // 86039-9874  
+    secondaryAddress()   // 'Appt. 350'  
+    state()              // 'California'  
+    stateAbbr()          // 'CA'  
+    streetAddress()      // '791 Crist Parks'  
+    streetName()         // 'Crist Parks'  
+    streetSuffix()       // 'Avenue'  
+
+### `Faker\Provider\en_US\Company`
+
+    bs()                 // 'integrate extensible convergence'  
+    catchPhrase()        // 'Robust full-range hub'  
+    company()            // 'Acme Ltd'  
+    companySuffix()      // 'Ltd'  
+
+### `Faker\Provider\en_US\Name`
+
+    firstName()          // 'John'  
+    lastName()           // 'Doe'  
+    name()               // 'John Doe'  
+    prefix()             // 'Mrs.'  
+    suffix()             // 'PhD'  
+
+### `Faker\Provider\en_US\PhoneNumber`
+
+    phoneNumber()        // '555-123-546' 
+
 ## Providers
 
 As a matter of fact, a `Faker\Generator` alone can't do much generation. It needs `Faker\Provider` objects to delegate the data generation to them. `Faker\Factory::create()` actually creates a `Faker\Generator` bundled with the default providers. Here is what happens under the hood:
