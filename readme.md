@@ -130,7 +130,8 @@ $faker->addProvider(new Faker\Provider\en_US\Name($faker));
 $faker->addProvider(new Faker\Provider\en_US\Address($faker));
 $faker->addProvider(new Faker\Provider\en_US\PhoneNumber($faker));
 $faker->addProvider(new Faker\Provider\en_US\Company($faker));
-$faker->addProvider(new Faker\Provider\en_US\Lorem($faker));
+$faker->addProvider(new Faker\Provider\Lorem($faker));
+$faker->addProvider(new Faker\Provider\Internet($faker));
 ````
 
 Whenever you try to access a property on the `$faker` object, the generator looks for a method with the same name in all the providers attached to it. For instance, calling `$faker->name` triggers a call to `Faker\Provider\Name::name()`.
