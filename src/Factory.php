@@ -8,7 +8,7 @@ class Factory
 {
 	const DEFAULT_LOCALE = 'en_US';
 	
-	protected static $defaultProviders = array('Name', 'Address', 'PhoneNumber', 'Company', 'Lorem', 'Internet');
+	protected static $defaultProviders = array('Name', 'Address', 'PhoneNumber', 'Company', 'Lorem', 'Internet', 'DateTime');
 	
 	public static function create($locale = self::DEFAULT_LOCALE)
 	{

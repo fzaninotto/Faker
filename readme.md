@@ -38,6 +38,26 @@ echo $faker->lorem;
 
 Each of the generator properties (like `name`, `address`, and `lorem`) are called "formatters". A faker generator has many of them, packaged in "providers". Here is a list of the bundled formatters in the default locale.
 
+### `Faker\Provider\DateTime`
+
+    amPm()               // 'am'  
+    century()            // 'V'  
+    date()               // '2008-11-27'  
+    dateTime()           // 2005-08-16 20:39:21  
+    dateTimeBetween()    // 1999-02-02 11:42:52  
+    dateTimeThisCentury() // 1964-04-04 11:02:02  
+    dateTimeThisDecade() // 2010-03-10 05:18:58  
+    dateTimeThisMonth()  // 2011-10-05 12:51:46  
+    dateTimeThisYear()   // 2011-09-19 09:24:37  
+    dayOfMonth()         // '29'  
+    dayOfWeek()          // 'Thursday'  
+    iso8601()            // '2003-10-21T16:05:52+0000'  
+    month()              // '06'  
+    monthName()          // 'November'  
+    time()               // '15:02:34'  
+    unixTime()           // 1061306726  
+    year()               // '1991' 
+    
 ### `Faker\Provider\Internet`
 
     domainName()         // 'mueller.info'  
