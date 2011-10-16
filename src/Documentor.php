@@ -23,6 +23,15 @@ class Documentor
 				if ($methodName == '__construct') {
 					continue;
 				}
+				$parameters = array();
+				foreach ($reflmethod->getParameters() as $reflparameter) {
+					$parameter = '$'. $reflparameter->getName();
+					if ($reflparameter->isDefaultValueAvailable()) {
+						$parameter .= ' = ' . var_export($reflparameter->getDefaultValue(), true);
+					}
+					$parameters []= $parameter;
+				}
+				$parameters = $parameters ? '('. join(', ', $parameters) . ')' : '';
 				$example = $this->generator->format($methodName);
 				if (is_array($example)) {
 					$example = "array('". join("', '", $example) . "')";
@@ -31,7 +40,7 @@ class Documentor
 				} elseif (is_string($example)) {
 					$example = var_export($example, true);
 				}
-				$formatters[$providerClass][$methodName] = $example;
+				$formatters[$providerClass][$methodName . $parameters] = $example;
 			}
 			ksort($formatters[$providerClass]);
 		}

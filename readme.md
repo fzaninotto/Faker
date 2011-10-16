@@ -57,83 +57,84 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
 ### `Faker\Provider\DateTime`
 
-    amPm()               // 'am'  
-    century()            // 'V'  
-    date()               // '2008-11-27'  
-    dateTime()           // 2005-08-16 20:39:21  
-    dateTimeBetween()    // 1999-02-02 11:42:52  
-    dateTimeThisCentury() // 1964-04-04 11:02:02  
-    dateTimeThisDecade() // 2010-03-10 05:18:58  
-    dateTimeThisMonth()  // 2011-10-05 12:51:46  
-    dateTimeThisYear()   // 2011-09-19 09:24:37  
-    dayOfMonth()         // '29'  
-    dayOfWeek()          // 'Thursday'  
-    iso8601()            // '2003-10-21T16:05:52+0000'  
-    month()              // '06'  
-    monthName()          // 'November'  
-    time()               // '15:02:34'  
-    unixTime()           // 1061306726  
-    year()               // '1991' 
-    
+    amPm                    // 'am'  
+    century                 // 'V'  
+    date($format = 'Y-m-d') // '2008-11-27'  
+    dateTime                // 2005-08-16 20:58:39  
+    dateTimeBetween($startDate = '-30 years', $endDate = 'now') // 1999-02-02 12:05:31  
+    dateTimeThisCentury     // 1964-04-04 11:24:41  
+    dateTimeThisDecade      // 2010-03-10 05:41:37  
+    dateTimeThisMonth       // 2011-10-05 13:14:25  
+    dateTimeThisYear        // 2011-09-19 09:47:16  
+    dayOfMonth              // '29'  
+    dayOfWeek               // 'Thursday'  
+    iso8601                 // '2003-10-21T16:24:11+0000'  
+    month                   // '06'  
+    monthName               // 'November'  
+    time($format = 'H:i:s') // '15:17:03'  
+    unixTime                // 1061307820  
+    year                    // '1991'  
+
 ### `Faker\Provider\Internet`
 
-    domainName()         // 'mueller.info'  
-    domainWord()         // 'von'  
-    email()              // 'cshields@rosenbaum.com'  
-    freeEmail()          // 'dayna55@gmail.com'  
-    freeEmailDomain()    // 'yahoo.com'  
-    ipv4()               // '237.149.115.38'  
-    ipv6()               // '35cd:186d:3e23:2986:ef9f:5b41:42a4:e6f1'  
-    safeEmail()          // 'nbatz@example.org'  
-    tld()                // 'info'  
-    url()                // 'http://www.runolfsdottir.com/'  
-    userName()           // 'tremblay.haylie'  
+    domainName              // 'mueller.info'  
+    domainWord              // 'von'  
+    email                   // 'cshields@rosenbaum.com'  
+    freeEmail               // 'dayna55@gmail.com'  
+    freeEmailDomain         // 'yahoo.com'  
+    ipv4                    // '237.149.115.38'  
+    ipv6                    // '35cd:186d:3e23:2986:ef9f:5b41:42a4:e6f1'  
+    safeEmail               // 'nbatz@example.org'  
+    tld                     // 'info'  
+    url                     // 'http://www.runolfsdottir.com/'  
+    userName                // 'tremblay.haylie'  
 
 ### `Faker\Provider\Lorem`
 
-    lorem()              // 'Fuga totam reiciendis qui architecto fugiat. (...)'  
-    paragraph()          // 'Sed a nam et sint autem. Aut officia aut. Blanditiis et ducimus.'  
-    paragraphs()         // array('Amet et est. (...)', 'Sequi cum culpa rem. Rerum exercitationem est.')  
-    sentence()           // 'Sit vitae voluptas sint non.'  
-    sentences()          // array('Ut optio quos qui illo error nihil.', 'Vero a officia id corporis incidunt.', 'Provident esse hic eligendi quos culpa ut.')  
-    word()               // 'aut'  
-    words()              // array('porro', 'sed', 'magni')  
+    lorem($nbParagraphs = 3) // 'Fuga totam reiciendis qui architecto fugiat. (...)'  
+    paragraph($nbSentences = 3) // 'Sed a nam et sint autem. Aut officia aut. Blanditiis et ducimus.'  
+    paragraphs($nb = 3)     // array('Amet et est. (...)', 'Sequi cum culpa rem. Rerum exercitationem est.')  
+    sentence($nbWords = 3)  // 'Sit vitae voluptas sint non.'  
+    sentences($nb = 3)      // array('Ut optio quos qui illo error nihil.', 'Vero a officia id corporis incidunt.', 'Provident esse hic eligendi quos culpa ut.')  
+    word                    // 'aut'  
+    words($nb = 3)          // array('porro', 'sed', 'magni')  
 
 ### `Faker\Provider\en_US\Address`
 
-    address()            // '8888 Cummings Vista Apt. 101, Susanbury, NY 95473'  
-    buildingNumber()     // '484'  
-    city()               // 'West Judge'  
-    cityPrefix()         // 'Lake'  
-    citySuffix()         // 'borough'  
-    country()            // 'Falkland Islands (Malvinas)'  
-    postcode()           // '17916'  
-    secondaryAddress()   // 'Suite 961'  
-    state()              // 'NewMexico'  
-    stateAbbr()          // 'OH'  
-    streetAddress()      // '439 Karley Loaf Suite 897'  
-    streetName()         // 'Keegan Trail'  
-    streetSuffix()       // 'Keys'  
+    address                 // '8888 Cummings Vista Apt. 101
+Susanbury, NY 95473'  
+    buildingNumber          // '484'  
+    city                    // 'West Judge'  
+    cityPrefix              // 'Lake'  
+    citySuffix              // 'borough'  
+    country                 // 'Falkland Islands (Malvinas)'  
+    postcode                // '17916'  
+    secondaryAddress        // 'Suite 961'  
+    state                   // 'NewMexico'  
+    stateAbbr               // 'OH'  
+    streetAddress           // '439 Karley Loaf Suite 897'  
+    streetName              // 'Keegan Trail'  
+    streetSuffix            // 'Keys'  
 
 ### `Faker\Provider\en_US\Company`
 
-    bs()                 // 'e-enable robust architectures'  
-    catchPhrase()        // 'Monitored regional contingency'  
-    company()            // 'Bogan-Treutel'  
-    companySuffix()      // 'and Sons'  
+    bs                      // 'e-enable robust architectures'  
+    catchPhrase             // 'Monitored regional contingency'  
+    company                 // 'Bogan-Treutel'  
+    companySuffix           // 'and Sons'  
 
 ### `Faker\Provider\en_US\Name`
 
-    firstName()          // 'Maynard'  
-    lastName()           // 'Zulauf'  
-    name()               // 'Dr. Zane Stroman'  
-    prefix()             // 'Ms.'  
-    suffix()             // 'Jr.'  
+    firstName               // 'Maynard'  
+    lastName                // 'Zulauf'  
+    name                    // 'Dr. Zane Stroman'  
+    prefix                  // 'Ms.'  
+    suffix                  // 'Jr.'  
 
 ### `Faker\Provider\en_US\PhoneNumber`
 
-    phoneNumber()        // '132-149-0269x3767' 
-    
+    phoneNumber             // '132-149-0269x3767'
+
 ## Localization
 
 `Faker\Factory` can take a locale as an argument, to return localized data. If no localized provider is found, the factory fallbacks to the default locale.
