@@ -101,8 +101,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
 ### `Faker\Provider\en_US\Address`
 
-    address                 // '8888 Cummings Vista Apt. 101
-Susanbury, NY 95473'  
+    address                 // '8888 Cummings Vista Apt. 101, Susanbury, NY 95473'  
     buildingNumber          // '484'  
     city                    // 'West Judge'  
     cityPrefix              // 'Lake'  
