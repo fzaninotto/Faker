@@ -41,9 +41,9 @@ class Lorem extends \Faker\Provider\Base
 	 * @param integer $nbWords around how many words the sentence should contain
 	 * @return string
 	 */
-	public function sentence($nbWords = 3)
+	public function sentence($nbWords = 6)
 	{
-		$words = static::words($nbWords + mt_rand(0, 4));
+		$words = static::words($nbWords + mt_rand(-2, 2));
 		$words[0] = ucwords($words[0]);
 		
 		return join($words, ' ') . '.';
@@ -74,7 +74,7 @@ class Lorem extends \Faker\Provider\Base
 	 */
 	public function paragraph($nbSentences = 3)
 	{
-		return join(static::sentences($nbSentences + mt_rand(0, 3)), ' ');
+		return join(static::sentences($nbSentences + mt_rand(-1, 1)), ' ');
 	}
 	
 	/**
@@ -97,11 +97,21 @@ class Lorem extends \Faker\Provider\Base
 	 * Generate a long text string
 	 *
  	 * @example 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'
-	 * @param integer $nbParagraphs around how many paragraphs the text should contain
+	 * @param integer $maxNbChars Maximum number of characters the text should contain
 	 * @return string
 	 */
-	public function lorem($nbParagraphs = 3)
+	public function text($maxNbChars = 200)
 	{
-		return join(static::paragraphs($nbParagraphs + mt_rand(0, 3)), "\n");
+		// determine how many paragraphs are needed to reach the $maxNbChars once;
+		$text = array();
+		$size = 0;
+		while ($size < $maxNbChars) {
+			$paragraph = self::paragraph();
+			$text []= $paragraph;
+			$size += strlen($paragraph);
+		}
+		array_pop($text);
+
+		return join($text, "\n");
 	}
 }
