@@ -42,9 +42,7 @@ class Documentor
 				}
 				$formatters[$providerClass][$methodName . $parameters] = $example;
 			}
-			ksort($formatters[$providerClass]);
 		}
-		ksort($formatters);
 		
 		return $formatters;
 	}
