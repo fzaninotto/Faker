@@ -32,7 +32,24 @@ echo $faker->lorem;
   // Et sint et. Ut ducimus quod nemo ab voluptatum.
 ```
 
-**Tip**: Even if this example shows a property access, each call to `$faker->name` yields a different (random) result. This is because Faker uses `__get()` magic, and forwards `Faker\Generator->$property` calls to `Faker\Generator->format($property)`.
+Even if this example shows a property access, each call to `$faker->name` yields a different (random) result. This is because Faker uses `__get()` magic, and forwards `Faker\Generator->$property` calls to `Faker\Generator->format($property)`.
+
+```php
+<?php
+for ($i=0; $i < 10; $i++) { 
+  echo $faker->name, "\n";
+}
+  // Adaline Reichel
+  // Dr. Santa Prosacco DVM
+  // Noemy Vandervort V
+  // Lexi O'Conner
+  // Gracie Weber
+  // Roscoe Johns
+  // Emmett Lebsack
+  // Keegan Thiel
+  // Wellington Koelpin II
+  // Ms. Karley Kiehn V
+```
 
 ## Formatters
 
@@ -122,6 +139,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 `Faker\Factory` can take a locale as an argument, to return localized data. If no localized provider is found, the factory fallbacks to the default locale.
 
 ```php
+<?php
 $faker = Faker\Factory::create('fr_FR'); // create a French faker
 echo $faker->name; // 'Jean Dupont'
 ```
