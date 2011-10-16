@@ -36,7 +36,7 @@ class Documentor
 				if (is_array($example)) {
 					$example = "array('". join("', '", $example) . "')";
 				} elseif($example instanceof \DateTime) {
-					$example = $example->format('Y-m-d H:i:s');
+					$example = "DateTime('" . $example->format('Y-m-d H:i:s') . "')";
 				} elseif (is_string($example)) {
 					$example = var_export($example, true);
 				}

@@ -116,16 +116,16 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
 ### `Faker\Provider\DateTime`
 
-    unixTime                // 58754961  
-    dateTime                // 2008-04-18 23:11:35  
-    iso8601                 // '2007-05-25T12:25:57+0000'  
+    unixTime                // 58754983  
+    dateTime                // DateTime('2008-04-18 23:19:03')  
+    iso8601                 // '2007-05-25T12:33:15+0000'  
     date($format = 'Y-m-d') // '1978-12-07'  
-    time($format = 'H:i:s') // '04:46:58'  
-    dateTimeBetween($startDate = '-30 years', $endDate = 'now') // 2000-04-13 00:11:22  
-    dateTimeThisCentury     // 1983-02-02 19:44:03  
-    dateTimeThisDecade      // 2002-02-25 08:17:41  
-    dateTimeThisYear        // 2011-05-09 04:08:14  
-    dateTimeThisMonth       // 2011-09-27 07:34:20  
+    time($format = 'H:i:s') // '04:48:48'  
+    dateTimeBetween($startDate = '-30 years', $endDate = 'now') // DateTime('2000-04-13 00:19:31')  
+    dateTimeThisCentury     // DateTime('1983-02-02 19:52:12')  
+    dateTimeThisDecade      // DateTime('2002-02-25 08:25:50')  
+    dateTimeThisYear        // DateTime('2011-05-09 04:16:23')  
+    dateTimeThisMonth       // DateTime('2011-09-27 07:42:29')  
     amPm                    // 'pm'  
     dayOfMonth              // '04'  
     dayOfWeek               // 'Wednesday'  
