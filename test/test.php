@@ -1,14 +1,15 @@
 <?php
 require_once __DIR__ . '/../src/Factory.php';
 $generator = Faker\Factory::create();
+$generator->seed(5);
 ?>
 <?xml version="1.0" encoding="UTF-8"?>
 <contacts>
 <?php for ($i=0; $i < 10; $i++): ?>
   <contact firstName="<?php echo $generator->firstName ?>" lastName="<?php echo $generator->lastName ?>" email="<?php echo $generator->email ?>"/>
     <phone number="<?php echo $generator->phoneNumber ?>"/>
-<?php if (mt_rand(0,5) == 0): ?>
-    <countryOfBirth><?php echo $generator->address ?></countryOfBirth>
+<?php if (mt_rand(0,3) == 0): ?>
+    <birth date="<?php echo $generator->dateTimeThisCentury->format('Y-m-d') ?>" place="<?php echo $generator->city ?>"/>
 <?php endif; ?>
     <address>
       <street><?php echo $generator->streetAddress ?></street>
@@ -27,7 +28,7 @@ $generator = Faker\Factory::create();
 <?php if (mt_rand(0,5) == 0): ?>
     <details>
 <![CDATA[
-<?php echo $generator->lorem(3) ?> 
+<?php echo $generator->text(400) ?> 
 ]]>
     </details>
 <?php endif; ?>
