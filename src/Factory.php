@@ -8,7 +8,7 @@ class Factory
 {
 	const DEFAULT_LOCALE = 'en_US';
 	
-	protected static $defaultProviders = array('Name', 'Address', 'PhoneNumber', 'Company', 'Lorem', 'Internet', 'DateTime');
+	protected static $defaultProviders = array('Name', 'Address', 'PhoneNumber', 'Company', 'Lorem', 'Internet', 'DateTime', 'Miscellaneous');
 	
 	public static function create($locale = self::DEFAULT_LOCALE)
 	{
@@ -21,7 +21,7 @@ class Factory
 		return $generator;
 	}
 	
-	protected function getProviderClassname($provider, $locale = '')
+	protected static function getProviderClassname($provider, $locale = '')
 	{
 		if ($providerClass = self::findProviderClassname($provider, $locale)) {
 			return $providerClass;

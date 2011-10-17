@@ -134,6 +134,13 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     year                    // '1985'  
     century                 // 'XII'  
 
+### `Faker\Provider\Miscellaneous`
+
+    boolean                 // true
+    md5                     // '67cc5698854132383fdad62fc845cd48'
+    sha1                    // 'ea791e73ad1d3a7f78e8e3e61dfbf2fc44401663'
+    sha256                  // '6327f9f323561921ae55041d39a03b7a515a58a9f780ae3a6c62a0ca8c4905f4'
+
 ## Localization
 
 `Faker\Factory` can take a locale as an argument, to return localized data. If no localized provider is found, the factory fallbacks to the default locale.
