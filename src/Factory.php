@@ -21,7 +21,7 @@ class Factory
 		return $generator;
 	}
 	
-	protected function getProviderClassname($provider, $locale = '')
+	protected static function getProviderClassname($provider, $locale = '')
 	{
 		if ($providerClass = self::findProviderClassname($provider, $locale)) {
 			return $providerClass;
