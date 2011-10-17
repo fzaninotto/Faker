@@ -13,18 +13,11 @@ class Address extends \Faker\Provider\Address
 		'Alley','Avenue','Branch','Bridge','Brook','Brooks','Burg','Burgs','Bypass','Camp','Canyon','Cape','Causeway','Center','Centers','Circle','Circles','Cliff','Cliffs','Club','Common','Corner','Corners','Course','Court','Courts','Cove','Coves','Creek','Crescent','Crest','Crossing','Crossroad','Curve','Dale','Dam','Divide','Drive','Drive','Drives','Estate','Estates','Expressway','Extension','Extensions','Fall','Falls','Ferry','Field','Fields','Flat','Flats','Ford','Fords','Forest','Forge','Forges','Fork','Forks','Fort','Garden','Gardens','Gateway','Glen','Glens','Green','Greens','Grove','Groves','Harbour','Harbours','Haven','Heights','Highway','Hill','Hills','Hollow','Inlet', 'Island','Islands', 'Isle','Junction','Junctions','Key','Keys','Knoll','Knolls','Lake','Lakes','Land','Landing','Lane','Light','Lights','Loaf','Lock','Locks','Locks','Lodge','Lodge','Loop','Manor','Manors','Meadow','Meadows','Mews','Mill','Mills','Motorway','Mount','Mountain','Mountains','Neck','Orchard','Oval','Overpass','Park','Parks','Parkway','Parkways','Pass','Passage','Path','Pike','Pine','Pines','Place','Plain','Plains','Plaza','Point','Points','Port','Ports','Radial','Ramp','Ranch','Rapid','Rapids','Rest','Ridge','Ridges','River','Road','Road','Roads','Roads','Route','Row','Rue','Run','Shoal','Shoals','Shore','Shores','Spring','Springs','Springs','Spur','Spurs','Square','Square','Squares','Squares','Station','Station','Stream','Stream','Street','Streets','Summit','Terrace','Throughway','Trace','Track','Trafficway','Trail','Tunnel','Turnpike','Underpass','Union','Unions','Valley','Valleys','Via','Viaduct','View','Views','Village','Villages','Ville','Vista','Vista','Walk','Walks','Wall','Way','Ways','Well','Wells'
 	);
 	protected static $postcode = array('#####', '#####-####');
-	protected static $state = array(
-		'Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','NewHampshire','NewJersey','NewMexico','NewYork','NorthCarolina','NorthDakota','Ohio','Oklahoma','Oregon','Pennsylvania','RhodeIsland','SouthCarolina','SouthDakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','WestVirginia','Wisconsin','Wyoming'
-	);
+
 	protected static $county = array(
 		'Aberdeenshire', 'Anglesey', 'Angus', 'Argyll', 'Ayrshire', 'Banffshire', 'Bedfordshire', 'Berwickshire', 'Breconshire', 'Buckinghamshire', 'Bute', 'Caernarvonshire', 'Caithness', 'Cambridgeshire', 'Cardiganshire', 'Carmarthenshire', 'Cheshire', 'Clackmannanshire', 'Cornwall', 'Isles of Scilly', 'Cumbria', 'Denbighshire', 'Derbyshire', 'Devon', 'Dorset', 'Dumbartonshire', 'Dumfriesshire', 'Durham', 'East Lothian', 'East Sussex', 'Essex', 'Fife', 'Flintshire', 'Glamorgan', 'Gloucestershire', 'Greater London', 'Greater Manchester', 'Hampshire', 'Hertfordshire', 'Inverness', 'Kent', 'Kincardineshire', 'Kinross-shire', 'Kirkcudbrightshire', 'Lanarkshire', 'Lancashire', 'Leicestershire', 'Lincolnshire', 'London', 'Merionethshire', 'Merseyside', 'Midlothian', 'Monmouthshire', 'Montgomeryshire', 'Moray', 'Nairnshire', 'Norfolk', 'North Yorkshire', 'Northamptonshire', 'Northumberland', 'Nottinghamshire', 'Orkney', 'Oxfordshire', 'Peebleshire', 'Pembrokeshire', 'Perthshire', 'Radnorshire', 'Renfrewshire', 'Ross & Cromarty', 'Roxburghshire', 'Selkirkshire', 'Shetland', 'Shropshire', 'Somerset', 'South Yorkshire', 'Staffordshire', 'Stirlingshire', 'Suffolk', 'Surrey', 'Sutherland', 'Tyne and Wear', 'Warwickshire', 'West Lothian', 'West Midlands', 'West Sussex', 'West Yorkshire', 'Wigtownshire', 'Wiltshire', 'Worcestershire'
 	);
 
-
-
-	protected static $stateAbbr = array(
-		'AL','AK','AS','AZ','AR','CA','CO','CT','DE','DC','FM','FL','GA','GU','HI','ID','IL','IN','IA','KS','KY','LA','ME','MH','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','MP','OH','OK','OR','PW','PA','PR','RI','SC','SD','TN','TX','UT','VT','VI','VA','WA','WV','WI','WY','AE','AA','AP'
-	);
 	protected static $country = array(
 		'Afghanistan','Albania','Algeria','American Samoa','Andorra','Angola','Anguilla','Antarctica (the territory South of 60 deg S)','Antigua and Barbuda','Argentina','Armenia','Aruba','Australia','Austria','Azerbaijan',
 		'Bahamas','Bahrain','Bangladesh','Barbados','Belarus','Belgium','Belize','Benin','Bermuda','Bhutan','Bolivia','Bosnia and Herzegovina','Botswana','Bouvet Island (Bouvetoya)','Brazil','British Indian Ocean Territory (Chagos Archipelago)','British Virgin Islands','Brunei Darussalam','Bulgaria','Burkina Faso','Burundi',
@@ -67,7 +60,7 @@ class Address extends \Faker\Provider\Address
 		'{{buildingNumber}} {{streetName}} {{secondaryAddress}}',
 	);
 	protected static $addressFormats = array(
-		"{{streetAddress}}\n{{city}}, {{stateAbbr}} {{postcode}}",
+		"{{streetAddress}}\n{{city}}, {{postcode}}",
 	);
 	protected static $secondaryAddressFormats = array('Flat ###', 'Studio ###');
 
@@ -80,7 +73,7 @@ class Address extends \Faker\Provider\Address
 	}
 
 	/**
-	 * @example 'Appt. 350'
+	 * @example 'Flat 350'
 	 */
 	public static function secondaryAddress()
 	{
@@ -93,14 +86,6 @@ class Address extends \Faker\Provider\Address
 	public static function county()
 	{
 		return static::randomElement(static::$county);
-	}
-
-	/**
-	 * @example 'CA'
-	 */	
-	public static function stateAbbr()
-	{
-		return static::randomElement(static::$stateAbbr);
 	}
 	
 }
