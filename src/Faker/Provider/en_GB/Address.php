@@ -62,7 +62,7 @@ class Address extends \Faker\Provider\Address
 	protected static $addressFormats = array(
 		"{{streetAddress}}\n{{city}}, {{postcode}}",
 	);
-	protected static $secondaryAddressFormats = array('Flat ###', 'Studio ###');
+	protected static $secondaryAddressFormats = array('Flat ##', 'Flat ##?', 'Studio ##', 'Studio ##?');
 
 	/**
 	 * @example 'East'
@@ -77,7 +77,7 @@ class Address extends \Faker\Provider\Address
 	 */
 	public static function secondaryAddress()
 	{
-		return static::numerify(static::randomElement(static::$secondaryAddressFormats));
+		return static::bothify(static::randomElement(static::$secondaryAddressFormats));
 	}
 
 	/**
