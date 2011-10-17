@@ -148,8 +148,22 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 ```php
 <?php
 $faker = Faker\Factory::create('fr_FR'); // create a French faker
-echo $faker->name; // 'Jean Dupont'
+for ($i=0; $i < 10; $i++) { 
+  echo $faker->name, "\n";
+}
+  // Luce du Coulon
+  // Auguste Dupont
+  // Roger Le Voisin
+  // Alexandre Lacroix
+  // Jacques Humbert-Roy
+  // Thérèse Guillet-Andre
+  // Gilles Gros-Bodin
+  // Amélie Pires
+  // Marcel Laporte
+  // Geneviève Marchal
 ```
+
+The localization of Faker is an ongoing process, for which we need your help. Don't hesitate to create localized providers to your own locale and submit a PR!
 
 ## Seeding the Generator
 
