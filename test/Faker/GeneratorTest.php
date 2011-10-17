@@ -2,7 +2,7 @@
 
 namespace Faker\Test;
 
-require_once __DIR__ . '/../src/Generator.php';
+require_once __DIR__ . '/../../src/Faker/Generator.php';
 
 use Faker\Generator;
 

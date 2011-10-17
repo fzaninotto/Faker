@@ -2,7 +2,7 @@
 
 namespace Faker\Test\Provider;
 
-require_once __DIR__ . '/../../src/Provider/Base.php';
+require_once __DIR__ . '/../../../src/Faker/Provider/Base.php';
 
 use Faker\Provider\Base as BaseProvider;
 

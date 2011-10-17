@@ -12,7 +12,7 @@ Use `Faker\Factory::create()` to create and initialize a faker generator, which 
 
 ```php
 <?php
-require_once '/path/to/Faker/src/Factory.php';
+require_once '/path/to/src/Faker/Factory.php';
 $faker = Faker\Factory::create(); // $faker is a Faker\Generator instance
 
 echo $faker->name; 
@@ -157,7 +157,7 @@ You may want to get always the same generated data - for instance when using Fak
 
 ```php
 <?php
-require_once '/path/to/Faker/src/Factory.php';
+require_once '/path/to/src/Faker/Factory.php';
 $faker = Faker\Factory::create();
 $faker->seed(1234);
 
@@ -189,7 +189,7 @@ The following script generates a valid XML document:
 
 ```php
 <?php
-require_once '/path/to/Faker/src/Factory.php';
+require_once '/path/to/src/Faker/Factory.php';
 $generator = Faker\Factory::create();
 ?>
 <?xml version="1.0" encoding="UTF-8"?>
