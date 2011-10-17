@@ -57,10 +57,11 @@ class Address extends \Faker\Provider\Address
 	);
 	protected static $streetAddressFormats = array(
 		'{{buildingNumber}} {{streetName}}',
-		'{{buildingNumber}} {{streetName}} {{secondaryAddress}}',
+		'{{buildingNumber}} {{streetName}}',
+                "{{secondaryAddress}}\n{{streetName}}",
 	);
 	protected static $addressFormats = array(
-		"{{streetAddress}}\n{{city}}, {{postcode}}",
+		"{{streetAddress}}\n{{city}}\n{{postcode}}",
 	);
 	protected static $secondaryAddressFormats = array('Flat ##', 'Flat ##?', 'Studio ##', 'Studio ##?');
 
