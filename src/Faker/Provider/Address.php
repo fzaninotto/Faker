@@ -81,7 +81,7 @@ class Address extends \Faker\Provider\Base
 	 */
 	public static function postcode()
 	{
-		return static::bothify(static::randomElement(static::$postcode));
+		return strtoupper(static::bothify(static::randomElement(static::$postcode)));
 	}
 
 	/**
