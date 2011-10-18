@@ -55,7 +55,7 @@ for ($i=0; $i < 10; $i++) {
 
 Each of the generator properties (like `name`, `address`, and `lorem`) are called "formatters". A faker generator has many of them, packaged in "providers". Here is a list of the bundled formatters in the default locale.
 
-### `Faker\Provider\en_US\Name`
+### `Faker\Provider\en_US\Person`
 
     prefix                  // 'Ms.'  
     suffix                  // 'Jr.'  
