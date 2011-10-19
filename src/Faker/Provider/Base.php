@@ -50,7 +50,7 @@ class Base
 	 */
 	protected static function numerify($string)
 	{
-		return preg_replace_callback('/\#/', get_called_class() . '::randomDigit', $string);
+		return preg_replace_callback('/\#/', 'static::randomDigit', $string);
 	}
 	
 	/**
@@ -61,7 +61,7 @@ class Base
 	 */
 	protected static function lexify($string)
 	{
-		return preg_replace_callback('/\?/', get_called_class() . '::randomLetter', $string);
+		return preg_replace_callback('/\?/', 'static::randomLetter', $string);
 	}
 	
 	/**
