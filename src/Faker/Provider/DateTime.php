@@ -9,6 +9,8 @@ class DateTime extends \Faker\Provider\Base
 	protected static $century = array('I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV','XVI','XVII','XVIII','XIX','XX','XX1');
 
 	/**
+	 * Get a timestamp between January 1, 1970 and now
+	 *
 	 * @example 1061306726
 	 */
 	public static function unixTime()
@@ -17,12 +19,25 @@ class DateTime extends \Faker\Provider\Base
 	}
 
 	/**
+	 * Get a datetime object for a date between January 1, 1970 and now
+	 *
 	 * @example DateTime('2005-08-16 20:39:21')
 	 * @return \DateTime
 	 */
 	public static function dateTime()
 	{
 		return new \DateTime('@' . static::unixTime());
+	}
+
+	/**
+	 * Get a datetime object for a date between January 1, 001 and now
+	 *
+	 * @example DateTime('1265-03-22 21:15:52')
+	 * @return \DateTime
+	 */
+	public static function dateTimeAD()
+	{
+		return new \DateTime('@' . mt_rand(-62135597361, time()));
 	}
 	
 	/**
@@ -34,6 +49,9 @@ class DateTime extends \Faker\Provider\Base
 	}
 
 	/**
+	 * Get a date string between January 1, 1970 and now
+	 *
+	 * @param   string $format
 	 * @example '2008-11-27'
 	 */
 	public static function date($format = 'Y-m-d')
@@ -42,6 +60,9 @@ class DateTime extends \Faker\Provider\Base
 	}
 
 	/**
+	 * Get a time string (24h format by default)
+	 *
+	 * @param   string $format
 	 * @example '15:02:34'
 	 */
 	public static function time($format = 'H:i:s')
@@ -50,6 +71,11 @@ class DateTime extends \Faker\Provider\Base
 	}
 
 	/**
+	 * Get a DateTime object based on a random date between two given dates.
+	 * Accepts date strings that can be recognized by strtotime().
+	 *
+	 * @param   string $startDate Defaults to 30 years ago
+	 * @param   string $endDate Defaults to "now"
 	 * @example DateTime('1999-02-02 11:42:52')
 	 * @return \DateTime
 	 */

@@ -4,7 +4,7 @@ namespace Faker\Provider;
 
 require_once __DIR__ . '/Base.php';
 
-class Name extends \Faker\Provider\Base
+class Person extends \Faker\Provider\Base
 {
 	protected static $formats = array(
 		'{{firstName}} {{lastName}}',
