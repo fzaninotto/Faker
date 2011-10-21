@@ -29,7 +29,7 @@ class EntityPopulator
 
 	public function setColumnFormatters($columnFormatters)
 	{
-		$this->columnFormatters = array_merge($columnFormatters, $this->columnFormatters);
+		$this->columnFormatters = $columnFormatters;
 	}
 
 	public function getColumnFormatters()
@@ -37,6 +37,11 @@ class EntityPopulator
 		return $this->columnFormatters;
 	}
 
+	public function mergeColumnFormattersWith($columnFormatters)
+	{
+		$this->columnFormatters = array_merge($this->columnFormatters, $columnFormatters);
+	}
+	
 	public function guessColumnFormatters(\Faker\Generator $generator)
 	{
 		$formatters = array();

@@ -11,8 +11,10 @@ BookQuery::create()->deleteAll();
 AuthorQuery::create()->deleteAll();
 $generator = \Faker\Factory::create();
 $populator = new Faker\ORM\Propel\Populator($generator);
-$populator->addEntity('Author', 5);
+$populator->addEntity('Author', 5, array(
+	'Email' => function($entities) use ($generator) { return $generator->safeEmail; },
+));
 $populator->addEntity('Book', 10);
-$insertec = $populator->execute();
+$inserted = $populator->execute();
 
 echo BookQuery::create()->joinWith('Book.Author')->find();
