@@ -20,6 +20,18 @@ class Base
 	{
 		return mt_rand(0, 9);
 	}
+
+	/**
+	 * Returns a random number with 0 to $nbDigits digits
+	 *
+	 * @param integer $nbDigits
+	 *
+	 * @return integer
+	 */
+	protected static function randomNumber($nbDigits = 3)
+	{
+		return mt_rand(0, $nbDigits * 10);
+	}
 	
 	/**
 	 * Returns a random letter from a to z

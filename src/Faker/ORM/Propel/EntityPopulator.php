@@ -3,6 +3,7 @@
 namespace Faker\ORM\Propel;
 
 include __DIR__ . '/../../Guesser/Name.php';
+include __DIR__ . '/ColumnTypeGuesser.php';
 
 /**
  * Service class for populating a table through a Propel ActiveRecord class.
@@ -49,6 +50,7 @@ class EntityPopulator
 		$peerClass = $class::PEER;
 		$tableMap = $peerClass::getTableMap();
 		$nameGuesser = new \Faker\Guesser\Name($generator);
+		$columnTypeGuesser = new \Faker\ORM\Propel\ColumnTypeGuesser($generator);
 		foreach ($tableMap->getColumns() as $columnMap) {
 			if ($columnMap->isForeignKey()) {
 				$relatedClass = $columnMap->getRelation()->getForeignTable()->getPhpName();
@@ -62,7 +64,10 @@ class EntityPopulator
 				$formatters[$columnMap->getPhpName()] = $formatter;
 				continue;
 			}
-			// TODO: PropelColumnTypeGuesser
+			if ($formatter = $columnTypeGuesser->guessFormat($columnMap)) {
+				$formatters[$columnMap->getPhpName()] = $formatter;
+				continue;
+			}
 		}
 		return $formatters;
 	}
