@@ -7,9 +7,9 @@ class Generator
 	protected $providers = array();
 	protected $formatters = array();
 	
-	public function addProvider($providers)
+	public function addProvider($provider)
 	{
-		$this->providers[]= $providers;
+		array_unshift($this->providers, $provider);
 	}
 	
 	public function getProviders()

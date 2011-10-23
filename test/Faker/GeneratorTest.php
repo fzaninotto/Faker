@@ -8,6 +8,14 @@ use Faker\Generator;
 
 class GeneratorTest extends \PHPUnit_Framework_TestCase
 {
+	public function testAddProviderGivesPriorityToNewlyAddedProvider()
+	{
+		$generator = new Generator;
+		$generator->addProvider(new FooProvider());
+		$generator->addProvider(new BarProvider());
+		$this->assertEquals('barfoo', $generator->format('fooFormatter'));
+	}
+	
 	public function testGetFormatterReturnsCallable()
 	{
 		$generator = new Generator;
@@ -112,5 +120,13 @@ class FooProvider
 	public function fooFormatterWithArguments($value = '')
 	{
 		return 'baz' . $value;
+	}
+}
+
+class BarProvider
+{
+	public function fooFormatter()
+	{
+		return 'barfoo';
 	}
 }
