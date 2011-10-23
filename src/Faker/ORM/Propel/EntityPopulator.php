@@ -80,7 +80,7 @@ class EntityPopulator
 		$obj = new $this->class();
 		foreach ($this->columnFormatters as $column => $format) {
 			if (null !== $column) {
-				$obj->setByName($column, is_callable($format) ? $format($insertedEntities) : $format);
+				$obj->setByName($column, is_callable($format) ? $format($insertedEntities, $obj) : $format);
 			}
 		}
 		$obj->save($con);

@@ -116,30 +116,33 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
 ### `Faker\Provider\DateTime`
 
-    unixTime                // 58754983  
-    dateTime                // DateTime('2008-04-18 23:19:03')  
-    iso8601                 // '2007-05-25T12:33:15+0000'  
-    date($format = 'Y-m-d') // '1978-12-07'  
-    time($format = 'H:i:s') // '04:48:48'  
-    dateTimeBetween($startDate = '-30 years', $endDate = 'now') // DateTime('2000-04-13 00:19:31')  
-    dateTimeThisCentury     // DateTime('1983-02-02 19:52:12')  
-    dateTimeThisDecade      // DateTime('2002-02-25 08:25:50')  
-    dateTimeThisYear        // DateTime('2011-05-09 04:16:23')  
-    dateTimeThisMonth       // DateTime('2011-09-27 07:42:29')  
+    unixTime                // 58781813  
+    dateTime                // DateTime('2008-04-25 08:37:17')  
+    dateTimeAD              // DateTime('1800-04-29 20:38:49')  
+    iso8601                 // '1978-12-09T10:10:29+0000'  
+    date($format = 'Y-m-d') // '1979-06-09'  
+    time($format = 'H:i:s') // '20:49:42'  
+    dateTimeBetween($startDate = '-30 years', $endDate = 'now') // DateTime('2003-03-15 02:00:49')  
+    dateTimeThisCentury     // DateTime('1915-05-30 19:28:21')  
+    dateTimeThisDecade      // DateTime('2007-05-29 22:30:48')  
+    dateTimeThisYear        // DateTime('2011-02-27 20:52:14')  
+    dateTimeThisMonth       // DateTime('2011-10-23 13:46:23')  
     amPm                    // 'pm'  
     dayOfMonth              // '04'  
-    dayOfWeek               // 'Wednesday'  
-    month                   // '09'  
-    monthName               // 'June'  
-    year                    // '1985'  
-    century                 // 'XII'  
+    dayOfWeek               // 'Friday'  
+    month                   // '06'  
+    monthName               // 'January'  
+    year                    // '1993'  
+    century                 // 'VI'  
 
 ### `Faker\Provider\Miscellaneous`
 
-    boolean                 // true
-    md5                     // '67cc5698854132383fdad62fc845cd48'
-    sha1                    // 'ea791e73ad1d3a7f78e8e3e61dfbf2fc44401663'
-    sha256                  // '6327f9f323561921ae55041d39a03b7a515a58a9f780ae3a6c62a0ca8c4905f4'
+    boolean                 // true  
+    md5                     // 'de99a620c50f2990e87144735cd357e7'  
+    sha1                    // 'f08e7f04ca1a413807ebc47551a40a20a0b4de5c'  
+    sha256                  // '0061e4c60dac5c1d82db0135a42e00c89ae3a333e7c26485321f24348c7e98a5'  
+    number($nbDigits = 3)   // 23
+    choose(array('a', 'b', 'c')) // 'b'
 
 ## Localization
 
@@ -164,6 +167,47 @@ for ($i=0; $i < 10; $i++) {
 ```
 
 The localization of Faker is an ongoing process, for which we need your help. Don't hesitate to create localized providers to your own locale and submit a PR!
+
+## Populating Entities Using an ORM
+
+Faker provides an adapter for the [Propel ORM](http://www.propelorm.org) to ease the population of a database using the Entity classes managed by the ORM.
+
+To populate entities, create a new populator class (using a generator instance as parameter), then list the class and number of all the entities that must be generated. To launch the actual data population, call the `execute()` method.
+
+Here is an example showing how to populate 5 `Author` and 10 `Book` objects:
+
+```php
+<?php
+$generator = \Faker\Factory::create();
+$populator = new Faker\ORM\Propel\Populator($generator);
+$populator->addEntity('Author', 5);
+$populator->addEntity('Book', 10);
+$insertedPKs = $populator->execute();
+```
+
+The populator uses name and column type guessers to populate each column with relevant data. For instance, Faker populates a column named `first_name` using the `firstName` formatter, and a column with a `TIMESTAMP` type using the `dateTime` formatter. The resulting entities are therefore coherent. If Faker misinterprets a column name, you can still specify a custom clusure to be used for populating a particular column, using the third argument to `addEntity()`:
+
+```php
+<?php
+$populator->addEntity('Book', 5, array(
+  'ISBN' => function() use ($generator) { return $generator->randomNumber(13); }
+));
+```
+
+In this example, Faker will guess a formatter for all columns except `ISBN`, for which the given anonymous function will be used.
+
+Of course, Faker does not populate autoincremented primary keys. In addition, `Faker\ORM\Propel\Populator::execute()` returns the list of inserted PKs, indexed by class:
+
+```php
+<?php
+print_r($insertedPKs);
+// array(
+//   'Author' => (34, 35, 36, 37, 38),
+//   'Book'   => (456, 457, 458, 459, 470, 471, 472, 473, 474, 475)
+// )
+```
+
+In the previous example, the `Book` and `Author` models share a relationship. Since `Author` entities are populated first, Faker is smart enough to relate the populated `Book` entities to one of the populated `Author` entities.
 
 ## Seeding the Generator
 
