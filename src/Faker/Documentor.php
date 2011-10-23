@@ -14,13 +14,18 @@ class Documentor
 	public function getFormatters()
 	{
 		$formatters = array();
-		foreach ($this->generator->getProviders() as $provider) {
+		$providers = $this->generator->getProviders();
+		$providers[]= new \Faker\Provider\Base($this->generator);
+		foreach ($providers as $provider) {
 			$providerClass = get_class($provider);
 			$formatters[$providerClass] = array();
 			$refl = new \ReflectionObject($provider);
 			foreach ($refl->getMethods(\ReflectionMethod::IS_PUBLIC) as $reflmethod) {
+				if ($reflmethod->getDeclaringClass()->getName() == 'Faker\Provider\Base' && $providerClass != 'Faker\Provider\Base') {
+					continue;
+				}
 				$methodName = $reflmethod->name;
-				if ($methodName == '__construct') {
+				if ($reflmethod->isConstructor()) {
 					continue;
 				}
 				$parameters = array();

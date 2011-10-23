@@ -16,7 +16,7 @@ class Base
 	 *
 	 * @return integer
 	 */
-	protected static function randomDigit()
+	public static function randomDigit()
 	{
 		return mt_rand(0, 9);
 	}
@@ -25,12 +25,16 @@ class Base
 	 * Returns a random number with 0 to $nbDigits digits
 	 *
 	 * @param integer $nbDigits
+	 * @example 79907610
 	 *
 	 * @return integer
 	 */
-	protected static function randomNumber($nbDigits = 3)
+	public static function randomNumber($nbDigits = null)
 	{
-		return mt_rand(0, $nbDigits * 10);
+		if (null === $nbDigits) {
+			$nbDigits = static::randomDigit();
+		}
+		return mt_rand(0, pow(10, $nbDigits) - 1);
 	}
 	
 	/**
@@ -38,7 +42,7 @@ class Base
 	 *
 	 * @return string
 	 */
-	protected static function randomLetter()
+	public static function randomLetter()
 	{
 		return chr(mt_rand(97, 122));
 	}
@@ -49,7 +53,7 @@ class Base
 	 * @param array $array
 	 * @return mixed
 	 */	
-	protected static function randomElement($array)
+	public static function randomElement($array = array('a', 'b', 'c'))
 	{
 		return $array[mt_rand(0, count($array) - 1)];
 	}
@@ -60,7 +64,7 @@ class Base
 	 * @param string $string String that needs to bet parsed
 	 * @return string
 	 */
-	protected static function numerify($string)
+	public static function numerify($string = '###')
 	{
 		return preg_replace_callback('/\#/', 'static::randomDigit', $string);
 	}
@@ -71,7 +75,7 @@ class Base
 	 * @param string $string String that needs to bet parsed
 	 * @return string
 	 */
-	protected static function lexify($string)
+	public static function lexify($string = '????')
 	{
 		return preg_replace_callback('/\?/', 'static::randomLetter', $string);
 	}
@@ -82,7 +86,7 @@ class Base
 	 * @param string $string String that needs to bet parsed
 	 * @return string
 	 */
-	protected static function bothify($string)
+	public static function bothify($string = '## ??')
 	{
 		return static::lexify(static::numerify($string));
 	}

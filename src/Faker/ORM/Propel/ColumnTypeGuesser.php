@@ -31,7 +31,7 @@ class ColumnTypeGuesser
 			case PropelColumnTypes::NUMERIC:
 			case PropelColumnTypes::DECIMAL:
 				$size = $column->getSize();
-				return function() use ($generator, $size) { return $generator->randomNumber($size * 100) / 100; };
+				return function() use ($generator, $size) { return $generator->randomNumber($size + 2) / 100; };
 			case PropelColumnTypes::TINYINT:
 				return function() { return mt_rand(0,255); };
 			case PropelColumnTypes::SMALLINT:

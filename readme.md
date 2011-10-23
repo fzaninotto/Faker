@@ -141,8 +141,16 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     md5                     // 'de99a620c50f2990e87144735cd357e7'  
     sha1                    // 'f08e7f04ca1a413807ebc47551a40a20a0b4de5c'  
     sha256                  // '0061e4c60dac5c1d82db0135a42e00c89ae3a333e7c26485321f24348c7e98a5'  
-    number($nbDigits = 3)   // 23
-    choose(array('a', 'b', 'c')) // 'b'
+
+### `Faker\Provider\Base`
+
+    randomDigit             // 7  
+    randomNumber($nbDigits = NULL) // 79907610  
+    randomLetter            // 'b'  
+    randomElement($array = array ('a','b','c')) // 'b'  
+    numerify($string = '###') // '609'  
+    lexify($string = '????') // 'wgts'  
+    bothify($string = '## ??') // '42 jz' 
 
 ## Localization
 
