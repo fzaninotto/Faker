@@ -51,6 +51,8 @@ class Populator
 		if (null === $con) {
 			$con = $this->getConnection();
 		}
+		$isInstancePoolingEnabled = \Propel::isInstancePoolingEnabled();
+		\Propel::disableInstancePooling();
 		$insertedEntities = array();
 		$con->beginTransaction();
 		foreach ($this->quantities as $class => $number) {
@@ -59,6 +61,9 @@ class Populator
 			}
 		}
 		$con->commit();
+		if ($isInstancePoolingEnabled) {
+			\Propel::enableInstancePooling();
+		}
 		
 		return $insertedEntities;
 	}
