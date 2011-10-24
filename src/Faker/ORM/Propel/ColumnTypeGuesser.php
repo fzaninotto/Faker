@@ -41,10 +41,10 @@ class ColumnTypeGuesser
 			case PropelColumnTypes::BIGINT:
 				return function() { return mt_rand(0,18446744073709551615); };
 			case PropelColumnTypes::FLOAT:
-				return function() { return mt_rand(0,4294967295)/mt_rand(0,4294967295); };
+				return function() { return mt_rand(0,4294967295)/mt_rand(1,4294967295); };
 			case PropelColumnTypes::DOUBLE:
 			case PropelColumnTypes::REAL:
-				return function() { return mt_rand(0,18446744073709551615)/mt_rand(0,18446744073709551615); };
+				return function() { return mt_rand(0,18446744073709551615)/mt_rand(1,18446744073709551615); };
 			case PropelColumnTypes::CHAR:
 			case PropelColumnTypes::VARCHAR:
 			case PropelColumnTypes::BINARY:
