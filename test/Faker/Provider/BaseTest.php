@@ -2,8 +2,6 @@
 
 namespace Faker\Test\Provider;
 
-require_once __DIR__ . '/../../../src/Faker/Provider/Base.php';
-
 use Faker\Provider\Base as BaseProvider;
 
 class BaseTest extends \PHPUnit_Framework_TestCase

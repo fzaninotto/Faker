@@ -2,9 +2,6 @@
 
 namespace Faker\ORM\Propel;
 
-include __DIR__ . '/../../Guesser/Name.php';
-include __DIR__ . '/ColumnTypeGuesser.php';
-
 /**
  * Service class for populating a table through a Propel ActiveRecord class.
  */

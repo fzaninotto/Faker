@@ -2,8 +2,6 @@
 
 namespace Faker\Provider\en_GB;
 
-require_once __DIR__ . '/../Internet.php';
-
 class Internet extends \Faker\Provider\Internet
 {
 	protected static $safeEmailTld = array('org', 'com', 'net', 'co.uk');

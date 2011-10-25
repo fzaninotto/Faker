@@ -2,8 +2,6 @@
 
 namespace Faker;
 
-require_once __DIR__ . '/Generator.php';
-
 class Factory
 {
 	const DEFAULT_LOCALE = 'en_US';
