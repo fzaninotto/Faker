@@ -1,5 +1,6 @@
 <?php
-require_once __DIR__ . '/../src/Faker/Factory.php';
+require_once __DIR__ . '/../src/autoload.php';
+
 $generator = Faker\Factory::create();
 $generator->seed(5);
 ?>
