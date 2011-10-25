@@ -11,8 +11,8 @@ require_once __DIR__ . '/EntityPopulator.php';
 class Populator
 {
 	protected $generator;
-	protected $entities;
-	protected $quantities;
+	protected $entities = array();
+	protected $quantities = array();
 
 	public function __construct(\Faker\Generator $generator)
 	{
