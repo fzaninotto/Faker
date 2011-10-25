@@ -2,8 +2,6 @@
 
 namespace Faker\Provider;
 
-require_once __DIR__ . '/Base.php';
-
 class Miscellaneous extends \Faker\Provider\Base
 {
 

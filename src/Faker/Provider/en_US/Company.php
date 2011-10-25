@@ -2,8 +2,6 @@
 
 namespace Faker\Provider\en_US;
 
-require_once __DIR__ . '/../Company.php';
-
 class Company extends \Faker\Provider\Company
 {
 	protected static $formats = array(

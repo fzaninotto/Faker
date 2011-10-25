@@ -2,8 +2,6 @@
 
 namespace Faker\Provider\en_GB;
 
-require_once __DIR__ . '/../Address.php';
-
 class Address extends \Faker\Provider\Address
 {
 	protected static $cityPrefix = array('North', 'East', 'West', 'South', 'New', 'Lake', 'Port');

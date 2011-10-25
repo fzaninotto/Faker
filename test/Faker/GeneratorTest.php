@@ -2,8 +2,6 @@
 
 namespace Faker\Test;
 
-require_once __DIR__ . '/../../src/Faker/Generator.php';
-
 use Faker\Generator;
 
 class GeneratorTest extends \PHPUnit_Framework_TestCase

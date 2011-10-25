@@ -2,8 +2,6 @@
 
 namespace Faker\ORM\Propel;
 
-require_once __DIR__ . '/EntityPopulator.php';
-
 /**
  * Service class for populating a database using the Propel ORM.
  * A Populator can populate several tables using ActiveRecord classes.

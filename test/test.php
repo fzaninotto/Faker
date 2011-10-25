@@ -1,5 +1,4 @@
 <?php
-require_once __DIR__ . '/../src/Faker/Factory.php';
 $generator = Faker\Factory::create();
 $generator->seed(5);
 ?>

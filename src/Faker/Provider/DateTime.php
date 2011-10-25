@@ -2,8 +2,6 @@
 
 namespace Faker\Provider;
 
-require_once __DIR__ . '/Base.php';
-
 class DateTime extends \Faker\Provider\Base
 {
 	protected static $century = array('I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV','XVI','XVII','XVIII','XIX','XX','XX1');
