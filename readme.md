@@ -9,11 +9,13 @@ Faker requires PHP >= 5.3.
 ## Basic Usage
 
 Require the Faker autoloader to use Faker in a script
+
 ```php
 <?php
 
 require_once '/path/to/src/autoload.php';
 ```
+
 Or use your own autoloader (ex: Symfony2 ClassLoader) to autoload the Faker namespace.
 
 Use `Faker\Factory::create()` to create and initialize a faker generator, which can generate data by accessing properties named after the type of data you want.
