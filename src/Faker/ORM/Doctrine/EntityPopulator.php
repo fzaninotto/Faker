@@ -86,16 +86,17 @@ class EntityPopulator
 	/**
 	 * Insert one new record using the Entity class.
 	 */
-	public function execute($con, $insertedEntities)
+	public function execute($manager, $insertedEntities)
 	{
-		$obj = new $this->class->getName();
+		$class = $this->class->getName();
+		$obj = new $class;
 		foreach ($this->columnFormatters as $field => $format) {
 			if (null !== $field) {
 				$value = is_callable($format) ? $format($insertedEntities, $obj) : $format;
 				$this->class->reflFields[$field]->setValue($obj, $value);
 			}
 		}
-		$con->persist($obj);
+		$manager->persist($obj);
 
 		return $obj;
 	}

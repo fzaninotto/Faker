@@ -50,8 +50,11 @@ class Populator
 	 */
 	public function execute($entityManager = null)
 	{
-		if (null !== $entityManager) {
+		if (null === $entityManager) {
 			$entityManager = $this->manager;
+		}
+		if (null === $entityManager) {
+			throw new \InvalidArgumentException("No entity manager passed to Doctrine Populator.");
 		}
 
 		$insertedEntities = array();
