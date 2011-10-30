@@ -159,7 +159,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
 ## Localization
 
-`Faker\Factory` can take a locale as an argument, to return localized data. If no localized provider is found, the factory fallbacks to the default locale.
+`Faker\Factory` can take a locale as an argument, to return localized data. If no localized provider is found, the factory fallbacks to the default locale (en_EN).
 
 ```php
 <?php
@@ -179,7 +179,7 @@ for ($i=0; $i < 10; $i++) {
   // Geneviève Marchal
 ```
 
-The localization of Faker is an ongoing process, for which we need your help. Don't hesitate to create localized providers to your own locale and submit a PR!
+You can check available Faker locales in the source code, [under the `Provider` directory](https://github.com/fzaninotto/Faker/tree/master/src/Faker/Provider). The localization of Faker is an ongoing process, for which we need your help. Don't hesitate to create localized providers to your own locale and submit a PR!
 
 ## Populating Entities Using an ORM
 
@@ -261,7 +261,49 @@ $faker->addProvider(new Faker\Provider\Internet($faker));
 
 Whenever you try to access a property on the `$faker` object, the generator looks for a method with the same name in all the providers attached to it. For instance, calling `$faker->name` triggers a call to `Faker\Provider\Name::name()`. And since Faker starts with the last provider, you can easily override existing formatters: just add a provider containing methods named after the formatters you want to override.
 
-That means that you can esily add your own providers to a `Faker\Generator`. Just have a look at the existing providers to see how you can design powerful data generators in no time.
+That means that you can esily add your own providers to a `Faker\Generator` instance. A provider is usually a class extending `\Faker\Provider\Base`. This parent class allows you to use methods like `lexify()` or `randomNumber()`; it also gives you access to formatters of other providers, through the protected `$generator` property. The new formatters are the public methods of the provider class.
+
+Here is an example provider for populating Book data:
+
+```php
+<?php
+
+namespace Faker\Provider;
+
+class Book extends \Faker\Provider\Base
+{
+  public function title($nbWords = 5)
+  {
+    $sentence = $this->generator->sentence($nbWords);
+    return substr($sentence, 0, strlen($sentence) - 1);
+  }
+  
+  public function ISBN()
+  {
+    return $this->generator->randomNumber(13);
+  }
+}
+```
+
+To register this provider, just add a new instance of `\Faker\Provider\Book` to an existing generator:
+
+```php
+<?php
+$faker->addProvider(new \Faker\Provider\Book($faker));
+```
+
+Now you can use the two new formatters like any other Faker formatter:
+
+```php
+<?php
+$book = new Book();
+$book->setTitle($faker->title);
+$book->setISBN($faker->ISBN);
+$book->setSummary($faker->text);
+$book->setPrice($faker->randomNumber(2));
+```
+
+**Tip**: A provider can also be a Plain Old PHP Object. In that case, all the public methods of the provider become available to the generator.
 
 ## Real Life Usage
 
