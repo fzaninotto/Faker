@@ -270,34 +270,34 @@ The following script generates a valid XML document:
 ```php
 <?php
 require_once '/path/to/Faker/src/autoload.php';
-$generator = Faker\Factory::create();
+$faker = Faker\Factory::create();
 ?>
 <?xml version="1.0" encoding="UTF-8"?>
 <contacts>
 <?php for ($i=0; $i < 10; $i++): ?>
-  <contact firstName="<?php echo $generator->firstName ?>" lastName="<?php echo $generator->lastName ?>" email="<?php echo $generator->email ?>"/>
-    <phone number="<?php echo $generator->phoneNumber ?>"/>
-<?php if (mt_rand(0,3) == 0): ?>
-    <birth date="<?php echo $generator->dateTimeThisCentury->format('Y-m-d') ?>" place="<?php echo $generator->city ?>"/>
+  <contact firstName="<?php echo $faker->firstName ?>" lastName="<?php echo $faker->lastName ?>" email="<?php echo $faker->email ?>"/>
+    <phone number="<?php echo $faker->phoneNumber ?>"/>
+<?php if ($faker->boolean(25)): ?>
+    <birth date="<?php echo $faker->dateTimeThisCentury->format('Y-m-d') ?>" place="<?php echo $faker->city ?>"/>
 <?php endif; ?>
     <address>
-      <street><?php echo $generator->streetAddress ?></street>
-      <city><?php echo $generator->city ?></city>
-      <postcode><?php echo $generator->postcode ?></postcode>
-      <state><?php echo $generator->state ?></state>
+      <street><?php echo $faker->streetAddress ?></street>
+      <city><?php echo $faker->city ?></city>
+      <postcode><?php echo $faker->postcode ?></postcode>
+      <state><?php echo $faker->state ?></state>
     </address>
-    <company name="<?php echo $generator->company ?>" catchPhrase="<?php echo $generator->catchPhrase ?>">
-<?php if (mt_rand(0,2) == 0): ?>
-      <offer><?php echo $generator->bs ?></offer>
+    <company name="<?php echo $faker->company ?>" catchPhrase="<?php echo $faker->catchPhrase ?>">
+<?php if ($faker->boolean(33)): ?>
+      <offer><?php echo $faker->bs ?></offer>
 <?php endif; ?>
-<?php if (mt_rand(0,3) == 0): ?>
-      <director name="<?php echo $generator->name ?>" />
+<?php if ($faker->boolean(33)): ?>
+      <director name="<?php echo $faker->name ?>" />
 <?php endif; ?>
     </company>
-<?php if (mt_rand(0,5) == 0): ?>
+<?php if ($faker->boolean(15)): ?>
     <details>
 <![CDATA[
-<?php echo $generator->text(400) ?> 
+<?php echo $faker->text(400) ?> 
 ]]>
     </details>
 <?php endif; ?>
@@ -396,7 +396,7 @@ Aut asperiores nihil eius repellendus. Vero nihil corporis voluptatem explicabo 
   </contact>
   <contact firstName="Rene" lastName="Spencer" email="anibal28@armstrong.info"/>
     <phone number="715.222.0095x175"/>
-    <birth date="2008-07-25" place="Zulaufborough"/>
+    <birth date="2008-08-07" place="Zulaufborough"/>
     <address>
       <street>478 Daisha Landing Apt. 510</street>
       <city>West Lizethhaven</city>
@@ -404,43 +404,58 @@ Aut asperiores nihil eius repellendus. Vero nihil corporis voluptatem explicabo 
       <state>WestVirginia</state>
     </address>
     <company name="Wiza Inc" catchPhrase="Persevering reciprocal approach">
-      <director name="Roel DuBuque" />
+      <offer>orchestrate dynamic networks</offer>
+      <director name="Erwin Nienow" />
+    </company>
+    <details>
+<![CDATA[
+Dolorem consequatur voluptates unde optio unde. Accusantium dolorem est est architecto impedit. Corrupti et provident quo.
+Reprehenderit dolores aut quidem suscipit repudiandae corporis error. Molestiae enim aperiam illo.
+Et similique qui non expedita quia dolorum. Ex rem incidunt ea accusantium temporibus minus non. 
+]]>
+    </details>
+  </contact>
+  <contact firstName="Alessandro" lastName="Hagenes" email="tbreitenberg@oharagorczany.com"/>
+    <phone number="1-284-958-6768"/>
+    <address>
+      <street>1251 Koelpin Mission</street>
+      <city>North Revastad</city>
+      <postcode>81620</postcode>
+      <state>Maryland</state>
+    </address>
+    <company name="Stiedemann-Bruen" catchPhrase="Re-engineered 24/7 success">
     </company>
   </contact>
-  <contact firstName="Erwin" lastName="Nienow" email="hudson88@lockman.com"/>
-    <phone number="+87(6)0704857083"/>
-    <birth date="2009-02-11" place="Estrellaside"/>
+  <contact firstName="Novella" lastName="Rutherford" email="claud65@bogisich.biz"/>
+    <phone number="(091)825-7971"/>
     <address>
-      <street>0920 Adah Skyway</street>
-      <city>South Kristopher</city>
-      <postcode>62693</postcode>
-      <state>Mississippi</state>
+      <street>6396 Langworth Hills Apt. 446</street>
+      <city>New Carlos</city>
+      <postcode>89399-0268</postcode>
+      <state>Wyoming</state>
     </address>
-    <company name="Jakubowski Inc" catchPhrase="Secured object-oriented conglomeration">
+    <company name="Stroman-Legros" catchPhrase="Expanded 4thgeneration moratorium">
+      <director name="Earlene Bayer" />
     </company>
   </contact>
-  <contact firstName="Zoie" lastName="Murazik" email="zschuster@hartmann.org"/>
-    <phone number="(179)927-3745"/>
+  <contact firstName="Andreane" lastName="Mann" email="meggie17@ornbaumbach.com"/>
+    <phone number="941-659-9982x5689"/>
+    <birth date="1934-02-21" place="Stantonborough"/>
     <address>
-      <street>91758 Sienna Burg Apt. 791</street>
-      <city>Murrayfurt</city>
-      <postcode>44284</postcode>
-      <state>Virginia</state>
+      <street>2246 Kreiger Station Apt. 291</street>
+      <city>Kaydenmouth</city>
+      <postcode>11397-1072</postcode>
+      <state>Wyoming</state>
     </address>
-    <company name="Schmitt-Moore" catchPhrase="Robust modular software">
-      <director name="Brianne Fahey" />
+    <company name="Lebsack, Bernhard and Kiehn" catchPhrase="Persevering actuating framework">
+      <offer>grow sticky portals</offer>
     </company>
-  </contact>
-  <contact firstName="Claud" lastName="Rosenbaum" email="adelbert08@barrowsshields.com"/>
-    <phone number="203.581.7085x587"/>
-    <address>
-      <street>165 Bogisich Unions Apt. 630</street>
-      <city>Corwinhaven</city>
-      <postcode>57971</postcode>
-      <state>Virginia</state>
-    </address>
-    <company name="Mann, Price and Hartmann" catchPhrase="Versatile mobile securedline">
-    </company>
+    <details>
+<![CDATA[
+Quia dolor ut quia error libero. Enim facilis iusto earum et minus rerum assumenda. Quia doloribus et reprehenderit ut. Occaecati voluptatum dolor voluptatem vitae qui velit quia.
+Fugiat non in itaque sunt nobis totam. Sed nesciunt est deleniti cumque alias. Repudiandae quo aut numquam modi dicta libero. 
+]]>
+    </details>
   </contact>
 </contacts>
 ```

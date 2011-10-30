@@ -1,35 +1,35 @@
 <?php
 require_once __DIR__ . '/../src/autoload.php';
 
-$generator = Faker\Factory::create();
-$generator->seed(5);
+$faker = Faker\Factory::create();
+$faker->seed(5);
 ?>
 <?xml version="1.0" encoding="UTF-8"?>
 <contacts>
 <?php for ($i=0; $i < 10; $i++): ?>
-  <contact firstName="<?php echo $generator->firstName ?>" lastName="<?php echo $generator->lastName ?>" email="<?php echo $generator->email ?>"/>
-    <phone number="<?php echo $generator->phoneNumber ?>"/>
-<?php if (mt_rand(0,3) == 0): ?>
-    <birth date="<?php echo $generator->dateTimeThisCentury->format('Y-m-d') ?>" place="<?php echo $generator->city ?>"/>
+  <contact firstName="<?php echo $faker->firstName ?>" lastName="<?php echo $faker->lastName ?>" email="<?php echo $faker->email ?>"/>
+    <phone number="<?php echo $faker->phoneNumber ?>"/>
+<?php if ($faker->boolean(25)): ?>
+    <birth date="<?php echo $faker->dateTimeThisCentury->format('Y-m-d') ?>" place="<?php echo $faker->city ?>"/>
 <?php endif; ?>
     <address>
-      <street><?php echo $generator->streetAddress ?></street>
-      <city><?php echo $generator->city ?></city>
-      <postcode><?php echo $generator->postcode ?></postcode>
-      <state><?php echo $generator->state ?></state>
+      <street><?php echo $faker->streetAddress ?></street>
+      <city><?php echo $faker->city ?></city>
+      <postcode><?php echo $faker->postcode ?></postcode>
+      <state><?php echo $faker->state ?></state>
     </address>
-    <company name="<?php echo $generator->company ?>" catchPhrase="<?php echo $generator->catchPhrase ?>">
-<?php if (mt_rand(0,2) == 0): ?>
-      <offer><?php echo $generator->bs ?></offer>
+    <company name="<?php echo $faker->company ?>" catchPhrase="<?php echo $faker->catchPhrase ?>">
+<?php if ($faker->boolean(33)): ?>
+      <offer><?php echo $faker->bs ?></offer>
 <?php endif; ?>
-<?php if (mt_rand(0,3) == 0): ?>
-      <director name="<?php echo $generator->name ?>" />
+<?php if ($faker->boolean(33)): ?>
+      <director name="<?php echo $faker->name ?>" />
 <?php endif; ?>
     </company>
-<?php if (mt_rand(0,5) == 0): ?>
+<?php if ($faker->boolean(15)): ?>
     <details>
 <![CDATA[
-<?php echo $generator->text(400) ?> 
+<?php echo $faker->text(400) ?> 
 ]]>
     </details>
 <?php endif; ?>
