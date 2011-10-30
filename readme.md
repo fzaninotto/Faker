@@ -183,7 +183,7 @@ The localization of Faker is an ongoing process, for which we need your help. Do
 
 ## Populating Entities Using an ORM
 
-Faker provides an adapter for the [Propel ORM](http://www.propelorm.org) to ease the population of a database using the Entity classes managed by the ORM.
+Faker provides an adapter for the Object-Relational Mappers (currently, [Propel](http://www.propelorm.org) and [Doctrine2](http://www.doctrine-project.org/projects/orm/2.0/docs/en)) to ease the population of a database using the Entity classes managed by the ORM.
 
 To populate entities, create a new populator class (using a generator instance as parameter), then list the class and number of all the entities that must be generated. To launch the actual data population, call the `execute()` method.
 
@@ -208,6 +208,16 @@ $populator->addEntity('Book', 5, array(
 ```
 
 In this example, Faker will guess a formatter for all columns except `ISBN`, for which the given anonymous function will be used.
+
+**Tip**: To ignore some columns, specify `null` for the column names in the third argument of `addEntity()`. This is usually necessary for columns added by a behavior:
+
+```php
+<?php
+$populator->addEntity('Book', 5, array(
+  'CreatedAt' => null,
+  'UpdatedAt' => null,
+));
+```
 
 Of course, Faker does not populate autoincremented primary keys. In addition, `Faker\ORM\Propel\Populator::execute()` returns the list of inserted PKs, indexed by class:
 
