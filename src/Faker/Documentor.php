@@ -14,7 +14,7 @@ class Documentor
 	public function getFormatters()
 	{
 		$formatters = array();
-		$providers = $this->generator->getProviders();
+		$providers = array_reverse($this->generator->getProviders());
 		$providers[]= new \Faker\Provider\Base($this->generator);
 		foreach ($providers as $provider) {
 			$providerClass = get_class($provider);
