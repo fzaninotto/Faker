@@ -50,7 +50,7 @@ class EntityPopulator
 		$columnTypeGuesser = new \Faker\ORM\Propel\ColumnTypeGuesser($generator);
 		foreach ($tableMap->getColumns() as $columnMap) {
 			if ($columnMap->isForeignKey()) {
-				$relatedClass = $columnMap->getRelation()->getForeignTable()->getPhpName();
+				$relatedClass = $columnMap->getRelation()->getForeignTable()->getClassname();
 				$formatters[$columnMap->getPhpName()] = function($inserted) use($relatedClass) { return isset($inserted[$relatedClass]) ? $inserted[$relatedClass][mt_rand(0, count($inserted[$relatedClass]) - 1)] : null; };
 				continue;
 			}
