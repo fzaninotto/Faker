@@ -3,20 +3,42 @@
 namespace Faker\ORM\Doctrine;
 
 use Doctrine\Common\Persistence\Mapping\ClassMetadata;
+use Doctrine\Common\Annotations\AnnotationReader;
 
 class ColumnTypeGuesser
 {
 	protected $generator;
+    /**
+     * @var AnnotationReader
+     */
+    protected $reader;
 
-	public function __construct(\Faker\Generator $generator)
+    public function __construct(\Faker\Generator $generator)
 	{
 		$this->generator = $generator;
+        $this->reader = new AnnotationReader();
 	}
 
 	public function guessFormat($fieldName, ClassMetadata $class)
 	{
 		$generator = $this->generator;
 		$type = $class->getTypeOfField($fieldName);
+        
+        $annotationName = 'Faker\ORM\Doctrine\Annotations\Fake';
+        $fake = $this->reader->getPropertyAnnotation($class->getReflectionProperty($fieldName), $annotationName);
+        if(!empty ($fake)) {
+            if(!empty ($fake->value)) {
+                return function() use ($generator, $fake) {
+                    return eval("return \$generator->{$fake->value};");
+                };
+            } elseif(!empty ($fake->enum)) {
+                $keys = array_keys(call_user_func(array($class->reflClass->getName(), $fake->enum)));
+                return function() use ($generator, $keys) {
+                    return $generator->randomElement($keys);
+                };
+            }
+        }
+        
 		switch ($type) {
 			case 'boolean':
 				return function() use ($generator) { return $generator->boolean; };
