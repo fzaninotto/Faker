@@ -76,7 +76,7 @@ class EntityPopulator
 			if (!$this->class->isIdentifier($assocName) || !$this->class->isCollectionValuedAssociation($assocName)) {
 				continue;
 			}
-			$relatedClass = $this->class->getAssociationTargetClass($fieldName);
+			$relatedClass = $this->class->getAssociationTargetClass($assocName);
 			$formatters[$assocName] = function($inserted) use($relatedClass) { return isset($inserted[$relatedClass]) ? $inserted[$relatedClass][mt_rand(0, count($inserted[$relatedClass]) - 1)] : null; };
 		}
 
