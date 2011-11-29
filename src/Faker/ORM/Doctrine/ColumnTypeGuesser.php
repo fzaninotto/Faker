@@ -26,11 +26,11 @@ class ColumnTypeGuesser
 			case 'smallint':
 				return function() { return mt_rand(0,65535); };
 			case 'integer':
-				return function() { return mt_rand(0,4294967295); };
+				return function() { return mt_rand(0,intval('4294967295')); };
 			case 'bigint':
-				return function() { return mt_rand(0,18446744073709551615); };
+				return function() { return mt_rand(0,intval('18446744073709551615')); };
 			case 'float':
-				return function() { return mt_rand(0,4294967295)/mt_rand(1,4294967295); };
+				return function() { return mt_rand(0,intval('4294967295'))/mt_rand(1,intval('4294967295')); };
 			case 'string':
 				$size = isset($class->fieldMappings[$fieldName]['length']) ? $class->fieldMappings[$fieldName]['length'] : 255;
 				return function() use ($generator, $size) { return $generator->text($size); };
