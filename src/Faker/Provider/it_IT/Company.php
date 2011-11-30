@@ -28,12 +28,12 @@ class Company extends \Faker\Provider\Company
         array(
             'partnerships','comunità','ROI','soluzioni','e-services','nicchie','tecnologie','contenuti','supply-chains','convergenze','relazioni','architetture','interfacce','mercati','e-commerce','sistemi','modelli','schemi','reti','applicazioni','metriche','e-business','funzionalità','esperienze','webservices','metodologie'
         ),
-		array(
-			'implementate','utilizzo','integrate','ottimali','evolutive','abilitate','reinventate','aggregate','migliorate','incentivate','monetizzate','sinergizzate','strategiche','deploy','marchi','accrescitive','target','sintetizzate','spedizioni','massimizzate','innovazione','guida','estensioni','generate','exploit','transizionali','matrici','ricontestualizzate'
-		),
-		array(
-			'valore aggiunto','verticalizzate','proattive','forti','rivoluzionari','scalabili','innovativi','intuitivi','strategici','e-business','mission-critical','24/7','globali','B2B','B2C','granulari','virtuali','virali','dinamiche','magnetiche','web','interattive','sexy','back-end','real-time','efficienti','front-end','distributivi','estensibili','mondiali','open-source','cross-platform','sinergiche','out-of-the-box','enterprise','integrate','di impatto','wireless','trasparenti','next-generation','cutting-edge','visionari','plug-and-play','collaborative','olistiche','ricche'
-		)
+        array(
+            'implementate','utilizzo','integrate','ottimali','evolutive','abilitate','reinventate','aggregate','migliorate','incentivate','monetizzate','sinergizzate','strategiche','deploy','marchi','accrescitive','target','sintetizzate','spedizioni','massimizzate','innovazione','guida','estensioni','generate','exploit','transizionali','matrici','ricontestualizzate'
+        ),
+        array(
+            'valore aggiunto','verticalizzate','proattive','forti','rivoluzionari','scalabili','innovativi','intuitivi','strategici','e-business','mission-critical','24/7','globali','B2B','B2C','granulari','virtuali','virali','dinamiche','magnetiche','web','interattive','sexy','back-end','real-time','efficienti','front-end','distributivi','estensibili','mondiali','open-source','cross-platform','sinergiche','out-of-the-box','enterprise','integrate','di impatto','wireless','trasparenti','next-generation','cutting-edge','visionari','plug-and-play','collaborative','olistiche','ricche'
+        )
 	);
 
 	protected static $companySuffix = array('SPA','e figli','Group', 's.r.l.');
