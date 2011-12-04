@@ -13,7 +13,7 @@ class Miscellaneous extends \Faker\Provider\Base
 	 */
 	public static function boolean($chanceOfGettingTrue = 50)
 	{
-		return mt_rand(0, 100) <= $chanceOfGettingTrue ? true: false;
+		return mt_rand(1, 100) <= $chanceOfGettingTrue ? true: false;
 	}
 
 	/**
