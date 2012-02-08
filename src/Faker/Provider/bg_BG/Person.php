@@ -4,7 +4,7 @@ namespace Faker\Provider\bg_BG;
 
 require_once __DIR__ . '/../Person.php';
 
-class Name extends \Faker\Provider\Person
+class Person extends \Faker\Provider\Person
 {
 	protected static $formats = array(
 		'{{firstNameMale}} {{lastNameMale}}',
@@ -14,9 +14,7 @@ class Name extends \Faker\Provider\Person
 		'{{firstNameFemale}} {{lastNameFemale}}',
 		'{{firstNameFemale}} {{lastNameFemale}}',
 		'{{prefixMale}} {{firstNameMale}} {{lastNameMale}}',
-		'{{prefixFemale}} {{firstNameFemale}} {{lastNameFemale}}',
-		'{{firstNameMale}} {{lastNameMale}} {{suffixMale}}',
-		'{{firstNameFemale}} {{lastNameFemale}} {{suffixFemale}}',
+		'{{prefixFemale}} {{firstNameFemale}} {{lastNameFemale}}'
 	);
 
 	protected static $firstNameMale = array(
