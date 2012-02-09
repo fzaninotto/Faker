@@ -102,11 +102,12 @@ class Lorem extends \Faker\Provider\Base
 	{
 		// determine how many paragraphs are needed to reach the $maxNbChars once;
 		$text = array();
+		$nlSize = strlen("\n");
 		$size = 0;
 		while ($size < $maxNbChars) {
 			$paragraph = self::paragraph();
 			$text []= $paragraph;
-			$size += strlen($paragraph);
+			$size += strlen($paragraph) + $nlSize;
 		}
 		array_pop($text);
 
