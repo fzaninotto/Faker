@@ -39,7 +39,7 @@ class Lorem extends \Faker\Provider\Base
 	 * @param integer $nbWords around how many words the sentence should contain
 	 * @return string
 	 */
-	public function sentence($nbWords = 6)
+	public static function sentence($nbWords = 6)
 	{
 		$words = static::words($nbWords + mt_rand(-2, 2));
 		$words[0] = ucwords($words[0]);
@@ -54,7 +54,7 @@ class Lorem extends \Faker\Provider\Base
 	 * @param integer $nb how many sentences to return
 	 * @return array
 	 */
-	public function sentences($nb = 3)
+	public static function sentences($nb = 3)
 	{
 		$sentences = array();
 		for ($i=0; $i < $nb; $i++) {
@@ -70,7 +70,7 @@ class Lorem extends \Faker\Provider\Base
 	 * @param integer $nbSentences around how many sentences the paragraph should contain
 	 * @return string
 	 */
-	public function paragraph($nbSentences = 3)
+	public static function paragraph($nbSentences = 3)
 	{
 		return join(static::sentences($nbSentences + mt_rand(-1, 1)), ' ');
 	}
@@ -82,7 +82,7 @@ class Lorem extends \Faker\Provider\Base
 	 * @param integer $nb how many paragraphs to return
 	 * @return array
 	 */
-	public function paragraphs($nb = 3)
+	public static function paragraphs($nb = 3)
 	{
 		$paragraphs = array();
 		for ($i=0; $i < $nb; $i++) {
@@ -104,12 +104,13 @@ class Lorem extends \Faker\Provider\Base
 		$text = array();
 		$size = 0;
 		while ($size < $maxNbChars) {
-			$paragraph = self::paragraph();
+			$paragraph = ($size ? "\n" : '') . static::paragraph();
 			$text []= $paragraph;
 			$size += strlen($paragraph);
 		}
 		array_pop($text);
 
-		return join($text, "\n");
+		return join($text, '');
 	}
 }
+
