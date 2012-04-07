@@ -161,6 +161,22 @@ class Person extends \Faker\Provider\Person
 	}
 
 	/**
+	 * @example 'Argus'
+	 */
+	public static function firstNameMale()
+	{
+		return static::randomElement(static::$firstNameMale);
+	}
+
+	/**
+	 * @example 'Magret'
+	 */
+	public static function firstNameFemale()
+	{
+		return static::randomElement(static::$firstNameFemale);
+	}
+
+	/**
 	 * @example 'Herr'
 	 */
 	public static function prefixMale()
