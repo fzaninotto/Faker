@@ -16,6 +16,12 @@ class BaseTest extends \PHPUnit_Framework_TestCase
 		$this->assertTrue(BaseProvider::randomDigit() >= 0);
 		$this->assertTrue(BaseProvider::randomDigit() < 10);
 	}
+
+	public function testRandomDigitNotNullReturnsNotNullDigit()
+	{
+		$this->assertTrue(BaseProvider::randomDigitNotNull() > 0);
+		$this->assertTrue(BaseProvider::randomDigitNotNull() < 10);
+	}
 	
 	public function testRandomNumberReturnsInteger()
 	{
@@ -58,6 +64,16 @@ class BaseTest extends \PHPUnit_Framework_TestCase
 	public function testNumerifyReturnsStringWithHashSignsReplacedByDigits()
 	{
 		$this->assertRegExp('/foo\dBa\dr/', BaseProvider::numerify('foo#Ba#r'));
+	}
+
+	public function testNumerifyReturnsStringWithPercentageSignsReplacedByDigits()
+	{
+		$this->assertRegExp('/foo\dBa\dr/', BaseProvider::numerify('foo%Ba%r'));
+	}
+
+	public function testNumerifyReturnsStringWithPercentageSignsReplacedByNotNullDigits()
+	{
+		$this->assertNotEquals('0', BaseProvider::numerify('%'));
 	}
 
 	public function testLexifyReturnsSameStringWhenItContainsNoQuestionMark()
