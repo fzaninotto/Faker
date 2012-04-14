@@ -233,6 +233,15 @@ print_r($insertedPKs);
 
 In the previous example, the `Book` and `Author` models share a relationship. Since `Author` entities are populated first, Faker is smart enough to relate the populated `Book` entities to one of the populated `Author` entities.
 
+Lastly, if you want to execute an arbitrary function on an entity before insertion, use the fourth argument of the `addEntity()` method:
+
+```php
+<?php
+$populator->addEntity('Book', 5, array(), array(
+  function($book) { $book->publish(); },
+));
+```
+
 ## Seeding the Generator
 
 You may want to get always the same generated data - for instance when using Faker for unit testing purposes. The generator offers a `seed()` method, which seeds the random number generator. Calling the same script twice with the same seed produces the same results.

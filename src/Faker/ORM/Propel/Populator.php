@@ -23,7 +23,7 @@ class Populator
 	 * @param mixed $entity A Propel ActiveRecord classname, or a \Faker\ORM\Propel\EntityPopulator instance
 	 * @param int $number The number of entities to populate
 	 */
-	public function addEntity($entity, $number, $customColumnFormatters = array())
+	public function addEntity($entity, $number, $customColumnFormatters = array(), $customModifiers = array())
 	{
 		if (!$entity instanceof \Faker\ORM\Propel\EntityPopulator) {
 			$entity = new \Faker\ORM\Propel\EntityPopulator($entity);
@@ -31,6 +31,10 @@ class Populator
 		$entity->setColumnFormatters($entity->guessColumnFormatters($this->generator));
 		if ($customColumnFormatters) {
 			$entity->mergeColumnFormattersWith($customColumnFormatters);
+		}
+		$entity->setModifiers($entity->guessModifiers($this->generator));
+		if ($customModifiers) {
+			$entity->mergeModifiersWith($customModifiers);
 		}
 		$class = $entity->getClass();
 		$this->entities[$class] = $entity;
