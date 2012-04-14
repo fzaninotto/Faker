@@ -110,6 +110,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     email                   // 'tkshlerin@collins.com'  
     safeEmail               // 'king.alford@example.org'  
     freeEmail               // 'bradley72@gmail.com'  
+    companyEmail            // 'russel.durward@mcdermott.org'  
     freeEmailDomain         // 'yahoo.com'  
     userName                // 'wade55'  
     domainName              // 'wolffdeckow.net'  

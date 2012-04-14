@@ -16,6 +16,7 @@ class Internet extends \Faker\Provider\Base
 	);
 	protected static $emailFormats = array(
 		'{{userName}}@{{domainName}}',
+		'{{userName}}@{{freeEmailDomain}}',
 	);
 	protected static $urlFormats = array(
 		'http://www.{{domainName}}/',
@@ -47,6 +48,14 @@ class Internet extends \Faker\Provider\Base
 		return $this->userName() . '@' . static::freeEmailDomain();
 	}
 
+	/**
+	 * @example 'jdoe@dawson.com'
+	 */
+	public function companyEmail()
+	{
+		return $this->userName() . '@' . $this->domainName();
+	}
+	
 	/**
 	 * @example 'gmail.com'
 	 */
