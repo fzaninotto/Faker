@@ -22,6 +22,16 @@ class Base
 	}
 
 	/**
+	 * Returns a random number between 1 and 9
+	 *
+	 * @return integer
+	 */
+	public static function randomDigitNotNull()
+	{
+		return mt_rand(1, 9);
+	}
+
+	/**
 	 * Returns a random number with 0 to $nbDigits digits
 	 *
 	 * @param integer $nbDigits
@@ -60,13 +70,17 @@ class Base
 
 	/**
 	 * Replaces all hash sign ('#') occurrences with a random number
+	 * Replaces all percentage sign ('%') occurrences with a not null number
 	 *
 	 * @param string $string String that needs to bet parsed
 	 * @return string
 	 */
 	public static function numerify($string = '###')
 	{
-		return preg_replace_callback('/\#/', 'static::randomDigit', $string);
+		$string = preg_replace_callback('/\#/', 'static::randomDigit', $string);
+		$string = preg_replace_callback('/\%/', 'static::randomDigitNotNull', $string);
+		
+		return $string;
 	}
 	
 	/**
