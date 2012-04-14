@@ -1,13 +1,11 @@
 <?php
 
-namespace Faker\Provider\bg_BG;
+namespace Faker\Provider\ru_RU;
 
 class Internet extends \Faker\Provider\Internet
 {
-	protected static $safeEmailTld = array('org', 'com', 'net', 'bg');
-	protected static $freeEmailDomain = array('gmail.com', 'yahoo.com', 'hotmail.com', 'mail.bg', 'abv.bg', 'dir.bg');
-	protected static $tld = array('bg', 'bg', 'bg', 'bg', 'bg', 'bg', 'com', 'biz', 'info', 'net', 'org');
-
+	protected static $tld = array('com', 'com', 'net', 'org', 'ru', 'ru', 'ru', 'ru');
+	
 	/**
 	 * @example 'jdoe'
 	 */	
@@ -25,7 +23,7 @@ class Internet extends \Faker\Provider\Internet
 		$company = $this->generator->format('company');
 		$companyElements = explode(' ', $company);
 		$company = $companyElements[0];
-		$company = preg_replace('/\W/', '', $company);
+		$company = preg_replace('/,/', '', $company);
 
 		return $company;
 	}

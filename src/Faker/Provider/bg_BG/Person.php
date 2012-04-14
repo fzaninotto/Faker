@@ -83,8 +83,7 @@ class Person extends \Faker\Provider\Person
 
 	public static function firstName()
 	{
-		$gender = static::randomElement(array('Male', 'Female'));
-		return call_user_func(array('static', 'firstName'.$gender));
+		return mt_rand(1, 100) <= 50 ? static::firstNameMale() : static::firstNameFemale();
 	}
 
 	public static function firstNameMale()
@@ -99,8 +98,7 @@ class Person extends \Faker\Provider\Person
 
 	public static function lastName()
 	{
-		$gender = static::randomElement(array('Male', 'Female'));
-		return call_user_func(array('static', 'lastName'.$gender));
+		return mt_rand(1, 100) <= 50 ? static::lastNameMale() : static::lastNameFemale();
 	}
 
 	public static function lastNameMale()
