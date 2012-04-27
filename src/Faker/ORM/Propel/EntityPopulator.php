@@ -132,8 +132,8 @@ class EntityPopulator
 					break;
 				case 'sortable':
 					$modifiers['sortable'] = function($obj, $inserted) use ($class, $generator) {
-						$nbInserted = count($inserted[$class]);
-						$obj->insertAtRank(mt_rand(1, $nbInserted ? $nbInserted : 1));
+						$maxRank = isset($inserted[$class]) ? count($inserted[$class]) : 0;
+						$obj->insertAtRank(mt_rand(1, $maxRank + 1));
 					};
 					break;
 			}
