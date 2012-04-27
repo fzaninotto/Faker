@@ -130,6 +130,12 @@ class EntityPopulator
 						}
 					};
 					break;
+				case 'sortable':
+					$modifiers['sortable'] = function($obj, $inserted) use ($class, $generator) {
+						$nbInserted = count($inserted[$class]);
+						$obj->insertAtRank(mt_rand(1, $nbInserted ? $nbInserted : 1));
+					};
+					break;
 			}
 		}
 		return $modifiers;
