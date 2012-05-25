@@ -41,11 +41,11 @@ class Lorem extends \Faker\Provider\Base
 	 */
 	public static function sentence($nbWords = 6)
 	{
-                if ($nbWords <= 0) {
-                        return '';
-                } else {
-                        $nbWords = ($nbWords * mt_rand(60, 140) / 100) + 1;
-                }
+		if ($nbWords <= 0) {
+			return '';
+		} else {
+			$nbWords = ($nbWords * mt_rand(60, 140) / 100) + 1;
+		}
 		$words = static::words($nbWords + mt_rand(-2, 2));
 		$words[0] = ucwords($words[0]);
 
@@ -77,11 +77,11 @@ class Lorem extends \Faker\Provider\Base
 	 */
 	public static function paragraph($nbSentences = 3)
 	{
-                if ($nbSentences <= 0) {
-                        return '';
-                } else {
-                        $nbSentences = ($nbSentences * mt_rand(60, 140) / 100) + 1;
-                }
+		if ($nbSentences <= 0) {
+			return '';
+		} else {
+			$nbSentences = ($nbSentences * mt_rand(60, 140) / 100) + 1;
+		}
 		return join(static::sentences($nbSentences + mt_rand(-1, 1)), ' ');
 	}
 
