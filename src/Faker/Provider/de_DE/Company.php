@@ -11,5 +11,5 @@ class Company extends \Faker\Provider\Company
 		'{{lastName}}',
 	);
 
-	protected static $companySuffix = array('GmhH', 'AG', 'KG');
+	protected static $companySuffix = array('GmbH', 'AG', 'KG');
 }
