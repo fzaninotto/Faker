@@ -43,9 +43,10 @@ class Lorem extends \Faker\Provider\Base
 	{
 		if ($nbWords <= 0) {
 			return '';
-		} else {
-			$nbWords = ($nbWords * mt_rand(60, 140) / 100) + 1;
 		}
+
+		$nbWords = ($nbWords * mt_rand(60, 140) / 100) + 1;
+
 		$words = static::words($nbWords);
 		$words[0] = ucwords($words[0]);
 
@@ -79,9 +80,10 @@ class Lorem extends \Faker\Provider\Base
 	{
 		if ($nbSentences <= 0) {
 			return '';
-		} else {
-			$nbSentences = ($nbSentences * mt_rand(60, 140) / 100) + 1;
 		}
+
+		$nbSentences = ($nbSentences * mt_rand(60, 140) / 100) + 1;
+
 		return join(static::sentences($nbSentences), ' ');
 	}
 
