@@ -15,7 +15,7 @@ class Lorem extends \Faker\Provider\Base
 	{
 		return static::randomElement(static::$wordList);
 	}
-	
+
 	/**
 	 * Generate an array of random words
 	 *
@@ -31,7 +31,7 @@ class Lorem extends \Faker\Provider\Base
 		}
 		return $words;
 	}
-	
+
 	/**
 	 * Generate a random sentence
 	 *
@@ -41,12 +41,18 @@ class Lorem extends \Faker\Provider\Base
 	 */
 	public static function sentence($nbWords = 6)
 	{
-		$words = static::words($nbWords + mt_rand(-2, 2));
+		if ($nbWords <= 0) {
+			return '';
+		}
+
+		$nbWords = ($nbWords * mt_rand(60, 140) / 100) + 1;
+
+		$words = static::words($nbWords);
 		$words[0] = ucwords($words[0]);
-		
+
 		return join($words, ' ') . '.';
 	}
-	
+
 	/**
 	 * Generate an array of sentences
 	 *
@@ -62,7 +68,7 @@ class Lorem extends \Faker\Provider\Base
 		}
 		return $sentences;
 	}
-	
+
 	/**
 	 * Generate a single paragraph
 	 *
@@ -72,9 +78,15 @@ class Lorem extends \Faker\Provider\Base
 	 */
 	public static function paragraph($nbSentences = 3)
 	{
-		return join(static::sentences($nbSentences + mt_rand(-1, 1)), ' ');
+		if ($nbSentences <= 0) {
+			return '';
+		}
+
+		$nbSentences = ($nbSentences * mt_rand(60, 140) / 100) + 1;
+
+		return join(static::sentences($nbSentences), ' ');
 	}
-	
+
 	/**
 	 * Generate an array of paragraphs
 	 *
