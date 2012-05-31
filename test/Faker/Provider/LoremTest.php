@@ -16,18 +16,40 @@ class LoremTest extends \PHPUnit_Framework_TestCase
 		$this->assertEquals($singleParagraph . "\n" . $singleParagraph, $provider->text(52));
 	}
 
-	public function testWithNegativeParam()
+	public function testSentenceWithZeroNbWordsReturnsEmptyString()
+	{
+		$this->assertEquals('', Lorem::sentence(0));
+	}
+
+	public function testSentenceWithNegativeNbWordsReturnsEmptyString()
 	{
 		$this->assertEquals('', Lorem::sentence(-1));
-		$this->assertEquals('', Lorem::paragraph(-1));
-		$this->assertEquals('', Lorem::sentence(0));
+	}
+
+	public function testParagraphWithZeroNbSentencesReturnsEmptyString()
+	{
 		$this->assertEquals('', Lorem::paragraph(0));
 	}
 
-	public function testWithStrictlyPositiveParam()
+	public function testParagraphWithNegativeNbSentencesReturnsEmptyString()
 	{
-		$this->assertGreaterThan(1, strlen(Lorem::sentence(1)));
-		$this->assertGreaterThan(1, strlen(Lorem::paragraph(1)));
+		$this->assertEquals('', Lorem::paragraph(-1));
+	}
+
+	public function testSentenceWithPositiveNbWordsReturnsAtLeastOneWord()
+	{
+ 		$sentence = Lorem::sentence(1);
+
+		$this->assertGreaterThan(1, strlen($sentence));
+		$this->assertGreaterThanOrEqual(1, count(explode(' ', $sentence)));
+	}
+
+	public function testParagraphWithPositiveNbSentencesReturnsAtLeastOneWord()
+	{
+		$paragraph = Lorem::paragraph(1);
+
+		$this->assertGreaterThan(1, strlen($paragraph));
+		$this->assertGreaterThanOrEqual(1, count(explode(' ', $paragraph)));
 	}
 }
 
