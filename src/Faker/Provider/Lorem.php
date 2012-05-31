@@ -46,7 +46,7 @@ class Lorem extends \Faker\Provider\Base
 		} else {
 			$nbWords = ($nbWords * mt_rand(60, 140) / 100) + 1;
 		}
-		$words = static::words($nbWords + mt_rand(-2, 2));
+		$words = static::words($nbWords);
 		$words[0] = ucwords($words[0]);
 
 		return join($words, ' ') . '.';
@@ -82,7 +82,7 @@ class Lorem extends \Faker\Provider\Base
 		} else {
 			$nbSentences = ($nbSentences * mt_rand(60, 140) / 100) + 1;
 		}
-		return join(static::sentences($nbSentences + mt_rand(-1, 1)), ' ');
+		return join(static::sentences($nbSentences), ' ');
 	}
 
 	/**
