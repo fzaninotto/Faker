@@ -83,25 +83,55 @@ class Address extends \Faker\Provider\Address
 		return static::randomElement(static::$streetPrefix);
 	}
 
+	/**
+	 * Randomly returns a french region.
+	 *
+	 * @example 'Guadeloupe'
+	 *
+	 * @return string
+	 */
 	public static function region()
 	{
 		return static::randomElement(static::$regions);
 	}
 
+	/**
+	 * Randomly returns a french department ('departmentNumber' => 'departmentName').
+	 *
+	 * @example array('2B' => 'Haute-Corse')
+	 *
+	 * @return array
+	 */
 	public static function department()
 	{
 		return static::randomElement(static::$departments);
 	}
 
+	/**
+	 * Randomly returns a french department name.
+	 *
+	 * @example 'Ardèche'
+	 *
+	 * @return string
+	 */
 	public static function departmentName()
 	{
 		$randomDepartmentName = array_values(static::department());
+
 		return $randomDepartmentName[0];
 	}
 
+	/**
+	 * Randomly returns a french department number.
+	 *
+	 * @example '59'
+	 *
+	 * @return string
+	 */
 	public static function departmentNumber()
 	{
 		$randomDepartmentNumber = array_keys(static::department());
+
 		return $randomDepartmentNumber[0];
 	}
 }
