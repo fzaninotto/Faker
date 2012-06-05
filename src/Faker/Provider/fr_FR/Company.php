@@ -11,7 +11,7 @@ class Company extends \Faker\Provider\Company
 		'{{lastName}}',
 	);
 
-	protected static $companySuffix = array('SA', 'S.A.', 'SARL', 'S.A.R.L.', 'S.A.S.');
+	protected static $companySuffix = array('SA', 'S.A.', 'SARL', 'S.A.R.L.', 'S.A.S.', 'et Fils');
 
 	protected static $sirenFormat = "### ### ###";
 
