@@ -20,7 +20,7 @@ class EntityPopulator
 	{
 		$this->class = $class;
 	}
-	
+
 	public function getClass()
 	{
 		return $this->class;
@@ -40,7 +40,7 @@ class EntityPopulator
 	{
 		$this->columnFormatters = array_merge($this->columnFormatters, $columnFormatters);
 	}
-	
+
 	public function guessColumnFormatters(\Faker\Generator $generator)
 	{
 		$formatters = array();
@@ -95,7 +95,7 @@ class EntityPopulator
 		}
 		return false;
 	}
-	
+
 	public function setModifiers($modifiers)
 	{
 		$this->modifiers = $modifiers;
@@ -140,7 +140,7 @@ class EntityPopulator
 		}
 		return $modifiers;
 	}
-	
+
 	/**
 	 * Insert one new record using the Entity class.
 	 */
@@ -148,7 +148,7 @@ class EntityPopulator
 	{
 		$obj = new $this->class();
 		foreach ($this->getColumnFormatters() as $column => $format) {
-			if (null !== $column) {
+			if (null !== $format) {
 				$obj->setByName($column, is_callable($format) ? $format($insertedEntities, $obj) : $format);
 			}
 		}
@@ -156,7 +156,7 @@ class EntityPopulator
 			$modifier($obj, $insertedEntities);
 		}
 		$obj->save($con);
-		
+
 		return $obj->getPrimaryKey();
 	}
 
