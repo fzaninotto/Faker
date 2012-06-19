@@ -4,38 +4,38 @@ namespace Faker\Provider\sr_RS;
 
 class Address extends \Faker\Provider\Address
 {
-	protected static $postcode = array('#####');
+    protected static $postcode = array('#####');
 
     protected static $streetPrefix = array(
-		'Булевар',
-	);
+        'Булевар',
+    );
 
-	protected static $street = array(
-		'Краља Милана',
+    protected static $street = array(
+        'Краља Милана',
         'Цара Душана',
         'Николе Тесле',
         'Михајла Пупина',
         'Николе Пашића',
-	);
+    );
 
     protected static $streetNameFormats = array(
-		'{{street}}',
-		'{{streetPrefix}} {{street}}',
+        '{{street}}',
+        '{{streetPrefix}} {{street}}',
     );
 
     protected static $streetAddressFormats = array(
-		'{{streetName}} {{buildingNumber}}',
-	);
+        '{{streetName}} {{buildingNumber}}',
+    );
 
     protected static $cityFormats = array(
-		'{{cityName}}',
-	);
+        '{{cityName}}',
+    );
 
     /**
      * @link http://sr.wikipedia.org/wiki/%D0%93%D1%80%D0%B0%D0%B4%D0%BE%D0%B2%D0%B8_%D1%83_%D0%A1%D1%80%D0%B1%D0%B8%D1%98%D0%B8
      */
     protected static $cityNames = array(
-		'Београд',
+        'Београд',
         'Ваљево',
         'Врање',
         'Зајечар',
@@ -59,12 +59,12 @@ class Address extends \Faker\Provider\Address
         'Ужице',
         'Чачак',
         'Шабац',
-	);
+    );
 
     /**
      * @link https://github.com/umpirsky/country-list/blob/master/country/cldr/sr_Cyrl/country.php
      */
-	protected static $country = array(
+    protected static $country = array(
         'Острво Асенсион',
         'Андора',
         'Уједињени Арапски Емирати',
@@ -320,20 +320,20 @@ class Address extends \Faker\Provider\Address
         'Јужноафричка Република',
         'Замбија',
         'Зимбабве',
-	);
+    );
 
     public static function streetPrefix()
-	{
-		return static::randomElement(static::$streetPrefix);
-	}
+    {
+        return static::randomElement(static::$streetPrefix);
+    }
 
     public static function street()
-	{
-		return static::randomElement(static::$street);
-	}
+    {
+        return static::randomElement(static::$street);
+    }
 
     public function cityName()
-	{
-		return static::randomElement(static::$cityNames);
-	}
+    {
+        return static::randomElement(static::$cityNames);
+    }
 }
