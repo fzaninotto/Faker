@@ -99,4 +99,19 @@ class Address extends \Faker\Provider\Base
 		return static::randomElement(static::$country);
 	}
 	
+	/**
+	 * @example '77.147489'
+	 */
+	public static function latitude()
+	{
+		return number_format(mt_rand(-180000000, 180000000)/1000000, 6);
+	}
+
+	/**
+	 * @example '86.211205'
+	 */
+	public static function longitude()
+	{
+		return number_format(mt_rand(-180000000, 180000000)/1000000, 6);
+	}
 }
