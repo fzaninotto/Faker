@@ -188,16 +188,32 @@ You can check available Faker locales in the source code, [under the `Provider` 
 
 Faker provides adapters for Object-Relational and Object-Document Mappers (currently, [Propel](http://www.propelorm.org), [Doctrine2](http://www.doctrine-project.org/projects/orm/2.0/docs/en), and [Mandango](https://github.com/mandango/mandango) are supported). These adapters ease the population of databases through the Entity classes provided by an ORM library (or the population of document stores using Document classes provided by an ODM library).
 
-To populate entities, create a new populator class (using a generator instance as parameter), then list the class and number of all the entities that must be generated. To launch the actual data population, call the `execute()` method.
+To populate entities, create a new populator class (using a generator instance as parameter), then list the class and number of all the entities that must be generated. To launch the actual data population, call the `execute()` method. If you'd like to do a partial execute for a specific entity, you may pass it as an optional argument (`execute($manager, $entity)`). This is particularly useful when you depend on previous results to build your next entity data.
 
 Here is an example showing how to populate 5 `Author` and 10 `Book` objects:
 
 ```php
 <?php
 $generator = \Faker\Factory::create();
-$populator = new Faker\ORM\Propel\Populator($generator);
+$populator = new \Faker\ORM\Propel\Populator($generator);
 $populator->addEntity('Author', 5);
 $populator->addEntity('Book', 10);
+$insertedPKs = $populator->execute();
+```
+
+Using partial executes:
+
+```php
+<?php
+$generator = \Faker\Factory::create();
+$populator = new \Faker\ORM\Propel\Populator($generator);
+$populator->addEntity('Author', 5);
+$insertedPKs = $populator->execute(null, 'Author');
+
+$authors = $insertedPKs['Author'];
+$populator->addEntity('Book', 10, array(
+  'author' => function() use ($generator, $authors) { return $generator->randomElement($authors); },
+  ));
 $insertedPKs = $populator->execute();
 ```
 

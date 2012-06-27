@@ -46,13 +46,20 @@ class Populator
 	 *
 	 * @return array A list of the inserted entities.
 	 */
-	public function execute()
+	public function execute($entity = null)
 	{
 		$insertedEntities = array();
 		foreach ($this->quantities as $class => $number) {
+			if (null !== $entity && $entity !== $class) {
+				continue;
+			}
+
 			for ($i=0; $i < $number; $i++) {
 				$insertedEntities[$class][]= $this->entities[$class]->execute($this->mandango, $insertedEntities);
 			}
+
+			unset($this->entities[$class]);
+			unset($this->quantities[$class]);
 		}
 		$this->mandango->flush();
 

@@ -44,11 +44,11 @@ class Populator
 	/**
 	 * Populate the database using all the Entity classes previously added.
 	 *
-	 * @param EntityManager $entityManager A Propel connection object
+	 * @param EntityManager $entityManager A Doctrine connection object
 	 *
 	 * @return array A list of the inserted PKs
 	 */
-	public function execute($entityManager = null)
+	public function execute($entityManager = null, $entity = null)
 	{
 		if (null === $entityManager) {
 			$entityManager = $this->manager;
@@ -59,9 +59,16 @@ class Populator
 
 		$insertedEntities = array();
 		foreach ($this->quantities as $class => $number) {
+			if (null !== $entity && $entity !== $class) {
+				continue;
+			}
+
 			for ($i=0; $i < $number; $i++) {
 				$insertedEntities[$class][]= $this->entities[$class]->execute($entityManager, $insertedEntities);
 			}
+
+			unset($this->entities[$class]);
+			unset($this->quantities[$class]);
 		}
 		$entityManager->flush();
 
