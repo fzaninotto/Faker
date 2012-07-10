@@ -7,13 +7,27 @@ use Faker\Generator;
 
 class LoremTest extends \PHPUnit_Framework_TestCase
 {
-	public function testText()
+	/**
+	 * @expectedException \InvalidArgumentException
+	 */
+	public function testTextThrowsExceptionWhenAskedLextSizeLessThan5()
 	{
-		$generator = new Generator();
-		$provider = new TestableLorem($generator);
-		$singleParagraph = 'This is a test paragraph.';
-		$this->assertEquals($singleParagraph, $provider->text(51));
-		$this->assertEquals($singleParagraph . "\n" . $singleParagraph, $provider->text(52));
+		Lorem::text(4);
+	}
+
+	public function testTextReturnsWordsWhenAskedSizeLessThan25()
+	{
+		$this->assertEquals('Word word word word.', TestableLorem::text(24));
+	}
+
+	public function testTextReturnsSentencesWhenAskedSizeLessThan100()
+	{
+		$this->assertEquals('This is a test sentence. This is a test sentence. This is a test sentence.', TestableLorem::text(99));
+	}
+
+	public function testTextReturnsParagraphsWhenAskedSizeGreaterOrEqualThanThan100()
+	{
+		$this->assertEquals('This is a test paragraph. It has three sentences. Exactly three.', TestableLorem::text(100));
 	}
 
 	public function testSentenceWithZeroNbWordsReturnsEmptyString()
@@ -55,9 +69,19 @@ class LoremTest extends \PHPUnit_Framework_TestCase
 
 class TestableLorem extends Lorem
 {
-	public static function paragraph($nbSentences = 3)
+
+	public static function word()
 	{
-		// 25 characters
-		return 'This is a test paragraph.';
+		return 'word';
+	}
+
+	public static function sentence($nbWords = 5, $variableNbWords = true)
+	{
+		return 'This is a test sentence.';
+	}
+
+	public static function paragraph($nbSentences = 3, $variableNbSentences = true)
+	{
+		return 'This is a test paragraph. It has three sentences. Exactly three.';
 	}
 }
