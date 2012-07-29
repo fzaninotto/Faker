@@ -314,14 +314,13 @@ class Address extends \Faker\Provider\Address
 		'Macedónsko', 'Madagaskar', 'Maďarsko', 'Malajzia', 'Malawi', 'Maldivy', 'Mali', 'Malta', 'Maroko', 'Marshallove ostrovy', 'Maurícius',
 		'Mauritánia', 'Mexiko', 'Mikronézia', 'Mjanmarsko', 'Moldavsko', 'Monako', 'Mongolsko', 'Mozambik', 'Namíbia', 'Nemecko', 'Nepál', 'Niger',
 		'Nigéria', 'Nikaragua', 'Nórsko', 'Nový Zéland', 'Omán', 'Pakistan', 'Palau', 'Palestína', 'Panama', 'Papua-Nová Guinea', 'Paraguaj', 'Peru',
-		'Pobrežie Slonoviny', 'Poľsko', 'Portugalsko', 'Rakúsko', 'Rovníková Guinea', 'Rumunsko', 'Rusko', , 'Rwanda', 'Salvádor', 'Samoa',
+		'Pobrežie Slonoviny', 'Poľsko', 'Portugalsko', 'Rakúsko', 'Rovníková Guinea', 'Rumunsko', 'Rusko', 'Rwanda', 'Salvádor', 'Samoa',
 		'San Maríno', 'Saudská Arábia', 'Senegal', 'Seychely', 'Sierra Leone', 'Singapur', 'Slovinsko', 'Somálsko', 'Spojené arabské emiráty',
 		'Spojené kráľovstvo', 'Spojené štáty', 'Srbsko', 'Srí Lanka', 'Stredoafrická republika', 'Sudán', 'Surinam', 'Svätá Lucia',
 		'Svätý Krištof a Nevis', 'Svätý Tomáš a Princov ostrov', 'Svätý Vincent a Grenadíny', 'Svazijsko', 'Sýria', 'Šalamúnove ostrovy',
 		'Španielsko', 'Švajčiarsko', 'Švédsko', 'Tadžikistan', 'Taliansko', 'Tanzánia', 'Thajsko', 'Togo', 'Tonga', 'Trinidad a Tobago',
 		'Tunisko', 'Turecko', 'Turkménsko', 'Tuvalu', 'Uganda', 'Ukrajina', 'Uruguaj', 'Uzbekistan', 'Vanuatu', 'Vatikán', 'Venezuela', 'Vietnam',
 		'Východný Timor', 'Zambia', 'Zimbabwe', 'Zvrchovaný vojenský špitálsky rád sv. Jána Jeruzalemského z Ródu a Malty'
-
 	);
 	protected static $cityFormats = array(
 		'{{city}}'
