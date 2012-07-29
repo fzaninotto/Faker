@@ -337,12 +337,4 @@ class Address extends \Faker\Provider\Address
 		'{{streetAddress}}\n {{postcode}}\n {{city}}',
 	);
 
-	/**
-	 * @example 'East'
-	 */
-	public static function city()
-	{
-		return static::randomElement(static::$city);
-	}
-	
 }
