@@ -5,7 +5,7 @@ namespace Faker\Provider\sk_SK;
 class Address extends \Faker\Provider\Address
 {
 	
-	protected static $city = array(
+	protected static $cityName = array(
 		'Ábelová', 'Abovce', 'Abrahám', 'Abrahámovce', 'Abrahámovce', 'Abramová', 'Abranovce', 'Adamovské Kochanovce', 'Adidovce', 'Alekšince',
 		'Andovce', 'Andrejová', 'Ardanovce', 'Ardovo', 'Arnutovce', 'Báb', 'Babie', 'Babín', 'Babiná', 'Babindol', 'Babinec', 'Bacúch', 'Bacúrov',
 		'Báč', 'Bačka', 'Bačkov', 'Bačkovík', 'Bádice', 'Badín', 'Baďan', 'Báhoň', 'Bajany', 'Bajč', 'Bajerov', 'Bajerovce', 'Bajka', 'Bajtava',
@@ -323,7 +323,7 @@ class Address extends \Faker\Provider\Address
 		'Východný Timor', 'Zambia', 'Zimbabwe', 'Zvrchovaný vojenský špitálsky rád sv. Jána Jeruzalemského z Ródu a Malty'
 	);
 	protected static $cityFormats = array(
-		'{{city}}'
+		'{{cityName}}'
 	);
 	protected static $streetNameFormats = array(
 		'{{firstName}} {{streetSuffix}}',
@@ -336,5 +336,10 @@ class Address extends \Faker\Provider\Address
 	protected static $addressFormats = array(
 		'{{streetAddress}}\n {{postcode}}\n {{city}}',
 	);
+	
+	public static function cityName()
+	{
+		return static::randomElement(static::$cityName);
+	}
 
 }
