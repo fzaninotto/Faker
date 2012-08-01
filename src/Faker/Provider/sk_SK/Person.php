@@ -86,7 +86,13 @@ class Person extends \Faker\Provider\Person
 	protected static $lastNameFemale = array(
 		'Slobodová', 'Novotná', 'Čierna', 'Kučerová', 'Veselá', 'Krajčíová', 'Nemcová', 'Králová', 'Růžičková', 'Fialová', 'Zemanová', 
 		'Kolárová', 'Kováčová', 'Vlčková', 'Poláková', 'Kopecká', 'Šimková', 'Konečná', 'Malá', 'Holubová', 'Staneková', 'Šťastná',
-		'Vargová', 'Tóthová', 'Horváthová', 'Balážová', 'Szabová', 'Molnárová', 'Balogová', 'Lukáčová'
+		'Vargová', 'Tóthová', 'Horváthová', 'Balážová', 'Szabová', 'Molnárová', 'Balogová', 'Lukáčová', 'Vícenová', 'Ringlóciová', 'Popovičová',
+		'Hulmanová', 'Zelenayová', 'Fingerlandová', 'Králiková', 'Kapustová', 'Hantuchová', 'Holéczyová', 'Butvínová', 'Oslejová', 'Radičová', 'Sárová',
+		'Sobotková', 'Kažimírová', 'Plšková', 'Jakubová', 'Šindlerová', 'Ondrejková', 'Slobodníková', 'Sadloňová', 'Černá', 'Nosková',
+		'Virčíková', 'Taliánová', 'Čuntalová', 'Oťapková', 'Zuzulová', 'Godolová', 'Gonová', 'Jančová', 'Kocúrová', 'Svobodová', 'Oravcová', 'Muráriková',
+		'Holubová', 'Kubáňová', 'Ondrišová', 'Šoltisová', 'Molnárová', 'Rezníčková', 'Dubníčková', 'Karolčíková', 'Máliková', 'Malíková', 'Litajová',
+		'Kolrusová', 'Košíková', 'Kušnírová', 'Kravjarová', 'Hotová', 'Hajzerová', 'Ferjenčíková', 'Senková', 'Adamcová', 'Pirošová', 'Šimonová',
+		'Finková', 'Hrdá', 'Murčová'
 	);
 
 	private static $prefix = array(
