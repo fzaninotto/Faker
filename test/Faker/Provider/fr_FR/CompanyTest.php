@@ -32,4 +32,18 @@ class CompanyTest extends \PHPUnit_Framework_TestCase
 		$this->assertRegExp("/[\d]{3} [\d]{3} [\d]{3} 0[\d]{4}/", $siret3);
 		$this->assertRegExp("/[\d]{3} [\d]{3} [\d]{3} [\d]{5}/", $siret4);
 	}
+
+	public function testCatchPhraseValidationReturnsFalse()
+	{
+		$isCatchPhraseValid = Company::isCatchPhraseValid('La sécurité de rouler en toute sécurité');
+
+		$this->assertFalse($isCatchPhraseValid);
+	}
+
+	public function testCatchPhraseValidationReturnsTrue()
+	{
+		$isCatchPhraseValid = Company::isCatchPhraseValid('La sécurité de rouler en toute simplicité');
+
+		$this->assertTrue($isCatchPhraseValid);
+	}
 }
