@@ -142,6 +142,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     monthName               // 'January'  
     year                    // '1993'  
     century                 // 'VI'  
+    timezone                // 'Europe/Paris'  
 
 ### `Faker\Provider\Miscellaneous`
 
