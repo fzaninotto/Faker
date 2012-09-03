@@ -178,4 +178,11 @@ class DateTime extends \Faker\Provider\Base
 		return static::randomElement(static::$century);
 	}
 
+    /**
+     * @example 'Europe/Paris'
+     */
+    public static function timezone()
+    {
+        return static::randomElement(\DateTimeZone::listIdentifiers());
+    }
 }
