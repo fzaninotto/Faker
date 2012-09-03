@@ -114,12 +114,30 @@ class DateTime extends \Faker\Provider\Base
 	}
 
 	/**
+	* @example DateTime('2011-09-19 09:24:37')
+	* @return \DateTime
+	*/
+	public static function dateTimeNextYear()
+	{
+		return static::dateTimeBetween("now", "+1 year");
+	}
+
+	/**
 	 * @example DateTime('2011-10-05 12:51:46')
 	 * @return \DateTime
 	 */
 	public static function dateTimeThisMonth()
 	{
 		return static::dateTimeBetween("-1 month");
+	}
+
+	/**
+	* @example DateTime('2011-10-05 12:51:46')
+	* @return \DateTime
+	*/
+	public static function dateTimeNextMonth()
+	{
+		return static::dateTimeBetween("now", "+1 month");
 	}
 
 	/**

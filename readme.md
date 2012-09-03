@@ -133,8 +133,10 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     dateTimeBetween($startDate = '-30 years', $endDate = 'now') // DateTime('2003-03-15 02:00:49')  
     dateTimeThisCentury     // DateTime('1915-05-30 19:28:21')  
     dateTimeThisDecade      // DateTime('2007-05-29 22:30:48')  
-    dateTimeThisYear        // DateTime('2011-02-27 20:52:14')  
+    dateTimeThisYear        // DateTime('2011-02-27 20:52:14')
+    dateTimeNextYear        // DateTime('2012-02-27 20:52:14')
     dateTimeThisMonth       // DateTime('2011-10-23 13:46:23')  
+    dateTimeNextMonth       // DateTime('2011-11-23 13:46:23')
     amPm                    // 'pm'  
     dayOfMonth              // '04'  
     dayOfWeek               // 'Friday'  
