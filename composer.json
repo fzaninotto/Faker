@@ -14,7 +14,7 @@
         "php": ">=5.3.3"
     },
     "require-dev": {
-        "doctrine/orm": "2.2.*"
+        "doctrine/orm": "2.*"
     },
     "autoload": {
         "psr-0": { "Faker": "src/" }
