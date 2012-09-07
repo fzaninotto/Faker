@@ -55,7 +55,6 @@ class PopulatorTest extends DoctrineOrmTestCase
         $this->assertEquals(2, count($insertedEntities[self::ENTITY_B]));
         $this->assertEquals(1, count($insertedEntities[self::ENTITY_A]));
 
-        // This should not be null as B has been added before A
-        $this->assertNotNull($insertedEntities[self::ENTITY_A][0]->b);
+        $this->assertInstanceOf(self::ENTITY_B, $insertedEntities[self::ENTITY_A][0]->b);
     }
 }
