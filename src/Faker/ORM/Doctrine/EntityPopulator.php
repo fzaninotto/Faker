@@ -2,6 +2,7 @@
 
 namespace Faker\ORM\Doctrine;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Persistence\Mapping\ClassMetadata;
 
 /**
@@ -73,12 +74,20 @@ class EntityPopulator
 		}
 
 		foreach ($this->class->getAssociationNames() AS $assocName) {
-			if (!$this->class->isIdentifier($assocName) || !$this->class->isCollectionValuedAssociation($assocName)) {
+			if ($this->class->isAssociationInverseSide($assocName)) {
 				continue;
 			}
 			$relatedClass = $this->class->getAssociationTargetClass($assocName);
-			$formatters[$assocName] = function($inserted) use($relatedClass) { return isset($inserted[$relatedClass]) ? $inserted[$relatedClass][mt_rand(0, count($inserted[$relatedClass]) - 1)] : null; };
-		}
+                        $isCollection = $this->class->isCollectionValuedAssociation($assocName);
+    			$formatters[$assocName] = function($inserted) use($relatedClass, $isCollection) {
+				if (!isset($inserted[$relatedClass])) {
+					return null;
+				}
+				$entity = $inserted[$relatedClass][mt_rand(0, count($inserted[$relatedClass]) - 1)];
+
+				return $isCollection ? new ArrayCollection(array($entity)) : $entity;
+			};
+                }
 
 		return $formatters;
 	}
