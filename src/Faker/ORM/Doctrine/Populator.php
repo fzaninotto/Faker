@@ -66,6 +66,6 @@ class Populator
 		$entityManager->flush();
 
 		return $insertedEntities;
-            }
+	}
 
 }

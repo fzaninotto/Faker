@@ -78,8 +78,8 @@ class EntityPopulator
 				continue;
 			}
 			$relatedClass = $this->class->getAssociationTargetClass($assocName);
-                        $isCollection = $this->class->isCollectionValuedAssociation($assocName);
-    			$formatters[$assocName] = function($inserted) use($relatedClass, $isCollection) {
+			$isCollection = $this->class->isCollectionValuedAssociation($assocName);
+			$formatters[$assocName] = function($inserted) use($relatedClass, $isCollection) {
 				if (!isset($inserted[$relatedClass])) {
 					return null;
 				}
@@ -87,7 +87,7 @@ class EntityPopulator
 
 				return $isCollection ? new ArrayCollection(array($entity)) : $entity;
 			};
-                }
+		}
 
 		return $formatters;
 	}
