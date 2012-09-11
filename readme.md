@@ -25,7 +25,7 @@ echo $faker->name;
 echo $faker->address;
   // "426 Jordy Lodge
   // Cartwrightshire, SC 88120-6700"
-echo $faker->lorem;
+echo $faker->text;
   // Sint velit eveniet. Rerum atque repellat voluptatem quia rerum. Numquam excepturi 
   // beatae sint laudantium consequatur. Magni occaecati itaque sint et sit tempore. Nesciunt
   // amet quidem. Iusto deleniti cum autem ad quia aperiam.
