@@ -9,7 +9,6 @@ class UserAgentTest extends \PHPUnit_Framework_TestCase
 {
     public function testRandomUserAgent()
     {
-        echo UserAgent::userAgent();
         $this->assertNotNull(UserAgent::userAgent());
     }
 
