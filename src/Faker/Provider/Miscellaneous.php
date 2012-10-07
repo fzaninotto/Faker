@@ -4,7 +4,9 @@ namespace Faker\Provider;
 
 class Miscellaneous extends \Faker\Provider\Base
 {
+	protected static $languageCode = array('cn', 'de', 'en', 'es', 'fr', 'it', 'pt', 'ru');
 
+	protected static $countryCode = array('CA', 'CN', 'DE', 'ES', 'FR', 'IE', 'IN', 'IT', 'MX', 'PT', 'RU', 'UK', 'US');
 	/**
 	 * Return a boolean, true or false
 	 *
@@ -39,5 +41,28 @@ class Miscellaneous extends \Faker\Provider\Base
 	{
 		return hash('sha256', mt_rand());
 	}
+	
+	/**
+	 * @example 'fr_FR'
+	 */
+	public function locale()
+	{
+		return $this->languageCode() . '_' . $this->countryCode();
+	}
 
+	/**
+	 * @example 'FR'
+	 */
+	public static function countryCode()
+	{
+		return static::randomElement(static::$countryCode);
+	}
+
+	/**
+	 * @example 'fr'
+	 */
+	public static function languageCode()
+	{
+		return static::randomElement(static::$languageCode);
+	}
 }
