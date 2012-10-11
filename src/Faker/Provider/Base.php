@@ -126,4 +126,24 @@ class Base
 	{
 		return static::lexify(static::numerify($string));
 	}
+
+	/**
+	 * Converts string to lowercase.
+	 * Uses mb_string extension if available
+	 * @param string $string String that should be converted to lowercase
+	 * @return string
+	 */
+	public static function toLower($string) {
+		return extension_loaded('mbstring') ? mb_strtolower($string) : strtolower($string);
+	}
+
+	/**
+	 * Converts string to uppercase.
+	 * Uses mb_string extension if available
+	 * @param string $string String that should be converted to uppercase
+	 * @return string
+	 */
+	public static function toUpper($string) {
+		return extension_loaded('mbstring') ? mb_strtoupper($string) : strtoupper($string);
+	}
 }

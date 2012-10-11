@@ -70,7 +70,7 @@ class Internet extends \Faker\Provider\Base
 	public function userName()
 	{
 		$format = static::randomElement(static::$userNameFormats);
-		return strtolower(static::bothify($this->generator->parse($format)));
+		return static::toLower(static::bothify($this->generator->parse($format)));
 	}
 
 	/**
@@ -91,7 +91,7 @@ class Internet extends \Faker\Provider\Base
 		$company = $companyElements[0];
 		$company = preg_replace('/\W/', '', $company);
 
-		return strtolower($company);
+		return static::toLower($company);
 	}
 
 	/**
