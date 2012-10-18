@@ -29,7 +29,7 @@ class Internet extends \Faker\Provider\Base
 	public function email()
 	{
 		$format = static::randomElement(static::$emailFormats);
-		return $this->generator->parse($format);
+		return preg_replace('/\s/', '', $this->generator->parse($format));
 	}
 
 	/**
