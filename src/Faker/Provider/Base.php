@@ -34,19 +34,41 @@ class Base
 	/**
 	 * Returns a random number with 0 to $nbDigits digits
 	 *
+	 * If $upTo is passed, it returns a number between $nbDigits (read as from) and $upTo
+	 *
 	 * @param integer $nbDigits
+	 * @param integer $upTo
 	 * @example 79907610
 	 *
 	 * @return integer
 	 */
-	public static function randomNumber($nbDigits = null)
+	public static function randomNumber($nbDigits = null, $upTo = null)
 	{
 		if (null === $nbDigits) {
 			$nbDigits = static::randomDigit();
 		}
+
+		if (null !== $upTo) {
+			return static::numberBetween($nbDigits, $upTo);
+		}
+
 		return mt_rand(0, pow(10, $nbDigits) - 1);
 	}
-	
+
+	/**
+	 * Returns a random number between $from and $to
+	 *
+	 * @param integer $from
+	 * @param integer $too
+	 * @example 79907610
+	 *
+	 * @return integer
+	 */
+	public static function numberBetween($from = null, $to = null)
+	{
+		return mt_rand($from ?: 0, $to ?: PHP_INT_MAX);
+	}
+
 	/**
 	 * Returns a random letter from a to z
 	 *
