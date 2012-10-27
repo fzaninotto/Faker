@@ -79,8 +79,8 @@ class DateTime extends \Faker\Provider\Base
 	 */
 	public static function dateTimeBetween($startDate = "-30 years", $endDate = "now")
 	{
-		$startTimestamp = strtotime($startDate);
-		$endTimestamp = strtotime($endDate);
+		$startTimestamp = $startDate instanceof \DateTime ? $startDate->getTimestamp() : strtotime($startDate);
+		$endTimestamp = $endDate instanceof \DateTime ? $endDate->getTimestamp() : strtotime($endDate);
 		$timestamp = mt_rand($startTimestamp, $endTimestamp);
 
 		return new \DateTime('@' . $timestamp);
