@@ -34,6 +34,24 @@ class BaseTest extends \PHPUnit_Framework_TestCase
 		$this->assertTrue(BaseProvider::randomNumber(3) < 1000);
 	}
 
+	public function testRandomNumberAcceptsMinMax()
+	{
+		$min = 5;
+		$max = 6;
+
+		$this->assertGreaterThanOrEqual($min, BaseProvider::randomNumber($min, $max));
+		$this->assertGreaterThanOrEqual(BaseProvider::randomNumber($min, $max), $max);
+	}
+
+	public function testNumberBetween()
+	{
+		$min = 5;
+		$max = 6;
+
+		$this->assertGreaterThanOrEqual($min, BaseProvider::numberBetween($min, $max));
+		$this->assertGreaterThanOrEqual(BaseProvider::numberBetween($min, $max), $max);
+	}
+
 	public function testRandomLetterReturnsString()
 	{
 		$this->assertTrue(is_string(BaseProvider::randomLetter()));
