@@ -126,5 +126,18 @@ class Base
 	{
 		return static::lexify(static::numerify($string));
 	}
-	
+
+	/**
+	 * Converts string to lowercase.
+	 * Uses mb_string extension if available
+	 * @param string $string String that should be converted to lowercase
+	 * @return string
+	 */
+	public static function toLower($string) {
+		if (function_exists('mb_strtolower')) {
+			return mb_strtolower($string);
+		}
+		return strtolower($string);
+	}
+
 }
