@@ -88,14 +88,15 @@ class EntityPopulator
 	 */
 	public function execute($manager, $insertedEntities)
 	{
-		$class = $this->class->getName();
-		$obj = new $class;
+		$obj = $this->class->newInstance();
+
 		foreach ($this->columnFormatters as $field => $format) {
 			if (null !== $format) {
 				$value = is_callable($format) ? $format($insertedEntities, $obj) : $format;
 				$this->class->reflFields[$field]->setValue($obj, $value);
 			}
 		}
+
 		$manager->persist($obj);
 
 		return $obj;
