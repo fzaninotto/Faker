@@ -6,8 +6,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "François Zaninotto",
-            "email": ""
+            "name": "François Zaninotto"
         }
     ],
     "require": {
