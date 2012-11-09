@@ -235,9 +235,14 @@ class Address extends \Faker\Provider\Address
         return static::randomElement(static::$streetSuffixWord);
     }
 
+    /**
+     * Randomly return a building number.
+     *
+     * @return string
+     */
     public static function buildingNumber()
     {
-        return strtoupper(static::bothify(static::randomElement(static::$buildingNumber)));
+        return static::toUpper(static::bothify(static::randomElement(static::$buildingNumber)));
     }
 
     /**
