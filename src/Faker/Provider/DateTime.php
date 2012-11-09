@@ -17,13 +17,19 @@ class DateTime extends \Faker\Provider\Base
 	}
 
 	/**
-	 * Get a datetime object for a date between January 1, 1970 and now
+	 * Get a datetime object for a date between January 1, 1970 and now if
+	 * no argument is given, or a date defined by $time (see Supported Date and
+	 * Time Formats in PHP doc)
 	 *
+	 * @param   string $time
 	 * @example DateTime('2005-08-16 20:39:21')
 	 * @return \DateTime
 	 */
-	public static function dateTime()
+	public static function dateTime($time = null)
 	{
+		if ($time !== null) {
+			return new \DateTime($time);
+		}
 		return new \DateTime('@' . static::unixTime());
 	}
 
