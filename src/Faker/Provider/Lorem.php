@@ -209,4 +209,3 @@ class Lorem extends \Faker\Provider\Base
 		return (int) ($nbElements * mt_rand(60, 140) / 100) + 1;
 	}
 }
-

@@ -26,5 +26,4 @@ class Company extends \Faker\Provider\Base
 	{
 		return static::randomElement(static::$companySuffix);
 	}
-	
 }

@@ -5,7 +5,7 @@ namespace Faker\Provider\de_DE;
 class Address extends \Faker\Provider\Address
 {
 	protected static $buildingNumber = array('###', '##', '#', '#/#');
-	
+
 	protected static $streetSuffixLong = array(
 		'Gasse', 'Platz', 'Ring', 'Straße', 'Weg', 'Allee'
 	);
@@ -48,16 +48,16 @@ class Address extends \Faker\Provider\Address
 		'Wallis und Futuna','Weihnachtsinsel','Westsahara',
 		'Zentralafrikanische Republik','Zypern',
 	);
-	
+
 	protected static $cityFormats = array(
 		'{{cityName}}',
 	);
-	
+
 	protected static $streetNameFormats = array(
 		'{{lastName}}{{streetSuffixShort}}',
 		'{{firstName}}-{{lastName}}-{{streetSuffixLong}}'
 	);
-	
+
 	protected static $streetAddressFormats = array(
 		'{{streetName}} {{buildingNumber}}',
 	);

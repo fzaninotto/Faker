@@ -7,9 +7,9 @@ class Person extends \Faker\Provider\Base
 	protected static $formats = array(
 		'{{firstName}} {{lastName}}',
 	);
-	
+
 	protected static $firstName = array('John', 'Jane');
-	
+
 	protected static $lastName = array('Doe');
 
 	/**
@@ -36,5 +36,4 @@ class Person extends \Faker\Provider\Base
 	{
 		return static::randomElement(static::$lastName);
 	}
-	
 }

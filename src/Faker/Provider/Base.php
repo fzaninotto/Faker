@@ -5,7 +5,7 @@ namespace Faker\Provider;
 class Base
 {
 	protected $generator;
-	
+
 	public function __construct($generator)
 	{
 		$this->generator = $generator;
@@ -84,7 +84,7 @@ class Base
 	 *
 	 * @param array $array
 	 * @return mixed
-	 */	
+	 */
 	public static function randomElement($array = array('a', 'b', 'c'))
 	{
 		return $array[mt_rand(0, count($array) - 1)];
@@ -101,10 +101,10 @@ class Base
 	{
 		$string = preg_replace_callback('/\#/', 'static::randomDigit', $string);
 		$string = preg_replace_callback('/\%/', 'static::randomDigitNotNull', $string);
-		
+
 		return $string;
 	}
-	
+
 	/**
 	 * Replaces all question mark ('?') occurrences with a random letter
 	 *
@@ -115,7 +115,7 @@ class Base
 	{
 		return preg_replace_callback('/\?/', 'static::randomLetter', $string);
 	}
-	
+
 	/**
 	 * Replaces hash signs and question marks with random numbers and letters
 	 *
@@ -126,5 +126,4 @@ class Base
 	{
 		return static::lexify(static::numerify($string));
 	}
-	
 }

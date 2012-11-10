@@ -5,10 +5,10 @@ namespace Faker\Provider\ru_RU;
 class Internet extends \Faker\Provider\Internet
 {
 	protected static $tld = array('com', 'com', 'net', 'org', 'ru', 'ru', 'ru', 'ru');
-	
+
 	/**
 	 * @example 'jdoe'
-	 */	
+	 */
 	public function userName()
 	{
 		$format = static::randomElement(static::$userNameFormats);
@@ -27,5 +27,4 @@ class Internet extends \Faker\Provider\Internet
 
 		return $company;
 	}
-
 }

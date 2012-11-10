@@ -37,7 +37,7 @@ class DateTime extends \Faker\Provider\Base
 	{
 		return new \DateTime('@' . mt_rand(-62135597361, time()));
 	}
-	
+
 	/**
 	 * @example '2003-10-21T16:05:52+0000'
 	 */

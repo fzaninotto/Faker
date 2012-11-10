@@ -14,7 +14,7 @@ class Person extends \Faker\Provider\Person
 		'{{firstName}} {{lastName}} {{suffix}}',
 		'{{prefix}} {{firstName}} {{lastName}} {{suffix}}'
 	);
-	
+
 	protected static $firstName = array(
 		'Aaliyah','Aaron','Abagail','Abbey','Abbie','Abbigail','Abby','Abdiel','Abdul','Abdullah','Abe','Abel','Abelardo','Abigail','Abigale','Abigayle','Abner','Abraham','Ada','Adah','Adalberto','Adaline','Adam','Adan','Addie','Addison','Adela','Adelbert','Adele','Adelia','Adeline','Adell','Adella','Adelle','Aditya','Adolf','Adolfo','Adolph','Adolphus','Adonis','Adrain','Adrian','Adriana','Adrianna','Adriel','Adrien','Adrienne','Afton','Aglae','Agnes','Agustin','Agustina','Ahmad','Ahmed','Aida','Aidan','Aiden','Aileen','Aimee','Aisha','Aiyana','Akeem','Al','Alaina','Alan','Alana','Alanis','Alanna','Alayna','Alba','Albert','Alberta','Albertha','Alberto','Albin','Albina','Alda','Alden','Alec','Aleen','Alejandra','Alejandrin','Alek','Alena','Alene','Alessandra','Alessandro','Alessia','Aletha','Alex','Alexa','Alexander','Alexandra','Alexandre','Alexandrea','Alexandria','Alexandrine','Alexandro','Alexane','Alexanne','Alexie','Alexis','Alexys','Alexzander','Alf','Alfonso','Alfonzo','Alford','Alfred','Alfreda','Alfredo','Ali','Alia','Alice','Alicia','Alisa','Alisha','Alison','Alivia','Aliya','Aliyah','Aliza','Alize','Allan','Allen','Allene','Allie','Allison','Ally','Alphonso','Alta','Althea','Alva','Alvah','Alvena','Alvera','Alverta','Alvina','Alvis','Alyce','Alycia','Alysa','Alysha','Alyson','Alysson','Amalia','Amanda','Amani','Amara','Amari','Amaya','Amber','Ambrose','Amelia','Amelie','Amely','America','Americo','Amie','Amina','Amir','Amira','Amiya','Amos','Amparo','Amy','Amya','Ana','Anabel','Anabelle','Anahi','Anais','Anastacio','Anastasia','Anderson','Andre','Andreane','Andreanne','Andres','Andrew','Andy','Angel','Angela','Angelica','Angelina','Angeline','Angelita','Angelo','Angie','Angus','Anibal','Anika','Anissa','Anita','Aniya','Aniyah','Anjali','Anna','Annabel','Annabell','Annabelle','Annalise','Annamae','Annamarie','Anne','Annetta','Annette','Annie','Ansel','Ansley','Anthony','Antoinette','Antone','Antonetta','Antonette','Antonia','Antonietta','Antonina','Antonio','Antwan','Antwon','Anya','April','Ara','Araceli','Aracely','Arch','Archibald','Ardella','Arden','Ardith','Arely','Ari','Ariane','Arianna','Aric','Ariel','Arielle','Arjun','Arlene','Arlie','Arlo','Armand','Armando','Armani','Arnaldo','Arne','Arno','Arnold','Arnoldo','Arnulfo','Aron','Art','Arthur','Arturo','Arvel','Arvid','Arvilla','Aryanna','Asa','Asha','Ashlee','Ashleigh','Ashley','Ashly','Ashlynn','Ashton','Ashtyn','Asia','Assunta','Astrid','Athena','Aubree','Aubrey','Audie','Audra','Audreanne','Audrey','August','Augusta','Augustine','Augustus','Aurelia','Aurelie','Aurelio','Aurore','Austen','Austin','Austyn','Autumn','Ava','Avery','Avis','Axel','Ayana','Ayden','Ayla','Aylin',
 		'Baby','Bailee','Bailey','Barbara','Barney','Baron','Barrett','Barry','Bart','Bartholome','Barton','Baylee','Beatrice','Beau','Beaulah','Bell','Bella','Belle','Ben','Benedict','Benjamin','Bennett','Bennie','Benny','Benton','Berenice','Bernadette','Bernadine','Bernard','Bernardo','Berneice','Bernhard','Bernice','Bernie','Berniece','Bernita','Berry','Bert','Berta','Bertha','Bertram','Bertrand','Beryl','Bessie','Beth','Bethany','Bethel','Betsy','Bette','Bettie','Betty','Bettye','Beulah','Beverly','Bianka','Bill','Billie','Billy','Birdie','Blair','Blaise','Blake','Blanca','Blanche','Blaze','Bo','Bobbie','Bobby','Bonita','Bonnie','Boris','Boyd','Brad','Braden','Bradford','Bradley','Bradly','Brady','Braeden','Brain','Brandi','Brando','Brandon','Brandt','Brandy','Brandyn','Brannon','Branson','Brant','Braulio','Braxton','Brayan','Breana','Breanna','Breanne','Brenda','Brendan','Brenden','Brendon','Brenna','Brennan','Brennon','Brent','Bret','Brett','Bria','Brian','Briana','Brianne','Brice','Bridget','Bridgette','Bridie','Brielle','Brigitte','Brionna','Brisa','Britney','Brittany','Brock','Broderick','Brody','Brook','Brooke','Brooklyn','Brooks','Brown','Bruce','Bryana','Bryce','Brycen','Bryon','Buck','Bud','Buddy','Buford','Bulah','Burdette','Burley','Burnice','Buster',
@@ -43,7 +43,7 @@ class Person extends \Faker\Provider\Person
 		'Yadira','Yasmeen','Yasmin','Yasmine','Yazmin','Yesenia','Yessenia','Yolanda','Yoshiko','Yvette','Yvonne',
 		'Zachariah','Zachary','Zachery','Zack','Zackary','Zackery','Zakary','Zander','Zane','Zaria','Zechariah','Zelda','Zella','Zelma','Zena','Zetta','Zion','Zita','Zoe','Zoey','Zoie','Zoila','Zola','Zora','Zula'
 	);
-	
+
 	protected static $lastName = array(
 		'Abbott','Abernathy','Abshire','Adams','Altenwerth','Anderson','Ankunding','Armstrong','Auer','Aufderhar',
 		'Bahringer','Bailey','Balistreri','Barrows','Bartell','Bartoletti','Barton','Bashirian','Batz','Bauch','Baumbach','Bayer','Beahan','Beatty','Bechtelar','Becker','Bednar','Beer','Beier','Berge','Bergnaum','Bergstrom','Bernhard','Bernier','Bins','Blanda','Blick','Block','Bode','Boehm','Bogan','Bogisich','Borer','Bosco','Botsford','Boyer','Boyle','Bradtke','Brakus','Braun','Breitenberg','Brekke','Brown','Bruen','Buckridge',
@@ -70,9 +70,9 @@ class Person extends \Faker\Provider\Person
 		'Yost','Yundt',
 		'Zboncak','Zemlak','Ziemann','Zieme','Zulauf'
 	);
-	
+
 	private static $prefix = array('Mr.','Mrs.','Ms.','Miss','Dr.');
-	
+
 	private static $suffix = array('Jr.','Sr.','I','II','III','IV','V','MD','DDS','PhD','DVM');
 
 	/**
