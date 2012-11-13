@@ -119,9 +119,9 @@ class Address extends \Faker\Provider\Address
     );
 
     /**
-     * @var array Danish municipalities.
+     * @var array Danish municipalities, called 'kommuner' in danish.
      */
-    protected static $municipalityNames = array(
+    protected static $kommuneNames = array(
         'København','Frederiksberg','Ballerup','Brøndby','Dragør','Gentofte','Gladsaxe','Glostrup','Herlev',
         'Albertslund','Hvidovre','Høje Taastrup','Lyngby-Taarbæk','Rødovre','Ishøj','Tårnby','Vallensbæk',
         'Allerød','Fredensborg','Helsingør','Hillerød','Hørsholm','Rudersdal','Egedal','Frederikssund','Greve',
@@ -265,9 +265,9 @@ class Address extends \Faker\Provider\Address
      *
      * @return string
      */
-    public static function municipality()
+    public static function kommune()
     {
-        return static::randomElement(static::$municipalityNames);
+        return static::randomElement(static::$kommuneNames);
     }
 
     /**
