@@ -74,7 +74,7 @@ class Lorem extends \Faker\Provider\Base
 	 *
  	 * @example 'Lorem ipsum dolor sit amet.'
 	 * @param integer $nbWords around how many words the sentence should contain
-	 * @param boolean $variableNbWords set to false if you want exactly $nbWords returned, 
+	 * @param boolean $variableNbWords set to false if you want exactly $nbWords returned,
 	 *                                 otherwise $nbWords may vary by +/-40% with a minimum of 1
 	 * @return string
 	 */
@@ -115,7 +115,7 @@ class Lorem extends \Faker\Provider\Base
 	 *
  	 * @example 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'
 	 * @param integer $nbSentences around how many sentences the paragraph should contain
-	 * @param boolean $variableNbSentences set to false if you want exactly $nbSentences returned, 
+	 * @param boolean $variableNbSentences set to false if you want exactly $nbSentences returned,
 	 *                                     otherwise $nbSentences may vary by +/-40% with a minimum of 1
 	 * @return string
 	 */
@@ -173,7 +173,7 @@ class Lorem extends \Faker\Provider\Base
 				}
 				array_pop($text);
 			}
-			$text[0][0] = strtoupper($text[0][0]);
+			$text[0][0] = static::toUpper($text[0][0]);
 			$text[count($text) - 1] .= '.';
 		} else if ($maxNbChars < 100) {
 			// join sentences
