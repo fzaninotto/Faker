@@ -84,7 +84,7 @@ class Person extends \Faker\Provider\Person
 	);
 
 	protected static $lastNameFemale = array(
-		'Slobodová', 'Novotná', 'Čierna', 'Kučerová', 'Veselá', 'Krajčíová', 'Nemcová', 'Králová', 'Růžičková', 'Fialová', 'Zemanová', 
+		'Slobodová', 'Novotná', 'Čierna', 'Kučerová', 'Veselá', 'Krajčíová', 'Nemcová', 'Králová', 'Růžičková', 'Fialová', 'Zemanová',
 		'Kolárová', 'Kováčová', 'Vlčková', 'Poláková', 'Kopecká', 'Šimková', 'Konečná', 'Malá', 'Holubová', 'Staneková', 'Šťastná',
 		'Vargová', 'Tóthová', 'Horváthová', 'Balážová', 'Szabová', 'Molnárová', 'Balogová', 'Lukáčová', 'Vícenová', 'Ringlóciová', 'Popovičová',
 		'Hulmanová', 'Zelenayová', 'Fingerlandová', 'Králiková', 'Kapustová', 'Hantuchová', 'Holéczyová', 'Butvínová', 'Oslejová', 'Radičová', 'Sárová',
@@ -103,7 +103,7 @@ class Person extends \Faker\Provider\Person
 	private static $suffix = array(
 		'CSc.', 'DrSc.', 'DSc.', 'Ph.D.', 'Th.D.'
 	);
-	
+
 	public static function firstName()
 	{
 		$gender = static::randomElement(array('Male', 'Female'));
@@ -140,7 +140,7 @@ class Person extends \Faker\Provider\Person
 	{
 		return static::randomElement(static::$prefix);
 	}
-	
+
 	/**
 	 * @example 'PhD'
 	 */

@@ -23,7 +23,7 @@ class Internet extends \Faker\Provider\Internet
 
 	/**
 	 * @example 'jdoe'
-	 */	
+	 */
 	public function userName()
 	{
 		$format = static::randomElement(static::$userNameFormats);
@@ -42,6 +42,4 @@ class Internet extends \Faker\Provider\Internet
 
 		return strtolower(static::toAscii($company));
 	}
-
-
 }

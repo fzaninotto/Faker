@@ -80,8 +80,8 @@ class Person extends \Faker\Provider\Person
 	);
 
 	/**
-	 * Return middle name 
-	 * 
+	 * Return middle name
+	 *
 	 * @example 'Иванович'
 	 *
 	 * @access public
@@ -92,5 +92,4 @@ class Person extends \Faker\Provider\Person
 	{
 		return static::randomElement(static::$middleName);
 	}
-
 }

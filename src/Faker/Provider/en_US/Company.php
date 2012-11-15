@@ -21,7 +21,7 @@ class Company extends \Faker\Provider\Company
 			'ability','access','adapter','algorithm','alliance','analyzer','application','approach','architecture','archive','artificialintelligence','array','attitude','benchmark','budgetarymanagement','capability','capacity','challenge','circuit','collaboration','complexity','concept','conglomeration','contingency','core','customerloyalty','database','data-warehouse','definition','emulation','encoding','encryption','extranet','firmware','flexibility','focusgroup','forecast','frame','framework','function','functionalities','GraphicInterface','groupware','GraphicalUserInterface','hardware','help-desk','hierarchy','hub','implementation','info-mediaries','infrastructure','initiative','installation','instructionset','interface','internetsolution','intranet','knowledgeuser','knowledgebase','localareanetwork','leverage','matrices','matrix','methodology','middleware','migration','model','moderator','monitoring','moratorium','neural-net','openarchitecture','opensystem','orchestration','paradigm','parallelism','policy','portal','pricingstructure','processimprovement','product','productivity','project','projection','protocol','securedline','service-desk','software','solution','standardization','strategy','structure','success','superstructure','support','synergy','systemengine','task-force','throughput','time-frame','toolset','utilisation','website','workforce'
 		)
 	);
-	
+
 	protected static $bsWords = array(
 		array(
 			'implement','utilize','integrate','streamline','optimize','evolve','transform','embrace','enable','orchestrate','leverage','reinvent','aggregate','architect','enhance','incentivize','morph','empower','envisioneer','monetize','harness','facilitate','seize','disintermediate','synergize','strategize','deploy','brand','grow','target','syndicate','synthesize','deliver','mesh','incubate','engage','maximize','benchmark','expedite','reintermediate','whiteboard','visualize','repurpose','innovate','scale','unleash','drive','extend','engineer','revolutionize','generate','exploit','transition','e-enable','iterate','cultivate','matrix','productize','redefine','recontextualize'
@@ -45,7 +45,7 @@ class Company extends \Faker\Provider\Company
 		foreach (static::$catchPhraseWords as &$word) {
 			$result[] = static::randomElement($word);
 		}
-		
+
 		return join($result, ' ');
 	}
 
@@ -58,7 +58,7 @@ class Company extends \Faker\Provider\Company
 		foreach (static::$bsWords as &$word) {
 			$result[] = static::randomElement($word);
 		}
-		
+
 		return join($result, ' ');
 	}
 }

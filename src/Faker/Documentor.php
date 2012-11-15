@@ -5,12 +5,12 @@ namespace Faker;
 class Documentor
 {
 	protected $generator;
-	
+
 	public function __construct($generator)
 	{
 		$this->generator = $generator;
 	}
-	
+
 	public function getFormatters()
 	{
 		$formatters = array();
@@ -48,8 +48,7 @@ class Documentor
 				$formatters[$providerClass][$methodName . $parameters] = $example;
 			}
 		}
-		
+
 		return $formatters;
 	}
-	
 }

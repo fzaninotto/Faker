@@ -87,10 +87,9 @@ class Address extends \Faker\Provider\Address
 
 	/**
 	 * @example 'AR-B'
-	 */	
+	 */
 	public static function stateAbbr()
 	{
 		return static::randomElement(static::$stateAbbr);
 	}
-	
 }

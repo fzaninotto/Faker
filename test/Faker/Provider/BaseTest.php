@@ -22,7 +22,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
 		$this->assertTrue(BaseProvider::randomDigitNotNull() > 0);
 		$this->assertTrue(BaseProvider::randomDigitNotNull() < 10);
 	}
-	
+
 	public function testRandomNumberReturnsInteger()
 	{
 		$this->assertTrue(is_integer(BaseProvider::randomNumber()));
@@ -67,7 +67,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
 		$lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz';
 		$this->assertTrue(strpos($lowercaseLetters, BaseProvider::randomLetter()) !== false);
 	}
-	
+
 	public function testRandomElementReturnsElementFromArray()
 	{
 		$elements = array('23', 'e', 32, '#');
@@ -103,10 +103,9 @@ class BaseTest extends \PHPUnit_Framework_TestCase
 	{
 		$this->assertRegExp('/foo[a-z]Ba[a-z]r/', BaseProvider::lexify('foo?Ba?r'));
 	}
-	
+
 	public function testBothifyCombinesNumerifyAndLexify()
 	{
 		$this->assertRegExp('/foo[a-z]Ba\dr/', BaseProvider::bothify('foo?Ba#r'));
 	}
-	
 }
