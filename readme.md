@@ -20,20 +20,20 @@ require_once '/path/to/Faker/src/autoload.php';
 $faker = Faker\Factory::create();
 
 // generate data by accessing properties
-echo $faker->name; 
+echo $faker->name;
   // 'Lucy Cechtelar';
 echo $faker->address;
   // "426 Jordy Lodge
   // Cartwrightshire, SC 88120-6700"
 echo $faker->text;
-  // Sint velit eveniet. Rerum atque repellat voluptatem quia rerum. Numquam excepturi 
+  // Sint velit eveniet. Rerum atque repellat voluptatem quia rerum. Numquam excepturi
   // beatae sint laudantium consequatur. Magni occaecati itaque sint et sit tempore. Nesciunt
   // amet quidem. Iusto deleniti cum autem ad quia aperiam.
-  // A consectetur quos aliquam. In iste aliquid et aut similique suscipit. Consequatur qui 
+  // A consectetur quos aliquam. In iste aliquid et aut similique suscipit. Consequatur qui
   // quaerat iste minus hic expedita. Consequuntur error magni et laboriosam. Aut aspernatur
   // voluptatem sit aliquam. Dolores voluptatum est.
   // Aut molestias et maxime. Fugit autem facilis quos vero. Eius quibusdam possimus est.
-  // Ea quaerat et quisquam. Deleniti sunt quam. Adipisci consequatur id in occaecati. 
+  // Ea quaerat et quisquam. Deleniti sunt quam. Adipisci consequatur id in occaecati.
   // Et sint et. Ut ducimus quod nemo ab voluptatum.
 ```
 
@@ -41,7 +41,7 @@ Even if this example shows a property access, each call to `$faker->name` yields
 
 ```php
 <?php
-for ($i=0; $i < 10; $i++) { 
+for ($i=0; $i < 10; $i++) {
   echo $faker->name, "\n";
 }
   // Adaline Reichel
@@ -62,116 +62,116 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
 ### `Faker\Provider\en_US\Person`
 
-    prefix                  // 'Ms.'  
-    suffix                  // 'Jr.'  
-    name                    // 'Dr. Zane Stroman'  
-    firstName               // 'Maynard'  
-    lastName                // 'Zulauf'  
+    prefix                  // 'Ms.'
+    suffix                  // 'Jr.'
+    name                    // 'Dr. Zane Stroman'
+    firstName               // 'Maynard'
+    lastName                // 'Zulauf'
 
 ### `Faker\Provider\en_US\Address`
 
-    cityPrefix              // 'Lake'  
-    secondaryAddress        // 'Suite 961'  
-    state                   // 'NewMexico'  
-    stateAbbr               // 'OH'  
-    citySuffix              // 'borough'  
-    streetSuffix            // 'Keys'  
-    buildingNumber          // '484'  
-    city                    // 'West Judge'  
-    streetName              // 'Keegan Trail'  
-    streetAddress           // '439 Karley Loaf Suite 897'  
-    postcode                // '17916'  
-    address                 // '8888 Cummings Vista Apt. 101, Susanbury, NY 95473'  
-    country                 // 'Falkland Islands (Malvinas)'  
+    cityPrefix              // 'Lake'
+    secondaryAddress        // 'Suite 961'
+    state                   // 'NewMexico'
+    stateAbbr               // 'OH'
+    citySuffix              // 'borough'
+    streetSuffix            // 'Keys'
+    buildingNumber          // '484'
+    city                    // 'West Judge'
+    streetName              // 'Keegan Trail'
+    streetAddress           // '439 Karley Loaf Suite 897'
+    postcode                // '17916'
+    address                 // '8888 Cummings Vista Apt. 101, Susanbury, NY 95473'
+    country                 // 'Falkland Islands (Malvinas)'
     latitude                // '77.147489'
     longitude               // '86.211205'
 
 ### `Faker\Provider\en_US\PhoneNumber`
 
-    phoneNumber             // '132-149-0269x3767'  
+    phoneNumber             // '132-149-0269x3767'
 
 ### `Faker\Provider\en_US\Company`
 
-    catchPhrase             // 'Monitored regional contingency'  
-    bs                      // 'e-enable robust architectures'  
-    company                 // 'Bogan-Treutel'  
-    companySuffix           // 'and Sons'  
+    catchPhrase             // 'Monitored regional contingency'
+    bs                      // 'e-enable robust architectures'
+    company                 // 'Bogan-Treutel'
+    companySuffix           // 'and Sons'
 
 ### `Faker\Provider\Lorem`
 
-    word                    // 'aut'  
-    words($nb = 3)          // array('porro', 'sed', 'magni')  
-    sentence($nbWords = 6)  // 'Sit vitae voluptas sint non voluptates.'  
-    sentences($nb = 3)      // array('Optio quos qui illo error.', 'Laborum vero a officia id corporis.', 'Saepe provident esse hic eligendi.')  
-    paragraph($nbSentences = 3) // 'Ut ab voluptas sed a nam. Sint autem inventore aut officia aut aut blanditiis. Ducimus eos odit amet et est ut eum.'  
-    paragraphs($nb = 3)     // array('Quidem ut sunt et quidem est accusamus aut. Fuga est placeat rerum ut. Enim ex eveniet facere sunt.', 'Aut nam et eum architecto fugit repellendus illo. Qui ex esse veritatis.', 'Possimus omnis aut incidunt sunt. Asperiores incidunt iure sequi cum culpa rem. Rerum exercitationem est rem.')  
-    text($maxNbChars = 200) // 'Fuga totam reiciendis qui architecto fugiat nemo. Consequatur recusandae qui cupiditate eos quod.'  
+    word                    // 'aut'
+    words($nb = 3)          // array('porro', 'sed', 'magni')
+    sentence($nbWords = 6)  // 'Sit vitae voluptas sint non voluptates.'
+    sentences($nb = 3)      // array('Optio quos qui illo error.', 'Laborum vero a officia id corporis.', 'Saepe provident esse hic eligendi.')
+    paragraph($nbSentences = 3) // 'Ut ab voluptas sed a nam. Sint autem inventore aut officia aut aut blanditiis. Ducimus eos odit amet et est ut eum.'
+    paragraphs($nb = 3)     // array('Quidem ut sunt et quidem est accusamus aut. Fuga est placeat rerum ut. Enim ex eveniet facere sunt.', 'Aut nam et eum architecto fugit repellendus illo. Qui ex esse veritatis.', 'Possimus omnis aut incidunt sunt. Asperiores incidunt iure sequi cum culpa rem. Rerum exercitationem est rem.')
+    text($maxNbChars = 200) // 'Fuga totam reiciendis qui architecto fugiat nemo. Consequatur recusandae qui cupiditate eos quod.'
 
 ### `Faker\Provider\Internet`
 
-    email                   // 'tkshlerin@collins.com'  
-    safeEmail               // 'king.alford@example.org'  
-    freeEmail               // 'bradley72@gmail.com'  
-    companyEmail            // 'russel.durward@mcdermott.org'  
-    freeEmailDomain         // 'yahoo.com'  
-    userName                // 'wade55'  
-    domainName              // 'wolffdeckow.net'  
-    domainWord              // 'feeney'  
-    tld                     // 'biz'  
-    url                     // 'http://www.strackeframi.com/'  
-    ipv4                    // '109.133.32.252'  
-    ipv6                    // '8e65:933d:22ee:a232:f1c1:2741:1f10:117c'  
+    email                   // 'tkshlerin@collins.com'
+    safeEmail               // 'king.alford@example.org'
+    freeEmail               // 'bradley72@gmail.com'
+    companyEmail            // 'russel.durward@mcdermott.org'
+    freeEmailDomain         // 'yahoo.com'
+    userName                // 'wade55'
+    domainName              // 'wolffdeckow.net'
+    domainWord              // 'feeney'
+    tld                     // 'biz'
+    url                     // 'http://www.strackeframi.com/'
+    ipv4                    // '109.133.32.252'
+    ipv6                    // '8e65:933d:22ee:a232:f1c1:2741:1f10:117c'
 
 ### `Faker\Provider\DateTime`
 
-    unixTime                // 58781813  
-    dateTime                // DateTime('2008-04-25 08:37:17')  
-    dateTimeAD              // DateTime('1800-04-29 20:38:49')  
-    iso8601                 // '1978-12-09T10:10:29+0000'  
-    date($format = 'Y-m-d') // '1979-06-09'  
-    time($format = 'H:i:s') // '20:49:42'  
-    dateTimeBetween($startDate = '-30 years', $endDate = 'now') // DateTime('2003-03-15 02:00:49')  
-    dateTimeThisCentury     // DateTime('1915-05-30 19:28:21')  
-    dateTimeThisDecade      // DateTime('2007-05-29 22:30:48')  
-    dateTimeThisYear        // DateTime('2011-02-27 20:52:14')  
-    dateTimeThisMonth       // DateTime('2011-10-23 13:46:23')  
-    amPm                    // 'pm'  
-    dayOfMonth              // '04'  
-    dayOfWeek               // 'Friday'  
-    month                   // '06'  
-    monthName               // 'January'  
-    year                    // '1993'  
-    century                 // 'VI'  
-    timezone                // 'Europe/Paris'  
+    unixTime                // 58781813
+    dateTime                // DateTime('2008-04-25 08:37:17')
+    dateTimeAD              // DateTime('1800-04-29 20:38:49')
+    iso8601                 // '1978-12-09T10:10:29+0000'
+    date($format = 'Y-m-d') // '1979-06-09'
+    time($format = 'H:i:s') // '20:49:42'
+    dateTimeBetween($startDate = '-30 years', $endDate = 'now') // DateTime('2003-03-15 02:00:49')
+    dateTimeThisCentury     // DateTime('1915-05-30 19:28:21')
+    dateTimeThisDecade      // DateTime('2007-05-29 22:30:48')
+    dateTimeThisYear        // DateTime('2011-02-27 20:52:14')
+    dateTimeThisMonth       // DateTime('2011-10-23 13:46:23')
+    amPm                    // 'pm'
+    dayOfMonth              // '04'
+    dayOfWeek               // 'Friday'
+    month                   // '06'
+    monthName               // 'January'
+    year                    // '1993'
+    century                 // 'VI'
+    timezone                // 'Europe/Paris'
 
 ### `Faker\Provider\Miscellaneous`
 
-    boolean($chanceOfGettingTrue = 50) // true  
-    md5                     // 'de99a620c50f2990e87144735cd357e7'  
-    sha1                    // 'f08e7f04ca1a413807ebc47551a40a20a0b4de5c'  
-    sha256                  // '0061e4c60dac5c1d82db0135a42e00c89ae3a333e7c26485321f24348c7e98a5'  
+    boolean($chanceOfGettingTrue = 50) // true
+    md5                     // 'de99a620c50f2990e87144735cd357e7'
+    sha1                    // 'f08e7f04ca1a413807ebc47551a40a20a0b4de5c'
+    sha256                  // '0061e4c60dac5c1d82db0135a42e00c89ae3a333e7c26485321f24348c7e98a5'
     locale                  // en_UK
     countryCode             // UK
     languageCode            // en
 
 ### `Faker\Provider\Base`
 
-    randomDigit             // 7  
-    randomNumber($nbDigits = NULL) // 79907610  
-    randomLetter            // 'b'  
-    randomElement($array = array ('a','b','c')) // 'b'  
-    numerify($string = '###') // '609'  
-    lexify($string = '????') // 'wgts'  
-    bothify($string = '## ??') // '42 jz' 
+    randomDigit             // 7
+    randomNumber($nbDigits = NULL) // 79907610
+    randomLetter            // 'b'
+    randomElement($array = array ('a','b','c')) // 'b'
+    numerify($string = '###') // '609'
+    lexify($string = '????') // 'wgts'
+    bothify($string = '## ??') // '42 jz'
 
 ### `Faker\Provider\UserAgent`
 
-    userAgent              // 'Mozilla/5.0 (Windows CE) AppleWebKit/5350 (KHTML, like Gecko) Chrome/13.0.888.0 Safari/5350'  
-    chrome                 // 'Mozilla/5.0 (Macintosh; PPC Mac OS X 10_6_5) AppleWebKit/5312 (KHTML, like Gecko) Chrome/14.0.894.0 Safari/5312'  
-    firefox                // 'Mozilla/5.0 (X11; Linuxi686; rv:7.0) Gecko/20101231 Firefox/3.6'  
-    safari                 // 'Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10_7_1 rv:3.0; en-US) AppleWebKit/534.11.3 (KHTML, like Gecko) Version/4.0 Safari/534.11.3'  
-    opera                  // 'Opera/8.25 (Windows NT 5.1; en-US) Presto/2.9.188 Version/10.00'  
-    internetExplorer       // 'Mozilla/5.0 (compatible; MSIE 7.0; Windows 98; Win 9x 4.90; Trident/3.0)'  
+    userAgent              // 'Mozilla/5.0 (Windows CE) AppleWebKit/5350 (KHTML, like Gecko) Chrome/13.0.888.0 Safari/5350'
+    chrome                 // 'Mozilla/5.0 (Macintosh; PPC Mac OS X 10_6_5) AppleWebKit/5312 (KHTML, like Gecko) Chrome/14.0.894.0 Safari/5312'
+    firefox                // 'Mozilla/5.0 (X11; Linuxi686; rv:7.0) Gecko/20101231 Firefox/3.6'
+    safari                 // 'Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10_7_1 rv:3.0; en-US) AppleWebKit/534.11.3 (KHTML, like Gecko) Version/4.0 Safari/534.11.3'
+    opera                  // 'Opera/8.25 (Windows NT 5.1; en-US) Presto/2.9.188 Version/10.00'
+    internetExplorer       // 'Mozilla/5.0 (compatible; MSIE 7.0; Windows 98; Win 9x 4.90; Trident/3.0)'
 
 ## Localization
 
@@ -180,7 +180,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 ```php
 <?php
 $faker = Faker\Factory::create('fr_FR'); // create a French faker
-for ($i=0; $i < 10; $i++) { 
+for ($i=0; $i < 10; $i++) {
   echo $faker->name, "\n";
 }
   // Luce du Coulon
@@ -302,7 +302,7 @@ class Book extends \Faker\Provider\Base
     $sentence = $this->generator->sentence($nbWords);
     return substr($sentence, 0, strlen($sentence) - 1);
   }
-  
+
   public function ISBN()
   {
     return $this->generator->randomNumber(13);
@@ -364,7 +364,7 @@ $faker = Faker\Factory::create();
 <?php if ($faker->boolean(15)): ?>
     <details>
 <![CDATA[
-<?php echo $faker->text(400) ?> 
+<?php echo $faker->text(400) ?>
 ]]>
     </details>
 <?php endif; ?>
@@ -392,7 +392,7 @@ Running this script produces a document looking like:
     <details>
 <![CDATA[
 Alias accusantium voluptatum autem nobis cumque neque modi. Voluptatem error molestiae consequatur alias.
-Illum commodi molestiae aut repellat id. Et sit consequuntur aut et ullam asperiores. Cupiditate culpa voluptatem et mollitia dolor. Nisi praesentium qui ut. 
+Illum commodi molestiae aut repellat id. Et sit consequuntur aut et ullam asperiores. Cupiditate culpa voluptatem et mollitia dolor. Nisi praesentium qui ut.
 ]]>
     </details>
   </contact>
@@ -433,7 +433,7 @@ Illum commodi molestiae aut repellat id. Et sit consequuntur aut et ullam asperi
 <![CDATA[
 Ut itaque et quaerat doloremque eum praesentium. Rerum in saepe dolorem. Explicabo qui consequuntur commodi minima rem.
 Harum temporibus rerum dolores. Non molestiae id dolorem placeat.
-Aut asperiores nihil eius repellendus. Vero nihil corporis voluptatem explicabo commodi. Occaecati omnis blanditiis beatae quod aspernatur eos. 
+Aut asperiores nihil eius repellendus. Vero nihil corporis voluptatem explicabo commodi. Occaecati omnis blanditiis beatae quod aspernatur eos.
 ]]>
     </details>
   </contact>
@@ -478,7 +478,7 @@ Aut asperiores nihil eius repellendus. Vero nihil corporis voluptatem explicabo 
 <![CDATA[
 Dolorem consequatur voluptates unde optio unde. Accusantium dolorem est est architecto impedit. Corrupti et provident quo.
 Reprehenderit dolores aut quidem suscipit repudiandae corporis error. Molestiae enim aperiam illo.
-Et similique qui non expedita quia dolorum. Ex rem incidunt ea accusantium temporibus minus non. 
+Et similique qui non expedita quia dolorum. Ex rem incidunt ea accusantium temporibus minus non.
 ]]>
     </details>
   </contact>
@@ -520,7 +520,7 @@ Et similique qui non expedita quia dolorum. Ex rem incidunt ea accusantium tempo
     <details>
 <![CDATA[
 Quia dolor ut quia error libero. Enim facilis iusto earum et minus rerum assumenda. Quia doloribus et reprehenderit ut. Occaecati voluptatum dolor voluptatem vitae qui velit quia.
-Fugiat non in itaque sunt nobis totam. Sed nesciunt est deleniti cumque alias. Repudiandae quo aut numquam modi dicta libero. 
+Fugiat non in itaque sunt nobis totam. Sed nesciunt est deleniti cumque alias. Repudiandae quo aut numquam modi dicta libero.
 ]]>
     </details>
   </contact>

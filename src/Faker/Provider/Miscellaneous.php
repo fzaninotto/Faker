@@ -41,7 +41,7 @@ class Miscellaneous extends \Faker\Provider\Base
 	{
 		return hash('sha256', mt_rand());
 	}
-	
+
 	/**
 	 * @example 'fr_FR'
 	 */

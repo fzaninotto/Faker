@@ -55,7 +55,7 @@ class Internet extends \Faker\Provider\Base
 	{
 		return $this->userName() . '@' . $this->domainName();
 	}
-	
+
 	/**
 	 * @example 'gmail.com'
 	 */
@@ -66,13 +66,13 @@ class Internet extends \Faker\Provider\Base
 
 	/**
 	 * @example 'jdoe'
-	 */	
+	 */
 	public function userName()
 	{
 		$format = static::randomElement(static::$userNameFormats);
 		return strtolower(static::bothify($this->generator->parse($format)));
 	}
-	
+
 	/**
 	 * @example 'tiramisu.com'
 	 */
@@ -93,7 +93,7 @@ class Internet extends \Faker\Provider\Base
 
 		return strtolower($company);
 	}
-	
+
 	/**
 	 * @example 'com'
 	 */
@@ -101,7 +101,7 @@ class Internet extends \Faker\Provider\Base
 	{
 		return static::randomElement(static::$tld);
 	}
-	
+
 	/**
 	 * @example 'http://www.runolfsdottir.com/'
 	 */
@@ -110,7 +110,7 @@ class Internet extends \Faker\Provider\Base
 		$format = static::randomElement(static::$urlFormats);
 		return $this->generator->parse($format);
 	}
-	
+
 	/**
 	 * @example '237.149.115.38'
 	 */
@@ -118,14 +118,14 @@ class Internet extends \Faker\Provider\Base
 	{
 		return long2ip(mt_rand(-2147483648, 2147483647));
 	}
-	
+
 	/**
 	 * @example '35cd:186d:3e23:2986:ef9f:5b41:42a4:e6f1'
 	 */
 	public function ipv6()
 	{
 		$res = array();
-		for ($i=0; $i < 8; $i++) { 
+		for ($i=0; $i < 8; $i++) {
 			$res []= dechex(mt_rand(0, "65535"));
 		}
 		return join(':', $res);

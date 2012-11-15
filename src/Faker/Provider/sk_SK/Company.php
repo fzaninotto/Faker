@@ -21,7 +21,7 @@ class Company extends \Faker\Provider\Company
 			'schopnosť', 'prístup', 'algoritmus', 'aliancie', 'analyzátor', 'aplikácie', 'prístup', 'architektúra', 'archív', 'pole', 'postoj', 'referenčné', 'schopnosť', 'kapacita', 'výzva', 'okruh', 'spolupráca', 'zložitosť', 'koncept', 'konglomerát', 'pohotovostný', 'jadro', 'databáza', 'sklad dát', 'definície', 'emulácia', 'kódovanie', 'šifrovanie', 'extranet', 'firmware', 'flexibilita', 'počasia', 'rám', 'rámec', 'funkcie', 'funkcie', 'hardware', 'help-desk', 'hierarchie', 'húb', 'vykonávanie', 'infraštruktúra', 'iniciatíva', 'inštalácia', 'rozhranie', 'encyklopédia', 'pákový efekt', 'metodika', 'migrácia', 'model', 'moderátor', 'kontrola', 'moratórium', 'neurónové-siete', 'paradigma', 'paralelné', 'politika', 'portál', 'produkt', 'produktivita', 'projekt', 'projekcie', 'protokol', 'služba', 'softvér', 'riešenie', 'normalizácie', 'stratégia', 'štruktúra', 'úspech', 'nadstavba', 'pomoc', 'synergia', 'priepustnosť', 'časovom horizonte', 'sadu nástrojov', 'využitie', 'web', 'pracovná sila'
 		)
 	);
-	
+
 	protected static $bsWords = array(
 		array(
 			'implement','utilize','integrate','streamline','optimize','evolve','transform','embrace','enable','orchestrate','leverage','reinvent','aggregate','architect','enhance','incentivize','morph','empower','envisioneer','monetize','harness','facilitate','seize','disintermediate','synergize','strategize','deploy','brand','grow','target','syndicate','synthesize','deliver','mesh','incubate','engage','maximize','benchmark','expedite','reintermediate','whiteboard','visualize','repurpose','innovate','scale','unleash','drive','extend','engineer','revolutionize','generate','exploit','transition','e-enable','iterate','cultivate','matrix','productize','redefine','recontextualize'
@@ -45,7 +45,7 @@ class Company extends \Faker\Provider\Company
 		foreach (static::$catchPhraseWords as &$word) {
 			$result[] = static::randomElement($word);
 		}
-		
+
 		return join($result, ' ');
 	}
 
@@ -58,7 +58,7 @@ class Company extends \Faker\Provider\Company
 		foreach (static::$bsWords as &$word) {
 			$result[] = static::randomElement($word);
 		}
-		
+
 		return join($result, ' ');
 	}
 }

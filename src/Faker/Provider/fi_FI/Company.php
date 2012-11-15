@@ -21,7 +21,7 @@ class Company extends \Faker\Provider\Company
 			'algoritmi','yhteisö','analysaattori','sovellus','lähestymistapa','arkkitehtuuri','arkisto','ryhmä','sovitin','benchmark','kapasiteetti','tietokanta','piiri','emulaatio','konsepti','firmware','rakenne','funktio','rauta','help-desk','hierarkia','hubi','implementaatio','intranet','malli','ohjelmisto','ratkaisu','strategia','menestys','projekti','tuote','tuki','www-sivusto','synergia','protokolla','koodaus','ennuste','joustavuus','extranet','salaus','kompleksisuus','ydin','asenne','liitto','internetratkaisu','asennus','monitorointi','infrastruktuuri'
 		)
 	);
-	
+
 	protected static $bsWords = array(
 		array(
 			'implementoi','käyttää','integroi','optimoi','kehittää','muuntaa','omaksuu','mahdollistaa','orkestoi','uudelleenkeksii','kerää','kokoaa','kasvattaa','parantaa','helpottaa','toimittaa','antaa','täyttää','vapauttaa','ajaa','jatkaa','mullistaa','iteroi','generoi','hyödyntää','brandaa','muokkaa','kasvattaa','kytkee','innovoi','viljelee','visualisoi'
@@ -45,7 +45,7 @@ class Company extends \Faker\Provider\Company
 		foreach (static::$catchPhraseWords as &$word) {
 			$result[] = static::randomElement($word);
 		}
-		
+
 		return join($result, ' ');
 	}
 
@@ -58,7 +58,7 @@ class Company extends \Faker\Provider\Company
 		foreach (static::$bsWords as &$word) {
 			$result[] = static::randomElement($word);
 		}
-		
+
 		return join($result, ' ');
 	}
 }

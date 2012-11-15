@@ -29,7 +29,7 @@ $faker->seed(5);
 <?php if ($faker->boolean(15)): ?>
     <details>
 <![CDATA[
-<?php echo $faker->text(400) ?> 
+<?php echo $faker->text(400) ?>
 ]]>
     </details>
 <?php endif; ?>

@@ -5,7 +5,7 @@ namespace Faker\Provider\de_AT;
 class Address extends \Faker\Provider\Address
 {
 	protected static $buildingNumber = array('###', '##', '#');
-	
+
 	protected static $streetSuffixLong = array(
 		'Gasse', 'Platz', 'Ring', 'Straße', 'Weg',
 	);
@@ -39,7 +39,7 @@ class Address extends \Faker\Provider\Address
 		'Ybbs an der Donau',
 		'Zell am See','Zeltweg','Zistersdorf','Zwettl',
 	);
-	
+
 	protected static $country = array(
 		'Afghanistan','Alandinseln','Albanien','Algerien','Amerikanisch-Ozeanien','Amerikanisch-Samoa','Amerikanische Jungferninseln','Andorra','Angola','Anguilla','Antarktis','Antigua und Barbuda','Argentinien','Armenien','Aruba','Aserbaidschan','Australien','Ägypten','Äquatorialguinea','Äthiopien','Äußeres Ozeanien',
 		'Bahamas','Bahrain','Bangladesch','Barbados','Belarus','Belgien','Belize','Benin','Bermuda','Bhutan','Bolivien','Bosnien und Herzegowina','Botsuana','Bouvetinsel','Brasilien','Britische Jungferninseln','Britisches Territorium im Indischen Ozean','Brunei Darussalam','Bulgarien','Burkina Faso','Burundi',
@@ -65,16 +65,16 @@ class Address extends \Faker\Provider\Address
 		'Wallis und Futuna','Weihnachtsinsel','Westsahara',
 		'Zentralafrikanische Republik','Zypern',
 	);
-	
+
 	protected static $cityFormats = array(
 		'{{cityName}}',
 	);
-	
+
 	protected static $streetNameFormats = array(
 		'{{lastName}}{{streetSuffixShort}}',
 		'{{firstName}}-{{lastName}}-{{streetSuffixLong}}'
 	);
-	
+
 	protected static $streetAddressFormats = array(
 		'{{streetName}} {{buildingNumber}}',
 	);

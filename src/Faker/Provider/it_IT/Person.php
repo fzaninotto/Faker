@@ -16,7 +16,7 @@ class Person extends \Faker\Provider\Person
 		'{{firstName}} {{lastName}}',
 		'{{prefix}} {{firstName}} {{lastName}}'
 	);
-	
+
 	protected static $firstName = array(
 		'Aaron', 'Akira', 'Alberto', 'Alessandro', 'Alighieri', 'Amedeo', 'Amos', 'Anselmo', 'Antonino', 'Arcibaldo', 'Armando', 'Artes',
 		'Audenico', 'Ausonio', 'Bacchisio', 'Battista', 'Bernardo', 'Boris', 'Caio', 'Carlo', 'Cecco', 'Cirino', 'Cleros', 'Costantino',
@@ -49,7 +49,7 @@ class Person extends \Faker\Provider\Person
 		'Sarita', 'Selvaggia', 'Shaira', 'Sibilla', 'Soriana', 'Sue ellen', 'Thea', 'Tosca', 'Ursula', 'Vania', 'Vera',
 		'Vienna', 'Violante', 'Vitalba', 'Zelida'
 	);
-	
+
 	protected static $lastName = array(
 		'Rossi', 'Russo', 'Ferrari', 'Esposito', 'Bianchi', 'Romano', 'Colombo', 'Ricci', 'Marino', 'Greco', 'Bruno', 'Gallo', 'Conti',
 		'De luca', 'Mancini', 'Costa', 'Giordano', 'Rizzo', 'Lombardi', 'Moretti', 'Barbieri', 'Fontana', 'Santoro', 'Mariani',
@@ -61,9 +61,9 @@ class Person extends \Faker\Provider\Person
 		'De rosa', 'Ferretti', 'Bellini', 'Basile', 'Riva', 'Donati', 'Piras', 'Vitali', 'Battaglia', 'Sartori', 'Neri', 'Costantini',
 		'Milani', 'Pagano', 'Ruggiero', 'Sorrentino', 'D\'amico', 'Orlando', 'Damico', 'Negri'
 	);
-	
+
 	private static $prefix = array('Sig.', 'Dott.');
-	
+
 	private static $suffix = array();
 
 	/**

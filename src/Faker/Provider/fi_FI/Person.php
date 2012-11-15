@@ -12,7 +12,7 @@ class Person extends \Faker\Provider\Person
 		'{{firstName}} {{lastName}}',
 		'{{prefix}} {{firstName}} {{lastName}}'
 	);
-	
+
 	protected static $firstName = array(
 		'Aada','Aamu','Ada','Aina','Aino','Aliina','Aliisa','Amanda','Amalia','Amelia','Amira','Anissa','Anna','Anne','Anni','Anniina','Annilotta','Annu','Aune','Asta','Aura','Aurora','Aake','Aapeli','Aapo','Aappo','Aarni','Aaro','Aatto','Aatu','Aki','Akseli','Aku','Aleksi','Anssi','Antti','Antton','Ari','Arttu','Artturi','Atte','Anita','Anu','Antero','Atte',
 		'Beeda','Briitta','Bella',
@@ -36,7 +36,7 @@ class Person extends \Faker\Provider\Person
 		'Veera','Venla','Viivi','Vilja','Vilma','Valtteri','Veeti','Veikko','Veli','Vilho','Vili','Viljo','Ville',
 		'Wiljami','Werneri','Wilma'
 	);
-	
+
 	protected static $lastName = array(
 		'Aakula','Aalto','Aaltonen','Aarnio','Aaronen','Aavikkola','Ahmala','Aho','Ahokas','Ahola','Ahomaa','Ahonen','Ahoniemi','Ahopelto','Ahovaara','Ahtila','Ahtiluoto','Ahtio','Ahtisaari','Ahto','Ahtola','Ahtonen','Ahtorinne','Aija','Aijala','Ainola','Aitio','Aitolahti','Aitomaa','Aittasalmi','Akkala','Akkanen','Alahuhta','Alajoki','Alajärvi','Alanen','Alatalo','Alasalmi','Alapuro','Alhola','Alijoki','Ankkala','Ankkuri','Annala','Annunen','Anttila','Anttinen','Anttonen','Ara','Arhila','Arhinmäki','Arhosuo,','Arinen','Arjamaa','Arjanen','Arkkila','Armio','Arnio','Aronen','Arosuo','Arponen','Arvola','Asikainen','Astala','Attila','Aunela','Aura','Auramies','Auranen','Autio','Auvinen','Auvola','Avonius','Avotie',
 		'Bräysy',
@@ -62,7 +62,7 @@ class Person extends \Faker\Provider\Person
 		'Äijälä','Ämmälä','Änäkkälä','Äyräs','Äärynen',
 		'Översti','Öysti','Öörni'
 	);
-	
+
 	private static $prefix = array('Hra.','Rva.','Nti.','Tri.');
 
 	/**
