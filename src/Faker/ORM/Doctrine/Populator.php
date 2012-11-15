@@ -62,8 +62,8 @@ class Populator
 			for ($i=0; $i < $number; $i++) {
 				$insertedEntities[$class][]= $this->entities[$class]->execute($entityManager, $insertedEntities);
 			}
+			$entityManager->flush();
 		}
-		$entityManager->flush();
 
 		return $insertedEntities;
 	}
