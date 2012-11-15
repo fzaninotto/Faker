@@ -165,4 +165,19 @@ class Person extends \Faker\Provider\Person
     {
         return static::randomElement(static::$middleName);
     }
+
+    /**
+     * Randomly return a danish CPR number (Personnal identification number) format.
+     *
+     * @link http://cpr.dk/cpr/site.aspx?p=16
+     * @link http://en.wikipedia.org/wiki/Personal_identification_number_%28Denmark%29
+     *
+     * @return string
+     */
+    public static function cpr()
+    {
+        $birthdate = new \DateTime('@' . mt_rand(0, time()));
+
+        return sprintf('%s-%s', $birthdate->format('dmy'), static::numerify('%###'));
+    }
 }
