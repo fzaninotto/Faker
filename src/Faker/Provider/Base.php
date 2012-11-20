@@ -59,7 +59,7 @@ class Base
 	 * Returns a random number between $from and $to
 	 *
 	 * @param integer $from
-	 * @param integer $too
+	 * @param integer $to
 	 * @example 79907610
 	 *
 	 * @return integer
