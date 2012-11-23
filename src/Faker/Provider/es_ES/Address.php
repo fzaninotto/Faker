@@ -11,7 +11,7 @@ class Address extends \Faker\Provider\Address
 		'Calle', 'Avenida', 'Plaza', 'Paseo', 'Ronda', 'Travesia', 'Camino', 'Carrer', 'Avinguda', 'Plaça', 'Passeig', 'Travessera', 'Rúa', 'Praza', 'Ruela', 'Camiño' 
 	);
 	protected static $postcode = array('#####');
-	protected static $comunity = array(
+	protected static $community = array(
 		'Andalucía', 'Aragón', 'Principado de Asturias', 'Illes Balears', 'Canarias', 'Cantabria', 'Castilla y León', 'Castilla - La Mancha', 'Cataluña', 'Comunitat Valenciana', 'Extremadura', 'Galicia', 'Comunidad de Madrid', 'Región de Murcia', 'Comunidad Foral de Navarra', 'País Vasco', 'La Rioja', 'Ceuta', 'Melilla'
 	);
 	protected static $state = array(
@@ -94,8 +94,8 @@ class Address extends \Faker\Provider\Address
 	/**
 	 * @example 'Comunidad de Madrid'
 	 */
-	public static function comunity()
+	public static function community()
 	{	   
-	    return static::randomElement(static::$comunity);
+	    return static::randomElement(static::$community);
 	}
 }
