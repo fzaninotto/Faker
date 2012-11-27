@@ -14,7 +14,7 @@ class Person extends \Faker\Provider\Person
 		'{{firstName}} {{lastName}} {{suffix}}',
 		'{{prefix}} {{firstName}} {{lastName}} {{suffix}}'
 	);
-	
+
 	protected static $firstName = array(
 		'Aarón','Abigail','Abril','Adriana','Adrián','Agustina','Agustín','Aitana','Alan','Alejandra','Alejandro','Alessandra','Alex','Alexa','Alexander','Allison','Alma','Alonso','Amanda','Amelia','Ana Paula','Ana Sofía','Ana','Andrea','Andrés','Anthony','Antonella','Antonia','Antonio','Ariadna','Ariana','Ashley','Axel',
 		'Bautista','Benjamín','Bianca','Bruno',
@@ -39,7 +39,7 @@ class Person extends \Faker\Provider\Person
 		'Ximena/Jimena',
 		'Zoe',
 	);
-	
+
 	protected static $lastName = array(
 		'Abeyta','Abrego','Abreu','Acevedo','Acosta','Acuña','Adame','Adorno','Agosto','Aguayo','Águilar','Aguilera','Aguirre','Alanis','Alaniz','Alarcón','Alba','Alcala','Alcántar','Alcaraz','Alejandro','Alemán','Alfaro','Alicea','Almanza','Almaraz','Almonte','Alonso','Alonzo','Altamirano','Alva','Alvarado','Álvarez','Amador','Amaya','Anaya','Anguiano','Angulo','Aparicio','Apodaca','Aponte','Aragón','Araña','Aranda','Arce','Archuleta','Arellano','Arenas','Arevalo','Arguello','Arias','Armas','Armendáriz','Armenta','Armijo','Arredondo','Arreola','Arriaga','Arroyo','Arteaga','Atencio','Ávalos','Ávila','Avilés','Ayala',
 		'Baca','Badillo','Báez','Baeza','Bahena','Balderas','Ballesteros','Banda','Bañuelos','Barajas','Barela','Barragán','Barraza','Barrera','Barreto','Barrientos','Barrios','Batista','Becerra','Beltrán','Benavides','Benavídez','Benítez','Bermúdez','Bernal','Berríos','Bétancourt','Blanco','Bonilla','Borrego','Botello','Bravo','Briones','Briseño','Brito','Bueno','Burgos','Bustamante','Bustos',
@@ -65,9 +65,9 @@ class Person extends \Faker\Provider\Person
 		'Yáñez','Ybarra',
 		'Zambrano','Zamora','Zamudio','Zapata','Zaragoza','Zarate','Zavala','Zayas','Zelaya','Zepeda','Zúñiga'
 	);
-	
+
 	private static $prefix = array('Sr.','Sra.','Srita.','Dn.','Dr.','Lic.','Ing.');
-	
+
 	private static $suffix = array('Hijo','Segundo','Tercero');
 
 	/**

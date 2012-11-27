@@ -22,7 +22,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
 		$this->assertTrue(BaseProvider::randomDigitNotNull() > 0);
 		$this->assertTrue(BaseProvider::randomDigitNotNull() < 10);
 	}
-	
+
 	public function testRandomNumberReturnsInteger()
 	{
 		$this->assertTrue(is_integer(BaseProvider::randomNumber()));
@@ -32,6 +32,24 @@ class BaseTest extends \PHPUnit_Framework_TestCase
 	{
 		$this->assertTrue(BaseProvider::randomNumber(3) >= 0);
 		$this->assertTrue(BaseProvider::randomNumber(3) < 1000);
+	}
+
+	public function testRandomNumberAcceptsMinMax()
+	{
+		$min = 5;
+		$max = 6;
+
+		$this->assertGreaterThanOrEqual($min, BaseProvider::randomNumber($min, $max));
+		$this->assertGreaterThanOrEqual(BaseProvider::randomNumber($min, $max), $max);
+	}
+
+	public function testNumberBetween()
+	{
+		$min = 5;
+		$max = 6;
+
+		$this->assertGreaterThanOrEqual($min, BaseProvider::numberBetween($min, $max));
+		$this->assertGreaterThanOrEqual(BaseProvider::numberBetween($min, $max), $max);
 	}
 
 	public function testRandomLetterReturnsString()
@@ -49,7 +67,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
 		$lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz';
 		$this->assertTrue(strpos($lowercaseLetters, BaseProvider::randomLetter()) !== false);
 	}
-	
+
 	public function testRandomElementReturnsElementFromArray()
 	{
 		$elements = array('23', 'e', 32, '#');
@@ -85,10 +103,9 @@ class BaseTest extends \PHPUnit_Framework_TestCase
 	{
 		$this->assertRegExp('/foo[a-z]Ba[a-z]r/', BaseProvider::lexify('foo?Ba?r'));
 	}
-	
+
 	public function testBothifyCombinesNumerifyAndLexify()
 	{
 		$this->assertRegExp('/foo[a-z]Ba\dr/', BaseProvider::bothify('foo?Ba#r'));
 	}
-	
 }

@@ -77,6 +77,7 @@ class EntityPopulator
 			if ($this->class->isAssociationInverseSide($assocName)) {
 				continue;
 			}
+
 			$relatedClass = $this->class->getAssociationTargetClass($assocName);
 			$isCollection = $this->class->isCollectionValuedAssociation($assocName);
 			$formatters[$assocName] = function($inserted) use($relatedClass, $isCollection) {
@@ -97,14 +98,15 @@ class EntityPopulator
 	 */
 	public function execute($manager, $insertedEntities)
 	{
-		$class = $this->class->getName();
-		$obj = new $class;
+		$obj = $this->class->newInstance();
+
 		foreach ($this->columnFormatters as $field => $format) {
 			if (null !== $format) {
 				$value = is_callable($format) ? $format($insertedEntities, $obj) : $format;
 				$this->class->reflFields[$field]->setValue($obj, $value);
 			}
 		}
+
 		$manager->persist($obj);
 
 		return $obj;

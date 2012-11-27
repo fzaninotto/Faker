@@ -6,8 +6,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "François Zaninotto",
-            "email": ""
+            "name": "François Zaninotto"
         }
     ],
     "require": {
@@ -18,5 +17,10 @@
     },
     "autoload": {
         "psr-0": { "Faker": "src/" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.1.x-dev"
+        }
     }
 }

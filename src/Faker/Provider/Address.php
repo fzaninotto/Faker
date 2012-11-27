@@ -22,7 +22,7 @@ class Address extends \Faker\Provider\Base
 	protected static $buildingNumber = array('##');
 	protected static $postcode = array('#####');
 	protected static $country = array();
-	
+
 	/**
 	 * @example 'town'
 	 */
@@ -73,13 +73,13 @@ class Address extends \Faker\Provider\Base
 		$format = static::randomElement(static::$streetAddressFormats);
 		return $this->generator->parse($format);
 	}
-	
+
 	/**
 	 * @example 86039-9874
 	 */
 	public static function postcode()
 	{
-		return strtoupper(static::bothify(static::randomElement(static::$postcode)));
+		return static::toUpper(static::bothify(static::randomElement(static::$postcode)));
 	}
 
 	/**
@@ -98,7 +98,7 @@ class Address extends \Faker\Provider\Base
 	{
 		return static::randomElement(static::$country);
 	}
-	
+
 	/**
 	 * @example '77.147489'
 	 */

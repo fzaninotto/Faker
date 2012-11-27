@@ -13,7 +13,7 @@ class Person extends \Faker\Provider\Person
 	 * {@link} http://ru.wikipedia.org/wiki/%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%BE%D0%B5_%D0%BB%D0%B8%D1%87%D0%BD%D0%BE%D0%B5_%D0%B8%D0%BC%D1%8F
 	 **/
 	protected static $firstName = array(
-		'Александр', 'Алексей', 'Дмитрий', 'Сергей,Андрей', 'Антон', 'Артём',
+		'Александр', 'Алексей', 'Дмитрий', 'Сергей', 'Андрей', 'Антон', 'Артём',
 		'Артемий', 'Виталий', 'Владимир', 'Денис', 'Евгений', 'Иван', 'Игорь',
 		'Константин', 'Максим', 'Михаил', 'Николай', 'Павел', 'Роман', 'Станислав',
 		'Август', 'Адам', 'Адриан', 'Аким', 'Ананий', 'Анатолий', 'Антонин',
@@ -33,7 +33,7 @@ class Person extends \Faker\Provider\Person
 
 	protected static $middleName = array(
 		'Александрович', 'Алексеевич', 'Андреевич', 'Дмитриевич', 'Евгеньевич',
-		'Сергеевич', 'Иванович', 
+		'Сергеевич', 'Иванович', 'Фёдорович', 'Львович',
 	);
 
 	/**
@@ -80,8 +80,8 @@ class Person extends \Faker\Provider\Person
 	);
 
 	/**
-	 * Return middle name 
-	 * 
+	 * Return middle name
+	 *
 	 * @example 'Иванович'
 	 *
 	 * @access public
@@ -92,5 +92,4 @@ class Person extends \Faker\Provider\Person
 	{
 		return static::randomElement(static::$middleName);
 	}
-
 }

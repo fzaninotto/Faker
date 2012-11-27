@@ -13,7 +13,7 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
 		$generator->addProvider(new BarProvider());
 		$this->assertEquals('barfoo', $generator->format('fooFormatter'));
 	}
-	
+
 	public function testGetFormatterReturnsCallable()
 	{
 		$generator = new Generator;
@@ -51,7 +51,7 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
 		$generator->addProvider($provider);
 		$generator->getFormatter('barFormatter');
 	}
-	
+
 	public function testFormatCallsFormatterOnProvider()
 	{
 		$generator = new Generator;
@@ -67,7 +67,7 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
 		$generator->addProvider($provider);
 		$this->assertEquals('bazfoo', $generator->format('fooFormatterWithArguments', array('foo')));
 	}
-	
+
 	public function testParseReturnsSameStringWhenItContainsNoCurlyBraces()
 	{
 		$generator = new Generator();
@@ -114,7 +114,7 @@ class FooProvider
 	{
 		return 'foobar';
 	}
-	
+
 	public function fooFormatterWithArguments($value = '')
 	{
 		return 'baz' . $value;

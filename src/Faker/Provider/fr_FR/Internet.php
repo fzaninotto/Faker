@@ -23,11 +23,11 @@ class Internet extends \Faker\Provider\Internet
 
 	/**
 	 * @example 'jdoe'
-	 */	
+	 */
 	public function userName()
 	{
 		$format = static::randomElement(static::$userNameFormats);
-		return strtolower(static::toAscii(static::bothify($this->generator->parse($format))));
+		return static::toLower(static::toAscii(static::bothify($this->generator->parse($format))));
 	}
 
 	/**
@@ -40,8 +40,6 @@ class Internet extends \Faker\Provider\Internet
 		$company = $companyElements[0];
 		$company = preg_replace('/\W/', '', $company);
 
-		return strtolower(static::toAscii($company));
+		return static::toLower(static::toAscii($company));
 	}
-
-
 }

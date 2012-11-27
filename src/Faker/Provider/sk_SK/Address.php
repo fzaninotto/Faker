@@ -4,7 +4,7 @@ namespace Faker\Provider\sk_SK;
 
 class Address extends \Faker\Provider\Address
 {
-	
+
 	protected static $cityName = array(
 		'Ábelová', 'Abovce', 'Abrahám', 'Abrahámovce', 'Abrahámovce', 'Abramová', 'Abranovce', 'Adamovské Kochanovce', 'Adidovce', 'Alekšince',
 		'Andovce', 'Andrejová', 'Ardanovce', 'Ardovo', 'Arnutovce', 'Báb', 'Babie', 'Babín', 'Babiná', 'Babindol', 'Babinec', 'Bacúch', 'Bacúrov',
@@ -43,7 +43,7 @@ class Address extends \Faker\Provider\Address
 		'Dlhá nad Oravou', 'Dlhá nad Váhom', 'Dlhá Ves', 'Dlhé Klčovo', 'Dlhé nad Cirochou', 'Dlhé Pole', 'Dlhé Stráže', 'Dlhoňa', 'Dlžín',
 		'Dobrá', 'Dobrá Niva', 'Dobrá Voda', 'Dobroč', 'Dobrohošť', 'Dobroslava', 'Dobšiná', 'Dohňany', 'Dojč', 'Dolinka', 'Dolná Breznica',
 		'Dolná Krupá', 'Dolná Lehota', 'Dolná Mariková', 'Dolná Mičiná', 'Dolná Poruba', 'Dolná Seč', 'Dolná Streda', 'Dolná Strehová',
-		'Dolná Súča', 'Dolná Tižina', 'Dolná Trnávka', 'Dolná Ves', 'Dolná Ždaňa', 'Dolné Dubové', 'Dolné Kočkovce', 'Dolné Lefantovce', 
+		'Dolná Súča', 'Dolná Tižina', 'Dolná Trnávka', 'Dolná Ves', 'Dolná Ždaňa', 'Dolné Dubové', 'Dolné Kočkovce', 'Dolné Lefantovce',
 		'Dolné Lovčice', 'Dolné Mladonice', 'Dolné Naštice', 'Dolné Obdokovce', 'Dolné Orešany', 'Dolné Otrokovce', 'Dolné Plachtince',
 		'Dolné Saliby', 'Dolné Semerovce', 'Dolné Srnie', 'Dolné Strháre', 'Dolné Trhovište', 'Dolné Vestenice', 'Dolné Zahorany',
 		'Dolné Zelenice', 'Dolný Badín', 'Dolný Bar', 'Dolný Harmanec', 'Dolný Hričov', 'Dolný Chotár', 'Dolný Kalník', 'Dolný Kubín',
@@ -128,14 +128,14 @@ class Address extends \Faker\Provider\Address
 		'Lentvora', 'Leopoldov', 'Lesenice', 'Lesíček', 'Lesné', 'Lesnica', 'Leštiny', 'Lešť (vojenský obvod)', 'Letanovce', 'Letničie',
 		'Leváre', 'Levice', 'Levkuška', 'Levoča', 'Ležiachov', 'Libichava', 'Licince', 'Ličartovce', 'Liesek', 'Lieskovany', 'Lieskovec',
 		'Lieskovec', 'Liešno', 'Liešťany', 'Lietava', 'Lietavská Lúčka', 'Lietavská Svinná-Babkov', 'Likavka', 'Limbach', 'Lipany', 'Lipník',
-		'Lipníky', 'Lipová', 'Lipová', 'Lipovany', 'Lipovce', 'Lipové', 'Lipovec', 'Lipovec', 'Lipovník', 'Lipovník', 'Liptovská Anna', 
+		'Lipníky', 'Lipová', 'Lipová', 'Lipovany', 'Lipovce', 'Lipové', 'Lipovec', 'Lipovec', 'Lipovník', 'Lipovník', 'Liptovská Anna',
 		'Liptovská Kokava', 'Liptovská Lúžna', 'Liptovská Osada', 'Liptovská Porúbka', 'Liptovská Sielnica', 'Liptovská Štiavnica',
 		'Liptovská Teplá', 'Liptovská Teplička', 'Liptovské Beharovce', 'Liptovské Kľačany', 'Liptovské Matiašovce', 'Liptovské Revúce',
 		'Liptovské Sliače', 'Liptovský Hrádok', 'Liptovský Ján', 'Liptovský Michal', 'Liptovský Mikuláš', 'Liptovský Ondrej', 'Liptovský Peter',
 		'Liptovský Trnovec', 'Lisková', 'Lišov', 'Litava', 'Litmanová', 'Livina', 'Livinské Opatovce', 'Livov', 'Livovská Huta', 'Lodno',
 		'Lok', 'Lokca', 'Lom nad Rimavicou', 'Lomná', 'Lomné', 'Lomnička', 'Lontov', 'Lopašov', 'Lopúchov', 'Lopušné Pažite', 'Lošonec',
 		'Lovce', 'Lovča', 'Lovčica-Trubín', 'Lovinobaňa', 'Lozorno', 'Ložín', 'Lubeník', 'Lubina', 'Lúč na Ostrove', 'Lučatín', 'Lučenec',
-		'Lúčina', 'Lučivná', 'Lúčka', 'Lúčka', 'Lúčka', 'Lúčka', 'Lúčky', 'Lúčky', 'Lúčky', 'Lúčnica nad Žitavou', 'Ludanice', 'Ludrová', 
+		'Lúčina', 'Lučivná', 'Lúčka', 'Lúčka', 'Lúčka', 'Lúčka', 'Lúčky', 'Lúčky', 'Lúčky', 'Lúčnica nad Žitavou', 'Ludanice', 'Ludrová',
 		'Luhyňa', 'Lúka', 'Lukačovce', 'Lukáčovce', 'Lukavica', 'Lukavica', 'Lukov', 'Lukovištia', 'Lúky', 'Lula', 'Lupoč', 'Lutila', 'Lutiše',
 		'Lužany', 'Lužany pri Topli', 'Lužianky', 'Lysá pod Makytou', 'Lysica', 'Ľubá', 'Ľubela', 'Ľubica', 'Ľubietová', 'Ľubiša', 'Ľubochňa',
 		'Ľuboreč', 'Ľuboriečka', 'Ľubotice', 'Ľubotín', 'Ľubovec', 'Ľudovítová', 'Ľutina', 'Ľutov', 'Macov', 'Mad', 'Madunice', 'Magnezitovce',
@@ -157,7 +157,7 @@ class Address extends \Faker\Provider\Address
 		'Mokrá Lúka', 'Mokrance', 'Mokroluh', 'Mokrý Háj', 'Moldava nad Bodvou', 'Moravany', 'Moravany nad Váhom', 'Moravské Lieskové',
 		'Moravský Svätý Ján', 'Most pri Bratislave', 'Mostová', 'Moškovec', 'Mošovce', 'Moštenica', 'Mošurov', 'Motešice', 'Motyčky', 'Môlča',
 		'Mrázovce', 'Mučín', 'Mudroňovo', 'Mudrovce', 'Muľa', 'Muráň', 'Muránska Dlhá Lúka', 'Muránska Huta', 'Muránska Lehota',
-		'Muránska Zdychava', 'Mútne', 'Mužla', 'Myjava', 'Myslina', 'Mýtna', 'Mýtne Ludany', 'Mýto pod Ďumbierom', 'Nacina Ves', 'Nadlice', 
+		'Muránska Zdychava', 'Mútne', 'Mužla', 'Myjava', 'Myslina', 'Mýtna', 'Mýtne Ludany', 'Mýto pod Ďumbierom', 'Nacina Ves', 'Nadlice',
 		'Naháč', 'Nálepkovo', 'Námestovo', 'Nána', 'Nandraž', 'Necpaly', 'Nedanovce', 'Nedašovce', 'Neded', 'Nededza', 'Nedožery-Brezany',
 		'Nechválova Polianka', 'Nemce', 'Nemcovce', 'Nemcovce', 'Nemčice', 'Nemčiňany', 'Nemecká', 'Nemečky', 'Nemešany', 'Nemšová', 'Nenince',
 		'Neporadza', 'Neporadza', 'Nesvady', 'Nesluša', 'Neverice', 'Nevidzany', 'Nevidzany', 'Nevoľné', 'Nezbudská Lúčka', 'Nimnica', 'Nitra',
@@ -186,7 +186,7 @@ class Address extends \Faker\Provider\Address
 		'Piskorovce', 'Pitelová', 'Plášťovce', 'Plavé Vozokany', 'Plavecké Podhradie', 'Plavecký Mikuláš', 'Plavecký Peter', 'Plavecký Štvrtok',
 		'Plaveč', 'Plavnica', 'Plechotice', 'Pleš', 'Plešivec', 'Plevník-Drienové', 'Pliešovce', 'Ploské', 'Ploské', 'Pobedim', 'Počarová',
 		'Počúvadlo', 'Podbiel', 'Podbranč', 'Podbrezová', 'Podhájska', 'Podhorany', 'Podhorany', 'Podhorany', 'Podhorie', 'Podhorie', 'Podhoroď',
-		'Podhradie', 'Podhradie', 'Podhradie', 'Podhradík', 'Podkonice', 'Podkriváň', 'Podkylava', 'Podlužany', 'Podlužany', 'Podolie', 
+		'Podhradie', 'Podhradie', 'Podhradie', 'Podhradík', 'Podkonice', 'Podkriváň', 'Podkylava', 'Podlužany', 'Podlužany', 'Podolie',
 		'Podolínec', 'Podrečany', 'Podskalie', 'Podtureň', 'Podvysoká', 'Podzámčok', 'Pohorelá', 'Pohranice', 'Pohronská Polhora',
 		'Pohronský Bukovec', 'Pohronský Ruskov', 'Pochabany', 'Pokryváč', 'Poliakovce', 'Polianka', 'Polichno', 'Polina', 'Poloma', 'Polomka',
 		'Poltár', 'Poluvsie', 'Poľanovce', 'Poľany', 'Poľný Kesov', 'Pongrácovce', 'Poniky', 'Poprad', 'Poproč', 'Poproč', 'Popudinské Močidľany',
@@ -200,14 +200,14 @@ class Address extends \Faker\Provider\Address
 		'Radimov', 'Radnovce', 'Radobica', 'Radoľa', 'Radoma', 'Radošina', 'Radošovce', 'Radošovce', 'Radôstka', 'Radvanovce',
 		'Radvaň nad Dunajom', 'Radvaň nad Laborcom', 'Radzovce', 'Rafajovce', 'Rajčany', 'Rajec', 'Rajecká Lesná', 'Rajecké Teplice',
 		'Rákoš', 'Rákoš', 'Raková', 'Rakovčík', 'Rakovec nad Ondavou', 'Rakovice', 'Rakovnica', 'Rakovo', 'Rakša', 'Rakúsy', 'Rakytník',
-		'Rankovce', 'Rapovce', 'Raslavice', 'Rastislavice', 'Rašice', 'Ratka', 'Ratková', 'Ratkovce', 'Ratkovo', 'Ratkovská Lehota', 
+		'Rankovce', 'Rapovce', 'Raslavice', 'Rastislavice', 'Rašice', 'Ratka', 'Ratková', 'Ratkovce', 'Ratkovo', 'Ratkovská Lehota',
 		'Ratkovská Suchá', 'Ratkovské Bystré', 'Ratnovce', 'Ratvaj', 'Ráztočno', 'Ráztoka', 'Ražňany', 'Reca', 'Regetovka', 'Rejdová',
 		'Reľov', 'Remeniny', 'Remetské Hámre', 'Renčišov', 'Repejov', 'Repište', 'Rešica', 'Rešov', 'Revúca', 'Revúcka Lehota', 'Riečka',
-		'Riečka', 'Richnava', 'Richvald', 'Rimavská Baňa', 'Rimavská Seč', 'Rimavská Sobota', 'Rimavské Brezovo', 'Rimavské Janovce', 
+		'Riečka', 'Richnava', 'Richvald', 'Rimavská Baňa', 'Rimavská Seč', 'Rimavská Sobota', 'Rimavské Brezovo', 'Rimavské Janovce',
 		'Rimavské Zalužany', 'Rišňovce', 'Rohov', 'Rohovce', 'Rohožník', 'Rohožník', 'Rochovce', 'Rokycany', 'Rokytov', 'Rokytov pri Humennom',
 		'Rokytovce', 'Rosina', 'Roškovce', 'Roštár', 'Rovensko', 'Rovinka', 'Rovné', 'Rovné', 'Rovné', 'Rovňany', 'Rozhanovce', 'Rozložná',
 		'Roztoky', 'Rožkovany', 'Rožňava', 'Rožňavské Bystré', 'Rúbaň', 'Rudina', 'Rudinka', 'Rudinská', 'Rudlov', 'Rudná', 'Rudnianska Lehota',
-		'Rudník', 'Rudník', 'Rudno', 'Rudno nad Hronom', 'Rudňany', 'Rumanová', 'Rumince', 'Runina', 'Ruská', 'Ruská Bystrá', 'Ruská Kajňa', 
+		'Rudník', 'Rudník', 'Rudno', 'Rudno nad Hronom', 'Rudňany', 'Rumanová', 'Rumince', 'Runina', 'Ruská', 'Ruská Bystrá', 'Ruská Kajňa',
 		'Ruská Nová Ves', 'Ruská Poruba', 'Ruská Volová', 'Ruská Voľa', 'Ruská Voľa nad Popradom', 'Ruskov', 'Ruskovce', 'Ruskovce',
 		'Ruský Hrabovec', 'Ruský Potok', 'Ružiná', 'Ružindol', 'Ružomberok', 'Rybany', 'Rybky', 'Rybník', 'Rybník', 'Rykynčice', 'Sabinov',
 		'Sačurov', 'Sedlice', 'Sádočné', 'Sady nad Torysou', 'Salka', 'Santovka', 'Sap', 'Sása', 'Sása', 'Sasinkovo', 'Sazdice', 'Sebedín-Bečov',
@@ -218,7 +218,7 @@ class Address extends \Faker\Provider\Address
 		'Sklabiňa', 'Sklené', 'Sklené Teplice', 'Skrabské', 'Skýcov', 'Sládkovičovo', 'Slančík', 'Slanec', 'Slanská Huta', 'Slanské Nové Mesto',
 		'Slaská', 'Slatina', 'Slatina nad Bebravou', 'Slatinka nad Bebravou', 'Slatinské Lazy', 'Slatvina', 'Slavec', 'Slavkovce', 'Slavnica',
 		'Slavoška', 'Slavošovce', 'Slepčany', 'Sliač', 'Sliepkovce', 'Slizké', 'Slivník', 'Slopná', 'Slovany', 'Slovenská Kajňa', 'Slovenská Ľupča',
-		'Slovenská Nová Ves', 'Slovenská Ves', 'Slovenská Volová', 'Slovenské Ďarmoty', 'Slovenské Kľačany', 'Slovenské Krivé', 
+		'Slovenská Nová Ves', 'Slovenská Ves', 'Slovenská Volová', 'Slovenské Ďarmoty', 'Slovenské Kľačany', 'Slovenské Krivé',
 		'Slovenské Nové Mesto', 'Slovenské Pravno', 'Slovenský Grob', 'Slovinky', 'Sľažany', 'Smilno', 'Smižany', 'Smolenice', 'Smolinské',
 		'Smolnícka Huta', 'Smolník', 'Smrdáky', 'Smrečany', 'Snakov', 'Snežnica', 'Snina', 'Socovce', 'Soblahov', 'Soboš', 'Sobotište',
 		'Sobrance', 'Sokolce', 'Sokolovce', 'Sokoľ', 'Sokoľany', 'Solčany', 'Solčianky', 'Sološnica', 'Soľ', 'Soľnička', 'Soľník', 'Somotor',
@@ -233,7 +233,7 @@ class Address extends \Faker\Provider\Address
 		'Suché Brezovo', 'Suchohrad', 'Sukov', 'Sulín', 'Súlovce', 'Súľov-Hradná', 'Sušany', 'Sútor', 'Svätá Mária', 'Svätoplukovo', 'Svätuš',
 		'Svätuše', 'Svätý Anton', 'Svätý Jur', 'Svätý Kríž', 'Svätý Peter', 'Svederník', 'Sverepec', 'Sveržov', 'Svetlice', 'Svidnička', 'Svidník',
 		'Svinia', 'Svinica', 'Svinice', 'Svinná', 'Svit', 'Svodín', 'Svrbice', 'Svrčinovec', 'Šahy', 'Šajdíkove Humence', 'Šalgovce', 'Šalgočka',
-		'Šalov', 'Šaľa', 'Šambron', 'Šamorín', 'Šamudovce', 'Šandal', 'Šarbov', 'Šarišská Poruba', 'Šarišská Trstená', 'Šarišské Bohdanovce', 
+		'Šalov', 'Šaľa', 'Šambron', 'Šamorín', 'Šamudovce', 'Šandal', 'Šarbov', 'Šarišská Poruba', 'Šarišská Trstená', 'Šarišské Bohdanovce',
 		'Šarišské Čierne', 'Šarišské Dravce', 'Šarišské Jastrabie', 'Šarišské Michaľany', 'Šarišské Sokolovce', 'Šarišský Štiavnik', 'Šarkan',
 		'Šarovce', 'Šašová', 'Šaštín-Stráže', 'Šávoľ', 'Šelpice', 'Šemetkovce', 'Šemša', 'Šenkvice', 'Šiatorská Bukovinka', 'Šiba', 'Šíd',
 		'Šimonovce', 'Šindliar', 'Šintava', 'Šípkov', 'Šípkové', 'Širákov', 'Širkovce', 'Široké', 'Šišov', 'Šivetice', 'Šmigovec', 'Šoltýska',
@@ -247,11 +247,11 @@ class Address extends \Faker\Provider\Address
 		'Tomášovce', 'Tomášovce', 'Topoľa', 'Topoľčany', 'Topoľčianky', 'Topoľnica', 'Topoľníky', 'Topoľovka', 'Toporec', 'Tornaľa', 'Torysa',
 		'Torysky', 'Tovarné', 'Tovarnianska Polianka', 'Tovarníky', 'Tôň', 'Trakovice', 'Trávnica', 'Trávnik', 'Trebatice', 'Trebejov',
 		'Trebeľovce', 'Trebichava', 'Trebišov', 'Trebostovo', 'Trebušovce', 'Trenč', 'Trenčianska Teplá', 'Trenčianska Turná',
-		'Trenčianske Bohuslavice', 'Trenčianske Jastrabie', 'Trenčianske Mitice', 'Trenčianske Stankovce', 'Trenčianske Teplice', 'Trenčín', 
+		'Trenčianske Bohuslavice', 'Trenčianske Jastrabie', 'Trenčianske Mitice', 'Trenčianske Stankovce', 'Trenčianske Teplice', 'Trenčín',
 		'Trhová Hradská', 'Trhovište', 'Trnava', 'Trnavá Hora', 'Trnava pri Laborci', 'Trnávka', 'Trnávka', 'Trnkov', 'Trnovec',
-		'Trnovec nad Váhom', 'Trnovo', 'Tročany', 'Trpín', 'Trstená', 'Trstená na Ostrove', 'Trstené', 'Trstené pri Hornáde', 'Trstice', 
-		'Trstín', 'Trsťany', 'Tŕnie', 'Tuhár', 'Tuhrina', 'Tuchyňa', 'Tulčík', 'Tupá', 'Turá', 'Turany', 'Turany nad Ondavou', 'Turcovce', 
-		'Turček', 'Turčianky', 'Turčianska Štiavnička', 'Turčianske Jaseno', 'Turčianske Kľačany', 'Turčianske Teplice', 'Turčiansky Ďur', 
+		'Trnovec nad Váhom', 'Trnovo', 'Tročany', 'Trpín', 'Trstená', 'Trstená na Ostrove', 'Trstené', 'Trstené pri Hornáde', 'Trstice',
+		'Trstín', 'Trsťany', 'Tŕnie', 'Tuhár', 'Tuhrina', 'Tuchyňa', 'Tulčík', 'Tupá', 'Turá', 'Turany', 'Turany nad Ondavou', 'Turcovce',
+		'Turček', 'Turčianky', 'Turčianska Štiavnička', 'Turčianske Jaseno', 'Turčianske Kľačany', 'Turčianske Teplice', 'Turčiansky Ďur',
 		'Turčiansky Peter', 'Turčok', 'Turecká', 'Tureň', 'Turie', 'Turík', 'Turnianska Nová Ves', 'Turňa nad Bodvou', 'Turová', 'Turzovka',
 		'Tušice', 'Tušická Nová Ves', 'Tužina', 'Tvarožná', 'Tvrdomestice', 'Tvrdošín', 'Tvrdošovce', 'Ťapešovo', 'Ubľa', 'Úbrež', 'Udavské',
 		'Udiča', 'Údol', 'Uhliská', 'Úhorná', 'Uhorská Ves', 'Uhorské', 'Uhrovec', 'Uhrovské Podhradie', 'Ulič', 'Uličské Krivé', 'Uloža',
@@ -273,7 +273,7 @@ class Address extends \Faker\Provider\Address
 		'Vinohrady nad Váhom', 'Vinosady', 'Virt', 'Vislanka', 'Vislava', 'Visolaje', 'Višňov', 'Višňové', 'Višňové', 'Vištuk', 'Vitanová',
 		'Vítkovce', 'Víťaz', 'Víťazovce', 'Vlača', 'Vladiča', 'Vlachovo', 'Vlachy', 'Vlčany', 'Vlčkovce', 'Vlkanová', 'Vlkas', 'Vlková',
 		'Vlkovce', 'Vlky', 'Voderady', 'Vojany', 'Vojčice', 'Vojka', 'Vojka nad Dunajom', 'Vojkovce', 'Vojnatina', 'Vojňany', 'Vojtovce',
-		'Volica', 'Volkovce', 'Voľa', 'Voznica', 'Vozokany', 'Vozokany', 'Vráble', 'Vrádište', 'Vrakúň', 'Vranov nad Topľou', 'Vrbnica', 
+		'Volica', 'Volkovce', 'Voľa', 'Voznica', 'Vozokany', 'Vozokany', 'Vráble', 'Vrádište', 'Vrakúň', 'Vranov nad Topľou', 'Vrbnica',
 		'Vrbov', 'Vrbovce', 'Vrbová nad Váhom', 'Vrbové', 'Vrbovka', 'Vrchteplá', 'Vrícko', 'Vršatské Podhradie', 'Vrútky', 'Vtáčkovce',
 		'Výborná', 'Výčapy-Opatovce', 'Vydrany', 'Vydrná', 'Vydrník', 'Vyhne', 'Východná', 'Výrava', 'Vysočany', 'Vysoká', 'Vysoká',
 		'Vysoká nad Kysucou', 'Vysoká nad Uhom', 'Vysoká pri Morave', 'Vysoké Tatry', 'Vyškovce', 'Vyškovce nad Ipľom', 'Vyšná Boca',
@@ -294,13 +294,13 @@ class Address extends \Faker\Provider\Address
 		'Želmanovce', 'Želovce', 'Žemberovce', 'Žemliare', 'Žiar', 'Žiar', 'Žiar nad Hronom', 'Žibritov', 'Žihárec', 'Žikava', 'Žilina',
 		'Žíp', 'Žipov', 'Žirany', 'Žitavany', 'Žitavce', 'Žitná-Radiša', 'Žlkovce', 'Župčany', 'Župkov'
 	);
-	
+
 	protected static $buildingNumber = array('#####', '####', '###');
 	protected static $streetSuffix = array(
 		'Alley','Avenue','Branch','Bridge','Brook','Brooks','Burg','Burgs','Bypass','Camp','Canyon','Cape','Causeway','Center','Centers','Circle','Circles','Cliff','Cliffs','Club','Common','Corner','Corners','Course','Court','Courts','Cove','Coves','Creek','Crescent','Crest','Crossing','Crossroad','Curve','Dale','Dam','Divide','Drive','Drive','Drives','Estate','Estates','Expressway','Extension','Extensions','Fall','Falls','Ferry','Field','Fields','Flat','Flats','Ford','Fords','Forest','Forge','Forges','Fork','Forks','Fort','Freeway','Garden','Gardens','Gateway','Glen','Glens','Green','Greens','Grove','Groves','Harbor','Harbors','Haven','Heights','Highway','Hill','Hills','Hollow','Inlet','Inlet','Island','Island','Islands','Islands','Isle','Isle','Junction','Junctions','Key','Keys','Knoll','Knolls','Lake','Lakes','Land','Landing','Lane','Light','Lights','Loaf','Lock','Locks','Locks','Lodge','Lodge','Loop','Mall','Manor','Manors','Meadow','Meadows','Mews','Mill','Mills','Mission','Mission','Motorway','Mount','Mountain','Mountain','Mountains','Mountains','Neck','Orchard','Oval','Overpass','Park','Parks','Parkway','Parkways','Pass','Passage','Path','Pike','Pine','Pines','Place','Plain','Plains','Plains','Plaza','Plaza','Point','Points','Port','Port','Ports','Ports','Prairie','Prairie','Radial','Ramp','Ranch','Rapid','Rapids','Rest','Ridge','Ridges','River','Road','Road','Roads','Roads','Route','Row','Rue','Run','Shoal','Shoals','Shore','Shores','Skyway','Spring','Springs','Springs','Spur','Spurs','Square','Square','Squares','Squares','Station','Station','Stravenue','Stravenue','Stream','Stream','Street','Street','Streets','Summit','Summit','Terrace','Throughway','Trace','Track','Trafficway','Trail','Trail','Tunnel','Tunnel','Turnpike','Turnpike','Underpass','Union','Unions','Valley','Valleys','Via','Viaduct','View','Views','Village','Village','Villages','Ville','Vista','Vista','Walk','Walks','Wall','Way','Ways','Well','Wells'
 	);
 	protected static $postcode = array('### ##');
-	
+
 	protected static $country = array(
 		'Afganistan', 'Albánsko', 'Alžírsko', 'Andorra', 'Angola', 'Antigua a Barbuda', 'Argentína', 'Arménsko', 'Austrália', 'Azerbajdžan',
 		'Bahamy', 'Bahrajn', 'Bangladéš', 'Barbados', 'Belgicko', 'Belize', 'Benin', 'Bhután', 'Bielorusko', 'Bolívia', 'Bosna a Hercegovina',
@@ -332,14 +332,13 @@ class Address extends \Faker\Provider\Address
 	protected static $streetAddressFormats = array(
 		'{{streetName}} {{buildingNumber}}'
 	);
-	
+
 	protected static $addressFormats = array(
 		'{{streetAddress}}\n {{postcode}}\n {{city}}',
 	);
-	
+
 	public static function cityName()
 	{
 		return static::randomElement(static::$cityName);
 	}
-
 }

@@ -37,7 +37,7 @@ class DateTime extends \Faker\Provider\Base
 	{
 		return new \DateTime('@' . mt_rand(-62135597361, time()));
 	}
-	
+
 	/**
 	 * @example '2003-10-21T16:05:52+0000'
 	 */
@@ -79,8 +79,8 @@ class DateTime extends \Faker\Provider\Base
 	 */
 	public static function dateTimeBetween($startDate = "-30 years", $endDate = "now")
 	{
-		$startTimestamp = strtotime($startDate);
-		$endTimestamp = strtotime($endDate);
+		$startTimestamp = $startDate instanceof \DateTime ? $startDate->getTimestamp() : strtotime($startDate);
+		$endTimestamp = $endDate instanceof \DateTime ? $endDate->getTimestamp() : strtotime($endDate);
 		$timestamp = mt_rand($startTimestamp, $endTimestamp);
 
 		return new \DateTime('@' . $timestamp);

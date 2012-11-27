@@ -5,7 +5,7 @@ namespace Faker\Provider;
 class Base
 {
 	protected $generator;
-	
+
 	public function __construct($generator)
 	{
 		$this->generator = $generator;
@@ -34,19 +34,41 @@ class Base
 	/**
 	 * Returns a random number with 0 to $nbDigits digits
 	 *
+	 * If $upTo is passed, it returns a number between $nbDigits (read as from) and $upTo
+	 *
 	 * @param integer $nbDigits
+	 * @param integer $upTo
 	 * @example 79907610
 	 *
 	 * @return integer
 	 */
-	public static function randomNumber($nbDigits = null)
+	public static function randomNumber($nbDigits = null, $upTo = null)
 	{
 		if (null === $nbDigits) {
 			$nbDigits = static::randomDigit();
 		}
+
+		if (null !== $upTo) {
+			return static::numberBetween($nbDigits, $upTo);
+		}
+
 		return mt_rand(0, pow(10, $nbDigits) - 1);
 	}
-	
+
+	/**
+	 * Returns a random number between $from and $to
+	 *
+	 * @param integer $from
+	 * @param integer $too
+	 * @example 79907610
+	 *
+	 * @return integer
+	 */
+	public static function numberBetween($from = null, $to = null)
+	{
+		return mt_rand($from ?: 0, $to ?: PHP_INT_MAX);
+	}
+
 	/**
 	 * Returns a random letter from a to z
 	 *
@@ -62,7 +84,7 @@ class Base
 	 *
 	 * @param array $array
 	 * @return mixed
-	 */	
+	 */
 	public static function randomElement($array = array('a', 'b', 'c'))
 	{
 		return $array[mt_rand(0, count($array) - 1)];
@@ -79,10 +101,10 @@ class Base
 	{
 		$string = preg_replace_callback('/\#/', 'static::randomDigit', $string);
 		$string = preg_replace_callback('/\%/', 'static::randomDigitNotNull', $string);
-		
+
 		return $string;
 	}
-	
+
 	/**
 	 * Replaces all question mark ('?') occurrences with a random letter
 	 *
@@ -93,7 +115,7 @@ class Base
 	{
 		return preg_replace_callback('/\?/', 'static::randomLetter', $string);
 	}
-	
+
 	/**
 	 * Replaces hash signs and question marks with random numbers and letters
 	 *
@@ -104,5 +126,24 @@ class Base
 	{
 		return static::lexify(static::numerify($string));
 	}
-	
+
+	/**
+	 * Converts string to lowercase.
+	 * Uses mb_string extension if available
+	 * @param string $string String that should be converted to lowercase
+	 * @return string
+	 */
+	public static function toLower($string) {
+		return extension_loaded('mbstring') ? mb_strtolower($string) : strtolower($string);
+	}
+
+	/**
+	 * Converts string to uppercase.
+	 * Uses mb_string extension if available
+	 * @param string $string String that should be converted to uppercase
+	 * @return string
+	 */
+	public static function toUpper($string) {
+		return extension_loaded('mbstring') ? mb_strtoupper($string) : strtoupper($string);
+	}
 }

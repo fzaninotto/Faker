@@ -5,9 +5,9 @@ namespace Faker;
 class Factory
 {
 	const DEFAULT_LOCALE = 'en_US';
-	
-	protected static $defaultProviders = array('Person', 'Address', 'PhoneNumber', 'Company', 'Lorem', 'Internet', 'DateTime', 'Miscellaneous');
-	
+
+	protected static $defaultProviders = array('Person', 'Address', 'PhoneNumber', 'Company', 'Lorem', 'Internet', 'DateTime', 'Miscellaneous', 'UserAgent');
+
 	public static function create($locale = self::DEFAULT_LOCALE)
 	{
 		$generator = new Generator();
@@ -15,10 +15,10 @@ class Factory
 			$providerClassName = self::getProviderClassname($provider, $locale);
 			$generator->addProvider(new $providerClassName($generator));
 		}
-		
+
 		return $generator;
 	}
-	
+
 	protected static function getProviderClassname($provider, $locale = '')
 	{
 		if ($providerClass = self::findProviderClassname($provider, $locale)) {

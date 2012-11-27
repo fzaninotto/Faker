@@ -65,6 +65,28 @@ class LoremTest extends \PHPUnit_Framework_TestCase
 		$this->assertGreaterThan(1, strlen($paragraph));
 		$this->assertGreaterThanOrEqual(1, count(explode(' ', $paragraph)));
 	}
+
+	public function testWordssAsText()
+	{
+		$words = TestableLorem::words(2, true);
+
+		$this->assertEquals('word word', $words);
+	}
+
+	public function testSentencesAsText()
+	{
+		$sentences = TestableLorem::sentences(2, true);
+
+		$this->assertEquals('This is a test sentence. This is a test sentence.', $sentences);
+	}
+
+	public function testParagraphsAsText()
+	{
+		$paragraphs = TestableLorem::paragraphs(2, true);
+
+		$expected = "This is a test paragraph. It has three sentences. Exactly three.\n\nThis is a test paragraph. It has three sentences. Exactly three.";
+		$this->assertEquals($expected, $paragraphs);
+	}
 }
 
 class TestableLorem extends Lorem

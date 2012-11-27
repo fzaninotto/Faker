@@ -13,7 +13,7 @@ class Name
 
 	public function guessFormat($name)
 	{
-		$name = strtolower($name);
+		$name = static::toLower($name);
 		$generator = $this->generator;
 		if (preg_match('/^is[_A-Z]/', $name)) {
 			return function() use ($generator) { return $generator->boolean; };

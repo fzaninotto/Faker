@@ -1,0 +1,25 @@
+CHANGELOG
+=========
+
+2012-10-29, v1.1.0
+------------------
+
+* Updated text provider to return paragraphs as a string instead of array. Great for populating markdown textarea fields (Seldaek)
+* Updated dateTimeBetween to accept DateTime instances (Seldaek)
+* Added random number generator between a and b, simply like rand() (Seldaek)
+* Fixed spaces in generated emails (blaugueux)
+* Fixed Person provider in Russian locale (Isamashii)
+* Added new UserAgent provider (blaugueux)
+* Added locale generator to Miscellaneous provider (blaugueux)
+* Added timezone generator to DateTime provider (blaugueux)
+* Added new generators to French Address providers (departments, regions) (geoffrey-brier)
+* Added new generators to French Company provider (catch phrase, SIREN, and SIRET numbers) (geoffrey-brier)
+* Added state generator to German Address provider (Powerhamster)
+* Added Slovak provider (bazo)
+* Added latitude and longitude formatters to Address provider (fixe)
+* Added Serbian provider (umpirsky)
+
+2012-07-10, v1.0.0
+-----------------
+
+* Initial Version
