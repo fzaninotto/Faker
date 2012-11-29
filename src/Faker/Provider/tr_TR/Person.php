@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\en_US;
+namespace Faker\Provider\tr_TR;
 
 class Person extends \Faker\Provider\Person {
 	protected static $formats = array (
