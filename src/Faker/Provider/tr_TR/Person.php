@@ -110,4 +110,27 @@ class Person extends \Faker\Provider\Person {
 			'Berkay',
 			'Güney'
 	);
+	private static $prefix = array (
+			'Doç. Dr.',
+			'Dr.'
+	);
+	private static $suffix = array (
+
+	);
+
+	/**
+	 *
+	 * @example 'Mrs.'
+	 */
+	public static function prefix() {
+		return static::randomElement ( static::$prefix );
+	}
+
+	/**
+	 *
+	 * @example 'PhD'
+	 */
+	public static function suffix() {
+		return static::randomElement ( static::$suffix );
+	}
 }
