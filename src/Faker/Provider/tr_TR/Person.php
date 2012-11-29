@@ -115,7 +115,7 @@ class Person extends \Faker\Provider\Person {
 			'Dr.'
 	);
 	private static $suffix = array (
-
+		''
 	);
 
 	/**
