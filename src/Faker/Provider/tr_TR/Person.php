@@ -1,6 +1,6 @@
 <?php
 
-namespace src\Faker\Provider\tr_TR;
+namespace Faker\Provider\tr_TR;
 
 class Person extends \Faker\Provider\Person
 {
@@ -18,14 +18,14 @@ class Person extends \Faker\Provider\Person
 		'Mert','Görkem','Burak','Meriç','Berke','Kutay','Tuna','Baran','Efe','Onur','Doruk','Bartu',
 		'Emirhan','Alp','Arhan','Bora','Canberk','Dağhan','Rüzgar','Derin','Toprak','Arın',
 		'Aşkın','Çınar','Armağan','Derin','Koray','Barlas','Ada','Atakan','Berk','Ali','Polat','Göktürk',
-		'Serhan','Ege','Utku','Berkay','Güney'
+		'Serhan','Ege','Utku','Berkay','Güney', 'Türker'
 	);
 
 	protected static $lastName = array(
-		'Emirhanlı','Cemşid','Ege','Çağan','Sarp','Kerem','Ferid','Zeynep','Deniz','Yağız','Yiğit','Emre','Kağan',
+		'Emirhanlı','Cemşid','Ege','Çağan','Sarp','Kerem','Deniz','Yağız','Yiğit','Emre','Kağan',
 		'Mert','Görkem','Burak','Meriç','Berke','Kutay','Tuna','Baran','Efe','Onur','Doruk','Bartu',
 		'Emirhan','Alp','Arhan','Bora','Canberk','Mövsümov','Dağhan','Rüzgar','Derin','Toprak','Arın',
-		'Aşkın','Çınar','Armağan','Derin','Koray','Barlas','Ada','Atakan','Berk','Ali','Polat','Göktürk',
+		'Aşkın','Çınar','Armağan','Derin','Koray','Barlas','Ada','Atakan','Berk','Polat','Göktürk',
 		'Serhan','Ege','Utku','Berkay','Güney', 'İrtegün', 'Şentürk', 'Şükür'
 	);
 
