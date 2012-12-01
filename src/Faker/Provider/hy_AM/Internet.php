@@ -29,7 +29,8 @@ class Internet extends \Faker\Provider\Internet
 		$company = mb_strtolower($company, 'UTF-8');
 		$company = str_replace(
 			array('ու','ա','բ','գ','դ','ե','զ','է','ը','թ','ժ','ի','լ','խ','ծ','կ','հ','ձ','ղ','ճ','մ','յ','ն','շ','ո','չ','պ','ջ','ռ','ս','վ','տ','ր','ց','փ','ք','և','օ','ֆ',),
-			array('u','a','b','g','d','e','z','e','y','t','zh','i','l','kh','ts','k','h','dz','gh','ch','m','y','n','sh','o','ch','p','j','r','s','v','t','r','ts','p','q','ev','o','f'),$company);
+			array('u','a','b','g','d','e','z','e','y','t','zh','i','l','kh','ts','k','h','dz','gh','ch','m','y','n','sh','o','ch','p','j','r','s','v','t','r','ts','p','q','ev','o','f'),
+		$company);
 		
 		return $company;
 	}
