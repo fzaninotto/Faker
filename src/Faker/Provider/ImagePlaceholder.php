@@ -54,8 +54,18 @@ class ImagePlaceholder extends \Faker\Provider\Base
 		return "http://placehold.it/{$size}{$colors}.{$extension}{$query}";
 	}
 	
+	private static $INSTASRC_TAGS = array(
+		'dimensions', 'ad', 'adrenaline', 'agriculture', 
+		'animal', 'architecture', 'art', 'aurora', 'boat', 'book', 
+		'botanical', 'cemetery', 'city', 'climbing', 'culinary', 
+		'dessert', 'exposure', 'fractal', 'future', 'geek', 
+		'history', 'instrument', 'kitten', 'machine', 'map', 
+		'military', 'nature', 'people', 'quote', 'road', 
+		'room', 'sky', 'space', 'statue', 'village', 'water'
+	);
+	
 	/**
-	 * @example http://instasrc.com/400x300/food/greyscale/new
+	 * @example http://instasrc.com/400x300/art/greyscale/new
 	 * @param int $width
 	 * @param int $height
 	 * @param string $category
@@ -65,8 +75,8 @@ class ImagePlaceholder extends \Faker\Provider\Base
 	public function instasrc($width = self :: DEFAULT_WIDTH, $height = self :: DEFAULT_HEIGHT, 
 		$category = null, $bw = false, $new = false)
 	{
-		$category 	= $category ? "/{$category}" : '';
-		$effect		= $bw ? '/greyscale' : '';
+		$category 	= $category ? "/{$category}" : '/' . self :: $INSTASRC_TAGS[array_rand(self :: $INSTASRC_TAGS)];
+		$effect		= $bw ? '/greyscale' : '/normal';
 		$new		= $new ? '/new' : ''; 
 		return "http://instasrc.com/{$width}x{$height}{$category}{$effect}{$new}";
 	}
