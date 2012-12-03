@@ -14,7 +14,7 @@ class Internet extends \Faker\Provider\Internet
     {
         $format = static::randomElement(static::$userNameFormats);
         return static::toLower(static::bothify(
-            Utils::cyrillicToLatin($this->generator->parse($format))
+                Utils::cyrillicToLatin($this->generator->parse($format))
             )
         );
     }

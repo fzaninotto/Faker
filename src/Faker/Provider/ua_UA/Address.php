@@ -4,14 +4,14 @@ namespace Faker\Provider\ua_UA;
 
 class Address extends \Faker\Provider\Address
 {
-	protected static $cityPrefix = array('місто');
-	protected static $regionSuffix = array('область');
-	protected static $streetPrefix = array(
-		'вул.', 'пров.', 'пл.', 'просп.'
-	);
-	protected static $buildingNumber = array('##');
-	protected static $postcode = array('#####');
-	protected static $country = array(
+    protected static $cityPrefix = array('місто');
+    protected static $regionSuffix = array('область');
+    protected static $streetPrefix = array(
+        'вул.', 'пров.', 'пл.', 'просп.'
+    );
+    protected static $buildingNumber = array('##');
+    protected static $postcode = array('#####');
+    protected static $country = array(
         'Афганістан',
         'Албанія',
         'Алжир',
@@ -204,7 +204,7 @@ class Address extends \Faker\Provider\Address
         'Зімбабве',
     );
 
-	protected static $region = array(
+    protected static $region = array(
         'Вінницька',
         'Волинська',
         'Дніпропетровська',
@@ -229,9 +229,9 @@ class Address extends \Faker\Provider\Address
         'Черкаська',
         'Чернівецька',
         'Чернігівська'
-	);
+    );
 
-	protected static $city = array(
+    protected static $city = array(
         'Вінниця',
         'Луцьк',
         'Дніпропетровськ',
@@ -256,25 +256,25 @@ class Address extends \Faker\Provider\Address
         'Черкаси',
         'Чернівці',
         'Чернігів'
-	);
+    );
 
-	protected static $street = array(
-		'Тараса Шевченка',
-		'Лесі Українки',
-		'Леніна',
-		'40 років Перемоги',
-		'50 років Жовтня',
-		'Михайла Грушевського',
-		'Гагаріна',
-		'Космонавта Попова',
-		'Генерала Жадова',
-		'Пацаєва',
-		'Волкова',
-	);
+    protected static $street = array(
+        'Тараса Шевченка',
+        'Лесі Українки',
+        'Леніна',
+        '40 років Перемоги',
+        '50 років Жовтня',
+        'Михайла Грушевського',
+        'Гагаріна',
+        'Космонавта Попова',
+        'Генерала Жадова',
+        'Пацаєва',
+        'Волкова',
+    );
 
-	protected static $addressFormats = array(
-		"{{postcode}}, {{cityAndRegion}}, {{streetPrefix}} {{street}}, {{buildingNumber}}",
-	);
+    protected static $addressFormats = array(
+        "{{postcode}}, {{cityAndRegion}}, {{streetPrefix}} {{street}}, {{buildingNumber}}",
+    );
 
     protected static $streetAddressFormats = array(
         "{{streetPrefix}} {{street}}, {{buildingNumber}}"
@@ -299,46 +299,46 @@ class Address extends \Faker\Provider\Address
         return '';
     }
 
-	public static function buildingNumber()
-	{
-		return static::numerify(static::randomElement(static::$buildingNumber));
-	}
+    public static function buildingNumber()
+    {
+        return static::numerify(static::randomElement(static::$buildingNumber));
+    }
 
-	public function address()
-	{
+    public function address()
+    {
         $format = static::randomElement(static::$addressFormats);
-		return $this->generator->parse($format, array());
-	}
+        return $this->generator->parse($format, array());
+    }
 
-	public static function country()
-	{
-		return static::randomElement(static::$country);
-	}
+    public static function country()
+    {
+        return static::randomElement(static::$country);
+    }
 
-	public static function postcode()
-	{
-		return static::toUpper(static::bothify(static::randomElement(static::$postcode)));
-	}
+    public static function postcode()
+    {
+        return static::toUpper(static::bothify(static::randomElement(static::$postcode)));
+    }
 
-	public static function regionSuffix()
-	{
-		return static::randomElement(static::$regionSuffix);
-	}
+    public static function regionSuffix()
+    {
+        return static::randomElement(static::$regionSuffix);
+    }
 
-	public static function region()
-	{
-		return static::randomElement(static::$region);
-	}
+    public static function region()
+    {
+        return static::randomElement(static::$region);
+    }
 
-	public static function cityPrefix()
-	{
-		return static::randomElement(static::$cityPrefix);
-	}
+    public static function cityPrefix()
+    {
+        return static::randomElement(static::$cityPrefix);
+    }
 
-	public function city()
-	{
-		return static::randomElement(static::$city);
-	}
+    public function city()
+    {
+        return static::randomElement(static::$city);
+    }
 
     /**
      * Get city and region together
@@ -355,13 +355,13 @@ class Address extends \Faker\Provider\Address
         return $this->generator->parse($format);
     }
 
-	public static function streetPrefix()
-	{
-		return static::randomElement(static::$streetPrefix);
-	}
+    public static function streetPrefix()
+    {
+        return static::randomElement(static::$streetPrefix);
+    }
 
-	public static function street()
-	{
-		return static::randomElement(static::$street);
-	}
+    public static function street()
+    {
+        return static::randomElement(static::$street);
+    }
 }

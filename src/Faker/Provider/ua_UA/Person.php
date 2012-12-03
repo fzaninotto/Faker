@@ -4,12 +4,12 @@ namespace Faker\Provider\ua_UA;
 
 class Person extends \Faker\Provider\Person
 {
-	protected static $formats = array(
-		'{{firstName}} {{middleName}} {{lastName}}',
-		'{{lastName}} {{firstName}} {{middleName}}',
-	);
+    protected static $formats = array(
+        '{{firstName}} {{middleName}} {{lastName}}',
+        '{{lastName}} {{firstName}} {{middleName}}',
+    );
 
-	protected static $firstName = array(
+    protected static $firstName = array(
         'Олександр', 'Олексій', 'Дмитро', 'Сергій', 'Андрій', 'Антон',
         'Віталий', 'Володимир', 'Денис', 'Євген', 'Іван', 'Ігор',
         'Костянтин', 'Максим', 'Михайло', 'Миколай', 'Роман', 'Анатолій',
@@ -21,14 +21,14 @@ class Person extends \Faker\Provider\Person
         'Марк', 'Мирослав', 'Назар', 'Микита', 'Олег', 'Петро', 'Платон',
         'Ростислав', 'Руслан', 'Савва', 'Сава', 'Святослав', 'Семен', 'Степан',
         'Тарас', 'Тимофій', 'Федір', 'Фелікс', 'Юлій', 'Юрій', 'Ян', 'Ярослав',
-	);
+    );
 
-	protected static $middleName = array(
-		'Олександрович', 'Олексійович', 'Андрійович', 'Євгенович',
-		'Сергійович', 'Іванович', 'Федорович', 'Тарасович', 'Васильович', 'Романович'
-	);
+    protected static $middleName = array(
+        'Олександрович', 'Олексійович', 'Андрійович', 'Євгенович',
+        'Сергійович', 'Іванович', 'Федорович', 'Тарасович', 'Васильович', 'Романович'
+    );
 
-	protected static $lastName = array(
+    protected static $lastName = array(
         'Антоненко',
         'Василенко',
         'Васильчук',
@@ -59,16 +59,16 @@ class Person extends \Faker\Provider\Person
         'Шинкаренко',
         'Пономаренко',
         'Пономарчук',
-	);
+    );
 
-	/**
-	 * Return middle name
-	 * @example 'Іванович'
-	 * @access public
-	 * @return string Middle name
-	 */
-	public function middleName()
-	{
-		return static::randomElement(static::$middleName);
-	}
+    /**
+     * Return middle name
+     * @example 'Іванович'
+     * @access public
+     * @return string Middle name
+     */
+    public function middleName()
+    {
+        return static::randomElement(static::$middleName);
+    }
 }
