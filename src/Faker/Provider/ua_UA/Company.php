@@ -2,12 +2,12 @@
 
 namespace Faker\Provider\ua_UA;
 
-class Company extends \Faker\Provider\Base
+class Company extends \Faker\Provider\Company
 {
 	protected static $formats = array(
 		'{{companyName}}',                                      // Вектор
 		'{{companyPrefix}} "{{companyName}}"',                  // ТОВ "Інфоком"
-		'{{companyName}}-{{companySuffix}}"',                   // Сервіс-Плюс
+		'{{companyName}}-{{companySuffix}}',                    // Сервіс-Плюс
 		'{{companyPrefix}} "{{companyName}}-{{companySuffix}}"',// ПАТ "Альфа-Стиль"
 	);
 

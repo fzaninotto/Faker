@@ -2,7 +2,7 @@
 
 namespace Faker\Provider\ua_UA;
 
-class Address extends \Faker\Provider\Base
+class Address extends \Faker\Provider\Address
 {
 	protected static $cityPrefix = array('місто');
 	protected static $regionSuffix = array('область');
@@ -276,6 +276,29 @@ class Address extends \Faker\Provider\Base
 		"{{postcode}}, {{cityAndRegion}}, {{streetPrefix}} {{street}}, {{buildingNumber}}",
 	);
 
+    protected static $streetAddressFormats = array(
+        "{{streetPrefix}} {{street}}, {{buildingNumber}}"
+    );
+
+    public static function citySuffix()
+    {
+        // We don't use city suffix
+        return '';
+    }
+
+    public static function streetSuffix()
+    {
+        // We don't use street suffix
+        return '';
+    }
+
+    public function streetName()
+    {
+        // Only a small part of person names can be used as street name,
+        // so skip it
+        return '';
+    }
+
 	public static function buildingNumber()
 	{
 		return static::numerify(static::randomElement(static::$buildingNumber));
@@ -312,7 +335,7 @@ class Address extends \Faker\Provider\Base
 		return static::randomElement(static::$cityPrefix);
 	}
 
-	public static function city()
+	public function city()
 	{
 		return static::randomElement(static::$city);
 	}
