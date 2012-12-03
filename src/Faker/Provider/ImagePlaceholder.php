@@ -6,7 +6,23 @@ class ImagePlaceholder extends \Faker\Provider\Base
 {
 	
 	const DEFAULT_WIDTH = 400;
-	const DEFAULT_HEIGHT = 300; 
+	const DEFAULT_HEIGHT = 200;
+	
+	private static $INSTASRC_TAGS = array(
+		'dimensions', 'ad', 'adrenaline', 'agriculture', 
+		'animal', 'architecture', 'art', 'aurora', 'boat', 'book', 
+		'botanical', 'cemetery', 'city', 'climbing', 'culinary', 
+		'dessert', 'exposure', 'fractal', 'future', 'geek', 
+		'history', 'instrument', 'kitten', 'machine', 'map', 
+		'military', 'nature', 'people', 'quote', 'road', 
+		'room', 'sky', 'space', 'statue', 'village', 'water'
+	);
+	
+	private static $LOREM_PIXEL_CATEGORIES = array(
+		'abstract', 'animals', 'city', 'food', 
+		'night', 'life', 'fashion', 'people', 'nature', 
+		'sports', 'technics', 'transport'
+	);
 	
 	/**
 	 * @example http://flickholdr.com/200/300/sea,sun/bw
@@ -18,7 +34,13 @@ class ImagePlaceholder extends \Faker\Provider\Base
 	public function flickholdr($width = self :: DEFAULT_WIDTH, $height = self :: DEFAULT_HEIGHT, 
 		$tags = array(), $bw = false)
 	{
-		$tags = count($tags) > 0 ? '/' . implode(',', $tags) : '';
+		if (count($tags) == 0) {
+			$mix = array_merge(self :: $INSTASRC_TAGS, self :: $LOREM_PIXEL_CATEGORIES);
+			for ($i = 0; $i < 2; $i++) {
+				$tags[] = static :: randomElement($mix); 				
+			}
+		}
+		$tags = '/' . implode(',', $tags);
 		$bw = $bw ? '/bw' : '';
 		return "http://flickholdr.com/{$width}/{$height}{$tags}{$bw}";
 	}
@@ -48,21 +70,12 @@ class ImagePlaceholder extends \Faker\Provider\Base
 		$bgColor = null, $fgColor = null, $text = null)
 	{
 		$size 	= $height ? "{$width}x{$height}" : $width;
-		$query 	= $text ? '&' . http_build_query(array('text' => $text)) : '';
+		$text	= $text ?: \Faker\Provider\Lorem :: words(2, true);
+		$query 	= http_build_query(array('text' => $text));
 		$colors = $bgColor ? "/{$bgColor}/{$fgColor}" : '';
 		 
-		return "http://placehold.it/{$size}{$colors}.{$extension}{$query}";
+		return "http://placehold.it/{$size}{$colors}.{$extension}&{$query}";
 	}
-	
-	private static $INSTASRC_TAGS = array(
-		'dimensions', 'ad', 'adrenaline', 'agriculture', 
-		'animal', 'architecture', 'art', 'aurora', 'boat', 'book', 
-		'botanical', 'cemetery', 'city', 'climbing', 'culinary', 
-		'dessert', 'exposure', 'fractal', 'future', 'geek', 
-		'history', 'instrument', 'kitten', 'machine', 'map', 
-		'military', 'nature', 'people', 'quote', 'road', 
-		'room', 'sky', 'space', 'statue', 'village', 'water'
-	);
 	
 	/**
 	 * @example http://instasrc.com/400x300/art/greyscale/new
@@ -73,12 +86,23 @@ class ImagePlaceholder extends \Faker\Provider\Base
 	 * @param bool $new
 	 */
 	public function instasrc($width = self :: DEFAULT_WIDTH, $height = self :: DEFAULT_HEIGHT, 
-		$category = null, $bw = false, $new = false)
+		$category = null, $bw = false, $new = true)
 	{
-		$category 	= $category ? "/{$category}" : '/' . self :: $INSTASRC_TAGS[array_rand(self :: $INSTASRC_TAGS)];
+		$category 	= $category ? "/{$category}" : '/' . static :: randomElement(self :: $INSTASRC_TAGS);
 		$effect		= $bw ? '/greyscale' : '/normal';
 		$new		= $new ? '/new' : ''; 
 		return "http://instasrc.com/{$width}x{$height}{$category}{$effect}{$new}";
+	}
+	
+	/**
+	 * @example http://lorempixel.com/400/200/sports/1
+	 */
+	public function lorempixel($width = self :: DEFAULT_WIDTH, $height = self :: DEFAULT_HEIGHT, 
+		$category = null, $number = null)
+	{
+		$category 	= $category ?: static :: randomElement(self :: $LOREM_PIXEL_CATEGORIES);
+		$number 	= $number ?: static :: numberBetween(1, 10);
+		return "http://lorempixel.com/{$width}/{$height}/{$category}/{$number}";
 	}
 	
 }
