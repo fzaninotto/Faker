@@ -8,11 +8,27 @@ class ImagePlaceholder extends \Faker\Provider\Base
 	const DEFAULT_WIDTH = 400;
 	const DEFAULT_HEIGHT = 300; 
 	
-	public function flickholdr($width = self :: DEFAULT_WIDTH, $height = self :: DEFAULT_HEIGHT, $tags = array(), $bw = false)
+	/**
+	 * @example http://flickholdr.com/200/300/sea,sun/bw
+	 * @param int $width
+	 * @param int $height
+	 * @param array $tags
+	 * @param bool $bw
+	 */
+	public function flickholdr($width = self :: DEFAULT_WIDTH, $height = self :: DEFAULT_HEIGHT, 
+		$tags = array(), $bw = false)
 	{
-		
+		$tags = count($tags) > 0 ? '/' . implode(',', $tags) : '';
+		$bw = $bw ? '/bw' : '';
+		return "http://flickholdr.com/{$width}/{$height}{$tags}{$bw}";
 	}
 	
+	/**
+	 * @example http://placekitten.com/200/300
+	 * @param int $width
+	 * @param int $height
+	 * @param bool $bw
+	 */
 	public function placekitten($width = self :: DEFAULT_WIDTH, $height = self :: DEFAULT_HEIGHT, $bw = false)
 	{
 		return sprintf('http://placekitten.com/%s%d/%d', ($bw ? 'g/' : ''), $width, $height);
@@ -22,10 +38,11 @@ class ImagePlaceholder extends \Faker\Provider\Base
 	 * @example http://placehold.it/350x150
 	 * @param int $width
 	 * @param int $height
-	 * @param string $extension
-	 * @param string $bgColor
-	 * @param string $fgColor
-	 * @param string $text
+	 * @param string $extension Image extension, defaults to GIF
+	 * @param string $bgColor Background color, in hex
+	 * @param string $fgColor Foreground color, in hex
+	 * @param string $text Optional text, defaults to image size
+	 * @return string
 	 */
 	public function placeholdit($width = self :: DEFAULT_WIDTH, $height = null, $extension = 'gif',  
 		$bgColor = null, $fgColor = null, $text = null)
@@ -39,12 +56,17 @@ class ImagePlaceholder extends \Faker\Provider\Base
 	
 	/**
 	 * @example http://instasrc.com/400x300/food/greyscale/new
+	 * @param int $width
+	 * @param int $height
+	 * @param string $category
+	 * @param bool $bw
+	 * @param bool $new
 	 */
 	public function instasrc($width = self :: DEFAULT_WIDTH, $height = self :: DEFAULT_HEIGHT, 
 		$category = null, $bw = false, $new = false)
 	{
 		$category 	= $category ? "/{$category}" : '';
-		$effect		= $bw ? '/greyscale' : '/normal';
+		$effect		= $bw ? '/greyscale' : '';
 		$new		= $new ? '/new' : ''; 
 		return "http://instasrc.com/{$width}x{$height}{$category}{$effect}{$new}";
 	}
