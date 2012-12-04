@@ -4,12 +4,43 @@ namespace Faker\Test\Provider\fr_FR;
 
 use Faker\Provider\fr_FR\Company;
 
+/**
+ * @see http://www.pixelastic.com/blog/13:validation-et-generation-de-numero-de-siret 
+ */
+class IsValidSiret extends \PHPUnit_Framework_Constraint
+{
+	
+    protected function matches($other)
+    {
+    	$siret = str_replace(' ', '', $other);
+		$sum = 0;
+		for($i = 0; $i != 14; $i++) {
+			$tmp = ((($i + 1) % 2) + 1 ) * intval($siret[$i]);
+			if ($tmp >= 10) $tmp -= 9;
+			$sum += $tmp;
+		}
+		return ($sum % 10 === 0);
+    }
+    
+    public function toString() {
+    	return 'is a valid SIRET number';
+    }
+    
+}
+
 class CompanyTest extends \PHPUnit_Framework_TestCase
 {
+	
+	private static function isValidSiret()
+    {
+        return new IsValidSiret();
+    }
+	
 	public function testParagraphWithNegativeNbDigitsReturnsAWellFormattedSiret()
 	{
 		$siret = Company::siret(-1);
-
+		
+		$this->assertThat($siret, self :: isValidSiret());
 		$this->assertRegExp("/[\d]{3} [\d]{3} [\d]{3} 00[\d]{3}/", $siret);
 	}
 
