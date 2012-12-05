@@ -86,63 +86,78 @@ class Company extends \Faker\Provider\Company
         return static::randomElement(static::$verb);
     }
 
-    /**
-     * Generates a french catch phrase.
-     *
-     * @return string
-     */
-    public function catchPhrase()
-    {
-        do {
-            $format = static::randomElement(static::$catchPhraseFormats);
-            $catchPhrase = ucfirst($this->generator->parse($format));
+	/**
+	 * Generates a french catch phrase.
+	 *
+	 * @return string
+	 */
+	public function catchPhrase()
+	{
+		do {
+			$format = static::randomElement(static::$catchPhraseFormats);
+			$catchPhrase = ucfirst($this->generator->parse($format));
 
-            if (static::isCatchPhraseValid($catchPhrase)) {
-                break;
-            }
-        } while (true);
+			if (static::isCatchPhraseValid($catchPhrase)) {
+				break;
+			}
+		} while (true);
 
-        return $catchPhrase;
-    }
+		return $catchPhrase;
+	}
 
-    /**
-     * Generates a siret number (14 digits).
-     * It is in fact the result of the concatenation of a siren number (9 digits),
-     * a sequential number (4 digits) and a control number (1 digit) concatenation.
-     * If $maxSequentialDigits is invalid, it is set to 2.
-     *
-     * @param int $maxSequentialDigits The maximum number of digits for the sequential number (> 0 && <= 4).
-     *
-     * @return string
-     */
-    public static function siret($maxSequentialDigits = 2)
-    {
-        if ($maxSequentialDigits > 4 || $maxSequentialDigits <= 0) {
-            $maxSequentialDigits = 2;
-        }
+	/**
+	 * Generates a siret number (14 digits).
+	 * It is in fact the result of the concatenation of a siren number (9 digits),
+	 * a sequential number (4 digits) and a control number (1 digit) concatenation.
+	 * If $maxSequentialDigits is invalid, it is set to 2.
+	 *
+	 * @param int $maxSequentialDigits The maximum number of digits for the sequential number (> 0 && <= 4).
+	 *
+	 * @return string
+	 */
+	public static function siret($maxSequentialDigits = 2)
+	{
+		
+		$siret = '';
+		$sum = 0;
+		for ($i = 0; $i != 8; $i++) {
+			$rand = mt_rand(0,9);
+			$siret .= $rand;
+			$tmp = $rand * ( 1 + ($i + 1) % 2);
+			if ($tmp >= 10) $tmp -= 9;
+			$sum += $tmp;
+		}
+		$siret .= "0000";
+		$diff = 10 - ($sum % 10);
+		if ($diff > 2) {
+			$first = floor($diff / 3);
+			$second = $diff - (2 * $first);
+			$siret .= $first . $second;
+		} else {
+			$siret .= '0' . $diff;
+		}
 
-        $sequentialNumber = str_pad(static::randomNumber($maxSequentialDigits), 4, '0', STR_PAD_LEFT);
+		return preg_replace("/([0-9]{3})([0-9]{3})([0-9]{3})([0-9]{5})/", "$1 $2 $3 $4", $siret);
+		
+	}
 
-        return  static::numerify(static::siren() . ' ' . $sequentialNumber . '#');
-    }
+	/**
+	 * Generates a siren number (9 digits).
+	 *
+	 * @return string
+	 */
+	public static function siren()
+	{
+		return static::numerify(static::$sirenFormat);
+	}
 
-    /**
-     * Generates a siren number (9 digits).
-     *
-     * @return string
-     */
-    public static function siren()
-    {
-        return static::numerify(static::$sirenFormat);
-    }
+	/**
+	 * @var array An array containing string which should not appear twice in a catch phrase.
+	 */
+	private static $wordsWhichShouldNotAppearTwice = array('sécurité', 'simpl');
 
-    /**
-     * @var array An array containing string which should not appear twice in a catch phrase.
-     */
-    private static $wordsWhichShouldNotAppearTwice = array('sécurité', 'simpl');
-
-    /**
-     * Validates a french catch phrase.
+	/**
+	 * Validates a french catch phrase.
      *
      * @param string $catchPhrase The catch phrase to validate.
      *
