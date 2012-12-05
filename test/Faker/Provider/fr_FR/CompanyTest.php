@@ -21,7 +21,8 @@ class IsValidSiret extends \PHPUnit_Framework_Constraint
 
     	$sum = 0;
 		for ($i = 0; $i < 14; $i++) {
-			$tmp = ((($i + 1) % 2) + 1) * intval($siret[$i]);
+			$isEven = (($i % 2) === 0);
+			$tmp = $isEven ? $siret[$i] * 2 : $siret[$i];
 			if ($tmp >= 10) $tmp -= 9;
 			$sum += $tmp;
 		}
