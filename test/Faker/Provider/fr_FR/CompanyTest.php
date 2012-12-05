@@ -5,17 +5,23 @@ namespace Faker\Test\Provider\fr_FR;
 use Faker\Provider\fr_FR\Company;
 
 /**
- * @see http://www.pixelastic.com/blog/13:validation-et-generation-de-numero-de-siret 
+ * @see http://www.pixelastic.com/blog/13:validation-et-generation-de-numero-de-siret
+ * @see http://fr.wikipedia.org/wiki/Syst%C3%A8me_d%E2%80%99identification_du_r%C3%A9pertoire_des_%C3%A9tablissements
  */
 class IsValidSiret extends \PHPUnit_Framework_Constraint
 {
 	
     protected function matches($other)
     {
+    	
     	$siret = str_replace(' ', '', $other);
-		$sum = 0;
-		for($i = 0; $i != 14; $i++) {
-			$tmp = ((($i + 1) % 2) + 1 ) * intval($siret[$i]);
+    	
+    	if (strlen($siret) != 14)
+    		return false;
+
+    	$sum = 0;
+		for ($i = 0; $i < 14; $i++) {
+			$tmp = ((($i + 1) % 2) + 1) * intval($siret[$i]);
 			if ($tmp >= 10) $tmp -= 9;
 			$sum += $tmp;
 		}
@@ -58,9 +64,13 @@ class CompanyTest extends \PHPUnit_Framework_TestCase
 		$siret3 = Company::siret(3);
 		$siret4 = Company::siret(4);
 
+		$this->assertThat($siret1, self :: isValidSiret());
 		$this->assertRegExp("/[\d]{3} [\d]{3} [\d]{3} 000[\d]{2}/", $siret1);
+		$this->assertThat($siret2, self :: isValidSiret());
 		$this->assertRegExp("/[\d]{3} [\d]{3} [\d]{3} 00[\d]{3}/", $siret2);
+		$this->assertThat($siret3, self :: isValidSiret());
 		$this->assertRegExp("/[\d]{3} [\d]{3} [\d]{3} 0[\d]{4}/", $siret3);
+		$this->assertThat($siret4, self :: isValidSiret());
 		$this->assertRegExp("/[\d]{3} [\d]{3} [\d]{3} [\d]{5}/", $siret4);
 	}
 
