@@ -118,25 +118,51 @@ class Company extends \Faker\Provider\Company
 	public static function siret($maxSequentialDigits = 2)
 	{
 		
-		$siret = '';
-		$sum = 0;
-		for ($i = 0; $i != 8; $i++) {
-			$rand = mt_rand(0,9);
-			$siret .= $rand;
-			$tmp = $rand * ( 1 + ($i + 1) % 2);
+		if ($maxSequentialDigits > 4 || $maxSequentialDigits <= 0) {
+			$maxSequentialDigits = 2;
+		}
+		
+		$controlDigit = mt_rand(0, 9);
+		$siret = $sum = $controlDigit;
+		
+		$position = 2;
+		for ($i = 0; $i < $maxSequentialDigits; $i++) {
+			
+			$sequentialDigit = mt_rand(0, 9);
+			$isEven = $position++ % 2 === 0;
+			
+			$tmp = $isEven ? $sequentialDigit * 2 : $sequentialDigit;
 			if ($tmp >= 10) $tmp -= 9;
 			$sum += $tmp;
+			
+			$siret = $sequentialDigit . $siret;
+			
 		}
-		$siret .= "0000";
-		$diff = 10 - ($sum % 10);
-		if ($diff > 2) {
-			$first = floor($diff / 3);
-			$second = $diff - (2 * $first);
-			$siret .= $first . $second;
+		
+		$siret = str_pad($siret, 5, '0', STR_PAD_LEFT);
+		
+		$position = 6;
+		
+		for ($i = 0; $i < 7; $i++) {
+			
+			$digit = mt_rand(0, 9);
+			$isEven = $position++ % 2 === 0;
+			
+			$tmp = $isEven ? $digit * 2 : $digit;
+			if ($tmp >= 10) $tmp -= 9;
+			$sum += $tmp;
+			
+			$siret = $digit . $siret;
+			
+		}
+		
+		$mod = $sum % 10;
+		if ($mod % 10 === 0) {
+			$siret = '00' . $siret;
 		} else {
-			$siret .= '0' . $diff;
+			$siret = '0' . (10 - $mod) . $siret;
 		}
-
+		
 		return preg_replace("/([0-9]{3})([0-9]{3})([0-9]{3})([0-9]{5})/", "$1 $2 $3 $4", $siret);
 		
 	}
