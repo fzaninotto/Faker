@@ -142,7 +142,6 @@ class Company extends \Faker\Provider\Company
 		$siret = str_pad($siret, 5, '0', STR_PAD_LEFT);
 		
 		$position = 6;
-		
 		for ($i = 0; $i < 7; $i++) {
 			
 			$digit = mt_rand(0, 9);
@@ -157,9 +156,10 @@ class Company extends \Faker\Provider\Company
 		}
 		
 		$mod = $sum % 10;
-		if ($mod % 10 === 0) {
+		if ($mod === 0) {
 			$siret = '00' . $siret;
 		} else {
+			// Use the odd position to avoid multiplying by two
 			$siret = '0' . (10 - $mod) . $siret;
 		}
 		
@@ -174,7 +174,30 @@ class Company extends \Faker\Provider\Company
 	 */
 	public static function siren()
 	{
-		return static::numerify(static::$sirenFormat);
+		$siren = '';
+		$sum = 0;
+		for ($i = 9; $i > 1; $i--) {
+			
+			$digit = mt_rand(0, 9);
+			$isEven = $i % 2 === 0;
+			
+			$tmp = $isEven ? $digit * 2 : $digit;
+			if ($tmp >= 10) $tmp -= 9;
+			$sum += $tmp;
+			
+			$siren = $digit . $siren;
+			
+		}
+		
+		$mod = $sum % 10;
+		if ($mod === 0) {
+			$siren = '0' . $siren;
+		} else {
+			$siren = (10 - $mod) . $siren;
+		}
+		
+		return preg_replace("/([0-9]{3})([0-9]{3})([0-9]{3})/", "$1 $2 $3", $siren);
+		
 	}
 
 	/**

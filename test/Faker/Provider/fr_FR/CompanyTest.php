@@ -23,8 +23,9 @@ abstract class IsValidSirenSiret extends \PHPUnit_Framework_Constraint
 
     	$sum = 0;
     	// IMPORTANT : from right to left
+    	$position = 1;
     	for ($i = strlen($code) - 1; $i >= 0; $i--) {
-    		$isEven = (($i % 2) === 0);
+    		$isEven = (($position++ % 2) === 0);
     		$tmp = $isEven ? $code[$i] * 2 : $code[$i];
     		if ($tmp >= 10) $tmp -= 9;
 			$sum += $tmp;
