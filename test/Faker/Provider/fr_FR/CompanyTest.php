@@ -3,84 +3,23 @@
 namespace Faker\Test\Provider\fr_FR;
 
 use Faker\Provider\fr_FR\Company;
+use Faker\PHPUnit\Framework\Constraint as Constraint;
 
-/**
- * @see http://www.pixelastic.com/blog/13:validation-et-generation-de-numero-de-siret
- * @see http://fr.wikipedia.org/wiki/Syst%C3%A8me_d%E2%80%99identification_du_r%C3%A9pertoire_des_%C3%A9tablissements
- * @see http://fr.wikipedia.org/wiki/SIREN
- */
-
-abstract class IsValidSirenSiret extends \PHPUnit_Framework_Constraint 
-{
-	
-	protected function matches($other)
-    {
-    	
-    	$code = str_replace(' ', '', $other);
-    	
-    	if (strlen($code) != $this->getLength())
-    		return false;
-
-    	$sum = 0;
-    	// IMPORTANT : from right to left
-    	$position = 1;
-    	for ($i = strlen($code) - 1; $i >= 0; $i--) {
-    		$isEven = (($position++ % 2) === 0);
-    		$tmp = $isEven ? $code[$i] * 2 : $code[$i];
-    		if ($tmp >= 10) $tmp -= 9;
-			$sum += $tmp;
-    	}
-    	return ($sum % 10 === 0);
-    	
-    }
-    
-    public function toString() {
-    	return sprintf('is a valid %s number', $this->getName());
-    }
-    
-    abstract protected function getLength();
-    
-    abstract protected function getName();
-
-}
-
-class IsValidSiret extends IsValidSirenSiret
-{
-	
-	protected function getLength() {
-		return 14;
-	}
-    
-	protected function getName() {
-		return 'SIRET';
-	}
-    
-}
-
-class IsValidSiren extends IsValidSirenSiret
-{
-	
-	protected function getLength() {
-		return 9;
-	}
-    
-	protected function getName() {
-		return 'SIREN';
-	}
-    
-}
+require_once __DIR__ . '/../../PHPUnit/Framework/Constraint/IsValidSirenSiret.php';
+require_once __DIR__ . '/../../PHPUnit/Framework/Constraint/IsValidSiret.php';
+require_once __DIR__ . '/../../PHPUnit/Framework/Constraint/IsValidSiren.php';
 
 class CompanyTest extends \PHPUnit_Framework_TestCase
 {
 	
 	private static function isValidSiret()
     {
-        return new IsValidSiret();
+        return new Constraint\IsValidSiret();
     }
 	
 	private static function isValidSiren()
     {
-        return new IsValidSiren();
+        return new Constraint\IsValidSiren();
     }
     
 	public function testParagraphWithNegativeNbDigitsReturnsAValidAndWellFormattedSiret()
