@@ -52,11 +52,6 @@ class Company extends \Faker\Provider\Company
 	protected static $companySuffix = array('SA', 'S.A.', 'SARL', 'S.A.R.L.', 'S.A.S.', 'et Fils');
 
 	/**
-	 * @var string Siren format.
-	 */
-	protected static $sirenFormat = "### ### ###";
-
-	/**
 	 * Returns a random catch phrase noun.
 	 *
 	 * @return string
@@ -106,13 +101,10 @@ class Company extends \Faker\Provider\Company
 	}
 
 	/**
-	 * Generates a siret number (14 digits).
-	 * It is in fact the result of the concatenation of a siren number (9 digits),
-	 * a sequential number (4 digits) and a control number (1 digit) concatenation.
-	 * If $maxSequentialDigits is invalid, it is set to 2.
-	 *
+	 * Generates a siret number (14 digits) that passes the Luhn check. 
+	 * Use $maxSequentialDigits to make sure the digits at position 2 to 5 are not zeros. 
+	 * @see http://en.wikipedia.org/wiki/Luhn_algorithm
 	 * @param int $maxSequentialDigits The maximum number of digits for the sequential number (> 0 && <= 4).
-	 *
 	 * @return string
 	 */
 	public static function siret($maxSequentialDigits = 2)
@@ -168,8 +160,8 @@ class Company extends \Faker\Provider\Company
 	}
 
 	/**
-	 * Generates a siren number (9 digits).
-	 *
+	 * Generates a siren number (9 digits) that passes the Luhn check. 
+	 * @see http://en.wikipedia.org/wiki/Luhn_algorithm
 	 * @return string
 	 */
 	public static function siren()
