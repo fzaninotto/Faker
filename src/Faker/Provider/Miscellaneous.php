@@ -4,9 +4,9 @@ namespace Faker\Provider;
 
 class Miscellaneous extends \Faker\Provider\Base
 {
-	protected static $languageCode = array('cn', 'de', 'en', 'es', 'fr', 'it', 'pt', 'ru','tr','az');
+	protected static $languageCode = array('cn', 'de', 'en', 'es', 'fr', 'it', 'pt', 'ru');
 
-	protected static $countryCode = array('CA', 'CN', 'DE', 'ES', 'FR', 'IE', 'IN', 'IT', 'MX', 'PT', 'RU', 'UK', 'US','AZ','TR');
+	protected static $countryCode = array('CA', 'CN', 'DE', 'ES', 'FR', 'IE', 'IN', 'IT', 'MX', 'PT', 'RU', 'UK', 'US');
 	/**
 	 * Return a boolean, true or false
 	 *
