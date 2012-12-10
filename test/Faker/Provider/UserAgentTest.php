@@ -3,7 +3,6 @@
 namespace Faker\Test\Provider;
 
 use Faker\Provider\UserAgent;
-use Faker\Generator;
 
 class UserAgentTest extends \PHPUnit_Framework_TestCase
 {
