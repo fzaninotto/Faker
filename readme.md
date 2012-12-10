@@ -299,13 +299,13 @@ class Book extends \Faker\Provider\Base
 {
   public function title($nbWords = 5)
   {
-    $sentence = $this->generator->sentence($nbWords);
+    $sentence = $this->sentence($nbWords);
     return substr($sentence, 0, strlen($sentence) - 1);
   }
 
   public function ISBN()
   {
-    return $this->generator->randomNumber(13);
+    return $this->randomNumber(13);
   }
 }
 ```
