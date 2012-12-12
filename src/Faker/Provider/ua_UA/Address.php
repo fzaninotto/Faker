@@ -299,22 +299,6 @@ class Address extends \Faker\Provider\Address
         return '';
     }
 
-    public static function buildingNumber()
-    {
-        return static::numerify(static::randomElement(static::$buildingNumber));
-    }
-
-    public function address()
-    {
-        $format = static::randomElement(static::$addressFormats);
-        return $this->generator->parse($format, array());
-    }
-
-    public static function country()
-    {
-        return static::randomElement(static::$country);
-    }
-
     public static function postcode()
     {
         return static::toUpper(static::bothify(static::randomElement(static::$postcode)));
