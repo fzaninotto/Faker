@@ -25,12 +25,6 @@ class Company extends \Faker\Provider\Company
         'Мегамакс', 'Мульти', 'Майнер'
     );
 
-    public function company()
-    {
-        $format = static::randomElement(static::$formats);
-        return $this->generator->parse($format);
-    }
-
     public function companyUrl()
     {
         $format = static::randomElement(static::$urlFormats);
