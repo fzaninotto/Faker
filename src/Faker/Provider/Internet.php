@@ -119,7 +119,7 @@ class Internet extends \Faker\Provider\Base
      */
     public function ipv4()
     {
-        return long2ip(mt_rand(-2147483648, 2147483647));
+        return long2ip(mt_rand(0, 1) == 0 ? mt_rand(-2147483648, 0) : mt_rand(1, 2147483647));
     }
 
     /**
