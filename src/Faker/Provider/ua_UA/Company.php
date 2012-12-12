@@ -36,11 +36,6 @@ class Company extends \Faker\Provider\Company
         return static::randomElement(static::$companyPrefix);
     }
 
-    public static function companySuffix()
-    {
-        return static::randomElement(static::$companySuffix);
-    }
-
     public static function companyName()
     {
         return static::randomElement(static::$companyName);
