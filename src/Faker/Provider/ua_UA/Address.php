@@ -273,11 +273,11 @@ class Address extends \Faker\Provider\Address
     );
 
     protected static $addressFormats = array(
-        "{{postcode}}, {{cityAndRegion}}, {{streetPrefix}} {{street}}, {{buildingNumber}}",
+        "{{postcode}}, {{cityAndRegion}}, {{streetPrefix}} {{streetName}}, {{buildingNumber}}",
     );
 
     protected static $streetAddressFormats = array(
-        "{{streetPrefix}} {{street}}, {{buildingNumber}}"
+        "{{streetPrefix}} {{streetName}}, {{buildingNumber}}"
     );
 
     public static function citySuffix()
@@ -294,9 +294,7 @@ class Address extends \Faker\Provider\Address
 
     public function streetName()
     {
-        // Only a small part of person names can be used as street name,
-        // so skip it
-        return '';
+        return static::randomElement(static::$street);
     }
 
     public static function postcode()
@@ -342,10 +340,5 @@ class Address extends \Faker\Provider\Address
     public static function streetPrefix()
     {
         return static::randomElement(static::$streetPrefix);
-    }
-
-    public static function street()
-    {
-        return static::randomElement(static::$street);
     }
 }
