@@ -3,9 +3,9 @@
 namespace Faker\Provider\ua_UA;
 
 /**
- * Some utils what ua_UA provider needs
+ * Cyrillic to latin transliteration util
  */
-Class Utils
+Class Transliteration
 {
     /**
      * Translate cyrillic text to latin
@@ -13,7 +13,7 @@ Class Utils
      * @param string $string
      * @return string
      */
-    public static function cyrillicToLatin($string = '') {
+    public static function transliterate($string = '') {
         $replace=array(
             "'"=>"",
             "`"=>"",

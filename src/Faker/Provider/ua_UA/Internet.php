@@ -14,7 +14,7 @@ class Internet extends \Faker\Provider\Internet
     {
         $format = static::randomElement(static::$userNameFormats);
         return static::toLower(static::bothify(
-                Utils::cyrillicToLatin($this->generator->parse($format))
+                Transliteration::transliterate($this->generator->parse($format))
             )
         );
     }
@@ -26,7 +26,7 @@ class Internet extends \Faker\Provider\Internet
     {
         $company = $this->generator->format('companyUrl');
         $company = str_replace(' ', '-', $company);
-        $company = Utils::cyrillicToLatin($company);
+        $company = Transliteration::transliterate($company);
         return $company;
     }
 }
