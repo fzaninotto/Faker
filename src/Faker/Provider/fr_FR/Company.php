@@ -4,7 +4,6 @@ namespace Faker\Provider\fr_FR;
 
 class Company extends \Faker\Provider\Company
 {
-	
     /**
      * @var array French company name formats.
      */
@@ -82,24 +81,24 @@ class Company extends \Faker\Provider\Company
         return static::randomElement(static::$verb);
     }
 
-	/**
-	 * Generates a french catch phrase.
-	 *
-	 * @return string
-	 */
-	public function catchPhrase()
-	{
-		do {
-			$format = static::randomElement(static::$catchPhraseFormats);
-			$catchPhrase = ucfirst($this->generator->parse($format));
+    /**
+     * Generates a french catch phrase.
+     *
+     * @return string
+     */
+    public function catchPhrase()
+    {
+        do {
+            $format = static::randomElement(static::$catchPhraseFormats);
+            $catchPhrase = ucfirst($this->generator->parse($format));
 
-			if (static::isCatchPhraseValid($catchPhrase)) {
-				break;
-			}
-		} while (true);
+            if (static::isCatchPhraseValid($catchPhrase)) {
+                break;
+            }
+        } while (true);
 
-		return $catchPhrase;
-	}
+        return $catchPhrase;
+    }
 
 	/**
 	 * Generates a siret number (14 digits) that passes the Luhn check. 
