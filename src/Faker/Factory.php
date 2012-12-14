@@ -13,7 +13,7 @@ class Factory
         $generator = new Generator();
         foreach (static::$defaultProviders as $provider) {
             $providerClassName = self::getProviderClassname($provider, $locale);
-            $generator->addProvider(new $providerClassName($generator));
+            $generator->addProvider(new $providerClassName($generator, $locale));
         }
 
         return $generator;
