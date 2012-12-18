@@ -52,11 +52,6 @@ class Company extends \Faker\Provider\Company
     protected static $companySuffix = array('SA', 'S.A.', 'SARL', 'S.A.R.L.', 'S.A.S.', 'et Fils');
 
     /**
-     * @var string Siren format.
-     */
-    protected static $sirenFormat = "### ### ###";
-
-    /**
      * Returns a random catch phrase noun.
      *
      * @return string
@@ -106,34 +101,95 @@ class Company extends \Faker\Provider\Company
     }
 
     /**
-     * Generates a siret number (14 digits).
-     * It is in fact the result of the concatenation of a siren number (9 digits),
-     * a sequential number (4 digits) and a control number (1 digit) concatenation.
-     * If $maxSequentialDigits is invalid, it is set to 2.
-     *
+     * Generates a siret number (14 digits) that passes the Luhn check. 
+     * Use $maxSequentialDigits to make sure the digits at position 2 to 5 are not zeros. 
+     * @see http://en.wikipedia.org/wiki/Luhn_algorithm
      * @param int $maxSequentialDigits The maximum number of digits for the sequential number (> 0 && <= 4).
-     *
      * @return string
      */
     public static function siret($maxSequentialDigits = 2)
     {
+        
         if ($maxSequentialDigits > 4 || $maxSequentialDigits <= 0) {
             $maxSequentialDigits = 2;
         }
-
-        $sequentialNumber = str_pad(static::randomNumber($maxSequentialDigits), 4, '0', STR_PAD_LEFT);
-
-        return  static::numerify(static::siren() . ' ' . $sequentialNumber . '#');
+        
+        $controlDigit = mt_rand(0, 9);
+        $siret = $sum = $controlDigit;
+        
+        $position = 2;
+        for ($i = 0; $i < $maxSequentialDigits; $i++) {
+            
+            $sequentialDigit = mt_rand(0, 9);
+            $isEven = $position++ % 2 === 0;
+            
+            $tmp = $isEven ? $sequentialDigit * 2 : $sequentialDigit;
+            if ($tmp >= 10) $tmp -= 9;
+            $sum += $tmp;
+            
+            $siret = $sequentialDigit . $siret;
+            
+        }
+        
+        $siret = str_pad($siret, 5, '0', STR_PAD_LEFT);
+        
+        $position = 6;
+        for ($i = 0; $i < 7; $i++) {
+            
+            $digit = mt_rand(0, 9);
+            $isEven = $position++ % 2 === 0;
+            
+            $tmp = $isEven ? $digit * 2 : $digit;
+            if ($tmp >= 10) $tmp -= 9;
+            $sum += $tmp;
+            
+            $siret = $digit . $siret;
+            
+        }
+        
+        $mod = $sum % 10;
+        if ($mod === 0) {
+            $siret = '00' . $siret;
+        } else {
+            // Use the odd position to avoid multiplying by two
+            $siret = '0' . (10 - $mod) . $siret;
+        }
+        
+        return preg_replace("/([0-9]{3})([0-9]{3})([0-9]{3})([0-9]{5})/", "$1 $2 $3 $4", $siret);
+        
     }
 
     /**
-     * Generates a siren number (9 digits).
-     *
+     * Generates a siren number (9 digits) that passes the Luhn check. 
+     * @see http://en.wikipedia.org/wiki/Luhn_algorithm
      * @return string
      */
     public static function siren()
     {
-        return static::numerify(static::$sirenFormat);
+        $siren = '';
+        $sum = 0;
+        for ($i = 9; $i > 1; $i--) {
+            
+            $digit = mt_rand(0, 9);
+            $isEven = $i % 2 === 0;
+            
+            $tmp = $isEven ? $digit * 2 : $digit;
+            if ($tmp >= 10) $tmp -= 9;
+            $sum += $tmp;
+            
+            $siren = $digit . $siren;
+            
+        }
+        
+        $mod = $sum % 10;
+        if ($mod === 0) {
+            $siren = '0' . $siren;
+        } else {
+            $siren = (10 - $mod) . $siren;
+        }
+        
+        return preg_replace("/([0-9]{3})([0-9]{3})([0-9]{3})/", "$1 $2 $3", $siren);
+        
     }
 
     /**
