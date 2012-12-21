@@ -38,7 +38,7 @@ class Internet extends \Faker\Provider\Base
      */
     public function safeEmail()
     {
-        return $this->userName() . '@example.' . static::randomElement(static::$safeEmailTld);
+        return preg_replace('/\s/', '', $this->userName() . '@example.' . static::randomElement(static::$safeEmailTld));
     }
 
     /**
@@ -46,7 +46,7 @@ class Internet extends \Faker\Provider\Base
      */
     public function freeEmail()
     {
-        return $this->userName() . '@' . static::freeEmailDomain();
+        return preg_replace('/\s/', '', $this->userName() . '@' . static::freeEmailDomain());
     }
 
     /**
@@ -54,7 +54,7 @@ class Internet extends \Faker\Provider\Base
      */
     public function companyEmail()
     {
-        return $this->userName() . '@' . $this->domainName();
+        return preg_replace('/\s/', '', $this->userName() . '@' . $this->domainName());
     }
 
     /**
