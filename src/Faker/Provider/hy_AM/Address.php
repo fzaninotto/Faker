@@ -114,12 +114,12 @@ class Address extends \Faker\Provider\Address
 		return static::randomElement(static::$cityPrefix);
 	}
 
-	public static function city()
+	public function city()
 	{
 		return static::randomElement(static::$city);
 	}
 
-	public static function streetPrefix()
+	public function streetPrefix()
 	{
 		return static::randomElement(static::$streetPrefix);
 	}
