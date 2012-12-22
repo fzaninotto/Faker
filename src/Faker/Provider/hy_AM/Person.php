@@ -51,9 +51,9 @@ class Person extends \Faker\Provider\Person
 		'Համբարձումյան','Սարգսյան',
 	);
 
-	//private static $prefix = array('Mr.','Mrs.','Ms.','Miss','Dr.');
+	private static $prefix = array('Պարոն','');
 
-	//private static $suffix = array('Jr.','Sr.','I','II','III','IV','V','MD','DDS','PhD','DVM');
+	private static $suffix = array('',);
 
 	/**
 	 * @example 'Mrs.'

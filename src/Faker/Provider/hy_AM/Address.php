@@ -2,7 +2,7 @@
 
 namespace Faker\Provider\hy_AM;
 
-class Address extends \Faker\Provider\Base
+class Address extends \Faker\Provider\Address
 {
 	protected static $cityPrefix = array('քաղաք','գյուղ');
 
@@ -76,7 +76,7 @@ class Address extends \Faker\Provider\Base
 
 	protected static $addressFormats = array(
 		"{{region}} {{regionSuffix}}, {{cityPrefix}} {{city}}, {{street}} {{buildingNumber}} {{streetPrefix}}, {{postcode}}",
-		//"{{country}}, {{region}} {{regionSuffix}}, {{cityPrefix}} {{city}}, {{street}} {{buildingNumber}} {{streetPrefix}}, {{postcode}}",
+		"{{postcode}}, {{region}} {{regionSuffix}}, {{cityPrefix}} {{city}}, {{street}} {{streetSuffix}}, {{buildingNumber}}",
 	);
 
 	public static function buildingNumber()
