@@ -25,7 +25,7 @@ class CompanyTest extends \PHPUnit_Framework_TestCase
     {
         $siret = Company::siret(-1);
         
-        $this->assertThat($siret, self :: isValidSiret());
+        $this->assertThat($siret, self::isValidSiret());
         $this->assertRegExp("/[\d]{3} [\d]{3} [\d]{3} 00[\d]{3}/", $siret);
     }
 
@@ -33,7 +33,7 @@ class CompanyTest extends \PHPUnit_Framework_TestCase
     {
         $siret = Company::siret(6);
         
-        $this->assertThat($siret, self :: isValidSiret());
+        $this->assertThat($siret, self::isValidSiret());
         $this->assertRegExp("/[\d]{3} [\d]{3} [\d]{3} 00[\d]{3}/", $siret);
     }
 
@@ -64,15 +64,23 @@ class CompanyTest extends \PHPUnit_Framework_TestCase
 
     public function testCatchPhraseValidationReturnsFalse()
     {
-        $isCatchPhraseValid = Company::isCatchPhraseValid('La sécurité de rouler en toute sécurité');
+        $isCatchPhraseValid = TestableCompany::isCatchPhraseValid('La sécurité de rouler en toute sécurité');
 
         $this->assertFalse($isCatchPhraseValid);
     }
 
     public function testCatchPhraseValidationReturnsTrue()
     {
-        $isCatchPhraseValid = Company::isCatchPhraseValid('La sécurité de rouler en toute simplicité');
+        $isCatchPhraseValid = TestableCompany::isCatchPhraseValid('La sécurité de rouler en toute simplicité');
 
         $this->assertTrue($isCatchPhraseValid);
+    }
+}
+
+class TestableCompany extends Company
+{
+    public static function isCatchPhraseValid($catchPhrase)
+    {
+        return parent::isCatchPhraseValid($catchPhrase);
     }
 }

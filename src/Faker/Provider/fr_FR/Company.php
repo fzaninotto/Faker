@@ -195,7 +195,7 @@ class Company extends \Faker\Provider\Company
     /**
      * @var array An array containing string which should not appear twice in a catch phrase.
      */
-    private static $wordsWhichShouldNotAppearTwice = array('sécurité', 'simpl');
+    protected static $wordsWhichShouldNotAppearTwice = array('sécurité', 'simpl');
 
     /**
      * Validates a french catch phrase.
