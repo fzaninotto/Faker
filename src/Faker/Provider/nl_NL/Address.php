@@ -109,33 +109,4 @@ class Address extends \Faker\Provider\Address
     {
         return static::randomElement(static::$cityNames);
     }
-
-    /**
-    * @see parent
-    */
-    public function address()
-    {
-        $address = parent::address();
-        return preg_replace('/\\\n/', PHP_EOL, $address);
-    }
-
-    /**
-    * Returns a NL latitude, roughly between 50.75 and 53.55
-    *
-    * @return float
-    */
-    public static function latitude()
-    {
-        return number_format(mt_rand(50750000, 53550000)/1000000, 6);
-    }
-
-    /**
-    * Returns a NL longitude, roughly between 3.38 and 7.22
-    *
-    * @return float
-    */
-    public static function longitude()
-    {
-        return number_format(mt_rand(3380000, 7220000)/1000000, 6);
-    }
 }
