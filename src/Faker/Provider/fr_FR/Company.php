@@ -92,7 +92,7 @@ class Company extends \Faker\Provider\Company
             $format = static::randomElement(static::$catchPhraseFormats);
             $catchPhrase = ucfirst($this->generator->parse($format));
 
-            if (static::isCatchPhraseValid($catchPhrase)) {
+            if ($this->isCatchPhraseValid($catchPhrase)) {
                 break;
             }
         } while (true);
@@ -204,7 +204,7 @@ class Company extends \Faker\Provider\Company
      *
      * @return boolean (true if valid, false otherwise)
      */
-    public static function isCatchPhraseValid($catchPhrase)
+    protected static function isCatchPhraseValid($catchPhrase)
     {
         foreach (static::$wordsWhichShouldNotAppearTwice as $word) {
             // Fastest way to check if a piece of word does not appear twice.
