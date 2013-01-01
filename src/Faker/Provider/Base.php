@@ -141,7 +141,7 @@ class Base
      * @param  string $string String that should be converted to lowercase
      * @return string
      */
-    public static function toLower($string)
+    public static function toLower($string = '')
     {
         return extension_loaded('mbstring') ? mb_strtolower($string) : strtolower($string);
     }
@@ -152,7 +152,7 @@ class Base
      * @param  string $string String that should be converted to uppercase
      * @return string
      */
-    public static function toUpper($string)
+    public static function toUpper($string = '')
     {
         return extension_loaded('mbstring') ? mb_strtoupper($string) : strtoupper($string);
     }
