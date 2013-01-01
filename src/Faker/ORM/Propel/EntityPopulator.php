@@ -2,6 +2,8 @@
 
 namespace Faker\ORM\Propel;
 
+use \Faker\Provider\Base;
+
 /**
  * Service class for populating a table through a Propel ActiveRecord class.
  */
@@ -78,7 +80,7 @@ class EntityPopulator
     protected function isColumnBehavior($columnMap)
     {
         foreach ($columnMap->getTable()->getBehaviors() as $name => $params) {
-            $columnName = static::toLower($columnMap->getName());
+            $columnName = Base::toLower($columnMap->getName());
             switch ($name) {
                 case 'nested_set':
                     $columnNames = array($params['left_column'], $params['right_column'], $params['level_column']);

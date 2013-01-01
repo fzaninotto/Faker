@@ -2,6 +2,8 @@
 
 namespace Faker\Guesser;
 
+use \Faker\Provider\Base;
+
 class Name
 {
     protected $generator;
@@ -13,7 +15,7 @@ class Name
 
     public function guessFormat($name)
     {
-        $name = static::toLower($name);
+        $name = Base::toLower($name);
         $generator = $this->generator;
         if (preg_match('/^is[_A-Z]/', $name)) {
             return function() use ($generator) { return $generator->boolean; };

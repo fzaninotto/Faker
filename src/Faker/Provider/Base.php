@@ -143,7 +143,7 @@ class Base
      */
     public static function toLower($string = '')
     {
-        return extension_loaded('mbstring') ? mb_strtolower($string) : strtolower($string);
+        return extension_loaded('mbstring') ? mb_strtolower($string, 'UTF-8') : strtolower($string);
     }
 
     /**
@@ -154,6 +154,6 @@ class Base
      */
     public static function toUpper($string = '')
     {
-        return extension_loaded('mbstring') ? mb_strtoupper($string) : strtoupper($string);
+        return extension_loaded('mbstring') ? mb_strtoupper($string, 'UTF-8') : strtoupper($string);
     }
 }
