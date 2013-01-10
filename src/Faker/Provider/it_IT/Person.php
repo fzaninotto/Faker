@@ -62,7 +62,7 @@ class Person extends \Faker\Provider\Person
         'Milani', 'Pagano', 'Ruggiero', 'Sorrentino', 'D\'amico', 'Orlando', 'Damico', 'Negri'
     );
 
-    private static $prefix = array('Sig.', 'Dott.');
+    private static $prefix = array('Sig.', 'Dott.', 'Dr.', 'Ing.');
 
     private static $suffix = array();
 
