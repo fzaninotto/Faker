@@ -42,10 +42,10 @@ class Person extends \Faker\Provider\Person
         'Nowacki', 'Borowski', 'Błaszczyk', 'Chojnacki', 'Ciesielski',
     );
 
-    private static $prefix = array('mgr.','inż.', 'dr.', 'doc.');
+    private static $prefix = array('mgr','inż.', 'dr', 'doc.');
 
     /**
-     * @example 'mgr.'
+     * @example 'mgr'
      */
     public static function prefix()
     {
