@@ -94,7 +94,11 @@ class EntityPopulator
         foreach ($this->columnFormatters as $field => $format) {
             if (null !== $format) {
                 $value = is_callable($format) ? $format($insertedEntities, $obj) : $format;
-                $this->class->reflFields[$field]->setValue($obj, $value);
+                if (is_callable(array($obj, $field))) {
+                    $obj->$field($value);
+                } else {
+                    $this->class->reflFields[$field]->setValue($obj, $value);
+                }
             }
         }
 
