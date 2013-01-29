@@ -2,7 +2,8 @@
 
 namespace Faker\ORM\Doctrine;
 
-use Doctrine\Common\Persistence\Mapping\ClassMetadata;
+use Doctrine\ORM\Mapping\ClassMetadata;
+use Faker\ORM\Doctrine\ColumnTypeGuesser;
 
 /**
  * Service class for populating a table through a Propel ActiveRecord class.
