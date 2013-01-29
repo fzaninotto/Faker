@@ -17,6 +17,10 @@ class EntityPopulator
      * @var array
      */
     protected $columnFormatters = array();
+    /**
+     * @var array
+     */
+    protected $modifiers = array();
 
     /**
      * Class constructor.
@@ -51,6 +55,21 @@ class EntityPopulator
         $this->columnFormatters = array_merge($this->columnFormatters, $columnFormatters);
     }
 
+    public function setModifiers(array $modifiers)
+    {
+        $this->modifiers = $modifiers;
+    }
+
+    public function getModifiers()
+    {
+        return $this->modifiers;
+    }
+
+    public function mergeModifiersWith(array $modifiers)
+    {
+        $this->modifiers = array_merge($this->modifiers, $modifiers);
+    }
+
     public function guessColumnFormatters(\Faker\Generator $generator)
     {
         $formatters = array();
@@ -78,7 +97,27 @@ class EntityPopulator
             }
 
             $relatedClass = $this->class->getAssociationTargetClass($assocName);
-            $formatters[$assocName] = function($inserted) use ($relatedClass) { return isset($inserted[$relatedClass]) ? $inserted[$relatedClass][mt_rand(0, count($inserted[$relatedClass]) - 1)] : null; };
+
+            $unique = false;
+            $mappings = $this->class->getAssociationMappings();
+            foreach ($mappings as $mapping) {
+                if ($mapping['targetEntity'] == $relatedClass) {
+                    if ($mapping['type'] == ClassMetadata::ONE_TO_ONE) {
+                        $unique = true;
+                        break;
+                    }
+                }
+            }
+
+            $index = 0;
+            $formatters[$assocName] = function($inserted) use ($relatedClass, &$index, $unique) {
+                if ($unique && isset($inserted[$relatedClass])) {
+                    return $inserted[$relatedClass][$index++];
+                } else if (isset($inserted[$relatedClass])) {
+                    return $inserted[$relatedClass][mt_rand(0, count($inserted[$relatedClass]) - 1)];
+                }
+                return null;
+            };
         }
 
         return $formatters;
@@ -87,18 +126,18 @@ class EntityPopulator
     /**
      * Insert one new record using the Entity class.
      */
-    public function execute($manager, $insertedEntities)
+    public function execute($manager, $insertedEntities, $generateId = false)
     {
         $obj = $this->class->newInstance();
 
-        foreach ($this->columnFormatters as $field => $format) {
-            if (null !== $format) {
-                $value = is_callable($format) ? $format($insertedEntities, $obj) : $format;
-                if (is_callable(array($obj, $field))) {
-                    $obj->$field($value);
-                } else {
-                    $this->class->reflFields[$field]->setValue($obj, $value);
-                }
+        $this->fillColumns($obj, $insertedEntities);
+        $this->callMethods($obj, $insertedEntities);
+
+        if ($generateId) {
+            $idsName = $this->class->getIdentifier();
+            foreach ($idsName as $idName) {
+                $id = $this->generateId($obj, $idName, $manager);
+                $this->class->reflFields[$idName]->setValue($obj, $id);
             }
         }
 
@@ -107,4 +146,42 @@ class EntityPopulator
         return $obj;
     }
 
+    private function fillColumns($obj, $insertedEntities)
+    {
+        foreach ($this->columnFormatters as $field => $format) {
+            if (null !== $format) {
+                $value = is_callable($format) ? $format($insertedEntities, $obj) : $format;
+                $this->class->reflFields[$field]->setValue($obj, $value);
+            }
+        }
+    }
+
+    private function callMethods($obj, $insertedEntities)
+    {
+        foreach ($this->getModifiers() as $method => $formats) {
+            $args = array();
+            foreach ($formats as $format) {
+               $args[] = is_callable($format) ? $format($insertedEntities, $obj) : $format;
+            }
+            call_user_func_array(array($obj, $method), $args);
+        }
+    }
+
+    private function generateId($obj, $column, $manager)
+    {
+        /* @var $repository \Doctrine\ORM\EntityRepository */
+        $repository = $manager->getRepository(get_class($obj));
+        $result = $repository->createQueryBuilder('e')
+                ->select(sprintf('e.%s', $column))
+                ->getQuery()
+                ->getResult();
+        $ids = array_map('current', $result);
+
+        $id = null;
+        do {
+            $id = rand();
+        } while(in_array($id, $ids));
+
+        return $id;
+    }
 }

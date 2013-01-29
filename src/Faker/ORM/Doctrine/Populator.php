@@ -14,6 +14,7 @@ class Populator
     protected $manager;
     protected $entities = array();
     protected $quantities = array();
+    protected $generateId = array();
 
     public function __construct(\Faker\Generator $generator, ObjectManager $manager = null)
     {
@@ -27,7 +28,7 @@ class Populator
      * @param mixed $entity A Doctrine classname, or a \Faker\ORM\Doctrine\EntityPopulator instance
      * @param int   $number The number of entities to populate
      */
-    public function addEntity($entity, $number, $customColumnFormatters = array())
+    public function addEntity($entity, $number, $customColumnFormatters = array(), $customModifiers = array(), $generateId = false)
     {
         if (!$entity instanceof \Faker\ORM\Doctrine\EntityPopulator) {
             $entity = new \Faker\ORM\Doctrine\EntityPopulator($this->manager->getClassMetadata($entity));
@@ -36,6 +37,9 @@ class Populator
         if ($customColumnFormatters) {
             $entity->mergeColumnFormattersWith($customColumnFormatters);
         }
+        $entity->mergeModifiersWith($customModifiers);
+        $this->generateId[$entity->getClass()] = $generateId;
+
         $class = $entity->getClass();
         $this->entities[$class] = $entity;
         $this->quantities[$class] = $number;
@@ -59,8 +63,9 @@ class Populator
 
         $insertedEntities = array();
         foreach ($this->quantities as $class => $number) {
+            $generateId = $this->generateId[$class];
             for ($i=0; $i < $number; $i++) {
-                $insertedEntities[$class][]= $this->entities[$class]->execute($entityManager, $insertedEntities);
+                $insertedEntities[$class][]= $this->entities[$class]->execute($entityManager, $insertedEntities, $generateId);
             }
             $entityManager->flush();
         }
