@@ -15,8 +15,8 @@ class UuidTest extends \PHPUnit_Framework_TestCase
     public function testUuidExpectedSeed()
     {
         mt_srand(123);
-        $this->assertEquals("8eea2b29-832f-3633-985c-b2a257eabb5a", BaseProvider::uuid());
-        $this->assertEquals("9424cf48-58b3-3b7d-b89f-c049e9f5d31f", BaseProvider::uuid());
+        $this->assertEquals("8e2e0c84-50dd-367c-9e66-f3ab455c78d6", BaseProvider::uuid());
+        $this->assertEquals("073eb60a-902c-30ab-93d0-a94db371f6c8", BaseProvider::uuid());
     }
 
     protected function isUuid($uuid)
