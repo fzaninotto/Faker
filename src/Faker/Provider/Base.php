@@ -74,7 +74,7 @@ class Base
      */
     public static function numberBetween($from = null, $to = null)
     {
-        return mt_rand($from ?: 0, $to ?: PHP_INT_MAX);
+        return mt_rand($from ?: 0, $to ?: 2147483647); // 32bit compat default
     }
 
     /**
