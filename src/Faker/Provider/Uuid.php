@@ -11,7 +11,7 @@ class Uuid extends \Faker\Provider\Base
     public static function uuid()
     {
         // fix for compatibility with 32bit architecture; seed range restricted to 62bit
-        $seed = mt_rand(0, 2147483648) . '#' . mt_rand(0, 2147483648);
+        $seed = mt_rand(0, 2147483647) . '#' . mt_rand(0, 2147483647);
 
         // Hash the seed and convert to a byte array
         $val = md5($seed, true);
