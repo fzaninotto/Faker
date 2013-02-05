@@ -14,12 +14,9 @@ class Uuid extends \Faker\Provider\Base
 
         // Hash the seed and convert to a byte array
         $val = md5($seed, true);
-        $byte = array();
-        foreach (unpack('C16', $val) as $tmpKey => $tmpVal) {
-            $byte[$tmpKey-1] = $tmpVal;
-        }
+        $byte = array_values(unpack('C16', $val));
 
-        // b2f
+        // extract fields from byte array
         $tLo = ($byte[0] << 24) | ($byte[1] << 16) | ($byte[2] << 8) | $byte[3];
         $tMi = ($byte[4] << 8) | $byte[5];
         $tHi = ($byte[6] << 8) | $byte[7];
@@ -34,7 +31,7 @@ class Uuid extends \Faker\Provider\Base
             $tHi = (($tHi & 0x00ff) << 8) | (($tHi & 0xff00) >> 8);
         }
 
-        // apply version
+        // apply version number
         $tHi &= 0x0fff;
         $tHi |= (3 << 12);
 
