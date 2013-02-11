@@ -38,7 +38,7 @@ class Internet extends \Faker\Provider\Base
      */
     public function safeEmail()
     {
-        return preg_replace('/\s/', '', $this->userName() . '@example.' . static::randomElement(static::$safeEmailTld));
+        return preg_replace('/\s/', '', $this->userName() . '@' . static::safeEmailDomain());
     }
 
     /**
