@@ -64,7 +64,14 @@ class Internet extends \Faker\Provider\Base
     {
         return static::randomElement(static::$freeEmailDomain);
     }
-
+    
+    /**
+     * @example 'example.org'
+     */
+    public static function safeEmailDomain()
+    {
+        return 'example.' . static::randomElement(static::$safeEmailTld);
+    }
     /**
      * @example 'jdoe'
      */
