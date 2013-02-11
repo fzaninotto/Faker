@@ -173,6 +173,10 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     opera                  // 'Opera/8.25 (Windows NT 5.1; en-US) Presto/2.9.188 Version/10.00'
     internetExplorer       // 'Mozilla/5.0 (compatible; MSIE 7.0; Windows 98; Win 9x 4.90; Trident/3.0)'
 
+### `Faker\Provider\Uuid`
+
+    uuid                   // '7e57d004-2b97-0e7a-b45f-5387367791cd'
+
 ## Localization
 
 `Faker\Factory` can take a locale as an argument, to return localized data. If no localized provider is found, the factory fallbacks to the default locale (en_EN).
