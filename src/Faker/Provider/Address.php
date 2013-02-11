@@ -108,7 +108,7 @@ class Address extends \Faker\Provider\Base
      */
     public static function latitude()
     {
-        return number_format(mt_rand(-180000000, 180000000)/1000000, 6);
+        return number_format(mt_rand(-90000000, 90000000)/1000000, 6);
     }
 
     /**
