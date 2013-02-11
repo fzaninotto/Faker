@@ -4,50 +4,51 @@ namespace Faker\Provider\fr_CA;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $formats = array(
-        '{{firstName}} {{lastName}}',
-        '{{firstName}} {{lastName}}',
-        '{{firstName}} {{lastName}}',
-        '{{firstName}} {{lastName}}',
-        '{{firstName}} {{lastName}}-{{lastName}}',
-        '{{firstName}}-{{firstName}} {{lastName}}',
+    protected static $maleNameFormats = array(
+        '{{firstNameMale}} {{lastName}}',
+        '{{firstNameMale}} {{lastName}}',
+        '{{firstNameMale}} {{lastName}}',
+        '{{firstNameMale}} {{lastName}}',
+        '{{firstNameMale}} {{lastName}}',
+        '{{firstNameMale}} {{lastName}}-{{lastName}}',
+        '{{firstNameMale}}-{{firstNameMale}} {{lastName}}',
+    );
+
+    protected static $femaleNameFormats = array(
+        '{{firstNameFemale}} {{lastName}}',
+        '{{firstNameFemale}} {{lastName}}',
+        '{{firstNameFemale}} {{lastName}}',
+        '{{firstNameFemale}} {{lastName}}',
+        '{{firstNameFemale}} {{lastName}}',
+        '{{firstNameFemale}} {{lastName}}-{{lastName}}',
+        '{{firstNameFemale}}-{{firstNameFemale}} {{lastName}}',
     );
 
     /**
      * This list is more or less the same as in \Faker\Provider\fr_FR\Person.php
      * Some common names were added and other removed.
      */
-    protected static $firstName = array(
-        'Adrien', 'Adrienne', 'Adèle', 'Agathe', 'Alice', 'Alysson', 'Aimé', 'Aimée', 'Alain', 'Albert', 'Aline',
-        'Alexandre', 'Alexandra', 'Alfred', 'Alphonse', 'Amélie', 'Anaïs', 'André', 'Andrée', 'Ann', 'Anne', 'Annette',
-        'Annie', 'Anouk', 'Antoine', 'Anthony', 'Arthur', 'Audrey', 'Auguste', 'Augustin',
-        'Augustine', 'Arianne', 'Aurélie', 'Aurore',
-        'Benjamin', 'Benoît', 'Benoit', 'Bernard', 'Bernadette', 'Bertrand', 'Brigitte',
-        'Caroline', 'Catherine', 'Camille', 'Cécile', 'Céline', 'Chantal', 'Charles', 'Charlotte', 'Christian',
-        'Christiane', 'Christine', 'Christophe', 'Claire', 'Claude', 'Claudine', 'Colette', 'Corrine',
-        'Daniel', 'Danielle', 'David', 'Denis', 'Denise', 'Dominic', 'Dominique',
-        'Édith', 'Édouard', 'Élisabeth', 'Élise', 'Élodie', 'Émile', 'Émilie', 'Emmanuel', 'Émanuelle', 'Éric', 'Érika',
-        'Étienne', 'Eugène', 'Eugénie', 'Eve',
-        'François', 'Françoise', 'Françis', 'Frédéric', 'Frédérique',
-        'Gabriel', 'Gabrielle', 'Geneviève', 'Georges', 'Gérard', 'Gilbert', 'Gilles', 'Grégory', 'Guillaume', 'Guy',
-        'Hélène', 'Henri', 'Honoré', 'Honorée', 'Hugues',
-        'Isaac', 'Isabelle',
-        'Jacques', 'Jacqueline', 'Jean', 'Jeanne', 'Jeannine', 'Jérôme', 'Joseph', 'Joséphine', 'Jules', 'Julie', 'Julien',
-        'Laurent', 'Laurence', 'Léon', 'Louis', 'Louise', 'Luc', 'Luce', 'Lucie', 'Lucas',
-        'Madeleine', 'Manon', 'Marc', 'Marcel', 'Margot', 'Marguerite', 'Maggie', 'Marianne', 'Marie', 'Marthe',
-        'Martin', 'Martine', 'Maryse', 'Mathieu', 'Mathilde', 'Matthieu', 'Maurice', 'Michel', 'Michèle', 'Michelle',
-        'Monique',
-        'Nancy', 'Nathalie', 'Nicolas', 'Nicole', 'Noël', 'Noémie',
-        'Olivier', 'Olivia', 'Odette',
-        'Patrick', 'Patrice', 'Patricia', 'Paul', 'Paule', 'Paulette', 'Pauline', 'Pénélope', 'Philippe', 'Pierre',
-        'Raymond', 'Rémy', 'René', 'Renée', 'Richard', 'Robert', 'Roger', 'Roland', 'Rolande',
-        'Sébastien', 'Simone', 'Sophie', 'Stéphane', 'Stéphanie', 'Susanne', 'Suzanne', 'Sylvie',
-        'Théo', 'Théophile', 'Thérèse', 'Thierry', 'Thomas', 'Timothée', 'Tristan',
-        'Valérie', 'Véronique', 'Victor', 'Vincent', 'Virginie',
-        'William',
-        'Xavier',
-        'Yves', 'Yvon', 'Yvonne', 'Yvan',
-        'Zacharie', 'Zoé',
+    protected static $firstNameMale = array(
+        'Adrien', 'Aimé', 'Alain', 'Albert', 'Alexandre', 'Alfred', 'Alphonse', 'Alysson', 'André', 'Anthony', 'Antoine', 'Arthur', 'Auguste',
+        'Augustin', 'Augustine', 'Benjamin', 'Benoit', 'Benoît', 'Bernard', 'Bertrand', 'Charles', 'Christian', 'Christophe', 'Claude', 'Daniel',
+        'David', 'Denis', 'Dominic', 'Emmanuel', 'Eugène', 'Françis', 'François', 'Frédéric', 'Gabriel', 'Georges', 'Gilbert', 'Gilles',
+        'Grégory', 'Guillaume', 'Guy', 'Gérard', 'Henri', 'Hugues', 'Isaac', 'Jacques', 'Joseph', 'Jules', 'Julien', 'Jérôme',
+        'Laurent', 'Louis', 'Luc', 'Lucas', 'Léon', 'Marc', 'Marcel', 'Martin', 'Mathieu', 'Matthieu', 'Maurice', 'Michel',
+        'Nicolas', 'Noël', 'Olivier', 'Patrick', 'Paul', 'Philippe', 'Pierre', 'Raymond', 'René', 'Richard', 'Robert', 'Roger',
+        'Roland', 'Rémy', 'Simone', 'Stéphane', 'Sébastien', 'Thierry', 'Thomas', 'Théo', 'Théophile', 'Timothée', 'Tristan', 'Victor',
+        'Vincent', 'William', 'Xavier', 'Yvan', 'Yves', 'Yvon', 'Zacharie', 'Édouard', 'Émanuelle', 'Émile', 'Éric', 'Étienne', 'Honoré',
+    );
+
+    protected static $firstNameFemale = array(
+        'Adrienne', 'Adèle', 'Agathe', 'Aimée', 'Alexandra', 'Alice', 'Aline', 'Amélie', 'Anaïs', 'Andrée', 'Ann', 'Anne', 'Annette',
+        'Annie', 'Anouk', 'Arianne', 'Audrey', 'Aurore', 'Aurélie', 'Bernadette', 'Brigitte', 'Camille', 'Caroline', 'Catherine', 'Chantal',
+        'Charlotte', 'Christiane', 'Christine', 'Claire', 'Claudine', 'Colette', 'Corrine', 'Cécile', 'Céline', 'Danielle', 'Denise', 'Dominique',
+        'Eugénie', 'Eve', 'Françoise', 'Frédérique', 'Gabrielle', 'Geneviève', 'Hélène', 'Isabelle', 'Jacqueline', 'Jean', 'Jeanne', 'Jeannine',
+        'Joséphine', 'Julie', 'Laurence', 'Louise', 'Luce', 'Lucie', 'Madeleine', 'Maggie', 'Manon', 'Margot', 'Marguerite', 'Marianne',
+        'Marie', 'Marthe', 'Martine', 'Maryse', 'Mathilde', 'Michelle', 'Michèle', 'Monique', 'Nancy', 'Nathalie', 'Nicole', 'Noémie',
+        'Odette', 'Olivia', 'Patrice', 'Patricia', 'Paule', 'Paulette', 'Pauline', 'Pénélope', 'Renée', 'Rolande', 'Sophie', 'Stéphanie',
+        'Susanne', 'Suzanne', 'Sylvie', 'Thérèse', 'Valérie', 'Virginie', 'Véronique', 'Yvonne', 'Zoé', 'Édith', 'Élisabeth', 'Élise',
+        'Élodie', 'Émilie', 'Érika', 'Honorée',
     );
 
     /**

@@ -4,30 +4,36 @@ namespace Faker\Provider\lv_LV;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $formats = array(
-        '{{firstName}} {{lastName}}',
-    );
-
     /**
      * {@link} http://ru.wikipedia.org/wiki/%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%BE%D0%B5_%D0%BB%D0%B8%D1%87%D0%BD%D0%BE%D0%B5_%D0%B8%D0%BC%D1%8F
      **/
-    protected static $firstName = array(
-        'Enijs', 'Enno', 'Enoks', 'Enrijs', 'Enriko', 'Enriks', 'Eralds', 'Erasts', 'Erberts',
-        'Erhards', 'Eriands', 'Eriens', 'Erihs', 'Eriks', 'Erims', 'Erlends', 'Ermanis', 'Ermans',
-        'Ermīns', 'Ernando', 'Ernests', 'Ernis', 'Ernsts', 'Ero', 'Ervids', 'Ervijs', 'Ervils',
-        'Ervīns', 'Ervins', 'Ervis', 'Esams', 'Etjēns', 'Euģenijs', 'Euģēnijs', 'Eugenijs', 'Eugēnijs',
-        'Euzebijs', 'Evalds', 'Evarists', 'Evars', 'Evarts', 'Eventijs', 'Everts', 'Evgēnijs',
-        'Evgenijs', 'Evģēnijs', 'Evģenijs', 'Evijs', 'Ādams', 'Ādolfs', 'Ārends', 'Ārens',
-        'Ārijs', 'Āriks', 'Āris', 'Ārons', 'Ārvaldis', 'Ārvalds', 'Āvo', 'Žaklīna', 'Žaklina',
-        'Žaklīne', 'Žana', 'Žaneta', 'Žanete', 'Žanija', 'Žanna', 'Žanneta', 'Žene', 'Ženija',
-        'Žermēna', 'Žermena', 'Žozefina', 'Žuanete', 'Žubīte', 'Ērihs', 'Ēriks', 'Ērmanis',
-        'Ēro', 'Ēvalds', 'Ēra', 'Ērika', 'Ēstere', 'Ēva', 'Ēvī', 'Ēvija', 'Ēvisa', 'Ūna', 'Ūnika',
-        'Ūva', 'Ģederts', 'Ģedimins', 'Ģintars', 'Ģints', 'Ģirts', 'Čarita', 'Čelsija', 'Čereta',
-        'Česlava', 'Čezeta', 'Īda', 'Īģe', 'Īna', 'Īra', 'Īrisa', 'Īva', 'Īvija', 'Īvis', 'Ņikifors',
-        'Ņikita', 'Šandors', 'Ādolfina', 'Ādolfīne', 'Āra', 'Ārija', 'Ārika', 'Ārite', 'Ārvalda',
-        'Valdis', 'Guntis', 'Dainis', 'Vilnis', 'Agris', 'Dzintars', 'Modris', 'Viesturs',  'Mārtiņš',
-        'Ričards', 'Kārlis', 'Emīls'
+    protected static $firstNameMale = array(
+        'Enno', 'Eriks', 'Ernests', 'Ero', 'Ervis', 'Mārtiņš', 'Ādams', 'Āris', 'Āvo', 'Ēriks', 'Enriko', 'Enriks',  'Ēro', 'Ģirts', 'Īra',
+        // below are unknown gender firstnames
+        'Agris', 'Dainis', 'Dzintars', 'Emīls', 'Enijs', 'Enoks', 'Enrijs', 'Eralds', 'Erasts', 'Erberts', 'Erhards',
+        'Eriands', 'Eriens', 'Erihs', 'Erims', 'Erlends', 'Ermanis', 'Ermans', 'Ermīns', 'Ernando', 'Ernis', 'Ernsts', 'Ervids',
+        'Ervijs', 'Ervils', 'Ervins', 'Ervīns', 'Esams', 'Etjēns', 'Eugenijs', 'Eugēnijs', 'Euzebijs', 'Euģenijs', 'Euģēnijs', 'Evalds',
+        'Evarists', 'Evars', 'Evarts', 'Eventijs', 'Everts', 'Evgenijs', 'Evgēnijs', 'Evijs', 'Evģenijs', 'Evģēnijs', 'Guntis', 'Kārlis',
+        'Modris', 'Ričards', 'Valdis', 'Viesturs', 'Vilnis', 'Ādolfina', 'Ādolfs', 'Ādolfīne', 'Ārends', 'Ārens', 'Ārija', 'Ārijs',
+        'Āriks', 'Ārite', 'Ārons', 'Ārvalda', 'Ārvaldis', 'Ārvalds', 'Čelsija', 'Čereta', 'Česlava', 'Čezeta', 'Ēra', 'Ērihs',
+        'Ērmanis', 'Ēstere', 'Ēvalds', 'Ēvija', 'Ēvisa', 'Ģederts', 'Ģedimins', 'Ģintars', 'Ģints', 'Īrisa', 'Īvija', 'Ņikifors',
+        'Šandors', 'Ūnika', 'Ūva', 'Žaklīne', 'Žanija', 'Žanna', 'Žanneta', 'Žene', 'Ženija', 'Žermena', 'Žermēna', 'Žozefina',
+        'Žuanete', 'Žubīte',
+    );
 
+    protected static $firstNameFemale = array(
+        'Āra', 'Ārika', 'Čarita', 'Ērika', 'Ēva', 'Ēvī', 'Īda', 'Īna', 'Īva', 'Īvis', 'Īģe', 'Ņikita', 'Ūna',
+        'Žaklina', 'Žaklīna', 'Žana', 'Žaneta', 'Žanete',
+        // below are unknown gender firstnames
+        'Agris', 'Dainis', 'Dzintars', 'Emīls', 'Enijs', 'Enoks', 'Enrijs', 'Eralds', 'Erasts', 'Erberts', 'Erhards',
+        'Eriands', 'Eriens', 'Erihs', 'Erims', 'Erlends', 'Ermanis', 'Ermans', 'Ermīns', 'Ernando', 'Ernis', 'Ernsts', 'Ervids',
+        'Ervijs', 'Ervils', 'Ervins', 'Ervīns', 'Esams', 'Etjēns', 'Eugenijs', 'Eugēnijs', 'Euzebijs', 'Euģenijs', 'Euģēnijs', 'Evalds',
+        'Evarists', 'Evars', 'Evarts', 'Eventijs', 'Everts', 'Evgenijs', 'Evgēnijs', 'Evijs', 'Evģenijs', 'Evģēnijs', 'Guntis', 'Kārlis',
+        'Modris', 'Ričards', 'Valdis', 'Viesturs', 'Vilnis', 'Ādolfina', 'Ādolfs', 'Ādolfīne', 'Ārends', 'Ārens', 'Ārija', 'Ārijs',
+        'Āriks', 'Ārite', 'Ārons', 'Ārvalda', 'Ārvaldis', 'Ārvalds', 'Čelsija', 'Čereta', 'Česlava', 'Čezeta', 'Ēra', 'Ērihs',
+        'Ērmanis', 'Ēstere', 'Ēvalds', 'Ēvija', 'Ēvisa', 'Ģederts', 'Ģedimins', 'Ģintars', 'Ģints', 'Īrisa', 'Īvija', 'Ņikifors',
+        'Šandors', 'Ūnika', 'Ūva', 'Žaklīne', 'Žanija', 'Žanna', 'Žanneta', 'Žene', 'Ženija', 'Žermena', 'Žermēna', 'Žozefina',
+        'Žuanete', 'Žubīte',
     );
 
     /**

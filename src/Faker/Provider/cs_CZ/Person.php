@@ -4,17 +4,25 @@ namespace Faker\Provider\cs_CZ;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $formats = array(
+    protected static $lastNameFormat = array(
+        '{{lastNameMale}}',
+        '{{lastNameFemale}}',
+    );
+    
+    protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
+        '{{titleMale}} {{firstNameMale}} {{lastNameMale}}',
+    );
+
+    protected static $femaleNameFormats = array(
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
-        '{{prefix}} {{firstNameMale}} {{lastNameMale}}',
-        '{{prefix}} {{firstNameFemale}} {{lastNameFemale}}',
+        '{{titleFemale}} {{firstNameFemale}} {{lastNameFemale}}',
     );
 
     protected static $firstNameMale = array(
@@ -413,32 +421,44 @@ class Person extends \Faker\Provider\Person
             'Žemličková', 'Žídková', 'Žižková', 'Žůrková'
     );
 
-    private static $prefix = array(
+    protected static $title = array(
         'Bc.', 'Ing.', 'MUDr.', 'MVDr.', 'Mgr.', 'JUDr.', 'PhDr.', 'RNDr.', 'doc.', 'Dr.'
     );
 
-    public static function firstName()
+    public function title($gender = null)
     {
-        $gender = static::randomElement(array('Male', 'Female'));
-
-        return call_user_func(array('static', 'firstName'.$gender));
+        return static::titleMale();
     }
 
-    public static function firstNameMale()
+    /**
+     * replaced by specific unisex Czech title
+     */
+    public static function titleMale()
     {
-        return static::randomElement(static::$firstNameMale);
+        return static::randomElement(static::$title);
     }
 
-    public static function firstNameFemale()
+    /**
+     * replaced by specific unisex Czech title
+     */
+    public static function titleFemale()
     {
-        return static::randomElement(static::$firstNameFemale);
+        return static::titleMale();
     }
 
-    public static function lastName()
+    /**
+     * @param string|null $gender 'male', 'female' or null for any 
+     * @example 'Albrecht'
+     */
+    public function lastName($gender = null)
     {
-        $gender = static::randomElement(array('Male', 'Female'));
-
-        return call_user_func(array('static', 'lastName'.$gender));
+        if ($gender === static::GENDER_MALE) {
+            return static::lastNameMale();
+        } elseif ($gender === static::GENDER_FEMALE) {
+            return static::lastNameFemale();
+        }
+        
+        return $this->generator->parse(static::randomElement(static::$lastNameFormat));
     }
 
     public static function lastNameMale()
@@ -449,10 +469,5 @@ class Person extends \Faker\Provider\Person
     public static function lastNameFemale()
     {
         return static::randomElement(static::$lastNameFemale);
-    }
-
-    public static function prefix()
-    {
-        return static::randomElement(static::$prefix);
     }
 }

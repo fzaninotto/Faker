@@ -4,16 +4,6 @@ namespace Faker\Provider\me_ME;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $formats = array(
-        '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}}',
-        '{{firstNameFemale}} {{lastName}}',
-        '{{firstNameFemale}} {{lastName}}',
-        '{{firstNameFemale}} {{lastName}}',
-    );
-
     /**
      * @link http://sr.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA_%D1%81%D1%80%D0%BF%D1%81%D0%BA%D0%B8%D1%85_%D0%B8%D0%BC%D0%B5%D0%BD%D0%B0
      */
@@ -109,21 +99,4 @@ class Person extends \Faker\Provider\Person
         'Džavrić', 'Džajić', 'Džambić', 'Džadžić', 'Dželebdžić', 'Džikić', 'Džinić', 'Džodić', 'Džombić', 'Džomić', 'Džonić',
         'Šakić', 'Šakotić', 'Šalinić', 'Šamatić', 'Šantić', 'Šapić', 'Šaponić', 'Šaponjić', 'Šapurić', 'Šarančić', 'Šarić', 'Šarkić', 'Šaronjić', 'Šašić', 'Švabić', 'Ševarlić', 'Šević', 'Ševkušić', 'Šestić', 'Šibalić', 'Šijakinjić', 'Šijačić', 'Šikanić', 'Šikanjić', 'Šimšić', 'Šipetić', 'Šišić', 'Šljivić', 'Šljukić', 'Šmigić', 'Šobajić', 'Šobačić', 'Šorgić', 'Šoškić', 'Špirić', 'Štakić', 'Štulić', 'Šubakić', 'Šubarić', 'Šubić', 'Šuleić', 'Šulejić', 'Šuletić', 'Šulkić', 'Šuluburić', 'Šuljagić', 'Šumatić', 'Šunderić', 'Šunkić', 'Šunjevarić', 'Šutuljić', 'Šušić', 'Šušulić'
     );
-
-    public static function firstName()
-    {
-        $gender = static::randomElement(array('Male', 'Female'));
-
-        return call_user_func(array('static', 'firstName'.$gender));
-    }
-
-    public static function firstNameMale()
-    {
-        return static::randomElement(static::$firstNameMale);
-    }
-
-    public static function firstNameFemale()
-    {
-        return static::randomElement(static::$firstNameFemale);
-    }
 }

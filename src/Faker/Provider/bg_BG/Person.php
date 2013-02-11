@@ -4,15 +4,23 @@ namespace Faker\Provider\bg_BG;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $formats = array(
+    protected static $lastNameFormat = array(
+        '{{lastNameMale}}',
+        '{{lastNameFemale}}',
+    );
+    
+    protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
+        '{{titleMale}} {{firstNameMale}} {{lastNameMale}}',
+    );
+
+    protected static $femaleNameFormats = array(
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
-        '{{prefixMale}} {{firstNameMale}} {{lastNameMale}}',
-        '{{prefixFemale}} {{firstNameFemale}} {{lastNameFemale}}'
+        '{{titleFemale}} {{firstNameFemale}} {{lastNameFemale}}'
     );
 
     protected static $firstNameMale = array(
@@ -76,27 +84,22 @@ class Person extends \Faker\Provider\Person
         'Габровлиева', 'Първанова', 'Певецова', 'Курухубева', 'Яркова', 'Плюцова', 'Балканска'
     );
 
-    private static $prefixMale = array('Г-н', 'Др.');
-    private static $prefixFemale = array('Г-жа', 'Г-ца', 'Др.');
+    protected static $titleMale = array('Г-н', 'Др.');
+    protected static $titleFemale = array('Г-жа', 'Г-ца', 'Др.');
 
-    public static function firstName()
+    /**
+     * @param string|null $gender 'male', 'female' or null for any 
+     * @example 'Чанталиев'
+     */
+    public function lastName($gender = null)
     {
-        return mt_rand(1, 100) <= 50 ? static::firstNameMale() : static::firstNameFemale();
-    }
-
-    public static function firstNameMale()
-    {
-        return static::randomElement(static::$firstNameMale);
-    }
-
-    public static function firstNameFemale()
-    {
-        return static::randomElement(static::$firstNameFemale);
-    }
-
-    public static function lastName()
-    {
-        return mt_rand(1, 100) <= 50 ? static::lastNameMale() : static::lastNameFemale();
+        if ($gender === static::GENDER_MALE) {
+            return static::lastNameMale();
+        } elseif ($gender === static::GENDER_FEMALE) {
+            return static::lastNameFemale();
+        }
+        
+        return $this->generator->parse(static::randomElement(static::$lastNameFormat));
     }
 
     public static function lastNameMale()
@@ -107,15 +110,5 @@ class Person extends \Faker\Provider\Person
     public static function lastNameFemale()
     {
         return static::randomElement(static::$lastNameFemale);
-    }
-
-    public static function prefixMale()
-    {
-        return static::randomElement(static::$prefixMale);
-    }
-
-    public static function prefixFemale()
-    {
-        return static::randomElement(static::$prefixFemale);
     }
 }

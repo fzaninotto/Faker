@@ -88,11 +88,15 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
 ### `Faker\Provider\en_US\Person`
 
-    prefix                  // 'Ms.'
-    suffix                  // 'Jr.'
-    name                    // 'Dr. Zane Stroman'
-    firstName               // 'Maynard'
-    lastName                // 'Zulauf'
+    title($gender = null|'male'|'female')     // 'Ms.'
+    titleMale                                 // 'Mr.'
+    titleFemale                               // 'Ms.'
+    suffix                                    // 'Jr.'
+    name($gender = null|'male'|'female')      // 'Dr. Zane Stroman' 
+    firstName($gender = null|'male'|'female') // 'Maynard' 
+    firstNameMale                             // 'Maynard'
+    firstNameFemale                           // 'Rachel'
+    lastName                                  // 'Zulauf'
 
 ### `Faker\Provider\en_US\Address`
 

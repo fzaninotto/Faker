@@ -4,37 +4,56 @@ namespace Faker\Provider\fi_FI;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $formats = array(
-        '{{firstName}} {{lastName}}',
-        '{{firstName}} {{lastName}}',
-        '{{firstName}} {{lastName}}',
-        '{{firstName}} {{lastName}}',
-        '{{firstName}} {{lastName}}',
-        '{{prefix}} {{firstName}} {{lastName}}'
+    protected static $maleNameFormats = array(
+        '{{firstNameMale}} {{lastName}}',
+        '{{firstNameMale}} {{lastName}}',
+        '{{firstNameMale}} {{lastName}}',
+        '{{titleMale}} {{firstNameMale}} {{lastName}}',
     );
 
-    protected static $firstName = array(
-        'Aada', 'Aamu', 'Ada', 'Aina', 'Aino', 'Aliina', 'Aliisa', 'Amanda', 'Amalia', 'Amelia', 'Amira', 'Anissa', 'Anna', 'Anne', 'Anni', 'Anniina', 'Annilotta', 'Annu', 'Aune', 'Asta', 'Aura', 'Aurora', 'Aake', 'Aapeli', 'Aapo', 'Aappo', 'Aarni', 'Aaro', 'Aatto', 'Aatu', 'Aki', 'Akseli', 'Aku', 'Aleksi', 'Anssi', 'Antti', 'Antton', 'Ari', 'Arttu', 'Artturi', 'Atte', 'Anita', 'Anu', 'Antero', 'Atte',
-        'Beeda', 'Briitta', 'Bella',
-        'Cara', 'Celina', 'Christa', 'Clara', 'Christel', 'Cornelia',
-        'Daniel', 'Dani',
-        'Eeli', 'Eelis', 'Eemeli', 'Eero', 'Eetu', 'Ekku', 'Elias', 'Eljas', 'Esa', 'Elmo', 'Emil', 'Eerika', 'Eeva', 'Eevi', 'Elea', 'Eliina', 'Elina', 'Elisa', 'Elise', 'Ella', 'Ellen', 'Elviira', 'Emma', 'Emmaliina', 'Emmi', 'Emilia', 'Enna', 'Enni', 'Ennika', 'Eveliina', 'Eva', 'Eija', 'Elma', 'Erja', 'Essi', 'Erkki', 'Erkko',
-        'Fanni', 'Fiona',
-        'Hampus', 'Hannu', 'Harri', 'Heikki', 'Henri', 'Hermanni', 'Hanna', 'Helinä', 'Helmi', 'Helmiina', 'Henna', 'Henniina', 'Hertta', 'Hilda', 'Hilja', 'Hilla', 'Hilma', 'Hilppa', 'Heli', 'Heidi',
-        'Iia', 'Iida', 'Iina', 'Iiris', 'Iita', 'Ilona', 'Inka', 'Inkeri', 'Inna', 'Isabella', 'Iiro', 'Ilja', 'Ilmari', 'Isto',
-        'Jaakko', 'Jake', 'Jami', 'Jani', 'Janne', 'Jarno', 'Jere', 'Jermia', 'Jeremy', 'Jesper', 'Jesse', 'Jimi', 'Jirko', 'Joel', 'Joakim', 'Joni', 'Jooa', 'Joona', 'Joonas', 'Joonatan', 'Juho', 'Jore', 'Juha', 'Jukka', 'Julius', 'Junnu', 'Justus', 'Jusu', 'Juuso', 'Jade', 'Jadessa', 'Janette', 'Janika', 'Janina', 'Janita', 'Janna', 'Janni', 'Jasmiina', 'Jemina', 'Jenna', 'Jenika', 'Jenni', 'Jessica', 'Johanna', 'Jonna', 'Julia', 'Juttamari', 'Juulia', 'Jari', 'Jussi',
-        'Kaisla', 'Karla', 'Kaste', 'Katri', 'Kati', 'Kia', 'Kalle', 'Karri', 'Kasperi', 'Kauto', 'Kimi', 'Konsta', 'Kristian', 'Kaija', 'Kaisu', 'Katja', 'Kirsi', 'Krista',
-        'Lari', 'Lassi', 'Lauri', 'Leevi', 'Leo', 'Levin', 'Luca', 'Lukas', 'Luukas', 'Laura', 'Lila', 'Linnea', 'Lotta', 'Loviisa', 'Lumina', 'Lea',
-        'Maia', 'Maija', 'Maiju', 'Maisa', 'Malla', 'Mari', 'Maria', 'Martta', 'Matleena', 'Meeri', 'Meri', 'Mette', 'Mia', 'Minna', 'Miina', 'Milla', 'Mimi', 'Mimmu', 'Mimosa', 'Minea', 'Minttu', 'Mira', 'Mirella', 'Magnus', 'Markus', 'Matias', 'Matti', 'Miika', 'Mika', 'Mikael', 'Miska', 'Maarit', 'Mirva', 'Marko', 'Mikko',
-        'Neo', 'Niklas', 'Niko', 'Nico', 'Nuutti', 'Nea', 'Neea', 'Nella', 'Nelli', 'Nia', 'Niina', 'Ninni', 'Noora', 'Nadja', 'Natalia',
-        'Oliivia', 'Olivia', 'Oona', 'Oliver', 'Onni', 'Oskari', 'Ossi', 'Otto', 'Olga', 'Outi', 'Osmo',
-        'Paavo', 'Patrik', 'Paulus', 'Peetu', 'Pekko', 'Pyry', 'Pauliina', 'Peppi', 'Petra', 'Pihla', 'Piia', 'Pinja', 'Pirkko', 'Paula', 'Pia', 'Päivi', 'Pasi', 'Pekka', 'Petteri', 'Petri', 'Pertti',
-        'Riia', 'Riikka', 'Riina', 'Ronja', 'Roosa', 'Rami', 'Rasmus', 'Riku', 'Roni', 'Roope', 'Reetta', 'Reeta', 'Ritva', 'Risto',
-        'Saku', 'Sami', 'Sampo', 'Samu', 'Samuel', 'Samuli', 'Santeri', 'Santtu', 'Simo,', 'Sisu', 'Sanna', 'Sari', 'Satu', 'Sirpa', 'Susanna', 'Seija', 'Siru', 'Sauli',
-        'Taneli', 'Teemu', 'Teppo', 'Tero', 'Tommi', 'Tomi', 'Topi', 'Tuomas', 'Tuomo', 'Touko', 'Tuukka', 'Taika', 'Taru', 'Tara', 'Tiia', 'Tiiu', 'Tinja', 'Tanja', 'Terhi', 'Tiina', 'Tea', 'Tatu', 'Teijo', 'Timo', 'Tuukka',
-        'Unto', 'Urho',
-        'Veera', 'Venla', 'Viivi', 'Vilja', 'Vilma', 'Valtteri', 'Veeti', 'Veikko', 'Veli', 'Vilho', 'Vili', 'Viljo', 'Ville',
-        'Wiljami', 'Werneri', 'Wilma'
+    protected static $femaleNameFormats = array(
+        '{{firstNameFemale}} {{lastName}}',
+        '{{firstNameFemale}} {{lastName}}',
+        '{{firstNameFemale}} {{lastName}}',
+        '{{titleFemale}} {{firstNameFemale}} {{lastName}}',
+    );
+
+    protected static $firstNameMale = array(
+         'Aleksi', 'Anssi', 'Antero', 'Antti', 'Ari', 'Arttu', 'Daniel', 'Eero', 'Eetu', 'Elias', 'Elmo', 'Emil', 'Erkki',
+        'Hampus', 'Hannu', 'Harri', 'Heikki', 'Helmi', 'Henri', 'Hermanni', 'Ilja', 'Jaakko', 'Jake', 'Jani', 'Janne',
+        'Jari', 'Jarno', 'Jere', 'Jeremy', 'Jesper', 'Jesse', 'Jimi', 'Joakim', 'Joel', 'Joona', 'Joonas', 'Juha',
+        'Juho', 'Jukka', 'Julius', 'Jussi', 'Justus', 'Juuso', 'Kalle', 'Kasperi', 'Konsta', 'Kristian', 'Lassi', 'Leevi',
+        'Leo', 'Levin', 'Luca', 'Lukas', 'Magnus', 'Marko', 'Markus', 'Matias', 'Matti', 'Miika', 'Mika', 'Mikael',
+        'Mikko', 'Neo', 'Nico', 'Niklas', 'Niko', 'Oliver', 'Oskari', 'Ossi', 'Otto', 'Paavo', 'Pasi', 'Patrik',
+        'Paulus', 'Peetu', 'Pekka', 'Pertti', 'Petri', 'Petteri', 'Pyry', 'Rami', 'Rasmus', 'Riku', 'Risto', 'Roope',
+        'Saku', 'Sami', 'Samu', 'Samuel', 'Samuli', 'Santeri', 'Taneli', 'Tatu', 'Teemu', 'Teppo', 'Tero', 'Timo',
+        'Tomi', 'Tommi', 'Topi', 'Touko', 'Tuomas', 'Tuomo', 'Tuukka', 'Tuukka', 'Valtteri', 'Veli', 'Viljo', 'Ville',
+        'Aake', 'Aapeli', 'Aapo', 'Aappo', 'Aarni', 'Aaro', 'Aatto', 'Aatu', 'Akseli', 'Aku', 'Antton', 'Artturi',
+        'Aune', 'Beeda', 'Briitta', 'Eeli', 'Eelis', 'Eemeli', 'Ekku', 'Eljas', 'Erkko', 'Iiro', 'Ilmari', 'Isto',
+        'Jirko', 'Joonatan', 'Jore', 'Junnu', 'Jusu', 'Kaste', 'Kauto', 'Luukas', 'Nuutti', 'Onni', 'Osmo', 'Pekko',
+        'Sampo', 'Santtu', 'Sauli', 'Simo,', 'Sisu', 'Teijo', 'Unto', 'Urho', 'Veeti', 'Veikko', 'Vilho', 'Werneri', 'Wiljami',
+
+    );
+
+    protected static $firstNameFemale = array(
+        'Aada', 'Ada', 'Aina', 'Aino', 'Aki', 'Aliisa', 'Amalia', 'Amanda', 'Amelia', 'Amira', 'Anissa', 'Anita', 'Anna',
+        'Anne', 'Anni', 'Anniina', 'Annu', 'Anu', 'Asta', 'Atte', 'Atte', 'Aura', 'Aurora', 'Bella', 'Cara',
+        'Celina', 'Christa', 'Christel', 'Clara', 'Cornelia', 'Dani', 'Eija', 'Elea', 'Elina', 'Elisa', 'Elise', 'Ella',
+        'Ellen', 'Elma', 'Emilia', 'Emma', 'Emmi', 'Enna', 'Erja', 'Esa', 'Essi', 'Eva', 'Eveliina', 'Fanni',
+        'Fiona', 'Hanna', 'Heidi', 'Heli', 'Helinä', 'Henna', 'Hilda', 'Hilja', 'Hilla', 'Hilma', 'Iida', 'Iina',
+        'Iiris', 'Ilona', 'Inka', 'Inkeri', 'Inna', 'Isabella', 'Jade', 'Jami', 'Janette', 'Janika', 'Janina', 'Janita',
+        'Janna', 'Janni', 'Jasmiina', 'Jenna', 'Jenni', 'Jessica', 'Johanna', 'Joni', 'Jonna', 'Julia', 'Juulia', 'Kaija',
+        'Karla', 'Karri', 'Kati', 'Katja', 'Katri', 'Kia', 'Kimi', 'Kirsi', 'Krista', 'Lari', 'Laura', 'Lauri',
+        'Lea', 'Lila', 'Linnea', 'Lotta', 'Lumina', 'Maarit', 'Maia', 'Maija', 'Maiju', 'Maisa', 'Mari', 'Maria',
+        'Meeri', 'Meri', 'Mette', 'Mia', 'Milla', 'Mimi', 'Mimosa', 'Minna', 'Mira', 'Mirella', 'Miska', 'Nadja',
+        'Natalia', 'Nea', 'Neea', 'Nella', 'Nia', 'Niina', 'Noora', 'Olga', 'Olivia', 'Oona', 'Outi', 'Paula',
+        'Pauliina', 'Petra', 'Pia', 'Piia', 'Pinja', 'Päivi', 'Reeta', 'Reetta', 'Riikka', 'Riina', 'Ritva', 'Roni',
+        'Ronja', 'Sanna', 'Sari', 'Satu', 'Seija', 'Sirpa', 'Siru', 'Susanna', 'Tanja', 'Tara', 'Taru', 'Tea',
+        'Terhi', 'Tiia', 'Tiina', 'Tiiu', 'Tinja', 'Veera', 'Vili', 'Vilma', 'Wilma', 'Aamu', 'Aliina', 'Annilotta',
+        'Eerika', 'Eeva', 'Eevi', 'Eliina', 'Elviira', 'Emmaliina', 'Enni', 'Ennika', 'Helmiina', 'Henniina',
+        'Hertta', 'Hilppa', 'Iia', 'Iita', 'Jadessa', 'Jemina', 'Jenika', 'Jermia', 'Jooa', 'Juttamari', 'Kaisla',
+        'Kaisu', 'Loviisa', 'Malla', 'Martta', 'Matleena', 'Miina', 'Mimmu', 'Minea', 'Minttu', 'Mirva', 'Nelli', 'Ninni',
+        'Oliivia', 'Peppi', 'Pihla', 'Pirkko', 'Riia', 'Roosa', 'Taika', 'Venla', 'Viivi', 'Vilja',
     );
 
     protected static $lastName = array(
@@ -63,13 +82,7 @@ class Person extends \Faker\Provider\Person
         'Översti', 'Öysti', 'Öörni'
     );
 
-    private static $prefix = array('Hra.', 'Rva.', 'Nti.', 'Tri.');
+    protected static $titleMale = array('Hra.', 'Tri.');
 
-    /**
-     * @example 'Hra.'
-     */
-    public static function prefix()
-    {
-        return static::randomElement(static::$prefix);
-    }
+    protected static $titleFemale = array('Rva.', 'Nti.', 'Tri.');
 }

@@ -4,17 +4,25 @@ namespace Faker\Provider\el_GR;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $formats = array(
+    protected static $lastNameFormat = array(
+        '{{lastNameMale}}',
+        '{{lastNameFemale}}',
+    );
+    
+    protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
+        '{{titleMale}} {{firstNameMale}} {{lastNameMale}}',
+    );
+
+    protected static $femaleNameFormats = array(
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
-        '{{prefixMale}} {{firstNameMale}} {{lastNameMale}}',
-        '{{prefixFemale}} {{firstNameFemale}} {{lastNameFemale}}',
+        '{{titleFemale}} {{firstNameFemale}} {{lastNameFemale}}',
     );
 
     protected static $firstNameMale = array(
@@ -134,39 +142,22 @@ class Person extends \Faker\Provider\Person
         'Σπανού', 'Σταματιάδου', 'Σωπολιάτη', 'Τριανταφυλλίδου', 'Φοσκιά', 'Φωτιάδου', 'Χαραλαμπίδου', 'Χατζηιωάννου',
     );
 
-    protected static $prefixMale = array('κος.', 'κ.');
-    protected static $prefixFemale = array('δις.', 'δνις.', 'κα.');
+    protected static $titleMale = array('κος.', 'κ.');
+    protected static $titleFemale = array('δις.', 'δνις.', 'κα.');
 
     /**
-     * @example 'Ηλίας'
+     * @param string|null $gender 'male', 'female' or null for any 
+     * @example 'Αγγελόπουλος'
      */
-    public static function firstNameMale()
+    public function lastName($gender = null)
     {
-        return static::randomElement(static::$firstNameMale);
-    }
-
-    /**
-     * @example 'Μιράντα'
-     */
-    public static function firstNameFemale()
-    {
-        return static::randomElement(static::$firstNameFemale);
-    }
-
-    /**
-     * @example 'κ.'
-     */
-    public static function prefixMale()
-    {
-        return static::randomElement(static::$prefixMale);
-    }
-
-    /**
-     * @example 'κα.'
-     */
-    public static function prefixFemale()
-    {
-        return static::randomElement(static::$prefixFemale);
+        if ($gender === static::GENDER_MALE) {
+            return static::lastNameMale();
+        } elseif ($gender === static::GENDER_FEMALE) {
+            return static::lastNameFemale();
+        }
+        
+        return $this->generator->parse(static::randomElement(static::$lastNameFormat));
     }
 
     /**

@@ -256,8 +256,8 @@ class Base
     /**
      * Chainable method for making any formatter optional.
      *
-     * @param float $weight Set the probability of receiving a null value.
-     *                      "0" will always return null, "1" will always return the generator.
+     * @param  float      $weight Set the probability of receiving a null value.
+     *                            "0" will always return null, "1" will always return the generator.
      * @return mixed|null
      */
     public function optional($weight = 0.5)
@@ -277,9 +277,9 @@ class Base
      * $faker->unique()->randomElement(array(1, 2, 3));
      * </code>
      *
-     * @param boolean $reset      If set to true, resets the list of existing values
-     * @param integer $maxRetries Maximum number of retries to find a unique value,
-     *                            After which an OverflowExcption is thrown.
+     * @param  boolean           $reset      If set to true, resets the list of existing values
+     * @param  integer           $maxRetries Maximum number of retries to find a unique value,
+     *                                       After which an OverflowExcption is thrown.
      * @throws OverflowException When no unique value can be found by iterating $maxRetries times
      *
      * @return UniqueGenerator A proxy class returning only non-existing values
