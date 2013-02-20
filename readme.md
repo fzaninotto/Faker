@@ -158,7 +158,9 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 ### `Faker\Provider\Base`
 
     randomDigit             // 7
+    randomDigitNotNull      // 5
     randomNumber($nbDigits = NULL) // 79907610
+    randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL) // 48.8932
     randomLetter            // 'b'
     randomElement($array = array ('a','b','c')) // 'b'
     numerify($string = '###') // '609'
