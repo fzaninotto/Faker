@@ -52,6 +52,22 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertGreaterThanOrEqual(BaseProvider::numberBetween($min, $max), $max);
     }
 
+    public function testRandomFloat()
+    {
+        $min = 4;
+        $max = 10;
+        $nbMaxDecimals = 8;
+        
+        $result = BaseProvider::randomFloat($nbMaxDecimals, $min, $max);
+        
+        $parts = explode('.', $result);
+                
+        $this->assertInternalType('float', $result);
+        $this->assertGreaterThanOrEqual($min, $result);
+        $this->assertLessThanOrEqual($max, $result);
+        $this->assertLessThanOrEqual($nbMaxDecimals, strlen($parts[1]));
+    }
+    
     public function testRandomLetterReturnsString()
     {
         $this->assertTrue(is_string(BaseProvider::randomLetter()));
