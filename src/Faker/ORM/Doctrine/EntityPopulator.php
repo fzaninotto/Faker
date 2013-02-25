@@ -159,12 +159,8 @@ class EntityPopulator
 
     private function callMethods($obj, $insertedEntities)
     {
-        foreach ($this->getModifiers() as $method => $formats) {
-            $args = array();
-            foreach ($formats as $format) {
-               $args[] = is_callable($format) ? $format($insertedEntities, $obj) : $format;
-            }
-            call_user_func_array(array($obj, $method), $args);
+        foreach ($this->getModifiers() as $modifier) {
+            $modifier($obj, $insertedEntities);
         }
     }
 
