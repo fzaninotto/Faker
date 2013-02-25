@@ -6,12 +6,16 @@ class Address extends \Faker\Provider\Address
 {
     protected static $postcode = array('####');
 
+    protected static $streetAddressFormats = array(
+        '{{streetName}} {{buildingNumber}}'
+    );
+
     protected static $streetNameFormats = array('{{lastName}}{{streetSuffix}}');
 
     protected static $cityFormats = array('{{cityName}}');
 
     protected static $addressFormats = array(
-        '{{streetAddress}}\n {{postcode}} {{city}}',
+        "{{streetAddress}}\n {{postcode}} {{city}}",
     );
 
     protected static $streetSuffix = array(
