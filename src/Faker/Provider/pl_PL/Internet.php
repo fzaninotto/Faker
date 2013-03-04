@@ -4,7 +4,6 @@ namespace Faker\Provider\pl_PL;
 
 class Internet extends \Faker\Provider\Internet
 {
-    protected static $safeEmailTld = array('com', 'pl');
 
     protected static $freeEmailDomain = array('gmail.com', 'yahoo.com', 'wp.pl', 'onet.pl', 'interia.pl', 'gazeta.pl');
 
