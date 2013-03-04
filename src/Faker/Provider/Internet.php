@@ -37,7 +37,7 @@ class Internet extends \Faker\Provider\Base
      */
     public final function safeEmail()
     {
-        return preg_replace('/\s/', '', $this->userName() . '@' . $this->safeEmailDomain());
+        return preg_replace('/\s/', '', $this->userName() . '@' . static::safeEmailDomain());
     }
 
     /**
@@ -66,9 +66,8 @@ class Internet extends \Faker\Provider\Base
     
     /**
      * @example 'example.org'
-     * @param boolean $knownTLD If set to true only domains with a well known TLD (i.e. com, org and net) are returned.
      */
-    public final function safeEmailDomain($knownTLD = false)
+    public static final function safeEmailDomain()
     {
         $domains = array(
             'example.com',
@@ -76,16 +75,7 @@ class Internet extends \Faker\Provider\Base
             'example.net'
         );
 
-        if (!$knownTLD) {
-            $domains[] = '*.example';
-            $domains[] = '*.test';
-            $domains[] = '*.invalid';
-            $domains[] = '*.lan';
-        }
-
-        $domain = static::randomElement($domains);
-
-        return str_replace('*', $this->domainWord(), $domain);
+        return static::randomElement($domains);
     }
     /**
      * @example 'jdoe'
