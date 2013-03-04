@@ -4,7 +4,6 @@ namespace Faker\Provider\cs_CZ;
 
 class Internet extends \Faker\Provider\Internet
 {
-    protected static $safeEmailTld = array('com', 'cz');
 
     protected static $freeEmailDomain = array('gmail.com', 'yahoo.com', 'seznam.cz', 'atlas.cz', 'centrum.cz', 'email.cz', 'post.cz');
 

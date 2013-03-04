@@ -4,7 +4,6 @@ namespace Faker\Provider;
 
 class Internet extends \Faker\Provider\Base
 {
-    protected static $safeEmailTld = array('org', 'com', 'net');
     protected static $freeEmailDomain = array('gmail.com', 'yahoo.com', 'hotmail.com');
     protected static $tld = array('com', 'com', 'com', 'com', 'com', 'com', 'biz', 'info', 'net', 'org');
 
@@ -36,9 +35,9 @@ class Internet extends \Faker\Provider\Base
     /**
      * @example 'jdoe@example.com'
      */
-    public function safeEmail()
+    public final function safeEmail()
     {
-        return preg_replace('/\s/', '', $this->userName() . '@' . static::safeEmailDomain());
+        return preg_replace('/\s/', '', $this->userName() . '@' . $this->safeEmailDomain());
     }
 
     /**
@@ -67,10 +66,25 @@ class Internet extends \Faker\Provider\Base
     
     /**
      * @example 'example.org'
+     * @param boolean $knownTLD If set to true only domains with a well known TLD (i.e. com, org and net) are returned.
      */
-    public static function safeEmailDomain()
+    public final function safeEmailDomain($knownTLD = false)
     {
-        return 'example.' . static::randomElement(static::$safeEmailTld);
+	$domains = array(
+		'example.com',
+		'example.org',
+		'example.net'
+	);
+	if (!$knownTLD) {
+		$domains[] = '*.example';
+		$domains[] = '*.test';
+		$domains[] = '*.invalid';
+		$domains[] = '*.lan';
+	}
+		
+        $domain = static::randomElement($domains);
+	
+	return str_replace('*', $this->domainWord(), $domain);
     }
     /**
      * @example 'jdoe'
