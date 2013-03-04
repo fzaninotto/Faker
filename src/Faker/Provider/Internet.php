@@ -70,21 +70,22 @@ class Internet extends \Faker\Provider\Base
      */
     public final function safeEmailDomain($knownTLD = false)
     {
-	$domains = array(
-		'example.com',
-		'example.org',
-		'example.net'
-	);
-	if (!$knownTLD) {
-		$domains[] = '*.example';
-		$domains[] = '*.test';
-		$domains[] = '*.invalid';
-		$domains[] = '*.lan';
-	}
-		
+        $domains = array(
+            'example.com',
+            'example.org',
+            'example.net'
+        );
+
+        if (!$knownTLD) {
+            $domains[] = '*.example';
+            $domains[] = '*.test';
+            $domains[] = '*.invalid';
+            $domains[] = '*.lan';
+        }
+
         $domain = static::randomElement($domains);
-	
-	return str_replace('*', $this->domainWord(), $domain);
+
+        return str_replace('*', $this->domainWord(), $domain);
     }
     /**
      * @example 'jdoe'
