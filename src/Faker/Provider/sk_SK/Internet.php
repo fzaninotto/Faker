@@ -4,7 +4,6 @@ namespace Faker\Provider\sk_SK;
 
 class Internet extends \Faker\Provider\Internet
 {
-    protected static $safeEmailTld = array('com', 'sk');
 
     protected static $freeEmailDomain = array('gmail.com', 'yahoo.com', 'zoznam.sk', 'atlas.', 'centrum.sk', 'azet.sk', 'post.sk');
 
