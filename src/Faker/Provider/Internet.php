@@ -4,7 +4,6 @@ namespace Faker\Provider;
 
 class Internet extends \Faker\Provider\Base
 {
-    protected static $safeEmailTld = array('org', 'com', 'net');
     protected static $freeEmailDomain = array('gmail.com', 'yahoo.com', 'hotmail.com');
     protected static $tld = array('com', 'com', 'com', 'com', 'com', 'com', 'biz', 'info', 'net', 'org');
 
@@ -36,7 +35,7 @@ class Internet extends \Faker\Provider\Base
     /**
      * @example 'jdoe@example.com'
      */
-    public function safeEmail()
+    public final function safeEmail()
     {
         return preg_replace('/\s/', '', $this->userName() . '@' . static::safeEmailDomain());
     }
@@ -68,9 +67,15 @@ class Internet extends \Faker\Provider\Base
     /**
      * @example 'example.org'
      */
-    public static function safeEmailDomain()
+    public static final function safeEmailDomain()
     {
-        return 'example.' . static::randomElement(static::$safeEmailTld);
+        $domains = array(
+            'example.com',
+            'example.org',
+            'example.net'
+        );
+
+        return static::randomElement($domains);
     }
     /**
      * @example 'jdoe'
