@@ -8,13 +8,6 @@ namespace Faker\Provider\is_IS;
 class Internet extends \Faker\Provider\Internet
 {
     /**
-     * @var array Some safe email TLD.
-     */
-    protected static $safeEmailTld = array(
-        'org', 'com', 'net', 'is', 'is', 'is',
-    );
-
-    /**
      * @var array Some email domains in Denmark.
      */
     protected static $freeEmailDomain = array(

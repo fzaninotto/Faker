@@ -38,7 +38,7 @@ class Person extends \Faker\Provider\Person
 
     public static function firstName()
     {
-	return static::randomDigit() > 4 ? static::firstNameMan() : static::firstNameWoman();
+        return static::randomDigit() > 4 ? static::firstNameMan() : static::firstNameWoman();
     }
 
     /**
@@ -53,7 +53,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Randomly return a icelandic first name for woman.
-     * 
+     *
      * @return array
      */
     public static function firstNameWoman()
@@ -73,7 +73,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Generate prepared last name for further processing
-     * 
+     *
      * @return string
      */
     public static function lastName()
@@ -95,7 +95,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Randomly return a icelandic last name for woman.
-     * 
+     *
      * @return string
      */
     public static function lastNameWoman()
@@ -105,7 +105,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Randomly return a icelandic last name for man.
-     * 
+     *
      * @return string
      */
     public static function lastNameMan()
@@ -136,7 +136,7 @@ class Person extends \Faker\Provider\Person
 
         while ( ! $valid)
         {
-            // make two random numbers 
+            // make two random numbers
             $rand = static::randomDigit().static::randomDigit();
 
             // 8 char string with birth date and two random numbers
