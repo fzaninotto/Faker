@@ -183,8 +183,8 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
 ### `Faker\Provider\File`
 
-    fileExtension                   // 'avi'
-    mimeType                       // 'video/x-msvideo'
+    fileExtension          // 'avi'
+    mimeType               // 'video/x-msvideo'
 
 ## Localization
 
