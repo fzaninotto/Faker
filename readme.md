@@ -181,6 +181,11 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
     uuid                   // '7e57d004-2b97-0e7a-b45f-5387367791cd'
 
+### `Faker\Provider\File`
+
+    fileExtension          // 'avi'
+    mimeType               // 'video/x-msvideo'
+
 ## Localization
 
 `Faker\Factory` can take a locale as an argument, to return localized data. If no localized provider is found, the factory fallbacks to the default locale (en_EN).
