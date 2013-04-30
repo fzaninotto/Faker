@@ -13,7 +13,7 @@ class Address extends \Faker\Provider\Base
     );
 
     protected static $buildingNumber = array('##');
-    protected static $postcode = array('#####');
+    protected static $postcode = array('######');
     protected static $country = array(
         'Украина', 'Российская Федерация', 'США', 'Канада', 'Австралия', 'Австрия',
         'Азербайджан', 'Аландские острова', 'Албания', 'Алжир', 'Американские острова Самоа', 'Ангилья',
@@ -90,7 +90,8 @@ class Address extends \Faker\Provider\Base
     );
 
     protected static $street = array(
-        'Косиора', 'Ладыгина', 'Ленина', 'Ломоносова',
+        'Косиора', 'Ладыгина', 'Ленина', 'Ломоносова', 'Домодедовская', 'Гоголя', '1905 года', 'Чехова', 'Сталина',
+		'Космонавтов', 'Гагарина', 'Славы', 'Бухарестская', 'Будапештсткая', 'Балканская'
     );
 
     protected static $addressFormats = array(
