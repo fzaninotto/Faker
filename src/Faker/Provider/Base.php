@@ -14,9 +14,43 @@ class Base
     /**
      * @param \Faker\Generator $generator
      */
-    public function __construct(Generator $generator)
+    public function __construct(Generator $generator = null)
+    {
+        if ($generator instanceof Generator) {
+            $this->setGenerator($generator);
+        }
+    }
+
+    /**
+     * @param Generator $generator
+     *
+     * @return \Faker\Provider\Base
+     */
+    public function setGenerator(Generator $generator)
     {
         $this->generator = $generator;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasGenerator()
+    {
+        return isset($this->generator);
+    }
+
+    /**
+     * @return Generator
+     * @throws \RuntimeException
+     */
+    public function getGenerator()
+    {
+        if ( ! $this->generator instanceof Generator) {
+            throw new \RuntimeException('No generator has been defined.');
+        }
+
+        return $this->generator;
     }
 
     /**
