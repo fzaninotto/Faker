@@ -24,7 +24,7 @@ class Internet extends \Faker\Provider\Internet
         $company = $this->generator->format('company');
         $companyElements = explode(' ', $company);
         $company = $companyElements[0];
-        $company = preg_replace('/,/', '', $company);
+        $company = preg_replace('/,/u', '', $company);
 
         return $company;
     }
