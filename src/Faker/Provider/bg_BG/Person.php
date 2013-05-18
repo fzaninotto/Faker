@@ -2,8 +2,6 @@
 
 namespace Faker\Provider\bg_BG;
 
-require_once __DIR__ . '/../Person.php';
-
 class Person extends \Faker\Provider\Person
 {
     protected static $formats = array(

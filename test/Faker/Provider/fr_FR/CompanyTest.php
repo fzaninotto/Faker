@@ -5,10 +5,6 @@ namespace Faker\Test\Provider\fr_FR;
 use Faker\Provider\fr_FR\Company;
 use Faker\PHPUnit\Framework\Constraint as Constraint;
 
-require_once __DIR__ . '/../../PHPUnit/Framework/Constraint/IsValidSirenSiret.php';
-require_once __DIR__ . '/../../PHPUnit/Framework/Constraint/IsValidSiret.php';
-require_once __DIR__ . '/../../PHPUnit/Framework/Constraint/IsValidSiren.php';
-
 class CompanyTest extends \PHPUnit_Framework_TestCase
 {
     private static function isValidSiret()
