@@ -5,6 +5,8 @@
 
 namespace Faker\Test\Provider;
 
+use Faker;
+
 /**
  * Class ProviderOverrideTest
  *
@@ -16,11 +18,18 @@ namespace Faker\Test\Provider;
  */
 class ProviderOverrideTest extends \PHPUnit_Framework_TestCase
 {
-    public function setUp()
-    {
-        $faker = new \Faker\Generator();
-    }
+    /**
+     * Constants with regular expression patterns for testing the output.
+     *
+     * Regular expressions are sensitive for malformed strings (e.g.: strings with incorrect encodings) so by using
+     * PCRE for the tests, even though they seem fairly pointless, we test for incorrect encodings also.
+     */
+    const TEST_STRING_REGEX = '/.+/u';
 
+    /**
+     * Slightly more specific for e-mail, the point isn't to properly validate e-mails.
+     */
+    const TEST_EMAIL_REGEX = '/^(.+)@(.+)$/ui';
 
     /**
      * @dataProvider localeDataProvider
@@ -28,12 +37,12 @@ class ProviderOverrideTest extends \PHPUnit_Framework_TestCase
      */
     public function testAddress($locale = null)
     {
-        $faker = \Faker\Factory::create($locale);
+        $faker = Faker\Factory::create($locale);
 
-        $this->assertRegExp('/.+/u', $faker->city);
-        $this->assertRegExp('/.+/u', $faker->postcode);
-        $this->assertRegExp('/.+/u', $faker->address);
-        $this->assertRegExp('/.+/u', $faker->country);
+        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->city);
+        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->postcode);
+        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->address);
+        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->country);
     }
 
 
@@ -43,9 +52,9 @@ class ProviderOverrideTest extends \PHPUnit_Framework_TestCase
      */
     public function testCompany($locale = null)
     {
-        $faker = \Faker\Factory::create($locale);
+        $faker = Faker\Factory::create($locale);
 
-        $this->assertRegExp('/.+/u', $faker->company);
+        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->company);
     }
 
 
@@ -55,10 +64,10 @@ class ProviderOverrideTest extends \PHPUnit_Framework_TestCase
      */
     public function testDateTime($locale = null)
     {
-        $faker = \Faker\Factory::create($locale);
+        $faker = Faker\Factory::create($locale);
 
-        $this->assertRegExp('/.+/u', $faker->century);
-        $this->assertRegExp('/.+/u', $faker->timezone);
+        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->century);
+        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->timezone);
     }
 
 
@@ -68,15 +77,14 @@ class ProviderOverrideTest extends \PHPUnit_Framework_TestCase
      */
     public function testInternet($locale = null)
     {
-        $faker = \Faker\Factory::create($locale);
+        $faker = Faker\Factory::create($locale);
 
-        $this->assertRegExp('/.+/u', $faker->userName);
+        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->userName);
 
-        $emailRegex = '/^(.+)@(.+)$/ui';
-        $this->assertRegExp($emailRegex, $faker->email);
-        $this->assertRegExp($emailRegex, $faker->safeEmail);
-        $this->assertRegExp($emailRegex, $faker->freeEmail);
-        $this->assertRegExp($emailRegex, $faker->companyEmail);
+        $this->assertRegExp(static::TEST_EMAIL_REGEX, $faker->email);
+        $this->assertRegExp(static::TEST_EMAIL_REGEX, $faker->safeEmail);
+        $this->assertRegExp(static::TEST_EMAIL_REGEX, $faker->freeEmail);
+        $this->assertRegExp(static::TEST_EMAIL_REGEX, $faker->companyEmail);
     }
 
 
@@ -86,9 +94,9 @@ class ProviderOverrideTest extends \PHPUnit_Framework_TestCase
      */
     public function testPerson($locale = null)
     {
-        $faker = \Faker\Factory::create($locale);
+        $faker = Faker\Factory::create($locale);
 
-        $this->assertRegExp('/.+/u', $faker->name);
+        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->name);
     }
 
 
@@ -98,9 +106,9 @@ class ProviderOverrideTest extends \PHPUnit_Framework_TestCase
      */
     public function testPhoneNumber($locale = null)
     {
-        $faker = \Faker\Factory::create($locale);
+        $faker = Faker\Factory::create($locale);
 
-        $this->assertRegExp('/.+/u', $faker->phoneNumber);
+        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->phoneNumber);
     }
 
 
@@ -110,9 +118,9 @@ class ProviderOverrideTest extends \PHPUnit_Framework_TestCase
      */
     public function testUserAgent($locale = null)
     {
-        $faker = \Faker\Factory::create($locale);
+        $faker = Faker\Factory::create($locale);
 
-        $this->assertRegExp('/.+/u', $faker->userAgent);
+        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->userAgent);
     }
 
 
@@ -124,9 +132,9 @@ class ProviderOverrideTest extends \PHPUnit_Framework_TestCase
      */
     public function testUuid($locale = null)
     {
-        $faker = \Faker\Factory::create($locale);
+        $faker = Faker\Factory::create($locale);
 
-        $this->assertRegExp('/.+/u', $faker->uuid);
+        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->uuid);
     }
 
 
@@ -155,10 +163,10 @@ class ProviderOverrideTest extends \PHPUnit_Framework_TestCase
      */
     private function getAllLocales()
     {
-        static $files = array();
+        static $locales = array();
 
-        if ( ! empty($files)) {
-            return $files;
+        if ( ! empty($locales)) {
+            return $locales;
         }
 
         // Finding all PHP files in the xx_XX directories
@@ -166,13 +174,13 @@ class ProviderOverrideTest extends \PHPUnit_Framework_TestCase
         foreach (glob($providerDir .'/*_*/*.php') as $file) {
             $localisation = basename(dirname($file));
 
-            if (isset($files[ $localisation ])) {
+            if (isset($locales[ $localisation ])) {
                 continue;
             }
 
-            $files[ $localisation ] = $localisation;
+            $locales[ $localisation ] = $localisation;
         }
 
-        return $files;
+        return $locales;
     }
 }
