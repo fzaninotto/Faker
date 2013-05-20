@@ -29,7 +29,7 @@ class Internet extends \Faker\Provider\Base
     {
         $format = static::randomElement(static::$emailFormats);
 
-        return preg_replace('/\s/', '', $this->generator->parse($format));
+        return preg_replace('/\s/u', '', $this->generator->parse($format));
     }
 
     /**
@@ -37,7 +37,7 @@ class Internet extends \Faker\Provider\Base
      */
     public final function safeEmail()
     {
-        return preg_replace('/\s/', '', $this->userName() . '@' . static::safeEmailDomain());
+        return preg_replace('/\s/u', '', $this->userName() . '@' . static::safeEmailDomain());
     }
 
     /**
@@ -45,7 +45,7 @@ class Internet extends \Faker\Provider\Base
      */
     public function freeEmail()
     {
-        return preg_replace('/\s/', '', $this->userName() . '@' . static::freeEmailDomain());
+        return preg_replace('/\s/u', '', $this->userName() . '@' . static::freeEmailDomain());
     }
 
     /**
@@ -53,7 +53,7 @@ class Internet extends \Faker\Provider\Base
      */
     public function companyEmail()
     {
-        return preg_replace('/\s/', '', $this->userName() . '@' . $this->domainName());
+        return preg_replace('/\s/u', '', $this->userName() . '@' . $this->domainName());
     }
 
     /**
@@ -103,7 +103,7 @@ class Internet extends \Faker\Provider\Base
         $company = $this->generator->format('company');
         $companyElements = explode(' ', $company);
         $company = $companyElements[0];
-        $company = preg_replace('/\W/', '', $company);
+        $company = preg_replace('/\W/u', '', $company);
 
         return static::toLower($company);
     }

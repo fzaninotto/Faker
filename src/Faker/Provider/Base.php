@@ -136,8 +136,8 @@ class Base
      */
     public static function numerify($string = '###')
     {
-        $string = preg_replace_callback('/\#/', 'static::randomDigit', $string);
-        $string = preg_replace_callback('/\%/', 'static::randomDigitNotNull', $string);
+        $string = preg_replace_callback('/\#/u', 'static::randomDigit', $string);
+        $string = preg_replace_callback('/\%/u', 'static::randomDigitNotNull', $string);
 
         return $string;
     }
@@ -150,7 +150,7 @@ class Base
      */
     public static function lexify($string = '????')
     {
-        return preg_replace_callback('/\?/', 'static::randomLetter', $string);
+        return preg_replace_callback('/\?/u', 'static::randomLetter', $string);
     }
 
     /**
