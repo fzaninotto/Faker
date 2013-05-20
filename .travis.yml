@@ -1,3 +1,5 @@
 language: php
 php: 5.3
+before_script:
+  - composer install --dev
 script: phpunit
