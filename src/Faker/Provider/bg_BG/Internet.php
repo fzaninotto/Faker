@@ -4,29 +4,29 @@ namespace Faker\Provider\bg_BG;
 
 class Internet extends \Faker\Provider\Internet
 {
-	protected static $safeEmailTld = array('org', 'com', 'net', 'bg');
-	protected static $freeEmailDomain = array('gmail.com', 'yahoo.com', 'hotmail.com', 'mail.bg', 'abv.bg', 'dir.bg');
-	protected static $tld = array('bg', 'bg', 'bg', 'bg', 'bg', 'bg', 'com', 'biz', 'info', 'net', 'org');
+    protected static $freeEmailDomain = array('gmail.com', 'yahoo.com', 'hotmail.com', 'mail.bg', 'abv.bg', 'dir.bg');
+    protected static $tld = array('bg', 'bg', 'bg', 'bg', 'bg', 'bg', 'com', 'biz', 'info', 'net', 'org');
 
-	/**
-	 * @example 'jdoe'
-	 */
-	public function userName()
-	{
-		$format = static::randomElement(static::$userNameFormats);
-		return static::bothify($this->generator->parse($format));
-	}
+    /**
+     * @example 'jdoe'
+     */
+    public function userName()
+    {
+        $format = static::randomElement(static::$userNameFormats);
 
-	/**
-	 * @example 'faber'
-	 */
-	public function domainWord()
-	{
-		$company = $this->generator->format('company');
-		$companyElements = explode(' ', $company);
-		$company = $companyElements[0];
-		$company = preg_replace('/\W/', '', $company);
+        return static::bothify($this->generator->parse($format));
+    }
 
-		return $company;
-	}
+    /**
+     * @example 'faber'
+     */
+    public function domainWord()
+    {
+        $company = $this->generator->format('company');
+        $companyElements = explode(' ', $company);
+        $company = $companyElements[0];
+        $company = preg_replace('/\W/u', '', $company);
+
+        return $company;
+    }
 }

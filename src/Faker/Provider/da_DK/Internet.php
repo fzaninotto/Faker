@@ -48,6 +48,7 @@ class Internet extends \Faker\Provider\Internet
     public function userName()
     {
         $format = static::randomElement(static::$userNameFormats);
+
         return static::toLower(static::toAscii(static::bothify($this->generator->parse($format))));
     }
 
@@ -60,7 +61,7 @@ class Internet extends \Faker\Provider\Internet
         $company = $this->generator->format('company');
         $companyElements = explode(' ', $company);
         $company = $companyElements[0];
-        $company = preg_replace('/\W/', '', $company);
+        $company = preg_replace('/\W/u', '', $company);
 
         return static::toLower(static::toAscii($company));
     }

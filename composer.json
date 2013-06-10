@@ -16,11 +16,14 @@
         "doctrine/orm": "2.*"
     },
     "autoload": {
-        "psr-0": { "Faker": "src/" }
+        "psr-0": {
+            "Faker": "src/",
+            "Faker\\PHPUnit": "test/"
+        }
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.1.x-dev"
+            "dev-master": "1.2.x-dev"
         }
     }
 }

@@ -114,6 +114,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     freeEmail               // 'bradley72@gmail.com'
     companyEmail            // 'russel.durward@mcdermott.org'
     freeEmailDomain         // 'yahoo.com'
+    safeEmailDomain         // 'example.org'
     userName                // 'wade55'
     domainName              // 'wolffdeckow.net'
     domainWord              // 'feeney'
@@ -157,7 +158,10 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 ### `Faker\Provider\Base`
 
     randomDigit             // 7
+    randomDigitNotNull      // 5
     randomNumber($nbDigits = NULL) // 79907610
+    randomNumber($from, $to) // 39049
+    randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL) // 48.8932
     randomLetter            // 'b'
     randomElement($array = array ('a','b','c')) // 'b'
     numerify($string = '###') // '609'
@@ -172,6 +176,15 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     safari                 // 'Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10_7_1 rv:3.0; en-US) AppleWebKit/534.11.3 (KHTML, like Gecko) Version/4.0 Safari/534.11.3'
     opera                  // 'Opera/8.25 (Windows NT 5.1; en-US) Presto/2.9.188 Version/10.00'
     internetExplorer       // 'Mozilla/5.0 (compatible; MSIE 7.0; Windows 98; Win 9x 4.90; Trident/3.0)'
+
+### `Faker\Provider\Uuid`
+
+    uuid                   // '7e57d004-2b97-0e7a-b45f-5387367791cd'
+
+### `Faker\Provider\File`
+
+    fileExtension          // 'avi'
+    mimeType               // 'video/x-msvideo'
 
 ## Localization
 
