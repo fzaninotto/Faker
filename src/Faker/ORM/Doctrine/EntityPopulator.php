@@ -2,6 +2,7 @@
 
 namespace Faker\ORM\Doctrine;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Faker\ORM\Doctrine\ColumnTypeGuesser;
 
