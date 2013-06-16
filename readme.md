@@ -154,9 +154,6 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     locale                  // en_UK
     countryCode             // UK
     languageCode            // en
-    hexcolor                // #fa3cc2
-    rgbcolor()              // 0,255,122
-    rgbColorAsArray()       // array(0,255,122)
 
 ### `Faker\Provider\Base`
 
@@ -188,6 +185,14 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
     fileExtension          // 'avi'
     mimeType               // 'video/x-msvideo'
+
+### `Faker\Provider\Color`
+
+    hexcolor               // '#fa3cc2'
+    rgbcolor               // '0,255,122'
+    rgbColorAsArray        // array(0,255,122)
+    safeColorName          // 'fuchsia'
+    colorName              // 'Gainsbor'
 
 ## Localization
 
