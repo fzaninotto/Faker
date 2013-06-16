@@ -16,13 +16,13 @@ class Color extends Base
 		'a', 'b', 'c', 'd', 'e', 'f'
 	);
 
-	protected static $oldBrowserNames = array(
+	protected static $safeColorNames = array(
 		'black', 'maroon', 'green', 'navy', 'olive',
 		'purple', 'teal', 'lime', 'blue', 'silver',
 		'gray', 'yellow', 'fuchsia', 'aqua', 'white'
 	);
 
-	protected static $newBrowserNames = array(
+	protected static $allColorNames = array(
 		'AliceBlue', 'AntiqueWhite', 'Aqua', 'Aquamarine',
 		'Azure', 'Beige', 'Bisque', 'Black', 'BlanchedAlmond',
 		'Blue', 'BlueViolet', 'Brown', 'BurlyWood', 'CadetBlue',
@@ -110,7 +110,7 @@ class Color extends Base
 	 */
 	public static function safeColorName()
 	{
-		return static::randomElement(static::$oldBrowserNames);
+		return static::randomElement(static::$safeColorNames);
 	}
 
 	/**
@@ -118,7 +118,7 @@ class Color extends Base
 	 */
 	public static function colorName()
 	{
-		return static::randomElement(static::$newBrowserNames);
+		return static::randomElement(static::$allColorNames);
 	}
 
 }
