@@ -23,4 +23,10 @@ class ColorTest extends \PHPUnit_Framework_TestCase
 		$this->assertRegExp('/^' . $regexp . ',' . $regexp . ',' . $regexp . '$/i', Color::rgbColor());
 	}
 
+	public function testRgbCssColor()
+	{
+		$regexp = '([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])';
+		$this->assertRegExp('/^rgb\(' . $regexp . ',' . $regexp . ',' . $regexp . '\)$/i', Color::rgbCssColor());
+	}
+
 }

@@ -191,6 +191,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     hexcolor               // '#fa3cc2'
     rgbcolor               // '0,255,122'
     rgbColorAsArray        // array(0,255,122)
+    rgbCssColor            // 'rgb(0,255,122)'
     safeColorName          // 'fuchsia'
     colorName              // 'Gainsbor'
 

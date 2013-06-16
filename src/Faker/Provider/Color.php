@@ -106,6 +106,14 @@ class Color extends Base
 	}
 
 	/**
+	 * @example 'rgb(0,255,122)'
+	 */
+	public static function rgbCssColor()
+	{
+		return 'rgb(' . static::rgbColor() . ')';
+	}
+
+	/**
 	 * @example 'blue'
 	 */
 	public static function safeColorName()
