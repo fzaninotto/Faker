@@ -150,7 +150,7 @@ class Miscellaneous extends \Faker\Provider\Base
     }
 
 	/**
-	 * @example '
+	 * @example '#fa3cc2'
 	 */
 	public static function hexColor()
 	{
@@ -165,6 +165,9 @@ class Miscellaneous extends \Faker\Provider\Base
 		);
 	}
 
+	/**
+	 * @example 'array(0,255,122)'
+	 */
 	public static function rgbColorAsArray()
 	{
 		$rgb = array();
@@ -175,6 +178,9 @@ class Miscellaneous extends \Faker\Provider\Base
 		return $rgb;
 	}
 
+	/**
+	 * @example '0,255,122'
+	 */
 	public static function rgbColor()
 	{
 		return implode(',', static::rgbColorAsArray());
