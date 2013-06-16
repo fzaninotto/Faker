@@ -143,7 +143,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
 	public function testRgbColor()
 	{
 		$faker = Faker\Factory::create();
-		$color = $faker->rgbColor(false);
+		$color = $faker->rgbColor();
 		$regexp = '([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])';
 		$this->assertRegExp('/^' . $regexp . ',' . $regexp . ',' . $regexp . '$/i', $color);
 	}
