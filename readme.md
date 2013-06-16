@@ -154,6 +154,9 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     locale                  // en_UK
     countryCode             // UK
     languageCode            // en
+    hexcolor                // #fa3cc2
+    rgbcolor()              // 0,255,122
+    rgbColorAsArray()       // array(0,255,122)
 
 ### `Faker\Provider\Base`
 
