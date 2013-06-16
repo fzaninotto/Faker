@@ -3,7 +3,6 @@
 namespace Faker\Test\Provider;
 
 use Faker\Provider\Base as BaseProvider;
-use Faker;
 
 class BaseTest extends \PHPUnit_Framework_TestCase
 {
@@ -125,26 +124,4 @@ class BaseTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertRegExp('/foo[a-z]Ba\dr/', BaseProvider::bothify('foo?Ba#r'));
     }
-
-	public function testHexColor()
-	{
-		$faker = Faker\Factory::create();
-		$color = $faker->hexColor;
-		$this->assertRegExp('/^#[a-f0-9]{6}$/i', $color);
-	}
-
-	public function testRgbColorAsArray()
-	{
-		$faker = Faker\Factory::create();
-		$color = $faker->rgbColorAsArray;
-		$this->assertEquals(3, count($color));
-	}
-
-	public function testRgbColor()
-	{
-		$faker = Faker\Factory::create();
-		$color = $faker->rgbColor();
-		$regexp = '([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])';
-		$this->assertRegExp('/^' . $regexp . ',' . $regexp . ',' . $regexp . '$/i', $color);
-	}
 }
