@@ -11,11 +11,6 @@ namespace Faker\Provider;
 class Color extends Base
 {
 
-	protected static $hexcodes = array(
-		'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-		'a', 'b', 'c', 'd', 'e', 'f'
-	);
-
 	protected static $safeColorNames = array(
 		'black', 'maroon', 'green', 'navy', 'olive',
 		'purple', 'teal', 'lime', 'blue', 'silver',
@@ -57,12 +52,12 @@ class Color extends Base
 	public static function hexColor()
 	{
 		return sprintf('#%s%s%s%s%s%s',
-			static::randomElement(static::$hexcodes),
-			static::randomElement(static::$hexcodes),
-			static::randomElement(static::$hexcodes),
-			static::randomElement(static::$hexcodes),
-			static::randomElement(static::$hexcodes),
-			static::randomElement(static::$hexcodes)
+			dechex(static::numberBetween(0,15)),
+			dechex(static::numberBetween(0,15)),
+			dechex(static::numberBetween(0,15)),
+			dechex(static::numberBetween(0,15)),
+			dechex(static::numberBetween(0,15)),
+			dechex(static::numberBetween(0,15))
 		);
 	}
 
@@ -71,9 +66,9 @@ class Color extends Base
 	 */
 	public static function safeHexColor()
 	{
-		$color1 = static::randomElement(static::$hexcodes);
-		$color2 = static::randomElement(static::$hexcodes);
-		$color3 = static::randomElement(static::$hexcodes);
+		$color1 = dechex(static::numberBetween(0,15));
+		$color2 = dechex(static::numberBetween(0,15));
+		$color3 = dechex(static::numberBetween(0,15));
 		return sprintf('#%s%s%s%s%s%s',
 			$color1,
 			$color1,
