@@ -51,14 +51,7 @@ class Color extends Base
 	 */
 	public static function hexColor()
 	{
-		return sprintf('#%s%s%s%s%s%s',
-			dechex(static::numberBetween(0,15)),
-			dechex(static::numberBetween(0,15)),
-			dechex(static::numberBetween(0,15)),
-			dechex(static::numberBetween(0,15)),
-			dechex(static::numberBetween(0,15)),
-			dechex(static::numberBetween(0,15))
-		);
+		return '#' . dechex(mt_rand(1, 16777215));
 	}
 
 	/**
