@@ -124,7 +124,8 @@ class Base
      */
     public static function randomElement($array = array('a', 'b', 'c'))
     {
-        $key = array_rand($array);
+        $keys = array_keys($array);
+        $key = $keys[mt_rand(0, count($keys) - 1)];
 
         return $array[$key];
     }
