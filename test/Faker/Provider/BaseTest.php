@@ -90,6 +90,12 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertContains(BaseProvider::randomElement($elements), $elements);
     }
 
+    public function testRandomElementReturnsElementFromAssociativeArray()
+    {
+        $elements = array('tata' => '23', 'toto' => 'e', 'tutu' => 32, 'titi' => '#');
+        $this->assertContains(BaseProvider::randomElement($elements), $elements);
+    }
+
     public function testNumerifyReturnsSameStringWhenItContainsNoHashSign()
     {
         $this->assertEquals('fooBar?', BaseProvider::numerify('fooBar?'));
