@@ -59,17 +59,8 @@ class Color extends Base
 	 */
 	public static function safeHexColor()
 	{
-		$color1 = dechex(static::numberBetween(0,15));
-		$color2 = dechex(static::numberBetween(0,15));
-		$color3 = dechex(static::numberBetween(0,15));
-		return sprintf('#%s%s%s%s%s%s',
-			$color1,
-			$color1,
-			$color2,
-			$color2,
-			$color3,
-			$color3
-		);
+		$color = str_pad(dechex(mt_rand(0,255)), 3, '0', STR_PAD_LEFT);
+		return '#' . $color[0] . $color[0] . $color[1] . $color[1] . $color[2] . $color[2];
 	}
 
 	/**
@@ -77,12 +68,12 @@ class Color extends Base
 	 */
 	public static function rgbColorAsArray()
 	{
-		$rgb = array();
-		$color = str_replace('#', '', static::hexColor());
-		$rgb[] = hexdec(substr($color,0,2));
-		$rgb[] = hexdec(substr($color,2,2));
-		$rgb[] = hexdec(substr($color,4,2));
-		return $rgb;
+		$color = static::hexColor();
+		return array(
+			hexdec(substr($color,1,2)),
+			hexdec(substr($color,3,2)),
+			hexdec(substr($color,5,2))
+		);
 	}
 
 	/**
