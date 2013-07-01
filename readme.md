@@ -186,6 +186,15 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     fileExtension          // 'avi'
     mimeType               // 'video/x-msvideo'
 
+### `Faker\Provider\Color`
+
+    hexcolor               // '#fa3cc2'
+    rgbcolor               // '0,255,122'
+    rgbColorAsArray        // array(0,255,122)
+    rgbCssColor            // 'rgb(0,255,122)'
+    safeColorName          // 'fuchsia'
+    colorName              // 'Gainsbor'
+
 ## Localization
 
 `Faker\Factory` can take a locale as an argument, to return localized data. If no localized provider is found, the factory fallbacks to the default locale (en_EN).
