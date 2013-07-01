@@ -1,15 +1,12 @@
 <?php
-/**
- * Created by lsv
- * Date: 6/17/13
- * Time: 12:49 AM
- */
 
 namespace Faker\Provider;
 
+/**
+ * @author lsv
+ */
 class Color extends Base
 {
-
     protected static $safeColorNames = array(
         'black', 'maroon', 'green', 'navy', 'olive',
         'purple', 'teal', 'lime', 'blue', 'silver',
