@@ -11,16 +11,16 @@ class CompanyTest extends \PHPUnit_Framework_TestCase
     {
         return new Constraint\IsValidSiret();
     }
-    
+
     private static function isValidSiren()
     {
         return new Constraint\IsValidSiren();
     }
-    
+
     public function testParagraphWithNegativeNbDigitsReturnsAWellFormattedSiret()
     {
         $siret = Company::siret(-1);
-        
+
         $this->assertThat($siret, self::isValidSiret());
         $this->assertRegExp("/[\d]{3} [\d]{3} [\d]{3} 00[\d]{3}/", $siret);
     }
@@ -28,7 +28,7 @@ class CompanyTest extends \PHPUnit_Framework_TestCase
     public function testParagraphWithInvalidNbDigitsReturnsAWellFormattedSiret()
     {
         $siret = Company::siret(6);
-        
+
         $this->assertThat($siret, self::isValidSiret());
         $this->assertRegExp("/[\d]{3} [\d]{3} [\d]{3} 00[\d]{3}/", $siret);
     }
@@ -39,7 +39,7 @@ class CompanyTest extends \PHPUnit_Framework_TestCase
         $siret2 = Company::siret(2);
         $siret3 = Company::siret(3);
         $siret4 = Company::siret(4);
-        
+
         $this->assertThat($siret1, self :: isValidSiret());
         $this->assertRegExp("/[\d]{3} [\d]{3} [\d]{3} 000[\d]{2}/", $siret1);
         $this->assertThat($siret2, self :: isValidSiret());
@@ -49,11 +49,11 @@ class CompanyTest extends \PHPUnit_Framework_TestCase
         $this->assertThat($siret4, self :: isValidSiret());
         $this->assertRegExp("/[\d]{3} [\d]{3} [\d]{3} [\d]{5}/", $siret4);
     }
-    
+
     public function testSirenReturnsAValidAndWellFormattedSiren()
     {
         $siret = Company::siren();
-        
+
         $this->assertThat($siret, self :: isValidSiren());
         $this->assertRegExp("/[\d]{3} [\d]{3} [\d]{3}/", $siret);
     }

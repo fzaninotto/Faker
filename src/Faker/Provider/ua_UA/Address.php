@@ -334,6 +334,7 @@ class Address extends \Faker\Provider\Address
         $region = static::$region[$regionAndCityNumber];
         $city = static::$city[$regionAndCityNumber];
         $format = "$region {{regionSuffix}}, {{cityPrefix}} $city";
+
         return $this->generator->parse($format);
     }
 

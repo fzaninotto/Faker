@@ -35,7 +35,7 @@ class Internet extends \Faker\Provider\Base
     /**
      * @example 'jdoe@example.com'
      */
-    public final function safeEmail()
+    final public function safeEmail()
     {
         return preg_replace('/\s/u', '', $this->userName() . '@' . static::safeEmailDomain());
     }
@@ -63,11 +63,11 @@ class Internet extends \Faker\Provider\Base
     {
         return static::randomElement(static::$freeEmailDomain);
     }
-    
+
     /**
      * @example 'example.org'
      */
-    public static final function safeEmailDomain()
+    final public static function safeEmailDomain()
     {
         $domains = array(
             'example.com',

@@ -28,6 +28,7 @@ class Company extends \Faker\Provider\Company
     public function companyUrl()
     {
         $format = static::randomElement(static::$urlFormats);
+
         return $this->generator->parse($format);
     }
 

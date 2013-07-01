@@ -10,10 +10,11 @@ Class Transliteration
     /**
      * Translate cyrillic text to latin
      * Useful for URL ang email generation
-     * @param string $string
+     * @param  string $string
      * @return string
      */
-    public static function transliterate($string = '') {
+    public static function transliterate($string = '')
+    {
         $replace=array(
             "'"=>"",
             "`"=>"",
@@ -53,6 +54,7 @@ Class Transliteration
             "ї"=>"yi","Ї"=>"yi",
             "є"=>"e","Є"=>"e"
         );
+
         return strtr($string, $replace);
     }
 }

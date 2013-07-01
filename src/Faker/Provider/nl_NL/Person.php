@@ -40,7 +40,6 @@ class Person extends \Faker\Provider\Person
         'Verbeek'
     );
 
-
     protected static $dutchLastNames = array(
         'Aalts', 'Aarden', 'Aarts', 'Adelaar', 'Adriaansen', 'Adriaensdr', 'Adriaense', 'Adryaens', 'Aeije',
         'Aelftrud van Wessex', 'Aertsz', 'van Alenburg', 'van Allemanië', 'Alpaidis', 'Amalrada', 'van Amstel',
@@ -165,8 +164,6 @@ class Person extends \Faker\Provider\Person
         'Zijlmans', 'Zuidweg', 'Zuijdveld', 'van Zwaben', 'Zwart', 'Zwijsen'
     );
 
-
-
     protected static $commonForeignLastNames = array(
         'Yilmaz', 'Nguyen', 'Ali', 'Mohamed', 'Yildiz', 'Yildirim', 'Öztürk', 'Demir', 'Hassan', 'Şahin', 'Aydin',
         'Özdemir', 'Çelik', 'Kiliç', 'Arslan', 'Dogan', 'Tran', 'Abdi', 'Aslan', 'Hussein', 'Koç', 'Özcan', 'Hussain',
@@ -284,7 +281,6 @@ class Person extends \Faker\Provider\Person
 
         return $lastName;
     }
-
 
     /**
      * @example 'mr.'

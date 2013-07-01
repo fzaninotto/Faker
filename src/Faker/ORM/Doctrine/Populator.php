@@ -31,7 +31,7 @@ class Populator
     public function addEntity($entity, $number, $customColumnFormatters = array(), $customModifiers = array(), $generateId = false)
     {
         if (!$entity instanceof \Faker\ORM\Doctrine\EntityPopulator) {
-            if (null === $this->manager) {              
+            if (null === $this->manager) {
                 throw new \InvalidArgumentException("No entity manager passed to Doctrine Populator.");
             }
             $entity = new \Faker\ORM\Doctrine\EntityPopulator($this->manager->getClassMetadata($entity));
