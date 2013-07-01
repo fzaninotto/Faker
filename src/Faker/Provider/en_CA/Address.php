@@ -24,7 +24,6 @@ class Address extends \Faker\Provider\en_US\Address
         "{{streetAddress}}\n{{city}}, {{provinceAbbr}}  {{postcode}}",
     );
 
-
     /**
      * @example 'Ontario'
      */
@@ -50,7 +49,6 @@ class Address extends \Faker\Provider\en_US\Address
         return static::randomElement(static::$postcodeLetters);
     }
 
-
     /**
      * @example A1B 2C3
      */
@@ -63,7 +61,5 @@ class Address extends \Faker\Provider\en_US\Address
 
         return static::toUpper($string);
     }
-
-
 
 }

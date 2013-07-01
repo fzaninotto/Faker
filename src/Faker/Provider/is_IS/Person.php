@@ -80,13 +80,11 @@ class Person extends \Faker\Provider\Person
     {
         $name = static::firstNameMan();
 
-        if (substr($name, -2) === 'ur')
-        {
+        if (substr($name, -2) === 'ur') {
             $name = substr($name, 0, strlen($name) - 2);
         }
 
-        if (substr($name, -1) !== 's')
-        {
+        if (substr($name, -1) !== 's') {
             $name .= 's';
         }
 
@@ -134,8 +132,7 @@ class Person extends \Faker\Provider\Person
         // valid flag
         $valid = FALSE;
 
-        while ( ! $valid)
-        {
+        while (! $valid) {
             // make two random numbers
             $rand = static::randomDigit().static::randomDigit();
 
@@ -143,8 +140,7 @@ class Person extends \Faker\Provider\Person
             $tmp = $birthdate->format('dmy').$rand;
 
             // loop through temp string
-            for ($i = 7, $sum = 0; $i >= 0; $i--)
-            {
+            for ($i = 7, $sum = 0; $i >= 0; $i--) {
                 // calculate security variable
                 $sum += ($tmp[$i] * $ref[$i]);
             }
@@ -152,8 +148,7 @@ class Person extends \Faker\Provider\Person
             // subtract 11 if not 11
             $chk = ($sum % 11 === 0) ? 0 : (11 - ($sum % 11));
 
-            if ($chk < 10)
-            {
+            if ($chk < 10) {
                 $lastFour = $rand.$chk.substr($birthdate->format('Y'), 1, 1);
 
                 $valid = TRUE;

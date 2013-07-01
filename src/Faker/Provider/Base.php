@@ -65,12 +65,12 @@ class Base
 
     /**
      * Return a random float number
-     * 
-     * @param int $nbMaxDecimals
+     *
+     * @param int       $nbMaxDecimals
      * @param int|float $min
      * @param int|float $max
      * @example 48.8932
-     * 
+     *
      * @return float
      */
     public static function randomFloat($nbMaxDecimals = null, $min = 0, $max = null)
@@ -78,20 +78,20 @@ class Base
         if (null === $nbMaxDecimals) {
             $nbMaxDecimals = static::randomDigit();
         }
-        
+
         if (null === $max) {
             $max = static::randomNumber();
         }
-        
+
         if ($min > $max) {
             $tmp = $min;
             $min = $max;
             $max = $tmp;
         }
-        
+
         return round($min + mt_rand() / mt_getrandmax() * ($max - $min), $nbMaxDecimals);
     }
-    
+
     /**
      * Returns a random number between $from and $to
      *

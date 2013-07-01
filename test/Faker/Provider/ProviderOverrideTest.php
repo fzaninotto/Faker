@@ -127,7 +127,7 @@ class ProviderOverrideTest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider localeDataProvider
      *
-     * @param null $locale
+     * @param null   $locale
      * @param string $locale
      */
     public function testUuid($locale = null)
