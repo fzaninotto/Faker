@@ -43,6 +43,21 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertGreaterThanOrEqual(BaseProvider::randomNumber($min, $max), $max);
     }
 
+    public function testRandomDigitFromMatchedSetReturnsInteger()
+    {
+        $this->assertTrue(
+          is_integer(BaseProvider::randomDigitFromMatchedSet(array( '[123]' )))
+        );
+    }
+
+    public function testRandomDigitFromMatchedSetReturnsMember() {
+        $this->assertTrue(in_array(
+            BaseProvider::randomDigitFromMatchedSet(array( '[123]' )),
+            array( 1, 2, 3 ),
+            true
+        ));
+    }
+
     public function testNumberBetween()
     {
         $min = 5;
@@ -111,13 +126,13 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertRegExp('/foo\dBa\dr/', BaseProvider::numerify('foo%Ba%r'));
     }
 
+    public function testNumerifyReturnsStringWithSetReplacedByOption() {
+        $this->assertRegExp('/foo[123]Bar/', BaseProvider::numerify('foo[123]Bar'));
+    }
+
     public function testNumerifyReturnsStringWithPercentageSignsReplacedByNotNullDigits()
     {
         $this->assertNotEquals('0', BaseProvider::numerify('%'));
-    }
-
-    public function testNumerifyReturnsStringWithSetReplacedByOption() {
-        $this->assertRegExp('/[123]/', BaseProvider::numerify('[123]'));
     }
 
     public function testLexifyReturnsSameStringWhenItContainsNoQuestionMark()

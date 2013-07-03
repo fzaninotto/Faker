@@ -40,6 +40,27 @@ class Base
     }
 
     /**
+     * Returns a random digit from a set matched by preg_*
+     *
+     * Splits a set of digits defined with regex character set syntax into an
+     * array to pass to randomElement()
+     *
+     * @param array $matches
+     *
+     * @return integer
+     */
+
+    protected static function randomDigitFromMatchedSet($matches) {
+        # Set is first match; trim []
+        $set = trim($matches[0], '[]');
+        # Split set into elements
+        $elems = str_split($set);
+        # Return random
+        return intval(static::randomElement($elems));
+    }
+    
+
+    /**
      * Returns a random number with 0 to $nbDigits digits
      *
      * If $upTo is passed, it returns a number between $nbDigits (read as from) and $upTo
@@ -141,14 +162,7 @@ class Base
     {
         $string = preg_replace_callback('/\#/u', 'static::randomDigit', $string);
         $string = preg_replace_callback('/\%/u', 'static::randomDigitNotNull', $string);
-        $string = preg_replace_callback('/\[\d+\]/u', function($matches) {
-            # Set is first match; trim []
-            $set = trim($matches[0], '[]');
-            # Split set into elements
-            $elem = str_split($set);
-            # Return random
-            return static::randomElement($elem);
-        }, $string);
+        $string = preg_replace_callback('/\[\d+\]/u', 'static::randomDigitFromMatchedSet', $string);
 
 
         return $string;
