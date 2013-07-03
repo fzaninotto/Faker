@@ -116,6 +116,10 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertNotEquals('0', BaseProvider::numerify('%'));
     }
 
+    public function testNumerifyReturnsStringWithSetReplacedByOption() {
+        $this->assertRegExp('/[123]/', BaseProvider::numerify('[123]'));
+    }
+
     public function testLexifyReturnsSameStringWhenItContainsNoQuestionMark()
     {
         $this->assertEquals('fooBar#', BaseProvider::lexify('fooBar#'));

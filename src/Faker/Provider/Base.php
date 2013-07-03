@@ -141,6 +141,15 @@ class Base
     {
         $string = preg_replace_callback('/\#/u', 'static::randomDigit', $string);
         $string = preg_replace_callback('/\%/u', 'static::randomDigitNotNull', $string);
+        $string = preg_replace_callback('/\[\d+\]/u', function($matches) {
+            # Set is first match; trim []
+            $set = trim($matches[0], '[]');
+            # Split set into elements
+            $elem = str_split($set);
+            # Return random
+            return static::randomElement($elem);
+        }, $string);
+
 
         return $string;
     }
