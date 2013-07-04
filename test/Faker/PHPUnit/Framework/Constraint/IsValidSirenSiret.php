@@ -9,8 +9,9 @@ abstract class IsValidSirenSiret extends \PHPUnit_Framework_Constraint
 
         $code = str_replace(' ', '', $other);
 
-        if (strlen($code) != $this->getLength())
+        if (strlen($code) != $this->getLength()) {
             return false;
+        }
 
         $sum = 0;
         // IMPORTANT : from right to left
