@@ -5,7 +5,7 @@ namespace Faker\Provider\ua_UA;
 /**
  * Cyrillic to latin transliteration util
  */
-Class Transliteration
+class Transliteration
 {
     /**
      * Translate cyrillic text to latin

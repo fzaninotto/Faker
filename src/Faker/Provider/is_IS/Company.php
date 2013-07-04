@@ -50,5 +50,4 @@ class Company extends \Faker\Provider\Company
     {
         return static::numerify(static::$vskFormat);
     }
-
 }
