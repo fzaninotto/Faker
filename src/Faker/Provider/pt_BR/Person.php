@@ -74,7 +74,7 @@ class Person extends \Faker\Provider\Person
         'Salazar', 'Sales', 'Salgado', 'Sanches', 'Sandoval', 'Santacruz',
         'Santana', 'Santiago', 'Saraiva', 'Sepúlveda', 'Serna', 'Serra',
         'Serrano', 'Soares', 'Solano', 'Soto', 'Tamoio', 'Teles', 'Toledo',
-        'Torres', 'Uchoa', 'Urias', 'Valdez', 'Valẽncia', 'Valentin', 'Vale',
+        'Torres', 'Uchoa', 'Urias', 'Valdez', 'Valência', 'Valentin', 'Vale',
         'Vasques', 'Vega', 'Velasques', 'Verdugo', 'Verdara', 'Vieira', 'Vila',
         'Zamana', 'Zambrano', 'Zaragoça', 'da Cruz', 'da Rosa', 'da Silva',
         'das Dores', 'das Neves', 'de Aguiar', 'de Oliveira', 'de Souza'
