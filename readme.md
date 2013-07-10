@@ -186,6 +186,9 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     fileExtension          // 'avi'
     mimeType               // 'video/x-msvideo'
 
+### `Faker\Provider\Image`
+    imageUrl($keyword, $imagesToFetch) // 'http://somedomain.com/image.jpg'
+
 ### `Faker\Provider\Color`
 
     hexcolor               // '#fa3cc2'
