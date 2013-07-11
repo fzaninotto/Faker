@@ -9,7 +9,7 @@ class LoremTest extends \PHPUnit_Framework_TestCase
     /**
      * @expectedException \InvalidArgumentException
      */
-    public function testTextThrowsExceptionWhenAskedLextSizeLessThan5()
+    public function testTextThrowsExceptionWhenAskedTextSizeLessThan5()
     {
         Lorem::text(4);
     }

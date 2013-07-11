@@ -124,13 +124,13 @@ class Person extends \Faker\Provider\Person
         $birthdate = new \DateTime('@' . mt_rand(0, time()));
 
         // last four buffer
-        $lastFour = NULL;
+        $lastFour = null;
 
         // security variable reference
         $ref = '32765432';
 
         // valid flag
-        $valid = FALSE;
+        $valid = false;
 
         while (! $valid) {
             // make two random numbers
@@ -151,7 +151,7 @@ class Person extends \Faker\Provider\Person
             if ($chk < 10) {
                 $lastFour = $rand.$chk.substr($birthdate->format('Y'), 1, 1);
 
-                $valid = TRUE;
+                $valid = true;
             }
         }
 

@@ -19,7 +19,6 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
         $generator = new Generator;
         $provider = new FooProvider();
         $generator->addProvider($provider);
-        $expected = array($provider, 'fooFormatter');
         $this->assertTrue(is_callable($generator->getFormatter('fooFormatter')));
     }
 
