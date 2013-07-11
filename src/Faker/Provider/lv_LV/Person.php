@@ -42,6 +42,16 @@ class Person extends \Faker\Provider\Person
         'Andersons', 'Kirhenšteins', 'Švarcbahs', 'Bendorfs', 'Veinbergs', 'Rozentāls', 'Neilands', 'Freidenfelds',
         'Veidenbaums', 'Kronvalds',
     );
+
+    public function driverLicence()
+    {
+        return $this->bothify("??######");
+    }
+
+    public function passportNumber()
+    {
+        return $this->bothify("??#######");
+    }
 }
 
 
