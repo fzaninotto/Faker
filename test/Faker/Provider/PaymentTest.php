@@ -25,7 +25,7 @@ class PaymentTest extends \PHPUnit_Framework_TestCase
     {
         $card  = Payment::randomCard();
         $this->assertEquals(count($card), 4);
-        $this->assertEquals(array('type','number','name','expirationDate'));
+        $this->assertEquals(array('type', 'number', 'name', 'expirationDate'), array_keys($card));
 
     }
 
