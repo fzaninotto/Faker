@@ -10,23 +10,46 @@ class Payment extends Base
 
     protected static $cardsParams = array(
         'visa' => array(
-            'prefix' => array("4539","4556","4916","4532","4929","40240071","4485","4716","4"),
-            'length' => array(16, 13),
+            'mask' => array(
+                "4539#########",
+                "4539############",
+                "4556#########",
+                "4556############",
+                "4916#########",
+                "4916############",
+                "4532#########",
+                "4532############",
+                "4929#########",
+                "4929############",
+                "40240071#####",
+                "40240071########",
+                "4485#########",
+                "4485############",
+                "4716#########",
+                "4716############",
+                "4############",
+                "4###############"
+            ),
             'name' => 'Visa'
         ),
         'mastercard' => array(
-            'prefix' => array("51","52","53","54", "55"),
-            'length' => array(16),
+            'mask' => array(
+                "51##############",
+                "52##############",
+                "53##############",
+                "54##############",
+                "55##############"
+            ),
             'name' => 'MasterCard'
         ),
         'amex' => array(
-            'prefix' => array("34", "37"),
-            'length' => array(15),
+            'mask' => array(
+                "34#############",
+                "37#############"),
             'name' => 'American Express'
         ),
         'discover' => array(
-            'prefix' => array("6011"),
-            'length' => array(16),
+            'mask' => array("6011############"),
             'name' => 'Discover'
         ),
     );
@@ -34,11 +57,7 @@ class Payment extends Base
     public static function randomCard($valid = true)
     {
         $params = static::randomElement(static::$cardsParams);
-
-        $CCPrefix = static::randomElement($params['prefix']);
-        $CCLength = static::randomElement($params['length']);
-
-        $CCNumber = static::randomCardNumber($CCPrefix, $CCLength);
+        $CCNumber = static::randomCardNumber($params['mask']);
 
         return array(
             'type' => $params['name'],
@@ -48,14 +67,14 @@ class Payment extends Base
         );
     }
 
-    public static function randomCardNumber($prefix, $length)
+    public static function randomCardNumber($mask = null)
     {
-        $cardNumber = $prefix;
-        while( strlen($cardNumber) < $length ) {
-            $cardNumber .= static::randomDigit();
+        if(is_null($mask)) {
+            $cp = static::randomElement(static::$cardsParams);
+            $mask = $cp['mask'];
         }
 
-        return $cardNumber;
+        return static::numerify($mask);
     }
 
     /**
