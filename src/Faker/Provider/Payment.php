@@ -2,149 +2,71 @@
 
 namespace Faker\Provider;
 
+use Faker\Provider\Person;
+
 class Payment extends Base
 {
-    protected static $formats = array(
-        '{{firstName}} {{lastName}}',
+    public static $expirationDateFormat = "m/y";
+
+    protected static $cardsParams = array(
+        'visa' => array(
+            'prefix' => array("4539","4556","4916","4532","4929","40240071","4485","4716","4"),
+            'length' => array(16, 13),
+            'name' => 'Visa'
+        ),
+        'mastercard' => array(
+            'prefix' => array("51","52","53","54", "55"),
+            'length' => array(16),
+            'name' => 'MasterCard'
+        ),
+        'amex' => array(
+            'prefix' => array("34", "37"),
+            'length' => array(15),
+            'name' => 'American Express'
+        ),
+        'discover' => array(
+            'prefix' => array("6011"),
+            'length' => array(16),
+            'name' => 'Discover'
+        ),
     );
 
-    protected static $expirationDateFormat = "MM/yy";
-
-    protected static $firstName = array('John', 'Jane');
-
-    protected static $lastName = array('Doe');
-
-    protected static $creditCards = array(
-        array(
-            'type' => 'American Express',
-            'number' => '378282246310005'
-        ),
-        array(
-            'type' => 'American Express',
-            'number' => '371449635398431'
-        ),
-        array(
-            'type' => 'American Express Corporate',
-            'number' => '378734493671000'
-        ),
-        array(
-            'type' => 'Australian BankCard',
-            'number' => '5610591081018250'
-        ),
-        array(
-            'type' => 'Diners Club',
-            'number' => '30569309025904'
-        ),
-        array(
-            'type' => 'Diners Club',
-            'number' => '38520000023237'
-        ),
-        array(
-            'type' => 'Discover',
-            'number' => '6011111111111117'
-        ),
-        array(
-            'type' => 'Discover',
-            'number' => '6011000990139424'
-        ),
-        array(
-            'type' => 'JCB',
-            'number' => '3530111333300000'
-        ),
-        array(
-            'type' => 'JCB',
-            'number' => '3566002020360505'
-        ),
-        array(
-            'type' => 'MasterCard',
-            'number' => '5555555555554444'
-        ),
-        array(
-            'type' => 'MasterCard',
-            'number' => '5105105105105100'
-        ),
-        array(
-            'type' => 'Visa',
-            'number' => '4111111111111111'
-        ),
-
-        array(
-            'type' => 'Visa',
-            'number' => '4012888888881881'
-        ),
-        array(
-            'type' => 'Visa',
-            'number' => '4222222222222'
-        ), //Note : Even though this number has a different character count than the other test numbers, it is the correct and functional number.
-        array(
-            'type' => 'Dankort (PBS)',
-            'number' => '76009244561'
-        ),
-        array(
-            'type' => 'Dankort (PBS)',
-            'number' => '5019717010103742'
-        ),
-        array(
-            'type' => 'Switch/Solo (Paymentech)',
-            'number' => '6331101999990016'
-        )
-    );
-
-
-    public function creditCard()
+    public static function randomCard($valid = true)
     {
-        return static::randomElement(static::$creditCards);
+        $params = static::randomElement(static::$cardsParams);
+
+        $CCPrefix = static::randomElement($params['prefix']);
+        $CCLength = static::randomElement($params['length']);
+
+        $CCNumber = static::randomCardNumber($CCPrefix, $CCLength);
+
+        return array(
+            'type' => $params['name'],
+            'number' => $CCNumber,
+            'name' => strtoupper(Person::firstName() . " " . Person::lastName()),
+            'expirationDate' => static::expirationDate($valid)
+        );
     }
 
-    public function creditCardType()
+    public static function randomCardNumber($prefix, $length)
     {
-        $cc = static::creditCard();
-        return $cc['type'];
-    }
+        $cardNumber = $prefix;
+        while( strlen($cardNumber) < $length ) {
+            $cardNumber .= static::randomDigit();
+        }
 
-    public function creditCardNumber()
-    {
-        $cc = static::creditCard();
-        return $cc['number'];
+        return $cardNumber;
     }
 
     /**
      * @example '04/13'
      */
-    public function expirationDate($valid = true)
+    public static function expirationDate($valid = true)
     {
         $dt = new \DateTime();
-        if($valid) {
-            $dt->modify("+1 year");
-        } else {
-            $dt->modify("-1 year");
-        }
+        $sign = ($valid) ? '+' : '-';
+        $dt->modify(sprintf($sign . "%s %s", rand(1,36), 'month'));
+
         return $dt->format(static::$expirationDateFormat);
-    }
-
-    /**
-     * @example 'John Doe'
-     */
-    public function cardHolderName()
-    {
-        $format = static::randomElement(static::$formats);
-
-        return $this->generator->parse($format);
-    }
-
-    /**
-     * @example 'John'
-     */
-    public static function firstName()
-    {
-        return static::randomElement(static::$firstName);
-    }
-
-    /**
-     * @example 'Doe'
-     */
-    public static function lastName()
-    {
-        return static::randomElement(static::$lastName);
     }
 }
