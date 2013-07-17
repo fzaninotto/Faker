@@ -1,5 +1,5 @@
 {
-    "name": "fzaninotto/faker",
+    "name": "mbfisher/faker",
     "type": "library",
     "description": "Faker is a PHP library that generates fake data for you.",
     "keywords": ["faker", "fixtures", "data"],
@@ -7,6 +7,9 @@
     "authors": [
         {
             "name": "François Zaninotto"
+        },
+        {
+            "name": "Mike Fisher"
         }
     ],
     "require": {
@@ -18,9 +21,4 @@
             "Faker\\PHPUnit": "test/"
         }
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.2.x-dev"
-        }
-    }
 }
