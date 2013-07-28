@@ -6,7 +6,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
     protected static $formats = array(
         '+30 2# ########',
-        '+30 6# ########'
+        '+30 6# ########',
         '+30 2### ######',
         '+30 6### ######',
         '+302#########',
