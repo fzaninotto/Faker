@@ -168,4 +168,22 @@ class Person extends \Faker\Provider\Person
     {
         return static::randomElement(static::$prefixFemale);
     }
+
+    /**
+     * @example 'Θεωδωρόπουλος'
+     */
+    public static function lastNameMale()
+    {
+        return static::randomElement(static::$lastNameMale);
+    }
+
+    /**
+     * @example 'Κοκκίνου'
+     */
+    public static function lastNameFemale()
+    {
+        return static::randomElement(static::$lastNameFemale);
+    }
+
+
 }
