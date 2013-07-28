@@ -33,7 +33,8 @@ class Address extends \Faker\Provider\Address
     	'Χιλή'
     );
     protected static $streetNameFormats = array(
-        '{{streetPrefix}} {{lastName}}'
+        '{{streetPrefix}} {{lastNameMale}}',
+        '{{streetPrefix}} {{lastNameFemale}}'
     );
     protected static $streetAddressFormats = array(
         '{{streetName}}, {{buildingNumber}}',
