@@ -135,18 +135,10 @@ class Person extends \Faker\Provider\Person
     );
 
     protected static $prefixMale = array('κος.', 'κ.');
-    protected static $prefixFemale = array('δις.', 'δνις.', 'κα.', );
+    protected static $prefixFemale = array('δις.', 'δνις.', 'κα.');
 
     /**
-     * @example 'Mrs.'
-     */
-    public static function prefix()
-    {
-        return static::randomElement(static::$prefixMale);
-    }
-
-    /**
-     * @example 'Argus'
+     * @example 'Ηλίας'
      */
     public static function firstNameMale()
     {
@@ -154,7 +146,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * @example 'Magret'
+     * @example 'Μιράντα'
      */
     public static function firstNameFemale()
     {
@@ -162,7 +154,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * @example 'Herr'
+     * @example 'κ.'
      */
     public static function prefixMale()
     {
@@ -170,7 +162,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * @example 'Frau'
+     * @example 'κα.'
      */
     public static function prefixFemale()
     {
