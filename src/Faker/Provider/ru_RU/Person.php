@@ -6,7 +6,7 @@ class Person extends \Faker\Provider\Person
 {
     protected static $formats = array(
         '{{firstName}} {{middleName}} {{lastName}}',
-        '{{lastName}} {{firstName}} {{lastName}}',
+        '{{lastName}} {{firstName}} {{middleName}}',
     );
 
     /**
