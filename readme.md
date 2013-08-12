@@ -298,7 +298,7 @@ A `Faker\Generator` alone can't do much generation. It needs `Faker\Provider` ob
 ```php
 <?php
 $faker = new Faker\Generator();
-$faker->addProvider(new Faker\Provider\en_US\Name($faker));
+$faker->addProvider(new Faker\Provider\en_US\Person($faker));
 $faker->addProvider(new Faker\Provider\en_US\Address($faker));
 $faker->addProvider(new Faker\Provider\en_US\PhoneNumber($faker));
 $faker->addProvider(new Faker\Provider\en_US\Company($faker));
@@ -306,7 +306,7 @@ $faker->addProvider(new Faker\Provider\Lorem($faker));
 $faker->addProvider(new Faker\Provider\Internet($faker));
 ````
 
-Whenever you try to access a property on the `$faker` object, the generator looks for a method with the same name in all the providers attached to it. For instance, calling `$faker->name` triggers a call to `Faker\Provider\Name::name()`. And since Faker starts with the last provider, you can easily override existing formatters: just add a provider containing methods named after the formatters you want to override.
+Whenever you try to access a property on the `$faker` object, the generator looks for a method with the same name in all the providers attached to it. For instance, calling `$faker->name` triggers a call to `Faker\Provider\Person::name()`. And since Faker starts with the last provider, you can easily override existing formatters: just add a provider containing methods named after the formatters you want to override.
 
 That means that you can easily add your own providers to a `Faker\Generator` instance. A provider is usually a class extending `\Faker\Provider\Base`. This parent class allows you to use methods like `lexify()` or `randomNumber()`; it also gives you access to formatters of other providers, through the protected `$generator` property. The new formatters are the public methods of the provider class.
 
