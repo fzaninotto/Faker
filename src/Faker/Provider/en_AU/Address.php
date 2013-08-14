@@ -31,7 +31,7 @@ class Address extends \Faker\Provider\en_US\Address
 
     protected static $streetAddressFormats = array(
         '{{buildingNumber}} {{streetName}}',
-        '{{buildingNumber}}? {{streetName}}',
+        '{{buildingNumber}}{{buildingLetter}} {{streetName}}',
         '{{secondaryAddress}} {{buildingNumber}} {{streetName}}',
     );
 
@@ -46,16 +46,11 @@ class Address extends \Faker\Provider\en_US\Address
         '# /',
     );
 
-    public function streetAddress()
-    {
-        return preg_replace_callback('/\?/u', 'static::randomBuildingLetter', parent::streetAddress());
-    }
-
     /**
      * Returns a sane building letter
      * @example B
      */
-    public static function randomBuildingLetter()
+    public static function buildingLetter()
     {
         return static::toUpper(static::randomElement(static::$buildingLetters));
     }
