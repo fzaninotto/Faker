@@ -188,4 +188,14 @@ class Base
     {
         return extension_loaded('mbstring') ? mb_strtoupper($string, 'UTF-8') : strtoupper($string);
     }
+    
+    /**
+     * Chainable method for making any formatter optional
+     * @param float $weight Set the percentage that the formatter is empty.  "0" would always return null,
+     * "1" would always return the formatter
+     * @return null or whatever the formatter would use
+     */
+    public function optional($weight = 0.5) {
+        return mt_rand() / mt_getrandmax() <= $weight ? $this->generator : new \Faker\NullGenerator;
+    }
 }

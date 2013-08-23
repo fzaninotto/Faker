@@ -130,4 +130,16 @@ class BaseTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertRegExp('/foo[a-z]Ba\dr/', BaseProvider::bothify('foo?Ba#r'));
     }
+    
+    public function testOptionalChainingOfProperty() {
+        $faker = \Faker\Factory::create();
+        $this->assertNotNull($faker->optional(1)->randomNumber);
+        $this->assertNull($faker->optional(0)->randomNumber);
+    }
+    
+    public function testOptionalChainingOfMethod() {
+        $faker = \Faker\Factory::create();
+        $this->assertNotNull($faker->optional(1)->randomNumber(4));
+        $this->assertNull($faker->optional(0)->randomNumber(4));
+    }
 }

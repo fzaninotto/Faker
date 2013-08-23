@@ -195,6 +195,16 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     safeColorName          // 'fuchsia'
     colorName              // 'Gainsbor'
 
+## Optional data
+
+All formatters can be made optional by chaining `optional`.  When optional, the formatter will randomly return `NULL`, which can be useful for seeding non-required fields.  For example:
+
+    $faker->optional->country
+    
+You can skew the randomization towards more nulls or less by passing an argument to `optional()`.  At 0, *only* `NULL` is returned.  At 1, it is never returned.
+
+    $faker->optional(.75)->country
+
 ## Localization
 
 `Faker\Factory` can take a locale as an argument, to return localized data. If no localized provider is found, the factory fallbacks to the default locale (en_EN).
