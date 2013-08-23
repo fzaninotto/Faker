@@ -197,7 +197,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
 ## Optional data
 
-All formatters can be made optional by chaining `optional`.  When optional, the formatter will randomly return `NULL`, which can be useful for seeding non-required fields.  For example:
+All formatters can be made optional by chaining `optional`. When optional, the formatter will randomly return `NULL`, which can be useful for seeding non-required fields. For example:
 
     $faker->optional->country
     
