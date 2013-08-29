@@ -191,16 +191,16 @@ class Base
     
     /**
      * Chainable method for making any formatter optional
-     * @param float $weight Set the percentage that the formatter is empty. "0" would always return null,
-     * "1" would always return the formatter
-     * @return null or whatever the formatter would use
+     * @param float $weight Set the percentage that the formatter is empty.
+     *                      "0" would always return null, "1" would always return the formatter
+     * @return mixed|null
      */
     public function optional($weight = 0.5)
     {
-        // Return the formatter
-        if (mt_rand() / mt_getrandmax() <= $weight) return $this->generator;
+        if (mt_rand() / mt_getrandmax() <= $weight) {
+            return $this->generator;
+        }
         
-        // Return NULL
-        else return new \Faker\NullGenerator();
+        return new \Faker\NullGenerator();
     }
 }
