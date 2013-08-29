@@ -4,7 +4,7 @@ namespace Faker\Provider\fr_FR;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
-    // Phone numbers can't start by 00, 07, or 09 in France
+    // Phone numbers can't start by 00 in France
     // 01 is the most common prefix
     protected static $formats = array(
         '+33 (0)1 ## ## ## ##',
@@ -14,7 +14,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '+33 (0)4 ## ## ## ##',
         '+33 (0)5 ## ## ## ##',
         '+33 (0)6 ## ## ## ##',
+        '+33 (0)7 ## ## ## ##',
         '+33 (0)8 ## ## ## ##',
+        '+33 (0)9 ## ## ## ##',
         '+33 1 ## ## ## ##',
         '+33 1 ## ## ## ##',
         '+33 2 ## ## ## ##',
@@ -22,7 +24,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '+33 4 ## ## ## ##',
         '+33 5 ## ## ## ##',
         '+33 6 ## ## ## ##',
+        '+33 7 ## ## ## ##',
         '+33 8 ## ## ## ##',
+        '+33 9 ## ## ## ##',
         '01########',
         '01########',
         '02########',
@@ -30,7 +34,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '04########',
         '05########',
         '06########',
+        '07########',
         '08########',
+        '09########',
         '01 ## ## ## ##',
         '01 ## ## ## ##',
         '02 ## ## ## ##',
@@ -38,6 +44,8 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '04 ## ## ## ##',
         '05 ## ## ## ##',
         '06 ## ## ## ##',
+        '07 ## ## ## ##',
         '08 ## ## ## ##',
+        '09 ## ## ## ##',
     );
 }
