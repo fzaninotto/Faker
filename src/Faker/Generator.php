@@ -2,6 +2,116 @@
 
 namespace Faker;
 
+
+/**
+ * @property string prefix
+ * @property string suffix
+ * @property string name
+ * @property string firstName
+ * @property string lastName
+ *
+ * @property string cityPrefix
+ * @property string secondaryAddress
+ * @property string state
+ * @property string stateAbbr
+ * @property string citySuffix
+ * @property string streetSuffix
+ * @property string buildingNumber
+ * @property string city
+ * @property string streetName
+ * @property string streetAddress
+ * @property string postcode
+ * @property string address
+ * @property string country
+ * @property string latitude
+ * @property string longitude
+ *
+ * @property string phoneNumber
+ *
+ * @property string catchPhrase
+ * @property string bs
+ * @property string company
+ * @property string companySuffix
+ *
+ * @property string word
+ * @method string words
+ * @method string sentence
+ * @method string sentences
+ * @method string paragraph
+ * @method string paragraphs
+ * @method string text
+ *
+ * @property string email
+ * @property string safeEmail
+ * @property string freeEmail
+ * @property string companyEmail
+ * @property string freeEmailDomain
+ * @property string safeEmailDomain
+ * @property string userName
+ * @property string domainName
+ * @property string domainWord
+ * @property string tld
+ * @property string url
+ * @property string ipv4
+ * @property string ipv6
+ *
+ * @property string unixTime
+ * @property string dateTime
+ * @property string dateTimeAD
+ * @property string iso8601
+ * @property string dateTimeThisCentury
+ * @property string dateTimeThisDecade
+ * @property string dateTimeThisYear
+ * @property string dateTimeThisMonth
+ * @property string amPm
+ * @property string dayOfMonth
+ * @property string dayOfWeek
+ * @property string month
+ * @property string monthName
+ * @property string year
+ * @property string century
+ * @property string timezone
+ * @method string date
+ * @method string time
+ * @method string dateTimeBetween
+ *
+ * @property string md5
+ * @property string sha1
+ * @property string sha256
+ * @property string locale
+ * @property string countryCode
+ * @property string languageCode
+ * @method string boolean
+ *
+ * @property string randomDigit
+ * @property string randomDigitNotNull
+ * @property string randomLetter
+ * @method string randomNumber
+ * @method string randomFloat
+ * @method string randomElement
+ * @method string numerify
+ * @method string lexify
+ * @method string bothify
+ *
+ * @property string userAgent
+ * @property string chrome
+ * @property string firefox
+ * @property string safari
+ * @property string opera
+ * @property string internetExplorer
+ *
+ * @property string uuid
+ *
+ * @property string mimeType
+ * @property string fileExtension
+ *
+ * @property string hexcolor
+ * @property string rgbcolor
+ * @property string rgbColorAsArray
+ * @property string rgbCssColor
+ * @property string safeColorName
+ * @property string colorName
+ */
 class Generator
 {
     protected $providers = array();
