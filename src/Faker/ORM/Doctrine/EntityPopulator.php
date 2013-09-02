@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping\ClassMetadata;
 use Faker\ORM\Doctrine\ColumnTypeGuesser;
 
 /**
- * Service class for populating a table through a Propel ActiveRecord class.
+ * Service class for populating a table through a Doctrine Entity class.
  */
 class EntityPopulator
 {
