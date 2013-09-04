@@ -23,8 +23,8 @@ namespace Faker;
  * @property string postcode
  * @property string address
  * @property string country
- * @property string latitude
- * @property string longitude
+ * @property float latitude
+ * @property float longitude
  *
  * @property string phoneNumber
  *
@@ -55,7 +55,7 @@ namespace Faker;
  * @property string ipv4
  * @property string ipv6
  *
- * @property string unixTime
+ * @property int unixTime
  * @property string dateTime
  * @property string dateTimeAD
  * @property string iso8601
@@ -64,12 +64,12 @@ namespace Faker;
  * @property string dateTimeThisYear
  * @property string dateTimeThisMonth
  * @property string amPm
- * @property string dayOfMonth
- * @property string dayOfWeek
- * @property string month
+ * @property int dayOfMonth
+ * @property int dayOfWeek
+ * @property int month
  * @property string monthName
- * @property string year
- * @property string century
+ * @property int year
+ * @property int century
  * @property string timezone
  * @method string date
  * @method string time
@@ -81,13 +81,13 @@ namespace Faker;
  * @property string locale
  * @property string countryCode
  * @property string languageCode
- * @method string boolean
+ * @method boolean boolean
  *
- * @property string randomDigit
- * @property string randomDigitNotNull
+ * @property int randomDigit
+ * @property int randomDigitNotNull
  * @property string randomLetter
- * @method string randomNumber
- * @method string randomFloat
+ * @method int randomNumber
+ * @method float randomFloat
  * @method string randomElement
  * @method string numerify
  * @method string lexify
