@@ -50,11 +50,18 @@ class DateTime extends \Faker\Provider\Base
      * Get a date string between January 1, 1970 and now
      *
      * @param string $format
+     * @param string $date Defaults between January 1, 1970 and now
      * @example '2008-11-27'
      */
-    public static function date($format = 'Y-m-d')
+    public static function date($format = 'Y-m-d', $date = null)
     {
-        return static::dateTime()->format($format);
+        if (null === $date) {
+            $date = static::dateTime();
+        } else if (!$date instanceof \DateTime) {
+            $date = new \DateTime($date);
+        }
+
+        return $date->format($format);
     }
 
     /**

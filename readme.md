@@ -129,7 +129,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     dateTime                // DateTime('2008-04-25 08:37:17')
     dateTimeAD              // DateTime('1800-04-29 20:38:49')
     iso8601                 // '1978-12-09T10:10:29+0000'
-    date($format = 'Y-m-d') // '1979-06-09'
+    date($format = 'Y-m-d', $date = '+10 days') // '2013-09-15'
     time($format = 'H:i:s') // '20:49:42'
     dateTimeBetween($startDate = '-30 years', $endDate = 'now') // DateTime('2003-03-15 02:00:49')
     dateTimeThisCentury     // DateTime('1915-05-30 19:28:21')
