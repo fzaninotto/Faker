@@ -22,7 +22,7 @@ class Address extends \Faker\Provider\en_US\Address
     protected static $postcode = array('####');
 
     protected static $state = array(
-        'Australian Capital Territory', 'New South Wales', 'Northern Territory', 'Queensland', 'South Australia', 'New South Wales', 'Victoria'
+        'Australian Capital Territory', 'New South Wales', 'Northern Territory', 'Queensland', 'South Australia', 'Tasmania', 'Victoria'
     );
 
     protected static $stateAbbr = array(
