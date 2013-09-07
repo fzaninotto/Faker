@@ -26,7 +26,7 @@ class Address extends \Faker\Provider\en_US\Address
     );
 
     protected static $stateAbbr = array(
-        'ACT', 'NSW', 'NT', 'Qld', 'SA', 'Tas', 'Vic'
+        'ACT', 'NSW', 'NT', 'QLD', 'SA', 'TAS', 'VIC'
     );
 
     protected static $streetAddressFormats = array(
