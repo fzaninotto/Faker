@@ -3,6 +3,7 @@
 namespace Faker\ORM\Propel;
 
 use \PropelColumnTypes;
+use \ColumnMap;
 
 class ColumnTypeGuesser
 {
@@ -13,7 +14,7 @@ class ColumnTypeGuesser
         $this->generator = $generator;
     }
 
-    public function guessFormat($column)
+    public function guessFormat(ColumnMap $column)
     {
         $generator = $this->generator;
         if ($column->isTemporal()) {

@@ -2,8 +2,6 @@
 
 namespace Faker\Provider\en_AU;
 
-use Faker\Generator;
-
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
     protected static $formats = array(

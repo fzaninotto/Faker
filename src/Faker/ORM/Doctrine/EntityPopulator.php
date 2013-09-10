@@ -2,6 +2,7 @@
 
 namespace Faker\ORM\Doctrine;
 
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Faker\ORM\Doctrine\ColumnTypeGuesser;
 
@@ -74,7 +75,6 @@ class EntityPopulator
     public function guessColumnFormatters(\Faker\Generator $generator)
     {
         $formatters = array();
-        $class = $this->class;
         $nameGuesser = new \Faker\Guesser\Name($generator);
         $columnTypeGuesser = new ColumnTypeGuesser($generator);
         foreach ($this->class->getFieldNames() AS $fieldName) {
@@ -128,7 +128,7 @@ class EntityPopulator
     /**
      * Insert one new record using the Entity class.
      */
-    public function execute($manager, $insertedEntities, $generateId = false)
+    public function execute(EntityManagerInterface $manager, $insertedEntities, $generateId = false)
     {
         $obj = $this->class->newInstance();
 
@@ -165,7 +165,7 @@ class EntityPopulator
         }
     }
 
-    private function generateId($obj, $column, $manager)
+    private function generateId($obj, $column, EntityManagerInterface $manager)
     {
         /* @var $repository \Doctrine\ORM\EntityRepository */
         $repository = $manager->getRepository(get_class($obj));

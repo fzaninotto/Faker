@@ -3,6 +3,7 @@
 namespace Faker\ORM\Propel;
 
 use \Faker\Provider\Base;
+use \ColumnMap;
 
 /**
  * Service class for populating a table through a Propel ActiveRecord class.
@@ -77,7 +78,7 @@ class EntityPopulator
         return $formatters;
     }
 
-    protected function isColumnBehavior($columnMap)
+    protected function isColumnBehavior(ColumnMap $columnMap)
     {
         foreach ($columnMap->getTable()->getBehaviors() as $name => $params) {
             $columnName = Base::toLower($columnMap->getName());
