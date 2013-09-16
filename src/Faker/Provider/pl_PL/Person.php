@@ -51,4 +51,57 @@ class Person extends \Faker\Provider\Person
     {
         return static::randomElement(static::$prefix);
     }
+
+	/**
+	 * @param DateTime $birthdate
+	 * @param string $sex M for male or F for female
+	 */
+	public static function pesel($birthdate = null, $sex = null)
+	{
+		if ($birthdate === null)
+			$birthdate = new \DateTime(date('Y-m-d',mt_rand(strtotime('1800-01-0'), time())));
+
+		$weights = array(1, 3, 7, 9, 1, 3, 7, 9, 1, 3);
+		$length = count($weights);
+
+		$fullYear = (int)$birthdate->format('Y');
+		$year = (int)$birthdate->format('y');
+		$month = $birthdate->format('m') + (((int)($fullYear/100) - 14) % 5) * 20;
+		$day = $birthdate->format('d');
+
+		$result = array((int)($year / 10), $year % 10, (int)($month / 10), $month % 10, (int)($day / 10), $day % 10);
+
+		for ($i = 6; $i < $length; $i++) {
+			$result[$i] = static::randomDigit();
+		}
+		if ($sex == "M") {
+			$b[$length - 1] |= 1;
+		} elseif ($sex == "F") {
+			$b[$length - 1] ^= 1;
+		}
+		$checksum = 0;
+		for ($i = 0; $i < $length; $i++) {
+			$checksum += $weights[$i] * $result[$i];
+		}
+		$checksum = (10 - ($checksum % 10)) % 10;
+		$result[] = $checksum;
+		return implode('',$result);
+	}
+
+	public static function personalIdentityNumber()
+	{
+		$range = str_split("ABCDEFGHIJKLMNPRSTUVWXYZ");
+		$low = array("A", static::randomElement($range), static::randomElement($range));
+		$high = array(static::randomDigit(), static::randomDigit(), static::randomDigit(), static::randomDigit(), static::randomDigit());
+		$weights = array(7, 3, 1, 7, 3, 1, 7, 3);
+		$checksum = 0;
+		for ($i = 0; $i < count($low); $i++) {
+			$checksum += $weights[$i] * (ord($low[$i]) - 55);
+		}
+		for ($i = 0; $i < count($high); $i++) {
+			$checksum += $weights[$i+3] * $high[$i];
+		}
+		$checksum %= 10;
+		return implode('',$low).$checksum.implode('',$high);
+	}
 }
