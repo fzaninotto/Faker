@@ -13,6 +13,9 @@ class Address extends \Faker\Provider\Address
 
     protected static $buildingNumber = array('##A', '##', '##A/##', '##/##');
     protected static $postcode = array('##-###');
+	/**
+	 * @var array full list of Polish voivodeship
+	 */
 	protected static $state = array(
 		'dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie','opolskie','podkarpackie',
 		'podlaskie','pomorskie','śląskie','świętokrzyskie','warmińsko-mazurskie','wielkopolskie','zachodniopomorskie'
@@ -20,6 +23,9 @@ class Address extends \Faker\Provider\Address
     protected static $country = array(
 		'Polska',
 	);
+	/**
+	 * @var array 250 Polish cities with biggest number of streets. Extracted from data issued by the official public postal service of Poland. @link http://www.poczta-polska.pl/
+	 */
 	protected static $city = array(
 		'Warszawa','Kraków','Łódź','Poznań','Wrocław','Gdańsk','Szczecin','Bydgoszcz','Lublin','Bielsko-Biała','Częstochowa','Katowice','Białystok','Gdynia','Radom',
 		'Rzeszów','Gliwice','Kielce','Opole','Rybnik','Sosnowiec','Zabrze','Ruda Śląska','Jaworzno','Olsztyn','Zielona Góra','Bytom','Koszalin','Dąbrowa Górnicza',
@@ -39,6 +45,9 @@ class Address extends \Faker\Provider\Address
 		'Kętrzyn','Ostróda','Bochnia','Jelcz-Laskowice','Ząbki','Września','Bielawa','Nowy Targ','Giżycko','Dzierżoniów','Myszków','Marylka','Czechowice-Dziedzice','Łowicz','Łomianki','Świebodzice',
 		'Świebodzin','Lubojenka','Lubliniec','Świecie','Lubartów','Lidzbark Warmiński','Świdnik','Pisz','Szczytno','Świdwin','Kozienice','Brodnica','Kościerzyna','Braniewo','Koło'
 	);
+	/**
+	 * @var array 549 most common Polish street names. Extracted from data issued by the official public postal service of Poland. @link http://www.poczta-polska.pl/
+	 */
 	protected static $street = array(
 		'Kościuszki Tadeusza','Mickiewicza Adama','Szkolna','Dworcowa','Kolejowa','Sienkiewicza Henryka','Rynek','Warszawska','Wojska Polskiego','Żeromskiego Stefana',
 		'Polna','1 Maja','Ogrodowa','Pocztowa','Grunwaldzka','Kopernika Mikołaja','Leśna','Lipowa','Słowackiego Juliusza','Parkowa','Kościelna','Jagiellońska','Słoneczna',

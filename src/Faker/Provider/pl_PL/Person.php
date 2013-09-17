@@ -53,13 +53,17 @@ class Person extends \Faker\Provider\Person
     }
 
 	/**
+	 * PESEL - Universal Electronic System for Registration of the Population
+	 * @link http://en.wikipedia.org/wiki/PESEL
 	 * @param DateTime $birthdate
 	 * @param string $sex M for male or F for female
+	 * @return string 11 digit number, like 44051401358
 	 */
 	public static function pesel($birthdate = null, $sex = null)
 	{
-		if ($birthdate === null)
-			$birthdate = new \DateTime(date('Y-m-d',mt_rand(strtotime('1800-01-0'), time())));
+		if ($birthdate === null) {
+			$birthdate = \Faker\Provider\DateTime::dateTimeThisCentury();
+		}
 
 		$weights = array(1, 3, 7, 9, 1, 3, 7, 9, 1, 3);
 		$length = count($weights);
@@ -75,9 +79,9 @@ class Person extends \Faker\Provider\Person
 			$result[$i] = static::randomDigit();
 		}
 		if ($sex == "M") {
-			$b[$length - 1] |= 1;
+			$result[$length - 1] |= 1;
 		} elseif ($sex == "F") {
-			$b[$length - 1] ^= 1;
+			$result[$length - 1] ^= 1;
 		}
 		$checksum = 0;
 		for ($i = 0; $i < $length; $i++) {
@@ -88,6 +92,11 @@ class Person extends \Faker\Provider\Person
 		return implode('',$result);
 	}
 
+	/**
+	 * National Identity Card number
+	 * @link http://en.wikipedia.org/wiki/Polish_National_Identity_Card
+	 * @return string 3 letters and 6 digits, like ABA300000
+	 */
 	public static function personalIdentityNumber()
 	{
 		$range = str_split("ABCDEFGHIJKLMNPRSTUVWXYZ");
@@ -103,5 +112,31 @@ class Person extends \Faker\Provider\Person
 		}
 		$checksum %= 10;
 		return implode('',$low).$checksum.implode('',$high);
+	}
+
+	/**
+	 * Taxpayer Identification Number (NIP in Polish)
+	 * @link http://en.wikipedia.org/wiki/PESEL#Other_identifiers
+	 * @link http://pl.wikipedia.org/wiki/NIP
+	 * @return string 10 digit number
+	 */
+	public static function taxpayerIdentificationNumber()
+	{
+		$weights = array(6, 5, 7, 2, 3, 4, 5, 6, 7);
+		$result = array();
+		do {
+			$result = array(
+				static::randomDigitNotNull(), static::randomDigitNotNull(), static::randomDigitNotNull(),
+				static::randomDigit(), static::randomDigit(), static::randomDigit(),
+				static::randomDigit(), static::randomDigit(), static::randomDigit(),
+			);
+			$checksum = 0;
+			for ($i = 0; $i < count($result); $i++) {
+				$checksum += $weights[$i] * $result[$i];
+			}
+			$checksum %= 11;
+		} while ($checksum == 10);
+		$result[] = $checksum;
+		return implode('', $result);
 	}
 }
