@@ -12,10 +12,35 @@ class Address extends \Faker\Provider\Address
 
     protected static $postcode = array('#####');
 
+    /**
+    * @var array Cities of Turkey, for feature updates please use @link https://tr.wikipedia.org/wiki/T%C3%BCrkiye'nin_illeri
+    */
     protected static $cityNames = array(
-        'Adana','Adıyaman','Afyon','Ağrı','Aksaray','Amasya','Ankara','Antalya','Ardahan','Artvin','Aydın','Balıkesir','Bartın','Batman','Bayburt','Bilecik','Bingöl','Bitlis','Bolu','Burdur','Bursa','Çanakkale','Çankırı','Çorum','Denizli','Diyarbakır','Düzce','Edirne','Elazığ','Erzincan','Erzurum','Eskişehir','Gaziantep','Giresun','Gümüşhane','Hakkari','Hatay','Iğdır','Isparta','İstanbul','İzmir','Kahramanmaraş','Karabük','Karaman','Kars','Kastamonu','Kayseri','Kilis','Kırıkkale','Kırklareli','Kırşehir','Kocaeli','Konya','Kütahya','Malatya','Manisa','Mardin','Mersin','Muğla','Muş','Nevşehir','Niğde','Ordu','Osmaniye','Rize','Sakarya','Samsun','Şanlıurfa','Siirt','Sinop','Şırnak','Sivas','Tekirdağ','Tokat','Trabzon','Tunceli','Uşak','Van','Yalova','Yozgat','Zonguldak'
+        'Adana','Adıyaman','Afyon','Ağrı','Aksaray','Amasya','Ankara','Antalya','Ardahan','Artvin','Aydın',
+        'Balıkesir','Bartın','Batman','Bayburt','Bilecik','Bingöl','Bitlis','Bolu','Burdur','Bursa',
+        'Çanakkale','Çankırı','Çorum',
+        'Denizli','Diyarbakır','Düzce',
+        'Edirne','Elazığ','Erzincan','Erzurum','Eskişehir',
+        'Gaziantep','Giresun','Gümüşhane',
+        'Hakkari','Hatay',
+        'Iğdır','Isparta','İstanbul','İzmir',
+        'Kahramanmaraş','Karabük','Karaman','Kars','Kastamonu','Kayseri','Kilis',
+        'Kırıkkale','Kırklareli','Kırşehir','Kocaeli','Konya','Kütahya',
+        'Malatya','Manisa','Mardin','Mersin','Muğla','Muş',
+        'Nevşehir','Niğde',
+        'Ordu','Osmaniye',
+        'Rize',
+        'Sakarya','Samsun','Şanlıurfa','Siirt','Sinop','Şırnak','Sivas',
+        'Tekirdağ','Tokat','Trabzon','Tunceli',
+        'Uşak',
+        'Van',
+        'Yalova','Yozgat',
+        'Zonguldak'
     );
     
+    /**
+    * @var array Countries in Turkish, for feature update/extend purposes please use @link https://tr.wikipedia.org/wiki/%C3%9Clkeler_listesi
+    */
     protected static $country = array(
         'Almanya','Amerika Birleşik Devletleri','Arjantin','Arnavutluk','Avustralya','Avusturya','Azerbaycan',
         'Bahreyn','Belçika','Beyaz Rusya','Birleşik Arap Emirlikleri','Bosna-hersek','Brezilya','Bulgaristan',
@@ -38,7 +63,9 @@ class Address extends \Faker\Provider\Address
         'Sri Lanka','Sudan','Suriye','Suudi Arabistan',
         'Tacikistan','Tayland','Tayvan','Tunus','Türkiye',
         'Ukrayna','Umman','Ürdün',
-        'Yemen','Yunanistan'
+        'Venezuela','Vietnam',
+        'Yemen','Yeni Zelanda','Yeşil Burun','Yunanistan',
+        'Zambiya','Zimbabve'
     );
 
     protected static $cityFormats = array(
