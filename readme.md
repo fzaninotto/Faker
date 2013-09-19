@@ -96,7 +96,6 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     bs                      // 'e-enable robust architectures'
     company                 // 'Bogan-Treutel'
     companySuffix           // 'and Sons'
-    bankAccountNumber($prefix = '', $digitsNumber = 24, $countryCode = 'PL') // 'PL08032566519460083829368443'
 
 ### `Faker\Provider\Lorem`
 
