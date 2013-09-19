@@ -1,18 +1,9 @@
 <?php
 
-namespace Faker\Provider\nl_NL;
+namespace Faker\Provider\el_GR;
 
 class Company extends \Faker\Provider\Company
 {
-    protected static $formats = array(
-        '{{lastName}} {{companySuffix}}',
-        '{{lastName}} {{lastName}} {{companySuffix}}',
-        '{{lastName}}',
-        '{{lastName}}',
-    );
-
-    protected static $companySuffix = array('VOF', 'CV', 'LLP', 'BV', 'NV', 'IBC', 'CSL', 'EESV', 'SE', 'CV', 'Stichting', '& Zonen', '& Zn');
-
 	/**
 	 * International Bank Account Number (IBAN)
 	 * @link http://en.wikipedia.org/wiki/International_Bank_Account_Number
@@ -21,7 +12,7 @@ class Company extends \Faker\Provider\Company
 	 * @param integer $length total length without country code and 2 check digits
 	 * @return string
 	 */
-	public static function bankAccountNumber($prefix = '', $countryCode = 'NL', $length = null)
+	public static function bankAccountNumber($prefix = '', $countryCode = 'GR', $length = null)
 	{
 		return static::iban($countryCode, $prefix, $length);
 	}
