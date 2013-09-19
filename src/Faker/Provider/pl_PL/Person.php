@@ -51,4 +51,92 @@ class Person extends \Faker\Provider\Person
     {
         return static::randomElement(static::$prefix);
     }
+
+	/**
+	 * PESEL - Universal Electronic System for Registration of the Population
+	 * @link http://en.wikipedia.org/wiki/PESEL
+	 * @param DateTime $birthdate
+	 * @param string $sex M for male or F for female
+	 * @return string 11 digit number, like 44051401358
+	 */
+	public static function pesel($birthdate = null, $sex = null)
+	{
+		if ($birthdate === null) {
+			$birthdate = \Faker\Provider\DateTime::dateTimeThisCentury();
+		}
+
+		$weights = array(1, 3, 7, 9, 1, 3, 7, 9, 1, 3);
+		$length = count($weights);
+
+		$fullYear = (int)$birthdate->format('Y');
+		$year = (int)$birthdate->format('y');
+		$month = $birthdate->format('m') + (((int)($fullYear/100) - 14) % 5) * 20;
+		$day = $birthdate->format('d');
+
+		$result = array((int)($year / 10), $year % 10, (int)($month / 10), $month % 10, (int)($day / 10), $day % 10);
+
+		for ($i = 6; $i < $length; $i++) {
+			$result[$i] = static::randomDigit();
+		}
+		if ($sex == "M") {
+			$result[$length - 1] |= 1;
+		} elseif ($sex == "F") {
+			$result[$length - 1] ^= 1;
+		}
+		$checksum = 0;
+		for ($i = 0; $i < $length; $i++) {
+			$checksum += $weights[$i] * $result[$i];
+		}
+		$checksum = (10 - ($checksum % 10)) % 10;
+		$result[] = $checksum;
+		return implode('',$result);
+	}
+
+	/**
+	 * National Identity Card number
+	 * @link http://en.wikipedia.org/wiki/Polish_National_Identity_Card
+	 * @return string 3 letters and 6 digits, like ABA300000
+	 */
+	public static function personalIdentityNumber()
+	{
+		$range = str_split("ABCDEFGHIJKLMNPRSTUVWXYZ");
+		$low = array("A", static::randomElement($range), static::randomElement($range));
+		$high = array(static::randomDigit(), static::randomDigit(), static::randomDigit(), static::randomDigit(), static::randomDigit());
+		$weights = array(7, 3, 1, 7, 3, 1, 7, 3);
+		$checksum = 0;
+		for ($i = 0; $i < count($low); $i++) {
+			$checksum += $weights[$i] * (ord($low[$i]) - 55);
+		}
+		for ($i = 0; $i < count($high); $i++) {
+			$checksum += $weights[$i+3] * $high[$i];
+		}
+		$checksum %= 10;
+		return implode('',$low).$checksum.implode('',$high);
+	}
+
+	/**
+	 * Taxpayer Identification Number (NIP in Polish)
+	 * @link http://en.wikipedia.org/wiki/PESEL#Other_identifiers
+	 * @link http://pl.wikipedia.org/wiki/NIP
+	 * @return string 10 digit number
+	 */
+	public static function taxpayerIdentificationNumber()
+	{
+		$weights = array(6, 5, 7, 2, 3, 4, 5, 6, 7);
+		$result = array();
+		do {
+			$result = array(
+				static::randomDigitNotNull(), static::randomDigitNotNull(), static::randomDigitNotNull(),
+				static::randomDigit(), static::randomDigit(), static::randomDigit(),
+				static::randomDigit(), static::randomDigit(), static::randomDigit(),
+			);
+			$checksum = 0;
+			for ($i = 0; $i < count($result); $i++) {
+				$checksum += $weights[$i] * $result[$i];
+			}
+			$checksum %= 11;
+		} while ($checksum == 10);
+		$result[] = $checksum;
+		return implode('', $result);
+	}
 }
