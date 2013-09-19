@@ -4,7 +4,7 @@ namespace Faker\Provider\pl_PL;
 
 class Company extends \Faker\Provider\Company
 {
-	/**
+	/*
 	 * Register of the National Economy
 	 * @link http://pl.wikipedia.org/wiki/REGON
 	 * @return 9 digit number
