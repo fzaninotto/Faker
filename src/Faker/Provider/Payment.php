@@ -69,7 +69,7 @@ class Payment extends Base
 
     public static function randomCardNumber($mask = null)
     {
-        if(is_null($mask)) {
+        if (is_null($mask)) {
             $cp = static::randomElement(static::$cardsParams);
             $mask = $cp['mask'];
         }
