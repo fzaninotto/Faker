@@ -130,10 +130,24 @@ class Base
      */
     public static function randomElement($array = array('a', 'b', 'c'))
     {
+        return $array ? $array[self::randomKey($array)] : null;
+    }
+
+    /**
+     * Returns a random key from a passed associative array
+     *
+     * @param  array $array
+     * @return mixed
+     */
+    public static function randomKey($array = array())
+    {
+        if (!$array) {
+            return null;
+        }
         $keys = array_keys($array);
         $key = $keys[mt_rand(0, count($keys) - 1)];
 
-        return $array[$key];
+        return $key;
     }
 
     /**
