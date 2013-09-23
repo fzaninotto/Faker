@@ -3,6 +3,7 @@
 namespace Faker\Provider;
 
 use Faker\Generator;
+use Faker\UniqueGenerator;
 
 class Base
 {
@@ -10,6 +11,11 @@ class Base
      * @var \Faker\Generator
      */
     protected $generator;
+
+    /**
+     * @var \Faker\UniqueGenerator
+     */
+    protected $unique;
 
     /**
      * @param \Faker\Generator $generator
@@ -202,5 +208,29 @@ class Base
         }
 
         return new \Faker\NullGenerator();
+    }
+
+    /**
+     * Chainable method for making any formatter unique.
+     *
+     * <code>
+     * // will never return twice the same value
+     * $faker->unique()->randomElement(array(1, 2, 3));
+     * </code>
+     *
+     * @param boolean $reset      If set to true, resets the list of existing values
+     * @param integer $maxRetries Maximum number of retries to find a unique value,
+     *                            After which an OverflowExcption is thrown.
+     * @throws OverflowException When no unique value can be found by iterating $maxRetries times
+     * 
+     * @return UniqueGenerator A proxy class returning only existing values
+     */
+    public function unique($reset = false, $maxRetries = 10000)
+    {
+        if ($reset || !$this->unique) {
+            $this->unique = new UniqueGenerator($this->generator, $maxRetries);
+        }
+
+        return $this->unique;
     }
 }
