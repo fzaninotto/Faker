@@ -195,15 +195,46 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     safeColorName          // 'fuchsia'
     colorName              // 'Gainsbor'
 
-## Optional data
+## Unique and Optional modifiers
 
-All formatters can be made optional by chaining `optional`. When optional, the formatter will randomly return `NULL`, which can be useful for seeding non-required fields. For example:
+Faker provides two special providers, `unique()` and `optional()`, to be called before any provider. `optional()` can be useful for seeding non-required fields, like a mobile telephone number ; `unique()` is required to populate fields that cannot accept twice the same value, like primary identifiers.
 
-    $faker->optional->country
-    
-You can skew the randomization towards more nulls or less by passing an argument to `optional()`.  At 0, *only* `NULL` is returned.  At 1, it is never returned.
+```php
+// unique() forces providers to return unique values
+$values = array();
+for ($i=0; $i < 10; $i++) {
+  // get a random digit, but always a new one, to avoid duplicates
+  $values []= $faker->unique()->randomDigit;
+}
+print_r($values); // [4, 1, 8, 5, 0, 2, 6, 9, 7, 3]
 
-    $faker->optional(.75)->country
+// providers with a limited range will throw an exception when no new unique value can be generated
+$values = array();
+try {
+  for ($i=0; $i < 10; $i++) {
+    $values []= $faker->unique()->randomDigitNotNull;
+  }
+} catch (\OverflowException $e) {
+  echo "There are only 9 unique digits not null, Faker can't generate 10 of them!";
+}
+
+// you can reset the unique modifier for all providers by passing true as first argument
+$faker->unique($reset = true)->randomDigitNotNull; // will not throw OverflowException since unique() was reset
+// tip: unique() keeps one array of values per provider 
+
+// optional() sometimes bypasses the provider to return null instead
+$values = array();
+for ($i=0; $i < 10; $i++) {
+  // get a random digit, but also null sometimes
+  $values []= $faker->optional()->randomDigit;
+}
+print_r($values); // [1, 4, null, 9, 5, null, null, 4, 6, null]
+
+// optional takes a weight argument to make the null occurrence impossible (value 0) or systematic (value 1)
+$faker->optional($weight = 0.1)->randomDigit; // 10% chance to get null
+$faker->optional($weight = 0.9)->randomDigit; // 90% chance to get null
+// the default $weight value is 0.5
+```
 
 ## Localization
 
