@@ -131,17 +131,102 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertRegExp('/foo[a-z]Ba\dr/', BaseProvider::bothify('foo?Ba#r'));
     }
 
-    public function testOptionalChainingOfProperty()
+    public function testOptionalReturnsProviderValueWhenCalledWithWeight1()
     {
-        $faker = \Faker\Factory::create();
-        $this->assertNotNull($faker->optional(1)->randomNumber);
-        $this->assertNull($faker->optional(0)->randomNumber);
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $this->assertNotNull($faker->optional(1)->randomDigit);
     }
 
-    public function testOptionalChainingOfMethod()
+    public function testOptionalReturnsNullWhenCalledWithWeight0()
     {
-        $faker = \Faker\Factory::create();
-        $this->assertNotNull($faker->optional(1)->randomNumber(4));
-        $this->assertNull($faker->optional(0)->randomNumber(4));
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $this->assertNull($faker->optional(0)->randomDigit);
+    }
+
+    public function testOptionalAllowsChainingPropertyAccess()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $faker->addProvider(new \ArrayObject(array(1))); // hack because method_exists forbids stubs
+        $this->assertEquals(1, $faker->optional(1)->count);
+        $this->assertNull($faker->optional(0)->count);
+    }
+
+    public function testOptionalAllowsChainingMethodCall()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $faker->addProvider(new \ArrayObject(array(1))); // hack because method_exists forbids stubs
+        $this->assertEquals(1, $faker->optional(1)->count());
+        $this->assertNull($faker->optional(0)->count());
+    }
+
+    public function testOptionalAllowsChainingProviderCallRandomlyReturnNull()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $values = array();
+        for ($i=0; $i < 10; $i++) {
+            $values[]= $faker->optional()->randomDigit;
+        }
+        $this->assertContains(null, $values);
+    }
+
+    public function testUniqueAllowsChainingPropertyAccess()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $faker->addProvider(new \ArrayObject(array(1))); // hack because method_exists forbids stubs
+        $this->assertEquals(1, $faker->unique()->count);
+    }
+
+    public function testUniqueAllowsChainingMethodCall()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $faker->addProvider(new \ArrayObject(array(1))); // hack because method_exists forbids stubs
+        $this->assertEquals(1, $faker->unique()->count());
+    }
+
+    public function testUniqueReturnsOnlyUniqueValues()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $values = array();
+        for ($i=0; $i < 10; $i++) {
+            $values[]= $faker->unique()->randomDigit;
+        }
+        sort($values);
+        $this->assertEquals(array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), $values);
+    }
+
+    /**
+     * @expectedException OverflowException
+     */
+    public function testUniqueThrowsExceptionWhenNoUniqueValueCanBeGenerated()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        for ($i=0; $i < 11; $i++) {
+            $faker->unique()->randomDigit;
+        }
+    }
+
+    public function testUniqueCanResetUniquesWhenPassedTrueAsArgument()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $values = array();
+        for ($i=0; $i < 10; $i++) {
+            $values[]= $faker->unique()->randomDigit;
+        }
+        $values[]= $faker->unique(true)->randomDigit;
+        for ($i=0; $i < 9; $i++) {
+            $values[]= $faker->unique()->randomDigit;
+        }
+        sort($values);
+        $this->assertEquals(array(0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9), $values);
     }
 }
