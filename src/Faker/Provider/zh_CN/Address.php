@@ -37,6 +37,7 @@ class Address extends \Faker\Provider\Address
     {
         $prefix = str_pad(mt_rand(1, 85), 2, 0, STR_PAD_LEFT);
         $suffix = '00';
+
         return $prefix . mt_rand(10, 88) . $suffix;
     }
 }

@@ -2,7 +2,6 @@
 
 namespace Faker;
 
-
 /**
  * @property string prefix
  * @property string suffix

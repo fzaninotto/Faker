@@ -37,7 +37,7 @@ class Address extends \Faker\Provider\Address
         'Yalova','Yozgat',
         'Zonguldak'
     );
-    
+
     /**
     * @var array Countries in Turkish, for future update/extend purposes please use @link https://tr.wikipedia.org/wiki/%C3%9Clkeler_listesi
     */

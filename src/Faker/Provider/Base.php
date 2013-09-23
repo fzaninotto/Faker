@@ -188,7 +188,7 @@ class Base
     {
         return extension_loaded('mbstring') ? mb_strtoupper($string, 'UTF-8') : strtoupper($string);
     }
-    
+
     /**
      * Chainable method for making any formatter optional
      * @param float $weight Set the percentage that the formatter is empty.
@@ -200,7 +200,7 @@ class Base
         if (mt_rand() / mt_getrandmax() <= $weight) {
             return $this->generator;
         }
-        
+
         return new \Faker\NullGenerator();
     }
 }

@@ -8,8 +8,8 @@ namespace Faker;
  */
 class NullGenerator
 {
-  
-    public function __get($attribute) 
+
+    public function __get($attribute)
     {
         return null;
     }
@@ -18,5 +18,5 @@ class NullGenerator
     {
         return null;
     }
-  
+
 }

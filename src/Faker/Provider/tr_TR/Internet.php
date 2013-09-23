@@ -6,7 +6,7 @@ class Internet extends \Faker\Provider\Internet
 {
     protected static $freeEmailDomain = array('gmail.com', 'hotmail.com', 'yahoo.com', 'mynet.com', 'ttmail.com', 'turk.net');
     protected static $tld = array('com', 'com', 'com', 'com', 'com.tr', 'com.tr', 'info', 'net', 'org', 'org.tr','edu', 'edu.tr', 'edu.tr');
-    
+
     /**
      * Converts Turkish characters to their ASCII representation
      *
@@ -14,7 +14,7 @@ class Internet extends \Faker\Provider\Internet
      */
     private static function toAscii($string)
     {
-    
+
         $from = array('ı', 'İ', 'ç', 'Ç', 'ğ', 'Ğ', 'ş', 'Ş', 'ü', 'Ü', 'ö', 'Ö');
         $to   = array('i', 'I', 'c', 'C', 'g', 'G', 's', 'S', 'u', 'U', 'o', 'O');
 
@@ -30,7 +30,7 @@ class Internet extends \Faker\Provider\Internet
 
         return static::toLower(static::toAscii(static::bothify($this->generator->parse($format))));
     }
-    
+
     /**
      * @example 'faber'
      */

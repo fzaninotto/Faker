@@ -15,6 +15,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     public static function phoneNumber()
     {
         $operators = static::$operators[array_rand(static::$operators)];
+
         return $operators . static::numerify(static::randomElement(static::$formats));
     }
 }

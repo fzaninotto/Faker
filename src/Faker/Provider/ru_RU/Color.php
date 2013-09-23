@@ -2,7 +2,6 @@
 
 namespace Faker\Provider\ru_RU;
 
-
 class Color extends \Faker\Provider\Color
 {
     protected static $safeColorNames = array(
