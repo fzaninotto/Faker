@@ -64,6 +64,25 @@ class Base
     }
 
     /**
+     * Generates an array of random numbers
+     *
+     * @param  integer $entries
+     * @param  integer $nbDigits
+     * @param  integer $upTo
+     *
+     * @return array
+     */
+    public static function randomNumbers($entries, $nbDigits = null, $upTo = null)
+    {
+        $numbers = array();
+        for ($i = 0; $i < $entries; $i++) {
+            $numbers[] = static::randomNumber($nbDigits, $upTo);
+        }
+
+        return $numbers;
+    }
+
+    /**
      * Return a random float number
      *
      * @param int       $nbMaxDecimals

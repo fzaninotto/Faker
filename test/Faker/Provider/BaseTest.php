@@ -34,6 +34,11 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(BaseProvider::randomNumber(3) < 1000);
     }
 
+    public function testRandomNumbersReturnsArray()
+    {
+        $this->assertCount(3, BaseProvider::randomNumbers(3));
+    }
+
     public function testRandomNumberAcceptsMinMax()
     {
         $min = 5;
