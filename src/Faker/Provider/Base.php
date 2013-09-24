@@ -2,6 +2,7 @@
 
 namespace Faker\Provider;
 
+use Faker\Factory;
 use Faker\Generator;
 use Faker\UniqueGenerator;
 
@@ -20,7 +21,7 @@ class Base
     /**
      * @param \Faker\Generator $generator
      */
-    public function __construct(Generator $generator)
+    public function __construct(Generator $generator, $locale = Factory::DEFAULT_LOCALE)
     {
         $this->generator = $generator;
     }

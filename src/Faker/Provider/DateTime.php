@@ -2,9 +2,21 @@
 
 namespace Faker\Provider;
 
+use Faker\Factory;
+
 class DateTime extends \Faker\Provider\Base
 {
     protected static $century = array('I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV','XVI','XVII','XVIII','XIX','XX','XX1');
+    protected static $dayOfWeekFormatter = null;
+    protected static $monthNameFormatter = null;
+
+    public function __construct($generator, $locale = Factory::DEFAULT_LOCALE)
+    {
+        self::$dayOfWeekFormatter = \IntlDateFormatter::create($locale, \IntlDateFormatter::NONE, \IntlDateFormatter::NONE, date_default_timezone_get(), \IntlDateFormatter::GREGORIAN, 'EEEE');
+        self::$monthNameFormatter = \IntlDateFormatter::create($locale, \IntlDateFormatter::NONE, \IntlDateFormatter::NONE, date_default_timezone_get(), \IntlDateFormatter::GREGORIAN, 'MMMM');
+
+        parent::__construct($generator, $locale);
+    }
 
     /**
      * Get a timestamp between January 1, 1970 and now
@@ -143,7 +155,7 @@ class DateTime extends \Faker\Provider\Base
      */
     public static function dayOfWeek()
     {
-        return static::dateTime()->format('l');
+        return self::$dayOfWeekFormatter->format(static::unixTime());
     }
 
     /**
@@ -159,7 +171,7 @@ class DateTime extends \Faker\Provider\Base
      */
     public static function monthName()
     {
-        return static::dateTime()->format('F');
+        return self::$monthNameFormatter->format(static::unixTime());
     }
 
     /**
