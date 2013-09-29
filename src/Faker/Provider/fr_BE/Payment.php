@@ -1,8 +1,8 @@
 <?php
 
-namespace Faker\Provider\cs_CZ;
+namespace Faker\Provider\fr_BE;
 
-class Company extends \Faker\Provider\Company
+class Payment extends \Faker\Provider\Payment
 {
 	/**
 	 * International Bank Account Number (IBAN)
@@ -12,7 +12,7 @@ class Company extends \Faker\Provider\Company
 	 * @param integer $length total length without country code and 2 check digits
 	 * @return string
 	 */
-	public static function bankAccountNumber($prefix = '', $countryCode = 'CZ', $length = null)
+	public static function bankAccountNumber($prefix = '', $countryCode = 'BE', $length = null)
 	{
 		return static::iban($countryCode, $prefix, $length);
 	}

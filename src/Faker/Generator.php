@@ -32,6 +32,13 @@ namespace Faker;
  * @property string company
  * @property string companySuffix
  *
+ * @property string creditCardType
+ * @property string creditCardNumber
+ * @property string creditCardExpirationDate
+ * @property string creditCardExpirationDateString
+ * @property string creditCardDetails
+ * @property string bankAccountNumber
+ *
  * @property string word
  * @method string words
  * @method string sentence
