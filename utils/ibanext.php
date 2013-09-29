@@ -1,5 +1,6 @@
 <?php
 
+// source: @link http://www.swift.com/dsp/resources/documents/IBAN_Registry.txt
 $path = 'IBAN_Registry.txt';
 if (($handle = fopen($path, "r")) === FALSE) {
 	die("Can't open the $path file!\n");
