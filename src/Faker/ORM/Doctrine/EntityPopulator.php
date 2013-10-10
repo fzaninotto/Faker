@@ -2,7 +2,7 @@
 
 namespace Faker\ORM\Doctrine;
 
-use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Faker\ORM\Doctrine\ColumnTypeGuesser;
 
@@ -128,7 +128,7 @@ class EntityPopulator
     /**
      * Insert one new record using the Entity class.
      */
-    public function execute(EntityManagerInterface $manager, $insertedEntities, $generateId = false)
+    public function execute(ObjectManager $manager, $insertedEntities, $generateId = false)
     {
         $obj = $this->class->newInstance();
 
