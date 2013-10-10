@@ -237,7 +237,7 @@ class Base
      *                            After which an OverflowExcption is thrown.
      * @throws OverflowException When no unique value can be found by iterating $maxRetries times
      * 
-     * @return UniqueGenerator A proxy class returning only existing values
+     * @return UniqueGenerator A proxy class returning only non-existing values
      */
     public function unique($reset = false, $maxRetries = 10000)
     {
