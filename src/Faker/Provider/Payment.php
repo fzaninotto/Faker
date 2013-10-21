@@ -72,7 +72,7 @@ class Payment extends Base
     public static function creditCardNumber($type = null, $formatted = false, $separator = '-')
     {
         if (is_null($type)) {
-            $type = static::cardType();
+            $type = static::creditCardType();
         }
         $mask = static::randomElement(static::$cardParams[$type]);
 
