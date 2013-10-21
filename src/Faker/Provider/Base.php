@@ -3,6 +3,7 @@
 namespace Faker\Provider;
 
 use Faker\Generator;
+use Faker\NullGenerator;
 use Faker\UniqueGenerator;
 
 class Base
@@ -221,7 +222,7 @@ class Base
             return $this->generator;
         }
 
-        return new \Faker\NullGenerator();
+        return new NullGenerator();
     }
 
     /**
