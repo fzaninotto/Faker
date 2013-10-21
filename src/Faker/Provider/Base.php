@@ -236,7 +236,7 @@ class Base
      * @param integer $maxRetries Maximum number of retries to find a unique value,
      *                            After which an OverflowExcption is thrown.
      * @throws OverflowException When no unique value can be found by iterating $maxRetries times
-     * 
+     *
      * @return UniqueGenerator A proxy class returning only non-existing values
      */
     public function unique($reset = false, $maxRetries = 10000)

@@ -52,7 +52,7 @@ class Payment extends Base
 
     /**
      * @return string Returns a credit card vendor name
-     * 
+     *
      * @example 'MasterCard'
      */
     public static function creditCardType()
@@ -77,7 +77,7 @@ class Payment extends Base
         $mask = static::randomElement(static::$cardParams[$type]);
 
         $number = static::numerify($mask);
-        
+
         if ($formatted) {
             $p1 = substr($number, 0, 4);
             $p2 = substr($number, 4, 4);
@@ -98,11 +98,12 @@ class Payment extends Base
         if ($valid) {
             return $this->generator->dateTimeBetween('now', '36 months');
         }
+
         return $this->generator->dateTimeBetween('-36 months', '36 months');
     }
 
     /**
-     * @param boolean $valid True (by default) to get a valid expiration date, false to get a maybe valid date
+     * @param boolean $valid                True (by default) to get a valid expiration date, false to get a maybe valid date
      * @param string  $expirationDateFormat
      * @example '04/13'
      */
@@ -112,7 +113,7 @@ class Payment extends Base
     }
 
     /**
-     * @param boolean $valid True (by default) to get a valid expiration date, false to get a maybe valid date
+     * @param  boolean $valid True (by default) to get a valid expiration date, false to get a maybe valid date
      * @return array()
      */
     public function creditCardDetails($valid = true)
