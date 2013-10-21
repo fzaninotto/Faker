@@ -83,7 +83,10 @@ class DateTime extends \Faker\Provider\Base
         $endTimestamp = $endDate instanceof \DateTime ? $endDate->getTimestamp() : strtotime($endDate);
         $timestamp = mt_rand($startTimestamp, $endTimestamp);
 
-        return new \DateTime('@' . $timestamp);
+        $ts = new \DateTime('@' . $timestamp);
+        $ts->setTimezone(new \DateTimeZone(date_default_timezone_get()));
+
+        return $ts;
     }
 
     /**
