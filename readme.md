@@ -195,7 +195,6 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     safeColorName          // 'fuchsia'
     colorName              // 'Gainsbor'
 
-<<<<<<< HEAD
 ### `Faker\Provider\Payment`
 
     creditCardType         // 'MasterCard'
@@ -246,6 +245,13 @@ $faker->optional($weight = 0.9)->randomDigit; // 90% chance to get null
 
 ### `Faker\Provider\Image`
 
+    /**
+     * Image generation provided by LoremPixel (http://lorempixel.com/)
+     *
+     * @param $dir An absolute path to a local directory
+     * @param $width/$height Size (in pixel) of the generated image (defaults to 640x480)
+     * @param $category One of 'abstract','animals','business','cats','city','food','nightlife','fashion','people','nature','sports','technics', and 'transport'
+     */
     image($dir)                  // '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
     image($dir, $width, $height) // '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
     image($dir, $width, $height, $category) // '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
@@ -254,12 +260,6 @@ $faker->optional($weight = 0.9)->randomDigit; // 90% chance to get null
     imageUrl($width, $height, $category) // 'http://lorempixel.com/800/600/person/'
     personImage($dir)           // '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
     personImageUrl              // 'http://lorempixel.com/1160/1160/person/'
-
-Image generation is done by [LoremPixel](http://lorempixel.com/.  Common params are:
-
-* $dir - An absolute path to a local directory
-* $width/$height - Integer width and heigh values for the image you want generated
-* $category - May be 'abstract', 'animals','business','cats','city','food','nightlife','fashion','people','nature','sports','technics','transport'.  Singular forms of all are supported as well.
 
 ## Localization
 
