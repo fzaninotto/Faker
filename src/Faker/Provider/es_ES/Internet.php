@@ -8,7 +8,8 @@ class Internet extends \Faker\Provider\Internet
     protected static $tld = array('com', 'com', 'com', 'com', 'net', 'org', 'org', 'es', 'es', 'es', 'com.es');
 
     /**
-     * Converts French characters to their ASCII representation
+     * Converts Spanish characters to their ASCII representation using an standard
+     * chars convert function
      *
      * @return string
      */
@@ -21,7 +22,7 @@ class Internet extends \Faker\Provider\Internet
     }
 
     /**
-     * @example 'jdoe'
+     * @example 'alex.iglesias'
      */
     public function userName()
     {
@@ -32,7 +33,7 @@ class Internet extends \Faker\Provider\Internet
     }
 
     /**
-     * @example 'faber'
+     * @example 'lovato-exposito'
      */
     public function domainWord()
     {
