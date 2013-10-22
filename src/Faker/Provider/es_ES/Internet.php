@@ -15,10 +15,10 @@ class Internet extends \Faker\Provider\Internet
      */
     private static function toAscii($string)
     {
-        $string = htmlentities($string, ENT_NOQUOTES, 'UTF-8');
-        $string = preg_replace('/\W/', '-', preg_replace('/&(\w)\w+;/', '$1', $string));
+        $from = array('á', 'Á', 'é', 'É', 'í', 'Í', 'ó', 'Ó', 'ú', 'Ú', 'ü', 'Ü', 'ñ', 'Ñ');
+        $to   = array('a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U', 'u', 'U', 'n', 'N');
 
-        return trim($string, '-');
+        return str_replace($from, $to, $string);
     }
 
     /**
@@ -39,6 +39,6 @@ class Internet extends \Faker\Provider\Internet
     {
         list($company) = explode(' ', $this->generator->format('company'));
 
-        return static::toLower(static::toAscii($company));
+        return static::toLower(static::toAscii(preg_replace('/\W/u', '', $company)));
     }
 }
