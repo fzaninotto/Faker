@@ -97,6 +97,14 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     company                 // 'Bogan-Treutel'
     companySuffix           // 'and Sons'
 
+### `Faker\Provider\Payment`
+
+    creditCardType          // 'MasterCard'
+    creditCardNumber        // '4485480221084675'
+    creditCardExpirationDate // 04/13
+    creditCardExpirationDateString // '04/13'
+    creditCardDetails       // array('MasterCard', '4485480221084675', 'Aleksander Nowak', '04/13')
+
 ### `Faker\Provider\Lorem`
 
     word                    // 'aut'
@@ -710,6 +718,18 @@ echo $faker->taxpayerIdentificationNumber; // '8211575109'
 echo $faker->regon; // "714676680"
 // Generates a random local REGON number
 echo $faker->regonLocal; // "15346111382836"
+
+```
+
+### `Faker\Provider\pl_PL\Payment`
+
+```php
+<?php
+
+// Generates a random bank name
+echo $faker->bank; // "Narodowy Bank Polski"
+// Generates a random bank account number
+echo $faker->bankAccountNumber; // "PL14968907563953822118075816"
 
 ```
 
