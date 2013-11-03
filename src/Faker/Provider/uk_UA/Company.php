@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\ua_UA;
+namespace Faker\Provider\uk_UA;
 
 class Company extends \Faker\Provider\Company
 {
