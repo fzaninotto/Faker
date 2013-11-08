@@ -40,21 +40,20 @@ class Address extends \Faker\Provider\Address
         'Zambia', 'Zimbabue'
     );
     protected static $cityFormats = array(
-        '{{cityPrefix}} {{firstName}} {{citySuffix}}',
+        '{{cityPrefix}} {{firstName}} {{lastName}}',
         '{{cityPrefix}} {{firstName}}',
         '{{firstName}} {{citySuffix}}',
         '{{lastName}} {{citySuffix}}',
     );
     protected static $streetNameFormats = array(
-        '{{streetPrefix}} {{firstName}} ',
-        '{{streetPrefix}} {{lastName}}'
+        '{{streetPrefix}} {{firstName}} {{lastName}}',
     );
     protected static $streetAddressFormats = array(
-        '{{streetName}} {{buildingNumber}} ',
-        '{{streetName}} {{buildingNumber}} {{secondaryAddress}}',
+        '{{streetName}} # {{buildingNumber}} ',
+        '{{streetName}} # {{buildingNumber}} {{secondaryAddress}}',
     );
     protected static $addressFormats = array(
-        "{{streetAddress}}\n{{city}}, {{postcode}}",
+        "{{streetAddress}}\n{{city}}, {{state}}",
     );
     protected static $secondaryAddressFormats = array('Dpto. ###', 'Hab. ###', 'Piso #', 'Piso ##');
 
