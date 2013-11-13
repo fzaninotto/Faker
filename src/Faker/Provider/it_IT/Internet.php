@@ -8,6 +8,14 @@ class Internet extends \Faker\Provider\Internet
     protected static $tld = array('com', 'com', 'com', 'net', 'org', 'it', 'it', 'it');
 
     /**
+     * @{inheritdoc}
+     */
+    public function userName()
+    {
+        return static::toAscii(parent::userName());
+    }
+
+    /**
      * Converts Italian characters to their ASCII representation
      *
      * @return string
