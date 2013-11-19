@@ -12,7 +12,9 @@ class Internet extends \Faker\Provider\Internet
      */
     public function userName()
     {
-        return static::toAscii(parent::userName());
+        $format = static::randomElement(static::$userNameFormats);
+
+        return static::toLower(static::toAscii(static::bothify($this->generator->parse($format))));
     }
 
     /**
