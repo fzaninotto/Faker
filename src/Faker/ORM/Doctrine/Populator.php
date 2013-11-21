@@ -26,10 +26,19 @@ class Populator
      * Add an order for the generation of $number records for $entity.
      *
      * @param mixed $entity A Doctrine classname, or a \Faker\ORM\Doctrine\EntityPopulator instance
-     * @param int   $number The number of entities to populate
+     * @param int $number The number of entities to populate
+     * @param array $customColumnFormatters
+     * @param array $customModifiers
+     * @param bool $generateId
+     * @throws \InvalidArgumentException
      */
-    public function addEntity($entity, $number, $customColumnFormatters = array(), $customModifiers = array(), $generateId = false)
-    {
+    public function addEntity(
+        $entity,
+        $number,
+        $customColumnFormatters = array(),
+        $customModifiers = array(),
+        $generateId = false
+    ) {
         if (!$entity instanceof \Faker\ORM\Doctrine\EntityPopulator) {
             if (null === $this->manager) {
                 throw new \InvalidArgumentException("No entity manager passed to Doctrine Populator.");
@@ -53,6 +62,7 @@ class Populator
      *
      * @param EntityManager $entityManager A Propel connection object
      *
+     * @throws \InvalidArgumentException
      * @return array A list of the inserted PKs
      */
     public function execute($entityManager = null)
@@ -67,13 +77,16 @@ class Populator
         $insertedEntities = array();
         foreach ($this->quantities as $class => $number) {
             $generateId = $this->generateId[$class];
-            for ($i=0; $i < $number; $i++) {
-                $insertedEntities[$class][]= $this->entities[$class]->execute($entityManager, $insertedEntities, $generateId);
+            for ($i = 0; $i < $number; $i++) {
+                $insertedEntities[$class][] = $this->entities[$class]->execute(
+                    $entityManager,
+                    $insertedEntities,
+                    $generateId
+                );
             }
             $entityManager->flush();
         }
 
         return $insertedEntities;
     }
-
 }
