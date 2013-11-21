@@ -3,6 +3,7 @@
 namespace Faker\ORM\Doctrine;
 
 use Doctrine\Common\Persistence\ObjectManager;
+use Faker\Generator;
 
 /**
  * Service class for populating a database using the Doctrine ORM or ODM.
@@ -16,7 +17,7 @@ class Populator
     protected $quantities = array();
     protected $generateId = array();
 
-    public function __construct(\Faker\Generator $generator, ObjectManager $manager = null)
+    public function __construct(Generator $generator, ObjectManager $manager = null)
     {
         $this->generator = $generator;
         $this->manager = $manager;
@@ -26,15 +27,19 @@ class Populator
      * Add an order for the generation of $number records for $entity.
      *
      * @param mixed $entity A Doctrine classname, or a \Faker\ORM\Doctrine\EntityPopulator instance
-     * @param int   $number The number of entities to populate
+     * @param int $number The number of entities to populate
+     * @param array $customColumnFormatters
+     * @param array $customModifiers
+     * @param bool $generateId
+     * @throws \InvalidArgumentException
      */
     public function addEntity($entity, $number, $customColumnFormatters = array(), $customModifiers = array(), $generateId = false)
     {
-        if (!$entity instanceof \Faker\ORM\Doctrine\EntityPopulator) {
+        if (!$entity instanceof EntityPopulator) {
             if (null === $this->manager) {
                 throw new \InvalidArgumentException("No entity manager passed to Doctrine Populator.");
             }
-            $entity = new \Faker\ORM\Doctrine\EntityPopulator($this->manager->getClassMetadata($entity));
+            $entity = new EntityPopulator($this->manager->getClassMetadata($entity));
         }
         $entity->setColumnFormatters($entity->guessColumnFormatters($this->generator));
         if ($customColumnFormatters) {
@@ -53,6 +58,7 @@ class Populator
      *
      * @param EntityManager $entityManager A Propel connection object
      *
+     * @throws \InvalidArgumentException
      * @return array A list of the inserted PKs
      */
     public function execute($entityManager = null)
@@ -75,5 +81,4 @@ class Populator
 
         return $insertedEntities;
     }
-
 }

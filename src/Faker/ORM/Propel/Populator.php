@@ -2,6 +2,8 @@
 
 namespace Faker\ORM\Propel;
 
+use Faker\Generator;
+
 /**
  * Service class for populating a database using the Propel ORM.
  * A Populator can populate several tables using ActiveRecord classes.
@@ -12,7 +14,7 @@ class Populator
     protected $entities = array();
     protected $quantities = array();
 
-    public function __construct(\Faker\Generator $generator)
+    public function __construct(Generator $generator)
     {
         $this->generator = $generator;
     }
@@ -21,12 +23,14 @@ class Populator
      * Add an order for the generation of $number records for $entity.
      *
      * @param mixed $entity A Propel ActiveRecord classname, or a \Faker\ORM\Propel\EntityPopulator instance
-     * @param int   $number The number of entities to populate
+     * @param int $number The number of entities to populate
+     * @param array $customColumnFormatters
+     * @param array $customModifiers
      */
     public function addEntity($entity, $number, $customColumnFormatters = array(), $customModifiers = array())
     {
-        if (!$entity instanceof \Faker\ORM\Propel\EntityPopulator) {
-            $entity = new \Faker\ORM\Propel\EntityPopulator($entity);
+        if (!$entity instanceof EntityPopulator) {
+            $entity = new EntityPopulator($entity);
         }
         $entity->setColumnFormatters($entity->guessColumnFormatters($this->generator));
         if ($customColumnFormatters) {
@@ -83,5 +87,4 @@ class Populator
 
         return \Propel::getConnection($peer::DATABASE_NAME, \Propel::CONNECTION_WRITE);
     }
-
 }
