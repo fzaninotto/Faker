@@ -2,6 +2,7 @@
 
 namespace Faker\ORM\Propel;
 
+use Faker\Generator;
 use \Faker\Provider\Base;
 use \ColumnMap;
 
@@ -44,7 +45,7 @@ class EntityPopulator
         $this->columnFormatters = array_merge($this->columnFormatters, $columnFormatters);
     }
 
-    public function guessColumnFormatters(\Faker\Generator $generator)
+    public function guessColumnFormatters(Generator $generator)
     {
         $formatters = array();
         $class = $this->class;
@@ -59,7 +60,12 @@ class EntityPopulator
             }
             if ($columnMap->isForeignKey()) {
                 $relatedClass = $columnMap->getRelation()->getForeignTable()->getClassname();
-                $formatters[$columnMap->getPhpName()] = function($inserted) use ($relatedClass) { return isset($inserted[$relatedClass]) ? $inserted[$relatedClass][mt_rand(0, count($inserted[$relatedClass]) - 1)] : null; };
+                $formatters[$columnMap->getPhpName()] = function ($inserted) use ($relatedClass) {
+                    return isset($inserted[$relatedClass]) ? $inserted[$relatedClass][mt_rand(
+                        0,
+                        count($inserted[$relatedClass]) - 1
+                    )] : null;
+                };
                 continue;
             }
             if ($columnMap->isPrimaryKey()) {
@@ -116,7 +122,7 @@ class EntityPopulator
         $this->modifiers = array_merge($this->modifiers, $modifiers);
     }
 
-    public function guessModifiers(\Faker\Generator $generator)
+    public function guessModifiers(Generator $generator)
     {
         $modifiers = array();
         $class = $this->class;
@@ -125,7 +131,7 @@ class EntityPopulator
         foreach ($tableMap->getBehaviors() as $name => $params) {
             switch ($name) {
                 case 'nested_set':
-                    $modifiers['nested_set'] = function($obj, $inserted) use ($class, $generator) {
+                    $modifiers['nested_set'] = function ($obj, $inserted) use ($class, $generator) {
                         if (isset($inserted[$class])) {
                             $queryClass = $class . 'Query';
                             $parent = $queryClass::create()->findPk($generator->randomElement($inserted[$class]));
@@ -136,7 +142,7 @@ class EntityPopulator
                     };
                     break;
                 case 'sortable':
-                    $modifiers['sortable'] = function($obj, $inserted) use ($class, $generator) {
+                    $modifiers['sortable'] = function ($obj, $inserted) use ($class, $generator) {
                         $maxRank = isset($inserted[$class]) ? count($inserted[$class]) : 0;
                         $obj->insertAtRank(mt_rand(1, $maxRank + 1));
                     };
@@ -165,5 +171,4 @@ class EntityPopulator
 
         return $obj->getPrimaryKey();
     }
-
 }
