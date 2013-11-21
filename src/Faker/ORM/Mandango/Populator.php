@@ -2,6 +2,7 @@
 
 namespace Faker\ORM\Mandango;
 
+use Faker\Generator;
 use Mandango\Mandango;
 
 /**
@@ -15,7 +16,7 @@ class Populator
     protected $entities = array();
     protected $quantities = array();
 
-    public function __construct(\Faker\Generator $generator, Mandango $mandango)
+    public function __construct(Generator $generator, Mandango $mandango)
     {
         $this->generator = $generator;
         $this->mandango = $mandango;
@@ -25,12 +26,13 @@ class Populator
      * Add an order for the generation of $number records for $entity.
      *
      * @param mixed $entity A Propel ActiveRecord classname, or a \Faker\ORM\Propel\EntityPopulator instance
-     * @param int   $number The number of entities to populate
+     * @param int $number The number of entities to populate
+     * @param array $customColumnFormatters
      */
     public function addEntity($entity, $number, $customColumnFormatters = array())
     {
-        if (!$entity instanceof \Faker\ORM\Mandango\EntityPopulator) {
-            $entity = new \Faker\ORM\Mandango\EntityPopulator($entity);
+        if (!$entity instanceof EntityPopulator) {
+            $entity = new EntityPopulator($entity);
         }
         $entity->setColumnFormatters($entity->guessColumnFormatters($this->generator, $this->mandango));
         if ($customColumnFormatters) {

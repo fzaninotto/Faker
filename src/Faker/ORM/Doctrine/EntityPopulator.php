@@ -4,6 +4,8 @@ namespace Faker\ORM\Doctrine;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\Mapping\ClassMetadata;
+use Faker\Generator;
+use Faker\Guesser\Name;
 use Faker\ORM\Doctrine\ColumnTypeGuesser;
 
 /**
@@ -72,12 +74,12 @@ class EntityPopulator
         $this->modifiers = array_merge($this->modifiers, $modifiers);
     }
 
-    public function guessColumnFormatters(\Faker\Generator $generator)
+    public function guessColumnFormatters(Generator $generator)
     {
         $formatters = array();
-        $nameGuesser = new \Faker\Guesser\Name($generator);
+        $nameGuesser = new Name($generator);
         $columnTypeGuesser = new ColumnTypeGuesser($generator);
-        foreach ($this->class->getFieldNames() AS $fieldName) {
+        foreach ($this->class->getFieldNames() as $fieldName) {
             if ($this->class->isIdentifier($fieldName) || !$this->class->hasField($fieldName)) {
                 continue;
             }
@@ -92,7 +94,7 @@ class EntityPopulator
             }
         }
 
-        foreach ($this->class->getAssociationNames() AS $assocName) {
+        foreach ($this->class->getAssociationNames() as $assocName) {
             if ($this->class->isCollectionValuedAssociation($assocName)) {
                 continue;
             }
@@ -111,7 +113,7 @@ class EntityPopulator
             }
 
             $index = 0;
-            $formatters[$assocName] = function($inserted) use ($relatedClass, &$index, $unique) {
+            $formatters[$assocName] = function ($inserted) use ($relatedClass, &$index, $unique) {
                 if ($unique && isset($inserted[$relatedClass])) {
                     return $inserted[$relatedClass][$index++];
                 } elseif (isset($inserted[$relatedClass])) {

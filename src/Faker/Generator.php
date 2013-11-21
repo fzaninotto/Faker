@@ -144,6 +144,8 @@ class Generator
     }
 
     /**
+     * @param $formatter
+     * @throws \InvalidArgumentException
      * @return Callable
      */
     public function getFormatter($formatter)
