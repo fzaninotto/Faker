@@ -3,6 +3,7 @@
 namespace Faker\ORM\Doctrine;
 
 use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Faker\ORM\Doctrine\ColumnTypeGuesser;
 
