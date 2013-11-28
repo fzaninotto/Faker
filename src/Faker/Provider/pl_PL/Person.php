@@ -105,10 +105,10 @@ class Person extends \Faker\Provider\Person
         $high = array(static::randomDigit(), static::randomDigit(), static::randomDigit(), static::randomDigit(), static::randomDigit());
         $weights = array(7, 3, 1, 7, 3, 1, 7, 3);
         $checksum = 0;
-        for ($i = 0; $i < count($low); $i++) {
+        for ($i = 0, $size = count($low); $i < $size; $i++) {
             $checksum += $weights[$i] * (ord($low[$i]) - 55);
         }
-        for ($i = 0; $i < count($high); $i++) {
+        for ($i = 0, $size = count($high); $i < $size; $i++) {
             $checksum += $weights[$i+3] * $high[$i];
         }
         $checksum %= 10;
@@ -133,7 +133,7 @@ class Person extends \Faker\Provider\Person
                 static::randomDigit(), static::randomDigit(), static::randomDigit(),
             );
             $checksum = 0;
-            for ($i = 0; $i < count($result); $i++) {
+            for ($i = 0, $size = count($result); $i < $size; $i++) {
                 $checksum += $weights[$i] * $result[$i];
             }
             $checksum %= 11;
