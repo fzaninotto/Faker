@@ -27,7 +27,7 @@ class ColumnTypeGuesser
             case 'smallint':
                 return function() { return mt_rand(0,65535); };
             case 'integer':
-                return function() { return mt_rand(0,intval('4294967295')); };
+                return function() { return mt_rand(0,intval('2147483647')); };
             case 'bigint':
                 return function() { return mt_rand(0,intval('18446744073709551615')); };
             case 'float':
