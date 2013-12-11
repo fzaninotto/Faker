@@ -3,16 +3,10 @@
 namespace Faker;
 
 /**
- * @property string prefix
- * @property string suffix
  * @property string name
  * @property string firstName
  * @property string lastName
  *
- * @property string cityPrefix
- * @property string secondaryAddress
- * @property string state
- * @property string stateAbbr
  * @property string citySuffix
  * @property string streetSuffix
  * @property string buildingNumber
@@ -27,8 +21,6 @@ namespace Faker;
  *
  * @property string phoneNumber
  *
- * @property string catchPhrase
- * @property string bs
  * @property string company
  * @property string companySuffix
  *
@@ -93,11 +85,17 @@ namespace Faker;
  * @property int randomDigitNotNull
  * @property string randomLetter
  * @method int randomNumber
+ * @method mixed randomKey
+ * @method int numberBetween
  * @method float randomFloat
  * @method string randomElement
  * @method string numerify
  * @method string lexify
  * @method string bothify
+ * @method string toLower
+ * @method string toUpper
+ * @method mixed optional
+ * @method UniqueGenerator unique
  *
  * @property string userAgent
  * @property string chrome
@@ -112,6 +110,7 @@ namespace Faker;
  * @property string fileExtension
  *
  * @property string hexcolor
+ * @property string safeHexColor
  * @property string rgbcolor
  * @property string rgbColorAsArray
  * @property string rgbCssColor
