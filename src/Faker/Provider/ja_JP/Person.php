@@ -29,4 +29,57 @@ class Person extends \Faker\Provider\Person
         '三宅', '村山',
         '山田', '吉本'
     );
+
+    protected static $kanaFormats = array(
+        '{{lastKanaName}} {{firstKanaName}}'
+    );
+
+    protected static $firstKanaName = array(
+        'アキラ', 'アケミ', 'アスカ', 'オサム',
+        'カナ', 'キョウスケ', 'ケンイチ', 'クミコ',
+        'ジュン', 'ソウタロウ',
+        'タロウ', 'チヨ', 'トモミ', 'トモヤ',
+        'ナオキ', 'ナオコ',
+        'ハナコ', 'ヒロシ',
+        'ミツル', 'モモコ',
+        'ユミコ', 'リカ',
+    );
+
+    protected static $lastKanaName = array(
+        'アオタ', 'イダカ', 'ウノ', 'エコダ', 'オオガキ',
+        'カノウ', 'キジマ', 'クドウ', 'コイズミ',
+        'ササダ', 'スズキ', 'スギヤマ',
+        'タナベ', 'ツダ',
+        'ナギサ', 'ナカツガワ', 'ニシノソノ',
+        'ハラダ', 'ハマダ', 'ヒロカワ', 'フジモト',
+        'ミヤケ', 'ムラヤマ',
+        'ヤマダ', 'ヨシモト'
+    );
+
+    /**
+     * @example 'アオタ アキラ'
+     */
+    public function kanaName()
+    {
+        $format = static::randomElement(static::$kanaFormats);
+
+        return $this->generator->parse($format);
+    }
+
+    /**
+     * @example 'アオタ'
+     */
+    public static function firstKanaName()
+    {
+        return static::randomElement(static::$firstKanaName);
+    }
+
+    /**
+     * @example 'アキラ'
+     */
+    public static function lastKanaName()
+    {
+        return static::randomElement(static::$lastKanaName);
+    }
+
 }
