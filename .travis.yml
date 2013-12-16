@@ -4,4 +4,5 @@ before_script:
 php:
   - 5.3
   - 5.4
+  - hhvm
 script: phpunit
