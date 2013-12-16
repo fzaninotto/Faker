@@ -198,9 +198,9 @@ class Payment extends Base
     /**
      * International Bank Account Number (IBAN)
      * @link http://en.wikipedia.org/wiki/International_Bank_Account_Number
-     * @param string $countryCode ISO 3166-1 alpha-2 country code
-     * @param string $prefix for generating bank account number of a specific bank
-     * @param integer $length total length without country code and 2 check digits
+     * @param  string  $countryCode ISO 3166-1 alpha-2 country code
+     * @param  string  $prefix      for generating bank account number of a specific bank
+     * @param  integer $length      total length without country code and 2 check digits
      * @return string
      */
     protected static function iban($countryCode, $prefix = '', $length = null)
@@ -212,7 +212,7 @@ class Payment extends Base
                 $length = 24;
             } else {
                 $length = 0;
-                foreach($format as $part) {
+                foreach ($format as $part) {
                     list($class, $groupCount) = $part;
                     $length += $groupCount;
                 }
@@ -234,7 +234,7 @@ class Payment extends Base
                 $nextPart = array_shift($format);
                 list($class, $groupCount) = $nextPart;
             }
-            switch($class) {
+            switch ($class) {
                 default:
                 case 'c': $result .= mt_rand(0, 100) <= 50 ? static::randomDigit() : strtoupper(static::randomLetter()); break;
                 case 'a': $result .= strtoupper(static::randomLetter()); break;
@@ -247,9 +247,9 @@ class Payment extends Base
         $countryNumber = 100 * (ord($countryCode[0])-55) + (ord($countryCode[1])-55);
         $tempResult = $result . $countryNumber . '00';
         // perform MOD97-10 checksum calculation
-        $checksum = (int)$tempResult[0];
+        $checksum = (int) $tempResult[0];
         for ($i = 1, $size = strlen($tempResult); $i < $size; $i++) {
-            $checksum = (10 * $checksum + (int)$tempResult[$i]) % 97;
+            $checksum = (10 * $checksum + (int) $tempResult[$i]) % 97;
         }
         $checksum = 98 - $checksum;
         if ($checksum < 10)
@@ -260,8 +260,8 @@ class Payment extends Base
 
     /**
      * Calculates a checksum for the national bank and branch code part in the IBAN.
-     * @param string $iban randomly generated $iban
-     * @param string $countryCode ISO 3166-1 alpha-2 country code
+     * @param  string $iban        randomly generated $iban
+     * @param  string $countryCode ISO 3166-1 alpha-2 country code
      * @return string IBAN with one character altered to a proper checksum
      */
     protected static function addBankCodeChecksum($iban, $countryCode = '')
