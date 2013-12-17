@@ -1,8 +1,17 @@
 language: php
-before_script:
-  - composer install --dev
+
 php:
-  - 5.3
-  - 5.4
-  - hhvm
+    - 5.3
+    - 5.4
+    - 5.5
+    - hhvm
+
+matrix:
+    allow_failures:
+        - php: hhvm
+
+before_script:
+    - composer self-update
+    - composer install --dev
+
 script: phpunit
