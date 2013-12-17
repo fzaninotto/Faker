@@ -735,6 +735,21 @@ echo $faker->bankAccountNumber; // "PL14968907563953822118075816"
 
 ```
 
+### `Faker\Provider\ja_JP\Person`
+
+```php
+<?php
+
+// Generates a 'kana' name
+echo $faker->kanaName; // "アオタ ナオコ"
+
+// Generates a 'kana' first name
+echo $faker->firstKanaName; // "トモミ"
+
+// Generates a 'kana' last name
+echo $faker->lastKanaName; // "ナギサ"
+```
+
 ## License
 
 Faker is released under the MIT Licence. See the bundled LICENSE file for details.
