@@ -10,7 +10,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     {
         $number = "+880";
         foreach (range(0, 7) as $num) {
-            $number .= rand(0, 9);
+            $number .= static::randomDigit();
         }
 
         return Utils::getBanglaNumber($number);
