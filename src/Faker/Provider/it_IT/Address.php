@@ -61,7 +61,7 @@ class Address extends \Faker\Provider\Address
     protected static $addressFormats = array(
         "{{streetAddress}}\n{{city}}, {{postcode}} {{state}} ({{stateAbbr}})",
     );
-    protected static $secondaryAddressFormats = array('Appartamento ##', 'Piano #', '');
+    protected static $secondaryAddressFormats = array('Appartamento ##', 'Piano #', 'Scala #');
 
     /**
      * @example 'East'
