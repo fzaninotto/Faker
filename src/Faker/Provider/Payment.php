@@ -180,6 +180,13 @@ class Payment extends Base
     }
 
     /**
+     * @example '568'
+     */
+    public function creditCardCVV2() {
+        return static::numerify( '###' );
+    }
+
+    /**
      * @param  boolean $valid True (by default) to get a valid expiration date, false to get a maybe valid date
      * @return array()
      */
