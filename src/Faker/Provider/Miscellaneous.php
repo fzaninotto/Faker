@@ -99,6 +99,10 @@ class Miscellaneous extends \Faker\Provider\Base
         'NT$' => 'Taiwan New Dollars', '฿' => 'Thai Baht', 'TL' => 'Turkish Lira'
     );
 
+    protected static $unitOfMeasurement = array(
+        'p', 'P/', 'in', 'ft', 'yd', 'mi', 'ftm', 'cb', 'nmi'
+    );
+
     /**
      * Return a boolean, true or false
      *
@@ -185,5 +189,12 @@ class Miscellaneous extends \Faker\Provider\Base
     public static function currency() {
         $key = static::randomKey(static::$currency);
         return static::$currency[$key] . ' (' . $key . ')';
+    }
+
+    /**
+     * @example 'yd'
+     */
+    public static function unitOfMeasurement() {
+        return static::randomElement(static::$unitOfMeasurement);
     }
 }
