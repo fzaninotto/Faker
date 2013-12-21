@@ -5,8 +5,8 @@ namespace Faker\Provider\it_IT;
 class Address extends \Faker\Provider\Address
 {
     protected static $cityPrefix = array('San', 'Borgo', 'Sesto', 'Quarto', 'Settimo');
-    protected static $citySuffix = array('a mare', 'lido', 'ligure', 'del friuli', 'salentino', 'calabro', 'veneto', 'nell\'emilia', 'umbro', 'laziale', 'terme', 'sardo', 'marina', 'di puglia');
-    protected static $buildingNumber = array('###', '##', '#');
+    protected static $citySuffix = array('a mare', 'lido', 'ligure', 'del friuli', 'salentino', 'calabro', 'veneto', 'nell\'emilia', 'umbro', 'laziale', 'terme', 'sardo', 'marina', 'di puglia', 'marittima');
+    protected static $buildingNumber = array('###', '##', '#', '#/a', '##/a', '###/a', '#/b', '##/b', '###/b');
     protected static $streetSuffix = array(
         'Piazza', 'Strada', 'Via', 'Borgo', 'Contrada', 'Rotonda', 'Incrocio', 'Viale'
     );
@@ -61,7 +61,7 @@ class Address extends \Faker\Provider\Address
     protected static $addressFormats = array(
         "{{streetAddress}}\n{{city}}, {{postcode}} {{state}} ({{stateAbbr}})",
     );
-    protected static $secondaryAddressFormats = array('Appartamento ##', 'Piano #');
+    protected static $secondaryAddressFormats = array('Appartamento ##', 'Piano #', '');
 
     /**
      * @example 'East'
