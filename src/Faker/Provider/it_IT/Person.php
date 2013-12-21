@@ -45,7 +45,9 @@ class Person extends \Faker\Provider\Person
         'Mercedes', 'Mietta', 'Miriana', 'Miriam', 'Monia', 'Morgana', 'Naomi', 'Nayade', 'Nicoletta', 'Ninfa', 'Noemi', 'Nunzia', 'Olimpia',
         'Oretta', 'Ortensia', 'Penelope', 'Piccarda', 'Prisca', 'Rebecca', 'Rita', 'Rosalba', 'Rosaria', 'Rosita', 'Ruth', 'Samira',
         'Sarita', 'Selvaggia', 'Shaira', 'Sibilla', 'Soriana', 'Sue ellen', 'Thea', 'Tosca', 'Ursula', 'Vania', 'Vera',
-        'Vienna', 'Violante', 'Vitalba', 'Zelida'
+        'Vienna', 'Violante', 'Vitalba', 'Zelida', 'Nicola', 'Marcantonio', 'Marisa', 'Elena', 'Paola', 'Francesco', 'Ugo', 'Pierpaolo',
+        'Federica', 'Asia', 'Paolo', 'Simone', 'Raimondo', 'Giada', 'Aldo', 'Giacomo', 'Isacco', 'Settimio', 'Martino', 'Francesco Paolo',
+        'Sabrina', 'Giovanni', 'Diego', 'Giustino', 'Samara', 'Tatiana', 'Raffaele', 'Raffaele Pio', 'Antonio Pio', 'Giuseppe', 'Giuseppe Pio'
     );
 
     protected static $lastName = array(
@@ -57,10 +59,11 @@ class Person extends \Faker\Provider\Person
         'Rizzi', 'Monti', 'Cattaneo', 'Morelli', 'Amato', 'Silvestri', 'Mazza', 'Testa', 'Grassi', 'Pellegrino', 'Carbone',
         'Giuliani', 'Benedetti', 'Barone', 'Rossetti', 'Caputo', 'Montanari', 'Guerra', 'Palmieri', 'Bernardi', 'Martino', 'Fiore',
         'De rosa', 'Ferretti', 'Bellini', 'Basile', 'Riva', 'Donati', 'Piras', 'Vitali', 'Battaglia', 'Sartori', 'Neri', 'Costantini',
-        'Milani', 'Pagano', 'Ruggiero', 'Sorrentino', 'D\'amico', 'Orlando', 'Damico', 'Negri'
+        'Milani', 'Pagano', 'Ruggiero', 'Sorrentino', 'D\'amico', 'Orlando', 'Damico', 'Negri', 'Montuori', 'Grillo', 'Del Buono',
+        'D\'Andola', 'Ienco', 'Carnevale', 'La Morte', 'Brambilla', 'Gabbana', 'Dolce', 'Chiarella'
     );
 
-    private static $prefix = array('Sig.', 'Dott.', 'Dr.', 'Ing.');
+    private static $prefix = array('Sig.', 'Dott.', 'Dott.ssa', 'Dr.', 'Ing.', 'Sig.ra', 'Sig.na', 'Avv.', 'Geom.', 'Mons.', 'Rag.');
 
     private static $suffix = array();
 

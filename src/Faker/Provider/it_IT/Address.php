@@ -5,10 +5,10 @@ namespace Faker\Provider\it_IT;
 class Address extends \Faker\Provider\Address
 {
     protected static $cityPrefix = array('San', 'Borgo', 'Sesto', 'Quarto', 'Settimo');
-    protected static $citySuffix = array('a mare', 'lido', 'ligure', 'del friuli', 'salentino', 'calabro', 'veneto', 'nell\'emilia', 'umbro', 'laziale', 'terme', 'sardo');
+    protected static $citySuffix = array('a mare', 'lido', 'ligure', 'del friuli', 'salentino', 'calabro', 'veneto', 'nell\'emilia', 'umbro', 'laziale', 'terme', 'sardo', 'marina', 'di puglia');
     protected static $buildingNumber = array('###', '##', '#');
     protected static $streetSuffix = array(
-        'Piazza', 'Strada', 'Via', 'Borgo', 'Contrada', 'Rotonda', 'Incrocio'
+        'Piazza', 'Strada', 'Via', 'Borgo', 'Contrada', 'Rotonda', 'Incrocio', 'Viale'
     );
     protected static $postcode = array('#####');
     protected static $state = array(

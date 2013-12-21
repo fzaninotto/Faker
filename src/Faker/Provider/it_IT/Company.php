@@ -34,7 +34,7 @@ class Company extends \Faker\Provider\Company
         )
     );
 
-    protected static $companySuffix = array('SPA', 'e figli', 'Group', 's.r.l.');
+    protected static $companySuffix = array('S.P.A.', 'e figli', 'Group', 'S.R.L.', 'S.A.S.', 'e fratelli', 'S.N.C.', 'SOC. COOP.', 'F.lli');
 
     /**
      * @example 'Robust full-range hub'
