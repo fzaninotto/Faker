@@ -183,6 +183,7 @@ class Miscellaneous extends \Faker\Provider\Base
      * @example 'Euros (€)'
      */
     public static function currency() {
-        return static::randomElement(static::$currency) . '(' . static::randomKey(static::$currency) . ')';
+        $key = static::randomKey(static::$currency);
+        return static::$currency[$key] . ' (' . $key . ')';
     }
 }

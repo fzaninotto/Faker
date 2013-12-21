@@ -12,6 +12,8 @@ class Person extends \Faker\Provider\Base
 
     protected static $lastName = array('Doe');
 
+    protected static $job = array('Accountant');
+
     /**
      * @example 'John Doe'
      */
@@ -36,5 +38,12 @@ class Person extends \Faker\Provider\Base
     public static function lastName()
     {
         return static::randomElement(static::$lastName);
+    }
+
+    /**
+     * @emaple 'Carpenter'
+     */
+    public static function job() {
+        return static::randomElement(static::$job);
     }
 }
