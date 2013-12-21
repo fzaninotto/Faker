@@ -4,6 +4,12 @@ namespace Faker\Provider\it_IT;
 
 class Payment extends \Faker\Provider\Payment
 {
+    protected static $cardVendors = array(
+        'Visa', 'Visa', 'Visa', 'Visa', 'Visa',
+        'MasterCard', 'MasterCard', 'MasterCard', 'MasterCard', 'MasterCard',
+        'American Express', 'Discover Card', 'PostePay'
+    );
+
     /**
      * International Bank Account Number (IBAN)
      * @link http://en.wikipedia.org/wiki/International_Bank_Account_Number

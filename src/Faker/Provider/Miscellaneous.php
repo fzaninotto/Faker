@@ -91,12 +91,12 @@ class Miscellaneous extends \Faker\Provider\Base
         'zh_MO',  'zh_SG',  'zh_TW',  'zu_ZA',
     );
 
-    protected static $currencySimbol = array(
-        '€', '$', '£'
-    );
-
-    protected static $currencyName = array(
-        'Euro', 'Dollar', 'Pound'
+    protected static $currency = array(
+        '€' => 'Euros', '$' => 'US Dollar', '£' => 'Pounds Sterling', '¥' => 'Japanese Yen', 'Rp' => 'Indonesia Rupiah',
+        'R$' => 'Brazilian Real', 'Kč' => 'Czech Koruna', 'kr' => 'Danish Krone', 'Ft' => 'Hungarian Forint', '₹' => 'Indian Rupee',
+        '₪' => 'Israeli Shekel', '₩' => 'South Korean Won', 'RM' => 'Malaysian Ringgits', '₱' => 'Philippine Pesos',
+        'zł' => 'Polish Zloty', 'lei' => 'Romanian Leu', 'руб.' => 'Russian Ruble', 'R' => 'South African rand', 'CHF' => 'Swiss Franc',
+        'NT$' => 'Taiwan New Dollars', '฿' => 'Thai Baht', 'TL' => 'Turkish Lira'
     );
 
     /**
@@ -163,5 +163,26 @@ class Miscellaneous extends \Faker\Provider\Base
     public static function languageCode()
     {
         return static::randomElement(static::$languageCode);
+    }
+
+    /**
+     * @example '€'
+     */
+    public static function currencySymbol() {
+        return static::randomKey(static::$currency);
+    }
+
+    /**
+     * @example 'Euros'
+     */
+    public static function currencyName() {
+        return static::randomElement(static::$currency);
+    }
+
+    /**
+     * @example 'Euros (€)'
+     */
+    public static function currency() {
+        return static::randomElement(static::$currency) . '(' . static::randomKey(static::$currency) . ')';
     }
 }
