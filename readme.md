@@ -105,6 +105,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     creditCardNumber        // '4485480221084675'
     creditCardExpirationDate // 04/13
     creditCardExpirationDateString // '04/13'
+    creditCardCVV2          // 865
     creditCardDetails       // array('MasterCard', '4485480221084675', 'Aleksander Nowak', '04/13')
 
 ### `Faker\Provider\Lorem`
