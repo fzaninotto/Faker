@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3"
+        "php": ">=5.3.3",
+        "sinergia/brasil":"0.5.4"
     },
     "autoload": {
         "psr-0": {
