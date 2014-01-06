@@ -100,21 +100,29 @@ class EntityPopulator
 
             $relatedClass = $this->class->getAssociationTargetClass($assocName);
 
-            $unique = false;
+            $unique = $optional = false;
             $mappings = $this->class->getAssociationMappings();
             foreach ($mappings as $mapping) {
                 if ($mapping['targetEntity'] == $relatedClass) {
                     if ($mapping['type'] == ClassMetadata::ONE_TO_ONE) {
                         $unique = true;
+                        $optional = $mapping['joinColumns'][0]['nullable'];
                         break;
                     }
                 }
             }
 
             $index = 0;
-            $formatters[$assocName] = function($inserted) use ($relatedClass, &$index, $unique) {
+            $formatters[$assocName] = function($inserted) use ($relatedClass, &$index, $unique, $optional) {
                 if ($unique && isset($inserted[$relatedClass])) {
-                    return $inserted[$relatedClass][$index++];
+                    $related = null;
+                    if (isset($inserted[$relatedClass][$index]) || !$optional) {
+                        $related = $inserted[$relatedClass][$index];
+                    }
+
+                    $index++;
+
+                    return $related;
                 } elseif (isset($inserted[$relatedClass])) {
                     return $inserted[$relatedClass][mt_rand(0, count($inserted[$relatedClass]) - 1)];
                 }
