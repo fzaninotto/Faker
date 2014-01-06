@@ -39,11 +39,4 @@ class Person extends \Faker\Provider\Base
     {
         return static::randomElement(static::$lastName);
     }
-
-    /**
-     * @emaple 'Carpenter'
-     */
-    public static function job() {
-        return static::randomElement(static::$job);
-    }
 }

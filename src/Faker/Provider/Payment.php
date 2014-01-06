@@ -180,9 +180,11 @@ class Payment extends Base
     }
 
     /**
+     * Card security code
+     * @link http://en.wikipedia.org/wiki/Card_Security_Code
      * @example '568'
      */
-    public function creditCardCVV2() {
+    public function creditCardSecurityCode() {
         return static::numerify( '###' );
     }
 
