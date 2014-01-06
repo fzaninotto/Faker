@@ -755,8 +755,6 @@ echo $faker->lastKanaName; // "ナギサ"
 ```php
 <?php
 
-// Generates a random person name
-echo $faker->name; // "Ion Ionescu"
 // Generates a random male name prefix/title
 echo $faker->prefixMale; // "ing."
 // Generates a random female name prefix/title
@@ -765,8 +763,6 @@ echo $faker->prefixFemale; // "d-na."
 echo $faker->firstNameMale; // "Adrian"
 // Generates a random female fist name
 echo $faker->firstNameFemale; // "Miruna"
-// Generates a random last name
-echo $faker->firstNameFemale; // "Cojocaru"
 
 // Generates a random Personal Numerical Code (CNP)
 echo $faker->cnp; // "2800523081231"
@@ -783,8 +779,6 @@ echo $faker->cnp($gender = NULL, $century = NULL, $county = NULL);
 ```php
 <?php
 
-// Generates a random landline or mobile phone number
-echo $faker->phoneNumber; // "0211234567"
 // Generates a random toll-free phone number
 echo $faker->tollFreePhoneNumber; // "0800123456"
 // Generates a random premium-rate phone number
