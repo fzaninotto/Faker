@@ -221,13 +221,6 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     imageUrl($width, $height)   // 'http://lorempixel.com/800/600/'
     imageUrl($width, $height, $category) // 'http://lorempixel.com/800/600/person/'
 
-### `Faker\Provider\Payment`
-
-    creditCardType         // 'MasterCard'
-    creditCardNumber($type = null) // '4485480221084675'
-    creditCardExpirationDate($valid = true) // DateTime('2014-10-23 13:46:23')
-    creditCardExpirationDateString($valid = true) // '10/14'
-
 ## Unique and Optional modifiers
 
 Faker provides two special providers, `unique()` and `optional()`, to be called before any provider. `optional()` can be useful for seeding non-required fields, like a mobile telephone number ; `unique()` is required to populate fields that cannot accept twice the same value, like primary identifiers.
