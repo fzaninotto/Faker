@@ -47,18 +47,21 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     {
         $type = static::randomElement(array_keys(static::$normalFormats));
         $number = static::numerify(static::randomElement(static::$normalFormats[$type]));
+
         return $number;
     }
 
     public static function tollFreePhoneNumber()
     {
         $number = static::numerify(static::randomElement(static::$specialFormats['toll-free']));
+
         return $number;
     }
 
     public static function premiumRatePhoneNumber()
     {
         $number = static::numerify(static::randomElement(static::$specialFormats['premium-rate']));
+
         return $number;
     }
 }
