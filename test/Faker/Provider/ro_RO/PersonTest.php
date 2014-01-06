@@ -76,8 +76,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
             $checkNumber = 279146358279;
 
             $checksum = 0;
-            foreach (range(0, 11) as $digit)
-            {
+            foreach (range(0, 11) as $digit) {
                 $checksum += substr($cnp, $digit, 1) * substr($checkNumber, $digit, 1);
             }
             $checksum = $checksum % 11;

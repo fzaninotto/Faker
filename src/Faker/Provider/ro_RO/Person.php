@@ -155,12 +155,9 @@ class Person extends \Faker\Provider\Person
      */
     public function cnp($gender = null, $century = null, $county = null)
     {
-        if (is_null($county) || !array_key_exists($county, static::$cnpCountyCodes))
-        {
+        if (is_null($county) || !array_key_exists($county, static::$cnpCountyCodes)) {
             $countyCode = static::randomElement(array_values(static::$cnpCountyCodes));
-        }
-        else
-        {
+        } else {
             $countyCode = static::$cnpCountyCodes[$county];
         }
 
@@ -187,8 +184,7 @@ class Person extends \Faker\Provider\Person
      */
     protected static function cnpFirstDigit($gender = null, $century = null)
     {
-        switch ($century)
-        {
+        switch ($century) {
             case 1800:
             case 3:
             case 4:
@@ -208,8 +204,7 @@ class Person extends \Faker\Provider\Person
                 $centuryCode = static::randomElement(array(0, 2, 4, 6, 9));
         }
 
-        switch (strtolower($gender))
-        {
+        switch (strtolower($gender)) {
             case 'm':
             case 1:
                 $genderCode = 1;
@@ -231,15 +226,14 @@ class Person extends \Faker\Provider\Person
      * Calculates a checksum for the Personal Numerical Code (CNP).
      *
      * @param  string $cnp Randomly generated CNP
-     * @return string      CNP with the last digit altered to a proper checksum
+     * @return string CNP with the last digit altered to a proper checksum
      */
     protected static function cnpAddChecksum($cnp)
     {
         $checkNumber = 279146358279;
 
         $checksum = 0;
-        foreach (range(0, 11) as $digit)
-        {
+        foreach (range(0, 11) as $digit) {
             $checksum += substr($cnp, $digit, 1) * substr($checkNumber, $digit, 1);
         }
         $checksum = $checksum % 11;
