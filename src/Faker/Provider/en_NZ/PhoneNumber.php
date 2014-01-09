@@ -9,21 +9,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      * @var array
      */
     protected static $formats = array(
-        // International Calls (International drops the 0)
-        '+64{{area_code}}{{beginning_number}}######',
-        '+64 {{area_code}} {{beginning_number}}## ####',
-        '+64-{{area_code}}-{{beginning_number}}##-####',
-
         // National Calls
-        '0{{area_code}}{{beginning_number}}######',
-        '0{{area_code}} {{beginning_number}}## ####',
-        '(0{{area_code}}) {{beginning_number}}## ####',
-        '0{{area_code}}-{{beginning_number}}##-####',
-
-        // Local Calls
-        '{{beginning_number}}######',
-        '{{beginning_number}}## ####',
-        '{{beginning_number}}##-####'
+        '{{area_code}}{{beginning_number}}######',
+        '{{area_code}} {{beginning_number}}## ####'
     );
 
     /**
@@ -35,17 +23,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '02########',
         '02#########',
         '02# ### ####',
-        '02# #### ####',
-        '02#-###-####',
-        '02#-####-####',
-
-        // International
-        '+642#######',
-        '+642########',
-        '+64 2# ### ####',
-        '+64 2# #### ####',
-        '+64-2#-###-####',
-        '+64-2#-####-####'
+        '02# #### ####'
     );
 
     /**
@@ -55,20 +33,10 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     protected static $tollFreeFormats = array(
         '0508######',
         '0508 ######',
-        '0508-######',
         '0508 ### ###',
-        '0508-###-###',
-        '0508 ## ## ##',
-        '0508 ##-##-##',
-        '0508-##-##-##',
         '0800######',
         '0800 ######',
-        '0800-######',
         '0800 ### ###',
-        '0800-###-###',
-        '0800 ## ## ##',
-        '0800 ##-##-##',
-        '0800-##-##-##'
     );
 
     /**
@@ -76,7 +44,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      * @var array
      */
     protected static $areaCodes = array(
-        '2', '3', '4', '6', '7', '9'
+        '02', '03', '04', '06', '07', '09'
     );
 
     /**
