@@ -750,7 +750,7 @@ echo $faker->firstKanaName; // "トモミ"
 echo $faker->lastKanaName; // "ナギサ"
 ```
 
-### `Faker\Provider\en_NZ\Phone
+### `Faker\Provider\en_NZ\Phone`
 
 ```php
 <?php
