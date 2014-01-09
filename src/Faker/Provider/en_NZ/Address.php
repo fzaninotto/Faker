@@ -20,15 +20,20 @@ class Address extends \Faker\Provider\Address
 	);
 
 	/**
-	 * An array of en_NZ (New Zealand) towns
+	 * City suffixes
 	 * @var array
 	 */
-	protected static $town = array(
-		'Auckland', 'Bay of Plenty', 'Canterbury', 'Christchurch', 'Coromandel', 'Dunedin', 'Eastland', 'Fiordland', 'Hawkes Bay', 'Manawatu', 'Marlborough', 'Mt Cook', 'Nelson', 'Northland', 'Otago', 'Queenstown', 'Rotorua', 'Ruapehu', 'Southland', 'Taranaki', 'Taupo', 'Waikato', 'Wairarapa', 'Wanaka', 'Wanganui', 'Wellington', 'West Coast'
-	);
+	protected static $citySuffix = array('ville', 'ston');
+
+	/**
+	 * City formats
+	 * @var array
+	 */
+	protected static $cityFormats = array('{{firstName}}{{citySuffix}}');
 
 	/**
 	 * An array of en_NZ (New Zealand) regions
+	 * @see http://en.wikipedia.org/wiki/Regions_of_New_Zealand
 	 * @var array
 	 */
 	protected static $region = array(
@@ -51,17 +56,13 @@ class Address extends \Faker\Provider\Address
 	 * An array of en_NZ (New Zealand) address formats
 	 * @var array
 	 */
-	protected static $addressFormats = array(
-		'{{buildingNumber}} {{streetName}}, {{town}}, {{region}}, {{postcode}}',
-	);
+	protected static $addressFormats = array('{{buildingNumber}} {{streetName}}, {{city}}, {{region}}, {{postcode}}');
 
 	/**
 	 * An array of en_NZ (New Zealand) street address formats
 	 * @var array
 	 */
-	protected static $streetAddressFormats = array(
-		'{{buildingNumber}} {{streetName}}',
-	);
+	protected static $streetAddressFormats = array('{{buildingNumber}} {{streetName}}');
 
 	/**
 	 * Return a en_NZ (New Zealand) postcode
@@ -70,24 +71,6 @@ class Address extends \Faker\Provider\Address
 	public static function postcode()
     {
         return static::numerify(static::randomElement(static::$postcode));
-    }
-
-    /**
-     * Return a en_NZ (New Zealand) town
-     * @return string
-     */
-    public static function town()
-    {
-    	return static::randomElement(static::$town);
-    }
-
-    /**
-     * Return a en_NZ (New Zealand) city
-     * @return string
-     */
-    public function city()
-    {
-    	return static::randomElement(static::$town);
     }
 
     /**
