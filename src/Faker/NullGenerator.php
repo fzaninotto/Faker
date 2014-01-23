@@ -3,7 +3,7 @@
 namespace Faker;
 
 /**
- * This generator returns NULL for all called propertis.  It works with
+ * This generator returns NULL for all called properties.  It works with
  * Faker\Generator\Base->optional()
  */
 class NullGenerator
