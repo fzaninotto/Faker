@@ -13,6 +13,10 @@ class Person extends \Faker\Provider\Person
         '{{firstName}}-{{firstName}} {{lastName}}',
     );
 
+    /**
+     * This list is more or less the same as in \Faker\Provider\fr_FR\Person.php
+     * Some common names were added and other removed.
+     */
     protected static $firstName = array(
         'Adrien', 'Adrienne', 'Adèle', 'Agathe', 'Alice', 'Alysson', 'Aimé', 'Aimée', 'Alain', 'Albert', 'Aline',
         'Alexandre', 'Alexandra', 'Alfred', 'Alphonse', 'Amélie', 'Anaïs', 'André', 'Andrée', 'Ann', 'Anne', 'Annette',
@@ -46,24 +50,32 @@ class Person extends \Faker\Provider\Person
         'Zacharie', 'Zoé',
     );
 
+    /**
+     * These last names come from this list of most common family names in Québec (1 to 130)
+     * http://fr.wikipedia.org/wiki/Liste_des_noms_de_famille_les_plus_courants_au_Québec
+     */
     protected static $lastName = array(
         'Allard', 'Arsenault', 'Audet',
-        'Beaudoin', 'Beaulieu', 'Bédard', 'Bélanger', 'Bergeron', 'Bernier', 'Bérubé', 'Blais', 'Boivert', 'Bolduc',
-        'Bouchard', 'Boucher', 'Boudreau',
-        'Caron', 'Cloutier', 'Côté', 'Couture', 'Cyr',
-        'Demers', 'Desjardins', 'Dion', 'Dubé', 'Dufour',
-        'Fortin', 'Fournier',
-        'Gagné', 'Gagnon', 'Gauthier', 'Girard', 'Gosselin', 'Grenier',
-        'Hamel', 'Hébert',
-        'Jean',
-        'Lachance', 'Landry', 'Langlois', 'Lapointe', 'Lavoie', 'Leblanc', 'Leclerc', 'Lefebvre', 'Lemieux', 'Lessard',
+        'Beaudoin', 'Beaulieu', 'Bédard', 'Bélanger', 'Benoît', 'Bergeron', 'Bernard', 'Bernier', 'Bertrand', 'Bérubé',
+        'Bilodeau', 'Blais', 'Blanchette', 'Boisvert', 'Boivin', 'Bolduc', 'Bouchard', 'Boucher', 'Boudreau',
+        'Caron', 'Carrier', 'Champagne', 'Charbonneau', 'Cloutier', 'Côté', 'Couture', 'Cyr',
+        'Demers', 'Deschênes', 'Desjardins', 'Desrosiers', 'Dion', 'Dionne', 'Drouin', 'Dubé', 'Dubois', 'Dufour', 'Dupuis',
+        'Fillion', 'Fontaine', 'Fortier', 'Fortin', 'Fournier',
+        'Gagné', 'Gagnon', 'Gaudreault', 'Gauthier', 'Giguère', 'Gilbert', 'Gingras', 'Girard', 'Giroux', 'Goulet',
+        'Gosselin', 'Gravel', 'Grenier', 'Guay',
+        'Hamel', 'Harvey', 'Hébert', 'Houle',
+        'Jean', 'Jacques',
+        'Labelle', 'Lachance', 'Lacroix', 'Lalonde', 'Lambert', 'Landry', 'Langlois', 'Lapierre', 'Lapointe', 'Larouche',
+        'Lauzon', 'Lavoie', 'Leblanc', 'Leduc', 'Leclerc', 'Lefebvre', 'Legault', 'Lemay', 'Lemieux', 'Lepage', 'Lessard',
         'Lévesque',
-        'Martel', 'Martin', 'Ménard', 'Mercier', 'Michaud', 'Morin',
-        'Nadeau',
+        'Martel', 'Martin', 'Ménard', 'Mercier', 'Michaud', 'Moreau', 'Morin',
+        'Nadeau', 'Nguyen',
         'Ouellet',
-        'Paquette', 'Parent', 'Pelletier', 'Perreault', 'Perron', 'Plante', 'Poirier', 'Poulin', 'Proulx',
-        'Richard', 'Roy',
+        'Paquette', 'Paradis', 'Parent', 'Pelletier', 'Perreault', 'Perron', 'Picard', 'Plante', 'Poirier', 'Poulin',
+        'Proulx',
+        'Raymond', 'Renaud', 'Richard', 'Rioux', 'Robert', 'Rousseau', 'Roy',
         'Savard', 'Simard', 'St-Pierre',
-        'Therrien', 'Thibault', 'Tremblay', 'Turcotte',
+        'Tardif', 'Tessier', 'Thériault', 'Therrien', 'Thibault', 'Tremblay', 'Trudel', 'Turcotte',
+        'Vachon', 'Vaillancourt', 'Villeneuve'
     );
 }

@@ -6,6 +6,10 @@ class Address extends \Faker\Provider\Address
 {
     protected static $cityPrefix = array('Saint-', 'Sainte-', 'St-', 'Ste-');
 
+    /**
+     * The suffixes come from this list of communities in Québec
+     * http://fr.wikipedia.org/wiki/Liste_des_municipalités_locales_du_Québec
+     */
     protected static $citySuffix = array(
         // Bas-Saint-Laurent
         '-des-Sables', '-sur-Mer', '-des-Neiges', '-des-Sept-Douleurs', '-du-Portage', '-du-Loup', '-des-Lacs', '-de-Lessard',
@@ -15,14 +19,14 @@ class Address extends \Faker\Provider\Address
         // Saguenay–Lac-Saint-Jean
         '-de-Lorette', '-du-Lac-Saint-Jean', '-de-Bourget', '-de-Falardeau', '-les-Plaines', '-de-Sales', '-de-Taillon',
         '-de-Milot', '-du-Nord',
-        // Québec
+        // Québec (Capitale-Nationale)
         '-aux-Coudres', '-des-Anges', '-de-Desmaures', '-les-Neiges', '-de-l\'Île-d\'Orléans', '-de-Valcartier',
         '-de-Portneuf', '-du-Cap-Tourmente', '-des-Carrières', '-des-Caps', '-de-Beaupré', '-de-Laval', '-de-la-Jacques-Cartier',
         '-d\'Auvergne',
         // Mauricie
         '-de-Monteauban', '-du-Mont-Carmel', '-des-Monts', '-de-Maskinongé', '-de-Caxton', '-des-Grès', '-le-Grand',
         '-de-Vincennes', '-du-Parc', '-de-Champlain', '-de-Mékinac', '-de-Prémont', '-de-la-Pérade', '-de-Batiscan',
-        // Estrie - Cantons de l'est
+        // Estrie (Cantons de l'est)
         '-Ouest', '-Est', '-Sud', '-Nord', '-des-Bois', '-de-Woburn', '-de-Brompton', '-de-Bolton', '-de-Windsor',
         '-de-Clifton', '-de-Paquette', '-de-la-Rochelle', '-de-Hatley', '-de-Whitton',
         // Montréal
@@ -36,6 +40,9 @@ class Address extends \Faker\Provider\Address
         '-des-Aulnaies', '-les-Mines', '-de-Lotbinière', '-de-Patton', '-sur-Rivière-du-Sud', '-de-Beauregard', '-de-Watford'
     );
 
+    /**
+     * @example 'Saint-Marc-des-Carrières' or 'Sainte-Monique'
+     */
     protected static $cityFormats = array(
         '{{cityPrefix}}{{firstName}}{{citySuffix}}',
         '{{cityPrefix}}{{firstName}}',
@@ -49,6 +56,9 @@ class Address extends \Faker\Provider\Address
 
     protected static $postcode = array('?#? #?#', '?#?#?#');
 
+    /**
+     * @example 'Avenue Bolduc'
+     */
     protected static $streetNameFormats = array(
         '{{streetSuffix}} {{firstName}}',
         '{{streetSuffix}} {{lastName}}'
@@ -73,6 +83,9 @@ class Address extends \Faker\Provider\Address
         'AB', 'BC', 'MB', 'NB', 'NL', 'NS', 'ON', 'PE', 'QC', 'SK'
     );
 
+    /**
+     * This list is the same as in \Faker\Provider\fr_FR\Address.php
+     */
     protected static $country = array(
         'Afghanistan', 'Afrique du sud', 'Albanie', 'Algérie', 'Allemagne', 'Andorre', 'Angola', 'Anguilla', 'Antarctique', 'Antigua et Barbuda', 'Antilles néerlandaises', 'Arabie saoudite', 'Argentine', 'Arménie', 'Aruba', 'Australie', 'Autriche', 'Azerbaïdjan',
         'Bahamas', 'Bahrain', 'Bangladesh', 'Belgique', 'Belize', 'Benin', 'Bermudes (Les)', 'Bhoutan', 'Biélorussie', 'Bolivie', 'Bosnie-Herzégovine', 'Botswana', 'Bouvet (Îles)', 'Brunei', 'Brésil', 'Bulgarie', 'Burkina Faso', 'Burundi',
