@@ -98,6 +98,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     bs                      // 'e-enable robust architectures'
     company                 // 'Bogan-Treutel'
     companySuffix           // 'and Sons'
+    job                     // 'Carpenter'
 
 ### `Faker\Provider\Payment`
 
@@ -105,6 +106,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     creditCardNumber        // '4485480221084675'
     creditCardExpirationDate // 04/13
     creditCardExpirationDateString // '04/13'
+    creditCardSecurityCode  // 865
     creditCardDetails       // array('MasterCard', '4485480221084675', 'Aleksander Nowak', '04/13')
 
 ### `Faker\Provider\Lorem`
@@ -158,12 +160,18 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 ### `Faker\Provider\Miscellaneous`
 
     boolean($chanceOfGettingTrue = 50) // true
+    base64                  // 'MTAwMDAwMDA='
     md5                     // 'de99a620c50f2990e87144735cd357e7'
     sha1                    // 'f08e7f04ca1a413807ebc47551a40a20a0b4de5c'
     sha256                  // '0061e4c60dac5c1d82db0135a42e00c89ae3a333e7c26485321f24348c7e98a5'
     locale                  // en_UK
     countryCode             // UK
     languageCode            // en
+    currency                // 'Euros (€)'
+    currencySymbol          // '€'
+    currencyName            // 'Euros'
+    unitOfMeasurement       // 'yd'
+
 
 ### `Faker\Provider\Base`
 
@@ -687,6 +695,16 @@ echo $faker->cvr; // "32458723"
 
 // Generates a random P number
 echo $faker->p; // "5398237590"
+
+```
+
+### `Faker\Provider\it_IT\Address`
+
+```php
+<?php
+
+// Generates a random region
+echo $faker->region; // "Puglia"
 
 ```
 

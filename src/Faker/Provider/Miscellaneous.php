@@ -6,7 +6,7 @@ class Miscellaneous extends \Faker\Provider\Base
 {
     protected static $languageCode = array('cn', 'de', 'en', 'es', 'fr', 'it', 'pt', 'ru');
 
-    protected static $countryCode = array('CA', 'CN', 'DE', 'ES', 'FR', 'IE', 'IN', 'IT', 'MX', 'PT', 'RU', 'GB', 'US');
+    protected static $countryCode = array('CA', 'CN', 'DE', 'ES', 'FR', 'IE', 'IN', 'IT', 'MX', 'PT', 'RU', 'GB', 'US', 'BR', 'CZ');
 
     protected static $localeData = array(
         'aa_DJ',  'aa_ER',  'aa_ET',
@@ -90,6 +90,19 @@ class Miscellaneous extends \Faker\Provider\Base
         'yo_NG',  'zh_CN',  'zh_HK',
         'zh_MO',  'zh_SG',  'zh_TW',  'zu_ZA',
     );
+
+    protected static $currency = array(
+        '€' => 'Euros', '$' => 'US Dollar', '£' => 'Pounds Sterling', '¥' => 'Japanese Yen', 'Rp' => 'Indonesia Rupiah',
+        'R$' => 'Brazilian Real', 'Kč' => 'Czech Koruna', 'kr' => 'Danish Krone', 'Ft' => 'Hungarian Forint', '₹' => 'Indian Rupee',
+        '₪' => 'Israeli Shekel', '₩' => 'South Korean Won', 'RM' => 'Malaysian Ringgits', '₱' => 'Philippine Pesos',
+        'zł' => 'Polish Zloty', 'lei' => 'Romanian Leu', 'руб.' => 'Russian Ruble', 'R' => 'South African rand', 'CHF' => 'Swiss Franc',
+        'NT$' => 'Taiwan New Dollars', '฿' => 'Thai Baht', 'TL' => 'Turkish Lira'
+    );
+
+    protected static $unitOfMeasurement = array(
+        'p', 'P/', 'in', 'ft', 'yd', 'mi', 'ftm', 'cb', 'nmi'
+    );
+
     /**
      * Return a boolean, true or false
      *
@@ -99,6 +112,13 @@ class Miscellaneous extends \Faker\Provider\Base
     public static function boolean($chanceOfGettingTrue = 50)
     {
         return mt_rand(1, 100) <= $chanceOfGettingTrue ? true: false;
+    }
+
+    /**
+     * @example 'MTAwMDAwMDA='
+     */
+    public static function base64() {
+        return base64_encode(mt_rand());
     }
 
     /**
@@ -147,5 +167,34 @@ class Miscellaneous extends \Faker\Provider\Base
     public static function languageCode()
     {
         return static::randomElement(static::$languageCode);
+    }
+
+    /**
+     * @example '€'
+     */
+    public static function currencySymbol() {
+        return static::randomKey(static::$currency);
+    }
+
+    /**
+     * @example 'Euros'
+     */
+    public static function currencyName() {
+        return static::randomElement(static::$currency);
+    }
+
+    /**
+     * @example 'Euros (€)'
+     */
+    public static function currency() {
+        $key = static::randomKey(static::$currency);
+        return static::$currency[$key] . ' (' . $key . ')';
+    }
+
+    /**
+     * @example 'yd'
+     */
+    public static function unitOfMeasurement() {
+        return static::randomElement(static::$unitOfMeasurement);
     }
 }

@@ -27,4 +27,11 @@ class Company extends \Faker\Provider\Base
     {
         return static::randomElement(static::$companySuffix);
     }
+
+    /**
+     * @example 'Carpenter'
+     */
+    public static function job() {
+        return static::randomElement(static::$job);
+    }
 }

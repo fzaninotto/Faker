@@ -12,6 +12,8 @@ class Person extends \Faker\Provider\Base
 
     protected static $lastName = array('Doe');
 
+    protected static $job = array('Accountant');
+
     /**
      * @example 'John Doe'
      */
