@@ -10,7 +10,7 @@ class Address extends \Faker\Provider\Address
     protected static $citySuffix = array('টাউন', 'তলা', 'হাট', 'খানা', 'পুর');
 
     protected static $streetNames = array(
-        'বরকত', 'হাজী', 'করিমউদ্দিন', ''
+        'বরকত', 'হাজী', 'করিমউদ্দিন', 'হাজীউদ্দীন'
     );
 
     protected static $streetSuffix = array(
