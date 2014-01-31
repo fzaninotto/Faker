@@ -173,6 +173,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     randomNumber($from, $to) // 39049
     randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL) // 48.8932
     randomLetter            // 'b'
+    randomString($length = null)  // 'bhhwsdxcw'
     randomElement($array = array ('a','b','c')) // 'b'
     numerify($string = '###') // '609'
     lexify($string = '????') // 'wgts'
