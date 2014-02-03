@@ -32,12 +32,12 @@ namespace Faker;
  * @property string bankAccountNumber
  *
  * @property string word
- * @method string words
- * @method string sentence
- * @method string sentences
- * @method string paragraph
- * @method string paragraphs
- * @method string text
+ * @method string words()
+ * @method string sentence()
+ * @method string sentences()
+ * @method string paragraph()
+ * @method string paragraphs()
+ * @method string text()
  *
  * @property string email
  * @property string safeEmail
@@ -69,9 +69,9 @@ namespace Faker;
  * @property int year
  * @property int century
  * @property string timezone
- * @method string date
- * @method string time
- * @method string dateTimeBetween
+ * @method string date()
+ * @method string time()
+ * @method string dateTimeBetween()
  *
  * @property string md5
  * @property string sha1
@@ -79,23 +79,23 @@ namespace Faker;
  * @property string locale
  * @property string countryCode
  * @property string languageCode
- * @method boolean boolean
+ * @method boolean boolean()
  *
  * @property int randomDigit
  * @property int randomDigitNotNull
  * @property string randomLetter
- * @method int randomNumber
- * @method mixed randomKey
- * @method int numberBetween
- * @method float randomFloat
- * @method string randomElement
- * @method string numerify
- * @method string lexify
- * @method string bothify
- * @method string toLower
- * @method string toUpper
- * @method mixed optional
- * @method UniqueGenerator unique
+ * @method int randomNumber()
+ * @method mixed randomKey()
+ * @method int numberBetween()
+ * @method float randomFloat()
+ * @method string randomElement()
+ * @method string numerify()
+ * @method string lexify()
+ * @method string bothify()
+ * @method string toLower()
+ * @method string toUpper()
+ * @method mixed optional()
+ * @method UniqueGenerator unique()
  *
  * @property string userAgent
  * @property string chrome
