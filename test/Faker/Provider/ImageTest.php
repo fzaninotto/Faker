@@ -45,4 +45,17 @@ class ImageTest extends \PHPUnit_Framework_TestCase
             unlink($file);
         }
     }
+
+    public function testCustomOutputPath()
+    {
+        $tempDir = sys_get_temp_dir();
+        $file = Image::image($tempDir, 640, 480, null, '/custom/path/');
+        $realFilePath = $tempDir . DIRECTORY_SEPARATOR . pathinfo($file, PATHINFO_BASENAME);
+        $this->assertFileExists($realFilePath);
+        $this->assertEquals('/custom/path', pathinfo($file, PATHINFO_DIRNAME));
+
+        if (file_exists($realFilePath)) {
+            unlink($realFilePath);
+        }
+    }
 }
