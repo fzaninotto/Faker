@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: lsv
- * Date: 2/7/14
- * Time: 7:00 AM
- */
 
 namespace Faker\Test\Provider;
 

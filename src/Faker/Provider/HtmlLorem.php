@@ -1,18 +1,24 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: lsv
- * Date: 2/7/14
- * Time: 6:05 AM
- */
-
 namespace Faker\Provider;
-
-use Faker\Provider\Base;
 
 class HtmlLorem extends Base
 {
 
+    /**
+     * Generate HTML Loremipsum text see http://loripsum.net/ for example
+     * @example http://loripsum.net/
+     *
+     * @param int $paragraphs       Number of paragraphs
+     * @param int $boldAndItalic    Number of <b> / <i> (random selected)
+     * @param int $links            Number of <a>
+     * @param int $unorderedlist    Number of <ul>
+     * @param int $orderedlist      Number of <ol>
+     * @param int $descriptionlist  Number of <dl> (will always be added to the bottom, and will always increase the paragraphs)
+     * @param int $blockquote       Number of <blockquote>
+     * @param int $code             Number of <code> / <pre> (random selected)
+     * @param int $headers          Number of <h1> / <h2> / <h3> / <h4> / <h5> / <h6> (random selected)
+     * @return string               Return the formatted html
+     */
     static public function lorem(
         $paragraphs = 5,
         $boldAndItalic = 0,
