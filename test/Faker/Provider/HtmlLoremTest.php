@@ -74,7 +74,7 @@ class HtmlLoremTest extends \PHPUnit_Framework_TestCase
     private function countElements($text, $tags)
     {
         $preg = '/(<(' . implode('|', $tags) . ')(.*?)>)/';
-        return preg_match_all($preg, $text);
+        return preg_match_all($preg, $text, $matches);
     }
 
 } 
