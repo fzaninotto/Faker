@@ -67,7 +67,7 @@ class Lorem extends \Faker\Provider\Base
             $words []= static::word();
         }
 
-        return $asText ? join(' ', $words) : $words;
+        return $asText ? implode(' ', $words) : $words;
     }
 
     /**
@@ -91,7 +91,7 @@ class Lorem extends \Faker\Provider\Base
         $words = static::words($nbWords);
         $words[0] = ucwords($words[0]);
 
-        return join($words, ' ') . '.';
+        return implode($words, ' ') . '.';
     }
 
     /**
@@ -109,7 +109,7 @@ class Lorem extends \Faker\Provider\Base
             $sentences []= static::sentence();
         }
 
-        return $asText ? join(' ', $sentences) : $sentences;
+        return $asText ? implode(' ', $sentences) : $sentences;
     }
 
     /**
@@ -130,7 +130,7 @@ class Lorem extends \Faker\Provider\Base
             $nbSentences = self::randomizeNbElements($nbSentences);
         }
 
-        return join(static::sentences($nbSentences), ' ');
+        return implode(static::sentences($nbSentences), ' ');
     }
 
     /**
@@ -148,7 +148,7 @@ class Lorem extends \Faker\Provider\Base
             $paragraphs []= static::paragraph();
         }
 
-        return $asText ? join("\n\n", $paragraphs) : $paragraphs;
+        return $asText ? implode("\n\n", $paragraphs) : $paragraphs;
     }
 
     /**
@@ -204,7 +204,7 @@ class Lorem extends \Faker\Provider\Base
             }
         }
 
-        return join($text, '');
+        return implode($text, '');
     }
 
     protected static function randomizeNbElements($nbElements)

@@ -36,10 +36,10 @@ class Documentor
                     }
                     $parameters []= $parameter;
                 }
-                $parameters = $parameters ? '('. join(', ', $parameters) . ')' : '';
+                $parameters = $parameters ? '('. implode(', ', $parameters) . ')' : '';
                 $example = $this->generator->format($methodName);
                 if (is_array($example)) {
-                    $example = "array('". join("', '", $example) . "')";
+                    $example = "array('". implode("', '", $example) . "')";
                 } elseif ($example instanceof \DateTime) {
                     $example = "DateTime('" . $example->format('Y-m-d H:i:s') . "')";
                 } else {

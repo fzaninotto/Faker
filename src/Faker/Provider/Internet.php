@@ -144,6 +144,6 @@ class Internet extends \Faker\Provider\Base
             $res []= dechex(mt_rand(0, "65535"));
         }
 
-        return join(':', $res);
+        return implode(':', $res);
     }
 }
