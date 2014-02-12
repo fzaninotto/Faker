@@ -26,12 +26,19 @@ class Person extends \Faker\Provider\Person
         'খান', 'শেখ', 'শিকদার', 'আলী', 'তাসনীম', 'তাবাসসুম'
     );
 
-    private static $prefix = array('মি.', 'মিসেস. ', 'মিস.');
+    private static $prefix = array('মি.', 'মিসেস.', 'মিস.', 'ড.' , 'ডাঃ');
+    
+    private static $suffix = array('পি.এইচ.ডি', 'এম.বি.বি.এস' , 'বি.ডি.এস');
 
 
     public static function prefix()
     {
         return static::randomElement(static::$prefix);
+    }
+    
+    public static function suffix()
+    {
+        return static::randomElement(static::$suffix);
     }
 
 }
