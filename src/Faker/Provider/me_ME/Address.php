@@ -7,7 +7,7 @@ class Address extends \Faker\Provider\Address
     protected static $postcode = array('#####');
 
     protected static $streetPrefix = array(
-        'Bulevar',
+        '',
     );
 
     protected static $street = array(
