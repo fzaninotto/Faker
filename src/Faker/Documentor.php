@@ -42,6 +42,8 @@ class Documentor
                     $example = "array('". join("', '", $example) . "')";
                 } elseif ($example instanceof \DateTime) {
                     $example = "DateTime('" . $example->format('Y-m-d H:i:s') . "')";
+                } elseif ($example instanceof Generator || $example instanceof UniqueGenerator) { // modifier
+                    $example = '';
                 } else {
                     $example = var_export($example, true);
                 }
