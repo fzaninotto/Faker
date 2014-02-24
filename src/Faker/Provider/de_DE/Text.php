@@ -2041,5 +2041,5 @@ EOT;
     including how to make donations to the Project Gutenberg Literary
     Archive Foundation, how to help produce our new eBooks, and how to
     subscribe to our email newsletter to hear about new eBooks.
-
+    */
 }
