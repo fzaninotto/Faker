@@ -124,6 +124,26 @@ class Base
     }
 
     /**
+     * Returns a random string of the specified length.
+     *
+     * @param  integer $length The wanted length for the string.
+     * @return string
+     */
+    public static function randomString($length = 0)
+    {
+        if (null === $length) {
+            $length = static::randomDigit();
+        }
+
+        $string = '';
+        for ($i = 0; $i != $length; $i++) {
+            $string .= chr(mt_rand(97, 122));
+        }
+
+        return $string;
+    }
+
+    /**
      * Returns a random element from a passed array
      *
      * @param  array $array
