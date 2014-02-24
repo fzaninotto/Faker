@@ -190,7 +190,8 @@ class Base
 
     /**
      * Converts string to lowercase.
-     * Uses mb_string extension if available
+     * Uses mb_string extension if available.
+     *
      * @param  string $string String that should be converted to lowercase
      * @return string
      */
@@ -201,7 +202,8 @@ class Base
 
     /**
      * Converts string to uppercase.
-     * Uses mb_string extension if available
+     * Uses mb_string extension if available.
+     *
      * @param  string $string String that should be converted to uppercase
      * @return string
      */
@@ -211,9 +213,10 @@ class Base
     }
 
     /**
-     * Chainable method for making any formatter optional
-     * @param float $weight Set the percentage that the formatter is empty.
-     *                      "0" would always return null, "1" would always return the formatter
+     * Chainable method for making any formatter optional.
+     *
+     * @param float $weight Set the probability of receiving a null value.
+     *                      "0" will always return null, "1" will always return the generator.
      * @return mixed|null
      */
     public function optional($weight = 0.5)

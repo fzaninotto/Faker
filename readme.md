@@ -256,10 +256,10 @@ for ($i=0; $i < 10; $i++) {
 }
 print_r($values); // [1, 4, null, 9, 5, null, null, 4, 6, null]
 
-// optional takes a weight argument to make the null occurrence impossible (value 0) or systematic (value 1)
-$faker->optional($weight = 0.1)->randomDigit; // 10% chance to get null
-$faker->optional($weight = 0.9)->randomDigit; // 90% chance to get null
-// the default $weight value is 0.5
+// optional() accepts a weight argument to specify the probability of receiving a NULL value.
+// 0 will always return NULL; 1 will always return the provider. Default weight is 0.5.
+$faker->optional($weight = 0.1)->randomDigit; // 90% chance of NULL
+$faker->optional($weight = 0.9)->randomDigit; // 10% chance of NULL
 ```
 
 ## Localization
