@@ -37,7 +37,7 @@ class Image extends Base
      *
      * @example '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
      */
-    public static function image($dir, $width = 640, $height = 480, $category = null)
+    public static function image($dir = '/tmp', $width = 640, $height = 480, $category = null)
     {
         // Validate directory path
         if (!is_dir($dir) || !is_writable($dir)) {
