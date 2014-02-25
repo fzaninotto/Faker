@@ -31,6 +31,12 @@ namespace Faker;
  * @property string creditCardDetails
  * @property string bankAccountNumber
  *
+ * @property string currency
+ * @property string price
+ * @property string manufacturer
+ * @property string category
+ * @property string product
+ *
  * @property string word
  * @method string words()
  * @method string sentence()

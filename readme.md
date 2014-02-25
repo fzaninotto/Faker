@@ -221,6 +221,14 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     imageUrl($width, $height)   // 'http://lorempixel.com/800/600/'
     imageUrl($width, $height, $category) // 'http://lorempixel.com/800/600/person/'
 
+### `Faker\Provider\Ecommerce`
+
+    currency               // 'USD'
+    price                  // '$1234,00'
+    manufacturer           // 'Samsung'
+    category               // 'Tablet'
+    product                // 'White Tablet'
+
 ## Unique and Optional modifiers
 
 Faker provides two special providers, `unique()` and `optional()`, to be called before any provider. `optional()` can be useful for seeding non-required fields, like a mobile telephone number ; `unique()` is required to populate fields that cannot accept twice the same value, like primary identifiers.
