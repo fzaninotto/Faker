@@ -8,8 +8,29 @@ class Company extends \Faker\Provider\Company
         '{{companyName}} {{companyType}}'
     );
 
+    /**
+     * Source: extracted from http://www.crps.me/index.php/predraga
+     */
     protected static $names = array(
-        'FOND ZAJEDNIČKOG ULAGANJA MONETA', 'INDUSTRIAIMPEX A.D.', 'GORNJI IBAR A.D.', 'GP RADNIK BETON', 'LUTRIJA CRNE GORE', 'OSIGURAVAJUĆE DRUŠTVO SWISS OSIGURANJE', 'LOVĆEN PODGORICA', 'PROGAS PODGORICA', 'DUVANSKI KOMBINAT, PODGORICA', 'DUKLJA-PEKARA', 'ŽELJEZNICA CRNE GORE', 'BUSINESSMONTENEGRO PODGORICA', 'ELASTIK-PLASTIKA AD PODGORICA', 'MLJEKARA', 'IZDAVAČKO-PROMETNO DRUŠTVO LJETOPIS', 'ATLAS BANKA', 'DRUŠTVO ZA UPRAVLJANJE INVESTICIONIM FONDOM ATLAS MONT', 'INPEK', 'PODGORICAEKSPRES', 'EXPORT-IMPORT SERVISIMPORT SI', 'INTOURS', 'MORAČA PODGORICA', 'TEHNOMARKETI', 'CRNAGORAPUT', 'CENTRALNA DEPOZITARNA AGENCIJA ', 'MORAČA SA P.O.', 'CRNOGORSKI TELEKOM', 'LOVĆENINVEST PODGORICA', 'EUROMARKET BANKA NLB GRUPA ', 'AUTOREMONT OSMANAGIĆ', 'PRVA BANKA CRNE GORE PODGORICA', 'DOCLEA EXPRESS PODGORICA', 'CRNAGORADRVO', 'DUKLJA PODGORICA', 'SOCIETE GENERALE BANKA MONTENEGRO AD', '13 JUL - PLANTAŽE ', 'NEX MONTENEGRO', 'RIBNICA COMMERCE', 'INSTITUT ZA ŠUMARSTVO ', 'HOTEL RAVNJAK', 'GRAĐEVINAR PODGORICA', 'VELIMPORT PODGORICA', 'MONETA A.D.', 'STADION', 'MESOPROMET PODGORICA', 'CRNOGORSKA KOMERCIJALNA BANKA ', 'ERSTE BANK AD PODGORICA', 'INVEST BANKA MONTENEGRO', 'TRGOPRESS', '19 DECEMBAR PODGORICA', 'TPC RAŽNATOVIĆ', 'LOVĆEN-RE', 'MARGOMARKET PODGORICA', 'ŠUMARSKO PREDUZEĆE ', 'MONTENEGROBERZA AKCIONARSKO DRUŠTVO', 'AGROKOMBINAT 13 JUL', 'MAŠINOPROMET', 'VELEPROMET PODGORICA', 'SI PROMET A.D.', 'VOLUMENTRADE PODGORICA', 'BOŽUR-VELEXPORT', 'UNIFARM ', 'DRVOIMPEX', 'CENTROKOŽA-PRODUKT ', 'GROSS MARKET PODGORICA', 'AGROKOMBINAT 13 JUL', 'CG BROKER', 'ZETATRANS', 'UTIP CRNA GORA', 'PAPIR', 'H.T.P.VELIKA PLAŽA A.D', 'CMC AD PODGORICA', 'TREND A.D.', 'NOVOGRADNJA AD PODGORICA', 'MAŠINOPROMET-COMMERCE', 'CEMEX MONTENEGRO', 'DRVOIMPEX', 'DRVOIMPEX-BAMS', 'DRVOIMPEX-MOBILE', 'DRVOIMPEX-GM PODGORICA', 'PROMET', 'DRVOIMPEX-FINCOM', 'VATROSTALNA PODGORICA', 'SIGMOBIL', 'GORICAPROMET PODGORICA', 'VELETRGOVINA-KOLAŠIN', 'DRVOIMPEX', 'HIGIJENA PODGORICA', 'SOLAR 80 - ELASTIK', 'DUKLJA - ZORA', 'EXAL', 'HIPOTEKARNA BANKA', 'SAVA MONTENEGRO PODGORICA'
+        '13 Jul - Plantaže ', '19 Decembar Podgorica', 
+        'Agrokombinat 13 Jul', 'Agrokombinat 13 Jul', 'Atlas Banka', 'Autoremont Osmanagić', 
+        'Božur-Velexport', 'Businessmontenegro Podgorica', 
+        'Cemex Montenegro', 'Centralna Depozitarna Agencija ', 'Centrokoža-Produkt ', 'CG Broker', 'CMC AD Podgorica', 'Crnagoradrvo', 'Crnagoraput', 'Crnogorska Komercijalna Banka ', 'Crnogorski Telekom', 'Doclea Express Podgorica', 'Društvo Za Upravljanje Investicionim Fondom Atlas Mont', 'Drvoimpex', 'Drvoimpex', 'Drvoimpex', 'Drvoimpex-Bams', 'Drvoimpex-Fincom', 'Drvoimpex-Gm Podgorica', 'Drvoimpex-Mobile', 'Duklja - Zora', 'Duklja Podgorica', 'Duklja-Pekara', 'Duvanski Kombinat, Podgorica', 
+        'Elastik-Plastika Ad Podgorica', 'Erste Bank Ad Podgorica', 'Euromarket Banka Nlb Grupa ', 'Exal', 'Export-Import Servisimport Si', 
+        'Fond Zajedničkog Ulaganja Moneta', 'Goricapromet Podgorica', 'Gornji Ibar A.D.', 'Gp Radnik Beton', 'Građevinar Podgorica', 'Gross Market Podgorica', 
+        'H.T.P.Velika Plaža A.D', 'Higijena Podgorica', 'Hipotekarna Banka', 'Hotel Ravnjak', 
+        'Industriaimpex A.D.', 'Inpek', 'Institut Za Šumarstvo ', 'Intours', 'Invest Banka Montenegro', 'Izdavačko-Prometno Društvo Ljetopis', 
+        'Lovćen Podgorica', 'Lovćen-Re', 'Lovćeninvest Podgorica', 'Lutrija Crne Gore', 
+        'Margomarket Podgorica', 'Mašinopromet', 'Mašinopromet-Commerce', 'Mesopromet Podgorica', 'Mljekara', 'Moneta A.D.', 'Montenegroberza Akcionarsko Društvo', 'Morača Podgorica', 'Morača Sa P.O.', 
+        'Nex Montenegro', 'Novogradnja Ad Podgorica', 
+        'Osiguravajuće Društvo Swiss Osiguranje', 
+        'Papir', 'Podgoricaekspres', 'Progas Podgorica', 'Promet', 'Prva Banka Crne Gore Podgorica', 
+        'Ribnica Commerce', 
+        'Sava Montenegro Podgorica', 'Si Promet A.D.', 'Sigmobil', 'Societe Generale Banka Montenegro Ad', 'Solar 80 - Elastik', 'Stadion', 'Šumarsko Preduzeće ', 
+        'Tehnomarketi', 'Tpc Ražnatović', 'Trend A.D.', 'Trgopress', 
+        'Unifarm ', 'Utip Crna Gora', 
+        'Vatrostalna Podgorica', 'Velepromet Podgorica', 'Veletrgovina-Kolašin', 'Velimport Podgorica', 'Volumentrade Podgorica', 
+        'Željeznica Crne Gore', 'Zetatrans'
     );
 
     protected static $types = array(
