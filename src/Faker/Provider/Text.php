@@ -74,7 +74,7 @@ abstract class Text extends \Faker\Provider\Base
         if (!isset($this->consecutiveWords[$indexSize])) {
             $parts = $this->getExplodedText();
             $words = array();
-            $index = [];
+            $index = array();
             for ($i = 0; $i < $indexSize; $i++) {
                 $index[] = array_shift($parts);
             }
