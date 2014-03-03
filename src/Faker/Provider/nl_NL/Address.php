@@ -15,7 +15,7 @@ class Address extends \Faker\Provider\Address
     protected static $cityFormats = array('{{cityName}}');
 
     protected static $addressFormats = array(
-        '{{streetAddress}}\n {{postcode}} {{city}}',
+        '{{streetAddress}}\n{{postcode}} {{city}}',
     );
 
     protected static $streetSuffix = array(
