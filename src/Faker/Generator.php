@@ -39,6 +39,8 @@ namespace Faker;
  * @method string paragraphs()
  * @method string text()
  *
+ * @method string realText()
+ *
  * @property string email
  * @property string safeEmail
  * @property string freeEmail
