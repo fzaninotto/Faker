@@ -99,7 +99,7 @@ abstract class Text extends \Faker\Provider\Base
     protected function getExplodedText()
     {
         if ($this->explodedText === null) {
-            $this->explodedText = explode(' ', preg_replace('/\s+/', ' ', static::$baseText));
+            $this->explodedText = explode(' ', preg_replace('/\s+/u', ' ', static::$baseText));
         }
 
         return $this->explodedText;
