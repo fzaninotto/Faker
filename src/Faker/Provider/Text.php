@@ -10,14 +10,17 @@ abstract class Text extends \Faker\Provider\Base
 
     /**
      * Generate a text string by the Markov chain algorithm.
+     *
      * Depending on the $maxNbChars, returns a random valid looking text. The algorithm
      * generates a weighted table with the specified number of words as the index and the
      * possible following words as the value.
      *
-     * @example 'Lorem ipsum dolor sit amet'
+     * @example 'Alice, swallowing down her flamingo, and began by taking the little golden key'
      * @param  integer $maxNbChars Maximum number of characters the text should contain (minimum: 10)
-     * @param  integer $indexSize Determines how many words are considered for the generation of the next word. The minimum is 1, and it produces the higher level of randomness, although the
-     *                            generated text usually doesn't make sense. Higher index size (up to 10) produce more correct text, at the price of less randomness.
+     * @param  integer $indexSize Determines how many words are considered for the generation of the next word.
+     *                            The minimum is 1, and it produces the higher level of randomness, although the
+     *                            generated text usually doesn't make sense. Higher index size (up to 10) 
+     *                            produce more correct text, at the price of less randomness.
      * @return string
      */
     public function realText($maxNbChars = 200, $indexSize = 2)
@@ -34,46 +37,27 @@ abstract class Text extends \Faker\Provider\Base
             throw new \InvalidArgumentException('indexSize must be at most 10');
         }
 
-        if (!isset($this->consecutiveWords[$indexSize])) {
-            $parts = $this->getExplodedText();
-
-            // generate look up table
-            $table = array();
-            for ($i = $indexSize, $max = count($parts) - 1; $i < $max; $i++) {
-                // calculate index
-                $index = implode(' ', array_slice($parts, $i - $indexSize, $indexSize));
-                if (!isset($table[$index])) $table[$index] = array();
-
-                // value: next part
-                $table[$index][] = $parts[$i];
-            }
-
-            // cache look up table for performance
-            $this->consecutiveWords[$indexSize] = $table;
-        }
-
-        $table = $this->consecutiveWords[$indexSize];
+        $words = $this->getConsecutiveWords($indexSize);
         $result = array();
         $resultLength = 0;
-
         // take a random starting point
-        $next = static::randomKey($table);
-        while ($resultLength < $maxNbChars && isset($table[$next])) {
-            // fetch a random element to append
-            $append = static::randomElement($table[$next]);
+        $next = static::randomKey($words);
+        while ($resultLength < $maxNbChars && isset($words[$next])) {
+            // fetch a random word to append
+            $word = static::randomElement($words[$next]);
 
             // calculate next index
-            $next = explode(' ', $next);
-            $next[] = $append;
-            array_shift($next);
-            $next = implode(' ', $next);
+            $currentWords = explode(' ', $next);
+            $currentWords[] = $word;
+            array_shift($currentWords);
+            $next = implode(' ', $currentWords);
 
             // ensure text starts with an uppercase letter
-            if ($resultLength == 0 && !preg_match('/^\p{Lu}/u', $append)) continue;
+            if ($resultLength == 0 && !preg_match('/^\p{Lu}/u', $word)) continue;
 
             // append the element
-            $result[] = $append;
-            $resultLength += strlen($append);
+            $result[] = $word;
+            $resultLength += strlen($word) + 1;
         }
 
         // remove the element that caused the text to overflow
@@ -85,11 +69,37 @@ abstract class Text extends \Faker\Provider\Base
         return $result.'.';
     }
 
+    protected function getConsecutiveWords($indexSize)
+    {
+        if (!isset($this->consecutiveWords[$indexSize])) {
+            $parts = $this->getExplodedText();
+            $words = array();
+            $index = [];
+            for ($i = 0; $i < $indexSize; $i++) {
+                $index[] = array_shift($parts);
+            }
+            $size = count($parts);
+            for ($i = 0, $count = count($parts); $i < $count; $i++) {
+                $stringIndex = implode(' ', $index);
+                if (!isset($words[$stringIndex])) {
+                    $words[$stringIndex] = array();
+                }
+                $word = $parts[$i];
+                $words[$stringIndex][] = $word;
+                array_shift($index);
+                $index[] = $word;
+            }
+            // cache look up words for performance
+            $this->consecutiveWords[$indexSize] = $words;
+        }
+
+        return $this->consecutiveWords[$indexSize];
+    }
+
     protected function getExplodedText()
     {
         if ($this->explodedText === null) {
-            $this->explodedText = static::$baseText;
-            $this->explodedText = explode(' ', preg_replace('/\s+/', ' ', $this->explodedText));
+            $this->explodedText = explode(' ', preg_replace('/\s+/', ' ', static::$baseText));
         }
 
         return $this->explodedText;
