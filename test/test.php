@@ -1,7 +1,7 @@
 <?php
 require __DIR__ .'/../vendor/autoload.php';
 
-$faker = Faker\Factory::create('cs_CZ');
+$faker = Faker\Factory::create();
 $faker->seed(5);
 
 echo '<?xml version="1.0" encoding="UTF-8"?>';
@@ -21,7 +21,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
     </address>
     <company name="<?php echo $faker->company ?>" catchPhrase="<?php echo $faker->catchPhrase ?>">
 <?php if ($faker->boolean(33)): ?>
-      <offer><?php echo $faker->realText ?></offer>
+      <offer><?php echo $faker->bs ?></offer>
 <?php endif; ?>
 <?php if ($faker->boolean(33)): ?>
       <director name="<?php echo $faker->name ?>" />
