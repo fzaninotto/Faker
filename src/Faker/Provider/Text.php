@@ -2,16 +2,11 @@
 
 namespace Faker\Provider;
 
-class Text extends \Faker\Provider\Base
+abstract class Text extends \Faker\Provider\Base
 {
-    protected static $baseText = <<<'EOT'
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-EOT;
-    protected static $normalizedText = null;
-    protected static $tables = array();
+    protected static $baseText = '';
+    protected $explodedText = null;
+    protected $consecutiveWords = array();
 
     /**
      * Generate a text string by the Markov chain algorithm.
@@ -25,7 +20,7 @@ EOT;
      *                            generated text usually doesn't make sense. Higher index size (up to 10) produce more correct text, at the price of less randomness.
      * @return string
      */
-    public static function realText($maxNbChars = 200, $indexSize = 2)
+    public function realText($maxNbChars = 200, $indexSize = 2)
     {
         if ($maxNbChars < 10) {
             throw new \InvalidArgumentException('maxNbChars must be at least 10');
@@ -39,11 +34,8 @@ EOT;
             throw new \InvalidArgumentException('indexSize must be at most 10');
         }
 
-        if (!isset(static::$tables[$indexSize])) {
-            $text = static::getNormalizedText();
-
-            // split into look up parts
-            $parts = preg_split('/ /u', $text, -1, PREG_SPLIT_NO_EMPTY);
+        if (!isset($this->consecutiveWords[$indexSize])) {
+            $parts = $this->getExplodedText();
 
             // generate look up table
             $table = array();
@@ -57,10 +49,10 @@ EOT;
             }
 
             // cache look up table for performance
-            static::$tables[$indexSize] = $table;
+            $this->consecutiveWords[$indexSize] = $table;
         }
 
-        $table = static::$tables[$indexSize];
+        $table = $this->consecutiveWords[$indexSize];
         $result = array();
         $resultLength = 0;
 
@@ -71,7 +63,7 @@ EOT;
             $append = static::randomElement($table[$next]);
 
             // calculate next index
-            $next = preg_split('/ /u', $next, -1, PREG_SPLIT_NO_EMPTY);
+            $next = explode(' ', $next);
             $next[] = $append;
             array_shift($next);
             $next = implode(' ', $next);
@@ -93,13 +85,13 @@ EOT;
         return $result.'.';
     }
 
-    protected static function getNormalizedText()
+    protected function getExplodedText()
     {
-        if (static::$normalizedText === null) {
-            static::$normalizedText = static::$baseText;
-            static::$normalizedText = preg_replace('/\s+/', ' ', static::$normalizedText);
+        if ($this->explodedText === null) {
+            $this->explodedText = static::$baseText;
+            $this->explodedText = explode(' ', preg_replace('/\s+/', ' ', $this->explodedText));
         }
 
-        return static::$normalizedText;
+        return $this->explodedText;
     }
 }
