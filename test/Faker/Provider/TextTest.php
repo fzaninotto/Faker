@@ -24,7 +24,10 @@ class TextTest extends \PHPUnit_Framework_TestCase
      */
     public function testTextMaxIndex()
     {
-        Text::realText(200, 11);
+	$generator = new Generator();
+        $generator->addProvider(new Text($generator));
+        $generator->seed(0);
+	$generator->realText(200, 11);
     }
 
     /**
@@ -32,7 +35,10 @@ class TextTest extends \PHPUnit_Framework_TestCase
      */
     public function testTextMinIndex()
     {
-        Text::realText(200, 0);
+	$generator = new Generator();
+        $generator->addProvider(new Text($generator));
+        $generator->seed(0);
+        $generator->realText(200, 0);
     }
 
     /**
@@ -40,6 +46,9 @@ class TextTest extends \PHPUnit_Framework_TestCase
      */
     public function testTextMinLength()
     {
-        Text::realText(9);
+	$generator = new Generator();
+        $generator->addProvider(new Text($generator));
+        $generator->seed(0);
+        $generator->realText(9);
     }
 }
