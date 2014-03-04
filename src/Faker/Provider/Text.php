@@ -19,7 +19,7 @@ abstract class Text extends \Faker\Provider\Base
      * @param  integer $maxNbChars Maximum number of characters the text should contain (minimum: 10)
      * @param  integer $indexSize Determines how many words are considered for the generation of the next word.
      *                            The minimum is 1, and it produces the higher level of randomness, although the
-     *                            generated text usually doesn't make sense. Higher index size (up to 10) 
+     *                            generated text usually doesn't make sense. Higher index sizes (up to 5)
      *                            produce more correct text, at the price of less randomness.
      * @return string
      */
@@ -34,7 +34,7 @@ abstract class Text extends \Faker\Provider\Base
         }
 
         if ($indexSize > 10) {
-            throw new \InvalidArgumentException('indexSize must be at most 10');
+            throw new \InvalidArgumentException('indexSize must be at most 5');
         }
 
         $words = $this->getConsecutiveWords($indexSize);
