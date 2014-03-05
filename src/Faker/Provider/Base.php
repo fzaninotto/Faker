@@ -134,24 +134,29 @@ class Base
      */
     public static function randomElements(array $array = array('a', 'b', 'c', 'd', 'e', 'f'), $count = 3)
     {
-        if (count($array) < $count) {
+        $allKeys = array_keys($array);
+        $numKeys = count($allKeys);
+
+        if ($numKeys < $count) {
             throw new \LengthException("Cannot get $count elements, only " . count($array) . ' in array');
         }
-        $keys = array_keys($array);
-        $highKey = count($keys) - 1;
+
+        $highKey = $numKeys - 1;
+        $keys = $elements = array();
         $numElements = 0;
 
-        $elements = array();
         while ($numElements < $count) {
-            $key = $keys[mt_rand(0, $highKey)];
-            if (isset($elements[$key])) {
+            $key = $allKeys[mt_rand(0, $highKey)];
+            if (isset($keys[$key])) {
                 continue;
             }
-            $elements[$key] = $array[$key];
+
+            $keys[$key] = true;
+            $elements[] = $array[$key];
             $numElements++;
         }
 
-        return array_values($elements);
+        return $elements;
     }
 
     /**
