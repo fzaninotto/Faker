@@ -33,7 +33,7 @@ abstract class Text extends \Faker\Provider\Base
             throw new \InvalidArgumentException('indexSize must be at least 1');
         }
 
-        if ($indexSize > 10) {
+        if ($indexSize > 5) {
             throw new \InvalidArgumentException('indexSize must be at most 5');
         }
 
