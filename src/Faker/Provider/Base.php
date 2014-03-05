@@ -137,10 +137,18 @@ class Base
         if (count($array) < $count) {
             throw new \LengthException("Cannot get $count elements, only " . count($array) . ' in array');
         }
+        $keys = array_keys($array);
+        $highKey = count($keys) - 1;
+        $numElements = 0;
+
         $elements = array();
-        while (count($elements) < $count) {
-            $key = static::randomKey($array);
+        while ($numElements < $count) {
+            $key = $keys[mt_rand(0, $highKey)];
+            if (isset($elements[$key])) {
+                continue;
+            }
             $elements[$key] = $array[$key];
+            $numElements++;
         }
 
         return array_values($elements);
