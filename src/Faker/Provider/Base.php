@@ -124,6 +124,29 @@ class Base
     }
 
     /**
+     * Returns random elements from a provided array
+     *
+     * @param  array   $array Array to take elements from. Defaults to a-f
+     * @param  integer $count Number of elements to take.
+     * @throws \LengthException When requesting more elements than provided
+     *
+     * @return array   New array with $count elements from $array
+     */
+    public static function randomElements(array $array = array('a', 'b', 'c', 'd', 'e', 'f'), $count = 3)
+    {
+        if (count($array) < $count) {
+            throw new \LengthException("Cannot get $count elements, only " . count($array) . ' in array');
+        }
+        $elements = array();
+        while (count($elements) < $count) {
+            $key = static::randomKey($array);
+            $elements[$key] = $array[$key];
+        }
+
+        return array_values($elements);
+    }
+
+    /**
      * Returns a random element from a passed array
      *
      * @param  array $array
