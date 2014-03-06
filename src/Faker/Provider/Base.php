@@ -132,13 +132,13 @@ class Base
      *
      * @return array   New array with $count elements from $array
      */
-    public static function randomElements(array $array = array('a', 'b', 'c', 'd', 'e', 'f'), $count = 3)
+    public static function randomElements(array $array = array('a', 'b', 'c'), $count = 1)
     {
         $allKeys = array_keys($array);
         $numKeys = count($allKeys);
 
         if ($numKeys < $count) {
-            throw new \LengthException("Cannot get $count elements, only " . count($array) . ' in array');
+            throw new \LengthException(sprintf('Cannot get %d elements, only %d in array', $count, $numKeys));
         }
 
         $highKey = $numKeys - 1;
@@ -146,13 +146,13 @@ class Base
         $numElements = 0;
 
         while ($numElements < $count) {
-            $key = $allKeys[mt_rand(0, $highKey)];
-            if (isset($keys[$key])) {
+            $num = mt_rand(0, $highKey);
+            if (isset($keys[$num])) {
                 continue;
             }
 
-            $keys[$key] = true;
-            $elements[] = $array[$key];
+            $keys[$num] = true;
+            $elements[] = $array[$allKeys[$num]];
             $numElements++;
         }
 
