@@ -84,6 +84,11 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(strpos($lowercaseLetters, BaseProvider::randomLetter()) !== false);
     }
 
+    public function testRandomElementReturnsNullWhenArrayEmpty()
+    {
+        $this->assertNull(BaseProvider::randomElement(array()));
+    }
+
     public function testRandomElementReturnsElementFromArray()
     {
         $elements = array('23', 'e', 32, '#');

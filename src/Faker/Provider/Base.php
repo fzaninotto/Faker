@@ -167,7 +167,11 @@ class Base
      */
     public static function randomElement($array = array('a', 'b', 'c'))
     {
-        return $array ? $array[self::randomKey($array)] : null;
+        if (!$array) {
+            return null;
+        }
+        $elements = static::randomElements($array, 1);
+        return $elements[0];
     }
 
     /**
