@@ -3,6 +3,7 @@
 namespace Faker\ORM\Mandango;
 
 use Mandango\Mandango;
+use Faker\Provider\Base;
 
 /**
  * Service class for populating a table through a Mandango ActiveRecord class.
@@ -71,7 +72,7 @@ class EntityPopulator
 
             $formatters[$referenceName] = function ($insertedEntities) use ($referenceClass) {
                 if (isset($insertedEntities[$referenceClass])) {
-                    return $insertedEntities[$referenceClass][array_rand($insertedEntities[$referenceClass])];
+                    return Base::randomElement($insertedEntities[$referenceClass]);
                 }
             };
         }
