@@ -87,9 +87,9 @@ class UserAgent extends \Faker\Provider\Base
         );
 
         $platforms = array(
-            '(' . static::windowsPlatformToken() . '; ' . static::randomElement(static::$lang) . '; rv:1.9.' . mt_rand(0, 2) . '.20) ' . $ver[array_rand($ver, 1)],
-            '(' . static::linuxPlatformToken() . '; rv:' . mt_rand(5, 7) . '.0) ' . $ver[array_rand($ver, 1)],
-            '(' . static::macPlatformToken() . ' rv:' . mt_rand(2, 6) . '.0) ' . $ver[array_rand($ver, 1)]
+            '(' . static::windowsPlatformToken() . '; ' . static::randomElement(static::$lang) . '; rv:1.9.' . mt_rand(0, 2) . '.20) ' . static::randomElement($ver),
+            '(' . static::linuxPlatformToken() . '; rv:' . mt_rand(5, 7) . '.0) ' . static::randomElement($ver),
+            '(' . static::macPlatformToken() . ' rv:' . mt_rand(2, 6) . '.0) ' . static::randomElement($ver)
         );
 
         return "Mozilla/5.0 " . static::randomElement($platforms);
