@@ -5,44 +5,101 @@ namespace Faker\Provider\pl_PL;
 class Person extends \Faker\Provider\Person
 {
     protected static $formats = array(
-        '{{firstName}} {{lastName}}',
-        '{{firstName}} {{lastName}}',
-        '{{firstName}} {{lastName}}',
-        '{{firstName}} {{lastName}}',
-        '{{firstName}} {{lastName}}',
-        '{{prefix}} {{firstName}} {{lastName}}',
-        '{{firstName}} {{lastName}}',
-        '{{prefix}} {{prefix}} {{firstName}} {{lastName}}',
+        '{{firstNameMale}} {{lastNameMale}}',
+        '{{firstNameMale}} {{lastNameMale}}',
+        '{{firstNameMale}} {{lastNameMale}}',
+        '{{firstNameMale}} {{lastNameMale}}',
+        '{{firstNameFemale}} {{lastNameFemale}}',
+        '{{firstNameFemale}} {{lastNameFemale}}',
+        '{{firstNameFemale}} {{lastNameFemale}}',
+        '{{firstNameFemale}} {{lastNameFemale}}',
+        '{{prefix}} {{firstNameMale}} {{lastNameMale}}',
+        '{{prefix}} {{firstNameFemale}} {{lastNameFemale}}',
     );
 
-    protected static $firstName = array(
-        'Adam', 'Adrian', 'Agata', 'Alan', 'Aleksander', 'Aleksandra', 'Alicja', 'Amelia', 'Anna', 'Antoni', 'Antonina',
-        'Błażej', 'Barbara', 'Bartłomiej', 'Bartosz', 'Blanka', 'Damian', 'Daniel', 'Daria', 'Dawid', 'Dominik', 'Dominika',
-        'Emilia', 'Fabian', 'Filip', 'Franciszek', 'Gabriel', 'Gabriela', 'Hanna', 'Hubert', 'Iga', 'Igor', 'Izabela',
-        'Jagoda', 'Jakub', 'Jan', 'Joanna', 'Julia', 'Justyna', 'Kacper', 'Kamil', 'Kamila', 'Karol', 'Karolina', 'Katarzyna',
-        'Kinga', 'Klaudia', 'Konrad', 'Kornelia', 'Krystian', 'Krzysztof', 'Ksawery', 'Laura', 'Lena', 'Maciej', 'Magdalena',
-        'Małgorzata', 'Maja', 'Maksymilian', 'Malwina', 'Marcel', 'Marcin', 'Maria', 'Marta', 'Martyna', 'Mateusz',
-        'Michał', 'Michalina', 'Mikołaj', 'Milena', 'Miłosz', 'Nadia', 'Natalia', 'Nikodem', 'Nikola', 'Nina',
-        'Oliwia', 'Oliwier', 'Oskar', 'Patrycja', 'Patryk', 'Paulina', 'Paweł', 'Piotr', 'Pola', 'Rafał', 'Roksana',
-        'Sandra', 'Sebastian', 'Stanisław', 'Szymon', 'Tomasz', 'Tymoteusz', 'Łukasz', 'Weronika', 'Wiktor', 'Wiktoria',
-        'Wojciech', 'Zofia', 'Zuzanna',
+    protected static $firstNameMale = array(
+        'Adam', 'Adrian', 'Alan', 'Albert', 'Aleks', 'Aleksander', 'Alex', 'Andrzej', 'Antoni', 'Arkadiusz', 'Artur',
+        'Bartek', 'Błażej', 'Borys', 'Bruno', 'Cezary', 'Cyprian', 'Damian', 'Daniel', 'Dariusz', 'Dawid', 'Dominik',
+        'Emil', 'Ernest', 'Eryk', 'Fabian', 'Filip', 'Franciszek', 'Fryderyk', 'Gabriel', 'Grzegorz', 'Gustaw', 'Hubert',
+        'Ignacy', 'Igor', 'Iwo', 'Jacek', 'Jakub', 'Jan', 'Jeremi', 'Jerzy', 'Jędrzej', 'Józef', 'Julian', 'Juliusz',
+        'Kacper', 'Kajetan', 'Kamil', 'Karol', 'Kazimierz', 'Konrad', 'Konstanty', 'Kornel', 'Krystian', 'Krzysztof', 'Ksawery',
+        'Leon', 'Leonard', 'Łukasz', 'Maciej', 'Maks', 'Maksymilian', 'Marcel', 'Marcin', 'Marek', 'Mariusz', 'Mateusz', 'Maurycy',
+        'Michał', 'Mieszko', 'Mikołaj', 'Miłosz', 'Natan', 'Nataniel', 'Nikodem', 'Norbert', 'Olaf', 'Olgierd', 'Oliwier', 'Oskar',
+        'Patryk', 'Paweł', 'Piotr', 'Przemysław', 'Radosław', 'Rafał', 'Robert', 'Ryszard', 'Sebastian', 'Stanisław', 'Stefan', 'Szymon',
+        'Tadeusz', 'Tomasz', 'Tymon', 'Tymoteusz', 'Wiktor', 'Witold', 'Wojciech',
     );
 
-    protected static $lastName = array(
-        'Nowak', 'Kowalski', 'Wiśniewski', 'Dąbrowski', 'Lewandowski', 'Wójcik', 'Kamiński', 'Kowalczyk', 'Zieliński', 'Szymański',
-        'Woźniak', 'Kozłowski', 'Jankowski', 'Wojciechowski', 'Kwiatkowski', 'Kaczmarek', 'Mazur', 'Krawczyk', 'Piotrowski',
-        'Grabowski', 'Nowakowski', 'Pawłowski', 'Michalski', 'Nowicki', 'Adamczyk', 'Dudek', 'Zając', 'Wieczorek', 'Jabłoński',
-        'Król', 'Majewski', 'Olszewski', 'Jaworski', 'Wróbel', 'Malinowski', 'Pawlak', 'Witkowski', 'Walczak', 'Stępień',
-        'Górski', 'Rutkowski', 'Michalak', 'Sikora', 'Ostrowski', 'Baran', 'Duda', 'Szewczyk', 'Tomaszewski', 'Pietrzak',
-        'Marciniak', 'Wróblewski', 'Zalewski', 'Jakubowski', 'Jasiński', 'Zawadzki', 'Sadowski', 'Bąk', 'Chmielewski',
-        'Włodarczyk', 'Borkowski', 'Czarnecki', 'Sawicki', 'Sokołowski', 'Urbański', 'Kubiak', 'Maciejewski', 'Szczepański',
-        'Kucharski', 'Wilk', 'Kalinowski', 'Lis', 'Mazurek', 'Wysocki', 'Adamski', 'Kaźmierczak', 'Wasilewski', 'Sobczak',
-        'Czerwiński', 'Andrzejewski', 'Cieślak', 'Głowacki', 'Zakrzewski', 'Kołodziej', 'Sikorski', 'Krajewski', 'Gajewski',
-        'Szymczak', 'Szulc', 'Baranowski', 'Laskowski', 'Brzeziński', 'Makowski', 'Ziółkowski', 'Przybylski', 'Domański',
-        'Nowacki', 'Borowski', 'Błaszczyk', 'Chojnacki', 'Ciesielski',
+    protected static $firstNameFemale = array(
+        'Ada', 'Adrianna', 'Agata', 'Agnieszka', 'Aleksandra', 'Alicja', 'Amelia', 'Anastazja', 'Angelika', 'Aniela', 'Anita',
+        'Anna', 'Anna', 'Antonina', 'Apolonia', 'Aurelia', 'Barbara', 'Bianka', 'Blanka', 'Dagmara', 'Daria', 'Dominika', 'Dorota',
+        'Eliza', 'Elżbieta', 'Emilia', 'Ewa', 'Ewelina', 'Gabriela', 'Hanna', 'Helena', 'Ida', 'Iga', 'Inga', 'Izabela',
+        'Jagoda', 'Janina', 'Joanna', 'Julia', 'Julianna', 'Julita', 'Justyna', 'Kaja', 'Kalina', 'Kamila', 'Karina', 'Karolina',
+        'Katarzyna', 'Kinga', 'Klara', 'Klaudia', 'Kornelia', 'Krystyna', 'Laura', 'Lena', 'Lidia', 'Liliana', 'Liwia', 'Łucja',
+        'Magdalena', 'Maja', 'Malwina', 'Małgorzata', 'Marcelina', 'Maria', 'Marianna', 'Marika', 'Marta', 'Martyna', 'Matylda',
+        'Melania', 'Michalina', 'Milena', 'Monika', 'Nadia', 'Natalia', 'Natasza', 'Nela', 'Nicole', 'Nikola', 'Nina',
+        'Olga', 'Oliwia', 'Patrycja', 'Paulina', 'Pola', 'Roksana', 'Rozalia', 'Róża', 'Sandra', 'Sara', 'Sonia', 'Sylwia',
+        'Tola', 'Urszula', 'Weronika', 'Wiktoria', 'Zofia', 'Zuzanna',
     );
 
-    private static $prefix = array('mgr','inż.', 'dr', 'doc.');
+    protected static $lastNameMale = array(
+        'Adamczyk', 'Adamski', 'Andrzejewski', 'Baran', 'Baranowski', 'Bąk', 'Błaszczyk', 'Borkowski', 'Borowski', 'Brzeziński',
+        'Chmielewski', 'Cieślak', 'Czarnecki', 'Czerwiński', 'Dąbrowski', 'Duda', 'Dudek', 'Gajewski', 'Głowacki', 'Górski', 'Grabowski',
+        'Jabłoński', 'Jakubowski', 'Jankowski', 'Jasiński', 'Jaworski', 'Kaczmarczyk', 'Kaczmarek', 'Kalinowski', 'Kamiński', 'Kaźmierczak',
+        'Kołodziej', 'Konieczny', 'Kowalczyk', 'Kowalski', 'Kozłowski', 'Krajewski', 'Krawczyk', 'Król', 'Krupa', 'Kubiak', 'Kucharski', 'Kwiatkowski',
+        'Laskowski', 'Lewandowski', 'Lis', 'Maciejewski', 'Majewski', 'Makowski', 'Malinowski', 'Marciniak', 'Mazur', 'Mazurek', 'Michalak',
+        'Michalski', 'Mróz', 'Nowak', 'Nowakowski', 'Nowicki', 'Olszewski', 'Ostrowski', 'Pawlak', 'Pawłowski', 'Pietrzak', 'Piotrowski', 'Przybylski',
+        'Rutkowski', 'Sadowski', 'Sawicki', 'Sikora', 'Sikorski', 'Sobczak', 'Sokołowski', 'Stępień', 'Szczepański', 'Szewczyk', 'Szulc', 'Szymański', 'Szymczak',
+        'Tomaszewski', 'Urbański', 'Walczak', 'Wasilewski', 'Wieczorek', 'Wilk', 'Wiśniewski', 'Witkowski', 'Włodarczyk', 'Wojciechowski',
+        'Woźniak', 'Wójcik', 'Wróbel', 'Wróblewski', 'Wysocki', 'Zając', 'Zakrzewski', 'Zalewski', 'Zawadzki', 'Zieliński', 'Ziółkowski',
+    );
+
+    protected static $lastNameFemale = array(
+        'Adamczyk', 'Adamska', 'Andrzejewska', 'Baran', 'Baranowska', 'Bąk', 'Błaszczyk', 'Borkowska', 'Borowska', 'Brzezińska',
+        'Chmielewska', 'Cieślak', 'Czarnecka', 'Czerwińska', 'Dąbrowska', 'Duda', 'Dudek', 'Gajewska', 'Głowacka', 'Górecka', 'Górska', 'Grabowska',
+        'Jabłońska', 'Jakubowska', 'Jankowska', 'Jasińska', 'Jaworska', 'Kaczmarczyk', 'Kaczmarek', 'Kalinowska', 'Kamińska', 'Kaźmierczak',
+        'Kołodziej', 'Kowalczyk', 'Kowalska', 'Kozłowska', 'Krajewska', 'Krawczyk', 'Król', 'Krupa', 'Kubiak', 'Kucharska', 'Kwiatkowska',
+        'Laskowska', 'Lewandowska', 'Lis', 'Maciejewska', 'Majewska', 'Makowska', 'Malinowska', 'Marciniak', 'Mazur', 'Mazurek', 'Michalak',
+        'Michalska', 'Mróz', 'Nowak', 'Nowakowska', 'Nowicka', 'Olszewska', 'Ostrowska', 'Pawlak', 'Pawłowska', 'Pietrzak', 'Piotrowska', 'Przybylska',
+        'Rutkowska', 'Sadowska', 'Sawicka', 'Sikora', 'Sikorska', 'Sobczak', 'Sokołowska', 'Stępień', 'Szczepańska', 'Szewczyk', 'Szulc', 'Szymańska', 'Szymczak',
+        'Tomaszewska', 'Urbańska', 'Walczak', 'Wasilewska', 'Wieczorek', 'Wilk', 'Wiśniewska', 'Witkowska', 'Włodarczyk', 'Wojciechowska',
+        'Woźniak', 'Wójcik', 'Wróbel', 'Wróblewska', 'Wysocka', 'Zając', 'Zakrzewska', 'Zalewska', 'Zawadzka', 'Zielińska', 'Ziółkowska',
+    );
+
+    private static $prefix = array('mgr', 'inż.', 'mgr inż.', 'dr', 'doc.');
+
+    public static function firstName()
+    {
+        $gender = static::randomElement(array('Male', 'Female'));
+
+        return call_user_func(array('static', 'firstName'.$gender));
+    }
+
+    public static function firstNameMale()
+    {
+        return static::randomElement(static::$firstNameMale);
+    }
+
+    public static function firstNameFemale()
+    {
+        return static::randomElement(static::$firstNameFemale);
+    }
+
+    public static function lastName()
+    {
+        $gender = static::randomElement(array('Male', 'Female'));
+
+        return call_user_func(array('static', 'lastName'.$gender));
+    }
+
+    public static function lastNameMale()
+    {
+        return static::randomElement(static::$lastNameMale);
+    }
+
+    public static function lastNameFemale()
+    {
+        return static::randomElement(static::$lastNameFemale);
+    }
 
     /**
      * @example 'mgr'
