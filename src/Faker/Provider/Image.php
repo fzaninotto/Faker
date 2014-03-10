@@ -37,7 +37,7 @@ class Image extends Base
      *
      * @example '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
      */
-    public static function image($dir = '/tmp', $width = 640, $height = 480, $category = null)
+    public static function image($dir = '/tmp', $width = 640, $height = 480, $category = null, $fullPath = true)
     {
         // Validate directory path
         if (!is_dir($dir) || !is_writable($dir)) {
@@ -47,7 +47,8 @@ class Image extends Base
         // Generate a random filename. Use the server address so that a file
         // generated at the same time on a different server won't have a collision.
         $name = md5(uniqid(empty($_SERVER['SERVER_ADDR']) ? '' : $_SERVER['SERVER_ADDR'], true));
-        $filepath = $dir . DIRECTORY_SEPARATOR . $name .'.jpg';
+        $filename = $name .'.jpg';
+        $filepath = $dir . DIRECTORY_SEPARATOR . $filename;
 
         $url = static::imageUrl($width, $height, $category);
 
@@ -72,6 +73,6 @@ class Image extends Base
             return false;
         }
 
-        return $filepath;
+        return $fullPath ? $filepath : $filename;
     }
 }
