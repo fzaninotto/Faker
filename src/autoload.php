@@ -7,7 +7,7 @@
  * Code inspired from the SplClassLoader RFC
  * @see https://wiki.php.net/rfc/splclassloader#example_implementation
  */
-spl_autoload_register(function($className) {
+spl_autoload_register(function ($className) {
     $className = ltrim($className, '\\');
     $fileName = '';
     $namespace = '';

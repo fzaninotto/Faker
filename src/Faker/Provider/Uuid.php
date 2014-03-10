@@ -39,8 +39,17 @@ class Uuid extends \Faker\Provider\Base
         // cast to string
         $uuid = sprintf(
             '%08x-%04x-%04x-%02x%02x-%02x%02x%02x%02x%02x%02x',
-            $tLo, $tMi, $tHi, $csHi, $csLo,
-            $byte[10], $byte[11], $byte[12], $byte[13], $byte[14], $byte[15]
+            $tLo,
+            $tMi,
+            $tHi,
+            $csHi,
+            $csLo,
+            $byte[10],
+            $byte[11],
+            $byte[12],
+            $byte[13],
+            $byte[14],
+            $byte[15]
         );
 
         return $uuid;

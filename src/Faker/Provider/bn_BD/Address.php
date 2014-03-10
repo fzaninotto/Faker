@@ -2,8 +2,6 @@
 
 namespace Faker\Provider\bn_BD;
 
-use Faker\Provider\bn_BD\Utils;
-
 class Address extends \Faker\Provider\Address
 {
     protected static $cityPrefix = array('দক্ষিন', 'পূর্ব', 'পশ্চিম', 'উত্তর', 'নতুন', 'লেইক', 'পোর্ট');
@@ -57,5 +55,4 @@ class Address extends \Faker\Provider\Address
     {
         return static::randomElement(static::$streetNames);
     }
-
 }

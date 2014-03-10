@@ -5,7 +5,6 @@ namespace Faker\ORM\Doctrine;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping\ClassMetadata;
-use Faker\ORM\Doctrine\ColumnTypeGuesser;
 
 /**
  * Service class for populating a table through a Doctrine Entity class.
@@ -78,7 +77,7 @@ class EntityPopulator
         $formatters = array();
         $nameGuesser = new \Faker\Guesser\Name($generator);
         $columnTypeGuesser = new ColumnTypeGuesser($generator);
-        foreach ($this->class->getFieldNames() AS $fieldName) {
+        foreach ($this->class->getFieldNames() as $fieldName) {
             if ($this->class->isIdentifier($fieldName) || !$this->class->hasField($fieldName)) {
                 continue;
             }
@@ -93,7 +92,7 @@ class EntityPopulator
             }
         }
 
-        foreach ($this->class->getAssociationNames() AS $assocName) {
+        foreach ($this->class->getAssociationNames() as $assocName) {
             if ($this->class->isCollectionValuedAssociation($assocName)) {
                 continue;
             }
@@ -113,7 +112,7 @@ class EntityPopulator
             }
 
             $index = 0;
-            $formatters[$assocName] = function($inserted) use ($relatedClass, &$index, $unique, $optional) {
+            $formatters[$assocName] = function ($inserted) use ($relatedClass, &$index, $unique, $optional) {
                 if ($unique && isset($inserted[$relatedClass])) {
                     $related = null;
                     if (isset($inserted[$relatedClass][$index]) || !$optional) {

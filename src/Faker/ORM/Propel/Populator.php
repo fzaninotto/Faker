@@ -83,5 +83,4 @@ class Populator
 
         return \Propel::getConnection($peer::DATABASE_NAME, \Propel::CONNECTION_WRITE);
     }
-
 }

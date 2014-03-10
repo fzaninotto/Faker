@@ -124,5 +124,4 @@ class Address extends \Faker\Provider\Address
     {
         return number_format(mt_rand(19260000, 19270000)/1000000, 6);
     }
-
 }

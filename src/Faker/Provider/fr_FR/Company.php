@@ -124,7 +124,9 @@ class Company extends \Faker\Provider\Company
             $isEven = $position++ % 2 === 0;
 
             $tmp = $isEven ? $sequentialDigit * 2 : $sequentialDigit;
-            if ($tmp >= 10) $tmp -= 9;
+            if ($tmp >= 10) {
+                $tmp -= 9;
+            }
             $sum += $tmp;
 
             $siret = $sequentialDigit . $siret;
@@ -140,7 +142,9 @@ class Company extends \Faker\Provider\Company
             $isEven = $position++ % 2 === 0;
 
             $tmp = $isEven ? $digit * 2 : $digit;
-            if ($tmp >= 10) $tmp -= 9;
+            if ($tmp >= 10) {
+                $tmp -= 9;
+            }
             $sum += $tmp;
 
             $siret = $digit . $siret;

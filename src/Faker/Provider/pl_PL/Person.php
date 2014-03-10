@@ -90,7 +90,7 @@ class Person extends \Faker\Provider\Person
         $checksum = (10 - ($checksum % 10)) % 10;
         $result[] = $checksum;
 
-        return implode('',$result);
+        return implode('', $result);
     }
 
     /**
@@ -113,7 +113,7 @@ class Person extends \Faker\Provider\Person
         }
         $checksum %= 10;
 
-        return implode('',$low).$checksum.implode('',$high);
+        return implode('', $low).$checksum.implode('', $high);
     }
 
     /**

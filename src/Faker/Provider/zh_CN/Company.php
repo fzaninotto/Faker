@@ -23,5 +23,4 @@ class Company extends \Faker\Provider\Company
     {
         return parent::companySuffix() . '有限公司';
     }
-
 }

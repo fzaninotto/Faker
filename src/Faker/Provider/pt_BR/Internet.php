@@ -15,8 +15,11 @@ class Internet extends \Faker\Provider\Internet
      */
     private static function toAscii($string)
     {
-        return preg_replace('/&([a-z]{1,2})(?:acute|cedil|circ|grave|lig|orn|ring|slash|th|tilde|uml|caron);/i', '$1',
-            htmlentities($string, ENT_QUOTES, 'UTF-8'));
+        return preg_replace(
+            '/&([a-z]{1,2})(?:acute|cedil|circ|grave|lig|orn|ring|slash|th|tilde|uml|caron);/i',
+            '$1',
+            htmlentities($string, ENT_QUOTES, 'UTF-8')
+        );
     }
 
     /**
