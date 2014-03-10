@@ -19,6 +19,9 @@ namespace Faker;
  * @property float latitude
  * @property float longitude
  *
+ * @property string ean13
+ * @property string ean8
+ *
  * @property string phoneNumber
  *
  * @property string company
