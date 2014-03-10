@@ -139,25 +139,25 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
 ### `Faker\Provider\DateTime`
 
-    unixTime                // 58781813
-    dateTime                // DateTime('2008-04-25 08:37:17')
-    dateTimeAD              // DateTime('1800-04-29 20:38:49')
-    iso8601                 // '1978-12-09T10:10:29+0000'
-    date($format = 'Y-m-d') // '1979-06-09'
-    time($format = 'H:i:s') // '20:49:42'
+    unixTime($max = 'now')                // 58781813
+    dateTime($max = 'now')                // DateTime('2008-04-25 08:37:17')
+    dateTimeAD($max = 'now')              // DateTime('1800-04-29 20:38:49')
+    iso8601($max = 'now')                 // '1978-12-09T10:10:29+0000'
+    date($format = 'Y-m-d', $max = 'now') // '1979-06-09'
+    time($format = 'H:i:s', $max = 'now') // '20:49:42'
     dateTimeBetween($startDate = '-30 years', $endDate = 'now') // DateTime('2003-03-15 02:00:49')
-    dateTimeThisCentury     // DateTime('1915-05-30 19:28:21')
-    dateTimeThisDecade      // DateTime('2007-05-29 22:30:48')
-    dateTimeThisYear        // DateTime('2011-02-27 20:52:14')
-    dateTimeThisMonth       // DateTime('2011-10-23 13:46:23')
-    amPm                    // 'pm'
-    dayOfMonth              // '04'
-    dayOfWeek               // 'Friday'
-    month                   // '06'
-    monthName               // 'January'
-    year                    // '1993'
-    century                 // 'VI'
-    timezone                // 'Europe/Paris'
+    dateTimeThisCentury($max = 'now')     // DateTime('1915-05-30 19:28:21')
+    dateTimeThisDecade($max = 'now')      // DateTime('2007-05-29 22:30:48')
+    dateTimeThisYear($max = 'now')        // DateTime('2011-02-27 20:52:14')
+    dateTimeThisMonth($max = 'now')       // DateTime('2011-10-23 13:46:23')
+    amPm($max = 'now')                    // 'pm'
+    dayOfMonth($max = 'now')              // '04'
+    dayOfWeek($max = 'now')               // 'Friday'
+    month($max = 'now')                   // '06'
+    monthName($max = 'now')               // 'January'
+    year($max = 'now')                    // '1993'
+    century                               // 'VI'
+    timezone                              // 'Europe/Paris'
 
 ### `Faker\Provider\Miscellaneous`
 
