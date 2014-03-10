@@ -6,66 +6,88 @@ class DateTime extends \Faker\Provider\Base
 {
     protected static $century = array('I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV','XVI','XVII','XVIII','XIX','XX','XX1');
 
+    protected static function getMaxTimestamp($max = 'now')
+    {
+        if (is_numeric($max)) {
+            return (int) $max;
+        }
+        
+        if ($max instanceof \DateTime) {
+            return $max->getTimestamp();
+        }
+        
+        return strtotime(empty($max) ? 'now' : $max);
+    }
+    
     /**
      * Get a timestamp between January 1, 1970 and now
      *
+     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * 
      * @example 1061306726
      */
-    public static function unixTime()
+    public static function unixTime($max = 'now')
     {
-        return mt_rand(0, time());
+        return mt_rand(0, static::getMaxTimestamp($max));
     }
 
     /**
      * Get a datetime object for a date between January 1, 1970 and now
      *
+     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example DateTime('2005-08-16 20:39:21')
      * @return \DateTime
      */
-    public static function dateTime()
+    public static function dateTime($max = 'now')
     {
-        return new \DateTime('@' . static::unixTime());
+        return new \DateTime('@' . static::unixTime($max));
     }
 
     /**
      * Get a datetime object for a date between January 1, 001 and now
      *
+     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example DateTime('1265-03-22 21:15:52')
      * @return \DateTime
      */
-    public static function dateTimeAD()
+    public static function dateTimeAD($max = 'now')
     {
-        return new \DateTime('@' . mt_rand(-62135597361, time()));
+        return new \DateTime('@' . mt_rand(-62135597361, static::getMaxTimestamp($max)));
     }
 
     /**
+     * get a date string formatted with ISO8601
+     * 
+     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example '2003-10-21T16:05:52+0000'
      */
-    public static function iso8601()
+    public static function iso8601($max = 'now')
     {
-        return static::date(\DateTime::ISO8601);
+        return static::date(\DateTime::ISO8601, $max);
     }
 
     /**
      * Get a date string between January 1, 1970 and now
      *
      * @param string $format
+     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example '2008-11-27'
      */
-    public static function date($format = 'Y-m-d')
+    public static function date($format = 'Y-m-d', $max = 'now')
     {
-        return static::dateTime()->format($format);
+        return static::dateTime($max)->format($format);
     }
 
     /**
      * Get a time string (24h format by default)
      *
      * @param string $format
+     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example '15:02:34'
      */
-    public static function time($format = 'H:i:s')
+    public static function time($format = 'H:i:s', $max = 'now')
     {
-        return static::dateTime()->format($format);
+        return static::dateTime($max)->format($format);
     }
 
     /**
@@ -77,10 +99,15 @@ class DateTime extends \Faker\Provider\Base
      * @example DateTime('1999-02-02 11:42:52')
      * @return \DateTime
      */
-    public static function dateTimeBetween($startDate = "-30 years", $endDate = "now")
+    public static function dateTimeBetween($startDate = '-30 years', $endDate = 'now')
     {
         $startTimestamp = $startDate instanceof \DateTime ? $startDate->getTimestamp() : strtotime($startDate);
-        $endTimestamp = $endDate instanceof \DateTime ? $endDate->getTimestamp() : strtotime($endDate);
+        $endTimestamp = static::getMaxTimestamp($endDate);
+        
+        if ($startTimestamp > $endTimestamp) {
+            throw new \InvalidArgumentException('Start date must be anterior to end date.');
+        }
+        
         $timestamp = mt_rand($startTimestamp, $endTimestamp);
 
         $ts = new \DateTime('@' . $timestamp);
@@ -90,87 +117,97 @@ class DateTime extends \Faker\Provider\Base
     }
 
     /**
+     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example DateTime('1964-04-04 11:02:02')
      * @return \DateTime
      */
-    public static function dateTimeThisCentury()
+    public static function dateTimeThisCentury($max = 'now')
     {
-        return static::dateTimeBetween("-100 year");
+        return static::dateTimeBetween('-100 year', $max);
     }
 
     /**
+     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example DateTime('2010-03-10 05:18:58')
      * @return \DateTime
      */
-    public static function dateTimeThisDecade()
+    public static function dateTimeThisDecade($max = 'now')
     {
-        return static::dateTimeBetween("-10 year");
+        return static::dateTimeBetween('-10 year', $max);
     }
 
     /**
+     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example DateTime('2011-09-19 09:24:37')
      * @return \DateTime
      */
-    public static function dateTimeThisYear()
+    public static function dateTimeThisYear($max = 'now')
     {
-        return static::dateTimeBetween("-1 year");
+        return static::dateTimeBetween('-1 year', $max);
     }
 
     /**
+     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example DateTime('2011-10-05 12:51:46')
      * @return \DateTime
      */
-    public static function dateTimeThisMonth()
+    public static function dateTimeThisMonth($max = 'now')
     {
-        return static::dateTimeBetween("-1 month");
+        return static::dateTimeBetween('-1 month', $max);
     }
 
     /**
+     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example 'am'
      */
-    public static function amPm()
+    public static function amPm($max = 'now')
     {
-        return static::dateTime()->format('a');
+        return static::dateTime($max)->format('a');
     }
 
     /**
+     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example '22'
      */
-    public static function dayOfMonth()
+    public static function dayOfMonth($max = 'now')
     {
-        return static::dateTime()->format('d');
+        return static::dateTime($max)->format('d');
     }
 
     /**
+     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example 'Tuesday'
      */
-    public static function dayOfWeek()
+    public static function dayOfWeek($max = 'now')
     {
-        return static::dateTime()->format('l');
+        return static::dateTime($max)->format('l');
     }
 
     /**
+     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example '7'
      */
-    public static function month()
+    public static function month($max = 'now')
     {
-        return static::dateTime()->format('m');
+        return static::dateTime($max)->format('m');
     }
 
     /**
+     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example 'September'
      */
-    public static function monthName()
+    public static function monthName($max = 'now')
     {
-        return static::dateTime()->format('F');
+        return static::dateTime($max)->format('F');
     }
 
     /**
+     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example 1673
      */
-    public static function year()
+    public static function year($max = 'now')
     {
-        return static::dateTime()->format('Y');
+        return static::dateTime($max)->format('Y');
     }
 
     /**
