@@ -193,6 +193,15 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
 ### `Faker\Provider\File`
 
+    /**
+     * Copy a random file from the source directory to the target directory and returns the filename/fullpath
+     *
+     * @param  string  $sourceDirectory The directory to look for random file taking
+     * @param  string  $targetDirectory
+     * @param  boolean $fullPath        Wether to have the full path or just the filename
+     */
+    fileCopy($sourceDir, $targetDir) // '/path/to/targetDir/13b73edae8443990be1aa8f1a483bc27.jpg'
+    fileCopy($sourceDir, $targetDir, false) // '13b73edae8443990be1aa8f1a483bc27.jpg'
     fileExtension          // 'avi'
     mimeType               // 'video/x-msvideo'
 
