@@ -2,6 +2,10 @@
 
 namespace Faker\Provider\pl_PL;
 
+/**
+ * Most popular first and last names published by Ministry of the Interior:
+ * @link https://msw.gov.pl/pl/sprawy-obywatelskie/ewidencja-ludnosci-dowo/statystyki-imion-i-nazw
+ */
 class Person extends \Faker\Provider\Person
 {
     protected static $formats = array(
@@ -70,8 +74,7 @@ class Person extends \Faker\Provider\Person
     public static function firstName()
     {
         $gender = static::randomElement(array('Male', 'Female'));
-
-        return call_user_func(array('static', 'firstName'.$gender));
+        return $this->generator->parse('{{firstName'.$gender.'}}');
     }
 
     public static function firstNameMale()
@@ -87,8 +90,7 @@ class Person extends \Faker\Provider\Person
     public static function lastName()
     {
         $gender = static::randomElement(array('Male', 'Female'));
-
-        return call_user_func(array('static', 'lastName'.$gender));
+        return $this->generator->parse('{{lastName'.$gender.'}}');
     }
 
     public static function lastNameMale()
