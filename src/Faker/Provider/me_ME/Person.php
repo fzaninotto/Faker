@@ -4,7 +4,6 @@ namespace Faker\Provider\me_ME;
 
 class Person extends \Faker\Provider\Person
 {
-
         protected static $formats = array(
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}',
@@ -97,4 +96,22 @@ class Person extends \Faker\Provider\Person
         'Džavrić', 'Džajić', 'Džambić', 'Džadžić', 'Dželebdžić', 'Džikić', 'Džinić', 'Džodić', 'Džombić', 'Džomić', 'Džonić', 
         'Šakić', 'Šakotić', 'Šalinić', 'Šamatić', 'Šantić', 'Šapić', 'Šaponić', 'Šaponjić', 'Šapurić', 'Šarančić', 'Šarić', 'Šarkić', 'Šaronjić', 'Šašić', 'Švabić', 'Ševarlić', 'Šević', 'Ševkušić', 'Šestić', 'Šibalić', 'Šijakinjić', 'Šijačić', 'Šikanić', 'Šikanjić', 'Šimšić', 'Šipetić', 'Šišić', 'Šljivić', 'Šljukić', 'Šmigić', 'Šobajić', 'Šobačić', 'Šorgić', 'Šoškić', 'Špirić', 'Štakić', 'Štulić', 'Šubakić', 'Šubarić', 'Šubić', 'Šuleić', 'Šulejić', 'Šuletić', 'Šulkić', 'Šuluburić', 'Šuljagić', 'Šumatić', 'Šunderić', 'Šunkić', 'Šunjevarić', 'Šutuljić', 'Šušić', 'Šušulić'
     );
+    public static function firstName()
+    {
+        $gender = static::randomElement(array('Male', 'Female'));
+
+        return call_user_func(array('static', 'firstName'.$gender));
+    }
+
+    public static function firstNameMale()
+    {
+        return static::randomElement(static::$firstNameMale);
+    }
+
+    public static function firstNameFemale()
+    {
+        return static::randomElement(static::$firstNameFemale);
+    }
+
+
 }
