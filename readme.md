@@ -218,10 +218,12 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
      * @param $dir An absolute path to a local directory
      * @param $width/$height Size (in pixel) of the generated image (defaults to 640x480)
      * @param $category One of 'abstract','animals','business','cats','city','food','nightlife','fashion','people','nature','sports','technics', and 'transport'
+     * @param $fullPath Whether to have the full path to the image or just the filename (default true)
      */
     image($dir)                  // '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
     image($dir, $width, $height) // '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
     image($dir, $width, $height, $category) // '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
+    image($dir, $width, $height, $category, $fullPath = false) // '13b73edae8443990be1aa8f1a483bc27.jpg'
     imageUrl                    // 'http://lorempixel.com/640/480/'
     imageUrl($width, $height)   // 'http://lorempixel.com/800/600/'
     imageUrl($width, $height, $category) // 'http://lorempixel.com/800/600/person/'
