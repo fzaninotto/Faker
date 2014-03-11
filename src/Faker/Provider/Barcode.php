@@ -25,11 +25,21 @@ class Barcode extends \Faker\Provider\Base
         return implode('', $code) . $checksum;
     }
 
+    /**
+     * Get a random EAN13 barcode.
+     * @return string
+     * @example '4006381333931'
+     */
     public function ean13()
     {
         return $this->ean(13);
     }
 
+    /**
+     * Get a random EAN8 barcode.
+     * @return string
+     * @example '73513537'
+     */
     public function ean8()
     {
         return $this->ean(8);
