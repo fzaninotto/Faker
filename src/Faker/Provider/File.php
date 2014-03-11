@@ -560,4 +560,31 @@ class File extends \Faker\Provider\Base
 
         return is_array($random_extension) ? static::randomElement($random_extension) : $random_extension;
     }
+
+    /**
+     * Copy a random file from the source directory to the target directory and returns the filename/fullpath
+     *
+     * @param  string  $sourceDirectory The directory to look for random file taking
+     * @param  string  $targetDirectory
+     * @param  boolean $fullPath        Wether to have the full path or just the filename
+     * @return string
+     */
+    public static function fileCopy($sourceDirectory, $targetDirectory, $fullPath = true)
+    {
+        // Drop . and .. and reset keys
+        $files = array_values(array_diff(scandir($sourceDirectory), array('.', '..')));
+
+        $sourceFullPath = $sourceDirectory . DIRECTORY_SEPARATOR . static::randomElement($files);
+
+        $destinationFile = md5(uniqid(empty($_SERVER['SERVER_ADDR']) ? '' : $_SERVER['SERVER_ADDR'], true)) . '.' . pathinfo($sourceFullPath, PATHINFO_EXTENSION);
+        $destinationFullPath = $targetDirectory . DIRECTORY_SEPARATOR . $destinationFile;
+
+        copy($sourceFullPath, $destinationFullPath);
+
+        if (!file_exists($destinationFullPath)) {
+            return false;
+        }
+
+        return $fullPath ? $destinationFullPath : $destinationFile;
+    }
 }
