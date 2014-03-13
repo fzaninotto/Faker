@@ -11,19 +11,19 @@ class DateTime extends \Faker\Provider\Base
         if (is_numeric($max)) {
             return (int) $max;
         }
-        
+
         if ($max instanceof \DateTime) {
             return $max->getTimestamp();
         }
-        
+
         return strtotime(empty($max) ? 'now' : $max);
     }
-    
+
     /**
      * Get a timestamp between January 1, 1970 and now
      *
      * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
-     * 
+     *
      * @example 1061306726
      */
     public static function unixTime($max = 'now')
@@ -57,7 +57,7 @@ class DateTime extends \Faker\Provider\Base
 
     /**
      * get a date string formatted with ISO8601
-     * 
+     *
      * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example '2003-10-21T16:05:52+0000'
      */
@@ -69,8 +69,8 @@ class DateTime extends \Faker\Provider\Base
     /**
      * Get a date string between January 1, 1970 and now
      *
-     * @param string $format
-     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param string               $format
+     * @param \DateTime|int|string $max    maximum timestamp used as random end limit, default to "now"
      * @example '2008-11-27'
      */
     public static function date($format = 'Y-m-d', $max = 'now')
@@ -81,8 +81,8 @@ class DateTime extends \Faker\Provider\Base
     /**
      * Get a time string (24h format by default)
      *
-     * @param string $format
-     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param string               $format
+     * @param \DateTime|int|string $max    maximum timestamp used as random end limit, default to "now"
      * @example '15:02:34'
      */
     public static function time($format = 'H:i:s', $max = 'now')
@@ -103,11 +103,11 @@ class DateTime extends \Faker\Provider\Base
     {
         $startTimestamp = $startDate instanceof \DateTime ? $startDate->getTimestamp() : strtotime($startDate);
         $endTimestamp = static::getMaxTimestamp($endDate);
-        
+
         if ($startTimestamp > $endTimestamp) {
             throw new \InvalidArgumentException('Start date must be anterior to end date.');
         }
-        
+
         $timestamp = mt_rand($startTimestamp, $endTimestamp);
 
         $ts = new \DateTime('@' . $timestamp);

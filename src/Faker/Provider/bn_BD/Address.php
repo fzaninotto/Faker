@@ -58,5 +58,4 @@ class Address extends \Faker\Provider\Address
         return static::randomElement(static::$streetNames);
     }
 
-
 }

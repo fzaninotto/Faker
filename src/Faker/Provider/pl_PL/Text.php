@@ -2580,7 +2580,6 @@ EOT;
     Gutenberg, including how to donate, how to help produce our new
     eBooks, and how to subscribe to our email newsletter (free!).
 
-
     Those of you who want to download any eBook before announcement
     can get to them as follows, and just download by date.  This is
     also a good way to get them instantly upon announcement, as the
@@ -2594,7 +2593,6 @@ EOT;
 
     Just search by the first five letters of the filename you want,
     as it appears in our Newsletters.
-
 
     Information about Project Gutenberg (one page)
 
@@ -2630,7 +2628,6 @@ EOT;
      6000  2002 December*
      9000  2003 November*
     10000  2004 January*
-
 
     The Project Gutenberg Literary Archive Foundation has been created
     to secure a future for Project Gutenberg into the next millennium.
@@ -2693,7 +2690,6 @@ EOT;
     You can get up to date donation information online at:
 
     http://www.gutenberg.net/donation.html
-
 
     ***
 
@@ -2865,7 +2861,6 @@ EOT;
     express permission.]
 
     *END THE SMALL PRINT! FOR PUBLIC DOMAIN EBOOKS*Ver.02/11/02*END*
-
 
     */
 }

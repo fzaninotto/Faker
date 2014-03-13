@@ -106,7 +106,7 @@ class EntityPopulator
                 if ($mapping['targetEntity'] == $relatedClass) {
                     if ($mapping['type'] == ClassMetadata::ONE_TO_ONE) {
                         $unique = true;
-                        $optional = isset($mapping['joinColumns'][0]['nullable']) ? $mapping['joinColumns'][0]['nullable'] : false; 
+                        $optional = isset($mapping['joinColumns'][0]['nullable']) ? $mapping['joinColumns'][0]['nullable'] : false;
                         break;
                     }
                 }

@@ -126,11 +126,11 @@ class Base
     /**
      * Returns random elements from a provided array
      *
-     * @param  array   $array Array to take elements from. Defaults to a-f
-     * @param  integer $count Number of elements to take.
+     * @param  array            $array Array to take elements from. Defaults to a-f
+     * @param  integer          $count Number of elements to take.
      * @throws \LengthException When requesting more elements than provided
      *
-     * @return array   New array with $count elements from $array
+     * @return array New array with $count elements from $array
      */
     public static function randomElements(array $array = array('a', 'b', 'c'), $count = 1)
     {
@@ -171,6 +171,7 @@ class Base
             return null;
         }
         $elements = static::randomElements($array, 1);
+
         return $elements[0];
     }
 

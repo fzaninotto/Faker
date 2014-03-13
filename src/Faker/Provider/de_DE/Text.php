@@ -1676,7 +1676,7 @@ hervor und sah noch dort unten im Schatten der hohen Lindenbäume ihr weißes Kl
 nach der Gartentür schimmern, ich streckte meine Arme aus, und es verschwand.
 EOT;
     /*
-    End of the Project Gutenberg EBook of Die Leiden des jungen Werther--Buch 1, by 
+    End of the Project Gutenberg EBook of Die Leiden des jungen Werther--Buch 1, by
     Johann Wolfgang von Goethe
 
     *** END OF THIS PROJECT GUTENBERG EBOOK DIE LEIDEN DES JUNGEN WERTHER ***
@@ -1688,7 +1688,6 @@ EOT;
     Produced by Michael Pullen, globaltraveler5565@yahoo.com
     with proofreading and correction by Dr. Mary Cicora,
     mcicora@yahoo.com.
-
 
     Updated editions will replace the previous one--the old editions
     will be renamed.
@@ -1710,8 +1709,6 @@ EOT;
     subject to the trademark license, especially commercial
     redistribution.
 
-
-
     *** START: FULL LICENSE ***
 
     THE FULL PROJECT GUTENBERG LICENSE
@@ -1723,7 +1720,6 @@ EOT;
     Gutenberg"), you agree to comply with all the terms of the Full Project
     Gutenberg-tm License (available with this file or online at
     http://gutenberg.org/license).
-
 
     Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
     electronic works
@@ -1937,7 +1933,6 @@ EOT;
     work, (b) alteration, modification, or additions or deletions to any
     Project Gutenberg-tm work, and (c) any Defect you cause.
 
-
     Section  2.  Information about the Mission of Project Gutenberg-tm
 
     Project Gutenberg-tm is synonymous with the free distribution of
@@ -1982,7 +1977,6 @@ EOT;
          Chief Executive and Director
          gbnewby@pglaf.org
 
-
     Section 4.  Information about Donations to the Project Gutenberg
     Literary Archive Foundation
 
@@ -2017,7 +2011,6 @@ EOT;
     ways including checks, online payments and credit card donations.
     To donate, please visit: http://pglaf.org/donate
 
-
     Section 5.  General Information About Project Gutenberg-tm electronic
     works.
 
@@ -2026,12 +2019,10 @@ EOT;
     with anyone.  For thirty years, he produced and distributed Project
     Gutenberg-tm eBooks with only a loose network of volunteer support.
 
-
     Project Gutenberg-tm eBooks are often created from several printed
     editions, all of which are confirmed as Public Domain in the U.S.
     unless a copyright notice is included.  Thus, we do not necessarily
     keep eBooks in compliance with any particular paper edition.
-
 
     Most people start at our Web site which has the main PG search facility:
 

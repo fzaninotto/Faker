@@ -28,7 +28,6 @@ class Person extends \Faker\Provider\Person
 
     private static $prefix = array('মি.', 'মিসেস. ', 'মিস.');
 
-
     public static function prefix()
     {
         return static::randomElement(static::$prefix);

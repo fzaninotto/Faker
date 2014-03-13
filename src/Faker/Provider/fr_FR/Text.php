@@ -11,7 +11,7 @@ class Text extends \Faker\Provider\Text
      * almost no restrictions whatsoever.  You may copy it, give it away or
      * re-use it under the terms of the Project Gutenberg License included
      * with this eBook or online at www.gutenberg.net
-     * 
+     *
      * Title: Madame Bovary
      * Author: Gustave Flaubert
      * Release Date: November 26, 2004 [EBook #14155]
@@ -19,13 +19,13 @@ class Text extends \Faker\Provider\Text
      * Language: French
      *
      * *** START OF THIS PROJECT GUTENBERG EBOOK MADAME BOVARY ***
-     * 
+     *
      * Produced by Ebooks libres et gratuits at http://www.ebooksgratuits.com
      *
      * Gustave Flaubert
      * MADAME BOVARY
      * (1857)
-     * 
+     *
      * @see http://www.gutenberg.org/cache/epub/14155/pg14155.txt
      * @var string
      */
@@ -15204,8 +15204,6 @@ EOT;
     subject to the trademark license, especially commercial
     redistribution.
 
-
-
     *** START: FULL LICENSE ***
 
     THE FULL PROJECT GUTENBERG LICENSE
@@ -15217,7 +15215,6 @@ EOT;
     Gutenberg"), you agree to comply with all the terms of the Full Project
     Gutenberg-tm License (available with this file or online at
     http://gutenberg.net/license).
-
 
     Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
     electronic works
@@ -15431,7 +15428,6 @@ EOT;
     work, (b) alteration, modification, or additions or deletions to any
     Project Gutenberg-tm work, and (c) any Defect you cause.
 
-
     Section  2.  Information about the Mission of Project Gutenberg-tm
 
     Project Gutenberg-tm is synonymous with the free distribution of
@@ -15476,7 +15472,6 @@ EOT;
          Chief Executive and Director
          gbnewby@pglaf.org
 
-
     Section 4.  Information about Donations to the Project Gutenberg
     Literary Archive Foundation
 
@@ -15511,7 +15506,6 @@ EOT;
     ways including including checks, online payments and credit card
     donations.  To donate, please visit: http://pglaf.org/donate
 
-
     Section 5.  General Information About Project Gutenberg-tm electronic
     works.
 
@@ -15520,12 +15514,10 @@ EOT;
     with anyone.  For thirty years, he produced and distributed Project
     Gutenberg-tm eBooks with only a loose network of volunteer support.
 
-
     Project Gutenberg-tm eBooks are often created from several printed
     editions, all of which are confirmed as Public Domain in the U.S.
     unless a copyright notice is included.  Thus, we do not necessarily
     keep eBooks in compliance with any particular paper edition.
-
 
     Most people start at our Web site which has the main PG search facility:
 
