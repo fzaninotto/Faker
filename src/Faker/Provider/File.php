@@ -569,14 +569,22 @@ class File extends \Faker\Provider\Base
      * @param  boolean $fullPath        Wether to have the full path or just the filename
      * @return string
      */
-    public static function fileCopy($sourceDirectory, $targetDirectory, $fullPath = true)
+    public static function file($sourceDirectory, $targetDirectory, $fullPath = true)
     {
-        // Drop . and .. and reset keys
+        if (!is_dir($sourceDirectory)) {
+            throw new \InvalidArgumentException(sprintf('Source directory %s does not exist or is not a directory.', $sourceDirectory));
+        }
+
+        if (!is_dir($targetDirectory)) {
+            throw new \InvalidArgumentException(sprintf('Target directory %s does not exist or is not a directory.', $targetDirectory));
+        }
+
+        // Drop . and .. and reset array keys
         $files = array_values(array_diff(scandir($sourceDirectory), array('.', '..')));
 
         $sourceFullPath = $sourceDirectory . DIRECTORY_SEPARATOR . static::randomElement($files);
 
-        $destinationFile = md5(uniqid(empty($_SERVER['SERVER_ADDR']) ? '' : $_SERVER['SERVER_ADDR'], true)) . '.' . pathinfo($sourceFullPath, PATHINFO_EXTENSION);
+        $destinationFile = Uuid::uuid() . '.' . pathinfo($sourceFullPath, PATHINFO_EXTENSION);
         $destinationFullPath = $targetDirectory . DIRECTORY_SEPARATOR . $destinationFile;
 
         copy($sourceFullPath, $destinationFullPath);
