@@ -569,7 +569,7 @@ class File extends \Faker\Provider\Base
      * @param  boolean $fullPath        Wether to have the full path or just the filename
      * @return string
      */
-    public static function file($sourceDirectory, $targetDirectory, $fullPath = true)
+    public static function file($sourceDirectory = '/tmp', $targetDirectory = '/tmp', $fullPath = true)
     {
         if (!is_dir($sourceDirectory)) {
             throw new \InvalidArgumentException(sprintf('Source directory %s does not exist or is not a directory.', $sourceDirectory));
