@@ -92,8 +92,8 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     titleMale                                 // 'Mr.'
     titleFemale                               // 'Ms.'
     suffix                                    // 'Jr.'
-    name($gender = null|'male'|'female')      // 'Dr. Zane Stroman' 
-    firstName($gender = null|'male'|'female') // 'Maynard' 
+    name($gender = null|'male'|'female')      // 'Dr. Zane Stroman'
+    firstName($gender = null|'male'|'female') // 'Maynard'
     firstNameMale                             // 'Maynard'
     firstNameFemale                           // 'Rachel'
     lastName                                  // 'Zulauf'
@@ -168,6 +168,8 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     url                     // 'http://www.strackeframi.com/'
     ipv4                    // '109.133.32.252'
     ipv6                    // '8e65:933d:22ee:a232:f1c1:2741:1f10:117c'
+    localIpv4               // '10.242.58.8'
+    macAddress              // '43:85:B7:08:10:CA'
 
 ### `Faker\Provider\UserAgent`
 
