@@ -14,10 +14,8 @@ class Computer extends \Faker\Provider\Base
      */
     public static function macAddress()
     {
-        $digits = self::$macAddressDigits;
         for ($i=0; $i<6; $i++) {
-            shuffle($digits);
-            $mac[] = $digits[0] . $digits[1];
+            $mac[] = static::randomElement(self::$macAddressDigits) . static::randomElement(self::$macAddressDigits);
         }
         $mac = implode(':', $mac);
 
@@ -29,17 +27,17 @@ class Computer extends \Faker\Provider\Base
      */
     public static function localIp()
     {
-        $start = ['10','192'];
+        $start = array('10','192');
 
-        $ip = $start[rand(0, 1)];
+        $ip = $start[static::randomNumber(0, 1)];
 
         if ($ip === '192') {
             $ip .= '.168';
         } else {
-            $ip .= '.' . rand(0, 255);
+            $ip .= '.' . static::randomNumber(0, 255);
         }
 
-        $ip .= sprintf('.%s.%s', rand(0, 255), rand(0, 255));
+        $ip .= sprintf('.%s.%s', static::randomNumber(0, 255), static::randomNumber(0, 255));
 
         return $ip;
     }
