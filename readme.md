@@ -370,6 +370,15 @@ $faker->seed(1234);
 echo $faker->name; // 'Jess Mraz I';
 ```
 
+> **Tip**: DateTime formatters won't reproduce the same fake data if you don't fix the `$max` value:
+>
+> ```php
+> <?php
+> // even when seeded, this line will return different results because $max varies
+> $faker->dateTime(); // equivalent to $faker->dateTime($max = 'now')
+> // make sure you fix the $max parameter
+> $faker->dateTime('2014-02-25 08:37:17'); // will return always the same date when seeded
+
 ## Faker Internals: Understanding Providers
 
 A `Faker\Generator` alone can't do much generation. It needs `Faker\Provider` objects to delegate the data generation to them. `Faker\Factory::create()` actually creates a `Faker\Generator` bundled with the default providers. Here is what happens under the hood:
