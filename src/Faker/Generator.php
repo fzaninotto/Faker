@@ -59,13 +59,13 @@ namespace Faker;
  * @property string ipv6
  *
  * @property int unixTime
- * @property string dateTime
- * @property string dateTimeAD
+ * @property \DateTime dateTime
+ * @property \DateTime dateTimeAD
  * @property string iso8601
- * @property string dateTimeThisCentury
- * @property string dateTimeThisDecade
- * @property string dateTimeThisYear
- * @property string dateTimeThisMonth
+ * @property \DateTime dateTimeThisCentury
+ * @property \DateTime dateTimeThisDecade
+ * @property \DateTime dateTimeThisYear
+ * @property \DateTime dateTimeThisMonth
  * @property string amPm
  * @property int dayOfMonth
  * @property int dayOfWeek
@@ -76,7 +76,7 @@ namespace Faker;
  * @property string timezone
  * @method string date()
  * @method string time()
- * @method string dateTimeBetween()
+ * @method \DateTime dateTimeBetween()
  *
  * @property string md5
  * @property string sha1
