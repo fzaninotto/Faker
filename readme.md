@@ -232,7 +232,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
 ## Unique and Optional modifiers
 
-Faker provides two special providers, `unique()` and `optional()`, to be called before any provider. `optional()` can be useful for seeding non-required fields, like a mobile telephone number ; `unique()` is required to populate fields that cannot accept twice the same value, like primary identifiers.
+Faker provides two special providers, `unique()` and `optional()`, to be called before any provider. `optional()` can be useful for seeding non-required fields, like a mobile telephone number; `unique()` is required to populate fields that cannot accept twice the same value, like primary identifiers.
 
 ```php
 // unique() forces providers to return unique values
@@ -257,7 +257,7 @@ try {
 $faker->unique($reset = true)->randomDigitNotNull; // will not throw OverflowException since unique() was reset
 // tip: unique() keeps one array of values per provider
 
-// optional() sometimes bypasses the provider to return null instead
+// optional() sometimes bypasses the provider to return a default value instead (which defaults to NULL)
 $values = array();
 for ($i=0; $i < 10; $i++) {
   // get a random digit, but also null sometimes
@@ -265,10 +265,15 @@ for ($i=0; $i < 10; $i++) {
 }
 print_r($values); // [1, 4, null, 9, 5, null, null, 4, 6, null]
 
-// optional() accepts a weight argument to specify the probability of receiving a NULL value.
-// 0 will always return NULL; 1 will always return the provider. Default weight is 0.5.
+// optional() accepts a weight argument to specify the probability of receiving the default value.
+// 0 will always return the default value; 1 will always return the provider. Default weight is 0.5.
 $faker->optional($weight = 0.1)->randomDigit; // 90% chance of NULL
 $faker->optional($weight = 0.9)->randomDigit; // 10% chance of NULL
+
+// optional() accepts a default argument to specify the default value to return.
+// Defaults to NULL.
+$faker->optional($weight = 0.5, $default = false)->randomDigit; // 50% chance of FALSE
+$faker->optional($weight = 0.9, $default = 'abc')->word; // 10% chance of 'abc'
 ```
 
 ## Localization

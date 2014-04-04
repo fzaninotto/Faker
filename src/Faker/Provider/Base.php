@@ -3,7 +3,7 @@
 namespace Faker\Provider;
 
 use Faker\Generator;
-use Faker\NullGenerator;
+use Faker\DefaultGenerator;
 use Faker\UniqueGenerator;
 
 class Base
@@ -260,13 +260,13 @@ class Base
      *                            "0" will always return null, "1" will always return the generator.
      * @return mixed|null
      */
-    public function optional($weight = 0.5)
+    public function optional($weight = 0.5, $default = null)
     {
         if (mt_rand() / mt_getrandmax() <= $weight) {
             return $this->generator;
         }
 
-        return new NullGenerator();
+        return new DefaultGenerator($default);
     }
 
     /**
