@@ -16,7 +16,7 @@ class Address extends \Faker\Provider\Address
     // random selection of seemingly frequently used streets and naming categories
     protected static $streetPlainName = array(
         // historical events
-        'Eroilor', 'Independenței', 'Memorandumului', 'Unirii', '1 Decembrie', 'Revolutței',
+        'Eroilor', 'Independenței', 'Memorandumului', 'Unirii', '1 Decembrie', 'Revoluței',
         // historical people
         'Mihai Viteazul', 'Mircea cel Bătrân', 'Vlad Țepeș', 'Traian', 'Decebal', 'Horea', 'Cloșca', 'Crișan', 'Constantin Brâncoveanu', 'Ștefan cel Mare', 'Titu Maiorescu', 'Grigore Antipa', 'Ștefan Odobleja', 'Ioan Cantacuzino', 'Nicolae Paulescu',
         // national and international people names
