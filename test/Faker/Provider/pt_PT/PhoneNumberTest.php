@@ -1,6 +1,6 @@
 <?php
 
-namespace \Faker\Test\Provider\pt_PT;
+namespace Faker\Test\Provider\pt_PT;
 
 use Faker\Generator;
 use Faker\Provider\pt_PT\PhoneNumber;
