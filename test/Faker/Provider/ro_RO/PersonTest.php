@@ -13,6 +13,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $faker = new Generator();
+        $faker->seed(1);
         $faker->addProvider(new DateTime($faker));
         $faker->addProvider(new Person($faker));
         $this->faker = $faker;
