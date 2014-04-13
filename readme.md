@@ -62,6 +62,30 @@ for ($i=0; $i < 10; $i++) {
 
 Each of the generator properties (like `name`, `address`, and `lorem`) are called "formatters". A faker generator has many of them, packaged in "providers". Here is a list of the bundled formatters in the default locale.
 
+### `Faker\Provider\Base`
+
+    randomDigit             // 7
+    randomDigitNotNull      // 5
+    randomNumber($nbDigits = NULL) // 79907610
+    randomNumber($from, $to) // 39049
+    randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL) // 48.8932
+    randomLetter            // 'b'
+    randomElements($array = array ('a','b','c'), $count = 1) // array('c')
+    randomElement($array = array ('a','b','c')) // 'b'
+    numerify($string = '###') // '609'
+    lexify($string = '????') // 'wgts'
+    bothify($string = '## ??') // '42 jz'
+
+### `Faker\Provider\Lorem`
+
+    word                    // 'aut'
+    words($nb = 3)          // array('porro', 'sed', 'magni')
+    sentence($nbWords = 6)  // 'Sit vitae voluptas sint non voluptates.'
+    sentences($nb = 3)      // array('Optio quos qui illo error.', 'Laborum vero a officia id corporis.', 'Saepe provident esse hic eligendi.')
+    paragraph($nbSentences = 3) // 'Ut ab voluptas sed a nam. Sint autem inventore aut officia aut aut blanditiis. Ducimus eos odit amet et est ut eum.'
+    paragraphs($nb = 3)     // array('Quidem ut sunt et quidem est accusamus aut. Fuga est placeat rerum ut. Enim ex eveniet facere sunt.', 'Aut nam et eum architecto fugit repellendus illo. Qui ex esse veritatis.', 'Possimus omnis aut incidunt sunt. Asperiores incidunt iure sequi cum culpa rem. Rerum exercitationem est rem.')
+    text($maxNbChars = 200) // 'Fuga totam reiciendis qui architecto fugiat nemo. Consequatur recusandae qui cupiditate eos quod.'
+
 ### `Faker\Provider\en_US\Person`
 
     prefix                  // 'Ms.'
@@ -99,43 +123,9 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     company                 // 'Bogan-Treutel'
     companySuffix           // 'and Sons'
 
-### `Faker\Provider\Payment`
+### `Faker\Provider\en_US\Text`
 
-    creditCardType          // 'MasterCard'
-    creditCardNumber        // '4485480221084675'
-    creditCardExpirationDate // 04/13
-    creditCardExpirationDateString // '04/13'
-    creditCardDetails       // array('MasterCard', '4485480221084675', 'Aleksander Nowak', '04/13')
-
-### `Faker\Provider\Lorem`
-
-    word                    // 'aut'
-    words($nb = 3)          // array('porro', 'sed', 'magni')
-    sentence($nbWords = 6)  // 'Sit vitae voluptas sint non voluptates.'
-    sentences($nb = 3)      // array('Optio quos qui illo error.', 'Laborum vero a officia id corporis.', 'Saepe provident esse hic eligendi.')
-    paragraph($nbSentences = 3) // 'Ut ab voluptas sed a nam. Sint autem inventore aut officia aut aut blanditiis. Ducimus eos odit amet et est ut eum.'
-    paragraphs($nb = 3)     // array('Quidem ut sunt et quidem est accusamus aut. Fuga est placeat rerum ut. Enim ex eveniet facere sunt.', 'Aut nam et eum architecto fugit repellendus illo. Qui ex esse veritatis.', 'Possimus omnis aut incidunt sunt. Asperiores incidunt iure sequi cum culpa rem. Rerum exercitationem est rem.')
-    text($maxNbChars = 200) // 'Fuga totam reiciendis qui architecto fugiat nemo. Consequatur recusandae qui cupiditate eos quod.'
-
-### `Faker\Provider\Text`
-
-    realText($maxNbChars = 200, $indexSize = 2) // 'At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur.'
-
-### `Faker\Provider\Internet`
-
-    email                   // 'tkshlerin@collins.com'
-    safeEmail               // 'king.alford@example.org'
-    freeEmail               // 'bradley72@gmail.com'
-    companyEmail            // 'russel.durward@mcdermott.org'
-    freeEmailDomain         // 'yahoo.com'
-    safeEmailDomain         // 'example.org'
-    userName                // 'wade55'
-    domainName              // 'wolffdeckow.net'
-    domainWord              // 'feeney'
-    tld                     // 'biz'
-    url                     // 'http://www.strackeframi.com/'
-    ipv4                    // '109.133.32.252'
-    ipv6                    // '8e65:933d:22ee:a232:f1c1:2741:1f10:117c'
+    realText($maxNbChars = 200, $indexSize = 2) // "And yet I wish you could manage it?) 'And what are they made of?' Alice asked in a shrill, passionate voice. 'Would YOU like cats if you were never even spoke to Time!' 'Perhaps not,' Alice replied."
 
 ### `Faker\Provider\DateTime`
 
@@ -159,29 +149,21 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     century                               // 'VI'
     timezone                              // 'Europe/Paris'
 
-### `Faker\Provider\Miscellaneous`
+### `Faker\Provider\Internet`
 
-    boolean($chanceOfGettingTrue = 50) // true
-    md5                     // 'de99a620c50f2990e87144735cd357e7'
-    sha1                    // 'f08e7f04ca1a413807ebc47551a40a20a0b4de5c'
-    sha256                  // '0061e4c60dac5c1d82db0135a42e00c89ae3a333e7c26485321f24348c7e98a5'
-    locale                  // en_UK
-    countryCode             // UK
-    languageCode            // en
-
-### `Faker\Provider\Base`
-
-    randomDigit             // 7
-    randomDigitNotNull      // 5
-    randomNumber($nbDigits = NULL) // 79907610
-    randomNumber($from, $to) // 39049
-    randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL) // 48.8932
-    randomLetter            // 'b'
-    randomElements($array = array ('a','b','c'), $count = 1) // array('c')
-    randomElement($array = array ('a','b','c')) // 'b'
-    numerify($string = '###') // '609'
-    lexify($string = '????') // 'wgts'
-    bothify($string = '## ??') // '42 jz'
+    email                   // 'tkshlerin@collins.com'
+    safeEmail               // 'king.alford@example.org'
+    freeEmail               // 'bradley72@gmail.com'
+    companyEmail            // 'russel.durward@mcdermott.org'
+    freeEmailDomain         // 'yahoo.com'
+    safeEmailDomain         // 'example.org'
+    userName                // 'wade55'
+    domainName              // 'wolffdeckow.net'
+    domainWord              // 'feeney'
+    tld                     // 'biz'
+    url                     // 'http://www.strackeframi.com/'
+    ipv4                    // '109.133.32.252'
+    ipv6                    // '8e65:933d:22ee:a232:f1c1:2741:1f10:117c'
 
 ### `Faker\Provider\UserAgent`
 
@@ -192,14 +174,13 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     opera                  // 'Opera/8.25 (Windows NT 5.1; en-US) Presto/2.9.188 Version/10.00'
     internetExplorer       // 'Mozilla/5.0 (compatible; MSIE 7.0; Windows 98; Win 9x 4.90; Trident/3.0)'
 
-### `Faker\Provider\Uuid`
+### `Faker\Provider\Payment`
 
-    uuid                   // '7e57d004-2b97-0e7a-b45f-5387367791cd'
-
-### `Faker\Provider\File`
-
-    fileExtension          // 'avi'
-    mimeType               // 'video/x-msvideo'
+    creditCardType          // 'MasterCard'
+    creditCardNumber        // '4485480221084675'
+    creditCardExpirationDate // 04/13
+    creditCardExpirationDateString // '04/13'
+    creditCardDetails       // array('MasterCard', '4485480221084675', 'Aleksander Nowak', '04/13')
 
 ### `Faker\Provider\Color`
 
@@ -210,28 +191,37 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     safeColorName          // 'fuchsia'
     colorName              // 'Gainsbor'
 
+### `Faker\Provider\File`
+
+    fileExtension          // 'avi'
+    mimeType               // 'video/x-msvideo'
+
 ### `Faker\Provider\Image`
 
-    /**
-     * Image generation provided by LoremPixel (http://lorempixel.com/)
-     *
-     * @param $dir An absolute path to a local directory
-     * @param $width/$height Size (in pixel) of the generated image (defaults to 640x480)
-     * @param $category One of 'abstract','animals','business','cats','city','food','nightlife','fashion','people','nature','sports','technics', and 'transport'
-     * @param $fullPath Whether to have the full path to the image or just the filename (default true)
-     */
-    image($dir)                  // '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
-    image($dir, $width, $height) // '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
-    image($dir, $width, $height, $category) // '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
-    image($dir, $width, $height, $category, $fullPath = false) // '13b73edae8443990be1aa8f1a483bc27.jpg'
-    imageUrl                    // 'http://lorempixel.com/640/480/'
-    imageUrl($width, $height)   // 'http://lorempixel.com/800/600/'
-    imageUrl($width, $height, $category) // 'http://lorempixel.com/800/600/person/'
+    // Image generation provided by LoremPixel (http://lorempixel.com/)
+    imageUrl($width = 640, $height = 480) // 'http://lorempixel.com/640/480/'
+    imageUrl($width, $height, 'cats')     // 'http://lorempixel.com/800/600/cats/'
+    image($dir = '/tmp', $width = 640, $height = 480) // '/tmp/13b73edae8443990be1aa8f1a483bc27.jpg'
+    image($dir, $width, $height, 'cats')  // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat!
+
+### `Faker\Provider\Uuid`
+
+    uuid                   // '7e57d004-2b97-0e7a-b45f-5387367791cd'
 
 ### `Faker\Provider\Barcode`
 
     ean13          // '4006381333931'
     ean8           // '73513537'
+
+### `Faker\Provider\Miscellaneous`
+
+    boolean($chanceOfGettingTrue = 50) // true
+    md5                     // 'de99a620c50f2990e87144735cd357e7'
+    sha1                    // 'f08e7f04ca1a413807ebc47551a40a20a0b4de5c'
+    sha256                  // '0061e4c60dac5c1d82db0135a42e00c89ae3a333e7c26485321f24348c7e98a5'
+    locale                  // en_UK
+    countryCode             // UK
+    languageCode            // en
 
 ## Unique and Optional modifiers
 
