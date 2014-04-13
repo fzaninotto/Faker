@@ -18,5 +18,4 @@ class NullGenerator
     {
         return null;
     }
-
 }

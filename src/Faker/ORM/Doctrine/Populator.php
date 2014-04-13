@@ -75,5 +75,4 @@ class Populator
 
         return $insertedEntities;
     }
-
 }

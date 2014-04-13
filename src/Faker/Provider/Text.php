@@ -53,7 +53,9 @@ abstract class Text extends \Faker\Provider\Base
             $next = implode(' ', $currentWords);
 
             // ensure text starts with an uppercase letter
-            if ($resultLength == 0 && !preg_match('/^\p{Lu}/u', $word)) continue;
+            if ($resultLength == 0 && !preg_match('/^\p{Lu}/u', $word)) {
+                continue;
+            }
 
             // append the element
             $result[] = $word;

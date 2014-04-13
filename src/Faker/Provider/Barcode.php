@@ -7,7 +7,7 @@ namespace Faker\Provider;
  */
 class Barcode extends \Faker\Provider\Base
 {
-    private function ean($length=13)
+    private function ean($length = 13)
     {
         $code = array();
         for ($i = 0; $i < $length - 1; $i++) {

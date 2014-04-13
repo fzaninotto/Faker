@@ -236,9 +236,15 @@ class Payment extends Base
             }
             switch ($class) {
                 default:
-                case 'c': $result .= mt_rand(0, 100) <= 50 ? static::randomDigit() : strtoupper(static::randomLetter()); break;
-                case 'a': $result .= strtoupper(static::randomLetter()); break;
-                case 'n': $result .= static::randomDigit(); break;
+                case 'c':
+                    $result .= mt_rand(0, 100) <= 50 ? static::randomDigit() : strtoupper(static::randomLetter());
+                    break;
+                case 'a':
+                    $result .= strtoupper(static::randomLetter());
+                    break;
+                case 'n':
+                    $result .= static::randomDigit();
+                    break;
             }
         }
 
@@ -252,8 +258,9 @@ class Payment extends Base
             $checksum = (10 * $checksum + (int) $tempResult[$i]) % 97;
         }
         $checksum = 98 - $checksum;
-        if ($checksum < 10)
+        if ($checksum < 10) {
             $checksum = '0'.$checksum;
+        }
 
         return $countryCode . $checksum . $result;
     }

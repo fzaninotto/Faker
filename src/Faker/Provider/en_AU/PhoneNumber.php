@@ -60,5 +60,4 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     {
         return static::numerify(static::randomElement(static::$areacodes));
     }
-
 }

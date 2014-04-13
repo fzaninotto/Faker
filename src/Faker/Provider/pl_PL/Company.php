@@ -34,7 +34,7 @@ class Company extends \Faker\Provider\Company
      */
     public static function regon()
     {
-        $weights = Array(8, 9, 2, 3, 4, 5, 6, 7);
+        $weights = array(8, 9, 2, 3, 4, 5, 6, 7);
         $regionNumber = static::numberBetween(0, 49) * 2 + 1;
         $result = array((int) ($regionNumber / 10), $regionNumber % 10);
         for ($i = 2, $size = count($weights); $i < $size; $i++) {
