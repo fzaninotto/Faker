@@ -4,6 +4,9 @@ namespace Faker\Provider\pt_PT;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
+     /*
+     * @link http://en.wikipedia.org/wiki/Telephone_numbers_in_Portugal
+     */
     protected static $phoneNumberPrefixes = array(
         'Abrantes' => '241',
         'Angra do Heroísmo' => '295',
@@ -58,35 +61,27 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         'Viseu' => '232',
     );
 
-    protected static $mobileFormats = array(
-        '91#######',
-        '92#######',
-        '93#######',
-        '96#######',
+    protected static $mobileNumberPrefixes = array(
+        '91#',
+        '92#',
+        '93#',
+        '96#',
     );
 
     protected static $countryCode = '+351';
 
-    public static function phoneNumber($allowCountryCodePrefix = true)
+    public static function phoneNumber()
     {
-        $format = static::randomElement(static::$phoneNumberPrefixes).'######';
+        $elements = array_merge(static::$phoneNumberPrefixes, static::$mobileNumberPrefixes);
+        $format = static::randomElement($elements).'######';
 
-        if ($allowCountryCodePrefix) {
-            return static::numerify(static::randomElement(array(static::$countryCode, '')).$format);
-        }
-
-        return static::numerify($format);
+        return static::numerify(static::randomElement(array(static::$countryCode, '')).$format);
     }
 
-    public static function mobileNumber($allowCountryCodePrefix = true)
+    public static function mobileNumber()
     {
-        $format = static::numerify(static::randomElement(static::$mobileFormats));
+        $format = static::randomElement(static::$mobileNumberPrefixes).'######';
 
-        if ($allowCountryCodePrefix) {
-            return static::numerify(static::randomElement(array(static::$countryCode, '')).$format);
-        }
-        
-        return static::numerify($format);
-        
+        return static::numerify(static::randomElement(array(static::$countryCode, '')).$format);
     }
 }
