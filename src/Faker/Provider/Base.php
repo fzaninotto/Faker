@@ -5,6 +5,7 @@ namespace Faker\Provider;
 use Faker\Generator;
 use Faker\NullGenerator;
 use Faker\UniqueGenerator;
+use Faker\WrongGenerator;
 
 class Base
 {
@@ -110,6 +111,12 @@ class Base
      */
     public static function numberBetween($from = null, $to = null)
     {
+        if ($to !== null && $from > $to) {
+            $tmp = $from;
+            $from = $to;
+            $to = $tmp;
+        }
+        
         return mt_rand($from ?: 0, $to ?: 2147483647); // 32bit compat default
     }
 
@@ -267,6 +274,26 @@ class Base
         }
 
         return new NullGenerator();
+    }
+    
+    /**
+     * Chainable method for using a different formatter than the one called and return a wrong value.
+     *
+     * @param float $weight Set the probability of receiving a wrong value.
+     *                      "0" will always return the wrong value generator, "1" will always return the generator.
+     * @param array $formatters array of formatters with arguments for each formatter (key is formatter name and value is an array of arguments).
+     *                          if the key is numeric and the value is the formatter name.
+     *                          if the array of formatters is empty, it uses a predefined set of formatters.
+     * @param boolean $asString convert generated objects and arrays to string, default = true
+     * @return mixed|null
+     */
+    public function wrong($weight = 0.5, array $formatters = array(), $asString = true)
+    {
+        if (mt_rand() / mt_getrandmax() <= $weight) {
+            return $this->generator;
+        }
+
+        return new WrongGenerator($this->generator, $formatters, $asString);
     }
 
     /**

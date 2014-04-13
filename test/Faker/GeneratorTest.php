@@ -104,11 +104,33 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
         $generator->addProvider($provider);
         $this->assertEquals('bazfoo', $generator->fooFormatterWithArguments('foo'));
     }
-
+    
+    public function testGetFormatters() 
+    {
+        $generator = new Generator;
+        $provider = new FooProvider();
+        $generator->addProvider($provider);
+        
+        $this->assertEquals(array(
+            'fooFormatter' => array(
+                0 => $provider,
+                1 => 'fooFormatter',
+            ),
+            'fooFormatterWithArguments' => array(
+                0 => $provider,
+                1 => 'fooFormatterWithArguments',
+            ),
+        ), $generator->getFormatters());
+    }
 }
 
 class FooProvider
 {
+    public function __construct()
+    {
+        
+    }
+    
     public function fooFormatter()
     {
         return 'foobar';

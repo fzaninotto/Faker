@@ -233,9 +233,9 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     ean13          // '4006381333931'
     ean8           // '73513537'
 
-## Unique and Optional modifiers
+## Unique, Optional and Wrong modifiers
 
-Faker provides two special providers, `unique()` and `optional()`, to be called before any provider. `optional()` can be useful for seeding non-required fields, like a mobile telephone number ; `unique()` is required to populate fields that cannot accept twice the same value, like primary identifiers.
+Faker provides three special providers, `unique()`, `optional()` and `wrong()`, to be called before any provider. `optional()` can be useful for seeding non-required fields, like a mobile telephone number ; `unique()` is required to populate fields that cannot accept twice the same value, like primary identifiers ; `wrong` is used to generate sometime an incorrect value to reflect real world project data which contains some wrong values or not well formatted.
 
 ```php
 // unique() forces providers to return unique values
@@ -272,6 +272,27 @@ print_r($values); // [1, 4, null, 9, 5, null, null, 4, 6, null]
 // 0 will always return NULL; 1 will always return the provider. Default weight is 0.5.
 $faker->optional($weight = 0.1)->randomDigit; // 90% chance of NULL
 $faker->optional($weight = 0.9)->randomDigit; // 10% chance of NULL
+
+// wrong() sometimes bypasses the provider to return a value generated with another method instead
+$values = array();
+for ($i=0; $i < 10; $i++) {
+  // get a random digit, but also a wrong value sometimes
+  $values []= $faker->wrong()->randomDigit;
+}
+print_r($values); // ['c', 0, 'Carmen', '2012-01-02', 'iwjw', 4, 9, 5, 'xwja', 'b']
+
+// wrong() accepts a weight argument to specify the probability of receiving a wrong value.
+// 0 will always return a wrong value; 1 will always return the correct provider. Default weight is 0.5.
+$faker->wrong($weight = 0.1)->randomDigit; // 90% chance of wrong value
+$faker->wrong($weight = 0.9)->randomDigit; // 10% chance of wrong value
+
+// you can restrict available formatters to use and arguments to pass to them
+$faker->wrong(
+    0.1, // probability to get wrong value
+    array('randomNumber' => array(1, 1000), 'dateTime' => array('2014-02-03'), 'dateTimeThisMonth', 'url') //formatters to use with custom arguments sometimes
+    true // return objects and array as string
+)
+
 ```
 
 ## Localization

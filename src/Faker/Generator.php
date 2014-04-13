@@ -101,6 +101,7 @@ namespace Faker;
  * @method string toUpper()
  * @method mixed optional()
  * @method UniqueGenerator unique()
+ * @method WrongGenerator wrong()
  *
  * @property string userAgent
  * @property string chrome
@@ -165,6 +166,26 @@ class Generator
         throw new \InvalidArgumentException(sprintf('Unknown formatter "%s"', $formatter));
     }
 
+    /**
+     * 
+     * @return array of all Provider Callables
+     */
+    public function getFormatters()
+    {
+        $this->formatters = array();
+        foreach ($this->providers as $provider) {
+            $class = new \ReflectionClass($provider);
+            $formatters = $class->getMethods();
+            foreach ($formatters as $formatter) {
+                if ($formatter->isPublic() && !$formatter->isConstructor() && !$formatter->isDestructor()) {
+                    $this->formatters[$formatter->getName()] = array($provider, $formatter->getName());
+                }
+            }
+        }
+        
+        return $this->formatters;
+    }
+    
     /**
      * Replaces tokens ('{{ tokenName }}') with the result from the token method call
      *
