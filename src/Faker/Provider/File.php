@@ -560,4 +560,37 @@ class File extends \Faker\Provider\Base
 
         return is_array($random_extension) ? static::randomElement($random_extension) : $random_extension;
     }
+
+    /**
+     * Copy a random file from the source directory to the target directory and returns the filename/fullpath
+     *
+     * @param  string  $sourceDirectory The directory to look for random file taking
+     * @param  string  $targetDirectory
+     * @param  boolean $fullPath        Wether to have the full path or just the filename
+     * @return string
+     */
+    public static function file($sourceDirectory = '/tmp', $targetDirectory = '/tmp', $fullPath = true)
+    {
+        if (!is_dir($sourceDirectory)) {
+            throw new \InvalidArgumentException(sprintf('Source directory %s does not exist or is not a directory.', $sourceDirectory));
+        }
+
+        if (!is_dir($targetDirectory)) {
+            throw new \InvalidArgumentException(sprintf('Target directory %s does not exist or is not a directory.', $targetDirectory));
+        }
+
+        // Drop . and .. and reset array keys
+        $files = array_values(array_diff(scandir($sourceDirectory), array('.', '..')));
+
+        $sourceFullPath = $sourceDirectory . DIRECTORY_SEPARATOR . static::randomElement($files);
+
+        $destinationFile = Uuid::uuid() . '.' . pathinfo($sourceFullPath, PATHINFO_EXTENSION);
+        $destinationFullPath = $targetDirectory . DIRECTORY_SEPARATOR . $destinationFile;
+
+        if (false === copy($sourceFullPath, $destinationFullPath)) {
+            return false;
+        }
+
+        return $fullPath ? $destinationFullPath : $destinationFile;
+    }
 }
