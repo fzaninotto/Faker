@@ -587,9 +587,7 @@ class File extends \Faker\Provider\Base
         $destinationFile = Uuid::uuid() . '.' . pathinfo($sourceFullPath, PATHINFO_EXTENSION);
         $destinationFullPath = $targetDirectory . DIRECTORY_SEPARATOR . $destinationFile;
 
-        copy($sourceFullPath, $destinationFullPath);
-
-        if (!file_exists($destinationFullPath)) {
+        if (false === copy($sourceFullPath, $destinationFullPath)) {
             return false;
         }
 
