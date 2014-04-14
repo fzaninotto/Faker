@@ -195,14 +195,8 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
     fileExtension          // 'avi'
     mimeType               // 'video/x-msvideo'
-    /**
-     * Copy a random file from the source directory to the target directory and returns the filename/fullpath
-     *
-     * @param $sourceDirectory The directory to look for random file taking
-     * @param $targetDirectory
-     * @param $fullPath Wether to have the full path or just the filename (default true)
-     */
-    file($sourceDir, $targetDir) // '/path/to/targetDir/13b73edae8443990be1aa8f1a483bc27.jpg'
+    // Copy a random file from the source to the target directory and returns the fullpath or filename
+    file($sourceDir = '/tmp', $targetDir = '/tmp') // '/path/to/targetDir/13b73edae8443990be1aa8f1a483bc27.jpg'
     file($sourceDir, $targetDir, false) // '13b73edae8443990be1aa8f1a483bc27.jpg'
 
 ### `Faker\Provider\Image`
