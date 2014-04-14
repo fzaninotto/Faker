@@ -118,8 +118,8 @@ class Address extends \Faker\Provider\Address
     protected static $streetNameFormats = array(
         '{{streetPrefix}}{{streetSuffix}}',
         '{{streetPrefix}}{{streetSuffix}}',
-        '{{firstNameMan}}{{streetSuffix}}',
-        '{{firstNameWoman}}{{streetSuffix}}'
+        '{{firstNameMale}}{{streetSuffix}}',
+        '{{firstNameFemale}}{{streetSuffix}}'
     );
 
     /**

@@ -4,19 +4,20 @@ namespace Faker\Provider\ja_JP;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $formats = array(
-        '{{lastName}} {{firstName}}'
+    protected static $maleNameFormats = array(
+        '{{lastName}} {{firstNameMale}}',
     );
 
-    protected static $firstName = array(
-        '晃', '明美', 'あすか', '治',
-        '加奈', '京助', '健一', 'くみ子',
-        '淳', '聡太郎',
-        '太郎', '千代', '知実', '智也',
-        '直樹', '直子',
-        '花子', '浩',
-        'みつる', '桃子',
-        '裕美子', '里佳',
+    protected static $femaleNameFormats = array(
+         '{{lastName}} {{firstNameFemale}}',
+    );
+
+    protected static $firstNameMale = array(
+        'みつる', '京助', '健一', '太郎', '晃', '智也', '治', '浩', '淳', '直樹', '聡太郎',
+    );
+
+    protected static $firstNameFemale = array(
+        'あすか', 'くみ子', '加奈', '明美', '桃子', '直子', '知実', '花子', '裕美子', '里佳', '千代',
     );
 
     protected static $lastName = array(

@@ -4,40 +4,48 @@ namespace Faker\Provider\es_AR;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $formats = array(
-        '{{firstName}} {{lastName}}',
-        '{{firstName}} {{lastName}}',
-        '{{firstName}} {{lastName}}',
-        '{{firstName}} {{lastName}}',
-        '{{firstName}} {{lastName}}',
-        '{{prefix}} {{firstName}} {{lastName}}',
-        '{{firstName}} {{lastName}} {{suffix}}',
-        '{{prefix}} {{firstName}} {{lastName}} {{suffix}}'
+    protected static $maleNameFormats = array(
+        '{{firstNameMale}} {{lastName}}',
+        '{{firstNameMale}} {{lastName}}',
+        '{{firstNameMale}} {{lastName}}',
+        '{{firstNameMale}} {{lastName}}',
+        '{{titleMale}} {{firstNameMale}} {{lastName}}',
+        '{{firstNameMale}} {{lastName}} {{suffix}}',
+        '{{titleMale}} {{firstNameMale}} {{lastName}} {{suffix}}',
     );
 
-    protected static $firstName = array(
-        'Aarón', 'Abigail', 'Abril', 'Adriana', 'Adrián', 'Agustina', 'Agustín', 'Aitana', 'Alan', 'Alejandra', 'Alejandro', 'Alessandra', 'Alex', 'Alexa', 'Alexander', 'Allison', 'Alma', 'Alonso', 'Amanda', 'Amelia', 'Ana Paula', 'Ana Sofía', 'Ana', 'Andrea', 'Andrés', 'Anthony', 'Antonella', 'Antonia', 'Antonio', 'Ariadna', 'Ariana', 'Ashley', 'Axel',
-        'Bautista', 'Benjamín', 'Bianca', 'Bruno',
-        'Camila', 'Camilo', 'Carla', 'Carlos', 'Carolina', 'Catalina', 'Christian', 'Christopher', 'Clara', 'Constanza', 'Cristóbal',
-        'Damián', 'Daniel', 'Daniela', 'Dante', 'David', 'Delfina', 'Diego Alejandro', 'Diego', 'Dylan',
-        'Eduardo', 'Elena ', 'Elizabeth', 'Elías', 'Emilia', 'Emiliano', 'Emilio', 'Emily', 'Emma', 'Emmanuel', 'Esteban',
-        'Fabiana', 'Facundo', 'Felipe', 'Fernando', 'Florencia', 'Francisco', 'Franco', 'Fátima ',
-        'Gabriel', 'Gabriela', 'Gael', 'Guadalupe',
-        'Hugo', 'Horacio', 'Hidalgo', 'Hipólito',
-        'Ian', 'Ignacio', 'Irene', 'Isaac', 'Isabel', 'Isabella', 'Isidora', 'Ivan', 'Ivanna',
-        'Jacobo', 'Javier', 'Jazmín', 'Jerónimo', 'Jesús', 'Joaquín', 'Jorge', 'José', 'Josefa', 'Josefina', 'Joshua', 'Josué', 'Juan David', 'Juan Diego', 'Juan Esteban', 'Juan José', 'Juan Manuel', 'Juan Martín', 'Juan Pablo', 'Juan Sebastián', 'Juan', 'Juana', 'Julia', 'Juliana', 'Julieta', 'Julián',
-        'Kevin',
-        'Laura', 'Lautaro', 'Leonardo', 'Lola', 'Lorenzo', 'Luana', 'Lucas', 'Luciana', 'Luciano', 'Lucía', 'Luis', 'Luna',
-        'Magdalena', 'Maite', 'Malena', 'Manuel', 'Manuela', 'Mariana', 'Mariangel', 'Mario', 'Martina', 'Martín', 'María Alejandra', 'María Camila', 'María Fernanda', 'María José', 'María Paula', 'María', 'Mateo', 'Matthew', 'Matías', 'Maximiliano', 'Micaela', 'Michelle', 'Miguel Ángel', 'Miguel', 'Miranda', 'Montserrat', 'Máximo', 'Mía',
-        'Nadia', 'Nahuel', 'Natalia', 'Nicole',
-        'Olivia', 'Oliva', 'Ornela',
-        'Pablo', 'Paula', 'Paulina', 'Pedro',
-        'Rafael', 'Rafaela', 'Rebeca', 'Regina', 'Renata', 'Ricardo', 'Rodrigo', 'Romina',
-        'Salomé', 'Samantha', 'Samuel', 'Santiago', 'Santino', 'Sara Sofía', 'Sara', 'Sebastián', 'Sergio', 'Silvana ', 'Simón', 'Sofía', 'Sophie',
-        'Thiago', 'Tomas',
-        'Valentina', 'Valentino', 'Valentín', 'Valeria', 'Valery ', 'Vicente', 'Victoria', 'Violeta',
-        'Ximena/Jimena',
-        'Zoe',
+    protected static $femaleNameFormats = array(
+        '{{firstNameFemale}} {{lastName}}',
+        '{{firstNameFemale}} {{lastName}}',
+        '{{firstNameFemale}} {{lastName}}',
+        '{{firstNameFemale}} {{lastName}}',
+        '{{titleFemale}} {{firstNameFemale}} {{lastName}}',
+        '{{firstNameFemale}} {{lastName}} {{suffix}}',
+        '{{titleFemale}} {{firstNameFemale}} {{lastName}} {{suffix}}',
+    );
+
+    protected static $firstNameMale = array(
+        'Aarón', 'Adrián', 'Agustín', 'Alan', 'Alejandro', 'Alex', 'Alexander', 'Alonso', 'Andrés', 'Anthony', 'Antonio', 'Axel', 'Benjamín',
+        'Bruno', 'Camilo', 'Carlos', 'Christian', 'Christopher', 'Cristóbal', 'Damián', 'Daniel', 'Dante', 'David', 'Diego', 'Diego Alejandro',
+        'Dylan', 'Eduardo', 'Elías', 'Emiliano', 'Emilio', 'Emmanuel', 'Esteban', 'Facundo', 'Felipe', 'Fernando', 'Francisco', 'Franco',
+        'Gabriel', 'Gael', 'Hipólito', 'Horacio', 'Hugo', 'Ian', 'Ignacio', 'Isaac', 'Ivan', 'Jacobo', 'Javier', 'Jerónimo',
+        'Jesús', 'Joaquín', 'Jorge', 'Joshua', 'Josué', 'José', 'Juan', 'Juan David', 'Juan Diego', 'Juan José', 'Juan Manuel', 'Juan Martín',
+        'Juan Pablo', 'Juan Sebastián', 'Julián', 'Kevin', 'Lautaro', 'Leonardo', 'Lorenzo', 'Lucas', 'Luciano', 'Luis', 'Manuel', 'Mario',
+        'Martín', 'Mateo', 'Matthew', 'Matías', 'Maximiliano', 'Miguel', 'Miguel Ángel', 'Máximo', 'Nahuel', 'Pablo', 'Pedro', 'Rafael',
+        'Ricardo', 'Rodrigo', 'Samuel', 'Santiago', 'Santino', 'Sebastián', 'Sergio', 'Simón', 'Thiago', 'Tomas', 'Valentino', 'Valentín',
+        'Vicente', 'Bautista', 'Juan Esteban', 'Hidalgo'
+    );
+
+    protected static $firstNameFemale = array(
+        'Abigail', 'Abril', 'Adriana', 'Agustina', 'Alejandra', 'Alessandra', 'Alexa', 'Allison', 'Alma', 'Amanda', 'Amelia', 'Ana', 'Ana Paula',
+        'Ana Sofía', 'Andrea', 'Antonella', 'Antonia', 'Ariadna', 'Ariana', 'Ashley', 'Bianca', 'Camila', 'Carla', 'Carolina', 'Catalina',
+        'Clara', 'Constanza', 'Daniela', 'Delfina', 'Elena ', 'Elizabeth', 'Emilia', 'Emily', 'Emma', 'Fabiana', 'Florencia', 'Fátima ',
+        'Gabriela', 'Guadalupe', 'Irene', 'Isabel', 'Isabella', 'Isidora', 'Ivanna', 'Jazmín', 'Josefa', 'Josefina', 'Juana', 'Julia',
+        'Juliana', 'Julieta', 'Laura', 'Lola', 'Luana', 'Luciana', 'Lucía', 'Luna', 'Magdalena', 'Maite', 'Malena', 'Manuela',
+        'Mariana', 'Mariangel', 'Martina', 'María', 'María Alejandra', 'María Camila', 'María Fernanda', 'María José', 'María Paula', 'Micaela', 'Michelle', 'Miranda',
+        'Montserrat', 'Mía', 'Nadia', 'Natalia', 'Nicole', 'Oliva', 'Olivia', 'Ornela', 'Paula', 'Paulina', 'Rafaela', 'Rebeca',
+        'Regina', 'Renata', 'Romina', 'Salomé', 'Samantha', 'Sara', 'Silvana ', 'Sofía', 'Sophie', 'Valentina', 'Valeria', 'Valery ',
+        'Victoria', 'Violeta', 'Zoe', 'Aitana', 'Sara Sofía', 'Ximena/Jimena'
     );
 
     protected static $lastName = array(
@@ -66,17 +74,11 @@ class Person extends \Faker\Provider\Person
         'Zambrano', 'Zamora', 'Zamudio', 'Zapata', 'Zaragoza', 'Zarate', 'Zavala', 'Zayas', 'Zelaya', 'Zepeda', 'Zúñiga'
     );
 
-    private static $prefix = array('Sr.', 'Sra.', 'Srita.', 'Dn.', 'Dr.', 'Lic.', 'Ing.');
+    protected static $titleMale = array('Sr.', 'Dn.', 'Dr.', 'Lic.', 'Ing.');
+
+    protected static $titleFemale = array('Sra.', 'Srita.', 'Dr.', 'Lic.', 'Ing.');
 
     private static $suffix = array('Hijo', 'Segundo', 'Tercero');
-
-    /**
-     * @example 'Sra.'
-     */
-    public static function prefix()
-    {
-        return static::randomElement(static::$prefix);
-    }
 
     /**
      * @example 'Hijo'

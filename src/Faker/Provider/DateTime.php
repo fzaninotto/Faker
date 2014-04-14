@@ -34,7 +34,7 @@ class DateTime extends \Faker\Provider\Base
     /**
      * Get a datetime object for a date between January 1, 1970 and now
      *
-     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param  \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example DateTime('2005-08-16 20:39:21')
      * @return \DateTime
      */
@@ -46,7 +46,7 @@ class DateTime extends \Faker\Provider\Base
     /**
      * Get a datetime object for a date between January 1, 001 and now
      *
-     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param  \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example DateTime('1265-03-22 21:15:52')
      * @return \DateTime
      */
@@ -94,8 +94,8 @@ class DateTime extends \Faker\Provider\Base
      * Get a DateTime object based on a random date between two given dates.
      * Accepts date strings that can be recognized by strtotime().
      *
-     * @param string $startDate Defaults to 30 years ago
-     * @param string $endDate   Defaults to "now"
+     * @param  string    $startDate Defaults to 30 years ago
+     * @param  string    $endDate   Defaults to "now"
      * @example DateTime('1999-02-02 11:42:52')
      * @return \DateTime
      */
@@ -117,7 +117,7 @@ class DateTime extends \Faker\Provider\Base
     }
 
     /**
-     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param  \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example DateTime('1964-04-04 11:02:02')
      * @return \DateTime
      */
@@ -127,7 +127,7 @@ class DateTime extends \Faker\Provider\Base
     }
 
     /**
-     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param  \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example DateTime('2010-03-10 05:18:58')
      * @return \DateTime
      */
@@ -137,7 +137,7 @@ class DateTime extends \Faker\Provider\Base
     }
 
     /**
-     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param  \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example DateTime('2011-09-19 09:24:37')
      * @return \DateTime
      */
@@ -147,7 +147,7 @@ class DateTime extends \Faker\Provider\Base
     }
 
     /**
-     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param  \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example DateTime('2011-10-05 12:51:46')
      * @return \DateTime
      */

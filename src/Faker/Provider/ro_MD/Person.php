@@ -4,15 +4,18 @@ namespace Faker\Provider\ro_MD;
 class Person extends \Faker\Provider\Person
 {
     // http://en.wikipedia.org/wiki/Romanian_name, prefixes are for more formal purposes
-    protected static $formats = array(
+    protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}',
+        '{{titleMale}} {{firstNameMale}} {{lastName}}',
+    );
+
+    protected static $femaleNameFormats = array(
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
-        '{{prefixMale}} {{firstNameMale}} {{lastName}}',
-        '{{prefixFemale}} {{firstNameFemale}} {{lastName}}'
+        '{{titleFemale}} {{firstNameFemale}} {{lastName}}'
     );
 
     //http://ro.wikipedia.org/wiki/List%C4%83_de_prenume_rom%C3%A2ne%C8%99ti#Feminine
@@ -82,50 +85,6 @@ class Person extends \Faker\Provider\Person
         'Vintila', 'Visan', 'Vlad', 'Voicu', 'Voinea', 'Zaharia', 'Zamfir'
     );
 
-    protected static $prefixMale = array('dl.', 'ing.', 'dr.');
-    protected static $prefixFemale = array('d-na.', 'd-șoara', 'ing.', 'dr.');
-
-    /**
-     * @example 'Ion Popescu'
-     */
-    public function name()
-    {
-        $format = static::randomElement(static::$formats);
-
-        return $this->generator->parse($format);
-    }
-
-    /**
-     * @example 'Ion'
-     */
-    public static function firstNameMale()
-    {
-        return static::randomElement(static::$firstNameMale);
-    }
-
-    /**
-     * @example 'Maria'
-     */
-    public static function firstNameFemale()
-    {
-        return static::randomElement(static::$firstNameFemale);
-    }
-
-    /**
-     * @example 'Popescu'
-     */
-    public static function lastName()
-    {
-        return static::randomElement(static::$lastName);
-    }
-
-    public static function prefixMale()
-    {
-        return static::randomElement(static::$prefixMale);
-    }
-
-    public static function prefixFemale()
-    {
-        return static::randomElement(static::$prefixFemale);
-    }
+    protected static $titleMale = array('dl.', 'ing.', 'dr.');
+    protected static $titleFemale = array('d-na.', 'd-șoara', 'ing.', 'dr.');
 }

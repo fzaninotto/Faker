@@ -4,19 +4,27 @@ namespace Faker\Provider\sk_SK;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $formats = array(
+    protected static $lastNameFormat = array(
+        '{{lastNameMale}}',
+        '{{lastNameFemale}}',
+    );
+    
+    protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
+        '{{titleMale}} {{firstNameMale}} {{lastNameMale}}',
+        '{{titleMale}} {{firstNameMale}} {{lastNameMale}} {{suffix}}',
+    );
+
+    protected static $femaleNameFormats = array(
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
-        '{{prefix}} {{firstNameMale}} {{lastNameMale}}',
-        '{{prefix}} {{firstNameFemale}} {{lastNameFemale}}',
-        '{{prefix}} {{firstNameMale}} {{lastNameMale}} {{suffix}}',
-        '{{prefix}} {{firstNameFemale}} {{lastNameFemale}} {{suffix}}'
+        '{{titleFemale}} {{firstNameFemale}} {{lastNameFemale}}',
+        '{{titleFemale}} {{firstNameFemale}} {{lastNameFemale}} {{suffix}}'
     );
 
     protected static $firstNameMale = array(
@@ -95,7 +103,7 @@ class Person extends \Faker\Provider\Person
         'Finková', 'Hrdá', 'Murčová'
     );
 
-    private static $prefix = array(
+    protected static $title = array(
         'Bc.', 'Ing.', 'MUDr.', 'MVDr.', 'Mgr.', 'JUDr.', 'PhDr.', 'RNDr.', 'doc.', 'Dr.', 'BcA.', 'ICDr.', 'Ing.', 'Ing. arch.', 'JUDr.',
         'Mgr. art.', 'MSDr.', 'PaedDr.', 'PharmDr.', 'PhDr.', 'PhMr.', 'RNDr.', 'RSDr.', 'ThDr.', 'ThLic.', 'prof.', 'Dr. h. c.'
     );
@@ -104,28 +112,40 @@ class Person extends \Faker\Provider\Person
         'CSc.', 'DrSc.', 'DSc.', 'Ph.D.', 'Th.D.'
     );
 
-    public static function firstName()
+    public function title($gender = null)
     {
-        $gender = static::randomElement(array('Male', 'Female'));
-
-        return call_user_func(array('static', 'firstName'.$gender));
+        return static::titleMale();
     }
 
-    public static function firstNameMale()
+    /**
+     * replaced by specific unisex slovakian title
+     */
+    public static function titleMale()
     {
-        return static::randomElement(static::$firstNameMale);
+        return static::randomElement(static::$title);
     }
 
-    public static function firstNameFemale()
+    /**
+     * replaced by specific unisex slovakian title
+     */
+    public static function titleFemale()
     {
-        return static::randomElement(static::$firstNameFemale);
+        return static::titleMale();
     }
 
-    public static function lastName()
+    /**
+     * @param string|null $gender 'male', 'female' or null for any 
+     * @example 'Novotný'
+     */
+    public function lastName($gender = null)
     {
-        $gender = static::randomElement(array('Male', 'Female'));
-
-        return call_user_func(array('static', 'lastName'.$gender));
+        if ($gender === static::GENDER_MALE) {
+            return static::lastNameMale();
+        } elseif ($gender === static::GENDER_FEMALE) {
+            return static::lastNameFemale();
+        }
+        
+        return $this->generator->parse(static::randomElement(static::$lastNameFormat));
     }
 
     public static function lastNameMale()
@@ -136,11 +156,6 @@ class Person extends \Faker\Provider\Person
     public static function lastNameFemale()
     {
         return static::randomElement(static::$lastNameFemale);
-    }
-
-    public static function prefix()
-    {
-        return static::randomElement(static::$prefix);
     }
 
     /**

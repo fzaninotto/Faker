@@ -74,9 +74,9 @@ class Lorem extends \Faker\Provider\Base
      * Generate a random sentence
      *
       * @example 'Lorem ipsum dolor sit amet.'
-     * @param integer $nbWords         around how many words the sentence should contain
-     * @param boolean $variableNbWords set to false if you want exactly $nbWords returned,
-     *                                 otherwise $nbWords may vary by +/-40% with a minimum of 1
+     * @param  integer $nbWords         around how many words the sentence should contain
+     * @param  boolean $variableNbWords set to false if you want exactly $nbWords returned,
+     *                                  otherwise $nbWords may vary by +/-40% with a minimum of 1
      * @return string
      */
     public static function sentence($nbWords = 6, $variableNbWords = true)
@@ -116,9 +116,9 @@ class Lorem extends \Faker\Provider\Base
      * Generate a single paragraph
      *
       * @example 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'
-     * @param integer $nbSentences         around how many sentences the paragraph should contain
-     * @param boolean $variableNbSentences set to false if you want exactly $nbSentences returned,
-     *                                     otherwise $nbSentences may vary by +/-40% with a minimum of 1
+     * @param  integer $nbSentences         around how many sentences the paragraph should contain
+     * @param  boolean $variableNbSentences set to false if you want exactly $nbSentences returned,
+     *                                      otherwise $nbSentences may vary by +/-40% with a minimum of 1
      * @return string
      */
     public static function paragraph($nbSentences = 3, $variableNbSentences = true)

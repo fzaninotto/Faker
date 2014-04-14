@@ -4,18 +4,27 @@ namespace Faker\Provider\fr_BE;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $firstName = array(
-        'Aaron', 'Adam', 'Adrien', 'Alessio', 'Alexander', 'Alexandre', 'Alexia', 'Alexis', 'Alice', 'Alicia', 'Alyssa', 'Amber', 'Amélie', 'Amy', 'Anaïs', 'Anna', 'Anouk', 'Antoine',
-        'Arne', 'Arthur', 'Axel', 'Axelle', 'Aya', 'Ayoub', 'Baptiste', 'Benjamin', 'Bo', 'Camille', 'Célia', 'Charlotte', 'Chiara', 'Chloé', 'Clara', 'Clémence', 'Clément', 'Daan',
-        'David', 'Diego', 'Dylan', 'Elena', 'Elias', 'Eline', 'Elisa', 'Elise', 'Ella', 'Eloïse', 'Emiel', 'Emile', 'Emilie', 'Emma', 'Enzo', 'Estelle', 'Ethan', 'Eva', 'Febe', 'Femke',
-        'Ferre', 'Fien', 'Finn', 'Fleur', 'Florian', 'Gabriel', 'Gilles', 'Giulia', 'Guillaume', 'Hajar', 'Hamza', 'Hanne', 'Helena', 'Hugo', 'Ilias', 'Ines', 'Inès', 'Jade', 'Jana', 'Janne',
-        'Jarne', 'Jasper', 'Jeanne', 'Jelle', 'Jonas', 'Jules', 'Julia', 'Julie', 'Julien', 'Juliette', 'Kaat', 'Kato', 'Kobe', 'Lana', 'Lander', 'Lara', 'Lars', 'Laura', 'Laure', 'Léa',
-        'Lena', 'Leon', 'Liam', 'Lien', 'Lilou', 'Lily', 'Lina', 'Linde', 'Lisa', 'Lise', 'Loïc', 'Lola', 'Lore', 'Lotte', 'Louis', 'Louise', 'Lowie', 'Luca', 'Lucas', 'Lucie', 'Lukas',
-        'Luna', 'Maëlle', 'Malak', 'Manon', 'Margaux', 'Margot', 'Marie', 'Marion', 'Martin', 'Mathéo', 'Mathias', 'Mathis', 'Mathys', 'Mats', 'Matteo', 'Mauro', 'Maxim', 'Maxime', 'Maya',
-        'Mehdi', 'Merel', 'Mila', 'Milan', 'Mohamed', 'Mohammed', 'Nathan', 'Nicolas', 'Niels', 'Nina', 'Noa', 'Noah', 'Noé', 'Noémie', 'Nolan', 'Noor', 'Nora', 'Nore', 'Océane', 'Olivia',
-        'Pauline', 'Quinten', 'Rania', 'Raphaël', 'Rayan', 'Robbe', 'Robin', 'Romain', 'Romane', 'Roos', 'Ruben', 'Rune', 'Sacha', 'Salma', 'Sam', 'Samuel', 'Sander', 'Sara', 'Sarah', 'Senne',
-        'Seppe', 'Siebe', 'Simon', 'Sofia', 'Stan', 'Tess', 'Théo', 'Thomas', 'Tibo', 'Tom', 'Tristan', 'Tuur', 'Vic', 'Victor', 'Victoria', 'Vince', 'Warre', 'Wout', 'Xander', 'Yana', 'Yanis',
-        'Yasmine', 'Zoé', 'Zoë'
+    protected static $firstNameMale = array(
+        'Aaron', 'Adam', 'Adrien', 'Alessio', 'Alexander', 'Alexandre', 'Antoine', 'Arne', 'Arthur', 'Axel', 'Ayoub', 'Baptiste', 'Benjamin',
+        'Bo', 'Clément', 'Daan', 'David', 'Diego', 'Dylan', 'Elias', 'Emiel', 'Emile', 'Enzo', 'Ethan', 'Finn',
+        'Florian', 'Gabriel', 'Gilles', 'Guillaume', 'Hamza', 'Hugo', 'Ilias', 'Janne', 'Jasper', 'Jelle', 'Jonas', 'Jules',
+        'Julien', 'Kato', 'Lars', 'Leon', 'Liam', 'Louis', 'Loïc', 'Luca', 'Lucas', 'Lukas', 'Martin', 'Mathias',
+        'Mathis', 'Mathéo', 'Mats', 'Matteo', 'Mauro', 'Maxim', 'Maxime', 'Mehdi', 'Milan', 'Mohamed', 'Mohammed', 'Nathan',
+        'Nicolas', 'Niels', 'Noah', 'Nolan', 'Quinten', 'Raphaël', 'Rayan', 'Robbe', 'Romain', 'Ruben', 'Rune', 'Sacha',
+        'Sam', 'Samuel', 'Sander', 'Simon', 'Stan', 'Thomas', 'Théo', 'Tibo', 'Tom', 'Tristan', 'Vic', 'Victor',
+        'Vince', 'Wout', 'Xander', 'Yanis', 'Jarne', 'Lowie', 'Mathys', 'Senne', 'Seppe', 'Siebe', 'Tuur', 'Warre'
+    );
+
+    protected static $firstNameFemale = array(
+        'Alexia', 'Alexis', 'Alice', 'Alicia', 'Alyssa', 'Amber', 'Amy', 'Amélie', 'Anaïs', 'Anna', 'Anouk', 'Axelle', 'Aya',
+        'Camille', 'Charlotte', 'Chiara', 'Chloé', 'Clara', 'Clémence', 'Célia', 'Elena', 'Eline', 'Elisa', 'Elise', 'Ella',
+        'Eloïse', 'Emilie', 'Emma', 'Estelle', 'Eva', 'Febe', 'Femke', 'Fien', 'Fleur', 'Giulia', 'Hajar', 'Hanne',
+        'Helena', 'Ines', 'Inès', 'Jade', 'Jana', 'Jeanne', 'Julia', 'Julie', 'Juliette', 'Kaat', 'Kobe', 'Lana',
+        'Lander', 'Lara', 'Laura', 'Laure', 'Lena', 'Lien', 'Lilou', 'Lily', 'Lina', 'Linde', 'Lisa', 'Lise',
+        'Lola', 'Lore', 'Lotte', 'Louise', 'Lucie', 'Luna', 'Léa', 'Malak', 'Manon', 'Margaux', 'Margot', 'Marie',
+        'Marion', 'Maya', 'Maëlle', 'Merel', 'Mila', 'Nina', 'Noa', 'Noor', 'Nora', 'Nore', 'Noé', 'Noémie',
+        'Océane', 'Olivia', 'Pauline', 'Rania', 'Robin', 'Romane', 'Salma', 'Sara', 'Sarah', 'Sofia', 'Tess', 'Victoria',
+        'Yana', 'Yasmine', 'Zoé', 'Zoë', 'Ferre', 'Roos'
     );
 
     protected static $lastName = array(
@@ -34,17 +43,7 @@ class Person extends \Faker\Provider\Person
         'Verhoeven', 'Verlinden', 'Vermeersch', 'Vermeiren', 'Vermeulen', 'Verschueren', 'Verstraete', 'Verstraeten', 'Vervoort', 'Wauters', 'Willems', 'Wouters', 'Wuyts', 'Yildirim', 'Yilmaz'
     );
 
-     private static $prefix = array('M.', 'Mme', 'Mlle', 'Dr', 'Pr', 'Me', 'Mgr');
+    protected static $titleMale = array('M.', 'Dr.', 'Pr.', 'Me.', 'Mgr');
 
-    /**
-     * Randomly returns a belgian prefix.
-     *
-     * @example 'Mrs.'
-     *
-     * @return string
-     */
-    public static function prefix()
-    {
-        return static::randomElement(static::$prefix);
-    }
+    protected static $titleFemale = array('Mme.', 'Mlle', 'Dr.', 'Pr.', 'Me.');
 }
