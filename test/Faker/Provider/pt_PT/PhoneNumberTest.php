@@ -16,10 +16,10 @@ class PhoneNumberTest extends \PHPUnit_Framework_TestCase
 
     public function testPhoneNumberReturnsPhoneNumberWithOrWithoutPrefix()
     {
-        $this->assertRegExp('/^(9[1,2,3,6][0-9]{7})|(2[0-9]{8})|(\+351[2][0-9]{8})|(\+3519[1,2,3,6][0-9]{7})/', $this->faker->phoneNumber());
+        $this->assertRegExp('/^(9[1,2,3,6][0-9]{7})|(2[0-9]{8})|(\+351 [2][0-9]{8})|(\+351 9[1,2,3,6][0-9]{7})/', $this->faker->phoneNumber());
     }
     public function testMobileNumberReturnsMobileNumberWithOrWithoutPrefix()
     {
-        $this->assertRegExp('/^(9[1,2,3,6][0-9]{7})|(\+3519[1,2,3,6][0-9]{7})/', $this->faker->mobileNumber());
+        $this->assertRegExp('/^(9[1,2,3,6][0-9]{7})/', $this->faker->mobileNumber());
     }
 }
