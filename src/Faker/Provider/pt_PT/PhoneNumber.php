@@ -37,14 +37,14 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     );
 
     protected static $mobileNumberPrefixes = array(
-        '91',
-        '92',
-        '93',
-        '96',
+        '91#########',
+        '92#########',
+        '93#########',
+        '96#########',
     );
 
     public static function mobileNumber()
     {
-        return static::numerify(static::randomElement(static::$mobileNumberPrefixes).'#######');
+        return static::numerify(static::randomElement(static::$mobileNumberPrefixes));
     }
 }
