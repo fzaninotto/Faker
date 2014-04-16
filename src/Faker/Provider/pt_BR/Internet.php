@@ -15,8 +15,7 @@ class Internet extends \Faker\Provider\Internet
      */
     private static function toAscii($string)
     {
-        return preg_replace('/&([a-z]{1,2})(?:acute|cedil|circ|grave|lig|orn|ring|slash|th|tilde|uml|caron);/i', '$1',
-            htmlentities($string, ENT_QUOTES, 'UTF-8'));
+        return strtr($string, array('Š' => 'S','Ž' => 'Z','š' => 's','ž' => 'z','Ÿ' => 'Y','À' => 'A','Á' => 'A','Â' => 'A','Ã' => 'A','Ä' => 'A','Å' => 'A','Ç' => 'C','È' => 'E','É' => 'E','Ê' => 'E','Ë' => 'E','Ì' => 'I','Í' => 'I','Î' => 'I','Ï' => 'I','Ñ' => 'N','Ò' => 'O','Ó' => 'O','Ô' => 'O','Õ' => 'O','Ö' => 'O','Ø' => 'O','Ù' => 'U','Ú' => 'U','Û' => 'U','Ü' => 'U','Ý' => 'Y','à' => 'a','á' => 'a','â' => 'a','ã' => 'a','ä' => 'a','å' => 'a','ç' => 'c','è' => 'e','é' => 'e','ê' => 'e','ë' => 'e','ì' => 'i','í' => 'i','î' => 'i','ï' => 'i','ñ' => 'n','ò' => 'o','ó' => 'o','ô' => 'o','õ' => 'o','ö' => 'o','ø' => 'o','ù' => 'u','ú' => 'u','û' => 'u','ü' => 'u','ý' => 'y','ÿ' => 'y'));
     }
 
     /**
@@ -25,9 +24,8 @@ class Internet extends \Faker\Provider\Internet
     public function userName()
     {
         $format = static::randomElement(static::$userNameFormats);
-        $username = static::toLower(static::bothify($this->generator->parse($format)));
 
-        return iconv('UTF-8', 'ASCII//TRANSLIT', $username);
+        return static::toLower(static::toAscii(static::bothify($this->generator->parse($format))));
     }
 
     /**
