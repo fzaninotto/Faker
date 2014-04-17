@@ -80,7 +80,7 @@ abstract class Text extends \Faker\Provider\Base
             for ($i = 0; $i < $indexSize; $i++) {
                 $index[] = array_shift($parts);
             }
-            $size = count($parts);
+            
             for ($i = 0, $count = count($parts); $i < $count; $i++) {
                 $stringIndex = implode(' ', $index);
                 if (!isset($words[$stringIndex])) {
