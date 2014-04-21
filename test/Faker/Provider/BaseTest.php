@@ -52,6 +52,11 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertGreaterThanOrEqual(BaseProvider::numberBetween($min, $max), $max);
     }
 
+    public function testNumberBetweenAcceptsZeroAsMax()
+    {
+        $this->assertEquals(0, BaseProvider::numberBetween(0, 0));
+    }
+
     public function testRandomFloat()
     {
         $min = 4;

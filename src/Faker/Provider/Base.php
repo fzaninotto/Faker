@@ -102,15 +102,15 @@ class Base
     /**
      * Returns a random number between $from and $to
      *
-     * @param integer $from
-     * @param integer $to
+     * @param integer $from default to 0
+     * @param integer $to   defaults to 32 bit max integer, ie 2147483647
      * @example 79907610
      *
      * @return integer
      */
-    public static function numberBetween($from = null, $to = null)
+    public static function numberBetween($from = 0, $to = 2147483647)
     {
-        return mt_rand($from ?: 0, $to ?: 2147483647); // 32bit compat default
+        return mt_rand($from, $to);
     }
 
     /**
