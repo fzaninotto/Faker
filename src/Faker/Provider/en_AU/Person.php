@@ -12,6 +12,14 @@ class Person extends \Faker\Provider\Person
         '{{titleMale}} {{firstNameMale}} {{lastName}}'
     );
 
+    protected static $femaleNameFormats = array(
+        '{{firstNameFemale}} {{lastName}}',
+        '{{firstNameFemale}} {{lastName}}',
+        '{{firstNameFemale}} {{lastName}}',
+        '{{firstNameFemale}} {{lastName}} {{suffix}}',
+        '{{titleFemale}} {{firstNameFemale}} {{lastName}}'
+    );
+
     protected static $firstNameMale = array(
         'John','Peter','David','Michael','Robert','James','Andrew','Matthew','Christopher','Daniel','Paul','William','Mark','Anthony','Thomas','Stephen','Benjamin','Ian','Joshua','Nicholas',
         'Jason','Steven','Luke','Adam','Timothy','Kevin','Brian','Jack','Richard','Ronald','Gregory','Geoffrey','Kenneth','Raymond','Alan','Lachlan','Nathan','Alexander','Scott','Samuel',
@@ -37,4 +45,4 @@ class Person extends \Faker\Provider\Person
         return static::randomElement(static::$suffix);
     }
 
-} 
+}
