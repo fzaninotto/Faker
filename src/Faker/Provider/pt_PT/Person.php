@@ -71,4 +71,50 @@ class Person extends \Faker\Provider\Person
 
         return $digit;
     }
+
+    /**
+     *
+     * @link http://nomesportugueses.blogspot.pt/2012/01/lista-dos-cem-nomes-mais-usados-em.html
+     */
+
+    protected static $firstNameMale = array(
+        'Rodrigo', 'João', 'Martim', 'Afonso', 'Tomás', 'Gonçalo', 'Francisco', 'Tiago',
+        'Diogo', 'Guilherme', 'Pedro', 'Miguel', 'Rafael', 'Gabriel', 'Santiago', 'Dinis',
+        'David', 'Duarte', 'José', 'Simão', 'Daniel', 'Lucas', 'Gustavo', 'André', 'Denis',
+        'Salvador', 'António', 'Vasco', 'Henrique', 'Lourenço', 'Manuel', 'Eduardo', 'Bernardo',
+        'Leandro', 'Luís', 'Diego', 'Leonardo', 'Alexandre', 'Rúben', 'Mateus', 'Ricardo',
+        'Vicente', 'Filipe', 'Bruno', 'Nuno', 'Carlos', 'Rui', 'Hugo', 'Samuel', 'Álvaro',
+        'Matias', 'Fábio', 'Ivo', 'Paulo', 'Jorge', 'Xavier', 'Marco', 'Isaac', 'Raúl','Benjamim',
+        'Renato', 'Artur', 'Mário', 'Frederico', 'Cristiano', 'Ivan', 'Sérgio', 'Micael',
+        'Vítor', 'Edgar', 'Kevin', 'Joaquim', 'Igor', 'Ângelo', 'Enzo', 'Valentim', 'Flávio',
+        'Joel', 'Fernando', 'Sebastião', 'Tomé', 'César', 'Cláudio', 'Nelson', 'Lisandro', 'Jaime',
+        'Gil', 'Mauro', 'Sandro', 'Hélder', 'Matheus', 'William', 'Gaspar', 'Márcio',
+        'Martinho', 'Emanuel', 'Marcos', 'Telmo', 'Davi', 'Wilson'
+    );
+
+    protected static $firstNameFemale = array(
+        'Maria', 'Leonor', 'Matilde', 'Mariana', 'Ana', 'Beatriz', 'Inês', 'Lara', 'Carolina', 'Margarida',
+        'Joana', 'Sofia', 'Diana', 'Francisca', 'Laura', 'Sara', 'Madalena', 'Rita', 'Mafalda', 'Catarina',
+        'Luana', 'Marta', 'Íris', 'Alice', 'Bianca', 'Constança', 'Gabriela', 'Eva', 'Clara', 'Bruna', 'Daniela',
+        'Iara', 'Filipa', 'Vitória', 'Ariana', 'Letícia', 'Bárbara', 'Camila', 'Rafaela', 'Carlota', 'Yara',
+        'Núria', 'Raquel', 'Ema', 'Helena', 'Benedita', 'Érica', 'Isabel', 'Nicole', 'Lia', 'Alícia', 'Mara',
+        'Jéssica', 'Soraia', 'Júlia', 'Luna', 'Victória', 'Luísa', 'Teresa', 'Miriam', 'Adriana', 'Melissa',
+        'Andreia', 'Juliana', 'Alexandra', 'Yasmin', 'Tatiana', 'Leticia', 'Luciana', 'Eduarda', 'Cláudia',
+        'Débora', 'Fabiana', 'Renata', 'Kyara', 'Kelly', 'Irina', 'Mélanie', 'Nádia', 'Cristiana', 'Liliana',
+        'Patrícia', 'Vera', 'Doriana', 'Ângela', 'Mia', 'Erica', 'Mónica', 'Isabela', 'Salomé', 'Cátia',
+        'Verónica', 'Violeta', 'Lorena', 'Érika', 'Vanessa', 'Iris', 'Anna', 'Viviane', 'Rebeca', 'Neuza',
+    );
+
+    protected static $lastName = array(
+        'Abreu',  'Almeida',  'Alves', 'Amaral', 'Amorim', 'Andrade', 'Anjos', 'Antunes', 'Araújo', 'Assunção',
+        'Azevedo', 'Baptista', 'Barbosa', 'Barros', 'Batista', 'Borges', 'Branco', 'Brito', 'Campos', 'Cardoso',
+        'Carneiro', 'Carvalho', 'Castro', 'Coelho', 'Correia', 'Costa', 'Cruz', 'Cunha', 'Domingues', 'Esteves',
+        'Faria', 'Fernandes', 'Ferreira', 'Figueiredo', 'Fonseca', 'Freitas', 'Garcia', 'Gaspar', 'Gomes',
+        'Gonçalves', 'Guerreiro', 'Henriques', 'Jesus', 'Leal', 'Leite', 'Lima', 'Lopes', 'Loureiro', 'Lourenço',
+        'Macedo', 'Machado', 'Magalhães', 'Maia', 'Marques', 'Martins', 'Matias', 'Matos', 'Melo', 'Mendes',
+        'Miranda', 'Monteiro', 'Morais', 'Moreira', 'Mota', 'Moura', 'Nascimento', 'Neto', 'Neves', 'Nogueira',
+        'Nunes', 'Oliveira', 'Pacheco', 'Paiva', 'Pereira', 'Pinheiro', 'Pinho', 'Pinto', 'Pires', 'Ramos',
+        'Reis', 'Ribeiro', 'Rocha', 'Rodrigues', 'Santos', 'Silva', 'Simões', 'Soares', 'Sousa',
+        'Sá', 'Tavares', 'Teixeira', 'Torres', 'Valente', 'Vaz', 'Vicente', 'Vieira',
+    );
 }
