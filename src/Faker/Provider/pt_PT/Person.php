@@ -4,6 +4,32 @@ namespace Faker\Provider\pt_PT;
 
 class Person extends \Faker\Provider\Person
 {
+    protected static $maleNameFormats = array(
+        '{{firstNameMale}} {{lastName}}',
+        '{{firstNameMale}} {{lastName}} {{lastName}}',
+        '{{firstNameMale}} {{lastName}} de {{lastName}}',
+        '{{firstNameMale}} {{firstNameMale}} {{lastName}}',
+        '{{firstNameMale}} {{firstNameMale}} de {{lastName}}',
+        '{{firstNameMale}} {{firstNameMale}} {{lastName}} {{lastName}}',
+        '{{firstNameMale}} {{firstNameMale}} {{lastName}} de {{lastName}}',
+        '{{firstNameMale}} {{firstNameMale}} {{lastName}} {{lastName}} {{lastName}}',
+    );
+
+    protected static $femaleNameFormats = array(
+        '{{firstNameFemale}} {{lastName}}',
+        '{{firstNameFemale}} {{lastName}} {{lastName}}',
+        '{{firstNameFemale}} {{lastName}} de {{lastName}}',
+        '{{firstNameFemale}} {{firstNameFemale}} {{lastName}}',
+        '{{firstNameFemale}} {{firstNameFemale}} de {{lastName}}',
+        '{{firstNameFemale}} {{firstNameFemale}} {{lastName}} {{lastName}}',
+        '{{firstNameFemale}} {{firstNameFemale}} {{lastName}} de {{lastName}}',
+        '{{firstNameFemale}} {{firstNameFemale}} {{lastName}} {{lastName}} {{lastName}}',
+    );
+
+    /** @link http://goo.gl/v6bScG document with all pt abreviations **/
+    protected static $titleMale = array('Sr.', 'Dr.', 'Exmo.', 'Eng.', 'Eng.º', 'Ex.', 'Exº');
+    protected static $titleFemale = array('Sra.', 'Dra.', 'Exma', 'Eng.ª', 'Exª');
+
     protected static $firstEightDigitsFormat = array(
       '1#######',
       '2#######',
