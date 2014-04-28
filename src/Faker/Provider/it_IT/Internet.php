@@ -8,16 +8,6 @@ class Internet extends \Faker\Provider\Internet
     protected static $tld = array('com', 'com', 'com', 'net', 'org', 'it', 'it', 'it');
 
     /**
-     * @{inheritdoc}
-     */
-    public function userName()
-    {
-        $format = static::randomElement(static::$userNameFormats);
-
-        return static::toLower(static::toAscii(static::bothify($this->generator->parse($format))));
-    }
-
-    /**
      * Converts Italian characters to their ASCII representation
      *
      * @return string
@@ -25,8 +15,16 @@ class Internet extends \Faker\Provider\Internet
     private static function toAscii($string)
     {
         $from = array('à', 'À', 'é', 'É', 'è', 'È', 'ù', 'Ù', "'");
-        $to   = array('a', 'A', 'e', 'E', 'e', 'E', 'u', 'U', '');
+        $to = array('a', 'A', 'e', 'E', 'e', 'E', 'u', 'U', '');
 
         return str_replace($from, $to, $string);
+    }
+
+    /**
+     * @{inheritdoc}
+     */
+    public function userName()
+    {
+        return static::toAscii(parent::userName());
     }
 }

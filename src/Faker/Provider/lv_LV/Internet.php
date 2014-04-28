@@ -12,9 +12,7 @@ class Internet extends \Faker\Provider\Internet
      */
     public function userName()
     {
-        $format = static::randomElement(static::$userNameFormats);
-
-        return static::bothify($this->generator->parse($format));
+        return static::convertToNormal(parent::userName());
     }
 
     /**
@@ -22,11 +20,8 @@ class Internet extends \Faker\Provider\Internet
      */
     public function domainWord()
     {
-        $company = $this->generator->format('company');
-        $companyElements = explode(' ', $company);
-        $company = $companyElements[0];
-        $company = preg_replace('/,/u', '', $company);
+        //$company = preg_replace('/,/u', '', parent::domainWord());
 
-        return $company;
+        return static::convertToNormal(parent::domainWord());
     }
 }

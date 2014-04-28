@@ -26,10 +26,7 @@ class Internet extends \Faker\Provider\Internet
      */
     public function userName()
     {
-        $format = static::randomElement(static::$userNameFormats);
-        $user = static::bothify($this->generator->parse($format));
-
-        return str_replace('-', '.', static::toLower(static::toAscii($user)));
+        return str_replace('-', '.', static::toAscii(parent::userName()));
     }
 
     /**

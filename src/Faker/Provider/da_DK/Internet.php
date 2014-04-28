@@ -35,8 +35,8 @@ class Internet extends \Faker\Provider\Internet
      */
     private static function toAscii($string)
     {
-        $from = array('æ', 'ø', 'å', 'Æ', 'Ø', 'Å');
-        $to   = array('ae', 'oe', 'aa', 'AE', 'OE', 'AA');
+        $from = array('ü', 'é', 'æ', 'ø', 'å', 'Æ', 'Ø', 'Å');
+        $to   = array('u', 'e', 'ae', 'oe', 'aa', 'AE', 'OE', 'AA');
 
         return str_replace($from, $to, $string);
     }
@@ -47,9 +47,7 @@ class Internet extends \Faker\Provider\Internet
      */
     public function userName()
     {
-        $format = static::randomElement(static::$userNameFormats);
-
-        return static::toLower(static::toAscii(static::bothify($this->generator->parse($format))));
+        return static::toAscii(parent::userName());
     }
 
     /**

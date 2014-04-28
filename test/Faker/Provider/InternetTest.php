@@ -9,7 +9,11 @@ use Faker\Provider\Company;
 
 class InternetTest extends \PHPUnit_Framework_TestCase
 {
-
+    /**
+     * @var Generator
+     */
+    private $faker;
+    
     public function setUp()
     {
         $faker = new Generator();
@@ -19,19 +23,73 @@ class InternetTest extends \PHPUnit_Framework_TestCase
         $this->faker = $faker;
     }
 
+    public function localeDataProvider()
+    {
+        $providerPath = realpath(__DIR__ . '/../../../src/Faker/Provider');
+        $localePaths = array_filter(glob($providerPath . '/*', GLOB_ONLYDIR));
+        foreach ($localePaths as $path) {
+            $parts = explode('/', $path);
+            $locales[] = array($parts[count($parts) - 1]);
+        }
+
+        return $locales;
+    }
+
+    /**
+     * This is a list with the locales that have not yet implemented toAscii method
+     */
+    protected $notImplemented = array(
+        'bg_BG',
+        'bn_BD',
+        'sr_Cyrl_RS',
+        'sr_RS',
+        'zh_CN',
+    );
+    
     /**
      * @link http://stackoverflow.com/questions/12026842/how-to-validate-an-email-address-in-php
+     *
+     * @dataProvider localeDataProvider
      */
-    public function testEmailIsValid()
+    public function testEmailIsValid($locale)
     {
+        if (in_array($locale, $this->notImplemented, true)) {
+            $this->markTestIncomplete('toAscii method not implemented for '.$locale);
+        }
+        $this->loadLocalProviers($locale);
         $pattern = '/^(?!(?:(?:\\x22?\\x5C[\\x00-\\x7E]\\x22?)|(?:\\x22?[^\\x5C\\x22]\\x22?)){255,})(?!(?:(?:\\x22?\\x5C[\\x00-\\x7E]\\x22?)|(?:\\x22?[^\\x5C\\x22]\\x22?)){65,}@)(?:(?:[\\x21\\x23-\\x27\\x2A\\x2B\\x2D\\x2F-\\x39\\x3D\\x3F\\x5E-\\x7E]+)|(?:\\x22(?:[\\x01-\\x08\\x0B\\x0C\\x0E-\\x1F\\x21\\x23-\\x5B\\x5D-\\x7F]|(?:\\x5C[\\x00-\\x7F]))*\\x22))(?:\\.(?:(?:[\\x21\\x23-\\x27\\x2A\\x2B\\x2D\\x2F-\\x39\\x3D\\x3F\\x5E-\\x7E]+)|(?:\\x22(?:[\\x01-\\x08\\x0B\\x0C\\x0E-\\x1F\\x21\\x23-\\x5B\\x5D-\\x7F]|(?:\\x5C[\\x00-\\x7F]))*\\x22)))*@(?:(?:(?!.*[^.]{64,})(?:(?:(?:xn--)?[a-z0-9]+(?:-+[a-z0-9]+)*\\.){1,126}){1,}(?:(?:[a-z][a-z0-9]*)|(?:(?:xn--)[a-z0-9]+))(?:-+[a-z0-9]+)*)|(?:\\[(?:(?:IPv6:(?:(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){7})|(?:(?!(?:.*[a-f0-9][:\\]]){7,})(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,5})?::(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,5})?)))|(?:(?:IPv6:(?:(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){5}:)|(?:(?!(?:.*[a-f0-9]:){5,})(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,3})?::(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,3}:)?)))?(?:(?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9]{2})|(?:[1-9]?[0-9]))(?:\\.(?:(?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9]{2})|(?:[1-9]?[0-9]))){3}))\\]))$/iD';
         $emailaddress = $this->faker->email();
-        $this->assertSame(preg_match($pattern, $emailaddress), 1, $emailaddress);
+        $this->assertSame(preg_match($pattern, $emailaddress), 1, $locale.' - '.$emailaddress);
     }
-    public function testUsernameIsValid()
+    
+    /**
+     * @dataProvider localeDataProvider
+     */
+    public function testUsernameIsValid($locale)
     {
-        $pattern = '/^[A-Za-z0-9_.]+$/';
-        $emailaddress = $this->faker->username();
-        $this->assertSame(preg_match($pattern, $emailaddress), 1, $emailaddress);
+        if (in_array($locale, $this->notImplemented, true)) {
+            $this->markTestIncomplete('toAscii method not implemented for '.$locale);
+        }
+        $this->loadLocalProviers($locale);
+        $pattern = '/^[A-Za-z0-9.]+$/';
+        $username = $this->faker->username();
+        $this->assertSame(preg_match($pattern, $username), 1, $locale.' - '.$username);
+    }
+
+    public function loadLocalProviers($locale)
+    {
+        $providerPath = realpath(__DIR__ . '/../../../src/Faker/Provider');
+        if (file_exists($providerPath.'/'.$locale.'/Internet.php')) {
+            $internet = "\\Faker\\Provider\\$locale\\Internet";
+            $this->faker->addProvider(new $internet($this->faker));
+        }
+        if (file_exists($providerPath.'/'.$locale.'/Person.php')) {
+            $person = "\\Faker\\Provider\\$locale\\Person";
+            $this->faker->addProvider(new $person($this->faker));
+        }
+        if (file_exists($providerPath.'/'.$locale.'/Company.php')) {
+            $company = "\\Faker\\Provider\\$locale\\Company";
+            $this->faker->addProvider(new $company($this->faker));
+        }
     }
 }
