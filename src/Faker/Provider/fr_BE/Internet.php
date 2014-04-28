@@ -15,7 +15,7 @@ class Internet extends \Faker\Provider\Internet
     private static function toAscii($string)
     {
         $from = array('à', 'À', 'ç', 'Ç', 'é', 'É', 'è', 'È', 'ë', 'Ë', 'ï', 'Ï', 'î', 'Î', 'ô', 'Ô', 'ù', 'Ù');
-        $to   = array('a', 'A', 'c', 'c', 'e', 'E', 'e', 'E', 'e', 'E', 'i', 'I', 'i', 'I', 'o', 'O', 'u', 'U');
+        $to = array('a', 'A', 'c', 'c', 'e', 'E', 'e', 'E', 'e', 'E', 'i', 'I', 'i', 'I', 'o', 'O', 'u', 'U');
 
         return str_replace($from, $to, $string);
     }
@@ -25,9 +25,7 @@ class Internet extends \Faker\Provider\Internet
      */
     public function userName()
     {
-        $format = static::randomElement(static::$userNameFormats);
-
-        return static::toLower(static::toAscii(static::bothify($this->generator->parse($format))));
+        return static::toAscii(parent::userName());
     }
 
     /**
@@ -35,11 +33,6 @@ class Internet extends \Faker\Provider\Internet
      */
     public function domainWord()
     {
-        $company = $this->generator->format('company');
-        $companyElements = explode(' ', $company);
-        $company = $companyElements[0];
-        $company = preg_replace('/\W/u', '', $company);
-
-        return static::toLower(static::toAscii($company));
+        return static::toAscii(parent::domainWord());
     }
 }

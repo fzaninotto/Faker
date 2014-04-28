@@ -28,8 +28,8 @@ class Internet extends \Faker\Provider\Internet
      */
     private static function toAscii($string)
     {
-        $from = array('Á','á','É','é','Ú','ú','Ý','ý','Ó','ó','Þ','þ','Ð','ð','Æ','æ','Ö','ö');
-        $to   = array('A','a','E','e','U','u','Y','y','O','o','Th','th','D','d','Ae','ae','O','o');
+        $from = array('Á', 'á', 'É', 'é', 'Ú', 'ú', 'Ý', 'ý', 'Ó', 'ó', 'Þ', 'þ', 'Ð', 'ð', 'Æ', 'æ', 'Ö', 'ö', 'í');
+        $to = array('A', 'a', 'E', 'e', 'U', 'u', 'Y', 'y', 'O', 'o', 'Th', 'th', 'D', 'd', 'Ae', 'ae', 'O', 'o', 'i');
 
         return str_replace($from, $to, $string);
     }
@@ -40,9 +40,7 @@ class Internet extends \Faker\Provider\Internet
      */
     public function userName()
     {
-        $format = static::randomElement(static::$userNameFormats);
-
-        return static::toLower(static::toAscii(static::bothify($this->generator->parse($format))));
+        return static::toAscii(parent::userName());
     }
 
     /**
@@ -51,11 +49,6 @@ class Internet extends \Faker\Provider\Internet
      */
     public function domainWord()
     {
-        $company = $this->generator->format('company');
-        $companyElements = explode(' ', $company);
-        $company = $companyElements[0];
-        $company = preg_replace('/\W/u', '', $company);
-
-        return static::toLower(static::toAscii($company));
+        return static::toAscii(parent::domainWord());
     }
 }

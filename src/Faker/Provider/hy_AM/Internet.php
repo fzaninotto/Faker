@@ -11,9 +11,18 @@ class Internet extends \Faker\Provider\Internet
      */
     public function userName()
     {
-        $format = static::randomElement(static::$userNameFormats);
+        return static::toAscii(parent::userName());
+    }
 
-        return static::bothify($this->generator->parse($format));
+    private static function toAscii($string)
+    {
+        $string = mb_strtolower($string, 'UTF-8');
+
+        return str_replace(
+            array('ւ', 'ու', 'ա', 'բ', 'գ', 'դ', 'ե', 'զ', 'է', 'ը', 'թ', 'ժ', 'ի', 'լ', 'խ', 'ծ', 'կ', 'հ', 'ձ', 'ղ', 'ճ', 'մ', 'յ', 'ն', 'շ', 'ո', 'չ', 'պ', 'ջ', 'ռ', 'ս', 'վ', 'տ', 'ր', 'ց', 'փ', 'ք', 'և', 'օ', 'ֆ',),
+            array('l', 'u', 'a', 'b', 'g', 'd', 'e', 'z', 'e', 'y', 't', 'zh', 'i', 'l', 'kh', 'ts', 'k', 'h', 'dz', 'gh', 'ch', 'm', 'y', 'n', 'sh', 'o', 'ch', 'p', 'j', 'r', 's', 'v', 't', 'r', 'ts', 'p', 'q', 'ev', 'o', 'f'),
+            $string
+        );
     }
 
     /**
@@ -21,19 +30,6 @@ class Internet extends \Faker\Provider\Internet
      */
     public function domainWord()
     {
-        $company = $this->generator->format('company');
-        $companyElements = explode(' ', $company);
-        $company = $companyElements[0];
-        $company = preg_replace('/,/', '', $company);
-
-        // Translit for armenian language
-        $company = mb_strtolower($company, 'UTF-8');
-        $company = str_replace(
-            array('ու','ա','բ','գ','դ','ե','զ','է','ը','թ','ժ','ի','լ','խ','ծ','կ','հ','ձ','ղ','ճ','մ','յ','ն','շ','ո','չ','պ','ջ','ռ','ս','վ','տ','ր','ց','փ','ք','և','օ','ֆ',),
-            array('u','a','b','g','d','e','z','e','y','t','zh','i','l','kh','ts','k','h','dz','gh','ch','m','y','n','sh','o','ch','p','j','r','s','v','t','r','ts','p','q','ev','o','f'),
-            $company
-        );
-
-        return $company;
+        return static::toAscii(parent::domainWord());
     }
 }
