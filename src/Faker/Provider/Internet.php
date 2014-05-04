@@ -152,17 +152,13 @@ class Internet extends \Faker\Provider\Base
      */
     public static function localIpv4()
     {
-        $start = array('10','192');
-
-        $ip = $start[static::randomNumber(0, 1)];
-
-        if ($ip === '192') {
-            $ip .= '.168';
+        if (static::randomNumber(0, 1) === 0) {
+            // 10.x.x.x range
+            $ip = long2ip(static::randomNumber(167772160, 184549375));
         } else {
-            $ip .= '.' . static::randomNumber(0, 255);
+            // 192.168.x.x range
+            $ip = long2ip(static::randomNumber(3232235520, 3232301055));
         }
-
-        $ip .= sprintf('.%s.%s', static::randomNumber(0, 255), static::randomNumber(0, 255));
 
         return $ip;
     }
