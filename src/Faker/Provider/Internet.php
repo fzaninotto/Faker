@@ -146,4 +146,33 @@ class Internet extends \Faker\Provider\Base
 
         return join(':', $res);
     }
+
+    /**
+     * @example '10.1.1.17'
+     */
+    public static function localIpv4()
+    {
+        if (static::randomNumber(0, 1) === 0) {
+            // 10.x.x.x range
+            $ip = long2ip(static::randomNumber(167772160, 184549375));
+        } else {
+            // 192.168.x.x range
+            $ip = long2ip(static::randomNumber(3232235520, 3232301055));
+        }
+
+        return $ip;
+    }
+
+    /**
+     * @example '32:F1:39:2F:D6:18'
+     */
+    public static function macAddress()
+    {
+        for ($i=0; $i<6; $i++) {
+            $mac[] = sprintf('%02X', static::numberBetween(0, 0xff));
+        }
+        $mac = implode(':', $mac);
+
+        return $mac;
+    }
 }
