@@ -21,7 +21,7 @@ class Internet extends \Faker\Provider\Internet
         $b = array(
             'A', 'A', 'A', 'A', 'C', 'c', 'E', 'E', 'E', 'I', 'I', 'O', 'O', 'O', 'O', 'U', 'U', 'U', 'a', 'a', 'a', 'a', 'e', 'e', 'e', 'i', 'i', 'i', 'o', 'o', 'o', 'o', 'u', 'u', 'u',
         );
-        
+
         return str_replace($a, $b, $string);
     }
 
@@ -29,10 +29,12 @@ class Internet extends \Faker\Provider\Internet
     {
         return static::toAscii(parent::email());
     }
+
     public function username()
     {
         return static::toAscii(parent::username());
     }
+
     public function domainWord()
     {
         return static::toAscii(parent::domainWord());
