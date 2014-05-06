@@ -90,6 +90,7 @@ class Miscellaneous extends \Faker\Provider\Base
         'yo_NG',  'zh_CN',  'zh_HK',
         'zh_MO',  'zh_SG',  'zh_TW',  'zu_ZA',
     );
+
     /**
      * Return a boolean, true or false
      *
