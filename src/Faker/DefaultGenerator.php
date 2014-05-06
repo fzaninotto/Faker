@@ -24,5 +24,4 @@ class DefaultGenerator
     {
         return $this->default;
     }
-
 }
