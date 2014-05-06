@@ -9,7 +9,6 @@ use Faker\Provider\Company;
 
 class InternetTest extends \PHPUnit_Framework_TestCase
 {
-
     public function setUp()
     {
         $faker = new Generator();
@@ -28,22 +27,23 @@ class InternetTest extends \PHPUnit_Framework_TestCase
         $emailaddress = $this->faker->email();
         $this->assertSame(preg_match($pattern, $emailaddress), 1, $emailaddress);
     }
+
     public function testUsernameIsValid()
     {
         $pattern = '/^[A-Za-z0-9_.]+$/';
         $emailaddress = $this->faker->username();
         $this->assertSame(preg_match($pattern, $emailaddress), 1, $emailaddress);
     }
+
     public function testLocalIpv4()
     {
         $range1 = '(10)(\.(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])|[1][0-9][0-9]|[1-9][0-9]|[0-9])){3}';
         $range2 = '(192)\.(168)(\.(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])|[1][0-9][0-9]|[1-9][0-9]|[0-9])){2}';
-
         $this->assertRegExp('/^'.$range1.'|'.$range2.'$/', Internet::localIpv4());
     }
+
     public function testMacAddress()
     {
         $this->assertRegExp('/^([0-9A-F]{2}[:]){5}([0-9A-F]{2})$/i', Internet::macAddress());
     }
-
 }
