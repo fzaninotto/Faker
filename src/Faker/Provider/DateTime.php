@@ -4,7 +4,7 @@ namespace Faker\Provider;
 
 class DateTime extends \Faker\Provider\Base
 {
-    protected static $century = array('I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV','XVI','XVII','XVIII','XIX','XX','XX1');
+    protected static $century = array('I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV','XVI','XVII','XVIII','XIX','XX','XXI');
 
     protected static function getMaxTimestamp($max = 'now')
     {
