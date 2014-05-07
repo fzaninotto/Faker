@@ -31,7 +31,7 @@ class Person extends \Faker\Provider\Person
 
     protected static $lastName = array(
         'Ayranlı', 'Emirhanlı', 'Cemşid', 'Ege', 'Çağan', 'Sarp', 'Kerem', 'Deniz', 'Yağız', 'Yiğit', 'Emre', 'Kağan',
-        'Mert', 'Görkem', 'Burak', 'Meriç', 'Berke', 'Kutay', 'Karakuş' 'Tuna', 'Baran', 'Efe', 'Onur', 'Doruk', 'Bartu',
+        'Mert', 'Görkem', 'Burak', 'Meriç', 'Berke', 'Kutay', 'Karakuş', 'Tuna', 'Baran', 'Efe', 'Onur', 'Doruk', 'Bartu',
         'Emirhan', 'Alp', 'Arhan', 'Bora', 'Canberk', 'Dağhan', 'Rüzgar', 'Derin', 'Toprak', 'Arın',
         'Aşkın', 'Çınar', 'Armağan', 'Derin', 'Koray', 'Barlas', 'Ada', 'Atakan', 'Berk', 'Polat', 'Göktürk',
         'Serhan', 'Ege', 'Utku', 'Berkay', 'Güney', 'İrtegün', 'Şentürk', 'Şükür'
