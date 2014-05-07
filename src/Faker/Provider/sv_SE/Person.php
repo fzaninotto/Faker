@@ -111,24 +111,6 @@ class Person extends \Faker\Provider\Person
         'Öberg'
     );
 
-    public function firstName($gender = null)
-    {
-        if ($gender == static::GENDER_MALE) {
-
-        }
-        return mt_rand(1, 100) <= 50 ? static::firstNameMale() : static::firstNameFemale();
-    }
-
-    public static function firstNameMale()
-    {
-        return static::randomElement(static::$firstNameMale);
-    }
-
-    public static function firstNameFemale()
-    {
-        return static::randomElement(static::$firstNameFemale);
-    }
-
     /**
      * National Personal Identity number (personnummer)
      * @link http://en.wikipedia.org/wiki/Personal_identity_number_(Sweden)
@@ -156,7 +138,11 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Luhn algorithm
-     * @link
+     *
+     * This is a naive implementation that only works
+     * specifically for numbered strings of size 9
+     *
+     * @link http://en.wikipedia.org/wiki/Luhn_algorithm
      * @param string $input
      * @return int checksum
      */
@@ -180,6 +166,6 @@ class Person extends \Faker\Provider\Person
         );
 
         $checksum = 10 - ($summed%10);
-        return $checksum;
+        return $checksum == 10 ? 0 : $checksum;
     }
 }
