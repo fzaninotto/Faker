@@ -20,6 +20,14 @@ class Internet extends \Faker\Provider\Base
     protected static $urlFormats = array(
         'http://www.{{domainName}}/',
         'http://{{domainName}}/',
+        'http://www.{{domainName}}/{{slug}}',
+        'http://www.{{domainName}}/{{slug}}',
+        'https://www.{{domainName}}/{{slug}}',
+        'http://www.{{domainName}}/{{slug}}.html',
+        'http://{{domainName}}/{{slug}}',
+        'http://{{domainName}}/{{slug}}',
+        'http://{{domainName}}/{{slug}}.html',
+        'https://{{domainName}}/{{slug}}.html',
     );
 
     /**
@@ -124,6 +132,22 @@ class Internet extends \Faker\Provider\Base
         $format = static::randomElement(static::$urlFormats);
 
         return $this->generator->parse($format);
+    }
+
+    /**
+     * @example 'aut-repellat-commodi-vel-itaque-nihil-id-saepe-nostrum'
+     */
+    public function slug($nbWords = 6, $variableNbWords = true)
+    {
+        if ($nbWords <= 0) {
+            return '';
+        }
+        if ($variableNbWords) {
+            $nbWords = (int) ($nbWords * mt_rand(60, 140) / 100) + 1;
+        }
+        $words = $this->generator->words($nbWords);
+
+        return join($words, '-');
     }
 
     /**
