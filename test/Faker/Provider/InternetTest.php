@@ -44,6 +44,16 @@ class InternetTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(preg_match($pattern, $slug), 1);
     }
 
+    /**
+     * @link http://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149
+     */
+    public function testUrlIsValid()
+    {
+        $pattern = '/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/';
+        $url = $this->faker->url();
+        $this->assertSame(preg_match($pattern, $url), 1);
+    }
+
     public function testLocalIpv4()
     {
         $range1 = '(10)(\.(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])|[1][0-9][0-9]|[1-9][0-9]|[0-9])){3}';
