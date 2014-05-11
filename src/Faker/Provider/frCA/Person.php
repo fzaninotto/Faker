@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\fr_CA;
+namespace Faker\Provider\frCA;
 
 class Person extends \Faker\Provider\Person
 {
@@ -25,7 +25,7 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
-     * This list is more or less the same as in \Faker\Provider\fr_FR\Person.php
+     * This list is more or less the same as in \Faker\Provider\frFR\Person.php
      * Some common names were added and other removed.
      */
     protected static $firstNameMale = array(

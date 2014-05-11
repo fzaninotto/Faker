@@ -1,12 +1,12 @@
 <?php
 
-namespace Faker\Provider\en_CA;
+namespace Faker\Provider\enCA;
 
 /**
  * Extend US class since most fields share the same format
  */
 
-class Address extends \Faker\Provider\en_US\Address
+class Address extends \Faker\Provider\enUS\Address
 {
     protected static $postcode = array('?#? #?#', '?#?-#?#', '?#?#?#');
 

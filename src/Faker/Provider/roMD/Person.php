@@ -1,5 +1,5 @@
 <?php
-namespace Faker\Provider\ro_MD;
+namespace Faker\Provider\roMD;
 
 class Person extends \Faker\Provider\Person
 {

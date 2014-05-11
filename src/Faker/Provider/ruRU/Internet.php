@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\ru_RU;
+namespace Faker\Provider\ruRU;
 
 class Internet extends \Faker\Provider\Internet
 {

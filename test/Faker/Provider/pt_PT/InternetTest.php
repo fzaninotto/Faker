@@ -1,10 +1,10 @@
 <?php
 
-namespace Faker\Test\Provider\pt_PT;
+namespace Faker\Test\Provider\ptPT;
 
 use Faker\Generator;
-use Faker\Provider\pt_PT\Person;
-use Faker\Provider\pt_PT\Internet;
+use Faker\Provider\ptPT\Person;
+use Faker\Provider\ptPT\Internet;
 use Faker\Provider\Company;
 
 class InternetTest extends \PHPUnit_Framework_TestCase

@@ -1,10 +1,10 @@
 <?php
 
-namespace Faker\Test\Provider\ro_RO;
+namespace Faker\Test\Provider\roRO;
 
 use Faker\Generator;
 use Faker\Provider\DateTime;
-use Faker\Provider\ro_RO\Person;
+use Faker\Provider\roRO\Person;
 
 class PersonTest extends \PHPUnit_Framework_TestCase
 {

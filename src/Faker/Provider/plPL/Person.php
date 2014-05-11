@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\pl_PL;
+namespace Faker\Provider\plPL;
 
 /**
  * Most popular first and last names published by Ministry of the Interior:
@@ -12,7 +12,7 @@ class Person extends \Faker\Provider\Person
         '{{lastNameMale}}',
         '{{lastNameFemale}}',
     );
-    
+
     protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
@@ -88,7 +88,7 @@ class Person extends \Faker\Provider\Person
     protected static $title = array('mgr','inż.', 'dr', 'doc.');
 
     /**
-     * @param string|null $gender 'male', 'female' or null for any 
+     * @param string|null $gender 'male', 'female' or null for any
      * @example 'Adamczyk'
      */
     public function lastName($gender = null)
@@ -98,7 +98,7 @@ class Person extends \Faker\Provider\Person
         } elseif ($gender === static::GENDER_FEMALE) {
             return static::lastNameFemale();
         }
-        
+
         return $this->generator->parse(static::randomElement(static::$lastNameFormat));
     }
 

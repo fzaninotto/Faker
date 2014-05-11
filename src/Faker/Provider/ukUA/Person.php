@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\uk_UA;
+namespace Faker\Provider\ukUA;
 
 class Person extends \Faker\Provider\Person
 {

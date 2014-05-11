@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\fr_CA;
+namespace Faker\Provider\frCA;
 
 class Address extends \Faker\Provider\Address
 {
@@ -84,7 +84,7 @@ class Address extends \Faker\Provider\Address
     );
 
     /**
-     * This list is the same as in \Faker\Provider\fr_FR\Address.php
+     * This list is the same as in \Faker\Provider\frFR\Address.php
      */
     protected static $country = array(
         'Afghanistan', 'Afrique du sud', 'Albanie', 'Algérie', 'Allemagne', 'Andorre', 'Angola', 'Anguilla', 'Antarctique', 'Antigua et Barbuda', 'Antilles néerlandaises', 'Arabie saoudite', 'Argentine', 'Arménie', 'Aruba', 'Australie', 'Autriche', 'Azerbaïdjan',

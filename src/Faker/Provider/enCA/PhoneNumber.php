@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\en_CA;
+namespace Faker\Provider\enCA;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {

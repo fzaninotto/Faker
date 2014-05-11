@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\da_DK;
+namespace Faker\Provider\daDK;
 
 /**
  * @author Antoine Corcy <contact@sbin.dk>

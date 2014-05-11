@@ -1,9 +1,9 @@
 <?php
 
-namespace Faker\Test\Provider\ja_JP;
+namespace Faker\Test\Provider\jaJP;
 
 use Faker\Generator;
-use Faker\Provider\ja_JP\Person;
+use Faker\Provider\jaJP\Person;
 
 class PersonTest extends \PHPUnit_Framework_TestCase
 {
@@ -35,4 +35,4 @@ class PersonTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('ナギサ', $faker->lastKanaName);
     }
 
-} 
+}

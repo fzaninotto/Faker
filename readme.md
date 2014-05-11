@@ -86,7 +86,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     paragraphs($nb = 3)     // array('Quidem ut sunt et quidem est accusamus aut. Fuga est placeat rerum ut. Enim ex eveniet facere sunt.', 'Aut nam et eum architecto fugit repellendus illo. Qui ex esse veritatis.', 'Possimus omnis aut incidunt sunt. Asperiores incidunt iure sequi cum culpa rem. Rerum exercitationem est rem.')
     text($maxNbChars = 200) // 'Fuga totam reiciendis qui architecto fugiat nemo. Consequatur recusandae qui cupiditate eos quod.'
 
-### `Faker\Provider\en_US\Person`
+### `Faker\Provider\enUS\Person`
 
     title($gender = null|'male'|'female')     // 'Ms.'
     titleMale                                 // 'Mr.'
@@ -98,7 +98,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     firstNameFemale                           // 'Rachel'
     lastName                                  // 'Zulauf'
 
-### `Faker\Provider\en_US\Address`
+### `Faker\Provider\enUS\Address`
 
     cityPrefix              // 'Lake'
     secondaryAddress        // 'Suite 961'
@@ -116,18 +116,18 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     latitude                // '77.147489'
     longitude               // '86.211205'
 
-### `Faker\Provider\en_US\PhoneNumber`
+### `Faker\Provider\enUS\PhoneNumber`
 
     phoneNumber             // '132-149-0269x3767'
 
-### `Faker\Provider\en_US\Company`
+### `Faker\Provider\enUS\Company`
 
     catchPhrase             // 'Monitored regional contingency'
     bs                      // 'e-enable robust architectures'
     company                 // 'Bogan-Treutel'
     companySuffix           // 'and Sons'
 
-### `Faker\Provider\en_US\Text`
+### `Faker\Provider\enUS\Text`
 
     realText($maxNbChars = 200, $indexSize = 2) // "And yet I wish you could manage it?) 'And what are they made of?' Alice asked in a shrill, passionate voice. 'Would YOU like cats if you were never even spoke to Time!' 'Perhaps not,' Alice replied."
 
@@ -391,10 +391,10 @@ A `Faker\Generator` alone can't do much generation. It needs `Faker\Provider` ob
 ```php
 <?php
 $faker = new Faker\Generator();
-$faker->addProvider(new Faker\Provider\en_US\Person($faker));
-$faker->addProvider(new Faker\Provider\en_US\Address($faker));
-$faker->addProvider(new Faker\Provider\en_US\PhoneNumber($faker));
-$faker->addProvider(new Faker\Provider\en_US\Company($faker));
+$faker->addProvider(new Faker\Provider\enUS\Person($faker));
+$faker->addProvider(new Faker\Provider\enUS\Address($faker));
+$faker->addProvider(new Faker\Provider\enUS\PhoneNumber($faker));
+$faker->addProvider(new Faker\Provider\enUS\Company($faker));
 $faker->addProvider(new Faker\Provider\Lorem($faker));
 $faker->addProvider(new Faker\Provider\Internet($faker));
 ````
@@ -645,7 +645,7 @@ Fugiat non in itaque sunt nobis totam. Sed nesciunt est deleniti cumque alias. R
 ## Language specific formatters
 
 
-### `Faker\Provider\fr_FR\Company`
+### `Faker\Provider\frFR\Company`
 
 ```php
 <?php
@@ -661,7 +661,7 @@ echo $faker->siret(3); // 438 472 611 01513
 
 ```
 
-### `Faker\Provider\fr_FR\Address`
+### `Faker\Provider\frFR\Address`
 
 ```php
 <?php
@@ -680,7 +680,7 @@ echo $faker->region; // "Saint-Pierre-et-Miquelon"
 
 ```
 
-### `Faker\Provider\da_DK\Person`
+### `Faker\Provider\daDK\Person`
 
 ```php
 <?php
@@ -690,7 +690,7 @@ echo $faker->cpr; // "051280-2387"
 
 ```
 
-### `Faker\Provider\da_DK\Address`
+### `Faker\Provider\daDK\Address`
 
 ```php
 <?php
@@ -703,7 +703,7 @@ echo $faker->region; // "Region Sjælland"
 
 ```
 
-### `Faker\Provider\da_DK\Company`
+### `Faker\Provider\daDK\Company`
 
 ```php
 <?php
@@ -716,7 +716,7 @@ echo $faker->p; // "5398237590"
 
 ```
 
-### `Faker\Provider\pl_PL\Person`
+### `Faker\Provider\plPL\Person`
 
 ```php
 <?php
@@ -730,7 +730,7 @@ echo $faker->taxpayerIdentificationNumber; // '8211575109'
 
 ```
 
-### `Faker\Provider\pl_PL\Company`
+### `Faker\Provider\plPL\Company`
 
 ```php
 <?php
@@ -742,7 +742,7 @@ echo $faker->regonLocal; // "15346111382836"
 
 ```
 
-### `Faker\Provider\pl_PL\Payment`
+### `Faker\Provider\plPL\Payment`
 
 ```php
 <?php
@@ -754,7 +754,7 @@ echo $faker->bankAccountNumber; // "PL14968907563953822118075816"
 
 ```
 
-### `Faker\Provider\ja_JP\Person`
+### `Faker\Provider\jaJP\Person`
 
 ```php
 <?php
@@ -769,7 +769,7 @@ echo $faker->firstKanaName; // "トモミ"
 echo $faker->lastKanaName; // "ナギサ"
 ```
 
-### `Faker\Provider\ro_RO\Person`
+### `Faker\Provider\roRO\Person`
 
 ```php
 <?php
@@ -793,7 +793,7 @@ echo $faker->cnp($gender = NULL, $century = NULL, $county = NULL);
 //  $county: 2 letter ISO 3166-2:RO county codes and B1-B6 for Bucharest's 6 sectors
 ```
 
-### `Faker\Provider\ro_RO\PhoneNumber`
+### `Faker\Provider\roRO\PhoneNumber`
 
 ```php
 <?php
@@ -804,7 +804,7 @@ echo $faker->tollFreePhoneNumber; // "0800123456"
 echo $faker->premiumRatePhoneNumber; // "0900123456"
 ```
 
-### `Faker\Provider\pt_PT\Person`
+### `Faker\Provider\ptPT\Person`
 
 ```php
 <?php

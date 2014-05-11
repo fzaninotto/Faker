@@ -1,9 +1,9 @@
 <?php
 
-namespace Faker\Test\Provider\pt_PT;
+namespace Faker\Test\Provider\ptPT;
 
 use Faker\Generator;
-use Faker\Provider\pt_PT\Address;
+use Faker\Provider\ptPT\Address;
 
 class AddressTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,7 +12,7 @@ class AddressTest extends \PHPUnit_Framework_TestCase
      * @var Generator
      */
     private $faker;
-    
+
     public function setUp()
     {
         $faker = new Generator();

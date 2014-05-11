@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\ja_JP;
+namespace Faker\Provider\jaJP;
 
 class Person extends \Faker\Provider\Person
 {

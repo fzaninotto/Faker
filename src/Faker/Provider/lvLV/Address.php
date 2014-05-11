@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\lv_LV;
+namespace Faker\Provider\lvLV;
 
 class Address extends \Faker\Provider\Base
 {

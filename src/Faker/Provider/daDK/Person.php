@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\da_DK;
+namespace Faker\Provider\daDK;
 
 /**
  * @link http://www.danskernesnavne.navneforskning.ku.dk/Personnavne.asp

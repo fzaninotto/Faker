@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\bg_BG;
+namespace Faker\Provider\bgBG;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {

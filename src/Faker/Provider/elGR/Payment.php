@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\el_GR;
+namespace Faker\Provider\elGR;
 
 class Payment extends \Faker\Provider\Payment
 {

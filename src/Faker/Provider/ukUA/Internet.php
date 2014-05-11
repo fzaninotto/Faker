@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\uk_UA;
+namespace Faker\Provider\ukUA;
 
 class Internet extends \Faker\Provider\Internet
 {

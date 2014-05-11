@@ -1,8 +1,8 @@
 <?php
 
-namespace Faker\Test\Provider\fr_FR;
+namespace Faker\Test\Provider\frFR;
 
-use Faker\Provider\fr_FR\Company;
+use Faker\Provider\frFR\Company;
 use Faker\PHPUnit\Framework\Constraint as Constraint;
 
 class CompanyTest extends \PHPUnit_Framework_TestCase

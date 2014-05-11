@@ -1,13 +1,13 @@
 <?php
 
-namespace Faker\Provider\en_AU;
+namespace Faker\Provider\enAU;
 
 /**
  * Class Address
  * @see http://www.ipaustralia.gov.au/about-us/corporate/address-standards/
- * @package Faker\Provider\en_AU
+ * @package Faker\Provider\enAU
  */
-class Address extends \Faker\Provider\en_US\Address
+class Address extends \Faker\Provider\enUS\Address
 {
     protected static $cityPrefix = array('North', 'East', 'West', 'South', 'New', 'Lake', 'Port', 'St.');
 

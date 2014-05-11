@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\is_IS;
+namespace Faker\Provider\isIS;
 
 class Payment extends \Faker\Provider\Payment
 {

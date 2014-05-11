@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\me_ME;
+namespace Faker\Provider\meME;
 
 class Address extends \Faker\Provider\Address
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\is_IS;
+namespace Faker\Provider\isIS;
 
 /**
  * @author Birkir Gudjonsson <birkir.gudjonsson@gmail.com>
