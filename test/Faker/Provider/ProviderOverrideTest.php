@@ -172,10 +172,10 @@ class ProviderOverrideTest extends \PHPUnit_Framework_TestCase
             return $locales;
         }
 
-        // Finding all PHP files in the xx_XX directories
+        // Finding all PHP files in the xxXX directories
         $providerDir = __DIR__ .'/../../../src/Faker/Provider';
-        foreach (glob($providerDir .'/*_*/*.php') as $file) {
-            $localisation = basename(dirname($file));
+        foreach (glob($providerDir .'/*/*.php') as $file) {
+            $localisation = preg_replace('#([a-z])([A-Z])#', "$1_$2", basename(dirname($file)));
 
             if (isset($locales[ $localisation ])) {
                 continue;
