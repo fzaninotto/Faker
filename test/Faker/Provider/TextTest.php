@@ -1,7 +1,7 @@
 <?php
 namespace Faker\Test\Provider;
 
-use Faker\Provider\en_US\Text;
+use Faker\Provider\enUS\Text;
 use Faker\Generator;
 
 class TextTest extends \PHPUnit_Framework_TestCase

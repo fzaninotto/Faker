@@ -38,7 +38,7 @@ class Factory
 
     protected static function findProviderClassname($provider, $locale = '')
     {
-        $providerClass = 'Faker\\' . ($locale ? sprintf('Provider\%s\%s', $locale, $provider) : sprintf('Provider\%s', $provider));
+        $providerClass = 'Faker\\' . ($locale ? sprintf('Provider\%s\%s', str_replace("_", "", $locale), $provider) : sprintf('Provider\%s', $provider));
         if (class_exists($providerClass, true)) {
             return $providerClass;
         }
