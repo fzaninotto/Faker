@@ -2,7 +2,7 @@
 
 namespace Faker\Provider;
 
-class Text extends \Faker\Provider\Base
+abstract class Text extends \Faker\Provider\Base
 {
     protected static $baseText = '';
     protected $explodedText = null;
