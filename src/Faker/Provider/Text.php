@@ -2,7 +2,7 @@
 
 namespace Faker\Provider;
 
-abstract class Text extends \Faker\Provider\Base
+class Text extends \Faker\Provider\Base
 {
     protected static $baseText = '';
     protected $explodedText = null;
@@ -80,7 +80,7 @@ abstract class Text extends \Faker\Provider\Base
             for ($i = 0; $i < $indexSize; $i++) {
                 $index[] = array_shift($parts);
             }
-            
+
             for ($i = 0, $count = count($parts); $i < $count; $i++) {
                 $stringIndex = implode(' ', $index);
                 if (!isset($words[$stringIndex])) {
