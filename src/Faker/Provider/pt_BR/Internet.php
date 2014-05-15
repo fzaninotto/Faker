@@ -7,6 +7,9 @@ class Internet extends \Faker\Provider\Internet
     protected static $freeEmailDomain = array('gmail.com', 'yahoo.com', 'hotmail.com', 'uol.com.br', 'terra.com.br', 'ig.com.br', 'r7.com');
     protected static $tld = array('com', 'com', 'com.br', 'com.br', 'net', 'net.br', 'br', 'org');
 
+	protected static $accentedChars = 'ÀÁÂÃÇçÈÉÊÌÍÒÓÔÕÙÚÛàáâãèéêìíîòóôõùúû';
+	protected static $normalChars   = 'AAAACcEEEIIOOOOUUUaaaaeeeiiioooouuu';
+
     /**
      * Convert accent chars to their canonical
      *
@@ -15,16 +18,9 @@ class Internet extends \Faker\Provider\Internet
      *
      * @return string
      */
-    private static function toAscii($string)
+    protected static function toAscii($string)
     {
-        $a = array(
-            'À', 'Á', 'Â', 'Ã', 'Ç', 'ç', 'È', 'É', 'Ê', 'Ì', 'Í', 'Ò', 'Ó', 'Ô', 'Õ', 'Ù', 'Ú', 'Û', 'à', 'á', 'â', 'ã', 'è', 'é', 'ê', 'ì', 'í', 'î', 'ò', 'ó', 'ô', 'õ', 'ù', 'ú', 'û',
-        );
-        $b = array(
-            'A', 'A', 'A', 'A', 'C', 'c', 'E', 'E', 'E', 'I', 'I', 'O', 'O', 'O', 'O', 'U', 'U', 'U', 'a', 'a', 'a', 'a', 'e', 'e', 'e', 'i', 'i', 'i', 'o', 'o', 'o', 'o', 'u', 'u', 'u',
-        );
-
-        return str_replace($a, $b, $string);
+        return strtr($string, static::$accentedChars, static::$normalChars);
     }
 
     /**
