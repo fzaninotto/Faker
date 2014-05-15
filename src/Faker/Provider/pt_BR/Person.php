@@ -90,7 +90,7 @@ class Person extends \Faker\Provider\Person
 
     protected static $titleFemale = array('Sra.', 'Srta.', 'Dr.',);
 
-    private static $suffix = array('Filho', 'Neto', 'Sobrinho', 'Jr.');
+    protected static $suffix = array('Filho', 'Neto', 'Sobrinho', 'Jr.');
 
     /**
      * @example 'Jr.'
@@ -99,4 +99,54 @@ class Person extends \Faker\Provider\Person
     {
         return static::randomElement(static::$suffix);
     }
+
+
+	/**
+	 * A random CPF number.
+	 * @param bool $formatted If the number should have dots/dashes or not.
+	 * @return string
+	 */
+	public function cpf($formatted = true)
+	{
+		$n = str_split($this->generator->numerify('#########'));
+
+		$n[9] = $n[8] * 2 + $n[7] * 3 + $n[6] * 4 + $n[5] * 5 +
+			$n[4] * 6 + $n[3] * 7 + $n[2] * 8 + $n[1] * 9 + $n[0] * 10;
+		$n[9] = 11 - ($n[9] % 11);
+		if ($n[9] >= 10)
+			$n[9] = 0;
+
+		$n[10] = $n[9] * 2 + $n[8] * 3 + $n[7] * 4 + $n[6] * 5 + $n[5] * 6 +
+			$n[4] * 7 + $n[3] * 8 + $n[2] * 9 + $n[1] * 10 + $n[0] * 11;
+		$n[10] = 11 - ($n[10] % 11);
+		if ($n[10] >= 10)
+			$n[10] = 0;
+
+		return $formatted?
+			vsprintf('%d%d%d.%d%d%d.%d%d%d-%d%d', $n) : implode($n);
+	}
+
+	/**
+	 * A random CNPJ number.
+	 * @param bool $formatted If the number should have dots/slashes/dashes or not.
+	 * @return string
+	 */
+	public function cnpj($formatted = true)
+	{
+		$n = str_split($this->generator->numerify('########0001'));
+
+		$n[12] = $n[11] * 2 + $n[10] * 3 + $n[9] * 4 + $n[8] * 5 + $n[7] * 6 + $n[6] * 7 +
+			$n[5] * 8 + $n[4] * 9 + $n[3] * 2 + $n[2] * 3 + $n[1] * 4 + $n[0] * 5;
+		$n[12] = 11 - ($n[12] % 11);
+		if ($n[12] >= 10)
+			$n[12] = 0;
+
+		$n[13] = $n[12] * 2 + $n[11] * 3 + $n[10] * 4 + $n[9] * 5 + $n[8] * 6 + $n[7] * 7 +
+			$n[6] * 8 + $n[5] * 9 + $n[4] * 2 + $n[3] * 3 + $n[2] * 4 + $n[1] * 5 + $n[0] * 6;
+		$n[13] = 11 - ($n[13] % 11);
+		if ($n[13] >= 10)
+			$n[13] = 0;
+
+		return $formatted? vsprintf('%d%d.%d%d%d.%d%d%d/%d%d%d%d-%d%d', $n) : implode($n);
+	}
 }
