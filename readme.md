@@ -6,6 +6,8 @@ Faker is heavily inspired by Perl's [Data::Faker](http://search.cpan.org/~jasonk
 
 Faker requires PHP >= 5.3.3.
 
+(To use [transliterator](http://www.php.net/manual/en/transliterator.transliterate.php) Faker requires PHP >= 5.4.0 and PECL intl >= 2.0.0.
+
 [![Monthly Downloads](https://poser.pugx.org/fzaninotto/faker/d/monthly.png)](https://packagist.org/packages/fzaninotto/faker) [![Build Status](https://secure.travis-ci.org/fzaninotto/Faker.png)](http://travis-ci.org/fzaninotto/Faker) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/eceb78a9-38d4-4ad5-8b6b-b52f323e3549/mini.png)](https://insight.sensiolabs.com/projects/eceb78a9-38d4-4ad5-8b6b-b52f323e3549)
 
 ## Basic Usage
