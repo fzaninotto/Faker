@@ -30,14 +30,35 @@ class Internet extends \Faker\Provider\Base
         'https://{{domainName}}/{{slug}}.html',
     );
 
+    private static function transliterate($string)
+    {
+        if (function_exists('transliterator_transliterate')) {
+            $string = transliterator_transliterate("Any-Latin; Latin-ASCII; NFD; [:Nonspacing Mark:] Remove; NFC; Lower();", $string);
+            $string = preg_replace('/(?!\.)\W/', '', $string);
+        }
+        
+        return $string;
+    }
+    
+    private static function transliterateEmail($email)
+    {
+        if (function_exists('transliterator_transliterate')) {
+            $emailParts = explode('@', $email);
+            $emailParts[0] = static::transliterate($emailParts[0]);
+            $emailParts[1] = static::transliterate($emailParts[1]);
+            $email = implode('@', $emailParts);
+        }
+        
+        return $email;
+    }
     /**
      * @example 'jdoe@acme.biz'
      */
     public function email()
     {
         $format = static::randomElement(static::$emailFormats);
-
-        return preg_replace('/\s/u', '', $this->generator->parse($format));
+        
+        return static::transliterateEmail($this->generator->parse($format));
     }
 
     /**
@@ -91,10 +112,10 @@ class Internet extends \Faker\Provider\Base
     public function userName()
     {
         $format = static::randomElement(static::$userNameFormats);
+        $username = static::bothify($this->generator->parse($format));
 
-        return static::toLower(static::bothify($this->generator->parse($format)));
+        return static::transliterate($username);
     }
-
     /**
      * @example 'fY4èHdZv68'
      */
