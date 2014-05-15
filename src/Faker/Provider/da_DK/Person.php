@@ -58,7 +58,7 @@ class Person extends \Faker\Provider\Person
         'Verner', 'Victor', 'Viktor', 'Villy', 'Walther', 'Werner', 'Wilhelm', 'William', 'Willy', 'Åge', 'Bendt', 'Bjarke',
         'Chr', 'Eigil', 'Ejgil', 'Ejler', 'Ejnar', 'Ejner', 'Evald', 'Folmer', 'Gunner', 'Gurli', 'Hartvig', 'Herluf', 'Hjalmar',
         'Ingemann', 'Ingolf', 'Ingvard', 'Keld', 'Kresten', 'Laurids', 'Laurits', 'Lauritz', 'Ludvig', 'Lynge', 'Oluf', 'Osvald',
-        'Povl', 'Richardt', 'Sigfred', 'Sofus', 'Thorkild', 'Unavngivet', 'Viggo', 'Vilhelm', 'Villiam',
+        'Povl', 'Richardt', 'Sigfred', 'Sofus', 'Thorkild', 'Viggo', 'Vilhelm', 'Villiam',
     );
 
     protected static $firstNameFemale = array(
