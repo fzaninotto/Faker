@@ -58,6 +58,75 @@ for ($i=0; $i < 10; $i++) {
   // Ms. Karley Kiehn V
 ```
 
+## Command line usage
+
+Use `bin/faker.php` to generate fake data on the command line.
+
+```
+$ ./bin/faker.php --count 10 word
+[
+    "culpa",
+    "consequatur",
+    "quisquam",
+    "recusandae",
+    "asperiores",
+    "accusamus",
+    "nihil",
+    "repellat",
+    "vero",
+    "omnis"
+]
+```
+
+You can use different output formats by definint the `--format` option. JSON is the default format.
+
+```
+$ ./bin/faker.php --format xml --count 10 word
+<?xml version="1.0"?>
+<array>
+  <item>culpa</item>
+  <item>consequatur</item>
+  <item>quisquam</item>
+  <item>recusandae</item>
+  <item>asperiores</item>
+  <item>accusamus</item>
+  <item>nihil</item>
+  <item>repellat</item>
+  <item>vero</item>
+  <item>omnis</item>
+</array>
+```
+
+```
+$ ./bin/faker.php --format csv --count 10 word
+culpa
+consequatur
+quisquam
+recusandae
+asperiores
+accusamus
+nihil
+repellat
+vero
+omnis
+```
+
+```
+$ ./bin/faker.php --format php --count 10 word
+array (
+  0 => 'culpa',
+  1 => 'consequatur',
+  2 => 'quisquam',
+  3 => 'recusandae',
+  4 => 'asperiores',
+  5 => 'accusamus',
+  6 => 'nihil',
+  7 => 'repellat',
+  8 => 'vero',
+  9 => 'omnis',
+)
+```
+
 ## Formatters
 
 Each of the generator properties (like `name`, `address`, and `lorem`) are called "formatters". A faker generator has many of them, packaged in "providers". Here is a list of the bundled formatters in the default locale.
