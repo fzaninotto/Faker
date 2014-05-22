@@ -115,8 +115,8 @@ class GenerateCommand extends Command
      */
     protected function generateXml(\DOMDocument $doc, $data)
     {
-        // $data is a regular indexed array
         if (is_array($data) && range(0, count($data)-1) == array_keys($data)) {
+            // $data is a regular indexed array
             $array = $doc->createElement('array');
 
             foreach ($data as $value) {
@@ -127,10 +127,8 @@ class GenerateCommand extends Command
             }
 
             return $array;
-        }
-
-        // $data is an associative array or object
-        else if (is_array($data) || is_object($data)) {
+        } else if (is_array($data) || is_object($data)) {
+            // $data is an associative array or object
             $map = $doc->createElement('map');
 
             foreach ($data as $key => $value) {
@@ -142,10 +140,8 @@ class GenerateCommand extends Command
             }
 
             return $map;
-        }
-
-        // $data is a primitive type
-        else {
+        } else {
+            // $data is a primitive type
             return $doc->createTextNode($data);
         }
     }
@@ -189,8 +185,7 @@ class GenerateCommand extends Command
             }
 
             return $buffer;
-        }
-        else {
+        } else {
             return (array) $data;
         }
     }
