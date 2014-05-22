@@ -17,6 +17,10 @@ class GenerateCommand extends Command
             ->setName('faker:generate')
             ->addOption('locale', 'l', InputOption::VALUE_REQUIRED, 'The locale to used.', Factory::DEFAULT_LOCALE)
             ->addOption('seed', 's', InputOption::VALUE_REQUIRED, 'The generators seed.')
+            ->addOption('pattern', 'p', InputOption::VALUE_REQUIRED, 'The printf pattern.')
+            ->addOption('delimiter', 'd', InputOption::VALUE_REQUIRED, 'The delimiter is used by the csv and printf format.')
+            ->addOption('enclosure', 'e', InputOption::VALUE_REQUIRED, 'The enclosure is used by the csv and printf format.')
+            ->addOption('escape', 'E', InputOption::VALUE_REQUIRED, 'The escape character is used by the printf format.', '\\')
             ->addOption('format', 'f', InputOption::VALUE_REQUIRED, 'The output format (json, xml, csv, php)', 'json')
             ->addOption('count', 'c', InputArgument::OPTIONAL, 'The count of generated data.', 1)
             ->addArgument('type', InputArgument::REQUIRED, 'The data type to generate (e.g. "randomDigit", "words(5)", "name", "city")')
@@ -54,11 +58,19 @@ class GenerateCommand extends Command
                 break;
 
             case 'csv':
-                $this->outputCsv($output, $data);
+                $this->outputCsv($input, $output, $data);
                 break;
 
             case 'php':
                 $this->outputPhp($output, $data);
+                break;
+
+            case 'printf':
+                $this->outputPrintf($input, $output, $data);
+                break;
+
+            case 'vprintf':
+                $this->outputVprintf($input, $output, $data);
                 break;
 
             default:
@@ -144,12 +156,15 @@ class GenerateCommand extends Command
      * @param OutputInterface $output
      * @param mixed           $data
      */
-    protected function outputCsv(OutputInterface $output, $data)
+    protected function outputCsv(InputInterface $input, OutputInterface $output, $data)
     {
+        $delimiter = $input->getOption('delimiter');
+        $enclosure = $input->getOption('enclosure');
+
         $stream = fopen('php://temp', 'w+');
 
         foreach ($data as $row) {
-            fputcsv($stream, $this->flattenArray($row), ',', '"');
+            fputcsv($stream, $this->flattenArray($row), $delimiter, $enclosure);
         }
 
         fseek($stream, 0);
@@ -190,5 +205,55 @@ class GenerateCommand extends Command
     {
         $php = var_export($data, true);
         $output->write($php);
+    }
+
+    /**
+     * Generate and output the data as PHP.
+     *
+     * @param OutputInterface $output
+     * @param mixed           $data
+     */
+    protected function outputPrintf(InputInterface $input, OutputInterface $output, $data)
+    {
+        $pattern   = $input->getOption('pattern');
+        $delimiter = $input->getOption('delimiter') ?: ',';
+        $enclosure = $input->getOption('enclosure');
+        $escape    = $input->getOption('escape');
+
+        foreach ($data as $value) {
+            $value = $this->flattenArray($value);
+            $value = implode($delimiter, $value);
+
+            if ($enclosure) {
+                $value = $enclosure . str_replace($enclosure, $escape . $enclosure, $value) . $enclosure;
+            }
+
+            $output->writeln(sprintf($pattern, $value));
+        }
+    }
+
+    /**
+     * Generate and output the data as PHP.
+     *
+     * @param OutputInterface $output
+     * @param mixed           $data
+     */
+    protected function outputVprintf(InputInterface $input, OutputInterface $output, $data)
+    {
+        $pattern   = $input->getOption('pattern');
+        $enclosure = $input->getOption('enclosure');
+        $escape    = $input->getOption('escape');
+
+        foreach ($data as $values) {
+            $values = $this->flattenArray((array) $values);
+
+            if ($enclosure) {
+                foreach ($values as $key => $value) {
+                    $values[$key] = $enclosure . str_replace($enclosure, $escape . $enclosure, $value) . $enclosure;
+                }
+            }
+
+            $output->writeln(vsprintf($pattern, $values));
+        }
     }
 }
