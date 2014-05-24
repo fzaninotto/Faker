@@ -644,6 +644,41 @@ Fugiat non in itaque sunt nobis totam. Sed nesciunt est deleniti cumque alias. R
 
 ## Language specific formatters
 
+### `Faker\Provider\da_DK\Person`
+
+```php
+<?php
+
+// Generates a random CPR number
+echo $faker->cpr; // "051280-2387"
+
+```
+
+### `Faker\Provider\da_DK\Address`
+
+```php
+<?php
+
+// Generates a random 'kommune' name
+echo $faker->kommune; // "Frederiksberg"
+
+// Generates a random region name
+echo $faker->region; // "Region Sjælland"
+
+```
+
+### `Faker\Provider\da_DK\Company`
+
+```php
+<?php
+
+// Generates a random CVR number
+echo $faker->cvr; // "32458723"
+
+// Generates a random P number
+echo $faker->p; // "5398237590"
+
+```
 
 ### `Faker\Provider\fr_FR\Company`
 
@@ -680,40 +715,19 @@ echo $faker->region; // "Saint-Pierre-et-Miquelon"
 
 ```
 
-### `Faker\Provider\da_DK\Person`
+### `Faker\Provider\ja_JP\Person`
 
 ```php
 <?php
 
-// Generates a random CPR number
-echo $faker->cpr; // "051280-2387"
+// Generates a 'kana' name
+echo $faker->kanaName; // "アオタ ナオコ"
 
-```
+// Generates a 'kana' first name
+echo $faker->firstKanaName; // "トモミ"
 
-### `Faker\Provider\da_DK\Address`
-
-```php
-<?php
-
-// Generates a random 'kommune' name
-echo $faker->kommune; // "Frederiksberg"
-
-// Generates a random region name
-echo $faker->region; // "Region Sjælland"
-
-```
-
-### `Faker\Provider\da_DK\Company`
-
-```php
-<?php
-
-// Generates a random CVR number
-echo $faker->cvr; // "32458723"
-
-// Generates a random P number
-echo $faker->p; // "5398237590"
-
+// Generates a 'kana' last name
+echo $faker->lastKanaName; // "ナギサ"
 ```
 
 ### `Faker\Provider\pl_PL\Person`
@@ -754,19 +768,14 @@ echo $faker->bankAccountNumber; // "PL14968907563953822118075816"
 
 ```
 
-### `Faker\Provider\ja_JP\Person`
+### `Faker\Provider\pt_PT\Person`
 
 ```php
 <?php
 
-// Generates a 'kana' name
-echo $faker->kanaName; // "アオタ ナオコ"
+// Generates a random taxpayer identification number (in portuguese - Número de Identificação Fiscal NIF)
+echo $faker->taxpayerIdentificationNumber; // '165249277'
 
-// Generates a 'kana' first name
-echo $faker->firstKanaName; // "トモミ"
-
-// Generates a 'kana' last name
-echo $faker->lastKanaName; // "ナギサ"
 ```
 
 ### `Faker\Provider\ro_RO\Person`
@@ -804,15 +813,6 @@ echo $faker->tollFreePhoneNumber; // "0800123456"
 echo $faker->premiumRatePhoneNumber; // "0900123456"
 ```
 
-### `Faker\Provider\pt_PT\Person`
-
-```php
-<?php
-
-// Generates a random taxpayer identification number (in portuguese - Número de Identificação Fiscal NIF)
-echo $faker->taxpayerIdentificationNumber; // '165249277'
-
-```
 ## License
 
 Faker is released under the MIT Licence. See the bundled LICENSE file for details.
