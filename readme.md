@@ -58,7 +58,7 @@ for ($i=0; $i < 10; $i++) {
   // Ms. Karley Kiehn V
 ```
 
-**Tip**: For a quick generation of data, you can also use Faker as a command line tool thanks to [faker-cli](https://github.com/bit3/faker-cli).
+**Tip**: For a quick generation of fake data, you can also use Faker as a command line tool thanks to [faker-cli](https://github.com/bit3/faker-cli).
 
 ## Formatters
 
