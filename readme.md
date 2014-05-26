@@ -58,6 +58,8 @@ for ($i=0; $i < 10; $i++) {
   // Ms. Karley Kiehn V
 ```
 
+**Tip**: For a quick generation of data, you can also use Faker as a command line tool thanks to [faker-cli](https://github.com/bit3/faker-cli).
+
 ## Formatters
 
 Each of the generator properties (like `name`, `address`, and `lorem`) are called "formatters". A faker generator has many of them, packaged in "providers". Here is a list of the bundled formatters in the default locale.
