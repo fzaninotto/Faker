@@ -646,39 +646,29 @@ Fugiat non in itaque sunt nobis totam. Sed nesciunt est deleniti cumque alias. R
 
 ## Language specific formatters
 
-
-### `Faker\Provider\fr_FR\Company`
-
+### `Faker\Provider\cs_CZ\Address`
 ```php
 <?php
 
-// Generates a random SIREN number
-echo $faker->siren; // 082 250 104
-
-// Generates a random SIRET number
-echo $faker->siret; // 347 355 708 00224
-
-// Generates a random SIRET number (controlling the number of sequential digits)
-echo $faker->siret(3); // 438 472 611 01513
+echo $faker->region; // "Liberecký kraj"
 
 ```
 
-### `Faker\Provider\fr_FR\Address`
-
+### `Faker\Provider\cs_CZ\Company`
 ```php
 <?php
 
-// Generates a random department name
-echo $faker->departmentName; // "Haut-Rhin"
+// Generates a valid IČO
+echo $faker->ico; // "69663963"
 
-// Generates a random department number
-echo $faker->departmentNumber; // "2B"
+```
 
-// Generates a random department info (department number => department name)
-$faker->department; // array('18' => 'Cher');
+### `Faker\Provider\cs_CZ\DateTime`
+```php
+<?php
 
-// Generates a random region
-echo $faker->region; // "Saint-Pierre-et-Miquelon"
+echo $faker->monthNameGenitive; // "prosince"
+echo $faker->formattedDate; // "12. listopadu 2015"
 
 ```
 
@@ -716,6 +706,56 @@ echo $faker->cvr; // "32458723"
 // Generates a random P number
 echo $faker->p; // "5398237590"
 
+```
+
+### `Faker\Provider\fr_FR\Company`
+
+```php
+<?php
+
+// Generates a random SIREN number
+echo $faker->siren; // 082 250 104
+
+// Generates a random SIRET number
+echo $faker->siret; // 347 355 708 00224
+
+// Generates a random SIRET number (controlling the number of sequential digits)
+echo $faker->siret(3); // 438 472 611 01513
+
+```
+
+### `Faker\Provider\fr_FR\Address`
+
+```php
+<?php
+
+// Generates a random department name
+echo $faker->departmentName; // "Haut-Rhin"
+
+// Generates a random department number
+echo $faker->departmentNumber; // "2B"
+
+// Generates a random department info (department number => department name)
+$faker->department; // array('18' => 'Cher');
+
+// Generates a random region
+echo $faker->region; // "Saint-Pierre-et-Miquelon"
+
+```
+
+### `Faker\Provider\ja_JP\Person`
+
+```php
+<?php
+
+// Generates a 'kana' name
+echo $faker->kanaName; // "アオタ ナオコ"
+
+// Generates a 'kana' first name
+echo $faker->firstKanaName; // "トモミ"
+
+// Generates a 'kana' last name
+echo $faker->lastKanaName; // "ナギサ"
 ```
 
 ### `Faker\Provider\pl_PL\Person`
@@ -756,19 +796,14 @@ echo $faker->bankAccountNumber; // "PL14968907563953822118075816"
 
 ```
 
-### `Faker\Provider\ja_JP\Person`
+### `Faker\Provider\pt_PT\Person`
 
 ```php
 <?php
 
-// Generates a 'kana' name
-echo $faker->kanaName; // "アオタ ナオコ"
+// Generates a random taxpayer identification number (in portuguese - Número de Identificação Fiscal NIF)
+echo $faker->taxpayerIdentificationNumber; // '165249277'
 
-// Generates a 'kana' first name
-echo $faker->firstKanaName; // "トモミ"
-
-// Generates a 'kana' last name
-echo $faker->lastKanaName; // "ナギサ"
 ```
 
 ### `Faker\Provider\ro_RO\Person`
@@ -806,15 +841,6 @@ echo $faker->tollFreePhoneNumber; // "0800123456"
 echo $faker->premiumRatePhoneNumber; // "0900123456"
 ```
 
-### `Faker\Provider\pt_PT\Person`
-
-```php
-<?php
-
-// Generates a random taxpayer identification number (in portuguese - Número de Identificação Fiscal NIF)
-echo $faker->taxpayerIdentificationNumber; // '165249277'
-
-```
 ## License
 
 Faker is released under the MIT Licence. See the bundled LICENSE file for details.
