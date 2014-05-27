@@ -222,7 +222,7 @@ class Internet extends \Faker\Provider\Base
         $format = static::randomElement(static::$userNameFormats);
         $username = static::bothify($this->generator->parse($format));
 
-        return static::transliterate($username);
+        return preg_replace('/\s/u', '', static::transliterate($username));
     }
     /**
      * @example 'tiramisu.com'
