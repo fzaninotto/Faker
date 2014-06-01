@@ -248,7 +248,7 @@ class Person extends \Faker\Provider\Person
      */
     public function lastName()
     {
-        $determinator = static::randomNumber(0, 3);
+        $determinator = static::numberBetween(0, 3);
         if ($determinator === 0) {
             $lastName = static::randomElement(static::$longLastNames);
         } elseif ($determinator === 1) {
