@@ -4,6 +4,8 @@ CHANGELOG
 To be released, v1.4.0
 ----------------------
 
+* Added strict option to randomNumber to force number of digits (fzaninotto)
+* Fixed randomNumber usage duplicating numberBetween (fzaninotto)
 * Fixed address provider for latvian language (MatissJA)
 * Added Czech Republic (cs_CZ) address, company, datetime and text providers (Mikulas)
 * Fixed da_DK Person provider data containing an 'unnamed' person (tolnem)
