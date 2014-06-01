@@ -60,11 +60,10 @@ class Base
         if (null === $nbDigits) {
             $nbDigits = static::randomDigit();
         }
-        do {
-            $ret = mt_rand(0, pow(10, $nbDigits) - 1);
-        } while ($strict ? (strlen((string)($ret)) !== $nbDigits) : false);
-        
-        return $ret;
+        if ($strict) {
+            return mt_rand(pow(10, $nbDigits - 1), pow(10, $nbDigits) - 1);
+        }
+        return mt_rand(0, pow(10, $nbDigits) - 1);
     }
 
     /**
