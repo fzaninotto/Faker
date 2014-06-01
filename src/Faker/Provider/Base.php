@@ -49,25 +49,22 @@ class Base
     /**
      * Returns a random number with 0 to $nbDigits digits
      *
-     * If $upTo is passed, it returns a number between $nbDigits (read as from) and $upTo
-     *
      * @param integer $nbDigits
-     * @param integer $upTo
+     * @param boolean $strict Whether the returned number should have exactly $nbDigits
      * @example 79907610
      *
      * @return integer
      */
-    public static function randomNumber($nbDigits = null, $upTo = null)
+    public static function randomNumber($nbDigits = null, $strict = false)
     {
         if (null === $nbDigits) {
             $nbDigits = static::randomDigit();
         }
-
-        if (null !== $upTo) {
-            return static::numberBetween($nbDigits, $upTo);
-        }
-
-        return mt_rand(0, pow(10, $nbDigits) - 1);
+        do {
+            $ret = mt_rand(0, pow(10, $nbDigits) - 1);
+        } while ($strict ? (strlen((string)($ret)) !== $nbDigits) : false);
+        
+        return $ret;
     }
 
     /**
@@ -100,17 +97,17 @@ class Base
     }
 
     /**
-     * Returns a random number between $from and $to
+     * Returns a random number between $min and $max
      *
-     * @param integer $from default to 0
-     * @param integer $to   defaults to 32 bit max integer, ie 2147483647
+     * @param integer $min default to 0
+     * @param integer $max   defaults to 32 bit max integer, ie 2147483647
      * @example 79907610
      *
      * @return integer
      */
-    public static function numberBetween($from = 0, $to = 2147483647)
+    public static function numberBetween($min = 0, $max = 2147483647)
     {
-        return mt_rand($from, $to);
+        return mt_rand($min, $max);
     }
 
     /**
