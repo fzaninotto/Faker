@@ -176,12 +176,12 @@ class Internet extends \Faker\Provider\Base
      */
     public static function localIpv4()
     {
-        if (static::randomNumber(0, 1) === 0) {
+        if (static::numberBetween(0, 1) === 0) {
             // 10.x.x.x range
-            $ip = long2ip(static::randomNumber(167772160, 184549375));
+            $ip = long2ip(static::numberBetween(167772160, 184549375));
         } else {
             // 192.168.x.x range
-            $ip = long2ip(static::randomNumber(3232235520, 3232301055));
+            $ip = long2ip(static::numberBetween(3232235520, 3232301055));
         }
 
         return $ip;
