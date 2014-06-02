@@ -47,7 +47,9 @@ class Base
     }
 
     /**
-     * Returns a random number with 0 to $nbDigits digits
+     * Returns a random number with 0 to $nbDigits digits.
+     *
+     * The maximum value returned is mt_getrandmax()
      *
      * @param integer $nbDigits Defaults to a random number between 1 and 9
      * @param boolean $strict Whether the returned number should have exactly $nbDigits
@@ -59,6 +61,9 @@ class Base
     {
         if (!is_bool($strict)) {
             throw new \InvalidArgumentException('randomNumber() generates numbers of fixed width. To generate numbers between two boundaries, use numberBetween() instead.');
+        }
+        if ((pow(10, $nbDigits) - 1) > mt_getrandmax()) {
+            throw new \InvalidArgumentException('randomNumber() can only generate numbers up to mt_getrandmax()');
         }
         if (null === $nbDigits) {
             $nbDigits = static::randomDigitNotNull();
@@ -209,9 +214,15 @@ class Base
             }
         }
         $nbReplacements = count($toReplace);
-        $numbers = (string) static::randomNumber($nbReplacements, true);
-        for ($i = 0; $i < $nbReplacements; $i++) {
-            $string[$toReplace[$i]] = $numbers[$i];
+        if ((pow(10, $nbReplacements) - 1) > mt_getrandmax()) {
+            // slow track, because big ints won't work
+            $string = preg_replace_callback('/#/u', 'static::randomDigit', $string);
+        } else {
+            // fast track
+            $numbers = (string) static::randomNumber($nbReplacements, true);
+            for ($i = 0; $i < $nbReplacements; $i++) {
+                $string[$toReplace[$i]] = $numbers[$i];
+            }            
         }
         $string = preg_replace_callback('/\%/u', 'static::randomDigitNotNull', $string);
 

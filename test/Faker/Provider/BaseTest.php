@@ -28,7 +28,15 @@ class BaseTest extends \PHPUnit_Framework_TestCase
      */
     public function testRandomNumberThrowsExceptionWhenCalledWithAMax()
     {
-        BaseProvider::randomNumber(100, 200);
+        BaseProvider::randomNumber(5, 200);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testRandomNumberThrowsExceptionWhenCalledWithATooHighNumberOfDigits()
+    {
+        BaseProvider::randomNumber(10);   
     }
 
     public function testRandomNumberReturnsInteger()
@@ -45,7 +53,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
 
     public function testRandomNumberAcceptsStrictParamToEnforceNumberSize()
     {
-        $this->assertEquals(10, strlen((string) BaseProvider::randomNumber(10, true)));
+        $this->assertEquals(5, strlen((string) BaseProvider::randomNumber(5, true)));
     }
 
     public function testNumberBetween()
@@ -131,12 +139,18 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertNotEquals('0', BaseProvider::numerify('%'));
     }
 
+    public function testNumerifyCanGenerateANumberOfDigits()
+    {
+        $largePattern = str_repeat('#', 20); // definitely larger than PHP_INT_MAX on all systems
+        $this->assertEquals(20, strlen(BaseProvider::numerify($largePattern)));
+    }
+
     public function testLexifyReturnsSameStringWhenItContainsNoQuestionMark()
     {
         $this->assertEquals('fooBar#', BaseProvider::lexify('fooBar#'));
     }
 
-    public function testNumerifyReturnsStringWithQuestionMarksReplacedByLetters()
+    public function testLexifyReturnsStringWithQuestionMarksReplacedByLetters()
     {
         $this->assertRegExp('/foo[a-z]Ba[a-z]r/', BaseProvider::lexify('foo?Ba?r'));
     }
