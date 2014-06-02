@@ -1,7 +1,10 @@
 <?php
 
 	namespace Faker\Provider\sv_SE;
-
+	
+/**
+ * @author Nathanael Björkgård
+ */
 	class Address extends \Faker\Provider\Address
 	{
 		protected static $buildingNumber = array('%###', '%##', '%#', '%#?', '%', '%?');
