@@ -23,9 +23,18 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(BaseProvider::randomDigitNotNull() < 10);
     }
 
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testRandomNumberThrowsExceptionWhenCalledWithAMax()
+    {
+        BaseProvider::randomNumber(100, 200);
+    }
+
     public function testRandomNumberReturnsInteger()
     {
         $this->assertTrue(is_integer(BaseProvider::randomNumber()));
+        $this->assertTrue(is_integer(BaseProvider::randomNumber(5, false)));
     }
 
     public function testRandomNumberReturnsDigit()
@@ -36,9 +45,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
 
     public function testRandomNumberAcceptsStrictParamToEnforceNumberSize()
     {
-        for ($i=0; $i < 10; $i++) {
-            $this->assertEquals(10, strlen((string) BaseProvider::randomNumber(10, true)));
-        }
+        $this->assertEquals(10, strlen((string) BaseProvider::randomNumber(10, true)));
     }
 
     public function testNumberBetween()
