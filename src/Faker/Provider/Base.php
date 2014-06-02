@@ -222,7 +222,7 @@ class Base
             $numbers = str_pad(static::randomNumber($nbReplacements), $nbReplacements, '0', STR_PAD_LEFT);
             for ($i = 0; $i < $nbReplacements; $i++) {
                 $string[$toReplace[$i]] = $numbers[$i];
-            }            
+            }
         }
         $string = preg_replace_callback('/\%/u', 'static::randomDigitNotNull', $string);
 
