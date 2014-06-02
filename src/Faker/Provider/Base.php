@@ -219,7 +219,7 @@ class Base
             $string = preg_replace_callback('/#/u', 'static::randomDigit', $string);
         } else {
             // fast track
-            $numbers = (string) static::randomNumber($nbReplacements, true);
+            $numbers = str_pad(static::randomNumber($nbReplacements), $nbReplacements, '0', STR_PAD_LEFT);
             for ($i = 0; $i < $nbReplacements; $i++) {
                 $string[$toReplace[$i]] = $numbers[$i];
             }            
