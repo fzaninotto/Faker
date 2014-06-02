@@ -4,6 +4,7 @@ CHANGELOG
 To be released, v1.4.0
 ----------------------
 
+* Fixed numerify() performance by making it 40% faster (fzaninotto)
 * Added strict option to randomNumber to force number of digits (fzaninotto)
 * Fixed randomNumber usage duplicating numberBetween (fzaninotto)
 * Fixed address provider for latvian language (MatissJA)
@@ -47,7 +48,6 @@ To be released, v1.4.0
 * Fixed potentially offensive word from last name list (joshuajabbour)
 * Fixed reamde documentation about the optional modifier (cryode)
 * Fixed Image provider and documentor routine (fzaninotto)
-* Fixed safeEmail in all locales and made it final (TimWolla)
 * Fixed IDE insights for methods (PedroTroller)
 * Fixed missing data in en_US Address provider (Garbee)
 * Added Bengali (bn_BD) providers (masnun)
