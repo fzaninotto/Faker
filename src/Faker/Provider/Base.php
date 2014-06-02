@@ -197,7 +197,19 @@ class Base
      */
     public static function numerify($string = '###')
     {
-        $string = preg_replace_callback('/\#/u', 'static::randomDigit', $string);
+        // instead of using randomDigit() several times, which is slow,
+        // count the number of hashes and generate once a large number
+        $toReplace = array();
+        for ($i = 0, $count = strlen($string); $i < $count; $i++) {
+            if ($string[$i] === '#') {
+                $toReplace []= $i;
+            }
+        }
+        $nbReplacements = count($toReplace);
+        $numbers = (string) static::randomNumber($nbReplacements, true);
+        for ($i = 0; $i < $nbReplacements; $i++) {
+            $string[$toReplace[$i]] = $numbers[$i];
+        }
         $string = preg_replace_callback('/\%/u', 'static::randomDigitNotNull', $string);
 
         return $string;
