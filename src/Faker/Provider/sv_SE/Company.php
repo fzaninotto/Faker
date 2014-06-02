@@ -2,6 +2,9 @@
 
 	namespace Faker\Provider\sv_SE;
 
+/**
+ * @author Nathanael Björkgård
+ */
 	class Company extends \Faker\Provider\Company
 	{
 		protected static $formats = array(
