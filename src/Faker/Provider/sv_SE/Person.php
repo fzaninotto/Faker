@@ -3,9 +3,7 @@
 namespace Faker\Provider\sv_SE;
 
 /**
- * @link http://www.danskernesnavne.navneforskning.ku.dk/Personnavne.asp
- *
- * @author Antoine Corcy <contact@sbin.dk>
+ * @author Nathanael Björkgård
  */
 class Person extends \Faker\Provider\Person
 {
