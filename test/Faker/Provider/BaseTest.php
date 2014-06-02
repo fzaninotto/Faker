@@ -139,7 +139,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertNotEquals('0', BaseProvider::numerify('%'));
     }
 
-    public function testNumerifyCanGenerateANumberOfDigits()
+    public function testNumerifyCanGenerateALargeNumberOfDigits()
     {
         $largePattern = str_repeat('#', 20); // definitely larger than PHP_INT_MAX on all systems
         $this->assertEquals(20, strlen(BaseProvider::numerify($largePattern)));
