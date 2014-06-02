@@ -2,6 +2,9 @@
 
 	namespace Faker\Provider\sv_SE;
 
+/**
+ * @author Nathanael Björkgård
+ */
 	class PhoneNumber extends \Faker\Provider\PhoneNumber
 	{
 		/**
