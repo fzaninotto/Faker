@@ -49,7 +49,7 @@ class Base
     /**
      * Returns a random number with 0 to $nbDigits digits
      *
-     * @param integer $nbDigits
+     * @param integer $nbDigits Defaults to a random number between 1 and 9
      * @param boolean $strict Whether the returned number should have exactly $nbDigits
      * @example 79907610
      *
@@ -57,8 +57,11 @@ class Base
      */
     public static function randomNumber($nbDigits = null, $strict = false)
     {
+        if (!is_bool($strict)) {
+            throw new \InvalidArgumentException('randomNumber() generates numbers of fixed width. To generate numbers between two boundaries, use numberBetween() instead.');
+        }
         if (null === $nbDigits) {
-            $nbDigits = static::randomDigit();
+            $nbDigits = static::randomDigitNotNull();
         }
         if ($strict) {
             return mt_rand(pow(10, $nbDigits - 1), pow(10, $nbDigits) - 1);
