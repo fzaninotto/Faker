@@ -22,14 +22,10 @@ class AddressTest extends \PHPUnit_Framework_TestCase
 
     public function testPostCodeIsValid()
     {
-        $main = '[1-9]{5}';
+        $main = '[0-9]{5}';
         $pattern = "/^($main)|($main-[0-9]{3})+$/";
         $postcode = $this->faker->postcode;
-        $this->assertSame(
-            preg_match($pattern, $postcode),
-            1,
-            'Post code ' . $postcode . ' is wrong!'
-        );
+        $this->assertRegExp($pattern, $postcode, 'Post code ' . $postcode . ' is wrong!');
     }
 
     public function testEmptySuffixes()
