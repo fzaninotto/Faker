@@ -62,16 +62,17 @@ class Base
         if (!is_bool($strict)) {
             throw new \InvalidArgumentException('randomNumber() generates numbers of fixed width. To generate numbers between two boundaries, use numberBetween() instead.');
         }
-        if ((pow(10, $nbDigits) - 1) > mt_getrandmax()) {
-            throw new \InvalidArgumentException('randomNumber() can only generate numbers up to mt_getrandmax()');
-        }
         if (null === $nbDigits) {
             $nbDigits = static::randomDigitNotNull();
         }
-        if ($strict) {
-            return mt_rand(pow(10, $nbDigits - 1), pow(10, $nbDigits) - 1);
+        $max = pow(10, $nbDigits) - 1;
+        if ($max > mt_getrandmax()) {
+            throw new \InvalidArgumentException('randomNumber() can only generate numbers up to mt_getrandmax()');
         }
-        return mt_rand(0, pow(10, $nbDigits) - 1);
+        if ($strict) {
+            return mt_rand(pow(10, $nbDigits - 1), $max);
+        }
+        return mt_rand(0, $max);
     }
 
     /**
@@ -213,13 +214,15 @@ class Base
                 $toReplace []= $i;
             }
         }
-        $nbReplacements = count($toReplace);
-        if ((pow(10, $nbReplacements) - 1) > mt_getrandmax()) {
-            // slow track, because big ints won't work
-            $string = preg_replace_callback('/#/u', 'static::randomDigit', $string);
-        } else {
-            // fast track
-            $numbers = str_pad(static::randomNumber($nbReplacements), $nbReplacements, '0', STR_PAD_LEFT);
+        if ($nbReplacements = count($toReplace)) {
+            $maxAtOnce = strlen((string) mt_getrandmax()) - 1;
+            $numbers = '';
+            $i = 0;
+            while ($i < $nbReplacements) {
+                $size = min($nbReplacements - $i, $maxAtOnce);
+                $numbers .= str_pad(static::randomNumber($size), $size, '0', STR_PAD_LEFT);
+                $i += $size;
+            }
             for ($i = 0; $i < $nbReplacements; $i++) {
                 $string[$toReplace[$i]] = $numbers[$i];
             }
