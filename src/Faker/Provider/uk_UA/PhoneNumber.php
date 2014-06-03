@@ -23,7 +23,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '099#######',
 
         // More generic formats
-        '+380#######',
         '+38(0##)#######',
         '+38(0###)######'
     );
