@@ -4,7 +4,9 @@ CHANGELOG
 To be released, v1.4.0
 ----------------------
 
-* Fixed numerify() performance by making it 40% faster (fzaninotto)
+* Fixed typo in Slovak person names (cinan)
+* Added tests for uk_UA providers (serge-kuharev)
+* Fixed numerify() performance by making it 30% faster (fzaninotto)
 * Added strict option to randomNumber to force number of digits (fzaninotto)
 * Fixed randomNumber usage duplicating numberBetween (fzaninotto)
 * Fixed address provider for latvian language (MatissJA)
