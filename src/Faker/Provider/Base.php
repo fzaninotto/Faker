@@ -47,7 +47,9 @@ class Base
     }
 
     /**
-     * Returns a random number with 0 to $nbDigits digits
+     * Returns a random number with 0 to $nbDigits digits.
+     *
+     * The maximum value returned is mt_getrandmax()
      *
      * @param integer $nbDigits Defaults to a random number between 1 and 9
      * @param boolean $strict Whether the returned number should have exactly $nbDigits
@@ -63,10 +65,14 @@ class Base
         if (null === $nbDigits) {
             $nbDigits = static::randomDigitNotNull();
         }
-        if ($strict) {
-            return mt_rand(pow(10, $nbDigits - 1), pow(10, $nbDigits) - 1);
+        $max = pow(10, $nbDigits) - 1;
+        if ($max > mt_getrandmax()) {
+            throw new \InvalidArgumentException('randomNumber() can only generate numbers up to mt_getrandmax()');
         }
-        return mt_rand(0, pow(10, $nbDigits) - 1);
+        if ($strict) {
+            return mt_rand(pow(10, $nbDigits - 1), $max);
+        }
+        return mt_rand(0, $max);
     }
 
     /**
@@ -208,10 +214,18 @@ class Base
                 $toReplace []= $i;
             }
         }
-        $nbReplacements = count($toReplace);
-        $numbers = (string) static::randomNumber($nbReplacements, true);
-        for ($i = 0; $i < $nbReplacements; $i++) {
-            $string[$toReplace[$i]] = $numbers[$i];
+        if ($nbReplacements = count($toReplace)) {
+            $maxAtOnce = strlen((string) mt_getrandmax()) - 1;
+            $numbers = '';
+            $i = 0;
+            while ($i < $nbReplacements) {
+                $size = min($nbReplacements - $i, $maxAtOnce);
+                $numbers .= str_pad(static::randomNumber($size), $size, '0', STR_PAD_LEFT);
+                $i += $size;
+            }
+            for ($i = 0; $i < $nbReplacements; $i++) {
+                $string[$toReplace[$i]] = $numbers[$i];
+            }
         }
         $string = preg_replace_callback('/\%/u', 'static::randomDigitNotNull', $string);
 
