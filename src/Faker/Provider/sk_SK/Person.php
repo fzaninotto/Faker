@@ -55,7 +55,7 @@ class Person extends \Faker\Provider\Person
         'Sofia', 'Gizela', 'Viola', 'Gertrúda', 'Zina', 'Júlia', 'Juliana', 'Želmíra', 'Ela', 'Vanesa', 'Iveta', 'Vilma', 'Petronela', 'Žaneta',
         'Xénia', 'Karolína', 'Lenka', 'Laura', 'Stanislava', 'Margaréta', 'Dobroslava', 'Blanka', 'Valéria', 'Paulína', 'Sidónia', 'Adriána',
         'Beáta', 'Petra', 'Melánia', 'Diana', 'Berta', 'Patrícia', 'Lujza', 'Amália', 'Milota', 'Nina', 'Margita', 'Kamila', 'Dušana', 'Magdaléna',
-        'Oľga', 'Anna', '¨Hana', 'Božena', 'Marta', 'Libuša', 'Božidara', 'Dominika', 'Hortenzia', 'Jozefína', 'Štefánia', 'Ľubomíra', 'Zuzana',
+        'Oľga', 'Anna', 'Hana', 'Božena', 'Marta', 'Libuša', 'Božidara', 'Dominika', 'Hortenzia', 'Jozefína', 'Štefánia', 'Ľubomíra', 'Zuzana',
         'Darina', 'Marcela', 'Milica', 'Elena', 'Helena', 'Lýdia', 'Anabela', 'Jana', 'Silvia', 'Nikola', 'Ružena', 'Nora', 'Drahoslava', 'Linda',
         'Melinda', 'Rebeka', 'Rozália', 'Regína', 'Alica', 'Marianna', 'Miriama', 'Martina', 'Mária', 'Jolana', 'Ľudomila', 'Ľudmila', 'Olympia',
         'Eugénia', 'Ľuboslava', 'Zdenka', 'Edita', 'Michaela', 'Stela', 'Viera', 'Natália', 'Eliška', 'Brigita', 'Valentína', 'Terézia', 'Vladimíra',
