@@ -1,8 +1,8 @@
 CHANGELOG
 =========
 
-To be released, v1.4.0
-----------------------
+2014-06-04, v1.4.0
+------------------
 
 * Fixed typo in Slovak person names (cinan)
 * Added tests for uk_UA providers (serge-kuharev)
