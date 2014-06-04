@@ -7,7 +7,7 @@ namespace Faker\Provider\sv_SE;
  */
 class Address extends \Faker\Provider\Address
 {
-	protected static $buildingNumber = array('%###', '%##', '%#', '%#?', '%', '%?');
+    protected static $buildingNumber = array('%###', '%##', '%#', '%#?', '%', '%?');
 
 	protected static $streetPrefix = array(
 		'Stor', 'Små', 'Lill', 'Sjö', 'Kungs', 'Drottning', 'Hamn', 'Brunns', 'Linné', 'Vasa', 'Ring', 'Freds'
