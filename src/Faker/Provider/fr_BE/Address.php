@@ -46,8 +46,8 @@ class Address extends \Faker\Provider\Address
     );
 
     protected static $province = array(
-        'Anvers', 'Limbourg', 'Flandre Orientale', 'Brabant Flamand', 'Flandre Occidentale',
-        'Hainaut', 'Liège', 'Luxembourg', 'Namur', 'Brabant Wallon'
+        'Anvers', 'Limbourg', 'Flandre orientale', 'Brabant flamand', 'Flandre occidentale',
+        'Hainaut', 'Liège', 'Luxembourg', 'Namur', 'Brabant wallon'
     );
 
     protected static $country = array(
