@@ -19,7 +19,7 @@ class Address extends \Faker\Provider\Address
     );
 
     protected static $streetSuffix = array(
-        'rue', 'avenue', 'boulevard', 'chemin', 'chaussée'
+        'rue', 'avenue', 'boulevard', 'chemin', 'chaussée', 'impasse', 'place'
     );
 
     /**
