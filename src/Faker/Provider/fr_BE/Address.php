@@ -28,17 +28,17 @@ class Address extends \Faker\Provider\Address
      * @var array
      */
     protected static $cityNames = array(
-        'Aarschot','Alost (Aalst)','Andenne','Antoing','Anvers (Antwerpen)','Arlon','Ath','Audenarde (Oudenaarde)','Bastogne','Beaumont','Beauraing','Beringen','Bilzen','Binche',
-        'Blankenberge','Bouillon','Braine-le-Comte','Bree','Bruges (Brugge)','Bruxelles','Charleroi','Châtelet','Chièvres','Chimay','Chiny','Ciney','Comines-Warneton','Courtrai (Kortrijk)',
-        'Couvin','Damme','Deinze','Diest','Dilsen-Stokkem','Dinant','Dixmude (Diksmuide)','Durbuy','Eeklo','Enghien','Eupen','Fleurus','Florenville','Fontaine-l\'Évêque','Fosses-la-Ville',
-        'Furnes (Veurne)','Gand (Gent)','Geel','Gembloux','Genappe','Genk','Gistel','Grammont (Geraardsbergen)','Hal (Halle)','Halen','Hamont-Achel','Hannut','Harelbeke','Hasselt',
-        'Herck-la-Ville (Herk-de-Stad)','Herentals','Herstal','Herve','Hoogstraten','Houffalize','Huy','Izegem','Jodoigne','La Louvière','La Roche-en-Ardenne','Landen','Léau (Zoutleeuw)',
-        'Le Rœulx','Lessines','Leuze-en-Hainaut','Liège','Lierre (Lier)','Limbourg','Lokeren','Lommel','Looz (Borgloon)','Lo-Reninge','Louvain (Leuven)','Maaseik','Malines (Mechelen)',
-        'Malmedy','Marche-en-Famenne','Menin (Menen)','Messines (Mesen)','Mons','Montaigu-Zichem (Scherpenheuvel-Zichem)','Mortsel','Mouscron','Namur','Neufchâteau','Nieuport (Nieuwpoort)',
-        'Ninove','Nivelles','Ostende (Oostende)','Ottignies-Louvain-la-Neuve','Oudenburg','Peer','Péruwelz','Philippeville','Poperinge','Renaix (Ronse)','Rochefort','Roulers (Roeselare)',
-        'Saint-Ghislain','Saint-Hubert','Saint-Nicolas (Sint-Niklaas)','Saint-Trond (Sint-Truiden)','Saint-Vith (Sankt Vith)','Seraing','Soignies','Stavelot','Termonde (Dendermonde)','Thuin',
-        'Tielt','Tirlemont (Tienen)','Tongres (Tongeren)','Torhout','Tournai','Turnhout','Verviers','Vilvorde (Vilvoorde)','Virton','Visé','Walcourt','Waregem','Waremme','Wavre','Wervik',
-        'Ypres (Ieper)','Zottegem'
+        'Aarschot','Alost','Andenne','Antoing','Anvers','Arlon','Ath','Audenarde','Bastogne','Beaumont','Beauraing','Beringen','Bilzen','Binche',
+        'Blankenberge','Bouillon','Braine-le-Comte','Bree','Bruges','Bruxelles','Charleroi','Châtelet','Chièvres','Chimay','Chiny','Ciney','Comines-Warneton','Courtrai',
+        'Couvin','Damme','Deinze','Diest','Dilsen-Stokkem','Dinant','Dixmude','Durbuy','Eeklo','Enghien','Eupen','Fleurus','Florenville','Fontaine-l\'Évêque','Fosses-la-Ville',
+        'Furnes','Gand','Geel','Gembloux','Genappe','Genk','Gistel','Grammont','Hal','Halen','Hamont-Achel','Hannut','Harelbeke','Hasselt',
+        'Herck-la-Ville','Herentals','Herstal','Herve','Hoogstraten','Houffalize','Huy','Izegem','Jodoigne','La Louvière','La Roche-en-Ardenne','Landen','Léau',
+        'Le Rœulx','Lessines','Leuze-en-Hainaut','Liège','Lierre','Limbourg','Lokeren','Lommel','Looz','Lo-Reninge','Louvain','Maaseik','Malines',
+        'Malmedy','Marche-en-Famenne','Menin','Messines','Mons','Montaigu-Zichem','Mortsel','Mouscron','Namur','Neufchâteau','Nieuport',
+        'Ninove','Nivelles','Ostende','Ottignies-Louvain-la-Neuve','Oudenburg','Peer','Péruwelz','Philippeville','Poperinge','Renaix','Rochefort','Roulers',
+        'Saint-Ghislain','Saint-Hubert','Saint-Nicolas','Saint-Trond','Saint-Vith','Seraing','Soignies','Stavelot','Termonde','Thuin',
+        'Tielt','Tirlemont','Tongres','Torhout','Tournai','Turnhout','Verviers','Vilvorde','Virton','Visé','Walcourt','Waregem','Waremme','Wavre','Wervik',
+        'Ypres','Zottegem'
     );
 
     protected static $region = array(
