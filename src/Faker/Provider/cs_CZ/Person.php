@@ -333,7 +333,7 @@ class Person extends \Faker\Provider\Person
             'Musilová', 'Mužíková', 'Myšková', 'Nagyová', 'Najmanová',
             'Navrátilová', 'Nečasová', 'Nedbalová', 'Nedomová', 'Nedvědová',
             'Nejedlá', 'Němcová', 'Němečková', 'Nesvadbová', 'Nešporová',
-            'Neubauerová', 'Neumanová', 'Neumannová', 'Nguyenová', 'vanová',
+            'Neubauerová', 'Neumanová', 'Neumannová', 'Nguyenová', 'Vanová',
             'Nosková', 'Nováčková', 'Nováková', 'Novosadová', 'Novotná',
             'Nová', 'Odehnalová', 'Oláhová', 'Olivová', 'Ondráčková',
             'Ondrová', 'Orságová', 'Otáhalová', 'Palečková', 'Pánková',
