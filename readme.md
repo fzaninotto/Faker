@@ -841,6 +841,24 @@ echo $faker->tollFreePhoneNumber; // "0800123456"
 echo $faker->premiumRatePhoneNumber; // "0900123456"
 ```
 
+### `Faker\Provider\ar_JO\Person`
+
+```php
+<?php
+
+// Generates a random male name prefix/title
+echo $faker->prefixMale; // "السيد"
+// Generates a random female name prefix/title
+echo $faker->prefixFemale; // "الآنسة"
+// Generates a random male fist name
+echo $faker->firstNameMale; // "طاهر"
+// Generates a random female fist name
+echo $faker->firstNameFemale; // "دارين"
+
+
+```
+
+
 ## License
 
 Faker is released under the MIT Licence. See the bundled LICENSE file for details.
