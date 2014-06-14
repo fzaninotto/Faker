@@ -9,7 +9,7 @@ class Lorem extends \Faker\Provider\Lorem
     );
 
     /**
-     * @example 'Lorem'
+     * @example 'المحتوى'
      */
     public static function word()
     {
@@ -19,7 +19,7 @@ class Lorem extends \Faker\Provider\Lorem
     /**
      * Generate an array of random words
      *
-     * @example array('Lorem', 'ipsum', 'dolor')
+     * @example array('المحتوى', 'القارئ', 'التركيز')
      * @param  integer      $nb     how many words to return
      * @param  bool         $asText if true the sentences are returned as one string
      * @return array|string
@@ -37,7 +37,7 @@ class Lorem extends \Faker\Provider\Lorem
     /**
      * Generate a random sentence
      *
-      * @example 'Lorem ipsum dolor sit amet.'
+      * @example 'لايزال سيلهي قابل أحياناً'
      * @param  integer $nbWords         around how many words the sentence should contain
      * @param  boolean $variableNbWords set to false if you want exactly $nbWords returned,
      *                                  otherwise $nbWords may vary by +/-40% with a minimum of 1
@@ -61,7 +61,7 @@ class Lorem extends \Faker\Provider\Lorem
     /**
      * Generate an array of sentences
      *
-     * @example array('Lorem ipsum dolor sit amet.', 'Consectetur adipisicing eli.')
+     * @example array('وضع الغالبية له فلقد هنا أحياناً للشك', 'يأتي بالنسخ فتجعلها')
      * @param  integer      $nb     how many sentences to return
      * @param  bool         $asText if true the sentences are returned as one string
      * @return array|string
@@ -79,7 +79,7 @@ class Lorem extends \Faker\Provider\Lorem
     /**
      * Generate a single paragraph
      *
-      * @example 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'
+      * @example 'مايكر حقيقة بما مولّد نفسه. هنا مستخدماً المكتبي الحقيقي. تستخدم خمسة. أقاصي عام أن علمية لائقة محتوى. توفير أكثر القياسي البروفيسور علمية محرجة'
      * @param  integer $nbSentences         around how many sentences the paragraph should contain
      * @param  boolean $variableNbSentences set to false if you want exactly $nbSentences returned,
      *                                      otherwise $nbSentences may vary by +/-40% with a minimum of 1
@@ -119,7 +119,8 @@ class Lorem extends \Faker\Provider\Lorem
      * Generate a text string.
      * Depending on the $maxNbChars, returns a string made of words, sentences, or paragraphs.
      *
-      * @example 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'
+      * @example '
+النشر يقوم وعاد الأسفل.. ذو إبسوم لصفحة تريد خالي. الأصلي للمفكر تحوي القسم لهذه تريد. عشوائي النص. صار توضع تعمل المصدر في اللاتينية'
      * @param  integer $maxNbChars Maximum number of characters the text should contain (minimum 5)
      * @return string
      */
