@@ -23,7 +23,7 @@ class Company extends \Faker\Provider\Company
 
     public function companyPrefix()
     {
-       return static::randomElement(self::$companyPrefix);
+        return static::randomElement(self::$companyPrefix);
     }
 
     /**

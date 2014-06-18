@@ -148,5 +148,4 @@ class Text extends \Faker\Provider\Text
 
 
 EOT;
-
 }
