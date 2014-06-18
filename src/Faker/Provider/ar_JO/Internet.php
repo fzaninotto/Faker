@@ -11,18 +11,18 @@ class Internet extends \Faker\Provider\Internet
         '?{{lastNameAscii}}',
     );
     protected static $safeEmailTld = array(
-        'org', 'com', 'net', 'jo', 'me'
+        'com', 'jo', 'me', 'net', 'org',
     );
 
     protected static $tld = array(
-        'com', 'com', 'com', 'biz', 'info', 'net', 'org', 'jo',
+        'biz', 'com', 'info', 'jo', 'net', 'org',
     );
 
     protected static $lastNameAscii = array(
-        'hamad', 'karam', 'abbas', 'abbad', 'kanaan', 'abulebbeh', 'abbadi', 'hasan', 'rashwani', 'nimry', 'qasem', 'obaisi'
+        'abbad', 'abbadi', 'abbas', 'abulebbeh', 'flefel', 'hadi', 'hamad', 'hasan', 'jabri', 'kanaan', 'karam', 'maanee', 'melhem', 'nimry', 'obaisi', 'qasem', 'qawasmee', 'rabee', 'rashwani', 'shami', 'zaloum',
     );
     protected static $firstNameAscii = array(
-        'abd','omar','bilal','ahmad', 'mohammad', 'akram', 'fadi', 'mutaz', 'layth', 'osama', 'rami', 'sami', 'samer', 'bashar', 'abdullah', 'omar', 'amr', 'yazan', 'ibrahim', 'khaled', 'saleem'
+        'abd', 'abdullah', 'ahmad', 'akram', 'amr', 'bashar', 'bilal', 'fadi', 'ibrahim', 'khaled', 'layth', 'mohammad', 'mutaz', 'omar', 'osama', 'rami', 'saleem', 'samer', 'sami', 'yazan',
     );
 
     public static function lastNameAscii()
