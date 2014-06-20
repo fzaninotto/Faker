@@ -28,7 +28,7 @@ class Address extends \Faker\Provider\Address
      **/
     protected static $state = array(
     'آيوا', 'أركنساس', 'أريزونا', 'ألاباما', 'ألاسكا', 'أوريغون', 'أوكلاهوما', 'أوهايو', 'أيداهو', 'إلينوي', 'إنديانا', 'الاباما', 'الجزر العذراء الأمريكية',
-    'بنسيلفانيا', 'بورتو ريكو',
+    'بنس    يلفانيا', 'بورتو ريكو',
     'تكساس', 'تينيسي',
     'جزر ماريانا الشمالية', 'جورجيا',
     'داكوتا الجنوبية', 'داكوتا الشمالية', 'ديلاوير', 'رود آيلاند',
@@ -102,7 +102,7 @@ class Address extends \Faker\Provider\Address
      */
     public static function cityName()
     {
-       return static::randomElement(static::$cityName);
+        return static::randomElement(static::$cityName);
     }
 
     /**
