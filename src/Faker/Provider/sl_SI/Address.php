@@ -5,43 +5,64 @@ namespace Faker\Provider\sl_SI;
 class Address extends \Faker\Provider\Address
 {
 
-    protected static $cityName = array(
-        'Ajdovščina', 'Kozje', 'Ribnica', 'Apače', 'Kranj', 'Ribnica na Pohorju', 'Beltinci', 'Kranjska Gora', 'Rogaška Slatina', 'Benedikt',
-        'Križevci', 'Rogašovci', 'Bistrica ob Sotli', 'Krško', 'Rogatec', 'Bled', 'Kungota', 'Ruše', 'Bloke', 'Kuzma', 'Selnica ob Dravi',
-        'Bohinj', 'Laško', 'Semič', 'Borovnica', 'Lenart', 'Sevnica', 'Bovec', 'Lendava', 'Sežana', 'Braslovče', 'Litija', 'Slovenj Gradec',
-        'Brda', 'Ljubljana', 'Slovenska Bistrica', 'Brezovica', 'Ljubno', 'Slovenske Konjice', 'Brežice', 'Ljutomer', 'Sodražica', 'Cankova',
-        'Log - Dragomer', 'Solčava', 'Celje', 'Logatec', 'Središče ob Dravi', 'Cerklje na Gorenjskem', 'Loška Dolina', 'Starše', 'Cerknica',
-        'Loški Potok', 'Straža', 'Cerkno', 'Lovrenc na Pohorju', 'Sveta Ana', 'Cerkvenjak', 'Luče', 'Sveta Trojica v Slovenskih goricah',
-        'Cirkulane', 'Lukovica', 'Sveti Andraž v Slovenskih goricah', 'Črenšovci', 'Majšperk', 'Sveti Jurij ob Ščavnici', 'Črna na Koroškem',
-        'Makole', 'Sveti Jurij v Slovenskih goricah', 'Črnomelj', 'Maribor', 'Sveti Tomaž', 'Destrnik', 'Markovci', 'Šalovci', 'Divača',
-        'Medvode', 'Šempeter - Vrtojba', 'Dobje', 'Mengeš', 'Šenčur', 'Dobrepolje', 'Metlika', 'Šentilj', 'Dobrna', 'Mežica', 'Šentjernej',
-        'Dobrova - Polhov Gradec', 'Miklavž na Dravskem polju', 'Šentjur', 'Dobrovnik', 'Miren - Kostanjevica', 'Šentrupert', 'Dol pri Ljubljani',
-        'Mirna Peč', 'Škocjan', 'Dolenjske Toplice', 'Mislinja', 'Škofja Loka', 'Domžale', 'Mokronog - Trebelno', 'Škofljica', 'Dornava', 'Moravče',
-        'Šmarje pri Jelšah', 'Dravograd', 'Moravske Toplice', 'Šmarješke Toplice', 'Duplek', 'Mozirje', 'Šmartno pri Litiji', 'Gorenja vas - Poljane',
-        'Murska Sobota', 'Šmartno ob Paki', 'Gorišnica', 'Muta', 'Šoštanj', 'Gorje', 'Naklo', 'Štore', 'Gornja Radgona', 'Nazarje', 'Tabor',
-        'Gornji Grad', 'Nova Gorica', 'Tišina', 'Gornji Petrovci', 'Novo mesto', 'Tolmin', 'Grad', 'Odranci', 'Trbovlje', 'Grosuplje', 'Oplotnica',
-        'Trebnje', 'Hajdina', 'Ormož', 'Trnovska vas', 'Hoče - Slivnica', 'Osilnica', 'Trzin', 'Hodoš', 'Pesnica', 'Tržič', 'Horjul', 'Piran',
-        'Turnišče', 'Hrastnik', 'Pivka', 'Velenje', 'Hrpelje - Kozina', 'Podčetrtek', 'Velika Polana', 'Idrija', 'Podlehnik', 'Velike Lašče',
-        'Ig', 'Podvelka', 'Veržej', 'Ilirska Bistrica', 'Poljčane', 'Videm', 'Ivančna Gorica', 'Polzela', 'Vipava', 'Izola', 'Postojna', 'Vitanje',
-        'Jesenice', 'Prebold', 'Vodice', 'Jezersko', 'Preddvor', 'Vojnik', 'Juršinci', 'Prevalje', 'Vransko', 'Kamnik', 'Ptuj', 'Vrhnika', 'Kanal ob Soči',
-        'Puconci', 'Vuzenica', 'Kidričevo', 'Rače - Fram', 'Zagorje ob Savi', 'Kobarid', 'Radeče', 'Zavrč', 'Kobilje', 'Radenci', 'Zreče', 'Kočevje',
-        'Radlje ob Dravi', 'Žalec', 'Komen', 'Radovljica', 'Železniki', 'Komenda', 'Ravne na Koroškem', 'Žetale', 'Koper', 'Razkrižje', 'Žiri',
-        'Kostanjevica na Krki', 'Rečica ob Savinji', 'Žirovnica', 'Kostel', 'Renče - Vogrsko', 'Žužemberk'
+    /**
+     * {@link} http://www.rtvslo.si/strani/abecedni-seznam-obcin/3103
+     **/
+
+    protected static $city = array(
+        'Ajdovščina', 'Apače', 'Beltinci', 'Benedikt', 'Bistrica ob Sotli', 'Bled', 'Bloke', 'Bohinj', 'Borovnica', 'Bovec',
+        'Braslovče', 'Brda', 'Brezovica', 'Brežice', 'Cankova', 'Celje', 'Cerklje na Gorenjskem', 'Cerknica', 'Cerkno',
+        'Cerkvenjak', 'Cirkulane', 'Destrnik', 'Divača', 'Dobje', 'Dobrepolje', 'Dobrna', 'Dobrova - Polhov Gradec', 'Dobrovnik',
+        'Dol pri Ljubljani', 'Dolenjske Toplice', 'Domžale', 'Dornava', 'Dravograd', 'Duplek', 'Gorenja vas - Poljane',
+        'Gorišnica', 'Gorje', 'Gornja Radgona', 'Gornji Grad', 'Gornji Petrovci', 'Grad', 'Grosuplje', 'Hajdina', 'Hodoš',
+        'Horjul', 'Hoče - Slivnica', 'Hrastnik', 'Hrpelje - Kozina', 'Idrija', 'Ig', 'Ilirska Bistrica', 'Ivančna Gorica',
+        'Izola', 'Jesenice', 'Jezersko', 'Juršinci', 'Kamnik', 'Kanal ob Soči', 'Kidričevo', 'Kobarid', 'Kobilje', 'Komen',
+        'Komenda', 'Koper', 'Kostanjevica na Krki', 'Kostel', 'Kozje', 'Kočevje', 'Kranj', 'Kranjska Gora', 'Križevci', 'Krško',
+        'Kungota', 'Kuzma', 'Laško', 'Lenart', 'Lendava', 'Litija', 'Ljubljana', 'Ljubno', 'Ljutomer', 'Log - Dragomer', 'Logatec',
+        'Lovrenc na Pohorju', 'Loška Dolina', 'Loški Potok', 'Lukovica', 'Luče', 'Majšperk', 'Makole', 'Maribor', 'Markovci',
+        'Medvode', 'Mengeš', 'Metlika', 'Mežica', 'Miklavž na Dravskem polju', 'Miren - Kostanjevica', 'Mirna Peč', 'Mislinja',
+        'Mokronog - Trebelno', 'Moravske Toplice', 'Moravče', 'Mozirje', 'Murska Sobota', 'Muta', 'Naklo', 'Nazarje', 'Nova Gorica',
+        'Novo mesto', 'Odranci', 'Oplotnica', 'Ormož', 'Osilnica', 'Pesnica', 'Piran', 'Pivka', 'Podlehnik', 'Podvelka',
+        'Podčetrtek', 'Poljčane', 'Polzela', 'Postojna', 'Prebold', 'Preddvor', 'Prevalje', 'Ptuj', 'Puconci', 'Radenci', 'Radeče',
+        'Radlje ob Dravi', 'Radovljica', 'Ravne na Koroškem', 'Razkrižje', 'Rače - Fram', 'Renče - Vogrsko', 'Rečica ob Savinji',
+        'Ribnica na Pohorju', 'Ribnica', 'Rogatec', 'Rogaška Slatina', 'Rogašovci', 'Ruše', 'Selnica ob Dravi', 'Semič', 'Sevnica',
+        'Sežana', 'Slovenj Gradec', 'Slovenska Bistrica', 'Slovenske Konjice', 'Sodražica', 'Solčava', 'Središče ob Dravi', 'Starše',
+        'Straža', 'Sveta Ana', 'Sveta Trojica v Slovenskih goricah', 'Sveti Andraž v Slovenskih goricah', 'Sveti Jurij ob Ščavnici',
+        'Sveti Jurij v Slovenskih goricah', 'Sveti Tomaž', 'Tabor', 'Tišina', 'Tolmin', 'Trbovlje', 'Trebnje', 'Trnovska vas',
+        'Trzin', 'Tržič', 'Turnišče', 'Velenje', 'Velika Polana', 'Velike Lašče', 'Veržej', 'Videm', 'Vipava', 'Vitanje', 'Vodice',
+        'Vojnik', 'Vransko', 'Vrhnika', 'Vuzenica', 'Zagorje ob Savi', 'Zavrč', 'Zreče', 'Črenšovci', 'Črna na Koroškem', 'Črnomelj',
+        'Šalovci', 'Šempeter - Vrtojba', 'Šentilj', 'Šentjernej', 'Šentjur', 'Šentrupert', 'Šenčur', 'Škocjan', 'Škofja Loka',
+        'Škofljica', 'Šmarje pri Jelšah', 'Šmarješke Toplice', 'Šmartno ob Paki', 'Šmartno pri Litiji', 'Šoštanj', 'Štore', 'Žalec',
+        'Železniki', 'Žetale', 'Žiri', 'Žirovnica', 'Žužemberk'
     );
 
     protected static $buildingNumber = array('1##', '##', '##', '##', '##', '#');
     // protected static $streetSuffix = array();
     protected static $postcode = array('###0');
-    protected static $streetNameFormats = array(
+
+    /**
+     * Most common street names in Slovenia
+     *
+     * {@link} http://www.stat.si/krajevnaimena/pregledi_ulice_najpogostejse.asp
+     * {@link} http://www.stat.si/KrajevnaImena/pregledi_naselja_najpogostejsa.asp
+     */
+
+    protected static $street = array(
         'Šolska ulica', 'Prešernova ulica', 'Cankarjeva ulica', 'Vrtna ulica', 'Gregorčičeva ulica', 'Kajuhova ulica', 'Prečna ulica',
         'Levstikova ulica', 'Trubarjeva ulica', 'Mladinska ulica', 'Gubčeva ulica', 'Ljubljanska cesta', 'Partizanska ulica', 'Maistrova ulica',
         'Rožna ulica', 'Bevkova ulica', 'Jurčičeva ulica', 'Župančičeva ulica', 'Kolodvorska ulica', 'Partizanska cesta', 'Gasilska ulica',
         'Kidričeva ulica', 'Aškerčeva ulica', 'Kratka ulica', 'Nova ulica', 'Obrtniška ulica', 'Tomšičeva ulica', 'Cvetlična ulica',
         'Mariborska cesta', 'Ob potoku', 'Trg svobode', 'Ulica talcev', 'Kettejeva ulica', 'Kosovelova ulica', 'Finžgarjeva ulica', 'Ob gozdu',
-        'Stara cesta', 'Vegova ulica', 'Prežihova ulica', 'Sončna ulica', 'Gradišče', 'Pristava', 'Brezje', 'Dolenja vas', 'Potok', 'Ravne',
+        'Stara cesta', 'Vegova ulica', 'Prežihova ulica', 'Sončna ulica',
+
+        'Gradišče', 'Pristava', 'Brezje', 'Dolenja vas', 'Potok', 'Ravne',
         'Brdo', 'Dobrava', 'Draga', 'Javorje', 'Kal', 'Laze', 'Log', 'Planina', 'Podkraj', 'Selce', 'Trnovec', 'Bistrica', 'Gorenja vas',
         'Gorica', 'Lipa', 'Nova vas', 'Podgora', 'Podgorje', 'Podgrad', 'Ponikve', 'Sela', 'Selo', 'Škocjan', 'Vrh'
     );
+
+    /**
+     * {@link} http://sl.wikipedia.org/wiki/Seznam_suverenih_držav
+     */
 
     protected static $country = array(
         'Afganistan', 'Albanija', 'Alžirija', 'Andora', 'Angola', 'Antigva in Barbuda', 'Argentina', 'Armenija', 'Avstralija', 'Avstrija',
@@ -78,6 +99,11 @@ class Address extends \Faker\Provider\Address
 
     public static function cityName()
     {
-        return static::randomElement(static::$cityName);
+        return static::randomElement(static::$city);
+    }
+
+    public function streetName()
+    {
+        return static::randomElement(static::$street);
     }
 }
