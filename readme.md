@@ -749,13 +749,13 @@ echo $faker->region; // "Saint-Pierre-et-Miquelon"
 <?php
 
 // Generates a 'kana' name
-echo $faker->kanaName; // "アオタ ナオコ"
+echo $faker->kanaName; // "アオタ ミノル"
 
 // Generates a 'kana' first name
-echo $faker->firstKanaName; // "トモミ"
+echo $faker->firstKanaName; // "ハルカ"
 
 // Generates a 'kana' last name
-echo $faker->lastKanaName; // "ナギサ"
+echo $faker->lastKanaName; // "ナカジマ"
 ```
 
 ### `Faker\Provider\pl_PL\Person`
