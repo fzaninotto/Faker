@@ -8,7 +8,6 @@ class Address extends \Faker\Provider\Address
     /**
      * {@link} http://www.rtvslo.si/strani/abecedni-seznam-obcin/3103
      **/
-
     protected static $city = array(
         'Ajdovščina', 'Apače', 'Beltinci', 'Benedikt', 'Bistrica ob Sotli', 'Bled', 'Bloke', 'Bohinj', 'Borovnica', 'Bovec',
         'Braslovče', 'Brda', 'Brezovica', 'Brežice', 'Cankova', 'Celje', 'Cerklje na Gorenjskem', 'Cerknica', 'Cerkno',
@@ -37,7 +36,7 @@ class Address extends \Faker\Provider\Address
     );
 
     protected static $buildingNumber = array('1##', '##', '##', '##', '##', '#');
-    // protected static $streetSuffix = array();
+
     protected static $postcode = array('###0');
 
     /**
@@ -46,7 +45,6 @@ class Address extends \Faker\Provider\Address
      * {@link} http://www.stat.si/krajevnaimena/pregledi_ulice_najpogostejse.asp
      * {@link} http://www.stat.si/KrajevnaImena/pregledi_naselja_najpogostejsa.asp
      */
-
     protected static $street = array(
         'Šolska ulica', 'Prešernova ulica', 'Cankarjeva ulica', 'Vrtna ulica', 'Gregorčičeva ulica', 'Kajuhova ulica', 'Prečna ulica',
         'Levstikova ulica', 'Trubarjeva ulica', 'Mladinska ulica', 'Gubčeva ulica', 'Ljubljanska cesta', 'Partizanska ulica', 'Maistrova ulica',
@@ -63,7 +61,6 @@ class Address extends \Faker\Provider\Address
     /**
      * {@link} http://sl.wikipedia.org/wiki/Seznam_suverenih_držav
      */
-
     protected static $country = array(
         'Afganistan', 'Albanija', 'Alžirija', 'Andora', 'Angola', 'Antigva in Barbuda', 'Argentina', 'Armenija', 'Avstralija', 'Avstrija',
         'Azerbajdžan', 'Bahami', 'Bahrajn', 'Bangladeš', 'Barbados', 'Belgija', 'Belize', 'Belorusija', 'Benin', 'Bocvana', 'Bolgarija',
@@ -85,6 +82,7 @@ class Address extends \Faker\Provider\Address
         'Venezuela', 'Vietnam', 'Vzhodni Timor', 'Zahodna Samoa', 'Zambija', 'Združene države Amerike', 'Združeni arabski emirati',
         'Zelenortski otoki', 'Zimbabve'
     );
+
     protected static $cityFormats = array(
         '{{cityName}}'
     );

@@ -25,7 +25,6 @@ class Person extends \Faker\Provider\Person
      * {@link} http://www.stat.si/imena_top_imena_spol.asp?r=True
      * {@link} http://www.stat.si/doc/vsebina/05/imena/TOPIMENA_SI.xlsx
      */
-
     protected static $firstNameMale = array(
         'Franc', 'Janez', 'Anton', 'Ivan', 'Jožef', 'Andrej', 'Marko', 'Jože', 'Marjan', 'Peter', 'Milan', 'Matej', 'Tomaž', 'Branko', 'Stanislav',
         'Luka', 'Aleš', 'Bojan', 'Robert', 'Boštjan', 'Rok', 'Matjaž', 'Gregor', 'Martin', 'Miha', 'Alojz', 'Igor', 'Boris', 'Dušan', 'Dejan', 'David',
@@ -54,7 +53,6 @@ class Person extends \Faker\Provider\Person
      * {@link} http://www.stat.si/imena_top_imena_spol.asp?r=True
      * {@link} http://www.stat.si/doc/vsebina/05/imena/TOPIMENA_SI.xlsx
      */
-
     protected static $firstNameFemale = array(
         'Marija', 'Ana', 'Maja', 'Irena', 'Mojca', 'Mateja', 'Nataša', 'Jožefa', 'Nina', 'Barbara', 'Jožica', 'Andreja', 'Petra', 'Frančiška',
         'Katja', 'Ivana', 'Anja', 'Sonja', 'Milena', 'Katarina', 'Tatjana', 'Tanja', 'Alenka', 'Terezija', 'Majda', 'Martina', 'Vesna', 'Tina',
@@ -83,7 +81,6 @@ class Person extends \Faker\Provider\Person
     /**
      * {@link} http://www.stat.si/imena_top_priimki.asp?r=True
      */
-
     protected static $lastName = array(
         'Novak', 'Horvat', 'Kovačič', 'Krajnc', 'Zupančič', 'Kovač', 'Potočnik', 'Mlakar', 'Vidmar', 'Kos', 'Golob', 'Turk', 'Božič', 'Kralj',
         'Korošec', 'Zupan', 'Bizjak', 'Hribar', 'Kotnik', 'Rozman', 'Kavčič', 'Petek', 'Kastelic', 'Oblak', 'Žagar', 'Kolar', 'Hočevar', 'Košir',
