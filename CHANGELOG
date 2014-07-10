@@ -36,7 +36,7 @@ CHANGELOG
 * Fixed phpdoc for DateTime magic methods (stof)
 * Added doc about seeding with maximum timestamp using dateTime formatters (fzaninotto)
 * Added Maximum Timestamp option to get always same unix timestamp when using a fixed seed (csanquer)
-* Added Montenegrian (me_ME) providers
+* Added Montenegrian (me_ME) providers (ognjenm)
 * Added ean barcode provider (nineinchnick)
 * Added fullPath parameter to Image provider (stefanosala)
 * Added more Polish company formats (nineinchnick)
