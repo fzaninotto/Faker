@@ -8,9 +8,9 @@ class Text extends \Faker\Provider\Text
     {
         $text = parent::realText($maxNbChars, $indexSize);
         $text = str_replace('„', '', $text);
+
         return str_replace('“', '', $text);
     }
-
 
     /**
      * License: PD old 70

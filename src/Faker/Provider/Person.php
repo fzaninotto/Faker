@@ -6,17 +6,17 @@ class Person extends \Faker\Provider\Base
 {
     const GENDER_MALE = 'male';
     const GENDER_FEMALE = 'female';
-    
+
     protected static $titleFormat = array(
       '{{titleMale}}',
       '{{titleFemale}}',
     );
-    
+
     protected static $firstNameFormat = array(
       '{{firstNameMale}}',
       '{{firstNameFemale}}',
     );
-    
+
     protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastName}}',
     );
@@ -40,7 +40,7 @@ class Person extends \Faker\Provider\Base
     protected static $titleFemale = array('Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.');
 
     /**
-     * @param string|null $gender 'male', 'female' or null for any 
+     * @param string|null $gender 'male', 'female' or null for any
      * @example 'John Doe'
      */
     public function name($gender = null)
@@ -52,12 +52,12 @@ class Person extends \Faker\Provider\Base
         } else {
             $format = static::randomElement(array_merge(static::$maleNameFormats, static::$femaleNameFormats));
         }
-        
+
         return $this->generator->parse($format);
     }
 
     /**
-     * @param string|null $gender 'male', 'female' or null for any 
+     * @param string|null $gender 'male', 'female' or null for any
      * @example 'John'
      */
     public function firstName($gender = null)
@@ -67,7 +67,7 @@ class Person extends \Faker\Provider\Base
         } elseif ($gender === static::GENDER_FEMALE) {
             return static::firstNameFemale();
         }
-        
+
         return $this->generator->parse(static::randomElement(static::$firstNameFormat));
     }
 
@@ -99,7 +99,7 @@ class Person extends \Faker\Provider\Base
         } elseif ($gender === static::GENDER_FEMALE) {
             return static::titleFemale();
         }
-        
+
         return $this->generator->parse(static::randomElement(static::$titleFormat));
     }
 

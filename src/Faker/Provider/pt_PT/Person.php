@@ -52,7 +52,7 @@ class Person extends \Faker\Provider\Person
      * Taxpayer Identification Number (NIF in Portugal)
      *
      * @link http://pt.wikipedia.org/wiki/N%C3%BAmero_de_identifica%C3%A7%C3%A3o_fiscal
-     * 
+     *
      * @return string 9 digit number
      */
     public static function taxpayerIdentificationNumber()
@@ -69,7 +69,7 @@ class Person extends \Faker\Provider\Person
      * @link http://pt.wikipedia.org/wiki/D%C3%ADgito_verificador
      *
      * @param string $number number
-     * 
+     *
      * @return int
      */
     public static function dvCalcMod11($number)

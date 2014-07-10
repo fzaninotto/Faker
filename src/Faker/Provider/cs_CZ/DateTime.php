@@ -2,7 +2,6 @@
 
 namespace Faker\Provider\cs_CZ;
 
-
 /**
  * Czech months and days without setting locale
  */
@@ -39,7 +38,7 @@ class DateTime extends \Faker\Provider\DateTime
     }
 
     /**
-     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param  \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @return string
      * @example '2'
      */

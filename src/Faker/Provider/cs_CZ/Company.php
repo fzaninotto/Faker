@@ -90,6 +90,7 @@ class Company extends \Faker\Provider\Company
     public function catchPhrase()
     {
         $format = static::randomElement(static::$catchPhraseFormats);
+
         return ucfirst($this->generator->parse($format));
     }
 
@@ -113,6 +114,7 @@ class Company extends \Faker\Provider\Company
         } elseif ($mod === 1) {
             return "{$ico}0";
         }
+
         return $ico . (11 - $mod);
     }
 }

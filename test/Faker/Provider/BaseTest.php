@@ -36,7 +36,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
      */
     public function testRandomNumberThrowsExceptionWhenCalledWithATooHighNumberOfDigits()
     {
-        BaseProvider::randomNumber(10);   
+        BaseProvider::randomNumber(10);
     }
 
     public function testRandomNumberReturnsInteger()

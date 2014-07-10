@@ -23,7 +23,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @link http://www.guzelisimler.com/en_cok_aranan_erkek_isimleri.php
-     * 
+     *
      * @var array Turkish first names.
      */
     protected static $firstNameMale = array(
@@ -35,7 +35,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @link http://www.guzelisimler.com/en_cok_aranan_kiz_isimleri.php
-     * 
+     *
      * @var array Turkish first names.
      */
     protected static $firstNameFemale = array(
@@ -44,7 +44,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @link http://tr.wikipedia.org/wiki/Kategori:T%C3%BCrk%C3%A7e_soyadlar%C4%B1
-     * 
+     *
      * @var array Turkish last names.
      */
     protected static $lastName = array(
