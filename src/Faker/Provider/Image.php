@@ -19,7 +19,7 @@ class Image extends Base
      *
      * @example 'http://lorempixel.com/640/480/'
      */
-    public static function imageUrl($width = 640, $height = 480, $category = null, $randomize=false)
+    public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = false)
     {
         $url = "http://lorempixel.com/{$width}/{$height}/";
         if ($category) {
