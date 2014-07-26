@@ -25,7 +25,7 @@ class AddressTest extends \PHPUnit_Framework_TestCase
         $postcode = ((int)$this->faker->postcode());
 
         // This is not meant to test or anything
-        // But more as a reminder that if someone managed to get a more 
+        // But more as a reminder that if someone managed to get a more
         // official and factual source of postal code data, they should also
         // modify this test, and the corresponding @link
         
