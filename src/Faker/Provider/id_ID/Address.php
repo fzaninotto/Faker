@@ -101,7 +101,7 @@ class Address extends \Faker\Provider\Address
     **/
     protected static $country = array(
         'Afganistan', 'Afrika Selatan', 'Albania', 'Aljazair',
-        'Amerika Serikat', 'Andorra', 'Angola', 'Anguilla', 
+        'Amerika Serikat', 'Andorra', 'Angola', 'Anguilla',
 
         // http://id.wikipedia.org/wiki/Antartika
         'Antarktika',
@@ -112,31 +112,33 @@ class Address extends \Faker\Provider\Address
         'Antillen Belanda',
 
         'Arab Saudi', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria',
-        'Azerbaijan', 'Bahama', 'Bahrain', 'Bangladesh', 'Barbados', 'Belanda', 'Belarus',
-        'Belgia', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 
+        'Azerbaijan', 'Bahama', 'Bahrain', 'Bangladesh', 'Barbados', 'Belanda',
+        'Belarus', 'Belgia', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia',
 
         // http://id.wikipedia.org/wiki/Bosnia_dan_Herzegovina
         'Bosnia dan Herzegovina',
 
-        'Botswana', 'Brasil', 'Brunei Darussalam', 'Bulgaria', 'Burkina Faso', 'Burundi',
-        'Chili', 'Cina', 'Cocos (Keeling)', 'Denmark', 'Djibouti', 
+        'Botswana', 'Brasil', 'Brunei Darussalam', 'Bulgaria', 'Burkina Faso',
+        'Burundi', 'Chili', 'Cina', 'Cocos (Keeling)', 'Denmark', 'Djibouti',
 
         // http://id.wikipedia.org/wiki/Dominica
         'Dominika',
 
-        'Ekuador', 'El Salvador', 'Eritrea', 'Estonia', 'Ethiopia', 'Federasi Rusia',
-        'Fiji', 'Filipina', 'Finlandia', 'Gabon', 'Gambia', 'Georgia',
+        'Ekuador', 'El Salvador', 'Eritrea', 'Estonia', 'Ethiopia',
+        'Federasi Rusia', 'Fiji', 'Filipina', 'Finlandia', 'Gabon', 'Gambia',
+        'Georgia',
 
         // http://id.wikipedia.org/wiki/South_Georgia_and_the_South_Sandwich_Islands
         'Georgia Selatan dan Kepulauan Sandwich Selatan',
 
-        'Ghana', 'Gibraltar', 'Greenland', 'Grenada', 'Guadeloupe', 'Guam', 'Guatemala',
-        'Guernsey', 'Guinea', 'Guinea Ekuatorial', 'Guinea-Bissau', 'Guyana',
-        'Guyana Prancis', 'Haiti', 'Honduras', 'Hong Kong', 'Hongaria', 'India',
-        'Indonesia', 'Inggris Raya', 'Irak', 'Iran', 'Irlandia', 'Islandia', 'Israel',
-        'Italia', 'Jamaika', 'Jepang', 'Jerman', 'Jersey', 'Jordan', 'Kaledonia baru',
-        'Kamboja', 'Kamerun', 'Kanada', 'Kazakhstan', 'Kenya', 'Kepulauan Cayman',
-        'Kepulauan Cook', 'Kepulauan Falkland (Malvinas)', 'Kepulauan Faroe',
+        'Ghana', 'Gibraltar', 'Greenland', 'Grenada', 'Guadeloupe', 'Guam',
+        'Guatemala', 'Guernsey', 'Guinea', 'Guinea Ekuatorial', 'Guinea-Bissau',
+        'Guyana', 'Guyana Prancis', 'Haiti', 'Honduras', 'Hong Kong',
+        'Hongaria', 'India', 'Indonesia', 'Inggris Raya', 'Irak', 'Iran',
+        'Irlandia', 'Islandia', 'Israel', 'Italia', 'Jamaika', 'Jepang',
+        'Jerman', 'Jersey', 'Jordan', 'Kaledonia baru', 'Kamboja', 'Kamerun',
+        'Kanada', 'Kazakhstan', 'Kenya', 'Kepulauan Cayman', 'Kepulauan Cook',
+        'Kepulauan Falkland (Malvinas)', 'Kepulauan Faroe',
         'Kepulauan Mariana Utara', 'Kepulauan Marshall', 'Kepulauan Pitcairn',
         'Kepulauan Solomon',
 
@@ -156,7 +158,7 @@ class Address extends \Faker\Provider\Address
 
         'Kuwait', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libyan Arab Jamahiriya',
         'Liechtenstein', 'Lithuania', 'Luxembourg', 'Madagaskar', 'Makau', 'Makedonia',
-        'Maladewa', 'Malawi', 'Malaysia', 'Mali', 'Malta', 'Maroko', 
+        'Maladewa', 'Malawi', 'Malaysia', 'Mali', 'Malta', 'Maroko',
 
         // http://id.wikipedia.org/wiki/Martinique
         'Martinik',
@@ -206,7 +208,7 @@ class Address extends \Faker\Provider\Address
 
         'Tanzania', 'Thailand', 'Timor-Leste', 'Togo', 'Tokelau', 'Tonga',
         'Trinidad dan Tobago', 'Tunisia', 'Turki', 'Turkmenistan', 'Tuvalu', 'Uganda',
-        'Ukraina', 'Uni Emirat Arab', 'Uruguay', 'Uzbekistan', 'Vanuatu', 
+        'Ukraina', 'Uni Emirat Arab', 'Uruguay', 'Uzbekistan', 'Vanuatu',
 
         // http://id.wikipedia.org/wiki/Holy_See
         'Vatikan',
@@ -226,28 +228,28 @@ class Address extends \Faker\Provider\Address
         "Administrasi Jakarta Barat", "Administrasi Jakarta Pusat",
         "Administrasi Jakarta Selatan", "Administrasi Jakarta Timur",
         "Administrasi Jakarta Utara", "Ambon", "Balikpapan", "Banda Aceh",
-        "Bandar Lampung", "Bandung", "Banjar", "Banjarbaru", "Banjarmasin", 
-        "Batam", "Batu", "Bau-Bau", "Bekasi", 
-        "Bengkulu", "Bima", "Binjai", "Bitung", 
-        "Blitar", "Bogor", "Bontang", "Bukittinggi", 
-        "Cilegon", "Cimahi", "Cirebon", "Denpasar", 
-        "Depok", "Dumai", "Gorontalo", "Gunungsitoli", 
-        "Jambi", "Jayapura", "Kediri", "Kendari", 
-        "Kotamobagu", "Kupang", "Langsa", "Lhokseumawe", 
-        "Lubuklinggau", "Madiun", "Magelang", "Makassar", 
-        "Malang", "Manado", "Mataram", "Medan", 
-        "Metro", "Mojokerto", "Padang", "Padangpanjang", 
-        "Padangsidempuan", "Pagar Alam", "Palangka Raya", "Palembang", 
-        "Palopo", "Palu", "Pangkal Pinang", "Parepare", 
-        "Pariaman", "Pasuruan", "Payakumbuh", "Pekalongan", 
-        "Pekanbaru", "Pematangsiantar", "Pontianak", "Prabumulih", 
-        "Probolinggo", "Sabang", "Salatiga", "Samarinda", 
-        "Sawahlunto", "Semarang", "Serang", "Sibolga", 
-        "Singkawang", "Solok", "Sorong", "Subulussalam", 
-        "Sukabumi", "Sungai Penuh", "Surabaya", "Surakarta", 
-        "Tangerang", "Tangerang Selatan", "Tanjung Pinang", "Tanjungbalai", 
-        "Tarakan", "Tasikmalaya", "Tebing Tinggi", "Tegal", 
-        "Ternate", "Tidore Kepulauan", "Tomohon", "Tual", 
+        "Bandar Lampung", "Bandung", "Banjar", "Banjarbaru", "Banjarmasin",
+        "Batam", "Batu", "Bau-Bau", "Bekasi",
+        "Bengkulu", "Bima", "Binjai", "Bitung",
+        "Blitar", "Bogor", "Bontang", "Bukittinggi",
+        "Cilegon", "Cimahi", "Cirebon", "Denpasar",
+        "Depok", "Dumai", "Gorontalo", "Gunungsitoli",
+        "Jambi", "Jayapura", "Kediri", "Kendari",
+        "Kotamobagu", "Kupang", "Langsa", "Lhokseumawe",
+        "Lubuklinggau", "Madiun", "Magelang", "Makassar",
+        "Malang", "Manado", "Mataram", "Medan",
+        "Metro", "Mojokerto", "Padang", "Padangpanjang",
+        "Padangsidempuan", "Pagar Alam", "Palangka Raya", "Palembang",
+        "Palopo", "Palu", "Pangkal Pinang", "Parepare",
+        "Pariaman", "Pasuruan", "Payakumbuh", "Pekalongan",
+        "Pekanbaru", "Pematangsiantar", "Pontianak", "Prabumulih",
+        "Probolinggo", "Sabang", "Salatiga", "Samarinda",
+        "Sawahlunto", "Semarang", "Serang", "Sibolga",
+        "Singkawang", "Solok", "Sorong", "Subulussalam",
+        "Sukabumi", "Sungai Penuh", "Surabaya", "Surakarta",
+        "Tangerang", "Tangerang Selatan", "Tanjung Pinang", "Tanjungbalai",
+        "Tarakan", "Tasikmalaya", "Tebing Tinggi", "Tegal",
+        "Ternate", "Tidore Kepulauan", "Tomohon", "Tual",
         "Yogyakarta",
     );
 

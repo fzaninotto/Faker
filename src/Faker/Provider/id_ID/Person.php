@@ -284,42 +284,64 @@ class Person extends \Faker\Provider\Person
 
     protected static $lastName = array(
         // Batak, http://id.wikipedia.org/wiki/Daftar_marga_suku_Batak_di_Toba
-        "Banjarnahor","Dabukke","Damanik","Doloksaribu","Dongoran","Harianja","Haro",
-        "Hasibuan","Hutabarat","Hutagalung","Hutagaol","Hutahaean","Hutajulu",
-        "Hutapea","Hutasoit","Malau","Manalu","Mangunsong","Manihuruk",
-        "Manik","Manullang","Manungkalit","Manurung","Marbun","Marpaung",
-        "NAIBORHU Naibaho","Nababan","Nadapdap","Nadeak","Nainggolan","Naipospos",
-        "Napitupulu","Ompusunggu","Pakpahan","Pangaribuan","Panggabean","Panjaitan",
-        "Pardede","Pardosi","Pasaribu","Pohan","Purba","Rajagukguk",
-        "Rumahorbo","Rumapea","Samosir","Saragih","Sarumpaet","Siagian",
-        "Siahaan","Sialagan","Sianipar","Sibarani","Sibuea","Sidabutar",
-        "Sidauruk","Sihite","Sihombing","Sihotang","Sijabat","Silaban",
-        "Silaen","Silalahi","Silitonga","Simamora","Simangunsong","Simanjuntak",
-        "Simanungkalit","Simare-mare","Simarmata","Simbolon","Sinaga","Sinambela",
-        "Sinurat","Sipahutar","Sirait","Siregar","Sitanggang","Sitindaon",
-        "Sitinjak","Sitohang","Sitompul","Sitorus","Situmeang","Situmorang",
-        "Tamba","Tarihoran","Turnip",
+        "Banjarnahor", "Dabukke", "Damanik", "Doloksaribu", "Dongoran",
+        "Harianja", "Haro", "Hasibuan", "Hutabarat",
+        "Hutagalung", "Hutagaol", "Hutahaean", "Hutajulu",
+        "Hutapea", "Hutasoit", "Malau", "Manalu",
+        "Mangunsong", "Manihuruk", "Manik", "Manullang",
+        "Manungkalit", "Manurung", "Marbun", "Marpaung",
+        "Naiborhu Naibaho", "Nababan", "Nadapdap", "Nadeak",
+        "Nainggolan", "Naipospos", "Napitupulu", "Ompusunggu",
+        "Pakpahan", "Pangaribuan", "Panggabean", "Panjaitan",
+        "Pardede", "Pardosi", "Pasaribu", "Pohan",
+        "Purba", "Rajagukguk", "Rumahorbo", "Rumapea",
+        "Samosir", "Saragih", "Sarumpaet", "Siagian",
+        "Siahaan", "Sialagan", "Sianipar", "Sibarani",
+        "Sibuea", "Sidabutar", "Sidauruk", "Sihite",
+        "Sihombing", "Sihotang", "Sijabat", "Silaban",
+        "Silaen", "Silalahi", "Silitonga", "Simamora",
+        "Simangunsong", "Simanjuntak", "Simanungkalit", "Simare-mare",
+        "Simarmata", "Simbolon", "Sinaga", "Sinambela",
+        "Sinurat", "Sipahutar", "Sirait", "Siregar",
+        "Sitanggang", "Sitindaon", "Sitinjak", "Sitohang",
+        "Sitompul", "Sitorus", "Situmeang", "Situmorang",
+        "Tamba", "Tarihoran", "Turnip",
 
         // Nias, http://id.wikipedia.org/wiki/Daftar_marga_Nias
-        "Amazihönö. Amuata","Baeha","Baene","Baewa","Bago","Bali","Bate'e","Bawa'ulu",
-        "Bawamenewi","Bawaniwa'ö","Bawö","Bazikho","Bidaya","Bohalima","Bu'ulölö",
-        "Buaya","Bulu'aro","Bunawölö","Dachi","Daeli","Dawölö","Daya",
-        "Dohare","Dohude","Dohöna","Duha","Duho","Fa'ana,Famaugu","Fakho",
-        "Falakhi","Fanaetu","Farasi","Fau","Finowa'a","Gaho","Gaidö",
-        "Ganumba","Garamba","Gari","Gaurifa","Ge'e","Gea","Giawa",
-        "Gohae","Gori","Gowasa","Gulö","Hadiranto","Hala Wawa","Halawa",
-        "Harefa","Haria","Harimao,Halu","Harita","Hia","Hondrö","Hoya",
-        "Hulu","Humendru","Hura","La'ia","Laeru","Lafau","Lahagu",
-        "Lahömi","Lamölö","Laoli","Laowö","Larosa","Lasara","Lase",
-        "Lature","Lawelu","Laweni","Lawölö","Lazira","Lo'i","Luaha",
-        "Luahambowo","Lugu","Lömbu","Löndu go'o","Maduwu","Manaö","Maru'ao",
-        "Maruabaya","Maruhawa","Marulafau","Marunduri","Mendröfa","Möhö","Mölö",
-        "Nadoya","Nakhe","Nazara","Ndraha","Ndruru","Nehe","Ote",
-        "Sa'oiagö","Sadawa","Saota","Saro","Sarumaha","Sihura","Sihönö",
-        "Sisökhi","Taföna'ö","Tajira","Talunohi","Telaumbanua","Wakho","Waoma",
-        "Warae","Warasi","Waruwu","Wau","Wehalö","Wohe","Zagötö",
-        "Zai","Zalukhu","Zalögö","Zamago","Zamago zamauze","Zamasi","Zamili",
-        "Zandroto","Zebua","Zega","Zendratö","Zidomi","Ziliwu","Ziraluo","Zörömi",
+        "Amazihönö. Amuata", "Baeha", "Baene", "Baewa", "Bago",
+        "Bali", "Bate'e", "Bawa'ulu", "Bawamenewi",
+        "Bawaniwa'ö", "Bawö", "Bazikho", "Bidaya",
+        "Bohalima", "Bu'ulölö", "Buaya", "Bulu'aro",
+        "Bunawölö", "Dachi", "Daeli", "Dawölö",
+        "Daya", "Dohare", "Dohude", "Dohöna",
+        "Duha", "Duho", "Fa'ana,Famaugu", "Fakho",
+        "Falakhi", "Fanaetu", "Farasi", "Fau",
+        "Finowa'a", "Gaho", "Gaidö", "Ganumba",
+        "Garamba", "Gari", "Gaurifa", "Ge'e",
+        "Gea", "Giawa", "Gohae", "Gori",
+        "Gowasa", "Gulö", "Hadiranto", "Hala Wawa",
+        "Halawa", "Harefa", "Haria", "Harimao,Halu",
+        "Harita", "Hia", "Hondrö", "Hoya",
+        "Hulu", "Humendru", "Hura", "La'ia",
+        "Laeru", "Lafau", "Lahagu", "Lahömi",
+        "Lamölö", "Laoli", "Laowö", "Larosa",
+        "Lasara", "Lase", "Lature", "Lawelu",
+        "Laweni", "Lawölö", "Lazira", "Lo'i",
+        "Luaha", "Luahambowo", "Lugu", "Lömbu",
+        "Löndu go'o", "Maduwu", "Manaö", "Maru'ao",
+        "Maruabaya", "Maruhawa", "Marulafau", "Marunduri",
+        "Mendröfa", "Möhö", "Mölö", "Nadoya",
+        "Nakhe", "Nazara", "Ndraha", "Ndruru",
+        "Nehe", "Ote", "Sa'oiagö", "Sadawa",
+        "Saota", "Saro", "Sarumaha", "Sihura",
+        "Sihönö", "Sisökhi", "Taföna'ö", "Tajira",
+        "Talunohi", "Telaumbanua", "Wakho", "Waoma",
+        "Warae", "Warasi", "Waruwu", "Wau",
+        "Wehalö", "Wohe", "Zagötö", "Zai",
+        "Zalukhu", "Zalögö", "Zamago", "Zamago zamauze",
+        "Zamasi", "Zamili", "Zandroto", "Zebua",
+        "Zega", "Zendratö", "Zidomi", "Ziliwu",
+        "Ziraluo", "Zörömi",
 
         // Manado, http://annsilva.wordpress.com/2009/09/13/marga-orang-manado/
         "Abutan","Adam","Agou","Akai","Aling","Alui","Amoi",
@@ -640,21 +662,26 @@ class Person extends \Faker\Provider\Person
     protected static $titleFemale = array('Ny.', 'Nn.');
 
     protected static $prefix = array(
-        'SST.','S.Th.I.','S.Th.','S.TI.','S.T.P.','S.T.','S.Sy.','S.Sos.','S.Si.Teol.',
-        'S.Si.','S.SI.','S.SArl.','S.S','S.Pt','S.Psi.','S.Psi','S.Pd.','S.P.','S.Mb',
-        'S.Kom.','S.Kep.','S.K.M.','S.IP','S.IK.','S.I.Kom.','S.Hut.','S.H.I.','S.H.',
-        'S.Farm.','S.E.I.','S.E.','S.Arl.','S.Ag','S.AP','S.AB.','S.AB','S. Sn','Psi.T.',
-        'Psi.P','S.Pd.I.'
+        'SST.', 'S.Th.I.', 'S.Th.', 'S.TI.', 'S.T.P.', 'S.T.', 'S.Sy.',
+        'S.Sos.', 'S.Si.Teol.', 'S.Si.', 'S.SI.', 'S.SArl.', 'S.S', 'S.Pt',
+        'S.Psi.', 'S.Psi', 'S.Pd.', 'S.P.', 'S.Mb', 'S.Kom.', 'S.Kep.',
+        'S.K.M.', 'S.IP', 'S.IK.', 'S.I.Kom.', 'S.Hut.', 'S.H.I.', 'S.H.',
+        'S.Farm.', 'S.E.I.', 'S.E.', 'S.Arl.', 'S.Ag', 'S.AP', 'S.AB.',
+        'S.AB', 'S. Sn', 'Psi.T.', 'Psi.P', 'S.Pd.I.'
     );
 
     protected static $suffix = array(
-        'M.M.SI.','MA','M.TI.','M.T.','M.Stat.','M.Sn','M.Si.','M.SI.','M.SArl.','M.Psi.',
-        'M.Pd.','M.MPd.','M.M.','M.Kom.','M.Kn.','M.Inf.','M.Hut.','M.Hum.','M.Farm.',
-        'M.Cs.','M.Arl.','M.Ak.','M.Ag.','M.AP','M.AB','M.A.R.S.','Ph.D.'
+        'M.M.SI.', 'MA', 'M.TI.', 'M.T.', 'M.Stat.', 'M.Sn', 'M.Si.', 'M.SI.',
+        'M.SArl.', 'M.Psi.', 'M.Pd.', 'M.MPd.', 'M.M.', 'M.Kom.', 'M.Kn.',
+        'M.Inf.', 'M.Hut.', 'M.Hum.', 'M.Farm.', 'M.Cs.', 'M.Arl.', 'M.Ak.',
+        'M.Ag.', 'M.AP', 'M.AB', 'M.A.R.S.', 'Ph.D.'
     );
-
+    
     /**
+     * Prefix for a person's name
+     * 
      * @example 'S.T.'
+     * @return string Name Prefix
      */
     public static function prefix()
     {
@@ -662,7 +689,10 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
+     * Suffix for a person's name
+     * 
      * @example 'Ph.D.'
+     * @return string Name Suffix
      */
     public static function suffix()
     {
