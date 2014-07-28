@@ -17,7 +17,7 @@ class Internet extends \Faker\Provider\Internet
     private function toAscii($string)
     {
         $from = array('Ě', 'ě', 'Š', 'š', 'Č', 'č', 'Ř', 'ř', 'Ž', 'ž', 'Ý', 'ý', 'Á', 'á', 'Í', 'í', 'É', 'é', 'Ó', 'ó', 'Ú', 'ú', 'Ů', 'ů', 'Ď', 'ď', 'Ť', 'ť', 'Ň', 'ň');
-        $to		= array('E', 'e', 'S', 's', 'C', 'c', 'R', 'r', 'Z', 'z', 'Y', 'y', 'A', 'a', 'I', 'i', 'E', 'e', 'O', 'o', 'U', 'u', 'U', 'u', 'D', 'd', 'T', 't', 'N', 'n');
+        $to = array('E', 'e', 'S', 's', 'C', 'c', 'R', 'r', 'Z', 'z', 'Y', 'y', 'A', 'a', 'I', 'i', 'E', 'e', 'O', 'o', 'U', 'u', 'U', 'u', 'D', 'd', 'T', 't', 'N', 'n');
 
         return str_replace($from, $to, $string);
     }
