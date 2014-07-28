@@ -44,7 +44,7 @@ CHANGELOG
 * Fixed remaining non-seedable random generators (terite)
 * Added randomElements provider (terite)
 * Added French realText provider (fzaninotto)
-* Fixed realText provider bootstrap slowness (fzaninotto) 
+* Fixed realText provider bootstrap slowness (fzaninotto)
 * Added realText provider for English and German, based on Markov Chains Generator (TimWolla)
 * Fixed address format in nl_NL provider (doenietzomoeilijk)
 * Fixed potentially offensive word from last name list (joshuajabbour)
