@@ -2,6 +2,11 @@
 
 namespace Faker\Provider;
 
+use ReverseRegex\Lexer;
+use ReverseRegex\Random\SimpleRandom;
+use ReverseRegex\Parser;
+use ReverseRegex\Generator\Scope;
+
 class Payment extends Base
 {
     public static $expirationDateFormat = "m/y";
@@ -154,6 +159,25 @@ class Payment extends Base
         }
 
         return $number;
+    }
+
+    /**
+     * Return the String of a SWIFT/BIC number
+     *
+     * @example 'RZTIAT22263'
+     * @link    http://en.wikipedia.org/wiki/ISO_9362
+     */
+    public static function swiftBicNumber()
+    {
+        $lexer = new  Lexer("^([a-zA-Z]){4}([a-zA-Z]){2}([0-9a-zA-Z]){2}([0-9a-zA-Z]{3})?$");
+        $gen   = new SimpleRandom(10002);
+        $result = '';
+
+        $parser = new Parser($lexer,new Scope(),new Scope());
+        $parser->parse()->getResult()->generate($result,$gen);
+
+        return $result;
+
     }
 
     /**
