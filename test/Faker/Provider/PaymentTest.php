@@ -42,4 +42,9 @@ class PaymentTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(count($cardDetails), 4);
         $this->assertEquals(array('type', 'number', 'name', 'expirationDate'), array_keys($cardDetails));
     }
+
+    public function testSwiftBicTypeReturnsValidSwitBic()
+    {
+        $this->assertRegExp('/^([a-zA-Z]){4}([a-zA-Z]){2}([0-9a-zA-Z]){2}([0-9a-zA-Z]{3})?$/', $this->faker->swiftBicNumber);
+    }
 }
