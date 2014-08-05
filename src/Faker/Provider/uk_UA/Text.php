@@ -5,7 +5,7 @@ namespace Faker\Provider\uk_UA;
 class Text extends \Faker\Provider\Text
 {
     /**
-     * From ru.wikisource.org
+     * From uk.wikisource.org
      *
      * Текст доступний на умовах ліцензії Creative Commons Attribution/Share-Alike,
      * також можуть діяти додаткові умови. Детальніше див. Умови використання.
