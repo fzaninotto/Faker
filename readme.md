@@ -386,6 +386,26 @@ echo $faker->name; // 'Jess Mraz I';
 > // make sure you fix the $max parameter
 > $faker->dateTime('2014-02-25 08:37:17'); // will return always the same date when seeded
 
+And
+> **Tip**: Formatters won't reproduce the same fake data if you use the php function `rand()`, always use `$faker` :
+>
+> ```php
+> <?php
+> for ($i = 0; $i < 3; $i++) {
+>    print $faker->numberBetween(1, 10) . PHP_EOL;
+>    //BAD
+>    print $faker->realText(rand(10,20)) . PHP_EOL;
+>}
+>
+> <?php
+> for ($i = 0; $i < 3; $i++) {
+>    print $faker->numberBetween(1, 10) . PHP_EOL;
+>    //GOOD
+>    print $faker->realText($faker->numberBetween(10,20)) . PHP_EOL;
+>}
+
+
+
 ## Faker Internals: Understanding Providers
 
 A `Faker\Generator` alone can't do much generation. It needs `Faker\Provider` objects to delegate the data generation to them. `Faker\Factory::create()` actually creates a `Faker\Generator` bundled with the default providers. Here is what happens under the hood:
