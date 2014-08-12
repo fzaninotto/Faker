@@ -73,6 +73,23 @@ class Address extends \Faker\Provider\Address
         return static::randomElement(static::$streetPrefix);
     }
 
+    ### http://es.wikipedia.org/wiki/Anexo:Puntos_extremos_del_Per%C3%BA
+    /**
+     * @example '77.147489'
+     */
+    public static function latitude()
+    {
+        return -number_format(mt_rand(00014800, 18205100)/1000000, 6);
+    }
+
+    /**
+     * @example '86.211205'
+     */
+    public static function longitude()
+    {
+        return -number_format(mt_rand(68392700, 81193500)/1000000, 6);
+    }
+
     /**
      * @example 'Dpto. 402'
      */
