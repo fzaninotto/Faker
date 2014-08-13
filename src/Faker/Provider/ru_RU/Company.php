@@ -4,12 +4,18 @@ namespace Faker\Provider\ru_RU;
 
 class Company extends \Faker\Provider\Company
 {
+    protected static $companyNameFormats = array(
+        '{{companyPrefix}} {{companyNameElement}}',
+        '{{companyPrefix}} {{companyNameElement}}{{companyNameElement}}',
+        '{{companyPrefix}} {{companyNameElement}}{{companyNameElement}}{{companyNameElement}}',
+        '{{companyPrefix}} {{companyNameElement}}{{companyNameElement}}{{companyNameElement}}{{companyNameSuffix}}',
+    );
 
-    protected static $format = '{{companyPrefix}} {{companyName}}';
+    protected static $companyPrefixes = array(
+        'ООО', 'ЗАО', 'ООО Компания', 'ОАО', 'ОАО'
+    );
 
-    protected static $companyPrefix = array('ООО', 'ЗАО', 'ООО Компания', 'ОАО', 'ОАО');
-
-    protected static $companySuffix = array(
+    protected static $companyNameSuffixes = array(
         'Маш', 'Наладка', 'Экспедиция', 'Пром', 'Комплекс', 'Машина', 'Снос', '-М', 'Лизинг', 'Траст'
     );
 
@@ -24,27 +30,23 @@ class Company extends \Faker\Provider\Company
      */
     public function company()
     {
-        $format = static::randomElement(static::$formats);
+        $format = static::randomElement(static::$companyNameFormats);
 
         return $this->generator->parse($format);
     }
 
     public static function companyPrefix()
     {
-        return static::randomElement(static::$companyPrefix);
+        return static::randomElement(static::$companyPrefixes);
     }
 
-    /**
-     * @example 'СтройГазМонтаж'
-     */
-    public static function companyName()
+    public static function companyNameElement()
     {
-        $result = '';
+        return static::randomElement(static::$companyElements);
+    }
 
-        for ($i=0; $i < mt_rand(1, 4); $i++) {
-            $result .= static::randomElement(static::$companyElements);
-        }
-
-        return $result . static::randomElement(static::$companySuffix);
+    public static function companyNameSuffix()
+    {
+        return static::randomElement(static::$companyNameSuffixes);
     }
 }
