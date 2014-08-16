@@ -129,7 +129,7 @@ class Miscellaneous extends \Faker\Provider\Base
     /**
      * @example 'fr_FR'
      */
-    public function locale()
+    public static function locale()
     {
         return static::randomElement(static::$localeData);
     }
