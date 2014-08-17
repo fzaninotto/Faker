@@ -119,7 +119,7 @@ class Person extends \Faker\Provider\Person
      */
     public function personalIdentityNumber($gender = null)
     {
-        $birthdate = new \DateTime('@' . mt_rand(0, time()));
+        $birthdate = \Faker\Provider\DateTime::dateTimeThisCentury();
         $datePart = $birthdate->format('ymd');
 
         if ($gender && $gender == static::GENDER_MALE) {

@@ -20,11 +20,11 @@ class PersonTest extends \PHPUnit_Framework_TestCase
     public function provideSeedAndExpectedReturn()
     {
         return array(
-            array(1, '950910-0799'),
-            array(2, '950214-8993'),
-            array(3, '900107-9715'),
-            array(4, '710730-9515'),
-            array(5, '040503-0115')
+            array(1, '720727-0070'),
+            array(2, '710414-8205'),
+            array(3, '591012-9245'),
+            array(4, '180307-9001'),
+            array(5, '820904-0552')
         );
     }
 
@@ -44,7 +44,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
         $faker = $this->faker;
         $faker->seed(1);
 
-        $this->assertEquals('950910-0799', $faker->personalIdentityNumber('male'));
+        $this->assertEquals('720727-0070', $faker->personalIdentityNumber('male'));
     }
 
     public function testUsesEvenValuesForFemales()
@@ -52,7 +52,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
         $faker = $this->faker;
         $faker->seed(1);
 
-        $this->assertEquals('950910-0781', $faker->personalIdentityNumber('female'));
+        $this->assertEquals('720727-0062', $faker->personalIdentityNumber('female'));
 
     }
 }
