@@ -12,36 +12,36 @@ class Person extends \Faker\Provider\Person
     protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
-        '{{firstNameMale}} {{lastNameMale}}',        
+        '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}'
     );
 
     protected static $femaleNameFormats = array(
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
-        '{{firstNameFemale}} {{lastNameFemale}}',        
-        '{{firstNameFemale}} {{lastNameFemale}}'        
+        '{{firstNameFemale}} {{lastNameFemale}}',
+        '{{firstNameFemale}} {{lastNameFemale}}'
     );
 
     /**
-     * http://www.kaskus.co.id/thread/52d563adbfcb1764748b459f/prediksi-nama-bayi-populer-indonesia-2014
-     * http://namafb.com/2010/08/12/top-1000-nama-populer-indonesia/
+     * @link http://www.kaskus.co.id/thread/52d563adbfcb1764748b459f/prediksi-nama-bayi-populer-indonesia-2014
+     * @link http://namafb.com/2010/08/12/top-1000-nama-populer-indonesia/
      */
     protected static $firstNameMale = array(
-        'Ahmad', 'Adi', 'Aditya', 'Agung', 'Agus', 'Angga', 'Arif', 'Asep', 
+        'Ahmad', 'Adi', 'Aditya', 'Agung', 'Agus', 'Angga', 'Arif', 'Asep',
         'Ali', 'Anto', 'Anton', 'Abdi', 'Ari', 'Akeenan', 'Afabian', 'Akeanu',
         'Adrian', 'Alvin', 'Ajayden', 'Aaron',
-        'Bagus', 'Bayu', 'Bari', 'Badri', 'Bama', 'Basri', 'Budi', 'Budiono', 
+        'Bagus', 'Bayu', 'Bari', 'Badri', 'Bama', 'Basri', 'Budi', 'Budiono',
         'Chandra', 'Charles', 'Cahya', 'Catur', 'Cecep', 'Ciptadi', 'Christian',
-        'Dani', 'Dimas', 'Dede', 'Dedi', 'Dadan', 'Dahri', 'Damian', 'Dana', 
+        'Dani', 'Dimas', 'Dede', 'Dedi', 'Dadan', 'Dahri', 'Damian', 'Dana',
         'Dono', 'Darren', 'Dodo', 'Doni', 'Desta', 'Datuk', 'Deni',
-        'Eko', 'Edo', 'Edi', 'Edison', 'Edwin', 'Edward', 'Elvin', 'Emil', 
+        'Eko', 'Edo', 'Edi', 'Edison', 'Edwin', 'Edward', 'Elvin', 'Emil',
         'Erik',
-        'Fajar', 'Fahri', 'Firman', 'Fauzi', 'Febi', 'Fadhil', 'Fabian', 
+        'Fajar', 'Fahri', 'Firman', 'Fauzi', 'Febi', 'Fadhil', 'Fabian',
         'Fahmi',
         'Gading', 'Gilang', 'Gema', 'Gafar', 'Gagah', 'Galih', 'Galvin', 'Geri',
         'Ghani',
-        'Hadi', 'Halim', 'Hasim', 'Hasan', 'Hendra', 'Hendri', 'Heryanto', 
+        'Hadi', 'Halim', 'Hasim', 'Hasan', 'Hendra', 'Hendri', 'Heryanto',
         'Hamzah', 'Hari',
         'Imam', 'Indra', 'Irwan', 'Irsad', 'Ikhsan', 'Irfan', 'Ian', 'Ibrahim',
         'Ibrani',
@@ -52,100 +52,100 @@ class Person extends \Faker\Provider\Person
         'Latif', 'Lasmanto', 'Lukman', 'Luthfi', 'Leo', 'Luis', 'Lutfan',
         'Maman', 'Mahmud', 'Mahdi', 'Mahfud', 'Malik', 'Muhammad', 'Mustofa',
         'Michael',
-        'Narji', 'Nasab', 'Nasrullah', 'Nasim', 'Najib', 'Najam', 'Nyoman', 
+        'Narji', 'Nasab', 'Nasrullah', 'Nasim', 'Najib', 'Najam', 'Nyoman',
         'Noah',
         'Olga', 'Ozy', 'Omar', 'Opan', 'Oscar',
         'Panji', 'Panca', 'Pandu', 'Paiman', 'Prima', 'Putu', 'Pasha', 'Petra',
         'Petrus', 'Prabu', 'Pardi',
         'Rahmat', 'Rahman', 'Rendy', 'Reza', 'Rizki', 'Ridwan', 'Rudi', 'Raden',
-        'Raditya', 'Radit', 'Radika', 'Rafi', 'Rafid', 'Raihan', 'Rama', 
-        'Ramon', 'Rafael', 'Ryan', 
-        'Salman', 'Saadat', 'Saiful', 'Surya', 'Slamet', 'Samsul', 'Soleh', 
-        'Simon', 'Sabar', 'Sabri', 'Sidiq', 'Satya', 'Setya', 'Saka', 'Sakti', 
+        'Raditya', 'Radit', 'Radika', 'Rafi', 'Rafid', 'Raihan', 'Rama',
+        'Ramon', 'Rafael', 'Ryan',
+        'Salman', 'Saadat', 'Saiful', 'Surya', 'Slamet', 'Samsul', 'Soleh',
+        'Simon', 'Sabar', 'Sabri', 'Sidiq', 'Satya', 'Setya', 'Saka', 'Sakti',
         'Salim',
-        'Taswir', 'Tedi', 'Teddy', 'Taufan', 'Taufik', 'Tomi', 'Tasnim', 
+        'Taswir', 'Tedi', 'Teddy', 'Taufan', 'Taufik', 'Tomi', 'Tasnim',
         'Tristan',
         'Umar', 'Usman', 'Uda', 'Umay',
-        'Viktor', 'Vino', 'Vincent', 
+        'Viktor', 'Vino', 'Vincent',
         'Wahyu', 'Wira', 'Wisnu', 'Wadi', 'Wardi', 'Warji',
-        'Xavier', 
+        'Xavier',
         'Yahya', 'Yusuf', 'Yosef', 'Yono', 'Yoga',
         'Zainal'
     );
 
     /**
-     * http://www.kaskus.co.id/thread/52d563adbfcb1764748b459f/prediksi-nama-bayi-populer-indonesia-2014
-     * http://namafb.com/2010/08/12/top-1000-nama-populer-indonesia/
+     * @link http://www.kaskus.co.id/thread/52d563adbfcb1764748b459f/prediksi-nama-bayi-populer-indonesia-2014
+     * @link http://namafb.com/2010/08/12/top-1000-nama-populer-indonesia/
      */
     protected static $firstNameFemale = array(
-        'Ade', 'Agnes', 'Ajeng', 'Amalia', 'Anita', 'Ayu', 'Aisyah', 'Ana', 
-        'Ami', 'Ani', 'Azalea', 'Aurora', 'Alika', 'Anastasia', 'Amelia', 
+        'Ade', 'Agnes', 'Ajeng', 'Amalia', 'Anita', 'Ayu', 'Aisyah', 'Ana',
+        'Ami', 'Ani', 'Azalea', 'Aurora', 'Alika', 'Anastasia', 'Amelia',
         'Almira',
         'Bella', 'Betania', 'Belinda',
         'Citra', 'Cindy', 'Chelsea', 'Clara', 'Cornelia', 'Cinta', 'Cinthia',
         'Ciaobella', 'Cici', 'Carla', 'Calista',
         'Devi', 'Dewi','Dian', 'Diah', 'Diana', 'Dina', 'Dinda', 'Dalima',
-        'Eka', 'Eva', 'Endah', 'Elisa', 'Eli', 'Ella', 'Ellis', 'Elma', 
+        'Eka', 'Eva', 'Endah', 'Elisa', 'Eli', 'Ella', 'Ellis', 'Elma',
         'Elvina',
-        'Fitria', 'Fitriani', 'Febi', 'Faizah', 'Farah', 'Farhunnisa', 
+        'Fitria', 'Fitriani', 'Febi', 'Faizah', 'Farah', 'Farhunnisa',
         'Fathonah',
         'Gabriella', 'Gasti', 'Gawati', 'Genta', 'Ghaliyati', 'Gina', 'Gilda',
-        'Halima', 'Hesti', 'Hilda', 'Hafshah', 'Hamima', 'Hana', 'Hani', 
+        'Halima', 'Hesti', 'Hilda', 'Hafshah', 'Hamima', 'Hana', 'Hani',
         'Hasna', 'Humaira',
-        'Ika', 'Indah', 'Intan', 'Irma', 'Icha', 'Ida', 'Ifa', 'Ilsa', 'Ina', 
+        'Ika', 'Indah', 'Intan', 'Irma', 'Icha', 'Ida', 'Ifa', 'Ilsa', 'Ina',
         'Ira', 'Iriana',
-        'Jamalia', 'Janet', 'Jane', 'Julia', 'Juli', 'Jessica', 'Jasmin', 
+        'Jamalia', 'Janet', 'Jane', 'Julia', 'Juli', 'Jessica', 'Jasmin',
         'Jelita',
         'Kamaria', 'Kamila', 'Kani', 'Karen', 'Karimah', 'Kartika', 'Kasiyah',
         'Keisha', 'Kezia', 'Kiandra', 'Kayla', 'Kania',
-        'Lala', 'Lalita', 'Latika', 'Laila', 'Laras', 'Lidya', 'Lili', 
+        'Lala', 'Lalita', 'Latika', 'Laila', 'Laras', 'Lidya', 'Lili',
         'Lintang',
-        'Maria', 'Mala', 'Maya', 'Maida', 'Maimunah', 'Melinda', 'Mila', 
+        'Maria', 'Mala', 'Maya', 'Maida', 'Maimunah', 'Melinda', 'Mila',
         'Mutia', 'Michelle', 'Malika',
-        'Nadia', 'Nadine', 'Nabila', 'Natalia', 'Novi', 'Nova', 'Nurul', 
+        'Nadia', 'Nadine', 'Nabila', 'Natalia', 'Novi', 'Nova', 'Nurul',
         'Nilam', 'Najwa',
         'Olivia', 'Ophelia', 'Oni', 'Oliva',
-        'Padma', 'Putri', 'Paramita', 'Paris', 'Patricia', 'Paulin', 'Puput', 
+        'Padma', 'Putri', 'Paramita', 'Paris', 'Patricia', 'Paulin', 'Puput',
         'Puji', 'Pia', 'Puspa', 'Puti', 'Putri', 'Padmi',
         'Qori',
         'Ratih', 'Ratna', 'Restu', 'Rini', 'Rika', 'Rina', 'Rahayu', 'Rahmi',
-        'Rachel', 'Rahmi', 'Raisa', 'Raina',    
+        'Rachel', 'Rahmi', 'Raisa', 'Raina',
         'Sarah', 'Sari', 'Siti', 'Siska', 'Suci', 'Syahrini', 'Septi', 'Sadina',
         'Safina', 'Sakura', 'Salimah', 'Salwa', 'Salsabila', 'Samiah', 'Shania',
         'Sabrina', 'Silvia', 'Shakila',
-        'Talia', 'Tami', 'Tira', 'Tiara', 'Titin', 'Tania', 'Tina', 'Tantri', 
-        'Tari', 'Titi', 
+        'Talia', 'Tami', 'Tira', 'Tiara', 'Titin', 'Tania', 'Tina', 'Tantri',
+        'Tari', 'Titi',
         'Uchita', 'Unjani', 'Ulya', 'Uli', 'Ulva', 'Umi', 'Usyi',
         'Vanya', 'Vanesa', 'Vivi', 'Vera', 'Vicky', 'Victoria', 'Violet',
         'Winda', 'Widya', 'Wulan', 'Wirda', 'Wani',
-        'Yani', 'Yessi', 'Yulia', 'Yuliana', 'Yuni', 'Yunita', 'Yance', 
+        'Yani', 'Yessi', 'Yulia', 'Yuliana', 'Yuni', 'Yunita', 'Yance',
         'Zahra', 'Zalindra', 'Zaenab', 'Zulfa', 'Zizi',
     );
 
-    protected static $lastNameMale = array(        
+    protected static $lastNameMale = array(
         'Adriansyah', 'Ardianto', 'Anggriawan',
         'Budiman', 'Budiyanto',
         'Firmansyah', 'Firgantoro',
-        'Gunarto', 'Gunawan', 
-        'Hardiansyah', 'Habibi', 'Hakim', 'Halim', 'Haryanto', 'Hidayat', 
-        'Hidayanto', 
-        'Irawan', 'Iswahyudi',   
+        'Gunarto', 'Gunawan',
+        'Hardiansyah', 'Habibi', 'Hakim', 'Halim', 'Haryanto', 'Hidayat',
+        'Hidayanto',
+        'Irawan', 'Iswahyudi',
         'Kuswoyo',
-        'Januar', 'Jailani',  
+        'Januar', 'Jailani',
         'Kurniawan', 'Kusumo',
-        'Latupono', 'Lazuardi',        
-        'Maheswara', 'Mahendra', 'Mustofa', 'Mansur', 'Mandala', 'Megantara', 
+        'Latupono', 'Lazuardi',
+        'Maheswara', 'Mahendra', 'Mustofa', 'Mansur', 'Mandala', 'Megantara',
         'Maulana', 'Maryadi',
         'Narpati', 'Natsir', 'Nugroho', 'Najmudin', 'Nashiruddin',
-        'Pangestu', 'Putra', 'Pranowo', 'Prabowo', 'Pratama', 'Prasetya', 
-        'Prasetyo', 'Pradana', 'Pradipta', 'Prakasa', 'Permadi', 'Prasasta', 
+        'Pangestu', 'Putra', 'Pranowo', 'Prabowo', 'Pratama', 'Prasetya',
+        'Prasetyo', 'Pradana', 'Pradipta', 'Prakasa', 'Permadi', 'Prasasta',
         'Prayoga',
         'Ramadan', 'Rajasa', 'Rajata',
-        'Saptono', 'Santoso', 'Saputra', 'Saefullah', 'Setiawan', 'Suryono', 
+        'Saptono', 'Santoso', 'Saputra', 'Saefullah', 'Setiawan', 'Suryono',
         'Suwarno', 'Siregar', 'Sihombing', 'Salahudin',
         'Tampubolon', 'Thamrin',
         'Utama', 'Uwais',
-        'Wahyudin', 'Waluyo', 'Wibowo', 'Winarno', 'Wibisono', 'Wijaya', 
+        'Wahyudin', 'Waluyo', 'Wibowo', 'Winarno', 'Wibisono', 'Wijaya',
         'Widodo', 'Wacana', 'Waskita', 'Wasita',
         'Zulkarnain'
     );
@@ -153,7 +153,7 @@ class Person extends \Faker\Provider\Person
     protected static $lastNameFemale = array(
         'Agustina', 'Andriani', 'Anggraini', 'Aryani', 'Astuti',
         'Fujiati', 'Farida',
-        'Handayani', 'Hassanah', 'Hartati', 'Hasanah', 'Haryanti', 'Hariyah', 
+        'Handayani', 'Hassanah', 'Hartati', 'Hasanah', 'Haryanti', 'Hariyah',
         'Hastuti', 'Halimah',
         'Kusmawati', 'Kuswandari',
         'Laksmiwati', 'Laksita', 'Lestari', 'Lailasari',
@@ -161,12 +161,12 @@ class Person extends \Faker\Provider\Person
         'Nurdiyanti', 'Novitasari', 'Nuraini', 'Nasyidah', 'Nasyiah', 'Namaga',
         'Palastri', 'Puspasari', 'Puspita', 'Purwanti', 'Pratiwi', 'Purnawati',
         'Pertiwi', 'Permata', 'Prastuti', 'Padmasari',
-        'Rahmawati', 'Rahayu', 'Riyanti', 'Rahimah', 
+        'Rahmawati', 'Rahayu', 'Riyanti', 'Rahimah',
         'Suartini', 'Sudiati', 'Suryatmi', 'Susanti', 'Safitri',
         'Oktaviani',
         'Utami', 'Usamah', 'Usada', 'Uyainah',
         'Yuniar', 'Yuliarti', 'Yulianti', 'Yolanda',
-        'Wahyuni', 'Wijayanti', 'Widiastuti', 'Winarsih', 'Wulandari', 
+        'Wahyuni', 'Wijayanti', 'Widiastuti', 'Winarsih', 'Wulandari',
         'Wastuti',
         'Zulaika',
     );
@@ -176,7 +176,7 @@ class Person extends \Faker\Provider\Person
      *
      * @param string|null $gender male or female or null for any
      *
-     * @return string last name     
+     * @return string last name
      */
     public function lastName($gender = null)
     {
@@ -197,7 +197,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return last name for male
-     *        
+     *
      * @return string last name
      */
     public static function lastNameMale()
@@ -206,7 +206,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * Return last name for female   
+     * Return last name for female
      *
      * @access public
      * @return string last name
