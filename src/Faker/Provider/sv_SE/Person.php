@@ -114,12 +114,15 @@ class Person extends \Faker\Provider\Person
     /**
      * National Personal Identity number (personnummer)
      * @link http://en.wikipedia.org/wiki/Personal_identity_number_(Sweden)
+     * @param \DateTime $birthdate
      * @param string $gender Person::GENDER_MALE || Person::GENDER_FEMALE
-     * @return string 3 letters and 6 digits, like ABA300000
+     * @return string on format XXXXXX-XXXX
      */
-    public function personalIdentityNumber($gender = null)
+    public function personalIdentityNumber(\DateTime $birthdate = null, $gender = null)
     {
-        $birthdate = \Faker\Provider\DateTime::dateTimeThisCentury();
+        if (!$birthdate) {
+            $birthdate = \Faker\Provider\DateTime::dateTimeThisCentury();
+        }
         $datePart = $birthdate->format('ymd');
 
         if ($gender && $gender == static::GENDER_MALE) {
