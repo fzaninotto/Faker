@@ -86,6 +86,7 @@ class Company extends \Faker\Provider\Company
     
     /**
      * Get company prefix
+     *
      * @return string company prefix
      */
     public static function companyPrefix()
@@ -95,10 +96,11 @@ class Company extends \Faker\Provider\Company
 
     /**
      * Get company name
+     *
      * @return string company name
      */
     public static function companyName()
     {
         return static::randomElement(static::$companyName);
-    }
+    }    
 }

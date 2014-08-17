@@ -3,7 +3,8 @@
 namespace Faker\Provider\id_ID;
 
 class Internet extends \Faker\Provider\Internet
-{    
+{
+
     protected static $freeEmailDomain = array(
         'gmail.com', 'yahoo.com'            
     );

@@ -174,8 +174,8 @@ class Person extends \Faker\Provider\Person
     /**
      * Return last name
      *
-     * @access public
-     * @param string|null $gender 'male', 'female' or null for any
+     * @param string|null $gender male or female or null for any
+     *
      * @return string last name     
      */
     public function lastName($gender = null)
@@ -197,8 +197,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return last name for male
-     *   
-     * @access public
+     *        
      * @return string last name
      */
     public static function lastNameMale()
