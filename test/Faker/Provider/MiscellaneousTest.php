@@ -29,7 +29,7 @@ class MiscellaneousTest extends \PHPUnit_Framework_TestCase
 
     public function testLocale()
     {
-        $this->assertRegExp('/^[a-z]{2}_[A-Z]{2}$/', Miscellaneous::locale());
+        $this->assertRegExp('/^[a-z]{2,3}_[A-Z]{2}$/', Miscellaneous::locale());
     }
 
     public function testCountryCode()
