@@ -1,0 +1,39 @@
+<?php
+
+namespace Faker\Test\Provider;
+
+use Faker\Provider\Miscellaneous;
+
+class MiscellaneousTest extends \PHPUnit_Framework_TestCase
+{
+
+    public function testBoolean()
+    {
+        $this->assertContains(Miscellaneous::boolean(), array(true, false));
+    }
+
+    public function testMd5()
+    {
+        $this->assertRegExp('/^[a-z0-9]{32}$/', Miscellaneous::md5());
+    }
+
+    public function testSha1()
+    {
+        $this->assertRegExp('/^[a-z0-9]{40}$/', Miscellaneous::sha1());
+    }
+
+    public function testSha256()
+    {
+        $this->assertRegExp('/^[a-z0-9]{64}$/', Miscellaneous::sha256());
+    }
+
+    public function testCountryCode()
+    {
+        $this->assertRegExp('/^[A-Z]{2}$/', Miscellaneous::countryCode());
+    }
+
+    public function testLanguage()
+    {
+        $this->assertRegExp('/^[a-z]{2}$/', Miscellaneous::languageCode());
+    }
+}
