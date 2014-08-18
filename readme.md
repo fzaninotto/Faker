@@ -385,7 +385,8 @@ echo $faker->name; // 'Jess Mraz I';
 > $faker->dateTime(); // equivalent to $faker->dateTime($max = 'now')
 > // make sure you fix the $max parameter
 > $faker->dateTime('2014-02-25 08:37:17'); // will return always the same date when seeded
->
+> ```
+> 
 > **Tip**: Formatters won't reproduce the same fake data if you use the php function `rand()`, use `$faker` instead :
 >
 > ```php
@@ -394,6 +395,7 @@ echo $faker->name; // 'Jess Mraz I';
 >    $faker->realText(rand(10,20));
 >    //GOOD
 >    $faker->realText($faker->numberBetween(10,20));
+> ```
 
 
 
