@@ -25,5 +25,4 @@ class PhoneNumberTest extends \PHPUnit_Framework_TestCase
         $number = $this->faker->phoneNumber;
         $this->assertRegExp('/^06\d{2} \d{7}|\+43 \d{4} \d{4}(-\d{2})?$/', $number);
     }
-
 }
