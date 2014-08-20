@@ -856,6 +856,18 @@ echo $faker->tollFreeNumber; // "0800 123 456"
 echo $faker->areaCode; // "03"
 ```
 
+### `Faker\Provider\sv_SE\Person`
+```php
+<?php
+
+//Generates a valid Swedish personal identity number (in Swedish - Personnummer)
+echo $faker->personalIdentityNumber() // '950910-0799'
+
+//Since the numbers are different for male and female persons, optionally you can specify gender.
+echo $faker->personalIdentityNumber('female') // '950910-0781'
+
+```
+
 ## License
 
 Faker is released under the MIT Licence. See the bundled LICENSE file for details.
