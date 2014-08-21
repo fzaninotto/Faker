@@ -85,4 +85,47 @@ class Person extends \Faker\Provider\Person
     protected static $titleMale = array('Hra.', 'Tri.');
 
     protected static $titleFemale = array('Rva.', 'Nti.', 'Tri.');
+
+    /**
+     * National Personal Identity number (henkilötunnus)
+     * @link http://fi.wikipedia.org/wiki/Henkil%C3%B6tunnus
+     * @author
+     * @param \DateTime $birthdate
+     * @param string $gender Person::GENDER_MALE || Person::GENDER_FEMALE
+     * @param bool $safe valid, but not in use (XXX between 900-999)
+     * @return string on format DDMMYY-XXXZ or DDMMYYAXXXZ
+     */
+    public function personalIdentityNumber(\DateTime $birthdate = null, $gender = null, $safe = false)
+    {
+        if (!$birthdate) {
+            $birthdate = \Faker\Provider\DateTime::dateTimeThisCentury();
+        }
+        $delimiter = '-';
+        $datePart = $birthdate->format('dmy');
+        if ($birthdate->format('Y') >= 2000) $delimiter = 'A';
+        $firstNum = $safe ? '9' : '#';
+        if ($gender && $gender == static::GENDER_MALE) {
+            $randomDigits = (string)static::numerify($firstNum . '#') . static::randomElement(array(1,3,5,7,9));
+        } elseif ($gender && $gender == static::GENDER_FEMALE) {
+            $randomDigits = (string)static::numerify($firstNum . '#') . static::randomElement(array(0,2,4,6,8));
+        } else {
+            $randomDigits = (string)static::numerify($firstNum . '##');
+        }
+
+        $checksum = $this->calculateChecksum($datePart . $randomDigits);
+
+        return $datePart . $delimiter . $randomDigits . $checksum;
+    }
+    public function safePersonalIdentityNumber(\DateTime $birthdate = null, $gender = null) {
+        return $this->personalIdentityNumber($birthdate, $gender, true);
+    }
+
+    /**
+     * @param string $input
+     * @return int checksum
+     */
+    protected function calculateChecksum($input)
+    {
+        return str_split('0123456789ABCDEFHJKLMNPRSTUVWXY')[(int) $input % 31];
+    }
 }
