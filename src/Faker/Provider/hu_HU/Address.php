@@ -4,6 +4,8 @@ namespace Faker\Provider\hu_HU;
 
 class Address extends \Faker\Provider\Address
 {
+    protected static $cityPrefix = array('Alsó', 'Felső', 'Al');
+    protected static $citySuffix = array('várad', 'falva', 'puszta', 'telek', 'háza', 'lak');
     protected static $buildingNumber = array('#####', '####', '###', '##', '##');
     protected static $streetSuffix = array(
         'árok', 'átjáró', 'dűlősor', 'dűlőút', 'erdősor', 'fasor', 'forduló', 'gát', 'határsor', 'határút', 'híd', 'játszótér', 'kert', 'körönd', 'körtér', 'körút', 'köz', 'lakótelep', 'lejáró', 'lejtő', 'lépcső', 'liget', 'mélyút', 'orom', 'országút', 'ösvény', 'park', 'part', 'pincesor', 'rakpart', 'sétány', 'sétaút', 'sor', 'sugárút', 'tér', 'tere', 'turistaút', 'udvar', 'út', 'útja', 'utca', 'üdülőpart'
@@ -16,8 +18,10 @@ class Address extends \Faker\Provider\Address
         'Afganisztán', 'Albánia', 'Algéria', 'Amerikai Egyesült Államok', 'Andorra', 'Angola', 'Antigua és Barbuda', 'Argentína', 'Ausztria', 'Ausztrália', 'Azerbajdzsán', 'Bahama-szigetek', 'Bahrein', 'Banglades', 'Barbados', 'Belgium', 'Belize', 'Benin', 'Bhután', 'Bolívia', 'Bosznia-Hercegovina', 'Botswana', 'Brazília', 'Brunei', 'Bulgária', 'Burkina Faso', 'Burma', 'Burundi', 'Chile', 'Ciprus', 'Costa Rica', 'Csehország', 'Csád', 'Dominikai Köztársaság', 'Dominikai Közösség', 'Dzsibuti', 'Dánia', 'Dél-Afrika', 'Dél-Korea', 'Dél-Szudán', 'Ecuador', 'Egyenlítői-Guinea', 'Egyesült Arab Emírségek', 'Egyesült Királyság', 'Egyiptom', 'Elefántcsontpart', 'Eritrea', 'Etiópia', 'Fehéroroszország', 'Fidzsi-szigetek', 'Finnország', 'Franciaország', 'Fülöp-szigetek', 'Gabon', 'Gambia', 'Ghána', 'Grenada', 'Grúzia', 'Guatemala', 'Guinea', 'Guyana', 'Görögország', 'Haiti', 'Hollandia', 'Horvátország', 'India', 'Indonézia', 'Irak', 'Irán', 'Izland', 'Izrael', 'Japán', 'Jemen', 'Jordánia', 'Kambodzsa', 'Kamerun', 'Kanada', 'Katar', 'Kazahsztán', 'Kelet-Timor', 'Kenya', 'Kirgizisztán', 'Kiribati', 'Kolumbia', 'Kongói Demokratikus Köztársaság', 'Kongói Köztársaság', 'Kuba', 'Kuvait', 'Kína', 'Közép-Afrika', 'Laosz', 'Lengyelország', 'Lesotho', 'Lettország', 'Libanon', 'Libéria', 'Liechtenstein', 'Litvánia', 'Luxemburg', 'Líbia', 'Macedónia', 'Madagaszkár', 'Magyarország', 'Malawi', 'Maldív-szigetek', 'Mali', 'Malájzia', 'Marokkó', 'Marshall-szigetek', 'Mauritánia', 'Mexikó', 'Mikronézia', 'Moldova', 'Monaco', 'Mongólia', 'Montenegró', 'Mozambik', 'Málta', 'Namíbia', 'Nauru', 'Nepál', 'Nicaragua', 'Niger', 'Nigéria', 'Norvégia', 'Németország', 'Olaszország', 'Omán', 'Oroszország', 'Pakisztán', 'Palau', 'Panama', 'Paraguay', 'Peru', 'Portugália', 'Pápua Új-Guinea', 'Románia', 'Ruanda', 'Saint Kitts és Nevis', 'Saint Vincent', 'Salamon-szigetek', 'Salvador', 'San Marino', 'Seychelle-szigetek', 'Spanyolország', 'Srí Lanka', 'Suriname', 'Svájc', 'Svédország', 'Szamoa', 'Szaúd-Arábia', 'Szenegál', 'Szerbia', 'Szingapúr', 'Szlovákia', 'Szlovénia', 'Szomália', 'Szudán', 'Szváziföld', 'Szíria', 'São Tomé és Príncipe', 'Tadzsikisztán', 'Tanzánia', 'Thaiföld', 'Togo', 'Tonga', 'Trinidad és Tobago', 'Tunézia', 'Tuvalu', 'Törökország', 'Türkmenisztán', 'Uganda', 'Ukrajna', 'Uruguay', 'Vanuatu', 'Venezuela', 'Vietnám', 'Zambia', 'Zimbabwe', 'Zöld-foki-szigetek', 'Észak-Korea', 'Észtország', 'Írország', 'Örményország', 'Új-Zéland', 'Üzbegisztán'
     );
     protected static $cityFormats = array(
-        '{{firstName}}',
-        '{{lastName}}',
+        '{{cityPrefix}} {{firstName}}{{citySuffix}}',
+        '{{cityPrefix}} {{firstName}}',
+        '{{firstName}}{{citySuffix}}',
+        '{{lastName}}{{citySuffix}}',
     );
     protected static $streetNameFormats = array(
         '{{firstName}} {{streetSuffix}}',
