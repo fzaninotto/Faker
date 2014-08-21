@@ -89,7 +89,6 @@ class Person extends \Faker\Provider\Person
     /**
      * National Personal Identity number (henkilötunnus)
      * @link http://fi.wikipedia.org/wiki/Henkil%C3%B6tunnus
-     * @author
      * @param \DateTime $birthdate
      * @param string $gender Person::GENDER_MALE || Person::GENDER_FEMALE
      * @param bool $safe valid, but not in use (XXX between 900-999)
