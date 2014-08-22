@@ -6,7 +6,7 @@ class Miscellaneous extends \Faker\Provider\Base
 {
     protected static $languageCode = array('cn', 'de', 'en', 'es', 'fr', 'it', 'pt', 'ru');
 
-    protected static $countryCode = array('CA', 'CN', 'DE', 'ES', 'FR', 'IE', 'IN', 'IT', 'MX', 'PT', 'RU', 'GB', 'US');
+    protected static $countryCode = array('CA', 'CN', 'DE', 'ES', 'FR', 'IE', 'IN', 'IT', 'MX', 'PT', 'RU', 'GB', 'US', 'VE');
 
     protected static $localeData = array(
         'aa_DJ',  'aa_ER',  'aa_ET',
