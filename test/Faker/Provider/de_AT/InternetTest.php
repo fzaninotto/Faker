@@ -10,6 +10,11 @@ use Faker\Provider\de_AT\Company;
 class InternetTest extends \PHPUnit_Framework_TestCase
 {
 
+    /**
+     * @var Generator
+     */
+    private $faker;
+
     public function setUp()
     {
         $faker = new Generator();
@@ -24,5 +29,4 @@ class InternetTest extends \PHPUnit_Framework_TestCase
         $email = $this->faker->email();
         $this->assertNotFalse(filter_var($email, FILTER_VALIDATE_EMAIL));
     }
-
 }
