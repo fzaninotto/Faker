@@ -273,8 +273,8 @@ class Base
      */
     public static function asciify($string = '****', $extended = false)
     {
-        return preg_replace_callback('/\*/u', function() use ($extended) {
-          return static::randomAscii($extended);
+        return preg_replace_callback('/\*/u', function () use ($extended) {
+            return static::randomAscii($extended);
         }, $string);
     }
 
