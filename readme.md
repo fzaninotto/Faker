@@ -164,6 +164,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     freeEmailDomain         // 'yahoo.com'
     safeEmailDomain         // 'example.org'
     userName                // 'wade55'
+    password                // 'k&|X+a45*2['
     domainName              // 'wolffdeckow.net'
     domainWord              // 'feeney'
     tld                     // 'biz'

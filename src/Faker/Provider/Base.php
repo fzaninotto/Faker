@@ -130,6 +130,14 @@ class Base
     }
 
     /**
+     * Returns a random ASCII character
+     */
+    public static function randomAscii($extended = false)
+    {
+        return chr(mt_rand(33, $extended ? 254 : 126));
+    }
+
+    /**
      * Returns random elements from a provided array
      *
      * @param  array            $array Array to take elements from. Defaults to a-f
@@ -253,6 +261,21 @@ class Base
     public static function bothify($string = '## ??')
     {
         return static::lexify(static::numerify($string));
+    }
+
+    /**
+     * Replaces * signs with random numbers and letters and special characters
+     *
+     * @example $faker->asciify(''********'); // "s5'G!uC3"
+     *
+     * @param  string $string String that needs to bet parsed
+     * @return string
+     */
+    public static function asciify($string = '****', $extended = false)
+    {
+        return preg_replace_callback('/\*/u', function() use ($extended) {
+          return static::randomAscii($extended);
+        }, $string);
     }
 
     /**
