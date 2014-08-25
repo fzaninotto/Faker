@@ -130,11 +130,11 @@ class Base
     }
 
     /**
-     * Returns a random ASCII character
+     * Returns a random ASCII character (excluding accents and special chars)
      */
-    public static function randomAscii($extended = false)
+    public static function randomAscii()
     {
-        return chr(mt_rand(33, $extended ? 254 : 126));
+        return chr(mt_rand(33, 126));
     }
 
     /**
@@ -271,11 +271,9 @@ class Base
      * @param  string $string String that needs to bet parsed
      * @return string
      */
-    public static function asciify($string = '****', $extended = false)
+    public static function asciify($string = '****')
     {
-        return preg_replace_callback('/\*/u', function () use ($extended) {
-            return static::randomAscii($extended);
-        }, $string);
+        return preg_replace_callback('/\*/u', 'static::randomAscii', $string);
     }
 
     /**
