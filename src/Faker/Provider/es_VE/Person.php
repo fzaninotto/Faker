@@ -5,6 +5,7 @@ namespace Faker\Provider\es_VE;
 class Person extends \Faker\Provider\Person
 {
     /**
+	 * CNE is the official national election registry org.
      * {@link} http://www.cne.gob.ve/web/registro_electoral/ciudadanos_111_129_2011.php
      */
     protected static $maleNameFormats = array(
@@ -16,7 +17,11 @@ class Person extends \Faker\Provider\Person
         '{{firstNameMale}} {{lastName}} {{suffix}}',
     );
 
-    protected static $femaleNameFormats = array(
+    /**
+	 * CNE is the official national election registry org.
+     * {@link} http://www.cne.gob.ve/web/registro_electoral/ciudadanos_111_129_2011.php
+     */
+	protected static $femaleNameFormats = array(
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}} {{lastName}}',
@@ -25,7 +30,11 @@ class Person extends \Faker\Provider\Person
         '{{titleFemale}} {{firstNameFemale}} {{lastName}} {{suffix}}',
     );
 
-    protected static $firstNameMale = array(
+    /**
+	 * CNE is the official national election registry org.
+     * {@link} http://www.cne.gob.ve/web/registro_electoral/ciudadanos_111_129_2011.php
+     */
+	protected static $firstNameMale = array(
         'Aaron', 'Adam', 'Adria', 'Adrian', 'Alberto', 'Aleix', 'Alejandro', 'Alex', 'Alonso', 'Alvaro', 'Ander', 'Andres',
         'Angel', 'Antonio', 'Bruno', 'Carlos', 'Cesar', 'Cristian', 'Daniel', 'Dario', 'David', 'Domingo',
         'Diego', 'Eduardo', 'Enrique', 'Eric', 'Erik', 'Fernando', 'Francisco', 'Francisco Javier', 'Gabriel', 'Gonzalo',
@@ -36,7 +45,11 @@ class Person extends \Faker\Provider\Person
         'Roberto', 'Rodrigo', 'Ruben', 'Samuel', 'Santiago', 'Saul', 'Sergio', 'Sebastian', 'Victor', 'Yorman',
     );
 
-    protected static $firstNameFemale = array(
+    /**
+	 * CNE is the official national election registry org.
+     * {@link} http://www.cne.gob.ve/web/registro_electoral/ciudadanos_111_129_2011.php
+     */
+	protected static $firstNameFemale = array(
         'Abril', 'Adriana', 'Africa', 'Ainara', 'Antonia', 'Alba', 'Alejandra', 'Alexandra', 'Alexia', 'Alicia', 'Alma',
         'Ana', 'Andrea', 'Ane', 'Angela', 'Anna', 'Ariadna', 'Aroa', 'Bella', 'Beatriz', 'Berta', 'Blanca', 'Candela',
         'Carla', 'Carlota', 'Carmen', 'Carolina', 'Celia', 'Clara', 'Claudia', 'Cristina', 'Daniela', 'Diana', 'Elena', 'Elsa',
@@ -48,7 +61,11 @@ class Person extends \Faker\Provider\Person
         'Valentina', 'Valeria', 'Vega', 'Vera', 'Victoria', 'Yaiza', 'Zulay',
     );
 
-    protected static $lastName = array(
+    /**
+	 * CNE is the official national election registry org.
+     * {@link} http://www.cne.gob.ve/web/registro_electoral/ciudadanos_111_129_2011.php
+     */
+	protected static $lastName = array(
         'Abad', 'Abeyta', 'Abrego', 'Abreu', 'Acevedo', 'Acosta', 'Acuña', 'Adame', 'Adorno', 'Agosto', 'Aguado', 'Aguayo',
         'Aguilar', 'Aguilera', 'Aguirre', 'Alanis', 'Alaniz', 'Alarcón', 'Alba', 'Alcala', 'Alcaraz', 'Alcántar', 'Alejandro',
         'Alemán', 'Alfaro', 'Alfonso', 'Alicea', 'Almanza', 'Almaraz', 'Almonte', 'Alonso', 'Alonzo', 'Altamirano', 'Alva',
