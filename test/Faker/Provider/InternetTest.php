@@ -35,7 +35,7 @@ class InternetTest extends \PHPUnit_Framework_TestCase
 
     public function testPasswordIsValid()
     {
-        $this->assertRegexp('/^.{6}$/', $this->faker->password(6,6));
+        $this->assertRegexp('/^.{6}$/', $this->faker->password(6, 6));
     }
 
     public function testSlugIsValid()
