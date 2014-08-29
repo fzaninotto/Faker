@@ -58,7 +58,7 @@ class InternetTest extends \PHPUnit_Framework_TestCase
 
     public function testIpv6()
     {
-        $this->assertNotFalse(filter_var(Internet::ipv6(), FILTER_VALIDATE_IP, FILTER_FLAG_IPV6));
+        $this->assertNotFalse(filter_var($this->faker->ipv6(), FILTER_VALIDATE_IP, FILTER_FLAG_IPV6));
     }
 
     public function testMacAddress()
