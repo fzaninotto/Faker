@@ -34,7 +34,7 @@ class UserAgent extends \Faker\Provider\Base
     }
 
     /**
-     * Generrate linux processor
+     * Generate linux processor
      *
      * @return string
      */
