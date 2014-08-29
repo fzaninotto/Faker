@@ -580,7 +580,7 @@ class File extends \Faker\Provider\Base
         }
 
         if ($sourceDirectory == $targetDirectory) {
-            throw new \InvalidArgumentException('Source and targer directories must differ.');
+            throw new \InvalidArgumentException('Source and target directories must differ.');
         }
 
         // Drop . and .. and reset array keys
