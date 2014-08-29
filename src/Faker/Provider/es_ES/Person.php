@@ -68,4 +68,17 @@ class Person extends \Faker\Provider\Person
     {
         return static::randomElement(static::$suffix);
     }
+    
+    /**
+     * National Personal Identity number (personnummer)
+     * 
+     * @return string on format 99999999X
+     */
+    public function personalIdentityNumber()
+    {
+        $number = rand(10000000, 99999999);
+        $letter = substr('TRWAGMYFPDXBNJZSQVHLCKE', $number % 23, 1);
+
+        return $number . $letter;
+    }
 }
