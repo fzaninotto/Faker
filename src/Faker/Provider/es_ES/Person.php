@@ -70,13 +70,18 @@ class Person extends \Faker\Provider\Person
     }
     
     /**
-     * National Personal Identity number (personnummer)
+     * National Personal Identity number (DNI/NIF)
      * 
      * @return string on format 99999999X
+     * 
+     * @url http://es.wikipedia.org/wiki/DNI_electr%C3%B3nico_en_Espa%C3%B1a
+     * @url http://es.wikipedia.org/wiki/N%C3%BAmero_de_identificaci%C3%B3n_fiscal
+     * @url http://bulma.net/body.phtml?nIdNoticia=2248
      */
     public function personalIdentityNumber()
     {
-        $number = rand(10000000, 99999999);
+        $number = mt_rand(100, 99999999);
+        $number = str_pad($number, 8, '0', STR_PAD_LEFT);
         $letter = substr('TRWAGMYFPDXBNJZSQVHLCKE', $number % 23, 1);
 
         return $number . $letter;
