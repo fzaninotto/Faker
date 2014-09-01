@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3"
+        "php": ">=5.3.3",
+        "icomefromthenet/reverse-regex": "v0.0.6.2"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0",
