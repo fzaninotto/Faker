@@ -15,7 +15,7 @@ class Luhn
     /**
      * @return int
      */
-    private static function checksum($number) 
+    private static function checksum($number)
     {
         $sum = 0;
         foreach (str_split(strrev((string) $number)) as $i => $digit) {

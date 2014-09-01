@@ -11,6 +11,8 @@ use Faker\Util\Luhn;
 
 class PaymentTest extends \PHPUnit_Framework_TestCase
 {
+    private $faker;
+
     public function setUp()
     {
         $faker = new Generator();
