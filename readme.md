@@ -423,7 +423,7 @@ class Book extends \Faker\Provider\Base
 
   public function ISBN()
   {
-    return $this->generator->randomNumber(13);
+    return $this->generator->ean13();
   }
 }
 ```
