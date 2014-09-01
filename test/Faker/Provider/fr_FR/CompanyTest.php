@@ -2,19 +2,16 @@
 
 namespace Faker\Test\Provider\fr_FR;
 
+use Faker\Generator;
 use Faker\Provider\fr_FR\Company;
 use Faker\PHPUnit\Framework\Constraint as Constraint;
+use Faker\Util\Luhn;
 
 class CompanyTest extends \PHPUnit_Framework_TestCase
 {
     private static function isValidSiret()
     {
         return new Constraint\IsValidSiret();
-    }
-
-    private static function isValidSiren()
-    {
-        return new Constraint\IsValidSiren();
     }
 
     public function testParagraphWithNegativeNbDigitsReturnsAWellFormattedSiret()
@@ -52,10 +49,17 @@ class CompanyTest extends \PHPUnit_Framework_TestCase
 
     public function testSirenReturnsAValidAndWellFormattedSiren()
     {
-        $siret = Company::siren();
+        $faker = new Generator();
+        $faker->addProvider(new Company($faker));
 
-        $this->assertThat($siret, self :: isValidSiren());
-        $this->assertRegExp("/[\d]{3} [\d]{3} [\d]{3}/", $siret);
+        $siren = $faker->siren();
+        $this->assertRegExp("/^\d{3} \d{3} \d{3}$/", $siren);
+        $siren = str_replace(' ', '', $siren);
+        $this->assertTrue(Luhn::isValid($siren));
+
+        $siren = $faker->siren(false);
+        $this->assertRegExp("/^\d{9}$/", $siren);
+        $this->assertTrue(Luhn::isValid($siren));
     }
 
     public function testCatchPhraseValidationReturnsFalse()

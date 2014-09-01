@@ -15,7 +15,13 @@ class LuhnTest extends \PHPUnit_Framework_TestCase
             ['37144963539843', '1'],
             ['561059108101825', '0'],
             ['601100099013942', '4'],
-            ['510510510510510', '0']
+            ['510510510510510', '0'],
+            [7992739871, '3'],
+            [3852000002323, '7'],
+            [37144963539843, '1'],
+            [561059108101825, '0'],
+            [601100099013942, '4'],
+            [510510510510510, '0']
         ];
     }
 
@@ -24,6 +30,7 @@ class LuhnTest extends \PHPUnit_Framework_TestCase
      */
     public function testComputeCheckDigit($partialNumber, $checkDigit)
     {
+        $this->assertInternalType('string', $checkDigit);
         $this->assertEquals($checkDigit, Luhn::computeCheckDigit($partialNumber));
     }
 
@@ -39,7 +46,9 @@ class LuhnTest extends \PHPUnit_Framework_TestCase
             ['79927398716', false],
             ['79927398717', false],
             ['79927398718', false],
-            ['79927398719', false]
+            ['79927398719', false],
+            [79927398713, true],
+            [79927398714, false],
         ];
     }
 

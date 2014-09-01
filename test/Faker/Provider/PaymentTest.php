@@ -2,15 +2,22 @@
 
 namespace Faker\Test\Provider;
 
+use Faker\Generator;
+use Faker\Provider\Base as BaseProvider;
+use Faker\Provider\DateTime as DateTimeProvider;
+use Faker\Provider\Payment as PaymentProvider;
+use Faker\Provider\Person as PersonProvider;
+use Faker\Util\Luhn;
+
 class PaymentTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $faker = new \Faker\Generator();
-        $faker->addProvider(new \Faker\Provider\Base($faker));
-        $faker->addProvider(new \Faker\Provider\DateTime($faker));
-        $faker->addProvider(new \Faker\Provider\Person($faker));
-        $faker->addProvider(new \Faker\Provider\Payment($faker));
+        $faker = new Generator();
+        $faker->addProvider(new BaseProvider($faker));
+        $faker->addProvider(new DateTimeProvider($faker));
+        $faker->addProvider(new PersonProvider($faker));
+        $faker->addProvider(new PaymentProvider($faker));
         $this->faker = $faker;
     }
 
@@ -19,9 +26,23 @@ class PaymentTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(in_array($this->faker->creditCardType, array('Visa', 'MasterCard', 'American Express', 'Discover Card')));
     }
 
-    public function testCreditCardNumberReturnsValidCreditCardNumber()
+    public function creditCardNumberProvider()
     {
-        $this->assertRegExp('/^6011\d{12}$/', $this->faker->creditCardNumber('Discover Card'));
+        return [
+            ['Discover Card', '/^6011\d{12}$/'],
+            ['Visa', '/^4\d{12,15}$/'],
+            ['MasterCard', '/^5[1-5]\d{14}$/']
+        ];
+    }
+
+    /**
+     * @dataProvider creditCardNumberProvider
+     */
+    public function testCreditCardNumberReturnsValidCreditCardNumber($type, $regexp)
+    {
+        $cardNumber = $this->faker->creditCardNumber($type);
+        $this->assertRegExp($regexp, $cardNumber);
+        $this->assertTrue(Luhn::isValid($cardNumber));
     }
 
     public function testCreditCardNumberCanFormatOutput()

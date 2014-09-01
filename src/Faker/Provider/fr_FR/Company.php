@@ -2,6 +2,8 @@
 
 namespace Faker\Provider\fr_FR;
 
+use Faker\Util\Luhn;
+
 class Company extends \Faker\Provider\Company
 {
     /**
@@ -102,7 +104,9 @@ class Company extends \Faker\Provider\Company
 
     /**
      * Generates a siret number (14 digits) that passes the Luhn check.
+     *
      * Use $maxSequentialDigits to make sure the digits at position 2 to 5 are not zeros.
+     *
      * @see http://en.wikipedia.org/wiki/Luhn_algorithm
      * @param  int    $maxSequentialDigits The maximum number of digits for the sequential number (> 0 && <= 4).
      * @return string
@@ -165,37 +169,19 @@ class Company extends \Faker\Provider\Company
 
     /**
      * Generates a siren number (9 digits) that passes the Luhn check.
+     *
      * @see http://en.wikipedia.org/wiki/Luhn_algorithm
      * @return string
      */
-    public static function siren()
+    public function siren($formatted = true)
     {
-        $siren = '';
-        $sum = 0;
-        for ($i = 9; $i > 1; $i--) {
-
-            $digit = mt_rand(0, 9);
-            $isEven = $i % 2 === 0;
-
-            $tmp = $isEven ? $digit * 2 : $digit;
-            if ($tmp >= 10) {
-                $tmp -= 9;
-            }
-            $sum += $tmp;
-
-            $siren = $digit . $siren;
-
+        $siren = $this->numerify('########');
+        $siren .= Luhn::computeCheckDigit($siren);
+        if ($formatted) {
+            $siren = substr($siren, 0, 3) . ' ' . substr($siren, 3, 3) . ' ' . substr($siren, 6, 3);
         }
 
-        $mod = $sum % 10;
-        if ($mod === 0) {
-            $siren = '0' . $siren;
-        } else {
-            $siren = (10 - $mod) . $siren;
-        }
-
-        return preg_replace("/([0-9]{3})([0-9]{3})([0-9]{3})/", "$1 $2 $3", $siren);
-
+        return $siren;
     }
 
     /**
