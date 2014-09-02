@@ -53,6 +53,8 @@ class Company extends \Faker\Provider\Company
      */
     protected static $companySuffix = array('SA', 'S.A.', 'SARL', 'S.A.R.L.', 'S.A.S.', 'et Fils');
 
+    protected static $siretNicFormats = array('####', '0###', '00#%');
+
     /**
      * Returns a random catch phrase noun.
      *
@@ -111,7 +113,8 @@ class Company extends \Faker\Provider\Company
     public function siret($formatted = true)
     {
         $siret = $this->siren(false);
-        $siret .= $this->numerify('####');
+        $nicFormat = static::randomElement(static::$siretNicFormats);
+        $siret .= $this->numerify($nicFormat);
         $siret .= Luhn::computeCheckDigit($siret);
         if ($formatted) {
             $siret = substr($siret, 0, 3) . ' ' . substr($siret, 3, 3) . ' ' . substr($siret, 6, 3) . ' ' . substr($siret, 9, 5);
