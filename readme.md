@@ -115,8 +115,8 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     postcode                // '17916'
     address                 // '8888 Cummings Vista Apt. 101, Susanbury, NY 95473'
     country                 // 'Falkland Islands (Malvinas)'
-    latitude                // '77.147489'
-    longitude               // '86.211205'
+    latitude                // 77.147489
+    longitude               // 86.211205
 
 ### `Faker\Provider\en_US\PhoneNumber`
 

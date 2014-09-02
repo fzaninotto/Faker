@@ -47,7 +47,7 @@ class Base
     }
 
     /**
-     * Returns a random number with 0 to $nbDigits digits.
+     * Returns a random integer with 0 to $nbDigits digits.
      *
      * The maximum value returned is mt_getrandmax()
      *
