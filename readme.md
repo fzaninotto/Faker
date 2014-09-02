@@ -388,14 +388,14 @@ echo $faker->name; // 'Jess Mraz I';
 > $faker->dateTime('2014-02-25 08:37:17'); // will return always the same date when seeded
 > ```
 > 
-> **Tip**: Formatters won't reproduce the same fake data if you use the php function `rand()`, use `$faker` instead :
+> **Tip**: Formatters won't reproduce the same fake data if you use the `rand()` php function. Use `$faker` or `mt_rand()` instead:
 >
 > ```php
 > <?php
->    //BAD
->    $faker->realText(rand(10,20));
->    //GOOD
->    $faker->realText($faker->numberBetween(10,20));
+> // bad
+> $faker->realText(rand(10,20));
+> // good
+> $faker->realText($faker->numberBetween(10,20));
 > ```
 
 
