@@ -2,7 +2,7 @@
 
 namespace Faker\Provider\sv_SE;
 
-use Faker\Util\Luhn;
+use Faker\Calculator\Luhn;
 
 class Person extends \Faker\Provider\Person
 {

@@ -2,12 +2,12 @@
 
 namespace Faker\Test\Provider;
 
+use Faker\Calculator\Luhn;
 use Faker\Generator;
 use Faker\Provider\Base as BaseProvider;
 use Faker\Provider\DateTime as DateTimeProvider;
 use Faker\Provider\Payment as PaymentProvider;
 use Faker\Provider\Person as PersonProvider;
-use Faker\Util\Luhn;
 
 class PaymentTest extends \PHPUnit_Framework_TestCase
 {

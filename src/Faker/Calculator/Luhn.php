@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Util;
+namespace Faker\Calculator;
 
 /**
  * Utility class for generating Luhn checksum and validating a number

@@ -1,8 +1,8 @@
 <?php
 
-namespace Faker\Test\Util;
+namespace Faker\Test\Calculator;
 
-use Faker\Util\Luhn;
+use Faker\Calculator\Luhn;
 
 class LuhnTest extends \PHPUnit_Framework_TestCase
 {

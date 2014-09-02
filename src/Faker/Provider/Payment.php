@@ -2,7 +2,7 @@
 
 namespace Faker\Provider;
 
-use Faker\Util\Luhn;
+use Faker\Calculator\Luhn;
 
 class Payment extends Base
 {

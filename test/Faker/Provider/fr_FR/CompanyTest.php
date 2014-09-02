@@ -2,9 +2,9 @@
 
 namespace Faker\Test\Provider\fr_FR;
 
+use Faker\Calculator\Luhn;
 use Faker\Generator;
 use Faker\Provider\fr_FR\Company;
-use Faker\Util\Luhn;
 
 class CompanyTest extends \PHPUnit_Framework_TestCase
 {

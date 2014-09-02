@@ -2,9 +2,9 @@
 
 namespace Faker\Test\Provider\sv_SE;
 
+use Faker\Calculator\Luhn;
 use Faker\Generator;
 use Faker\Provider\sv_SE\Person;
-use Faker\Util\Luhn;
 
 class PersonTest extends \PHPUnit_Framework_TestCase
 {
