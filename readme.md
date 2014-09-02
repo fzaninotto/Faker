@@ -719,10 +719,6 @@ echo $faker->siren; // 082 250 104
 
 // Generates a random SIRET number
 echo $faker->siret; // 347 355 708 00224
-
-// Generates a random SIRET number (controlling the number of sequential digits)
-echo $faker->siret(3); // 438 472 611 01513
-
 ```
 
 ### `Faker\Provider\fr_FR\Address`
