@@ -17,15 +17,14 @@ class Luhn
      */
     private static function checksum($number)
     {
+        $number = (string) $number;
+        $length = strlen($number);
         $sum = 0;
-        foreach (str_split(strrev((string) $number)) as $i => $digit) {
-            if ($i % 2 !== 0) {
-                $digit = $digit * 2;
-                if ($digit > 9) {
-                    $digit = (int) ($digit / 10) + $digit % 10;
-                }
-            }
-            $sum += $digit;
+        for ($i = $length - 1; $i >= 0; $i -= 2) {
+            $sum += $number{$i};
+        }
+        for ($i = $length - 2; $i >= 0; $i -= 2) {
+            $sum += array_sum(str_split($number{$i} * 2));
         }
 
         return $sum % 10;
@@ -36,12 +35,12 @@ class Luhn
      */
     public static function computeCheckDigit($partialNumber)
     {
-        $checkDigit = self::checksum($partialNumber * 10);
+        $checkDigit = self::checksum($partialNumber . '0');
         if ($checkDigit === 0) {
             return 0;
         }
 
-        return (string) 10 - $checkDigit;
+        return (string) (10 - $checkDigit);
     }
 
     /**

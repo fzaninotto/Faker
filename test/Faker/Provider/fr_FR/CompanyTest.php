@@ -4,7 +4,6 @@ namespace Faker\Test\Provider\fr_FR;
 
 use Faker\Generator;
 use Faker\Provider\fr_FR\Company;
-use Faker\PHPUnit\Framework\Constraint as Constraint;
 use Faker\Util\Luhn;
 
 class CompanyTest extends \PHPUnit_Framework_TestCase

@@ -30,11 +30,11 @@ class PaymentTest extends \PHPUnit_Framework_TestCase
 
     public function creditCardNumberProvider()
     {
-        return [
-            ['Discover Card', '/^6011\d{12}$/'],
-            ['Visa', '/^4\d{12,15}$/'],
-            ['MasterCard', '/^5[1-5]\d{14}$/']
-        ];
+        return array(
+            array('Discover Card', '/^6011\d{12}$/'),
+            array('Visa', '/^4\d{12,15}$/'),
+            array('MasterCard', '/^5[1-5]\d{14}$/')
+        );
     }
 
     /**
