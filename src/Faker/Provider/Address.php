@@ -104,7 +104,8 @@ class Address extends \Faker\Provider\Base
     }
 
     /**
-     * @example '77.147489'
+     * @example 77.147489
+     * @return float Uses signed degrees format (returns a float number between -90 and 90)
      */
     public static function latitude()
     {
@@ -112,7 +113,8 @@ class Address extends \Faker\Provider\Base
     }
 
     /**
-     * @example '86.211205'
+     * @example 86.211205
+     * @return float Uses signed degrees format (returns a float number between -180 and 180)
      */
     public static function longitude()
     {
