@@ -46,13 +46,13 @@ class PersonTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(Luhn::isValid($pin));
     }
 
-    public function testPersonalIdentityNumberGeneratesEvenValuesForMales()
+    public function testPersonalIdentityNumberGeneratesOddValuesForMales()
     {
         $pin = $this->faker->personalIdentityNumber(null, 'male');
         $this->assertEquals(1, $pin{9} % 2);
     }
 
-    public function testPersonalIdentityNumberGeneratesOddValuesForFemales()
+    public function testPersonalIdentityNumberGeneratesEvenValuesForFemales()
     {
         $pin = $this->faker->personalIdentityNumber(null, 'female');
         $this->assertEquals(0, $pin{9} % 2);
