@@ -223,8 +223,9 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
 ### `Faker\Provider\Barcode`
 
-    ean13          // '4006381333931'
-    ean8           // '73513537'
+    ean13                // '4006381333931'
+    ean8                 // '73513537'
+	code39($length = 10) // 'AK*$SJD382'
 
 ### `Faker\Provider\Miscellaneous`
 
