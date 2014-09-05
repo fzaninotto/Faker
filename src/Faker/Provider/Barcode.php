@@ -27,17 +27,17 @@ class Barcode extends \Faker\Provider\Base
         return (10 - $sums % 10) % 10;
     }
 
-	private function code39generate($length)
-	{
-		$code39chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$/+%*'; // allowed code39 characters
-		
-		$barcode = '';
-		
-		for ($i=0; $i<$length; $i++){
-			$barcode .= $code39chars[rand(0,strlen($code39chars)-1)];
-		}
-		return $barcode;
-	}
+    private function code39generate($length)
+    {
+        $code39chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$/+%*'; // allowed code39 characters
+
+        $barcode = '';
+
+        for ($i=0; $i<$length; $i++){
+            $barcode .= $code39chars[rand(0,strlen($code39chars)-1)];
+        }
+        return $barcode;
+    }
 	
     /**
      * Get a random EAN13 barcode.
@@ -59,16 +59,16 @@ class Barcode extends \Faker\Provider\Base
         return $this->ean(8);
     }
 	
-	/**
-	 * Get a random Code39 barcode.
-	 * @return string
-	 * @example '4C567DKLH3'
-	 */
-	public function code39($length=10)
-	{
-		if(!is_numeric($length)){
-			$length = 10;
-		}
-		return $this->code39generate($length);
-	}
+    /**
+     * Get a random Code39 barcode.
+     * @return string
+     * @example '4C567DKLH3'
+     */
+    public function code39($length=10)
+    {
+        if(!is_numeric($length)){
+            $length = 10;
+        }
+        return $this->code39generate($length);
+    }
 }
