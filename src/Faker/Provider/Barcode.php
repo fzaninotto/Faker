@@ -11,7 +11,7 @@ class Barcode extends \Faker\Provider\Base
     private function ean($length = 13)
     {
         $code = '';
-        for ( $i=0; $i<$length-1; $i++ ) {
+        for ($i=0; $i<$length-1; $i++) {
             $code .= mt_rand(0, 9);
         }
         
