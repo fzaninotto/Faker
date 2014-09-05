@@ -11,8 +11,8 @@ class Barcode extends \Faker\Provider\Base
     private function ean($length = 13)
     {
         $code = '';
-        for( $i=0; $i<$length-1; $i++ ){
-            $code .= mt_rand(0,9);
+        for ( $i=0; $i<$length-1; $i++ ) {
+            $code .= mt_rand(0, 9);
         }
         
         return $code . static::eanChecksum($code);
@@ -33,7 +33,7 @@ class Barcode extends \Faker\Provider\Base
 
     private function code39generate($length)
     {
-        $code39chars = str_split('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$/+%*',1); // allowed code39 characters
+        $code39chars = str_split('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$/+%*', 1); // allowed code39 characters
 
         $barcode = '';
         for ($i = 0; $i < $length; $i++) {
@@ -75,5 +75,4 @@ class Barcode extends \Faker\Provider\Base
         }
         return $this->code39generate($length);
     }
-
 }
