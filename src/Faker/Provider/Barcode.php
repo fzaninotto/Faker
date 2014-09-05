@@ -34,7 +34,7 @@ class Barcode extends \Faker\Provider\Base
         $barcode = '';
 
         for ($i=0; $i<$length; $i++){
-            $barcode .= $code39chars[rand(0,strlen($code39chars)-1)];
+            $barcode .= $code39chars[ rand(0, strlen($code39chars) - 1) ];
         }
         return $barcode;
     }
@@ -64,7 +64,7 @@ class Barcode extends \Faker\Provider\Base
      * @return string
      * @example '4C567DKLH3'
      */
-    public function code39($length=10)
+    public function code39($length = 10)
     {
         if(!is_numeric($length)){
             $length = 10;
