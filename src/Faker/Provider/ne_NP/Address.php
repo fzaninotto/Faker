@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\en_US;
+namespace Faker\Provider\ne_NP;
 
 class Address extends \Faker\Provider\Address
 {
