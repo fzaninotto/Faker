@@ -114,7 +114,7 @@ class Address extends \Faker\Provider\Address
     }
 
     /**
-     * @example 'California'
+     * @example 'Bara'
      */
     public static function district()
     {
