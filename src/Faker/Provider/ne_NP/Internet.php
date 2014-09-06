@@ -29,5 +29,4 @@ class Internet extends \Faker\Provider\Internet
         'http://www.{{domainName}}/',
         'http://{{domainName}}/',
     );
-
 }
