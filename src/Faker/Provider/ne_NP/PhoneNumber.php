@@ -9,6 +9,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '01-5######',
         '01-6######',
         '9841######',
+        '9849######',
         '98510#####',
         '9803######',
         '9808######',
