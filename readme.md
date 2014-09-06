@@ -878,7 +878,7 @@ echo $faker->personalIdentityNumber('female') // '950910-0781'
 
 ```
 
-### `Faker\Provider\ne_NP\Addres`
+### `Faker\Provider\ne_NP\Address`
 ```php
 <?php
 
