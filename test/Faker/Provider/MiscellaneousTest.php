@@ -37,6 +37,11 @@ class MiscellaneousTest extends \PHPUnit_Framework_TestCase
         $this->assertRegExp('/^[A-Z]{2}$/', Miscellaneous::countryCode());
     }
 
+    public function testCountryISOAlpha3()
+    {
+        $this->assertRegExp('/^[A-Z]{3}$/', Miscellaneous::countryISOAlpha3());
+    }
+
     public function testLanguage()
     {
         $this->assertRegExp('/^[a-z]{2}$/', Miscellaneous::languageCode());

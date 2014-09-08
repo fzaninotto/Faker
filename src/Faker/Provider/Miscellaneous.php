@@ -8,6 +8,8 @@ class Miscellaneous extends \Faker\Provider\Base
 
     protected static $countryCode = array('CA', 'CN', 'DE', 'ES', 'FR', 'IE', 'IN', 'IT', 'MX', 'PT', 'RU', 'GB', 'US');
 
+    protected static $countryISOAlpha3 = array('CAN', 'CHN', 'DEU', 'ESP', 'FRA', 'IRL', 'IND', 'ITA', 'MEX', 'PRT', 'RUS', 'GBR', 'USA');
+
     protected static $localeData = array(
         'aa_DJ',  'aa_ER',  'aa_ET',
         'af_NA',  'af_ZA',  'ak_GH',
@@ -140,6 +142,14 @@ class Miscellaneous extends \Faker\Provider\Base
     public static function countryCode()
     {
         return static::randomElement(static::$countryCode);
+    }
+
+    /**
+     * @example 'FRA'
+     */
+    public static function countryISOAlpha3()
+    {
+        return static::randomElement(static::$countryISOAlpha3);
     }
 
     /**
