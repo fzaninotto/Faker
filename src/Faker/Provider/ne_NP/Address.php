@@ -12,7 +12,7 @@ class Address extends \Faker\Provider\Address
     protected static $postcode = array('#####');
 
     /**
-     * {@link} http://en.wikipedia.org/wiki/List_of_districts_of_Nepal
+     * @link http://en.wikipedia.org/wiki/List_of_districts_of_Nepal
      */
     protected static $district = array(
         'Achham', 'Arghakhanchi',
