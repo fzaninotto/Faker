@@ -878,6 +878,17 @@ echo $faker->personalIdentityNumber('female') // '950910-0781'
 
 ```
 
+### `Faker\Provider\ne_NP\Address`
+```php
+<?php
+
+//Generates a Nepali district name
+echo $faker->district;
+
+//Generates a Nepali city name
+echo $faker->cityName;
+```
+
 ## Third-Party Libraries Extending/Based On Faker
 
 * [BazingaFakerBundle](https://github.com/willdurand/BazingaFakerBundle): Put the awesome Faker library into the Symfony2 DIC and populate your database with fake data.
