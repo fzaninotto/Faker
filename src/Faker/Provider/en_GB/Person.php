@@ -12,6 +12,9 @@ class Person extends \Faker\Provider\Person
         '{{firstNameFemale}} {{lastName}}',
     );
 
+    /**
+     * @link http://www.ons.gov.uk/ons/rel/vsob1/baby-names--england-and-wales/2013/index.html
+     */
     protected static $firstNameMale = array(
         'Aaron', 'Adam', 'Adrian', 'Aiden', 'Alan', 'Alex', 'Alexander', 'Alfie', 'Andrew', 'Andy', 'Anthony', 'Archie', 'Arthur',
         'Barry', 'Ben', 'Benjamin', 'Bradley', 'Brandon', 'Bruce',
@@ -63,16 +66,28 @@ class Person extends \Faker\Provider\Person
         'Zoe',
     );
 
+    /**
+     * @link http://surname.sofeminine.co.uk/w/surnames/most-common-surnames-in-great-britain.html
+     */
     protected static $lastName = array(
-        'Smith', 'Jones', 'Taylor', 'Williams', 'Brown', 'Davies', 'Evans', 'Wilson', 'Thomas', 'Roberts',
-        'Johnson', 'Lewis', 'Walker', 'Robinson', 'Wood', 'Thompson', 'White', 'Watson', 'Jackson', 'Wright',
-        'Green', 'Harris', 'Cooper', 'King', 'Lee', 'Martin', 'Clarke', 'James', 'Morgan', 'Hughes',
-        'Edwards', 'Hill', 'Moore', 'Clark', 'Harrison', 'Scott', 'Young', 'Morris', 'Hall', 'Ward',
-        'Turner', 'Carter', 'Phillips', 'Mitchell', 'Patel', 'Adams', 'Campbell', 'Anderson', 'Allen', 'Cook',
-        'Bailey', 'Parker', 'Miller', 'Davis', 'Murphy', 'Price', 'Bell', 'Baker', 'Griffiths', 'Kelly',
-        'Simpson', 'Marshall', 'Collins', 'Bennett', 'Cox', 'Richardson', 'Fox', 'Gray', 'Rose', 'Chapman',
-        'Hunt', 'Robertson', 'Shaw', 'Reynolds', 'Lloyd', 'Ellis', 'Richards', 'Russell', 'Wilkinson', 'Khan',
-        'Graham', 'Stewart', 'Reid', 'Murray', 'Powell', 'Palmer', 'Holmes', 'Rogers', 'Stevens', 'Walsh',
-        'Hunter', 'Thompson', 'Matthews', 'Ross', 'Owen', 'Mason', 'Knight', 'Kennedy', 'Butler', 'Saunders'
+        'Adams', 'Allen', 'Anderson',
+        'Bailey', 'Baker', 'Bell', 'Bennett', 'Brown', 'Butler',
+        'Campbell', 'Carter', 'Chapman', 'Clark', 'Clarke', 'Collins', 'Cook', 'Cooper', 'Cox',
+        'Davies', 'Davis',
+        'Edwards', 'Ellis', 'Evans', 
+        'Fox', 
+        'Graham', 'Gray', 'Green', 'Griffiths', 
+        'Hall', 'Harris', 'Harrison', 'Hill', 'Holmes', 'Hughes', 'Hunt', 'Hunter', 
+        'Jackson', 'James', 'Johnson', 'Jones', 
+        'Kelly', 'Kennedy', 'Khan', 'King', 'Knight', 
+        'Lee', 'Lewis', 'Lloyd', 
+        'Marshall', 'Martin', 'Mason', 'Matthews', 'Miller', 'Mitchell', 'Moore', 'Morgan', 'Morris', 'Murphy', 'Murray', 
+        'Owen', 
+        'Palmer', 'Parker', 'Patel', 'Phillips', 'Powell', 'Price', 
+        'Reid', 'Reynolds', 'Richards', 'Richardson', 'Roberts', 'Robertson', 'Robinson', 'Rogers', 'Rose', 'Ross', 'Russell', 
+        'Saunders' 'Scott', 'Shaw', 'Simpson', 'Smith', 'Stevens', 'Stewart', 
+        'Taylor', 'Thomas', 'Thompson', 'Turner', 
+        'Walker', 'Walsh', 'Ward', 'Watson', 'White', 'Wilkinson', 'Williams', 'Wilson', 'Wood', 'Wright', 
+        'Young',
     );
 }
