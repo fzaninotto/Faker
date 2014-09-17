@@ -16,5 +16,4 @@ class Internet extends \Faker\Provider\Internet
     protected static $emailFormats = array(
         '{{userName}}@{{freeEmailDomain}}',
     );
-    
 }
