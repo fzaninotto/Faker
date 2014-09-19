@@ -25,4 +25,16 @@ class AddressTest extends \PHPUnit_Framework_TestCase
         $postcode = $this->faker->postcode;
         $this->assertRegExp("/^\d{4}$/", $postcode);
     }
+
+    public function testLatitude()
+    {
+        $latitude = $this->faker->latitude();
+        $this->assertTrue(($latitude > 46 && $latitude < 49));
+    }
+
+    public function testLongitude()
+    {
+        $longitude = $this->faker->longitude();
+        $this->assertTrue(($longitude > 9 && $longitude < 18));
+    }
 }

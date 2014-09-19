@@ -96,4 +96,14 @@ class Address extends \Faker\Provider\Address
     {
         return static::randomElement(static::$streetSuffixLong);
     }
+
+    public static function latitude()
+    {
+        return static::randomFloat(6, 47, 48);
+    }
+
+    public static function longitude()
+    {
+        return static::randomFloat(6, 10, 17);
+    }
 }
