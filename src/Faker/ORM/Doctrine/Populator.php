@@ -51,7 +51,7 @@ class Populator
     /**
      * Populate the database using all the Entity classes previously added.
      *
-     * @param EntityManager $entityManager A Propel connection object
+     * @param EntityManager $entityManager A Doctrine connection object
      *
      * @return array A list of the inserted PKs
      */
