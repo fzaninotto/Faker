@@ -350,7 +350,7 @@ class Address extends \Faker\Provider\Address
     public static function randomChineseNumber()
     {
         $digits = array(
-            '一', '二', '三', '四', '五', '六', '七', '八', '九',
+            '', '一', '二', '三', '四', '五', '六', '七', '八', '九',
         );
         return $digits[static::randomDigitNotNull()];
     }
