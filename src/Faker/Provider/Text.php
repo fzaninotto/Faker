@@ -133,5 +133,4 @@ abstract class Text extends \Faker\Provider\Base
     {
         return $text.'.';
     }
-
 }
