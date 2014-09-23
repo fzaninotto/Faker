@@ -39,7 +39,6 @@ abstract class Text extends \Faker\Provider\Base
             throw new \InvalidArgumentException('indexSize must be at most 5');
         }
 
-
         $words = $this->getConsecutiveWords($indexSize);
         $result = array();
         $resultLength = 0;
