@@ -236,9 +236,9 @@ class Company extends \Faker\Provider\Company
     public function bs()
     {
         $result = '';
-        foreach (static::$bsWords as &$word)
+        foreach (static::$bsWords as &$word) {
             $result .= static::randomElement($word);
+        }
         return $result;
     }
-
 }

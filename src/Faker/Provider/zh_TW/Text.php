@@ -79,12 +79,15 @@ EOT;
 
     public function realText($maxNbChars = 200, $indexSize = 2)
     {
-        if ($maxNbChars < 10)
+        if ($maxNbChars < 10) {
             throw new \InvalidArgumentException('maxNbChars must be at least 10');
-        if ($indexSize < 1)
+        }
+        if ($indexSize < 1) {
             throw new \InvalidArgumentException('indexSize must be at least 1');
-        if ($indexSize > 5)
+        }
+        if ($indexSize > 5) {
             throw new \InvalidArgumentException('indexSize must be at most 5');
+        }
 
         $words = $this->getConsecutiveWords($indexSize);
         $result = array();
@@ -103,8 +106,9 @@ EOT;
             $next = implode('', $currentWords);
 
             // ensure the first word is not punctuation
-            if ($resultLength === 0 and in_array($word, $punct))
+            if ($resultLength === 0 and in_array($word, $punct)) {
                 continue;
+            }
 
             // append the element
             $result[] = $word;
@@ -149,8 +153,9 @@ EOT;
 
     protected function getExplodedText()
     {
-        if ($this->explodedText === null)
+        if ($this->explodedText === null) {
             $this->explodedText = static::split(static::$baseText);
+        }
         return $this->explodedText;
     }
 
@@ -161,8 +166,9 @@ EOT;
 
     public static function strlen($text)
     {
-        if (function_exists('mb_get_info'))
+        if (function_exists('mb_get_info')) {
             return mb_strlen($text);
+        }
         return count(static::split($text));
     }
 }
