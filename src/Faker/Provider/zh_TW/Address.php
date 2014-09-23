@@ -352,7 +352,7 @@ class Address extends \Faker\Provider\Address
         $digits = array(
             '一', '二', '三', '四', '五', '六', '七', '八', '九',
         );
-        return $digits[mt_rand(0, count($digits)-1)];
+        return $digits[static::randomDigitNotNull()];
     }
 
     public static function randomNumber2()
@@ -365,12 +365,12 @@ class Address extends \Faker\Provider\Address
         return static::randomNumber(3) + 1;
     }
 
-    public static function latitude()
+    public static function localLatitude()
     {
         return number_format(mt_rand(22000000, 25000000)/1000000, 6);
     }
 
-    public static function longitude()
+    public static function localLongitude()
     {
         return number_format(mt_rand(120000000, 122000000)/1000000, 6);
     }
