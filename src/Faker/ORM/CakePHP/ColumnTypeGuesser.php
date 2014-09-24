@@ -22,21 +22,21 @@ class ColumnTypeGuesser
                     return $generator->boolean;
                 };
             case 'integer':
-                return function() {
-                    return mt_rand(0, intval('2147483647'));
+                return function() use ($generator) {
+                    return $generator->randomNumber(10);
                 };
             case 'biginteger':
-                return function() {
-                    return mt_rand(0, intval('18446744073709551615'));
+                return function() use ($generator) {
+                    return $generator->randomNumber(20);
                 };
             case 'decimal':
             case 'float':
-                return function() {
-                    return mt_rand(0, intval('4294967295')) / mt_rand(1, intval('4294967295'));
+                return function() use ($generator) {
+                    return $generator->randomFloat();
                 };
             case 'uuid':
-                return function() {
-                    return \Cake\Utility\String::uuid();
+                return function() use ($generator) {
+                    return $generator->uuid();
                 };
             case 'string':
                 $columnData = $schema->column($column);
