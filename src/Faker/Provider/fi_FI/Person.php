@@ -89,20 +89,30 @@ class Person extends \Faker\Provider\Person
     /**
      * National Personal Identity number (henkilötunnus)
      * @link http://fi.wikipedia.org/wiki/Henkil%C3%B6tunnus
-     * @param \DateTime $birthdate
+     *
+     * @param \DateTime $birthDate
      * @param string $gender Person::GENDER_MALE || Person::GENDER_FEMALE
+     * @param int $minAge Minimum age of the person
+     * @param int $maxAge Maximum age of the person (default 0 = limited to this century)
      * @param bool $safe valid, but not in use (XXX between 900-999)
+     *
      * @return string on format DDMMYY-XXXZ or DDMMYYAXXXZ
      */
-    public function personalIdentityNumber(\DateTime $birthdate = null, $gender = null, $safe = false)
+    public function personalIdentityNumber(\DateTime $birthDate = null, $gender = null, $minAge = 0, $maxAge = 0, $safe = false)
     {
-        if (!$birthdate) {
-            $birthdate = \Faker\Provider\DateTime::dateTimeThisCentury();
+        if ( ! $birthDate) {
+	        if (!$maxAge) {
+		        $maxAge = 110;
+	        }
+	        $age = rand($minAge, $maxAge);
+	        $birthDate = new \DateTime();
+	        $birthDate->sub(new \DateInterval('P' . $age . 'Y' . rand(0,364) . 'DT' . rand(0,23) . 'H' . rand(0,59) . 'M'));
         }
+
         $delimiter = '-';
-        $datePart = $birthdate->format('dmy');
-        if ($birthdate->format('Y') >= 2000) $delimiter = 'A';
-        $firstNum = $safe ? '9' : '#';
+        $datePart = $birthDate->format('dmy');
+        if ( $birthDate->format('Y') >= 2000) $delimiter = 'A';
+        $firstNum = $safe ? '9' : rand(0,8);
         if ($gender && $gender == static::GENDER_MALE) {
             $randomDigits = (string)static::numerify($firstNum . '#') . static::randomElement(array(1,3,5,7,9));
         } elseif ($gender && $gender == static::GENDER_FEMALE) {

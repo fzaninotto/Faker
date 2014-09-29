@@ -14,10 +14,8 @@ class Internet extends \Faker\Provider\Internet
 	 */
 	private function toAscii($string)
 	{
-		$from = array('ü', 'Ü', 'ä', 'Ä', 'ö', 'Ö', 'å', 'Å', 'à', 'À', 'ç', 'Ç', 'é', 'É', 'è', 'È', 'ë', 'Ë', 'ï', 'Ï', 'î', 'Î', 'ô', 'Ô', 'ù', 'Ù', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', 'Ý', 'ý', 'Á', 'á', 'Í', 'í', 'É', 'é', 'Ó', 'ó', 'Ú', 'ú', '?', '?', '?', '?', '?', '?', '?', '?', 'ß');
-		$to =   array('u', 'U', 'a', 'A', 'o', 'O', 'a', 'A', 'a', 'A', 'c', 'c', 'e', 'E', 'e', 'E', 'e', 'E', 'i', 'I', 'i', 'I', 'o', 'O', 'u', 'U', 'E', 'e', 'S', 's', 'C', 'c', 'R', 'r', 'Z', 'z', 'Y', 'y', 'A', 'a', 'I', 'i', 'E', 'e', 'O', 'o', 'U', 'u', 'U', 'u', 'D', 'd', 'T', 't', 'N', 'n', 'ss');
-
-		return str_replace($from, $to, $string);
+		return preg_replace('/[^a-zA-Z0-9@_\-.]/', '', str_replace(array('Ã¤','Ã¶','Ã¥','Ã„','Ã–','Ã…'), array('a','o','a','A','O','A'), $string));
+		//return str_replace($from, $to, $string);
 	}
 
 	public function email()
