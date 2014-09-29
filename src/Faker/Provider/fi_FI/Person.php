@@ -133,9 +133,9 @@ class Person extends \Faker\Provider\Person
         return $datePart . $delimiter . $randomDigits . $checksum;
     }
 
-    public function safePersonalIdentityNumber(\DateTime $birthdate = null, $gender = null)
+    public function safePersonalIdentityNumber(\DateTime $birthdate = null, $gender = null, $minAge = 0, $maxAge = 0)
     {
-        return $this->personalIdentityNumber($birthdate, $gender, true);
+        return $this->personalIdentityNumber($birthdate, $gender, $minAge, $maxAge, true);
     }
 
     /**
