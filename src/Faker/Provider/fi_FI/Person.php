@@ -107,7 +107,7 @@ class Person extends \Faker\Provider\Person
     ) {
         if (! $birthDate) {
             if (! $maxAge) {
-                $maxAge = 110;
+                $maxAge = 99;
             }
             $age = rand($minAge, $maxAge);
             $birthDate = new \DateTime();
