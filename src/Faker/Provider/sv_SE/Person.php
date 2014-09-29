@@ -2,6 +2,8 @@
 
 namespace Faker\Provider\sv_SE;
 
+use Faker\Calculator\Luhn;
+
 class Person extends \Faker\Provider\Person
 {
     protected static $formats = array(
@@ -134,41 +136,8 @@ class Person extends \Faker\Provider\Person
         }
 
 
-        $checksum = $this->calculateChecksum($datePart . $randomDigits);
+        $checksum = Luhn::computeCheckDigit($datePart . $randomDigits);
 
         return $datePart . '-' . $randomDigits . $checksum;
-    }
-
-    /**
-     * Luhn algorithm
-     *
-     * This is a naive implementation that only works
-     * specifically for numbered strings of size 9
-     *
-     * @link http://en.wikipedia.org/wiki/Luhn_algorithm
-     * @param string $input
-     * @return int checksum
-     */
-    protected function calculateChecksum($input)
-    {
-        $multiplied = implode(
-            array_map(
-                function ($first, $second) {
-                    return $first * $second;
-                },
-                str_split($input),
-                array(2, 1, 2, 1, 2, 1, 2, 1, 2)
-            )
-        );
-
-        $summed = (int)array_reduce(
-            str_split($multiplied),
-            function ($carry, $item) {
-                return (int)($carry + $item);
-            }
-        );
-
-        $checksum = 10 - ($summed%10);
-        return $checksum == 10 ? 0 : $checksum;
     }
 }

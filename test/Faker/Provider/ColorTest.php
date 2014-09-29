@@ -12,6 +12,11 @@ class ColorTest extends \PHPUnit_Framework_TestCase
         $this->assertRegExp('/^#[a-f0-9]{6}$/i', Color::hexColor());
     }
 
+    public function testSafeHexColor()
+    {
+        $this->assertRegExp('/^#[a-f0-9]{6}$/i', Color::safeHexColor());
+    }
+
     public function testRgbColorAsArray()
     {
         $this->assertEquals(3, count(Color::rgbColorAsArray()));
@@ -29,4 +34,13 @@ class ColorTest extends \PHPUnit_Framework_TestCase
         $this->assertRegExp('/^rgb\(' . $regexp . ',' . $regexp . ',' . $regexp . '\)$/i', Color::rgbCssColor());
     }
 
+    public function testSafeColorName()
+    {
+        $this->assertRegExp('/^[\w]+$/', Color::safeColorName());
+    }
+
+    public function testColorName()
+    {
+        $this->assertRegExp('/^[\w]+$/', Color::colorName());
+    }
 }

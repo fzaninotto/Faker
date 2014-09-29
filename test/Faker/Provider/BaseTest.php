@@ -102,6 +102,22 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(strpos($lowercaseLetters, BaseProvider::randomLetter()) !== false);
     }
 
+    public function testRandomAsciiReturnsString()
+    {
+        $this->assertTrue(is_string(BaseProvider::randomAscii()));
+    }
+
+    public function testRandomAsciiReturnsSingleCharacter()
+    {
+        $this->assertEquals(1, strlen(BaseProvider::randomAscii()));
+    }
+
+    public function testRandomAsciiReturnsAsciiCharacter()
+    {
+        $lowercaseLetters = '!"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
+        $this->assertTrue(strpos($lowercaseLetters, BaseProvider::randomAscii()) !== false);
+    }
+
     public function testRandomElementReturnsNullWhenArrayEmpty()
     {
         $this->assertNull(BaseProvider::randomElement(array()));
@@ -158,6 +174,16 @@ class BaseTest extends \PHPUnit_Framework_TestCase
     public function testBothifyCombinesNumerifyAndLexify()
     {
         $this->assertRegExp('/foo[a-z]Ba\dr/', BaseProvider::bothify('foo?Ba#r'));
+    }
+
+    public function testAsciifyReturnsSameStringWhenItContainsNoStarSign()
+    {
+        $this->assertEquals('fooBar?', BaseProvider::asciify('fooBar?'));
+    }
+
+    public function testNumerifyReturnsStringWithStarSignsReplacedByAsciiChars()
+    {
+        $this->assertRegExp('/foo.Ba.r/', BaseProvider::numerify('foo*Ba*r'));
     }
 
     public function testOptionalReturnsProviderValueWhenCalledWithWeight1()

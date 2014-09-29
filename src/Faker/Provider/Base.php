@@ -47,7 +47,7 @@ class Base
     }
 
     /**
-     * Returns a random number with 0 to $nbDigits digits.
+     * Returns a random integer with 0 to $nbDigits digits.
      *
      * The maximum value returned is mt_getrandmax()
      *
@@ -127,6 +127,14 @@ class Base
     public static function randomLetter()
     {
         return chr(mt_rand(97, 122));
+    }
+
+    /**
+     * Returns a random ASCII character (excluding accents and special chars)
+     */
+    public static function randomAscii()
+    {
+        return chr(mt_rand(33, 126));
     }
 
     /**
@@ -256,6 +264,19 @@ class Base
     }
 
     /**
+     * Replaces * signs with random numbers and letters and special characters
+     *
+     * @example $faker->asciify(''********'); // "s5'G!uC3"
+     *
+     * @param  string $string String that needs to bet parsed
+     * @return string
+     */
+    public static function asciify($string = '****')
+    {
+        return preg_replace_callback('/\*/u', 'static::randomAscii', $string);
+    }
+
+    /**
      * Converts string to lowercase.
      * Uses mb_string extension if available.
      *
@@ -305,7 +326,7 @@ class Base
      *
      * @param boolean $reset      If set to true, resets the list of existing values
      * @param integer $maxRetries Maximum number of retries to find a unique value,
-     *                                       After which an OverflowExcption is thrown.
+     *                                       After which an OverflowException is thrown.
      * @throws OverflowException When no unique value can be found by iterating $maxRetries times
      *
      * @return UniqueGenerator A proxy class returning only non-existing values

@@ -96,6 +96,16 @@ class Internet extends \Faker\Provider\Base
     }
 
     /**
+     * @example 'fY4èHdZv68'
+     */
+    public function password($minLength = 6, $maxLength = 20)
+    {
+        $pattern = str_repeat('*', $this->numberBetween($minLength, $maxLength));
+
+        return $this->asciify($pattern);
+    }
+
+    /**
      * @example 'tiramisu.com'
      */
     public function domainName()

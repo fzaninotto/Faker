@@ -2,6 +2,7 @@
 
 namespace Faker\Test\Provider\sv_SE;
 
+use Faker\Calculator\Luhn;
 use Faker\Generator;
 use Faker\Provider\sv_SE\Person;
 
@@ -31,37 +32,29 @@ class PersonTest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider provideSeedAndExpectedReturn
      */
-    public function testPersonalIdentityNumber($seed, $birthdate, $expected)
+    public function testPersonalIdentityNumberUsesBirthDateIfProvided($seed, $birthdate, $expected)
     {
         $faker = $this->faker;
         $faker->seed($seed);
-
-        $this->assertEquals(
-            $expected,
-            $faker->personalIdentityNumber(\DateTime::createFromFormat('ymd', $birthdate))
-        );
+        $pin = $faker->personalIdentityNumber(\DateTime::createFromFormat('ymd', $birthdate));
+        $this->assertEquals($expected, $pin);
     }
 
-    public function testUsesOddValuesForMales()
+    public function testPersonalIdentityNumberGeneratesLuhnCompliantNumbers()
     {
-        $faker = $this->faker;
-        $faker->seed(1);
-
-        $this->assertEquals(
-            '720727-5715',
-            $faker->personalIdentityNumber(\DateTime::createFromFormat('ymd', '720727'), 'male')
-        );
+        $pin = str_replace('-', '', $this->faker->personalIdentityNumber());
+        $this->assertTrue(Luhn::isValid($pin));
     }
 
-    public function testUsesEvenValuesForFemales()
+    public function testPersonalIdentityNumberGeneratesOddValuesForMales()
     {
-        $faker = $this->faker;
-        $faker->seed(1);
+        $pin = $this->faker->personalIdentityNumber(null, 'male');
+        $this->assertEquals(1, $pin{9} % 2);
+    }
 
-        $this->assertEquals(
-            '720727-5707',
-            $faker->personalIdentityNumber(\DateTime::createFromFormat('ymd', '720727'), 'female')
-        );
-
+    public function testPersonalIdentityNumberGeneratesEvenValuesForFemales()
+    {
+        $pin = $this->faker->personalIdentityNumber(null, 'female');
+        $this->assertEquals(0, $pin{9} % 2);
     }
 }

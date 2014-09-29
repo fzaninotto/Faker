@@ -17,7 +17,7 @@ class Address extends \Faker\Provider\en_US\Address
     );
 
     protected static $provinceAbbr = array(
-        'AB', 'BC', 'MB', 'NB', 'NL', 'NT', 'NS', 'NV', 'ON', 'PE', 'QC', 'SK', 'YT'
+        'AB', 'BC', 'MB', 'NB', 'NL', 'NT', 'NS', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT'
     );
 
     protected static $addressFormats = array(
@@ -41,7 +41,7 @@ class Address extends \Faker\Provider\en_US\Address
     }
 
     /**
-     * Returns a postalcodde-safe letter
+     * Returns a postalcode-safe letter
      * @example A1B 2C3
      */
     public static function randomPostcodeLetter()

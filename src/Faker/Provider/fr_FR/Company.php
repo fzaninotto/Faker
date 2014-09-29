@@ -2,6 +2,8 @@
 
 namespace Faker\Provider\fr_FR;
 
+use Faker\Calculator\Luhn;
+
 class Company extends \Faker\Provider\Company
 {
     /**
@@ -50,6 +52,8 @@ class Company extends \Faker\Provider\Company
      * @var array Company suffixes.
      */
     protected static $companySuffix = array('SA', 'S.A.', 'SARL', 'S.A.R.L.', 'S.A.S.', 'et Fils');
+
+    protected static $siretNicFormats = array('####', '0###', '00#%');
 
     /**
      * Returns a random catch phrase noun.
@@ -102,100 +106,38 @@ class Company extends \Faker\Provider\Company
 
     /**
      * Generates a siret number (14 digits) that passes the Luhn check.
-     * Use $maxSequentialDigits to make sure the digits at position 2 to 5 are not zeros.
-     * @see http://en.wikipedia.org/wiki/Luhn_algorithm
-     * @param  int    $maxSequentialDigits The maximum number of digits for the sequential number (> 0 && <= 4).
+     *
+     * @see http://fr.wikipedia.org/wiki/Syst%C3%A8me_d'identification_du_r%C3%A9pertoire_des_%C3%A9tablissements
      * @return string
      */
-    public static function siret($maxSequentialDigits = 2)
+    public function siret($formatted = true)
     {
-
-        if ($maxSequentialDigits > 4 || $maxSequentialDigits <= 0) {
-            $maxSequentialDigits = 2;
+        $siret = $this->siren(false);
+        $nicFormat = static::randomElement(static::$siretNicFormats);
+        $siret .= $this->numerify($nicFormat);
+        $siret .= Luhn::computeCheckDigit($siret);
+        if ($formatted) {
+            $siret = substr($siret, 0, 3) . ' ' . substr($siret, 3, 3) . ' ' . substr($siret, 6, 3) . ' ' . substr($siret, 9, 5);
         }
 
-        $controlDigit = mt_rand(0, 9);
-        $siret = $sum = $controlDigit;
-
-        $position = 2;
-        for ($i = 0; $i < $maxSequentialDigits; $i++) {
-
-            $sequentialDigit = mt_rand(0, 9);
-            $isEven = $position++ % 2 === 0;
-
-            $tmp = $isEven ? $sequentialDigit * 2 : $sequentialDigit;
-            if ($tmp >= 10) {
-                $tmp -= 9;
-            }
-            $sum += $tmp;
-
-            $siret = $sequentialDigit . $siret;
-
-        }
-
-        $siret = str_pad($siret, 5, '0', STR_PAD_LEFT);
-
-        $position = 6;
-        for ($i = 0; $i < 7; $i++) {
-
-            $digit = mt_rand(0, 9);
-            $isEven = $position++ % 2 === 0;
-
-            $tmp = $isEven ? $digit * 2 : $digit;
-            if ($tmp >= 10) {
-                $tmp -= 9;
-            }
-            $sum += $tmp;
-
-            $siret = $digit . $siret;
-
-        }
-
-        $mod = $sum % 10;
-        if ($mod === 0) {
-            $siret = '00' . $siret;
-        } else {
-            // Use the odd position to avoid multiplying by two
-            $siret = '0' . (10 - $mod) . $siret;
-        }
-
-        return preg_replace("/([0-9]{3})([0-9]{3})([0-9]{3})([0-9]{5})/", "$1 $2 $3 $4", $siret);
-
+        return $siret;
     }
 
     /**
      * Generates a siren number (9 digits) that passes the Luhn check.
-     * @see http://en.wikipedia.org/wiki/Luhn_algorithm
+     *
+     * @see http://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27identification_du_r%C3%A9pertoire_des_entreprises
      * @return string
      */
-    public static function siren()
+    public function siren($formatted = true)
     {
-        $siren = '';
-        $sum = 0;
-        for ($i = 9; $i > 1; $i--) {
-
-            $digit = mt_rand(0, 9);
-            $isEven = $i % 2 === 0;
-
-            $tmp = $isEven ? $digit * 2 : $digit;
-            if ($tmp >= 10) {
-                $tmp -= 9;
-            }
-            $sum += $tmp;
-
-            $siren = $digit . $siren;
-
+        $siren = $this->numerify('%#######');
+        $siren .= Luhn::computeCheckDigit($siren);
+        if ($formatted) {
+            $siren = substr($siren, 0, 3) . ' ' . substr($siren, 3, 3) . ' ' . substr($siren, 6, 3);
         }
 
-        $mod = $sum % 10;
-        if ($mod === 0) {
-            $siren = '0' . $siren;
-        } else {
-            $siren = (10 - $mod) . $siren;
-        }
-
-        return preg_replace("/([0-9]{3})([0-9]{3})([0-9]{3})/", "$1 $2 $3", $siren);
-
+        return $siren;
     }
 
     /**
