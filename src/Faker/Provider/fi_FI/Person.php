@@ -111,7 +111,7 @@ class Person extends \Faker\Provider\Person
             }
             $age = rand($minAge, $maxAge);
             $birthDate = new \DateTime();
-            $birthDate->sub(new \DateInterval('P' . $age . 'Y' . rand(0, 364) . 'DT' . rand(0, 23) . 'H' . rand(0, 59) . 'M' ));
+            $birthDate->sub(new \DateInterval('P' . $age . 'Y' . rand(0, 364) . 'DT' . rand(0, 23) . 'H' . rand(0, 59) . 'M'));
         }
 
         $delimiter = '-';

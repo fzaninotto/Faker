@@ -16,9 +16,7 @@ class Internet extends \Faker\Provider\Internet
      */
     private function toAscii($string)
     {
-        return preg_replace('/[^a-zA-Z0-9@_\-.]/', '',
-                            str_replace(array('ä', 'ö', 'å', 'Ä', 'Ö', 'Å'), array('a', 'o', 'a', 'A', 'O', 'A'), $string));
-        //return str_replace($from, $to, $string);
+        return preg_replace('/[^a-zA-Z0-9@_\-.]/', '', str_replace(array('ä', 'ö', 'å', 'Ä', 'Ö', 'Å'), array('a', 'o', 'a', 'A', 'O', 'A'), $string));
     }
 
     public function email()
