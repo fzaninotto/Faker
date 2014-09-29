@@ -105,37 +105,37 @@ class Person extends \Faker\Provider\Person
         $maxAge = 0,
         $safe = false
     ) {
-        if ( ! $birthDate) {
-            if ( ! $maxAge) {
+        if (! $birthDate) {
+            if (! $maxAge) {
                 $maxAge = 110;
             }
-            $age = rand( $minAge, $maxAge );
+            $age = rand($minAge, $maxAge);
             $birthDate = new \DateTime();
-            $birthDate->sub( new \DateInterval( 'P' . $age . 'Y' . rand( 0, 364 ) . 'DT' . rand( 0, 23 ) . 'H' . rand( 0, 59 ) . 'M' ) );
+            $birthDate->sub(new \DateInterval('P' . $age . 'Y' . rand(0, 364) . 'DT' . rand(0, 23) . 'H' . rand(0, 59) . 'M' ));
         }
 
         $delimiter = '-';
-        $datePart  = $birthDate->format( 'dmy' );
-        if ($birthDate->format( 'Y' ) >= 2000) {
+        $datePart  = $birthDate->format('dmy');
+        if ($birthDate->format('Y') >= 2000) {
             $delimiter = 'A';
         }
-        $firstNum = $safe ? '9' : rand( 0, 8 );
+        $firstNum = $safe ? '9' : rand(0, 8);
         if ($gender && $gender == static::GENDER_MALE) {
-            $randomDigits = (string) static::numerify( $firstNum . '#' ) . static::randomElement( array( 1, 3, 5, 7, 9 ) );
+            $randomDigits = (string) static::numerify($firstNum . '#') . static::randomElement(array(1, 3, 5, 7, 9));
         } elseif ($gender && $gender == static::GENDER_FEMALE) {
-            $randomDigits = (string) static::numerify( $firstNum . '#' ) . static::randomElement( array( 0, 2, 4, 6, 8 ) );
+            $randomDigits = (string) static::numerify($firstNum . '#') . static::randomElement(array(0, 2, 4, 6, 8));
         } else {
-            $randomDigits = (string) static::numerify( $firstNum . '##' );
+            $randomDigits = (string) static::numerify($firstNum . '##');
         }
 
-        $checksum = $this->calculateChecksum( $datePart . $randomDigits );
+        $checksum = $this->calculateChecksum($datePart . $randomDigits);
 
         return $datePart . $delimiter . $randomDigits . $checksum;
     }
 
-    public function safePersonalIdentityNumber( \DateTime $birthdate = null, $gender = null )
+    public function safePersonalIdentityNumber(\DateTime $birthdate = null, $gender = null)
     {
-        return $this->personalIdentityNumber( $birthdate, $gender, true );
+        return $this->personalIdentityNumber($birthdate, $gender, true);
     }
 
     /**
@@ -143,8 +143,8 @@ class Person extends \Faker\Provider\Person
      *
      * @return int checksum
      */
-    protected function calculateChecksum( $input )
+    protected function calculateChecksum($input)
     {
-        return str_split( '0123456789ABCDEFHJKLMNPRSTUVWXY' )[(int) $input % 31];
+        return str_split('0123456789ABCDEFHJKLMNPRSTUVWXY')[(int) $input % 31];
     }
 }
