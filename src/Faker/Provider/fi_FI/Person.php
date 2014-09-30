@@ -145,6 +145,7 @@ class Person extends \Faker\Provider\Person
      */
     protected function calculateChecksum($input)
     {
-        return str_split('0123456789ABCDEFHJKLMNPRSTUVWXY')[(int) $input % 31];
+        $letters = str_split('0123456789ABCDEFHJKLMNPRSTUVWXY');
+        return $letters[(int) $input % 31];
     }
 }
