@@ -20,11 +20,11 @@ class PersonTest extends \PHPUnit_Framework_TestCase
     public function provideSeedAndExpectedReturn()
     {
         return array(
-            array(1, '24021987', '240287-257U', '240287-957D'),
-            array(2, '02071935', '020735-1560', '020735-956T'),
-            array(3, '17111997', '171197-045A', '171197-945B'),
-            array(4, '12092001', '120901A4038', '120901A903C'),
-            array(5, '30041968', '300468-577R', '300468-977M')
+            array(1, '24021987', '240287-757Y', '240287-957D'),
+            array(2, '02071935', '020735-756B', '020735-956T'),
+            array(3, '17111997', '171197-745W', '171197-945B'),
+            array(4, '12092001', '120901A703X', '120901A903C'),
+            array(5, '30041968', '300468-077L', '300468-977M')
         );
     }
 
@@ -60,7 +60,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
         $faker->seed(1);
 
         $this->assertEquals(
-            '280377-851T',
+            '280377-351N',
             $faker->personalIdentityNumber(\DateTime::createFromFormat('dmY', '28031977'), Person::GENDER_MALE)
         );
     }
@@ -71,7 +71,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
         $faker->seed(2);
 
         $this->assertEquals(
-            '150200A5589',
+            '150200A658H',
             $faker->personalIdentityNumber(\DateTime::createFromFormat('dmY', '15022000'), Person::GENDER_FEMALE)
         );
     }
