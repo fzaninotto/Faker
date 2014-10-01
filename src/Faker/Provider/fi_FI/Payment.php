@@ -32,7 +32,7 @@ class Payment extends \Faker\Provider\Payment
      */
     public static function bankAccountNumber($prefix = '', $countryCode = 'FI', $length = 14)
     {
-        if (!$prefix) $prefix = static::randomElement(array_keys(self::$banks));
+        if (!$prefix && $countryCode == 'FI') $prefix = static::randomElement(array_keys(self::$banks));
         return static::iban($countryCode, $prefix, $length);
     }
 }
