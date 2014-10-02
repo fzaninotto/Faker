@@ -40,7 +40,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
     public function testMalePIN()
     {
         $pin = $this->faker->personalIdentityNumber(null, Person::GENDER_MALE);
-        $this->assertEquals(true, (int) substr($pin, 9, 1) % 2 == 0 ? true : false, "Last number of male individual number isn't odd");
+        $this->assertEquals(true, (int) substr($pin, 9, 1) % 2 == 1 ? true : false, "Last number of male individual number isn't odd");
         return $pin;
 
     }
