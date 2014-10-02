@@ -8,7 +8,7 @@ class Internet extends \Faker\Provider\Internet
     protected static $tld = array('com', 'com', 'com', 'com', 'com', 'com', 'biz', 'info', 'net', 'org', 'fi');
 
     /**
-     * Converts czech characters to their ASCII representation
+     * Converts finnish characters to their ASCII representation
      *
      * @param string $string
      *
