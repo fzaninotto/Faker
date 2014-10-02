@@ -142,6 +142,8 @@ class Person extends \Faker\Provider\Person
      * @param string $input
      *
      * @return int checksum
+     *
+     * @see http://www.vrk.fi/default.aspx?id=45 "Calculating the control character"
      */
     protected function calculateChecksum($input)
     {

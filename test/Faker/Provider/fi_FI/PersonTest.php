@@ -17,26 +17,56 @@ class PersonTest extends \PHPUnit_Framework_TestCase
         $this->faker = $faker;
     }
 
-    public function testGeneratedNumbersValidity() {
-        $someNums = array();
-        for ($i = 0; $i < 20; $i++) {
-            $faker = $this->faker;
-            $someNums[] = array('num' => $faker->safePersonalIdentityNumber(), 'type' => 'safe');
-            $someNums[] = array('num' => $faker->personalIdentityNumber(), 'type' => 'any');
-            $someNums[] = array('num' => $faker->personalIdentityNumber(null, null, rand(0,20), rand(60,80)), 'type' => 'any');
-            $someNums[] = array('num' => $faker->personalIdentityNumber(null, rand(0,1) ? 'male' : 'female', rand(0,20), rand(60,80)), 'type' => 'any');
-        }
-        foreach ($someNums as $num) {
-            $this->assertStringMatchesFormat('%d%d%d%d%d%d%c%d%d%d%c', $num['num']);
-            $this->assertEquals(1, preg_match('/^(\d{6})([A\-])(\d{3})([0123456789ABCDEFHJKLMNPRSTUVWXY])$/', $num['num'], $matches));
-            $bday = $matches[1];
-            $delimiter = $matches[2];
-            $idPart = $matches[3];
-            //$checksum = $matches[4];
-            $this->assertInstanceOf('DateTime', $dt = \DateTime::createFromFormat('dmy', $bday));
-            if ($dt->format('y') < date('y')) $this->assertEquals('A', $delimiter);
-            if ($num['type'] == 'safe') $this->assertGreaterThan(899, $idPart);
-        }
+    public function testPIN()
+    {
+        return $this->faker->personalIdentityNumber();
     }
 
+    public function testSafePIN()
+    {
+        $pin = $this->faker->safePersonalIdentityNumber();
+        $this->assertEquals('9', substr($pin, 7, 1), "First character of the individual number isn't 9");
+        return $pin;
+    }
+
+    public function testFemalePIN()
+    {
+        $pin = $this->faker->personalIdentityNumber(null, Person::GENDER_FEMALE);
+        $this->assertEquals(true, (int) substr($pin, 9, 1) % 2 == 0 ? true : false, "Last number of female individual number isn't even");
+        return $pin;
+
+    }
+
+    public function testMalePIN()
+    {
+        $pin = $this->faker->personalIdentityNumber(null, Person::GENDER_MALE);
+        $this->assertEquals(true, (int) substr($pin, 9, 1) % 2 == 0 ? true : false, "Last number of male individual number isn't odd");
+        return $pin;
+
+    }
+
+
+    public function test21stCenturyPIN()
+    {
+        $pin = $this->faker->personalIdentityNumber(new \DateTime("2000-01-01"));
+        $this->assertEquals(true, substr($pin, 6, 1) % 2 == 'A' ? true : false, "21st century number should have A as separator.");
+        return $pin;
+    }
+
+    /**
+     * @depends testPIN
+     * @depends testSafePIN
+     * @depends testFemalePIN
+     * @depends testMalePIN
+     * @depends test21stCenturyPIN
+     */
+    public function testValidity()
+    {
+        foreach (func_get_args() as $pin) {
+            $this->assertStringMatchesFormat('%d%d%d%d%d%d%c%d%d%d%c', $pin);
+            $this->assertEquals(1, preg_match('/^(\d{6})([A\-])(\d{3})([0123456789ABCDEFHJKLMNPRSTUVWXY])$/', $pin, $matches), "Personal identification number isn't well formed");
+            $bday = $matches[1];
+            $this->assertInstanceOf('DateTime', $dt = \DateTime::createFromFormat('dmy', $bday));
+        }
+    }
 }
