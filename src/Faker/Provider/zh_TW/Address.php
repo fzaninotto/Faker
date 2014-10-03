@@ -25,7 +25,9 @@ class Address extends \Faker\Provider\Address
         '路', '街',
     );
 
-    # reference: http://blog.davidou.org/archives/583
+    /**
+     * @link http://blog.davidou.org/archives/583
+     */
     protected static $street = array(
         '東英二', '大公十三', '美術南一', '漁港',
         '德美', '福林', '榮安', '忠孝南', '新立',
@@ -152,7 +154,9 @@ class Address extends \Faker\Provider\Address
         '大功', '陜西',
     );
 
-    # reference: http://zh.wikipedia.org/wiki/%E8%87%BA%E7%81%A3%E8%A1%8C%E6%94%BF%E5%8D%80%E5%8A%83
+    /**
+     * @link http://zh.wikipedia.org/wiki/%E8%87%BA%E7%81%A3%E8%A1%8C%E6%94%BF%E5%8D%80%E5%8A%83
+     */
     protected static $city = array(
         '新北市' => array(
             '板橋區', '三重區', '中和區', '永和區',
@@ -285,7 +289,9 @@ class Address extends \Faker\Provider\Address
         ),
     );
 
-    # Reference: http://terms.naer.edu.tw/download/287/
+    /**
+     * @link http://terms.naer.edu.tw/download/287/
+     */
     protected static $country = array(
         '不丹', '中非', '丹麥', '伊朗', '冰島', '剛果',
         '加彭', '北韓', '南非', '卡達', '印尼', '印度',
