@@ -5,8 +5,6 @@ namespace Faker\Provider;
 abstract class Text extends \Faker\Provider\Base
 {
     protected static $baseText = '';
-    protected static $separator = ' ';
-    protected static $separatorLen = 1;
     protected $explodedText = null;
     protected $consecutiveWords = array();
 
@@ -49,28 +47,28 @@ abstract class Text extends \Faker\Provider\Base
             $word = static::randomElement($words[$next]);
 
             // calculate next index
-            $currentWords = static::explode($next);
+            $currentWords = explode(' ', $next);
             $currentWords[] = $word;
             array_shift($currentWords);
-            $next = static::implode($currentWords);
+            $next = implode(' ', $currentWords);
 
             // ensure text starts with an uppercase letter
-            if ($resultLength == 0 && !static::validStart($word)) {
+            if ($resultLength == 0 && !preg_match('/^\p{Lu}/u', $word)) {
                 continue;
             }
 
             // append the element
             $result[] = $word;
-            $resultLength += static::strlen($word) + static::$separatorLen;
+            $resultLength += strlen($word) + 1;
         }
 
         // remove the element that caused the text to overflow
         array_pop($result);
 
         // build result
-        $result = static::implode($result);
+        $result = implode(' ', $result);
 
-        return static::appendEnd($result);
+        return $result.'.';
     }
 
     protected function getConsecutiveWords($indexSize)
@@ -84,7 +82,7 @@ abstract class Text extends \Faker\Provider\Base
             }
 
             for ($i = 0, $count = count($parts); $i < $count; $i++) {
-                $stringIndex = static::implode($index);
+                $stringIndex = implode(' ', $index);
                 if (!isset($words[$stringIndex])) {
                     $words[$stringIndex] = array();
                 }
@@ -103,34 +101,9 @@ abstract class Text extends \Faker\Provider\Base
     protected function getExplodedText()
     {
         if ($this->explodedText === null) {
-            $this->explodedText = static::explode(preg_replace('/\s+/u', ' ', static::$baseText));
+            $this->explodedText = explode(' ', preg_replace('/\s+/u', ' ', static::$baseText));
         }
 
         return $this->explodedText;
-    }
-
-    protected static function explode($text)
-    {
-        return explode(static::$separator, $text);
-    }
-
-    protected static function implode($words)
-    {
-        return implode(static::$separator, $words);
-    }
-
-    protected static function strlen($text)
-    {
-        return strlen($text);
-    }
-
-    protected static function validStart($word)
-    {
-        return preg_match('/^\p{Lu}/u', $word);
-    }
-
-    protected static function appendEnd($text)
-    {
-        return $text.'.';
     }
 }

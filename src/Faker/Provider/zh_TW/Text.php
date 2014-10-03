@@ -4,9 +4,8 @@ namespace Faker\Provider\zh_TW;
 
 class Text extends \Faker\Provider\Text
 {
-    protected static $separator = '';
-    protected static $separatorLen = 0;
-    protected static $punct = array('、', '。', '」', '』', '！', '？', 'ー', '，', '：', '；');
+    protected $explodedText = null;
+    protected $consecutiveWords = array();
 
     /**
      * Title: 三國演義 Romance of the Three Kingdoms
@@ -78,23 +77,98 @@ class Text extends \Faker\Provider\Text
 三人飛馬引軍而出。張角正殺敗董卓，乘勢趕來，忽遇三人衝殺，角軍大亂，敗走五十餘里。三人救了董卓回寨。卓問三人現居何職。玄德曰：「白身。」卓甚輕之，不為禮。玄德出，張飛大怒曰：「我等親赴血戰，救了這廝，他卻如此無禮；若不殺之，難消我氣！」便要提刀入帳來殺董卓。正是：人情勢利古猶今，誰識英雄是白身？安得快人如翼德，盡誅世上負心人！畢竟董卓性命如何，且看下文分解。
 EOT;
 
-    protected static function explode($text)
+    public function realText($maxNbChars = 200, $indexSize = 2)
+    {
+        if ($maxNbChars < 10) {
+            throw new \InvalidArgumentException('maxNbChars must be at least 10');
+        }
+        if ($indexSize < 1) {
+            throw new \InvalidArgumentException('indexSize must be at least 1');
+        }
+        if ($indexSize > 5) {
+            throw new \InvalidArgumentException('indexSize must be at most 5');
+        }
+
+        $words = $this->getConsecutiveWords($indexSize);
+        $result = array();
+        $resultLength = 0;
+        // take a random starting point
+        $punct = array('、', '。', '」', '』', '！', '？', 'ー', '，', '：', '；');
+        $next = static::randomKey($words);
+        while ($resultLength < $maxNbChars && isset($words[$next])) {
+            // fetch a random word to append
+            $word = static::randomElement($words[$next]);
+
+            // calculate next index
+            $currentWords = static::split($next);
+            $currentWords[] = $word;
+            array_shift($currentWords);
+            $next = implode('', $currentWords);
+
+            // ensure the first word is not punctuation
+            if ($resultLength === 0 and in_array($word, $punct)) {
+                continue;
+            }
+
+            // append the element
+            $result[] = $word;
+            $resultLength += static::strlen($word);
+        }
+
+        // remove the element that caused the text to overflow
+        array_pop($result);
+
+        // build result
+        $result = implode('', $result);
+
+        return $result.static::randomElement(array('。', '！', '？',));
+    }
+
+    protected function getConsecutiveWords($indexSize)
+    {
+        if (!isset($this->consecutiveWords[$indexSize])) {
+            $parts = $this->getExplodedText();
+            $words = array();
+            $index = array();
+            for ($i = 0; $i < $indexSize; $i++) {
+                $index[] = array_shift($parts);
+            }
+
+            for ($i = 0, $count = count($parts); $i < $count; $i++) {
+                $stringIndex = implode('', $index);
+                if (!isset($words[$stringIndex])) {
+                    $words[$stringIndex] = array();
+                }
+                $word = $parts[$i];
+                $words[$stringIndex][] = $word;
+                array_shift($index);
+                $index[] = $word;
+            }
+            // cache look up words for performance
+            $this->consecutiveWords[$indexSize] = $words;
+        }
+
+        return $this->consecutiveWords[$indexSize];
+    }
+
+    protected function getExplodedText()
+    {
+        if ($this->explodedText === null) {
+            $this->explodedText = static::split(static::$baseText);
+        }
+        return $this->explodedText;
+    }
+
+    public static function split($text)
     {
         return array_values(array_filter(preg_split('//u', preg_replace('/\s+/', '', $text))));
     }
 
-    protected static function strlen($text)
+    public static function strlen($text)
     {
-        return function_exists('mb_get_info') ? mb_strlen($text) : count(static::split($text));
-    }
-
-    protected static function validStart($word)
-    {
-        return !in_array($word, static::$punct);
-    }
-
-    protected static function appendEnd($text)
-    {
-        return $text.static::randomElement(array('。', '！', '？',));
+        if (function_exists('mb_get_info')) {
+            return mb_strlen($text);
+        }
+        return count(static::split($text));
     }
 }
