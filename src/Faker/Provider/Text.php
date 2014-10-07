@@ -122,7 +122,7 @@ abstract class Text extends \Faker\Provider\Base
 
     protected static function strlen($text)
     {
-        return strlen($text);
+        return function_exists('mb_strlen') ? mb_strlen($text, 'UTF-8') : strlen($text);
     }
 
     protected static function validStart($word)
