@@ -10,7 +10,7 @@ class UniqueGenerator
 {
     protected $generator;
     protected $maxRetries;
-    protected $uniques = array();
+    public $uniques = array();
 
     public function __construct(Generator $generator, $maxRetries)
     {
