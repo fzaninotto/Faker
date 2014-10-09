@@ -37,4 +37,13 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
       return static::numerify(static::randomElement(static::$mobileFormats));
     }
 
+    /**
+     * Return a en_GB cell (mobile) phone number
+     * @return string
+     */
+    public static function cellNumber()
+    {
+      return static::mobileNumber();
+    }
+
 }
