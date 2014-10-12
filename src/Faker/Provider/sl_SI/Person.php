@@ -146,5 +146,4 @@ class Person extends \Faker\Provider\Person
     {
         return static::lastName();
     }
-
 }
