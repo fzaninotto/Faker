@@ -98,4 +98,20 @@ class Address extends \Faker\Provider\Address
     {
         return static::randomElement(static::$community);
     }
+    
+        /**
+     * @example '77.147489'
+     */
+    public static function latitude()
+    {
+        return number_format(mt_rand(360000, 437900)/10000, 6);
+    }
+
+    /**
+     * @example '86.211205'
+     */
+    public static function longitude()
+    {
+        return number_format(mt_rand(-9270000, 3320000)/1000000, 6);
+    }
 }
