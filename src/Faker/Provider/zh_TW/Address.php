@@ -2,7 +2,7 @@
 
 namespace Faker\Provider\zh_TW;
 
-class Address extends \Faker\Provider\Address
+class Address extends \Faker\Provider\Address 
 {
 
     protected static $cites = array(

@@ -2,30 +2,32 @@
 
 namespace Faker\Provider\zh_TW;
 
-class Person extends \Faker\Provider\Person
+class Person extends \Faker\Provider\Person 
 {
+
     protected static $maleNameFormats = array(
         '{{lastName}}{{firstNameMale}}',
-//        '{{firstNameMale}}{{$lastName1Male}}{{$lastName2Male}}',
     );
 
     protected static $femaleNameFormats = array(
         '{{lastName}}{{firstNameFemale}}',
     );
 
-
+    /**
+     * Override firstNameMail()
+     **/
     public static function firstNameMale()
     {
         return static::randomElement(static::$firstName1Male) . static::randomElement(static::$firstName2Male);
     }
 
+    /**
+     * Override firstNameFemale()
+     **/
     public static function firstNameFemale()
     {
-//        return static::randomElement(static::$firstNameFemale);
         return static::randomElement(static::$firstName1Female) . static::randomElement(static::$firstName2Female);
     }
-
-
 
     protected static $lastName = array(
         //百家姓
@@ -50,6 +52,7 @@ class Person extends \Faker\Provider\Person
         '建', '堅', '健', '經', '景', '俊', '天', '峻', '季',
         '', '', '', '', ''
     );
+
     protected static $firstName2Male = array(
         '邦', '福', '歌', '國', '和', '康', '瀾', '民', '寧', '平', '然', '順',
         '翔', '晏', '宜', '怡', '易', '志', '然', '雄',
@@ -106,8 +109,8 @@ class Person extends \Faker\Provider\Person
         '語', '雲', '韻', '玉', '珠', '寶', '珍', '金', '銀', '珊',
         '瓊', '瑤', '琳', '玲', '璧',
         ''  , '', '', ''
-
     );
+
     protected static $firstName2Female = array(
         '玉','珠','寶','珍','金','銀','珊','瑩','瓊','瑤','琳','玲',
         '璧','彩','豔','紅','綠','紫','彤','青','翠','秀','美','麗',
@@ -115,7 +118,5 @@ class Person extends \Faker\Provider\Person
         '靜','潔','慧','巧','雅','花','蘭','菊','蓮','梅','柳','莉',
         '茜','薇','鳳','凰','鸞','鶯','燕','雁','鵑','釵','環','繡',
         '錦','纓','黛','香','線','瓶','琴'
-
     );
-
 }
