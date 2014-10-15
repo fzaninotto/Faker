@@ -109,7 +109,7 @@ class Address extends \Faker\Provider\Address
     public static function postcode()
     {
         $prefix = mt_rand(100, 999);
-        $suffix = str_pad(mt_rand(1, 55), 2,0, STR_PAD_LEFT);
+        $suffix = str_pad(mt_rand(1, 55), 2, 0, STR_PAD_LEFT);
 
         return $prefix . $suffix;
     }
