@@ -6,7 +6,7 @@ class Documentor
 {
     protected $generator;
 
-    public function __construct($generator)
+    public function __construct(Generator $generator)
     {
         $this->generator = $generator;
     }
