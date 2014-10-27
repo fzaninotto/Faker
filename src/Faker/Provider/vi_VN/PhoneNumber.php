@@ -16,7 +16,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         33, 53, 79, 22, 66, 36,
         280, 37, 54, 73, 74, 27,
         70, 211, 29,
-        // Mobile 
+        // Mobile
         96, 97, 98, 162, 163, 164, 165, 166, 167, 168, 169, // Viettel
         91, 94, 123, 124, 125, 127, 129, // Vinaphone
         90, 93, 120, 121, 122, 126, 128, // Mobifone
@@ -53,7 +53,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         $digits = 7;
 
         if ($areaCodeLength < 2) $digits = 8;
-
         return static::numerify(str_replace('[a]', $areaCode, static::randomElement(static::$formats[$digits])));
     }
 }

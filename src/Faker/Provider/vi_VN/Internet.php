@@ -36,6 +36,12 @@ class Internet extends \Faker\Provider\Internet
         'https://{{domainName}}/{{slug}}.html',
     );
 
+    /**
+     * Convert Vietnamese characters to their ASCII representation
+     *
+     * @param  string
+     * @return string
+     */
     private static function toAscii($string)
     {
         $arr = array(
@@ -48,8 +54,7 @@ class Internet extends \Faker\Provider\Internet
             'y'=>'ý|ỳ|ỷ|ỹ|ỵ|Ý|Ỳ|Ỷ|Ỹ|Ỵ',
         );
 
-        foreach ($arr as $ascii => $uni)
-        {
+        foreach ($arr as $ascii => $uni) {
             $string = preg_replace("/($uni)/i", $ascii, $string);
         }
 
