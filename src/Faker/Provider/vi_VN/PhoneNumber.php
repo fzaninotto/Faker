@@ -52,7 +52,10 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         $areaCodeLength = strlen($areaCode);
         $digits = 7;
 
-        if ($areaCodeLength < 2) $digits = 8;
+        if ($areaCodeLength < 2) {
+            $digits = 8;
+        }
+
         return static::numerify(str_replace('[a]', $areaCode, static::randomElement(static::$formats[$digits])));
     }
 }
