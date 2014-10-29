@@ -8,6 +8,7 @@ class Address extends \Faker\Provider\Address
         '{{street}}{{streetSuffix}}',
         '{{street}}{{streetSuffix}}{{randomChineseNumber}}段',
     );
+
     protected static $streetAddressFormats = array(
         '{{streetName}}{{randomNumber3}}號',
         '{{streetName}}{{randomNumber3}}號{{randomNumber2}}樓',
@@ -16,7 +17,9 @@ class Address extends \Faker\Provider\Address
         '{{streetName}}{{randomNumber3}}巷{{randomNumber3}}弄{{randomNumber3}}號',
         '{{streetName}}{{randomNumber3}}巷{{randomNumber3}}弄{{randomNumber3}}號{{randomNumber2}}樓',
     );
+
     protected static $secondaryAddressSuffix = array('室', '房');
+
     protected static $addressFormats = array(
         '{{postcode}} {{city}}{{streetAddress}}',
     );
@@ -346,6 +349,7 @@ class Address extends \Faker\Provider\Address
         '馬達加斯加', '密克羅尼西亞', '沙烏地阿拉伯',
         '千里達及托巴哥',
     );
+
     protected static $postcode = array('###-##', '###');
 
     public function street()

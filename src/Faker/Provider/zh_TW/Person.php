@@ -7,6 +7,7 @@ class Person extends \Faker\Provider\Person
     protected static $maleNameFormats = array(
         '{{lastName}}{{firstNameMale}}',
     );
+
     protected static $femaleNameFormats = array(
         '{{lastName}}{{firstNameFemale}}',
     );
@@ -95,6 +96,7 @@ class Person extends \Faker\Provider\Person
         '文', '柏', '樺', '瑋', '穎', '美', '翰', '華',
         '詩', '豪', '賢', '軒', '銘', '霖',
     );
+
     protected static $characterFemale = array(
         '伶', '佩', '佳', '依', '儀', '冠', '君', '嘉',
         '如', '娟', '婉', '婷', '安', '宜', '家', '庭',

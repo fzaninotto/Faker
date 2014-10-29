@@ -12,6 +12,7 @@ class Color extends \Faker\Provider\Color
         '紫', '鳧綠', '鮮綠色', '藍色', '銀色',
         '灰色', '黃色', '品紅', '水色', '白色'
     );
+
     protected static $allColorNames = array(
         '黑色', '昏灰', '灰色', '暗灰', '銀色', '亮灰色',
         '庚斯博羅灰', '白煙色', '白色', '雪色', '鐵灰色',

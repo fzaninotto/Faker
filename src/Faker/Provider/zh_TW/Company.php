@@ -7,26 +7,19 @@ class Company extends \Faker\Provider\Company
     protected static $companyEnSuffix = array(
         'Inc', 'and Sons', 'LLC', 'Group', 'PLC', 'Ltd'
     );
+
     protected static $companyEnFormats = array(
         '{{lastNameEn}} {{companyEnSuffix}}',
         '{{lastNameEn}}-{{lastNameEn}}',
         '{{lastNameEn}}, {{lastNameEn}} and {{lastNameEn}}'
     );
-    public static function companyEnSuffix()
-    {
-        return static::randomElement(static::$companyEnSuffix);
-    }
-    public function companyEn()
-    {
-        $format = static::randomElement(static::$companyEnFormats);
-        return $this->generator->parse($format);
-    }
 
     protected static $formats = array(
         '{{companyPrefix}}{{companyModifier}}',
         '{{companyPrefix}}{{companySuffix}}',
         '{{companyPrefix}}{{companyModifier}}{{CompanySuffix}}',
     );
+
     /**
      * @link http://zh.wikipedia.org/zh-tw/Category:%E5%8F%B0%E7%81%A3%E5%85%AC%E5%8F%B8%E5%88%97%E8%A1%A8
      */
@@ -199,6 +192,7 @@ class Company extends \Faker\Provider\Company
         '靜得讓您耳根清靜',
         '馬上就會好',
     );
+
     protected static $bsWords = array(
         array(
             '實現', '實作', '整合', '最佳化',
@@ -221,6 +215,17 @@ class Company extends \Faker\Provider\Company
             '模型', '網路', '使用經驗', '評量', '方法',
         )
     );
+
+    public static function companyEnSuffix()
+    {
+        return static::randomElement(static::$companyEnSuffix);
+    }
+
+    public function companyEn()
+    {
+        $format = static::randomElement(static::$companyEnFormats);
+        return $this->generator->parse($format);
+    }
 
     public static function companyModifier()
     {
