@@ -23,6 +23,9 @@ class Person extends \Faker\Provider\Person
       '{{firstNameFemale}}',
     );
 
+    /**
+     * @link http://www.dattenhay.vn/1001-ten-cho-be-trai.htm
+     */
     protected static $firstNameMale = array(
         'An', 'Anh',
         'Bào', 'Bình', 'Bạch', 'Bảo', 'Bắc', 'Bằng', 'Bổng', 'Bửu',
@@ -43,10 +46,13 @@ class Person extends \Faker\Provider\Person
         'Xuân',
         'Yên',
         'Án', 'Ân',
-        'Ðan', 'Ðiền', 'Ðiệp', 'Ðoàn', 'Ðình', 'Ðôn', 'Ðăng', 'Ðại', 'Ðạo', 'Ðạt', 'Ðịnh', 'Ðồng', 'Ðộ', 'Ðức', 'Đức',
+        'Đan', 'Điền', 'Điệp', 'Đoàn', 'Đình', 'Đôn', 'Đăng', 'Đại', 'Đạo', 'Đạt', 'Định', 'Đồng', 'Độ', 'Đức', 'Đức',
         'Ẩn',
     );
 
+    /**
+     * @link http://www.dattenhay.vn/1001-ten-cho-be-trai.htm
+     */
     protected static $middleNameMale = array(
         'An', 'Anh',
         'Bá', 'Bách', 'Bình', 'Bích', 'Bảo', 'Bằng', 'Bửu', 'Bữu',
@@ -63,9 +69,12 @@ class Person extends \Faker\Provider\Person
         'Song', 'Sĩ', 'Sơn', 'Sỹ',
         'Tài', 'Tạ',
         'Ân',
-        'Ðan', 'Ðinh', 'Ðoàn', 'Ðình', 'Ðông', 'Ðăng', 'Ðại', 'Ðạt', 'Ðắc', 'Ðịnh', 'Ðồng', 'Ðức', 'Đăng', 'Đức',
+        'Đan', 'Đinh', 'Đoàn', 'Đình', 'Đông', 'Đăng', 'Đại', 'Đạt', 'Đắc', 'Định', 'Đồng', 'Đức', 'Đăng', 'Đức',
     );
 
+    /**
+     * @link http://www.dattenhay.vn/1001-ten-cho-be-gai.htm
+     */
     protected static $firstNameFemale = array(
         'An', 'Anh',
         'Bình', 'Bích', 'Băng', 'Bạch', 'Bảo',
@@ -89,10 +98,13 @@ class Person extends \Faker\Provider\Person
         'Xuyến', 'Xuân',
         'Yên', 'Yến',
         'Ái', 'Ánh', 'Ân',
-        'Ðan', 'Ðiệp', 'Ðoan', 'Ðài', 'Ðàn', 'Ðào', 'Ðình', 'Ðường', 'Đan',
+        'Đan', 'Điệp', 'Đoan', 'Đài', 'Đàn', 'Đào', 'Đình', 'Đường', 'Đan',
         'Ý',
     );
 
+    /**
+     * @link http://www.dattenhay.vn/1001-ten-cho-be-gai.htm
+     */
     protected static $middleNameFemale = array(
         'An', 'Anh',
         'Ban', 'Bích', 'Băng', 'Bạch', 'Bảo', 'Bội',
@@ -114,10 +126,13 @@ class Person extends \Faker\Provider\Person
         'Xuyến', 'Xuân',
         'Yên', 'Yến',
         'Ái', 'Ánh',
-        'Ðan', 'Ðinh', 'Ðoan', 'Ðài', 'Ðông', 'Ðồng', 'Đan', 'Đoan',
+        'Đan', 'Đinh', 'Đoan', 'Đài', 'Đông', 'Đồng', 'Đan', 'Đoan',
         'Ý',
     );
 
+    /**
+     * @link http://vi.wikipedia.org/wiki/H%E1%BB%8D_ng%C6%B0%E1%BB%9Di_Vi%E1%BB%87t_Nam
+     */
     protected static $lastName = array(
         'An', 'Ánh',
         'Ân', 'Âu', 'Ấu',
