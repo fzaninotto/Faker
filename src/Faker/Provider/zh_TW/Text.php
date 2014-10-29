@@ -97,7 +97,7 @@ EOT;
 
     protected static function strlen($text)
     {
-        return function_exists('mb_strlen') ? mb_strlen($text, 'UTF-8') : count(static::split($text));
+        return function_exists('mb_strlen') ? mb_strlen($text, 'UTF-8') : count(static::explode($text));
     }
 
     protected static function validStart($word)
