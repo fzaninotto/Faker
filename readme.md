@@ -155,6 +155,20 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     century                               // 'VI'
     timezone                              // 'Europe/Paris'
 
+### `Faker\Provider\HtmlLorem`
+
+    lorem(
+        $paragraphs = 5,        // Number of paragraphs
+        $boldAndItalic = 0,     // Number of <b> / <i> (random selected)
+        $links = 0,             // Number of <a>
+        $unorderedlist = 0,     // Number of <ul>
+        $orderedlist = 0,       // Number of <ol>
+        $descriptionlist = 0,   // Number of <dl> (will always be added to the bottom, and will always increase the paragraphs)
+        $blockquote = 0,        // Number of <blockquote>
+        $code = 0,              // Number of <code> / <pre> (random selected)
+        $headers = 0            // Number of <h1> / <h2> / <h3> / <h4> / <h5> / <h6> (random selected)
+    )
+
 ### `Faker\Provider\Internet`
 
     email                   // 'tkshlerin@collins.com'
