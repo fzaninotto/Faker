@@ -1,0 +1,196 @@
+<?php
+
+namespace Faker\Provider\id_ID;
+
+class Person extends \Faker\Provider\Person
+{
+    protected static $formats = array(
+        '{{firstNameMale}}',
+        '{{firstNameFemale}}',
+        '{{firstNameMale}} {{firstNameMale}}',
+        '{{firstNameFemale}} {{firstNameFemale}}',
+        '{{firstNameFemale}} {{firstNameMale}}',
+        '{{firstNameMale}} {{lastName}}',
+        '{{firstNameFemale}} {{lastName}}',
+        '{{firstNameMale}} {{firstNameMale}} {{lastName}}',
+        '{{firstNameFemale}} {{firstNameFemale}} {{lastName}}',
+    );
+    
+    protected static $firstNameMale = array(
+        'Aldi',
+        'Angga',
+        'Budi',
+        'Cipta',
+        'Ibrahim',
+        'Ilham',
+        'Muhammad',
+    );
+
+    protected static $firstNameFemale = array(
+        'Adinda',
+        'Adriana',
+        'Afriana',
+        'Agnes',
+        'Angel',
+        'Angela',
+        'Anggi',
+        'Ani',
+        'Anita',
+        'Annisa',
+        'Ayu',
+        'Bonita',
+        'Caroline',
+        'Catherine',
+        'Citra',
+        'Dahlia',
+        'Delfania',
+        'Desi',
+        'Devi',
+        'Devina',
+        'Dewi',
+        'Dhea',
+        'Diah',
+        'Dita',
+        'Dwi',
+        'Eka',
+        'Elsa',
+        'Elysia',
+        'Endang',
+        'Fadia',
+        'Farah',
+        'Fenny',
+        'Fini',
+        'Firda',
+        'Gabriella',
+        'Henny',
+        'Imelda',
+        'Indah',
+        'Intan',
+        'Kartika',
+        'Karina',
+        'Kristina',
+        'Lia',
+        'Linda',
+        'Lanny',
+        'Maria',
+        'Maya',
+        'Mega',
+        'Melisa',
+        'Melly',
+        'Michelle',
+        'Nadia',
+        'Natalia',
+        'Niken',
+        'Nur',
+        'Olivia',
+        'Paramita',
+        'Patricia',
+        'Pamela',
+        'Putri',
+        'Rachel',
+        'Ratu',
+        'Rina',
+        'Sabrina',
+        'Sherly',
+        'Sinta',
+        'Stephanie',
+        'Susi',
+        'Tamara',
+        'Tika',
+        'Tuti',
+        'Utari',
+        'Vanessa',
+        'Vina',
+        'Wanda',
+        'Wulan',
+        'Yolanda',
+        'Yuliana',
+        'Yusi',
+        'Yusina',
+        'Yusrina',
+        'Zelda',
+        'Adinda',
+        'Adyarini',
+        'Ananda',
+        'Angelika',
+        'Agustina',
+        'Aprilliani',
+        'Chandra',
+        'Citra',
+        'Dewi',
+        'Felita',
+        'Guritno',
+        'Handayani',
+        'Irena',
+        'Irina',
+        'Irmawati',
+        'Kristina',
+        'Lestari',
+        'Liu',
+        'Karina',
+        'Kartika',
+        'Maulana',
+        'Maharani',
+        'Marisa',
+        'Marshanda',
+        'Merpati',
+        'Mustika',
+        'Natalia',
+        'Nirmala',
+        'Ningrum',
+        'Ningtyas',
+        'Patricia',
+        'Pratama',
+        'Putri',
+        'Salamah',
+        'Saraswati',
+        'Sari',
+        'Setiawati',
+        'Suryani',
+        'Susilo',
+        'Sukma',
+        'Sutarman',
+        'Tifani',
+        'Utari',
+        'Utami',
+        'Wati',
+        'Wicaksono',
+        'Wijaya',
+        'Wijayanti',
+        'Valentina',
+        'Yolanda',
+        'Yuliana',
+    );
+
+    protected static $lastName = array(
+        'Chaniago',
+        'Sinaga',
+        'Siregar',
+        'Tandiari',
+        'Tanoto',
+        'Tigor',
+        'Tambunan',
+        'Tanamas',
+        'Yusuf',
+    );
+
+    private static $prefix = array('Tn.', 'Ny.', 'Nn.');
+
+    private static $suffix = array('S.Kom.', 'M.Sc', 'ST');
+
+    /**
+     * @example 'Mrs.'
+     */
+    public static function prefix()
+    {
+        return static::randomElement(static::$prefix);
+    }
+
+    /**
+     * @example 'PhD'
+     */
+    public static function suffix()
+    {
+        return static::randomElement(static::$suffix);
+    }
+}
