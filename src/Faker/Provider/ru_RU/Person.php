@@ -5,13 +5,17 @@ namespace Faker\Provider\ru_RU;
 class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = array(
-        '{{firstNameMale}} {{middleName}} {{lastName}}',
-        '{{lastName}} {{firstNameMale}} {{middleName}}',
+        '{{firstNameMale}} {{middleNameMale}} {{lastName}}',
+        '{{lastName}} {{firstNameMale}} {{middleNameMale}}',
     );
 
+    /**
+     * This provider uses wikipedia's 250 top russian last names
+     * That list of MALE last names could be safely extended to FEMALE list just by adding 'a' letter at the end
+     */
     protected static $femaleNameFormats = array(
-        '{{firstNameFemale}} {{middleName}} {{lastName}}',
-        '{{lastName}} {{firstNameFemale}} {{middleName}}',
+        '{{firstNameFemale}} {{middleNameFemale}} {{lastName}}а',
+        '{{lastName}}а {{firstNameFemale}} {{middleNameFemale}}',
     );
 
     /**
@@ -46,10 +50,16 @@ class Person extends \Faker\Provider\Person
         'Эмма', 'Юлия', 'Яна', 'Ярослава',
     );
 
-    protected static $middleName = array(
+    protected static $middleNameMale = array(
         'Александрович', 'Алексеевич', 'Андреевич', 'Дмитриевич', 'Евгеньевич',
         'Сергеевич', 'Иванович', 'Фёдорович', 'Львович', 'Романович', 'Владимирович',
         'Борисович', 'Максимович',
+    );
+
+    protected static $middleNameFemale = array(
+        'Александровна', 'Алексеевна', 'Андреевна', 'Дмитриевна', 'Евгеньевна',
+        'Сергеевна', 'Ивановна', 'Фёдоровна', 'Львовна', 'Романовна', 'Владимировна',
+        'Борисовна', 'Максимовна',
     );
 
     /**
@@ -96,7 +106,7 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
-     * Return middle name
+     * Return male middle name
      *
      * @example 'Иванович'
      *
@@ -104,8 +114,22 @@ class Person extends \Faker\Provider\Person
      *
      * @return string Middle name
      */
-    public function middleName()
+    public function middleNameMale()
     {
-        return static::randomElement(static::$middleName);
+        return static::randomElement(static::$middleNameMale);
+    }
+
+    /**
+     * Return female middle name
+     *
+     * @example 'Ивановна'
+     *
+     * @access public
+     *
+     * @return string Middle name
+     */
+    public function middleNameFemale()
+    {
+        return static::randomElement(static::$middleNameFemale);
     }
 }
