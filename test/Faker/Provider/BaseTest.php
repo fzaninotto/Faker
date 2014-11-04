@@ -135,6 +135,96 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertContains(BaseProvider::randomElement($elements), $elements);
     }
 
+    public function testShuffleReturnsStringWhenPassedAStringArgument()
+    {
+        $this->assertInternalType('string', BaseProvider::shuffle('foo'));
+    }
+
+    public function testShuffleReturnsArrayWhenPassedAnArrayArgument()
+    {
+        $this->assertInternalType('array', BaseProvider::shuffle(array(1, 2, 3)));
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testShuffleThrowsExceptionWhenPassedAnInvalidArgument()
+    {
+        BaseProvider::shuffle(false);
+    }
+
+    public function testShuffleArraySupportsEmptyArrays()
+    {
+        $this->assertEquals(array(), BaseProvider::shuffleArray(array()));
+    }
+
+    public function testShuffleArrayReturnsAnArrayOfTheSameSize()
+    {
+        $array = array(1, 2, 3, 4, 5);
+        $this->assertSameSize($array, BaseProvider::shuffleArray($array));
+    }
+
+    public function testShuffleArrayReturnsAnArrayWithSameElements()
+    {
+        $array = array(2, 4, 6, 8, 10);
+        $shuffleArray = BaseProvider::shuffleArray($array);
+        $this->assertContains(2, $shuffleArray);
+        $this->assertContains(4, $shuffleArray);
+        $this->assertContains(6, $shuffleArray);
+        $this->assertContains(8, $shuffleArray);
+        $this->assertContains(10, $shuffleArray);
+    }
+
+    public function testShuffleArrayReturnsADifferentArrayThanTheOriginal()
+    {
+        $arr = array(1, 2, 3, 4, 5);
+        $shuffledArray = BaseProvider::shuffleArray($arr);
+        $this->assertNotEquals($arr, $shuffledArray);
+    }
+
+    public function testShuffleArrayLeavesTheOriginalArrayUntouched()
+    {
+        $arr = array(1, 2, 3, 4, 5);
+        BaseProvider::shuffleArray($arr);
+        $this->assertEquals($arr, array(1, 2, 3, 4, 5));
+    }
+
+    public function testShuffleStringSupportsEmptyStrings()
+    {
+        $this->assertEquals('', BaseProvider::shuffleString(''));
+    }
+
+    public function testShuffleStringReturnsAnStringOfTheSameSize()
+    {
+        $string = 'abcdef';
+        $this->assertEquals(strlen($string), strlen(BaseProvider::shuffleString($string)));
+    }
+
+    public function testShuffleStringReturnsAnStringWithSameElements()
+    {
+        $string = 'acegi';
+        $shuffleString = BaseProvider::shuffleString($string);
+        $this->assertContains('a', $shuffleString);
+        $this->assertContains('c', $shuffleString);
+        $this->assertContains('e', $shuffleString);
+        $this->assertContains('g', $shuffleString);
+        $this->assertContains('i', $shuffleString);
+    }
+
+    public function testShuffleStringReturnsADifferentStringThanTheOriginal()
+    {
+        $string = 'abcdef';
+        $shuffledString = BaseProvider::shuffleString($string);
+        $this->assertNotEquals($string, $shuffledString);
+    }
+
+    public function testShuffleStringLeavesTheOriginalStringUntouched()
+    {
+        $string = 'abcdef';
+        BaseProvider::shuffleString($string);
+        $this->assertEquals($string, 'abcdef');
+    }
+
     public function testNumerifyReturnsSameStringWhenItContainsNoHashSign()
     {
         $this->assertEquals('fooBar?', BaseProvider::numerify('fooBar?'));
