@@ -207,6 +207,100 @@ class Base
     }
 
     /**
+     * Returns a shuffled version of the argument.
+     *
+     * This function accepts either an array, or a string.
+     *
+     * @example $faker->shuffle([1, 2, 3]); // [2, 1, 3]
+     * @example $faker->shuffle('hello, world'); // 'rlo,h eold!lw'
+     *
+     * @see shuffleArray()
+     * @see shuffleString()
+     *
+     * @param array|string $arg The set to shuffle
+     * @return array|string The shuffled set
+     */
+    public static function shuffle($arg = '')
+    {
+        if (is_array($arg)) {
+            return static::shuffleArray($arg);
+        }
+        if (is_string($arg)) {
+            return static::shuffleString($arg);
+        }
+        throw new \InvalidArgumentException('shuffle() only supports strings of arrays');
+    }
+
+    /**
+     * Returns a shuffled version of the array.
+     *
+     * This function does not mutate the original array. It uses the
+     * Fisher–Yates algorithm, which is unbiaised, together with a Mersenne
+     * twister random generator. This function is therefore more random than
+     * PHP's shuffle() function, and it is seedable.
+     * 
+     * @link http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle 
+     *
+     * @example $faker->shuffleArray([1, 2, 3]); // [2, 1, 3]
+     *
+     * @param array $array The set to shuffle
+     * @return array The shuffled set
+     */
+    public static function shuffleArray($array = array())
+    {
+        $shuffledArray = array();
+        $i = 0;
+        reset($array);
+        while (list($key, $value) = each($array)) {
+            if ($i == 0) {
+                $j = 0;
+            } else {
+                $j = mt_rand(0, $i);
+            }
+            if ($j == $i) {
+                $shuffledArray[]= $value;
+            } else {
+                $shuffledArray[]= $shuffledArray[$j];
+                $shuffledArray[$j] = $value;
+            }
+            $i++;
+        }
+        return $shuffledArray;
+    }
+
+    /**
+     * Returns a shuffled version of the string.
+     *
+     * This function does not mutate the original string. It uses the
+     * Fisher–Yates algorithm, which is unbiaised, together with a Mersenne
+     * twister random generator. This function is therefore more random than
+     * PHP's shuffle() function, and it is seedable. Additionally, it is
+     * UTF8 safe if the mb extension is available.
+     * 
+     * @link http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle 
+     *
+     * @example $faker->shuffleString('hello, world'); // 'rlo,h eold!lw'
+     *
+     * @param string $string The set to shuffle
+     * @param string $encoding The string encoding (defaults to UTF-8)
+     * @return string The shuffled set
+     */
+    public static function shuffleString($string = '', $encoding = 'UTF-8')
+    {
+        if (function_exists('mb_strlen')) {
+            // UTF8-safe str_split()
+            $array = array();
+            $strlen = mb_strlen($string, $encoding);
+            for ($i = 0; $i < $strlen; $i++) {
+                $array []= mb_substr($string, $i, 1, $encoding);
+            }
+        } else {
+            $array = str_split($string, 1);
+        }
+        return join('', static::shuffleArray($array));
+    }
+
+    /**
      * Replaces all hash sign ('#') occurrences with a random number
      * Replaces all percentage sign ('%') occurrences with a not null number
      *

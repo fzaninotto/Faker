@@ -74,6 +74,8 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     randomLetter            // 'b'
     randomElements($array = array ('a','b','c'), $count = 1) // array('c')
     randomElement($array = array ('a','b','c')) // 'b'
+    shuffle('hello, world') // 'rlo,h eoldlw'
+    shuffle(array(1, 2, 3)) // array(2, 1, 3)
     numerify($string = '###') // '609'
     lexify($string = '????') // 'wgts'
     bothify($string = '## ??') // '42 jz'
