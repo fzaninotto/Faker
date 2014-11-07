@@ -371,6 +371,79 @@ class Base
     }
 
     /**
+     * Transforms a basic regular expression into a random string satisfying the expression.
+     *
+     * @example $faker->regexify('[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}'); // sm0@y8k96a.ej
+     *
+     * Regex delimiters '/.../' and begin/end markers '^...$' are ignored.
+     *
+     * Only supports a small subset of the regex syntax. For instance,
+     * unicode, negated classes, unbouned ranges, subpatterns, back references,
+     * assertions, recursive patterns, and comments are not supported. Escaping
+     * support is extremely fragile.
+     *
+     * This method is also VERY slow. Use it only when no other formatter
+     * can generate the fake data you want. For instance, prefer calling
+     * `$faker->email` rather than `regexify` with the previous regular
+     * expression.
+     *
+     * Also note than `bothify` can probably do most of what this method does,
+     * but much faster. For instance, for a dummy email generation, try
+     * `$faker->bothify('?????????@???.???')`.
+     *
+     * @see https://github.com/icomefromthenet/ReverseRegex for a more robust implementation
+     *
+     * @param string $regex A regular expression (delimiters are optional)
+     * @return string
+     */
+    public static function regexify($regex = '')
+    {
+        // ditch the anchors
+        $regex = preg_replace('/^\/?\^?/', '', $regex);
+        $regex = preg_replace('/\$?\/?$/', '', $regex);
+        // All {2} become {2,2}
+        $regex = preg_replace('/\{(\d+)\}/', '{\1,\1}', $regex);
+        // Single-letter quantifiers (?, *, +) become bracket quantifiers ({0,1}, {0,rand}, {1, rand})
+        $regex = preg_replace('/(?<!\\\)\?/', '{0,1}', $regex);
+        $regex = preg_replace('/(?<!\\\)\*/', '{0,' . static::randomDigitNotNull() . '}', $regex);
+        $regex = preg_replace('/(?<!\\\)\+/', '{1,' . static::randomDigitNotNull() . '}', $regex);
+        // [12]{1,2} becomes [12] or [12][12]
+        $regex = preg_replace_callback('/(\[[^\]]+\])\{(\d+),(\d+)\}/', function ($matches) {
+            return str_repeat($matches[1], Base::randomElement(range($matches[2], $matches[3])));
+        }, $regex);
+        // (12|34){1,2} becomes (12|34) or (12|34)(12|34)
+        $regex = preg_replace_callback('/(\([^\)]+\))\{(\d+),(\d+)\}/', function ($matches) {
+            return str_repeat($matches[1], Base::randomElement(range($matches[2], $matches[3])));
+        }, $regex);
+        // A{1,2} becomes A or AA or \d{3} becomes \d\d\d
+        $regex = preg_replace_callback('/(\\\?.)\{(\d+),(\d+)\}/', function ($matches) {
+            return str_repeat($matches[1], Base::randomElement(range($matches[2], $matches[3])));
+        }, $regex);
+        // (this|that) becomes 'this' or 'that'
+        $regex = preg_replace_callback('/\((.*?)\)/', function ($matches) {
+            return Base::randomElement(explode('|', str_replace(array('(', ')'), '', $matches[1])));
+        }, $regex);
+        // All A-F inside of [] become ABCDEF
+        $regex = preg_replace_callback('/\[([^\]]+)\]/', function ($matches) {
+            return '[' . preg_replace_callback('/(\w|\d)\-(\w|\d)/', function ($range) {
+                return join(range($range[1], $range[2]), '');
+            }, $matches[1]) . ']';
+        }, $regex);
+        // All [ABC] become B (or A or C)
+        $regex = preg_replace_callback('/\[([^\]]+)\]/', function ($matches) {
+            return Base::randomElement(str_split($matches[1]));
+        }, $regex);
+        // replace \d with number and \w with letter and . with ascii
+        $regex = preg_replace_callback('/\\\w/', 'static::randomLetter', $regex);
+        $regex = preg_replace_callback('/\\\d/', 'static::randomDigit', $regex);
+        $regex = preg_replace_callback('/(?<!\\\)\./', 'static::randomAscii', $regex);
+        // remove remaining backslashes
+        $regex = str_replace('\\', '', $regex);
+        // phew
+        return $regex;
+    }
+
+    /**
      * Converts string to lowercase.
      * Uses mb_string extension if available.
      *
