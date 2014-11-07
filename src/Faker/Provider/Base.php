@@ -405,23 +405,23 @@ class Base
         $regex = preg_replace('/\{(\d+)\}/', '{\1,\1}', $regex);
         // Single-letter quantifiers (?, *, +) become bracket quantifiers ({0,1}, {0,rand}, {1, rand})
         $regex = preg_replace('/(?<!\\\)\?/', '{0,1}', $regex);
-        $regex = preg_replace('/(?<!\\\)\*/', '{0,' . self::randomDigitNotNull() . '}', $regex);
-        $regex = preg_replace('/(?<!\\\)\+/', '{1,' . self::randomDigitNotNull() . '}', $regex);
+        $regex = preg_replace('/(?<!\\\)\*/', '{0,' . static::randomDigitNotNull() . '}', $regex);
+        $regex = preg_replace('/(?<!\\\)\+/', '{1,' . static::randomDigitNotNull() . '}', $regex);
         // [12]{1,2} becomes [12] or [12][12]
         $regex = preg_replace_callback('/(\[[^\]]+\])\{(\d+),(\d+)\}/', function ($matches) {
-            return str_repeat($matches[1], static::randomElement(range($matches[2], $matches[3])));
+            return str_repeat($matches[1], Base::randomElement(range($matches[2], $matches[3])));
         }, $regex);
         // (12|34){1,2} becomes (12|34) or (12|34)(12|34)
         $regex = preg_replace_callback('/(\([^\)]+\))\{(\d+),(\d+)\}/', function ($matches) {
-            return str_repeat($matches[1], static::randomElement(range($matches[2], $matches[3])));
+            return str_repeat($matches[1], Base::randomElement(range($matches[2], $matches[3])));
         }, $regex);
         // A{1,2} becomes A or AA or \d{3} becomes \d\d\d
         $regex = preg_replace_callback('/(\\\?.)\{(\d+),(\d+)\}/', function ($matches) {
-            return str_repeat($matches[1], static::randomElement(range($matches[2], $matches[3])));
+            return str_repeat($matches[1], Base::randomElement(range($matches[2], $matches[3])));
         }, $regex);
         // (this|that) becomes 'this' or 'that'
         $regex = preg_replace_callback('/\((.*?)\)/', function ($matches) {
-            return static::randomElement(explode('|', str_replace(array('(', ')'), '', $matches[1])));
+            return Base::randomElement(explode('|', str_replace(array('(', ')'), '', $matches[1])));
         }, $regex);
         // All A-F inside of [] become ABCDEF
         $regex = preg_replace_callback('/\[([^\]]+)\]/', function ($matches) {
@@ -431,7 +431,7 @@ class Base
         }, $regex);
         // All [ABC] become B (or A or C)
         $regex = preg_replace_callback('/\[([^\]]+)\]/', function ($matches) {
-            return static::randomElement(str_split($matches[1]));
+            return Base::randomElement(str_split($matches[1]));
         }, $regex);
         // replace \d with number and \w with letter and . with ascii
         $regex = preg_replace_callback('/\\\w/', 'static::randomLetter', $regex);
