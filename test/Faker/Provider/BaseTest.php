@@ -271,9 +271,55 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('fooBar?', BaseProvider::asciify('fooBar?'));
     }
 
-    public function testNumerifyReturnsStringWithStarSignsReplacedByAsciiChars()
+    public function testAsciifyReturnsStringWithStarSignsReplacedByAsciiChars()
     {
-        $this->assertRegExp('/foo.Ba.r/', BaseProvider::numerify('foo*Ba*r'));
+        $this->assertRegExp('/foo.Ba.r/', BaseProvider::asciify('foo*Ba*r'));
+    }
+
+    public function regexifyBasicDataProvider()
+    {
+        return array(
+            array('azeQSDF1234', 'azeQSDF1234', 'does not change non regex chars'),
+            array('foo(bar){1}', 'foobar', 'replaces regex characters'),
+            array('', '', 'supports empty string'),
+            array('/^foo(bar){1}$/', 'foobar', 'ignores regex delimiters')
+        );
+    }
+
+    /**
+     * @dataProvider regexifyBasicDataProvider
+     */
+    public function testRegexifyBasicFeatures($input, $output, $message)
+    {
+        $this->assertEquals($output, BaseProvider::regexify($input), $message);
+    }
+
+    public function regexifyDataProvider()
+    {
+        return array(
+            array('\d', 'numbers'),
+            array('\w', 'letters'),
+            array('(a|b)', 'alternation'),
+            array('[aeiou]', 'basic character class'),
+            array('[a-z]', 'character class range'),
+            array('[a-z1-9]', 'multiple character class range'),
+            array('a*b+c?', 'single character quantifiers'),
+            array('a{2}', 'brackets quantifiers'),
+            array('a{2,3}', 'min-max brackets quantifiers'),
+            array('[aeiou]{2,3}', 'brackets quantifiers on basic character class'),
+            array('[a-z]{2,3}', 'brackets quantifiers on character class range'),
+            array('(a|b){2,3}', 'brackets quantifiers on alternation'),
+            array('\.\*\?\+', 'escaped characters'),
+            array('[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}', 'complex regex')
+        );
+    }
+
+    /**
+     * @dataProvider regexifyDataProvider
+     */
+    public function testRegexifySupportedRegexSyntax($pattern, $message)
+    {
+        $this->assertRegExp('/' . $pattern . '/', BaseProvider::regexify($pattern), 'Regexify supports ' . $message);
     }
 
     public function testOptionalReturnsProviderValueWhenCalledWithWeight1()
