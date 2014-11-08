@@ -4,6 +4,7 @@ namespace Faker\Provider\en_UG;
 
 class Address extends \Faker\Provider\Address
 {
+	protected static $region = array( 'Central', 'East', 'North', 'West' );
 
 	/**
 	 * @link http://en.wikipedia.org/wiki/Category:Districts_of_Uganda
@@ -35,6 +36,11 @@ class Address extends \Faker\Provider\Address
 		'Yumbe',
 		'Zombo'
 	);
+
+	public static function region()
+	{
+		return static::randomElement(static::$district);
+	}
 	
 	/**
 	 * @example 'Kampala'
