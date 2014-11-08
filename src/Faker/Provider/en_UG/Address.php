@@ -39,7 +39,7 @@ class Address extends \Faker\Provider\Address
 
 	public static function region()
 	{
-		return static::randomElement(static::$district);
+		return static::randomElement(static::$region);
 	}
 	
 	/**
