@@ -17,9 +17,13 @@
         "squizlabs/php_codesniffer": "~1.5"
     },
     "autoload": {
-        "psr-0": {
-            "Faker": "src/",
-            "Faker\\PHPUnit": "test/"
+        "psr-4": {
+            "Faker\\": "src/Faker/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Faker\\PHPUnit\\": "test/Faker/"
         }
     },
     "extra": {
