@@ -4,7 +4,7 @@ namespace Faker\Provider\en_UG;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $cityFormat = array(
+    protected static $cityFormats = array(
         '{{city}}'
     );
     /**
