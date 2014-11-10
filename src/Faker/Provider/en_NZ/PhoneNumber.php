@@ -78,15 +78,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     }
 
     /**
-     * Return a en_NZ cell (mobile) phone number
-     * @return string
-     */
-    public static function cellNumber()
-    {
-        return static::mobileNumber();
-    }
-
-    /**
      * Return a en_NZ toll free phone number
      * @return string
      */
