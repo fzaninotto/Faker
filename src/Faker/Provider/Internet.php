@@ -94,7 +94,7 @@ class Internet extends \Faker\Provider\Base
 
         $userName = static::toLower(static::bothify($this->generator->parse($format)));
         
-        return filter_var($userName, FILTER_SANITIZE_EMAIL);
+        return filter_var($userName, \FILTER_SANITIZE_EMAIL);
     }
 
     /**
