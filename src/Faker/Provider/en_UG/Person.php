@@ -4,11 +4,11 @@ namespace Faker\Provider\en_UG;
 
 class Person extends \Faker\Provider\Person
 {
-	protected static $lastNameFormat = array(
-		'{{lastName}}',
-		'{{lastNameMale}}',
-		'{{lastNameFemale}}'
-	);
+    protected static $lastNameFormat = array(
+        '{{lastName}}',
+        '{{lastNameMale}}',
+        '{{lastNameFemale}}'
+    );
 
     protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastName}}',
@@ -78,38 +78,38 @@ class Person extends \Faker\Provider\Person
         'Zaria', 'Zelda', 'Zella', 'Zelma', 'Zena', 'Zetta', 'Zita', 'Zoe', 'Zoey', 'Zoie', 'Zoila', 'Zola', 'Zora', 'Zula'
     );
 
-	protected static $lastNameMale = array(
-		'Mubiru','Muwanguzi','Muwonge',
-		'Nsamba',
-		'Obol','Odeke','Okumu','Okumuringa','Opega','Opio','Orishaba','Osiki','Ouma',
-		'Sekandi','Semande','Serwanga','Ssebatta','Ssebugulu','Ssebunya','Ssebuuma','Ssebyala','Ssegawa','Ssekabira','Ssekanjako','Ssekate','Ssekibuule','Ssekidde','Ssekiranda','Ssekitooleko','Ssekubulwa','Ssempija','Ssempungu','Ssemwezi','Ssendege','Ssenjovu','Ssenkaali','Ssentezza','Ssentongo','Sserubiri','Sseruyinda','Ssettende',
-	);
+    protected static $lastNameMale = array(
+        'Mubiru','Muwanguzi','Muwonge',
+        'Nsamba',
+        'Obol','Odeke','Okumu','Okumuringa','Opega','Opio','Orishaba','Osiki','Ouma',
+        'Sekandi','Semande','Serwanga','Ssebatta','Ssebugulu','Ssebunya','Ssebuuma','Ssebyala','Ssegawa','Ssekabira','Ssekanjako','Ssekate','Ssekibuule','Ssekidde','Ssekiranda','Ssekitooleko','Ssekubulwa','Ssempija','Ssempungu','Ssemwezi','Ssendege','Ssenjovu','Ssenkaali','Ssentezza','Ssentongo','Sserubiri','Sseruyinda','Ssettende',
+    );
 
-	protected static $lastNameFemale = array(
-		'Abol','Adeke','Aketch','Akoth','Akumu','Aol','Apega','Apio','Auma','Awori','Ayo',
-		'Babirye',
-		'Chandiru',
-		'Dushime',
-		'Kabatesi','Kabonesa','Kaitesi','Kakiiza','Kakuze','Kaliisa','Karungi','Katusiime','Kebirungi','Kyomi','Kyoshabire',
-		'Mahoro','Murungi',
-		'Nabaale','Nabaggala','Nabakooza','Nabaloga','Nabankema','Nabasirye','Nabaweesi','Nabayunga','Nabbona','Nabise','Nabukeera','Nabunya','Nabuufu','Nabuuso','Nabwami','Nakaayi','Nakabugo','Nakabuye','Nakafeero','Nakalanzi','Nakalunda','Nakasinde','Nakasolya','Nakasumba','Nakato','Nakaweesa','Nakazibwe','Nakiboneka','Nakidde','Nakigozi','Nakiguli','Nakimbugwe','Nakimuli','Nakinobe','Nakiridde','Nakisige','Nakitende','Nakiyemba','Nakku','Nakyagaba','Nakyanzi','Nalubuga','Nalubwama','Nalukwago','Naluyima','Nalweyiso','Nalwoga','Namaganda','Namagembe','Namatovu','Nambi','Nambogo','Nambooze','Nambuusi','Namenya','Namiiro','Namirembe','Nampemba','Nampijja','Namubiru','Namuddu','Namugenyi','Namugwanya','Namukwaya','Namuleme','Namulindwa','Namutebi','Nankindu','Nankinga','Nanteeza','Nantongo','Nanvule','Nanyanzi','Nanyombi','Nanyondo','Nanyonjo','Nassimwba','Nazziwa','Ndagire'
-	);
+    protected static $lastNameFemale = array(
+        'Abol','Adeke','Aketch','Akoth','Akumu','Aol','Apega','Apio','Auma','Awori','Ayo',
+        'Babirye',
+        'Chandiru',
+        'Dushime',
+        'Kabatesi','Kabonesa','Kaitesi','Kakiiza','Kakuze','Kaliisa','Karungi','Katusiime','Kebirungi','Kyomi','Kyoshabire',
+        'Mahoro','Murungi',
+        'Nabaale','Nabaggala','Nabakooza','Nabaloga','Nabankema','Nabasirye','Nabaweesi','Nabayunga','Nabbona','Nabise','Nabukeera','Nabunya','Nabuufu','Nabuuso','Nabwami','Nakaayi','Nakabugo','Nakabuye','Nakafeero','Nakalanzi','Nakalunda','Nakasinde','Nakasolya','Nakasumba','Nakato','Nakaweesa','Nakazibwe','Nakiboneka','Nakidde','Nakigozi','Nakiguli','Nakimbugwe','Nakimuli','Nakinobe','Nakiridde','Nakisige','Nakitende','Nakiyemba','Nakku','Nakyagaba','Nakyanzi','Nalubuga','Nalubwama','Nalukwago','Naluyima','Nalweyiso','Nalwoga','Namaganda','Namagembe','Namatovu','Nambi','Nambogo','Nambooze','Nambuusi','Namenya','Namiiro','Namirembe','Nampemba','Nampijja','Namubiru','Namuddu','Namugenyi','Namugwanya','Namukwaya','Namuleme','Namulindwa','Namutebi','Nankindu','Nankinga','Nanteeza','Nantongo','Nanvule','Nanyanzi','Nanyombi','Nanyondo','Nanyonjo','Nassimwba','Nazziwa','Ndagire'
+    );
 
-	protected static $lastname = array(
-		'Abayisenga','Adeke','Agaba','Ahebwe','Aisu','Akankunda','Akankwasa','Akashaba','Akashabe','Ampumuza','Ankunda','Asasira','Asiimwe','Atuhe','Atuhire','Atukunda','Atukwase','Atwine','Aurishaba',
-		'Badru','Baguma','Bakabulindi','Bamwiine','Barigye','Bbosa','Bisheko','Biyinzika','Bugala','Bukenya','Buyinza','Bwana','Byanyima','Byaruhanga',
-		'Ddamulira',
-		'Gamwera',
-		'Ijaga','Isyagi',
-		'Kaaya','Kabanda','Kabuubi','Kabuye','Kafeero','Kagambira','Kakooza','Kalumba','Kanshabe','Kansiime','Kanyesigye','Kareiga','Kasekende','Kasumba','Kateregga','Katusiime','Kawooya','Kawuki','Kayemba','Kazibwe','Kibirige','Kiconco','Kiganda','Kijjoba','Kirabira','Kirabo','Kirigwajjo','Kisitu','Kitovu','Kityamuwesi','Kivumbi','Kiwanuka','Kyambadde',
-		'Lunyoro',
-		'Mbabazi','Migisha','Mugisa','Mugisha','Muhwezi','Mukalazi','Mulalira','Munyagwa','Murungi','Mushabe','Musinguzi','Mutabuza','Muyambi','Mwesige','Mwesigye',
-		'Nabasa','Nabimanya','Nankunda','Natukunda','Nayebare','Nimukunda','Ninsiima','Nkoojo','Nkurunungi','Nuwagaba','Nuwamanya','Nyeko',
-		'Obol','Odeke','Okumu','Okumuringa','Opega','Orishaba','Osiki','Ouma',
-		'Rubalema','Rusiimwa','Rwabyoma',
-		'Tamale','Tendo','Tizikara','Tuhame','Tumusiime','Tumwebaze','Tumwesigye','Tumwiine','Turyasingura','Tusiime','Twasiima','Twesigomwe',
-		'Wasswa','Wavamuno','Were'
-	);
+    protected static $lastname = array(
+        'Abayisenga','Adeke','Agaba','Ahebwe','Aisu','Akankunda','Akankwasa','Akashaba','Akashabe','Ampumuza','Ankunda','Asasira','Asiimwe','Atuhe','Atuhire','Atukunda','Atukwase','Atwine','Aurishaba',
+        'Badru','Baguma','Bakabulindi','Bamwiine','Barigye','Bbosa','Bisheko','Biyinzika','Bugala','Bukenya','Buyinza','Bwana','Byanyima','Byaruhanga',
+        'Ddamulira',
+        'Gamwera',
+        'Ijaga','Isyagi',
+        'Kaaya','Kabanda','Kabuubi','Kabuye','Kafeero','Kagambira','Kakooza','Kalumba','Kanshabe','Kansiime','Kanyesigye','Kareiga','Kasekende','Kasumba','Kateregga','Katusiime','Kawooya','Kawuki','Kayemba','Kazibwe','Kibirige','Kiconco','Kiganda','Kijjoba','Kirabira','Kirabo','Kirigwajjo','Kisitu','Kitovu','Kityamuwesi','Kivumbi','Kiwanuka','Kyambadde',
+        'Lunyoro',
+        'Mbabazi','Migisha','Mugisa','Mugisha','Muhwezi','Mukalazi','Mulalira','Munyagwa','Murungi','Mushabe','Musinguzi','Mutabuza','Muyambi','Mwesige','Mwesigye',
+        'Nabasa','Nabimanya','Nankunda','Natukunda','Nayebare','Nimukunda','Ninsiima','Nkoojo','Nkurunungi','Nuwagaba','Nuwamanya','Nyeko',
+        'Obol','Odeke','Okumu','Okumuringa','Opega','Orishaba','Osiki','Ouma',
+        'Rubalema','Rusiimwa','Rwabyoma',
+        'Tamale','Tendo','Tizikara','Tuhame','Tumusiime','Tumwebaze','Tumwesigye','Tumwiine','Turyasingura','Tusiime','Twasiima','Twesigomwe',
+        'Wasswa','Wavamuno','Were'
+    );
 
     public function lastName($gender = null)
     {
