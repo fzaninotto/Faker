@@ -4,27 +4,30 @@ namespace Faker\Provider\en_UG;
 
 class Address extends \Faker\Provider\Address
 {
+    protected static $cityFormat = array(
+        '{{city}}'
+    );
     /**
      * @link http://en.wikipedia.org/wiki/List_of_cities_and_towns_in_Uganda
      */
     protected static $city = array(
         'Alebtong','Abim','Adjumani','Amolatar','Amuria','Amuru','Apac','Arua',
-        'Bombo','Budaka_town','Bugembe','Bugiri','Bukedea','Bulisa','Buikwe','Bundibugyo',
+        'Bombo','Budaka','Bugembe','Bugiri','Bukedea','Bulisa','Buikwe','Bundibugyo',
         'Busembatya','Bushenyi','Busia','Busolwe','Butaleja','Buwenge',
         'Dokolo',
         'Entebbe',
-        'Fort_Portal',
+        'Fort Portal',
         'Gulu',
         'Hima','Hoima',
         'Ibanda','Iganga','Isingiro',
         'Jinja',
         'Kaabong','Kabale','Kaberamaido','Kabwohe','Kagadi','Kakinga','Kakiri','Kalangala','Kaliro',
         'Kalisizo','Kalongo','Kalungu','Kampala','Kamuli','Kanoni','Kamwenge','Kanungu','Kapchorwa',
-        'Kasese','Katakwi','Kayunga','Kibaale','Kiboga','Kihiihi','Kira_Town','Kiruhura','Kiryandongo',
+        'Kasese','Katakwi','Kayunga','Kibaale','Kiboga','Kihiihi','Kiira','Kiruhura','Kiryandongo',
         'Kisoro','Kitgum','Koboko','Kotido','Kumi','Kyenjojo','Kyotera',
         'Lira','Lugazi','Lukaya','Luwero','Lwakhakha','Lwengo','Lyantonde',
-        'Malaba','Manafwa','Masaka','Masindi','Masindi_Port','Matugga','Mayuge','Mbale','Mbarara',
-        'Mitooma','Mityana','Mpigi','Mpondwe','Moroto_Town','Moyo_Town','Mubende','Mukono','Mutukula',
+        'Malaba','Manafwa','Masaka','Masindi','Masindi Port','Matugga','Mayuge','Mbale','Mbarara',
+        'Mitooma','Mityana','Mpigi','Mpondwe','Moroto','Moyo','Mubende','Mukono','Mutukula',
         'Nagongera','Nakaseke','Nakasongola','Nakapiripirit','Namutumba','Nansana','Nebbi','Ngora',
         'Njeru','Nkokonjeru','Ntungamo',
         'Oyam',
