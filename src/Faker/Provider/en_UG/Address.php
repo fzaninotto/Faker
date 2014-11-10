@@ -5,12 +5,12 @@ namespace Faker\Provider\en_UG;
 class Address extends \Faker\Provider\Address
 {
     protected static $cityFormats = array(
-        '{{cityNames}}'
+        '{{cityName}}'
     );
     /**
      * @link http://en.wikipedia.org/wiki/List_of_cities_and_towns_in_Uganda
      */
-    protected static $cityNames = array(
+    protected static $cityName = array(
         'Alebtong','Abim','Adjumani','Amolatar','Amuria','Amuru','Apac','Arua',
         'Bombo','Budaka','Bugembe','Bugiri','Bukedea','Bulisa','Buikwe','Bundibugyo',
         'Busembatya','Bushenyi','Busia','Busolwe','Butaleja','Buwenge',
@@ -101,6 +101,14 @@ class Address extends \Faker\Provider\Address
     protected static $postcode = array( '#', "##", "###", "####", "#####" );
 
     protected static $region = array( 'Central', 'East', 'North', 'West' );
+
+    /**
+     * @example 'Fort Portal'
+     */
+    public static function cityName()
+    {
+        return static::randomElement(static::$cityName);
+    }
 
     /**
      * @example 'Kampala'
