@@ -103,6 +103,14 @@ class Address extends \Faker\Provider\Address
     protected static $region = array( 'Central', 'East', 'North', 'West' );
 
     /**
+     * @example 'Fort Portal'
+     */
+    public static function city()
+    {
+        return static::randomElement(static::$city);
+    }
+    
+    /**
      * @example 'Kampala'
      */
     public static function district()
