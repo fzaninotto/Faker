@@ -36,7 +36,7 @@ class Address extends \Faker\Provider\Address
         'Sembabule','Sironko','Soroti',
         'Tororo',
         'Wakiso','Wobulenzi',
-        'Yumbe',
+        'Yumbe'
     );
 
     protected static $country = array(
