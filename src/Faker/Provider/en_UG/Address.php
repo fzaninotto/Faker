@@ -5,12 +5,12 @@ namespace Faker\Provider\en_UG;
 class Address extends \Faker\Provider\Address
 {
     protected static $cityFormats = array(
-        '{{city}}'
+        '{{cityNames}}'
     );
     /**
      * @link http://en.wikipedia.org/wiki/List_of_cities_and_towns_in_Uganda
      */
-    protected static $city = array(
+    protected static $cityNames = array(
         'Alebtong','Abim','Adjumani','Amolatar','Amuria','Amuru','Apac','Arua',
         'Bombo','Budaka','Bugembe','Bugiri','Bukedea','Bulisa','Buikwe','Bundibugyo',
         'Busembatya','Bushenyi','Busia','Busolwe','Butaleja','Buwenge',
