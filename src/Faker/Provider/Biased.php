@@ -8,7 +8,7 @@ class Biased extends \Faker\Provider\Base
      * Returns a biased integer between $min and $max (both inclusive).
      * The distribution depends on $function.
      *
-     * The algorithm creates two doubles, x, y ∈ [0, 1) and checks whether the
+     * The algorithm creates two doubles, x ∈ [0, 1], y ∈ [0, 1) and checks whether the
      * return value of $function for x is greater than or equal to y. If this is
      * the case the number is accepted and x is mapped to the appropriate integer
      * between $min and $max. Otherwise two new doubles are created until the pair
@@ -16,15 +16,15 @@ class Biased extends \Faker\Provider\Base
      *
      * @param integer $min Minimum value of the generated integers.
      * @param integer $max Maximum value of the generated integers.
-     * @param callable $function A function mapping x ∈ [0, 1) onto a double ∈ [0, 1]
+     * @param callable $function A function mapping x ∈ [0, 1] onto a double ∈ [0, 1]
      * @return integer An integer between $min and $max.
      */
-    public function biasedInteger($min, $max, $function)
+    public function biasedNumberBetween($min = 0, $max = 100, $function = 'sqrt')
     {
         do {
-            $x = mt_rand() / (mt_getrandmax() + 1);
+            $x = mt_rand() / mt_getrandmax();
             $y = mt_rand() / (mt_getrandmax() + 1);
-        } while ($function($x) < $y);
+        } while (call_user_func($function, $x) < $y);
         
         return floor($x * ($max - $min + 1) + $min);
     }
