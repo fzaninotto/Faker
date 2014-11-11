@@ -7,7 +7,7 @@ use Faker\Generator;
 class BiasedTest extends \PHPUnit_Framework_TestCase
 {
     const MAX = 10;
-    const NUMBERS = 10000;
+    const NUMBERS = 25000;
     protected $generator;
     protected $results = array();
     
@@ -15,7 +15,7 @@ class BiasedTest extends \PHPUnit_Framework_TestCase
     {
         $this->generator = new Generator();
         $this->generator->addProvider(new Biased($this->generator));
-        $this->generator->seed(0);
+        $this->generator->seed(1);
 
         $this->results = array_fill(1, self::MAX, 0);
     }
@@ -23,7 +23,7 @@ class BiasedTest extends \PHPUnit_Framework_TestCase
     public function performFake($function)
     {
         for($i = 0; $i < self::NUMBERS; $i++) {
-            $this->results[$this->generator->biasedInteger(1, self::MAX, $function)]++;
+            $this->results[$this->generator->biasedNumberBetween(1, self::MAX, $function)]++;
         }
     }
     
@@ -33,8 +33,12 @@ class BiasedTest extends \PHPUnit_Framework_TestCase
 
         // assert that all numbers are near the expected unbiased value
         foreach ($this->results as $number => $amount) {
-            $this->assertGreaterThan((self::NUMBERS / self::MAX) * .95, $amount, "Value was more than 5 percent under the expected value");
-            $this->assertLessThan((self::NUMBERS / self::MAX) * 1.05, $amount, "Value was more than 5 percent over the expected value");
+            // integral
+            $assumed = (1 / self::MAX * $number) - (1 / self::MAX * ($number - 1));
+            // calculate the fraction of the whole area
+            $assumed /= 1;
+            $this->assertGreaterThan(self::NUMBERS * $assumed * .95, $amount, "Value was more than 5 percent under the expected value");
+            $this->assertLessThan(self::NUMBERS * $assumed * 1.05, $amount, "Value was more than 5 percent over the expected value");
         }
     }
     
@@ -42,10 +46,13 @@ class BiasedTest extends \PHPUnit_Framework_TestCase
     {
         $this->performFake(array('\Faker\Provider\Biased', 'linearHigh'));
 
-        $last = 0;
-        // assert that the list is ordered
         foreach ($this->results as $number => $amount) {
-            $this->assertGreaterThan($last * .98, $amount, "Amount was smaller than that of the number before");
+            // integral
+            $assumed = 0.5 * pow(1 / self::MAX * $number, 2) - 0.5 * pow(1 / self::MAX * ($number - 1), 2);
+            // calculate the fraction of the whole area
+            $assumed /= pow(1, 2) * .5;
+            $this->assertGreaterThan(self::NUMBERS * $assumed * .95, $amount, "Value was more than 5 percent under the expected value");
+            $this->assertLessThan(self::NUMBERS * $assumed * 1.05, $amount, "Value was more than 5 percent over the expected value");
         }
     }
     
@@ -53,10 +60,15 @@ class BiasedTest extends \PHPUnit_Framework_TestCase
     {
         $this->performFake(array('\Faker\Provider\Biased', 'linearLow'));
 
-        $last = PHP_INT_MAX;
-        // assert that the list is ordered
         foreach ($this->results as $number => $amount) {
-            $this->assertLessThan($last, $amount, "Amount was greater than that of the number before");
+            // integral
+            $assumed = -0.5 * pow(1 / self::MAX * $number, 2) - -0.5 * pow(1 / self::MAX * ($number - 1), 2);
+            // shift the graph up
+            $assumed += 1 / self::MAX;
+            // calculate the fraction of the whole area
+            $assumed /= pow(1, 2) * .5;
+            $this->assertGreaterThan(self::NUMBERS * $assumed * .95, $amount, "Value was more than 5 percent under the expected value");
+            $this->assertLessThan(self::NUMBERS * $assumed * 1.05, $amount, "Value was more than 5 percent over the expected value");
         }
     }
 }

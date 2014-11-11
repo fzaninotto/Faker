@@ -235,7 +235,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
 ### `Faker\Provider\Biased`
 
-    biasedInteger($min, $max, $function) // 42
+    biasedNumberBetween($min, $max, $function) // 42
 
 ## Unique and Optional modifiers
 
