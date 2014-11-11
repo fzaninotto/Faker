@@ -34,6 +34,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      */
     public static function mobileNumber()
     {
-      return static::numerify(static::randomElement(static::$mobileFormats));
+        return static::numerify(static::randomElement(static::$mobileFormats));
     }
 }
