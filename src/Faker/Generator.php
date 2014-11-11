@@ -104,7 +104,7 @@ namespace Faker;
  * @method mixed optional()
  * @method UniqueGenerator unique()
  *
- * @method integer biasedInteger()
+ * @method integer biasedNumberBetween()
  *
  * @property string $userAgent
  * @property string $chrome
