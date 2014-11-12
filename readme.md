@@ -44,7 +44,7 @@ Even if this example shows a property access, each call to `$faker->name` yields
 ```php
 <?php
 for ($i=0; $i < 10; $i++) {
-  echo $faker->name, "\n";
+  echo $faker->name . PHP_EOL;
 }
   // Adaline Reichel
   // Dr. Santa Prosacco DVM
