@@ -24,6 +24,9 @@ class Person extends \Faker\Provider\Person
         '龚',
     );
 
+    /**
+     * Data origin: http://www.mmbang.com/bang/521/486785
+     */
     protected static $firstNameMale = array(
         '靖平', '衡岳', '博易', '承嗣', '琪维', '高昂', '梦文', '凌辉', '承载',
         '成弘', '禄军', '成和', '孟华', '善福', '吉钰', '纪杰', '德惠', '博瀚',
@@ -47,6 +50,9 @@ class Person extends \Faker\Provider\Person
         '德寿', '高岑', '峻伟', '韶杰', '茂奎', '德业', '承安', '汝凯', '承宣',
     );
 
+    /**
+     * Data origin: http://www.richyli.com/name/novel.asp
+     */
     protected static $firstNameFemale = array(
         '雁楓', '翠夏', '寄柳', '夜白', '念瑤', '綺丹', '雪露', '恨霜', '千雪',
         '谷琴', '谷露', '以煙', '惜萱', '傲凝', '綺夢', '宛竹', '雪風', '水風',
