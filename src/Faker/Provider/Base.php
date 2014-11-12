@@ -228,7 +228,7 @@ class Base
         if (is_string($arg)) {
             return static::shuffleString($arg);
         }
-        throw new \InvalidArgumentException('shuffle() only supports strings of arrays');
+        throw new \InvalidArgumentException('shuffle() only supports strings or arrays');
     }
 
     /**
