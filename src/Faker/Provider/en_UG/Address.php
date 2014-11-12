@@ -7,6 +7,7 @@ class Address extends \Faker\Provider\Address
     protected static $cityFormats = array(
         '{{cityName}}'
     );
+    
     /**
      * @link http://en.wikipedia.org/wiki/List_of_cities_and_towns_in_Uganda
      */
