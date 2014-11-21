@@ -195,6 +195,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     creditCardExpirationDate // 04/13
     creditCardExpirationDateString // '04/13'
     creditCardDetails       // array('MasterCard', '4485480221084675', 'Aleksander Nowak', '04/13')
+    swiftBicNumber          // RZTIAT22263
 
 ### `Faker\Provider\Color`
 
