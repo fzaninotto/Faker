@@ -280,4 +280,15 @@ class Payment extends Base
     {
         return $iban;
     }
+
+    /**
+     * Return the String of a SWIFT/BIC number
+     *
+     * @example 'RZTIAT22263'
+     * @link    http://en.wikipedia.org/wiki/ISO_9362
+     */
+    public static function swiftBicNumber()
+    {
+        return self::regexify("^([A-Z]){4}([A-Z]){2}([0-9A-Z]){2}([0-9A-Z]{3})?$");
+    }
 }
