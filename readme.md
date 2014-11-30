@@ -665,6 +665,14 @@ Fugiat non in itaque sunt nobis totam. Sed nesciunt est deleniti cumque alias. R
 
 ## Language specific formatters
 
+### `Faker\Provider\at_AT\Payment`
+```php
+<?php
+
+echo $faker->vat; // "AT U12345678" - Austrian Value Added Tax number
+
+```
+
 ### `Faker\Provider\cs_CZ\Address`
 ```php
 <?php
