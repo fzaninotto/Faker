@@ -286,6 +286,7 @@ class Payment extends Base
      *
      * @example 'RZTIAT22263'
      * @link    http://en.wikipedia.org/wiki/ISO_9362
+     * @return  string Swift/Bic number
      */
     public static function swiftBicNumber()
     {
