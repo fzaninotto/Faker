@@ -669,7 +669,8 @@ Fugiat non in itaque sunt nobis totam. Sed nesciunt est deleniti cumque alias. R
 ```php
 <?php
 
-echo $faker->vat; // "AT U12345678" - Austrian Value Added Tax number
+echo $faker->vat;           // "AT U12345678" - Austrian Value Added Tax number
+echo $faker->vat(false);    // "ATU12345678" - unspaced Austrian Value Added Tax number
 
 ```
 
