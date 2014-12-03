@@ -18,24 +18,24 @@ class ColumnTypeGuesser
 
         switch ($schema->columnType($column)) {
             case 'boolean':
-                return function() use ($generator) {
+                return function () use ($generator) {
                     return $generator->boolean;
                 };
             case 'integer':
-                return function() use ($generator) {
+                return function () use ($generator) {
                     return $generator->randomNumber(10);
                 };
             case 'biginteger':
-                return function() use ($generator) {
+                return function () use ($generator) {
                     return $generator->randomNumber(20);
                 };
             case 'decimal':
             case 'float':
-                return function() use ($generator) {
+                return function () use ($generator) {
                     return $generator->randomFloat();
                 };
             case 'uuid':
-                return function() use ($generator) {
+                return function () use ($generator) {
                     return $generator->uuid();
                 };
             case 'string':
@@ -61,5 +61,4 @@ class ColumnTypeGuesser
                 return null;
         }
     }
-
 }
