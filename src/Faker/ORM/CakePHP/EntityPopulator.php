@@ -8,6 +8,7 @@ use Faker\Guesser\Name as NameGuesser;
 class EntityPopulator
 {
     protected $class;
+    protected $connectionName;
     protected $columnFormatters = [];
     protected $modifiers = [];
 
@@ -40,7 +41,7 @@ class EntityPopulator
     {
         $formatters = [];
         $class = $this->class;
-        $table = TableRegistry::get($class);
+        $table = $this->getTable($class);
         $schema = $table->schema();
         $pk = $schema->primaryKey();
         $guessers = $populator->getGuessers() + ['ColumnTypeGuesser' => new ColumnTypeGuesser($populator->getGenerator())];
@@ -73,7 +74,7 @@ class EntityPopulator
     public function guessModifiers($populator)
     {
         $modifiers = [];
-        $table = TableRegistry::get($this->class);
+        $table = $this->getTable($this->class);
 
         $belongsTo = $table->associations()->type('BelongsTo');
         foreach ($belongsTo as $assoc) {
@@ -94,7 +95,7 @@ class EntityPopulator
 
     public function execute($class, $insertedEntities, $options = [])
     {
-        $table = TableRegistry::get($class);
+        $table = $this->getTable($class);
         $entity = $table->newEntity();
 
         foreach ($this->columnFormatters as $column => $format) {
@@ -113,5 +114,19 @@ class EntityPopulator
 
         $pk = $table->primaryKey();
         return $entity->{$pk};
+    }
+
+    public function setConnection($name)
+    {
+        $this->connectionName = $name;
+    }
+
+    protected function getTable($class)
+    {
+        $options = [];
+        if (!empty($this->connectionName)) {
+            $options['connection'] = $this->connectionName;
+        }
+        return TableRegistry::get($class, $options);
     }
 }
