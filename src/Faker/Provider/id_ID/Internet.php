@@ -4,12 +4,16 @@ namespace Faker\Provider\id_ID;
 
 class Internet extends \Faker\Provider\Internet
 {
-
+    /**
+     * @var array some email domains
+     */
     protected static $freeEmailDomain = array(
-        'gmail.com', 'yahoo.com'
+        'gmail.com', 'yahoo.com', 'gmail.co.id', 'yahoo.co.id'
     );
 
     /**
+     * General tld and local tld
+     *
      * @link http://idwebhost.com/
      * @link http://domain.id/
      */
