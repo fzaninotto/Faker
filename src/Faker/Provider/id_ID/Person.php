@@ -15,7 +15,7 @@ class Person extends \Faker\Provider\Person
         '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}} {{suffix}}',
         '{{firstNameMale}} {{firstNameMale}} {{lastNameMale}}',
-        '{{firstNameMale}} {{firstNameMale}} {{lastNameMale}} {{suffix}}'
+        '{{firstNameMale}} {{firstNameMale}} {{lastNameMale}} {{suffix}}',
     );
 
     protected static $femaleNameFormats = array(
@@ -24,7 +24,7 @@ class Person extends \Faker\Provider\Person
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}} {{suffix}}',
         '{{firstNameFemale}} {{firstNameFemale}} {{lastNameFemale}}',
-        '{{firstNameFemale}} {{firstNameFemale}} {{lastNameFemale}} {{suffix}}'
+        '{{firstNameFemale}} {{firstNameFemale}} {{lastNameFemale}} {{suffix}}',
     );
 
     /**
@@ -101,7 +101,7 @@ class Person extends \Faker\Provider\Person
         'Viktor', 'Vino', 'Vinsen', 'Vero', 'Vega', 'Viman', 'Virman',
         'Wahyu', 'Wira', 'Wisnu', 'Wadi', 'Wardi', 'Warji', 'Waluyo', 'Wakiman',
         'Wage', 'Wardaya', 'Warsa', 'Warsita', 'Warta', 'Wasis', 'Wawan',
-        'Xanana', 'Yahya', 'Yusuf', 'Yosef', 'Yono', 'Yoga'
+        'Xanana', 'Yahya', 'Yusuf', 'Yosef', 'Yono', 'Yoga',
     );
 
     /**
@@ -137,7 +137,7 @@ class Person extends \Faker\Provider\Person
         'Usyi', 'Vanya', 'Vanesa', 'Vivi', 'Vera', 'Vicky', 'Victoria',
         'Violet', 'Winda', 'Widya', 'Wulan', 'Wirda', 'Wani', 'Yani', 'Yessi',
         'Yulia', 'Yuliana', 'Yuni', 'Yunita', 'Yance', 'Zahra', 'Zalindra',
-        'Zaenab', 'Zulfa', 'Zizi', 'Zulaikha', 'Zamira', 'Zelda', 'Zelaya'
+        'Zaenab', 'Zulfa', 'Zizi', 'Zulaikha', 'Zamira', 'Zelda', 'Zelaya',
     );
 
     /**
@@ -162,7 +162,7 @@ class Person extends \Faker\Provider\Person
         'Simanjuntak', 'Sinaga', 'Simbolon', 'Sitompul', 'Sitorus', 'Sirait',
         'Siregar', 'Situmorang', 'Tampubolon', 'Thamrin', 'Tamba', 'Tarihoran',
         'Utama', 'Uwais', 'Wahyudin', 'Waluyo', 'Wibowo', 'Winarno', 'Wibisono',
-        'Wijaya', 'Widodo', 'Wacana', 'Waskita', 'Wasita', 'Zulkarnain'
+        'Wijaya', 'Widodo', 'Wacana', 'Waskita', 'Wasita', 'Zulkarnain',
     );
 
     /**
@@ -180,7 +180,7 @@ class Person extends \Faker\Provider\Person
         'Rahayu', 'Riyanti', 'Rahimah', 'Suartini', 'Sudiati', 'Suryatmi',
         'Susanti', 'Safitri', 'Oktaviani', 'Utami', 'Usamah', 'Usada',
         'Uyainah', 'Yuniar', 'Yuliarti', 'Yulianti', 'Yolanda', 'Wahyuni',
-        'Wijayanti', 'Widiastuti', 'Winarsih', 'Wulandari', 'Wastuti', 'Zulaika'
+        'Wijayanti', 'Widiastuti', 'Winarsih', 'Wulandari', 'Wastuti', 'Zulaika',
     );
 
     /**
@@ -199,7 +199,7 @@ class Person extends \Faker\Provider\Person
      */
     private static $suffix = array('S.Ked', 'S.Gz', 'S.Pt', 'S.IP', 'S.E.I',
         'S.E.', 'S.Kom', 'S.H.', 'S.T.', 'S.Pd', 'S.Psi', 'S.I.Kom',
-        'S.Sos', 'S.Farm', 'M.M.', 'M.Kom.', 'M.TI.', 'M.Pd', 'M.Farm', 'M.Ak');
+        'S.Sos', 'S.Farm', 'M.M.', 'M.Kom.', 'M.TI.', 'M.Pd', 'M.Farm', 'M.Ak', );
 
     /**
      * Return last name
@@ -211,15 +211,10 @@ class Person extends \Faker\Provider\Person
     public function lastName($gender = null)
     {
         if ($gender === static::GENDER_MALE) {
-
             return static::lastNameMale();
-
         } elseif ($gender === static::GENDER_FEMALE) {
-
             return static::lastNameFemale();
-
         } else {
-
             $lastNameRandomElement = static::randomElement(
                 static::$lastNameFormat
             );

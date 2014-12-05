@@ -8,7 +8,7 @@ class Company extends \Faker\Provider\Company
         '{{companyPrefix}} {{lastName}}',
         '{{companyPrefix}} {{lastName}} {{lastName}}',
         '{{companyPrefix}} {{lastName}} {{companySuffix}}',
-        '{{companyPrefix}} {{lastName}} {{lastName}} {{companySuffix}}'
+        '{{companyPrefix}} {{lastName}} {{lastName}} {{companySuffix}}',
     );
 
     /**
