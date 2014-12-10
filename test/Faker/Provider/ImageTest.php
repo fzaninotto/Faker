@@ -45,4 +45,27 @@ class ImageTest extends \PHPUnit_Framework_TestCase
             unlink($file);
         }
     }
+
+    public function testGenerateColoredImage()
+    {
+        if (!extension_loaded('gd')) {
+            $this->markTestSkipped('This test requires GD extension');
+        }
+
+        $file = Image::imageColor(sys_get_temp_dir());
+        $this->assertFileExists($file);
+
+        if (function_exists('getimagesize')) {
+            list($width, $height, $type, $attr) = getimagesize($file);
+            $this->assertEquals(640, $width);
+            $this->assertEquals(480, $height);
+            $this->assertEquals(constant('IMAGETYPE_JPEG'), $type);
+        } else {
+            $this->assertEquals('jpg', pathinfo($file, PATHINFO_EXTENSION));
+        }
+
+        if (file_exists($file)) {
+            unlink($file);
+        }
+    }
 }
