@@ -170,7 +170,10 @@ class EntityPopulator
                         $ex->getMessage()
                     ));
                 }
-                $this->class->reflFields[$field]->setValue($obj, $value);
+                //Try a standard setter if it's available, otherwise fall back on reflection
+                $setter = sprintf("set%s", ucfirst($field));
+                if(method_exists($obj, $setter)) $obj->$setter($value);
+                else $this->class->reflFields[$field]->setValue($obj, $value);
             }
         }
     }
