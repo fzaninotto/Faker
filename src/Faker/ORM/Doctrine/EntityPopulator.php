@@ -189,7 +189,7 @@ class EntityPopulator
                 //Add some extended debugging information to any errors thrown by the formatter
                 try {
                     $value = is_callable($format) ? $format($insertedEntities, $obj) : $format;
-                } catch(\InvalidArgumentException $ex) {
+                } catch (\InvalidArgumentException $ex) {
                     throw new \InvalidArgumentException(sprintf("Failed to generate a value for %s::%s: %s",
                         get_class($obj),
                         $field,
@@ -198,8 +198,11 @@ class EntityPopulator
                 }
                 //Try a standard setter if it's available, otherwise fall back on reflection
                 $setter = sprintf("set%s", ucfirst($field));
-                if(method_exists($obj, $setter)) $obj->$setter($value);
-                else $this->class->reflFields[$field]->setValue($obj, $value);
+                if(method_exists($obj, $setter)) {
+                    $obj->$setter($value);
+                } else {
+                    $this->class->reflFields[$field]->setValue($obj, $value);
+                }
             }
         }
     }
