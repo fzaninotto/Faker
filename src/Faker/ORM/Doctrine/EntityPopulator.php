@@ -186,7 +186,16 @@ class EntityPopulator
     {
         foreach ($this->columnFormatters as $field => $format) {
             if (null !== $format) {
-                $value = is_callable($format) ? $format($insertedEntities, $obj) : $format;
+                //Add some extended debugging information to any errors thrown by the formatter
+                try {
+                    $value = is_callable($format) ? $format($insertedEntities, $obj) : $format;
+                } catch(\InvalidArgumentException $ex) {
+                    throw new \InvalidArgumentException(sprintf("Failed to generate a value for %s::%s: %s",
+                        get_class($obj),
+                        $field,
+                        $ex->getMessage()
+                    ));
+                }
                 $this->class->reflFields[$field]->setValue($obj, $value);
             }
         }
