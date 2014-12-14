@@ -71,8 +71,8 @@ class Address extends \Faker\Provider\Address
 
     // http://en.wikipedia.org/wiki/Singapore_Post#Address_format
     protected static $addressFormats = array(
-        "{{streetNumber}} {{streetName}}\n{{townName}} {{postcode}}",
-        "{{blockNumber}} {{streetName}}\n{{floorNumber}} {{apartmentNumber}}\n{{townName}} {{postcode}}",
+        "{{streetNumber}} {{streetAddress}}\n{{townName}} {{postcode}}",
+        "{{blockNumber}} {{streetAddress}}\n{{floorNumber}} {{apartmentNumber}}\n{{townName}} {{postcode}}",
     );
 
     protected static $townName = 'SINGAPORE';
