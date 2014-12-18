@@ -52,6 +52,7 @@ namespace Faker;
  * @property string $freeEmailDomain
  * @property string $safeEmailDomain
  * @property string $userName
+ * @property string $twitterHandler
  * @property string $domainName
  * @property string $domainWord
  * @property string $tld
