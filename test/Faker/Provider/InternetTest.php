@@ -36,7 +36,7 @@ class InternetTest extends \PHPUnit_Framework_TestCase
     public function testTwitterHandlerIsValid()
     {
         $pattern = '/@([A-Za-z0-9_]{1,15})/';
-        $emailaddress = $this->faker->username();
+        $emailaddress = $this->faker->twitterHandler();
         $this->assertSame(preg_match($pattern, $emailaddress), 1);
     }
 
