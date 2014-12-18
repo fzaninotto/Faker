@@ -30,7 +30,7 @@ class Internet extends \Faker\Provider\Base
         'https://{{domainName}}/{{slug}}.html',
     );
 
-     protected static $tiwtterFormats = array(
+     protected static $twitterFormats = array(
         '@{{userName}}'
     );
 
