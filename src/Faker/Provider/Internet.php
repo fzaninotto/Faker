@@ -30,6 +30,10 @@ class Internet extends \Faker\Provider\Base
         'https://{{domainName}}/{{slug}}.html',
     );
 
+     protected static $twitterFormats = array(
+        '@{{userName}}'
+    );
+
     /**
      * @example 'jdoe@acme.biz'
      */
@@ -95,6 +99,16 @@ class Internet extends \Faker\Provider\Base
         return static::toLower(static::bothify($this->generator->parse($format)));
     }
 
+     /**
+     * @example '@jdoe'
+     */
+    public function twitterHandler()
+    {
+        $format = static::randomElement(static::$twitterFormats);
+
+        return static::toLower(static::bothify($this->generator->parse($format)));
+    }
+    
     /**
      * @example 'fY4èHdZv68'
      */

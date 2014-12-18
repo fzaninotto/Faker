@@ -33,6 +33,13 @@ class InternetTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(preg_match($pattern, $emailaddress), 1);
     }
 
+    public function testTwitterHandlerIsValid()
+    {
+        $pattern = '/@([A-Za-z0-9_]{1,15})/';
+        $emailaddress = $this->faker->twitterHandler();
+        $this->assertSame(preg_match($pattern, $emailaddress), 1);
+    }
+
     public function testPasswordIsValid()
     {
         $this->assertRegexp('/^.{6}$/', $this->faker->password(6, 6));
