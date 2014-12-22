@@ -92,7 +92,9 @@ class Internet extends \Faker\Provider\Base
     {
         $format = static::randomElement(static::$userNameFormats);
 
-        return static::toLower(static::bothify($this->generator->parse($format)));
+        $userName = static::toLower(static::bothify($this->generator->parse($format)));
+        
+        return filter_var($userName, \FILTER_SANITIZE_EMAIL);
     }
 
     /**
