@@ -4,10 +4,6 @@ namespace Faker\Provider\en_UG;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $lastNameFormats = array(
-        '{{lastName}}'
-    );
-
     /**
      * It is very common in Uganda for people to arrange their names as
      * lastname(surname) firstname
@@ -96,7 +92,7 @@ class Person extends \Faker\Provider\Person
         'Nabaale','Nabaggala','Nabakooza','Nabaloga','Nabankema','Nabasirye','Nabaweesi','Nabayunga','Nabbona','Nabise','Nabukeera','Nabunya','Nabuufu','Nabuuso','Nabwami','Nakaayi','Nakabugo','Nakabuye','Nakafeero','Nakalanzi','Nakalunda','Nakasinde','Nakasolya','Nakasumba','Nakato','Nakaweesa','Nakazibwe','Nakiboneka','Nakidde','Nakigozi','Nakiguli','Nakimbugwe','Nakimuli','Nakinobe','Nakiridde','Nakisige','Nakitende','Nakiyemba','Nakku','Nakyagaba','Nakyanzi','Nalubuga','Nalubwama','Nalukwago','Naluyima','Nalweyiso','Nalwoga','Namaganda','Namagembe','Namatovu','Nambi','Nambogo','Nambooze','Nambuusi','Namenya','Namiiro','Namirembe','Nampemba','Nampijja','Namubiru','Namuddu','Namugenyi','Namugwanya','Namukwaya','Namuleme','Namulindwa','Namutebi','Nankindu','Nankinga','Nanteeza','Nantongo','Nanvule','Nanyanzi','Nanyombi','Nanyondo','Nanyonjo','Nassimwba','Nazziwa','Ndagire'
     );
 
-    protected static $lastname = array(
+    protected static $lastName = array(
         'Abayisenga','Agaba','Ahebwe','Aisu','Akankunda','Akankwasa','Akashaba','Akashabe','Ampumuza','Ankunda','Asasira','Asiimwe','Atuhe','Atuhire','Atukunda','Atukwase','Atwine','Aurishaba',
         'Badru','Baguma','Bakabulindi','Bamwiine','Barigye','Bbosa','Bisheko','Biyinzika','Bugala','Bukenya','Buyinza','Bwana','Byanyima','Byaruhanga',
         'Ddamulira',
@@ -120,7 +116,7 @@ class Person extends \Faker\Provider\Person
             return static::lastNameFemale();
         }
 
-        return $this->generator->parse(static::randomElement(static::$lastNameFormats));
+        return static::randomElement(static::$lastName);
     }
 
     public static function lastNameMale()
