@@ -5,9 +5,7 @@ namespace Faker\Provider\en_UG;
 class Person extends \Faker\Provider\Person
 {
     protected static $lastNameFormats = array(
-        '{{lastName}}',
-        '{{lastNameMale}}',
-        '{{lastNameFemale}}'
+        '{{lastName}}'
     );
 
     /**
@@ -99,7 +97,7 @@ class Person extends \Faker\Provider\Person
     );
 
     protected static $lastname = array(
-        'Abayisenga','Adeke','Agaba','Ahebwe','Aisu','Akankunda','Akankwasa','Akashaba','Akashabe','Ampumuza','Ankunda','Asasira','Asiimwe','Atuhe','Atuhire','Atukunda','Atukwase','Atwine','Aurishaba',
+        'Abayisenga','Agaba','Ahebwe','Aisu','Akankunda','Akankwasa','Akashaba','Akashabe','Ampumuza','Ankunda','Asasira','Asiimwe','Atuhe','Atuhire','Atukunda','Atukwase','Atwine','Aurishaba',
         'Badru','Baguma','Bakabulindi','Bamwiine','Barigye','Bbosa','Bisheko','Biyinzika','Bugala','Bukenya','Buyinza','Bwana','Byanyima','Byaruhanga',
         'Ddamulira',
         'Gamwera',
