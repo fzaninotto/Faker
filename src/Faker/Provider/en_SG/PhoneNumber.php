@@ -2,14 +2,10 @@
 
 namespace Faker\Provider\en_SG;
 
+use Faker\Factory;
+
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
-    // http://en.wikipedia.org/wiki/Telephone_numbers_in_Singapore#Numbering_plan
-    protected static $formats = array(
-        '{{fixedLineNumber}}',
-        '{{mobileNumber}}',
-    );
-
     protected static $internationalCodePrefix = array(
         '+65',
         '65',
@@ -19,7 +15,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     protected static $oneToNine = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
 
-    protected static $mobileNumber = array(
+    protected static $mobileNumberFormats = array(
         '{{internationalCodePrefix}}9{{zeroToEight}}## ####',
         '{{internationalCodePrefix}} 9{{zeroToEight}}## ####',
         '9{{zeroToEight}}## ####',
@@ -31,10 +27,16 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '7{{oneToNine}}## ####',
     );
 
-    protected static $fixedLineNumber = array(
+    protected static $fixedLineNumberFormats = array(
         '{{internationalCodePrefix}}6### ####',
         '{{internationalCodePrefix}} 6### ####',
         '6### ####',
+    );
+
+    // http://en.wikipedia.org/wiki/Telephone_numbers_in_Singapore#Numbering_plan
+    protected static $sgPhoneNumberFormats = array(
+        '{{mobileNumber}}',
+        '{{fixedLineNumber}}',
     );
 
     protected static $voipNumber = array(
@@ -72,22 +74,30 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     public function mobileNumber()
     {
-        return static::randomElement(static::$mobileNumber);
+        $format = static::randomElement(static::$mobileNumberFormats);
+
+        return static::numerify($this->generator->parse($format));
     }
 
     public function fixedLineNumber()
     {
-        return static::randomElement(static::$fixedLineNumber);
+        $format = static::randomElement(static::$fixedLineNumberFormats);
+
+        return static::numerify($this->generator->parse($format));
     }
 
     public function voipNumber()
     {
-        return static::randomElement(static::$voipNumber);
+        $format = static::randomElement(static::$voipNumber);
+
+        return $this->generator->parse($format);
     }
 
     public function internationalCodePrefix()
     {
-        return static::randomElement(static::$internationalCodePrefix);
+        $format = static::randomElement(static::$internationalCodePrefix);
+
+        return $this->generator->parse($format);
     }
 
     public function zeroToEight()
@@ -98,5 +108,20 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     public function oneToNine()
     {
         return static::randomElement(static::$oneToNine);
+    }
+
+    public function sgPhoneNumber() {
+        $format = static::randomElement(static::$sgPhoneNumberFormats);
+
+        return $this->generator->parse($format);
+    }
+
+/**
+ * this overrides the static function in Faker\Provider\PhoneNumber
+ */
+    public static function phoneNumber() {
+        $faker = Factory::create('en_SG');
+        $sgPhoneNumber = new PhoneNumber($faker);
+        return $sgPhoneNumber->sgPhoneNumber();
     }
 }
