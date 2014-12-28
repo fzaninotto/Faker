@@ -38,6 +38,6 @@ class PhoneNumberTest extends \PHPUnit_Framework_TestCase
             $mobileNumber = $this->faker->mobileNumber();
             $startsWith7Or8 = preg_match('/^(\+65|65)?\s*[7-8]/', $mobileNumber);
         }
-        $this->assertRegExp('/^(\+65|65)?\s*[7-8]\s*[1-9]{3}\s*\d{4}$/', $this->faker->phoneNumber());
+        $this->assertRegExp('/^(\+65|65)?\s*[7-8]\s*[1-9]{3}\s*\d{4}$/', $mobileNumber);
     }
 }
