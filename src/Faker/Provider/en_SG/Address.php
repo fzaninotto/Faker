@@ -88,16 +88,6 @@ class Address extends \Faker\Provider\Address
         return static::randomElement(static::$streetPrefix);
     }
 
-    public function streetSuffix()
-    {
-        return static::randomElement(static::$streetSuffix);
-    }
-
-    public function streetName()
-    {
-        return static::randomElement(static::$streetName);
-    }
-
     public function streetNumber()
     {
         return static::randomElement(static::$streetNumber);
