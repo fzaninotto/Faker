@@ -110,16 +110,19 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         return static::randomElement(static::$oneToNine);
     }
 
-    public function sgPhoneNumber() {
+    public function sgPhoneNumber()
+    {
         $format = static::randomElement(static::$sgPhoneNumberFormats);
 
         return $this->generator->parse($format);
     }
 
-/**
- * this overrides the static function in Faker\Provider\PhoneNumber
- */
-    public static function phoneNumber() {
+    /**
+     * this overrides the static function in Faker\Provider\PhoneNumber
+     * @return string PhoneNumber in string format
+     */
+    public static function phoneNumber()
+    {
         $faker = Factory::create('en_SG');
         $sgPhoneNumber = new PhoneNumber($faker);
         return $sgPhoneNumber->sgPhoneNumber();
