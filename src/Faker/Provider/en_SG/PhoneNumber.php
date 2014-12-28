@@ -15,9 +15,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '65',
     );
 
-    protected static $zeroToEight = range(0, 8);
+    protected static $zeroToEight = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
-    protected static $oneToNine = range(1, 9);
+    protected static $oneToNine = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
     protected static $mobileNumber = array(
         '{{internationalCodePrefix}}9{{zeroToEight}}## ####',
