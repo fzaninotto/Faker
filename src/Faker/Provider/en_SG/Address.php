@@ -98,6 +98,11 @@ class Address extends \Faker\Provider\Address
         return static::randomElement(static::$blockNumber);
     }
 
+    public function floorNumber()
+    {
+        return static::randomElement(static::$floorNumber);
+    }
+
     public function townName()
     {
         return static::$townName;
