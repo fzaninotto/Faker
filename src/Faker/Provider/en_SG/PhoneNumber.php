@@ -99,5 +99,4 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     {
         return static::randomElement(static::$oneToNine);
     }
-
 }

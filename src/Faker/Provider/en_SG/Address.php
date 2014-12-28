@@ -13,8 +13,8 @@ class Address extends \Faker\Provider\Address
 
     // http://www.streetdirectory.com/asia_travel/travel/street/alphabet2/
     protected static $streetSuffix = array(
-        'Alley', 'Avenue', 
-        'Bridge', 
+        'Alley', 'Avenue',
+        'Bridge',
         'Crescent',
         'Drive',
         'Grove',
@@ -43,14 +43,14 @@ class Address extends \Faker\Provider\Address
         'George', 'Glasgow', 'Grange',
         'Havelock', 'High', 'Hylam',
         'International Business', 'International', 'Irving',
-        'Jubilee', 
+        'Jubilee',
         'Kensington Park', 'Kitchener', 'Knights',
         'Lancaster', 'Leicester', 'Lengkok Bahru', 'Lim Teck Kim',
         'Malay', 'Market', 'Middle', 'Malabar', 'Merchant', 'Mohammed Sultan',
-        'Napier', 'Nathan', 'Newton', 
+        'Napier', 'Nathan', 'Newton',
         'Ocean', 'One Tree', 'Orchard', 'Outram', 'Ophir',
-        'Pekin', 'Peng Siang', 'Prince Edward', 'Palmer', 
-        'Quality', 'Queen', 
+        'Pekin', 'Peng Siang', 'Prince Edward', 'Palmer',
+        'Quality', 'Queen',
         'Raffles', 'Robinson', 'Rochor', 'Regent', 'Ridley', 'River Valley',
         'Sixth', 'Somerset', 'Stanley', 'Stamford', 'Shenton', 'Sultan',
         'Telok Ayer', 'Temple', 'Thomson', 'Unity', 'Victoria', 'Xilin', 'York', 'Zion',
@@ -62,12 +62,12 @@ class Address extends \Faker\Provider\Address
     );
 
     protected static $floorNumber = array(
-        '##', '0#', 
+        '##', '0#',
     );
 
     protected static $apartmentNumber = array(
-        '##', '###', 
-    );    
+        '##', '###',
+    );
 
     // http://en.wikipedia.org/wiki/Singapore_Post#Address_format
     protected static $addressFormats = array(
