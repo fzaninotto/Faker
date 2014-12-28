@@ -2,14 +2,14 @@
 
 namespace Faker\Test\Provider\en_SG;
 
-use Faker\Generator;
+use Faker\Factory;
 use Faker\Provider\en_SG\PhoneNumber;
 
 class PhoneNumberTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $faker = new Generator();
+        $faker = Factory::create('en_SG');
         $faker->addProvider(new PhoneNumber($faker));
         $this->faker = $faker;
     }

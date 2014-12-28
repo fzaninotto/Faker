@@ -9,7 +9,18 @@ class Address extends \Faker\Provider\Address
     protected static $streetNumber = array('##', '###');
 
     // http://en.wikipedia.org/wiki/Singapore_Post#Address_format
-    protected static $blockNumber = array('Blk ##', 'Blk ###', 'Blk ###A', 'Blk ###B', 'Blk ###C', 'Blk ###D');
+    protected static $blockNumber = array(
+        'Blk ##',
+        'Blk ###',
+        'Blk ###A',
+        'Blk ###B',
+        'Blk ###C',
+        'Blk ###D',
+        'Blk ###E',
+        'Blk ###F',
+        'Blk ###G',
+        'Blk ###H',
+    );
 
     // http://www.streetdirectory.com/asia_travel/travel/street/alphabet2/
     protected static $streetSuffix = array(
@@ -90,12 +101,12 @@ class Address extends \Faker\Provider\Address
 
     public function streetNumber()
     {
-        return static::randomElement(static::$streetNumber);
+        return static::numerify(static::randomElement(static::$streetNumber));
     }
 
     public function blockNumber()
     {
-        return static::randomElement(static::$blockNumber);
+        return static::numerify(static::randomElement(static::$blockNumber));
     }
 
     public function floorNumber()
