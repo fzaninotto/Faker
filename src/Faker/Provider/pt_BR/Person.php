@@ -112,7 +112,7 @@ class Person extends \Faker\Provider\Person
         $randomRg = (string) rand(10000000, 99999999);
         $sum = 0;
 
-        for ($i=1; $i < 9; $i++) { 
+        for ($i=1; $i < 9; $i++) {
             $sum += $randomRg[$i-1] * ($i+1);
         }
 
@@ -122,8 +122,9 @@ class Person extends \Faker\Provider\Person
             $dv = "X";
         }
 
-        if ($format === 'string')
+        if ($format === 'string') {
             return substr($randomRg, 0, 2) . '.' . substr($randomRg, 2, 3) . '.' . substr($randomRg, 5, 3) . '-' . $dv;
+        }
 
         return $randomRg.$dv;
     }
@@ -142,8 +143,9 @@ class Person extends \Faker\Provider\Person
         $firstDV = static::_mod11($randomCpf);
         $secondDV = static::_mod11($randomCpf.$firstDV);
 
-        if ($format === 'string')
+        if ($format === 'string') {
             return substr($randomCpf, 0, 3) . '.' . substr($randomCpf, 3, 3) . '.' .substr($randomCpf, 6, 3) . '-' . $firstDV.$secondDV;
+        }
         
         return $randomCpf.$firstDV.$secondDV;
     }
@@ -154,7 +156,8 @@ class Person extends \Faker\Provider\Person
      * @param int $cpf CPF only numbers
      * @return int $dv
      */
-    public static function _mod11($cpf) {
+    public static function _mod11($cpf)
+    {
         $sum = 0;
         $aux = 2;
 
@@ -166,8 +169,9 @@ class Person extends \Faker\Provider\Person
         
         $dv = 11 - ($sum % 11);
 
-        if ($dv > 9)
+        if ($dv > 9) {
             $dv = 0;
+        }
 
         return $dv;
     }
