@@ -130,11 +130,11 @@ class EntityPopulator
                         }
                     }
                 }
-            }  elseif ( $this->class instanceof \Doctrine\ODM\MongoDB\Mapping\ClassMetadata) {
+            } elseif ($this->class instanceof \Doctrine\ODM\MongoDB\Mapping\ClassMetadata) {
                 $mappings = $this->class->associationMappings;
                 foreach ($mappings as $mapping) {
                     if ($mapping['targetDocument'] == $relatedClass) {
-                        if ($mapping['type'] == \Doctrine\ODM\MongoDB\Mapping\ClassMetadata::ONE && $mapping['association'] == \Doctrine\ODM\MongoDB\Mapping\ClassMetadata::REFERENCE_ONE ) {
+                        if ($mapping['type'] == \Doctrine\ODM\MongoDB\Mapping\ClassMetadata::ONE && $mapping['association'] == \Doctrine\ODM\MongoDB\Mapping\ClassMetadata::REFERENCE_ONE) {
                             $unique = true;
                             $optional = isset($mapping['nullable']) ? $mapping['nullable'] : false;
                             break;
