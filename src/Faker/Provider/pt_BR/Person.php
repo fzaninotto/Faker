@@ -99,4 +99,76 @@ class Person extends \Faker\Provider\Person
     {
         return static::randomElement(static::$suffix);
     }
+
+    /**
+     * Cédula de Identidade - RG (SSP-SP)
+     * @link http://pt.wikipedia.org/wiki/C%C3%A9dula_de_identidade
+     *
+     * @param $format 'string' or 'integer'
+     * @return string or integer
+     */
+    public static function rg($format = 'string')
+    {
+        $randomRg = (string) rand(10000000, 99999999);
+        $sum = 0;
+
+        for ($i=1; $i < 9; $i++) { 
+            $sum += $randomRg[$i-1] * ($i+1);
+        }
+
+        $dv = $sum % 11;
+
+        if ($dv == 10) {
+            $dv = "X";
+        }
+
+        if ($format === 'string')
+            return substr($randomRg, 0, 2) . '.' . substr($randomRg, 2, 3) . '.' . substr($randomRg, 5, 3) . '-' . $dv;
+
+        return $randomRg.$dv;
+    }
+
+    /**
+     * Cadastro de Pessoas Físicas - CPF
+     * @link http://pt.wikipedia.org/wiki/Cadastro_de_Pessoas_F%C3%ADsicas
+     *
+     * @param $format 'string' or 'integer'
+     * @return string or integer
+     */
+    public static function cpf($format = 'string')
+    {
+        $randomCpf = (string) rand(100000000, 999999999);
+
+        $firstDV = static::_mod11($randomCpf);
+        $secondDV = static::_mod11($randomCpf.$firstDV);
+
+        if ($format === 'string')
+            return substr($randomCpf, 0, 3) . '.' . substr($randomCpf, 3, 3) . '.' .substr($randomCpf, 6, 3) . '-' . $firstDV.$secondDV;
+        
+        return $randomCpf.$firstDV.$secondDV;
+    }
+
+    /**
+     * Auxiliar method to calc mod11 of the random cpf
+     *
+     * @param int $cpf CPF only numbers
+     * @return int $dv
+     */
+    public static function _mod11($cpf) {
+        $sum = 0;
+        $aux = 2;
+
+        $lenght = strlen($cpf);
+
+        for ($i = $lenght - 1; $i >= 0; $i--) {
+            $sum = $sum + substr($cpf, $i, 1) * $aux++;
+        }
+        
+        $dv = 11 - ($sum % 11);
+
+        if ($dv > 9)
+            $dv = 0;
+
+        return $dv;
+    }
 }
