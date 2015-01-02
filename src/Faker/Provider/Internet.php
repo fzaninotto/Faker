@@ -132,7 +132,13 @@ class Internet extends \Faker\Provider\Base
             'ằ' => 'a','ầ' => 'a','ḑ' => 'd','Ḩ' => 'H','Ḑ' => 'D','ḑ' => 'd',
             'Ģ' => 'G','Š' => 'S','ļ' => 'l','ž' => 'z','Ē' => 'E','ņ' => 'n',
             'Č' => 'C','ș' => 's','ț' => 't', 'ộ' => 'o','ắ' => 'a','ş' => 's',
-            "'" => '',
+            "'" => '', 'ու' => 'u','ա' => 'a','բ' => 'b','գ' => 'g','դ' => 'd',
+            'ե' => 'e','զ' => 'z','է' => 'e','ը' => 'y','թ' => 't','ժ' => 'zh',
+            'ի' => 'i','լ' => 'l','խ' => 'kh','ծ' => 'ts','կ' => 'k','հ' => 'h',
+            'ձ' => 'dz','ղ' => 'gh','ճ' => 'ch','մ' => 'm','յ' => 'y','ն' => 'n',
+            'շ' => 'sh','ո' => 'o','չ' => 'ch','պ' => 'p','ջ' => 'j','ռ' => 'r',
+            'ս' => 's','վ' => 'v','տ' => 't','ր' => 'r','ց' => 'ts','փ' => 'p',
+            'ք' => 'q','և' => 'ev','օ' => 'o','ֆ' => 'f',
         );
 
         return str_replace(array_keys($transliterationTable), array_values($transliterationTable), $string);
@@ -140,12 +146,13 @@ class Internet extends \Faker\Provider\Base
     
     private static function transliterate($string)
     {
-        if (!function_exists('transliterator_transliterate')) {
-            return static::toAscii($string);
+        if (function_exists('transliterator_transliterate')) {
+            $transString = transliterator_transliterate("Any-Latin; Latin-ASCII; NFD; [:Nonspacing Mark:] Remove; NFC; Lower();", $string);    
+        } else {
+            $transString = static::toAscii($string);
         }
-        $transString = transliterator_transliterate("Any-Latin; Latin-ASCII; NFD; [:Nonspacing Mark:] Remove; NFC; Lower();", $string);
 
-        return preg_replace('/[^A-Za-z0-9_.]/', '', $transString);
+        return preg_replace('/[^A-Za-z0-9_.]/u', '', $transString);
     }
     
     /**
