@@ -241,6 +241,10 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     countryCode             // UK
     languageCode            // en
 
+### `Faker\Provider\Biased`
+
+    biasedNumberBetween($min, $max, $function) // 42
+
 ## Unique and Optional modifiers
 
 Faker provides two special providers, `unique()` and `optional()`, to be called before any provider. `optional()` can be useful for seeding non-required fields, like a mobile telephone number; `unique()` is required to populate fields that cannot accept twice the same value, like primary identifiers.
