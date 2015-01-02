@@ -150,15 +150,6 @@ class Internet extends \Faker\Provider\Base
         return $string;
     }
     
-    private static function transliterateEmail($email)
-    {
-        $emailParts = explode('@', $email);
-        $emailParts[0] = static::transliterate($emailParts[0]);
-        $emailParts[1] = static::transliterate($emailParts[1]);
-        $email = implode('@', $emailParts);
-        
-        return $email;
-    }
     /**
      * @example 'jdoe@acme.biz'
      */
@@ -166,7 +157,7 @@ class Internet extends \Faker\Provider\Base
     {
         $format = static::randomElement(static::$emailFormats);
         
-        return static::transliterateEmail($this->generator->parse($format));
+        return $this->generator->parse($format);
     }
 
     /**
@@ -222,7 +213,7 @@ class Internet extends \Faker\Provider\Base
         $format = static::randomElement(static::$userNameFormats);
         $username = static::bothify($this->generator->parse($format));
 
-        return preg_replace('/\s/u', '', static::transliterate($username));
+        return preg_replace('/[^A-Za-z0-9_.]/u', '', static::transliterate($username));
     }
     /**
      * @example 'fY4èHdZv68'
@@ -248,11 +239,10 @@ class Internet extends \Faker\Provider\Base
     public function domainWord()
     {
         $company = $this->generator->format('company');
-        $companyElements = explode(' ', $company);
+        $companyElements = function_exists('mb_split') ? mb_split(' ', $company) : explode(' ', $company);
         $company = $companyElements[0];
-        $company = preg_replace('/\W/u', '', $company);
 
-        return static::toLower($company);
+        return preg_replace('/[^A-Za-z0-9_.]/u', '', static::transliterate($company));
     }
 
     /**
