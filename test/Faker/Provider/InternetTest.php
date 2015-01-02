@@ -40,6 +40,7 @@ class InternetTest extends \PHPUnit_Framework_TestCase
     /**
      * @link http://stackoverflow.com/questions/12026842/how-to-validate-an-email-address-in-php
      *
+     * @requires PHP 5.4
      * @dataProvider localeDataProvider
      */
     public function testEmailIsValid($locale)
@@ -51,6 +52,7 @@ class InternetTest extends \PHPUnit_Framework_TestCase
     }
     
     /**
+     * @requires PHP 5.4
      * @dataProvider localeDataProvider
      */
     public function testUsernameIsValid($locale)

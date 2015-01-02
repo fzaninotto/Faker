@@ -147,7 +147,7 @@ class Internet extends \Faker\Provider\Base
     private static function transliterate($string)
     {
         if (function_exists('transliterator_transliterate')) {
-            $transString = transliterator_transliterate("Any-Latin; Latin-ASCII; NFD; [:Nonspacing Mark:] Remove; NFC; Lower();", $string);    
+            $transString = transliterator_transliterate("Any-Latin; Latin-ASCII; NFD; [:Nonspacing Mark:] Remove; NFC; Lower();", $string);
         } else {
             $transString = static::toAscii($string);
         }
