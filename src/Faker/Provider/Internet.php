@@ -140,14 +140,12 @@ class Internet extends \Faker\Provider\Base
     
     private static function transliterate($string)
     {
-        if (function_exists('transliterator_transliterate')) {
-            $string = transliterator_transliterate("Any-Latin; Latin-ASCII; NFD; [:Nonspacing Mark:] Remove; NFC; Lower();", $string);
-            $string = preg_replace('/(?!\.)\W/', '', $string);
-        } else {
-            $string = static::toAscii($string);
+        if (!function_exists('transliterator_transliterate')) {
+            return static::toAscii($string);
         }
-        
-        return $string;
+        $transString = transliterator_transliterate("Any-Latin; Latin-ASCII; NFD; [:Nonspacing Mark:] Remove; NFC; Lower();", $string);
+
+        return preg_replace('/[^A-Za-z0-9_.]/', '', $transString);
     }
     
     /**
@@ -213,7 +211,7 @@ class Internet extends \Faker\Provider\Base
         $format = static::randomElement(static::$userNameFormats);
         $username = static::bothify($this->generator->parse($format));
 
-        return preg_replace('/[^A-Za-z0-9_.]/u', '', static::transliterate($username));
+        return static::transliterate($username);
     }
     /**
      * @example 'fY4èHdZv68'
@@ -240,9 +238,8 @@ class Internet extends \Faker\Provider\Base
     {
         $company = $this->generator->format('company');
         $companyElements = function_exists('mb_split') ? mb_split(' ', $company) : explode(' ', $company);
-        $company = $companyElements[0];
 
-        return preg_replace('/[^A-Za-z0-9_.]/u', '', static::transliterate($company));
+        return static::transliterate($companyElements[0]);
     }
 
     /**

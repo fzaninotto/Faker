@@ -17,7 +17,7 @@
         "squizlabs/php_codesniffer": "~1.5"
     },
     "suggest": {
-         "ext-intl": "Needed for transliterate"
+         "ext-intl": "*"
      },
     "autoload": {
         "psr-4": {
