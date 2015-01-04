@@ -731,6 +731,22 @@ echo $faker->p; // "5398237590"
 
 ```
 
+### `Faker\Provider\fi_FI\Person`
+```php
+<?php
+
+//Generates a valid Finnish personal identity number (in Finnish - henkilötunnus)
+echo $faker->personalIdentityNumber // '950910-0799'
+// It's also possible to generate safe personal identity number
+echo $faker->safePersonalIdentityNumber
+
+// Supported attributes
+// $faker->personalIdentityNumber($gender, $minAge, $maxAge, $safe)
+echo $faker->personalIdentityNumber('female', 18, 65) // '950910-0781'
+echo $faker->personalIdentityNumber(null, 18)
+
+```
+
 ### `Faker\Provider\fr_FR\Company`
 
 ```php
