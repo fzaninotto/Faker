@@ -272,7 +272,7 @@ class Address extends \Faker\Provider\Address
     protected static $postcode = array('%####');
 
     /**
-     * @example 'California'
+     * @example 'Kalimantan Tengah'
      */
     public static function state()
     {
@@ -280,7 +280,7 @@ class Address extends \Faker\Provider\Address
     }
 
     /**
-     * @example 'CA'
+     * @example 'Banten'
      */
     public static function stateAbbr()
     {

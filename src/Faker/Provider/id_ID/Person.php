@@ -679,7 +679,7 @@ class Person extends \Faker\Provider\Person
     
     /**
      * Prefix for a person's name
-     * 
+     *
      * @example 'S.T.'
      * @return string Name Prefix
      */
@@ -690,7 +690,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Suffix for a person's name
-     * 
+     *
      * @example 'Ph.D.'
      * @return string Name Suffix
      */
