@@ -85,7 +85,7 @@ class Person extends \Faker\Provider\Person
         'Owen',
         'Palmer', 'Parker', 'Patel', 'Phillips', 'Powell', 'Price',
         'Reid', 'Reynolds', 'Richards', 'Richardson', 'Roberts', 'Robertson', 'Robinson', 'Rogers', 'Rose', 'Ross', 'Russell',
-        'Saunders' 'Scott', 'Shaw', 'Simpson', 'Smith', 'Stevens', 'Stewart',
+        'Saunders', 'Scott', 'Shaw', 'Simpson', 'Smith', 'Stevens', 'Stewart',
         'Taylor', 'Thomas', 'Thompson', 'Turner',
         'Walker', 'Walsh', 'Ward', 'Watson', 'White', 'Wilkinson', 'Williams', 'Wilson', 'Wood', 'Wright',
         'Young',
