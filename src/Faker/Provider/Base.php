@@ -5,6 +5,7 @@ namespace Faker\Provider;
 use Faker\Generator;
 use Faker\DefaultGenerator;
 use Faker\UniqueGenerator;
+use Faker\MaxGenerator;
 
 class Base
 {
@@ -17,6 +18,11 @@ class Base
      * @var \Faker\UniqueGenerator
      */
     protected $unique;
+
+    /**
+     * @var \Faker\MaxGenerator
+     */
+    protected $max;
 
     /**
      * @param \Faker\Generator $generator
@@ -505,5 +511,33 @@ class Base
         }
 
         return $this->unique;
+    }
+
+    /**
+     * Chainable method for making any formatter return a given maximum amount of entries.
+     *
+     * <code>
+     * // Will only return the first 3 entries it generates.
+     * $faker->max(3)->person;
+     * </code>
+     *
+     * @param integer $num             The maximum number of entries to generate.
+     * @param boolean $resetIndividual If set to true, resets the list of existing values for the next formatter called.
+     * @param boolean $reset           If set to true, resets the list of existing values for all formatters.
+     * @param integer $maxRetries      Maximum number of retries to find a unique value.
+     * @throws OverflowException       When no unique value can be found by iterating $maxRetries times.
+     *
+     * @return MaxGenerator            A proxy class returning only a maximum number of values for a given formatter.
+     */
+    public function max($num, $resetIndividual = false, $reset = false, $maxRetries = 10000)
+    {
+        if ($reset || !$this->max) {
+            $this->max = new MaxGenerator($this->generator, $maxRetries);
+        }
+
+        $this->max->nextMax = $num;
+        $this->max->resetNextIndividual = $resetIndividual;
+
+        return $this->max;
     }
 }
