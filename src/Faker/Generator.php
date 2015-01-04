@@ -34,6 +34,7 @@ namespace Faker;
  * @property string $creditCardDetails
  * @property string $bankAccountNumber
  * @property string $swiftBicNumber
+ * @property string $vat
  *
  * @property string $word
  * @method string words()
