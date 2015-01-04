@@ -243,10 +243,9 @@ class Internet extends \Faker\Provider\Base
      */
     public function domainWord()
     {
-        $company = $this->generator->format('company');
-        $companyElements = function_exists('mb_split') ? mb_split(' ', $company) : explode(' ', $company);
+        $lastName = $this->generator->format('lastName');
 
-        return static::transliterate($companyElements[0]);
+        return static::transliterate($lastName);
     }
 
     /**
