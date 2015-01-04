@@ -221,8 +221,6 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     imageUrl($width, $height, 'cats')     // 'http://lorempixel.com/800/600/cats/'
     image($dir = '/tmp', $width = 640, $height = 480) // '/tmp/13b73edae8443990be1aa8f1a483bc27.jpg'
     image($dir, $width, $height, 'cats')  // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat!
-    image($dir, $width, $height, 'cats', true)  // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg?52345' it's a cat with a five digit random GET argument,
-                                                // thus, each generated image within a single web page will be different (no client cache use).
 
 ### `Faker\Provider\Uuid`
 

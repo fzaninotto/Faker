@@ -15,11 +15,11 @@ class Image extends Base
     /**
      * Generate the URL that will return a random image
      *
-     * Set randomize to false to add a random GET parameter at the end of the url.
+     * Set randomize to false to remove the random GET parameter at the end of the url.
      *
-     * @example 'http://lorempixel.com/640/480/'
+     * @example 'http://lorempixel.com/640/480/?12345'
      */
-    public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = false)
+    public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true)
     {
         $url = "http://lorempixel.com/{$width}/{$height}/";
         if ($category) {
