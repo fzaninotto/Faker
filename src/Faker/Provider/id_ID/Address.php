@@ -313,21 +313,4 @@ class Address extends \Faker\Provider\Address
     {
         return static::numberBetween(1, 999);
     }
-
-    /**
-     * Returns a valid (non-verified) single postal code
-     * @link http://nomor.net/_kodepos.php?_i=provinsi-kodepos&daerah=&jobs=&perhal=200&urut=&asc=000011111&sby=000000&no1=2
-     * @return String Postal Code
-     */
-    // public static function postcode()
-    // {
-    //     // Ended up using the second result on the first page of google search
-    //     // Because the derelict, decrepit, and non user-friendly
-    //     // Official Government site at:
-    //     // http://kodepos.posindonesia.co.id/kodeposalamatindonesialist.php
-    //     // just won't let you list all currently used postal codes
-
-    //     // MAGIC NUMBERS!!!
-    //     return static::numberBetween(10110, 99974);
-    // }
 }

@@ -5,11 +5,8 @@ namespace Faker\Provider\id_ID;
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
     protected static $formats = array(
-        // 8804 234
-        '#######',
-
-        // 7777 4444
-        '########',
+        '#######', // 8804 234
+        '########', // 7777 4444
     );
 
     protected static $internationalPrefixes = array('+62', '(+62)');
@@ -66,14 +63,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     );
 
     protected static $mobileNumberFormats = array(
-        // 0811 XXX XXX, 10 digits, very old
-        '######',
-        
-        // 0811 XXXX XXX, 11 digits
-        '#######',
-        
-        // 0811 XXXX XXXX, 12 digits
-        '########',
+        '######',   // 0811 XXX XXX, 10 digits, very old
+        '#######',  // 0811 XXXX XXX, 11 digits
+        '########', // 0811 XXXX XXXX, 12 digits
     );
 
     public static function internationalNumber()
