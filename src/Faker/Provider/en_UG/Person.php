@@ -10,9 +10,9 @@ class Person extends \Faker\Provider\Person
      */
     protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastName}}',
-        '{{lastName}}      {{firstNameMale}}',
+        '{{lastName}} {{firstNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
-        '{{lastNameMale}}  {{firstNameMale}}'
+        '{{lastNameMale}} {{firstNameMale}}'
     );
 
     /**
@@ -21,9 +21,9 @@ class Person extends \Faker\Provider\Person
      */
     protected static $femaleNameFormats = array(
         '{{firstNameFemale}} {{lastName}}',
-        '{{lastName}}        {{firstNameFemale}}',
+        '{{lastName}} {{firstNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
-        '{{lastNameFemale}}  {{firstNameFemale}}'
+        '{{lastNameFemale}} {{firstNameFemale}}'
     );
 
     protected static $firstNameMale = array(
@@ -112,7 +112,8 @@ class Person extends \Faker\Provider\Person
     {
         if ($gender === static::GENDER_MALE) {
             return static::lastNameMale();
-        } elseif ($gender === static::GENDER_FEMALE) {
+        }
+        if ($gender === static::GENDER_FEMALE) {
             return static::lastNameFemale();
         }
 
