@@ -21,6 +21,15 @@ class ImageTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(Image::imageUrl(800, 400, 'nature'), 'http://lorempixel.com/800/400/nature/');
     }
 
+    public function testRandomizedUrl()
+    {
+        $url = Image::imageUrl(800, 400, null, true);
+        $splitUrl = preg_split('/\?/', $url);
+
+        $this->assertEquals(count($splitUrl), 2);
+        $this->assertEquals($splitUrl[0], 'http://lorempixel.com/800/400/');
+    }
+
     /**
      * @expectedException \InvalidArgumentException
      */
