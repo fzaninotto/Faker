@@ -10,17 +10,17 @@ class Address extends \Faker\Provider\Address
     protected static $blockSegment = array('A', 'B', 'C', 'D');
 
     protected static $streetPrefix = array(
-        'Str.', 'B-dul.', 'Aleea', 'Splaiul', 'Calea', 'P-ța'
+        'Str.', 'B-dul.', 'Aleea', 'Splaiul', 'Calea', 'P-ța', 'Intrarea'
     );
 
     // random selection of seemingly frequently used streets and naming categories
     protected static $streetPlainName = array(
         // historical events
-        'Eroilor', 'Independenței', 'Memorandumului', 'Unirii', '1 Decembrie',
+        'Eroilor', 'Independenței', 'Memorandumului', 'Unirii', '1 Decembrie', 'Revoluției',
         // historical people
-        'Mihai Viteazul', 'Mircea cel Bătrân', 'Vlad Țepeș', 'Traian', 'Decebal', 'Horea', 'Cloșca', 'Crișan',
+        'Mihai Viteazul', 'Mircea cel Bătrân', 'Vlad Țepeș', 'Traian', 'Decebal', 'Horea', 'Cloșca', 'Crișan', 'Constantin Brâncoveanu', 'Ștefan cel Mare', 'Titu Maiorescu', 'Grigore Antipa', 'Ștefan Odobleja', 'Ioan Cantacuzino', 'Nicolae Paulescu',
         // national and international people names
-        'Louis Pasteur', 'Albert Einstein', 'Franklin Delano Rosevelt', 'J.J Rousseau', 'Petrache Poenaru', 'Henri Coandă', 'Constantin Brâncuși', 'Aurel Vlaicu', 'Ion Creangă', 'Mihai Eminescu',
+        'Louis Pasteur', 'Albert Einstein', 'Franklin Delano Rosevelt', 'J.J Rousseau', 'Petrache Poenaru', 'Henri Coandă', 'Constantin Brâncuși', 'Aurel Vlaicu', 'Ion Creangă', 'Mihai Eminescu', 'Nicolae Ceausescu,', 'George Enescu', 
         // nature-related
         'Cireșilor', 'Frasinului', 'Salcâmilor', 'Brăduțului', 'Frunzișului', 'Castanilor', 'Mesteacănului', 'Florilor', 'Pădurii', 'Piersicului',
         // work-related
@@ -66,7 +66,7 @@ class Address extends \Faker\Provider\Address
 
     // http://ro.wikipedia.org/wiki/Lista_statelor_lumii#Lista_statelor_lumii
     protected static $country = array(
-        'Afganistan', 'Africa de Sud', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Antigua și Barbuda', 'Arabia Saudită', 'Argentina', 'Armenia', 'Australia', 'Austria', 'Azerbaidjan',
+        'Afganistan', 'Africa de Sud', 'Albania', 'Algeria', 'Andorra', 'Anglia', 'Angola', 'Antigua și Barbuda', 'Arabia Saudită', 'Argentina', 'Armenia', 'Australia', 'Austria', 'Azerbaidjan',
         'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgia', 'Belize', 'Benin', 'Bhutan', 'Birmania', 'Bolivia', 'Bosnia și Herțegovina', 'Botswana', 'Brazilia', 'Brunei', 'Bulgaria',
         'Burkina Faso', 'Burundi', 'Cambodgia', 'Camerun', 'Canada', 'Capul Verde', 'Cehia', 'Republica Centrafricană', 'Chile', 'Republica Populară Chineză', 'Ciad', 'Cipru', 'Columbia', 'Comore',
         'Republica Democrată Congo', 'Republica Congo', 'Coreea de Nord', 'Coreea de Sud', 'Costa Rica', 'Coasta de Fildeș', 'Croația', 'Cuba', 'Danemarca', 'Djibouti', 'Dominica',
