@@ -50,12 +50,8 @@ class Image extends Base
             throw new \InvalidArgumentException(sprintf('Cannot write to directory "%s"', $dir));
         }
 
-        // Generate a random filename. Use the server address so that a file
-        // generated at the same time on a different server won't have a collision.
-        $name = md5(uniqid(empty($_SERVER['SERVER_ADDR']) ? '' : $_SERVER['SERVER_ADDR'], true));
-        $filename = $name .'.jpg';
+        $filename = self::generateRandomFilename();
         $filepath = $dir . DIRECTORY_SEPARATOR . $filename;
-
         $url = static::imageUrl($width, $height, $category);
 
         // save file
@@ -80,5 +76,47 @@ class Image extends Base
         }
 
         return $fullPath ? $filepath : $filename;
+    }
+
+    /**
+     * Create a random image filled with random color on disk and return its location
+     *
+     * Requires gd extension in php.
+     *
+     * @example '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
+     */
+    public static function imageColor($dir = '/tmp', $width = 640, $height = 480, $fullPath = true)
+    {
+        if (!extension_loaded('gd')) {
+            throw new \Exception('GD extension is required to generate image');
+        }
+
+        // Validate directory path
+        if (!is_dir($dir) || !is_writable($dir)) {
+            throw new \InvalidArgumentException(sprintf('Cannot write to directory "%s"', $dir));
+        }
+
+        $filename = self::generateRandomFilename();
+        $filepath = $dir . DIRECTORY_SEPARATOR . $filename;
+
+        $imageHandle = imagecreatetruecolor($width, $height);
+
+        $color = imagecolorallocate($imageHandle, mt_rand(0, 255), mt_rand(0, 255), mt_rand(0, 255));
+        imagefill($imageHandle, 0, 0, $color);
+
+        imagejpeg($imageHandle, $filepath);
+        imagedestroy($imageHandle);
+
+        return $fullPath ? $filepath : $filename;
+    }
+
+    /**
+     * Generate a random filename. Use the server address so that a file
+     * generated at the same time on a different server won't have a collision.
+     */
+    private static function generateRandomFilename()
+    {
+        $name = md5(uniqid(empty($_SERVER['SERVER_ADDR']) ? '' : $_SERVER['SERVER_ADDR'], true));
+        return $name .'.jpg';
     }
 }
