@@ -12,7 +12,7 @@ class Internet extends \Faker\Provider\Internet
      *
      * @return string
      */
-    private static function toAscii($string)
+    public static function toAscii($string)
     {
         $from = array('á', 'é', 'í', 'ó', 'ú', 'Á', 'É', 'Í', 'Ó', 'Ú');
         $to   = array('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U');
