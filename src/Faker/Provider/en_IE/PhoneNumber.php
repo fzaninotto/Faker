@@ -20,7 +20,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     protected static $phoneFormats = array(
         '+353 ({{phonePrefix}}) ### ####',
-        '(0{{phonePrefix}}) ### ####'
+        '(0{{phonePrefix}}) ### ####',
         '+353 ({{mobilePrefix}}) ### ####',
         '(0{{mobilePrefix}}) ### ####'
     );
