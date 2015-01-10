@@ -46,4 +46,9 @@ class MiscellaneousTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertRegExp('/^[a-z]{2}$/', Miscellaneous::languageCode());
     }
+
+    public function testCurrencyCode()
+    {
+        $this->assertRegExp('/^[A-Z]{3}$/', Miscellaneous::currencyCode());
+    }
 }
