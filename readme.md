@@ -245,6 +245,16 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
     biasedNumberBetween($min, $max, $function) // 42
 
+### `Faker\Provider\Cron`
+
+    cron()           // 12-38 */4 * * 2000/5
+    cronMinute()     // */12,30-39
+    cronHour()       // 0-23
+    cronDayOfMonth() // L,14W,30
+    cronMonth()      // 1/2,6-8
+    cronDayOfWeek()  // 0-2,4W,3#2
+    cronYear()       // 2012,2000-2039
+
 ## Unique and Optional modifiers
 
 Faker provides two special providers, `unique()` and `optional()`, to be called before any provider. `optional()` can be useful for seeding non-required fields, like a mobile telephone number; `unique()` is required to populate fields that cannot accept twice the same value, like primary identifiers.

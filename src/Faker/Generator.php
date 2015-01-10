@@ -127,6 +127,14 @@ namespace Faker;
  * @property string $rgbCssColor
  * @property string $safeColorName
  * @property string $colorName
+ *
+ * @method string cronMinute()
+ * @method string cronHour()
+ * @method string cronDayOfMonth()
+ * @method string cronMonth()
+ * @method string cronDayOfWeek()
+ * @method string cronYear()
+ * @method string cron()
  */
 class Generator
 {
