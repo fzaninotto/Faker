@@ -221,6 +221,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     imageUrl($width, $height, 'cats')     // 'http://lorempixel.com/800/600/cats/'
     image($dir = '/tmp', $width = 640, $height = 480) // '/tmp/13b73edae8443990be1aa8f1a483bc27.jpg'
     image($dir, $width, $height, 'cats')  // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat!
+    image($dir, $width, $height, false, 'Faker') // 'http://lorempixel.com/800/400/nature/Faker'
 
 ### `Faker\Provider\Uuid`
 
