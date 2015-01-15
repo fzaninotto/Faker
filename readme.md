@@ -219,9 +219,10 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     // Image generation provided by LoremPixel (http://lorempixel.com/)
     imageUrl($width = 640, $height = 480) // 'http://lorempixel.com/640/480/'
     imageUrl($width, $height, 'cats')     // 'http://lorempixel.com/800/600/cats/'
+    imageUrl($width, $height, 'cats', false, 'Faker')     // 'http://lorempixel.com/800/400/cats/Faker'
     image($dir = '/tmp', $width = 640, $height = 480) // '/tmp/13b73edae8443990be1aa8f1a483bc27.jpg'
     image($dir, $width, $height, 'cats')  // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat!
-    image($dir, $width, $height, false, 'Faker') // 'http://lorempixel.com/800/400/nature/Faker'
+    image($dir, $width, $height, 'cats', false, 'Faker') // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat with Faker text
 
 ### `Faker\Provider\Uuid`
 
