@@ -12,6 +12,11 @@ class Image extends Base
         'fashion', 'people', 'nature', 'sports', 'technics', 'transport'
     );
 
+    protected static $placeimg_cats = array(
+        'animals', 'arch', 'nature', 'people', 'tech', 'any'
+    );
+
+
     /**
      * Generate the URL that will return a random image
      *
@@ -19,18 +24,110 @@ class Image extends Base
      *
      * @example 'http://lorempixel.com/640/480/?12345'
      */
-    public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true)
+    public static function imageUrl($service = 'lorem', $width = 640, $height = 480, $category = null, $randomize = true, $filter = null, $blur = null, $gravity = null)
     {
-        $url = "http://lorempixel.com/{$width}/{$height}/";
-        if ($category) {
-            if (!in_array($category, static::$categories)) {
-                throw new \InvalidArgumentException(sprintf('Unkown image category "%s"', $category));
+
+        if ($service == 'Unsplash')
+        {
+            return self::Unsplash($width, $height, $randomize, $filter, $blur, $gravity);
+        }
+        elseif ($service == 'placeimg')
+        {
+            return self::placeImg($width, $height, $category, $filter);
+        }
+        else
+        {
+            $url = "http://lorempixel.com/{$width}/{$height}/";
+
+            if ($category) {
+                if (!in_array($category, static::$categories)) {
+                    throw new \InvalidArgumentException(sprintf('Unkown image category "%s"', $category));
+                }
+                $url .= "{$category}/";
             }
-            $url .= "{$category}/";
+
+            if ($randomize) {
+                $url .= '?' . static::randomNumber(5, true);
+            }
+
+            return $url;
         }
 
+    }
+
+    /**
+     * https://unsplash.it/
+     * @param integer $width     [inherit]
+     * @param integer $height    [inherit]
+     * @param [type]  $randomize [Generate a Random image]
+     * @param [type]  $filter    [GrayScale]
+     * @param [type]  $blur      [Blur]
+     * @param [type]  $gravity   [Crop Gravity]
+     */
+    private static function Unsplash($width, $height, $randomize, $filter = null, $blur = null, $gravity = null)
+    {
+
+        // check if user wants the image to be in grayscale or use standard
+        if ($filter) {
+            $url = "https://unsplash.it/g/{$width}/{$height}/";
+        } else {
+            $url = "https://unsplash.it/{$width}/{$height}/";
+        }
+
+        if ($gravity) {
+            if (!in_array($gravity, static::$gravity_dir)) {
+                throw new \InvalidArgumentException($gravity . ' is invalid ,use any of (north, east, south, west, center)');
+            }
+        }
+
+        // check what was given to construct the url
+        // this is a better/different approach from of the native "?random"
         if ($randomize) {
-            $url .= '?' . static::randomNumber(5, true);
+            $url .= '?image=' . rand(0, 605);
+            if ($blur) {
+                $url .= "&blur";
+            }
+            if ($gravity) {
+               $url .= "&gravity=$gravity";
+            }
+        } elseif ($blur) {
+            $url .= "?blur";
+            if ($gravity) {
+               $url .= "&gravity=$gravity";
+            }
+        } elseif ($gravity) {
+           $url .= "?gravity=$gravity";
+        }
+
+        return $url;
+    }
+
+
+    /**
+     * http://placeimg.com/
+     * @param  integer $width    [inherit]
+     * @param  integer $height   [inherit]
+     * @param  [type]  $category [search in a specific category]
+     * @param  [type]  $filter   [GrayScale or sepia]
+     * @return [type]            [url]
+     */
+    private static function placeImg($width, $height, $category, $filter)
+    {
+        $url = "http://placeimg.com/{$width}/{$height}/";
+        if ($category) {
+           if (!in_array($category, static::$placeimg_cats)) {
+                throw new \InvalidArgumentException('Unkown image category ' . $category);
+            }
+            $url .= "{$category}";
+        }
+
+        $filters = ['grayscale','sepia'];
+
+        if ($filter) {
+            if (!in_array($filter, $filters)) {
+                throw new \InvalidArgumentException($filter . ' is invalid ,use either (grayscale or sepia)');
+            }
+            $url .= '/' . $filter;
         }
 
         return $url;
