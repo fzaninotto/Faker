@@ -795,6 +795,17 @@ echo $faker->firstKanaName; // "ハルカ"
 echo $faker->lastKanaName; // "ナカジマ"
 ```
 
+
+### `Faker\Provider\lv_LV\Person`
+
+```php
+<?php
+
+// Generates a random personal identity card number
+echo $faker->personalIdentityNumber; // "140190-12301"
+
+```
+
 ### `Faker\Provider\pl_PL\Person`
 
 ```php
