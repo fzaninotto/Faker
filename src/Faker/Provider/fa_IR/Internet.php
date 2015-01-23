@@ -47,7 +47,7 @@ class Internet extends \Faker\Provider\Internet
     }
 
     /**
-     * @example 'wewebit.jo'
+     * @example 'ahmad.ir'
      */
     public function domainName()
     {
