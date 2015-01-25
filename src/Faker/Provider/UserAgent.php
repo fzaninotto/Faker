@@ -108,7 +108,7 @@ class UserAgent extends \Faker\Provider\Base
         $mobileDevices = array(
             'iPhone; CPU iPhone OS',
             'iPad; CPU OS'
-        )
+        );
 
         $platforms = array(
             '(Windows; U; ' . static::windowsPlatformToken() . ") AppleWebKit/$saf (KHTML, like Gecko) Version/$ver Safari/$saf",
