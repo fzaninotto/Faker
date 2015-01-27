@@ -19,11 +19,54 @@ class Internet extends \Faker\Provider\Internet
         'biz', 'com', 'info', 'ir', 'net', 'org',
     );
 
+    /*
+     * @link http://en.wikipedia.org/wiki/Category:Iranian-language_surnames
+     */
     protected static $lastNameAscii = array(
-        'ahmadi', 'rezaei', 'mohammady', 'salari', 'zare', 'chamran', 'hosseini', 'hasan', 'shahriari', 'karimi', 'majidi', 'moosavi', 'soleimani', 'ebrahimi', 'abbasi', 'majedi', 'nili', 'yazdi', 'jalili', 'babaei', 'ghasemi',
+        'abdullahi', 'abbasi', 'abedini', 'ahadi', 'ahmadi', 'akbari', 'alizadeh', 'asadi',
+        'baraghani', 'babaei',
+        'chamran',
+        'ebrahimi', 'esfahani',
+        'fanaei', 'farahani', 'farsi', 'fekri',
+        'ghasemi', 'ghorbani',
+        'hamadani', 'hamidi', 'heidari', 'hijazi', 'husseini',
+        'jahanbani', 'jalili', 'jamshidi', 'javadi',
+        'kadivar', 'karimi', 'kashani', 'kazmi', 'khadem', 'khalaji', 'khomeini', 'khorsandi',
+        'mahdavi', 'mahmoudi', 'mahmoudieh', 'majidi', 'mazanderani', 'mirzaei', 'mokri', 'mohammady', 'mousavi',
+        'nabavi', 'naceri', 'nafisi', 'najafi', 'nalci', 'namazi', 'namdar', 'nariman', 'nazari', 'nili', 'norouzi',
+        'pahlavi', 'paria', 'pashaei', 'pejman',
+        'qazwini',
+        'rahimi', 'rahmani', 'rajaei', 'ramadani', 'rashidi', 'rezaei',
+        'salari', 'salehi', 'salemi', 'shahbazi', 'shahriari', 'shahidi', 'shirazi', 'shojaei', 'soleimani', 'soomekh', 'soroush',
+        'tabatabaei', 'talebi', 'tousi',
+        'yazdani', 'yazdi', 'yousefi',
+        'zandi', 'zare',
     );
+
+    /*
+     * @link http://en.wikipedia.org/wiki/Persian_name
+     */
     protected static $firstNameAscii = array(
-        'ali', 'reza', 'ahmad', 'hoda', 'mohsen', 'kamran', 'hanie', 'majid', 'hossein', 'maryam', 'arman', 'mohammad', 'amir', 'mahdi', 'bahar', 'zahra', 'marjan', 'behnaz', 'fateme', 'zeynab',
+        'abbas', 'afshin', 'ahmad', 'ali', 'amir', 'anahita', 'anousheh', 'arash', 'ardeshir', 'arezu', 'aria', 'arian', 'arman', 'ashraf', 'atoosa', 'azadeh', 'azar',
+        'babak', 'bahar', 'bahare', 'bardia', 'behnaz', 'benyamin', 'bita',
+        'dalir', 'dariush', 'davoud', 'donya',
+        'ebrahim', 'ehsan', 'eskandar', 'esmaeel',
+        'farangis', 'farbod', 'farhad', 'farideh', 'farnaz', 'farrokh', 'farshid', 'farzaneh', 'fateme', 'fereshteh',
+        'garshasp',
+        'hanie', 'hashem', 'hirbod', 'hoda', 'hormoz', 'hossein',
+        'jaleh', 'jamshid', 'javad',
+        'kamran', 'karim', 'kasra', 'katayoun', 'kazem', 'khorshid', 'khosrow', 'kiana', 'kiarash', 'kourosh',
+        'laleh', 'leila',
+        'mahdi', 'mahmoud', 'mahshid', 'majid', 'manuchehr', 'marjan', 'maryam', 'marzban', 'massoud', 'mazdak', 'maziar', 'mehran', 'mehrdad', 'meysam', 'milad', 'mina', 'mithra', 'mohammad', 'mohsen', 'musa',
+        'nasrin', 'nazanin', 'niloufar',
+        'omid',
+        'parastoo', 'parisa', 'parsa', 'parvin', 'parviz', 'payam', 'payvand', 'pedram', 'piruz', 'pouria',
+        'ramin', 'reyhan', 'reza', 'roksaneh', 'rostam', 'roxana', 'roya',
+        'sahar', 'saman', 'samir', 'sara', 'sassan', 'sepehr', 'sepideh', 'shahin', 'shahryar', 'shapour', 'shervin', 'shirin', 'simin', 'soheila', 'sohrab', 'soraya', 'soroush',
+        'tara', 'taraneh', 'turan',
+        'vahid',
+        'yaghoub', 'yahya', 'yasamin', 'yasaman', 'younes', 'yousef',
+        'zahra', 'zarine', 'zeynab', 'zhila',
     );
 
     public static function lastNameAscii()
