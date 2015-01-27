@@ -240,6 +240,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     locale                  // en_UK
     countryCode             // UK
     languageCode            // en
+    currencyCode            // EUR
 
 ### `Faker\Provider\Biased`
 
