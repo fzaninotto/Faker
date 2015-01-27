@@ -19,7 +19,7 @@ class Internet extends \Faker\Provider\Internet
         'biz', 'com', 'info', 'ir', 'net', 'org',
     );
 
-    /*
+    /**
      * @link http://en.wikipedia.org/wiki/Category:Iranian-language_surnames
      */
     protected static $lastNameAscii = array(
