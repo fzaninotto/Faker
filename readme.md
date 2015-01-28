@@ -329,7 +329,7 @@ for ($i=0; $i < 10; $i++) {
 print_r($values); // [1, 4, null, 9, 5, null, null, 4, 6, null]
 
 // optional() accepts a weight argument to specify the probability of receiving the default value.
-// 0 will always return the default value; 1 will always return the provider. Default weight is 0.5.
+// 0 will always return the default value; 1 will always return the provider. Default weight is 0.5 (50% chance).
 $faker->optional($weight = 0.1)->randomDigit; // 90% chance of NULL
 $faker->optional($weight = 0.9)->randomDigit; // 10% chance of NULL
 
@@ -338,6 +338,16 @@ $faker->optional($weight = 0.9)->randomDigit; // 10% chance of NULL
 $faker->optional($weight = 0.5, $default = false)->randomDigit; // 50% chance of FALSE
 $faker->optional($weight = 0.9, $default = 'abc')->word; // 10% chance of 'abc'
 ```
+
+Since v1.5 this method will accept a percentage like the `boolean()` method.
+```php
+$faker->optional(0.9)->randomDigit; // 10% chance of NULL
+$faker->optional(90)->randomDigit;  // 10% chance of NULL
+```
+
+> **Attention!**
+> This introduces a small BC with the values `0` and `1`, and it will be removed in `v2`.
+> Them will be threated as 0% and 1% chance of NULL.
 
 ## Localization
 
