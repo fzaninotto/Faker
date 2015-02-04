@@ -151,6 +151,8 @@ class Lorem extends \Faker\Provider\Base
         return $asText ? join("\n\n", $paragraphs) : $paragraphs;
     }
 
+    const TOO_SHORT_TEXT_ARGUMENT = 5;
+
     /**
      * Generate a text string.
      * Depending on the $maxNbChars, returns a string made of words, sentences, or paragraphs.
@@ -162,7 +164,7 @@ class Lorem extends \Faker\Provider\Base
     public static function text($maxNbChars = 200)
     {
         $text = array();
-        if ($maxNbChars < 5) {
+        if ($maxNbChars < self::TOO_SHORT_TEXT_ARGUMENT) {
             throw new \InvalidArgumentException('text() can only generate text of at least 5 characters');
         } elseif ($maxNbChars < 25) {
             // join words

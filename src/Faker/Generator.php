@@ -61,6 +61,7 @@ namespace Faker;
  * @property string $ipv6
  * @property string $internalIpv4
  * @property string $macAddress
+ * @property string $html
  *
  * @property int       $unixTime
  * @property \DateTime $dateTime

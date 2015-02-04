@@ -29,7 +29,7 @@ class Internet extends \Faker\Provider\Base
         'http://{{domainName}}/{{slug}}.html',
         'https://{{domainName}}/{{slug}}.html',
     );
-    
+
     public static function toAscii($string)
     {
         $transliterationTable = array(
@@ -143,7 +143,7 @@ class Internet extends \Faker\Provider\Base
 
         return str_replace(array_keys($transliterationTable), array_values($transliterationTable), $string);
     }
-    
+
     private static function transliterate($string)
     {
         if (function_exists('transliterator_transliterate')) {
@@ -154,14 +154,14 @@ class Internet extends \Faker\Provider\Base
 
         return preg_replace('/[^A-Za-z0-9_.]/u', '', $transString);
     }
-    
+
     /**
      * @example 'jdoe@acme.biz'
      */
     public function email()
     {
         $format = static::randomElement(static::$emailFormats);
-        
+
         return $this->generator->parse($format);
     }
 
@@ -330,5 +330,129 @@ class Internet extends \Faker\Provider\Base
         $mac = implode(':', $mac);
 
         return $mac;
+    }
+
+    /**
+     *
+     */
+    const SMALLEST_HTML_LENGTH = 4; // <br>
+
+    /**
+     * @param string $tag
+     * @param string $content
+     * @param string $attributes as a string
+     *
+     * @return string
+     */
+    protected static function buildHtmlTag($tag, $content = '')
+    {
+        return sprintf('<%s>%s</%s>', $tag, $content, $tag);
+    }
+
+    /**
+     * @return array of distinct block-level and inline-level elements names
+     */
+    protected static function getHtmlTags()
+    {
+        return array(
+            "block" =>  array("h1", "h2", "h3", "p"),
+            "inline" => array("i", "b", "span")
+        );
+    }
+
+    /**
+     * @link http://w3c.github.io/html-reference/global-attributes.html
+     * pro-memoria for now
+     *
+     * @return array
+     */
+    protected static function getRandomHtmlTagsGlobalAttribute()
+    {
+        return self::randomElement(array(
+            "accesskey" =>          sprintf("accesskey='%s'", self::randomLetter()),
+            "class" =>              sprintf("class='%s'", Lorem::word()),
+            "contenteditable" =>    sprintf("contenteditable='%s'", self::randomElement(array('true', 'false'))),
+            "dir" =>                sprintf("dir='%s'", self::randomElement(array("ltr", "rtl", "auto"))),
+            "draggable" =>          sprintf("draggable='%s'", self::randomElement(array('true', 'false'))),
+            "data" =>               sprintf("data-%s='%s'", Lorem::word(), Lorem::word()),
+            "dropzone" =>           sprintf("dropzone='%s'", self::randomElement(array("copy", "move", "link"))),
+            "hidden" =>             sprintf("hidden='%s'", self::randomElement(array('true', 'false'))),
+            "spellcheck" =>         sprintf("spellcheck='%s'", self::randomElement(array('true', 'false'))),
+            "tablindex" =>          sprintf("tabindex='%s'", self::randomDigit()),
+            "title" =>              sprintf("title='%s'", Lorem::sentence()),
+            "translate" =>          sprintf("translate='%s'", self::randomElement(array("yes", "no"))),
+        ));
+    }
+
+    /**
+     * Principe 0: No fixed chars length guaranteed, only a max size, as in Lorem::text()
+     * Principe 1: The more maxLength you want, the more html tags you get
+     * Principe 2: Available html block/inline tags list is fixed, for now
+     * Principe 3: We distinguish block-level and inline tags, and allow inline tags inside blocks.
+     *
+     * @param int $maxLength max string size expected
+     *
+     * @return string html output - html tags + Lorem text rendering
+     */
+    public static function html($maxLength = 100)
+    {
+        if (0 > ($maxLength - self::SMALLEST_HTML_LENGTH - 5)) { // 5 == Lorem::text() argument limit
+            $message = sprintf(
+                "Given length parameter a%d must be superior to %d - text length cannot be %d",
+                $maxLength,
+                self::SMALLEST_HTML_LENGTH + Lorem::TOO_SHORT_TEXT_ARGUMENT,
+                $maxLength - self::SMALLEST_HTML_LENGTH - Lorem::TOO_SHORT_TEXT_ARGUMENT
+            );
+            throw new \InvalidArgumentException($message);
+        }
+
+        $output         = "";
+        $htmlTags       = self::getHtmlTags();
+        //$htmlBlockTags  = $htmlTags['block'];
+        //$htmlInlineTags = $htmlTags['inline'];
+
+        // how many chars length occupied only by the html tags:
+        $htmlTagsLength = 0;
+        foreach ($htmlTags as $tagType) {
+            foreach ($tagType as $tag) {
+                $htmlTagsLength += strlen(self::buildHtmlTag($tag));
+            }
+        }
+        $textLength = $maxLength - $htmlTagsLength;
+        switch ($maxLength) {
+            case ($maxLength >= (self::SMALLEST_HTML_LENGTH + 200)):
+                /*
+                Since Lorem::text() output length is 99% always below than the request $maxNbChars
+                while looping over the tag list, generating the html output,
+                we recalculate the real remaining  text length to be outputted.
+                Makes the result as closer as possible from the max expected value
+                */
+                foreach ($htmlTags['block'] as $i => $tag) {
+                    $remainingBlockTagsToBuild = count($htmlTags['block']) - $i;
+                    $remainingTextLength = $textLength - strlen(strip_tags($output));
+                    // we'll concatenate a block tag html + inline tag html
+                    $textLengthPerTag = floor(($remainingTextLength / $remainingBlockTagsToBuild) / count($htmlTags)) - 15;
+                    if ($textLengthPerTag > Lorem::TOO_SHORT_TEXT_ARGUMENT) {
+                        $inlineHtml = self::buildHtmlTag(
+                            self::randomElement($htmlTags['inline']),
+                            Lorem::text($textLengthPerTag)
+                        );
+                        $blockHtml = self::buildHtmlTag(
+                            $tag,
+                            sprintf("%s %s", $inlineHtml, Lorem::text($textLengthPerTag))
+                        );
+                        $output .= $blockHtml;
+                    }
+                }
+                $output = sprintf("<div>%s</div>", $output);
+                break;
+            case ($maxLength >= (self::SMALLEST_HTML_LENGTH + 15)):
+                $output = self::buildHtmlTag('div', Lorem::text($maxLength - strlen(self::buildHtmlTag('div'))));
+                break;
+            default:
+                $output = sprintf("<br>%s", Lorem::text($maxLength - self::SMALLEST_HTML_LENGTH));
+        }
+
+        return $output;
     }
 }
