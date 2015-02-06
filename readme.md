@@ -339,16 +339,6 @@ $faker->optional($weight = 0.5, $default = false)->randomDigit; // 50% chance of
 $faker->optional($weight = 0.9, $default = 'abc')->word; // 10% chance of 'abc'
 ```
 
-Since v1.5 this method will accept a percentage like the `boolean()` method.
-```php
-$faker->optional(0.9)->randomDigit; // 10% chance of NULL
-$faker->optional(90)->randomDigit;  // 10% chance of NULL
-```
-
-> **Attention!**
-> This introduces a small BC with the values `0` and `1`, and it will be removed in `v2`.
-> Them will be threated as 0% and 1% chance of NULL.
-
 ## Localization
 
 `Faker\Factory` can take a locale as an argument, to return localized data. If no localized provider is found, the factory fallbacks to the default locale (en_EN).
