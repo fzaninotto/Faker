@@ -326,7 +326,6 @@ class BaseTest extends \PHPUnit_Framework_TestCase
     {
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
-        // BC: $this->assertNotNull($faker->optional(1)->randomDigit);
         $this->assertNotNull($faker->optional(100)->randomDigit);
     }
 
@@ -342,7 +341,6 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         $faker->addProvider(new \ArrayObject(array(1))); // hack because method_exists forbids stubs
-        // BC: $this->assertEquals(1, $faker->optional(1)->count);
         $this->assertEquals(1, $faker->optional(100)->count);
         $this->assertNull($faker->optional(0)->count);
     }
@@ -352,7 +350,6 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         $faker->addProvider(new \ArrayObject(array(1))); // hack because method_exists forbids stubs
-        // BC: $this->assertEquals(1, $faker->optional(1)->count());
         $this->assertEquals(1, $faker->optional(100)->count());
         $this->assertNull($faker->optional(0)->count());
     }
