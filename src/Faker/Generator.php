@@ -7,6 +7,10 @@ namespace Faker;
  * @property string $firstName
  * @property string $lastName
  *
+ * @property string $cityPrefix
+ * @property string $secondaryAddress
+ * @property string $state
+ * @property string $stateAbbr
  * @property string $citySuffix
  * @property string $streetSuffix
  * @property string $buildingNumber
