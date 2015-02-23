@@ -5,6954 +5,1990 @@ namespace Faker\Provider\it_IT;
 class Text extends \Faker\Provider\Text
 {
     /**
-     * Project Gutenberg's La Divina Commedia di Dante: Inferno, by Dante Alighieri
+     * Carlo Collodi
+     * Pinocchio
+     * Questo e-book è stato realizzato anche grazie al sostegno di:
      *
-     * This eBook is for the use of anyone anywhere in the United States and most
-     * other parts of the world at no cost and with almost no restrictions
-     * whatsoever.  You may copy it, give it away or re-use it under the terms of
-     * the Project Gutenberg License included with this eBook or online at
-     * www.gutenberg.org.  If you are not located in the United States, you'll have
-     * to check the laws of the country where you are located before using this ebook.
+     * E-text
+     * Web design, Editoria, Multimedia
+     * (pubblica il tuo libro, o crea il tuo sito con E-text!)
+     * http://www.e-text.it/
      *
-     * Title: La Divina Commedia di Dante: Inferno
+     * QUESTO E-BOOK:
      *
-     * Author: Dante Alighieri
+     * TITOLO: Pinocchio
+     * AUTORE: Collodi, Carlo
+     * TRADUTTORE:
+     * CURATORE:
+     * NOTE:
      *
-     * Posting Date: December 8, 2014 [EBook #1009]
-     * Release Date: August, 1997
-     * First Posted: September 4, 1997
+     * CODICE ISBN E-BOOK: 9788890359767
      *
-     * Language: Italian
+     * DIRITTI D'AUTORE: no
      *
+     * LICENZA: questo testo è distribuito con la licenza specificata al seguente indirizzo Internet: http://www.liberliber.it/libri/licenze/ (Attribution-NonCommercial-ShareAlike 4.0 International)
      *
-     *  *** START OF THIS PROJECT GUTENBERG EBOOK DIVINIA COMMEDIA DI DANTE: INFERNO ***
+     * TRATTO DA: Le avventure di Pinocchio : storia di un burattino / di Carlo Collodi ; illustrata da Enrico Mazzanti. – 2a edizione. – Milano : Rizzoli Editore, Milano, 1949.
      *
+     * CODICE ISBN: informazione non disponibile
      *
+     * 1a EDIZIONE ELETTRONICA DEL: 28 gennaio 1996
+     * 2a EDIZIONE ELETTRONICA DEL: 17 gennaio 2002
+     * 3a EDIZIONE ELETTRONICA DEL: 19 luglio 2013
      *
+     * INDICE DI AFFIDABILITA': 1
+     * 0: affidabilità bassa
+     * 1: affidabilità media
+     * 2: affidabilità buona
+     * 3: affidabilità ottima
      *
-     * Produced by an anonymous Project Gutenberg volunteer. HTML
-     * version by Al Haines.
+     * DIGITALIZZAZIONE:
+     * Riccardo Scateni
      *
+     * REVISIONE:
+     * Marco Zela
      *
+     * IMPAGINAZIONE:
+     * Riccardo Scateni
+     * Marco Zela
+     * Catia Righi
      *
+     * PUBBLICAZIONE:
+     * Marco Calvo, http://www.marcocalvo.it/
+     * Informazioni sul "progetto Manuzio"
+     * Il "progetto Manuzio" è una iniziativa dell'associazione culturale Liber Liber. Aperto a chiunque voglia collaborare, si pone come scopo la pubblicazione e la diffusione gratuita di opere letterarie in formato elettronico. Ulteriori informazioni sono disponibili sul sito Internet:
+     * http://www.liberliber.it/
+     * Aiuta anche tu il "progetto Manuzio"
+     * Se questo "libro elettronico" è stato di tuo gradimento, o se condividi le finalità del "progetto Manuzio", invia una donazione a Liber Liber. Il tuo sostegno ci aiuterà a far crescere ulteriormente la nostra biblioteca. Qui le istruzioni:
+     * http://www.liberliber.it/aiuta/
      *
+     * Indice generale
+     * I. Come andò che maestro Ciliegia, falegname, trovò un pezzo di legno, che piangeva e rideva come un bambino.
+     * II. Maestro Ciliegia regala il pezzo di legno al suo amico Geppetto, il quale lo prende per fabbricarsi un burattino maraviglioso che sappia ballare, tirar di scherma e fare i salti mortali.
+     * III Geppetto, tornato a casa, comincia subito a fabbricarsi il burattino e gli mette il nome di Pinocchio. Prime monellerie del burattino.
+     * IV La storia di Pinocchio col Grillo-parlante, dove si vede come i ragazzi cattivi hanno a noia di sentirsi correggere da chi ne sa più di loro.
+     * V Pinocchio ha fame, e cerca un uovo per farsi una frittata; ma sul più bello, la frittata gli vola via dalla finestra.
+     * VI Pinocchio si addormenta coi piedi sul caldano, e la mattina dopo si sveglia coi piedi tutti bruciati.
+     * VII Geppetto torna a casa, e dà al burattino la colazione che il pover’uomo aveva portata con sé.
+     * VIII Geppetto rifà i piedi a Pinocchio e vende la propria casacca per comprargli l’Abbecedario.
+     * IX Pinocchio vende l’Abbecedario per andare a vedere il teatrino dei burattini.
+     * X I burattini riconoscono il loro fratello Pinocchio e gli fanno una grandissima festa; ma sul più bello, esce fuori il burattinaio Mangiafoco, e Pinocchio corre il pericolo di fare una brutta fine.
+     * XI Mangiafoco starnutisce e perdona a Pinocchio, il quale poi difende dalla morte il suo amico Arlecchino.
+     * XII Il burattinaio Mangiafoco regala cinque monete d’oro a Pinocchio, perché le porti al suo babbo Geppetto: e Pinocchio, invece, si lascia abbindolare dalla Volpe e dal Gatto e se ne va con loro.
+     * XIII L’osteria del Gambero Rosso.
+     * XIV Pinocchio, per non aver dato retta ai buoni consigli del Grillo-parlante, s’imbatte negli assassini.
+     * XV Gli assassini inseguono Pinocchio; e, dopo averlo raggiunto, lo impiccano a un ramo della Quercia grande.
+     * XVI La bella Bambina dai capelli turchini fa raccogliere il burattino: lo mette a letto, e chiama tre medici per sapere se sia vivo o morto.
+     * XVII Pinocchio mangia lo zucchero, ma non vuol purgarsi: Però quando vede i becchini che vengono a portarlo via, allora si purga. Poi dice una bugia e per gastigo gli cresce il naso.
+     * XVIII Pinocchio ritrova la Volpe e il Gatto, e va con loro a seminare le quattro monete nel Campo de’ Miracoli.
+     * XIX Pinocchio è derubato delle sue monete d’oro e, per gastigo, si busca quattro mesi di prigione.
+     * XX Liberato dalla prigione, si avvia per tornare a casa della Fata; ma lungo la strada trova un serpente orribile, e poi rimane preso alla tagliuola.
+     * XXI Pinocchio è preso da un contadino, il quale lo costringe a far da can da guardia a un pollaio.
+     * XXII Pinocchio scuopre i ladri e, in ricompensa di essere stato fedele, vien posto in libertà.
+     * XXIII Pinocchio piange la morte della bella Bambina dai capelli turchini: poi trova un Colombo che lo porta sulla riva del mare, e lì si getta nell’acqua per andare in aiuto del suo babbo Geppetto.
+     * XXIV Pinocchio arriva all’isola delle Api industriose e ritrova la Fata.
+     * XXV Pinocchio promette alla Fata di essere buono e di studiare, perché è stufo di fare il burattino e vuol diventare un bravo ragazzo.
+     * XXVI Pinocchio va co’ suoi compagni di scuola in riva al mare, per vedere il terribile Pescecane.
+     * XXVII Gran combattimento fra Pinocchio e i suoi compagni: uno de’ quali essendo rimasto ferito, Pinocchio viene arrestato dai carabinieri.
+     * XXVIII Pinocchio corre pericolo di essere fritto in padella come un pesce.
+     * XXIX Ritorna a casa della Fata, la quale gli promette che il giorno dopo non sarà più un burattino, ma diventerà un ragazzo. Gran colazione di caffè-e-latte per festeggiare questo grande avvenimento.
+     * XXX Pinocchio, invece di diventare un ragazzo, parte di nascosto col suo amico Lucignolo per il Paese dei Balocchi.
+     * XXXI Dopo cinque mesi di cuccagna, Pinocchio, con sua grande maraviglia, sente spuntarsi un bel paio d’orecchie asinine e diventa un ciuchino, con la coda e tutto.
+     * XXXII A Pinocchio gli vengono gli orecchi di ciuco, e poi diventa un ciuchino vero e comincia a ragliare.
+     * XXXIII Diventato un ciuchino vero, è portato a vendere, e lo compra il direttore di una compagnia di pagliacci per insegnargli a ballare e a saltare i cerchi; ma una sera azzoppisce e allora lo ricompra un altro, per far con la sua pelle un tamburo.
+     * XXXIV Pinocchio, gettato in mare, è mangiato dai pesci e ritorna ad essere un burattino come prima; ma mentre nuota per salvarsi, è ingoiato dal terribile Pesce-cane.
+     * XXXV Pinocchio ritrova in corpo al Pesce-cane... Chi ritrova? Leggete questo capitolo e lo saprete.
+     * XXXVI Finalmente Pinocchio cessa d’essere un burattino e diventa un ragazzo.
      *
-     *
-     *
-     *
-     *
-     *
-     * LA DIVINA COMMEDIA
-     * di Dante Alighieri
-     *
-     *
-     *
-     *
-     *
-     * INFERNO
-     *
-     * @see http://www.gutenberg.org/cache/epub/1009/pg1009.txt
+     * @see http://www.liberliber.it/libri/c/collodi/index.php#elenco_opere
      * @var string
      */
     protected static $baseText = <<<'EOT'
-  Inferno · Canto I
-
-
-  Nel mezzo del cammin di nostra vita
-  mi ritrovai per una selva oscura,
-  ché la diritta via era smarrita.
-
-  Ahi quanto a dir qual era è cosa dura
-  esta selva selvaggia e aspra e forte
-  che nel pensier rinova la paura!
-
-  Tant’ è amara che poco è più morte;
-  ma per trattar del ben ch’i’ vi trovai,
-  dirò de l’altre cose ch’i’ v’ho scorte.
-
-  Io non so ben ridir com’ i’ v’intrai,
-  tant’ era pien di sonno a quel punto
-  che la verace via abbandonai.
-
-  Ma poi ch’i’ fui al piè d’un colle giunto,
-  là dove terminava quella valle
-  che m’avea di paura il cor compunto,
-
-  guardai in alto e vidi le sue spalle
-  vestite già de’ raggi del pianeta
-  che mena dritto altrui per ogne calle.
-
-  Allor fu la paura un poco queta,
-  che nel lago del cor m’era durata
-  la notte ch’i’ passai con tanta pieta.
-
-  E come quei che con lena affannata,
-  uscito fuor del pelago a la riva,
-  si volge a l’acqua perigliosa e guata,
-
-  così l’animo mio, ch’ancor fuggiva,
-  si volse a retro a rimirar lo passo
-  che non lasciò già mai persona viva.
-
-  Poi ch’èi posato un poco il corpo lasso,
-  ripresi via per la piaggia diserta,
-  sì che ’l piè fermo sempre era ’l più basso.
-
-  Ed ecco, quasi al cominciar de l’erta,
-  una lonza leggera e presta molto,
-  che di pel macolato era coverta;
-
-  e non mi si partia dinanzi al volto,
-  anzi ’mpediva tanto il mio cammino,
-  ch’i’ fui per ritornar più volte vòlto.
-
-  Temp’ era dal principio del mattino,
-  e ’l sol montava ’n sù con quelle stelle
-  ch’eran con lui quando l’amor divino
-
-  mosse di prima quelle cose belle;
-  sì ch’a bene sperar m’era cagione
-  di quella fiera a la gaetta pelle
-
-  l’ora del tempo e la dolce stagione;
-  ma non sì che paura non mi desse
-  la vista che m’apparve d’un leone.
-
-  Questi parea che contra me venisse
-  con la test’ alta e con rabbiosa fame,
-  sì che parea che l’aere ne tremesse.
-
-  Ed una lupa, che di tutte brame
-  sembiava carca ne la sua magrezza,
-  e molte genti fé già viver grame,
-
-  questa mi porse tanto di gravezza
-  con la paura ch’uscia di sua vista,
-  ch’io perdei la speranza de l’altezza.
-
-  E qual è quei che volontieri acquista,
-  e giugne ’l tempo che perder lo face,
-  che ’n tutti suoi pensier piange e s’attrista;
-
-  tal mi fece la bestia sanza pace,
-  che, venendomi ’ncontro, a poco a poco
-  mi ripigneva là dove ’l sol tace.
-
-  Mentre ch’i’ rovinava in basso loco,
-  dinanzi a li occhi mi si fu offerto
-  chi per lungo silenzio parea fioco.
-
-  Quando vidi costui nel gran diserto,
-  «Miserere di me», gridai a lui,
-  «qual che tu sii, od ombra od omo certo!».
-
-  Rispuosemi: «Non omo, omo già fui,
-  e li parenti miei furon lombardi,
-  mantoani per patrïa ambedui.
-
-  Nacqui sub Iulio, ancor che fosse tardi,
-  e vissi a Roma sotto ’l buono Augusto
-  nel tempo de li dèi falsi e bugiardi.
-
-  Poeta fui, e cantai di quel giusto
-  figliuol d’Anchise che venne di Troia,
-  poi che ’l superbo Ilïón fu combusto.
-
-  Ma tu perché ritorni a tanta noia?
-  perché non sali il dilettoso monte
-  ch’è principio e cagion di tutta gioia?».
-
-  «Or se’ tu quel Virgilio e quella fonte
-  che spandi di parlar sì largo fiume?»,
-  rispuos’ io lui con vergognosa fronte.
-
-  «O de li altri poeti onore e lume,
-  vagliami ’l lungo studio e ’l grande amore
-  che m’ha fatto cercar lo tuo volume.
-
-  Tu se’ lo mio maestro e ’l mio autore,
-  tu se’ solo colui da cu’ io tolsi
-  lo bello stilo che m’ha fatto onore.
-
-  Vedi la bestia per cu’ io mi volsi;
-  aiutami da lei, famoso saggio,
-  ch’ella mi fa tremar le vene e i polsi».
-
-  «A te convien tenere altro vïaggio»,
-  rispuose, poi che lagrimar mi vide,
-  «se vuo’ campar d’esto loco selvaggio;
-
-  ché questa bestia, per la qual tu gride,
-  non lascia altrui passar per la sua via,
-  ma tanto lo ’mpedisce che l’uccide;
-
-  e ha natura sì malvagia e ria,
-  che mai non empie la bramosa voglia,
-  e dopo ’l pasto ha più fame che pria.
-
-  Molti son li animali a cui s’ammoglia,
-  e più saranno ancora, infin che ’l veltro
-  verrà, che la farà morir con doglia.
-
-  Questi non ciberà terra né peltro,
-  ma sapïenza, amore e virtute,
-  e sua nazion sarà tra feltro e feltro.
-
-  Di quella umile Italia fia salute
-  per cui morì la vergine Cammilla,
-  Eurialo e Turno e Niso di ferute.
-
-  Questi la caccerà per ogne villa,
-  fin che l’avrà rimessa ne lo ’nferno,
-  là onde ’nvidia prima dipartilla.
-
-  Ond’ io per lo tuo me’ penso e discerno
-  che tu mi segui, e io sarò tua guida,
-  e trarrotti di qui per loco etterno;
-
-  ove udirai le disperate strida,
-  vedrai li antichi spiriti dolenti,
-  ch’a la seconda morte ciascun grida;
-
-  e vederai color che son contenti
-  nel foco, perché speran di venire
-  quando che sia a le beate genti.
-
-  A le quai poi se tu vorrai salire,
-  anima fia a ciò più di me degna:
-  con lei ti lascerò nel mio partire;
-
-  ché quello imperador che là sù regna,
-  perch’ i’ fu’ ribellante a la sua legge,
-  non vuol che ’n sua città per me si vegna.
-
-  In tutte parti impera e quivi regge;
-  quivi è la sua città e l’alto seggio:
-  oh felice colui cu’ ivi elegge!».
-
-  E io a lui: «Poeta, io ti richeggio
-  per quello Dio che tu non conoscesti,
-  acciò ch’io fugga questo male e peggio,
-
-  che tu mi meni là dov’ or dicesti,
-  sì ch’io veggia la porta di san Pietro
-  e color cui tu fai cotanto mesti».
-
-  Allor si mosse, e io li tenni dietro.
-
-
-
-  Inferno · Canto II
-
-
-  Lo giorno se n’andava, e l’aere bruno
-  toglieva li animai che sono in terra
-  da le fatiche loro; e io sol uno
-
-  m’apparecchiava a sostener la guerra
-  sì del cammino e sì de la pietate,
-  che ritrarrà la mente che non erra.
-
-  O muse, o alto ingegno, or m’aiutate;
-  o mente che scrivesti ciò ch’io vidi,
-  qui si parrà la tua nobilitate.
-
-  Io cominciai: «Poeta che mi guidi,
-  guarda la mia virtù s’ell’ è possente,
-  prima ch’a l’alto passo tu mi fidi.
-
-  Tu dici che di Silvïo il parente,
-  corruttibile ancora, ad immortale
-  secolo andò, e fu sensibilmente.
-
-  Però, se l’avversario d’ogne male
-  cortese i fu, pensando l’alto effetto
-  ch’uscir dovea di lui, e ’l chi e ’l quale
-
-  non pare indegno ad omo d’intelletto;
-  ch’e’ fu de l’alma Roma e di suo impero
-  ne l’empireo ciel per padre eletto:
-
-  la quale e ’l quale, a voler dir lo vero,
-  fu stabilita per lo loco santo
-  u’ siede il successor del maggior Piero.
-
-  Per quest’ andata onde li dai tu vanto,
-  intese cose che furon cagione
-  di sua vittoria e del papale ammanto.
-
-  Andovvi poi lo Vas d’elezïone,
-  per recarne conforto a quella fede
-  ch’è principio a la via di salvazione.
-
-  Ma io, perché venirvi? o chi ’l concede?
-  Io non Enëa, io non Paulo sono;
-  me degno a ciò né io né altri ’l crede.
-
-  Per che, se del venire io m’abbandono,
-  temo che la venuta non sia folle.
-  Se’ savio; intendi me’ ch’i’ non ragiono».
-
-  E qual è quei che disvuol ciò che volle
-  e per novi pensier cangia proposta,
-  sì che dal cominciar tutto si tolle,
-
-  tal mi fec’ ïo ’n quella oscura costa,
-  perché, pensando, consumai la ’mpresa
-  che fu nel cominciar cotanto tosta.
-
-  «S’i’ ho ben la parola tua intesa»,
-  rispuose del magnanimo quell’ ombra,
-  «l’anima tua è da viltade offesa;
-
-  la qual molte fïate l’omo ingombra
-  sì che d’onrata impresa lo rivolve,
-  come falso veder bestia quand’ ombra.
-
-  Da questa tema acciò che tu ti solve,
-  dirotti perch’ io venni e quel ch’io ’ntesi
-  nel primo punto che di te mi dolve.
-
-  Io era tra color che son sospesi,
-  e donna mi chiamò beata e bella,
-  tal che di comandare io la richiesi.
-
-  Lucevan li occhi suoi più che la stella;
-  e cominciommi a dir soave e piana,
-  con angelica voce, in sua favella:
-
-  “O anima cortese mantoana,
-  di cui la fama ancor nel mondo dura,
-  e durerà quanto ’l mondo lontana,
-
-  l’amico mio, e non de la ventura,
-  ne la diserta piaggia è impedito
-  sì nel cammin, che vòlt’ è per paura;
-
-  e temo che non sia già sì smarrito,
-  ch’io mi sia tardi al soccorso levata,
-  per quel ch’i’ ho di lui nel cielo udito.
-
-  Or movi, e con la tua parola ornata
-  e con ciò c’ha mestieri al suo campare,
-  l’aiuta sì ch’i’ ne sia consolata.
-
-  I’ son Beatrice che ti faccio andare;
-  vegno del loco ove tornar disio;
-  amor mi mosse, che mi fa parlare.
-
-  Quando sarò dinanzi al segnor mio,
-  di te mi loderò sovente a lui”.
-  Tacette allora, e poi comincia’ io:
-
-  “O donna di virtù sola per cui
-  l’umana spezie eccede ogne contento
-  di quel ciel c’ha minor li cerchi sui,
-
-  tanto m’aggrada il tuo comandamento,
-  che l’ubidir, se già fosse, m’è tardi;
-  più non t’è uo’ ch’aprirmi il tuo talento.
-
-  Ma dimmi la cagion che non ti guardi
-  de lo scender qua giuso in questo centro
-  de l’ampio loco ove tornar tu ardi”.
-
-  “Da che tu vuo’ saver cotanto a dentro,
-  dirotti brievemente”, mi rispuose,
-  “perch’ i’ non temo di venir qua entro.
-
-  Temer si dee di sole quelle cose
-  c’hanno potenza di fare altrui male;
-  de l’altre no, ché non son paurose.
-
-  I’ son fatta da Dio, sua mercé, tale,
-  che la vostra miseria non mi tange,
-  né fiamma d’esto ’ncendio non m’assale.
-
-  Donna è gentil nel ciel che si compiange
-  di questo ’mpedimento ov’ io ti mando,
-  sì che duro giudicio là sù frange.
-
-  Questa chiese Lucia in suo dimando
-  e disse:—Or ha bisogno il tuo fedele
-  di te, e io a te lo raccomando—.
-
-  Lucia, nimica di ciascun crudele,
-  si mosse, e venne al loco dov’ i’ era,
-  che mi sedea con l’antica Rachele.
-
-  Disse:—Beatrice, loda di Dio vera,
-  ché non soccorri quei che t’amò tanto,
-  ch’uscì per te de la volgare schiera?
-
-  Non odi tu la pieta del suo pianto,
-  non vedi tu la morte che ’l combatte
-  su la fiumana ove ’l mar non ha vanto?—.
-
-  Al mondo non fur mai persone ratte
-  a far lor pro o a fuggir lor danno,
-  com’ io, dopo cotai parole fatte,
-
-  venni qua giù del mio beato scanno,
-  fidandomi del tuo parlare onesto,
-  ch’onora te e quei ch’udito l’hanno”.
-
-  Poscia che m’ebbe ragionato questo,
-  li occhi lucenti lagrimando volse,
-  per che mi fece del venir più presto.
-
-  E venni a te così com’ ella volse:
-  d’inanzi a quella fiera ti levai
-  che del bel monte il corto andar ti tolse.
-
-  Dunque: che è? perché, perché restai,
-  perché tanta viltà nel core allette,
-  perché ardire e franchezza non hai,
-
-  poscia che tai tre donne benedette
-  curan di te ne la corte del cielo,
-  e ’l mio parlar tanto ben ti promette?».
-
-  Quali fioretti dal notturno gelo
-  chinati e chiusi, poi che ’l sol li ’mbianca,
-  si drizzan tutti aperti in loro stelo,
-
-  tal mi fec’ io di mia virtude stanca,
-  e tanto buono ardire al cor mi corse,
-  ch’i’ cominciai come persona franca:
-
-  «Oh pietosa colei che mi soccorse!
-  e te cortese ch’ubidisti tosto
-  a le vere parole che ti porse!
-
-  Tu m’hai con disiderio il cor disposto
-  sì al venir con le parole tue,
-  ch’i’ son tornato nel primo proposto.
-
-  Or va, ch’un sol volere è d’ambedue:
-  tu duca, tu segnore e tu maestro».
-  Così li dissi; e poi che mosso fue,
-
-  intrai per lo cammino alto e silvestro.
-
-
-
-  Inferno · Canto III
-
-
-  ‘Per me si va ne la città dolente,
-  per me si va ne l’etterno dolore,
-  per me si va tra la perduta gente.
-
-  Giustizia mosse il mio alto fattore;
-  fecemi la divina podestate,
-  la somma sapïenza e ’l primo amore.
-
-  Dinanzi a me non fuor cose create
-  se non etterne, e io etterno duro.
-  Lasciate ogne speranza, voi ch’intrate’.
-
-  Queste parole di colore oscuro
-  vid’ ïo scritte al sommo d’una porta;
-  per ch’io: «Maestro, il senso lor m’è duro».
-
-  Ed elli a me, come persona accorta:
-  «Qui si convien lasciare ogne sospetto;
-  ogne viltà convien che qui sia morta.
-
-  Noi siam venuti al loco ov’ i’ t’ho detto
-  che tu vedrai le genti dolorose
-  c’hanno perduto il ben de l’intelletto».
-
-  E poi che la sua mano a la mia puose
-  con lieto volto, ond’ io mi confortai,
-  mi mise dentro a le segrete cose.
-
-  Quivi sospiri, pianti e alti guai
-  risonavan per l’aere sanza stelle,
-  per ch’io al cominciar ne lagrimai.
-
-  Diverse lingue, orribili favelle,
-  parole di dolore, accenti d’ira,
-  voci alte e fioche, e suon di man con elle
-
-  facevano un tumulto, il qual s’aggira
-  sempre in quell’ aura sanza tempo tinta,
-  come la rena quando turbo spira.
-
-  E io ch’avea d’error la testa cinta,
-  dissi: «Maestro, che è quel ch’i’ odo?
-  e che gent’ è che par nel duol sì vinta?».
-
-  Ed elli a me: «Questo misero modo
-  tegnon l’anime triste di coloro
-  che visser sanza ’nfamia e sanza lodo.
-
-  Mischiate sono a quel cattivo coro
-  de li angeli che non furon ribelli
-  né fur fedeli a Dio, ma per sé fuoro.
-
-  Caccianli i ciel per non esser men belli,
-  né lo profondo inferno li riceve,
-  ch’alcuna gloria i rei avrebber d’elli».
-
-  E io: «Maestro, che è tanto greve
-  a lor che lamentar li fa sì forte?».
-  Rispuose: «Dicerolti molto breve.
-
-  Questi non hanno speranza di morte,
-  e la lor cieca vita è tanto bassa,
-  che ’nvidïosi son d’ogne altra sorte.
-
-  Fama di loro il mondo esser non lassa;
-  misericordia e giustizia li sdegna:
-  non ragioniam di lor, ma guarda e passa».
-
-  E io, che riguardai, vidi una ’nsegna
-  che girando correva tanto ratta,
-  che d’ogne posa mi parea indegna;
-
-  e dietro le venìa sì lunga tratta
-  di gente, ch’i’ non averei creduto
-  che morte tanta n’avesse disfatta.
-
-  Poscia ch’io v’ebbi alcun riconosciuto,
-  vidi e conobbi l’ombra di colui
-  che fece per viltade il gran rifiuto.
-
-  Incontanente intesi e certo fui
-  che questa era la setta d’i cattivi,
-  a Dio spiacenti e a’ nemici sui.
-
-  Questi sciaurati, che mai non fur vivi,
-  erano ignudi e stimolati molto
-  da mosconi e da vespe ch’eran ivi.
-
-  Elle rigavan lor di sangue il volto,
-  che, mischiato di lagrime, a’ lor piedi
-  da fastidiosi vermi era ricolto.
-
-  E poi ch’a riguardar oltre mi diedi,
-  vidi genti a la riva d’un gran fiume;
-  per ch’io dissi: «Maestro, or mi concedi
-
-  ch’i’ sappia quali sono, e qual costume
-  le fa di trapassar parer sì pronte,
-  com’ i’ discerno per lo fioco lume».
-
-  Ed elli a me: «Le cose ti fier conte
-  quando noi fermerem li nostri passi
-  su la trista riviera d’Acheronte».
-
-  Allor con li occhi vergognosi e bassi,
-  temendo no ’l mio dir li fosse grave,
-  infino al fiume del parlar mi trassi.
-
-  Ed ecco verso noi venir per nave
-  un vecchio, bianco per antico pelo,
-  gridando: «Guai a voi, anime prave!
-
-  Non isperate mai veder lo cielo:
-  i’ vegno per menarvi a l’altra riva
-  ne le tenebre etterne, in caldo e ’n gelo.
-
-  E tu che se’ costì, anima viva,
-  pàrtiti da cotesti che son morti».
-  Ma poi che vide ch’io non mi partiva,
-
-  disse: «Per altra via, per altri porti
-  verrai a piaggia, non qui, per passare:
-  più lieve legno convien che ti porti».
-
-  E ’l duca lui: «Caron, non ti crucciare:
-  vuolsi così colà dove si puote
-  ciò che si vuole, e più non dimandare».
-
-  Quinci fuor quete le lanose gote
-  al nocchier de la livida palude,
-  che ’ntorno a li occhi avea di fiamme rote.
-
-  Ma quell’ anime, ch’eran lasse e nude,
-  cangiar colore e dibattero i denti,
-  ratto che ’nteser le parole crude.
-
-  Bestemmiavano Dio e lor parenti,
-  l’umana spezie e ’l loco e ’l tempo e ’l seme
-  di lor semenza e di lor nascimenti.
-
-  Poi si ritrasser tutte quante insieme,
-  forte piangendo, a la riva malvagia
-  ch’attende ciascun uom che Dio non teme.
-
-  Caron dimonio, con occhi di bragia
-  loro accennando, tutte le raccoglie;
-  batte col remo qualunque s’adagia.
-
-  Come d’autunno si levan le foglie
-  l’una appresso de l’altra, fin che ’l ramo
-  vede a la terra tutte le sue spoglie,
-
-  similemente il mal seme d’Adamo
-  gittansi di quel lito ad una ad una,
-  per cenni come augel per suo richiamo.
-
-  Così sen vanno su per l’onda bruna,
-  e avanti che sien di là discese,
-  anche di qua nuova schiera s’auna.
-
-  «Figliuol mio», disse ’l maestro cortese,
-  «quelli che muoion ne l’ira di Dio
-  tutti convegnon qui d’ogne paese;
-
-  e pronti sono a trapassar lo rio,
-  ché la divina giustizia li sprona,
-  sì che la tema si volve in disio.
-
-  Quinci non passa mai anima buona;
-  e però, se Caron di te si lagna,
-  ben puoi sapere omai che ’l suo dir suona».
-
-  Finito questo, la buia campagna
-  tremò sì forte, che de lo spavento
-  la mente di sudore ancor mi bagna.
-
-  La terra lagrimosa diede vento,
-  che balenò una luce vermiglia
-  la qual mi vinse ciascun sentimento;
-
-  e caddi come l’uom cui sonno piglia.
-
-
-
-  Inferno · Canto IV
-
-
-  Ruppemi l’alto sonno ne la testa
-  un greve truono, sì ch’io mi riscossi
-  come persona ch’è per forza desta;
-
-  e l’occhio riposato intorno mossi,
-  dritto levato, e fiso riguardai
-  per conoscer lo loco dov’ io fossi.
-
-  Vero è che ’n su la proda mi trovai
-  de la valle d’abisso dolorosa
-  che ’ntrono accoglie d’infiniti guai.
-
-  Oscura e profonda era e nebulosa
-  tanto che, per ficcar lo viso a fondo,
-  io non vi discernea alcuna cosa.
-
-  «Or discendiam qua giù nel cieco mondo»,
-  cominciò il poeta tutto smorto.
-  «Io sarò primo, e tu sarai secondo».
-
-  E io, che del color mi fui accorto,
-  dissi: «Come verrò, se tu paventi
-  che suoli al mio dubbiare esser conforto?».
-
-  Ed elli a me: «L’angoscia de le genti
-  che son qua giù, nel viso mi dipigne
-  quella pietà che tu per tema senti.
-
-  Andiam, ché la via lunga ne sospigne».
-  Così si mise e così mi fé intrare
-  nel primo cerchio che l’abisso cigne.
-
-  Quivi, secondo che per ascoltare,
-  non avea pianto mai che di sospiri
-  che l’aura etterna facevan tremare;
-
-  ciò avvenia di duol sanza martìri,
-  ch’avean le turbe, ch’eran molte e grandi,
-  d’infanti e di femmine e di viri.
-
-  Lo buon maestro a me: «Tu non dimandi
-  che spiriti son questi che tu vedi?
-  Or vo’ che sappi, innanzi che più andi,
-
-  ch’ei non peccaro; e s’elli hanno mercedi,
-  non basta, perché non ebber battesmo,
-  ch’è porta de la fede che tu credi;
-
-  e s’e’ furon dinanzi al cristianesmo,
-  non adorar debitamente a Dio:
-  e di questi cotai son io medesmo.
-
-  Per tai difetti, non per altro rio,
-  semo perduti, e sol di tanto offesi
-  che sanza speme vivemo in disio».
-
-  Gran duol mi prese al cor quando lo ’ntesi,
-  però che gente di molto valore
-  conobbi che ’n quel limbo eran sospesi.
-
-  «Dimmi, maestro mio, dimmi, segnore»,
-  comincia’ io per voler esser certo
-  di quella fede che vince ogne errore:
-
-  «uscicci mai alcuno, o per suo merto
-  o per altrui, che poi fosse beato?».
-  E quei che ’ntese il mio parlar coverto,
-
-  rispuose: «Io era nuovo in questo stato,
-  quando ci vidi venire un possente,
-  con segno di vittoria coronato.
-
-  Trasseci l’ombra del primo parente,
-  d’Abèl suo figlio e quella di Noè,
-  di Moïsè legista e ubidente;
-
-  Abraàm patrïarca e Davìd re,
-  Israèl con lo padre e co’ suoi nati
-  e con Rachele, per cui tanto fé,
-
-  e altri molti, e feceli beati.
-  E vo’ che sappi che, dinanzi ad essi,
-  spiriti umani non eran salvati».
-
-  Non lasciavam l’andar perch’ ei dicessi,
-  ma passavam la selva tuttavia,
-  la selva, dico, di spiriti spessi.
-
-  Non era lunga ancor la nostra via
-  di qua dal sonno, quand’ io vidi un foco
-  ch’emisperio di tenebre vincia.
-
-  Di lungi n’eravamo ancora un poco,
-  ma non sì ch’io non discernessi in parte
-  ch’orrevol gente possedea quel loco.
-
-  «O tu ch’onori scïenzïa e arte,
-  questi chi son c’hanno cotanta onranza,
-  che dal modo de li altri li diparte?».
-
-  E quelli a me: «L’onrata nominanza
-  che di lor suona sù ne la tua vita,
-  grazïa acquista in ciel che sì li avanza».
-
-  Intanto voce fu per me udita:
-  «Onorate l’altissimo poeta;
-  l’ombra sua torna, ch’era dipartita».
-
-  Poi che la voce fu restata e queta,
-  vidi quattro grand’ ombre a noi venire:
-  sembianz’ avevan né trista né lieta.
-
-  Lo buon maestro cominciò a dire:
-  «Mira colui con quella spada in mano,
-  che vien dinanzi ai tre sì come sire:
-
-  quelli è Omero poeta sovrano;
-  l’altro è Orazio satiro che vene;
-  Ovidio è ’l terzo, e l’ultimo Lucano.
-
-  Però che ciascun meco si convene
-  nel nome che sonò la voce sola,
-  fannomi onore, e di ciò fanno bene».
-
-  Così vid’ i’ adunar la bella scola
-  di quel segnor de l’altissimo canto
-  che sovra li altri com’ aquila vola.
-
-  Da ch’ebber ragionato insieme alquanto,
-  volsersi a me con salutevol cenno,
-  e ’l mio maestro sorrise di tanto;
-
-  e più d’onore ancora assai mi fenno,
-  ch’e’ sì mi fecer de la loro schiera,
-  sì ch’io fui sesto tra cotanto senno.
-
-  Così andammo infino a la lumera,
-  parlando cose che ’l tacere è bello,
-  sì com’ era ’l parlar colà dov’ era.
-
-  Venimmo al piè d’un nobile castello,
-  sette volte cerchiato d’alte mura,
-  difeso intorno d’un bel fiumicello.
-
-  Questo passammo come terra dura;
-  per sette porte intrai con questi savi:
-  giugnemmo in prato di fresca verdura.
-
-  Genti v’eran con occhi tardi e gravi,
-  di grande autorità ne’ lor sembianti:
-  parlavan rado, con voci soavi.
-
-  Traemmoci così da l’un de’ canti,
-  in loco aperto, luminoso e alto,
-  sì che veder si potien tutti quanti.
-
-  Colà diritto, sovra ’l verde smalto,
-  mi fuor mostrati li spiriti magni,
-  che del vedere in me stesso m’essalto.
-
-  I’ vidi Eletra con molti compagni,
-  tra ’ quai conobbi Ettòr ed Enea,
-  Cesare armato con li occhi grifagni.
-
-  Vidi Cammilla e la Pantasilea;
-  da l’altra parte vidi ’l re Latino
-  che con Lavina sua figlia sedea.
-
-  Vidi quel Bruto che cacciò Tarquino,
-  Lucrezia, Iulia, Marzïa e Corniglia;
-  e solo, in parte, vidi ’l Saladino.
-
-  Poi ch’innalzai un poco più le ciglia,
-  vidi ’l maestro di color che sanno
-  seder tra filosofica famiglia.
-
-  Tutti lo miran, tutti onor li fanno:
-  quivi vid’ ïo Socrate e Platone,
-  che ’nnanzi a li altri più presso li stanno;
-
-  Democrito che ’l mondo a caso pone,
-  Dïogenès, Anassagora e Tale,
-  Empedoclès, Eraclito e Zenone;
-
-  e vidi il buono accoglitor del quale,
-  Dïascoride dico; e vidi Orfeo,
-  Tulïo e Lino e Seneca morale;
-
-  Euclide geomètra e Tolomeo,
-  Ipocràte, Avicenna e Galïeno,
-  Averoìs, che ’l gran comento feo.
-
-  Io non posso ritrar di tutti a pieno,
-  però che sì mi caccia il lungo tema,
-  che molte volte al fatto il dir vien meno.
-
-  La sesta compagnia in due si scema:
-  per altra via mi mena il savio duca,
-  fuor de la queta, ne l’aura che trema.
-
-  E vegno in parte ove non è che luca.
-
-
-
-  Inferno · Canto V
-
-
-  Così discesi del cerchio primaio
-  giù nel secondo, che men loco cinghia
-  e tanto più dolor, che punge a guaio.
-
-  Stavvi Minòs orribilmente, e ringhia:
-  essamina le colpe ne l’intrata;
-  giudica e manda secondo ch’avvinghia.
-
-  Dico che quando l’anima mal nata
-  li vien dinanzi, tutta si confessa;
-  e quel conoscitor de le peccata
-
-  vede qual loco d’inferno è da essa;
-  cignesi con la coda tante volte
-  quantunque gradi vuol che giù sia messa.
-
-  Sempre dinanzi a lui ne stanno molte:
-  vanno a vicenda ciascuna al giudizio,
-  dicono e odono e poi son giù volte.
-
-  «O tu che vieni al doloroso ospizio»,
-  disse Minòs a me quando mi vide,
-  lasciando l’atto di cotanto offizio,
-
-  «guarda com’ entri e di cui tu ti fide;
-  non t’inganni l’ampiezza de l’intrare!».
-  E ’l duca mio a lui: «Perché pur gride?
-
-  Non impedir lo suo fatale andare:
-  vuolsi così colà dove si puote
-  ciò che si vuole, e più non dimandare».
-
-  Or incomincian le dolenti note
-  a farmisi sentire; or son venuto
-  là dove molto pianto mi percuote.
-
-  Io venni in loco d’ogne luce muto,
-  che mugghia come fa mar per tempesta,
-  se da contrari venti è combattuto.
-
-  La bufera infernal, che mai non resta,
-  mena li spirti con la sua rapina;
-  voltando e percotendo li molesta.
-
-  Quando giungon davanti a la ruina,
-  quivi le strida, il compianto, il lamento;
-  bestemmian quivi la virtù divina.
-
-  Intesi ch’a così fatto tormento
-  enno dannati i peccator carnali,
-  che la ragion sommettono al talento.
-
-  E come li stornei ne portan l’ali
-  nel freddo tempo, a schiera larga e piena,
-  così quel fiato li spiriti mali
-
-  di qua, di là, di giù, di sù li mena;
-  nulla speranza li conforta mai,
-  non che di posa, ma di minor pena.
-
-  E come i gru van cantando lor lai,
-  faccendo in aere di sé lunga riga,
-  così vid’ io venir, traendo guai,
-
-  ombre portate da la detta briga;
-  per ch’i’ dissi: «Maestro, chi son quelle
-  genti che l’aura nera sì gastiga?».
-
-  «La prima di color di cui novelle
-  tu vuo’ saper», mi disse quelli allotta,
-  «fu imperadrice di molte favelle.
-
-  A vizio di lussuria fu sì rotta,
-  che libito fé licito in sua legge,
-  per tòrre il biasmo in che era condotta.
-
-  Ell’ è Semiramìs, di cui si legge
-  che succedette a Nino e fu sua sposa:
-  tenne la terra che ’l Soldan corregge.
-
-  L’altra è colei che s’ancise amorosa,
-  e ruppe fede al cener di Sicheo;
-  poi è Cleopatràs lussurïosa.
-
-  Elena vedi, per cui tanto reo
-  tempo si volse, e vedi ’l grande Achille,
-  che con amore al fine combatteo.
-
-  Vedi Parìs, Tristano»; e più di mille
-  ombre mostrommi e nominommi a dito,
-  ch’amor di nostra vita dipartille.
-
-  Poscia ch’io ebbi ’l mio dottore udito
-  nomar le donne antiche e ’ cavalieri,
-  pietà mi giunse, e fui quasi smarrito.
-
-  I’ cominciai: «Poeta, volontieri
-  parlerei a quei due che ’nsieme vanno,
-  e paion sì al vento esser leggeri».
-
-  Ed elli a me: «Vedrai quando saranno
-  più presso a noi; e tu allor li priega
-  per quello amor che i mena, ed ei verranno».
-
-  Sì tosto come il vento a noi li piega,
-  mossi la voce: «O anime affannate,
-  venite a noi parlar, s’altri nol niega!».
-
-  Quali colombe dal disio chiamate
-  con l’ali alzate e ferme al dolce nido
-  vegnon per l’aere, dal voler portate;
-
-  cotali uscir de la schiera ov’ è Dido,
-  a noi venendo per l’aere maligno,
-  sì forte fu l’affettüoso grido.
-
-  «O animal grazïoso e benigno
-  che visitando vai per l’aere perso
-  noi che tignemmo il mondo di sanguigno,
-
-  se fosse amico il re de l’universo,
-  noi pregheremmo lui de la tua pace,
-  poi c’hai pietà del nostro mal perverso.
-
-  Di quel che udire e che parlar vi piace,
-  noi udiremo e parleremo a voi,
-  mentre che ’l vento, come fa, ci tace.
-
-  Siede la terra dove nata fui
-  su la marina dove ’l Po discende
-  per aver pace co’ seguaci sui.
-
-  Amor, ch’al cor gentil ratto s’apprende,
-  prese costui de la bella persona
-  che mi fu tolta; e ’l modo ancor m’offende.
-
-  Amor, ch’a nullo amato amar perdona,
-  mi prese del costui piacer sì forte,
-  che, come vedi, ancor non m’abbandona.
-
-  Amor condusse noi ad una morte.
-  Caina attende chi a vita ci spense».
-  Queste parole da lor ci fuor porte.
-
-  Quand’ io intesi quell’ anime offense,
-  china’ il viso, e tanto il tenni basso,
-  fin che ’l poeta mi disse: «Che pense?».
-
-  Quando rispuosi, cominciai: «Oh lasso,
-  quanti dolci pensier, quanto disio
-  menò costoro al doloroso passo!».
-
-  Poi mi rivolsi a loro e parla’ io,
-  e cominciai: «Francesca, i tuoi martìri
-  a lagrimar mi fanno tristo e pio.
-
-  Ma dimmi: al tempo d’i dolci sospiri,
-  a che e come concedette amore
-  che conosceste i dubbiosi disiri?».
-
-  E quella a me: «Nessun maggior dolore
-  che ricordarsi del tempo felice
-  ne la miseria; e ciò sa ’l tuo dottore.
-
-  Ma s’a conoscer la prima radice
-  del nostro amor tu hai cotanto affetto,
-  dirò come colui che piange e dice.
-
-  Noi leggiavamo un giorno per diletto
-  di Lancialotto come amor lo strinse;
-  soli eravamo e sanza alcun sospetto.
-
-  Per più fïate li occhi ci sospinse
-  quella lettura, e scolorocci il viso;
-  ma solo un punto fu quel che ci vinse.
-
-  Quando leggemmo il disïato riso
-  esser basciato da cotanto amante,
-  questi, che mai da me non fia diviso,
-
-  la bocca mi basciò tutto tremante.
-  Galeotto fu ’l libro e chi lo scrisse:
-  quel giorno più non vi leggemmo avante».
-
-  Mentre che l’uno spirto questo disse,
-  l’altro piangëa; sì che di pietade
-  io venni men così com’ io morisse.
-
-  E caddi come corpo morto cade.
-
-
-
-  Inferno · Canto VI
-
-
-  Al tornar de la mente, che si chiuse
-  dinanzi a la pietà d’i due cognati,
-  che di trestizia tutto mi confuse,
-
-  novi tormenti e novi tormentati
-  mi veggio intorno, come ch’io mi mova
-  e ch’io mi volga, e come che io guati.
-
-  Io sono al terzo cerchio, de la piova
-  etterna, maladetta, fredda e greve;
-  regola e qualità mai non l’è nova.
-
-  Grandine grossa, acqua tinta e neve
-  per l’aere tenebroso si riversa;
-  pute la terra che questo riceve.
-
-  Cerbero, fiera crudele e diversa,
-  con tre gole caninamente latra
-  sovra la gente che quivi è sommersa.
-
-  Li occhi ha vermigli, la barba unta e atra,
-  e ’l ventre largo, e unghiate le mani;
-  graffia li spirti ed iscoia ed isquatra.
-
-  Urlar li fa la pioggia come cani;
-  de l’un de’ lati fanno a l’altro schermo;
-  volgonsi spesso i miseri profani.
-
-  Quando ci scorse Cerbero, il gran vermo,
-  le bocche aperse e mostrocci le sanne;
-  non avea membro che tenesse fermo.
-
-  E ’l duca mio distese le sue spanne,
-  prese la terra, e con piene le pugna
-  la gittò dentro a le bramose canne.
-
-  Qual è quel cane ch’abbaiando agogna,
-  e si racqueta poi che ’l pasto morde,
-  ché solo a divorarlo intende e pugna,
-
-  cotai si fecer quelle facce lorde
-  de lo demonio Cerbero, che ’ntrona
-  l’anime sì, ch’esser vorrebber sorde.
-
-  Noi passavam su per l’ombre che adona
-  la greve pioggia, e ponavam le piante
-  sovra lor vanità che par persona.
-
-  Elle giacean per terra tutte quante,
-  fuor d’una ch’a seder si levò, ratto
-  ch’ella ci vide passarsi davante.
-
-  «O tu che se’ per questo ’nferno tratto»,
-  mi disse, «riconoscimi, se sai:
-  tu fosti, prima ch’io disfatto, fatto».
-
-  E io a lui: «L’angoscia che tu hai
-  forse ti tira fuor de la mia mente,
-  sì che non par ch’i’ ti vedessi mai.
-
-  Ma dimmi chi tu se’ che ’n sì dolente
-  loco se’ messo, e hai sì fatta pena,
-  che, s’altra è maggio, nulla è sì spiacente».
-
-  Ed elli a me: «La tua città, ch’è piena
-  d’invidia sì che già trabocca il sacco,
-  seco mi tenne in la vita serena.
-
-  Voi cittadini mi chiamaste Ciacco:
-  per la dannosa colpa de la gola,
-  come tu vedi, a la pioggia mi fiacco.
-
-  E io anima trista non son sola,
-  ché tutte queste a simil pena stanno
-  per simil colpa». E più non fé parola.
-
-  Io li rispuosi: «Ciacco, il tuo affanno
-  mi pesa sì, ch’a lagrimar mi ’nvita;
-  ma dimmi, se tu sai, a che verranno
-
-  li cittadin de la città partita;
-  s’alcun v’è giusto; e dimmi la cagione
-  per che l’ha tanta discordia assalita».
-
-  E quelli a me: «Dopo lunga tencione
-  verranno al sangue, e la parte selvaggia
-  caccerà l’altra con molta offensione.
-
-  Poi appresso convien che questa caggia
-  infra tre soli, e che l’altra sormonti
-  con la forza di tal che testé piaggia.
-
-  Alte terrà lungo tempo le fronti,
-  tenendo l’altra sotto gravi pesi,
-  come che di ciò pianga o che n’aonti.
-
-  Giusti son due, e non vi sono intesi;
-  superbia, invidia e avarizia sono
-  le tre faville c’hanno i cuori accesi».
-
-  Qui puose fine al lagrimabil suono.
-  E io a lui: «Ancor vo’ che mi ’nsegni
-  e che di più parlar mi facci dono.
-
-  Farinata e ’l Tegghiaio, che fuor sì degni,
-  Iacopo Rusticucci, Arrigo e ’l Mosca
-  e li altri ch’a ben far puoser li ’ngegni,
-
-  dimmi ove sono e fa ch’io li conosca;
-  ché gran disio mi stringe di savere
-  se ’l ciel li addolcia o lo ’nferno li attosca».
-
-  E quelli: «Ei son tra l’anime più nere;
-  diverse colpe giù li grava al fondo:
-  se tanto scendi, là i potrai vedere.
-
-  Ma quando tu sarai nel dolce mondo,
-  priegoti ch’a la mente altrui mi rechi:
-  più non ti dico e più non ti rispondo».
-
-  Li diritti occhi torse allora in biechi;
-  guardommi un poco e poi chinò la testa:
-  cadde con essa a par de li altri ciechi.
-
-  E ’l duca disse a me: «Più non si desta
-  di qua dal suon de l’angelica tromba,
-  quando verrà la nimica podesta:
-
-  ciascun rivederà la trista tomba,
-  ripiglierà sua carne e sua figura,
-  udirà quel ch’in etterno rimbomba».
-
-  Sì trapassammo per sozza mistura
-  de l’ombre e de la pioggia, a passi lenti,
-  toccando un poco la vita futura;
-
-  per ch’io dissi: «Maestro, esti tormenti
-  crescerann’ ei dopo la gran sentenza,
-  o fier minori, o saran sì cocenti?».
-
-  Ed elli a me: «Ritorna a tua scïenza,
-  che vuol, quanto la cosa è più perfetta,
-  più senta il bene, e così la doglienza.
-
-  Tutto che questa gente maladetta
-  in vera perfezion già mai non vada,
-  di là più che di qua essere aspetta».
-
-  Noi aggirammo a tondo quella strada,
-  parlando più assai ch’i’ non ridico;
-  venimmo al punto dove si digrada:
-
-  quivi trovammo Pluto, il gran nemico.
-
-
-
-  Inferno · Canto VII
-
-
-  «Pape Satàn, pape Satàn aleppe!»,
-  cominciò Pluto con la voce chioccia;
-  e quel savio gentil, che tutto seppe,
-
-  disse per confortarmi: «Non ti noccia
-  la tua paura; ché, poder ch’elli abbia,
-  non ci torrà lo scender questa roccia».
-
-  Poi si rivolse a quella ’nfiata labbia,
-  e disse: «Taci, maladetto lupo!
-  consuma dentro te con la tua rabbia.
-
-  Non è sanza cagion l’andare al cupo:
-  vuolsi ne l’alto, là dove Michele
-  fé la vendetta del superbo strupo».
-
-  Quali dal vento le gonfiate vele
-  caggiono avvolte, poi che l’alber fiacca,
-  tal cadde a terra la fiera crudele.
-
-  Così scendemmo ne la quarta lacca,
-  pigliando più de la dolente ripa
-  che ’l mal de l’universo tutto insacca.
-
-  Ahi giustizia di Dio! tante chi stipa
-  nove travaglie e pene quant’ io viddi?
-  e perché nostra colpa sì ne scipa?
-
-  Come fa l’onda là sovra Cariddi,
-  che si frange con quella in cui s’intoppa,
-  così convien che qui la gente riddi.
-
-  Qui vid’ i’ gente più ch’altrove troppa,
-  e d’una parte e d’altra, con grand’ urli,
-  voltando pesi per forza di poppa.
-
-  Percotëansi ’ncontro; e poscia pur lì
-  si rivolgea ciascun, voltando a retro,
-  gridando: «Perché tieni?» e «Perché burli?».
-
-  Così tornavan per lo cerchio tetro
-  da ogne mano a l’opposito punto,
-  gridandosi anche loro ontoso metro;
-
-  poi si volgea ciascun, quand’ era giunto,
-  per lo suo mezzo cerchio a l’altra giostra.
-  E io, ch’avea lo cor quasi compunto,
-
-  dissi: «Maestro mio, or mi dimostra
-  che gente è questa, e se tutti fuor cherci
-  questi chercuti a la sinistra nostra».
-
-  Ed elli a me: «Tutti quanti fuor guerci
-  sì de la mente in la vita primaia,
-  che con misura nullo spendio ferci.
-
-  Assai la voce lor chiaro l’abbaia,
-  quando vegnono a’ due punti del cerchio
-  dove colpa contraria li dispaia.
-
-  Questi fuor cherci, che non han coperchio
-  piloso al capo, e papi e cardinali,
-  in cui usa avarizia il suo soperchio».
-
-  E io: «Maestro, tra questi cotali
-  dovre’ io ben riconoscere alcuni
-  che furo immondi di cotesti mali».
-
-  Ed elli a me: «Vano pensiero aduni:
-  la sconoscente vita che i fé sozzi,
-  ad ogne conoscenza or li fa bruni.
-
-  In etterno verranno a li due cozzi:
-  questi resurgeranno del sepulcro
-  col pugno chiuso, e questi coi crin mozzi.
-
-  Mal dare e mal tener lo mondo pulcro
-  ha tolto loro, e posti a questa zuffa:
-  qual ella sia, parole non ci appulcro.
-
-  Or puoi, figliuol, veder la corta buffa
-  d’i ben che son commessi a la fortuna,
-  per che l’umana gente si rabbuffa;
-
-  ché tutto l’oro ch’è sotto la luna
-  e che già fu, di quest’ anime stanche
-  non poterebbe farne posare una».
-
-  «Maestro mio», diss’ io, «or mi dì anche:
-  questa fortuna di che tu mi tocche,
-  che è, che i ben del mondo ha sì tra branche?».
-
-  E quelli a me: «Oh creature sciocche,
-  quanta ignoranza è quella che v’offende!
-  Or vo’ che tu mia sentenza ne ’mbocche.
-
-  Colui lo cui saver tutto trascende,
-  fece li cieli e diè lor chi conduce
-  sì, ch’ogne parte ad ogne parte splende,
-
-  distribuendo igualmente la luce.
-  Similemente a li splendor mondani
-  ordinò general ministra e duce
-
-  che permutasse a tempo li ben vani
-  di gente in gente e d’uno in altro sangue,
-  oltre la difension d’i senni umani;
-
-  per ch’una gente impera e l’altra langue,
-  seguendo lo giudicio di costei,
-  che è occulto come in erba l’angue.
-
-  Vostro saver non ha contasto a lei:
-  questa provede, giudica, e persegue
-  suo regno come il loro li altri dèi.
-
-  Le sue permutazion non hanno triegue:
-  necessità la fa esser veloce;
-  sì spesso vien chi vicenda consegue.
-
-  Quest’ è colei ch’è tanto posta in croce
-  pur da color che le dovrien dar lode,
-  dandole biasmo a torto e mala voce;
-
-  ma ella s’è beata e ciò non ode:
-  con l’altre prime creature lieta
-  volve sua spera e beata si gode.
-
-  Or discendiamo omai a maggior pieta;
-  già ogne stella cade che saliva
-  quand’ io mi mossi, e ’l troppo star si vieta».
-
-  Noi ricidemmo il cerchio a l’altra riva
-  sovr’ una fonte che bolle e riversa
-  per un fossato che da lei deriva.
-
-  L’acqua era buia assai più che persa;
-  e noi, in compagnia de l’onde bige,
-  intrammo giù per una via diversa.
-
-  In la palude va c’ha nome Stige
-  questo tristo ruscel, quand’ è disceso
-  al piè de le maligne piagge grige.
-
-  E io, che di mirare stava inteso,
-  vidi genti fangose in quel pantano,
-  ignude tutte, con sembiante offeso.
-
-  Queste si percotean non pur con mano,
-  ma con la testa e col petto e coi piedi,
-  troncandosi co’ denti a brano a brano.
-
-  Lo buon maestro disse: «Figlio, or vedi
-  l’anime di color cui vinse l’ira;
-  e anche vo’ che tu per certo credi
-
-  che sotto l’acqua è gente che sospira,
-  e fanno pullular quest’ acqua al summo,
-  come l’occhio ti dice, u’ che s’aggira.
-
-  Fitti nel limo dicon: “Tristi fummo
-  ne l’aere dolce che dal sol s’allegra,
-  portando dentro accidïoso fummo:
-
-  or ci attristiam ne la belletta negra”.
-  Quest’ inno si gorgoglian ne la strozza,
-  ché dir nol posson con parola integra».
-
-  Così girammo de la lorda pozza
-  grand’ arco tra la ripa secca e ’l mézzo,
-  con li occhi vòlti a chi del fango ingozza.
-
-  Venimmo al piè d’una torre al da sezzo.
-
-
-
-  Inferno · Canto VIII
-
-
-  Io dico, seguitando, ch’assai prima
-  che noi fossimo al piè de l’alta torre,
-  li occhi nostri n’andar suso a la cima
-
-  per due fiammette che i vedemmo porre,
-  e un’altra da lungi render cenno,
-  tanto ch’a pena il potea l’occhio tòrre.
-
-  E io mi volsi al mar di tutto ’l senno;
-  dissi: «Questo che dice? e che risponde
-  quell’ altro foco? e chi son quei che ’l fenno?».
-
-  Ed elli a me: «Su per le sucide onde
-  già scorgere puoi quello che s’aspetta,
-  se ’l fummo del pantan nol ti nasconde».
-
-  Corda non pinse mai da sé saetta
-  che sì corresse via per l’aere snella,
-  com’ io vidi una nave piccioletta
-
-  venir per l’acqua verso noi in quella,
-  sotto ’l governo d’un sol galeoto,
-  che gridava: «Or se’ giunta, anima fella!».
-
-  «Flegïàs, Flegïàs, tu gridi a vòto»,
-  disse lo mio segnore, «a questa volta:
-  più non ci avrai che sol passando il loto».
-
-  Qual è colui che grande inganno ascolta
-  che li sia fatto, e poi se ne rammarca,
-  fecesi Flegïàs ne l’ira accolta.
-
-  Lo duca mio discese ne la barca,
-  e poi mi fece intrare appresso lui;
-  e sol quand’ io fui dentro parve carca.
-
-  Tosto che ’l duca e io nel legno fui,
-  segando se ne va l’antica prora
-  de l’acqua più che non suol con altrui.
-
-  Mentre noi corravam la morta gora,
-  dinanzi mi si fece un pien di fango,
-  e disse: «Chi se’ tu che vieni anzi ora?».
-
-  E io a lui: «S’i’ vegno, non rimango;
-  ma tu chi se’, che sì se’ fatto brutto?».
-  Rispuose: «Vedi che son un che piango».
-
-  E io a lui: «Con piangere e con lutto,
-  spirito maladetto, ti rimani;
-  ch’i’ ti conosco, ancor sie lordo tutto».
-
-  Allor distese al legno ambo le mani;
-  per che ’l maestro accorto lo sospinse,
-  dicendo: «Via costà con li altri cani!».
-
-  Lo collo poi con le braccia mi cinse;
-  basciommi ’l volto e disse: «Alma sdegnosa,
-  benedetta colei che ’n te s’incinse!
-
-  Quei fu al mondo persona orgogliosa;
-  bontà non è che sua memoria fregi:
-  così s’è l’ombra sua qui furïosa.
-
-  Quanti si tegnon or là sù gran regi
-  che qui staranno come porci in brago,
-  di sé lasciando orribili dispregi!».
-
-  E io: «Maestro, molto sarei vago
-  di vederlo attuffare in questa broda
-  prima che noi uscissimo del lago».
-
-  Ed elli a me: «Avante che la proda
-  ti si lasci veder, tu sarai sazio:
-  di tal disïo convien che tu goda».
-
-  Dopo ciò poco vid’ io quello strazio
-  far di costui a le fangose genti,
-  che Dio ancor ne lodo e ne ringrazio.
-
-  Tutti gridavano: «A Filippo Argenti!»;
-  e ’l fiorentino spirito bizzarro
-  in sé medesmo si volvea co’ denti.
-
-  Quivi il lasciammo, che più non ne narro;
-  ma ne l’orecchie mi percosse un duolo,
-  per ch’io avante l’occhio intento sbarro.
-
-  Lo buon maestro disse: «Omai, figliuolo,
-  s’appressa la città c’ha nome Dite,
-  coi gravi cittadin, col grande stuolo».
-
-  E io: «Maestro, già le sue meschite
-  là entro certe ne la valle cerno,
-  vermiglie come se di foco uscite
-
-  fossero». Ed ei mi disse: «Il foco etterno
-  ch’entro l’affoca le dimostra rosse,
-  come tu vedi in questo basso inferno».
-
-  Noi pur giugnemmo dentro a l’alte fosse
-  che vallan quella terra sconsolata:
-  le mura mi parean che ferro fosse.
-
-  Non sanza prima far grande aggirata,
-  venimmo in parte dove il nocchier forte
-  «Usciteci», gridò: «qui è l’intrata».
-
-  Io vidi più di mille in su le porte
-  da ciel piovuti, che stizzosamente
-  dicean: «Chi è costui che sanza morte
-
-  va per lo regno de la morta gente?».
-  E ’l savio mio maestro fece segno
-  di voler lor parlar segretamente.
-
-  Allor chiusero un poco il gran disdegno
-  e disser: «Vien tu solo, e quei sen vada
-  che sì ardito intrò per questo regno.
-
-  Sol si ritorni per la folle strada:
-  pruovi, se sa; ché tu qui rimarrai,
-  che li ha’ iscorta sì buia contrada».
-
-  Pensa, lettor, se io mi sconfortai
-  nel suon de le parole maladette,
-  ché non credetti ritornarci mai.
-
-  «O caro duca mio, che più di sette
-  volte m’hai sicurtà renduta e tratto
-  d’alto periglio che ’ncontra mi stette,
-
-  non mi lasciar», diss’ io, «così disfatto;
-  e se ’l passar più oltre ci è negato,
-  ritroviam l’orme nostre insieme ratto».
-
-  E quel segnor che lì m’avea menato,
-  mi disse: «Non temer; ché ’l nostro passo
-  non ci può tòrre alcun: da tal n’è dato.
-
-  Ma qui m’attendi, e lo spirito lasso
-  conforta e ciba di speranza buona,
-  ch’i’ non ti lascerò nel mondo basso».
-
-  Così sen va, e quivi m’abbandona
-  lo dolce padre, e io rimagno in forse,
-  che sì e no nel capo mi tenciona.
-
-  Udir non potti quello ch’a lor porse;
-  ma ei non stette là con essi guari,
-  che ciascun dentro a pruova si ricorse.
-
-  Chiuser le porte que’ nostri avversari
-  nel petto al mio segnor, che fuor rimase
-  e rivolsesi a me con passi rari.
-
-  Li occhi a la terra e le ciglia avea rase
-  d’ogne baldanza, e dicea ne’ sospiri:
-  «Chi m’ha negate le dolenti case!».
-
-  E a me disse: «Tu, perch’ io m’adiri,
-  non sbigottir, ch’io vincerò la prova,
-  qual ch’a la difension dentro s’aggiri.
-
-  Questa lor tracotanza non è nova;
-  ché già l’usaro a men segreta porta,
-  la qual sanza serrame ancor si trova.
-
-  Sovr’ essa vedestù la scritta morta:
-  e già di qua da lei discende l’erta,
-  passando per li cerchi sanza scorta,
-
-  tal che per lui ne fia la terra aperta».
-
-
-
-  Inferno · Canto IX
-
-
-  Quel color che viltà di fuor mi pinse
-  veggendo il duca mio tornare in volta,
-  più tosto dentro il suo novo ristrinse.
-
-  Attento si fermò com’ uom ch’ascolta;
-  ché l’occhio nol potea menare a lunga
-  per l’aere nero e per la nebbia folta.
-
-  «Pur a noi converrà vincer la punga»,
-  cominciò el, «se non . . . Tal ne s’offerse.
-  Oh quanto tarda a me ch’altri qui giunga!».
-
-  I’ vidi ben sì com’ ei ricoperse
-  lo cominciar con l’altro che poi venne,
-  che fur parole a le prime diverse;
-
-  ma nondimen paura il suo dir dienne,
-  perch’ io traeva la parola tronca
-  forse a peggior sentenzia che non tenne.
-
-  «In questo fondo de la trista conca
-  discende mai alcun del primo grado,
-  che sol per pena ha la speranza cionca?».
-
-  Questa question fec’ io; e quei «Di rado
-  incontra», mi rispuose, «che di noi
-  faccia il cammino alcun per qual io vado.
-
-  Ver è ch’altra fïata qua giù fui,
-  congiurato da quella Eritón cruda
-  che richiamava l’ombre a’ corpi sui.
-
-  Di poco era di me la carne nuda,
-  ch’ella mi fece intrar dentr’ a quel muro,
-  per trarne un spirto del cerchio di Giuda.
-
-  Quell’ è ’l più basso loco e ’l più oscuro,
-  e ’l più lontan dal ciel che tutto gira:
-  ben so ’l cammin; però ti fa sicuro.
-
-  Questa palude che ’l gran puzzo spira
-  cigne dintorno la città dolente,
-  u’ non potemo intrare omai sanz’ ira».
-
-  E altro disse, ma non l’ho a mente;
-  però che l’occhio m’avea tutto tratto
-  ver’ l’alta torre a la cima rovente,
-
-  dove in un punto furon dritte ratto
-  tre furïe infernal di sangue tinte,
-  che membra feminine avieno e atto,
-
-  e con idre verdissime eran cinte;
-  serpentelli e ceraste avien per crine,
-  onde le fiere tempie erano avvinte.
-
-  E quei, che ben conobbe le meschine
-  de la regina de l’etterno pianto,
-  «Guarda», mi disse, «le feroci Erine.
-
-  Quest’ è Megera dal sinistro canto;
-  quella che piange dal destro è Aletto;
-  Tesifón è nel mezzo»; e tacque a tanto.
-
-  Con l’unghie si fendea ciascuna il petto;
-  battiensi a palme e gridavan sì alto,
-  ch’i’ mi strinsi al poeta per sospetto.
-
-  «Vegna Medusa: sì ’l farem di smalto»,
-  dicevan tutte riguardando in giuso;
-  «mal non vengiammo in Tesëo l’assalto».
-
-  «Volgiti ’n dietro e tien lo viso chiuso;
-  ché se ’l Gorgón si mostra e tu ’l vedessi,
-  nulla sarebbe di tornar mai suso».
-
-  Così disse ’l maestro; ed elli stessi
-  mi volse, e non si tenne a le mie mani,
-  che con le sue ancor non mi chiudessi.
-
-  O voi ch’avete li ’ntelletti sani,
-  mirate la dottrina che s’asconde
-  sotto ’l velame de li versi strani.
-
-  E già venìa su per le torbide onde
-  un fracasso d’un suon, pien di spavento,
-  per cui tremavano amendue le sponde,
-
-  non altrimenti fatto che d’un vento
-  impetüoso per li avversi ardori,
-  che fier la selva e sanz’ alcun rattento
-
-  li rami schianta, abbatte e porta fori;
-  dinanzi polveroso va superbo,
-  e fa fuggir le fiere e li pastori.
-
-  Li occhi mi sciolse e disse: «Or drizza il nerbo
-  del viso su per quella schiuma antica
-  per indi ove quel fummo è più acerbo».
-
-  Come le rane innanzi a la nimica
-  biscia per l’acqua si dileguan tutte,
-  fin ch’a la terra ciascuna s’abbica,
-
-  vid’ io più di mille anime distrutte
-  fuggir così dinanzi ad un ch’al passo
-  passava Stige con le piante asciutte.
-
-  Dal volto rimovea quell’ aere grasso,
-  menando la sinistra innanzi spesso;
-  e sol di quell’ angoscia parea lasso.
-
-  Ben m’accorsi ch’elli era da ciel messo,
-  e volsimi al maestro; e quei fé segno
-  ch’i’ stessi queto ed inchinassi ad esso.
-
-  Ahi quanto mi parea pien di disdegno!
-  Venne a la porta e con una verghetta
-  l’aperse, che non v’ebbe alcun ritegno.
-
-  «O cacciati del ciel, gente dispetta»,
-  cominciò elli in su l’orribil soglia,
-  «ond’ esta oltracotanza in voi s’alletta?
-
-  Perché recalcitrate a quella voglia
-  a cui non puote il fin mai esser mozzo,
-  e che più volte v’ha cresciuta doglia?
-
-  Che giova ne le fata dar di cozzo?
-  Cerbero vostro, se ben vi ricorda,
-  ne porta ancor pelato il mento e ’l gozzo».
-
-  Poi si rivolse per la strada lorda,
-  e non fé motto a noi, ma fé sembiante
-  d’omo cui altra cura stringa e morda
-
-  che quella di colui che li è davante;
-  e noi movemmo i piedi inver’ la terra,
-  sicuri appresso le parole sante.
-
-  Dentro li ’ntrammo sanz’ alcuna guerra;
-  e io, ch’avea di riguardar disio
-  la condizion che tal fortezza serra,
-
-  com’ io fui dentro, l’occhio intorno invio:
-  e veggio ad ogne man grande campagna,
-  piena di duolo e di tormento rio.
-
-  Sì come ad Arli, ove Rodano stagna,
-  sì com’ a Pola, presso del Carnaro
-  ch’Italia chiude e suoi termini bagna,
-
-  fanno i sepulcri tutt’ il loco varo,
-  così facevan quivi d’ogne parte,
-  salvo che ’l modo v’era più amaro;
-
-  ché tra li avelli fiamme erano sparte,
-  per le quali eran sì del tutto accesi,
-  che ferro più non chiede verun’ arte.
-
-  Tutti li lor coperchi eran sospesi,
-  e fuor n’uscivan sì duri lamenti,
-  che ben parean di miseri e d’offesi.
-
-  E io: «Maestro, quai son quelle genti
-  che, seppellite dentro da quell’ arche,
-  si fan sentir coi sospiri dolenti?».
-
-  E quelli a me: «Qui son li eresïarche
-  con lor seguaci, d’ogne setta, e molto
-  più che non credi son le tombe carche.
-
-  Simile qui con simile è sepolto,
-  e i monimenti son più e men caldi».
-  E poi ch’a la man destra si fu vòlto,
-
-  passammo tra i martìri e li alti spaldi.
-
-
-
-  Inferno · Canto X
-
-
-  Ora sen va per un secreto calle,
-  tra ’l muro de la terra e li martìri,
-  lo mio maestro, e io dopo le spalle.
-
-  «O virtù somma, che per li empi giri
-  mi volvi», cominciai, «com’ a te piace,
-  parlami, e sodisfammi a’ miei disiri.
-
-  La gente che per li sepolcri giace
-  potrebbesi veder? già son levati
-  tutt’ i coperchi, e nessun guardia face».
-
-  E quelli a me: «Tutti saran serrati
-  quando di Iosafàt qui torneranno
-  coi corpi che là sù hanno lasciati.
-
-  Suo cimitero da questa parte hanno
-  con Epicuro tutti suoi seguaci,
-  che l’anima col corpo morta fanno.
-
-  Però a la dimanda che mi faci
-  quinc’ entro satisfatto sarà tosto,
-  e al disio ancor che tu mi taci».
-
-  E io: «Buon duca, non tegno riposto
-  a te mio cuor se non per dicer poco,
-  e tu m’hai non pur mo a ciò disposto».
-
-  «O Tosco che per la città del foco
-  vivo ten vai così parlando onesto,
-  piacciati di restare in questo loco.
-
-  La tua loquela ti fa manifesto
-  di quella nobil patrïa natio,
-  a la qual forse fui troppo molesto».
-
-  Subitamente questo suono uscìo
-  d’una de l’arche; però m’accostai,
-  temendo, un poco più al duca mio.
-
-  Ed el mi disse: «Volgiti! Che fai?
-  Vedi là Farinata che s’è dritto:
-  da la cintola in sù tutto ’l vedrai».
-
-  Io avea già il mio viso nel suo fitto;
-  ed el s’ergea col petto e con la fronte
-  com’ avesse l’inferno a gran dispitto.
-
-  E l’animose man del duca e pronte
-  mi pinser tra le sepulture a lui,
-  dicendo: «Le parole tue sien conte».
-
-  Com’ io al piè de la sua tomba fui,
-  guardommi un poco, e poi, quasi sdegnoso,
-  mi dimandò: «Chi fuor li maggior tui?».
-
-  Io ch’era d’ubidir disideroso,
-  non gliel celai, ma tutto gliel’ apersi;
-  ond’ ei levò le ciglia un poco in suso;
-
-  poi disse: «Fieramente furo avversi
-  a me e a miei primi e a mia parte,
-  sì che per due fïate li dispersi».
-
-  «S’ei fur cacciati, ei tornar d’ogne parte»,
-  rispuos’ io lui, «l’una e l’altra fïata;
-  ma i vostri non appreser ben quell’ arte».
-
-  Allor surse a la vista scoperchiata
-  un’ombra, lungo questa, infino al mento:
-  credo che s’era in ginocchie levata.
-
-  Dintorno mi guardò, come talento
-  avesse di veder s’altri era meco;
-  e poi che ’l sospecciar fu tutto spento,
-
-  piangendo disse: «Se per questo cieco
-  carcere vai per altezza d’ingegno,
-  mio figlio ov’ è? e perché non è teco?».
-
-  E io a lui: «Da me stesso non vegno:
-  colui ch’attende là, per qui mi mena
-  forse cui Guido vostro ebbe a disdegno».
-
-  Le sue parole e ’l modo de la pena
-  m’avean di costui già letto il nome;
-  però fu la risposta così piena.
-
-  Di sùbito drizzato gridò: «Come?
-  dicesti “elli ebbe”? non viv’ elli ancora?
-  non fiere li occhi suoi lo dolce lume?».
-
-  Quando s’accorse d’alcuna dimora
-  ch’io facëa dinanzi a la risposta,
-  supin ricadde e più non parve fora.
-
-  Ma quell’ altro magnanimo, a cui posta
-  restato m’era, non mutò aspetto,
-  né mosse collo, né piegò sua costa;
-
-  e sé continüando al primo detto,
-  «S’elli han quell’ arte», disse, «male appresa,
-  ciò mi tormenta più che questo letto.
-
-  Ma non cinquanta volte fia raccesa
-  la faccia de la donna che qui regge,
-  che tu saprai quanto quell’ arte pesa.
-
-  E se tu mai nel dolce mondo regge,
-  dimmi: perché quel popolo è sì empio
-  incontr’ a’ miei in ciascuna sua legge?».
-
-  Ond’ io a lui: «Lo strazio e ’l grande scempio
-  che fece l’Arbia colorata in rosso,
-  tal orazion fa far nel nostro tempio».
-
-  Poi ch’ebbe sospirando il capo mosso,
-  «A ciò non fu’ io sol», disse, «né certo
-  sanza cagion con li altri sarei mosso.
-
-  Ma fu’ io solo, là dove sofferto
-  fu per ciascun di tòrre via Fiorenza,
-  colui che la difesi a viso aperto».
-
-  «Deh, se riposi mai vostra semenza»,
-  prega’ io lui, «solvetemi quel nodo
-  che qui ha ’nviluppata mia sentenza.
-
-  El par che voi veggiate, se ben odo,
-  dinanzi quel che ’l tempo seco adduce,
-  e nel presente tenete altro modo».
-
-  «Noi veggiam, come quei c’ha mala luce,
-  le cose», disse, «che ne son lontano;
-  cotanto ancor ne splende il sommo duce.
-
-  Quando s’appressano o son, tutto è vano
-  nostro intelletto; e s’altri non ci apporta,
-  nulla sapem di vostro stato umano.
-
-  Però comprender puoi che tutta morta
-  fia nostra conoscenza da quel punto
-  che del futuro fia chiusa la porta».
-
-  Allor, come di mia colpa compunto,
-  dissi: «Or direte dunque a quel caduto
-  che ’l suo nato è co’ vivi ancor congiunto;
-
-  e s’i’ fui, dianzi, a la risposta muto,
-  fate i saper che ’l fei perché pensava
-  già ne l’error che m’avete soluto».
-
-  E già ’l maestro mio mi richiamava;
-  per ch’i’ pregai lo spirto più avaccio
-  che mi dicesse chi con lu’ istava.
-
-  Dissemi: «Qui con più di mille giaccio:
-  qua dentro è ’l secondo Federico
-  e ’l Cardinale; e de li altri mi taccio».
-
-  Indi s’ascose; e io inver’ l’antico
-  poeta volsi i passi, ripensando
-  a quel parlar che mi parea nemico.
-
-  Elli si mosse; e poi, così andando,
-  mi disse: «Perché se’ tu sì smarrito?».
-  E io li sodisfeci al suo dimando.
-
-  «La mente tua conservi quel ch’udito
-  hai contra te», mi comandò quel saggio;
-  «e ora attendi qui», e drizzò ’l dito:
-
-  «quando sarai dinanzi al dolce raggio
-  di quella il cui bell’ occhio tutto vede,
-  da lei saprai di tua vita il vïaggio».
-
-  Appresso mosse a man sinistra il piede:
-  lasciammo il muro e gimmo inver’ lo mezzo
-  per un sentier ch’a una valle fiede,
-
-  che ’nfin là sù facea spiacer suo lezzo.
-
-
-
-  Inferno · Canto XI
-
-
-  In su l’estremità d’un’alta ripa
-  che facevan gran pietre rotte in cerchio,
-  venimmo sopra più crudele stipa;
-
-  e quivi, per l’orribile soperchio
-  del puzzo che ’l profondo abisso gitta,
-  ci raccostammo, in dietro, ad un coperchio
-
-  d’un grand’ avello, ov’ io vidi una scritta
-  che dicea: ‘Anastasio papa guardo,
-  lo qual trasse Fotin de la via dritta’.
-
-  «Lo nostro scender conviene esser tardo,
-  sì che s’ausi un poco in prima il senso
-  al tristo fiato; e poi no i fia riguardo».
-
-  Così ’l maestro; e io «Alcun compenso»,
-  dissi lui, «trova che ’l tempo non passi
-  perduto». Ed elli: «Vedi ch’a ciò penso».
-
-  «Figliuol mio, dentro da cotesti sassi»,
-  cominciò poi a dir, «son tre cerchietti
-  di grado in grado, come que’ che lassi.
-
-  Tutti son pien di spirti maladetti;
-  ma perché poi ti basti pur la vista,
-  intendi come e perché son costretti.
-
-  D’ogne malizia, ch’odio in cielo acquista,
-  ingiuria è ’l fine, ed ogne fin cotale
-  o con forza o con frode altrui contrista.
-
-  Ma perché frode è de l’uom proprio male,
-  più spiace a Dio; e però stan di sotto
-  li frodolenti, e più dolor li assale.
-
-  Di vïolenti il primo cerchio è tutto;
-  ma perché si fa forza a tre persone,
-  in tre gironi è distinto e costrutto.
-
-  A Dio, a sé, al prossimo si pòne
-  far forza, dico in loro e in lor cose,
-  come udirai con aperta ragione.
-
-  Morte per forza e ferute dogliose
-  nel prossimo si danno, e nel suo avere
-  ruine, incendi e tollette dannose;
-
-  onde omicide e ciascun che mal fiere,
-  guastatori e predon, tutti tormenta
-  lo giron primo per diverse schiere.
-
-  Puote omo avere in sé man vïolenta
-  e ne’ suoi beni; e però nel secondo
-  giron convien che sanza pro si penta
-
-  qualunque priva sé del vostro mondo,
-  biscazza e fonde la sua facultade,
-  e piange là dov’ esser de’ giocondo.
-
-  Puossi far forza ne la deïtade,
-  col cor negando e bestemmiando quella,
-  e spregiando natura e sua bontade;
-
-  e però lo minor giron suggella
-  del segno suo e Soddoma e Caorsa
-  e chi, spregiando Dio col cor, favella.
-
-  La frode, ond’ ogne coscïenza è morsa,
-  può l’omo usare in colui che ’n lui fida
-  e in quel che fidanza non imborsa.
-
-  Questo modo di retro par ch’incida
-  pur lo vinco d’amor che fa natura;
-  onde nel cerchio secondo s’annida
-
-  ipocresia, lusinghe e chi affattura,
-  falsità, ladroneccio e simonia,
-  ruffian, baratti e simile lordura.
-
-  Per l’altro modo quell’ amor s’oblia
-  che fa natura, e quel ch’è poi aggiunto,
-  di che la fede spezïal si cria;
-
-  onde nel cerchio minore, ov’ è ’l punto
-  de l’universo in su che Dite siede,
-  qualunque trade in etterno è consunto».
-
-  E io: «Maestro, assai chiara procede
-  la tua ragione, e assai ben distingue
-  questo baràtro e ’l popol ch’e’ possiede.
-
-  Ma dimmi: quei de la palude pingue,
-  che mena il vento, e che batte la pioggia,
-  e che s’incontran con sì aspre lingue,
-
-  perché non dentro da la città roggia
-  sono ei puniti, se Dio li ha in ira?
-  e se non li ha, perché sono a tal foggia?».
-
-  Ed elli a me «Perché tanto delira»,
-  disse, «lo ’ngegno tuo da quel che sòle?
-  o ver la mente dove altrove mira?
-
-  Non ti rimembra di quelle parole
-  con le quai la tua Etica pertratta
-  le tre disposizion che ’l ciel non vole,
-
-  incontenenza, malizia e la matta
-  bestialitade? e come incontenenza
-  men Dio offende e men biasimo accatta?
-
-  Se tu riguardi ben questa sentenza,
-  e rechiti a la mente chi son quelli
-  che sù di fuor sostegnon penitenza,
-
-  tu vedrai ben perché da questi felli
-  sien dipartiti, e perché men crucciata
-  la divina vendetta li martelli».
-
-  «O sol che sani ogne vista turbata,
-  tu mi contenti sì quando tu solvi,
-  che, non men che saver, dubbiar m’aggrata.
-
-  Ancora in dietro un poco ti rivolvi»,
-  diss’ io, «là dove di’ ch’usura offende
-  la divina bontade, e ’l groppo solvi».
-
-  «Filosofia», mi disse, «a chi la ’ntende,
-  nota, non pure in una sola parte,
-  come natura lo suo corso prende
-
-  dal divino ’ntelletto e da sua arte;
-  e se tu ben la tua Fisica note,
-  tu troverai, non dopo molte carte,
-
-  che l’arte vostra quella, quanto pote,
-  segue, come ’l maestro fa ’l discente;
-  sì che vostr’ arte a Dio quasi è nepote.
-
-  Da queste due, se tu ti rechi a mente
-  lo Genesì dal principio, convene
-  prender sua vita e avanzar la gente;
-
-  e perché l’usuriere altra via tene,
-  per sé natura e per la sua seguace
-  dispregia, poi ch’in altro pon la spene.
-
-  Ma seguimi oramai che ’l gir mi piace;
-  ché i Pesci guizzan su per l’orizzonta,
-  e ’l Carro tutto sovra ’l Coro giace,
-
-  e ’l balzo via là oltra si dismonta».
-
-
-
-  Inferno · Canto XII
-
-
-  Era lo loco ov’ a scender la riva
-  venimmo, alpestro e, per quel che v’er’ anco,
-  tal, ch’ogne vista ne sarebbe schiva.
-
-  Qual è quella ruina che nel fianco
-  di qua da Trento l’Adice percosse,
-  o per tremoto o per sostegno manco,
-
-  che da cima del monte, onde si mosse,
-  al piano è sì la roccia discoscesa,
-  ch’alcuna via darebbe a chi sù fosse:
-
-  cotal di quel burrato era la scesa;
-  e ’n su la punta de la rotta lacca
-  l’infamïa di Creti era distesa
-
-  che fu concetta ne la falsa vacca;
-  e quando vide noi, sé stesso morse,
-  sì come quei cui l’ira dentro fiacca.
-
-  Lo savio mio inver’ lui gridò: «Forse
-  tu credi che qui sia ’l duca d’Atene,
-  che sù nel mondo la morte ti porse?
-
-  Pàrtiti, bestia, ché questi non vene
-  ammaestrato da la tua sorella,
-  ma vassi per veder le vostre pene».
-
-  Qual è quel toro che si slaccia in quella
-  c’ha ricevuto già ’l colpo mortale,
-  che gir non sa, ma qua e là saltella,
-
-  vid’ io lo Minotauro far cotale;
-  e quello accorto gridò: «Corri al varco;
-  mentre ch’e’ ’nfuria, è buon che tu ti cale».
-
-  Così prendemmo via giù per lo scarco
-  di quelle pietre, che spesso moviensi
-  sotto i miei piedi per lo novo carco.
-
-  Io gia pensando; e quei disse: «Tu pensi
-  forse a questa ruina, ch’è guardata
-  da quell’ ira bestial ch’i’ ora spensi.
-
-  Or vo’ che sappi che l’altra fïata
-  ch’i’ discesi qua giù nel basso inferno,
-  questa roccia non era ancor cascata.
-
-  Ma certo poco pria, se ben discerno,
-  che venisse colui che la gran preda
-  levò a Dite del cerchio superno,
-
-  da tutte parti l’alta valle feda
-  tremò sì, ch’i’ pensai che l’universo
-  sentisse amor, per lo qual è chi creda
-
-  più volte il mondo in caòsso converso;
-  e in quel punto questa vecchia roccia,
-  qui e altrove, tal fece riverso.
-
-  Ma ficca li occhi a valle, ché s’approccia
-  la riviera del sangue in la qual bolle
-  qual che per vïolenza in altrui noccia».
-
-  Oh cieca cupidigia e ira folle,
-  che sì ci sproni ne la vita corta,
-  e ne l’etterna poi sì mal c’immolle!
-
-  Io vidi un’ampia fossa in arco torta,
-  come quella che tutto ’l piano abbraccia,
-  secondo ch’avea detto la mia scorta;
-
-  e tra ’l piè de la ripa ed essa, in traccia
-  corrien centauri, armati di saette,
-  come solien nel mondo andare a caccia.
-
-  Veggendoci calar, ciascun ristette,
-  e de la schiera tre si dipartiro
-  con archi e asticciuole prima elette;
-
-  e l’un gridò da lungi: «A qual martiro
-  venite voi che scendete la costa?
-  Ditel costinci; se non, l’arco tiro».
-
-  Lo mio maestro disse: «La risposta
-  farem noi a Chirón costà di presso:
-  mal fu la voglia tua sempre sì tosta».
-
-  Poi mi tentò, e disse: «Quelli è Nesso,
-  che morì per la bella Deianira,
-  e fé di sé la vendetta elli stesso.
-
-  E quel di mezzo, ch’al petto si mira,
-  è il gran Chirón, il qual nodrì Achille;
-  quell’ altro è Folo, che fu sì pien d’ira.
-
-  Dintorno al fosso vanno a mille a mille,
-  saettando qual anima si svelle
-  del sangue più che sua colpa sortille».
-
-  Noi ci appressammo a quelle fiere isnelle:
-  Chirón prese uno strale, e con la cocca
-  fece la barba in dietro a le mascelle.
-
-  Quando s’ebbe scoperta la gran bocca,
-  disse a’ compagni: «Siete voi accorti
-  che quel di retro move ciò ch’el tocca?
-
-  Così non soglion far li piè d’i morti».
-  E ’l mio buon duca, che già li er’ al petto,
-  dove le due nature son consorti,
-
-  rispuose: «Ben è vivo, e sì soletto
-  mostrar li mi convien la valle buia;
-  necessità ’l ci ’nduce, e non diletto.
-
-  Tal si partì da cantare alleluia
-  che mi commise quest’ officio novo:
-  non è ladron, né io anima fuia.
-
-  Ma per quella virtù per cu’ io movo
-  li passi miei per sì selvaggia strada,
-  danne un de’ tuoi, a cui noi siamo a provo,
-
-  e che ne mostri là dove si guada,
-  e che porti costui in su la groppa,
-  ché non è spirto che per l’aere vada».
-
-  Chirón si volse in su la destra poppa,
-  e disse a Nesso: «Torna, e sì li guida,
-  e fa cansar s’altra schiera v’intoppa».
-
-  Or ci movemmo con la scorta fida
-  lungo la proda del bollor vermiglio,
-  dove i bolliti facieno alte strida.
-
-  Io vidi gente sotto infino al ciglio;
-  e ’l gran centauro disse: «E’ son tiranni
-  che dier nel sangue e ne l’aver di piglio.
-
-  Quivi si piangon li spietati danni;
-  quivi è Alessandro, e Dïonisio fero
-  che fé Cicilia aver dolorosi anni.
-
-  E quella fronte c’ha ’l pel così nero,
-  è Azzolino; e quell’ altro ch’è biondo,
-  è Opizzo da Esti, il qual per vero
-
-  fu spento dal figliastro sù nel mondo».
-  Allor mi volsi al poeta, e quei disse:
-  «Questi ti sia or primo, e io secondo».
-
-  Poco più oltre il centauro s’affisse
-  sovr’ una gente che ’nfino a la gola
-  parea che di quel bulicame uscisse.
-
-  Mostrocci un’ombra da l’un canto sola,
-  dicendo: «Colui fesse in grembo a Dio
-  lo cor che ’n su Tamisi ancor si cola».
-
-  Poi vidi gente che di fuor del rio
-  tenean la testa e ancor tutto ’l casso;
-  e di costoro assai riconobb’ io.
-
-  Così a più a più si facea basso
-  quel sangue, sì che cocea pur li piedi;
-  e quindi fu del fosso il nostro passo.
-
-  «Sì come tu da questa parte vedi
-  lo bulicame che sempre si scema»,
-  disse ’l centauro, «voglio che tu credi
-
-  che da quest’ altra a più a più giù prema
-  lo fondo suo, infin ch’el si raggiunge
-  ove la tirannia convien che gema.
-
-  La divina giustizia di qua punge
-  quell’ Attila che fu flagello in terra,
-  e Pirro e Sesto; e in etterno munge
-
-  le lagrime, che col bollor diserra,
-  a Rinier da Corneto, a Rinier Pazzo,
-  che fecero a le strade tanta guerra».
-
-  Poi si rivolse e ripassossi ’l guazzo.
-
-
-
-  Inferno · Canto XIII
-
-
-  Non era ancor di là Nesso arrivato,
-  quando noi ci mettemmo per un bosco
-  che da neun sentiero era segnato.
-
-  Non fronda verde, ma di color fosco;
-  non rami schietti, ma nodosi e ’nvolti;
-  non pomi v’eran, ma stecchi con tòsco.
-
-  Non han sì aspri sterpi né sì folti
-  quelle fiere selvagge che ’n odio hanno
-  tra Cecina e Corneto i luoghi cólti.
-
-  Quivi le brutte Arpie lor nidi fanno,
-  che cacciar de le Strofade i Troiani
-  con tristo annunzio di futuro danno.
-
-  Ali hanno late, e colli e visi umani,
-  piè con artigli, e pennuto ’l gran ventre;
-  fanno lamenti in su li alberi strani.
-
-  E ’l buon maestro «Prima che più entre,
-  sappi che se’ nel secondo girone»,
-  mi cominciò a dire, «e sarai mentre
-
-  che tu verrai ne l’orribil sabbione.
-  Però riguarda ben; sì vederai
-  cose che torrien fede al mio sermone».
-
-  Io sentia d’ogne parte trarre guai
-  e non vedea persona che ’l facesse;
-  per ch’io tutto smarrito m’arrestai.
-
-  Cred’ ïo ch’ei credette ch’io credesse
-  che tante voci uscisser, tra quei bronchi,
-  da gente che per noi si nascondesse.
-
-  Però disse ’l maestro: «Se tu tronchi
-  qualche fraschetta d’una d’este piante,
-  li pensier c’hai si faran tutti monchi».
-
-  Allor porsi la mano un poco avante
-  e colsi un ramicel da un gran pruno;
-  e ’l tronco suo gridò: «Perché mi schiante?».
-
-  Da che fatto fu poi di sangue bruno,
-  ricominciò a dir: «Perché mi scerpi?
-  non hai tu spirto di pietade alcuno?
-
-  Uomini fummo, e or siam fatti sterpi:
-  ben dovrebb’ esser la tua man più pia,
-  se state fossimo anime di serpi».
-
-  Come d’un stizzo verde ch’arso sia
-  da l’un de’ capi, che da l’altro geme
-  e cigola per vento che va via,
-
-  sì de la scheggia rotta usciva insieme
-  parole e sangue; ond’ io lasciai la cima
-  cadere, e stetti come l’uom che teme.
-
-  «S’elli avesse potuto creder prima»,
-  rispuose ’l savio mio, «anima lesa,
-  ciò c’ha veduto pur con la mia rima,
-
-  non averebbe in te la man distesa;
-  ma la cosa incredibile mi fece
-  indurlo ad ovra ch’a me stesso pesa.
-
-  Ma dilli chi tu fosti, sì che ’n vece
-  d’alcun’ ammenda tua fama rinfreschi
-  nel mondo sù, dove tornar li lece».
-
-  E ’l tronco: «Sì col dolce dir m’adeschi,
-  ch’i’ non posso tacere; e voi non gravi
-  perch’ ïo un poco a ragionar m’inveschi.
-
-  Io son colui che tenni ambo le chiavi
-  del cor di Federigo, e che le volsi,
-  serrando e diserrando, sì soavi,
-
-  che dal secreto suo quasi ogn’ uom tolsi;
-  fede portai al glorïoso offizio,
-  tanto ch’i’ ne perde’ li sonni e ’ polsi.
-
-  La meretrice che mai da l’ospizio
-  di Cesare non torse li occhi putti,
-  morte comune e de le corti vizio,
-
-  infiammò contra me li animi tutti;
-  e li ’nfiammati infiammar sì Augusto,
-  che ’ lieti onor tornaro in tristi lutti.
-
-  L’animo mio, per disdegnoso gusto,
-  credendo col morir fuggir disdegno,
-  ingiusto fece me contra me giusto.
-
-  Per le nove radici d’esto legno
-  vi giuro che già mai non ruppi fede
-  al mio segnor, che fu d’onor sì degno.
-
-  E se di voi alcun nel mondo riede,
-  conforti la memoria mia, che giace
-  ancor del colpo che ’nvidia le diede».
-
-  Un poco attese, e poi «Da ch’el si tace»,
-  disse ’l poeta a me, «non perder l’ora;
-  ma parla, e chiedi a lui, se più ti piace».
-
-  Ond’ ïo a lui: «Domandal tu ancora
-  di quel che credi ch’a me satisfaccia;
-  ch’i’ non potrei, tanta pietà m’accora».
-
-  Perciò ricominciò: «Se l’om ti faccia
-  liberamente ciò che ’l tuo dir priega,
-  spirito incarcerato, ancor ti piaccia
-
-  di dirne come l’anima si lega
-  in questi nocchi; e dinne, se tu puoi,
-  s’alcuna mai di tai membra si spiega».
-
-  Allor soffiò il tronco forte, e poi
-  si convertì quel vento in cotal voce:
-  «Brievemente sarà risposto a voi.
-
-  Quando si parte l’anima feroce
-  dal corpo ond’ ella stessa s’è disvelta,
-  Minòs la manda a la settima foce.
-
-  Cade in la selva, e non l’è parte scelta;
-  ma là dove fortuna la balestra,
-  quivi germoglia come gran di spelta.
-
-  Surge in vermena e in pianta silvestra:
-  l’Arpie, pascendo poi de le sue foglie,
-  fanno dolore, e al dolor fenestra.
-
-  Come l’altre verrem per nostre spoglie,
-  ma non però ch’alcuna sen rivesta,
-  ché non è giusto aver ciò ch’om si toglie.
-
-  Qui le strascineremo, e per la mesta
-  selva saranno i nostri corpi appesi,
-  ciascuno al prun de l’ombra sua molesta».
-
-  Noi eravamo ancora al tronco attesi,
-  credendo ch’altro ne volesse dire,
-  quando noi fummo d’un romor sorpresi,
-
-  similemente a colui che venire
-  sente ’l porco e la caccia a la sua posta,
-  ch’ode le bestie, e le frasche stormire.
-
-  Ed ecco due da la sinistra costa,
-  nudi e graffiati, fuggendo sì forte,
-  che de la selva rompieno ogne rosta.
-
-  Quel dinanzi: «Or accorri, accorri, morte!».
-  E l’altro, cui pareva tardar troppo,
-  gridava: «Lano, sì non furo accorte
-
-  le gambe tue a le giostre dal Toppo!».
-  E poi che forse li fallia la lena,
-  di sé e d’un cespuglio fece un groppo.
-
-  Di rietro a loro era la selva piena
-  di nere cagne, bramose e correnti
-  come veltri ch’uscisser di catena.
-
-  In quel che s’appiattò miser li denti,
-  e quel dilaceraro a brano a brano;
-  poi sen portar quelle membra dolenti.
-
-  Presemi allor la mia scorta per mano,
-  e menommi al cespuglio che piangea
-  per le rotture sanguinenti in vano.
-
-  «O Iacopo», dicea, «da Santo Andrea,
-  che t’è giovato di me fare schermo?
-  che colpa ho io de la tua vita rea?».
-
-  Quando ’l maestro fu sovr’ esso fermo,
-  disse: «Chi fosti, che per tante punte
-  soffi con sangue doloroso sermo?».
-
-  Ed elli a noi: «O anime che giunte
-  siete a veder lo strazio disonesto
-  c’ha le mie fronde sì da me disgiunte,
-
-  raccoglietele al piè del tristo cesto.
-  I’ fui de la città che nel Batista
-  mutò ’l primo padrone; ond’ ei per questo
-
-  sempre con l’arte sua la farà trista;
-  e se non fosse che ’n sul passo d’Arno
-  rimane ancor di lui alcuna vista,
-
-  que’ cittadin che poi la rifondarno
-  sovra ’l cener che d’Attila rimase,
-  avrebber fatto lavorare indarno.
-
-  Io fei gibetto a me de le mie case».
-
-
-
-  Inferno · Canto XIV
-
-
-  Poi che la carità del natio loco
-  mi strinse, raunai le fronde sparte
-  e rende’le a colui, ch’era già fioco.
-
-  Indi venimmo al fine ove si parte
-  lo secondo giron dal terzo, e dove
-  si vede di giustizia orribil arte.
-
-  A ben manifestar le cose nove,
-  dico che arrivammo ad una landa
-  che dal suo letto ogne pianta rimove.
-
-  La dolorosa selva l’è ghirlanda
-  intorno, come ’l fosso tristo ad essa;
-  quivi fermammo i passi a randa a randa.
-
-  Lo spazzo era una rena arida e spessa,
-  non d’altra foggia fatta che colei
-  che fu da’ piè di Caton già soppressa.
-
-  O vendetta di Dio, quanto tu dei
-  esser temuta da ciascun che legge
-  ciò che fu manifesto a li occhi mei!
-
-  D’anime nude vidi molte gregge
-  che piangean tutte assai miseramente,
-  e parea posta lor diversa legge.
-
-  Supin giacea in terra alcuna gente,
-  alcuna si sedea tutta raccolta,
-  e altra andava continüamente.
-
-  Quella che giva ’ntorno era più molta,
-  e quella men che giacëa al tormento,
-  ma più al duolo avea la lingua sciolta.
-
-  Sovra tutto ’l sabbion, d’un cader lento,
-  piovean di foco dilatate falde,
-  come di neve in alpe sanza vento.
-
-  Quali Alessandro in quelle parti calde
-  d’Indïa vide sopra ’l süo stuolo
-  fiamme cadere infino a terra salde,
-
-  per ch’ei provide a scalpitar lo suolo
-  con le sue schiere, acciò che lo vapore
-  mei si stingueva mentre ch’era solo:
-
-  tale scendeva l’etternale ardore;
-  onde la rena s’accendea, com’ esca
-  sotto focile, a doppiar lo dolore.
-
-  Sanza riposo mai era la tresca
-  de le misere mani, or quindi or quinci
-  escotendo da sé l’arsura fresca.
-
-  I’ cominciai: «Maestro, tu che vinci
-  tutte le cose, fuor che ’ demon duri
-  ch’a l’intrar de la porta incontra uscinci,
-
-  chi è quel grande che non par che curi
-  lo ’ncendio e giace dispettoso e torto,
-  sì che la pioggia non par che ’l marturi?».
-
-  E quel medesmo, che si fu accorto
-  ch’io domandava il mio duca di lui,
-  gridò: «Qual io fui vivo, tal son morto.
-
-  Se Giove stanchi ’l suo fabbro da cui
-  crucciato prese la folgore aguta
-  onde l’ultimo dì percosso fui;
-
-  o s’elli stanchi li altri a muta a muta
-  in Mongibello a la focina negra,
-  chiamando “Buon Vulcano, aiuta, aiuta!”,
-
-  sì com’ el fece a la pugna di Flegra,
-  e me saetti con tutta sua forza:
-  non ne potrebbe aver vendetta allegra».
-
-  Allora il duca mio parlò di forza
-  tanto, ch’i’ non l’avea sì forte udito:
-  «O Capaneo, in ciò che non s’ammorza
-
-  la tua superbia, se’ tu più punito;
-  nullo martiro, fuor che la tua rabbia,
-  sarebbe al tuo furor dolor compito».
-
-  Poi si rivolse a me con miglior labbia,
-  dicendo: «Quei fu l’un d’i sette regi
-  ch’assiser Tebe; ed ebbe e par ch’elli abbia
-
-  Dio in disdegno, e poco par che ’l pregi;
-  ma, com’ io dissi lui, li suoi dispetti
-  sono al suo petto assai debiti fregi.
-
-  Or mi vien dietro, e guarda che non metti,
-  ancor, li piedi ne la rena arsiccia;
-  ma sempre al bosco tien li piedi stretti».
-
-  Tacendo divenimmo là ’ve spiccia
-  fuor de la selva un picciol fiumicello,
-  lo cui rossore ancor mi raccapriccia.
-
-  Quale del Bulicame esce ruscello
-  che parton poi tra lor le peccatrici,
-  tal per la rena giù sen giva quello.
-
-  Lo fondo suo e ambo le pendici
-  fatt’ era ’n pietra, e ’ margini dallato;
-  per ch’io m’accorsi che ’l passo era lici.
-
-  «Tra tutto l’altro ch’i’ t’ho dimostrato,
-  poscia che noi intrammo per la porta
-  lo cui sogliare a nessuno è negato,
-
-  cosa non fu da li tuoi occhi scorta
-  notabile com’ è ’l presente rio,
-  che sovra sé tutte fiammelle ammorta».
-
-  Queste parole fuor del duca mio;
-  per ch’io ’l pregai che mi largisse ’l pasto
-  di cui largito m’avëa il disio.
-
-  «In mezzo mar siede un paese guasto»,
-  diss’ elli allora, «che s’appella Creta,
-  sotto ’l cui rege fu già ’l mondo casto.
-
-  Una montagna v’è che già fu lieta
-  d’acqua e di fronde, che si chiamò Ida;
-  or è diserta come cosa vieta.
-
-  Rëa la scelse già per cuna fida
-  del suo figliuolo, e per celarlo meglio,
-  quando piangea, vi facea far le grida.
-
-  Dentro dal monte sta dritto un gran veglio,
-  che tien volte le spalle inver’ Dammiata
-  e Roma guarda come süo speglio.
-
-  La sua testa è di fin oro formata,
-  e puro argento son le braccia e ’l petto,
-  poi è di rame infino a la forcata;
-
-  da indi in giuso è tutto ferro eletto,
-  salvo che ’l destro piede è terra cotta;
-  e sta ’n su quel, più che ’n su l’altro, eretto.
-
-  Ciascuna parte, fuor che l’oro, è rotta
-  d’una fessura che lagrime goccia,
-  le quali, accolte, fóran quella grotta.
-
-  Lor corso in questa valle si diroccia;
-  fanno Acheronte, Stige e Flegetonta;
-  poi sen van giù per questa stretta doccia,
-
-  infin, là ove più non si dismonta,
-  fanno Cocito; e qual sia quello stagno
-  tu lo vedrai, però qui non si conta».
-
-  E io a lui: «Se ’l presente rigagno
-  si diriva così dal nostro mondo,
-  perché ci appar pur a questo vivagno?».
-
-  Ed elli a me: «Tu sai che ’l loco è tondo;
-  e tutto che tu sie venuto molto,
-  pur a sinistra, giù calando al fondo,
-
-  non se’ ancor per tutto ’l cerchio vòlto;
-  per che, se cosa n’apparisce nova,
-  non de’ addur maraviglia al tuo volto».
-
-  E io ancor: «Maestro, ove si trova
-  Flegetonta e Letè? ché de l’un taci,
-  e l’altro di’ che si fa d’esta piova».
-
-  «In tutte tue question certo mi piaci»,
-  rispuose, «ma ’l bollor de l’acqua rossa
-  dovea ben solver l’una che tu faci.
-
-  Letè vedrai, ma fuor di questa fossa,
-  là dove vanno l’anime a lavarsi
-  quando la colpa pentuta è rimossa».
-
-  Poi disse: «Omai è tempo da scostarsi
-  dal bosco; fa che di retro a me vegne:
-  li margini fan via, che non son arsi,
-
-  e sopra loro ogne vapor si spegne».
-
-
-
-  Inferno · Canto XV
-
-
-  Ora cen porta l’un de’ duri margini;
-  e ’l fummo del ruscel di sopra aduggia,
-  sì che dal foco salva l’acqua e li argini.
-
-  Quali Fiamminghi tra Guizzante e Bruggia,
-  temendo ’l fiotto che ’nver’ lor s’avventa,
-  fanno lo schermo perché ’l mar si fuggia;
-
-  e quali Padoan lungo la Brenta,
-  per difender lor ville e lor castelli,
-  anzi che Carentana il caldo senta:
-
-  a tale imagine eran fatti quelli,
-  tutto che né sì alti né sì grossi,
-  qual che si fosse, lo maestro félli.
-
-  Già eravam da la selva rimossi
-  tanto, ch’i’ non avrei visto dov’ era,
-  perch’ io in dietro rivolto mi fossi,
-
-  quando incontrammo d’anime una schiera
-  che venian lungo l’argine, e ciascuna
-  ci riguardava come suol da sera
-
-  guardare uno altro sotto nuova luna;
-  e sì ver’ noi aguzzavan le ciglia
-  come ’l vecchio sartor fa ne la cruna.
-
-  Così adocchiato da cotal famiglia,
-  fui conosciuto da un, che mi prese
-  per lo lembo e gridò: «Qual maraviglia!».
-
-  E io, quando ’l suo braccio a me distese,
-  ficcaï li occhi per lo cotto aspetto,
-  sì che ’l viso abbrusciato non difese
-
-  la conoscenza süa al mio ’ntelletto;
-  e chinando la mano a la sua faccia,
-  rispuosi: «Siete voi qui, ser Brunetto?».
-
-  E quelli: «O figliuol mio, non ti dispiaccia
-  se Brunetto Latino un poco teco
-  ritorna ’n dietro e lascia andar la traccia».
-
-  I’ dissi lui: «Quanto posso, ven preco;
-  e se volete che con voi m’asseggia,
-  faròl, se piace a costui che vo seco».
-
-  «O figliuol», disse, «qual di questa greggia
-  s’arresta punto, giace poi cent’ anni
-  sanz’ arrostarsi quando ’l foco il feggia.
-
-  Però va oltre: i’ ti verrò a’ panni;
-  e poi rigiugnerò la mia masnada,
-  che va piangendo i suoi etterni danni».
-
-  Io non osava scender de la strada
-  per andar par di lui; ma ’l capo chino
-  tenea com’ uom che reverente vada.
-
-  El cominciò: «Qual fortuna o destino
-  anzi l’ultimo dì qua giù ti mena?
-  e chi è questi che mostra ’l cammino?».
-
-  «Là sù di sopra, in la vita serena»,
-  rispuos’ io lui, «mi smarri’ in una valle,
-  avanti che l’età mia fosse piena.
-
-  Pur ier mattina le volsi le spalle:
-  questi m’apparve, tornand’ ïo in quella,
-  e reducemi a ca per questo calle».
-
-  Ed elli a me: «Se tu segui tua stella,
-  non puoi fallire a glorïoso porto,
-  se ben m’accorsi ne la vita bella;
-
-  e s’io non fossi sì per tempo morto,
-  veggendo il cielo a te così benigno,
-  dato t’avrei a l’opera conforto.
-
-  Ma quello ingrato popolo maligno
-  che discese di Fiesole ab antico,
-  e tiene ancor del monte e del macigno,
-
-  ti si farà, per tuo ben far, nimico;
-  ed è ragion, ché tra li lazzi sorbi
-  si disconvien fruttare al dolce fico.
-
-  Vecchia fama nel mondo li chiama orbi;
-  gent’ è avara, invidiosa e superba:
-  dai lor costumi fa che tu ti forbi.
-
-  La tua fortuna tanto onor ti serba,
-  che l’una parte e l’altra avranno fame
-  di te; ma lungi fia dal becco l’erba.
-
-  Faccian le bestie fiesolane strame
-  di lor medesme, e non tocchin la pianta,
-  s’alcuna surge ancora in lor letame,
-
-  in cui riviva la sementa santa
-  di que’ Roman che vi rimaser quando
-  fu fatto il nido di malizia tanta».
-
-  «Se fosse tutto pieno il mio dimando»,
-  rispuos’ io lui, «voi non sareste ancora
-  de l’umana natura posto in bando;
-
-  ché ’n la mente m’è fitta, e or m’accora,
-  la cara e buona imagine paterna
-  di voi quando nel mondo ad ora ad ora
-
-  m’insegnavate come l’uom s’etterna:
-  e quant’ io l’abbia in grado, mentr’ io vivo
-  convien che ne la mia lingua si scerna.
-
-  Ciò che narrate di mio corso scrivo,
-  e serbolo a chiosar con altro testo
-  a donna che saprà, s’a lei arrivo.
-
-  Tanto vogl’ io che vi sia manifesto,
-  pur che mia coscïenza non mi garra,
-  ch’a la Fortuna, come vuol, son presto.
-
-  Non è nuova a li orecchi miei tal arra:
-  però giri Fortuna la sua rota
-  come le piace, e ’l villan la sua marra».
-
-  Lo mio maestro allora in su la gota
-  destra si volse in dietro e riguardommi;
-  poi disse: «Bene ascolta chi la nota».
-
-  Né per tanto di men parlando vommi
-  con ser Brunetto, e dimando chi sono
-  li suoi compagni più noti e più sommi.
-
-  Ed elli a me: «Saper d’alcuno è buono;
-  de li altri fia laudabile tacerci,
-  ché ’l tempo saria corto a tanto suono.
-
-  In somma sappi che tutti fur cherci
-  e litterati grandi e di gran fama,
-  d’un peccato medesmo al mondo lerci.
-
-  Priscian sen va con quella turba grama,
-  e Francesco d’Accorso anche; e vedervi,
-  s’avessi avuto di tal tigna brama,
-
-  colui potei che dal servo de’ servi
-  fu trasmutato d’Arno in Bacchiglione,
-  dove lasciò li mal protesi nervi.
-
-  Di più direi; ma ’l venire e ’l sermone
-  più lungo esser non può, però ch’i’ veggio
-  là surger nuovo fummo del sabbione.
-
-  Gente vien con la quale esser non deggio.
-  Sieti raccomandato il mio Tesoro,
-  nel qual io vivo ancora, e più non cheggio».
-
-  Poi si rivolse, e parve di coloro
-  che corrono a Verona il drappo verde
-  per la campagna; e parve di costoro
-
-  quelli che vince, non colui che perde.
-
-
-
-  Inferno · Canto XVI
-
-
-  Già era in loco onde s’udia ’l rimbombo
-  de l’acqua che cadea ne l’altro giro,
-  simile a quel che l’arnie fanno rombo,
-
-  quando tre ombre insieme si partiro,
-  correndo, d’una torma che passava
-  sotto la pioggia de l’aspro martiro.
-
-  Venian ver’ noi, e ciascuna gridava:
-  «Sòstati tu ch’a l’abito ne sembri
-  esser alcun di nostra terra prava».
-
-  Ahimè, che piaghe vidi ne’ lor membri,
-  ricenti e vecchie, da le fiamme incese!
-  Ancor men duol pur ch’i’ me ne rimembri.
-
-  A le lor grida il mio dottor s’attese;
-  volse ’l viso ver’ me, e «Or aspetta»,
-  disse, «a costor si vuole esser cortese.
-
-  E se non fosse il foco che saetta
-  la natura del loco, i’ dicerei
-  che meglio stesse a te che a lor la fretta».
-
-  Ricominciar, come noi restammo, ei
-  l’antico verso; e quando a noi fuor giunti,
-  fenno una rota di sé tutti e trei.
-
-  Qual sogliono i campion far nudi e unti,
-  avvisando lor presa e lor vantaggio,
-  prima che sien tra lor battuti e punti,
-
-  così rotando, ciascuno il visaggio
-  drizzava a me, sì che ’n contraro il collo
-  faceva ai piè continüo vïaggio.
-
-  E «Se miseria d’esto loco sollo
-  rende in dispetto noi e nostri prieghi»,
-  cominciò l’uno, «e ’l tinto aspetto e brollo,
-
-  la fama nostra il tuo animo pieghi
-  a dirne chi tu se’, che i vivi piedi
-  così sicuro per lo ’nferno freghi.
-
-  Questi, l’orme di cui pestar mi vedi,
-  tutto che nudo e dipelato vada,
-  fu di grado maggior che tu non credi:
-
-  nepote fu de la buona Gualdrada;
-  Guido Guerra ebbe nome, e in sua vita
-  fece col senno assai e con la spada.
-
-  L’altro, ch’appresso me la rena trita,
-  è Tegghiaio Aldobrandi, la cui voce
-  nel mondo sù dovria esser gradita.
-
-  E io, che posto son con loro in croce,
-  Iacopo Rusticucci fui, e certo
-  la fiera moglie più ch’altro mi nuoce».
-
-  S’i’ fossi stato dal foco coperto,
-  gittato mi sarei tra lor di sotto,
-  e credo che ’l dottor l’avria sofferto;
-
-  ma perch’ io mi sarei brusciato e cotto,
-  vinse paura la mia buona voglia
-  che di loro abbracciar mi facea ghiotto.
-
-  Poi cominciai: «Non dispetto, ma doglia
-  la vostra condizion dentro mi fisse,
-  tanta che tardi tutta si dispoglia,
-
-  tosto che questo mio segnor mi disse
-  parole per le quali i’ mi pensai
-  che qual voi siete, tal gente venisse.
-
-  Di vostra terra sono, e sempre mai
-  l’ovra di voi e li onorati nomi
-  con affezion ritrassi e ascoltai.
-
-  Lascio lo fele e vo per dolci pomi
-  promessi a me per lo verace duca;
-  ma ’nfino al centro pria convien ch’i’ tomi».
-
-  «Se lungamente l’anima conduca
-  le membra tue», rispuose quelli ancora,
-  «e se la fama tua dopo te luca,
-
-  cortesia e valor dì se dimora
-  ne la nostra città sì come suole,
-  o se del tutto se n’è gita fora;
-
-  ché Guiglielmo Borsiere, il qual si duole
-  con noi per poco e va là coi compagni,
-  assai ne cruccia con le sue parole».
-
-  «La gente nuova e i sùbiti guadagni
-  orgoglio e dismisura han generata,
-  Fiorenza, in te, sì che tu già ten piagni».
-
-  Così gridai con la faccia levata;
-  e i tre, che ciò inteser per risposta,
-  guardar l’un l’altro com’ al ver si guata.
-
-  «Se l’altre volte sì poco ti costa»,
-  rispuoser tutti, «il satisfare altrui,
-  felice te se sì parli a tua posta!
-
-  Però, se campi d’esti luoghi bui
-  e torni a riveder le belle stelle,
-  quando ti gioverà dicere “I’ fui”,
-
-  fa che di noi a la gente favelle».
-  Indi rupper la rota, e a fuggirsi
-  ali sembiar le gambe loro isnelle.
-
-  Un amen non saria possuto dirsi
-  tosto così com’ e’ fuoro spariti;
-  per ch’al maestro parve di partirsi.
-
-  Io lo seguiva, e poco eravam iti,
-  che ’l suon de l’acqua n’era sì vicino,
-  che per parlar saremmo a pena uditi.
-
-  Come quel fiume c’ha proprio cammino
-  prima dal Monte Viso ’nver’ levante,
-  da la sinistra costa d’Apennino,
-
-  che si chiama Acquacheta suso, avante
-  che si divalli giù nel basso letto,
-  e a Forlì di quel nome è vacante,
-
-  rimbomba là sovra San Benedetto
-  de l’Alpe per cadere ad una scesa
-  ove dovea per mille esser recetto;
-
-  così, giù d’una ripa discoscesa,
-  trovammo risonar quell’ acqua tinta,
-  sì che ’n poc’ ora avria l’orecchia offesa.
-
-  Io avea una corda intorno cinta,
-  e con essa pensai alcuna volta
-  prender la lonza a la pelle dipinta.
-
-  Poscia ch’io l’ebbi tutta da me sciolta,
-  sì come ’l duca m’avea comandato,
-  porsila a lui aggroppata e ravvolta.
-
-  Ond’ ei si volse inver’ lo destro lato,
-  e alquanto di lunge da la sponda
-  la gittò giuso in quell’ alto burrato.
-
-  ‘E’ pur convien che novità risponda’,
-  dicea fra me medesmo, ‘al novo cenno
-  che ’l maestro con l’occhio sì seconda’.
-
-  Ahi quanto cauti li uomini esser dienno
-  presso a color che non veggion pur l’ovra,
-  ma per entro i pensier miran col senno!
-
-  El disse a me: «Tosto verrà di sovra
-  ciò ch’io attendo e che il tuo pensier sogna;
-  tosto convien ch’al tuo viso si scovra».
-
-  Sempre a quel ver c’ha faccia di menzogna
-  de’ l’uom chiuder le labbra fin ch’el puote,
-  però che sanza colpa fa vergogna;
-
-  ma qui tacer nol posso; e per le note
-  di questa comedìa, lettor, ti giuro,
-  s’elle non sien di lunga grazia vòte,
-
-  ch’i’ vidi per quell’ aere grosso e scuro
-  venir notando una figura in suso,
-  maravigliosa ad ogne cor sicuro,
-
-  sì come torna colui che va giuso
-  talora a solver l’àncora ch’aggrappa
-  o scoglio o altro che nel mare è chiuso,
-
-  che ’n sù si stende e da piè si rattrappa.
-
-
-
-  Inferno · Canto XVII
-
-
-  «Ecco la fiera con la coda aguzza,
-  che passa i monti e rompe i muri e l’armi!
-  Ecco colei che tutto ’l mondo appuzza!».
-
-  Sì cominciò lo mio duca a parlarmi;
-  e accennolle che venisse a proda,
-  vicino al fin d’i passeggiati marmi.
-
-  E quella sozza imagine di froda
-  sen venne, e arrivò la testa e ’l busto,
-  ma ’n su la riva non trasse la coda.
-
-  La faccia sua era faccia d’uom giusto,
-  tanto benigna avea di fuor la pelle,
-  e d’un serpente tutto l’altro fusto;
-
-  due branche avea pilose insin l’ascelle;
-  lo dosso e ’l petto e ambedue le coste
-  dipinti avea di nodi e di rotelle.
-
-  Con più color, sommesse e sovraposte
-  non fer mai drappi Tartari né Turchi,
-  né fuor tai tele per Aragne imposte.
-
-  Come talvolta stanno a riva i burchi,
-  che parte sono in acqua e parte in terra,
-  e come là tra li Tedeschi lurchi
-
-  lo bivero s’assetta a far sua guerra,
-  così la fiera pessima si stava
-  su l’orlo ch’è di pietra e ’l sabbion serra.
-
-  Nel vano tutta sua coda guizzava,
-  torcendo in sù la venenosa forca
-  ch’a guisa di scorpion la punta armava.
-
-  Lo duca disse: «Or convien che si torca
-  la nostra via un poco insino a quella
-  bestia malvagia che colà si corca».
-
-  Però scendemmo a la destra mammella,
-  e diece passi femmo in su lo stremo,
-  per ben cessar la rena e la fiammella.
-
-  E quando noi a lei venuti semo,
-  poco più oltre veggio in su la rena
-  gente seder propinqua al loco scemo.
-
-  Quivi ’l maestro «Acciò che tutta piena
-  esperïenza d’esto giron porti»,
-  mi disse, «va, e vedi la lor mena.
-
-  Li tuoi ragionamenti sian là corti;
-  mentre che torni, parlerò con questa,
-  che ne conceda i suoi omeri forti».
-
-  Così ancor su per la strema testa
-  di quel settimo cerchio tutto solo
-  andai, dove sedea la gente mesta.
-
-  Per li occhi fora scoppiava lor duolo;
-  di qua, di là soccorrien con le mani
-  quando a’ vapori, e quando al caldo suolo:
-
-  non altrimenti fan di state i cani
-  or col ceffo or col piè, quando son morsi
-  o da pulci o da mosche o da tafani.
-
-  Poi che nel viso a certi li occhi porsi,
-  ne’ quali ’l doloroso foco casca,
-  non ne conobbi alcun; ma io m’accorsi
-
-  che dal collo a ciascun pendea una tasca
-  ch’avea certo colore e certo segno,
-  e quindi par che ’l loro occhio si pasca.
-
-  E com’ io riguardando tra lor vegno,
-  in una borsa gialla vidi azzurro
-  che d’un leone avea faccia e contegno.
-
-  Poi, procedendo di mio sguardo il curro,
-  vidine un’altra come sangue rossa,
-  mostrando un’oca bianca più che burro.
-
-  E un che d’una scrofa azzurra e grossa
-  segnato avea lo suo sacchetto bianco,
-  mi disse: «Che fai tu in questa fossa?
-
-  Or te ne va; e perché se’ vivo anco,
-  sappi che ’l mio vicin Vitalïano
-  sederà qui dal mio sinistro fianco.
-
-  Con questi Fiorentin son padoano:
-  spesse fïate mi ’ntronan li orecchi
-  gridando: “Vegna ’l cavalier sovrano,
-
-  che recherà la tasca con tre becchi!”».
-  Qui distorse la bocca e di fuor trasse
-  la lingua, come bue che ’l naso lecchi.
-
-  E io, temendo no ’l più star crucciasse
-  lui che di poco star m’avea ’mmonito,
-  torna’mi in dietro da l’anime lasse.
-
-  Trova’ il duca mio ch’era salito
-  già su la groppa del fiero animale,
-  e disse a me: «Or sie forte e ardito.
-
-  Omai si scende per sì fatte scale;
-  monta dinanzi, ch’i’ voglio esser mezzo,
-  sì che la coda non possa far male».
-
-  Qual è colui che sì presso ha ’l riprezzo
-  de la quartana, c’ha già l’unghie smorte,
-  e triema tutto pur guardando ’l rezzo,
-
-  tal divenn’ io a le parole porte;
-  ma vergogna mi fé le sue minacce,
-  che innanzi a buon segnor fa servo forte.
-
-  I’ m’assettai in su quelle spallacce;
-  sì volli dir, ma la voce non venne
-  com’ io credetti: ‘Fa che tu m’abbracce’.
-
-  Ma esso, ch’altra volta mi sovvenne
-  ad altro forse, tosto ch’i’ montai
-  con le braccia m’avvinse e mi sostenne;
-
-  e disse: «Gerïon, moviti omai:
-  le rote larghe, e lo scender sia poco;
-  pensa la nova soma che tu hai».
-
-  Come la navicella esce di loco
-  in dietro in dietro, sì quindi si tolse;
-  e poi ch’al tutto si sentì a gioco,
-
-  là ’v’ era ’l petto, la coda rivolse,
-  e quella tesa, come anguilla, mosse,
-  e con le branche l’aere a sé raccolse.
-
-  Maggior paura non credo che fosse
-  quando Fetonte abbandonò li freni,
-  per che ’l ciel, come pare ancor, si cosse;
-
-  né quando Icaro misero le reni
-  sentì spennar per la scaldata cera,
-  gridando il padre a lui «Mala via tieni!»,
-
-  che fu la mia, quando vidi ch’i’ era
-  ne l’aere d’ogne parte, e vidi spenta
-  ogne veduta fuor che de la fera.
-
-  Ella sen va notando lenta lenta;
-  rota e discende, ma non me n’accorgo
-  se non che al viso e di sotto mi venta.
-
-  Io sentia già da la man destra il gorgo
-  far sotto noi un orribile scroscio,
-  per che con li occhi ’n giù la testa sporgo.
-
-  Allor fu’ io più timido a lo stoscio,
-  però ch’i’ vidi fuochi e senti’ pianti;
-  ond’ io tremando tutto mi raccoscio.
-
-  E vidi poi, ché nol vedea davanti,
-  lo scendere e ’l girar per li gran mali
-  che s’appressavan da diversi canti.
-
-  Come ’l falcon ch’è stato assai su l’ali,
-  che sanza veder logoro o uccello
-  fa dire al falconiere «Omè, tu cali!»,
-
-  discende lasso onde si move isnello,
-  per cento rote, e da lunge si pone
-  dal suo maestro, disdegnoso e fello;
-
-  così ne puose al fondo Gerïone
-  al piè al piè de la stagliata rocca,
-  e, discarcate le nostre persone,
-
-  si dileguò come da corda cocca.
-
-
-
-  Inferno · Canto XVIII
-
-
-  Luogo è in inferno detto Malebolge,
-  tutto di pietra di color ferrigno,
-  come la cerchia che dintorno il volge.
-
-  Nel dritto mezzo del campo maligno
-  vaneggia un pozzo assai largo e profondo,
-  di cui suo loco dicerò l’ordigno.
-
-  Quel cinghio che rimane adunque è tondo
-  tra ’l pozzo e ’l piè de l’alta ripa dura,
-  e ha distinto in dieci valli il fondo.
-
-  Quale, dove per guardia de le mura
-  più e più fossi cingon li castelli,
-  la parte dove son rende figura,
-
-  tale imagine quivi facean quelli;
-  e come a tai fortezze da’ lor sogli
-  a la ripa di fuor son ponticelli,
-
-  così da imo de la roccia scogli
-  movien che ricidien li argini e ’ fossi
-  infino al pozzo che i tronca e raccogli.
-
-  In questo luogo, de la schiena scossi
-  di Gerïon, trovammoci; e ’l poeta
-  tenne a sinistra, e io dietro mi mossi.
-
-  A la man destra vidi nova pieta,
-  novo tormento e novi frustatori,
-  di che la prima bolgia era repleta.
-
-  Nel fondo erano ignudi i peccatori;
-  dal mezzo in qua ci venien verso ’l volto,
-  di là con noi, ma con passi maggiori,
-
-  come i Roman per l’essercito molto,
-  l’anno del giubileo, su per lo ponte
-  hanno a passar la gente modo colto,
-
-  che da l’un lato tutti hanno la fronte
-  verso ’l castello e vanno a Santo Pietro,
-  da l’altra sponda vanno verso ’l monte.
-
-  Di qua, di là, su per lo sasso tetro
-  vidi demon cornuti con gran ferze,
-  che li battien crudelmente di retro.
-
-  Ahi come facean lor levar le berze
-  a le prime percosse! già nessuno
-  le seconde aspettava né le terze.
-
-  Mentr’ io andava, li occhi miei in uno
-  furo scontrati; e io sì tosto dissi:
-  «Già di veder costui non son digiuno».
-
-  Per ch’ïo a figurarlo i piedi affissi;
-  e ’l dolce duca meco si ristette,
-  e assentio ch’alquanto in dietro gissi.
-
-  E quel frustato celar si credette
-  bassando ’l viso; ma poco li valse,
-  ch’io dissi: «O tu che l’occhio a terra gette,
-
-  se le fazion che porti non son false,
-  Venedico se’ tu Caccianemico.
-  Ma che ti mena a sì pungenti salse?».
-
-  Ed elli a me: «Mal volontier lo dico;
-  ma sforzami la tua chiara favella,
-  che mi fa sovvenir del mondo antico.
-
-  I’ fui colui che la Ghisolabella
-  condussi a far la voglia del marchese,
-  come che suoni la sconcia novella.
-
-  E non pur io qui piango bolognese;
-  anzi n’è questo loco tanto pieno,
-  che tante lingue non son ora apprese
-
-  a dicer ‘sipa’ tra Sàvena e Reno;
-  e se di ciò vuoi fede o testimonio,
-  rècati a mente il nostro avaro seno».
-
-  Così parlando il percosse un demonio
-  de la sua scurïada, e disse: «Via,
-  ruffian! qui non son femmine da conio».
-
-  I’ mi raggiunsi con la scorta mia;
-  poscia con pochi passi divenimmo
-  là ’v’ uno scoglio de la ripa uscia.
-
-  Assai leggeramente quel salimmo;
-  e vòlti a destra su per la sua scheggia,
-  da quelle cerchie etterne ci partimmo.
-
-  Quando noi fummo là dov’ el vaneggia
-  di sotto per dar passo a li sferzati,
-  lo duca disse: «Attienti, e fa che feggia
-
-  lo viso in te di quest’ altri mal nati,
-  ai quali ancor non vedesti la faccia
-  però che son con noi insieme andati».
-
-  Del vecchio ponte guardavam la traccia
-  che venìa verso noi da l’altra banda,
-  e che la ferza similmente scaccia.
-
-  E ’l buon maestro, sanza mia dimanda,
-  mi disse: «Guarda quel grande che vene,
-  e per dolor non par lagrime spanda:
-
-  quanto aspetto reale ancor ritene!
-  Quelli è Iasón, che per cuore e per senno
-  li Colchi del monton privati féne.
-
-  Ello passò per l’isola di Lenno
-  poi che l’ardite femmine spietate
-  tutti li maschi loro a morte dienno.
-
-  Ivi con segni e con parole ornate
-  Isifile ingannò, la giovinetta
-  che prima avea tutte l’altre ingannate.
-
-  Lasciolla quivi, gravida, soletta;
-  tal colpa a tal martiro lui condanna;
-  e anche di Medea si fa vendetta.
-
-  Con lui sen va chi da tal parte inganna;
-  e questo basti de la prima valle
-  sapere e di color che ’n sé assanna».
-
-  Già eravam là ’ve lo stretto calle
-  con l’argine secondo s’incrocicchia,
-  e fa di quello ad un altr’ arco spalle.
-
-  Quindi sentimmo gente che si nicchia
-  ne l’altra bolgia e che col muso scuffa,
-  e sé medesma con le palme picchia.
-
-  Le ripe eran grommate d’una muffa,
-  per l’alito di giù che vi s’appasta,
-  che con li occhi e col naso facea zuffa.
-
-  Lo fondo è cupo sì, che non ci basta
-  loco a veder sanza montare al dosso
-  de l’arco, ove lo scoglio più sovrasta.
-
-  Quivi venimmo; e quindi giù nel fosso
-  vidi gente attuffata in uno sterco
-  che da li uman privadi parea mosso.
-
-  E mentre ch’io là giù con l’occhio cerco,
-  vidi un col capo sì di merda lordo,
-  che non parëa s’era laico o cherco.
-
-  Quei mi sgridò: «Perché se’ tu sì gordo
-  di riguardar più me che li altri brutti?».
-  E io a lui: «Perché, se ben ricordo,
-
-  già t’ho veduto coi capelli asciutti,
-  e se’ Alessio Interminei da Lucca:
-  però t’adocchio più che li altri tutti».
-
-  Ed elli allor, battendosi la zucca:
-  «Qua giù m’hanno sommerso le lusinghe
-  ond’ io non ebbi mai la lingua stucca».
-
-  Appresso ciò lo duca «Fa che pinghe»,
-  mi disse, «il viso un poco più avante,
-  sì che la faccia ben con l’occhio attinghe
-
-  di quella sozza e scapigliata fante
-  che là si graffia con l’unghie merdose,
-  e or s’accoscia e ora è in piedi stante.
-
-  Taïde è, la puttana che rispuose
-  al drudo suo quando disse “Ho io grazie
-  grandi apo te?”: “Anzi maravigliose!”.
-
-  E quinci sian le nostre viste sazie».
-
-
-
-  Inferno · Canto XIX
-
-
-  O Simon mago, o miseri seguaci
-  che le cose di Dio, che di bontate
-  deon essere spose, e voi rapaci
-
-  per oro e per argento avolterate,
-  or convien che per voi suoni la tromba,
-  però che ne la terza bolgia state.
-
-  Già eravamo, a la seguente tomba,
-  montati de lo scoglio in quella parte
-  ch’a punto sovra mezzo ’l fosso piomba.
-
-  O somma sapïenza, quanta è l’arte
-  che mostri in cielo, in terra e nel mal mondo,
-  e quanto giusto tua virtù comparte!
-
-  Io vidi per le coste e per lo fondo
-  piena la pietra livida di fóri,
-  d’un largo tutti e ciascun era tondo.
-
-  Non mi parean men ampi né maggiori
-  che que’ che son nel mio bel San Giovanni,
-  fatti per loco d’i battezzatori;
-
-  l’un de li quali, ancor non è molt’ anni,
-  rupp’ io per un che dentro v’annegava:
-  e questo sia suggel ch’ogn’ omo sganni.
-
-  Fuor de la bocca a ciascun soperchiava
-  d’un peccator li piedi e de le gambe
-  infino al grosso, e l’altro dentro stava.
-
-  Le piante erano a tutti accese intrambe;
-  per che sì forte guizzavan le giunte,
-  che spezzate averien ritorte e strambe.
-
-  Qual suole il fiammeggiar de le cose unte
-  muoversi pur su per la strema buccia,
-  tal era lì dai calcagni a le punte.
-
-  «Chi è colui, maestro, che si cruccia
-  guizzando più che li altri suoi consorti»,
-  diss’ io, «e cui più roggia fiamma succia?».
-
-  Ed elli a me: «Se tu vuo’ ch’i’ ti porti
-  là giù per quella ripa che più giace,
-  da lui saprai di sé e de’ suoi torti».
-
-  E io: «Tanto m’è bel, quanto a te piace:
-  tu se’ segnore, e sai ch’i’ non mi parto
-  dal tuo volere, e sai quel che si tace».
-
-  Allor venimmo in su l’argine quarto;
-  volgemmo e discendemmo a mano stanca
-  là giù nel fondo foracchiato e arto.
-
-  Lo buon maestro ancor de la sua anca
-  non mi dipuose, sì mi giunse al rotto
-  di quel che si piangeva con la zanca.
-
-  «O qual che se’ che ’l di sù tien di sotto,
-  anima trista come pal commessa»,
-  comincia’ io a dir, «se puoi, fa motto».
-
-  Io stava come ’l frate che confessa
-  lo perfido assessin, che, poi ch’è fitto,
-  richiama lui per che la morte cessa.
-
-  Ed el gridò: «Se’ tu già costì ritto,
-  se’ tu già costì ritto, Bonifazio?
-  Di parecchi anni mi mentì lo scritto.
-
-  Se’ tu sì tosto di quell’ aver sazio
-  per lo qual non temesti tòrre a ’nganno
-  la bella donna, e poi di farne strazio?».
-
-  Tal mi fec’ io, quai son color che stanno,
-  per non intender ciò ch’è lor risposto,
-  quasi scornati, e risponder non sanno.
-
-  Allor Virgilio disse: «Dilli tosto:
-  “Non son colui, non son colui che credi”»;
-  e io rispuosi come a me fu imposto.
-
-  Per che lo spirto tutti storse i piedi;
-  poi, sospirando e con voce di pianto,
-  mi disse: «Dunque che a me richiedi?
-
-  Se di saper ch’i’ sia ti cal cotanto,
-  che tu abbi però la ripa corsa,
-  sappi ch’i’ fui vestito del gran manto;
-
-  e veramente fui figliuol de l’orsa,
-  cupido sì per avanzar li orsatti,
-  che sù l’avere e qui me misi in borsa.
-
-  Di sotto al capo mio son li altri tratti
-  che precedetter me simoneggiando,
-  per le fessure de la pietra piatti.
-
-  Là giù cascherò io altresì quando
-  verrà colui ch’i’ credea che tu fossi,
-  allor ch’i’ feci ’l sùbito dimando.
-
-  Ma più è ’l tempo già che i piè mi cossi
-  e ch’i’ son stato così sottosopra,
-  ch’el non starà piantato coi piè rossi:
-
-  ché dopo lui verrà di più laida opra,
-  di ver’ ponente, un pastor sanza legge,
-  tal che convien che lui e me ricuopra.
-
-  Nuovo Iasón sarà, di cui si legge
-  ne’ Maccabei; e come a quel fu molle
-  suo re, così fia lui chi Francia regge».
-
-  Io non so s’i’ mi fui qui troppo folle,
-  ch’i’ pur rispuosi lui a questo metro:
-  «Deh, or mi dì: quanto tesoro volle
-
-  Nostro Segnore in prima da san Pietro
-  ch’ei ponesse le chiavi in sua balìa?
-  Certo non chiese se non “Viemmi retro”.
-
-  Né Pier né li altri tolsero a Matia
-  oro od argento, quando fu sortito
-  al loco che perdé l’anima ria.
-
-  Però ti sta, ché tu se’ ben punito;
-  e guarda ben la mal tolta moneta
-  ch’esser ti fece contra Carlo ardito.
-
-  E se non fosse ch’ancor lo mi vieta
-  la reverenza de le somme chiavi
-  che tu tenesti ne la vita lieta,
-
-  io userei parole ancor più gravi;
-  ché la vostra avarizia il mondo attrista,
-  calcando i buoni e sollevando i pravi.
-
-  Di voi pastor s’accorse il Vangelista,
-  quando colei che siede sopra l’acque
-  puttaneggiar coi regi a lui fu vista;
-
-  quella che con le sette teste nacque,
-  e da le diece corna ebbe argomento,
-  fin che virtute al suo marito piacque.
-
-  Fatto v’avete dio d’oro e d’argento;
-  e che altro è da voi a l’idolatre,
-  se non ch’elli uno, e voi ne orate cento?
-
-  Ahi, Costantin, di quanto mal fu matre,
-  non la tua conversion, ma quella dote
-  che da te prese il primo ricco patre!».
-
-  E mentr’ io li cantava cotai note,
-  o ira o coscïenza che ’l mordesse,
-  forte spingava con ambo le piote.
-
-  I’ credo ben ch’al mio duca piacesse,
-  con sì contenta labbia sempre attese
-  lo suon de le parole vere espresse.
-
-  Però con ambo le braccia mi prese;
-  e poi che tutto su mi s’ebbe al petto,
-  rimontò per la via onde discese.
-
-  Né si stancò d’avermi a sé distretto,
-  sì men portò sovra ’l colmo de l’arco
-  che dal quarto al quinto argine è tragetto.
-
-  Quivi soavemente spuose il carco,
-  soave per lo scoglio sconcio ed erto
-  che sarebbe a le capre duro varco.
-
-  Indi un altro vallon mi fu scoperto.
-
-
-
-  Inferno · Canto XX
-
-
-  Di nova pena mi conven far versi
-  e dar matera al ventesimo canto
-  de la prima canzon, ch’è d’i sommersi.
-
-  Io era già disposto tutto quanto
-  a riguardar ne lo scoperto fondo,
-  che si bagnava d’angoscioso pianto;
-
-  e vidi gente per lo vallon tondo
-  venir, tacendo e lagrimando, al passo
-  che fanno le letane in questo mondo.
-
-  Come ’l viso mi scese in lor più basso,
-  mirabilmente apparve esser travolto
-  ciascun tra ’l mento e ’l principio del casso,
-
-  ché da le reni era tornato ’l volto,
-  e in dietro venir li convenia,
-  perché ’l veder dinanzi era lor tolto.
-
-  Forse per forza già di parlasia
-  si travolse così alcun del tutto;
-  ma io nol vidi, né credo che sia.
-
-  Se Dio ti lasci, lettor, prender frutto
-  di tua lezione, or pensa per te stesso
-  com’ io potea tener lo viso asciutto,
-
-  quando la nostra imagine di presso
-  vidi sì torta, che ’l pianto de li occhi
-  le natiche bagnava per lo fesso.
-
-  Certo io piangea, poggiato a un de’ rocchi
-  del duro scoglio, sì che la mia scorta
-  mi disse: «Ancor se’ tu de li altri sciocchi?
-
-  Qui vive la pietà quand’ è ben morta;
-  chi è più scellerato che colui
-  che al giudicio divin passion comporta?
-
-  Drizza la testa, drizza, e vedi a cui
-  s’aperse a li occhi d’i Teban la terra;
-  per ch’ei gridavan tutti: “Dove rui,
-
-  Anfïarao? perché lasci la guerra?”.
-  E non restò di ruinare a valle
-  fino a Minòs che ciascheduno afferra.
-
-  Mira c’ha fatto petto de le spalle;
-  perché volle veder troppo davante,
-  di retro guarda e fa retroso calle.
-
-  Vedi Tiresia, che mutò sembiante
-  quando di maschio femmina divenne,
-  cangiandosi le membra tutte quante;
-
-  e prima, poi, ribatter li convenne
-  li duo serpenti avvolti, con la verga,
-  che rïavesse le maschili penne.
-
-  Aronta è quel ch’al ventre li s’atterga,
-  che ne’ monti di Luni, dove ronca
-  lo Carrarese che di sotto alberga,
-
-  ebbe tra ’ bianchi marmi la spelonca
-  per sua dimora; onde a guardar le stelle
-  e ’l mar non li era la veduta tronca.
-
-  E quella che ricuopre le mammelle,
-  che tu non vedi, con le trecce sciolte,
-  e ha di là ogne pilosa pelle,
-
-  Manto fu, che cercò per terre molte;
-  poscia si puose là dove nacqu’ io;
-  onde un poco mi piace che m’ascolte.
-
-  Poscia che ’l padre suo di vita uscìo
-  e venne serva la città di Baco,
-  questa gran tempo per lo mondo gio.
-
-  Suso in Italia bella giace un laco,
-  a piè de l’Alpe che serra Lamagna
-  sovra Tiralli, c’ha nome Benaco.
-
-  Per mille fonti, credo, e più si bagna
-  tra Garda e Val Camonica e Pennino
-  de l’acqua che nel detto laco stagna.
-
-  Loco è nel mezzo là dove ’l trentino
-  pastore e quel di Brescia e ’l veronese
-  segnar poria, s’e’ fesse quel cammino.
-
-  Siede Peschiera, bello e forte arnese
-  da fronteggiar Bresciani e Bergamaschi,
-  ove la riva ’ntorno più discese.
-
-  Ivi convien che tutto quanto caschi
-  ciò che ’n grembo a Benaco star non può,
-  e fassi fiume giù per verdi paschi.
-
-  Tosto che l’acqua a correr mette co,
-  non più Benaco, ma Mencio si chiama
-  fino a Governol, dove cade in Po.
-
-  Non molto ha corso, ch’el trova una lama,
-  ne la qual si distende e la ’mpaluda;
-  e suol di state talor essere grama.
-
-  Quindi passando la vergine cruda
-  vide terra, nel mezzo del pantano,
-  sanza coltura e d’abitanti nuda.
-
-  Lì, per fuggire ogne consorzio umano,
-  ristette con suoi servi a far sue arti,
-  e visse, e vi lasciò suo corpo vano.
-
-  Li uomini poi che ’ntorno erano sparti
-  s’accolsero a quel loco, ch’era forte
-  per lo pantan ch’avea da tutte parti.
-
-  Fer la città sovra quell’ ossa morte;
-  e per colei che ’l loco prima elesse,
-  Mantüa l’appellar sanz’ altra sorte.
-
-  Già fuor le genti sue dentro più spesse,
-  prima che la mattia da Casalodi
-  da Pinamonte inganno ricevesse.
-
-  Però t’assenno che, se tu mai odi
-  originar la mia terra altrimenti,
-  la verità nulla menzogna frodi».
-
-  E io: «Maestro, i tuoi ragionamenti
-  mi son sì certi e prendon sì mia fede,
-  che li altri mi sarien carboni spenti.
-
-  Ma dimmi, de la gente che procede,
-  se tu ne vedi alcun degno di nota;
-  ché solo a ciò la mia mente rifiede».
-
-  Allor mi disse: «Quel che da la gota
-  porge la barba in su le spalle brune,
-  fu—quando Grecia fu di maschi vòta,
-
-  sì ch’a pena rimaser per le cune—
-  augure, e diede ’l punto con Calcanta
-  in Aulide a tagliar la prima fune.
-
-  Euripilo ebbe nome, e così ’l canta
-  l’alta mia tragedìa in alcun loco:
-  ben lo sai tu che la sai tutta quanta.
-
-  Quell’ altro che ne’ fianchi è così poco,
-  Michele Scotto fu, che veramente
-  de le magiche frode seppe ’l gioco.
-
-  Vedi Guido Bonatti; vedi Asdente,
-  ch’avere inteso al cuoio e a lo spago
-  ora vorrebbe, ma tardi si pente.
-
-  Vedi le triste che lasciaron l’ago,
-  la spuola e ’l fuso, e fecersi ’ndivine;
-  fecer malie con erbe e con imago.
-
-  Ma vienne omai, ché già tiene ’l confine
-  d’amendue li emisperi e tocca l’onda
-  sotto Sobilia Caino e le spine;
-
-  e già iernotte fu la luna tonda:
-  ben ten de’ ricordar, ché non ti nocque
-  alcuna volta per la selva fonda».
-
-  Sì mi parlava, e andavamo introcque.
-
-
-
-  Inferno · Canto XXI
-
-
-  Così di ponte in ponte, altro parlando
-  che la mia comedìa cantar non cura,
-  venimmo; e tenavamo ’l colmo, quando
-
-  restammo per veder l’altra fessura
-  di Malebolge e li altri pianti vani;
-  e vidila mirabilmente oscura.
-
-  Quale ne l’arzanà de’ Viniziani
-  bolle l’inverno la tenace pece
-  a rimpalmare i legni lor non sani,
-
-  ché navicar non ponno—in quella vece
-  chi fa suo legno novo e chi ristoppa
-  le coste a quel che più vïaggi fece;
-
-  chi ribatte da proda e chi da poppa;
-  altri fa remi e altri volge sarte;
-  chi terzeruolo e artimon rintoppa—:
-
-  tal, non per foco ma per divin’ arte,
-  bollia là giuso una pegola spessa,
-  che ’nviscava la ripa d’ogne parte.
-
-  I’ vedea lei, ma non vedëa in essa
-  mai che le bolle che ’l bollor levava,
-  e gonfiar tutta, e riseder compressa.
-
-  Mentr’ io là giù fisamente mirava,
-  lo duca mio, dicendo «Guarda, guarda!»,
-  mi trasse a sé del loco dov’ io stava.
-
-  Allor mi volsi come l’uom cui tarda
-  di veder quel che li convien fuggire
-  e cui paura sùbita sgagliarda,
-
-  che, per veder, non indugia ’l partire:
-  e vidi dietro a noi un diavol nero
-  correndo su per lo scoglio venire.
-
-  Ahi quant’ elli era ne l’aspetto fero!
-  e quanto mi parea ne l’atto acerbo,
-  con l’ali aperte e sovra i piè leggero!
-
-  L’omero suo, ch’era aguto e superbo,
-  carcava un peccator con ambo l’anche,
-  e quei tenea de’ piè ghermito ’l nerbo.
-
-  Del nostro ponte disse: «O Malebranche,
-  ecco un de li anzïan di Santa Zita!
-  Mettetel sotto, ch’i’ torno per anche
-
-  a quella terra, che n’è ben fornita:
-  ogn’ uom v’è barattier, fuor che Bonturo;
-  del no, per li denar, vi si fa ita».
-
-  Là giù ’l buttò, e per lo scoglio duro
-  si volse; e mai non fu mastino sciolto
-  con tanta fretta a seguitar lo furo.
-
-  Quel s’attuffò, e tornò sù convolto;
-  ma i demon che del ponte avean coperchio,
-  gridar: «Qui non ha loco il Santo Volto!
-
-  qui si nuota altrimenti che nel Serchio!
-  Però, se tu non vuo’ di nostri graffi,
-  non far sopra la pegola soverchio».
-
-  Poi l’addentar con più di cento raffi,
-  disser: «Coverto convien che qui balli,
-  sì che, se puoi, nascosamente accaffi».
-
-  Non altrimenti i cuoci a’ lor vassalli
-  fanno attuffare in mezzo la caldaia
-  la carne con li uncin, perché non galli.
-
-  Lo buon maestro «Acciò che non si paia
-  che tu ci sia», mi disse, «giù t’acquatta
-  dopo uno scheggio, ch’alcun schermo t’aia;
-
-  e per nulla offension che mi sia fatta,
-  non temer tu, ch’i’ ho le cose conte,
-  perch’ altra volta fui a tal baratta».
-
-  Poscia passò di là dal co del ponte;
-  e com’ el giunse in su la ripa sesta,
-  mestier li fu d’aver sicura fronte.
-
-  Con quel furore e con quella tempesta
-  ch’escono i cani a dosso al poverello
-  che di sùbito chiede ove s’arresta,
-
-  usciron quei di sotto al ponticello,
-  e volser contra lui tutt’ i runcigli;
-  ma el gridò: «Nessun di voi sia fello!
-
-  Innanzi che l’uncin vostro mi pigli,
-  traggasi avante l’un di voi che m’oda,
-  e poi d’arruncigliarmi si consigli».
-
-  Tutti gridaron: «Vada Malacoda!»;
-  per ch’un si mosse—e li altri stetter fermi—
-  e venne a lui dicendo: «Che li approda?».
-
-  «Credi tu, Malacoda, qui vedermi
-  esser venuto», disse ’l mio maestro,
-  «sicuro già da tutti vostri schermi,
-
-  sanza voler divino e fato destro?
-  Lascian’ andar, ché nel cielo è voluto
-  ch’i’ mostri altrui questo cammin silvestro».
-
-  Allor li fu l’orgoglio sì caduto,
-  ch’e’ si lasciò cascar l’uncino a’ piedi,
-  e disse a li altri: «Omai non sia feruto».
-
-  E ’l duca mio a me: «O tu che siedi
-  tra li scheggion del ponte quatto quatto,
-  sicuramente omai a me ti riedi».
-
-  Per ch’io mi mossi e a lui venni ratto;
-  e i diavoli si fecer tutti avanti,
-  sì ch’io temetti ch’ei tenesser patto;
-
-  così vid’ ïo già temer li fanti
-  ch’uscivan patteggiati di Caprona,
-  veggendo sé tra nemici cotanti.
-
-  I’ m’accostai con tutta la persona
-  lungo ’l mio duca, e non torceva li occhi
-  da la sembianza lor ch’era non buona.
-
-  Ei chinavan li raffi e «Vuo’ che ’l tocchi»,
-  diceva l’un con l’altro, «in sul groppone?».
-  E rispondien: «Sì, fa che gliel’ accocchi».
-
-  Ma quel demonio che tenea sermone
-  col duca mio, si volse tutto presto
-  e disse: «Posa, posa, Scarmiglione!».
-
-  Poi disse a noi: «Più oltre andar per questo
-  iscoglio non si può, però che giace
-  tutto spezzato al fondo l’arco sesto.
-
-  E se l’andare avante pur vi piace,
-  andatevene su per questa grotta;
-  presso è un altro scoglio che via face.
-
-  Ier, più oltre cinqu’ ore che quest’ otta,
-  mille dugento con sessanta sei
-  anni compié che qui la via fu rotta.
-
-  Io mando verso là di questi miei
-  a riguardar s’alcun se ne sciorina;
-  gite con lor, che non saranno rei».
-
-  «Tra’ti avante, Alichino, e Calcabrina»,
-  cominciò elli a dire, «e tu, Cagnazzo;
-  e Barbariccia guidi la decina.
-
-  Libicocco vegn’ oltre e Draghignazzo,
-  Cirïatto sannuto e Graffiacane
-  e Farfarello e Rubicante pazzo.
-
-  Cercate ’ntorno le boglienti pane;
-  costor sian salvi infino a l’altro scheggio
-  che tutto intero va sovra le tane».
-
-  «Omè, maestro, che è quel ch’i’ veggio?»,
-  diss’ io, «deh, sanza scorta andianci soli,
-  se tu sa’ ir; ch’i’ per me non la cheggio.
-
-  Se tu se’ sì accorto come suoli,
-  non vedi tu ch’e’ digrignan li denti
-  e con le ciglia ne minaccian duoli?».
-
-  Ed elli a me: «Non vo’ che tu paventi;
-  lasciali digrignar pur a lor senno,
-  ch’e’ fanno ciò per li lessi dolenti».
-
-  Per l’argine sinistro volta dienno;
-  ma prima avea ciascun la lingua stretta
-  coi denti, verso lor duca, per cenno;
-
-  ed elli avea del cul fatto trombetta.
-
-
-
-  Inferno · Canto XXII
-
-
-  Io vidi già cavalier muover campo,
-  e cominciare stormo e far lor mostra,
-  e talvolta partir per loro scampo;
-
-  corridor vidi per la terra vostra,
-  o Aretini, e vidi gir gualdane,
-  fedir torneamenti e correr giostra;
-
-  quando con trombe, e quando con campane,
-  con tamburi e con cenni di castella,
-  e con cose nostrali e con istrane;
-
-  né già con sì diversa cennamella
-  cavalier vidi muover né pedoni,
-  né nave a segno di terra o di stella.
-
-  Noi andavam con li diece demoni.
-  Ahi fiera compagnia! ma ne la chiesa
-  coi santi, e in taverna coi ghiottoni.
-
-  Pur a la pegola era la mia ’ntesa,
-  per veder de la bolgia ogne contegno
-  e de la gente ch’entro v’era incesa.
-
-  Come i dalfini, quando fanno segno
-  a’ marinar con l’arco de la schiena
-  che s’argomentin di campar lor legno,
-
-  talor così, ad alleggiar la pena,
-  mostrav’ alcun de’ peccatori ’l dosso
-  e nascondea in men che non balena.
-
-  E come a l’orlo de l’acqua d’un fosso
-  stanno i ranocchi pur col muso fuori,
-  sì che celano i piedi e l’altro grosso,
-
-  sì stavan d’ogne parte i peccatori;
-  ma come s’appressava Barbariccia,
-  così si ritraén sotto i bollori.
-
-  I’ vidi, e anco il cor me n’accapriccia,
-  uno aspettar così, com’ elli ’ncontra
-  ch’una rana rimane e l’altra spiccia;
-
-  e Graffiacan, che li era più di contra,
-  li arruncigliò le ’mpegolate chiome
-  e trassel sù, che mi parve una lontra.
-
-  I’ sapea già di tutti quanti ’l nome,
-  sì li notai quando fuorono eletti,
-  e poi ch’e’ si chiamaro, attesi come.
-
-  «O Rubicante, fa che tu li metti
-  li unghioni a dosso, sì che tu lo scuoi!»,
-  gridavan tutti insieme i maladetti.
-
-  E io: «Maestro mio, fa, se tu puoi,
-  che tu sappi chi è lo sciagurato
-  venuto a man de li avversari suoi».
-
-  Lo duca mio li s’accostò allato;
-  domandollo ond’ ei fosse, e quei rispuose:
-  «I’ fui del regno di Navarra nato.
-
-  Mia madre a servo d’un segnor mi puose,
-  che m’avea generato d’un ribaldo,
-  distruggitor di sé e di sue cose.
-
-  Poi fui famiglia del buon re Tebaldo;
-  quivi mi misi a far baratteria,
-  di ch’io rendo ragione in questo caldo».
-
-  E Cirïatto, a cui di bocca uscia
-  d’ogne parte una sanna come a porco,
-  li fé sentir come l’una sdruscia.
-
-  Tra male gatte era venuto ’l sorco;
-  ma Barbariccia il chiuse con le braccia
-  e disse: «State in là, mentr’ io lo ’nforco».
-
-  E al maestro mio volse la faccia;
-  «Domanda», disse, «ancor, se più disii
-  saper da lui, prima ch’altri ’l disfaccia».
-
-  Lo duca dunque: «Or dì: de li altri rii
-  conosci tu alcun che sia latino
-  sotto la pece?». E quelli: «I’ mi partii,
-
-  poco è, da un che fu di là vicino.
-  Così foss’ io ancor con lui coperto,
-  ch’i’ non temerei unghia né uncino!».
-
-  E Libicocco «Troppo avem sofferto»,
-  disse; e preseli ’l braccio col runciglio,
-  sì che, stracciando, ne portò un lacerto.
-
-  Draghignazzo anco i volle dar di piglio
-  giuso a le gambe; onde ’l decurio loro
-  si volse intorno intorno con mal piglio.
-
-  Quand’ elli un poco rappaciati fuoro,
-  a lui, ch’ancor mirava sua ferita,
-  domandò ’l duca mio sanza dimoro:
-
-  «Chi fu colui da cui mala partita
-  di’ che facesti per venire a proda?».
-  Ed ei rispuose: «Fu frate Gomita,
-
-  quel di Gallura, vasel d’ogne froda,
-  ch’ebbe i nemici di suo donno in mano,
-  e fé sì lor, che ciascun se ne loda.
-
-  Danar si tolse e lasciolli di piano,
-  sì com’ e’ dice; e ne li altri offici anche
-  barattier fu non picciol, ma sovrano.
-
-  Usa con esso donno Michel Zanche
-  di Logodoro; e a dir di Sardigna
-  le lingue lor non si sentono stanche.
-
-  Omè, vedete l’altro che digrigna;
-  i’ direi anche, ma i’ temo ch’ello
-  non s’apparecchi a grattarmi la tigna».
-
-  E ’l gran proposto, vòlto a Farfarello
-  che stralunava li occhi per fedire,
-  disse: «Fatti ’n costà, malvagio uccello!».
-
-  «Se voi volete vedere o udire»,
-  ricominciò lo spaürato appresso,
-  «Toschi o Lombardi, io ne farò venire;
-
-  ma stieno i Malebranche un poco in cesso,
-  sì ch’ei non teman de le lor vendette;
-  e io, seggendo in questo loco stesso,
-
-  per un ch’io son, ne farò venir sette
-  quand’ io suffolerò, com’ è nostro uso
-  di fare allor che fori alcun si mette».
-
-  Cagnazzo a cotal motto levò ’l muso,
-  crollando ’l capo, e disse: «Odi malizia
-  ch’elli ha pensata per gittarsi giuso!».
-
-  Ond’ ei, ch’avea lacciuoli a gran divizia,
-  rispuose: «Malizioso son io troppo,
-  quand’ io procuro a’ mia maggior trestizia».
-
-  Alichin non si tenne e, di rintoppo
-  a li altri, disse a lui: «Se tu ti cali,
-  io non ti verrò dietro di gualoppo,
-
-  ma batterò sovra la pece l’ali.
-  Lascisi ’l collo, e sia la ripa scudo,
-  a veder se tu sol più di noi vali».
-
-  O tu che leggi, udirai nuovo ludo:
-  ciascun da l’altra costa li occhi volse,
-  quel prima, ch’a ciò fare era più crudo.
-
-  Lo Navarrese ben suo tempo colse;
-  fermò le piante a terra, e in un punto
-  saltò e dal proposto lor si sciolse.
-
-  Di che ciascun di colpa fu compunto,
-  ma quei più che cagion fu del difetto;
-  però si mosse e gridò: «Tu se’ giunto!».
-
-  Ma poco i valse: ché l’ali al sospetto
-  non potero avanzar; quelli andò sotto,
-  e quei drizzò volando suso il petto:
-
-  non altrimenti l’anitra di botto,
-  quando ’l falcon s’appressa, giù s’attuffa,
-  ed ei ritorna sù crucciato e rotto.
-
-  Irato Calcabrina de la buffa,
-  volando dietro li tenne, invaghito
-  che quei campasse per aver la zuffa;
-
-  e come ’l barattier fu disparito,
-  così volse li artigli al suo compagno,
-  e fu con lui sopra ’l fosso ghermito.
-
-  Ma l’altro fu bene sparvier grifagno
-  ad artigliar ben lui, e amendue
-  cadder nel mezzo del bogliente stagno.
-
-  Lo caldo sghermitor sùbito fue;
-  ma però di levarsi era neente,
-  sì avieno inviscate l’ali sue.
-
-  Barbariccia, con li altri suoi dolente,
-  quattro ne fé volar da l’altra costa
-  con tutt’ i raffi, e assai prestamente
-
-  di qua, di là discesero a la posta;
-  porser li uncini verso li ’mpaniati,
-  ch’eran già cotti dentro da la crosta.
-
-  E noi lasciammo lor così ’mpacciati.
-
-
-
-  Inferno · Canto XXIII
-
-
-  Taciti, soli, sanza compagnia
-  n’andavam l’un dinanzi e l’altro dopo,
-  come frati minor vanno per via.
-
-  Vòlt’ era in su la favola d’Isopo
-  lo mio pensier per la presente rissa,
-  dov’ el parlò de la rana e del topo;
-
-  ché più non si pareggia ‘mo’ e ‘issa’
-  che l’un con l’altro fa, se ben s’accoppia
-  principio e fine con la mente fissa.
-
-  E come l’un pensier de l’altro scoppia,
-  così nacque di quello un altro poi,
-  che la prima paura mi fé doppia.
-
-  Io pensava così: ‘Questi per noi
-  sono scherniti con danno e con beffa
-  sì fatta, ch’assai credo che lor nòi.
-
-  Se l’ira sovra ’l mal voler s’aggueffa,
-  ei ne verranno dietro più crudeli
-  che ’l cane a quella lievre ch’elli acceffa’.
-
-  Già mi sentia tutti arricciar li peli
-  de la paura e stava in dietro intento,
-  quand’ io dissi: «Maestro, se non celi
-
-  te e me tostamente, i’ ho pavento
-  d’i Malebranche. Noi li avem già dietro;
-  io li ’magino sì, che già li sento».
-
-  E quei: «S’i’ fossi di piombato vetro,
-  l’imagine di fuor tua non trarrei
-  più tosto a me, che quella dentro ’mpetro.
-
-  Pur mo venieno i tuo’ pensier tra ’ miei,
-  con simile atto e con simile faccia,
-  sì che d’intrambi un sol consiglio fei.
-
-  S’elli è che sì la destra costa giaccia,
-  che noi possiam ne l’altra bolgia scendere,
-  noi fuggirem l’imaginata caccia».
-
-  Già non compié di tal consiglio rendere,
-  ch’io li vidi venir con l’ali tese
-  non molto lungi, per volerne prendere.
-
-  Lo duca mio di sùbito mi prese,
-  come la madre ch’al romore è desta
-  e vede presso a sé le fiamme accese,
-
-  che prende il figlio e fugge e non s’arresta,
-  avendo più di lui che di sé cura,
-  tanto che solo una camiscia vesta;
-
-  e giù dal collo de la ripa dura
-  supin si diede a la pendente roccia,
-  che l’un de’ lati a l’altra bolgia tura.
-
-  Non corse mai sì tosto acqua per doccia
-  a volger ruota di molin terragno,
-  quand’ ella più verso le pale approccia,
-
-  come ’l maestro mio per quel vivagno,
-  portandosene me sovra ’l suo petto,
-  come suo figlio, non come compagno.
-
-  A pena fuoro i piè suoi giunti al letto
-  del fondo giù, ch’e’ furon in sul colle
-  sovresso noi; ma non lì era sospetto:
-
-  ché l’alta provedenza che lor volle
-  porre ministri de la fossa quinta,
-  poder di partirs’ indi a tutti tolle.
-
-  Là giù trovammo una gente dipinta
-  che giva intorno assai con lenti passi,
-  piangendo e nel sembiante stanca e vinta.
-
-  Elli avean cappe con cappucci bassi
-  dinanzi a li occhi, fatte de la taglia
-  che in Clugnì per li monaci fassi.
-
-  Di fuor dorate son, sì ch’elli abbaglia;
-  ma dentro tutte piombo, e gravi tanto,
-  che Federigo le mettea di paglia.
-
-  Oh in etterno faticoso manto!
-  Noi ci volgemmo ancor pur a man manca
-  con loro insieme, intenti al tristo pianto;
-
-  ma per lo peso quella gente stanca
-  venìa sì pian, che noi eravam nuovi
-  di compagnia ad ogne mover d’anca.
-
-  Per ch’io al duca mio: «Fa che tu trovi
-  alcun ch’al fatto o al nome si conosca,
-  e li occhi, sì andando, intorno movi».
-
-  E un che ’ntese la parola tosca,
-  di retro a noi gridò: «Tenete i piedi,
-  voi che correte sì per l’aura fosca!
-
-  Forse ch’avrai da me quel che tu chiedi».
-  Onde ’l duca si volse e disse: «Aspetta,
-  e poi secondo il suo passo procedi».
-
-  Ristetti, e vidi due mostrar gran fretta
-  de l’animo, col viso, d’esser meco;
-  ma tardavali ’l carco e la via stretta.
-
-  Quando fuor giunti, assai con l’occhio bieco
-  mi rimiraron sanza far parola;
-  poi si volsero in sé, e dicean seco:
-
-  «Costui par vivo a l’atto de la gola;
-  e s’e’ son morti, per qual privilegio
-  vanno scoperti de la grave stola?».
-
-  Poi disser me: «O Tosco, ch’al collegio
-  de l’ipocriti tristi se’ venuto,
-  dir chi tu se’ non avere in dispregio».
-
-  E io a loro: «I’ fui nato e cresciuto
-  sovra ’l bel fiume d’Arno a la gran villa,
-  e son col corpo ch’i’ ho sempre avuto.
-
-  Ma voi chi siete, a cui tanto distilla
-  quant’ i’ veggio dolor giù per le guance?
-  e che pena è in voi che sì sfavilla?».
-
-  E l’un rispuose a me: «Le cappe rance
-  son di piombo sì grosse, che li pesi
-  fan così cigolar le lor bilance.
-
-  Frati godenti fummo, e bolognesi;
-  io Catalano e questi Loderingo
-  nomati, e da tua terra insieme presi
-
-  come suole esser tolto un uom solingo,
-  per conservar sua pace; e fummo tali,
-  ch’ancor si pare intorno dal Gardingo».
-
-  Io cominciai: «O frati, i vostri mali . . . »;
-  ma più non dissi, ch’a l’occhio mi corse
-  un, crucifisso in terra con tre pali.
-
-  Quando mi vide, tutto si distorse,
-  soffiando ne la barba con sospiri;
-  e ’l frate Catalan, ch’a ciò s’accorse,
-
-  mi disse: «Quel confitto che tu miri,
-  consigliò i Farisei che convenia
-  porre un uom per lo popolo a’ martìri.
-
-  Attraversato è, nudo, ne la via,
-  come tu vedi, ed è mestier ch’el senta
-  qualunque passa, come pesa, pria.
-
-  E a tal modo il socero si stenta
-  in questa fossa, e li altri dal concilio
-  che fu per li Giudei mala sementa».
-
-  Allor vid’ io maravigliar Virgilio
-  sovra colui ch’era disteso in croce
-  tanto vilmente ne l’etterno essilio.
-
-  Poscia drizzò al frate cotal voce:
-  «Non vi dispiaccia, se vi lece, dirci
-  s’a la man destra giace alcuna foce
-
-  onde noi amendue possiamo uscirci,
-  sanza costrigner de li angeli neri
-  che vegnan d’esto fondo a dipartirci».
-
-  Rispuose adunque: «Più che tu non speri
-  s’appressa un sasso che da la gran cerchia
-  si move e varca tutt’ i vallon feri,
-
-  salvo che ’n questo è rotto e nol coperchia;
-  montar potrete su per la ruina,
-  che giace in costa e nel fondo soperchia».
-
-  Lo duca stette un poco a testa china;
-  poi disse: «Mal contava la bisogna
-  colui che i peccator di qua uncina».
-
-  E ’l frate: «Io udi’ già dire a Bologna
-  del diavol vizi assai, tra ’ quali udi’
-  ch’elli è bugiardo, e padre di menzogna».
-
-  Appresso il duca a gran passi sen gì,
-  turbato un poco d’ira nel sembiante;
-  ond’ io da li ’ncarcati mi parti’
-
-  dietro a le poste de le care piante.
-
-
-
-  Inferno · Canto XXIV
-
-
-  In quella parte del giovanetto anno
-  che ’l sole i crin sotto l’Aquario tempra
-  e già le notti al mezzo dì sen vanno,
-
-  quando la brina in su la terra assempra
-  l’imagine di sua sorella bianca,
-  ma poco dura a la sua penna tempra,
-
-  lo villanello a cui la roba manca,
-  si leva, e guarda, e vede la campagna
-  biancheggiar tutta; ond’ ei si batte l’anca,
-
-  ritorna in casa, e qua e là si lagna,
-  come ’l tapin che non sa che si faccia;
-  poi riede, e la speranza ringavagna,
-
-  veggendo ’l mondo aver cangiata faccia
-  in poco d’ora, e prende suo vincastro
-  e fuor le pecorelle a pascer caccia.
-
-  Così mi fece sbigottir lo mastro
-  quand’ io li vidi sì turbar la fronte,
-  e così tosto al mal giunse lo ’mpiastro;
-
-  ché, come noi venimmo al guasto ponte,
-  lo duca a me si volse con quel piglio
-  dolce ch’io vidi prima a piè del monte.
-
-  Le braccia aperse, dopo alcun consiglio
-  eletto seco riguardando prima
-  ben la ruina, e diedemi di piglio.
-
-  E come quei ch’adopera ed estima,
-  che sempre par che ’nnanzi si proveggia,
-  così, levando me sù ver’ la cima
-
-  d’un ronchione, avvisava un’altra scheggia
-  dicendo: «Sovra quella poi t’aggrappa;
-  ma tenta pria s’è tal ch’ella ti reggia».
-
-  Non era via da vestito di cappa,
-  ché noi a pena, ei lieve e io sospinto,
-  potavam sù montar di chiappa in chiappa.
-
-  E se non fosse che da quel precinto
-  più che da l’altro era la costa corta,
-  non so di lui, ma io sarei ben vinto.
-
-  Ma perché Malebolge inver’ la porta
-  del bassissimo pozzo tutta pende,
-  lo sito di ciascuna valle porta
-
-  che l’una costa surge e l’altra scende;
-  noi pur venimmo al fine in su la punta
-  onde l’ultima pietra si scoscende.
-
-  La lena m’era del polmon sì munta
-  quand’ io fui sù, ch’i’ non potea più oltre,
-  anzi m’assisi ne la prima giunta.
-
-  «Omai convien che tu così ti spoltre»,
-  disse ’l maestro; «ché, seggendo in piuma,
-  in fama non si vien, né sotto coltre;
-
-  sanza la qual chi sua vita consuma,
-  cotal vestigio in terra di sé lascia,
-  qual fummo in aere e in acqua la schiuma.
-
-  E però leva sù; vinci l’ambascia
-  con l’animo che vince ogne battaglia,
-  se col suo grave corpo non s’accascia.
-
-  Più lunga scala convien che si saglia;
-  non basta da costoro esser partito.
-  Se tu mi ’ntendi, or fa sì che ti vaglia».
-
-  Leva’mi allor, mostrandomi fornito
-  meglio di lena ch’i’ non mi sentia,
-  e dissi: «Va, ch’i’ son forte e ardito».
-
-  Su per lo scoglio prendemmo la via,
-  ch’era ronchioso, stretto e malagevole,
-  ed erto più assai che quel di pria.
-
-  Parlando andava per non parer fievole;
-  onde una voce uscì de l’altro fosso,
-  a parole formar disconvenevole.
-
-  Non so che disse, ancor che sovra ’l dosso
-  fossi de l’arco già che varca quivi;
-  ma chi parlava ad ire parea mosso.
-
-  Io era vòlto in giù, ma li occhi vivi
-  non poteano ire al fondo per lo scuro;
-  per ch’io: «Maestro, fa che tu arrivi
-
-  da l’altro cinghio e dismontiam lo muro;
-  ché, com’ i’ odo quinci e non intendo,
-  così giù veggio e neente affiguro».
-
-  «Altra risposta», disse, «non ti rendo
-  se non lo far; ché la dimanda onesta
-  si de’ seguir con l’opera tacendo».
-
-  Noi discendemmo il ponte da la testa
-  dove s’aggiugne con l’ottava ripa,
-  e poi mi fu la bolgia manifesta:
-
-  e vidivi entro terribile stipa
-  di serpenti, e di sì diversa mena
-  che la memoria il sangue ancor mi scipa.
-
-  Più non si vanti Libia con sua rena;
-  ché se chelidri, iaculi e faree
-  produce, e cencri con anfisibena,
-
-  né tante pestilenzie né sì ree
-  mostrò già mai con tutta l’Etïopia
-  né con ciò che di sopra al Mar Rosso èe.
-
-  Tra questa cruda e tristissima copia
-  corrëan genti nude e spaventate,
-  sanza sperar pertugio o elitropia:
-
-  con serpi le man dietro avean legate;
-  quelle ficcavan per le ren la coda
-  e ’l capo, ed eran dinanzi aggroppate.
-
-  Ed ecco a un ch’era da nostra proda,
-  s’avventò un serpente che ’l trafisse
-  là dove ’l collo a le spalle s’annoda.
-
-  Né O sì tosto mai né I si scrisse,
-  com’ el s’accese e arse, e cener tutto
-  convenne che cascando divenisse;
-
-  e poi che fu a terra sì distrutto,
-  la polver si raccolse per sé stessa
-  e ’n quel medesmo ritornò di butto.
-
-  Così per li gran savi si confessa
-  che la fenice more e poi rinasce,
-  quando al cinquecentesimo anno appressa;
-
-  erba né biado in sua vita non pasce,
-  ma sol d’incenso lagrime e d’amomo,
-  e nardo e mirra son l’ultime fasce.
-
-  E qual è quel che cade, e non sa como,
-  per forza di demon ch’a terra il tira,
-  o d’altra oppilazion che lega l’omo,
-
-  quando si leva, che ’ntorno si mira
-  tutto smarrito de la grande angoscia
-  ch’elli ha sofferta, e guardando sospira:
-
-  tal era ’l peccator levato poscia.
-  Oh potenza di Dio, quant’ è severa,
-  che cotai colpi per vendetta croscia!
-
-  Lo duca il domandò poi chi ello era;
-  per ch’ei rispuose: «Io piovvi di Toscana,
-  poco tempo è, in questa gola fiera.
-
-  Vita bestial mi piacque e non umana,
-  sì come a mul ch’i’ fui; son Vanni Fucci
-  bestia, e Pistoia mi fu degna tana».
-
-  E ïo al duca: «Dilli che non mucci,
-  e domanda che colpa qua giù ’l pinse;
-  ch’io ’l vidi uomo di sangue e di crucci».
-
-  E ’l peccator, che ’ntese, non s’infinse,
-  ma drizzò verso me l’animo e ’l volto,
-  e di trista vergogna si dipinse;
-
-  poi disse: «Più mi duol che tu m’hai colto
-  ne la miseria dove tu mi vedi,
-  che quando fui de l’altra vita tolto.
-
-  Io non posso negar quel che tu chiedi;
-  in giù son messo tanto perch’ io fui
-  ladro a la sagrestia d’i belli arredi,
-
-  e falsamente già fu apposto altrui.
-  Ma perché di tal vista tu non godi,
-  se mai sarai di fuor da’ luoghi bui,
-
-  apri li orecchi al mio annunzio, e odi.
-  Pistoia in pria d’i Neri si dimagra;
-  poi Fiorenza rinova gente e modi.
-
-  Tragge Marte vapor di Val di Magra
-  ch’è di torbidi nuvoli involuto;
-  e con tempesta impetüosa e agra
-
-  sovra Campo Picen fia combattuto;
-  ond’ ei repente spezzerà la nebbia,
-  sì ch’ogne Bianco ne sarà feruto.
-
-  E detto l’ho perché doler ti debbia!».
-
-
-
-  Inferno · Canto XXV
-
-
-  Al fine de le sue parole il ladro
-  le mani alzò con amendue le fiche,
-  gridando: «Togli, Dio, ch’a te le squadro!».
-
-  Da indi in qua mi fuor le serpi amiche,
-  perch’ una li s’avvolse allora al collo,
-  come dicesse ‘Non vo’ che più diche’;
-
-  e un’altra a le braccia, e rilegollo,
-  ribadendo sé stessa sì dinanzi,
-  che non potea con esse dare un crollo.
-
-  Ahi Pistoia, Pistoia, ché non stanzi
-  d’incenerarti sì che più non duri,
-  poi che ’n mal fare il seme tuo avanzi?
-
-  Per tutt’ i cerchi de lo ’nferno scuri
-  non vidi spirto in Dio tanto superbo,
-  non quel che cadde a Tebe giù da’ muri.
-
-  El si fuggì che non parlò più verbo;
-  e io vidi un centauro pien di rabbia
-  venir chiamando: «Ov’ è, ov’ è l’acerbo?».
-
-  Maremma non cred’ io che tante n’abbia,
-  quante bisce elli avea su per la groppa
-  infin ove comincia nostra labbia.
-
-  Sovra le spalle, dietro da la coppa,
-  con l’ali aperte li giacea un draco;
-  e quello affuoca qualunque s’intoppa.
-
-  Lo mio maestro disse: «Questi è Caco,
-  che, sotto ’l sasso di monte Aventino,
-  di sangue fece spesse volte laco.
-
-  Non va co’ suoi fratei per un cammino,
-  per lo furto che frodolente fece
-  del grande armento ch’elli ebbe a vicino;
-
-  onde cessar le sue opere biece
-  sotto la mazza d’Ercule, che forse
-  gliene diè cento, e non sentì le diece».
-
-  Mentre che sì parlava, ed el trascorse,
-  e tre spiriti venner sotto noi,
-  de’ quai né io né ’l duca mio s’accorse,
-
-  se non quando gridar: «Chi siete voi?»;
-  per che nostra novella si ristette,
-  e intendemmo pur ad essi poi.
-
-  Io non li conoscea; ma ei seguette,
-  come suol seguitar per alcun caso,
-  che l’un nomar un altro convenette,
-
-  dicendo: «Cianfa dove fia rimaso?»;
-  per ch’io, acciò che ’l duca stesse attento,
-  mi puosi ’l dito su dal mento al naso.
-
-  Se tu se’ or, lettore, a creder lento
-  ciò ch’io dirò, non sarà maraviglia,
-  ché io che ’l vidi, a pena il mi consento.
-
-  Com’ io tenea levate in lor le ciglia,
-  e un serpente con sei piè si lancia
-  dinanzi a l’uno, e tutto a lui s’appiglia.
-
-  Co’ piè di mezzo li avvinse la pancia
-  e con li anterïor le braccia prese;
-  poi li addentò e l’una e l’altra guancia;
-
-  li diretani a le cosce distese,
-  e miseli la coda tra ’mbedue
-  e dietro per le ren sù la ritese.
-
-  Ellera abbarbicata mai non fue
-  ad alber sì, come l’orribil fiera
-  per l’altrui membra avviticchiò le sue.
-
-  Poi s’appiccar, come di calda cera
-  fossero stati, e mischiar lor colore,
-  né l’un né l’altro già parea quel ch’era:
-
-  come procede innanzi da l’ardore,
-  per lo papiro suso, un color bruno
-  che non è nero ancora e ’l bianco more.
-
-  Li altri due ’l riguardavano, e ciascuno
-  gridava: «Omè, Agnel, come ti muti!
-  Vedi che già non se’ né due né uno».
-
-  Già eran li due capi un divenuti,
-  quando n’apparver due figure miste
-  in una faccia, ov’ eran due perduti.
-
-  Fersi le braccia due di quattro liste;
-  le cosce con le gambe e ’l ventre e ’l casso
-  divenner membra che non fuor mai viste.
-
-  Ogne primaio aspetto ivi era casso:
-  due e nessun l’imagine perversa
-  parea; e tal sen gio con lento passo.
-
-  Come ’l ramarro sotto la gran fersa
-  dei dì canicular, cangiando sepe,
-  folgore par se la via attraversa,
-
-  sì pareva, venendo verso l’epe
-  de li altri due, un serpentello acceso,
-  livido e nero come gran di pepe;
-
-  e quella parte onde prima è preso
-  nostro alimento, a l’un di lor trafisse;
-  poi cadde giuso innanzi lui disteso.
-
-  Lo trafitto ’l mirò, ma nulla disse;
-  anzi, co’ piè fermati, sbadigliava
-  pur come sonno o febbre l’assalisse.
-
-  Elli ’l serpente e quei lui riguardava;
-  l’un per la piaga e l’altro per la bocca
-  fummavan forte, e ’l fummo si scontrava.
-
-  Taccia Lucano ormai là dov’ e’ tocca
-  del misero Sabello e di Nasidio,
-  e attenda a udir quel ch’or si scocca.
-
-  Taccia di Cadmo e d’Aretusa Ovidio,
-  ché se quello in serpente e quella in fonte
-  converte poetando, io non lo ’nvidio;
-
-  ché due nature mai a fronte a fronte
-  non trasmutò sì ch’amendue le forme
-  a cambiar lor matera fosser pronte.
-
-  Insieme si rispuosero a tai norme,
-  che ’l serpente la coda in forca fesse,
-  e ’l feruto ristrinse insieme l’orme.
-
-  Le gambe con le cosce seco stesse
-  s’appiccar sì, che ’n poco la giuntura
-  non facea segno alcun che si paresse.
-
-  Togliea la coda fessa la figura
-  che si perdeva là, e la sua pelle
-  si facea molle, e quella di là dura.
-
-  Io vidi intrar le braccia per l’ascelle,
-  e i due piè de la fiera, ch’eran corti,
-  tanto allungar quanto accorciavan quelle.
-
-  Poscia li piè di rietro, insieme attorti,
-  diventaron lo membro che l’uom cela,
-  e ’l misero del suo n’avea due porti.
-
-  Mentre che ’l fummo l’uno e l’altro vela
-  di color novo, e genera ’l pel suso
-  per l’una parte e da l’altra il dipela,
-
-  l’un si levò e l’altro cadde giuso,
-  non torcendo però le lucerne empie,
-  sotto le quai ciascun cambiava muso.
-
-  Quel ch’era dritto, il trasse ver’ le tempie,
-  e di troppa matera ch’in là venne
-  uscir li orecchi de le gote scempie;
-
-  ciò che non corse in dietro e si ritenne
-  di quel soverchio, fé naso a la faccia
-  e le labbra ingrossò quanto convenne.
-
-  Quel che giacëa, il muso innanzi caccia,
-  e li orecchi ritira per la testa
-  come face le corna la lumaccia;
-
-  e la lingua, ch’avëa unita e presta
-  prima a parlar, si fende, e la forcuta
-  ne l’altro si richiude; e ’l fummo resta.
-
-  L’anima ch’era fiera divenuta,
-  suffolando si fugge per la valle,
-  e l’altro dietro a lui parlando sputa.
-
-  Poscia li volse le novelle spalle,
-  e disse a l’altro: «I’ vo’ che Buoso corra,
-  com’ ho fatt’ io, carpon per questo calle».
-
-  Così vid’ io la settima zavorra
-  mutare e trasmutare; e qui mi scusi
-  la novità se fior la penna abborra.
-
-  E avvegna che li occhi miei confusi
-  fossero alquanto e l’animo smagato,
-  non poter quei fuggirsi tanto chiusi,
-
-  ch’i’ non scorgessi ben Puccio Sciancato;
-  ed era quel che sol, di tre compagni
-  che venner prima, non era mutato;
-
-  l’altr’ era quel che tu, Gaville, piagni.
-
-
-
-  Inferno · Canto XXVI
-
-
-  Godi, Fiorenza, poi che se’ sì grande
-  che per mare e per terra batti l’ali,
-  e per lo ’nferno tuo nome si spande!
-
-  Tra li ladron trovai cinque cotali
-  tuoi cittadini onde mi ven vergogna,
-  e tu in grande orranza non ne sali.
-
-  Ma se presso al mattin del ver si sogna,
-  tu sentirai, di qua da picciol tempo,
-  di quel che Prato, non ch’altri, t’agogna.
-
-  E se già fosse, non saria per tempo.
-  Così foss’ ei, da che pur esser dee!
-  ché più mi graverà, com’ più m’attempo.
-
-  Noi ci partimmo, e su per le scalee
-  che n’avea fatto iborni a scender pria,
-  rimontò ’l duca mio e trasse mee;
-
-  e proseguendo la solinga via,
-  tra le schegge e tra ’ rocchi de lo scoglio
-  lo piè sanza la man non si spedia.
-
-  Allor mi dolsi, e ora mi ridoglio
-  quando drizzo la mente a ciò ch’io vidi,
-  e più lo ’ngegno affreno ch’i’ non soglio,
-
-  perché non corra che virtù nol guidi;
-  sì che, se stella bona o miglior cosa
-  m’ha dato ’l ben, ch’io stessi nol m’invidi.
-
-  Quante ’l villan ch’al poggio si riposa,
-  nel tempo che colui che ’l mondo schiara
-  la faccia sua a noi tien meno ascosa,
-
-  come la mosca cede a la zanzara,
-  vede lucciole giù per la vallea,
-  forse colà dov’ e’ vendemmia e ara:
-
-  di tante fiamme tutta risplendea
-  l’ottava bolgia, sì com’ io m’accorsi
-  tosto che fui là ’ve ’l fondo parea.
-
-  E qual colui che si vengiò con li orsi
-  vide ’l carro d’Elia al dipartire,
-  quando i cavalli al cielo erti levorsi,
-
-  che nol potea sì con li occhi seguire,
-  ch’el vedesse altro che la fiamma sola,
-  sì come nuvoletta, in sù salire:
-
-  tal si move ciascuna per la gola
-  del fosso, ché nessuna mostra ’l furto,
-  e ogne fiamma un peccatore invola.
-
-  Io stava sovra ’l ponte a veder surto,
-  sì che s’io non avessi un ronchion preso,
-  caduto sarei giù sanz’ esser urto.
-
-  E ’l duca che mi vide tanto atteso,
-  disse: «Dentro dai fuochi son li spirti;
-  catun si fascia di quel ch’elli è inceso».
-
-  «Maestro mio», rispuos’ io, «per udirti
-  son io più certo; ma già m’era avviso
-  che così fosse, e già voleva dirti:
-
-  chi è ’n quel foco che vien sì diviso
-  di sopra, che par surger de la pira
-  dov’ Eteòcle col fratel fu miso?».
-
-  Rispuose a me: «Là dentro si martira
-  Ulisse e Dïomede, e così insieme
-  a la vendetta vanno come a l’ira;
-
-  e dentro da la lor fiamma si geme
-  l’agguato del caval che fé la porta
-  onde uscì de’ Romani il gentil seme.
-
-  Piangevisi entro l’arte per che, morta,
-  Deïdamìa ancor si duol d’Achille,
-  e del Palladio pena vi si porta».
-
-  «S’ei posson dentro da quelle faville
-  parlar», diss’ io, «maestro, assai ten priego
-  e ripriego, che ’l priego vaglia mille,
-
-  che non mi facci de l’attender niego
-  fin che la fiamma cornuta qua vegna;
-  vedi che del disio ver’ lei mi piego!».
-
-  Ed elli a me: «La tua preghiera è degna
-  di molta loda, e io però l’accetto;
-  ma fa che la tua lingua si sostegna.
-
-  Lascia parlare a me, ch’i’ ho concetto
-  ciò che tu vuoi; ch’ei sarebbero schivi,
-  perch’ e’ fuor greci, forse del tuo detto».
-
-  Poi che la fiamma fu venuta quivi
-  dove parve al mio duca tempo e loco,
-  in questa forma lui parlare audivi:
-
-  «O voi che siete due dentro ad un foco,
-  s’io meritai di voi mentre ch’io vissi,
-  s’io meritai di voi assai o poco
-
-  quando nel mondo li alti versi scrissi,
-  non vi movete; ma l’un di voi dica
-  dove, per lui, perduto a morir gissi».
-
-  Lo maggior corno de la fiamma antica
-  cominciò a crollarsi mormorando,
-  pur come quella cui vento affatica;
-
-  indi la cima qua e là menando,
-  come fosse la lingua che parlasse,
-  gittò voce di fuori e disse: «Quando
-
-  mi diparti’ da Circe, che sottrasse
-  me più d’un anno là presso a Gaeta,
-  prima che sì Enëa la nomasse,
-
-  né dolcezza di figlio, né la pieta
-  del vecchio padre, né ’l debito amore
-  lo qual dovea Penelopè far lieta,
-
-  vincer potero dentro a me l’ardore
-  ch’i’ ebbi a divenir del mondo esperto
-  e de li vizi umani e del valore;
-
-  ma misi me per l’alto mare aperto
-  sol con un legno e con quella compagna
-  picciola da la qual non fui diserto.
-
-  L’un lito e l’altro vidi infin la Spagna,
-  fin nel Morrocco, e l’isola d’i Sardi,
-  e l’altre che quel mare intorno bagna.
-
-  Io e ’ compagni eravam vecchi e tardi
-  quando venimmo a quella foce stretta
-  dov’ Ercule segnò li suoi riguardi
-
-  acciò che l’uom più oltre non si metta;
-  da la man destra mi lasciai Sibilia,
-  da l’altra già m’avea lasciata Setta.
-
-  “O frati”, dissi “che per cento milia
-  perigli siete giunti a l’occidente,
-  a questa tanto picciola vigilia
-
-  d’i nostri sensi ch’è del rimanente
-  non vogliate negar l’esperïenza,
-  di retro al sol, del mondo sanza gente.
-
-  Considerate la vostra semenza:
-  fatti non foste a viver come bruti,
-  ma per seguir virtute e canoscenza”.
-
-  Li miei compagni fec’ io sì aguti,
-  con questa orazion picciola, al cammino,
-  che a pena poscia li avrei ritenuti;
-
-  e volta nostra poppa nel mattino,
-  de’ remi facemmo ali al folle volo,
-  sempre acquistando dal lato mancino.
-
-  Tutte le stelle già de l’altro polo
-  vedea la notte, e ’l nostro tanto basso,
-  che non surgëa fuor del marin suolo.
-
-  Cinque volte racceso e tante casso
-  lo lume era di sotto da la luna,
-  poi che ’ntrati eravam ne l’alto passo,
-
-  quando n’apparve una montagna, bruna
-  per la distanza, e parvemi alta tanto
-  quanto veduta non avëa alcuna.
-
-  Noi ci allegrammo, e tosto tornò in pianto;
-  ché de la nova terra un turbo nacque
-  e percosse del legno il primo canto.
-
-  Tre volte il fé girar con tutte l’acque;
-  a la quarta levar la poppa in suso
-  e la prora ire in giù, com’ altrui piacque,
-
-  infin che ’l mar fu sovra noi richiuso».
-
-
-
-  Inferno · Canto XXVII
-
-
-  Già era dritta in sù la fiamma e queta
-  per non dir più, e già da noi sen gia
-  con la licenza del dolce poeta,
-
-  quand’ un’altra, che dietro a lei venìa,
-  ne fece volger li occhi a la sua cima
-  per un confuso suon che fuor n’uscia.
-
-  Come ’l bue cicilian che mugghiò prima
-  col pianto di colui, e ciò fu dritto,
-  che l’avea temperato con sua lima,
-
-  mugghiava con la voce de l’afflitto,
-  sì che, con tutto che fosse di rame,
-  pur el pareva dal dolor trafitto;
-
-  così, per non aver via né forame
-  dal principio nel foco, in suo linguaggio
-  si convertïan le parole grame.
-
-  Ma poscia ch’ebber colto lor vïaggio
-  su per la punta, dandole quel guizzo
-  che dato avea la lingua in lor passaggio,
-
-  udimmo dire: «O tu a cu’ io drizzo
-  la voce e che parlavi mo lombardo,
-  dicendo “Istra ten va, più non t’adizzo”,
-
-  perch’ io sia giunto forse alquanto tardo,
-  non t’incresca restare a parlar meco;
-  vedi che non incresce a me, e ardo!
-
-  Se tu pur mo in questo mondo cieco
-  caduto se’ di quella dolce terra
-  latina ond’ io mia colpa tutta reco,
-
-  dimmi se Romagnuoli han pace o guerra;
-  ch’io fui d’i monti là intra Orbino
-  e ’l giogo di che Tever si diserra».
-
-  Io era in giuso ancora attento e chino,
-  quando il mio duca mi tentò di costa,
-  dicendo: «Parla tu; questi è latino».
-
-  E io, ch’avea già pronta la risposta,
-  sanza indugio a parlare incominciai:
-  «O anima che se’ là giù nascosta,
-
-  Romagna tua non è, e non fu mai,
-  sanza guerra ne’ cuor de’ suoi tiranni;
-  ma ’n palese nessuna or vi lasciai.
-
-  Ravenna sta come stata è molt’ anni:
-  l’aguglia da Polenta la si cova,
-  sì che Cervia ricuopre co’ suoi vanni.
-
-  La terra che fé già la lunga prova
-  e di Franceschi sanguinoso mucchio,
-  sotto le branche verdi si ritrova.
-
-  E ’l mastin vecchio e ’l nuovo da Verrucchio,
-  che fecer di Montagna il mal governo,
-  là dove soglion fan d’i denti succhio.
-
-  Le città di Lamone e di Santerno
-  conduce il lïoncel dal nido bianco,
-  che muta parte da la state al verno.
-
-  E quella cu’ il Savio bagna il fianco,
-  così com’ ella sie’ tra ’l piano e ’l monte,
-  tra tirannia si vive e stato franco.
-
-  Ora chi se’, ti priego che ne conte;
-  non esser duro più ch’altri sia stato,
-  se ’l nome tuo nel mondo tegna fronte».
-
-  Poscia che ’l foco alquanto ebbe rugghiato
-  al modo suo, l’aguta punta mosse
-  di qua, di là, e poi diè cotal fiato:
-
-  «S’i’ credesse che mia risposta fosse
-  a persona che mai tornasse al mondo,
-  questa fiamma staria sanza più scosse;
-
-  ma però che già mai di questo fondo
-  non tornò vivo alcun, s’i’ odo il vero,
-  sanza tema d’infamia ti rispondo.
-
-  Io fui uom d’arme, e poi fui cordigliero,
-  credendomi, sì cinto, fare ammenda;
-  e certo il creder mio venìa intero,
-
-  se non fosse il gran prete, a cui mal prenda!,
-  che mi rimise ne le prime colpe;
-  e come e quare, voglio che m’intenda.
-
-  Mentre ch’io forma fui d’ossa e di polpe
-  che la madre mi diè, l’opere mie
-  non furon leonine, ma di volpe.
-
-  Li accorgimenti e le coperte vie
-  io seppi tutte, e sì menai lor arte,
-  ch’al fine de la terra il suono uscie.
-
-  Quando mi vidi giunto in quella parte
-  di mia etade ove ciascun dovrebbe
-  calar le vele e raccoglier le sarte,
-
-  ciò che pria mi piacëa, allor m’increbbe,
-  e pentuto e confesso mi rendei;
-  ahi miser lasso! e giovato sarebbe.
-
-  Lo principe d’i novi Farisei,
-  avendo guerra presso a Laterano,
-  e non con Saracin né con Giudei,
-
-  ché ciascun suo nimico era cristiano,
-  e nessun era stato a vincer Acri
-  né mercatante in terra di Soldano,
-
-  né sommo officio né ordini sacri
-  guardò in sé, né in me quel capestro
-  che solea fare i suoi cinti più macri.
-
-  Ma come Costantin chiese Silvestro
-  d’entro Siratti a guerir de la lebbre,
-  così mi chiese questi per maestro
-
-  a guerir de la sua superba febbre;
-  domandommi consiglio, e io tacetti
-  perché le sue parole parver ebbre.
-
-  E’ poi ridisse: “Tuo cuor non sospetti;
-  finor t’assolvo, e tu m’insegna fare
-  sì come Penestrino in terra getti.
-
-  Lo ciel poss’ io serrare e diserrare,
-  come tu sai; però son due le chiavi
-  che ’l mio antecessor non ebbe care”.
-
-  Allor mi pinser li argomenti gravi
-  là ’ve ’l tacer mi fu avviso ’l peggio,
-  e dissi: “Padre, da che tu mi lavi
-
-  di quel peccato ov’ io mo cader deggio,
-  lunga promessa con l’attender corto
-  ti farà trïunfar ne l’alto seggio”.
-
-  Francesco venne poi, com’ io fu’ morto,
-  per me; ma un d’i neri cherubini
-  li disse: “Non portar: non mi far torto.
-
-  Venir se ne dee giù tra ’ miei meschini
-  perché diede ’l consiglio frodolente,
-  dal quale in qua stato li sono a’ crini;
-
-  ch’assolver non si può chi non si pente,
-  né pentere e volere insieme puossi
-  per la contradizion che nol consente”.
-
-  Oh me dolente! come mi riscossi
-  quando mi prese dicendomi: “Forse
-  tu non pensavi ch’io löico fossi!”.
-
-  A Minòs mi portò; e quelli attorse
-  otto volte la coda al dosso duro;
-  e poi che per gran rabbia la si morse,
-
-  disse: “Questi è d’i rei del foco furo”;
-  per ch’io là dove vedi son perduto,
-  e sì vestito, andando, mi rancuro».
-
-  Quand’ elli ebbe ’l suo dir così compiuto,
-  la fiamma dolorando si partio,
-  torcendo e dibattendo ’l corno aguto.
-
-  Noi passamm’ oltre, e io e ’l duca mio,
-  su per lo scoglio infino in su l’altr’ arco
-  che cuopre ’l fosso in che si paga il fio
-
-  a quei che scommettendo acquistan carco.
-
-
-
-  Inferno · Canto XXVIII
-
-
-  Chi poria mai pur con parole sciolte
-  dicer del sangue e de le piaghe a pieno
-  ch’i’ ora vidi, per narrar più volte?
-
-  Ogne lingua per certo verria meno
-  per lo nostro sermone e per la mente
-  c’hanno a tanto comprender poco seno.
-
-  S’el s’aunasse ancor tutta la gente
-  che già, in su la fortunata terra
-  di Puglia, fu del suo sangue dolente
-
-  per li Troiani e per la lunga guerra
-  che de l’anella fé sì alte spoglie,
-  come Livïo scrive, che non erra,
-
-  con quella che sentio di colpi doglie
-  per contastare a Ruberto Guiscardo;
-  e l’altra il cui ossame ancor s’accoglie
-
-  a Ceperan, là dove fu bugiardo
-  ciascun Pugliese, e là da Tagliacozzo,
-  dove sanz’ arme vinse il vecchio Alardo;
-
-  e qual forato suo membro e qual mozzo
-  mostrasse, d’aequar sarebbe nulla
-  il modo de la nona bolgia sozzo.
-
-  Già veggia, per mezzul perdere o lulla,
-  com’ io vidi un, così non si pertugia,
-  rotto dal mento infin dove si trulla.
-
-  Tra le gambe pendevan le minugia;
-  la corata pareva e ’l tristo sacco
-  che merda fa di quel che si trangugia.
-
-  Mentre che tutto in lui veder m’attacco,
-  guardommi e con le man s’aperse il petto,
-  dicendo: «Or vedi com’ io mi dilacco!
-
-  vedi come storpiato è Mäometto!
-  Dinanzi a me sen va piangendo Alì,
-  fesso nel volto dal mento al ciuffetto.
-
-  E tutti li altri che tu vedi qui,
-  seminator di scandalo e di scisma
-  fuor vivi, e però son fessi così.
-
-  Un diavolo è qua dietro che n’accisma
-  sì crudelmente, al taglio de la spada
-  rimettendo ciascun di questa risma,
-
-  quand’ avem volta la dolente strada;
-  però che le ferite son richiuse
-  prima ch’altri dinanzi li rivada.
-
-  Ma tu chi se’ che ’n su lo scoglio muse,
-  forse per indugiar d’ire a la pena
-  ch’è giudicata in su le tue accuse?».
-
-  «Né morte ’l giunse ancor, né colpa ’l mena»,
-  rispuose ’l mio maestro, «a tormentarlo;
-  ma per dar lui esperïenza piena,
-
-  a me, che morto son, convien menarlo
-  per lo ’nferno qua giù di giro in giro;
-  e quest’ è ver così com’ io ti parlo».
-
-  Più fuor di cento che, quando l’udiro,
-  s’arrestaron nel fosso a riguardarmi
-  per maraviglia, oblïando il martiro.
-
-  «Or dì a fra Dolcin dunque che s’armi,
-  tu che forse vedra’ il sole in breve,
-  s’ello non vuol qui tosto seguitarmi,
-
-  sì di vivanda, che stretta di neve
-  non rechi la vittoria al Noarese,
-  ch’altrimenti acquistar non saria leve».
-
-  Poi che l’un piè per girsene sospese,
-  Mäometto mi disse esta parola;
-  indi a partirsi in terra lo distese.
-
-  Un altro, che forata avea la gola
-  e tronco ’l naso infin sotto le ciglia,
-  e non avea mai ch’una orecchia sola,
-
-  ristato a riguardar per maraviglia
-  con li altri, innanzi a li altri aprì la canna,
-  ch’era di fuor d’ogne parte vermiglia,
-
-  e disse: «O tu cui colpa non condanna
-  e cu’ io vidi su in terra latina,
-  se troppa simiglianza non m’inganna,
-
-  rimembriti di Pier da Medicina,
-  se mai torni a veder lo dolce piano
-  che da Vercelli a Marcabò dichina.
-
-  E fa saper a’ due miglior da Fano,
-  a messer Guido e anco ad Angiolello,
-  che, se l’antiveder qui non è vano,
-
-  gittati saran fuor di lor vasello
-  e mazzerati presso a la Cattolica
-  per tradimento d’un tiranno fello.
-
-  Tra l’isola di Cipri e di Maiolica
-  non vide mai sì gran fallo Nettuno,
-  non da pirate, non da gente argolica.
-
-  Quel traditor che vede pur con l’uno,
-  e tien la terra che tale qui meco
-  vorrebbe di vedere esser digiuno,
-
-  farà venirli a parlamento seco;
-  poi farà sì, ch’al vento di Focara
-  non sarà lor mestier voto né preco».
-
-  E io a lui: «Dimostrami e dichiara,
-  se vuo’ ch’i’ porti sù di te novella,
-  chi è colui da la veduta amara».
-
-  Allor puose la mano a la mascella
-  d’un suo compagno e la bocca li aperse,
-  gridando: «Questi è desso, e non favella.
-
-  Questi, scacciato, il dubitar sommerse
-  in Cesare, affermando che ’l fornito
-  sempre con danno l’attender sofferse».
-
-  Oh quanto mi pareva sbigottito
-  con la lingua tagliata ne la strozza
-  Curïo, ch’a dir fu così ardito!
-
-  E un ch’avea l’una e l’altra man mozza,
-  levando i moncherin per l’aura fosca,
-  sì che ’l sangue facea la faccia sozza,
-
-  gridò: «Ricordera’ti anche del Mosca,
-  che disse, lasso!, “Capo ha cosa fatta”,
-  che fu mal seme per la gente tosca».
-
-  E io li aggiunsi: «E morte di tua schiatta»;
-  per ch’elli, accumulando duol con duolo,
-  sen gio come persona trista e matta.
-
-  Ma io rimasi a riguardar lo stuolo,
-  e vidi cosa ch’io avrei paura,
-  sanza più prova, di contarla solo;
-
-  se non che coscïenza m’assicura,
-  la buona compagnia che l’uom francheggia
-  sotto l’asbergo del sentirsi pura.
-
-  Io vidi certo, e ancor par ch’io ’l veggia,
-  un busto sanza capo andar sì come
-  andavan li altri de la trista greggia;
-
-  e ’l capo tronco tenea per le chiome,
-  pesol con mano a guisa di lanterna:
-  e quel mirava noi e dicea: «Oh me!».
-
-  Di sé facea a sé stesso lucerna,
-  ed eran due in uno e uno in due;
-  com’ esser può, quei sa che sì governa.
-
-  Quando diritto al piè del ponte fue,
-  levò ’l braccio alto con tutta la testa
-  per appressarne le parole sue,
-
-  che fuoro: «Or vedi la pena molesta,
-  tu che, spirando, vai veggendo i morti:
-  vedi s’alcuna è grande come questa.
-
-  E perché tu di me novella porti,
-  sappi ch’i’ son Bertram dal Bornio, quelli
-  che diedi al re giovane i ma’ conforti.
-
-  Io feci il padre e ’l figlio in sé ribelli;
-  Achitofèl non fé più d’Absalone
-  e di Davìd coi malvagi punzelli.
-
-  Perch’ io parti’ così giunte persone,
-  partito porto il mio cerebro, lasso!,
-  dal suo principio ch’è in questo troncone.
-
-  Così s’osserva in me lo contrapasso».
-
-
-
-  Inferno · Canto XXIX
-
-
-  La molta gente e le diverse piaghe
-  avean le luci mie sì inebrïate,
-  che de lo stare a piangere eran vaghe.
-
-  Ma Virgilio mi disse: «Che pur guate?
-  perché la vista tua pur si soffolge
-  là giù tra l’ombre triste smozzicate?
-
-  Tu non hai fatto sì a l’altre bolge;
-  pensa, se tu annoverar le credi,
-  che miglia ventidue la valle volge.
-
-  E già la luna è sotto i nostri piedi;
-  lo tempo è poco omai che n’è concesso,
-  e altro è da veder che tu non vedi».
-
-  «Se tu avessi», rispuos’ io appresso,
-  «atteso a la cagion per ch’io guardava,
-  forse m’avresti ancor lo star dimesso».
-
-  Parte sen giva, e io retro li andava,
-  lo duca, già faccendo la risposta,
-  e soggiugnendo: «Dentro a quella cava
-
-  dov’ io tenea or li occhi sì a posta,
-  credo ch’un spirto del mio sangue pianga
-  la colpa che là giù cotanto costa».
-
-  Allor disse ’l maestro: «Non si franga
-  lo tuo pensier da qui innanzi sovr’ ello.
-  Attendi ad altro, ed ei là si rimanga;
-
-  ch’io vidi lui a piè del ponticello
-  mostrarti e minacciar forte col dito,
-  e udi’ ’l nominar Geri del Bello.
-
-  Tu eri allor sì del tutto impedito
-  sovra colui che già tenne Altaforte,
-  che non guardasti in là, sì fu partito».
-
-  «O duca mio, la vïolenta morte
-  che non li è vendicata ancor», diss’ io,
-  «per alcun che de l’onta sia consorte,
-
-  fece lui disdegnoso; ond’ el sen gio
-  sanza parlarmi, sì com’ ïo estimo:
-  e in ciò m’ha el fatto a sé più pio».
-
-  Così parlammo infino al loco primo
-  che de lo scoglio l’altra valle mostra,
-  se più lume vi fosse, tutto ad imo.
-
-  Quando noi fummo sor l’ultima chiostra
-  di Malebolge, sì che i suoi conversi
-  potean parere a la veduta nostra,
-
-  lamenti saettaron me diversi,
-  che di pietà ferrati avean li strali;
-  ond’ io li orecchi con le man copersi.
-
-  Qual dolor fora, se de li spedali
-  di Valdichiana tra ’l luglio e ’l settembre
-  e di Maremma e di Sardigna i mali
-
-  fossero in una fossa tutti ’nsembre,
-  tal era quivi, e tal puzzo n’usciva
-  qual suol venir de le marcite membre.
-
-  Noi discendemmo in su l’ultima riva
-  del lungo scoglio, pur da man sinistra;
-  e allor fu la mia vista più viva
-
-  giù ver’ lo fondo, la ’ve la ministra
-  de l’alto Sire infallibil giustizia
-  punisce i falsador che qui registra.
-
-  Non credo ch’a veder maggior tristizia
-  fosse in Egina il popol tutto infermo,
-  quando fu l’aere sì pien di malizia,
-
-  che li animali, infino al picciol vermo,
-  cascaron tutti, e poi le genti antiche,
-  secondo che i poeti hanno per fermo,
-
-  si ristorar di seme di formiche;
-  ch’era a veder per quella oscura valle
-  languir li spirti per diverse biche.
-
-  Qual sovra ’l ventre e qual sovra le spalle
-  l’un de l’altro giacea, e qual carpone
-  si trasmutava per lo tristo calle.
-
-  Passo passo andavam sanza sermone,
-  guardando e ascoltando li ammalati,
-  che non potean levar le lor persone.
-
-  Io vidi due sedere a sé poggiati,
-  com’ a scaldar si poggia tegghia a tegghia,
-  dal capo al piè di schianze macolati;
-
-  e non vidi già mai menare stregghia
-  a ragazzo aspettato dal segnorso,
-  né a colui che mal volontier vegghia,
-
-  come ciascun menava spesso il morso
-  de l’unghie sopra sé per la gran rabbia
-  del pizzicor, che non ha più soccorso;
-
-  e sì traevan giù l’unghie la scabbia,
-  come coltel di scardova le scaglie
-  o d’altro pesce che più larghe l’abbia.
-
-  «O tu che con le dita ti dismaglie»,
-  cominciò ’l duca mio a l’un di loro,
-  «e che fai d’esse talvolta tanaglie,
-
-  dinne s’alcun Latino è tra costoro
-  che son quinc’ entro, se l’unghia ti basti
-  etternalmente a cotesto lavoro».
-
-  «Latin siam noi, che tu vedi sì guasti
-  qui ambedue», rispuose l’un piangendo;
-  «ma tu chi se’ che di noi dimandasti?».
-
-  E ’l duca disse: «I’ son un che discendo
-  con questo vivo giù di balzo in balzo,
-  e di mostrar lo ’nferno a lui intendo».
-
-  Allor si ruppe lo comun rincalzo;
-  e tremando ciascuno a me si volse
-  con altri che l’udiron di rimbalzo.
-
-  Lo buon maestro a me tutto s’accolse,
-  dicendo: «Dì a lor ciò che tu vuoli»;
-  e io incominciai, poscia ch’ei volse:
-
-  «Se la vostra memoria non s’imboli
-  nel primo mondo da l’umane menti,
-  ma s’ella viva sotto molti soli,
-
-  ditemi chi voi siete e di che genti;
-  la vostra sconcia e fastidiosa pena
-  di palesarvi a me non vi spaventi».
-
-  «Io fui d’Arezzo, e Albero da Siena»,
-  rispuose l’un, «mi fé mettere al foco;
-  ma quel per ch’io mori’ qui non mi mena.
-
-  Vero è ch’i’ dissi lui, parlando a gioco:
-  “I’ mi saprei levar per l’aere a volo”;
-  e quei, ch’avea vaghezza e senno poco,
-
-  volle ch’i’ li mostrassi l’arte; e solo
-  perch’ io nol feci Dedalo, mi fece
-  ardere a tal che l’avea per figliuolo.
-
-  Ma ne l’ultima bolgia de le diece
-  me per l’alchìmia che nel mondo usai
-  dannò Minòs, a cui fallar non lece».
-
-  E io dissi al poeta: «Or fu già mai
-  gente sì vana come la sanese?
-  Certo non la francesca sì d’assai!».
-
-  Onde l’altro lebbroso, che m’intese,
-  rispuose al detto mio: «Tra’mene Stricca
-  che seppe far le temperate spese,
-
-  e Niccolò che la costuma ricca
-  del garofano prima discoverse
-  ne l’orto dove tal seme s’appicca;
-
-  e tra’ne la brigata in che disperse
-  Caccia d’Ascian la vigna e la gran fonda,
-  e l’Abbagliato suo senno proferse.
-
-  Ma perché sappi chi sì ti seconda
-  contra i Sanesi, aguzza ver’ me l’occhio,
-  sì che la faccia mia ben ti risponda:
-
-  sì vedrai ch’io son l’ombra di Capocchio,
-  che falsai li metalli con l’alchìmia;
-  e te dee ricordar, se ben t’adocchio,
-
-  com’ io fui di natura buona scimia».
-
-
-
-  Inferno · Canto XXX
-
-
-  Nel tempo che Iunone era crucciata
-  per Semelè contra ’l sangue tebano,
-  come mostrò una e altra fïata,
-
-  Atamante divenne tanto insano,
-  che veggendo la moglie con due figli
-  andar carcata da ciascuna mano,
-
-  gridò: «Tendiam le reti, sì ch’io pigli
-  la leonessa e ’ leoncini al varco»;
-  e poi distese i dispietati artigli,
-
-  prendendo l’un ch’avea nome Learco,
-  e rotollo e percosselo ad un sasso;
-  e quella s’annegò con l’altro carco.
-
-  E quando la fortuna volse in basso
-  l’altezza de’ Troian che tutto ardiva,
-  sì che ’nsieme col regno il re fu casso,
-
-  Ecuba trista, misera e cattiva,
-  poscia che vide Polissena morta,
-  e del suo Polidoro in su la riva
-
-  del mar si fu la dolorosa accorta,
-  forsennata latrò sì come cane;
-  tanto il dolor le fé la mente torta.
-
-  Ma né di Tebe furie né troiane
-  si vider mäi in alcun tanto crude,
-  non punger bestie, nonché membra umane,
-
-  quant’ io vidi in due ombre smorte e nude,
-  che mordendo correvan di quel modo
-  che ’l porco quando del porcil si schiude.
-
-  L’una giunse a Capocchio, e in sul nodo
-  del collo l’assannò, sì che, tirando,
-  grattar li fece il ventre al fondo sodo.
-
-  E l’Aretin che rimase, tremando
-  mi disse: «Quel folletto è Gianni Schicchi,
-  e va rabbioso altrui così conciando».
-
-  «Oh», diss’ io lui, «se l’altro non ti ficchi
-  li denti a dosso, non ti sia fatica
-  a dir chi è, pria che di qui si spicchi».
-
-  Ed elli a me: «Quell’ è l’anima antica
-  di Mirra scellerata, che divenne
-  al padre, fuor del dritto amore, amica.
-
-  Questa a peccar con esso così venne,
-  falsificando sé in altrui forma,
-  come l’altro che là sen va, sostenne,
-
-  per guadagnar la donna de la torma,
-  falsificare in sé Buoso Donati,
-  testando e dando al testamento norma».
-
-  E poi che i due rabbiosi fuor passati
-  sovra cu’ io avea l’occhio tenuto,
-  rivolsilo a guardar li altri mal nati.
-
-  Io vidi un, fatto a guisa di lëuto,
-  pur ch’elli avesse avuta l’anguinaia
-  tronca da l’altro che l’uomo ha forcuto.
-
-  La grave idropesì, che sì dispaia
-  le membra con l’omor che mal converte,
-  che ’l viso non risponde a la ventraia,
-
-  faceva lui tener le labbra aperte
-  come l’etico fa, che per la sete
-  l’un verso ’l mento e l’altro in sù rinverte.
-
-  «O voi che sanz’ alcuna pena siete,
-  e non so io perché, nel mondo gramo»,
-  diss’ elli a noi, «guardate e attendete
-
-  a la miseria del maestro Adamo;
-  io ebbi, vivo, assai di quel ch’i’ volli,
-  e ora, lasso!, un gocciol d’acqua bramo.
-
-  Li ruscelletti che d’i verdi colli
-  del Casentin discendon giuso in Arno,
-  faccendo i lor canali freddi e molli,
-
-  sempre mi stanno innanzi, e non indarno,
-  ché l’imagine lor vie più m’asciuga
-  che ’l male ond’ io nel volto mi discarno.
-
-  La rigida giustizia che mi fruga
-  tragge cagion del loco ov’ io peccai
-  a metter più li miei sospiri in fuga.
-
-  Ivi è Romena, là dov’ io falsai
-  la lega suggellata del Batista;
-  per ch’io il corpo sù arso lasciai.
-
-  Ma s’io vedessi qui l’anima trista
-  di Guido o d’Alessandro o di lor frate,
-  per Fonte Branda non darei la vista.
-
-  Dentro c’è l’una già, se l’arrabbiate
-  ombre che vanno intorno dicon vero;
-  ma che mi val, c’ho le membra legate?
-
-  S’io fossi pur di tanto ancor leggero
-  ch’i’ potessi in cent’ anni andare un’oncia,
-  io sarei messo già per lo sentiero,
-
-  cercando lui tra questa gente sconcia,
-  con tutto ch’ella volge undici miglia,
-  e men d’un mezzo di traverso non ci ha.
-
-  Io son per lor tra sì fatta famiglia;
-  e’ m’indussero a batter li fiorini
-  ch’avevan tre carati di mondiglia».
-
-  E io a lui: «Chi son li due tapini
-  che fumman come man bagnate ’l verno,
-  giacendo stretti a’ tuoi destri confini?».
-
-  «Qui li trovai—e poi volta non dierno—»,
-  rispuose, «quando piovvi in questo greppo,
-  e non credo che dieno in sempiterno.
-
-  L’una è la falsa ch’accusò Gioseppo;
-  l’altr’ è ’l falso Sinon greco di Troia:
-  per febbre aguta gittan tanto leppo».
-
-  E l’un di lor, che si recò a noia
-  forse d’esser nomato sì oscuro,
-  col pugno li percosse l’epa croia.
-
-  Quella sonò come fosse un tamburo;
-  e mastro Adamo li percosse il volto
-  col braccio suo, che non parve men duro,
-
-  dicendo a lui: «Ancor che mi sia tolto
-  lo muover per le membra che son gravi,
-  ho io il braccio a tal mestiere sciolto».
-
-  Ond’ ei rispuose: «Quando tu andavi
-  al fuoco, non l’avei tu così presto;
-  ma sì e più l’avei quando coniavi».
-
-  E l’idropico: «Tu di’ ver di questo:
-  ma tu non fosti sì ver testimonio
-  là ’ve del ver fosti a Troia richesto».
-
-  «S’io dissi falso, e tu falsasti il conio»,
-  disse Sinon; «e son qui per un fallo,
-  e tu per più ch’alcun altro demonio!».
-
-  «Ricorditi, spergiuro, del cavallo»,
-  rispuose quel ch’avëa infiata l’epa;
-  «e sieti reo che tutto il mondo sallo!».
-
-  «E te sia rea la sete onde ti crepa»,
-  disse ’l Greco, «la lingua, e l’acqua marcia
-  che ’l ventre innanzi a li occhi sì t’assiepa!».
-
-  Allora il monetier: «Così si squarcia
-  la bocca tua per tuo mal come suole;
-  ché, s’i’ ho sete e omor mi rinfarcia,
-
-  tu hai l’arsura e ’l capo che ti duole,
-  e per leccar lo specchio di Narcisso,
-  non vorresti a ’nvitar molte parole».
-
-  Ad ascoltarli er’ io del tutto fisso,
-  quando ’l maestro mi disse: «Or pur mira,
-  che per poco che teco non mi risso!».
-
-  Quand’ io ’l senti’ a me parlar con ira,
-  volsimi verso lui con tal vergogna,
-  ch’ancor per la memoria mi si gira.
-
-  Qual è colui che suo dannaggio sogna,
-  che sognando desidera sognare,
-  sì che quel ch’è, come non fosse, agogna,
-
-  tal mi fec’ io, non possendo parlare,
-  che disïava scusarmi, e scusava
-  me tuttavia, e nol mi credea fare.
-
-  «Maggior difetto men vergogna lava»,
-  disse ’l maestro, «che ’l tuo non è stato;
-  però d’ogne trestizia ti disgrava.
-
-  E fa ragion ch’io ti sia sempre allato,
-  se più avvien che fortuna t’accoglia
-  dove sien genti in simigliante piato:
-
-  ché voler ciò udire è bassa voglia».
-
-
-
-  Inferno · Canto XXXI
-
-
-  Una medesma lingua pria mi morse,
-  sì che mi tinse l’una e l’altra guancia,
-  e poi la medicina mi riporse;
-
-  così od’ io che solea far la lancia
-  d’Achille e del suo padre esser cagione
-  prima di trista e poi di buona mancia.
-
-  Noi demmo il dosso al misero vallone
-  su per la ripa che ’l cinge dintorno,
-  attraversando sanza alcun sermone.
-
-  Quiv’ era men che notte e men che giorno,
-  sì che ’l viso m’andava innanzi poco;
-  ma io senti’ sonare un alto corno,
-
-  tanto ch’avrebbe ogne tuon fatto fioco,
-  che, contra sé la sua via seguitando,
-  dirizzò li occhi miei tutti ad un loco.
-
-  Dopo la dolorosa rotta, quando
-  Carlo Magno perdé la santa gesta,
-  non sonò sì terribilmente Orlando.
-
-  Poco portäi in là volta la testa,
-  che me parve veder molte alte torri;
-  ond’ io: «Maestro, dì, che terra è questa?».
-
-  Ed elli a me: «Però che tu trascorri
-  per le tenebre troppo da la lungi,
-  avvien che poi nel maginare abborri.
-
-  Tu vedrai ben, se tu là ti congiungi,
-  quanto ’l senso s’inganna di lontano;
-  però alquanto più te stesso pungi».
-
-  Poi caramente mi prese per mano
-  e disse: «Pria che noi siam più avanti,
-  acciò che ’l fatto men ti paia strano,
-
-  sappi che non son torri, ma giganti,
-  e son nel pozzo intorno da la ripa
-  da l’umbilico in giuso tutti quanti».
-
-  Come quando la nebbia si dissipa,
-  lo sguardo a poco a poco raffigura
-  ciò che cela ’l vapor che l’aere stipa,
-
-  così forando l’aura grossa e scura,
-  più e più appressando ver’ la sponda,
-  fuggiemi errore e cresciemi paura;
-
-  però che, come su la cerchia tonda
-  Montereggion di torri si corona,
-  così la proda che ’l pozzo circonda
-
-  torreggiavan di mezza la persona
-  li orribili giganti, cui minaccia
-  Giove del cielo ancora quando tuona.
-
-  E io scorgeva già d’alcun la faccia,
-  le spalle e ’l petto e del ventre gran parte,
-  e per le coste giù ambo le braccia.
-
-  Natura certo, quando lasciò l’arte
-  di sì fatti animali, assai fé bene
-  per tòrre tali essecutori a Marte.
-
-  E s’ella d’elefanti e di balene
-  non si pente, chi guarda sottilmente,
-  più giusta e più discreta la ne tene;
-
-  ché dove l’argomento de la mente
-  s’aggiugne al mal volere e a la possa,
-  nessun riparo vi può far la gente.
-
-  La faccia sua mi parea lunga e grossa
-  come la pina di San Pietro a Roma,
-  e a sua proporzione eran l’altre ossa;
-
-  sì che la ripa, ch’era perizoma
-  dal mezzo in giù, ne mostrava ben tanto
-  di sovra, che di giugnere a la chioma
-
-  tre Frison s’averien dato mal vanto;
-  però ch’i’ ne vedea trenta gran palmi
-  dal loco in giù dov’ omo affibbia ’l manto.
-
-  «Raphèl maì amècche zabì almi»,
-  cominciò a gridar la fiera bocca,
-  cui non si convenia più dolci salmi.
-
-  E ’l duca mio ver’ lui: «Anima sciocca,
-  tienti col corno, e con quel ti disfoga
-  quand’ ira o altra passïon ti tocca!
-
-  Cércati al collo, e troverai la soga
-  che ’l tien legato, o anima confusa,
-  e vedi lui che ’l gran petto ti doga».
-
-  Poi disse a me: «Elli stessi s’accusa;
-  questi è Nembrotto per lo cui mal coto
-  pur un linguaggio nel mondo non s’usa.
-
-  Lasciànlo stare e non parliamo a vòto;
-  ché così è a lui ciascun linguaggio
-  come ’l suo ad altrui, ch’a nullo è noto».
-
-  Facemmo adunque più lungo vïaggio,
-  vòlti a sinistra; e al trar d’un balestro
-  trovammo l’altro assai più fero e maggio.
-
-  A cigner lui qual che fosse ’l maestro,
-  non so io dir, ma el tenea soccinto
-  dinanzi l’altro e dietro il braccio destro
-
-  d’una catena che ’l tenea avvinto
-  dal collo in giù, sì che ’n su lo scoperto
-  si ravvolgëa infino al giro quinto.
-
-  «Questo superbo volle esser esperto
-  di sua potenza contra ’l sommo Giove»,
-  disse ’l mio duca, «ond’ elli ha cotal merto.
-
-  Fïalte ha nome, e fece le gran prove
-  quando i giganti fer paura a’ dèi;
-  le braccia ch’el menò, già mai non move».
-
-  E io a lui: «S’esser puote, io vorrei
-  che de lo smisurato Brïareo
-  esperïenza avesser li occhi mei».
-
-  Ond’ ei rispuose: «Tu vedrai Anteo
-  presso di qui che parla ed è disciolto,
-  che ne porrà nel fondo d’ogne reo.
-
-  Quel che tu vuo’ veder, più là è molto
-  ed è legato e fatto come questo,
-  salvo che più feroce par nel volto».
-
-  Non fu tremoto già tanto rubesto,
-  che scotesse una torre così forte,
-  come Fïalte a scuotersi fu presto.
-
-  Allor temett’ io più che mai la morte,
-  e non v’era mestier più che la dotta,
-  s’io non avessi viste le ritorte.
-
-  Noi procedemmo più avante allotta,
-  e venimmo ad Anteo, che ben cinque alle,
-  sanza la testa, uscia fuor de la grotta.
-
-  «O tu che ne la fortunata valle
-  che fece Scipïon di gloria reda,
-  quand’ Anibàl co’ suoi diede le spalle,
-
-  recasti già mille leon per preda,
-  e che, se fossi stato a l’alta guerra
-  de’ tuoi fratelli, ancor par che si creda
-
-  ch’avrebber vinto i figli de la terra:
-  mettine giù, e non ten vegna schifo,
-  dove Cocito la freddura serra.
-
-  Non ci fare ire a Tizio né a Tifo:
-  questi può dar di quel che qui si brama;
-  però ti china e non torcer lo grifo.
-
-  Ancor ti può nel mondo render fama,
-  ch’el vive, e lunga vita ancor aspetta
-  se ’nnanzi tempo grazia a sé nol chiama».
-
-  Così disse ’l maestro; e quelli in fretta
-  le man distese, e prese ’l duca mio,
-  ond’ Ercule sentì già grande stretta.
-
-  Virgilio, quando prender si sentio,
-  disse a me: «Fatti qua, sì ch’io ti prenda»;
-  poi fece sì ch’un fascio era elli e io.
-
-  Qual pare a riguardar la Carisenda
-  sotto ’l chinato, quando un nuvol vada
-  sovr’ essa sì, ched ella incontro penda:
-
-  tal parve Antëo a me che stava a bada
-  di vederlo chinare, e fu tal ora
-  ch’i’ avrei voluto ir per altra strada.
-
-  Ma lievemente al fondo che divora
-  Lucifero con Giuda, ci sposò;
-  né, sì chinato, lì fece dimora,
-
-  e come albero in nave si levò.
-
-
-
-  Inferno · Canto XXXII
-
-
-  S’ïo avessi le rime aspre e chiocce,
-  come si converrebbe al tristo buco
-  sovra ’l qual pontan tutte l’altre rocce,
-
-  io premerei di mio concetto il suco
-  più pienamente; ma perch’ io non l’abbo,
-  non sanza tema a dicer mi conduco;
-
-  ché non è impresa da pigliare a gabbo
-  discriver fondo a tutto l’universo,
-  né da lingua che chiami mamma o babbo.
-
-  Ma quelle donne aiutino il mio verso
-  ch’aiutaro Anfïone a chiuder Tebe,
-  sì che dal fatto il dir non sia diverso.
-
-  Oh sovra tutte mal creata plebe
-  che stai nel loco onde parlare è duro,
-  mei foste state qui pecore o zebe!
-
-  Come noi fummo giù nel pozzo scuro
-  sotto i piè del gigante assai più bassi,
-  e io mirava ancora a l’alto muro,
-
-  dicere udi’mi: «Guarda come passi:
-  va sì, che tu non calchi con le piante
-  le teste de’ fratei miseri lassi».
-
-  Per ch’io mi volsi, e vidimi davante
-  e sotto i piedi un lago che per gelo
-  avea di vetro e non d’acqua sembiante.
-
-  Non fece al corso suo sì grosso velo
-  di verno la Danoia in Osterlicchi,
-  né Tanaï là sotto ’l freddo cielo,
-
-  com’ era quivi; che se Tambernicchi
-  vi fosse sù caduto, o Pietrapana,
-  non avria pur da l’orlo fatto cricchi.
-
-  E come a gracidar si sta la rana
-  col muso fuor de l’acqua, quando sogna
-  di spigolar sovente la villana,
-
-  livide, insin là dove appar vergogna
-  eran l’ombre dolenti ne la ghiaccia,
-  mettendo i denti in nota di cicogna.
-
-  Ognuna in giù tenea volta la faccia;
-  da bocca il freddo, e da li occhi il cor tristo
-  tra lor testimonianza si procaccia.
-
-  Quand’ io m’ebbi dintorno alquanto visto,
-  volsimi a’ piedi, e vidi due sì stretti,
-  che ’l pel del capo avieno insieme misto.
-
-  «Ditemi, voi che sì strignete i petti»,
-  diss’ io, «chi siete?». E quei piegaro i colli;
-  e poi ch’ebber li visi a me eretti,
-
-  li occhi lor, ch’eran pria pur dentro molli,
-  gocciar su per le labbra, e ’l gelo strinse
-  le lagrime tra essi e riserrolli.
-
-  Con legno legno spranga mai non cinse
-  forte così; ond’ ei come due becchi
-  cozzaro insieme, tanta ira li vinse.
-
-  E un ch’avea perduti ambo li orecchi
-  per la freddura, pur col viso in giùe,
-  disse: «Perché cotanto in noi ti specchi?
-
-  Se vuoi saper chi son cotesti due,
-  la valle onde Bisenzo si dichina
-  del padre loro Alberto e di lor fue.
-
-  D’un corpo usciro; e tutta la Caina
-  potrai cercare, e non troverai ombra
-  degna più d’esser fitta in gelatina:
-
-  non quelli a cui fu rotto il petto e l’ombra
-  con esso un colpo per la man d’Artù;
-  non Focaccia; non questi che m’ingombra
-
-  col capo sì, ch’i’ non veggio oltre più,
-  e fu nomato Sassol Mascheroni;
-  se tosco se’, ben sai omai chi fu.
-
-  E perché non mi metti in più sermoni,
-  sappi ch’i’ fu’ il Camiscion de’ Pazzi;
-  e aspetto Carlin che mi scagioni».
-
-  Poscia vid’ io mille visi cagnazzi
-  fatti per freddo; onde mi vien riprezzo,
-  e verrà sempre, de’ gelati guazzi.
-
-  E mentre ch’andavamo inver’ lo mezzo
-  al quale ogne gravezza si rauna,
-  e io tremava ne l’etterno rezzo;
-
-  se voler fu o destino o fortuna,
-  non so; ma, passeggiando tra le teste,
-  forte percossi ’l piè nel viso ad una.
-
-  Piangendo mi sgridò: «Perché mi peste?
-  se tu non vieni a crescer la vendetta
-  di Montaperti, perché mi moleste?».
-
-  E io: «Maestro mio, or qui m’aspetta,
-  sì ch’io esca d’un dubbio per costui;
-  poi mi farai, quantunque vorrai, fretta».
-
-  Lo duca stette, e io dissi a colui
-  che bestemmiava duramente ancora:
-  «Qual se’ tu che così rampogni altrui?».
-
-  «Or tu chi se’ che vai per l’Antenora,
-  percotendo», rispuose, «altrui le gote,
-  sì che, se fossi vivo, troppo fora?».
-
-  «Vivo son io, e caro esser ti puote»,
-  fu mia risposta, «se dimandi fama,
-  ch’io metta il nome tuo tra l’altre note».
-
-  Ed elli a me: «Del contrario ho io brama.
-  Lèvati quinci e non mi dar più lagna,
-  ché mal sai lusingar per questa lama!».
-
-  Allor lo presi per la cuticagna
-  e dissi: «El converrà che tu ti nomi,
-  o che capel qui sù non ti rimagna».
-
-  Ond’ elli a me: «Perché tu mi dischiomi,
-  né ti dirò ch’io sia, né mosterrolti,
-  se mille fiate in sul capo mi tomi».
-
-  Io avea già i capelli in mano avvolti,
-  e tratti glien’ avea più d’una ciocca,
-  latrando lui con li occhi in giù raccolti,
-
-  quando un altro gridò: «Che hai tu, Bocca?
-  non ti basta sonar con le mascelle,
-  se tu non latri? qual diavol ti tocca?».
-
-  «Omai», diss’ io, «non vo’ che più favelle,
-  malvagio traditor; ch’a la tua onta
-  io porterò di te vere novelle».
-
-  «Va via», rispuose, «e ciò che tu vuoi conta;
-  ma non tacer, se tu di qua entro eschi,
-  di quel ch’ebbe or così la lingua pronta.
-
-  El piange qui l’argento de’ Franceschi:
-  “Io vidi”, potrai dir, “quel da Duera
-  là dove i peccatori stanno freschi”.
-
-  Se fossi domandato “Altri chi v’era?”,
-  tu hai dallato quel di Beccheria
-  di cui segò Fiorenza la gorgiera.
-
-  Gianni de’ Soldanier credo che sia
-  più là con Ganellone e Tebaldello,
-  ch’aprì Faenza quando si dormia».
-
-  Noi eravam partiti già da ello,
-  ch’io vidi due ghiacciati in una buca,
-  sì che l’un capo a l’altro era cappello;
-
-  e come ’l pan per fame si manduca,
-  così ’l sovran li denti a l’altro pose
-  là ’ve ’l cervel s’aggiugne con la nuca:
-
-  non altrimenti Tidëo si rose
-  le tempie a Menalippo per disdegno,
-  che quei faceva il teschio e l’altre cose.
-
-  «O tu che mostri per sì bestial segno
-  odio sovra colui che tu ti mangi,
-  dimmi ’l perché», diss’ io, «per tal convegno,
-
-  che se tu a ragion di lui ti piangi,
-  sappiendo chi voi siete e la sua pecca,
-  nel mondo suso ancora io te ne cangi,
-
-  se quella con ch’io parlo non si secca».
-
-
-
-  Inferno · Canto XXXIII
-
-
-  La bocca sollevò dal fiero pasto
-  quel peccator, forbendola a’ capelli
-  del capo ch’elli avea di retro guasto.
-
-  Poi cominciò: «Tu vuo’ ch’io rinovelli
-  disperato dolor che ’l cor mi preme
-  già pur pensando, pria ch’io ne favelli.
-
-  Ma se le mie parole esser dien seme
-  che frutti infamia al traditor ch’i’ rodo,
-  parlar e lagrimar vedrai insieme.
-
-  Io non so chi tu se’ né per che modo
-  venuto se’ qua giù; ma fiorentino
-  mi sembri veramente quand’ io t’odo.
-
-  Tu dei saper ch’i’ fui conte Ugolino,
-  e questi è l’arcivescovo Ruggieri:
-  or ti dirò perché i son tal vicino.
-
-  Che per l’effetto de’ suo’ mai pensieri,
-  fidandomi di lui, io fossi preso
-  e poscia morto, dir non è mestieri;
-
-  però quel che non puoi avere inteso,
-  cioè come la morte mia fu cruda,
-  udirai, e saprai s’e’ m’ha offeso.
-
-  Breve pertugio dentro da la Muda,
-  la qual per me ha ’l titol de la fame,
-  e che conviene ancor ch’altrui si chiuda,
-
-  m’avea mostrato per lo suo forame
-  più lune già, quand’ io feci ’l mal sonno
-  che del futuro mi squarciò ’l velame.
-
-  Questi pareva a me maestro e donno,
-  cacciando il lupo e ’ lupicini al monte
-  per che i Pisan veder Lucca non ponno.
-
-  Con cagne magre, studïose e conte
-  Gualandi con Sismondi e con Lanfranchi
-  s’avea messi dinanzi da la fronte.
-
-  In picciol corso mi parieno stanchi
-  lo padre e ’ figli, e con l’agute scane
-  mi parea lor veder fender li fianchi.
-
-  Quando fui desto innanzi la dimane,
-  pianger senti’ fra ’l sonno i miei figliuoli
-  ch’eran con meco, e dimandar del pane.
-
-  Ben se’ crudel, se tu già non ti duoli
-  pensando ciò che ’l mio cor s’annunziava;
-  e se non piangi, di che pianger suoli?
-
-  Già eran desti, e l’ora s’appressava
-  che ’l cibo ne solëa essere addotto,
-  e per suo sogno ciascun dubitava;
-
-  e io senti’ chiavar l’uscio di sotto
-  a l’orribile torre; ond’ io guardai
-  nel viso a’ mie’ figliuoi sanza far motto.
-
-  Io non piangëa, sì dentro impetrai:
-  piangevan elli; e Anselmuccio mio
-  disse: “Tu guardi sì, padre! che hai?”.
-
-  Perciò non lagrimai né rispuos’ io
-  tutto quel giorno né la notte appresso,
-  infin che l’altro sol nel mondo uscìo.
-
-  Come un poco di raggio si fu messo
-  nel doloroso carcere, e io scorsi
-  per quattro visi il mio aspetto stesso,
-
-  ambo le man per lo dolor mi morsi;
-  ed ei, pensando ch’io ’l fessi per voglia
-  di manicar, di sùbito levorsi
-
-  e disser: “Padre, assai ci fia men doglia
-  se tu mangi di noi: tu ne vestisti
-  queste misere carni, e tu le spoglia”.
-
-  Queta’mi allor per non farli più tristi;
-  lo dì e l’altro stemmo tutti muti;
-  ahi dura terra, perché non t’apristi?
-
-  Poscia che fummo al quarto dì venuti,
-  Gaddo mi si gittò disteso a’ piedi,
-  dicendo: “Padre mio, ché non m’aiuti?”.
-
-  Quivi morì; e come tu mi vedi,
-  vid’ io cascar li tre ad uno ad uno
-  tra ’l quinto dì e ’l sesto; ond’ io mi diedi,
-
-  già cieco, a brancolar sovra ciascuno,
-  e due dì li chiamai, poi che fur morti.
-  Poscia, più che ’l dolor, poté ’l digiuno».
-
-  Quand’ ebbe detto ciò, con li occhi torti
-  riprese ’l teschio misero co’ denti,
-  che furo a l’osso, come d’un can, forti.
-
-  Ahi Pisa, vituperio de le genti
-  del bel paese là dove ’l sì suona,
-  poi che i vicini a te punir son lenti,
-
-  muovasi la Capraia e la Gorgona,
-  e faccian siepe ad Arno in su la foce,
-  sì ch’elli annieghi in te ogne persona!
-
-  Che se ’l conte Ugolino aveva voce
-  d’aver tradita te de le castella,
-  non dovei tu i figliuoi porre a tal croce.
-
-  Innocenti facea l’età novella,
-  novella Tebe, Uguiccione e ’l Brigata
-  e li altri due che ’l canto suso appella.
-
-  Noi passammo oltre, là ’ve la gelata
-  ruvidamente un’altra gente fascia,
-  non volta in giù, ma tutta riversata.
-
-  Lo pianto stesso lì pianger non lascia,
-  e ’l duol che truova in su li occhi rintoppo,
-  si volge in entro a far crescer l’ambascia;
-
-  ché le lagrime prime fanno groppo,
-  e sì come visiere di cristallo,
-  rïempion sotto ’l ciglio tutto il coppo.
-
-  E avvegna che, sì come d’un callo,
-  per la freddura ciascun sentimento
-  cessato avesse del mio viso stallo,
-
-  già mi parea sentire alquanto vento;
-  per ch’io: «Maestro mio, questo chi move?
-  non è qua giù ogne vapore spento?».
-
-  Ond’ elli a me: «Avaccio sarai dove
-  di ciò ti farà l’occhio la risposta,
-  veggendo la cagion che ’l fiato piove».
-
-  E un de’ tristi de la fredda crosta
-  gridò a noi: «O anime crudeli
-  tanto che data v’è l’ultima posta,
-
-  levatemi dal viso i duri veli,
-  sì ch’ïo sfoghi ’l duol che ’l cor m’impregna,
-  un poco, pria che ’l pianto si raggeli».
-
-  Per ch’io a lui: «Se vuo’ ch’i’ ti sovvegna,
-  dimmi chi se’, e s’io non ti disbrigo,
-  al fondo de la ghiaccia ir mi convegna».
-
-  Rispuose adunque: «I’ son frate Alberigo;
-  i’ son quel da le frutta del mal orto,
-  che qui riprendo dattero per figo».
-
-  «Oh», diss’ io lui, «or se’ tu ancor morto?».
-  Ed elli a me: «Come ’l mio corpo stea
-  nel mondo sù, nulla scïenza porto.
-
-  Cotal vantaggio ha questa Tolomea,
-  che spesse volte l’anima ci cade
-  innanzi ch’Atropòs mossa le dea.
-
-  E perché tu più volentier mi rade
-  le ’nvetrïate lagrime dal volto,
-  sappie che, tosto che l’anima trade
-
-  come fec’ ïo, il corpo suo l’è tolto
-  da un demonio, che poscia il governa
-  mentre che ’l tempo suo tutto sia vòlto.
-
-  Ella ruina in sì fatta cisterna;
-  e forse pare ancor lo corpo suso
-  de l’ombra che di qua dietro mi verna.
-
-  Tu ’l dei saper, se tu vien pur mo giuso:
-  elli è ser Branca Doria, e son più anni
-  poscia passati ch’el fu sì racchiuso».
-
-  «Io credo», diss’ io lui, «che tu m’inganni;
-  ché Branca Doria non morì unquanche,
-  e mangia e bee e dorme e veste panni».
-
-  «Nel fosso sù», diss’ el, «de’ Malebranche,
-  là dove bolle la tenace pece,
-  non era ancora giunto Michel Zanche,
-
-  che questi lasciò il diavolo in sua vece
-  nel corpo suo, ed un suo prossimano
-  che ’l tradimento insieme con lui fece.
-
-  Ma distendi oggimai in qua la mano;
-  aprimi li occhi». E io non gliel’ apersi;
-  e cortesia fu lui esser villano.
-
-  Ahi Genovesi, uomini diversi
-  d’ogne costume e pien d’ogne magagna,
-  perché non siete voi del mondo spersi?
-
-  Ché col peggiore spirto di Romagna
-  trovai di voi un tal, che per sua opra
-  in anima in Cocito già si bagna,
-
-  e in corpo par vivo ancor di sopra.
-
-
-
-  Inferno · Canto XXXIV
-
-
-  «Vexilla regis prodeunt inferni
-  verso di noi; però dinanzi mira»,
-  disse ’l maestro mio, «se tu ’l discerni».
-
-  Come quando una grossa nebbia spira,
-  o quando l’emisperio nostro annotta,
-  par di lungi un molin che ’l vento gira,
-
-  veder mi parve un tal dificio allotta;
-  poi per lo vento mi ristrinsi retro
-  al duca mio, ché non lì era altra grotta.
-
-  Già era, e con paura il metto in metro,
-  là dove l’ombre tutte eran coperte,
-  e trasparien come festuca in vetro.
-
-  Altre sono a giacere; altre stanno erte,
-  quella col capo e quella con le piante;
-  altra, com’ arco, il volto a’ piè rinverte.
-
-  Quando noi fummo fatti tanto avante,
-  ch’al mio maestro piacque di mostrarmi
-  la creatura ch’ebbe il bel sembiante,
-
-  d’innanzi mi si tolse e fé restarmi,
-  «Ecco Dite», dicendo, «ed ecco il loco
-  ove convien che di fortezza t’armi».
-
-  Com’ io divenni allor gelato e fioco,
-  nol dimandar, lettor, ch’i’ non lo scrivo,
-  però ch’ogne parlar sarebbe poco.
-
-  Io non mori’ e non rimasi vivo;
-  pensa oggimai per te, s’hai fior d’ingegno,
-  qual io divenni, d’uno e d’altro privo.
-
-  Lo ’mperador del doloroso regno
-  da mezzo ’l petto uscia fuor de la ghiaccia;
-  e più con un gigante io mi convegno,
-
-  che i giganti non fan con le sue braccia:
-  vedi oggimai quant’ esser dee quel tutto
-  ch’a così fatta parte si confaccia.
-
-  S’el fu sì bel com’ elli è ora brutto,
-  e contra ’l suo fattore alzò le ciglia,
-  ben dee da lui procedere ogne lutto.
-
-  Oh quanto parve a me gran maraviglia
-  quand’ io vidi tre facce a la sua testa!
-  L’una dinanzi, e quella era vermiglia;
-
-  l’altr’ eran due, che s’aggiugnieno a questa
-  sovresso ’l mezzo di ciascuna spalla,
-  e sé giugnieno al loco de la cresta:
-
-  e la destra parea tra bianca e gialla;
-  la sinistra a vedere era tal, quali
-  vegnon di là onde ’l Nilo s’avvalla.
-
-  Sotto ciascuna uscivan due grand’ ali,
-  quanto si convenia a tanto uccello:
-  vele di mar non vid’ io mai cotali.
-
-  Non avean penne, ma di vispistrello
-  era lor modo; e quelle svolazzava,
-  sì che tre venti si movean da ello:
-
-  quindi Cocito tutto s’aggelava.
-  Con sei occhi piangëa, e per tre menti
-  gocciava ’l pianto e sanguinosa bava.
-
-  Da ogne bocca dirompea co’ denti
-  un peccatore, a guisa di maciulla,
-  sì che tre ne facea così dolenti.
-
-  A quel dinanzi il mordere era nulla
-  verso ’l graffiar, che talvolta la schiena
-  rimanea de la pelle tutta brulla.
-
-  «Quell’ anima là sù c’ha maggior pena»,
-  disse ’l maestro, «è Giuda Scarïotto,
-  che ’l capo ha dentro e fuor le gambe mena.
-
-  De li altri due c’hanno il capo di sotto,
-  quel che pende dal nero ceffo è Bruto:
-  vedi come si storce, e non fa motto!;
-
-  e l’altro è Cassio, che par sì membruto.
-  Ma la notte risurge, e oramai
-  è da partir, ché tutto avem veduto».
-
-  Com’ a lui piacque, il collo li avvinghiai;
-  ed el prese di tempo e loco poste,
-  e quando l’ali fuoro aperte assai,
-
-  appigliò sé a le vellute coste;
-  di vello in vello giù discese poscia
-  tra ’l folto pelo e le gelate croste.
-
-  Quando noi fummo là dove la coscia
-  si volge, a punto in sul grosso de l’anche,
-  lo duca, con fatica e con angoscia,
-
-  volse la testa ov’ elli avea le zanche,
-  e aggrappossi al pel com’ om che sale,
-  sì che ’n inferno i’ credea tornar anche.
-
-  «Attienti ben, ché per cotali scale»,
-  disse ’l maestro, ansando com’ uom lasso,
-  «conviensi dipartir da tanto male».
-
-  Poi uscì fuor per lo fóro d’un sasso
-  e puose me in su l’orlo a sedere;
-  appresso porse a me l’accorto passo.
-
-  Io levai li occhi e credetti vedere
-  Lucifero com’ io l’avea lasciato,
-  e vidili le gambe in sù tenere;
-
-  e s’io divenni allora travagliato,
-  la gente grossa il pensi, che non vede
-  qual è quel punto ch’io avea passato.
-
-  «Lèvati sù», disse ’l maestro, «in piede:
-  la via è lunga e ’l cammino è malvagio,
-  e già il sole a mezza terza riede».
-
-  Non era camminata di palagio
-  là ’v’ eravam, ma natural burella
-  ch’avea mal suolo e di lume disagio.
-
-  «Prima ch’io de l’abisso mi divella,
-  maestro mio», diss’ io quando fui dritto,
-  «a trarmi d’erro un poco mi favella:
-
-  ov’ è la ghiaccia? e questi com’ è fitto
-  sì sottosopra? e come, in sì poc’ ora,
-  da sera a mane ha fatto il sol tragitto?».
-
-  Ed elli a me: «Tu imagini ancora
-  d’esser di là dal centro, ov’ io mi presi
-  al pel del vermo reo che ’l mondo fóra.
-
-  Di là fosti cotanto quant’ io scesi;
-  quand’ io mi volsi, tu passasti ’l punto
-  al qual si traggon d’ogne parte i pesi.
-
-  E se’ or sotto l’emisperio giunto
-  ch’è contraposto a quel che la gran secca
-  coverchia, e sotto ’l cui colmo consunto
-
-  fu l’uom che nacque e visse sanza pecca;
-  tu haï i piedi in su picciola spera
-  che l’altra faccia fa de la Giudecca.
-
-  Qui è da man, quando di là è sera;
-  e questi, che ne fé scala col pelo,
-  fitto è ancora sì come prim’ era.
-
-  Da questa parte cadde giù dal cielo;
-  e la terra, che pria di qua si sporse,
-  per paura di lui fé del mar velo,
-
-  e venne a l’emisperio nostro; e forse
-  per fuggir lui lasciò qui loco vòto
-  quella ch’appar di qua, e sù ricorse».
-
-  Luogo è là giù da Belzebù remoto
-  tanto quanto la tomba si distende,
-  che non per vista, ma per suono è noto
-
-  d’un ruscelletto che quivi discende
-  per la buca d’un sasso, ch’elli ha roso,
-  col corso ch’elli avvolge, e poco pende.
-
-  Lo duca e io per quel cammino ascoso
-  intrammo a ritornar nel chiaro mondo;
-  e sanza cura aver d’alcun riposo,
-
-  salimmo sù, el primo e io secondo,
-  tanto ch’i’ vidi de le cose belle
-  che porta ’l ciel, per un pertugio tondo.
-
-  E quindi uscimmo a riveder le stelle.
+I. Come andò che maestro Ciliegia, falegname, trovò un pezzo di legno, che piangeva e rideva come un bambino.
+
+C’era una volta...
+– Un re! – diranno subito i miei piccoli lettori.
+No, ragazzi, avete sbagliato. C’era una volta un pezzo di legno.
+Non era un legno di lusso, ma un semplice pezzo da catasta, di quelli che d’inverno si mettono nelle stufe e nei caminetti per accendere il fuoco e per riscaldare le stanze.
+Non so come andasse, ma il fatto gli è che un bel giorno questo pezzo di legno capitò nella bottega di un vecchio falegname, il quale aveva nome mastr’Antonio, se non che tutti lo chiamavano maestro Ciliegia, per via della punta del suo naso, che era sempre lustra e paonazza, come una ciliegia matura.
+Appena maestro Ciliegia ebbe visto quel pezzo di legno, si rallegrò tutto e dandosi una fregatina di mani per la contentezza, borbottò a mezza voce:
+– Questo legno è capitato a tempo: voglio servirmene per fare una gamba di tavolino.
+Detto fatto, prese subito l’ascia arrotata per cominciare a levargli la scorza e a digrossarlo, ma quando fu lì per lasciare andare la prima asciata, rimase col braccio sospeso in aria, perché sentì una vocina sottile, che disse raccomandandosi:
+– Non mi picchiar tanto forte!
+Figuratevi come rimase quel buon vecchio di maestro Ciliegia!
+Girò gli occhi smarriti intorno alla stanza per vedere di dove mai poteva essere uscita quella vocina, e non vide nessuno! Guardò sotto il banco, e nessuno; guardò dentro un armadio che stava sempre chiuso, e nessuno; guardò nel corbello dei trucioli e della segatura, e nessuno; apri l’uscio di bottega per dare un’occhiata anche sulla strada, e nessuno! O dunque?...
+– Ho capito; – disse allora ridendo e grattandosi la parrucca, – si vede che quella vocina me la sono figurata io. Rimettiamoci a lavorare.
+E ripresa l’ascia in mano, tirò giù un solennissimo colpo sul pezzo di legno.
+– Ohi! tu m’hai fatto male! – gridò rammaricandosi la solita vocina.
+Questa volta maestro Ciliegia restò di stucco, cogli occhi fuori del capo per la paura, colla bocca spalancata e colla lingua giù ciondoloni fino al mento, come un mascherone da fontana. Appena riebbe l’uso della parola, cominciò a dire tremando e balbettando dallo spavento:
+– Ma di dove sarà uscita questa vocina che ha detto ohi?... Eppure qui non c’è anima viva. Che sia per caso questo pezzo di legno che abbia imparato a piangere e a lamentarsi come un bambino? Io non lo posso credere. Questo legno eccolo qui; è un pezzo di legno da caminetto, come tutti gli altri, e a buttarlo sul fuoco, c’è da far bollire una pentola di fagioli... O dunque? Che ci sia nascosto dentro qualcuno? Se c’è nascosto qualcuno, tanto peggio per lui. Ora l’accomodo io!
+E così dicendo, agguantò con tutt’e due le mani quel povero pezzo di legno e si pose a sbatacchiarlo senza carità contro le pareti della stanza.
+Poi si messe in ascolto, per sentire se c’era qualche vocina che si lamentasse. Aspettò due minuti, e nulla; cinque minuti, e nulla; dieci minuti, e nulla!
+– Ho capito, – disse allora sforzandosi di ridere e arruffandosi la parrucca, – si vede che quella vocina che ha detto ohi, me la sono figurata io! Rimettiamoci a lavorare.
+E perché gli era entrata addosso una gran paura, si provò a canterellare per farsi un po’ di coraggio.
+Intanto, posata da una parte l’ascia, prese in mano la pialla, per piallare e tirare a pulimento il pezzo di legno; ma nel mentre che lo piallava in su e in giù, senti la solita vocina che gli disse ridendo:
+– Smetti! tu mi fai il pizzicorino sul corpo!
+Questa volta il povero maestro Ciliegia cadde giù come fulminato. Quando riaprì gli occhi, si trovò seduto per terra.
+Il suo viso pareva trasfigurato, e perfino la punta del naso, di paonazza come era quasi sempre, gli era diventata turchina dalla gran paura.
+
+II. Maestro Ciliegia regala il pezzo di legno al suo amico Geppetto, il quale lo prende per fabbricarsi un burattino maraviglioso che sappia ballare, tirar di scherma e fare i salti mortali.
+
+In quel punto fu bussato alla porta.
+– Passate pure, – disse il falegname, senza aver la forza di rizzarsi in piedi.
+Allora entrò in bottega un vecchietto tutto arzillo, il quale aveva nome Geppetto; ma i ragazzi del vicinato, quando lo volevano far montare su tutte le furie, lo chiamavano col soprannome di Polendina, a motivo della sua parrucca gialla che somigliava moltissimo alla polendina di granturco.
+Geppetto era bizzosissimo. Guai a chiamarlo Polendina! Diventava subito una bestia e non c’era più verso di tenerlo.
+– Buon giorno, mastr’Antonio, – disse Geppetto. – Che cosa fate costì per terra?
+– Insegno l’abbaco alle formicole.
+– Buon pro vi faccia!
+– Chi vi ha portato da me, compar Geppetto?
+– Le gambe. Sappiate, mastr’Antonio, che son venuto da voi, per chiedervi un favore.
+– Eccomi qui, pronto a servirvi, – replicò il falegname, rizzandosi su i ginocchi.
+– Stamani m’è piovuta nel cervello un’idea.
+– Sentiamola.
+– Ho pensato di fabbricarmi da me un bel burattino di legno; ma un burattino maraviglioso, che sappia ballare, tirare di scherma e fare i salti mortali. Con questo burattino voglio girare il mondo, per buscarmi un tozzo di pane e un bicchier di vino; che ve ne pare?
+– Bravo Polendina! – gridò la solita vocina, che non si capiva di dove uscisse.
+A sentirsi chiamar Polendina, compar Geppetto diventò rosso come un peperone dalla bizza, e voltandosi verso il falegname, gli disse imbestialito:
+– Perché mi offendete?
+– Chi vi offende?
+– Mi avete detto Polendina!...
+– Non sono stato io.
+– Sta’ un po’ a vedere che sarò stato io! Io dico che siete stato voi.
+– No!
+– Si!
+– No!
+– Si!
+E riscaldandosi sempre più, vennero dalle parole ai fatti, e acciuffatisi fra di loro, si graffiarono, si morsero e si sbertucciarono.
+Finito il combattimento, mastr’Antonio si trovò fra le mani la parrucca gialla di Geppetto, e Geppetto si accorse di avere in bocca la parrucca brizzolata del falegname.
+– Rendimi la mia parrucca! – gridò mastr’Antonio.
+– E tu rendimi la mia, e rifacciamo la pace.
+I due vecchietti, dopo aver ripreso ognuno di loro la propria parrucca, si strinsero la mano e giurarono di rimanere buoni amici per tutta la vita.
+– Dunque, compar Geppetto, – disse il falegname in segno di pace fatta, – qual è il piacere che volete da me?
+– Vorrei un po’ di legno per fabbricare il mio burattino; me lo date?
+Mastr’Antonio, tutto contento, andò subito a prendere sul banco quel pezzo di legno che era stato cagione a lui di tante paure. Ma quando fu lì per consegnarlo all’amico, il pezzo di legno dette uno scossone e sgusciandogli violentemente dalle mani, andò a battere con forza negli stinchi impresciuttiti del povero Geppetto.
+– Ah! gli è con questo bel garbo, mastr’Antonio, che voi regalate la vostra roba? M’avete quasi azzoppito!...
+– Vi giuro che non sono stato io!
+– Allora sarò stato io!...
+– La colpa è tutta di questo legno...
+– Lo so che è del legno: ma siete voi che me l’avete tirato nelle gambe!
+– Io non ve l’ho tirato!
+– Bugiardo!
+– Geppetto, non mi offendete; se no vi chiamo Polendina!...
+– Asino!
+– Polendina!
+– Somaro!
+– Polendina!
+– Brutto scimmiotto!
+– Polendina!
+A sentirsi chiamar Polendina per la terza volta, Geppetto perse il lume degli occhi, si avvento sul falegname; e lì se ne dettero un sacco e una sporta.
+A battaglia finita, mastr’Antonio si trovo due graffi di più sul naso, e quell’altro due bottoni di meno al giubbetto. Pareggiati in questo modo i loro conti, si strinsero la mano e giurarono di rimanere buoni amici per tutta la vita.
+Intanto Geppetto prese con se il suo bravo pezzo di legno, e ringraziato mastr’Antonio, se ne tornò zoppicando a casa.
+
+III Geppetto, tornato a casa, comincia subito a fabbricarsi il burattino e gli mette il nome di Pinocchio. Prime monellerie del burattino.
+
+La casa di Geppetto era una stanzina terrena, che pigliava luce da un sottoscala. La mobilia non poteva essere più semplice: una seggiola cattiva, un letto poco buono e un tavolino tutto rovinato. Nella parete di fondo si vedeva un caminetto col fuoco acceso; ma il fuoco era dipinto, e accanto al fuoco c’era dipinta una pentola che bolliva allegramente e mandava fuori una nuvola di fumo, che pareva fumo davvero.
+Appena entrato in casa, Geppetto prese subito gli arnesi e si pose a intagliare e a fabbricare il suo burattino.
+– Che nome gli metterò? – disse fra sé e sé. – Lo voglio chiamar Pinocchio. Questo nome gli porterà fortuna. Ho conosciuto una famiglia intera di Pinocchi: Pinocchio il padre, Pinocchia la madre e Pinocchi i ragazzi, e tutti se la passavano bene. Il più ricco di loro chiedeva l’elemosina.
+Quando ebbe trovato il nome al suo burattino, allora cominciò a lavorare a buono, e gli fece subito i capelli, poi la fronte, poi gli occhi.
+Fatti gli occhi, figuratevi la sua maraviglia quando si accorse che gli occhi si muovevano e che lo guardavano fisso fisso.
+Geppetto, vedendosi guardare da quei due occhi di legno, se n’ebbe quasi per male, e disse con accento risentito:
+– Occhiacci di legno, perché mi guardate?
+Nessuno rispose.
+Allora, dopo gli occhi, gli fece il naso; ma il naso, appena fatto, cominciò a crescere: e cresci, cresci, cresci diventò in pochi minuti un nasone che non finiva mai.
+Il povero Geppetto si affaticava a ritagliarlo; ma più lo ritagliava e lo scorciva, e più quel naso impertinente diventava lungo.
+Dopo il naso, gli fece la bocca.
+La bocca non era ancora finita di fare, che cominciò subito a ridere e a canzonarlo.
+– Smetti di ridere! – disse Geppetto impermalito; ma fu come dire al muro.
+– Smetti di ridere, ti ripeto! – urlò con voce minacciosa.
+Allora la bocca smesse di ridere, ma cacciò fuori tutta la lingua.
+Geppetto, per non guastare i fatti suoi, finse di non avvedersene, e continuò a lavorare.
+Dopo la bocca, gli fece il mento, poi il collo, le spalle, lo stomaco, le braccia e le mani.
+Appena finite le mani, Geppetto senti portarsi via la parrucca dal capo. Si voltò in su, e che cosa vide? Vide la sua parrucca gialla in mano del burattino.
+– Pinocchio!... rendimi subito la mia parrucca!
+E Pinocchio, invece di rendergli la parrucca, se la messe in capo per sé, rimanendovi sotto mezzo affogato.
+A quel garbo insolente e derisorio, Geppetto si fece triste e melanconico, come non era stato mai in vita sua, e voltandosi verso Pinocchio, gli disse:
+– Birba d’un figliuolo! Non sei ancora finito di fare, e già cominci a mancar di rispetto a tuo padre! Male, ragazzo mio, male!
+E si rasciugò una lacrima.
+Restavano sempre da fare le gambe e i piedi.
+Quando Geppetto ebbe finito di fargli i piedi, sentì arrivarsi un calcio sulla punta del naso.
+– Me lo merito! – disse allora fra sé. – Dovevo pensarci prima! Ormai è tardi!
+Poi prese il burattino sotto le braccia e lo posò in terra, sul pavimento della stanza, per farlo camminare.
+Pinocchio aveva le gambe aggranchite e non sapeva muoversi, e Geppetto lo conduceva per la mano per insegnargli a mettere un passo dietro l’altro.
+Quando le gambe gli si furono sgranchite, Pinocchio cominciò a camminare da sé e a correre per la stanza; finché, infilata la porta di casa, saltò nella strada e si dette a scappare.
+E il povero Geppetto a corrergli dietro senza poterlo raggiungere, perché quel birichino di Pinocchio andava a salti come una lepre, e battendo i suoi piedi di legno sul lastrico della strada, faceva un fracasso, come venti paia di zoccoli da contadini.
+– Piglialo! piglialo! – urlava Geppetto; ma la gente che era per la via, vedendo questo burattino di legno, che correva come un barbero, si fermava incantata a guardarlo, e rideva, rideva e rideva, da non poterselo figurare.
+Alla fine, e per buona fortuna, capitò un carabiniere, il quale, sentendo tutto quello schiamazzo e credendo si trattasse di un puledro che avesse levata la mano al padrone, si piantò coraggiosamente a gambe larghe in mezzo alla strada, coll’animo risoluto di fermarlo e di impedire il caso di maggiori disgrazie.
+Ma Pinocchio, quando si avvide da lontano del carabiniere che barricava tutta la strada, s’ingegnò di passargli, per sorpresa, frammezzo alle gambe, e invece fece fiasco.
+Il carabiniere, senza punto smoversi, lo acciuffò pulitamente per il naso (era un nasone spropositato, che pareva fatto apposta per essere acchiappato dai carabinieri), e lo riconsegnò nelle proprie mani di Geppetto; il quale, a titolo di correzione, voleva dargli subito una buona tiratina d’orecchi. Ma figuratevi come rimase quando, nel cercargli gli orecchi, non gli riuscì di poterli trovare: e sapete perché? Perché, nella furia di scolpirlo, si era dimenticato di farglieli.
+Allora lo prese per la collottola, e, mentre lo riconduceva indietro, gli disse tentennando minacciosamente il capo:
+– Andiamo a casa. Quando saremo a casa, non dubitare che faremo i nostri conti!
+Pinocchio, a questa antifona, si buttò per terra, e non volle più camminare. Intanto i curiosi e i bighelloni principiavano a fermarsi lì dintorno e a far capannello.
+Chi ne diceva una, chi un’altra.
+– Povero burattino! – dicevano alcuni, – ha ragione a non voler tornare a casa! Chi lo sa come lo picchierebbe quell’omaccio di Geppetto!...
+E gli altri soggiungevano malignamente:
+– Quel Geppetto pare un galantuomo! ma è un vero tiranno coi ragazzi! Se gli lasciano quel povero burattino fra le mani, è capacissimo di farlo a pezzi!...
+Insomma, tanto dissero e tanto fecero, che il carabiniere rimise in libertà Pinocchio e condusse in prigione quel pover’uomo di Geppetto. Il quale, non avendo parole lì per lì per difendersi, piangeva come un vitellino, e nell’avviarsi verso il carcere, balbettava singhiozzando:
+– Sciagurato figliuolo! E pensare che ho penato tanto a farlo un burattino per bene! Ma mi sta il dovere! Dovevo pensarci prima!...
+Quello che accadde dopo, è una storia da non potersi credere, e ve la racconterò in quest’altri capitoli.
+
+IV La storia di Pinocchio col Grillo-parlante, dove si vede come i ragazzi cattivi hanno a noia di sentirsi correggere da chi ne sa più di loro.
+
+Vi dirò dunque, ragazzi, che mentre il povero Geppetto era condotto senza sua colpa in prigione, quel monello di Pinocchio, rimasto libero dalle grinfie del carabiniere, se la dava a gambe giù attraverso ai campi, per far più presto a tornarsene a casa; e nella gran furia del correre saltava greppi altissimi, siepi di pruni e fossi pieni d’acqua, tale e quale come avrebbe potuto fare un capretto o un leprottino inseguito dai cacciatori.
+Giunto dinanzi a casa, trovò l’uscio di strada socchiuso. Lo spinse, entrò dentro, e appena ebbe messo tanto di paletto, si gettò a sedere per terra, lasciando andare un gran sospirone di contentezza.
+Ma quella contentezza durò poco, perché sentì nella stanza qualcuno che fece:
+– Crì - crì - crì!
+– Chi è che mi chiama? – disse Pinocchio tutto impaurito.
+– Sono io!
+Pinocchio si voltò e vide un grosso Grillo che saliva lentamente su su per il muro.
+– Dimmi, Grillo: e tu chi sei?
+– Io sono il Grillo-parlante, ed abito in questa stanza da più di cent’anni.
+– Oggi però questa stanza è mia, – disse il burattino, – e se vuoi farmi un vero piacere, vattene subito, senza nemmeno voltarti indietro.
+– Io non me ne anderò di qui, – rispose il Grillo, – se prima non ti avrò detto una gran verità.
+– Dimmela e spìcciati.
+– Guai a quei ragazzi che si ribellano ai loro genitori e che abbandonano capricciosamente la casa paterna! Non avranno mai bene in questo mondo; e prima o poi dovranno pentirsene amaramente.
+– Canta pure, Grillo mio, come ti pare e piace: ma io so che domani, all’alba, voglio andarmene di qui, perché se rimango qui, avverrà a me quel che avviene a tutti gli altri ragazzi, vale a dire mi manderanno a scuola e per amore o per forza mi toccherà studiare; e io, a dirtela in confidenza, di studiare non ne ho punto voglia e mi diverto più a correre dietro alle farfalle e a salire su per gli alberi a prendere gli uccellini di nido.
+– Povero grullerello! Ma non sai che, facendo così, diventerai da grande un bellissimo somaro e che tutti si piglieranno gioco di te?
+– Chétati. Grillaccio del mal’augurio! – gridò Pinocchio.
+Ma il Grillo, che era paziente e filosofo, invece di aversi a male di questa impertinenza, continuò con lo stesso tono di voce:
+– E se non ti garba di andare a scuola, perché non impari almeno un mestiere, tanto da guadagnarti onestamente un pezzo di pane?
+– Vuoi che te lo dica? – replicò Pinocchio, che cominciava a perdere la pazienza. – Fra tutti i mestieri del mondo non ce n’è che uno solo, che veramente mi vada a genio.
+– E questo mestiere sarebbe?...
+– Quello di mangiare, bere, dormire, divertirmi e fare dalla mattina alla sera la vita del vagabondo.
+– Per tua regola, – disse il Grillo-parlante con la sua solita calma, – tutti quelli che fanno codesto mestiere finiscono sempre allo spedale o in prigione.
+– Bada, Grillaccio del mal’augurio!... se mi monta la bizza, guai a te!
+– Povero Pinocchio! Mi fai proprio compassione!...
+– Perché ti faccio compassione?
+– Perché sei un burattino e, quel che è peggio, perché hai la testa di legno.
+A queste ultime parole, Pinocchio saltò su tutt’infuriato e preso sul banco un martello di legno lo scagliò contro il Grillo-parlante.
+Forse non credeva nemmeno di colpirlo: ma disgraziatamente lo colse per l’appunto nel capo, tanto che il povero Grillo ebbe appena il fiato di fare crì - crì - crì, e poi rimase lì stecchito e appiccicato alla parete.
+
+V Pinocchio ha fame, e cerca un uovo per farsi una frittata; ma sul più bello, la frittata gli vola via dalla finestra.
+
+Intanto cominciò a farsi notte, e Pinocchio, ricordandosi che non aveva mangiato nulla, senti un’uggiolina allo stomaco, che somigliava moltissimo all’appetito.
+Ma l’appetito nei ragazzi cammina presto; e di fatti dopo pochi minuti l’appetito diventò fame, e la fame, dal vedere al non vedere, si converti in una fame da lupi, una fame da tagliarsi col coltello.
+Il povero Pinocchio corse subito al focolare, dove c’era una pentola che bolliva e fece l’atto di scoperchiarla, per vedere che cosa ci fosse dentro, ma la pentola era dipinta sul muro. Figuratevi come restò. Il suo naso, che era già lungo, gli diventò più lungo almeno quattro dita.
+Allora si dette a correre per la stanza e a frugare per tutte le cassette e per tutti i ripostigli in cerca di un po’ di pane, magari un po’ di pan secco, un crosterello, un osso avanzato al cane, un po’ di polenta muffita, una lisca di pesce, un nocciolo di ciliegia, insomma di qualche cosa da masticare: ma non trovò nulla, il gran nulla, proprio nulla.
+E intanto la fame cresceva, e cresceva sempre: e il povero Pinocchio non aveva altro sollievo che quello di sbadigliare: e faceva degli sbadigli così lunghi, che qualche volta la bocca gli arrivava fino agli orecchi. E dopo avere sbadigliato, sputava, e sentiva che lo stomaco gli andava via.
+Allora piangendo e disperandosi, diceva:
+– Il Grillo-parlante aveva ragione. Ho fatto male a rivoltarmi al mio babbo e a fuggire di casa... Se il mio babbo fosse qui, ora non mi troverei a morire di sbadigli! Oh! che brutta malattia che è la fame!
+Quand’ecco gli parve di vedere nel monte della spazzatura qualche cosa di tondo e di bianco, che somigliava tutto a un uovo di gallina. Spiccare un salto e gettarvisi sopra, fu un punto solo. Era un uovo davvero.
+La gioia del burattino è impossibile descriverla: bisogna sapersela figurare. Credendo quasi che fosse un sogno, si rigirava quest’uovo fra le mani, e lo toccava e lo baciava, e baciandolo diceva:
+– E ora come dovrò cuocerlo? Ne farò una frittata?... No, è meglio cuocerlo nel piatto!... O non sarebbe più saporito se lo friggessi in padella? O se invece lo cuocessi a uso uovo da bere? No, la più lesta di tutte è di cuocerlo nel piatto o nel tegamino: ho troppa voglia di mangiarmelo!
+Detto fatto, pose un tegamino sopra un caldano pieno di brace accesa: messe nel tegamino, invece d’olio o di burro, un po’ d’acqua: e quando l’acqua principiò a fumare, tac!... spezzò il guscio dell’uovo, e fece l’atto di scodellarvelo dentro.
+Ma invece della chiara e del torlo, scappò fuori un pulcino tutto allegro e complimentoso, il quale, facendo una bella riverenza, disse:
+– Mille grazie, signor Pinocchio, d’avermi risparmiata la fatica di rompere il guscio! Arrivedella, stia bene e tanti saluti a casa!
+Ciò detto distese le ali e, infilata la finestra che era aperta, se ne volò via a perdita d’occhio.
+Il povero burattino rimase lì, come incantato, cogli occhi fissi, colla bocca aperta e coi gusci dell’uovo in mano. Riavutosi, peraltro, dal primo sbigottimento, cominciò a piangere, a strillare, a battere i piedi in terra, per la disperazione, e piangendo diceva:
+– Eppure il Grillo-parlante aveva ragione! Se non fossi scappato di casa e se il mio babbo fosse qui, ora non mi troverei a morire di fame! Oh! che brutta malattia che è la fame!...
+E perché il corpo gli seguitava a brontolare più che mai, e non sapeva come fare a chetarlo, pensò di uscir di casa e di dare una scappata al paesello vicino, nella speranza di trovare qualche persona caritatevole che gli avesse fatto l’elemosina di un po’ di pane.
+
+VI Pinocchio si addormenta coi piedi sul caldano, e la mattina dopo si sveglia coi piedi tutti bruciati.
+
+Per l’appunto era una nottataccia d’inferno. Tuonava forte forte, lampeggiava come se il cielo pigliasse fuoco, e un ventaccio freddo e strapazzone, fischiando rabbiosamente e sollevando un immenso nuvolo di polvere, faceva stridere e cigolare tutti gli alberi della campagna.
+Pinocchio aveva una gran paura dei tuoni e dei lampi: se non che la fame era più forte della paura: motivo per cui accostò l’uscio di casa, e presa la carriera, in un centinaio di salti arrivò fino al paese, colla lingua fuori e col fiato grosso, come un cane da caccia.
+Ma trovò tutto buio e tutto deserto. Le botteghe erano chiuse; le porte di casa chiuse; le finestre chiuse; e nella strada nemmeno un cane. Pareva il paese dei morti.
+Allora Pinocchio, preso dalla disperazione e dalla fame, si attaccò al campanello d’una casa, e cominciò a suonare a distesa, dicendo dentro di sé:
+– Qualcuno si affaccierà.
+Difatti si affacciò un vecchino, col berretto da notte in capo, il quale gridò tutto stizzito:
+– Che cosa volete a quest’ora?
+– Che mi fareste il piacere di darmi un po’ di pane?
+– Aspettami costì che torno subito, – rispose il vecchino, credendo di aver da fare con qualcuno di quei ragazzacci rompicollo che si divertono di notte a suonare i campanelli delle case, per molestare la gente per bene, che se la dorme tranquillamente.
+Dopo mezzo minuto la finestra si riaprì e la voce del solito vecchino gridò a Pinocchio:
+– Fatti sotto e para il cappello.
+Pinocchio si levò subito il suo cappelluccio; ma mentre faceva l’atto di pararlo, sentì pioversi addosso un’enorme catinellata d’acqua che lo annaffiò tutto dalla testa ai piedi, come se fosse un vaso di giranio appassito.
+Tornò a casa bagnato come un pulcino e rifinito dalla stanchezza e dalla fame e perché non aveva più forza di reggersi ritto, si pose a sedere, appoggiando i piedi fradici e impillaccherati sopra un caldano pieno di brace accesa.
+E lì si addormentò; e nel dormire, i piedi che erano di legno, gli presero fuoco e adagio adagio gli si carbonizzarono e diventarono cenere.
+E Pinocchio seguitava a dormire e a russare, come se i suoi piedi fossero quelli d’un altro. Finalmente sul far del giorno si svegliò, perché qualcuno aveva bussato alla porta.
+– Chi è? – domandò sbadigliando e stropicciandosi gli occhi.
+– Sono io, – rispose una voce.
+Quella voce era la voce di Geppetto.
+
+VII Geppetto torna a casa, e dà al burattino la colazione che il pover’uomo aveva portata con sé.
+
+Il povero Pinocchio, che aveva sempre gli occhi fra il sonno, non s’era ancora avvisto dei piedi, che gli si erano tutti bruciati: per cui appena sentì la voce di suo padre, schizzò giù dallo sgabello per correre a tirare il paletto; ma invece, dopo due o tre traballoni, cadde di picchio tutto lungo disteso sul pavimento.
+E nel battere in terra fece lo stesso rumore, che avrebbe fatto un sacco di mestoli. cascato da un quinto piano.
+– Aprimi! – intanto gridava Geppetto dalla strada.
+– Babbo mio, non posso, – rispondeva il burattino piangendo e ruzzolandosi per terra.
+– Perché non puoi?
+– Perché mi hanno mangiato i piedi.
+– E chi te li ha mangiati?
+– Il gatto, – disse Pinocchio, vedendo il gatto che colle zampine davanti si divertiva a far ballare alcuni trucioli di legno.
+– Aprimi, ti dico! – ripeté Geppetto, – se no quando vengo in casa, il gatto te lo do io!
+– Non posso star ritto, credetelo. O povero me! povero me che mi toccherà a camminare coi ginocchi per tutta la vita!...
+Geppetto, credendo che tutti questi piagnistei fossero un’altra monelleria del burattino, pensò bene di farla finita, e arrampicatosi su per il muro, entrò in casa dalla finestra.
+Da principio voleva dire e voleva fare: ma poi quando vide il suo Pinocchio sdraiato in terra e rimasto senza piedi davvero, allora sentì intenerirsi; e presolo subito in collo, si dette a baciarlo e a fargli mille carezze e mille moine, e, coi luccioloni che gli cascavano giù per le gote, gli disse singhiozzando:
+– Pinocchiuccio mio! Com’è che ti sei bruciato i piedi?
+– Non lo so, babbo, ma credetelo che è stata una nottata d’inferno e me ne ricorderò fin che campo. Tonava, balenava e io avevo una gran fame e allora il Grillo-parlante mi disse: «Ti sta bene; sei stato cattivo, e te lo meriti», e io gli dissi: «Bada, Grillo!...», e lui mi disse: «Tu sei un burattino e hai la testa di legno» e io gli tirai un martello di legno, e lui morì ma la colpa fu sua, perché io non volevo ammazzarlo, prova ne sia che messi un tegamino sulla brace accesa del caldano, ma il pulcino scappò fuori e disse: «Arrivedella... e tanti saluti a casa» e la fame cresceva sempre, motivo per cui quel vecchino col berretto da notte, affacciandosi alla finestra mi disse: «Fatti sotto e para il cappello» e io con quella catinellata d’acqua sul capo, perché il chiedere un po’ di pane non è vergogna, non è vero? me ne tornai subito a casa, e perché avevo sempre una gran fame, messi i piedi sul caldano per rasciugarmi, e voi siete tornato, e me li sono trovati bruciati, e intanto la fame l’ho sempre e i piedi non li ho più! Ih!... ih!... ih!... ih!...
+E il povero Pinocchio cominciò a piangere e a berciare così forte, che lo sentivano da cinque chilometri lontano.
+Geppetto, che di tutto quel discorso arruffato aveva capito una cosa sola, cioè che il burattino sentiva morirsi dalla gran fame, tirò fuori di tasca tre pere, e porgendogliele, disse:
+– Queste tre pere erano per la mia colazione: ma io te le do volentieri. Mangiale, e buon pro ti faccia.
+– Se volete che le mangi, fatemi il piacere di sbucciarle.
+– Sbucciarle? – replicò Geppetto meravigliato. – Non avrei mai creduto, ragazzo, mio, che tu fossi così boccuccia e così schizzinoso di palato. Male! In questo mondo, fin da bambini, bisogna avvezzarsi abboccati e a saper mangiare di tutto, perché non si sa mai quel che ci può capitare. I casi son tanti!...
+– Voi direte bene, – soggiunse Pinocchio, – ma io non mangerò mai una frutta, che non sia sbucciata. Le bucce non le posso soffrire.
+E quel buon uomo di Geppetto, cavato fuori un coltellino, e armatosi di santa pazienza, sbucciò le tre pere, e pose tutte le bucce sopra un angolo della tavola.
+Quando Pinocchio in due bocconi ebbe mangiata la prima pera, fece l’atto di buttar via il torsolo: ma Geppetto gli trattenne il braccio, dicendogli:
+– Non lo buttar via: tutto in questo mondo può far comodo.
+– Ma io il torsolo non lo mangio davvero!... – gridò il burattino, rivoltandosi come una vipera.
+– Chi lo sa! I casi son tanti!... – ripeté Geppetto, senza riscaldarsi.
+Fatto sta che i tre torsoli, invece di essere gettati fuori dalla finestra, vennero posati sull’angolo della tavola in compagnia delle bucce.
+Mangiate o, per dir meglio, divorate le tre pere, Pinocchio fece un lunghissimo sbadiglio e disse piagnucolando:
+– Ho dell’altra fame!
+– Ma io, ragazzo mio, non ho più nulla da darti.
+– Proprio nulla, nulla?
+– Ci avrei soltanto queste bucce e questi torsoli di pera.
+– Pazienza! – disse Pinocchio, – se non c’è altro, mangerò una buccia.
+E cominciò a masticare. Da principio storse un po’ la bocca; ma poi, una dietro l’altra, spolverò in un soffio tutte le bucce: e dopo le bucce, anche i torsoli, e quand’ebbe finito di mangiare ogni cosa, si batté tutto contento le mani sul corpo, e disse gongolando:
+– Ora sì che sto bene!
+– Vedi dunque, – osservò Geppetto, – che avevo ragione io quando ti dicevo che non bisogna avvezzarsi né troppo sofistici né troppo delicati di palato. Caro mio, non si sa mai quel che ci può capitare in questo mondo. I casi son tanti!...
+
+VIII Geppetto rifà i piedi a Pinocchio e vende la propria casacca per comprargli l’Abbecedario.
+
+Il burattino, appena che si fu levata la fame, cominciò subito a bofonchiare e a piangere, perché voleva un paio di piedi nuovi.
+Ma Geppetto, per punirlo della monelleria fatta lo lasciò piangere e disperarsi per una mezza giornata: poi gli disse:
+– E perché dovrei rifarti i piedi? Forse per vederti scappar di nuovo da casa tua?
+– Vi prometto, – disse il burattino singhiozzando, – che da oggi in poi sarò buono...
+– Tutti i ragazzi, – replicò Geppetto, – quando vogliono ottenere qualcosa, dicono così.
+– Vi prometto che anderò a scuola, studierò e mi farò onore...
+– Tutti i ragazzi, quando vogliono ottenere qualcosa, ripetono la medesima storia.
+– Ma io non sono come gli altri ragazzi! Io sono più buono di tutti e dico sempre la verità. Vi prometto, babbo, che imparerò un’arte e che sarò la consolazione e il bastone della vostra vecchiaia.
+Geppetto che, sebbene facesse il viso di tiranno, aveva gli occhi pieni di pianto e il cuore grosso dalla passione di vedere il suo povero Pinocchio in quello stato compassionevole, non rispose altre parole: ma, presi in mano gli arnesi del mestiere e due pezzetti di legno stagionato, si pose a lavorare di grandissimo impegno.
+E in meno d’un’ora, i piedi erano bell’e fatti; due piedini svelti, asciutti e nervosi, come se fossero modellati da un artista di genio.
+Allora Geppetto disse al burattino:
+– Chiudi gli occhi e dormi!
+E Pinocchio chiuse gli occhi e fece finta di dormire. E nel tempo che si fingeva addormentato, Geppetto con un po’ di colla sciolta in un guscio d’uovo gli appiccicò i due piedi al loro posto, e glieli appiccicò così bene, che non si vedeva nemmeno il segno dell’attaccatura.
+Appena il burattino si accorse di avere i piedi, saltò giù dalla tavola dove stava disteso, e principiò a fare mille sgambetti e mille capriole, come se fosse ammattito dalla gran contentezza.
+– Per ricompensarvi di quanto avete fatto per me, – disse Pinocchio al suo babbo, – voglio subito andare a scuola.
+– Bravo ragazzo!
+– Ma per andare a scuola ho bisogno d’un po’ di vestito.
+Geppetto, che era povero e non aveva in tasca nemmeno un centesimo, gli fece allora un vestituccio di carta fiorita, un paio di scarpe di scorza di albero e un berrettino di midolla di pane.
+Pinocchio corse subito a specchiarsi in una catinella piena d’acqua e rimase così contento di sé, che disse pavoneggiandosi:
+– Paio proprio un signore!
+– Davvero, – replicò Geppetto, – perché, tienlo a mente, non è il vestito bello che fa il signore. ma è piuttosto il vestito pulito.
+– A proposito, – soggiunse il burattino, – per andare alla scuola mi manca sempre qualcosa: anzi mi manca il più e il meglio.
+– Cioè?
+– Mi manca l’Abbecedario.
+– Hai ragione: ma come si fa per averlo?
+– È facilissimo: si va da un libraio e si compra.
+– E i quattrini?
+– Io non ce l’ho.
+– Nemmeno io, – soggiunse il buon vecchio, facendosi tristo.
+E Pinocchio, sebbene fosse un ragazzo allegrissimo, si fece tristo anche lui: perché la miseria, quando è miseria davvero, la intendono tutti: anche i ragazzi.
+– Pazienza! – gridò Geppetto tutt’a un tratto rizzandosi in piedi; e infilatasi la vecchia casacca di fustagno, tutta toppe e rimendi, uscì correndo di casa.
+Dopo poco tornò: e quando tornò aveva in mano l’Abbecedario per il figliuolo, ma la casacca non l’aveva più. Il pover’uomo era in maniche di camicia, e fuori nevicava.
+– E la casacca, babbo?
+– L’ho venduta.
+– Perché l’avete venduta?
+– Perché mi faceva caldo.
+Pinocchio capì questa risposta a volo, e non potendo frenare l’impeto del suo buon cuore, saltò al collo di Geppetto e cominciò a baciarlo per tutto il viso.
+
+IX Pinocchio vende l’Abbecedario per andare a vedere il teatrino dei burattini.
+
+Smesso che fu di nevicare, Pinocchio col suo bravo Abbecedario nuovo sotto il braccio, prese la strada che menava alla scuola: e strada facendo, fantasticava nel suo cervellino mille ragionamenti e mille castelli in aria, uno più bello dell’altro.
+E discorrendo da sé solo diceva:
+– Oggi, alla scuola, voglio subito imparare a leggere: domani poi imparerò a scrivere e domani l’altro imparerò a fare i numeri. Poi, colla mia abilità, guadagnerò molti quattrini e coi primi quattrini che mi verranno in tasca, voglio subito fare al mio babbo una bella casacca di panno. Ma che dico di panno? Gliela voglio fare tutta d’argento e d’oro, e coi bottoni di brillanti. E quel pover’uomo se la merita davvero: perché, insomma, per comprarmi i libri e per farmi istruire, è rimasto in maniche di camicia... a questi freddi! Non ci sono che i babbi che sieno capaci di certi sacrifizi!...
+Mentre tutto commosso diceva così gli parve di sentire in lontananza una musica di pifferi e di colpi di grancassa: pì-pì-pì, pì-pì-pì zum, zum, zum, zum.
+Si fermò e stette in ascolto. Quei suoni venivano di fondo a una lunghissima strada traversa, che conduceva a un piccolo paesetto fabbricato sulla spiaggia del mare.
+– Che cosa sia questa musica? Peccato che io debba andare a scuola, se no...
+E rimase lì perplesso. A ogni modo, bisognava prendere una risoluzione: o a scuola, o a sentire i pifferi.
+– Oggi anderò a sentire i pifferi, e domani a scuola: per andare a scuola c’è sempre tempo, – disse finalmente quel monello facendo una spallucciata.
+Detto fatto, infilò giù per la strada traversa, e cominciò a correre a gambe. Più correva e più sentiva distinto il suono dei pifferi e dei tonfi della grancassa: pì-pì-pì, pì-pì-pì… zum, zum, zum, zum.
+Quand’ecco che si trovò in mezzo a una piazza tutta piena di gente, la quale si affollava intorno a un gran baraccone di legno e di tela dipinta di mille colori.
+– Che cos’è quel baraccone? – domandò Pinocchio, voltandosi a un ragazzetto che era lì del paese.
+– Leggi il cartello, che c’è scritto, e lo saprai.
+– Lo leggerei volentieri, ma per l’appunto oggi non so leggere.
+– Bravo bue! Allora te lo leggerò io. Sappi dunque che in quel cartello a lettere rosse come il fuoco c’è scritto: GRAN TEATRO DEI BURATTINI...
+– È molto che è incominciata la commedia?
+– Comincia ora.
+– E quanto si spende per entrare?
+– Quattro soldi.
+Pinocchio, che aveva addosso la febbre della curiosità, perse ogni ritegno, e disse senza vergognarsi al ragazzetto, col quale parlava:
+– Mi daresti quattro soldi fino a domani?
+– Te li darei volentieri, – gli rispose l’altro canzonandolo, – ma oggi per l’appunto non te li posso dare.
+– Per quattro soldi, ti vendo la mia giacchetta, – gli disse allora il burattino.
+– Che vuoi che mi faccia di una giacchetta di carta fiorita? Se ci piove su, non c’è più verso di cavartela da dosso.
+– Vuoi comprare le mie scarpe?
+– Sono buone per accendere il fuoco.
+– Quanto mi dai del berretto?
+– Bell’acquisto davvero! Un berretto di midolla di pane! C’è il caso che i topi me lo vengano a mangiare in capo!
+Pinocchio era sulle spine. Stava lì lì per fare un’ultima offerta: ma non aveva coraggio; esitava, tentennava, pativa. Alla fine disse:
+– Vuoi darmi quattro soldi di quest’Abbecedario nuovo?
+– Io sono un ragazzo, e non compro nulla dai ragazzi, – gli rispose il suo piccolo interlocutore, che aveva molto più giudizio di lui.
+– Per quattro soldi l’Abbecedario lo prendo io, – gridò un rivenditore di panni usati, che s’era trovato presente alla conversazione.
+E il libro fu venduto lì sui due piedi. E pensare che quel pover’uomo di Geppetto era rimasto a casa, a tremare dal freddo in maniche di camicia, per comprare l’Abbecedario al figliuolo!
+
+X I burattini riconoscono il loro fratello Pinocchio e gli fanno una grandissima festa; ma sul più bello, esce fuori il burattinaio Mangiafoco, e Pinocchio corre il pericolo di fare una brutta fine.
+
+Quando Pinocchio entrò nel teatrino delle marionette, accadde un fatto che destò mezza rivoluzione.
+Bisogna sapere che il sipario era tirato su e la commedia era già incominciata.
+Sulla scena si vedevano Arlecchino e Pulcinella, che bisticciavano fra di loro e, secondo il solito, minacciavano da un momento all’altro di scambiarsi un carico di schiaffi e di bastonate.
+La platea, tutta attenta, si mandava a male dalle grandi risate, nel sentire il battibecco di quei due burattini, che gestivano e si trattavano d’ogni vitupero con tanta verità, come se fossero proprio due animali ragionevoli e due persone di questo mondo.
+Quando all’improvviso, che è che non è, Arlecchino smette di recitare, e voltandosi verso il pubblico e accennando colla mano qualcuno in fondo alla platea, comincia a urlare in tono drammatico:
+– Numi del firmamento! sogno o son desto? Eppure quello laggiù è Pinocchio!...
+– È Pinocchio davvero! – grida Pulcinella.
+– È proprio lui! – strilla la signora Rosaura, facendo capolino di fondo alla scena.
+– È Pinocchio! è Pinocchio! – urlano in coro tutti i burattini, uscendo a salti fuori delle quinte.
+– È Pinocchio! è il nostro fratello Pinocchio! Evviva Pinocchio.
+– Pinocchio, vieni quassù da me, – grida Arlecchino, – vieni a gettarti fra le braccia dei tuoi fratelli di legno!
+A questo affettuoso invito Pinocchio spicca un salto, e di fondo alla platea va nei posti distinti; poi con un altro salto, dai posti distinti monta sulla testa del direttore d’orchestra, e di lì schizza sul palcoscenico.
+È impossibile figurarsi gli abbracciamenti, gli strizzoni di collo, i pizzicotti dell’amicizia e le zuccate della vera e sincera fratellanza, che Pinocchio ricevé in mezzo a tanto arruffio dagli attori e dalle attrici di quella compagnia drammatico-vegetale.
+Questo spettacolo era commovente, non c’è che dire: ma il pubblico della platea, vedendo che la commedia non andava più avanti, s’impazientì e prese a gridare:
+– Vogliamo la commedia, vogliamo la commedia!
+Tutto fiato buttato via, perché i burattini, invece di continuare la recita, raddoppiarono il chiasso e le grida, e, postosi Pinocchio sulle spalle, se lo portarono in trionfo davanti ai lumi della ribalta.
+Allora uscì fuori il burattinaio, un omone così brutto, che metteva paura soltanto a guardarlo. Aveva una barbaccia nera come uno scarabocchio d’inchiostro, e tanto lunga che gli scendeva dal mento fino a terra: basta dire che, quando camminava, se la pestava coi piedi. La sua bocca era larga come un forno, i suoi occhi parevano due lanterne di vetro rosso, col lume acceso di dietro, e con le mani faceva schioccare una grossa frusta, fatta di serpenti e di code di volpe attorcigliate insieme.
+All’apparizione inaspettata del burattinaio, ammutolirono tutti: nessuno fiatò più. Si sarebbe sentito volare una mosca. Quei poveri burattini, maschi e femmine, tremavano tutti come tante foglie.
+– Perché sei venuto a mettere lo scompiglio nel mio teatro? – domandò il burattinaio a Pinocchio, con un vocione d’Orco gravemente infreddato di testa.
+– La creda, illustrissimo, che la colpa non è stata mia!...
+– Basta così! Stasera faremo i nostri conti.
+Difatti, finita la recita della commedia, il burattinaio andò in cucina, dov’egli s’era preparato per cena un bel montone, che girava lentamente infilato nello spiedo. E perché gli mancavano la legna per finirlo di cuocere e di rosolare, chiamò Arlecchino e Pulcinella e disse loro:
+– Portatemi di qua quel burattino che troverete attaccato al chiodo. Mi pare un burattino fatto di un legname molto asciutto, e sono sicuro che, a buttarlo sul fuoco, mi darà una bellissima fiammata all’arrosto.
+Arlecchino e Pulcinella da principio esitarono; ma impauriti da un’occhiataccia del loro padrone, obbedirono: e dopo poco tornarono in cucina, portando sulle braccia il povero Pinocchio, il quale, divincolandosi come un’anguilla fuori dell’acqua, strillava disperatamente:
+– Babbo mio, salvatemi! Non voglio morire, non voglio morire!...
+
+XI Mangiafoco starnutisce e perdona a Pinocchio, il quale poi difende dalla morte il suo amico Arlecchino.
+
+Il burattinaio Mangiafoco che (questo era il suo nome) pareva un uomo spaventoso, non dico di no, specie con quella sua barbaccia nera che, a uso grembiale, gli copriva tutto il petto e tutte le gambe; ma nel fondo poi non era un cattiv’uomo. Prova ne sia che quando vide portarsi davanti quel povero Pinocchio, che si dibatteva per ogni verso, urlando «Non voglio morire, non voglio morire!», principiò subito a commuoversi e a impietosirsi e, dopo aver resistito un bel pezzo, alla fine non ne poté più, e lasciò andare un sonorissimo starnuto.
+A quello starnuto, Arlecchino, che fin allora era stato afflitto e ripiegato come un salcio piangente, si fece tutto allegro in viso, e chinatosi verso Pinocchio, gli bisbigliò sottovoce:
+– Buone nuove, fratello. Il burattinaio ha starnutito, e questo è segno che s’è mosso a compassione per te, e oramai sei salvo.
+Perché bisogna sapere che, mentre tutti gli uomini, quando si sentono impietositi per qualcuno, o piangono o per lo meno fanno finta di rasciugarsi gli occhi, Mangiafoco, invece, ogni volta che s’inteneriva davvero, aveva il vizio di starnutire. Era un modo come un altro, per dare a conoscere agli altri la sensibilità del suo cuore.
+Dopo aver starnutito, il burattinaio, seguitando a fare il burbero, gridò a Pinocchio:
+– Finiscila di piangere! I tuoi lamenti mi hanno messo un’uggiolina in fondo allo stomaco... Sento uno spasimo, che quasi quasi... Etcì! etcì! – e fece altri due starnuti.
+– Felicità! – disse Pinocchio.
+– Grazie! E il tuo babbo e la tua mamma sono sempre vivi? – gli domandò Mangiafoco.
+– Il babbo, sì la mamma non l’ho mai conosciuta.
+– Chi lo sa che dispiacere sarebbe per il tuo vecchio padre, se ora ti facessi gettare fra quei carboni ardenti! Povero vecchio! lo compatisco!.. Etcì, etcì, etcì, – e fece altri tre starnuti.
+– Felicità! – disse Pinocchio.
+– Grazie! Del resto bisogna compatire anche me, perché, come vedi, non ho più legna per finire di cuocere quel montone arrosto, e tu, dico la verità, in questo caso mi avresti fatto un gran comodo! Ma oramai mi sono impietosito e ci vuol pazienza. Invece di te, metterò a bruciare sotto lo spiedo qualche burattino della mia Compagnia... Olà, giandarmi!
+A questo comando comparvero subito due giandarmi di legno, lunghi lunghi, secchi secchi, col cappello a lucerna in testa e colla sciabola sfoderata in mano.
+Allora il burattinaio disse loro con voce rantolosa:
+– Pigliatemi lì quell’Arlecchino, legatelo ben bene, e poi gettatelo a bruciare sul fuoco. Io voglio che il mio montone sia arrostito bene!
+Figuratevi il povero Arlecchino! Fu tanto il suo spavento, che le gambe gli si ripiegarono e cadde bocconi per terra.
+Pinocchio, alla vista di quello spettacolo straziante, andò a gettarsi ai piedi del burattinaio e piangendo dirottamente e bagnandogli di lacrime tutti i peli della lunghissima barba, cominciò a dire con voce supplichevole:
+– Pietà, signor Mangiafoco!...
+– Qui non ci son signori! – replicò duramente il burattinaio.
+– Pietà, signor Cavaliere!...
+– Qui non ci son cavalieri!
+– Pietà, signor Commendatore!...
+– Qui non ci son commendatori!
+– Pietà, Eccellenza!...
+A sentirsi chiamare Eccellenza il burattinaio fece subito il bocchino tondo, e diventato tutt’a un tratto più umano e più trattabile, disse a Pinocchio:
+– Ebbene, che cosa vuoi da me?
+– Vi domando grazia per il povero Arlecchino!...
+– Qui non c’è grazia che tenga. Se ho risparmiato te, bisogna che faccia mettere sul fuoco lui, perché io voglio che il mio montone sia arrostito bene.
+– In questo caso, – gridò fieramente Pinocchio, rizzandosi e gettando via il suo berretto di midolla di pane, – in questo caso conosco qual è il mio dovere. Avanti, signori giandarmi! Legatemi e gettatemi là fra quelle fiamme. No, non è giusta che il povero Arlecchino, il vero amico mio, debba morire per me!...
+Queste parole, pronunziate con voce alta e con accento eroico, fecero piangere tutti i burattini che erano presenti a quella scena. Gli stessi giandarmi, sebbene fossero di legno, piangevano come due agnellini di latte.
+Mangiafoco, sul principio, rimase duro e immobile come un pezzo di ghiaccio: ma poi, adagio adagio, cominciò anche lui a commuoversi e a starnutire. E fatti quattro o cinque starnuti, aprì affettuosamente le braccia e disse a Pinocchio:
+– Tu sei un gran bravo ragazzo! Vieni qua da me e dammi un bacio.
+Pinocchio corse subito, e arrampicandosi come uno scoiattolo su per la barba del burattinaio, andò a posargli un bellissimo bacio sulla punta del naso.
+– Dunque la grazia è fatta? – domandò il povero Arlecchino, con un fil di voce che si sentiva appena.
+– La grazia è fatta! – rispose Mangiafoco: poi soggiunse sospirando e tentennando il capo: – Pazienza! Per questa sera mi rassegnerò a mangiare il montone mezzo crudo, ma un’altra volta, guai a chi toccherà!...
+Alla notizia della grazia ottenuta, i burattini corsero tutti sul palcoscenico e, accesi i lumi e i lampadari come in serata di gala, cominciarono a saltare e a ballare. Era l’alba e ballavano sempre.
+
+XII Il burattinaio Mangiafoco regala cinque monete d’oro a Pinocchio, perché le porti al suo babbo Geppetto: e Pinocchio, invece, si lascia abbindolare dalla Volpe e dal Gatto e se ne va con loro.
+
+Il giorno dipoi Mangiafoco chiamò in disparte Pinocchio e gli domandò:
+– Come si chiama tuo padre?
+– Geppetto.
+– E che mestiere fa?
+– Il povero.
+– Guadagna molto?
+– Guadagna tanto, quanto ci vuole per non aver mai un centesimo in tasca. Si figuri che per comprarmi l’Abbecedario della scuola dové vendere l’unica casacca che aveva addosso: una casacca che, fra toppe e rimendi, era tutta una piaga.
+– Povero diavolo! Mi fa quasi compassione. Ecco qui cinque monete d’oro. Vai subito a portargliele e salutalo tanto da parte mia.
+Pinocchio, com’è facile immaginarselo, ringraziò mille volte il burattinaio, abbracciò, a uno a uno, tutti i burattini della Compagnia, anche i giandarmi: e fuori di sé dalla contentezza, si mise in viaggio per tornarsene a casa sua.
+Ma non aveva fatto ancora mezzo chilometro, che incontrò per la strada una Volpe zoppa da un piede e un Gatto cieco da tutt’e due gli occhi, che se ne andavano là là, aiutandosi fra di loro, da buoni compagni di sventura. La Volpe che era zoppa, camminava appoggiandosi al Gatto: e il Gatto, che era cieco, si lasciava guidare dalla Volpe.
+– Buon giorno, Pinocchio, – gli disse la Volpe, salutandolo garbatamente.
+– Com’è che sai il mio nome? – domandò il burattino.
+– Conosco bene il tuo babbo.
+– Dove l’hai veduto?
+– L’ho veduto ieri sulla porta di casa sua.
+– E che cosa faceva?
+– Era in maniche di camicia e tremava dal freddo.
+– Povero babbo! Ma, se Dio vuole, da oggi in poi non tremerà più!...
+– Perché?
+– Perché io sono diventato un gran signore.
+– Un gran signore tu? – disse la Volpe, e cominciò a ridere di un riso sguaiato e canzonatore: e il Gatto rideva anche lui, ma per non darlo a vedere, si pettinava i baffi colle zampe davanti.
+– C’è poco da ridere, – gridò Pinocchio impermalito. – Mi dispiace davvero di farvi venire l’acquolina in bocca, ma queste qui, se ve ne intendete, sono cinque bellissime monete d’oro.
+E tirò fuori le monete avute in regalo da Mangiafoco.
+Al simpatico suono di quelle monete la Volpe, per un moto involontario, allungò la gamba che pareva rattrappita, e il Gatto spalancò tutt’e due gli occhi, che parvero due lanterne verdi: ma poi li richiuse subito, tant’è vero che Pinocchio non si accorse di nulla.
+– E ora, – gli domandò la Volpe, – che cosa vuoi farne di codeste monete?
+– Prima di tutto, – rispose il burattino, – voglio comprare per il mio babbo una bella casacca nuova, tutta d’oro e d’argento e coi bottoni di brillanti: e poi voglio comprare un Abbecedario per me.
+– Per te?
+– Davvero: perché voglio andare a scuola e mettermi a studiare a buono.
+– Guarda me! – disse la Volpe. – Per la passione sciocca di studiare ho perduto una gamba.
+– Guarda me! – disse il Gatto. – Per la passione sciocca di studiare ho perduto la vista di tutti e due gli occhi.
+In quel mentre un Merlo bianco, che se ne stava appollaiato sulla siepe della strada, fece il solito verso e disse:
+– Pinocchio, non dar retta ai consigli dei cattivi compagni: se no, te ne pentirai!
+Povero Merlo, non l’avesse mai detto! Il Gatto, spiccando un gran salto, gli si avventò addosso, e senza dargli nemmeno il tempo di dire ohi se lo mangiò in un boccone, con le penne e tutto.
+Mangiato che l’ebbe e ripulitasi la bocca, chiuse gli occhi daccapo e ricominciò a fare il cieco, come prima.
+– Povero Merlo! – disse Pinocchio al Gatto, – perché l’hai trattato così male?
+– Ho fatto per dargli una lezione. Così un’altra volta imparerà a non metter bocca nei discorsi degli altri.
+Erano giunti più che a mezza strada, quando la Volpe, fermandosi di punto in bianco, disse al burattino:
+– Vuoi raddoppiare le tue monete d’oro?
+– Cioè?
+– Vuoi tu, di cinque miserabili zecchini, farne cento, mille, duemila?
+– Magari! E la maniera?
+– La maniera è facilissima. Invece di tornartene a casa tua, dovresti venire con noi.
+– E dove mi volete condurre?
+– Nel paese dei Barbagianni.
+Pinocchio ci pensò un poco, e poi disse risolutamente:
+– No, non ci voglio venire. Oramai sono vicino a casa, e voglio andarmene a casa, dove c’è il mio babbo che m’aspetta. Chi lo sa, povero vecchio, quanto ha sospirato ieri, a non vedermi tornare. Pur troppo io sono stato un figliolo cattivo, e il Grillo-parlante aveva ragione quando diceva: «I ragazzi disobbedienti non possono aver bene in questo mondo». E io l’ho provato a mie spese, Perché mi sono capitate dimolte disgrazie, e anche ieri sera in casa di Mangiafoco, ho corso pericolo... Brrr! mi viene i bordoni soltanto a pensarci!
+– Dunque, – disse la Volpe, – vuoi proprio andare a casa tua? Allora vai pure, e tanto peggio per te!
+– Tanto peggio per te! – ripeté il Gatto.
+– Pensaci bene, Pinocchio, perché tu dai un calcio alla fortuna.
+– Alla fortuna! – ripeté il Gatto.
+– I tuoi cinque zecchini, dall’oggi al domani sarebbero diventati duemila.
+– Duemila! – ripeté il Gatto.
+– Ma com’è mai possibile che diventino tanti? – domandò Pinocchio, restando a bocca aperta dallo stupore.
+– Te lo spiego subito, – disse la Volpe. – Bisogna sapere che nel paese dei Barbagianni c’è un campo benedetto, chiamato da tutti il Campo dei miracoli. Tu fai in questo campo una piccola buca e ci metti dentro per esempio uno zecchino d’oro. Poi ricuopri la buca con un po’ di terra: l’annaffi con due secchie d’acqua di fontana, ci getti sopra una presa di sale, e la sera te ne vai tranquillamente a letto. Intanto, durante la notte, lo zecchino germoglia e fiorisce, e la mattina dopo, di levata, ritornando nel campo, che cosa trovi? Trovi un bell’albero carico di tanti zecchini d’oro, quanti chicchi di grano può avere una bella spiga nel mese di giugno.
+– Sicché dunque, – disse Pinocchio sempre più sbalordito, – se io sotterrassi in quel campo i miei cinque zecchini, la mattina dopo quanti zecchini ci troverei?
+– È un conto facilissimo, – rispose la Volpe, – un conto che puoi farlo sulla punta delle dita. Poni che ogni zecchino ti faccia un grappolo di cinquecento zecchini: moltiplica il cinquecento per cinque e la mattina dopo ti trovi in tasca duemila cinquecento zecchini lampanti e sonanti.
+– Oh che bella cosa! – gridò Pinocchio, ballando dall’allegrezza. – Appena che questi zecchini gli avrò raccolti, ne prenderò per me duemila e gli altri cinquecento di più li darò in regalo a voi altri due.
+– Un regalo a noi? – gridò la Volpe sdegnandosi e chiamandosi offesa. – Dio te ne liberi!
+– Te ne liberi! – ripeté il Gatto.
+– Noi, – riprese la Volpe, – non lavoriamo per il vile interesse: noi lavoriamo unicamente per arricchire gli altri.
+– Gli altri! – ripeté il Gatto.
+– Che brave persone! – pensò dentro di sé Pinocchio: e dimenticandosi lì sul tamburo, del suo babbo, della casacca nuova, dell’Abbecedario e di tutti i buoni proponimenti fatti, disse alla Volpe e al Gatto:
+– Andiamo pure. Io vengo con voi.
+
+XIII L’osteria del Gambero Rosso.
+
+Cammina, cammina, cammina, alla fine sul far della sera arrivarono stanchi morti all’osteria del Gambero Rosso.
+– Fermiamoci un po’ qui, – disse la Volpe, – tanto per mangiare un boccone e per riposarci qualche ora. A mezzanotte poi ripartiremo per essere domani, all’alba, nel Campo dei miracoli.
+Entrati nell’osteria, si posero tutti e tre a tavola: ma nessuno di loro aveva appetito.
+Il povero Gatto, sentendosi gravemente indisposto di stomaco, non poté mangiare altro che trentacinque triglie con salsa di pomodoro e quattro porzioni di trippa alla parmigiana: e perché la trippa non gli pareva condita abbastanza, si rifece tre volte a chiedere il burro e il formaggio grattato!
+La Volpe avrebbe spelluzzicato volentieri qualche cosa anche lei: ma siccome il medico le aveva ordinato una grandissima dieta, così dové contentarsi di una semplice lepre dolce e forte con un leggerissimo contorno di pollastre ingrassate e di galletti di primo canto. Dopo la lepre si fece portare per tornagusto un cibreino di pernici, di starne, di conigli, di ranocchi, di lucertole e d’uva paradisa; e poi non volle altro. Aveva tanta nausea per il cibo, diceva lei, che non poteva accostarsi nulla alla bocca.
+Quello che mangiò meno di tutti fu Pinocchio. Chiese uno spicchio di noce e un cantuccino di pane, e lasciò nel piatto ogni cosa. Il povero figliuolo col pensiero sempre fisso al Campo dei miracoli, aveva preso un’indigestione anticipata di monete d’oro.
+Quand’ebbero cenato, la Volpe disse all’oste:
+– Dateci due buone camere, una per il signor Pinocchio e un’altra per me e per il mio compagno. Prima di ripartire schiacceremo un sonnellino. Ricordatevi però che a mezzanotte vogliamo essere svegliati per continuare il nostro viaggio.
+– Sissignori, – rispose l’oste e strizzò l’occhio alla Volpe e al Gatto, come dire: «Ho mangiata la foglia e ci siamo intesi!...».
+Appena che Pinocchio fu entrato nel letto, si addormentò a colpo e principiò a sognare. E sognando gli pareva di essere in mezzo a un campo, e questo campo era pieno di arboscelli carichi di grappoli, e questi grappoli erano carichi di zecchini d’oro che, dondolandosi mossi dal vento, facevano zin, zin, zin, quasi volessero dire: «Chi ci vuole venga a prenderci». Ma quando Pinocchio fu sul più bello, quando, cioè, allungò la mano per prendere a manciate tutte quelle belle monete e mettersele in tasca, si trovò svegliato all’improvviso da tre violentissimi colpi dati nella porta di camera.
+Era l’oste che veniva a dirgli che la mezzanotte era suonata.
+– E i miei compagni sono pronti? – gli domandò il burattino.
+– Altro che pronti! Sono partiti due ore fa.
+– Perché mai tanta fretta?
+– Perché il Gatto ha ricevuto un’imbasciata, che il suo gattino maggiore, malato di geloni ai piedi, stava in pericolo di vita.
+– E la cena l’hanno pagata?
+– Che vi pare? Quelle lì sono persone troppo educate perché facciano un affronto simile alla signoria vostra.
+– Peccato! Quest’affronto mi avrebbe fatto tanto piacere! – disse Pinocchio, grattandosi il capo. Poi domandò:
+– E dove hanno detto di aspettarmi quei buoni amici?
+– Al Campo dei miracoli, domattina, allo spuntare del giorno.
+Pinocchio pagò uno zecchino per la cena sua e per quella dei suoi compagni, e dopo partì.
+Ma si può dire che partisse a tastoni, perché fuori dell’osteria c’era un buio così buio, che non ci si vedeva da qui a lì. Nella campagna all’intorno non si sentiva alitare una foglia. Solamente alcuni uccellacci notturni, traversando la strada da una siepe all’altra, venivano a sbattere le ali sul naso di Pinocchio, il quale, facendo un salto indietro per la paura, gridava: – Chi va là? – e l’eco delle colline circostanti ripeteva in lontananza: – Chi va là? chi va là? chi va là?
+Intanto, mentre camminava, vide sul tronco di un albero un piccolo animaletto che riluceva di una luce pallida e opaca, come un lumino da notte dentro una lampada di porcellana trasparente.
+– Chi sei? – gli domandò Pinocchio.
+– Sono l’ombra del Grillo-parlante, – rispose l’animaletto, con una vocina fioca fioca, che pareva venisse dal mondo di là.
+– Che vuoi da me? – disse il burattino.
+– Voglio darti un consiglio. Ritorna indietro e porta i quattro zecchini, che ti sono rimasti, al tuo povero babbo che piange e si dispera per non averti più veduto.
+– Domani il mio babbo sarà un gran signore, perché questi quattro zecchini diventeranno duemila.
+– Non ti fidare, ragazzo mio, di quelli che promettono di farti ricco dalla mattina alla sera. Per il solito, o sono matti o imbroglioni! Dai retta a me, ritorna indietro.
+– E io, invece, voglio andare avanti.
+– L’ora è tarda!...
+– Voglio andare avanti.
+– La nottata è scura...
+– Voglio andare avanti.
+– La strada è pericolosa...
+– Voglio andare avanti.
+– Ricordati che i ragazzi che vogliono fare di loro capriccio e a modo loro, prima o poi se ne pentono.
+– Le solite storie. Buona notte, Grillo.
+– Buona notte, Pinocchio, e che il cielo ti salvi dalla guazza e dagli assassini!
+Appena dette queste ultime parole, il Grillo-parlante si spense a un tratto, come si spenge un lume soffiandoci sopra, e la strada rimase più buia di prima.
+
+XIV Pinocchio, per non aver dato retta ai buoni consigli del Grillo-parlante, s’imbatte negli assassini.
+
+– Davvero, – disse fra sé il burattino rimettendosi in viaggio, – come siamo disgraziati noialtri poveri ragazzi! Tutti ci sgridano, tutti ci ammoniscono, tutti ci danno consigli. A lasciarli dire, tutti si metterebbero in capo di essere i nostri babbi e i nostri maestri; tutti: anche i Grilli-parlanti. Ecco qui: perché io non ho voluto dar retta a quell’uggioso di Grillo, chi lo sa quante disgrazie, secondo lui, mi dovrebbero accadere! Dovrei incontrare anche gli assassini! Meno male che agli assassini io non ci credo, né ci ho creduto mai. Per me gli assassini sono stati inventati apposta dai babbi, per far paura ai ragazzi che vogliono andare fuori la notte. E poi se anche li trovassi qui sulla strada, mi darebbero forse soggezione? Neanche per sogno. Anderei loro sul viso, gridando: «Signori assassini, che cosa vogliono da me? Si rammentino che con me non si scherza! Se ne vadano dunque per i fatti loro, e zitti!». A questa parlantina fatta sul serio, quei poveri assassini, mi par di vederli, scapperebbero via come il vento. Caso poi fossero tanto ineducati da non voler scappare, allora scapperei io, e così la farei finita...
+Ma Pinocchio non poté finire il suo ragionamento, perché in quel punto gli parve di sentire dietro di sé un leggerissimo fruscio di foglie.
+Si voltò a guardare e vide nel buio due figuracce nere tutte imbacuccate in due sacchi da carbone, le quali correvano dietro a lui a salti e in punta di piedi, come se fossero due fantasmi.
+– Eccoli davvero! – disse dentro di sé: e non sapendo dove nascondere i quattro zecchini, se li nascose in bocca e precisamente sotto la lingua.
+Poi si provò a scappare. Ma non aveva ancor fatto il primo passo, che sentì agguantarsi per le braccia e intese due voci orribili e cavernose, che gli dissero:
+– O la borsa o la vita!
+Pinocchio non potendo rispondere con le parole, a motivo delle monete che aveva in bocca, fece mille salamelecchi e mille pantomime per dare ad intendere a quei due incappati, di cui si vedevano soltanto gli occhi attraverso i buchi dei sacchi, che lui era un povero burattino, e che non aveva in tasca nemmeno un centesimo falso.
+– Via, via! Meno ciarle e fuori i denari! – gridavano minacciosamente i due briganti.
+E il burattino fece col capo e colle mani un segno come dire: «Non ne ho».
+– Metti fuori i denari o sei morto, - disse l’assassino più alto di statura.
+- Morto! - ripeté l’altro.
+– E dopo ammazzato te, ammazzeremo anche tuo padre!
+– Anche tuo padre!
+– No, no, no, il mio povero babbo no! – gridò Pinocchio con accento disperato: ma nel gridare così, gli zecchini gli suonarono in bocca.
+– Ah! furfante! Dunque i denari te li sei nascosti sotto la lingua? Sputali subito!
+E Pinocchio, duro!
+– Ah! tu fai il sordo? Aspetta un poco, che penseremo noi a farteli sputare!
+Difatti, uno di loro afferrò il burattino per la punta del naso e quell’altro lo prese per la bazza, e lì cominciarono a tirare screanzatamente, uno per in qua e l’altro per in là, tanto da costringerlo a spalancare la bocca: ma non ci fu verso. La bocca del burattino pareva inchiodata e ribadita.
+Allora l’assassino più piccolo di statura, cavato fuori un coltellaccio, provò a conficcarglielo, a guisa di leva e di scalpello, fra le labbra: ma Pinocchio, lesto come un lampo, gli azzannò la mano coi denti, e dopo avergliela con un morso staccata di netto, la sputò; e figuratevi la sua maraviglia quando, invece di una mano, si accorse di aver sputato in terra uno zampetto di gatto.
+Incoraggiato da questa prima vittoria, si liberò a forza dalle unghie degli assassini e, saltata la siepe della strada, cominciò a fuggire per la campagna. E gli assassini a correre dietro a lui, come due cani dietro una lepre: e quello che aveva perduto uno zampetto correva con una gamba sola, né si è saputo mai come facesse.
+Dopo una corsa di quindici chilometri, Pinocchio non ne poteva più. Allora, vistosi perso, si arrampicò su per il fusto di un altissimo pino e si pose a sedere in vetta ai rami. Gli assassini tentarono di arrampicarsi anche loro, ma giunti a metà del fusto sdrucciolarono e, ricascando a terra, si spellarono le mani e i piedi.
+Non per questo si dettero per vinti: che anzi, raccolto un fastello di legna secche a piè del pino, vi appiccarono il fuoco. In men che non si dice, il pino cominciò a bruciare e a divampare, come una candela agitata dal vento. Pinocchio, vedendo che le fiamme salivano sempre più, e non volendo far la fine del piccione arrosto, spiccò un bel salto di vetta all’albero, e via a correre daccapo attraverso ai campi e ai vigneti. E gli assassini dietro, sempre dietro, senza stancarsi mai.
+Intanto cominciava a baluginare il giorno e si rincorrevano sempre; quand’ecco che Pinocchio si trovò sbarrato il passo da un fosso largo e profondissimo, tutto pieno di acquaccia sudicia, color del caffè e latte. Che fare? «Una, due, tre!» gridò il burattino, e slanciandosi con una gran rincorsa, saltò dall’altra parte. E gli assassini saltarono anche loro, ma non avendo preso bene la misura, patatunfete!... cascarono giù nel bel mezzo del fosso. Pinocchio che sentì il tonfo e gli schizzi dell’acqua, urlò ridendo e seguitando a correre:
+– Buon bagno, signori assassini.
+E già si figurava che fossero bell’e affogati, quando invece, voltandosi a guardare, si accòrse che gli correvano dietro tutti e due, sempre imbacuccati nei loro sacchi e grondanti acqua come due panieri sfondati.
+
+XV Gli assassini inseguono Pinocchio; e, dopo averlo raggiunto, lo impiccano a un ramo della Quercia grande.
+
+Allora il burattino, perdutosi d’animo, fu proprio sul punto di gettarsi in terra e di darsi per vinto, quando nel girare gli occhi all’intorno vide fra mezzo al verde cupo degli alberi biancheggiare in lontananza una casina candida come la neve.
+– Se io avessi tanto fiato da arrivare fino a quella casa, forse sarei salvo, – disse dentro di sé.
+E senza indugiare un minuto riprese a correre per il bosco a carriera distesa. E gli assassini sempre dietro.
+E dopo una corsa disperata di quasi due ore, finalmente tutto trafelato arrivò alla porta di quella casina e bussò.
+Nessuno rispose.
+Tornò a bussare con maggior violenza, perché sentiva avvicinarsi il rumore dei passi e il respiro grosso e affannoso de’ suoi persecutori.
+Lo stesso silenzio.
+Avvedutosi che il bussare non giovava a nulla, cominciò per disperazione a dare calci e zuccate nella porta. Allora si affacciò alla finestra una bella bambina, coi capelli turchini e il viso bianco come un’immagine di cera, gli occhi chiusi e le mani incrociate sul petto, la quale senza muovere punto le labbra, disse con una vocina che pareva venisse dall’altro mondo:
+– In questa casa non c’è nessuno. Sono tutti morti.
+– Aprimi almeno tu! – gridò Pinocchio piangendo e raccomandandosi.
+– Sono morta anch’io.
+– Morta? e allora che cosa fai costì alla finestra?
+– Aspetto la bara che venga a portarmi via.
+Appena detto così, la bambina disparve, e la finestra si richiuse senza far rumore.
+– O bella bambina dai capelli turchini, – gridava Pinocchio, – aprimi per carità! Abbi compassione di un povero ragazzo inseguito dagli assass...
+Ma non poté finir la parola, perché sentì afferrarsi per il collo, e le solite due vociaccie che gli brontolarono minacciosamente:
+– Ora non ci scappi più!
+Il burattino, vedendosi balenare la morte dinanzi agli occhi, fu preso da un tremito così forte, che nel tremare, gli sonavano le giunture delle sue gambe di legno e i quattro zecchini che teneva nascosti sotto la lingua.
+– Dunque? – gli domandarono gli assassini, – vuoi aprirla la bocca, sì o no? Ah! non rispondi?... Lascia fare: ché questa volta te la faremo aprir noi!...
+E cavato fuori due coltellacci lunghi lunghi e affilati come rasoi, zaff... gli affibbiarono due colpi nel mezzo alle reni.
+Ma il burattino per sua fortuna era fatto d’un legno durissimo, motivo per cui le lame, spezzandosi, andarono in mille schegge e gli assassini rimasero col manico dei coltelli in mano, a guardarsi in faccia.
+– Ho capito, – disse allora uno di loro, – bisogna impiccarlo! Impicchiamolo!
+– Impicchiamolo, – ripeté l’altro.
+Detto fatto, gli legarono le mani dietro le spalle e passatogli un nodo scorsoio intorno alla gola, lo attaccarono penzoloni al ramo di una grossa pianta detta la Quercia grande.
+Poi si posero là, seduti sull’erba, aspettando che il burattino facesse l’ultimo sgambetto: ma il burattino, dopo tre ore, aveva sempre gli occhi aperti, la bocca chiusa e sgambettava più che mai.
+Annoiati finalmente di aspettare, si voltarono a Pinocchio e gli dissero sghignazzando:
+– Addio a domani. Quando domani torneremo qui, si spera che ci farai la garbatezza di farti trovare bell’e morto e con la bocca spalancata.
+E se ne andarono.
+Intanto s’era levato un vento impetuoso di tramontana, che soffiando e mugghiando con rabbia, sbatacchiava in qua e in là il povero impiccato, facendolo dondolare violentemente come il battaglio di una campana che suona a festa. E quel dondolìo gli cagionava acutissimi spasimi, e il nodo scorsoio, stringendosi sempre più alla gola, gli toglieva il respiro.
+A poco a poco gli occhi gli si appannavano; e sebbene sentisse avvicinarsi la morte, pure sperava sempre che da un momento all’altro sarebbe capitata qualche anima pietosa a dargli aiuto. Ma quando, aspetta aspetta, vide che non compariva nessuno, proprio nessuno, allora gli tornò in mente il suo povero babbo... e balbettò quasi moribondo:
+– Oh babbo mio! se tu fossi qui!...
+E non ebbe fiato per dir altro. Chiuse gli occhi, aprì la bocca, stirò le gambe e, dato un grande scrollone, rimase lì come intirizzito.
+
+XVI La bella Bambina dai capelli turchini fa raccogliere il burattino: lo mette a letto, e chiama tre medici per sapere se sia vivo o morto.
+
+In quel mentre che il povero Pinocchio impiccato dagli assassini a un ramo della Quercia grande, pareva oramai più morto che vivo, la bella Bambina dai capelli turchini si affacciò daccapo alla finestra, e impietositasi alla vista di quell’infelice che, sospeso per il collo, ballava il trescone alle ventate di tramontana, batté per tre volte le mani insieme, e fece tre piccoli colpi.
+A questo segnale si sentì un gran rumore di ali che volavano con foga precipitosa, e un grosso falco venne a posarsi sul davanzale della finestra.
+– Che cosa comandate, mia graziosa Fata? – disse il Falco abbassando il becco in atto di reverenza (perché bisogna sapere che la Bambina dai capelli turchini non era altro, in fin dei conti, che una buonissima Fata, che da più di mill’anni abitava nelle vicinanze di quel bosco):
+– Vedi tu quel burattino attaccato penzoloni a un ramo della Quercia grande?
+– Lo vedo.
+– Orbene: vola subito laggiù: rompi col tuo fortissimo becco il nodo che lo tiene sospeso in aria e posalo delicatamente sdraiato sull’erba a piè della Quercia.
+Il Falco volò via e dopo due minuti tornò dicendo:
+– Quel che mi avete comandato, è fatto.
+– E come l’hai trovato? Vivo o morto?
+– A vederlo, pareva morto, ma non dev’essere ancora morto perbene, perché, appena gli ho sciolto il nodo scorsoio che lo stringeva intorno alla gola, ha lasciato andare un sospiro, balbettando a mezza voce: «Ora mi sento meglio!».
+Allora la Fata, battendo le mani insieme, fece due piccoli colpi, e apparve un magnifico Can-barbone, che camminava ritto sulle gambe di dietro, tale e quale come se fosse un uomo.
+Il Can-barbone era vestito da cocchiere in livrea di gala. Aveva in capo un nicchiettino a tre punte gallonato d’oro, una parrucca bianca coi riccioli che gli scendevano giù per il collo, una giubba color di cioccolata coi bottoni di brillanti e con due grandi tasche per tenervi gli ossi che gli regalava a pranzo la padrona, un paio di calzoni corti di velluto cremisi, le calze di seta, gli scarpini scollati, e di dietro una specie di fodera da ombrelli, tutta di raso turchino, per mettervi dentro la coda, quando il tempo cominciava a piovere.
+– Su da bravo, Medoro! – disse la Fata al Can-barbone; – Fai subito attaccare la più bella carrozza della mia scuderia e prendi la via del bosco. Arrivato che sarai sotto la Quercia grande, troverai disteso sull’erba un povero burattino mezzo morto. Raccoglilo con garbo, posalo pari pari su i cuscini della carrozza e portamelo qui. Hai capito?
+Il Can-barbone, per fare intendere che aveva capito, dimenò tre o quattro volte la fodera di raso turchino, che aveva dietro, e partì come un barbero.
+Di lì a poco, si vide uscire dalla scuderia una bella carrozzina color dell’aria, tutta imbottita di penne di canarino e foderata nell’interno di panna montata e di crema coi savoiardi. La carrozzina era tirata da cento pariglie di topini bianchi, e il Can-barbone, seduto a cassetta, schioccava la frusta a destra e a sinistra, come un vetturino quand’ha paura di aver fatto tardi.
+Non era ancora passato un quarto d’ora, che la carrozzina tornò, e la Fata, che stava aspettando sull’uscio di casa, prese in collo il povero burattino, e portatolo in una cameretta che aveva le pareti di madreperla, mandò subito a chiamare i medici più famosi del vicinato.
+E i medici arrivarono subito, uno dopo l’altro: arrivò, cioè, un Corvo, una Civetta e un Grillo-parlante.
+– Vorrei sapere da lor signori, – disse la Fata, rivolgendosi ai tre medici riuniti intorno al letto di Pinocchio, – vorrei sapere da lor signori se questo disgraziato burattino sia morto o vivo!...
+A quest’invito, il Corvo, facendosi avanti per il primo, tastò il polso a Pinocchio: poi gli tastò il naso, poi il dito mignolo dei piedi: e quand’ebbe tastato ben bene, pronunziò solennemente queste parole:
+– A mio credere il burattino è bell’e morto: ma se per disgrazia non fosse morto, allora sarebbe indizio sicuro che è sempre vivo!
+– Mi dispiace, – disse la Civetta, – di dover contraddire il Corvo, mio illustre amico e collega: per me, invece, il burattino è sempre vivo; ma se per disgrazia non fosse vivo, allora sarebbe segno che è morto davvero!
+– E lei non dice nulla? – domandò la Fata al Grillo-parlante.
+– Io dico che il medico prudente quando non sa quello che dice, la miglior cosa che possa fare, è quella di stare zitto. Del resto quel burattino lì non m’è fisonomia nuova: io lo conosco da un pezzo!...
+Pinocchio, che fin allora era stato immobile come un vero pezzo di legno, ebbe una specie di fremito convulso, che fece scuotere tutto il letto.
+– Quel burattino lì, – seguitò a dire il Grillo-parlante, – è una birba matricolata...
+Pinocchio aprì gli occhi e li richiuse subito.
+– È un monellaccio, uno svogliato, un vagabondo. Pinocchio si nascose la faccia sotto i lenzuoli.
+– Quel burattino lì è un figliuolo disubbidiente, che farà morire di crepacuore il suo povero babbo!...
+A questo punto si sentì nella camera un suono soffocato di pianti e di singhiozzi. Figuratevi come rimasero tutti, allorché sollevati un poco i lenzuoli, si accorsero che quello che piangeva e singhiozzava era Pinocchio.
+– Quando il morto piange, è segno che è in via di guarigione, – disse solennemente il Corvo.
+– Mi duole di contraddire il mio illustre amico e collega, – soggiunse la Civetta, – ma per me, quando il morto piange è segno che gli dispiace a morire.
+
+XVII Pinocchio mangia lo zucchero, ma non vuol purgarsi: Però quando vede i becchini che vengono a portarlo via, allora si purga. Poi dice una bugia e per gastigo gli cresce il naso.
+
+Appena i tre medici furono usciti di camera, la Fata si accostò a Pinocchio e, dopo averlo toccato sulla fronte, si accòrse che era travagliato da un febbrone da non si dire.
+Allora sciolse una certa polverina bianca in un mezzo bicchier d’acqua, e porgendolo al burattino, gli disse amorosamente:
+– Bevila, e in pochi giorni sarai guarito.
+Pinocchio guardò il bicchiere, storse un po’ la bocca, e poi dimanda con voce di piagnisteo:
+– È dolce o amara?
+– È amara, ma ti farà bene.
+– Se è amara, non la voglio.
+– Da’ retta a me: bevila.
+– A me l’amaro non mi piace.
+– Bevila: e quando l’avrai bevuta, ti darò una pallina di zucchero, per rifarti la bocca.
+– Dov’è la pallina di zucchero?
+– Eccola qui, – disse la Fata, tirandola fuori da una zuccheriera d’oro.
+– Prima voglio la pallina di zucchero, e poi beverò quell’acquaccia amara...
+– Me lo prometti?
+– Sì...
+La fata gli dette la pallina, e Pinocchio, dopo averla sgranocchiata e ingoiata in un attimo, disse leccandosi i labbri:
+– Bella cosa se anche lo zucchero fosse una medicina!... Mi purgherei tutti i giorni.
+– Ora mantieni la promessa e bevi queste poche gocciole d’acqua, che ti renderanno la salute.
+Pinocchio prese di mala voglia il bicchiere in mano e vi ficcò dentro la punta del naso: poi se l’accostò alla bocca: poi tornò a ficcarci la punta del naso: finalmente disse:
+– È troppo amara! troppo amara! Io non la posso bere.
+– Come fai a dirlo se non l’hai nemmeno assaggiata?
+– Me lo figuro! L’ho sentita all’odore. Voglio prima un’altra pallina di zucchero... e poi la beverò!...
+Allora la Fata, con tutta la pazienza di una buona mamma, gli pose in bocca un altro po’ di zucchero; e dopo gli presentò daccapo il bicchiere.
+– Così non la posso bere! – disse il burattino, facendo mille smorfie.
+– Perché?
+– Perché mi dà noia quel guanciale che ho laggiù sui piedi.
+La Fata gli levò il guanciale.
+– È inutile! Nemmeno così la posso bere...
+– Che cos’altro ti dà noia?
+– Mi dà noia l’uscio di camera, che è mezzo aperto.
+La Fata andò e chiuse l’uscio di camera.
+– Insomma, – gridò Pinocchio, dando in uno scoppio di pianto, – quest’acquaccia amara, non la voglio bere, no, no, no!...
+– Ragazzo mio, te ne pentirai...
+– Non me n’importa...
+– La tua malattia è grave...
+– Non me n’importa...
+– La febbre ti porterà in poche ore all’altro mondo...
+– Non me n’importa...
+– Non hai paura della morte?
+– Punto paura!... Piuttosto morire, che bevere quella medicina cattiva.
+A questo punto, la porta della camera si spalancò ed entrarono dentro quattro conigli neri come l’inchiostro, che portavano sulle spalle una piccola bara da morto.
+– Che cosa volete da me? – gridò Pinocchio, rizzandosi tutto impaurito a sedere sul letto.
+– Siamo venuti a prenderti, – rispose il coniglio più grosso.
+– A prendermi?... Ma io non sono ancora morto!...
+– Ancora no: ma ti restano pochi minuti di vita avendo tu ricusato di bevere la medicina, che ti avrebbe guarito dalla febbre!...
+– O Fata, o Fata mia,– cominciò allora a strillare il burattino, – datemi subito quel bicchiere. Spicciatevi, per carità, perché non voglio morire no... non voglio morire...
+E preso il bicchiere con tutt’e due le mani, lo votò in un fiato.
+– Pazienza! – dissero i conigli. – Per questa volta abbiamo fatto il viaggio a ufo.
+E tiratisi di nuovo la piccola bara sulle spalle, uscirono di camera bofonchiando e mormorando fra i denti.
+Fatto sta che di lì a pochi minuti, Pinocchio saltò giù dal letto, bell’e guarito; perché bisogna sapere che i burattini di legno hanno il privilegio di ammalarsi di rado e di guarire prestissimo.
+E la Fata, vedendolo correre e ruzzare per la camera, vispo e allegro come un gallettino di primo canto, gli disse:
+– Dunque la mia medicina t’ha fatto bene davvero?
+– Altro che bene! Mi ha rimesso al mondo!...
+– E allora come mai ti sei fatto tanto pregare a beverla?
+– Egli è che noi ragazzi siamo tutti così! Abbiamo più paura delle medicine che del male.
+– Vergogna! I ragazzi dovrebbero sapere che un buon medicamento preso a tempo può salvarli da una grave malattia e fors’anche dalla morte...
+– Oh! ma un’altra volta non mi farò tanto pregare! Mi rammenterò di quei conigli neri, colla bara sulle spalle... e allora piglierò subito il bicchiere in mano, e giù!...
+– Ora vieni un po’ qui da me e raccontami come andò che ti trovasti fra le mani degli assassini.
+– Gli andò che il burattinaio Mangiafoco mi dette alcune monete d’oro, e mi disse: «To’, portale al tuo babbo!» e io, invece, per la strada trovai una Volpe e un Gatto, due persone molto per bene, che mi dissero: «Vuoi che codeste monete diventino mille e duemila? Vieni con noi, e ti condurremo al Campo dei Miracoli». E io dissi: «Andiamo»; e loro dissero: «Fermiamoci qui all’osteria del Gambero Rosso e dopo la mezzanotte ripartiremo». Ed io, quando mi svegliai, loro non c’erano più, perché erano partiti. Allora io cominciai a camminare di notte, che era un buio che pareva impossibile, per cui trovai per la strada due assassini dentro due sacchi da carbone, che mi dissero: «Metti fuori i quattrini»; e io dissi: «Non ce n’ho»; perché le quattro monete d’oro me l’ero nascoste in bocca, e uno degli assassini si provò a mettermi le mani in bocca, e io con un morso gli staccai la mano e poi la sputai, ma invece di una mano sputai uno zampetto di gatto. E gli assassini a corrermi dietro e, io corri che ti corro, finché mi raggiunsero, e mi legarono per il collo a un albero di questo bosco, col dire: «Domani torneremo qui, e allora sarai morto e colla bocca aperta, e così ti porteremo via le monete d’oro che hai nascoste sotto la lingua».
+– E ora le quattro monete dove le hai messe? – gli domandò la Fata.
+– Le ho perdute! – rispose Pinocchio; ma disse una bugia, perché invece le aveva in tasca. Appena detta la bugia, il suo naso, che era già lungo, gli crebbe subito due dita di più.
+– E dove le hai perdute?
+– Nel bosco qui vicino.
+A questa seconda bugia il naso seguitò a crescere.
+– Se le hai perdute nel bosco vicino, – disse la Fata, – le cercheremo e le ritroveremo: perché tutto quello che si perde nel vicino bosco, si ritrova sempre.
+– Ah! ora che mi rammento bene, – replicò il burattino, imbrogliandosi, – le quattro monete non le ho perdute, ma senza avvedermene le ho inghiottite mentre bevevo la vostra medicina.
+A questa terza bugia, il naso gli si allungò in un modo così straordinario, che il povero Pinocchio non poteva più girarsi da nessuna parte. Se si voltava di qui batteva il naso nel letto o nei vetri della finestra, se si voltava di là, lo batteva nelle pareti o nella porta di camera, se alzava un po’ di più il capo, correva il rischio di ficcarlo in un occhio alla Fata.
+E la Fata lo guardava e rideva.
+– Perché ridete? – gli domandò il burattino, tutto confuso e impensierito di quel suo naso che cresceva a occhiate.
+– Rido della bugia che hai detto.
+– Come mai sapete che ho detto una bugia?
+– Le bugie, ragazzo mio, si riconoscono subito! perché ve ne sono di due specie: vi sono le bugie che hanno le gambe corte, e le bugie che hanno il naso lungo: la tua per l’appunto è di quelle che hanno il naso lungo.
+Pinocchio, non sapendo più dove nascondersi per la vergogna, si provò a fuggire di camera; ma non gli riuscì. Il suo naso era cresciuto tanto, che non passava più dalla porta.
+
+XVIII Pinocchio ritrova la Volpe e il Gatto, e va con loro a seminare le quattro monete nel Campo de’ Miracoli.
+
+Come potete immaginarvelo, la Fata lasciò che il burattino piangesse e urlasse una buona mezz’ora, a motivo di quel suo naso che non passava più dalla porta di camera; e lo fece per dargli una severa lezione perché si correggesse dal brutto vizio di dire le bugie, il più brutto vizio che possa avere un ragazzo. Ma quando lo vide trasfigurato e cogli occhi fuori della testa dalla gran disperazione, allora, mossa a pietà, batté le mani insieme, e a quel segnale entrarono in camera dalla finestra un migliaio di grossi uccelli chiamati Picchi, i quali, posatisi tutti sul naso di Pinocchio, cominciarono a beccarglielo tanto e poi tanto, che in pochi minuti quel naso enorme e spropositato si trovò ridotto alla sua grandezza naturale.
+– Quanto siete buona, Fata mia, – disse il burattino, asciugandosi gli occhi, – e quanto bene vi voglio!
+– Ti voglio bene anch’io, – rispose la Fata, – e se tu vuoi rimanere con me, tu sarai il mio fratellino e io la tua buona sorellina...
+– Io resterei volentieri... ma il mio povero babbo?
+– Ho pensato a tutto. Il tuo babbo è stato digià avvertito: e prima che faccia notte, sarà qui.
+– Davvero?... – gridò Pinocchio, saltando dall’allegrezza. – Allora, Fatina mia, se vi contentate, vorrei andargli incontro! Non vedo l’ora di poter dare un bacio a quel povero vecchio, che ha sofferto tanto per me!
+– Vai pure, ma bada di non ti sperdere. Prendi la via del bosco, e sono sicurissima che lo incontrerai.
+Pinocchio partì: e appena entrato nel bosco, cominciò a correre come un capriolo. Ma quando fu arrivato a un certo punto, quasi in faccia alla Quercia grande, si fermò, perché gli parve di aver sentito gente fra mezzo alle frasche. Difatti vide apparire sulla strada, indovinate chi?... la Volpe e il Gatto, ossia i due compagni di viaggio, coi quali aveva cenato all’osteria del Gambero Rosso.
+– Ecco il nostro caro Pinocchio! – gridò la Volpe, abbracciandolo e baciandolo. – Come mai sei qui?
+– Come mai sei qui? – ripeté il Gatto.
+– È una storia lunga, – disse il burattino, – e ve la racconterò a comodo. Sappiate però che l’altra notte, quando mi avete lasciato solo nell’osteria, ho trovato gli assassini per la strada...
+– Gli assassini?... O povero amico! E che cosa volevano?
+– Mi volevano rubare le monete d’oro.
+– Infami!... – disse la Volpe.
+– Infamissimi! – ripeté il Gatto.
+– Ma io cominciai a scappare, – continuò a dire il burattino, – e loro sempre dietro: finché mi raggiunsero e m’impiccarono a un ramo di quella quercia.
+E Pinocchio accennò la Quercia grande, che era lì a due passi.
+– Si può sentir di peggio? – disse la Volpe. – In che mondo siamo condannati a vivere? Dove troveremo un rifugio sicuro noi altri galantuomini?...
+Nel tempo che parlavano così, Pinocchio si accorse che il Gatto era zoppo dalla gamba destra davanti, perché gli mancava in fondo tutto lo zampetto cogli unghioli: per cui gli domandò:
+– Che cosa hai fatto del tuo zampetto?
+Il Gatto voleva rispondere qualche cosa, ma s’imbrogliò. Allora la Volpe disse subito:
+– Il mio amico è troppo modesto, – e per questo non risponde. Risponderò io per lui. Sappi dunque che un’ora fa abbiamo incontrato sulla strada un vecchio lupo, quasi svenuto dalla fame, che ci ha chiesto un po’ d’elemosina. Non avendo noi da dargli nemmeno una lisca di pesce, che cosa ha fatto l’amico mio, che ha davvero un cuore di Cesare?... Si è staccato coi denti uno zampetto delle sue gambe davanti e l’ha gettato a quella povera bestia, perché potesse sdigiunarsi.
+E la Volpe nel dir così, si asciugò una lacrima.
+Pinocchio, commosso anche lui, si avvicinò al Gatto, sussurrandogli negli orecchi:
+– Se tutti i gatti ti somigliassero, fortunati i topi!...
+– E ora che cosa fai in questi luoghi? – domandò la Volpe al burattino.
+– Aspetto il mio babbo, che deve arrivare qui di momento in momento.
+– E le tue monete d’oro?
+– Le ho sempre in tasca, meno una che la spesi all’osteria del Gambero Rosso.
+– E pensare che, invece di quattro monete, potrebbero diventare domani mille e duemila! Perché non dai retta al mio consiglio? Perché non vai a seminarle nel Campo dei miracoli?
+– Oggi è impossibile: vi anderò un altro giorno.
+– Un altro giorno sarà tardi, – disse la Volpe.
+– Perché?
+– Perché quel campo è stato comprato da un gran signore e da domani in là non sarà più permesso a nessuno di seminarvi i denari.
+– Quant’è distante di qui il Campo dei miracoli?
+– Due chilometri appena. Vuoi venire con noi? Fra mezz’ora sei là: semini subito le quattro monete: dopo pochi minuti ne raccogli duemila e stasera ritorni qui colle tasche piene. Vuoi venire con noi?
+Pinocchio esitò un poco a rispondere, perché gli tornò in mente la buona Fata, il vecchio Geppetto e gli avvertimenti del Grillo-parlante; ma poi finì col fare come fanno tutti i ragazzi senza un fil di giudizio e senza cuore; finì, cioè, col dare una scrollatina di capo, e disse alla Volpe e al Gatto:
+– Andiamo pure: io vengo con voi.
+E partirono.
+Dopo aver camminato una mezza giornata arrivarono a una città che aveva nome «Acchiappa-citrulli». Appena entrato in città, Pinocchio vide tutte le strade popolate di cani spelacchiati, che sbadigliavano dall’appetito, di pecore tosate che tremavano dal freddo, di galline rimaste senza cresta e senza bargigli, che chiedevano l’elemosina d’un chicco di granturco, di grosse farfalle, che non potevano più volare, perché avevano venduto le loro bellissime ali colorite, di pavoni tutti scodati, che si vergognavano a farsi vedere, e di fagiani che zampettavano cheti cheti, rimpiangendo le loro scintillanti penne d’oro e d’argento, oramai perdute per sempre.
+In mezzo a questa folla di accattoni e di poveri vergognosi passavano di tanto in tanto alcune carrozze signorili con dentro o qualche volpe, o qualche gazza ladra o qualche uccellaccio di rapina.
+– E il Campo dei miracoli dov’è? – domandò Pinocchio.
+– È qui a due passi.
+Detto fatto traversarono la città e, usciti fuori dalle mura, si fermarono in un campo solitario che, su per giù, somigliava a tutti gli altri campi.
+– Eccoci giunti, – disse la Volpe al burattino. – Ora chinati giù a terra, scava con le mani una piccola buca nel campo e mettici dentro le monete d’oro.
+Pinocchio ubbidì. Scavò la buca, ci pose le quattro monete d’oro che gli erano rimaste: e dopo ricoprì la buca con un po’ di terra.
+– Ora poi, – disse la Volpe, – vai alla gora qui vicina, prendi una secchia d’acqua e annaffia il terreno dove hai seminato.
+Pinocchio andò alla gora, e perché non aveva lì per lì una secchia, si levò di piedi una ciabatta e, riempitala d’acqua, annaffiò la terra che copriva la buca. Poi domandò:
+– C’è altro da fare?
+– Nient’altro, – rispose la Volpe. – Ora possiamo andar via. Tu poi ritorna qui fra una ventina di minuti e troverai l’arboscello già spuntato dal suolo e coi rami tutti carichi di monete.
+Il povero burattino, fuori di sé dalla contentezza, ringraziò mille volte la Volpe e il Gatto, e promise loro un bellissimo regalo.
+– Noi non vogliamo regali, – risposero quei due malanni. – A noi ci basta di averti insegnato il modo di arricchire senza durar fatica, e siamo contenti come pasque.
+Ciò detto salutarono Pinocchio, e augurandogli una buona raccolta, se ne andarono per i fatti loro.
+
+XIX Pinocchio è derubato delle sue monete d’oro e, per gastigo, si busca quattro mesi di prigione.
+
+Il burattino, ritornato in città, cominciò a contare i minuti a uno a uno; e, quando gli parve che fosse l’ora, riprese subito la strada che menava al Campo dei miracoli.
+E mentre camminava con passo frettoloso, il cuore gli batteva forte e gli faceva tic, tac, tic, tac, come un orologio da sala, quando corre davvero. E intanto pensava dentro di sé:
+– E se invece di mille monete, ne trovassi su i rami dell’albero duemila?... E se invece di duemila, ne trovassi cinquemila?... E se invece di cinquemila ne trovassi centomila? Oh che bel signore, allora, che diventerei!... Vorrei avere un bel palazzo, mille cavallini di legno e mille scuderie, per potermi baloccare, una cantina di rosoli e di alchermes, e una libreria tutta piena di canditi, di torte, di panettoni, di mandorlati e di cialdoni colla panna.
+Così fantasticando, giunse in vicinanza del campo, e lì si fermò a guardare se per caso avesse potuto scorgere qualche albero coi rami carichi di monete: ma non vide nulla. Fece altri cento passi in avanti, e nulla: entrò sul campo... andò proprio su quella piccola buca, dove aveva sotterrato i suoi zecchini, e nulla. Allora diventò pensieroso e, dimenticando le regole del Galateo e della buona creanza, tirò fuori una mano di tasca e si dette una lunghissima grattatina di capo.
+In quel mentre sentì fischiare negli orecchi una gran risata: e voltatosi in su, vide sopra un albero un grosso pappagallo che si spollinava le poche penne che aveva addosso.
+– Perché ridi? – gli domandò Pinocchio con voce di bizza.
+– Rido, perché nello spollinarmi mi son fatto il solletico sotto le ali.
+Il burattino non rispose. Andò alla gora e riempita d’acqua la solita ciabatta, si pose nuovamente ad annaffiare la terra che ricuopriva le monete d’oro.
+Quand’ecco che un’altra risata, anche più impertinente della prima, si fece sentire nella solitudine silenziosa di quel campo.
+– Insomma, – gridò Pinocchio, arrabbiandosi, – si può sapere, Pappagallo mal educato, di che cosa ridi?
+– Rido di quei barbagianni, che credono a tutte le scioccherie e che si lasciano trappolare da chi è più furbo di loro.
+– Parli forse di me?
+– Sì, parlo di te, povero Pinocchio, di te che sei così dolce di sale, da credere che i denari si possano seminare e raccogliere nei campi, come si seminano i fagioli e le zucche. Anch’io l’ho creduto una volta, e oggi ne porto le pene. Oggi (ma troppo tardi!) mi son dovuto persuadere che per mettere insieme onestamente pochi soldi, bisogna saperseli guadagnare o col lavoro delle proprie mani o coll’ingegno della propria testa.
+– Non ti capisco, – disse il burattino, che già cominciava a tremare dalla paura.
+– Pazienza! Mi spiegherò meglio, – soggiunse il Pappagallo. – Sappi dunque che, mentre tu eri in città, la Volpe e il Gatto sono tornati in questo campo: hanno preso le monete d’oro sotterrate, e poi sono fuggiti come il vento. E ora chi li raggiunge, è bravo!
+Pinocchio restò a bocca aperta, e non volendo credere alle parole del Pappagallo, cominciò colle mani e colle unghie a scavare il terreno che aveva annaffiato. E scava, scava, scava, fece una buca così profonda, che ci sarebbe entrato per ritto un pagliaio: ma le monete non ci erano più.
+Allora, preso dalla disperazione, tornò di corsa in città e andò difilato in tribunale, per denunziare al giudice i due malandrini, che lo avevano derubato.
+Il giudice era uno scimmione della razza dei Gorilla: un vecchio scimmione rispettabile per la sua grave età, per la sua barba bianca e specialmente per i suoi occhiali d’oro, senza vetri, che era costretto a portare continuamente, a motivo di una flussione d’occhi, che lo tormentava da parecchi anni.
+Pinocchio, alla presenza del giudice, raccontò per filo e per segno l’iniqua frode, di cui era stato vittima; dette il nome, il cognome e i connotati dei malandrini, e finì col chiedere giustizia.
+Il giudice lo ascoltò con molta benignità: prese vivissima parte al racconto: s’intenerì, si commosse: e quando il burattino non ebbe più nulla da dire, allungò la mano e suonò il campanello.
+A quella scampanellata comparvero subito due can mastini vestiti da giandarmi.
+Allora il giudice, accennando Pinocchio ai giandarmi, disse loro:
+– Quel povero diavolo è stato derubato di quattro monete d’oro: pigliatelo dunque e mettetelo subito in prigione.
+Il burattino, sentendosi dare questa sentenza fra capo e collo, rimase di princisbecco e voleva protestare: ma i giandarmi, a scanso di perditempi inutili, gli tapparono la bocca e lo condussero in gattabuia.
+E lì v’ebbe a rimanere quattro mesi: quattro lunghissimi mesi: e vi sarebbe rimasto anche di più, se non si fosse dato un caso fortunatissimo. Perché bisogna sapere che il giovane Imperatore che regnava nella città di Acchiappa-citrulli, avendo riportato una gran vittoria contro i suoi nemici, ordinò grandi feste pubbliche, luminarie, fuochi artificiali, corse di barberi e velocipedi, e in segno di maggiore esultanza, volle che fossero aperte le carceri e mandati fuori tutti i malandrini.
+– Se escono di prigione gli altri, voglio uscire anch’io, – disse Pinocchio al carceriere.
+– Voi no, – rispose il carceriere, – perché voi non siete del bel numero...
+– Domando scusa, – replicò Pinocchio, – sono un malandrino anch’io.
+– In questo caso avete mille ragioni, – disse il carceriere; e levandosi il berretto rispettosamente e salutandolo, gli aprì le porte della prigione e lo lasciò scappare.
+
+XX Liberato dalla prigione, si avvia per tornare a casa della Fata; ma lungo la strada trova un serpente orribile, e poi rimane preso alla tagliuola.
+
+Figuratevi l’allegrezza di Pinocchio, quando si sentì libero. Senza stare a dire che è e che non è, uscì subito fuori della città e riprese la strada che doveva ricondurlo alla Casina della Fata.
+A motivo del tempo piovigginoso, la strada era diventata tutta un pantano e ci si andava fino a mezza gamba.
+Ma il burattino non se ne dava per inteso.
+Tormentato dalla passione di rivedere il suo babbo e la sua sorellina dai capelli turchini, correva a salti come un cane levriero, e nel correre le pillacchere gli schizzavano fin sopra il berretto. Intanto andava dicendo fra sé e sé:
+– Quante disgrazie mi sono accadute... E me le merito! perché io sono un burattino testardo e piccoso... e voglio far sempre tutte le cose a modo mio, senza dar retta a quelli che mi voglion bene e che hanno mille volte più giudizio di me!... Ma da questa volta in là, faccio proponimento di cambiar vita e di diventare un ragazzo ammodo e ubbidiente... Tanto ormai ho bell’e visto che i ragazzi, a essere disubbidienti, ci scapitano sempre e non ne infilano mai una per il su’ verso. E il mio babbo mi avrà aspettato?... Ce lo troverò a casa della Fata? è tanto tempo, pover’uomo, che non lo vedo più, che mi struggo di fargli mille carezze e di finirlo dai baci! E la Fata mi perdonerà la brutta azione che le ho fatto?... E pensare che ho ricevuto da lei tante attenzioni e tante cure amorose... e pensare che se oggi son sempre vivo, lo debbo a lei! Ma si può dare un ragazzo più ingrato e più senza cuore di me?...
+Nel tempo che diceva così, si fermò tutt’a un tratto spaventato e fece quattro passi indietro.
+Che cosa aveva veduto?...
+Aveva veduto un grosso Serpente, disteso attraverso alla strada, che aveva la pelle verde, gli occhi di fuoco e la coda appuntuta, che gli fumava come una cappa di camino.
+Impossibile immaginarsi la paura del burattino: il quale, allontanatosi più di mezzo chilometro, si mise a sedere sopra un monticello di sassi, aspettando che il Serpente se ne andasse una buona volta per i fatti suoi e lasciasse libero il passo della strada.
+Aspettò un’ora; due ore; tre ore; ma il Serpente era sempre là, e, anche di lontano, si vedeva il rosseggiare de’ suoi occhi di fuoco e la colonna di fumo che gli usciva dalla punta della coda.
+Allora Pinocchio, figurandosi di aver coraggio, si avvicinò a pochi passi di distanza, e facendo una vocina dolce, insinuante e sottile, disse al Serpente:
+– Scusi, signor Serpente, che mi farebbe il piacere di tirarsi un pochino da una parte, tanto da lasciarmi passare?
+Fu lo stesso che dire al muro. Nessuno si mosse.
+Allora riprese colla solita vocina:
+– Deve sapere, signor Serpente, che io vado a casa, dove c’è il mio babbo che mi aspetta e che è tanto tempo che non lo vedo più!... Si contenta dunque che io seguiti per la mia strada?
+Aspettò un segno di risposta a quella dimanda: ma la risposta non venne: anzi il Serpente, che fin allora pareva arzillo e pieno di vita, diventò immobile e quasi irrigidito. Gli occhi gli si chiusero e la coda gli smesse di fumare.
+– Che sia morto davvero?... – disse Pinocchio, dandosi una fregatina di mani dalla gran contentezza: e senza mettere tempo in mezzo, fece l’atto di scavalcarlo, per passare dall’altra parte della strada. Ma non aveva ancora finito di alzare la gamba, che il Serpente si rizzò all’improvviso, come una molla scattata: e il burattino, nel tirarsi indietro, spaventato, inciampò e cadde per terra.
+E per l’appunto cadde così male, che restò col capo conficcato nel fango della strada e con le gambe ritte su in aria.
+Alla vista di quel burattino, che sgambettava a capofitto con una velocità incredibile il Serpente fu preso da una tal convulsione di risa, che ridi, ridi, ridi, alla fine, dallo sforzo del troppo ridere, gli si strappò una vena sul petto: e quella volta morì davvero.
+Allora Pinocchio ricominciò a correre per arrivare a casa della Fata prima che si facesse buio. Ma lungo la strada non potendo più reggere ai morsi terribili della fame, saltò in un campo coll’intenzione di cogliere poche ciocche d’uva moscadella. Non l’avesse mai fatto!
+Appena giunto sotto la vite, crac... sentì stringersi le gambe da due ferri taglienti, che gli fecero vedere quante stelle c’erano in cielo.
+Il povero burattino era rimasto preso da una tagliuola appostata là da alcuni contadini per beccarvi alcune grosse faine, che erano il flagello di tutti i pollai del vicinato.
+
+XXI Pinocchio è preso da un contadino, il quale lo costringe a far da can da guardia a un pollaio.
+
+Pinocchio, come potete figurarvelo, si dette a piangere, a strillare, a raccomandarsi: ma erano pianti e grida inutili, perché lì all’intorno non si vedevano case, e dalla strada non passava anima viva.
+Intanto si fece notte.
+Un po’ per lo spasimo della tagliuola, che gli segava gli stinchi, e un po’ per la paura di trovarsi solo e al buio in mezzo a quei campi, il burattino principiava quasi a svenirsi; quando a un tratto vedendosi passare una Lucciola di sul capo, la chiamò e le disse:
+– O Lucciolina, mi faresti la carità di liberarmi da questo supplizio?...
+– Povero figliuolo! – replicò la Lucciola, fermandosi impietosita a guardarlo. – Come mai sei rimasto colle gambe attanagliate fra codesti ferri arrotati?
+– Sono entrato nel campo per cogliere due grappoli di quest’uva moscadella, e...
+– Ma l’uva era tua?
+– No...
+– E allora chi t’ha insegnato a portar via la roba degli altri?...
+– Avevo fame...
+– La fame, ragazzo mio, non è una buona ragione per potere appropriarsi la roba che non è nostra...
+– È vero, è vero! – gridò Pinocchio piangendo, – ma un’altra volta non lo farò più.
+A questo punto il dialogo fu interrotto da un piccolissimo rumore di passi, che si avvicinavano.
+Era il padrone del campo che veniva in punta di piedi a vedere se qualcuna di quelle faine, che mangiavano di nottetempo i polli, fosse rimasta al trabocchetto della tagliuola.
+E la sua maraviglia fu grandissima quando, tirata fuori la lanterna di sotto il pastrano, s’accorse che, invece di una faina, c’era rimasto preso un ragazzo.
+– Ah, ladracchiòlo! – disse il contadino incollerito, – dunque sei tu che mi porti via le galline?
+– Io no, io no! – gridò Pinocchio, singhiozzando. – Io sono entrato nel campo per prendere soltanto due grappoli d’uva!...
+– Chi ruba l’uva è capacissimo di rubare anche i polli. Lascia fare a me, che ti darò una lezione da ricordartene per un pezzo.
+E aperta la tagliuola, afferrò il burattino per la collottola e lo portò di peso fino a casa, come si porterebbe un agnellino di latte.
+Arrivato che fu sull’aia dinanzi alla casa, lo scaraventò in terra: e tenendogli un piede sul collo, gli disse:
+– Oramai è tardi e voglio andare a letto. I nostri conti li aggiusteremo domani. Intanto, siccome oggi mi è morto il cane che mi faceva la guardia di notte, tu prenderai subito il suo posto. Tu mi farai da cane di guardia.
+Detto fatto, gl’infilò al collo un grosso collare tutto coperto di spunzoni di ottone, e glielo strinse in modo da non poterselo levare passandoci la testa dentro. Al collare c’era attaccata una lunga catenella di ferro: e la catenella era fissata nel muro.
+– Se questa notte, – disse il contadino, – cominciasse a piovere, tu puoi andare a cuccia in quel casotto di legno, dove c’è sempre la paglia che ha servito di letto per quattr’anni al mio povero cane. E se per disgrazia venissero i ladri, ricordati di stare a orecchi ritti e di abbaiare.
+Dopo quest’ultimo avvertimento, il contadino entrò in casa chiudendo la porta con tanto di catenaccio: e il povero Pinocchio rimase accovacciato sull’aia, più morto che vivo, a motivo del freddo, della fame e della paura. E di tanto in tanto, cacciandosi rabbiosamente le mani dentro al collare, che gli serrava la gola, diceva piangendo:
+– Mi sta bene!... Pur troppo mi sta bene! Ho voluto fare lo svogliato, il vagabondo... ho voluto dar retta ai cattivi compagni, e per questo la sfortuna mi perseguita sempre. Se fossi stato un ragazzino per bene, come ce n’è tanti, se avessi avuto voglia di studiare e di lavorare, se fossi rimasto in casa col mio povero babbo, a quest’ora non mi troverei qui, in mezzo ai campi, a fare il cane di guardia alla casa d’un contadino. Oh, se potessi rinascere un’altra volta!... Ma oramai è tardi, e ci vuol pazienza!
+Fatto questo piccolo sfogo, che gli venne proprio dal cuore, entrò dentro il casotto e si addormentò.
+
+XXII Pinocchio scuopre i ladri e, in ricompensa di essere stato fedele, vien posto in libertà.
+
+Ed era già più di due ore che dormiva saporitamente; quando verso la mezzanotte fu svegliato da un bisbiglio e da un pissi-pissi di vocine strane, che gli parve di sentire nell’aia. Messa fuori la punta del naso dalla buca del casotto, vide riunite a consiglio quattro bestiuole di pelame scuro, che parevano gatti. Ma non erano gatti: erano faine, animaletti carnivori, ghiottissimi specialmente di uova e di pollastrine giovani. Una di queste faine, staccandosi dalle sue compagne, andò alla buca del casotto e disse sottovoce:
+– Buona sera, Melampo.
+– Io non mi chiamo Melampo, – rispose il burattino.
+– O dunque chi sei?
+– Io sono Pinocchio.
+– E che cosa fai costì?
+– Faccio il cane di guardia.
+– O Melampo dov’è? dov’è il vecchio cane, che stava in questo casotto?
+– È morto questa mattina.
+– Morto? Povera bestia! Era tanto buono!... Ma giudicandoti alla fisonomia, anche te mi sembri un cane di garbo.
+– Domando scusa, io non sono un cane!...
+– O chi sei?
+– Io sono un burattino.
+– E fai da cane di guardia?
+– Purtroppo: per mia punizione!...
+– Ebbene, io ti propongo gli stessi patti, che avevo col defunto Melampo: e sarai contento.
+– E questi patti sarebbero?
+– Noi verremo una volta la settimana, come per il passato, a visitare di notte questo pollaio, e porteremo via otto galline. Di queste galline, sette le mangeremo noi, e una la daremo a te, a condizione, s’intende bene, che tu faccia finta di dormire e non ti venga mai l’estro di abbaiare e di svegliare il contadino.
+– E Melampo faceva proprio così? – domandò Pinocchio.
+– Faceva così, e fra noi e lui siamo andati sempre d’accordo. Dormi dunque tranquillamente, e stai sicuro che prima di partire di qui, ti lasceremo sul casotto una gallina bell’e pelata, per la colazione di domani. Ci siamo intesi bene?
+– Anche troppo bene!... – rispose Pinocchio: e tentennò il capo in un certo modo minaccioso, come se avesse voluto dire: «Fra poco ci riparleremo!».
+Quando le quattro faine si credettero sicure del fatto loro, andarono difilato al pollaio, che rimaneva appunto vicinissimo al casotto del cane, e aperta a furia di denti e di unghioli la porticina di legno, che ne chiudeva l’entratina, vi sgusciarono dentro, una dopo l’altra. Ma non erano ancora finite d’entrare, che sentirono la porticina richiudersi con grandissima violenza.
+Quello che l’aveva richiusa era Pinocchio; il quale, non contento di averla richiusa, vi posò davanti per maggior sicurezza una grossa pietra, a guisa di puntello.
+E poi cominciò ad abbaiare: e, abbaiando proprio come se fosse un cane di guardia, faceva colla voce bu-bu-bu-bu.
+A quell’abbaiata, il contadino saltò dal letto e, preso il fucile e affacciatosi alla finestra, domandò:
+– Che c’è di nuovo?
+– Ci sono i ladri! – rispose Pinocchio.
+– Dove sono?
+– Nel pollaio.
+– Ora scendo subito.
+E infatti, in men che non si dice amen, il contadino scese: entrò di corsa nel pollaio e, dopo avere acchiappate e rinchiuse in un sacco le quattro faine, disse loro con accento di vera contentezza:
+– Alla fine siete cascate nelle mie mani! Potrei punirvi, ma sì vil non sono! Mi contenterò, invece, di portarvi domani all’oste del vicino paese, il quale vi spellerà e vi cucinerà a uso lepre dolce e forte. È un onore che non vi meritate, ma gli uomini generosi come me non badano a queste piccolezze!...
+Quindi, avvicinatosi a Pinocchio, cominciò a fargli molte carezze, e, fra le altre cose, gli domandò:
+– Com’hai fatto a scuoprire il complotto di queste quattro ladroncelle? E dire che Melampo, il mio fido Melampo, non s’era mai accorto di nulla...
+Il burattino, allora, avrebbe potuto raccontare quel che sapeva: avrebbe potuto, cioè, raccontare i patti vergognosi che passavano fra il cane e le faine: ma ricordatosi che il cane era morto, pensò subito dentro di sé: – A che serve accusare i morti?... I morti son morti, e la miglior cosa che si possa fare è quella di lasciarli in pace!...
+– All’arrivo delle faine sull’aia, eri sveglio o dormivi? – continuò a chiedergli il contadino.
+– Dormivo, – rispose Pinocchio, – ma le faine mi hanno svegliato coi loro chiacchiericci, e una è venuta fin qui al casotto per dirmi: «Se prometti di non abbaiare e di non svegliare il padrone, noi ti regaleremo una pollastra bell’e pelata!...». Capite, eh? Avere la sfacciataggine di fare a me una simile proposta! Perché bisogna sapere che io sono un burattino, che avrò tutti i difetti di questo mondo: ma non avrò mai quello di star di balla e di reggere il sacco alla gente disonesta!
+– Bravo ragazzo! – gridò il contadino, battendogli sur una spalla. – Cotesti sentimenti ti fanno onore: e per provarti la mia grande soddisfazione, ti lascio libero fin d’ora di tornare a casa.
+E gli levò il collare da cane.
+
+XXIII Pinocchio piange la morte della bella Bambina dai capelli turchini: poi trova un Colombo che lo porta sulla riva del mare, e lì si getta nell’acqua per andare in aiuto del suo babbo Geppetto.
+
+Appena Pinocchio non sentì più il peso durissimo e umiliante di quel collare intorno al collo, si pose a scappare attraverso i campi, e non si fermò un solo minuto, finché non ebbe raggiunta la strada maestra, che doveva ricondurlo alla Casina della Fata.
+Arrivato sulla strada maestra, si voltò in giù a guardare nella sottoposta pianura, e vide benissimo a occhio nudo il bosco, dove disgraziatamente aveva incontrato la Volpe e il Gatto: vide, fra mezzo agli alberi, inalzarsi la cima di quella Quercia grande, alla quale era stato appeso ciondoloni per il collo: ma guarda di qua, guarda di là, non gli fu possibile di vedere la piccola casa della bella Bambina dai capelli turchini.
+Allora ebbe una specie di tristo presentimento e datosi a correre con quanta forza gli rimaneva nelle gambe, si trovò in pochi minuti sul prato, dove sorgeva una volta la Casina bianca. Ma la Casina bianca non c’era più. C’era, invece, una piccola pietra di marmo sulla quale si leggevano in carattere stampatello queste dolorose parole:
+QUI GIACE
+LA BAMBINA DAI CAPELLI TURCHINI
+MORTA DI DOLORE PER ESSERE STATA ABBANDONATA DAL SUO FRATELLINO PINOCCHIO
+Come rimanesse il burattino, quand’ebbe compitate alla peggio quelle parole, lo lascio pensare a voi. Cadde bocconi a terra e coprendo di mille baci quel marmo mortuario, dette in un grande scoppio di pianto. Pianse tutta la notte, e la mattina dopo, sul far del giorno, piangeva sempre, sebbene negli occhi non avesse più lacrime: e le sue grida e i suoi lamenti erano così strazianti e acuti, che tutte le colline all’intorno ne ripetevano l’eco.
+E piangendo diceva:
+– O Fatina mia, perché sei morta?... perché, invece di te, non sono morto io, che sono tanto cattivo, mentre tu eri tanto buona?... E il mio babbo, dove sarà? O Fatina mia, dimmi dove posso trovarlo, che voglio stare sempre con lui, e non lasciarlo più! più! più!... O Fatina mia, dimmi che non è vero che sei morta!... Se davvero mi vuoi bene... se vuoi bene al tuo fratellino, rivivisci... ritorna viva come prima!... Non ti dispiace a vedermi solo e abbandonato da tutti? Se arrivano gli assassini. mi attaccheranno daccapo al ramo dell’albero... e allora morirò per sempre. Che vuoi che faccia qui, solo in questo mondo? Ora che ho perduto te e il mio babbo, chi mi darà da mangiare? Dove anderò a dormire la notte? Chi mi farà la giacchettina nuova? Oh! sarebbe meglio, cento volte meglio, che morissi anch’io! Sì, voglio morire!... ih! ih! ih!...
+E mentre si disperava a questo modo, fece l’atto di volersi strappare i capelli: ma i suoi capelli, essendo di legno, non poté nemmeno levarsi il gusto di ficcarci dentro le dita.
+Intanto passò su per aria un grosso Colombo, il quale soffermatosi, a ali distese, gli gridò da una grande altezza:
+– Dimmi, bambino, che cosa fai costaggiù?
+– Non lo vedi? piango! – disse Pinocchio alzando il capo verso quella voce e strofinandosi gli occhi colla manica della giacchetta.
+– Dimmi, – soggiunse allora il Colombo – non conosci per caso fra i tuoi compagni, un burattino, che ha nome Pinocchio?
+– Pinocchio?... Hai detto Pinocchio? – ripeté il burattino saltando subito in piedi. – Pinocchio sono io!
+Il Colombo, a questa risposta, si calò velocemente e venne a posarsi a terra. Era più grosso di un tacchino.
+– Conoscerai dunque anche Geppetto? – domandò al burattino.
+– Se lo conosco? È il mio povero babbo! Ti ha forse parlato di me? Mi conduci da lui? Ma è sempre vivo? Rispondimi per carità: è sempre vivo?
+– L’ho lasciato tre giorni fa sulla spiaggia del mare.
+– Che cosa faceva?
+– Si fabbricava da sé una piccola barchetta per traversare l’Oceano. Quel pover’uomo sono più di quattro mesi che gira per il mondo in cerca di te: e non avendoti potuto trovare, ora si è messo in capo di cercarti nei paesi lontani del nuovo mondo.
+– Quanto c’è di qui alla spiaggia? – domandò Pinocchio con ansia affannosa.
+– Più di mille chilometri.
+– Mille chilometri? O Colombo mio, che bella cosa potessi avere le tue ali!...
+– Se vuoi venire, ti ci porto io.
+– Come?
+– A cavallo sulla mia groppa. Sei peso di molto?...
+– Peso? tutt’altro! Son leggiero come una foglia.
+E lì, senza stare a dir altro, Pinocchio saltò sulla groppa al Colombo e messa una gamba di qua e l’altra di là, come fanno i cavallerizzi, gridò tutto contento: – Galoppa, galoppa, cavallino, ché mi preme di arrivar presto!...
+Il Colombo prese l’aire e in pochi minuti arrivò col volo tanto in alto, che toccava quasi le nuvole. Giunto a quell’altezza straordinaria, il burattino ebbe la curiosità di voltarsi in giù a guardare: e fu preso da tanta paura e da tali giracapi che, per evitare il pericolo di venir disotto, si avviticchiò colle braccia, stretto stretto, al collo della sua piumata cavalcatura.
+Volarono tutto il giorno. Sul far della sera, il Colombo disse:
+– Ho una gran sete!
+– E io una gran fame! – soggiunse Pinocchio.
+– Fermiamoci a questa colombaia pochi minuti; e dopo ci rimetteremo in viaggio, per essere domattina all’alba sulla spiaggia del mare.
+Entrarono in una colombaia deserta, dove c’era soltanto una catinella piena d’acqua e un cestino ricolmo di veccie.
+Il burattino, in tempo di vita sua, non aveva mai potuto patire le veccie: a sentir lui, gli facevano nausea, gli rivoltavano lo stomaco: ma quella sera ne mangiò a strippapelle, e quando l’ebbe quasi finite, si voltò al Colombo e gli disse:
+– Non avrei mai creduto che le veccie fossero così buone!
+– Bisogna persuadersi, ragazzo mio, – replicò il Colombo, – che quando la fame dice davvero e non c’è altro da mangiare, anche le veccie diventano squisite! La fame non ha capricci né ghiottonerie!
+Fatto alla svelta un piccolo spuntino, si riposero in viaggio, e via! La mattina dopo arrivarono sulla spiaggia del mare.
+Il Colombo posò a terra Pinocchio, e non volendo nemmeno la seccatura di sentirsi ringraziare per aver fatto una buona azione, riprese subito il volo e sparì.
+La spiaggia era piena di gente che urlava e gesticolava guardando il mare.
+– Che cos’è accaduto? – domandò Pinocchio a una vecchina.
+– Gli è accaduto che un povero babbo, avendo perduto il figliolo, gli è voluto entrare in una barchetta per andare a cercarlo di là dal mare; e il mare oggi è molto cattivo e la barchetta sta per andare sott’acqua...
+– Dov’è la barchetta?
+– Eccola laggiù, diritta al mio dito, – disse la vecchia, accennando una piccola barca che, veduta in quella distanza, pareva un guscio di noce con dentro un omino piccino piccino.
+Pinocchio appuntò gli occhi da quella parte, e dopo aver guardato attentamente, cacciò un urlo acutissimo gridando:
+– Gli è il mi’ babbo! gli è il mi’ babbo!
+Intanto la barchetta, sbattuta dall’infuriare dell’onde, ora spariva fra i grossi cavalloni, ora tornava a galleggiare: e Pinocchio ritto sulla punta di un alto scoglio non finiva più dal chiamare il suo babbo per nome e dal fargli molti segnali colle mani e col moccichino da naso e perfino col berretto che aveva in capo.
+E parve che Geppetto, sebbene fosse molto lontano dalla spiaggia, riconoscesse il figliuolo, perché si levò il berretto anche lui e lo salutò e, a furia di gesti, gli fece capire che sarebbe tornato volentieri indietro, ma il mare era tanto grosso, che gl’impediva di lavorare col remo e di potersi avvicinare alla terra.
+Tutt’a un tratto, venne una terribile ondata, e la barca sparì.
+Aspettarono che la barca tornasse a galla: ma la barca non si vide più tornare.
+– Pover’omo! – dissero allora i pescatori, che erano raccolti sulla spiaggia: e brontolando sottovoce una preghiera si mossero per tornarsene alle loro case.
+Quand’ecco che udirono un urlo disperato, e, voltandosi indietro, videro un ragazzetto che, di vetta a uno scoglio, si gettava in mare gridando:
+– Voglio salvare il mio babbo!
+Pinocchio, essendo tutto di legno, galleggiava facilmente e nuotava come un pesce. Ora si vedeva sparire sott’acqua, portato dall’impeto dei flutti, ora riappariva fuori con una gamba o con un braccio, a grandissima distanza dalla terra. Alla fine lo persero d’occhio e non lo videro più.
+– Povero ragazzo! - dissero allora i pescatori, che erano raccolti sulla spiaggia: e brontolando sottovoce una preghiera tornarono alle loro case.
+
+XXIV Pinocchio arriva all’isola delle Api industriose e ritrova la Fata.
+
+Pinocchio, animato dalla speranza di arrivare in tempo a dare aiuto al suo povero babbo, nuotò tutta quanta la notte.
+E che orribile nottata fu quella! Diluviò, grandinò, tuonò spaventosamente, e con certi lampi che pareva di giorno.
+Sul far del mattino, gli riuscì di vedere poco distante una lunga striscia di terra. Era un’isola in mezzo al mare.
+Allora fece di tutto per arrivare a quella spiaggia: ma inutilmente. Le onde, rincorrendosi e accavallandosi, se lo abballottavano fra di loro, come se fosse stato un fuscello o un filo di paglia. Alla fine, e per sua buona fortuna, venne un’ondata tanto prepotente e impetuosa, che lo scaraventò di peso sulla rena del lido.
+Il colpo fu così forte che, battendo in terra, gli crocchiarono tutte le costole e tutte le congiunture: ma si consolò subito col dire:
+– Anche per questa volta l’ho proprio scampata bella!
+Intanto a poco a poco il cielo si rasserenò; il sole apparve fuori in tutto il suo splendore e il mare diventò tranquillissimo e buono come un olio.
+Allora il burattino distese i suoi panni al sole per rasciugarli e si pose a guardare di qua e di là se per caso avesse potuto scorgere su quella immensa spianata d’acqua una piccola barchetta con un omino dentro. Ma dopo aver guardato ben bene, non vide altro dinanzi a sé che cielo, mare e qualche vela di bastimento, ma così lontana, che pareva una mosca.
+– Sapessi almeno come si chiama quest’isola! – andava dicendo. – Sapessi almeno se quest’isola è abitata da gente di garbo, voglio dire da gente che non abbia il vizio di attaccare i ragazzi ai rami degli alberi; ma a chi mai posso domandarlo? A chi, se non c’è nessuno?...
+Quest’idea di trovarsi solo, solo, solo in mezzo a quel gran paese disabitato, gli messe addosso tanta malinconia, che stava lì lì per piangere; quando tutt’a un tratto vide passare, a poca distanza dalla riva, un grosso pesce, che se ne andava tranquillamente per i fatti suoi, con tutta la testa fuori dell’acqua.
+Non sapendo come chiamarlo per nome, il burattino gli gridò a voce alta, per farsi sentire:
+– Ehi, signor pesce, che mi permetterebbe una parola?
+– Anche due, – rispose il pesce, il quale era un Delfino così garbato, come se ne trovano pochi in tutti i mari del mondo.
+– Mi farebbe il piacere di dirmi se in quest’isola vi sono dei paesi dove si possa mangiare, senza pericolo d’esser mangiati?
+– Ve ne sono sicuro, – rispose il Delfino. – Anzi, ne troverai uno poco lontano di qui.
+– E che strada si fa per andarvi?
+– Devi prendere quella viottola là, a mancina, e camminare sempre diritto al naso. Non puoi sbagliare.
+– Mi dica un’altra cosa. Lei che passeggia tutto il giorno e tutta la notte per il mare, non avrebbe incontrato per caso una piccola barchettina con dentro il mi’ babbo?
+– E chi è il tuo babbo?
+– Gli è il babbo più buono del mondo, come io sono il figliuolo più cattivo che si possa dare.
+– Colla burrasca che ha fatto questa notte, – rispose il delfino, – la barchettina sarà andata sott’acqua.
+– E il mio babbo?
+– A quest’ora l’avrà inghiottito il terribile Pesce-cane, che da qualche giorno è venuto a spargere lo sterminio e la desolazione nelle nostre acque.
+– Che è grosso di molto questo Pesce-cane? – domandò Pinocchio, che digià cominciava a tremare dalla paura.
+– Se gli è grosso!... – replicò il Delfino. – Perché tu possa fartene un’idea, ti dirò che è più grosso di un casamento di cinque piani, ed ha una boccaccia così larga e profonda, che ci passerebbe comodamente tutto il treno della strada ferrata colla macchina accesa.
+– Mamma mia! – gridò spaventato il burattino: e rivestitosi in fretta e furia, si voltò al delfino e gli disse: – Arrivedella, signor pesce: scusi tanto l’incomodo e mille grazie della sua garbatezza.
+Detto ciò, prese subito la viottola e cominciò a camminare di un passo svelto; tanto svelto, che pareva quasi che corresse. E a ogni più piccolo rumore che sentiva, si voltava subito a guardare indietro, per la paura di vedersi inseguire da quel terribile pesce-cane grosso come una casa di cinque piani e con un treno della strada ferrata in bocca.
+Dopo mezz’ora di strada, arrivò a un piccolo paese detto «Il paese delle Api industriose». Le strade formicolavano di persone che correvano di qua e di là per le loro faccende: tutti lavoravano, tutti avevano qualche cosa da fare. Non si trovava un ozioso o un vagabondo nemmeno a cercarlo col lumicino.
+– Ho capito, – disse subito quello svogliato di Pinocchio, – questo paese non è fatto per me! Io non son nato per lavorare!
+Intanto la fame lo tormentava, perché erano oramai passate ventiquattr’ore che non aveva mangiato più nulla; nemmeno una pietanza di veccie.
+Che fare?
+Non gli restavano che due modi per potersi sdigiunare: o chiedere un po’ di lavoro, o chiedere in elemosina un soldo o un boccone di pane.
+A chiedere l’elemosina si vergognava: perché il suo babbo gli aveva predicato sempre che l’elemosina hanno il diritto di chiederla solamente i vecchi e gl’infermi. I veri poveri, in questo mondo, meritevoli di assistenza e di compassione, non sono altro che quelli che, per ragione d’età o di malattia, si trovano condannati a non potersi più guadagnare il pane col lavoro delle proprie mani. Tutti gli altri hanno l’obbligo di lavorare: e se non lavorano e patiscono la fame, tanto peggio per loro.
+In quel frattempo, passò per la strada un uomo tutto sudato e trafelato, il quale da sé tirava con gran fatica due carretti carichi di carbone.
+Pinocchio, giudicandolo dalla fisonomia per un buon uomo, gli si accostò e, abbassando gli occhi dalla vergogna, gli disse sottovoce:
+– Mi fareste la carità di darmi un soldo, perché mi sento morir dalla fame?
+– Non un soldo solo, – rispose il carbonaio, – ma te ne do quattro, a patto che tu m’aiuti a tirare fino a casa questi due carretti di carbone.
+– Mi meraviglio! – rispose il burattino quasi offeso, – per vostra regola io non ho fatto mai il somaro: io non ho mai tirato il carretto!...
+– Meglio per te! – rispose il carbonaio. – Allora, ragazzo mio, se ti senti davvero morir dalla fame, mangia due belle fette della tua superbia e bada di non prendere un’indigestione.
+Dopo pochi minuti passò per la via un muratore, che portava sulle spalle un corbello di calcina.
+– Fareste, galantuomo, la carità d’un soldo a un povero ragazzo, che sbadiglia dall’appetito?
+– Volentieri; vieni con me a portar calcina, – rispose il muratore, – e invece d’un soldo, te ne darò cinque.
+– Ma la calcina è pesa, – replicò Pinocchio, – e io non voglio durar fatica.
+– Se non vuoi durar fatica, allora, ragazzo mio, – divertiti a sbadigliare, e buon pro ti faccia.
+In men di mezz’ora passarono altre venti persone, e a tutte Pinocchio chiese un po’ d’elemosina, ma tutte gli risposero:
+– Non ti vergogni? Invece di fare il bighellone per la strada, và piuttosto a cercarti un po’ di lavoro, e impara a guadagnarti il pane!
+Finalmente passò una buona donnina che portava due brocche d’acqua.
+– Vi contentate, buona donna, che io beva una sorsata d’acqua alla vostra brocca? – disse Pinocchio, che bruciava dall’arsione della sete.
+– Bevi pure, ragazzo mio! – disse la donnina, posando le due brocche in terra.
+Quando Pinocchio ebbe bevuto come una spugna, borbottò a mezza voce, asciugandosi la bocca:
+– La sete me la sono levata! Così mi potessi levar la fame!...
+La buona donnina, sentendo queste parole, soggiunse subito:
+– Se mi aiuti a portare a casa una di queste brocche d’acqua, ti darò un bel pezzo di pane.
+Pinocchio guardò la brocca, e non rispose né sì né no.
+– E insieme col pane ti darò un bel piatto di cavolfiore condito coll’olio e coll’aceto, – soggiunse la buona donna.
+Pinocchio dette un’altra occhiata alla brocca, e non rispose né sì né no.
+– E dopo il cavolfiore ti darò un bel confetto ripieno di rosolio.
+Alle seduzioni di quest’ultima ghiottoneria, Pinocchio non seppe più resistere e, fatto un animo risoluto, disse:
+– Pazienza! Vi porterò la brocca fino a casa!
+La brocca era molto pesa, e il burattino, non avendo forza da portarla colle mani, si rassegnò a portarla in capo.
+Arrivati a casa, la buona donnina fece sedere Pinocchio a una piccola tavola apparecchiata e gli pose davanti il pane, il cavolfiore condito e il confetto.
+Pinocchio non mangiò, ma diluviò. Il suo stomaco pareva un quartiere rimasto vuoto e disabitato da cinque mesi.
+Calmati a poco a poco i morsi rabbiosi della fame, allora alzò il capo per ringraziare la sua benefattrice; ma non aveva ancora finito di fissarla in volto, che cacciò un lunghissimo ohhh!... di maraviglia e rimase là incantato, cogli occhi spalancati, colla forchetta per aria e colla bocca piena di pane e di cavolfiore.
+– Che cos’è mai tutta questa maraviglia? – disse ridendo la buona donna.
+– Egli è... – rispose balbettando Pinocchio, – egli è... egli è... che voi somigliate... voi mi rammentate... sì, sì, sì, la stessa voce... gli stessi occhi.. gli stessi capelli... sì, sì, sì... anche voi avete i capelli turchini... come lei!... O Fatina mia!... O Fatina mia!... ditemi che siete voi, proprio voi!... Non mi fate più piangere! Se sapeste!... Ho pianto tanto, ho patito tanto..
+E nel dir così, Pinocchio piangeva dirottamente, e gettandosi ginocchioni per terra, abbracciava i ginocchi di quella donnina misteriosa.
+
+XXV Pinocchio promette alla Fata di essere buono e di studiare, perché è stufo di fare il burattino e vuol diventare un bravo ragazzo.
+
+In sulle prime la buona donnina cominciò col dire che lei non era la piccola Fata dai capelli turchini: ma poi, vedendosi oramai scoperta e non volendo mandare più a lungo la commedia, fini col farsi riconoscere, e disse a Pinocchio:
+– Birba d’un burattino! Come mai ti sei accorto che ero io?
+– Gli è il gran bene che vi voglio quello che me l’ha detto.
+– Ti ricordi? Mi lasciasti bambina e ora mi ritrovi donna; tanto donna, che potrei quasi farti da mamma.
+– L’ho caro dimolto, perché così, invece di sorellina, vi chiamerò la mia mamma. Gli è tanto tempo che mi struggo di avere una mamma come tutti gli altri ragazzi!... Ma come avete fatto a crescere così presto?
+– È un segreto.
+– Insegnatemelo: vorrei crescere un poco anch’io. Non lo vedete? Sono sempre rimasto alto come un soldo di cacio.
+– Ma tu non puoi crescere, – replicò la Fata.
+– Perché?
+– Perché i burattini non crescono mai. Nascono burattini, vivono burattini e muoiono burattini.
+– Oh! sono stufo di far sempre il burattino! – gridò Pinocchio, dandosi uno scappellotto. – Sarebbe ora che diventassi anch’io un uomo come tutti gli altri.
+– E lo diventerai, se saprai meritartelo...
+– Davvero? E che posso fare per meritarmelo?
+– Una cosa facilissima: avvezzarti a essere un ragazzino perbene.
+– O che forse non sono?
+– Tutt’altro! I ragazzi perbene sono ubbidienti, e tu invece...
+– E io non ubbidisco mai.
+– I ragazzi perbene prendono amore allo studio e al lavoro, e tu...
+– E io, invece, faccio il bighellone e il vagabondo tutto l’anno.
+– I ragazzi perbene dicono sempre la verità...
+– E io sempre le bugie.
+– I ragazzi perbene vanno volentieri alla scuola...
+– E a me la scuola mi fa venire i dolori di corpo. Ma da oggi in poi voglio mutar vita.
+– Me lo prometti?
+– Lo prometto. Voglio diventare un ragazzino perbene e voglio essere la consolazione del mio babbo... Dove sarà il mio povero babbo a quest’ora?
+– Non lo so.
+– Avrò mai la fortuna di poterlo rivedere e abbracciare?
+– Credo di sì: anzi ne sono sicura.
+A questa risposta fu tale e tanta la contentezza di Pinocchio, che prese le mani alla Fata e cominciò a baciargliele con tanta foga, che pareva quasi fuori di sé. Poi, alzando il viso e guardandola amorosamente, le domandò:
+– Dimmi, mammina: dunque non è vero che tu sia morta?
+– Par di no, – rispose sorridendo la Fata.
+– Se tu sapessi, che dolore e che serratura alla gola che provai, quando lessi qui giace...
+– Lo so: ed è per questo che ti ho perdonato. La sincerità del tuo dolore mi fece conoscere che tu avevi il cuore buono: e dai ragazzi buoni di cuore, anche se sono un po’ monelli e avvezzati male, c’è sempre da sperar qualcosa: ossia, c’è sempre da sperare che rientrino sulla vera strada. Ecco perché son venuta a cercarti fin qui. Io sarò la tua mamma...
+– Oh! che bella cosa! – gridò Pinocchio saltando dall’allegrezza.
+– Tu mi ubbidirai e farai sempre quello che ti dirò io.
+– Volentieri, volentieri, volentieri!
+– Fino da domani, – soggiunse la Fata, – tu comincerai coll’andare a scuola.
+Pinocchio diventò subito un po’ meno allegro.
+– Poi sceglierai a tuo piacere un’arte o un mestiere...
+Pinocchio diventò serio.
+– Che cosa brontoli fra i denti? – domandò la Fata con accento risentito.
+– Dicevo... – mugolò il burattino a mezza voce, – che oramai per andare a scuola mi pare un po’ tardi...
+– Nossignore. Tieni a mente che per istruirsi e per imparare non è mai tardi.
+– Ma io non voglio fare né arti né mestieri...
+– Perché?
+– Perché a lavorare mi par fatica.
+– Ragazzo mio, – disse la Fata, – quelli che dicono così, finiscono quasi sempre o in carcere o all’ospedale. L’uomo, per tua regola, nasca ricco o povero, è obbligato in questo mondo a far qualcosa, a occuparsi, a lavorare. Guai a lasciarsi prendere dall’ozio! L’ozio è una bruttissima malattia, e bisogna guarirla subito, fin da ragazzi: se no, quando siamo grandi, non si guarisce più.
+Queste parole toccarono l’animo di Pinocchio, il quale rialzando vivacemente la testa disse alla Fata:
+– Io studierò, io lavorerò, io farò tutto quello che mi dirai, perché, insomma, la vita del burattino mi è venuta a noia, e voglio diventare un ragazzo a tutti i costi. Me l’hai promesso, non è vero?
+– Te l’ho promesso, e ora dipende da te.
+
+XXVI Pinocchio va co’ suoi compagni di scuola in riva al mare, per vedere il terribile Pescecane.
+
+Il giorno dopo Pinocchio andò alla scuola comunale.
+Figuratevi quelle birbe di ragazzi, quando videro entrare nella loro scuola un burattino! Fu una risata, che non finiva più. Chi gli faceva uno scherzo, chi un altro; chi gli levava il berretto di mano; chi gli tirava il giubbettino di dietro; chi si provava a fargli coll’inchiostro due grandi baffi sotto il naso; e chi si attentava perfino a legargli dei fili ai piedi e alle mani per farlo ballare.
+Per un poco Pinocchio usò disinvoltura e tirò via; ma finalmente, sentendosi scappar la pazienza, si rivolse a quelli, che più lo tafanavano e si pigliavano gioco di lui, e disse loro a muso duro:
+– Badate, ragazzi: io non son venuto qui per essere il vostro buffone. Io rispetto gli altri e voglio essere rispettato.
+– Bravo berlicche! Hai parlato come un libro stampato! – urlarono quei monelli, buttandosi via dalle matte risate: e uno di loro, più impertinente degli altri allungò la mano coll’idea di prendere il burattino per la punta del naso.
+Ma non fece a tempo: perché Pinocchio stese la gamba sotto la tavola e gli consegnò una pedata negli stinchi.
+– Ohi! che piedi duri! – urlò il ragazzo stropicciandosi il livido che gli aveva fatto il burattino.
+– E che gomiti!... anche più duri dei piedi! – disse un altro che, per i suoi scherzi sguaiati, s’era beccata una gomitata nello stomaco.
+Fatto sta che dopo quel calcio e quella gomitata Pinocchio acquistò subito la stima e la simpatia di tutti i ragazzi di scuola: e tutti gli facevano mille carezze e tutti gli volevano un bene dell’anima.
+E anche il maestro se ne lodava, perché lo vedeva attento, studioso, intelligente, sempre il primo a entrare nella scuola, sempre l’ultimo a rizzarsi in piedi, a scuola finita.
+Il solo difetto che avesse era quello di bazzicare troppi compagni: e fra questi, c’erano molti monelli conosciutissimi per la loro poca voglia di studiare e di farsi onore.
+Il maestro lo avvertiva tutti i giorni, e anche la buona Fata non mancava di dirgli e di ripetergli più volte:
+– Bada, Pinocchio! Quei tuoi compagnacci di scuola finiranno prima o poi col farti perdere l’amore allo studio e, forse forse, col tirarti addosso qualche grossa disgrazia.
+– Non c’è pericolo! – rispondeva il burattino, facendo una spallucciata e toccandosi coll’indice in mezzo alla fronte, come per dire: «C’è tanto giudizio qui dentro!».
+Ora avvenne che un bel giorno, mentre camminava verso scuola, incontrò un branco dei soliti compagni, che andandogli incontro, gli dissero:
+– Sai la gran notizia?
+– No.
+– Qui nel mare vicino è arrivato un Pesce-cane, grosso come una montagna.
+– Davvero?... Che sia quel medesimo Pesce-cane di quando affogò il mio povero babbo?
+– Noi andiamo alla spiaggia per vederlo. Vieni anche tu?
+– Io, no: voglio andare a scuola.
+– Che t’importa della scuola? Alla scuola ci anderemo domani. Con una lezione di più o con una di meno, si rimane sempre gli stessi somari.
+– E il maestro che dirà?
+– Il maestro si lascia dire. È pagato apposta per brontolare tutto il giorno.
+– E la mia mamma?...
+– Le mamme non sanno mai nulla, – risposero quei malanni.
+– Sapete che cosa farò? – disse Pinocchio. – Il Pesce-cane voglio vederlo per certe mie ragioni... ma anderò a vederlo dopo la scuola.
+– Povero giucco! – ribatté uno del branco. – Che credi che un pesce di quella grossezza voglia star lì a fare il comodo tuo? Appena s’è annoiato, piglia il dirizzone per un’altra parte, e allora chi s’è visto s’è visto.
+– Quanto tempo ci vuole di qui alla spiaggia? – domandò il burattino.
+– Fra un’ora, siamo bell’e andati e tornati.
+– Dunque, via! e chi più corre, è più bravo! – gridò Pinocchio.
+Dato così il segnale della partenza, quel branco di monelli, coi loro libri e i loro quaderni sotto il braccio, si messero a correre attraverso ai campi; e Pinocchio era sempre avanti a tutti: pareva che avesse le ali ai piedi.
+Di tanto in tanto, voltandosi indietro, canzonava i suoi compagni rimasti a una bella distanza, e nel vederli, ansanti, trafelati, polverosi e con tanto di lingua fuori, se la rideva proprio di cuore. Lo sciagurato in quel momento non sapeva a quali paure e a quali orribili disgrazie andava incontro!...
+
+XXVII Gran combattimento fra Pinocchio e i suoi compagni: uno de’ quali essendo rimasto ferito, Pinocchio viene arrestato dai carabinieri.
+
+Giunto che fu sulla spiaggia, Pinocchio dette subito una grande occhiata sul mare; ma non vide nessun Pesce-cane.
+Il mare era tutto liscio come un gran cristallo da specchio.
+– O il Pesce-cane dov’è? – domandò, voltandosi ai compagni.
+– Sarà andato a far colazione, – rispose uno di loro, ridendo.
+– O si sarà buttato sul letto per far un sonnellino, – soggiunse un altro, ridendo più forte che mai.
+Da quelle risposte sconclusionate e da quelle risatacce grulle, Pinocchio capì che i suoi compagni gli avevano fatto una brutta celia, dandogli ad intendere una cosa che non era vera; e pigliandosela a male, disse a loro con voce di bizza:
+– E ora? Che sugo ci avete trovato a darmi ad intendere la storiella del Pesce-cane?
+– Il sugo c’è sicuro!... – risposero in coro quei monelli.
+– E sarebbe?...
+– Quello di farti perdere la scuola e di farti venire con noi. Non ti vergogni a mostrarti tutti i giorni così preciso e così diligente alle lezioni? Non ti vergogni a studiar tanto, come fai?
+– E se io studio, che cosa ve ne importa?
+– A noi ce ne importa moltissimo perché ci costringi a fare una brutta figura col maestro...
+– Perché?
+– Perché gli scolari che studiano fanno sempre scomparire quelli, come noi, che non hanno voglia di studiare. E noi non vogliamo scomparire! Anche noi abbiamo il nostro amor proprio!...
+– E allora che cosa devo fare per contentarvi?
+– Devi prendere a noia, anche tu, la scuola, la lezione e il maestro, che sono i nostri tre grandi nemici.
+– E se io volessi seguitare a studiare?
+– Noi non ti guarderemo più in faccia, e alla prima occasione ce la pagherai!...
+– In verità mi fate quasi ridere, – disse il burattino con una scrollatina di capo.
+– Ehi, Pinocchio! – gridò allora il più grande di quei ragazzi, andandogli sul viso. – Non venir qui a fare lo smargiasso: non venir qui a far tanto il galletto!... Perché se tu non hai paura di noi, noi non abbiamo paura di te! Ricordati che tu sei solo e noi siamo in sette.
+– Sette come i peccati mortali, – disse Pinocchio con una gran risata.
+– Avete sentito? Ci ha insultati tutti! Ci ha chiamati col nome di peccati mortali!...
+– Pinocchio! chiedici scusa dell’offesa... se no, guai a te!...
+– Cucù! – fece il burattino, battendosi coll’indice sulla punta del naso, in segno di canzonatura.
+– Pinocchio! la finisce male!...
+– Cucù!
+– Ne toccherai quanto un somaro!...
+– Cucù!
+– Ritornerai a casa col naso rotto!...
+– Cucù!
+– Ora il cucù te lo darò io! – gridò il più ardito di quei monelli. – Prendi intanto quest’acconto e serbalo per la cena di stasera.
+E nel dir così gli appiccicò un pugno sul capo.
+Ma fu, come si suol dire, botta e risposta; perché il burattino, come c’era da aspettarselo, rispose con un altro pugno: e lì, da un momento all’altro, il combattimento diventò generale e accanito.
+Pinocchio, sebbene fosse solo, si difendeva come un eroe. Con quei suoi piedi di legno durissimo lavorava così bene, da tener sempre i suoi nemici a rispettosa distanza. Dove i suoi piedi potevano arrivare e toccare, ci lasciavano sempre un livido per ricordo.
+Allora i ragazzi, indispettiti di non potersi misurare col burattino a corpo a corpo, pensarono bene di metter mano ai proiettili, e sciolti i fagotti de’ loro libri di scuola, cominciarono a scagliare contro di lui i Sillabari, le Grammatiche, i Giannettini, i Minuzzoli, i Racconti del Thouar, il Pulcino della Baccini e altri libri scolastici: ma il burattino, che era d’occhio svelto e ammalizzito, faceva sempre civetta a tempo, sicché i volumi, passandogli di sopra al capo, andavano tutti a cascare nel mare.
+Figuratevi i pesci! I pesci, credendo che quei libri fossero roba da mangiare, correvano a frotte a fior d’acqua; ma dopo avere abboccata qualche pagina o qualche frontespizio, la risputavano subito facendo con la bocca una certa smorfia, che pareva volesse dire: «Non è roba per noi: noi siamo avvezzi a cibarci molto meglio!»
+Intanto il combattimento s’inferociva sempre più, quand’ecco che un grosso Granchio, che era uscito fuori dell’acqua e s’era adagio adagio arrampicato fin sulla spiaggia, gridò con una vociaccia di trombone infreddato:
+– Smettetela, birichini che non siete altro! Queste guerre manesche fra ragazzi e ragazzi raramente vanno a finir bene. Qualche disgrazia accade sempre!...
+Povero Granchio! Fu lo stesso che avesse predicato al vento. Anzi quella birba di Pinocchio, voltandosi indietro a guardarlo in cagnesco, gli disse sgarbatamente:
+– Chétati, Granchio dell’uggia!... Faresti meglio a succiare due pasticche di lichene per guarire da codesta infreddatura di gola. Vai piuttosto a letto e cerca di sudare!
+In quel frattempo i ragazzi, che avevano finito oramai di tirare tutti i loro libri, occhiarono lì a poca distanza il fagotto dei libri del burattino, e se ne impadronirono in men che non si dice.
+Fra questi libri, v’era un volume rilegato in cartoncino grosso, colla costola e colle punte di cartapecora. Era un Trattato di Aritmetica. Vi lascio immaginare se era peso dimolto!
+Uno di quei monelli agguantò quel volume e, presa di mira la testa di Pinocchio, lo scagliò con quanta forza aveva nel braccio: ma invece di cogliere il burattino, colse nella testa uno dei compagni; il quale diventò bianco come un panno lavato, e non disse altro che queste parole:
+– O mamma mia, aiutatemi... perché muoio!
+Poi cadde disteso sulla rena del lido.
+Alla vista di quel morticino, i ragazzi spaventati si dettero a scappare a gambe e in pochi minuti non si videro più.
+Ma Pinocchio rimase lì, e sebbene per il dolore e per lo spavento, anche lui fosse più morto che vivo, nondimeno corse a inzuppare il suo fazzoletto nell’acqua del mare e si pose a bagnare la tempia del suo povero compagno di scuola. E intanto piangendo dirottamente e disperandosi, lo chiamava per nome e gli diceva:
+– Eugenio!... povero Eugenio mio!... apri gli occhi, e guardami!... Perché non mi rispondi? Non sono stato io, sai, che ti ho fatto tanto male! Credilo, non sono stato io!... Apri gli occhi, Eugenio... Se tieni gli occhi chiusi, mi farai morire anche me... O Dio mio! come farò ora a tornare a casa?... Con che coraggio potrò presentarmi alla mia buona mamma? Che sarà di me?... Dove fuggirò?... Dove andrò a nascondermi?... Oh! quant’era meglio, mille volte meglio che fossi andato a scuola!... Perché ho dato retta a questi compagni, che sono la mia dannazione?... E il maestro me l’aveva detto!... e la mia mamma me lo aveva ripetuto: «Guàrdati dai cattivi compagni!». Ma io sono un testardo... un caparbiaccio... lascio dir tutti, e poi fo sempre a modo mio!... E dopo mi tocca a scontarle... E così, da che sono al mondo, non ho mai avuto un quarto d’ora di bene. Dio mio! Che sarà di me, che sarà di me, che sarà di me?...
+E Pinocchio continuava a piangere, e berciare, a darsi pugni nel capo e a chiamar per nome il povero Eugenio: quando sentì a un tratto un rumore sordo di passi che si avvicinavano.
+Si voltò: erano due carabinieri
+– Che cosa fai così sdraiato per terra? – domandarono a Pinocchio.
+– Assisto questo mio compagno di scuola.
+– Che gli è venuto male?
+– Par di sì!..
+– Altro che male! – disse uno dei carabinieri, chinandosi e osservando Eugenio da vicino. – Questo ragazzo è stato ferito in una tempia: chi è che l’ha ferito?
+– Io no, – balbettò il burattino che non aveva più fiato in corpo.
+– Se non sei stato tu, chi è stato dunque che l’ha ferito?
+– Io no, – ripeté Pinocchio.
+– E con che cosa è stato ferito?
+– Con questo libro. – E il burattino raccattò di terra il Trattato di Aritmetica, rilegato in cartone e cartapecora, per mostrarlo al carabiniere.
+– E questo libro di chi è?
+– Mio.
+– Basta così: non occorre altro. Rìzzati subito e vieni via con noi.
+– Ma io...
+– Via con noi!
+– Ma io sono innocente...
+– Via con noi!
+Prima di partire, i carabinieri chiamarono alcuni pescatori, che in quel momento passavano per l’appunto colla loro barca vicino alla spiaggia, e dissero loro:
+– Vi affidiamo questo ragazzetto ferito nel capo. Portatelo a casa vostra e assistetelo. Domani torneremo a vederlo.
+Quindi si volsero a Pinocchio, e dopo averlo messo in mezzo a loro due, gl’intimarono con accento soldatesco:
+– Avanti! e cammina spedito! se no, peggio per te!
+Senza farselo ripetere, il burattino cominciò a camminare per quella viottola, che conduceva al paese. Ma il povero diavolo non sapeva più nemmeno lui in che mondo si fosse. Gli pareva di sognare, e che brutto sogno! Era fuori di sé. I suoi occhi vedevano tutto doppio: le gambe gli tremavano: la lingua gli era rimasta attaccata al palato e non poteva più spiccicare una sola parola. Eppure, in mezzo a quella specie di stupidità e di rintontimento, una spina acutissima gli bucava il cuore: il pensiero, cioè, di dover passare sotto le finestre di casa della sua buona Fata, in mezzo ai carabinieri. Avrebbe preferito piuttosto di morire.
+Erano già arrivati e stavano per entrare in paese, quando una folata di vento strapazzone levò di testa a Pinocchio il berretto, portandoglielo lontano una decina di passi.
+– Si contentano, – disse il burattino ai carabinieri, – che vada a riprendere il mio berretto?
+– Vai pure: ma facciamo una cosa lesta.
+Il burattino andò, raccattò il berretto... ma invece di metterselo in capo, se lo mise in bocca fra i denti, e poi cominciò a correre di gran carriera verso la spiaggia del mare. Andava via come una palla di fucile.
+I carabinieri, giudicando che fosse difficile raggiungerlo, gli aizzarono dietro un grosso cane mastino, che aveva guadagnato il primo premio in tutte le corse dei cani. Pinocchio correva, e il cane correva più di lui: per cui tutta la gente si affacciava alle finestre e si affollava in mezzo alla strada, ansiosa di veder la fine di questo palio feroce.
+Ma non poté levarsi questa voglia, perché il cane mastino e Pinocchio sollevarono lungo la strada un tal polverone, che dopo pochi minuti non fu più possibile di veder nulla.
+
+XXVIII Pinocchio corre pericolo di essere fritto in padella come un pesce.
+
+Durante quella corsa disperata, vi fu un momento terribile, un momento in cui Pinocchio si credé perduto: perché bisogna sapere che Alidoro (era questo il nome del can-mastino) a furia di correre e correre, l’aveva quasi raggiunto.
+Basti dire che il burattino sentiva dietro di sé, alla distanza d’un palmo, l’ansare affannoso di quella bestiaccia e ne sentiva perfino la vampa calda delle fiatate.
+Per buona fortuna la spiaggia era oramai vicina e il mare si vedeva lì a pochi passi.
+Appena fu sulla spiaggia, il burattino spiccò un bellissimo salto, come avrebbe potuto fare un ranocchio, e andò a cascare in mezzo all’acqua. Alidoro invece voleva fermarsi; ma trasportato dall’impeto della corsa, entrò nell’acqua anche lui. E quel disgraziato non sapeva nuotare; per cui cominciò subito ad annaspare colle zampe per reggersi a galla: ma più annaspava e più andava col capo sott’acqua.
+Quando torno a rimettere il capo fuori, il povero cane aveva gli occhi impauriti e stralunati, e, abbaiando, gridava.
+– Affogo! Affogo!
+– Crepa! – gli rispose Pinocchio da lontano, il quale si vedeva oramai sicuro da ogni pericolo.
+– Aiutami, Pinocchio mio!... salvami dalla morte!...
+A quelle grida strazianti, il burattino, che in fondo aveva un cuore eccellente, si mosse a compassione, e voltosi al cane gli disse:
+– Ma se io ti aiuto a salvarti, mi prometti di non darmi più noia e di non corrermi dietro?
+– Te lo prometto! Te lo prometto! Spicciati per carità, perché se indugi un altro mezzo minuto, son bell’e morto.
+Pinocchio esitò un poco: ma poi ricordandosi che il suo babbo gli aveva detto tante volte che a fare una buona azione non ci si scapita mai, andò nuotando a raggiungere Alidoro, e, presolo per la coda con tutte e due le mani, lo portò sano e salvo sulla rena asciutta del lido.
+Il povero cane non si reggeva più in piedi. Aveva bevuto, senza volerlo, tant’acqua salata, che era gonfiato come un pallone. Per altro il burattino, non volendo fare a fidarsi troppo, stimò cosa prudente di gettarsi novamente in mare; e, allontanandosi dalla spiaggia, gridò all’amico salvato:
+– Addio, Alidoro, fai buon viaggio e tanti saluti a casa.
+– Addio, Pinocchio, – rispose il cane; – mille grazie di avermi liberato dalla morte. Tu mi hai fatto un gran servizio: e in questo mondo quel che è fatto è reso. Se capita l’occasione, ci riparleremo.
+Pinocchio seguitò a nuotare, tenendosi sempre vicino alla terra. Finalmente gli parve di esser giunto in un luogo sicuro; e dando un’ occhiata alla spiaggia, vide sugli scogli una specie di grotta, dalla quale usciva un lunghissimo pennacchio di fumo.
+– In quella grotta, – disse allora fra sé, – ci deve essere del fuoco. Tanto meglio! Anderò a rasciugarmi e a riscaldarmi, e poi?... E poi sarà quel che sarà.
+Presa questa risoluzione, si avvicinò alla scogliera; ma quando fu lì per arrampicarsi, sentì qualche cosa sotto l’acqua che saliva, saliva, saliva e lo portava per aria. Tentò subito di fuggire, ma oramai era tardi, perché con sua grandissima maraviglia si trovò rinchiuso dentro a una grossa rete in mezzo a un brulichio di pesci d’ogni forma e grandezza, che scodinzolando si dibattevano come tant’anime disperate.
+E nel tempo stesso vide uscire dalla grotta un pescatore così brutto, ma tanto brutto, che pareva un mostro marino. Invece di capelli aveva sulla testa un cespuglio foltissimo di erba verde; verde era la pelle del suo corpo, verdi gli occhi, verde la barba lunghissima, che gli scendeva fin quaggiù. Pareva un grosso ramarro ritto su i piedi di dietro.
+Quando il pescatore ebbe tirata fuori la rete dal mare, gridò tutto contento:
+– Provvidenza benedetta! Anch’oggi potrò fare una bella scorpacciata di pesce!
+– Manco male, che io non sono un pesce! – disse Pinocchio dentro di sé, ripigliando un po’ di coraggio.
+La rete piena di pesci fu portata dentro la grotta, una grotta buia e affumicata, in mezzo alla quale friggeva una gran padella d’olio, che mandava un odorino di moccolaia da mozzare il respiro.
+– Ora vediamo un po’ che pesci abbiamo presi! – disse il pescatore verde; e ficcando nella rete una manona così spropositata, che pareva una pala da fornai, tirò fuori una manciata di triglie.
+– Buone queste triglie! – disse, guardandole e annusandole con compiacenza. E dopo averle annusate, le scaraventò in una conca senz’acqua.
+Poi ripeté più volte la solita operazione; e via via che cavava fuori gli altri pesci, sentiva venirsi l’acquolina in bocca e gongolando diceva:
+– Buoni questi naselli!...
+– Squisiti questi muggini!...
+– Deliziose queste sogliole!...
+– Prelibati questi ragnotti!...
+– Carine queste acciughe col capo!...
+Come potete immaginarvelo, i naselli, i muggini, le sogliole, i ragnotti e le acciughe, andarono tutti alla rinfusa nella conca, a tener compagnia alle triglie.
+L’ultimo che restò nella rete fu Pinocchio.
+Appena il pescatore l’ebbe cavato fuori, sgranò dalla maraviglia i suoi occhioni verdi, gridando quasi impaurito:
+– Che razza di pesce è questo? Dei pesci fatti a questo modo non mi ricordo di averne mai mangiati!
+E tornò a guardarlo attentamente, e dopo averlo guardato ben bene per ogni verso, finì col dire:
+– Ho già capito: dev’essere un granchio di mare.
+Allora Pinocchio mortificato di sentirsi scambiare per un granchio, disse con accento risentito:
+– Ma che granchio e non granchio? Guardi come lei mi tratta! Io per sua regola sono un burattino.
+– Un burattino? – replicò il pescatore. – Dico la verità, il pesce burattino è per me un pesce nuovo! Meglio così! Ti mangerò più volentieri.
+– Mangiarmi? Ma la vuol capire che io non sono un pesce? O non sente che parlo, e ragiono come lei?
+– È verissimo, – soggiunse il pescatore, – e siccome vedo che sei un pesce, che hai la fortuna di parlare e di ragionare, come me, così voglio usarti anch’io i dovuti riguardi.
+– E questi riguardi sarebbero?...
+– In segno di amicizia e di stima particolare, lascerò a te la scelta del come vuoi essere cucinato. Desideri essere fritto in padella, oppure preferisci di essere cotto nel tegame colla salsa di pomidoro?
+– A dir la verità, – rispose Pinocchio, – se io debbo scegliere, preferisco piuttosto di essere lasciato libero, per potermene tornare a casa mia.
+– Tu scherzi? Ti pare che io voglia perdere l’occasione di assaggiare un pesce così raro? Non capita mica tutti i giorni un pesce burattino in questi mari. Lascia fare a me: ti friggerò in padella assieme a tutti gli altri pesci, e te ne troverai contento. L’esser fritto in compagnia è sempre una consolazione.
+L’infelice Pinocchio, a quest’antifona, cominciò a piangere, a strillare, a raccomandarsi e piangendo diceva: – Quant’era meglio, che fossi andato a scuola!... Ho voluto dar retta ai compagni, e ora la pago! Ih!... Ih!... Ih!...
+E perché si divincolava come un anguilla e faceva sforzi incredibili, per isgusciare dalle grinfie del pescatore verde, questi prese una bella buccia di giunco, e dopo averlo legato per le mani e per i piedi, come un salame, lo gettò in fondo alla conca cogli altri.
+Poi, tirato fuori un vassoiaccio di legno, pieno di farina, si dette a infarinare tutti quei pesci; e man mano che li aveva infarinati, li buttava a friggere dentro la padella.
+I primi a ballare nell’olio bollente furono i poveri naselli: poi toccò ai ragnotti, poi ai muggini, poi alle sogliole e alle acciughe, e poi venne la volta di Pinocchio. Il quale a vedersi così vicino alla morte (e che brutta morte!) fu preso da tanto tremito e da tanto spavento, che non aveva più né voce né fiato per raccomandarsi.
+Il povero figliuolo si raccomandava cogli occhi! Ma il pescatore verde, senza badarlo neppure, lo avvoltolò cinque o sei volte nella farina, infarinandolo così bene dal capo ai piedi, che pareva diventato un burattino di gesso.
+Poi lo prese per il capo, e...
+
+XXIX Ritorna a casa della Fata, la quale gli promette che il giorno dopo non sarà più un burattino, ma diventerà un ragazzo. Gran colazione di caffè-e-latte per festeggiare questo grande avvenimento.
+
+Mentre il pescatore era proprio sul punto di buttar Pinocchio nella padella, entrò nella grotta un grosso cane condotto là dall’odore acutissimo e ghiotto della frittura.
+– Passa via! – gli gridò il pescatore minacciandolo e tenendo sempre in mano il burattino infarinato.
+Ma il povero cane aveva una fame per quattro, e mugolando e dimenando la coda, pareva che dicesse: «Dammi un boccon di frittura e ti lascio in pace».
+– Passa via, ti dico! – gli ripeté il pescatore; e allungò la gamba per tirargli una pedata.
+Allora il cane che, quando aveva fame davvero, non era avvezzo a lasciarsi posar mosche sul naso, si rivoltò ringhioso al pescatore, mostrandogli le sue terribili zanne.
+In quel mentre si udì nella grotta una vocina fioca fioca, che disse:
+– Salvami, Alidoro!... Se non mi salvi, son fritto!
+Il cane riconobbe subito la voce di Pinocchio e si accorse con sua grandissima maraviglia che la vocina era uscita da quel fagotto infarinato che il pescatore teneva in mano.
+Allora che cosa fa? Spicca un gran lancio da terra, abbocca quel fagotto infarinato e tenendolo leggermente coi denti, esce correndo dalla grotta, e via come un baleno!
+Il pescatore, arrabbiatissimo di vedersi strappar di mano un pesce, che egli avrebbe mangiato tanto volentieri, si provò a rincorrere il cane; ma fatti pochi passi, gli venne un nodo di tosse e dové tornarsene indietro.
+Intanto Alidoro, ritrovata che ebbe la viottola che conduceva al paese, si fermò e posò delicatamente in terra l’amico Pinocchio.
+– Quanto ti debbo ringraziare! – disse il burattino.
+– Non c’è bisogno, – replicò il cane. – Tu salvasti me, e quel che è fatto, è reso. Si sa: in questo mondo bisogna tutti aiutarsi l’uno coll’altro.
+– Ma come mai sei capitato in quella grotta?
+– Ero sempre qui disteso sulla spiaggia più morto che vivo, quando il vento mi ha portato da lontano un odorino di frittura. Quell’odorino mi ha stuzzicato l’appetito, e io gli sono andato dietro. Se arrivavo un minuto più tardi!...
+– Non me lo dire! – urlò Pinocchio che tremava ancora dalla paura. – Non me lo dire! Se tu arrivavi un minuto più tardi, a quest’ora io ero bell’e fritto, mangiato e digerito. Brrr!... mi vengono i brividi soltanto a pensarvi!...
+Alidoro, ridendo, stese la zampa destra verso il burattino, il quale gliela strinse forte forte in segno di grande amicizia: e dopo si lasciarono.
+Il cane riprese la strada di casa: e Pinocchio, rimasto solo, andò a una capanna lì poco distante, e domandò a un vecchietto che stava sulla porta a scaldarsi al sole:
+– Dite, galantuomo, sapete nulla di un povero ragazzo ferito nel capo e che si chiamava Eugenio?...
+– Il ragazzo è stato portato da alcuni pescatori in questa capanna, e ora...
+Ora sarà morto!... – interruppe Pinocchio con gran dolore.
+– No: ora è vivo, ed è già ritornato a casa sua.
+– Davvero, davvero? – gridò il burattino, saltando dall’allegrezza. – Dunque la ferita non era grave?
+– Ma poteva riuscire gravissima e anche mortale, – rispose il vecchietto, – perché gli tirarono sul capo un grosso libro rilegato in cartone.
+– E chi glielo tirò?
+– Un suo compagno di scuola: un certo Pinocchio...
+– E chi è questo Pinocchio? – domandò il burattino facendo lo gnorri.
+– Dicono che sia un ragazzaccio, un vagabondo, un vero rompicollo...
+– Calunnie! Tutte calunnie!
+– Lo conosci tu questo Pinocchio?
+– Di vista! – rispose il burattino.
+– E tu che concetto ne hai? – gli chiese il vecchietto.
+– A me mi pare un gran buon figliuolo, pieno di voglia di studiare, ubbidiente, affezionato al suo babbo e alla sua famiglia...
+Mentre il burattino sfilava a faccia fresca tutte queste bugie, si toccò il naso e si accorse che il naso gli s’era allungato più d’un palmo. Allora tutto impaurito cominciò a gridare:
+– Non date retta, galantuomo, a tutto il bene che ve ne ho detto: perché conosco benissimo Pinocchio e posso assicurarvi anch’io che è davvero un ragazzaccio, un disubbidiente e uno svogliato, che invece di andare a scuola, va coi compagni a fare lo sbarazzino!
+Appena ebbe pronunziate queste parole, il suo naso raccorcì e tornò della grandezza naturale, come era prima.
+– E perché sei tutto bianco a codesto modo? – gli domandò a un tratto il vecchietto.
+– Vi dirò... senza avvedermene, mi sono strofinato a un muro, che era imbiancato di fresco, – rispose il burattino, vergognandosi a confessare che lo avevano infarinato come un pesce, per poi friggerlo in padella.
+– O della tua giacchetta, de’ tuoi calzoncini e del tuo berretto che cosa ne hai fatto?
+– Ho incontrato i ladri e mi hanno spogliato. Dite, buon vecchio, non avreste per caso da darmi un po’ di vestituccio, tanto perché io possa ritornare a casa?
+– Ragazzo mio, in fatto di vestiti, io non ho che un piccolo sacchetto, dove ci tengo i lupini. Se vuoi, piglialo: eccolo là.
+E Pinocchio non se lo fece dire due volte: prese subito il sacchetto dei lupini che era vuoto, e dopo averci fatto colle forbici una piccola buca nel fondo e due buche dalle parti, se lo infilò a uso camicia. E vestito leggerino a quel modo, si avviò verso il paese.
+Ma, lungo la strada, non si sentiva punto tranquillo; tant’è vero che faceva un passo avanti e uno indietro e, discorrendo da se solo, andava dicendo:
+– Come farò a presentarmi alla mia buona Fatina? Che dirà quando mi vedrà?... Vorrà perdonarmi questa seconda birichinata?... Scommetto che non me la perdona!... Oh! Non me la perdona di certo... E mi sta il dovere: perché io sono un monello che prometto sempre di correggermi, e non mantengo mai!...
+Arrivò al paese che era già notte buia, e perché faceva tempaccio e l’acqua veniva giù a catinelle, andò diritto diritto alla casa della Fata coll’animo risoluto di bussare alla porta e di farsi aprire.
+Ma, quando fu lì, sentì mancarsi il coraggio, e invece di bussare si allontanò, correndo, una ventina di passi. Si avvicinò una seconda volta alla porta, e non concluse nulla: si avvicinò una terza volta, e nulla: la quarta volta prese, tremando, il battente di ferro in mano, e bussò un piccolo colpettino.
+Aspetta, aspetta, finalmente dopo mezz’ora si aprì una finestra dell’ultimo piano (la casa era di quattro piani) e Pinocchio vide affacciarsi una grossa Lumaca, che aveva un lumicino acceso sul capo, la quale disse:
+– Chi è a quest’ora?
+– La Fata è in casa? – domandò il burattino.
+– La Fata dorme e non vuol essere svegliata: ma tu chi sei?
+– Sono io!
+– Chi io?
+– Pinocchio.
+– Chi Pinocchio?
+– Il burattino, quello che sta in casa colla Fata.
+– Ah! ho capito, – disse la Lumaca. – Aspettami costì, che ora scendo giù e ti apro subito.
+– Spicciatevi, per carità, perché io muoio dal freddo.
+– Ragazzo mio, io sono una lumaca, e le lumache non hanno mai fretta.
+Intanto passò un’ora, ne passarono due, e la porta non si apriva: per cui Pinocchio, che tremava dal freddo, dalla paura e dall’acqua che aveva addosso, si fece cuore e bussò una seconda volta, e bussò più forte. A quel secondo colpo si aprì una finestra del piano di sotto e si affacciò la solita Lumaca.
+– Lumachina bella, – gridò Pinocchio dalla strada, – sono due ore che aspetto! E due ore, a questa serataccia, diventano più lunghe di due anni. Spicciatevi, per carità.
+– Ragazzo mio – gli rispose dalla finestra quella bestiola tutta pace e tutta flemma, – ragazzo mio, io sono una lumaca, e le lumache non hanno mai fretta.
+E la finestra si richiuse.
+Di lì a poco suonò la mezzanotte: poi il tocco, poi le due dopo mezzanotte, e la porta era sempre chiusa.
+Allora Pinocchio, perduta la pazienza, afferrò con rabbia il battente della porta per bussare un gran colpo da far rintronare tutto il casamento: ma il battente che era di ferro, diventò a un tratto un’anguilla viva, che sgusciandogli dalle mani sparì nel rigagnolo d’acqua in mezzo alla strada.
+– Ah, sì? – gridò Pinocchio sempre più accecato dalla collera. – Se il battente è sparito, io seguiterò a bussare a furia di calci.
+E tiratosi un poco indietro, lasciò andare una solennissima pedata nell’uscio della casa. Il colpo fu così forte, che il piede penetrò nel legno fino a mezzo: e quando il burattino si provò a ricavarlo fuori, fu tutta fatica inutile: perché il piede c’era rimasto conficcato dentro, come un chiodo ribadito.
+Figuratevi il povero Pinocchio! Dové passare tutto il resto della notte con un piede in terra e con quell’altro per aria.
+La mattina, sul far del giorno, finalmente la porta si aprì.
+Quella brava bestiola della Lumaca, a scendere dal quarto piano fino all’uscio di strada, ci aveva messo solamente nove ore. Bisogna proprio dire che avesse fatto una sudata!
+– Che cosa fate con codesto piede conficcato nell’uscio? – domandò ridendo al burattino.
+– È stata una disgrazia. Vedete un po’, Lumachina bella, se vi riesce di liberarmi da questo supplizio.
+– Ragazzo mio, così ci vuole un legnaiolo, e io non ho mai fatto la legnaiola.
+– Pregate la Fata da parte mia!...
+– La Fata dorme e non vuol essere svegliata.
+– Ma che cosa volete che io faccia inchiodato tutto il giorno a questa porta?
+– Divèrtiti a contare le formicole che passano per la strada.
+– Portatemi almeno qualche cosa da mangiare, perché mi sento rifinito.
+– Subito! – disse la Lumaca.
+Difatti dopo tre ore e mezzo Pinocchio la vide tornare con un vassoio d’argento in capo. Nel vassoio c’era un pane, un pollastro arrosto e quattro albicocche mature.
+– Ecco la colazione che vi manda la Fata, – disse la Lumaca.
+Alla vista di quella grazia di Dio, il burattino sentì consolarsi tutto.
+Ma quale fu il suo disinganno, quando incominciando a mangiare, si dové accorgere che il pane era di gesso, il pollastro di cartone e le quattro albicocche di alabastro, colorite al naturale.
+Voleva piangere, voleva darsi alla disperazione, voleva buttar via il vassoio e quel che c’era dentro: ma invece, o fosse il gran dolore o la gran languidezza di stomaco, fatto sta che cadde svenuto.
+Quando si riebbe, si trovò disteso sopra un sofà, e la Fata era accanto a lui.
+– Anche per questa volta ti perdono, – gli disse la Fata, – ma guai a te se me ne fai un’altra delle tue!...
+Pinocchio promise e giurò che avrebbe studiato, e che si sarebbe condotto sempre bene. E mantenne la parola per tutto il resto dell’anno. Difatti, agli esami delle vacanze, ebbe l’onore di essere il più bravo della scuola; e i suoi portamenti, in generale, furono giudicati così lodevoli e soddisfacenti, che la Fata, tutta contenta, gli disse:
+– Domani finalmente il tuo desiderio sarà appagato!
+– Cioè?
+– Domani finirai di essere un burattino di legno, e diventerai un ragazzo perbene.
+Chi non ha veduto la gioia di Pinocchio, a questa notizia tanto sospirata, non potrà mai figurarsela. Tutti i suoi amici e compagni di scuola dovevano essere invitati per il giorno dopo a una gran colazione in casa della Fata, per festeggiare insieme il grande avvenimento: e la Fata aveva fatto preparare dugento tazze di caffè-e-latte e quattrocento panini imburrati di sotto e di sopra. Quella giornata prometteva d’essere molto bella e molto allegra, ma...
+Disgraziatamente, nella vita dei burattini c’è sempre un ma, che sciupa ogni cosa.
+
+XXX Pinocchio, invece di diventare un ragazzo, parte di nascosto col suo amico Lucignolo per il Paese dei Balocchi.
+
+Com’è naturale, Pinocchio chiese subito alla Fata il permesso di andare in giro per la città a fare gli inviti: e la Fata gli disse:
+– Vai pure a invitare i tuoi compagni per la colazione di domani: ma ricordati di tornare a casa prima che faccia notte. Hai capito?
+– Fra un’ora prometto di essere bell’e ritornato, – replicò il burattino.
+– Bada, Pinocchio! I ragazzi fanno presto a promettere: ma il più delle volte, fanno tardi a mantenere.
+– Ma io non sono come gli altri: io, quando dico una cosa, la mantengo.
+– Vedremo. Caso poi tu disubbidissi, tanto peggio per te.
+– Perché?
+– Perché i ragazzi che non danno retta ai consigli di chi ne sa più di loro, vanno sempre incontro a qualche disgrazia.
+– E io l’ho provato! – disse Pinocchio. – Ma ora non ci ricasco più!
+– Vedremo se dici il vero.
+Senza aggiungere altre parole, il burattino salutò la sua buona Fata, che era per lui una specie di mamma, e cantando e ballando uscì fuori della porta di casa.
+In poco più d’un’ora, tutti i suoi amici furono invitati. Alcuni accettarono subito e di gran cuore: altri da principio si fecero un po’ pregare; ma quando seppero che i panini da inzuppare nel caffè-e-latte sarebbero stati imburrati anche dalla parte di fuori, finirono tutti col dire: «Verremo anche noi, per farti piacere».
+Ora bisogna sapere che Pinocchio, fra i suoi amici e compagni di scuola, ne aveva uno prediletto e carissimo, il quale si chiamava di nome Romeo: ma tutti lo chiamavano col soprannome di Lucignolo, per via del suo personalino asciutto, secco e allampanato, tale e quale come il lucignolo nuovo di un lumino da notte.
+Lucignolo era il ragazzo più svogliato e più birichino di tutta la scuola: ma Pinocchio gli voleva un gran bene. Difatti andò subito a cercarlo a casa, per invitarlo alla colazione, e non lo trovò: tornò una seconda volta, e Lucignolo non c’era: tornò una terza volta, e fece la strada invano.
+Dove poterlo ripescare? Cerca di qua, cerca di là, finalmente lo vide nascosto sotto il portico di una casa di contadini.
+– Che cosa fai costì? – gli domandò Pinocchio, avvicinandosi.
+– Aspetto la mezzanotte, per partire...
+– Dove vai?
+– Lontano, lontano, lontano!
+– E io che son venuto a cercarti a casa tre volte!...
+– Che cosa volevi da me?
+– Non sai il grande avvenimento? Non sai la fortuna che mi è toccata?
+– Quale?
+– Domani finisco di essere un burattino e divento un ragazzo come te, e come tutti gli altri.
+– Buon pro ti faccia.
+– Domani, dunque, ti aspetto a colazione a casa mia.
+– Ma se ti dico che parto questa sera.
+– A che ora?
+– Fra poco.
+– E dove vai?
+– Vado ad abitare in un paese... che è il più bel paese di questo mondo: una vera cuccagna!...
+– E come si chiama?
+– Si chiama il Paese dei Balocchi. Perché non vieni anche tu?
+– Io? no davvero!
+– Hai torto, Pinocchio! Credilo a me che, se non vieni, te ne pentirai. Dove vuoi trovare un paese più salubre per noialtri ragazzi? Lì non vi sono scuole: lì non vi sono maestri: lì non vi sono libri. In quel paese benedetto non si studia mai. Il giovedì non si fa scuola: e ogni settimana è composta di sei giovedì e di una domenica. Figùrati che le vacanze dell’autunno cominciano col primo di gennaio e finiscono coll’ultimo di dicembre. Ecco un paese, come piace veramente a me! Ecco come dovrebbero essere tutti i paesi civili!...
+– Ma come si passano le giornate nel Paese dei Balocchi?
+– Si passano baloccandosi e divertendosi dalla mattina alla sera. La sera poi si va a letto, e la mattina dopo si ricomincia daccapo. Che te ne pare?
+– Uhm!... – fece Pinocchio: e tentennò leggermente il capo, come dire: «È una vita che farei volentieri anch’io!».
+– Dunque, vuoi partire con me? Sì o no? Risolviti.
+– No, no, no e poi no. Oramai ho promesso alla mia buona Fata di diventare un ragazzo perbene, e voglio mantenere la promessa. Anzi, siccome vedo che il sole va sotto, così ti lascio subito e scappo via. Dunque addio e buon viaggio.
+– Dove corri con tanta furia?
+– A casa. La mia buona Fata vuole che ritorni prima di notte.
+– Aspetta altri due minuti.
+– Faccio troppo tardi.
+– Due minuti soli.
+– E se poi la Fata mi grida?
+– Lasciala gridare. Quando avrà gridato ben bene, si cheterà, – disse quella birba di Lucignolo.
+– E come fai? Parti solo o in compagnia?
+– Solo? Saremo più di cento ragazzi.
+– E il viaggio lo fate a piedi?
+– A mezzanotte passerà di qui il carro che ci deve prendere e condurre fin dentro ai confini di quel fortunatissimo paese.
+– Che cosa pagherei che ora fosse mezzanotte!...
+– Perché?
+– Per vedervi partire tutti insieme.
+– Rimani qui un altro poco e ci vedrai.
+– No, no: voglio ritornare a casa.
+– Aspetta altri due minuti.
+– Ho indugiato anche troppo. La Fata starà in pensiero per me.
+– Povera Fata! Che ha paura forse che ti mangino i pipistrelli?
+– Ma dunque, – soggiunse Pinocchio, – tu sei veramente sicuro che in quel paese non ci sono punte scuole?...
+– Neanche l’ombra.
+– E nemmeno maestri?...
+– Nemmen’uno.
+– E non c’è mai l’obbligo di studiare?
+– Mai, mai, mai!
+– Che bel paese! – disse Pinocchio, sentendo venirsi l’acquolina in bocca. – Che bel paese! Io non ci sono stato mai, ma me lo figuro!...
+– Perché non vieni anche tu?
+– È inutile che tu mi tenti! Oramai ho promesso alla mia buona Fata di diventare un ragazzo di giudizio, e non voglio mancare alla parola.
+– Dunque addio, e salutami tanto le scuole ginnasiali!... E anche quelle liceali, se le incontri per la strada.
+– Addio, Lucignolo: fai buon viaggio, divertiti e rammentati qualche volta degli amici.
+Ciò detto, il burattino fece due passi in atto di andarsene: ma poi, fermandosi e voltandosi all’amico, gli domandò:
+– Ma sei proprio sicuro che in quel paese tutte le settimane sieno composte di sei giovedì e di una domenica?
+– Sicurissimo.
+– Ma lo sai di certo che le vacanze abbiano principio col primo di gennaio e finiscano coll’ultimo di dicembre?
+– Di certissimo!
+– Che bel paese! – ripeté Pinocchio, sputando dalla soverchia consolazione.
+Poi, fatto un animo risoluto, soggiunse in fretta e furia:
+– Dunque, addio davvero: e buon viaggio.
+– Addio.
+– Fra quanto partirete?
+– Fra due ore!
+– Peccato! Se alla partenza mancasse un’ora sola, sarei quasi quasi capace di aspettare.
+– E la Fata?...
+– Oramai ho fatto tardi!... E tornare a casa un’ora prima o un’ora dopo, è lo stesso.
+– Povero Pinocchio! E se la Fata ti grida?
+– Pazienza! La lascerò gridare. Quando avrà gridato ben bene, si cheterà.
+Intanto si era già fatta notte e notte buia: quando a un tratto videro muoversi in lontananza un lumicino... e sentirono un suono di bubboli e uno squillo di trombetta, così piccolino e soffocato, che pareva il sibilo di una zanzara!
+– Eccolo! – gridò Lucignolo, rizzandosi in piedi.
+– Chi è? – domandò sottovoce Pinocchio.
+– È il carro che viene a prendermi. Dunque, vuoi venire, sì o no?
+– Ma è proprio vero, – domandò il burattino, – che in quel paese i ragazzi non hanno mai l’obbligo di studiare?
+– Mai, mai, mai!
+– Che bel paese!... che bel paese!... che bel paese!...
+
+XXXI Dopo cinque mesi di cuccagna, Pinocchio, con sua grande maraviglia, sente spuntarsi un bel paio d’orecchie asinine e diventa un ciuchino, con la coda e tutto.
+
+Finalmente il carro arrivò: e arrivò senza fare il più piccolo rumore, perché le sue ruote erano fasciate di stoppa e di cenci.
+Lo tiravano dodici pariglie di ciuchini, tutti della medesima grandezza, ma di diverso pelame.
+Alcuni erano bigi, altri bianchi, altri brizzolati a uso pepe e sale, e altri rigati a grandi strisce gialle e turchine. Ma la cosa più singolare era questa: che quelle dodici pariglie, ossia quei ventiquattro ciuchini, invece di essere ferrati come tutti le altre bestie da tiro o da soma, avevano ai piedi degli stivali da uomo di vacchetta bianca.
+E il conduttore del carro?...
+Figuratevi un omino più largo che lungo, tenero e untuoso come una palla di burro, con un visino di melarosa, una bocchina che rideva sempre e una voce sottile e carezzevole, come quella d’un gatto che si raccomanda al buon cuore della padrona di casa.
+Tutti i ragazzi, appena lo vedevano, ne restavano innamorati e facevano a gara nel montare sul suo carro, per essere condotti da lui in quella vera cuccagna conosciuta nella carta geografica col seducente nome di Paese dei Balocchi.
+Difatti il carro era già tutto pieno di ragazzetti fra gli otto e i dodici anni, ammonticchiati gli uni sugli altri, come tante acciughe nella salamoia. Stavano male, stavano pigiati, non potevano quasi respirare: ma nessuno diceva ohi!, nessuno si lamentava. La consolazione di sapere che fra poche ore sarebbero giunti in un paese, dove non c’erano né libri, né scuole, né maestri, li rendeva così contenti e rassegnati, che non sentivano né i disagi, né gli strapazzi, né la fame, né la sete, né il sonno.
+Appena che il carro si fu fermato, l’omino si volse a Lucignolo e con mille smorfie e mille manierine, gli domandò sorridendo:
+– Dimmi, mio bel ragazzo, vuoi venire anche tu in quel fortunato paese?
+– Sicuro che ci voglio venire.
+– Ma ti avverto, carino mio, che nel carro non c’è più posto. Come vedi, è tutto pieno!...
+– Pazienza! – replicò Lucignolo, – se non c’è posto dentro, io mi adatterò a star seduto sulle stanghe del carro.
+E spiccato un salto, montò a cavalcioni sulle stanghe.
+– E tu, amor mio?... – disse l’omino volgendosi tutto complimentoso a Pinocchio. – Che intendi fare? Vieni con noi, o rimani?...
+– Io rimango, – rispose Pinocchio. – Io voglio tornarmene a casa mia: voglio studiare e voglio farmi onore alla scuola, come fanno tutti i ragazzi perbene.
+– Buon pro ti faccia!
+– Pinocchio! – disse allora Lucignolo. – Dai retta a me: vieni via con noi e staremo allegri.
+– No, no, no!
+– Vieni via con noi e staremo allegri, – gridarono altre quattro voci di dentro al carro.
+– Vieni via con noi e staremo allegri, – urlarono tutte insieme un centinaio di voci di dentro al carro.
+– E se vengo con voi, che cosa dirà la mia buona Fata? – disse il burattino che cominciava a intenerirsi e a ciurlar nel manico.
+– Non ti fasciare il capo con tante melanconie. Pensa che andiamo in un paese dove saremo padroni di fare il chiasso dalla mattina alla sera!
+Pinocchio non rispose: ma fece un sospiro: poi fece un altro sospiro: poi un terzo sospiro; finalmente disse:
+– Fatemi un po’ di posto: voglio venire anch’io!...
+– I posti son tutti pieni, – replicò l’omino, – ma per mostrarti quanto sei gradito, posso cederti il mio posto a cassetta...
+– E voi?...
+– E io farò la strada a piedi.
+– No, davvero, che non lo permetto. Preferisco piuttosto di salire in groppa a qualcuno di questi ciuchini! – gridò Pinocchio.
+Detto fatto, si avvicinò al ciuchino manritto della prima pariglia e fece l’atto di volerlo cavalcare: ma la bestiola, voltandosi a secco, gli dette una gran musata nello stomaco e lo gettò a gambe all’aria.
+Figuratevi la risatona impertinente e sgangherata di tutti quei ragazzi presenti alla scena.
+Ma l’omino non rise. Si accostò pieno di amorevolezza al ciuchino ribelle, e, facendo finta di dargli un bacio, gli staccò con un morso la metà dell’orecchio destro.
+Intanto Pinocchio, rizzatosi da terra tutto infuriato, schizzò con un salto sulla groppa di quel povero animale. E il salto fu così bello, che i ragazzi, smesso di ridere, cominciarono a urlare: «Viva Pinocchio!» e a fare una smanacciata di applausi, che non finivano più.
+Quand’ecco che all’improvviso il ciuchino alzò tutt’e due le gambe di dietro, e dando una fortissima sgropponata, scaraventò il povero burattino in mezzo alla strada sopra un monte di ghiaia.
+Allora grandi risate daccapo: ma l’omino, invece di ridere, si sentì preso da tanto amore per quell’irrequieto asinello, che, con un bacio, gli portò via di netto la metà di quell’altro orecchio. Poi disse al burattino:
+– Rimonta pure a cavallo e non aver paura. Quel ciuchino aveva qualche grillo per il capo: ma io gli ho detto due paroline negli orecchi e spero di averlo reso mansueto e ragionevole.
+Pinocchio montò: e il carro cominciò a muoversi: ma nel tempo che i ciuchini galoppavano e che il carro correva sui ciotoli della via maestra, gli parve al burattino di sentire una voce sommessa e appena intelligibile, che gli disse:
+– Povero gonzo! Hai voluto fare a modo tuo, ma te ne pentirai!
+Pinocchio, quasi impaurito, guardò di qua e di là, per conoscere da qual parte venissero queste parole; ma non vide nessuno: i ciuchini galoppavano, il carro correva, i ragazzi dentro al carro dormivano, Lucignolo russava come un ghiro e l’omino seduto a cassetta, canterellava fra i denti:
+Tutti la notte dormono
+E io non dormo mai...
+Fatto un altro mezzo chilometro, Pinocchio sentì la solita vocina fioca che gli disse:
+– Tienlo a mente, grullerello! I ragazzi che smettono di studiare e voltano le spalle ai libri, alle scuole e ai maestri, per darsi interamente ai balocchi e ai divertimenti, non possono far altro che una fine disgraziata!... Io lo so per prova!... E te lo posso dire! Verrà un giorno che piangerai anche tu, come oggi piango io... ma allora sarà tardi!...
+A queste parole bisbigliate sommessamente, il burattino, spaventato più che mai, saltò giù dalla groppa della cavalcatura e andò a prendere il suo ciuchino per il muso.
+E immaginatevi come restò, quando s’accorse che il suo ciuchino piangeva... e piangeva proprio come un ragazzo!
+– Ehi, signor omino, – gridò allora Pinocchio al padrone del carro, – sapete che cosa c’è di nuovo? Questo ciuchino piange.
+– Lascialo piangere: riderà quando sarà sposo
+– Ma che forse gli avete insegnato anche a parlare ?
+– No: ha imparato da sé a borbottare qualche parola, essendo stato tre anni in una compagnia di cani ammaestrati.
+– Povera bestia!...
+– Via, via, – disse l’omino, – non perdiamo il nostro tempo a veder piangere un ciuco. Rimonta a cavallo, e andiamo: la notte è fresca e la strada è lunga.
+Pinocchio obbedì senza rifiatare. Il carro riprese la sua corsa: e la mattina, sul far dell’alba, arrivarono felicemente nel Paese dei Balocchi.
+Questo paese non somigliava a nessun altro paese del mondo. La sua popolazione era tutta composta di ragazzi. I più vecchi avevano quattordici anni: i più giovani ne avevano otto appena. Nelle strade, un’allegria, un chiasso, uno strillìo da levar di cervello! Branchi di monelli dappertutto. Chi giocava alle noci, chi alle piastrelle, chi alla palla, chi andava in velocipede, chi sopra a un cavallino di legno; questi facevano a mosca-cieca, quegli altri si rincorrevano; altri, vestiti da pagliacci, mangiavano la stoppa accesa: chi recitava, chi cantava, chi faceva i salti mortali, chi si divertiva a camminare colle mani in terra e colle gambe in aria; chi mandava il cerchio, chi passeggiava vestito da generale coll’elmo di foglio e lo squadrone di cartapesta; chi rideva, chi urlava, chi chiamava, chi batteva le mani, chi fischiava, chi rifaceva il verso alla gallina quando ha fatto l’ovo; insomma un tal pandemonio, un tal passeraio, un tal baccano indiavolato, da doversi mettere il cotone negli orecchi per non rimanere assorditi. Su tutte le piazze si vedevano teatrini di tela, affollati di ragazzi dalla mattina alla sera, e su tutti i muri delle case si leggevano scritte col carbone delle bellissime cose come queste: Viva i balocci (invece di balocchi): non voglamo più schole (invece di non vogliamo più scuole): abbasso Larin Metica (invece di l’aritmetica) e altri fiori consimili.
+Pinocchio, Lucignolo e tutti gli altri ragazzi, che avevano fatto il viaggio coll’omino, appena ebbero messo il piede dentro la città, si ficcarono subito in mezzo alla gran baraonda, e in pochi minuti, come è facile immaginarselo, diventarono gli amici di tutti. Chi più felice, chi più contento di loro?
+In mezzo ai continui spassi e agli svariati divertimenti, le ore, i giorni, le settimane, passavano come tanti baleni.
+– Oh! che bella vita! – diceva Pinocchio tutte le volte che per caso s’imbatteva in Lucignolo.
+– Vedi, dunque, se avevo ragione?... – ripigliava quest’ultimo. – E dire che tu non volevi partire! E pensare che t’eri messo in capo di tornartene a casa dalla tua Fata, per perdere il tempo a studiare!.... Se oggi ti sei liberato dalla noia dei libri e delle scuole, lo devi a me, ai miei consigli, alle mie premure, ne convieni? Non vi sono che i veri amici che sappiano rendere di questi grandi favori.
+– È vero, Lucignolo! Se oggi io sono un ragazzo veramente contento, è tutto merito tuo. E il maestro, invece, sai che cosa mi diceva, parlando di te? Mi diceva sempre: «Non praticare quella birba di Lucignolo perché Lucignolo è un cattivo compagno e non può consigliarti altro che a far del male!...».
+– Povero maestro! – replicò l’altro tentennando il capo. – Lo so purtroppo che mi aveva a noia e che si divertiva sempre a calunniarmi, ma io sono generoso e gli perdono!
+– Anima grande! – disse Pinocchio, abbracciando affettuosamente l’amico e dandogli un bacio in mezzo agli occhi.
+Intanto era già da cinque mesi che durava questa bella cuccagna di baloccarsi e di divertirsi le giornate intere, senza mai vedere in faccia né un libro, né una scuola, quando una mattina Pinocchio, svegliandosi, ebbe, come si suol dire, una gran brutta sorpresa che lo messe proprio di malumore.
+
+XXXII A Pinocchio gli vengono gli orecchi di ciuco, e poi diventa un ciuchino vero e comincia a ragliare.
+
+E questa sorpresa quale fu?
+Ve lo dirò io, miei cari e piccoli lettori: la sorpresa fu che Pinocchio, svegliandosi, gli venne fatto naturalmente di grattarsi il capo; e nel grattarsi il capo si accorse...
+Indovinate un po’ di che cosa si accorse?
+Si accorse con sua grandissima maraviglia che gli orecchi gli erano cresciuti più d’un palmo.
+Voi sapete che il burattino, fin dalla nascita, aveva gli orecchi piccini piccini: tanto piccini che, a occhio nudo, non si vedevano neppure! Immaginatevi dunque come restò, quando si poté scorgere che i suoi orecchi, durante la notte, erano così allungati, che parevano due spazzole di padule.
+Andò subito in cerca di uno specchio, per potersi vedere: ma non trovando uno specchio, empì d’acqua la catinella del lavamano, e specchiandovisi dentro, vide quel che non avrebbe mai voluto vedere: vide, cioè, la sua immagine abbellita di un magnifico paio di orecchi asinini.
+Lascio pensare a voi il dolore, la vergogna e la disperazione del povero Pinocchio!
+Cominciò a piangere, a strillare, a battere la testa nel muro: ma quanto più si disperava, e più i suoi orecchi crescevano, crescevano e diventavano pelosi verso la cima. Al rumore di quelle grida acutissime, entrò nella stanza una bella Marmottina, che abitava il piano di sopra: la quale, vedendo il burattino in così grandi smanie, gli domandò premurosamente:
+– Che cos’hai, mio caro casigliano?
+– Sono malato, Marmottina mia, molto malato... e malato d’una malattia che mi fa paura! Te ne intendi tu del polso?
+– Un pochino.
+– Senti dunque se per caso avessi la febbre.
+La Marmottina alzò la zampa destra davanti: e dopo aver tastato il polso di Pinocchio gli disse sospirando:
+– Amico mio, mi dispiace doverti dare una cattiva notizia!...
+– Cioè?
+– Tu hai una gran brutta febbre!...
+– E che febbre sarebbe?
+– È la febbre del somaro.
+– Non la capisco questa febbre! – rispose il burattino, che l’aveva pur troppo capita.
+– Allora te la spiegherò io, – soggiunse la Marmottina. – Sappi dunque che fra due o tre ore tu non sarai più burattino, né un ragazzo...
+– E che cosa sarò?
+– Fra due o tre ore, tu diventerai un ciuchino vero e proprio, come quelli che tirano il carretto e che portano i cavoli e l’insalata al mercato.
+– Oh! Povero me! Povero me! – gridò Pinocchio pigliandosi con le mani tutt’e due gli orecchi, e tirandoli e strapazzandoli rabbiosamente, come se fossero gli orecchi di un altro.
+– Caro mio, – replicò la Marmottina per consolarlo, – che cosa ci vuoi tu fare? Oramai è destino. Oramai è scritto nei decreti della sapienza, che tutti quei ragazzi svogliati che, pigliando a noia i libri, le scuole e i maestri, passano le loro giornate in balocchi, in giochi e in divertimenti, debbano finire prima o poi col trasformarsi in tanti piccoli somari.
+– Ma davvero è proprio così? – domandò singhiozzando il burattino.
+– Purtroppo è così! E ora i pianti sono inutili. Bisognava pensarci prima!
+– Ma la colpa non è mia: la colpa, credilo, Marmottina, è tutta di Lucignolo!...
+– E chi è questo Lucignolo!...
+– Un mio compagno di scuola. Io volevo tornare a casa: io volevo essere ubbidiente: io volevo seguitare a studiare e a farmi onore... ma Lucignolo mi disse: «Perché vuoi annoiarti a studiare? Perché vuoi andare alla scuola? Vieni piuttosto con me, nel Paese dei Balocchi: lì non studieremo più: lì ci divertiremo dalla mattina alla sera e staremo sempre allegri».
+– E perché seguisti il consiglio di quel falso amico? di quel cattivo compagno?
+– Perché?... Perché, Marmottina mia, io sono un burattino senza giudizio... e senza cuore. Oh! se avessi avuto un zinzino di cuore, non avrei mai abbandonato quella buona Fata, che mi voleva bene come una mamma e che aveva fatto tanto per me!... E a quest’ora non sarei più un burattino... ma sarei invece un ragazzino a modo, come ce n’è tanti! Oh!... ma se incontro Lucignolo, guai a lui! Gliene voglio dire un sacco e una sporta!
+E fece l’atto di volere uscire. Ma quando fu sulla porta, si ricordò che aveva gli orecchi d’asino, e vergognandosi di mostrarli al pubblico, che cosa inventò?... Prese un gran berretto di cotone, e, ficcatoselo in testa, se lo ingozzò fin sotto la punta del naso.
+Poi uscì: e si dette a cercar Lucignolo dappertutto. Lo cercò nelle strade, nelle piazze, nei teatrini, in ogni luogo: ma non lo trovò. Ne chiese notizia a quanti incontrò per la via, ma nessuno l’aveva veduto.
+Allora andò a cercarlo a casa: e arrivato alla porta bussò.
+– Chi è? – domandò Lucignolo di dentro.
+– Sono io! – rispose il burattino.
+– Aspetta un poco, e ti aprirò.
+Dopo mezz’ora la porta si aprì: e figuratevi come restò Pinocchio quando, entrando nella stanza, vide il suo amico Lucignolo con un gran berretto di cotone in testa, che gli scendeva fin sotto il naso.
+Alla vista di quel berretto, Pinocchio sentì quasi consolarsi e pensò subito dentro di sé:
+«Che l’amico sia malato della mia medesima malattia? Che abbia anche lui la febbre del ciuchino?...»
+E facendo finta di non essersi accorto di nulla, gli domandò sorridendo:
+– Come stai, mio caro Lucignolo?
+– Benissimo: come un topo in una forma di cacio parmigiano.
+– Lo dici proprio sul serio?
+– E perché dovrei dirti una bugia?
+– Scusami, amico: e allora perché tieni in capo codesto berretto di cotone che ti cuopre tutti gli orecchi?
+– Me l’ha ordinato il medico, perché mi sono fatto male a questo ginocchio. E tu, caro burattino, perché porti codesto berretto di cotone ingozzato fin sotto il naso?
+– Me l’ha ordinato il medico, perché mi sono sbucciato un piede.
+– Oh! povero Pinocchio!...
+– Oh! povero Lucignolo!...
+A queste parole tenne dietro un lunghissimo silenzio, durante il quale i due amici non fecero altro che guardarsi fra loro in atto di canzonatura.
+Finalmente il burattino, con una vocina melliflua e flautata, disse al suo compagno:
+– Levami una curiosità, mio caro Lucignolo: hai mai sofferto di malattia agli orecchi?
+– Mai!... E tu?
+– Mai! Per altro da questa mattina in poi ho un orecchio, che mi fa spasimare.
+– Ho lo stesso male anch’io.
+– Anche tu?... E qual è l’orecchio che ti duole?
+– Tutt’e due. E tu?
+– Tutt’e due. Che sia la medesima malattia?
+– Ho paura di sì?
+– Vuoi farmi un piacere, Lucignolo?
+– Volentieri! Con tutto il cuore.
+– Mi fai vedere i tuoi orecchi?
+– Perché no? Ma prima voglio vedere i tuoi, caro Pinocchio.
+– No: il primo devi essere tu.
+– No, carino! Prima tu, e dopo io!
+– Ebbene, – disse allora il burattino, – facciamo un patto da buoni amici.
+– Sentiamo il patto.
+– Leviamoci tutt’e due il berretto nello stesso tempo: accetti?
+– Accetto.
+– Dunque attenti!
+E Pinocchio cominciò a contare a voce alta:
+– Uno! Due! Tre!
+Alla parola tre! i due ragazzi presero i loro berretti di capo e li gettarono in aria.
+E allora avvenne una scena, che parrebbe incredibile, se non fosse vera. Avvenne, cioè, che Pinocchio e Lucignolo, quando si videro colpiti tutt’e due dalla medesima disgrazia, invece di restar mortificati e dolenti, cominciarono ad ammiccarsi i loro orecchi smisuratamente cresciuti, e dopo mille sguaiataggini finirono col dare in una bella risata.
+E risero, risero, risero da doversi reggere il corpo: se non che, sul più bello del ridere, Lucignolo tutt’a un tratto si chetò, e barcollando e cambiando colore, disse all’amico:
+– Aiuto, aiuto, Pinocchio!
+– Che cos’hai?
+– Ohimè. Non mi riesce più di star ritto sulle gambe.
+– Non mi riesce più neanche a me, – gridò Pinocchio, piangendo e traballando.
+E mentre dicevano così, si piegarono tutt’e due carponi a terra e, camminando con le mani e coi piedi, cominciarono a girare e a correre per la stanza. E intanto che correvano, i loro bracci diventarono zampe, i loro visi si allungarono e diventarono musi e le loro schiene si coprirono di un pelame grigiolino chiaro, brizzolato di nero.
+Ma il momento più brutto per que’ due sciagurati sapete quando fu? Il momento più brutto e più umiliante fu quello quando sentirono spuntarsi di dietro la coda. Vinti allora dalla vergogna e dal dolore, si provarono a piangere e a lamentarsi del loro destino.
+Non l’avessero mai fatto! Invece di gemiti e di lamenti, mandavano fuori dei ragli asinini: e ragliando sonoramente, facevano tutt’e due coro: j-a, j-a, j-a.
+In quel frattempo fu bussato alla porta, e una voce di fuori disse:
+– Aprite! Sono l’Omino, sono il conduttore del carro che vi portò in questo paese. Aprite subito, o guai a voi!
+
+XXXIII Diventato un ciuchino vero, è portato a vendere, e lo compra il direttore di una compagnia di pagliacci per insegnargli a ballare e a saltare i cerchi; ma una sera azzoppisce e allora lo ricompra un altro, per far con la sua pelle un tamburo.
+
+Vedendo che la porta non si apriva, l’Omino la spalancò con un violentissimo calcio: ed entrato che fu nella stanza, disse col suo solito risolino a Pinocchio e a Lucignolo:
+– Bravi ragazzi! Avete ragliato bene, e io vi ho subito riconosciuti alla voce. E per questo eccomi qui.
+A tali parole, i due ciuchini rimasero mogi mogi, colla testa giù, con gli orecchi bassi e con la coda fra le gambe.
+Da principio l’Omino li lisciò, li accarezzò, li palpeggiò: poi, tirata fuori la striglia, cominciò a strigliarli perbene.
+E quando a furia di strigliarli, li ebbe fatti lustri come due specchi, allora messe loro la cavezza e li condusse sulla piazza del mercato, con la speranza di venderli e di beccarsi un discreto guadagno.
+E i compratori, difatti, non si fecero aspettare.
+Lucignolo fu comprato da un contadino, a cui era morto il somaro il giorno avanti, e Pinocchio fu venduto al direttore di una compagnia di pagliacci e di saltatori di corda, il quale lo comprò per ammaestrarlo e per farlo poi saltare e ballare insieme con le altre bestie della compagnia.
+E ora avete capito, miei piccoli lettori, qual era il bel mestiere che faceva l’Omino? Questo brutto mostriciattolo, che aveva una fisionomia tutta latte e miele, andava di tanto in tanto con un carro a girare per il mondo: strada facendo raccoglieva con promesse e con moine tutti i ragazzi svogliati, che avevano a noia i libri e le scuole: e dopo averli caricati sul suo carro, li conduceva nel Paese dei Balocchi, perché passassero tutto il loro tempo in giochi, in chiassate e in divertimenti. Quando poi quei poveri ragazzi illusi, a furia di baloccarsi sempre e di non studiare mai, diventavano tanti ciuchini, allora tutto allegro e contento s’impadroniva di loro e li portava a vendere sulle fiere e sui mercati. E così in pochi anni aveva fatto fior di quattrini ed era diventato milionario.
+Quel che accadesse di Lucignolo, non lo so: so, per altro, che Pinocchio andò incontro fin dai primi giorni a una vita durissima e strapazzata.
+Quando fu condotto nella stalla, il nuovo padrone gli empì la greppia di paglia: ma Pinocchio, dopo averne assaggiata una boccata, la risputò.
+Allora il padrone, brontolando, gli empì la greppia di fieno: ma neppure il fieno gli piacque.
+– Ah! non ti piace neppure il fieno? – gridò il padrone imbizzito. – Lascia fare, ciuchino bello, che se hai dei capricci per il capo, penserò io a levarteli!...
+E a titolo di correzione, gli affibbiò subito una frustata nelle gambe.
+Pinocchio dal gran dolore, cominciò a piangere e a ragliare, e ragliando, disse:
+– J-a, j-a, la paglia non la posso digerire!...
+– Allora mangia il fieno! – replicò il padrone che intendeva benissimo il dialetto asinino.
+– J-a, j-a, il fieno mi fa dolere il corpo!...
+– Pretenderesti, dunque, che un somaro, par tuo, lo dovessi mantenere a petti di pollo e cappone in galantina? – soggiunse il padrone arrabbiandosi sempre più e affibbiandogli una seconda frustata.
+A quella seconda frustata Pinocchio, per prudenza, si chetò subito e non disse altro.
+Intanto la stalla fu chiusa e Pinocchio rimase solo: e perché erano molte ore che non aveva mangiato cominciò a sbadigliare dal grande appetito. E, sbadigliando, spalancava una bocca che pareva un forno.
+Alla fine, non trovando altro nella greppia, si rassegnò a masticare un po’ di fieno: e dopo averlo masticato ben bene, chiuse gli occhi e lo tirò giù.
+– Questo fieno non è cattivo, – poi disse dentro di sé, – ma quanto sarebbe stato meglio che avessi continuato a studiare!... A quest’ora, invece di fieno, potrei mangiare un cantuccio di pan fresco e una bella fetta di salame!... Pazienza!
+La mattina dopo, svegliandosi, cercò subito nella greppia un altro po’ di fieno; ma non lo trovò perché l’aveva mangiato tutto nella notte.
+Allora prese una boccata di paglia tritata: ma in quel mentre che la masticava si dové accorgere che il sapore della paglia tritata non somigliava punto né al risotto alla milanese né ai maccheroni alla napoletana.
+– Pazienza! – ripeté, continuando a masticare. – Che almeno la mia disgrazia possa servire di lezione a tutti i ragazzi disobbedienti e che non hanno voglia di studiare. Pazienza!... pazienza!
+– Pazienza un corno! – urlò il padrone, entrando in quel momento nella stalla. – Credi forse, mio bel ciuchino, ch’io ti abbia comprato unicamente per darti da bere e da mangiare? Io ti ho comprato perché tu lavori e perché tu mi faccia guadagnare molti quattrini. Su, dunque, da bravo! Vieni con me nel Circo, e là ti insegnerà a saltare i cerchi, a rompere col capo le botti di foglio e a ballare il valzer e la polca, stando ritto sulle gambe di dietro.
+Il povero Pinocchio, per amore o per forza, dové imparare tutte queste bellissime cose; ma, per impararle, gli ci vollero tre mesi di lezioni, e molte frustate da levare il pelo.
+Venne finalmente il giorno, in cui il suo padrone poté annunziare uno spettacolo veramente straordinario. I cartelloni di vario colore, attaccati alle cantonate delle strade, dicevano così:
+GRANDE
+SPETTACOLO DI GALA
+
+PER QUESTA SERA
+
+AVRANNO LUOGO I SOLITI SALTI ED ESERCIZI SORPRENDENTI ESEGUITI DA TUTTI GLI ARTISTI E DA TUTTI I CAVALLI D’AMBO I SESSI DELLA COMPAGNIA
+
+E PIÙ SARÀ PRESENTATO PER LA PRIMA VOLTA IL FAMOSO
+
+CIUCHINO
+PINOCCHIO
+DETTO
+LA STELLA DELLA DANZA
+
+IL TEATRO SARÀ ILLUMINATO A GIORNO
+Quella sera, come potete figurarvelo, un’ora prima che cominciasse lo spettacolo, il teatro era pieno stipato.
+Non si trovava più né un posto distinto, né un palco, nemmeno a pagarlo a peso d’oro.
+Le gradinate del Circo formicolavano di bambini, di bambine e di ragazzi di tutte le età, che avevano la febbre addosso per la smania di veder ballare il famoso ciuchino Pinocchio.
+Finita la prima parte dello spettacolo, il direttore della compagnia, vestito in giubba nera, calzoni bianchi a coscia e stivaloni di pelle fin sopra ai ginocchi, si presentò all’affollatissimo pubblico, e, fatto un grande inchino, recitò con molta solennità il seguente spropositato discorso:
+«Rispettabile pubblico, cavalieri e dame!»
+«L’umile sottoscritto essendo di passaggio per questa illustre metropolitana, ho voluto procrearmi l’onore nonché il piacere di presentare a questo intelligente e cospicuo uditorio un celebre ciuchino, che ebbe già l’onore di ballare al cospetto di Sua Maestà l’Imperatore di tutte le Corti principali d’Europa.»
+«E col ringraziandoli, aiutateci della vostra animatrice presenza e compatiteci!”
+Questo discorso fu accolto da molte risate e da molti applausi: ma gli applausi raddoppiarono e diventarono una specie di uragano alla comparsa del ciuchino Pinocchio in mezzo al Circo. Egli era tutto agghindato a festa. Aveva una briglia nuova di pelle lustra, con fibbie e borchie d’ottone; due camelie bianche agli orecchi; la criniera divisa in tanti riccioli legati con fiocchettini d’argento attraverso alla vita, e la coda tutta intrecciata con nastri di velluto amaranto e celeste. Era, insomma, un ciuchino da innamorare!
+Il direttore, nel presentarlo al pubblico, aggiunse queste parole:
+«Miei rispettabili auditori! Non starò qui a farvi menzogne delle grandi difficoltà da me soppressate per comprendere e soggiogare questo mammifero, mentre pascolava liberamente di montagna in montagna nelle pianure della zona torrida. Osservate, vi prego, quanta selvaggina trasudi dà suoi occhi, conciossiaché essendo riusciti vanitosi tutti i mezzi per addomesticarlo al vivere dei quadrupedi civili, ho dovuto più volte ricorrere all’affabile dialetto della frusta. Ma ogni mia gentilezza invece di farmi da lui benvolere, me ne ha maggiormente cattivato l’animo. Io però, seguendo il sistema di Galles, trovai nel suo cranio una piccola cartagine ossea che la stessa Facoltà Medicea di Parigi riconobbe essere quello il bulbo rigeneratore dei capelli e della danza pirrica. E per questo io lo volli ammaestrare nel ballo nonché nei relativi salti dei cerchi e delle botti foderate di foglio. Ammiratelo, e poi giudicatelo! Prima però di prendere cognato da voi, permettete, o signori, che io v’inviti al diurno spettacolo di domani sera: ma nell’apoteosi che il tempo piovoso minacciasse acqua, allora lo spettacolo invece di domani sera, sarà posticipato a domattina, alle ore undici antimeridiane del pomeriggio».
+E qui il direttore fece un’altra profondissima riverenza: quindi rivolgendosi a Pinocchio, gli disse:
+– Animo, Pinocchio!... Avanti di dar principio ai vostri esercizi, salutate questo rispettabile pubblico, cavalieri, dame e ragazzi!
+Pinocchio, ubbidiente, piegò subito i due ginocchi davanti, fino a terra, e rimase inginocchiato fino a tanto che il direttore, schioccando la frusta, non gli gridò:
+– Al passo!
+Allora il ciuchino si rizzò sulle quattro gambe, e cominciò a girare intorno al Circo, camminando sempre di passo.
+Dopo un poco il direttore grido:
+– Al trotto! – e Pinocchio, ubbidiente al comando, cambiò il passo in trotto.
+– Al galoppo!... – e Pinocchio staccò il galoppo.
+– Alla carriera! – e Pinocchio si dette a correre di gran carriera.
+Ma in quella che correva come un barbero, il direttore, alzando il braccio in aria, scaricò un colpo di pistola.
+A quel colpo il ciuchino, fingendosi ferito, cadde disteso nel Circo, come se fosse moribondo davvero.
+Rizzatosi da terra, in mezzo a uno scoppio di applausi, d’urli e di battimani, che andavano alle stelle, gli venne naturalmente di alzare la testa e di guardare in su... e guardando, vide in un palco una bella signora, che aveva al collo una grossa collana d’oro, dalla quale pendeva un medaglione.
+Nel medaglione c’era dipinto il ritratto d’un burattino.
+– Quel ritratto è il mio!... quella signora è la Fata! – disse dentro di sé Pinocchio, riconoscendola subito: e lasciandosi vincere dalla gran contentezza, si provò a gridare:
+– Oh Fatina mia! oh Fatina mia!
+Ma invece di queste parole, gli uscì dalla gola un raglio così sonoro e prolungato, che fece ridere tutti gli spettatori, e segnatamente tutti i ragazzi che erano in teatro.
+Allora il direttore, per insegnargli e per fargli intendere che non è buona creanza mettersi a ragliare in faccia al pubblico, gli diè col manico della frusta una bacchettata sul naso.
+Il povero ciuchino, tirato fuori un palmo di lingua, durò a leccarsi il naso almeno cinque minuti, credendo forse così di rasciugarsi il dolore che aveva sentito.
+Ma quale fu la sua disperazione quando, voltandosi in su una seconda volta, vide che il palco era vuoto e che la Fata era sparita!...
+Si sentì come morire: gli occhi gli si empirono di lacrime e cominciò a piangere dirottamente. Nessuno però se ne accorse e, meno degli altri, il direttore, il quale, anzi, schioccando la frusta, gridò:
+– Da bravo, Pinocchio! Ora farete vedere a questi signori con quanta grazia sapete saltare i cerchi.
+Pinocchio si provò due o tre volte: ma ogni volta che arrivava davanti al cerchio, invece di attraversarlo, ci passava più comodamente di sotto. Alla fine spiccò un salto e l’attraversò: ma le gambe di dietro gli rimasero disgraziatamente impigliate nel cerchio: motivo per cui ricadde in terra dall’altra parte tutto in un fascio.
+Quando si rizzò, era azzoppito, e a malapena poté ritornare alla scuderia.
+– Fuori Pinocchio! Vogliamo il ciuchino! Fuori il ciuchino! – gridavano i ragazzi dalla platea, impietositi e commossi al tristissimo caso.
+Ma il ciuchino per quella sera non si fece rivedere.
+La mattina dopo il veterinario, ossia il medico delle bestie, quando l’ebbe visitato, dichiarò che sarebbe rimasto zoppo per tutta la vita.
+Allora il direttore disse al suo garzone di stalla:
+– Che vuoi tu che mi faccia d’un somaro zoppo? Sarebbe un mangiapane a ufo. Portalo dunque in piazza e rivendilo.
+Arrivati in piazza, trovarono subito il compratore, il quale domandò al garzone di stalla:
+– Quanto vuoi di cotesto ciuchino zoppo?
+– Venti lire.
+– Io ti do venti soldi. Non credere che io lo compri per servirmene: lo compro unicamente per la sua pelle. Vedo che ha la pelle molto dura, e con la sua pelle voglio fare un tamburo per la banda musicale del mio paese.
+Lascio pensare a voi, ragazzi, il bel piacere che fu per il povero Pinocchio, quando sentì che era destinato a diventare un tamburo!
+Fatto sta che il compratore, appena pagati i venti soldi, condusse il ciuchino sopra uno scoglio ch’era sulla riva del mare; e messogli un sasso al collo e legatolo per una zampa con una fune che teneva in mano, gli diè improvvisamente uno spintone e lo gettò nell’acqua.
+Pinocchio, con quel macigno al collo, andò subito a fondo; e il compratore, tenendo sempre stretta in mano la fune, si pose a sedere sullo scoglio, aspettando che il ciuchino avesse tutto il tempo di morire affogato, per poi levargli la pelle.
+
+XXXIV Pinocchio, gettato in mare, è mangiato dai pesci e ritorna ad essere un burattino come prima; ma mentre nuota per salvarsi, è ingoiato dal terribile Pesce-cane.
+
+Dopo cinquanta minuti che il ciuchino era sott’acqua, il compratore disse, discorrendo da sé solo:
+– A quest’ora il mio povero ciuchino zoppo deve essere bell’affogato. Ritiriamolo dunque su, e facciamo con la sua pelle questo bel tamburo.
+E cominciò a tirare la fune, con la quale lo aveva legato per una gamba: e tira, tira, tira, alla fine vide apparire a fior d’acqua... indovinate? Invece di un ciuchino morto, vide apparire a fior d’acqua un burattino vivo che scodinzolava come un’anguilla.
+Vedendo quel burattino di legno, il pover’uomo credé di sognare e rimase lì intontito, a bocca aperta e con gli occhi fuori della testa.
+Riavutosi un poco dal suo primo stupore, disse piangendo e balbettando:
+– E il ciuchino che ho gettato in mare dov’è?
+– Quel ciuchino son io! – rispose il burattino, ridendo.
+– Tu?
+– Io.
+– Ah! mariuolo! Pretenderesti forse burlarti di me?
+– Burlarmi di voi? Tutt’altro, caro padrone: io vi parlo sul serio.
+– Ma come mai tu, che poco fa eri un ciuchino, ora, stando nell’acqua sei diventato un burattino di legno?...
+– Sarà effetto dell’acqua del mare. Il mare ne fa di questi scherzi.
+– Bada, burattino, bada!... Non credere di divertirti alle mie spalle. Guai a te, se mi scappa la pazienza.
+– Ebbene, padrone: volete sapere tutta la vera storia? Scioglietemi questa gamba e io ve la racconterò.
+Quel buon pasticcione del compratore, curioso di conoscere la vera storia, gli sciolse subito il nodo della fune, che lo teneva legato: e allora Pinocchio, trovandosi libero come un uccello nell’aria prese a dirgli così:
+– Sappiate dunque che io ero un burattino di legno come sono oggi: ma mi trovavo a tocco e non tocco di diventare un ragazzo, come in questo mondo ce n’è tanti: se non che per la mia poca voglia di studiare e per dar retta ai cattivi compagni, scappai di casa... e un bel giorno, svegliandomi, mi trovai cambiato in un somaro con tanto di orecchi... e con tanto di coda!... Che vergogna fu quella per me!... Una vergogna, caro padrone, che Sant’Antonio benedetto non la faccia provare neppure a voi! Portato a vendere sul mercato degli asini, fui comprato dal Direttore di una compagnia equestre, il quale si messe in capo di far di me un gran ballerino e un gran saltatore di cerchi; ma una sera durante lo spettacolo, feci in teatro una brutta cascata, e rimasi zoppo da tutt’e due le gambe. Allora il direttore non sapendo che cosa farsi d’un asino zoppo, mi mandò a rivendere, e voi mi avete comprato!
+– Pur troppo! E ti ho pagato venti soldi. E ora chi mi rende i miei poveri venti soldi?
+– E perché mi avete comprato? Voi mi avete comprato per fare con la mia pelle un tamburo!... un tamburo!...
+– Pur troppo!... E ora dove troverò un’altra pelle?
+– Non vi date alla disperazione, padrone. Dei ciuchini ce n’è tanti, in questo mondo!
+– Dimmi, monello impertinente: e la tua storia finisce qui?
+– No, – rispose il burattino, – ci sono altre due parole, e poi è finita. Dopo avermi comprato, mi avete condotto in questo luogo per uccidermi; ma poi, cedendo a un sentimento pietoso d’umanità, avete preferito di legarmi un sasso al collo e di gettarmi in fondo al mare. Questo sentimento di delicatezza vi onora moltissimo, e io ve ne serberò eterna riconoscenza. Per altro, caro padrone, questa volta avete fatto i vostri conti senza la Fata...
+– E chi è questa Fata?
+– È la mia mamma, la quale somiglia a tutte quelle buone mamme, che vogliono un gran bene ai loro ragazzi e non li perdono mai d’occhio, e li assistono amorosamente in ogni disgrazia, anche quando questi ragazzi, per le loro scapataggini e per i loro cattivi portamenti, meriterebbero di essere abbandonati e lasciati in balia a se stessi. Dicevo, dunque, che la buona Fata, appena mi vide in pericolo di affogare, mandò subito intorno a me un branco infinito di pesci, i quali credendomi davvero un ciuchino bell’e morto, cominciarono a mangiarmi! E che bocconi che facevano! Non avrei mai creduto che i pesci fossero più ghiotti anche dei ragazzi! Chi mi mangiò gli orecchi, chi mi mangiò il muso, chi il collo e la criniera, chi la pelle delle zampe, chi la pelliccia della schiena... e fra gli altri, vi fu un pesciolino così garbato, che si degnò perfino di mangiarmi la coda.
+– Da oggi in poi, – disse il compratore inorridito, – faccio giuro di non assaggiar più carne di pesce. Mi dispiacerebbe troppo di aprire una triglia o un nasello fritto e di trovargli in corpo una coda di ciuco!
+– Io la penso come voi, – replicò il burattino, ridendo. – Del resto, dovete sapere che quando i pesci ebbero finito di mangiarmi tutta quella buccia asinina, che mi copriva dalla testa ai piedi, arrivarono, – com’è naturale, all’osso... o per dir meglio, arrivarono al legno, perché, come vedete, io son fatto di legno durissimo. Ma dopo dati i primi morsi, quei pesci ghiottoni si accorsero subito che il legno non era ciccia per i loro denti, e nauseati da questo cibo indigesto se ne andarono chi in qua chi in là, senza voltarsi nemmeno a dirmi grazie... Ed eccovi raccontato come qualmente voi, tirando su la fune, avete trovato un burattino vivo, invece d’un ciuchino morto.
+– Io mi rido della tua storia, – gridò il compratore imbestialito. – Io so che ho speso venti soldi per comprarti, e rivoglio i miei quattrini. Sai che cosa farò? Ti porterò daccapo al mercato, e ti rivenderò a peso di legno stagionato per accendere il fuoco nel caminetto.
+– Rivendetemi pure: io sono contento, – disse Pinocchio.
+Ma nel dir così, fece un bel salto e schizzò in mezzo all’acqua. E nuotando allegramente e allontanandosi dalla spiaggia, gridava al povero compratore:
+– Addio, padrone; se avete bisogno di una pelle per fare un tamburo, ricordatevi di me.
+E poi rideva e seguitava a nuotare: e dopo un poco, rivoltandosi indietro, urlava più forte:
+– Addio, padrone: se avete bisogno di un po’ di legno stagionato, per accendere il caminetto, ricordatevi di me.
+Fatto sta che in un batter d’occhio si era tanto allontanato, che non si vedeva quasi più: ossia, si vedeva solamente sulla superficie del mare un puntolino nero, che di tanto in tanto rizzava le gambe fuori dell’acqua e faceva capriole e salti, come un delfino in vena di buonumore.
+Intanto che Pinocchio nuotava alla ventura, vide in mezzo al mare uno scoglio che pareva di marmo bianco: e su in cima allo scoglio, una bella Caprettina che belava amorosamente e gli faceva segno di avvicinarsi.
+La cosa più singolare era questa: che la lana della Caprettina, invece di esser bianca, o nera, o pallata di due colori, come quella delle altre capre, era invece turchina, ma d’un color turchino sfolgorante, che rammentava moltissimo i capelli della bella Bambina.
+Lascio pensare a voi se il cuore del povero Pinocchio cominciò a battere più forte! Raddoppiando di forza e di energia si diè a nuotare verso lo scoglio bianco: ed era già a mezza strada, quando ecco uscir fuori dall’acqua e venirgli incontro una orribile testa di mostro marino, con la bocca spalancata, come una voragine, e tre filari di zanne che avrebbero fatto paura anche a vederle dipinte.
+E sapete chi era quel mostro marino?
+Quel mostro marino era né più né meno quel gigantesco Pesce-cane, ricordato più volte in questa storia, e che per le sue stragi e per la sua insaziabile voracità, veniva soprannominato «l’Attila dei pesci e dei pescatori».
+Immaginatevi lo spavento del povero Pinocchio alla vista del mostro. Cercò di scansarlo, di cambiare strada: cercò di fuggire: ma quella immensa bocca spalancata gli veniva sempre incontro con la velocità di una saetta.
+– Affréttati, Pinocchio, per carità! – gridava belando la bella Caprettina.
+E Pinocchio nuotava disperatamente con le braccia, col petto, con le gambe e coi piedi.
+– Corri, Pinocchio, perché il mostro si avvicina!
+E Pinocchio, raccogliendo tutte le sue forze, raddoppiava di lena nella corsa.
+– Bada, Pinocchio!... il mostro ti raggiunge!... Eccolo!... Eccolo!... Affréttati per carità, o sei perduto!...
+E Pinocchio a nuotar più lesto che mai, e via, e via, e via, come andrebbe una palla di fucile. E già era presso lo scoglio, e già la Caprettina, spenzolandosi tutta sul mare, gli porgeva le sue zampine davanti per aiutarlo a uscire dall’acqua!
+Ma oramai era tardi! Il mostro lo aveva raggiunto: il mostro, tirando il fiato a sé, si bevve il povero burattino, come avrebbe bevuto un uovo di gallina: e lo inghiottì con tanta violenza e con tanta avidità, che Pinocchio, cascando giù in corpo al Pesce-cane, batté un colpo così screanzato, da restarne sbalordito per un quarto d’ora.
+Quando ritornò in sé da quello sbigottimento, non sapeva raccapezzarsi, nemmeno lui, in che mondo si fosse. Intorno a sé c’era da ogni parte un gran buio: ma un buio così nero e profondo, che gli pareva di essere entrato col capo in un calamaio pieno d’inchiostro. Stette in ascolto e non senti nessun rumore: solamente di tanto in tanto sentiva battersi nel viso alcune grandi buffate di vento. Da principio non sapeva intendere da dove quel vento uscisse: ma poi capì che usciva dai polmoni del mostro. Perché bisogna sapere che il Pesce-cane soffriva moltissimo d’asma, e quando respirava, pareva proprio che tirasse la tramontana.
+Pinocchio, sulle prime, s’ingegnò di farsi un poco di coraggio: ma quand’ebbe la prova e la riprova di trovarsi chiuso in corpo al mostro marino allora cominciò a piangere e a strillare: e piangendo diceva:
+– Aiuto! aiuto! Oh povero me! Non c’è nessuno che venga a salvarmi?
+– Chi vuoi che ti salvi, disgraziato?... – disse in quel buio una vociaccia fessa di chitarra scordata.
+– Chi è che parla così? – domandò Pinocchio, sentendosi gelare dallo spavento.
+– Sono io! sono un povero Tonno, inghiottito dal Pesce-cane insieme con te. E tu che pesce sei?
+– Io non ho che vedere nulla coi pesci. Io sono un burattino.
+– E allora, se non sei un pesce, perché ti sei fatto inghiottire dal mostro?
+– Non son io, che mi son fatto inghiottire: gli è lui che mi ha inghiottito! Ed ora che cosa dobbiamo fare qui al buio?...
+– Rassegnarsi e aspettare che il Pesce-cane ci abbia digeriti tutt’e due!...
+– Ma io non voglio esser digerito! – urlò Pinocchio, ricominciando a piangere.
+– Neppure io vorrei esser digerito, – soggiunse il Tonno, – ma io sono abbastanza filosofo e mi consolo pensando che, quando si nasce Tonni, c’è più dignità a morir sott’acqua che sott’olio!...
+– Scioccherie! – gridò Pinocchio.
+– La mia è un’opinione, – replicò il Tonno, – e le opinioni, come dicono i Tonni politici, vanno rispettate!
+– Insomma... io voglio andarmene di qui... io voglio fuggire...
+– Fuggi, se ti riesce!...
+– È molto grosso questo Pesce-cane che ci ha inghiottiti? – domandò il burattino.
+– Figùrati che il suo corpo è più lungo di un chilometro, senza contare la coda.
+Nel tempo che facevano questa conversazione al buio, parve a Pinocchio di veder lontan lontano una specie di chiarore.
+– Che cosa sarà mai quel lumicino lontano lontano? – disse Pinocchio.
+– Sarà qualche nostro compagno di sventura, che aspetterà come noi il momento di esser digerito!....
+– Voglio andare a trovarlo. Non potrebbe darsi il caso che fosse qualche vecchio pesce capace di insegnarmi la strada per fuggire?
+– Io te l’auguro di cuore, caro burattino.
+– Addio, Tonno.
+– Addio, burattino; e buona fortuna.
+– Dove ci rivedremo?...
+– Chi lo sa?... è meglio non pensarci neppure!
+
+XXXV Pinocchio ritrova in corpo al Pesce-cane... Chi ritrova? Leggete questo capitolo e lo saprete.
+
+Pinocchio, appena che ebbe detto addio al suo buon amico Tonno, si mosse brancolando in mezzo a quel buio, e cominciò a camminare a tastoni dentro il corpo del Pesce-cane, avviandosi un passo dietro l’altro verso quel piccolo chiarore che vedeva baluginare lontano lontano.
+E nel camminare sentì che i suoi piedi sguazzavano in una pozzanghera d’acqua grassa e sdrucciolona, e quell’acqua sapeva di un odore così acuto di pesce fritto che gli pareva di essere a mezza quaresima.
+E più andava avanti, e più il chiarore si faceva rilucente e distinto: finché, cammina cammina, alla fine arrivò: e quando fu arrivato... che cosa trovò? Ve lo do a indovinare in mille: trovò una piccola tavola apparecchiata, con sopra una candela accesa infilata in una bottiglia di cristallo verde, e seduto a tavola un vecchiettino tutto bianco, come se fosse di neve o di panna montata, il quale se ne stava lì biascicando alcuni pesciolini vivi, ma tanto vivi, che alle volte mentre li mangiava, gli scappavano perfino di bocca.
+A quella vista il povero Pinocchio ebbe un’allegrezza così grande e così inaspettata, che ci mancò un ette non cadesse in delirio. Voleva ridere, voleva piangere, voleva dire un monte di cose; e invece mugolava confusamente e balbettava delle parole tronche e sconclusionate. Finalmente gli riuscì di cacciar fuori un grido di gioia e spalancando le braccia e gettandosi al collo del vecchietto, cominciò a urlare:
+– Oh! babbino mio! finalmente vi ho ritrovato! Ora poi non vi lascio più, mai più, mai più!
+– Dunque gli occhi mi dicono il vero? – replicò il vecchietto stropicciandosi gli occhi, – Dunque tu sé proprio il mi’ caro Pinocchio?
+– Sì, sì, sono io, proprio io! E voi mi avete digià perdonato, non è vero? Oh! babbino mio, come siete buono!... e pensare che io, invece... Oh! ma se sapeste quante disgrazie mi son piovute sul capo e quante cose mi son andate per traverso! Figuratevi che il giorno che voi, povero babbino, col vendere la vostra casacca mi compraste l’Abbecedario per andare a scuola, io scappai a vedere i burattini, e il burattinaio mi voleva mettere sul fuoco perché gli cocessi il montone arrosto, che fu quello poi che mi dette cinque monete d’oro, perché le portassi a voi, ma io trovai la Volpe e il Gatto, che mi condussero all’osteria del Gambero Rosso dove mangiarono come lupi, e partito solo di notte incontrai gli assassini che si messero a corrermi dietro, e io via, e loro dietro, e io via e loro sempre dietro, e io via, finché m’impiccarono a un ramo della Quercia grande, dovecché la bella Bambina dai capelli turchini mi mandò a prendere con una carrozzina, e i medici, quando m’ebbero visitato, dissero subito: «Se non è morto, è segno che è sempre vivo», e allora mi scappò detto una bugia, e il naso cominciò a crescermi e non mi passava più dalla porta di camera, motivo per cui andai con la Volpe e col Gatto a sotterrare le quattro monete d’oro, che una l’avevo spesa all’osteria, e il pappagallo si messe a ridere, e viceversa di duemila monete non trovai più nulla, la quale il giudice quando seppe che ero stato derubato, mi fece subito mettere in prigione, per dare una soddisfazione ai ladri, di dove, col venir via, vidi un bel grappolo d’uva in un campo, che rimasi preso alla tagliola e il contadino di santa ragione mi messe il collare da cane perché facessi la guardia al pollaio, che riconobbe la mia innocenza e mi lasciò andare, e il Serpente, colla coda che gli fumava, cominciò a ridere e gli si strappò una vena sul petto e così ritornai alla Casa della bella Bambina, che era morta, e il Colombo vedendo che piangevo mi disse: «Ho visto il tu’ babbo che si fabbricava una barchettina per venirti a cercare», e io gli dissi: «Oh! se avessi l’ali anch’io», e lui mi disse: «Vuoi venire dal tuo babbo?», e io gli dissi: «Magari! ma chi mi ci porta», e lui mi disse: «Ti ci porto io», e io gli dissi: «Come?», e lui mi disse: «Montami sulla groppa», e così abbiamo volato tutta la notte, e poi la mattina tutti i pescatori che guardavano verso il mare mi dissero: «C’è un pover’uomo in una barchetta che sta per affogare», e io da lontano vi riconobbi subito, perché me lo diceva il core, e vi feci cenno di tornare alla spiaggia...
+– Ti riconobbi anch’io, – disse Geppetto, – e sarei volentieri tornato alla spiaggia: ma come fare? Il mare era grosso e un cavallone m’arrovesciò la barchetta. Allora un orribile Pesce-cane che era lì vicino, appena m’ebbe visto nell’acqua corse subito verso di me, e tirata fuori la lingua, mi prese pari pari, e m’inghiottì come un tortellino di Bologna.
+– E quant’è che siete chiuso qui dentro? – domandò Pinocchio.
+– Da quel giorno in poi, saranno oramai due anni: due anni, Pinocchio mio, che mi son parsi due secoli!
+– E come avete fatto a campare? E dove avete trovata la candela? E i fiammiferi per accenderla, chi ve li ha dati?
+– Ora ti racconterò tutto. Devi dunque sapere che quella medesima burrasca, che rovesciò la mia barchetta, fece anche affondare un bastimento mercantile. I marinai si salvarono tutti, ma il bastimento colò a fondo e il solito Pesce-cane, che quel giorno aveva un appetito eccellente, dopo aver inghiottito me, inghiottì anche il bastimento...
+– Come? Lo inghiottì tutto in un boccone?... – domandò Pinocchio maravigliato.
+– Tutto in un boccone: e risputò solamente l’albero maestro, perché gli era rimasto fra i denti come una lisca. Per mia gran fortuna, quel bastimento era carico di carne conservata in cassette di stagno, di biscotto, ossia di pane abbrostolito, di bottiglie di vino, d’uva secca, di cacio, di caffè, di zucchero, di candele steariche e di scatole di fiammiferi di cera. Con tutta questa grazia di Dio ho potuto campare due anni: ma oggi sono agli ultimi sgoccioli: oggi nella dispensa non c’è più nulla, e questa candela, che vedi accesa, è l’ultima candela che mi sia rimasta...
+– E dopo?...
+– E dopo, caro mio, rimarremo tutt’e due al buio.
+– Allora, babbino mio, – disse Pinocchio, – non c’è tempo da perdere. Bisogna pensar subito a fuggire...
+– A fuggire?... e come?
+– Scappando dalla bocca del Pesce-cane e gettandosi a nuoto in mare.
+– Tu parli bene: ma io, caro Pinocchio, non so nuotare.
+– E che importa?... Voi mi monterete a cavalluccio sulle spalle e io, che sono un buon nuotatore, vi porterò sano e salvo fino alla spiaggia.
+– Illusioni, ragazzo mio! – replicò Geppetto, scotendo il capo e sorridendo malinconicamente. – Ti par egli possibile che un burattino, alto appena un metro, come sei tu, possa aver tanta forza da portarmi a nuoto sulle spalle?
+– Provatevi e vedrete! A ogni modo, se sarà scritto in cielo che dobbiamo morire, avremo almeno la gran consolazione di morire abbracciati insieme.
+E senza dir altro, Pinocchio prese in mano la candela, e andando avanti per far lume, disse al suo babbo:
+– Venite dietro a me, e non abbiate paura. E così camminarono un bel pezzo, e traversarono tutto il corpo e tutto lo stomaco del Pesce-cane. Ma giunti che furono al punto dove cominciava la gran gola del mostro, pensarono bene di fermarsi per dare un’occhiata e cogliere il momento opportuno alla fuga.
+Ora bisogna sapere che il Pesce-cane, essendo molto vecchio e soffrendo d’asma e di palpitazione di cuore, era costretto a dormir a bocca aperta: per cui Pinocchio, affacciandosi al principio della gola e guardando in su, poté vedere al di fuori di quell’enorme bocca spalancata un bel pezzo di cielo stellato e un bellissimo lume di luna.
+– Questo è il vero momento di scappare, – bisbigliò allora voltandosi al suo babbo. – Il Pescecane dorme come un ghiro: il mare è tranquillo e ci si vede come di giorno. Venite dunque, babbino, dietro a me e fra poco saremo salvi.
+Detto fatto, salirono su per la gola del mostro marino, e arrivati in quell’immensa bocca cominciarono a camminare in punta di piedi sulla lingua; una lingua così larga e così lunga, che pareva il viottolone d’un giardino. E già stavano lì lì per fare il gran salto e per gettarsi a nuoto nel mare, quando, sul più bello, il Pesce-cane starnutì, e nello starnutire, dette uno scossone così violento, che Pinocchio e Geppetto si trovarono rimbalzati all’indietro e scaraventati novamente in fondo allo stomaco del mostro.
+Nel grand’urto della caduta la candela si spense, e padre e figliuolo rimasero al buio.
+– E ora?... – domandò Pinocchio facendosi serio.
+– Ora ragazzo mio, siamo bell’e perduti.
+– Perché perduti? Datemi la mano, babbino, e badate di non sdrucciolare!...
+– Dove mi conduci?
+– Dobbiamo ritentare la fuga. Venite con me e non abbiate paura.
+Ciò detto, Pinocchio prese il suo babbo per la mano: e camminando sempre in punta di piedi, risalirono insieme su per la gola del mostro: poi traversarono tutta la lingua e scavalcarono i tre filari di denti. Prima però di fare il gran salto, il burattino disse al suo babbo:
+– Montatemi a cavalluccio sulle spalle e abbracciatemi forte forte. Al resto ci penso io.
+Appena Geppetto si fu accomodato per bene sulle spalle del figliuolo, Pinocchio, sicurissimo del fatto suo, si gettò nell’acqua e cominciò a nuotare. Il mare era tranquillo come un olio: la luna splendeva in tutto il suo chiarore e il Pesce-cane seguitava a dormire di un sonno così profondo, che non l’avrebbe svegliato nemmeno una cannonata.
+
+XXXVI Finalmente Pinocchio cessa d’essere un burattino e diventa un ragazzo.
+
+Mentre Pinocchio nuotava alla svelta per raggiungere la spiaggia, si accorse che il suo babbo, il quale gli stava a cavalluccio sulle spalle e aveva le gambe mezze nell’acqua, tremava fitto fitto, come se al pover’uomo gli battesse la febbre terzana.
+Tremava di freddo o di paura? Chi lo sa? Forse un po’ dell’uno e un po’ dell’altro. Ma Pinocchio, credendo che quel tremito fosse di paura, gli disse per confortarlo:
+– Coraggio babbo! Fra pochi minuti arriveremo a terra e saremo salvi.
+– Ma dov’è questa spiaggia benedetta? – domandò il vecchietto diventando sempre più inquieto, e appuntando gli occhi, come fanno i sarti quando infilano l’ago. – Eccomi qui, che guardo da tutte le parti, e non vedo altro che cielo e mare.
+– Ma io vedo anche la spiaggia, – disse il burattino. – Per vostra regola io sono come i gatti: ci vedo meglio di notte che di giorno.
+Il povero Pinocchio faceva finta di essere di buonumore: ma invece... Invece cominciava a scoraggiarsi: le forze gli scemavano, il suo respiro diventava grosso e affannoso... insomma non ne poteva più, la spiaggia era sempre lontana.
+Nuotò finché ebbe fiato: poi si voltò col capo verso Geppetto, e disse con parole interrotte:
+– Babbo mio, aiutatemi... perché io muoio!
+E il padre e il figliuolo erano oramai sul punto di affogare, quando udirono una voce di chitarra scordata che disse:
+– Chi è che muore?
+– Sono io e il mio povero babbo!...
+– Questa voce la riconosco! Tu sei Pinocchio!...
+– Preciso: e tu?
+– Io sono il Tonno, il tuo compagno di prigionia in corpo al Pesce-cane.
+– E come hai fatto a scappare?
+– Ho imitato il tuo esempio. Tu sei quello che mi hai insegnato la strada, e dopo te, sono fuggito anch’io.
+– Tonno mio, tu càpiti proprio a tempo! Ti prego per l’amor che porti ai Tonnini tuoi figliuoli: aiutaci, o siamo perduti.
+– Volentieri e con tutto il cuore. Attaccatevi tutt’e due alla mia coda, e lasciatevi guidare. In quattro minuti vi condurrò alla riva.
+Geppetto e Pinocchio, come potete immaginarvelo accettarono subito l’invito: ma invece di attaccarsi alla coda, giudicarono più comodo di mettersi addirittura a sedere sulla groppa del Tonno.
+– Siamo troppo pesi?... – gli domandò Pinocchio.
+– Pesi? Neanche per ombra; mi par di avere addosso due gusci di conchiglia, – rispose il Tonno, il quale era di una corporatura così grossa e robusta, da parere un vitello di due anni.
+Giunti alla riva, Pinocchio saltò a terra il primo, per aiutare il suo babbo a fare altrettanto; poi si voltò al Tonno, e con voce commossa gli disse:
+– Amico mio, tu hai salvato il mio babbo! Dunque non ho parole per ringraziarti abbastanza! Permetti almeno che ti dia un bacio in segno di riconoscenza eterna!...
+Il Tonno cacciò il muso fuori dall’acqua, e Pinocchio, piegandosi coi ginocchi a terra, gli posò un affettuosissimo bacio sulla bocca. A questo tratto di spontanea e vivissima tenerezza, il povero Tonno, che non c’era avvezzo, si sentì talmente commosso, che vergognandosi a farsi veder piangere come un bambino, ricacciò il capo sott’acqua e sparì.
+Intanto s’era fatto giorno.
+Allora Pinocchio, offrendo il suo braccio a Geppetto, che aveva appena il fiato di reggersi in piedi, gli disse:
+– Appoggiatevi pure al mio braccio, caro babbino, e andiamo. Cammineremo pian pianino come le formicole, e quando saremo stanchi ci riposeremo lungo la via.
+– E dove dobbiamo andare? – domandò Geppetto.
+– In cerca di una casa o d’una capanna, dove ci diano per carità un boccon di pane e un po’ di paglia che ci serva da letto.
+Non avevano ancora fatti cento passi, che videro seduti sul ciglione della strada due brutti ceffi, i quali stavano lì in atto di chiedere l’elemosina.
+Erano il Gatto e la Volpe: ma non si riconoscevano più da quelli d’una volta. Figuratevi che il Gatto, a furia di fingersi cieco, aveva finito coll’accecare davvero: e la Volpe invecchiata, intignata e tutta perduta da una parte, non aveva più nemmeno la coda. Così è. Quella trista ladracchiola, caduta nella più squallida miseria, si trovò costretta un bel giorno a vendere perfino la sua bellissima coda a un merciaio ambulante, che la comprò per farsene uno scacciamosche.
+– O Pinocchio, – gridò la Volpe con voce di piagnisteo, – fai un po’ di carità a questi due poveri infermi.
+– Infermi! – ripeté il Gatto.
+– Addio, mascherine! – rispose il burattino. – Mi avete ingannato una volta, e ora non mi ripigliate più.
+– Credilo, Pinocchio, che oggi siamo poveri e disgraziati davvero!
+– Davvero! – ripeté il Gatto.
+– Se siete poveri, ve lo meritate. Ricordatevi del proverbio che dice: «I quattrini rubati non fanno mai frutto». Addio, mascherine!
+– Abbi compassione di noi!...
+– Di noi!...
+– Addio, mascherine! Ricordatevi del proverbio che dice: «La farina del diavolo va tutta in crusca».
+– Non ci abbandonare!...
+– ...are! - ripeté il Gatto.
+– Addio, mascherine! Ricordatevi del proverbio che dice: «Chi ruba il mantello al suo prossimo, per il solito muore senza camicia».
+E così dicendo, Pinocchio e Geppetto seguitarono tranquillamente per la loro strada: finché, fatti altri cento passi, videro in fondo a una viottola in mezzo ai campi una bella capanna tutta di paglia, e col tetto coperto d’embrici e di mattoni.
+– Quella capanna dev’essere abitata da qualcuno, – disse Pinocchio. – Andiamo là e bussiamo.
+Difatti andarono, e bussarono alla porta.
+– Chi è? – disse una vocina di dentro.
+– Siamo un povero babbo e un povero figliuolo, senza pane e senza tetto, – rispose il burattino.
+– Girate la chiave, e la porta si aprirà, – disse la solita vocina.
+Pinocchio girò la chiave, e la porta si apri. Appena entrati dentro, guardarono di qua, guardarono di là, e non videro nessuno.
+– O il padrone della capanna dov’è? – disse Pinocchio maravigliato.
+– Eccomi quassù!
+Babbo e figliuolo si voltarono subito verso il soffitto, e videro sopra un travicello il Grillo-parlante:
+– Oh! mio caro Grillino, – disse Pinocchio salutandolo garbatamente.
+– Ora mi chiami il «tuo caro Grillino», non è vero? Ma ti rammenti di quando, per scacciarmi di casa tua, mi tirasti un martello di legno?...
+– Hai ragione, Grillino! Scaccia anche me... tira anche a me un martello di legno: ma abbi pietà del mio povero babbo...
+– Io avrò pietà del babbo e anche del figliuolo: ma ho voluto rammentarti il brutto garbo ricevuto, per insegnarti che in questo mondo, quando si può, bisogna mostrarsi cortesi con tutti, se vogliamo esser ricambiati con pari cortesia nei giorni del bisogno.
+– Hai ragione, Grillino, hai ragione da vendere e io terrò a mente la lezione che mi hai data. Ma mi dici come hai fatto a comprarti questa bella capanna?
+– Questa capanna mi è stata regalata ieri da una graziosa capra, che aveva la lana d’un bellissimo colore turchino.
+– E la capra dov’è andata? – domandò Pinocchio con vivissima curiosità.
+– Non lo so.
+– E quando ritornerà?...
+– Non ritornerà mai. Ieri è partita tutta afflitta, e, belando, pareva che dicesse: “Povero Pinocchio... oramai non lo rivedrò più... il Pesce-cane a quest’ora l’avrà bell’e divorato!...”.
+– Ha detto proprio così?... Dunque era lei!... Era lei!... era la mia cara Fatina!... – cominciò a urlare Pinocchio, singhiozzando e piangendo dirottamente.
+Quand’ebbe pianto ben bene, si rasciugò gli occhi e, preparato un buon lettino di paglia, vi distese sopra il vecchio Geppetto. Poi domandò al Grillo-parlante:
+– Dimmi, Grillino: dove potrei trovare un bicchiere di latte per il mio povero babbo?
+– Tre campi distante di qui c’è l’ortolano Giangio, che tiene le mucche. Và da lui e troverai il latte, che cerchi.
+Pinocchio andò di corsa a casa dell’ortolano Giangio; ma l’ortolano gli disse:
+– Quanto ne vuoi del latte?
+– Ne voglio un bicchiere pieno.
+– Un bicchiere di latte costa un soldo. Comincia intanto dal darmi il soldo.
+– Non ho nemmeno un centesimo, – rispose Pinocchio tutto mortificato e dolente.
+– Male, burattino mio, – replicò l’ortolano. – Se tu non hai nemmeno un centesimo, io non ho nemmeno un dito di latte.
+– Pazienza! – disse Pinocchio e fece l’atto di andarsene.
+– Aspetta un po’, – disse Giangio. – Fra te e me ci possiamo accomodare. Vuoi adattarti a girare il bindolo?
+– Che cos’è il bindolo?
+– Gli è quell’ordigno di legno, che serve a tirar su l’acqua dalla cisterna, per annaffiare gli ortaggi.
+– Mi proverò...
+– Dunque, tirami su cento secchie d’acqua e io ti regalerò in compenso un bicchiere di latte.
+– Sta bene.
+Giangio condusse il burattino nell’orto e gl’insegnò la maniera di girare il bindolo. Pinocchio si pose subito al lavoro; ma prima di aver tirato su le cento secchie d’acqua, era tutto grondante di sudore dalla testa ai piedi. Una fatica a quel modo non l’aveva durata mai.
+– Finora questa fatica di girare il bindolo, – disse l’ortolano, – l’ho fatta fare al mio ciuchino: ma oggi quel povero animale è in fin di vita.
+– Mi menate a vederlo? – disse Pinocchio.
+– Volentieri.
+Appena che Pinocchio fu entrato nella stalla vide un bel ciuchino disteso sulla paglia, rifinito dalla fame e dal troppo lavoro.
+Quando l’ebbe guardato fisso fisso, disse dentro di sé, turbandosi:
+– Eppure quel ciuchino lo conosco! Non mi è fisonomia nuova!
+E chinatosi fino a lui, gli domandò in dialetto asinino:
+– Chi sei?
+A questa domanda, il ciuchino apri gli occhi moribondi, e rispose balbettando nel medesimo dialetto:
+– Sono Lu...ci...gno...lo.
+E dopo richiuse gli occhi e spirò.
+– Oh! povero Lucignolo! – disse Pinocchio a mezza voce: e presa una manciata di paglia, si rasciugò una lacrima che gli colava giù per il viso.
+– Ti commovi tanto per un asino che non ti costa nulla? – disse l’ortolano. – Che cosa dovrei far io che lo comprai a quattrini contanti?
+– Vi dirò... era un mio amico!...
+– Tuo amico?
+– Un mio compagno di scuola!...
+– Come?! – urlò Giangio dando in una gran risata. – Come?! avevi dei somari per compagni di scuola!... Figuriamoci i belli studi che devi aver fatto!...
+Il burattino, sentendosi mortificato da quelle parole, non rispose: ma prese il suo bicchiere di latte quasi caldo, e se ne tornò alla capanna.
+E da quel giorno in poi, continuò più di cinque mesi a levarsi ogni mattina, prima dell’alba, per andare a girare il bindolo, e guadagnare così quel bicchiere di latte, che faceva tanto bene alla salute cagionosa del suo babbo. Né si contentò di questo: perché a tempo avanzato, imparò a fabbricare anche i canestri e i panieri di giunco: e coi quattrini che ne ricavava, provvedeva con moltissimo giudizio a tutte le spese giornaliere. Fra le altre cose, costruì da sé stesso un elegante carrettino per condurre a spasso il suo babbo alle belle giornate, e per fargli prendere una boccata d’aria.
+Nelle veglie poi della sera, si esercitava a leggere e a scrivere. Aveva comprato nel vicino paese per pochi centesimi un grosso libro, al quale mancavano il frontespizio e l’indice, e con quello faceva la sua lettura. Quanto allo scrivere, si serviva di un fuscello temperato a uso penna; e non avendo né calamaio né inchiostro, lo intingeva in una boccettina ripiena di sugo di more e di ciliege.
+Fatto sta, che con la sua buona volontà d’ingegnarsi, di lavorare e di tirarsi avanti, non solo era riuscito a mantenere quasi agiatamente il suo genitore sempre malaticcio, ma per di più aveva potuto mettere da parte anche quaranta soldi per comprarsi un vestitino nuovo.
+Una mattina disse a suo padre:
+– Vado qui al mercato vicino, a comprarmi una giacchettina, un berrettino e un paio di scarpe. Quando tornerò a casa, – soggiunse ridendo, – sarò vestito così bene, che mi scambierete per un gran signore.
+E uscito di casa, cominciò a correre tutto allegro e contento. Quando a un tratto sentì chiamarsi per nome: e voltandosi, vide una bella Lumaca che sbucava fuori della siepe.
+– Non mi riconosci? – disse la Lumaca.
+– Mi pare e non mi pare...
+– Non ti ricordi di quella Lumaca, che stava per cameriera con la Fata dai capelli turchini? Non ti rammenti di quella volta, quando scesi a farti lume e che tu rimanesti con un piede confitto nell’uscio di casa?
+– Mi rammento di tutto, – gridò Pinocchio. – Rispondimi subito, Lumachina bella: dove hai lasciato la mia buona Fata? Che fa? Mi ha perdonato? Si ricorda sempre di me? Mi vuol sempre bene? È molto lontana da qui? Potrei andare a trovarla?
+A tutte queste domande fatte precipitosamente e senza ripigliar fiato, la Lumaca rispose con la sua solita flemma:
+– Pinocchio mio! La povera Fata giace in un fondo di letto allo spedale!...
+– Allo spedale?...
+– Pur troppo! Colpita da mille disgrazie, si è gravemente ammalata e non ha più da comprarsi un boccon di pane.
+– Davvero?... Oh! Che gran dolore che mi hai dato! Oh! povera Fatina! Povera Fatina! Povera Fatina!... Se avessi un milione, correrei a portarglielo... Ma io non ho che quaranta soldi... eccoli qui: andavo giusto a comprarmi un vestito nuovo. Prendili, Lumaca, e và a portarli subito alla mia buona Fata.
+– E il tuo vestito nuovo?...
+– Che m’importa del vestito nuovo? Venderei anche questi cenci che ho addosso, per poterla aiutare! Và, Lumaca, spìcciati: e fra due giorni ritorna qui, che spero di poterti dare qualche altro soldo. Finora ho lavorato per mantenere il mio babbo: da oggi in là, lavorerò cinque ore di più per mantenere anche la mia buona mamma. Addio, Lumaca, e fra due giorni ti aspetto.
+La Lumaca, contro il suo costume, cominciò a correre come una lucertola nei grandi solleoni d’agosto.
+Quando Pinocchio tornò a casa, il suo babbo gli domandò:
+– E il vestito nuovo?
+– Non m’è stato possibile di trovarne uno che mi tornasse bene. Pazienza!... Lo comprerò un’altra volta.
+Quella sera Pinocchio, invece di vegliare fino alle dieci, vegliò fino alla mezzanotte suonata; e invece di far otto canestre di giunco ne fece sedici.
+Poi andò a letto e si addormentò. E nel dormire, gli parve di vedere in sogno la Fata, tutta bella e sorridente, la quale, dopo avergli dato un bacio, gli disse così.
+– Bravo Pinocchio! In grazia del tuo buon cuore, io ti perdono tutte le monellerie che hai fatto fino a oggi. I ragazzi che assistono amorosamente i propri genitori nelle loro miserie e nelle loro infermità, meritano sempre gran lode e grande affetto, anche se non possono esser citati come modelli d’ubbidienza e di buona condotta. Metti giudizio per l’avvenire, e sarai felice.
+A questo punto il sogno finì, e Pinocchio si svegliò con tanto d’occhi spalancati.
+Ora immaginatevi voi quale fu la sua maraviglia quando, svegliandosi, si accorse che non era più un burattino di legno: ma che era diventato, invece, un ragazzo come tutti gli altri. Dette un’occhiata all’intorno e invece delle solite pareti di paglia della capanna, vide una bella camerina ammobiliata e agghindata con una semplicità quasi elegante. Saltando giù dal letto, trovò preparato un bel vestiario nuovo, un berretto nuovo e un paio di stivaletti di pelle, che gli tornavano una vera pittura.
+Appena si fu vestito gli venne fatto naturalmente di mettere la mani nelle tasche e tirò fuori un piccolo portamonete d’avorio, sul quale erano scritte queste parole: «La Fata dai capelli turchini restituisce al suo caro Pinocchio i quaranta soldi e lo ringrazia tanto del suo buon cuore». Aperto il portamonete, invece dei quaranta soldi di rame, vi luccicavano quaranta zecchini d’oro, tutti nuovi di zecca.
+Dopo andò a guardarsi allo specchio, e gli parve d’essere un altro. Non vide più riflessa la solita immagine della marionetta di legno, ma vide l’immagine vispa e intelligente di un bel fanciullo coi capelli castagni, cogli occhi celesti e con un’aria allegra e festosa come una pasqua di rose.
+In mezzo a tutte queste meraviglie, che si succedevano le une alle altre, Pinocchio non sapeva più nemmeno lui se era desto davvero o se sognava sempre a occhi aperti.
+– E il mio babbo dov’è? – gridò tutt’a un tratto: ed entrato nella stanza accanto trovò il vecchio Geppetto sano, arzillo e di buonumore, come una volta, il quale, avendo ripreso subito la sua professione d’intagliatore in legno, stava appunto disegnando una bellissima cornice ricca di fogliami, di fiori e di testine di diversi animali.
+– Levatemi una curiosità, babbino: ma come si spiega tutto questo cambiamento improvviso? – gli domandò Pinocchio saltandogli al collo e coprendolo di baci.
+– Questo improvviso cambiamento in casa nostra è tutto merito tuo, – disse Geppetto.
+– Perché merito mio?...
+– Perché quando i ragazzi, di cattivi diventano buoni, hanno la virtù di far prendere un aspetto nuovo e sorridente anche all’interno delle loro famiglie.
+– E il vecchio Pinocchio di legno dove si sarà nascosto?
+– Eccolo là, – rispose Geppetto; e gli accennò un grosso burattino appoggiato a una seggiola, col capo girato sur una parte, con le braccia ciondoloni e con le gambe incrocicchiate e ripiegate a mezzo, da parere un miracolo se stava ritto.
+Pinocchio si voltò a guardarlo; e dopo che l’ebbe guardato un poco, disse dentro di sé con grandissima compiacenza:
+– Com’ero buffo, quand’ero un burattino!... e come ora son contento di essere diventato un ragazzino perbene!...
+Fine.
 EOT;
-
-    /*
-      - - - - - - - - - - - - - - - - - - - - - - -
-
-      TAVOLA DEI CARATTERI SPECIALI
-      TABLE OF SPECIAL CHARACTERS
-
-          à = a grave
-          è = e grave
-          ì = i grave
-          ò = o grave
-          ù = u grave
-
-          é = e acute
-          ó = o acute
-
-          ä = a uml
-          ë = e uml
-          ï = i uml
-          ö = o uml
-          ü = u uml
-
-          È = E grave
-          Ë = E uml
-          Ï = I uml
-
-          « = left angle quotation mark
-          » = right angle quotation mark
-
-          “ = left double quotation mark
-          ” = right double quotation mark
-
-          ‘ = left single quotation mark
-          ’ = right single quotation mark
-
-          — = em dash
-
-          · = middot
-
-      . . . = ellipsis
-
-
-
-
-
-
-
-
-
-
-
-    End of the Project Gutenberg EBook of La Divina Commedia di Dante: Inferno, by
-    Dante Alighieri
-
-    *** END OF THIS PROJECT GUTENBERG EBOOK DIVINIA COMMEDIA DI DANTE: INFERNO ***
-
-    ***** This file should be named 1009-8.txt or 1009-8.zip *****
-    This and all associated files of various formats will be found in:
-            http://www.gutenberg.org/1/0/0/1009/
-
-    Produced by an anonymous Project Gutenberg volunteer. HTML
-    version by Al Haines.
-
-    Updated editions will replace the previous one--the old editions will
-    be renamed.
-
-    Creating the works from print editions not protected by U.S. copyright
-    law means that no one owns a United States copyright in these works,
-    so the Foundation (and you!) can copy and distribute it in the United
-    States without permission and without paying copyright
-    royalties. Special rules, set forth in the General Terms of Use part
-    of this license, apply to copying and distributing Project
-    Gutenberg-tm electronic works to protect the PROJECT GUTENBERG-tm
-    concept and trademark. Project Gutenberg is a registered trademark,
-    and may not be used if you charge for the eBooks, unless you receive
-    specific permission. If you do not charge anything for copies of this
-    eBook, complying with the rules is very easy. You may use this eBook
-    for nearly any purpose such as creation of derivative works, reports,
-    performances and research. They may be modified and printed and given
-    away--you may do practically ANYTHING in the United States with eBooks
-    not protected by U.S. copyright law. Redistribution is subject to the
-    trademark license, especially commercial redistribution.
-
-    START: FULL LICENSE
-
-    THE FULL PROJECT GUTENBERG LICENSE
-    PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
-
-    To protect the Project Gutenberg-tm mission of promoting the free
-    distribution of electronic works, by using or distributing this work
-    (or any other work associated in any way with the phrase "Project
-    Gutenberg"), you agree to comply with all the terms of the Full
-    Project Gutenberg-tm License available with this file or online at
-    www.gutenberg.org/license.
-
-    Section 1. General Terms of Use and Redistributing Project
-    Gutenberg-tm electronic works
-
-    1.A. By reading or using any part of this Project Gutenberg-tm
-    electronic work, you indicate that you have read, understand, agree to
-    and accept all the terms of this license and intellectual property
-    (trademark/copyright) agreement. If you do not agree to abide by all
-    the terms of this agreement, you must cease using and return or
-    destroy all copies of Project Gutenberg-tm electronic works in your
-    possession. If you paid a fee for obtaining a copy of or access to a
-    Project Gutenberg-tm electronic work and you do not agree to be bound
-    by the terms of this agreement, you may obtain a refund from the
-    person or entity to whom you paid the fee as set forth in paragraph
-    1.E.8.
-
-    1.B. "Project Gutenberg" is a registered trademark. It may only be
-    used on or associated in any way with an electronic work by people who
-    agree to be bound by the terms of this agreement. There are a few
-    things that you can do with most Project Gutenberg-tm electronic works
-    even without complying with the full terms of this agreement. See
-    paragraph 1.C below. There are a lot of things you can do with Project
-    Gutenberg-tm electronic works if you follow the terms of this
-    agreement and help preserve free future access to Project Gutenberg-tm
-    electronic works. See paragraph 1.E below.
-
-    1.C. The Project Gutenberg Literary Archive Foundation ("the
-    Foundation" or PGLAF), owns a compilation copyright in the collection
-    of Project Gutenberg-tm electronic works. Nearly all the individual
-    works in the collection are in the public domain in the United
-    States. If an individual work is unprotected by copyright law in the
-    United States and you are located in the United States, we do not
-    claim a right to prevent you from copying, distributing, performing,
-    displaying or creating derivative works based on the work as long as
-    all references to Project Gutenberg are removed. Of course, we hope
-    that you will support the Project Gutenberg-tm mission of promoting
-    free access to electronic works by freely sharing Project Gutenberg-tm
-    works in compliance with the terms of this agreement for keeping the
-    Project Gutenberg-tm name associated with the work. You can easily
-    comply with the terms of this agreement by keeping this work in the
-    same format with its attached full Project Gutenberg-tm License when
-    you share it without charge with others.
-
-    1.D. The copyright laws of the place where you are located also govern
-    what you can do with this work. Copyright laws in most countries are
-    in a constant state of change. If you are outside the United States,
-    check the laws of your country in addition to the terms of this
-    agreement before downloading, copying, displaying, performing,
-    distributing or creating derivative works based on this work or any
-    other Project Gutenberg-tm work. The Foundation makes no
-    representations concerning the copyright status of any work in any
-    country outside the United States.
-
-    1.E. Unless you have removed all references to Project Gutenberg:
-
-    1.E.1. The following sentence, with active links to, or other
-    immediate access to, the full Project Gutenberg-tm License must appear
-    prominently whenever any copy of a Project Gutenberg-tm work (any work
-    on which the phrase "Project Gutenberg" appears, or with which the
-    phrase "Project Gutenberg" is associated) is accessed, displayed,
-    performed, viewed, copied or distributed:
-
-      This eBook is for the use of anyone anywhere in the United States and
-      most other parts of the world at no cost and with almost no
-      restrictions whatsoever. You may copy it, give it away or re-use it
-      under the terms of the Project Gutenberg License included with this
-      eBook or online at www.gutenberg.org. If you are not located in the
-      United States, you'll have to check the laws of the country where you
-      are located before using this ebook.
-
-    1.E.2. If an individual Project Gutenberg-tm electronic work is
-    derived from texts not protected by U.S. copyright law (does not
-    contain a notice indicating that it is posted with permission of the
-    copyright holder), the work can be copied and distributed to anyone in
-    the United States without paying any fees or charges. If you are
-    redistributing or providing access to a work with the phrase "Project
-    Gutenberg" associated with or appearing on the work, you must comply
-    either with the requirements of paragraphs 1.E.1 through 1.E.7 or
-    obtain permission for the use of the work and the Project Gutenberg-tm
-    trademark as set forth in paragraphs 1.E.8 or 1.E.9.
-
-    1.E.3. If an individual Project Gutenberg-tm electronic work is posted
-    with the permission of the copyright holder, your use and distribution
-    must comply with both paragraphs 1.E.1 through 1.E.7 and any
-    additional terms imposed by the copyright holder. Additional terms
-    will be linked to the Project Gutenberg-tm License for all works
-    posted with the permission of the copyright holder found at the
-    beginning of this work.
-
-    1.E.4. Do not unlink or detach or remove the full Project Gutenberg-tm
-    License terms from this work, or any files containing a part of this
-    work or any other work associated with Project Gutenberg-tm.
-
-    1.E.5. Do not copy, display, perform, distribute or redistribute this
-    electronic work, or any part of this electronic work, without
-    prominently displaying the sentence set forth in paragraph 1.E.1 with
-    active links or immediate access to the full terms of the Project
-    Gutenberg-tm License.
-
-    1.E.6. You may convert to and distribute this work in any binary,
-    compressed, marked up, nonproprietary or proprietary form, including
-    any word processing or hypertext form. However, if you provide access
-    to or distribute copies of a Project Gutenberg-tm work in a format
-    other than "Plain Vanilla ASCII" or other format used in the official
-    version posted on the official Project Gutenberg-tm web site
-    (www.gutenberg.org), you must, at no additional cost, fee or expense
-    to the user, provide a copy, a means of exporting a copy, or a means
-    of obtaining a copy upon request, of the work in its original "Plain
-    Vanilla ASCII" or other form. Any alternate format must include the
-    full Project Gutenberg-tm License as specified in paragraph 1.E.1.
-
-    1.E.7. Do not charge a fee for access to, viewing, displaying,
-    performing, copying or distributing any Project Gutenberg-tm works
-    unless you comply with paragraph 1.E.8 or 1.E.9.
-
-    1.E.8. You may charge a reasonable fee for copies of or providing
-    access to or distributing Project Gutenberg-tm electronic works
-    provided that
-
-    * You pay a royalty fee of 20% of the gross profits you derive from
-      the use of Project Gutenberg-tm works calculated using the method
-      you already use to calculate your applicable taxes. The fee is owed
-      to the owner of the Project Gutenberg-tm trademark, but he has
-      agreed to donate royalties under this paragraph to the Project
-      Gutenberg Literary Archive Foundation. Royalty payments must be paid
-      within 60 days following each date on which you prepare (or are
-      legally required to prepare) your periodic tax returns. Royalty
-      payments should be clearly marked as such and sent to the Project
-      Gutenberg Literary Archive Foundation at the address specified in
-      Section 4, "Information about donations to the Project Gutenberg
-      Literary Archive Foundation."
-
-    * You provide a full refund of any money paid by a user who notifies
-      you in writing (or by e-mail) within 30 days of receipt that s/he
-      does not agree to the terms of the full Project Gutenberg-tm
-      License. You must require such a user to return or destroy all
-      copies of the works possessed in a physical medium and discontinue
-      all use of and all access to other copies of Project Gutenberg-tm
-      works.
-
-    * You provide, in accordance with paragraph 1.F.3, a full refund of
-      any money paid for a work or a replacement copy, if a defect in the
-      electronic work is discovered and reported to you within 90 days of
-      receipt of the work.
-
-    * You comply with all other terms of this agreement for free
-      distribution of Project Gutenberg-tm works.
-
-    1.E.9. If you wish to charge a fee or distribute a Project
-    Gutenberg-tm electronic work or group of works on different terms than
-    are set forth in this agreement, you must obtain permission in writing
-    from both the Project Gutenberg Literary Archive Foundation and The
-    Project Gutenberg Trademark LLC, the owner of the Project Gutenberg-tm
-    trademark. Contact the Foundation as set forth in Section 3 below.
-
-    1.F.
-
-    1.F.1. Project Gutenberg volunteers and employees expend considerable
-    effort to identify, do copyright research on, transcribe and proofread
-    works not protected by U.S. copyright law in creating the Project
-    Gutenberg-tm collection. Despite these efforts, Project Gutenberg-tm
-    electronic works, and the medium on which they may be stored, may
-    contain "Defects," such as, but not limited to, incomplete, inaccurate
-    or corrupt data, transcription errors, a copyright or other
-    intellectual property infringement, a defective or damaged disk or
-    other medium, a computer virus, or computer codes that damage or
-    cannot be read by your equipment.
-
-    1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
-    of Replacement or Refund" described in paragraph 1.F.3, the Project
-    Gutenberg Literary Archive Foundation, the owner of the Project
-    Gutenberg-tm trademark, and any other party distributing a Project
-    Gutenberg-tm electronic work under this agreement, disclaim all
-    liability to you for damages, costs and expenses, including legal
-    fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
-    LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
-    PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
-    TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
-    LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
-    INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
-    DAMAGE.
-
-    1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
-    defect in this electronic work within 90 days of receiving it, you can
-    receive a refund of the money (if any) you paid for it by sending a
-    written explanation to the person you received the work from. If you
-    received the work on a physical medium, you must return the medium
-    with your written explanation. The person or entity that provided you
-    with the defective work may elect to provide a replacement copy in
-    lieu of a refund. If you received the work electronically, the person
-    or entity providing it to you may choose to give you a second
-    opportunity to receive the work electronically in lieu of a refund. If
-    the second copy is also defective, you may demand a refund in writing
-    without further opportunities to fix the problem.
-
-    1.F.4. Except for the limited right of replacement or refund set forth
-    in paragraph 1.F.3, this work is provided to you 'AS-IS', WITH NO
-    OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
-    LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
-
-    1.F.5. Some states do not allow disclaimers of certain implied
-    warranties or the exclusion or limitation of certain types of
-    damages. If any disclaimer or limitation set forth in this agreement
-    violates the law of the state applicable to this agreement, the
-    agreement shall be interpreted to make the maximum disclaimer or
-    limitation permitted by the applicable state law. The invalidity or
-    unenforceability of any provision of this agreement shall not void the
-    remaining provisions.
-
-    1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
-    trademark owner, any agent or employee of the Foundation, anyone
-    providing copies of Project Gutenberg-tm electronic works in
-    accordance with this agreement, and any volunteers associated with the
-    production, promotion and distribution of Project Gutenberg-tm
-    electronic works, harmless from all liability, costs and expenses,
-    including legal fees, that arise directly or indirectly from any of
-    the following which you do or cause to occur: (a) distribution of this
-    or any Project Gutenberg-tm work, (b) alteration, modification, or
-    additions or deletions to any Project Gutenberg-tm work, and (c) any
-    Defect you cause.
-
-    Section 2. Information about the Mission of Project Gutenberg-tm
-
-    Project Gutenberg-tm is synonymous with the free distribution of
-    electronic works in formats readable by the widest variety of
-    computers including obsolete, old, middle-aged and new computers. It
-    exists because of the efforts of hundreds of volunteers and donations
-    from people in all walks of life.
-
-    Volunteers and financial support to provide volunteers with the
-    assistance they need are critical to reaching Project Gutenberg-tm's
-    goals and ensuring that the Project Gutenberg-tm collection will
-    remain freely available for generations to come. In 2001, the Project
-    Gutenberg Literary Archive Foundation was created to provide a secure
-    and permanent future for Project Gutenberg-tm and future
-    generations. To learn more about the Project Gutenberg Literary
-    Archive Foundation and how your efforts and donations can help, see
-    Sections 3 and 4 and the Foundation information page at
-    www.gutenberg.org
-
-
-
-    Section 3. Information about the Project Gutenberg Literary Archive Foundation
-
-    The Project Gutenberg Literary Archive Foundation is a non profit
-    501(c)(3) educational corporation organized under the laws of the
-    state of Mississippi and granted tax exempt status by the Internal
-    Revenue Service. The Foundation's EIN or federal tax identification
-    number is 64-6221541. Contributions to the Project Gutenberg Literary
-    Archive Foundation are tax deductible to the full extent permitted by
-    U.S. federal laws and your state's laws.
-
-    The Foundation's principal office is in Fairbanks, Alaska, with the
-    mailing address: PO Box 750175, Fairbanks, AK 99775, but its
-    volunteers and employees are scattered throughout numerous
-    locations. Its business office is located at 809 North 1500 West, Salt
-    Lake City, UT 84116, (801) 596-1887. Email contact links and up to
-    date contact information can be found at the Foundation's web site and
-    official page at www.gutenberg.org/contact
-
-    For additional contact information:
-
-        Dr. Gregory B. Newby
-        Chief Executive and Director
-        gbnewby@pglaf.org
-
-    Section 4. Information about Donations to the Project Gutenberg
-    Literary Archive Foundation
-
-    Project Gutenberg-tm depends upon and cannot survive without wide
-    spread public support and donations to carry out its mission of
-    increasing the number of public domain and licensed works that can be
-    freely distributed in machine readable form accessible by the widest
-    array of equipment including outdated equipment. Many small donations
-    ($1 to $5,000) are particularly important to maintaining tax exempt
-    status with the IRS.
-
-    The Foundation is committed to complying with the laws regulating
-    charities and charitable donations in all 50 states of the United
-    States. Compliance requirements are not uniform and it takes a
-    considerable effort, much paperwork and many fees to meet and keep up
-    with these requirements. We do not solicit donations in locations
-    where we have not received written confirmation of compliance. To SEND
-    DONATIONS or determine the status of compliance for any particular
-    state visit www.gutenberg.org/donate
-
-    While we cannot and do not solicit contributions from states where we
-    have not met the solicitation requirements, we know of no prohibition
-    against accepting unsolicited donations from donors in such states who
-    approach us with offers to donate.
-
-    International donations are gratefully accepted, but we cannot make
-    any statements concerning tax treatment of donations received from
-    outside the United States. U.S. laws alone swamp our small staff.
-
-    Please check the Project Gutenberg Web pages for current donation
-    methods and addresses. Donations are accepted in a number of other
-    ways including checks, online payments and credit card donations. To
-    donate, please visit: www.gutenberg.org/donate
-
-    Section 5. General Information About Project Gutenberg-tm electronic works.
-
-    Professor Michael S. Hart was the originator of the Project
-    Gutenberg-tm concept of a library of electronic works that could be
-    freely shared with anyone. For forty years, he produced and
-    distributed Project Gutenberg-tm eBooks with only a loose network of
-    volunteer support.
-
-    Project Gutenberg-tm eBooks are often created from several printed
-    editions, all of which are confirmed as not protected by copyright in
-    the U.S. unless a copyright notice is included. Thus, we do not
-    necessarily keep eBooks in compliance with any particular paper
-    edition.
-
-    Most people start at our Web site which has the main PG search
-    facility: www.gutenberg.org
-
-    This Web site includes information about Project Gutenberg-tm,
-    including how to make donations to the Project Gutenberg Literary
-    Archive Foundation, how to help produce our new eBooks, and how to
-    subscribe to our email newsletter to hear about new eBooks.
-    */
 }
