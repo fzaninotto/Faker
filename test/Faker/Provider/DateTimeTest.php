@@ -74,6 +74,35 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     *
+     * @dataProvider providerDateTimeInInterval
+     */
+    public function testDateTimeInInterval($start, $interval = "+5 days", $isInFutur)
+    {
+        $date = DateTimeProvider::dateTimeInInterval($start, $interval);
+        $this->assertInstanceOf('\DateTime', $date);
+        
+        $_interval = \DateInterval::createFromDateString($interval);
+        $_start = new \DateTime($start);
+        if($isInFutur){
+            $this->assertGreaterThanOrEqual($_start, $date);
+            $this->assertLessThanOrEqual($_start->add($_interval), $date);
+        }else{
+            $this->assertLessThanOrEqual($_start, $date);
+            $this->assertGreaterThanOrEqual($_start->add($_interval), $date);
+        }
+    }
+
+    public function providerDateTimeInInterval()
+    {
+        return array(
+            array('-1 year', '+5 days', true),
+            array('-1 day', '-1 hour', false),
+            array('-1 day', '+1 hour', true),
+        );
+    }
+
     public function testFixedSeedWithMaximumTimestamp()
     {
         $max = '2018-03-01 12:00:00';
