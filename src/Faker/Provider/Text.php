@@ -9,6 +9,7 @@ abstract class Text extends \Faker\Provider\Base
     protected static $separatorLen = 1;
     protected $explodedText = null;
     protected $consecutiveWords = array();
+    protected $textStartsWithUppercase = true;
 
     /**
      * Generate a text string by the Markov chain algorithm.
@@ -56,7 +57,7 @@ abstract class Text extends \Faker\Provider\Base
             $next = static::implode($currentWords);
 
             // ensure text starts with an uppercase letter
-            if ($resultLength == 0 && !static::validStart($word)) {
+            if ( $resultLength == 0 && !static::validStart($word)) {
                 continue;
             }
 
@@ -127,6 +128,7 @@ abstract class Text extends \Faker\Provider\Base
 
     protected static function validStart($word)
     {
+        if(  !  $this->textStartsWithUppercase ) return true;
         return preg_match('/^\p{Lu}/u', $word);
     }
 
