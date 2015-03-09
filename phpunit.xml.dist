@@ -5,5 +5,8 @@
         <testsuite name="Faker Test Suite">
             <directory>./test/Faker/</directory>
         </testsuite>
+        <testsuite name="Html"><!-- promised, we'll remove this ad the end of the WIP -->
+            <file>./test/Faker/Provider/HtmlTest.php</file>
+        </testsuite>
     </testsuites>
 </phpunit>

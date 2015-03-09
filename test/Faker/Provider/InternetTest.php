@@ -118,24 +118,5 @@ class InternetTest extends \PHPUnit_Framework_TestCase
         $this->assertRegExp('/^([0-9A-F]{2}[:]){5}([0-9A-F]{2})$/i', Internet::macAddress());
     }
 
-    public function test_htmlLoremDefault()
-    {
-        $html = Internet::html();
-        $this->assertTrue(strlen(strip_tags($html)) < strlen($html));
-    }
-
-    public function test_htmlLoremSmallLengths()
-    {
-        $html = Internet::html(Internet::SMALLEST_HTML_LENGTH+5);
-        $this->assertTrue(strlen(strip_tags($html)) < strlen($html));
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function test_htmlTooSmall()
-    {
-        Internet::html(Internet::SMALLEST_HTML_LENGTH + Lorem::TOO_SHORT_TEXT_ARGUMENT -1);
-    }
 
 }
