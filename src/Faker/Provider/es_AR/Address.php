@@ -43,7 +43,7 @@ class Address extends \Faker\Provider\Address
         'Zambia', 'Zimbabue'
     );
     protected static $cityFormats = array(
-        '{{cityPrefix}} {{firstName}}{{citySuffix}}',
+        '{{cityPrefix}} {{firstName}} {{citySuffix}}',
         '{{cityPrefix}} {{firstName}}',
         '{{firstName}} {{citySuffix}}',
         '{{lastName}} {{citySuffix}}',
