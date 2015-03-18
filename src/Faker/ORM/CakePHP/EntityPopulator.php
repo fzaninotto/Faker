@@ -81,7 +81,24 @@ class EntityPopulator
             $modifiers['belongsTo' . $assoc->name()] = function ($data, $insertedEntities) use ($assoc) {
                 $table = $assoc->target();
                 $foreignModel = $table->alias();
-                $foreignKey = $insertedEntities[$foreignModel][array_rand($insertedEntities[$foreignModel])];
+
+                $foreignKeys = [];
+                if (!empty($insertedEntities[$foreignModel])) {
+                    $foreignKeys = $insertedEntities[$foreignModel];
+                } else {
+                    $foreignKeys = $table->find('all')
+                    ->select(['id'])
+                    ->map(function ($row) {
+                        return $row->id;
+                    })
+                    ->toArray();
+                }
+
+                if (empty($foreignKeys)) {
+                    throw new \Exception(sprintf('%s belongsTo %s, which seems empty at this point.', $this->getTable($this->class)->table(), $assoc->table()));
+                }
+
+                $foreignKey = $foreignKeys[array_rand($foreignKeys)];
                 $primaryKey = $table->primaryKey();
                 $data[$assoc->foreignKey()] = $foreignKey;
                 return $data;
