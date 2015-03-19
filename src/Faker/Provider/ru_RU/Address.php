@@ -97,9 +97,9 @@ class Address extends \Faker\Provider\Address
     protected static $addressFormats = array(
         "{{postcode}}, {{region}} {{regionSuffix}}, {{cityPrefix}} {{city}}, {{streetPrefix}} {{street}}, {{buildingNumber}}",
     );
-    
+
     protected static $streetAddressFormats = array(
-        "{{streetPrefix}} {{streetName}}, {{buildingNumber}}"
+        "{{streetPrefix}} {{street}}, {{buildingNumber}}"
     );
 
     public static function buildingNumber()
