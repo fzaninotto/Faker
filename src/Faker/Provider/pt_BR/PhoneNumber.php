@@ -131,7 +131,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     }
 
     /**
-     * Randomizes between complete cellphone and landline numbers, cleared from formatting.
+     * Randomizes between complete cellphone and landline numbers, cleared from formatting symbols.
      * @return mixed
      */
     public static function phoneNumberCleared()
@@ -140,4 +140,3 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         return static::{$method}(false);
     }
 }
-
