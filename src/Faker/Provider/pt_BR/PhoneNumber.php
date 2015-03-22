@@ -24,7 +24,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      * Generates a 2-digit area code not composed by zeroes.
      * @return string
      */
-    public function areaCode()
+    public static function areaCode()
     {
         return static::randomDigitNotNull().static::randomDigitNotNull();
     }
