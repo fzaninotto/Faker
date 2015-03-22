@@ -140,3 +140,4 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         return static::{$method}(false);
     }
 }
+
