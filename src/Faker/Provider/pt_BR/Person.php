@@ -101,52 +101,54 @@ class Person extends \Faker\Provider\Person
     }
 
 
-	/**
-	 * A random CPF number.
-	 * @param bool $formatted If the number should have dots/dashes or not.
-	 * @return string
-	 */
-	public function cpf($formatted = true)
-	{
-		$n = str_split($this->generator->numerify('#########'));
+    /**
+     * A random CPF number.
+     * @param bool $formatted If the number should have dots/dashes or not.
+     * @return string
+     */
+    public function cpf($formatted = true)
+    {
+        $n = $this->generator->numerify('#########');
+        $n .= $this->verifierDigit($n);
+        $n .= $this->verifierDigit($n);
 
-		$n[9] = $n[8] * 2 + $n[7] * 3 + $n[6] * 4 + $n[5] * 5 +
-			$n[4] * 6 + $n[3] * 7 + $n[2] * 8 + $n[1] * 9 + $n[0] * 10;
-		$n[9] = 11 - ($n[9] % 11);
-		if ($n[9] >= 10)
-			$n[9] = 0;
+        return $formatted? vsprintf('%d%d%d.%d%d%d.%d%d%d-%d%d', str_split($n)) : $n;
+    }
 
-		$n[10] = $n[9] * 2 + $n[8] * 3 + $n[7] * 4 + $n[6] * 5 + $n[5] * 6 +
-			$n[4] * 7 + $n[3] * 8 + $n[2] * 9 + $n[1] * 10 + $n[0] * 11;
-		$n[10] = 11 - ($n[10] % 11);
-		if ($n[10] >= 10)
-			$n[10] = 0;
+    /**
+     * A random CNPJ number.
+     * @param bool $formatted If the number should have dots/slashes/dashes or not.
+     * @return string
+     */
+    public function cnpj($formatted = true)
+    {
+        $n = $this->generator->numerify('########0001');
+        $n .= $this->verifierDigit($n);
+        $n .= $this->verifierDigit($n);
 
-		return $formatted?
-			vsprintf('%d%d%d.%d%d%d.%d%d%d-%d%d', $n) : implode($n);
-	}
+        return $formatted? vsprintf('%d%d.%d%d%d.%d%d%d/%d%d%d%d-%d%d', str_split($n)) : $n;
+    }
 
-	/**
-	 * A random CNPJ number.
-	 * @param bool $formatted If the number should have dots/slashes/dashes or not.
-	 * @return string
-	 */
-	public function cnpj($formatted = true)
-	{
-		$n = str_split($this->generator->numerify('########0001'));
+    protected function verifierDigit($numbers)
+    {
+        $length = strlen($numbers);
+        $second_algorithm = $length >= 12;
+        $verifier = 0;
 
-		$n[12] = $n[11] * 2 + $n[10] * 3 + $n[9] * 4 + $n[8] * 5 + $n[7] * 6 + $n[6] * 7 +
-			$n[5] * 8 + $n[4] * 9 + $n[3] * 2 + $n[2] * 3 + $n[1] * 4 + $n[0] * 5;
-		$n[12] = 11 - ($n[12] % 11);
-		if ($n[12] >= 10)
-			$n[12] = 0;
+        for($i = 1; $i <= $length; $i++) {
+            if (!$second_algorithm) {
+                $multiplier = $i+1;
+            } else {
+                $multiplier = ($i >= 9)? $i-7 : $i+1;
+            }
+            $verifier += $numbers[$length-$i] * $multiplier;
+        }
 
-		$n[13] = $n[12] * 2 + $n[11] * 3 + $n[10] * 4 + $n[9] * 5 + $n[8] * 6 + $n[7] * 7 +
-			$n[6] * 8 + $n[5] * 9 + $n[4] * 2 + $n[3] * 3 + $n[2] * 4 + $n[1] * 5 + $n[0] * 6;
-		$n[13] = 11 - ($n[13] % 11);
-		if ($n[13] >= 10)
-			$n[13] = 0;
+        $verifier = 11 - ($verifier % 11);
+        if ($verifier >= 10) {
+            $verifier = 0;
+        }
 
-		return $formatted? vsprintf('%d%d.%d%d%d.%d%d%d/%d%d%d%d-%d%d', $n) : implode($n);
-	}
+        return $verifier;
+    }
 }
