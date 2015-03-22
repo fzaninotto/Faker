@@ -883,7 +883,8 @@ echo $faker->cellphone(true, true); // '98983-3945' or '7343-1290'
 // Using the "Number" suffix adds the area code to the phone
 echo $faker->cellphoneNumber;       // (11) 98309-2935
 echo $faker->landlineNumber(false); // 3522835934
-echo $faker->phoneNumber;           // random landline or cellphone (obbeying the 9th digit rule)
+echo $faker->phoneNumber;           // formatted, random landline or cellphone (obbeying the 9th digit rule)
+echo $faker->phoneNumberCleared;    // not formatted, random landline or cellphone (obbeying the 9th digit rule)
 ```
 
 ### `Faker\Provider\pt_BR\Person`
@@ -891,7 +892,7 @@ echo $faker->phoneNumber;           // random landline or cellphone (obbeying th
 ```php
 <?php
 
-// Now the names generators may include double first or double last names, plus title and suffix
+// The name generator may include double first or double last names, plus title and suffix
 echo $faker->name; // 'Sr. Luis Adriano Sepúlveda Filho'
 
 // Valid document generators have a boolean argument to remove formatting
