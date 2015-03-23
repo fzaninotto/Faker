@@ -103,6 +103,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * A random CPF number.
+     * @link http://en.wikipedia.org/wiki/Cadastro_de_Pessoas_F%C3%ADsicas#Validation
      * @param bool $formatted If the number should have dots/dashes or not.
      * @return string
      */
@@ -117,6 +118,8 @@ class Person extends \Faker\Provider\Person
 
     /**
      * A random CNPJ number.
+     * @link http://en.wikipedia.org/wiki/CNPJ
+     * @link http://pt.wikipedia.org/wiki/CNPJ#Algoritmo_de_Valida.C3.A7.C3.A3o
      * @param bool $formatted If the number should have dots/slashes/dashes or not.
      * @return string
      */
