@@ -292,12 +292,12 @@ class Internet extends \Faker\Provider\Base
     }
 
     /**
-     * @example '35cd:186d:3e23:2986:ef9f:5b41:42a4:e6f1'
+     * @example '2001:0db8:3e23:2986:ef9f:5b41:42a4:e6f1'
      */
     public function ipv6()
     {
-        $res = array();
-        for ($i=0; $i < 8; $i++) {
+        $res = array('2001', '0db8');
+        for ($i=0; $i < 6; $i++) {
             $res []= dechex(mt_rand(0, "65535"));
         }
 
