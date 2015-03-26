@@ -135,6 +135,7 @@ class Payment extends Base
      * @param string  $type      Supporting any of 'Visa', 'MasterCard', 'Amercian Express', and 'Discover'
      * @param boolean $formatted Set to true if the output string should contain one separator every 4 digits
      * @param string  $separator Separator string for formatting card number. Defaults to dash (-).
+     * @return string
      *
      * @example '4485480221084675'
      */
@@ -161,6 +162,7 @@ class Payment extends Base
 
     /**
      * @param boolean $valid True (by default) to get a valid expiration date, false to get a maybe valid date
+     * @return \DateTime
      * @example 04/13
      */
     public function creditCardExpirationDate($valid = true)
@@ -175,6 +177,7 @@ class Payment extends Base
     /**
      * @param boolean $valid                True (by default) to get a valid expiration date, false to get a maybe valid date
      * @param string  $expirationDateFormat
+     * @return string
      * @example '04/13'
      */
     public function creditCardExpirationDateString($valid = true, $expirationDateFormat = null)
@@ -184,7 +187,7 @@ class Payment extends Base
 
     /**
      * @param  boolean $valid True (by default) to get a valid expiration date, false to get a maybe valid date
-     * @return array()
+     * @return array
      */
     public function creditCardDetails($valid = true)
     {

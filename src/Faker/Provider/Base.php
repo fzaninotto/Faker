@@ -193,7 +193,7 @@ class Base
      * Returns a random key from a passed associative array
      *
      * @param  array $array
-     * @return mixed
+     * @return int|string|null
      */
     public static function randomKey($array = array())
     {
@@ -238,8 +238,8 @@ class Base
      * Fisher–Yates algorithm, which is unbiaised, together with a Mersenne
      * twister random generator. This function is therefore more random than
      * PHP's shuffle() function, and it is seedable.
-     * 
-     * @link http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle 
+     *
+     * @link http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
      *
      * @example $faker->shuffleArray([1, 2, 3]); // [2, 1, 3]
      *
@@ -276,8 +276,8 @@ class Base
      * twister random generator. This function is therefore more random than
      * PHP's shuffle() function, and it is seedable. Additionally, it is
      * UTF8 safe if the mb extension is available.
-     * 
-     * @link http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle 
+     *
+     * @link http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
      *
      * @example $faker->shuffleString('hello, world'); // 'rlo,h eold!lw'
      *
@@ -472,7 +472,7 @@ class Base
      *
      * @param float $weight Set the probability of receiving a null value.
      *                            "0" will always return null, "1" will always return the generator.
-     * @return mixed|null
+     * @return Generator|DefaultGenerator
      */
     public function optional($weight = 0.5, $default = null)
     {
@@ -494,7 +494,7 @@ class Base
      * @param boolean $reset      If set to true, resets the list of existing values
      * @param integer $maxRetries Maximum number of retries to find a unique value,
      *                                       After which an OverflowException is thrown.
-     * @throws OverflowException When no unique value can be found by iterating $maxRetries times
+     * @throws \OverflowException When no unique value can be found by iterating $maxRetries times
      *
      * @return UniqueGenerator A proxy class returning only non-existing values
      */
