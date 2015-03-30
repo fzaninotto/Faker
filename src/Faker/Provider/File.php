@@ -566,7 +566,7 @@ class File extends \Faker\Provider\Base
      *
      * @param  string  $sourceDirectory The directory to look for random file taking
      * @param  string  $targetDirectory
-     * @param  boolean $fullPath        Wether to have the full path or just the filename
+     * @param  boolean $fullPath        Whether to have the full path or just the filename
      * @return string
      */
     public static function file($sourceDirectory = '/tmp', $targetDirectory = '/tmp', $fullPath = true)

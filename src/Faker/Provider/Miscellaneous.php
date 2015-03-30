@@ -181,6 +181,7 @@ class Miscellaneous extends \Faker\Provider\Base
      * Return a boolean, true or false
      *
      * @param integer $chanceOfGettingTrue Between 0 (always get false) and 100 (always get true).
+     * @return bool
      * @example true
      */
     public static function boolean($chanceOfGettingTrue = 50)
