@@ -4,6 +4,11 @@ namespace Faker\Provider\pt_BR;
 
 class Person extends \Faker\Provider\Person
 {
+    const PERSON_CPF_FORMAT_MASKED = 'cpf_format_masked';
+    const PERSON_CPF_FORMAT_PLAIN = 'cpf_format_plain';
+    const PERSON_RG_FORMAT_MASKED = 'rg_format_masked';
+    const PERSON_RG_FORMAT_PLAIN = 'rg_format_plain';
+
     protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{firstNameMale}} {{lastName}}',
@@ -107,7 +112,7 @@ class Person extends \Faker\Provider\Person
      * @param $format 'string' or 'integer'
      * @return string or integer
      */
-    public static function rg($format = 'string')
+    public static function rg($format = self::PERSON_RG_FORMAT_MASKED)
     {
         $randomRg = (string) mt_rand(10000000, 99999999);
         $sum = 0;
@@ -122,7 +127,7 @@ class Person extends \Faker\Provider\Person
             $dv = "X";
         }
 
-        if ($format === 'string') {
+        if ($format === self::PERSON_RG_FORMAT_MASKED) {
             return substr($randomRg, 0, 2) . '.' . substr($randomRg, 2, 3) . '.' . substr($randomRg, 5, 3) . '-' . $dv;
         }
 
@@ -136,14 +141,14 @@ class Person extends \Faker\Provider\Person
      * @param $format 'string' or 'integer'
      * @return string or integer
      */
-    public static function cpf($format = 'string')
+    public static function cpf($format = self::PERSON_CPF_FORMAT_MASKED)
     {
         $randomCpf = (string) mt_rand(100000000, 999999999);
 
         $firstDV = static::_mod11($randomCpf);
         $secondDV = static::_mod11($randomCpf.$firstDV);
 
-        if ($format === 'string') {
+        if ($format === self::PERSON_CPF_FORMAT_MASKED) {
             return substr($randomCpf, 0, 3) . '.' . substr($randomCpf, 3, 3) . '.' .substr($randomCpf, 6, 3) . '-' . $firstDV.$secondDV;
         }
         
