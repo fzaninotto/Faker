@@ -109,7 +109,7 @@ class Person extends \Faker\Provider\Person
      */
     public static function rg($format = 'string')
     {
-        $randomRg = (string) rand(10000000, 99999999);
+        $randomRg = (string) mt_rand(10000000, 99999999);
         $sum = 0;
 
         for ($i=1; $i < 9; $i++) {
@@ -138,7 +138,7 @@ class Person extends \Faker\Provider\Person
      */
     public static function cpf($format = 'string')
     {
-        $randomCpf = (string) rand(100000000, 999999999);
+        $randomCpf = (string) mt_rand(100000000, 999999999);
 
         $firstDV = static::_mod11($randomCpf);
         $secondDV = static::_mod11($randomCpf.$firstDV);
@@ -161,9 +161,9 @@ class Person extends \Faker\Provider\Person
         $sum = 0;
         $aux = 2;
 
-        $lenght = strlen($cpf);
+        $length = strlen($cpf);
 
-        for ($i = $lenght - 1; $i >= 0; $i--) {
+        for ($i = $length - 1; $i >= 0; $i--) {
             $sum = $sum + substr($cpf, $i, 1) * $aux++;
         }
         
