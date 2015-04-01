@@ -2,6 +2,8 @@
 
 namespace Faker\Provider\pt_BR;
 
+require_once "check_digit.php";
+
 class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = array(
@@ -110,48 +112,9 @@ class Person extends \Faker\Provider\Person
     public function cpf($formatted = true)
     {
         $n = $this->generator->numerify('#########');
-        $n .= $this->verifierDigit($n);
-        $n .= $this->verifierDigit($n);
+        $n .= check_digit($n);
+        $n .= check_digit($n);
 
         return $formatted? vsprintf('%d%d%d.%d%d%d.%d%d%d-%d%d', str_split($n)) : $n;
-    }
-
-    /**
-     * A random CNPJ number.
-     * @link http://en.wikipedia.org/wiki/CNPJ
-     * @link http://pt.wikipedia.org/wiki/CNPJ#Algoritmo_de_Valida.C3.A7.C3.A3o
-     * @param bool $formatted If the number should have dots/slashes/dashes or not.
-     * @return string
-     */
-    public function cnpj($formatted = true)
-    {
-        $n = $this->generator->numerify('########0001');
-        $n .= $this->verifierDigit($n);
-        $n .= $this->verifierDigit($n);
-
-        return $formatted? vsprintf('%d%d.%d%d%d.%d%d%d/%d%d%d%d-%d%d', str_split($n)) : $n;
-    }
-
-    protected function verifierDigit($numbers)
-    {
-        $length = strlen($numbers);
-        $second_algorithm = $length >= 12;
-        $verifier = 0;
-
-        for ($i = 1; $i <= $length; $i++) {
-            if (!$second_algorithm) {
-                $multiplier = $i+1;
-            } else {
-                $multiplier = ($i >= 9)? $i-7 : $i+1;
-            }
-            $verifier += $numbers[$length-$i] * $multiplier;
-        }
-
-        $verifier = 11 - ($verifier % 11);
-        if ($verifier >= 10) {
-            $verifier = 0;
-        }
-
-        return $verifier;
     }
 }
