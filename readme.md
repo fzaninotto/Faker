@@ -898,6 +898,7 @@ echo $faker->name; // 'Sr. Luis Adriano Sepúlveda Filho'
 // Valid document generators have a boolean argument to remove formatting
 echo $faker->cpf;        // '145.343.345-76'
 echo $faker->cpf(false); // '45623467866'
+echo $faker->rg;         // '84.405.736-3'
 echo $faker->cnpj;       // '23.663.478/0001-24'
 ```
 

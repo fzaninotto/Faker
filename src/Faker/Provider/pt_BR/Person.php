@@ -102,10 +102,9 @@ class Person extends \Faker\Provider\Person
         return static::randomElement(static::$suffix);
     }
 
-
     /**
      * A random CPF number.
-     * @link http://en.wikipedia.org/wiki/Cadastro_de_Pessoas_F%C3%ADsicas#Validation
+     * @link http://en.wikipedia.org/wiki/Cadastro_de_Pessoas_F%C3%ADsicas
      * @param bool $formatted If the number should have dots/dashes or not.
      * @return string
      */
@@ -116,5 +115,19 @@ class Person extends \Faker\Provider\Person
         $n .= check_digit($n);
 
         return $formatted? vsprintf('%d%d%d.%d%d%d.%d%d%d-%d%d', str_split($n)) : $n;
+    }
+
+    /**
+     * A random RG number, following Sao Paulo state's rules.
+     * @link http://pt.wikipedia.org/wiki/C%C3%A9dula_de_identidade
+     * @param bool $formatted If the number should have dots/dashes or not.
+     * @return string
+     */
+    public function rg($formatted = true)
+    {
+        $n = $this->generator->numerify('########');
+        $n .= check_digit($n);
+
+        return $formatted? vsprintf('%d%d.%d%d%d.%d%d%d-%s', str_split($n)) : $n;
     }
 }
