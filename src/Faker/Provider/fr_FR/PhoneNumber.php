@@ -51,7 +51,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     // Mobile phone numbers start by 06 and 07
     // 06 is the most common prefix
-    protected static $formatsmobile = array(        
+    protected static $mobileFormats  = array(        
                
         '+33 6 ## ## ## ##',
         '+33 7 ## ## ## ##',       
@@ -66,6 +66,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      */
     public static function mobileNumber()
     {
-        return static::numerify(static::randomElement(static::$formatsmobile));
+        return static::numerify(static::randomElement(static::$mobileFormats));
     }
 }
