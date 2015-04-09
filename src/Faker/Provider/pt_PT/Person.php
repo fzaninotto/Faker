@@ -115,7 +115,7 @@ class Person extends \Faker\Provider\Person
         'Vítor', 'Edgar', 'Kevin', 'Joaquim', 'Igor', 'Ângelo', 'Enzo', 'Valentim', 'Flávio',
         'Joel', 'Fernando', 'Sebastião', 'Tomé', 'César', 'Cláudio', 'Nelson', 'Lisandro', 'Jaime',
         'Gil', 'Mauro', 'Sandro', 'Hélder', 'Matheus', 'William', 'Gaspar', 'Márcio',
-        'Martinho', 'Emanuel', 'Marcos', 'Telmo', 'Davi', 'Wilson'
+        'Martinho', 'Emanuel', 'Marcos', 'Telmo', 'Davi', 'Wilson', 'Tassiano'
     );
 
     protected static $firstNameFemale = array(
@@ -141,6 +141,6 @@ class Person extends \Faker\Provider\Person
         'Miranda', 'Monteiro', 'Morais', 'Moreira', 'Mota', 'Moura', 'Nascimento', 'Neto', 'Neves', 'Nogueira',
         'Nunes', 'Oliveira', 'Pacheco', 'Paiva', 'Pereira', 'Pinheiro', 'Pinho', 'Pinto', 'Pires', 'Ramos',
         'Reis', 'Ribeiro', 'Rocha', 'Rodrigues', 'Santos', 'Silva', 'Simões', 'Soares', 'Sousa',
-        'Sá', 'Tavares', 'Teixeira', 'Torres', 'Valente', 'Vaz', 'Vicente', 'Vieira',
+        'Sá', 'Tavares', 'Teixeira', 'Torres', 'Valente', 'Vaz', 'Vicente', 'Vieira', 'Alencar'
     );
 }
