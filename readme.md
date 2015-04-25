@@ -854,6 +854,25 @@ echo $faker->bankAccountNumber; // "PL14968907563953822118075816"
 
 ```
 
+### `Faker\Provider\pt_PT\Address`
+
+```php
+<?php
+
+// Generates a random portuguese city
+echo $faker->city; // 'Braga'
+
+// Generates a random portuguese street name
+echo $faker->streetName; // 'Avenida de Bernier'
+
+// Generates a random portuguese street address
+echo $faker->streetAddress; // 'Rua St. Cade Fadel'
+
+// Generates a random portuguese city
+echo $faker->postcode; // '4710'
+
+```
+
 ### `Faker\Provider\pt_PT\Person`
 
 ```php
