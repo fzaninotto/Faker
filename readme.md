@@ -859,6 +859,15 @@ echo $faker->bankAccountNumber; // "PL14968907563953822118075816"
 ```php
 <?php
 
+// Generates a random portuguese male first name
+echo $this->faker->firstNameMale; // Nuno
+
+// Generates a random portuguese female first name
+echo $this->faker->firstNameFemale; // Débora
+
+// Generates a random portuguese last name
+echo $this->faker->lastName; // Rocha
+
 // Generates a random taxpayer identification number (in portuguese - Número de Identificação Fiscal NIF)
 echo $faker->taxpayerIdentificationNumber; // '165249277'
 
