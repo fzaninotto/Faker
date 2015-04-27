@@ -4,6 +4,11 @@ namespace Faker\Provider\pt_BR;
 
 class Person extends \Faker\Provider\Person
 {
+    const PERSON_CPF_FORMAT_MASKED = 'cpf_format_masked';
+    const PERSON_CPF_FORMAT_PLAIN = 'cpf_format_plain';
+    const PERSON_RG_FORMAT_MASKED = 'rg_format_masked';
+    const PERSON_RG_FORMAT_PLAIN = 'rg_format_plain';
+
     protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{firstNameMale}} {{lastName}}',
@@ -98,5 +103,81 @@ class Person extends \Faker\Provider\Person
     public static function suffix()
     {
         return static::randomElement(static::$suffix);
+    }
+
+    /**
+     * Cédula de Identidade - RG (SSP-SP)
+     * @link http://pt.wikipedia.org/wiki/C%C3%A9dula_de_identidade
+     *
+     * @param $format 'string' or 'integer'
+     * @return string or integer
+     */
+    public static function rg($format = self::PERSON_RG_FORMAT_MASKED)
+    {
+        $randomRg = (string) mt_rand(10000000, 99999999);
+        $sum = 0;
+
+        for ($i=1; $i < 9; $i++) {
+            $sum += $randomRg[$i-1] * ($i+1);
+        }
+
+        $dv = $sum % 11;
+
+        if ($dv == 10) {
+            $dv = "X";
+        }
+
+        if ($format === self::PERSON_RG_FORMAT_MASKED) {
+            return substr($randomRg, 0, 2) . '.' . substr($randomRg, 2, 3) . '.' . substr($randomRg, 5, 3) . '-' . $dv;
+        }
+
+        return $randomRg.$dv;
+    }
+
+    /**
+     * Cadastro de Pessoas Físicas - CPF
+     * @link http://pt.wikipedia.org/wiki/Cadastro_de_Pessoas_F%C3%ADsicas
+     *
+     * @param $format 'string' or 'integer'
+     * @return string or integer
+     */
+    public static function cpf($format = self::PERSON_CPF_FORMAT_MASKED)
+    {
+        $randomCpf = (string) mt_rand(100000000, 999999999);
+
+        $firstDV = static::_mod11($randomCpf);
+        $secondDV = static::_mod11($randomCpf.$firstDV);
+
+        if ($format === self::PERSON_CPF_FORMAT_MASKED) {
+            return substr($randomCpf, 0, 3) . '.' . substr($randomCpf, 3, 3) . '.' .substr($randomCpf, 6, 3) . '-' . $firstDV.$secondDV;
+        }
+        
+        return $randomCpf.$firstDV.$secondDV;
+    }
+
+    /**
+     * Auxiliar method to calc mod11 of the random cpf
+     *
+     * @param int $cpf CPF only numbers
+     * @return int $dv
+     */
+    public static function _mod11($cpf)
+    {
+        $sum = 0;
+        $aux = 2;
+
+        $length = strlen($cpf);
+
+        for ($i = $length - 1; $i >= 0; $i--) {
+            $sum = $sum + substr($cpf, $i, 1) * $aux++;
+        }
+        
+        $dv = 11 - ($sum % 11);
+
+        if ($dv > 9) {
+            $dv = 0;
+        }
+
+        return $dv;
     }
 }
