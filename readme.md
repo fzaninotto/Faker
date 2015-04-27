@@ -899,6 +899,15 @@ echo $faker->tollFreePhoneNumber; // "0800123456"
 echo $faker->premiumRatePhoneNumber; // "0900123456"
 ```
 
+### `Faker\Provider\ru_RU\Payment`
+
+```php
+<?php
+
+// Generates a Russian bank name (based on list of real russian banks)
+echo $faker->bank; // "ОТП Банк"
+```
+
 ### `Faker\Provider\en_NZ\Phone`
 
 ```php
