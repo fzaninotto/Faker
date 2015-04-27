@@ -864,6 +864,23 @@ echo $faker->taxpayerIdentificationNumber; // '165249277'
 
 ```
 
+### `Faker\Provider\pt_BR\Person`
+
+```php
+<?php
+
+// Generates a random identification number (in portuguese - Registro Geral RG do Estado de São Paulo) - based on SSP-SP algorithm
+echo $faker->rg; // '84.405.736-3'
+// or as integer
+echo $faker->rg('integer'); // '844057363'
+
+// Generates a random registry of contributors' identification (in portuguese - Cadastro de Pessoa Física CPF)
+echo $faker->cpf; // '755.255.531-98'
+// or as integer
+echo $faker->cpf('integer'); // '75525553198'
+
+```
+
 ### `Faker\Provider\ro_RO\Person`
 
 ```php
