@@ -98,6 +98,10 @@ class Address extends \Faker\Provider\Address
         "{{postcode}}, {{region}} {{regionSuffix}}, {{cityPrefix}} {{city}}, {{streetPrefix}} {{street}}, {{buildingNumber}}",
     );
 
+    protected static $streetAddressFormats = array(
+        "{{streetPrefix}} {{street}}, {{buildingNumber}}"
+    );
+
     public static function buildingNumber()
     {
         return static::numerify(static::randomElement(static::$buildingNumber));
