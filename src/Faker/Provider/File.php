@@ -584,7 +584,9 @@ class File extends \Faker\Provider\Base
         }
 
         // Drop . and .. and reset array keys
-        $files = array_values(array_diff(scandir($sourceDirectory), array('.', '..')));
+        $files = array_filter(array_values(array_diff(scandir($sourceDirectory), array('.', '..'))), function ($file) use ($sourceDirectory) {
+                return !is_dir($sourceDirectory . DIRECTORY_SEPARATOR . $file);
+        });
 
         $sourceFullPath = $sourceDirectory . DIRECTORY_SEPARATOR . static::randomElement($files);
 
