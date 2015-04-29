@@ -26,10 +26,8 @@ class PersonTest extends \PHPUnit_Framework_TestCase
     public function testRgFormatIsValid()
     {
         $rg = $this->faker->rg(false);
-        echo $rg."\n";
         $this->assertRegExp('/\d{8}\d/', $rg);
         $rg = $this->faker->rg(true);
-        echo $rg."\n";
         $this->assertRegExp('/\d{2}\.\d{3}\.\d{3}-[0-9X]/', $rg);
     }
 }
