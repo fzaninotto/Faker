@@ -15,6 +15,7 @@ class Address extends \Faker\Provider\Address
     protected static $postcode = array('0#####');
     protected static $country = array(
         'Қазақстан',
+        'Ресей',
     );
 
     protected static $region = array(
