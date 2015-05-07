@@ -106,21 +106,21 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
 ### `Faker\Provider\en_US\Address`
 
-    cityPrefix              // 'Lake'
-    secondaryAddress        // 'Suite 961'
-    state                   // 'NewMexico'
-    stateAbbr               // 'OH'
-    citySuffix              // 'borough'
-    streetSuffix            // 'Keys'
-    buildingNumber          // '484'
-    city                    // 'West Judge'
-    streetName              // 'Keegan Trail'
-    streetAddress           // '439 Karley Loaf Suite 897'
-    postcode                // '17916'
-    address                 // '8888 Cummings Vista Apt. 101, Susanbury, NY 95473'
-    country                 // 'Falkland Islands (Malvinas)'
-    latitude                // 77.147489
-    longitude               // 86.211205
+    cityPrefix                          // 'Lake'
+    secondaryAddress                    // 'Suite 961'
+    state                               // 'NewMexico'
+    stateAbbr                           // 'OH'
+    citySuffix                          // 'borough'
+    streetSuffix                        // 'Keys'
+    buildingNumber                      // '484'
+    city                                // 'West Judge'
+    streetName                          // 'Keegan Trail'
+    streetAddress                       // '439 Karley Loaf Suite 897'
+    postcode                            // '17916'
+    address                             // '8888 Cummings Vista Apt. 101, Susanbury, NY 95473'
+    country                             // 'Falkland Islands (Malvinas)'
+    latitude($min = -90, $max = 90)     // 77.147489
+    longitude($min = -180, $max = 180)  // 86.211205
 
 ### `Faker\Provider\en_US\PhoneNumber`
 
