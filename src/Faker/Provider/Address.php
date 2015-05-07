@@ -111,7 +111,7 @@ class Address extends \Faker\Provider\Base
      */
     public static function latitude($min = -90, $max = 90)
     {
-        return floatval(number_format(mt_rand($min * 1000000, $max * 1000000)/1000000, 6));
+        return mt_rand($min * 1000000, $max * 1000000)/1000000;
     }
 
     /**
@@ -122,6 +122,6 @@ class Address extends \Faker\Provider\Base
      */
     public static function longitude($min = -180, $max = 180)
     {
-        return floatval(number_format(mt_rand($min * 1000000, $max * 1000000)/1000000, 6));
+        return mt_rand($min * 1000000, $max * 1000000)/1000000;
     }
 }
