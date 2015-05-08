@@ -105,4 +105,24 @@ class Person extends \Faker\Provider\Person
         'Ыстамбақы',
         'Ісмет',
     );
+
+    /**
+     * National Individual Identification Numbers
+     *
+     * @link   http://egov.kz/wps/portal/!utWCM/p/b1/04_Sj9S1tDAwMzY1NjLTj9CPykssy0xPLMnMz0vMAfGjzOKDvDxNnJwMHQ0sTMOMDBxNPJ2dggNCg13MDIEKIpEVGFiGOIMUuIcFOJkZGxgYE6ffAAdwNCCkP1w_ClUJFheAFeCxws8jPzdVPzcqx83SU9cRADxWbyg!/dl4/d5/L0lDUmlTUSEhL3dHa0FKRnNBLzRKVXFDQSEhL2Vu/
+     * @param  \DateTime $birthDate
+     * @return string 12 digits, like 780322300455
+     */
+    public static function individualIdentificationNumber(\DateTime $birthDate = null)
+    {
+        if (!$birthDate) {
+            $birthDate = \Faker\Provider\DateTime::dateTimeBetween();
+        }
+
+        $dateAsString       = $birthDate->format('ymd');
+        $genderAndCenturyId = (string) static::numberBetween(1, 6);
+        $randomDigits       = (string) static::numerify('#####');
+
+        return $dateAsString . $genderAndCenturyId . $randomDigits;
+    }
 }
