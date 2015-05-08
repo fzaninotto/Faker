@@ -815,6 +815,7 @@ echo $faker->company; // "АҚ ҚазТехЭлектроҚұрылыс"
 
 // Generates an business identification number
 echo $faker->businessIdentificationNumber; // "150140000019"
+```
 
 ### `Faker\Provider\kk_KZ\Person`
 
