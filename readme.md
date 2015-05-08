@@ -805,6 +805,17 @@ echo $faker->firstKanaName; // "ハルカ"
 echo $faker->lastKanaName; // "ナカジマ"
 ```
 
+### `Faker\Provider\kk_KZ\Company`
+
+```php
+<?php
+
+// Generates a company
+echo $faker->company; // "АҚ ҚазТехЭлектроҚұрылыс"
+
+// Generates an business identification number
+echo $faker->businessIdentificationNumber; // "150140000019"
+
 ### `Faker\Provider\kk_KZ\Person`
 
 ```php
@@ -812,6 +823,9 @@ echo $faker->lastKanaName; // "ナカジマ"
 
 // Generates a name
 echo $faker->name; // "Үрімбайқызы Ләтипа"
+
+// Generates an individual identification number
+echo $faker->individualIdentificationNumber; // "780322300455"
 
 ```
 
