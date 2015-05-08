@@ -805,6 +805,25 @@ echo $faker->firstKanaName; // "ハルカ"
 echo $faker->lastKanaName; // "ナカジマ"
 ```
 
+### `Faker\Provider\kk_KZ\Person`
+
+```php
+<?php
+
+// Generates a name
+echo $faker->name; // "Үрімбайқызы Ләтипа"
+
+```
+
+### `Faker\Provider\kk_KZ\Address`
+
+```php
+<?php
+
+// Generates a region
+echo $faker->region; // "Талдықорған"
+
+```
 
 ### `Faker\Provider\lv_LV\Person`
 
