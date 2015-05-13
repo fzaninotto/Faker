@@ -148,7 +148,8 @@ class Person extends \Faker\Provider\Person
      * @param  boolean $mask
      * @return string $cnpj
      */
-    public static function nationalRegistryLegalEntities($mask = true) {
+    public static function nationalRegistryLegalEntities($mask = true) 
+    {
         $n1 = rand(0, 9);
         $n2 = rand(0, 9);
         $n3 = rand(0, 9);
@@ -185,7 +186,8 @@ class Person extends \Faker\Provider\Person
     * @param int $divider
     * @return int
     */
-    private static function mod($dividend, $divider) {
+    private static function mod($dividend, $divider) 
+    {
         return round($dividend - (floor($dividend / $divider) * $divider));
     }
 }
