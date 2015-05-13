@@ -864,7 +864,7 @@ echo $faker->taxpayerIdentificationNumber; // '165249277'
 
 ```
 
-### `Faker\Provider\pt_BT\Person`
+### `Faker\Provider\pt_BR\Person`
 
 ```php
 <?php
