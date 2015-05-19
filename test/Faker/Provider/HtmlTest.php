@@ -52,7 +52,6 @@ class HtmlTest extends \PHPUnit_Framework_TestCase
     public function test_htmlLoremSmallLengths()
     {
         $html = Html::html(Html::SMALLEST_HTML_LENGTH+5);
-        echo $html;
         //TODO This below do not have any sense to me
         $this->assertTrue(strlen(strip_tags($html)) < strlen($html));
     }
@@ -60,7 +59,6 @@ class HtmlTest extends \PHPUnit_Framework_TestCase
     public function test_htmlLoremMediumLengths()
     {
         $html = Html::html(Html::SMALLEST_HTML_LENGTH+30);
-        echo $html;
         //TODO This below do not have any sense to me
         $this->assertTrue(strlen(strip_tags($html)) < strlen($html));
     }
@@ -68,7 +66,6 @@ class HtmlTest extends \PHPUnit_Framework_TestCase
     public function test_htmlLoremLongLengths()
     {
         $html = Html::html(Html::SMALLEST_HTML_LENGTH+25);
-        echo $html;
         //TODO This below do not have any sense to me
         $this->assertTrue(strlen(strip_tags($html)) < strlen($html));
     }
