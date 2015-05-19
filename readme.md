@@ -870,6 +870,19 @@ echo $faker->taxpayerIdentificationNumber; // '165249277'
 
 ```
 
+### `Faker\Provider\pt_BR\Person`
+
+```php
+<?php
+
+// Generates a random Natural Persons Register (in portuguese Cadastro de Pessoa Física - CPF)
+echo $faker->naturalPersonsRegister; // '361.413.683-36'
+
+// Generates a random ational Registry of Legal Entities (in portuguese Cadastro Nacional da Pessoa Jurídica - CNPJ)
+echo $faker->nationalRegistryLegalEntities; // '97.531.288/0001-62'
+
+```
+
 ### `Faker\Provider\ro_RO\Person`
 
 ```php
