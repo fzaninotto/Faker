@@ -8,9 +8,11 @@ Faker requires PHP >= 5.3.3.
 
 [![Monthly Downloads](https://poser.pugx.org/fzaninotto/faker/d/monthly.png)](https://packagist.org/packages/fzaninotto/faker) [![Build Status](https://secure.travis-ci.org/fzaninotto/Faker.png)](http://travis-ci.org/fzaninotto/Faker) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/eceb78a9-38d4-4ad5-8b6b-b52f323e3549/mini.png)](https://insight.sensiolabs.com/projects/eceb78a9-38d4-4ad5-8b6b-b52f323e3549)
 
-## Installation with composer
+## Installation
 
-```composer require fzaninotto/faker```
+```sh
+composer require fzaninotto/faker
+```
 
 ## Basic Usage
 
