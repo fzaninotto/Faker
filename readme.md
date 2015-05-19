@@ -812,6 +812,20 @@ echo $faker->lastKanaName; // "ナカジマ"
 ```
 
 
+### `Faker\Provider\ko_KR\Address`
+
+```php
+<?php
+
+// Generates a metropolitan city
+echo $faker->metropolitanCity; // "서울특별시"
+
+// Generates a borough
+echo $faker->borough; // "강남구"
+
+```
+
+
 ### `Faker\Provider\lv_LV\Person`
 
 ```php
