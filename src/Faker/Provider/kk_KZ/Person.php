@@ -4,15 +4,31 @@ namespace Faker\Provider\kk_KZ;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $maleNameFormats = array(
+
+    /**
+     * @see https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D0%BA%D0%B0%D1%8F_%D1%84%D0%B0%D0%BC%D0%B8%D0%BB%D0%B8%D1%8F
+     *
+     * @var array
+     */
+    protected static $maleNameFormats = [
         '{{lastName}}ұлы {{firstNameMale}}',
-    );
+    ];
 
-    protected static $femaleNameFormats = array(
+    /**
+     * @see https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D0%BA%D0%B0%D1%8F_%D1%84%D0%B0%D0%BC%D0%B8%D0%BB%D0%B8%D1%8F
+     *
+     * @var array
+     */
+    protected static $femaleNameFormats = [
         '{{lastName}}қызы {{firstNameFemale}}',
-    );
+    ];
 
-    protected static $firstNameMale = array(
+    /**
+     * @see http://koshpendi.kz/index.php/nomad/imena/
+     *
+     * @var array
+     */
+    protected static $firstNameMale = [
         'Аылғазы',
         'Әбдіқадыр',
         'Бабағожа',
@@ -41,9 +57,14 @@ class Person extends \Faker\Provider\Person
         'Шаттық',
         'Ыстамбақы',
         'Ібни',
-    );
+    ];
 
-    protected static $firstNameFemale = array(
+    /**
+     * @see http://koshpendi.kz/index.php/nomad/imena/
+     *
+     * @var array
+     */
+    protected static $firstNameFemale = [
         'Асылтас',
         'Әужа',
         'Бүлдіршін',
@@ -73,9 +94,15 @@ class Person extends \Faker\Provider\Person
         'Шырынгүл',
         'Ырысты',
         'Іңкәр',
-    );
+    ];
 
-    protected static $lastName = array(
+    /**
+     * @see http://koshpendi.kz/index.php/nomad/imena/
+     * @see https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D0%BA%D0%B0%D1%8F_%D1%84%D0%B0%D0%BC%D0%B8%D0%BB%D0%B8%D1%8F
+     *
+     * @var array
+     */
+    protected static $lastName = [
         'Адырбай',
         'Әжібай',
         'Байбөрі',
@@ -104,7 +131,7 @@ class Person extends \Faker\Provider\Person
         'Шілдебай',
         'Ыстамбақы',
         'Ісмет',
-    );
+    ];
 
     /**
      * National Individual Identification Numbers
