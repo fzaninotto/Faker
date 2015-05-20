@@ -8,6 +8,12 @@ Faker requires PHP >= 5.3.3.
 
 [![Monthly Downloads](https://poser.pugx.org/fzaninotto/faker/d/monthly.png)](https://packagist.org/packages/fzaninotto/faker) [![Build Status](https://secure.travis-ci.org/fzaninotto/Faker.png)](http://travis-ci.org/fzaninotto/Faker) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/eceb78a9-38d4-4ad5-8b6b-b52f323e3549/mini.png)](https://insight.sensiolabs.com/projects/eceb78a9-38d4-4ad5-8b6b-b52f323e3549)
 
+## Installation
+
+```sh
+composer require fzaninotto/faker
+```
+
 ## Basic Usage
 
 Use `Faker\Factory::create()` to create and initialize a faker generator, which can generate data by accessing properties named after the type of data you want.
@@ -825,6 +831,20 @@ echo $faker->individualIdentificationNumber; // "780322300455"
 
 ```
 
+### `Faker\Provider\ko_KR\Address`
+
+```php
+<?php
+
+// Generates a metropolitan city
+echo $faker->metropolitanCity; // "서울특별시"
+
+// Generates a borough
+echo $faker->borough; // "강남구"
+
+```
+
+
 ### `Faker\Provider\lv_LV\Person`
 
 ```php
@@ -881,6 +901,44 @@ echo $faker->bankAccountNumber; // "PL14968907563953822118075816"
 // Generates a random taxpayer identification number (in portuguese - Número de Identificação Fiscal NIF)
 echo $faker->taxpayerIdentificationNumber; // '165249277'
 
+```
+
+### `Faker\Provider\pt_BR\PhoneNumber`
+
+```php
+<?php
+
+echo $faker->areaCode;  // 21
+echo $faker->cellphone; // 9432-5656
+echo $faker->landline;  // 2654-3445
+echo $faker->phone;     // random landline, 8-digit or 9-digit cellphone number
+
+// Using the phone functions with a false argument returns unformatted numbers
+echo $faker->cellphone(false); // 74336667
+
+// cellphone() has a special second argument to add the 9th digit. Ignored if generated a Radio number
+echo $faker->cellphone(true, true); // 98983-3945 or 7343-1290
+
+// Using the "Number" suffix adds area code to the phone
+echo $faker->cellphoneNumber;       // (11) 98309-2935
+echo $faker->landlineNumber(false); // 3522835934
+echo $faker->phoneNumber;           // formatted, random landline or cellphone (obbeying the 9th digit rule)
+echo $faker->phoneNumberCleared;    // not formatted, random landline or cellphone (obbeying the 9th digit rule)
+```
+
+### `Faker\Provider\pt_BR\Person`
+
+```php
+<?php
+
+// The name generator may include double first or double last names, plus title and suffix
+echo $faker->name; // 'Sr. Luis Adriano Sepúlveda Filho'
+
+// Valid document generators have a boolean argument to remove formatting
+echo $faker->cpf;        // '145.343.345-76'
+echo $faker->cpf(false); // '45623467866'
+echo $faker->rg;         // '84.405.736-3'
+echo $faker->cnpj;       // '23.663.478/0001-24'
 ```
 
 ### `Faker\Provider\ro_RO\Person`

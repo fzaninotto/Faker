@@ -2,6 +2,8 @@
 
 namespace Faker\Provider\pt_BR;
 
+require_once "check_digit.php";
+
 class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = array(
@@ -90,7 +92,7 @@ class Person extends \Faker\Provider\Person
 
     protected static $titleFemale = array('Sra.', 'Srta.', 'Dr.',);
 
-    private static $suffix = array('Filho', 'Neto', 'Sobrinho', 'Jr.');
+    protected static $suffix = array('Filho', 'Neto', 'Sobrinho', 'Jr.');
 
     /**
      * @example 'Jr.'
@@ -98,5 +100,34 @@ class Person extends \Faker\Provider\Person
     public static function suffix()
     {
         return static::randomElement(static::$suffix);
+    }
+
+    /**
+     * A random CPF number.
+     * @link http://en.wikipedia.org/wiki/Cadastro_de_Pessoas_F%C3%ADsicas
+     * @param bool $formatted If the number should have dots/dashes or not.
+     * @return string
+     */
+    public function cpf($formatted = true)
+    {
+        $n = $this->generator->numerify('#########');
+        $n .= check_digit($n);
+        $n .= check_digit($n);
+
+        return $formatted? vsprintf('%d%d%d.%d%d%d.%d%d%d-%d%d', str_split($n)) : $n;
+    }
+
+    /**
+     * A random RG number, following Sao Paulo state's rules.
+     * @link http://pt.wikipedia.org/wiki/C%C3%A9dula_de_identidade
+     * @param bool $formatted If the number should have dots/dashes or not.
+     * @return string
+     */
+    public function rg($formatted = true)
+    {
+        $n = $this->generator->numerify('########');
+        $n .= check_digit($n);
+
+        return $formatted? vsprintf('%d%d.%d%d%d.%d%d%d-%s', str_split($n)) : $n;
     }
 }
