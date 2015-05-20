@@ -21,6 +21,11 @@ class ImageTest extends \PHPUnit_Framework_TestCase
         $this->assertRegExp('#^http://lorempixel.com/800/400/nature/#', Image::imageUrl(800, 400, 'nature'));
     }
 
+    public function testImageUrlAcceptsCustomText()
+    {
+        $this->assertRegExp('#^http://lorempixel.com/800/400/nature/Faker#', Image::imageUrl(800, 400, 'nature', false, 'Faker'));
+    }
+
     public function testImageUrlAddsARandomGetParameterByDefault()
     {
         $url = Image::imageUrl(800, 400);
