@@ -4,6 +4,7 @@ namespace Faker\Test\Provider\cs_CZ;
 
 use Faker\Generator;
 use Faker\Provider\cs_CZ\Person;
+use Faker\Provider\Miscellaneous;
 
 class PersonTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,6 +12,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
+        $faker->addProvider(new Miscellaneous($faker));
 
         for ($i = 0; $i < 1000; $i++) { 
             $birthNumber = $faker->birthNumber();

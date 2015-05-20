@@ -437,7 +437,7 @@ class Person extends \Faker\Provider\Person
     public function birthNumber($gender = null, $minAge = 0, $maxAge = 100, $slashProbability = 50)
     {
         if ($gender == null) {
-            $gender = Miscellaneous::boolean() ? static::GENDER_MALE : static::GENDER_FEMALE;
+            $gender = $this->generator->boolean() ? static::GENDER_MALE : static::GENDER_FEMALE;
         }
 
         $startTimestamp = strtotime("-${maxAge} year");
@@ -454,7 +454,7 @@ class Person extends \Faker\Provider\Person
             $month += 50;
         }
         // from year 2004 everyone has +20 to month when birth numbers in one day are exhausted
-        if ($year >= 2004 && Miscellaneous::boolean(10)) {
+        if ($year >= 2004 && $this->generator->boolean(10)) {
             $month += 20;
         }
 
@@ -470,7 +470,7 @@ class Person extends \Faker\Provider\Person
         }
 
         // add slash
-        if (Miscellaneous::boolean($slashProbability)) {
+        if ($this->generator->boolean($slashProbability)) {
             $birthNumber = substr($birthNumber, 0, 6) . '/' . substr($birthNumber, 6);
         }
 
