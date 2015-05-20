@@ -238,6 +238,8 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
     ean13          // '4006381333931'
     ean8           // '73513537'
+    isbn13         // '9790404436093'
+    isbn10         // '4881416324
 
 ### `Faker\Provider\Miscellaneous`
 
