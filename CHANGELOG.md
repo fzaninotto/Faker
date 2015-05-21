@@ -110,7 +110,7 @@ To be released, v1.5.0
 * Added Biased Integer Provider [\#332](https://github.com/fzaninotto/Faker/pull/332) ([TimWolla](https://github.com/TimWolla))
 * Added Swedish (sv\_SE) locale [\#316](https://github.com/fzaninotto/Faker/pull/316) ([ulrikjohansson](https://github.com/ulrikjohansson))
 * Added English for New Zealand (en\_NZ) locale [\#283](https://github.com/fzaninotto/Faker/pull/283) ([JasonMortonNZ](https://github.com/JasonMortonNZ))
-* Mentioned external Provider for cron expressions [\#498](https://github.com/fzaninotto/Faker/pull/498) ([swekaj](https://github.com/swekaj))
+* Added mention of external Provider for cron expressions to readme[\#498](https://github.com/fzaninotto/Faker/pull/498) ([swekaj](https://github.com/swekaj))
 
 2014-06-04, v1.4.0
 ------------------
