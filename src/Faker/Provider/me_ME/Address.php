@@ -111,17 +111,23 @@ class Address extends \Faker\Provider\Address
 
     /**
      * @example '77.147489'
+     * @param float|int $min
+     * @param float|int $max
+     * @return float Uses signed degrees format (returns a float number between -90 and 90)
      */
-    public static function latitude()
+    public static function latitude($min = 42.43, $max = 42.45)
     {
-        return number_format(mt_rand(42430000, 42450000)/1000000, 6);
+        return static::randomFloat(6, $min, $max);
     }
 
     /**
      * @example '86.211205'
+     * @param float|int $min
+     * @param float|int $max
+     * @return float Uses signed degrees format (returns a float number between -180 and 180)
      */
-    public static function longitude()
+    public static function longitude($min = 19.16, $max = 19.27)
     {
-        return number_format(mt_rand(19260000, 19270000)/1000000, 6);
+        return static::randomFloat(6, $min, $max);
     }
 }
