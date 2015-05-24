@@ -231,7 +231,7 @@ class Payment extends Base
         }
 
         $expandedFormat = '';
-        foreach($format as list($class, $length)) {
+        foreach ($format as list($class, $length)) {
             $expandedFormat .=  str_repeat($class, $length);
         }
 
@@ -256,7 +256,7 @@ class Payment extends Base
 
         $tempResult = $result . $countryCode . '00';
 
-        $tempResult = preg_replace_callback('/[A-Z]/', function($matches) {
+        $tempResult = preg_replace_callback('/[A-Z]/', function ($matches) {
             return str_pad(ord($matches[0]) - 55, 2, '0', STR_PAD_LEFT);
         }, $tempResult);
 
