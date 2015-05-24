@@ -231,7 +231,8 @@ class Payment extends Base
         }
 
         $expandedFormat = '';
-        foreach ($format as list($class, $length)) {
+        foreach ($format as $item) {
+            list($class, $length) = $item;
             $expandedFormat .=  str_repeat($class, $length);
         }
 
@@ -254,11 +255,17 @@ class Payment extends Base
 
         $result = static::addBankCodeChecksum($result, $countryCode);
 
-        $tempResult = $result . $countryCode . '00';
+        $tempResult = str_split($result . $countryCode . '00');
 
-        $tempResult = preg_replace_callback('/[A-Z]/', function ($matches) {
-            return str_pad(ord($matches[0]) - 55, 2, '0', STR_PAD_LEFT);
-        }, $tempResult);
+        // Convert letters to numbers
+        foreach ($tempResult as &$letter) {
+            $num = ord($letter) - 55;
+            if ($num >= 10 && $num <= 35) {
+                $letter = str_pad($num, 2, '0', STR_PAD_LEFT);
+            }
+        }
+        unset($letter);
+        $tempResult = join('', $tempResult);
 
         // perform MOD97-10 checksum calculation
         $checksum = (int) $tempResult[0];
