@@ -1,8 +1,8 @@
 CHANGELOG
 =========
 
-To be released, v1.5.0
-----------------------
+2015-05-29, v1.5.0
+------------------
 
 * Added ability to print custom text on the images fetched by the Image provider [\#583](https://github.com/fzaninotto/Faker/pull/583) ([fzaninotto](https://github.com/fzaninotto))
 * Fixed typos in Preuvian (es\_PE) Person provider [\#581](https://github.com/fzaninotto/Faker/pull/581) [\#580](https://github.com/fzaninotto/Faker/pull/580) ([ysramirez](https://github.com/ysramirez))
