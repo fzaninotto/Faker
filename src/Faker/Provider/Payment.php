@@ -16,7 +16,7 @@ class Payment extends Base
      * @link http://en.wikipedia.org/wiki/VAT_identification_number
      * @link https://github.com/ronanguilloux/IsoCodes/blob/master/src/IsoCodes/Vat.php
      */
-    protected static $patterns = array(
+    public static $patterns = array(
         'AT' => 'U\d{8}',
         'BE' => '0\d{9}',
         'BG' => '\d{9,10}',
@@ -51,11 +51,9 @@ class Payment extends Base
         'AU' => '\d{9}',
         'BY' => '\d{9}',
         'HR' => '\d{11}',
-        'CA' => '[A-Z\d]{15}',
         'NO' => '\d{9}MVA',
         'PH' => '\d{12}',
         'RU' => '(\d{10}|\d{12})',
-        'CH' => '(\d{6}|E\d{9}(TVA|MWST|IVA))',
         'TR' => '\d{10}',
         'UA' => '\d{12}',
         'AR' => '\d{11}',

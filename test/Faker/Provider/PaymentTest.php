@@ -7,6 +7,7 @@ use Faker\Generator;
 use Faker\Provider\Base as BaseProvider;
 use Faker\Provider\DateTime as DateTimeProvider;
 use Faker\Provider\Payment as PaymentProvider;
+use Faker\Provider\Payment;
 use Faker\Provider\Person as PersonProvider;
 
 class PaymentTest extends \PHPUnit_Framework_TestCase
@@ -64,5 +65,25 @@ class PaymentTest extends \PHPUnit_Framework_TestCase
         $cardDetails = $this->faker->creditCardDetails;
         $this->assertEquals(count($cardDetails), 4);
         $this->assertEquals(array('type', 'number', 'name', 'expirationDate'), array_keys($cardDetails));
+    }
+
+    public function countriesProvider()
+    {
+        $data = array();
+
+        foreach(Payment::$patterns as $country => $regexp) {
+            $data[] = array($country, sprintf("/^%s%s$/",$country, Payment::$patterns[$country]));
+        }
+
+        return $data;
+    }
+
+    /**
+     * @dataProvider countriesProvider
+     */
+    public function testVat($country, $regexp)
+    {
+        $vat = Payment::vat(false, $country);
+        $this->assertRegExp($regexp, $vat);
     }
 }
