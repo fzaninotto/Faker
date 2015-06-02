@@ -79,7 +79,7 @@ class Payment extends Base
      * @param string $country              country code (ex: 'BE')
      * @return string a fake valid VAT number
      */
-    public static function vat($spacedNationalPrefix = true, $country)
+    public static function vat($spacedNationalPrefix = true, $country = null)
     {
         $prefix = ($spacedNationalPrefix) ? " " : "";
         if (!array_key_exists($country, self::$patterns)) {
