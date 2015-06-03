@@ -26,6 +26,8 @@ namespace Faker;
  *
  * @property string $ean13
  * @property string $ean8
+ * @property string $isbn13
+ * @property string $isbn10
  *
  * @property string $phoneNumber
  *
