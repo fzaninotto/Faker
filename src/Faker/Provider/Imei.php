@@ -2,7 +2,9 @@
 
 namespace Faker\Provider;
 
-class Imei
+use Faker\Calculator\Luhn;
+
+class Imei extends Base
 {
     /**
      * International Mobile Equipment Identity (IMEI)
@@ -14,43 +16,8 @@ class Imei
      */
     public function imei()
     {
-        $code = rand(1, 9);
-        $code = $code . rand(0, 9);
-        $code = $code . rand(0, 9);
-        $code = $code . rand(0, 9);
-        $code = $code . rand(0, 9);
-        $code = $code . rand(0, 9);
-        $code = $code . rand(0, 9);
-        $code = $code . rand(0, 9);
-        $code = $code . rand(0, 9);
-        $code = $code . rand(0, 9);
-        $code = $code . rand(0, 9);
-        $code = $code . rand(0, 9);
-        $code = $code . rand(0, 9);
-        $code = $code . rand(0, 9);
-        $position = 0;
-        $total = 0;
-        while ($position < strlen($code)) {
-            if ($position % 2 == 0) {
-                $prod = 1;
-            } else {
-                $prod = 2;
-            }
-            $actualNum = $prod * $code[$position];
-            if ($actualNum > 9) {
-                $strNum = strval($actualNum);
-                $total += $strNum[0] + $strNum[1];
-            } else {
-                $total += $actualNum;
-            }
-            $position++;
-        }
-        $last = 10 - ($total % 10);
-        if ($last == 10) {
-            $imei = $code . 0;
-        } else {
-            $imei = $code . $last;
-        }
+        $imei = (string) static::numerify('##############');
+        $imei .= Luhn::computeCheckDigit($imei);
         return $imei;
     }
 }
