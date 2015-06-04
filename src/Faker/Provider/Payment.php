@@ -16,7 +16,7 @@ class Payment extends Base
      * @link http://en.wikipedia.org/wiki/VAT_identification_number
      * @link https://github.com/ronanguilloux/IsoCodes/blob/master/src/IsoCodes/Vat.php
      */
-    public static $patterns = array(
+    public static $countryPatterns = array(
         'AT' => 'U\d{8}',
         'BE' => '0\d{9}',
         'BG' => '\d{9,10}',
@@ -79,12 +79,13 @@ class Payment extends Base
      */
     public static function vat($spacedNationalPrefix = true, $country = null)
     {
+        $country = is_null($country) ? array_rand(self::$countryPatterns) : $country;
         $prefix = ($spacedNationalPrefix) ? " " : "";
-        if (!array_key_exists($country, self::$patterns)) {
+        if (!array_key_exists($country, self::$countryPatterns)) {
             throw new \InvalidArgumentException(sprintf("There is no VAT generator for %s so far.", $country));
         }
 
-        return self::regexify(sprintf("^%s%s%s$", $country, $prefix, self::$patterns[$country]));
+        return self::regexify(sprintf("^%s%s%s$", $country, $prefix, self::$countryPatterns[$country]));
     }
 
     public static $expirationDateFormat = "m/y";

@@ -71,8 +71,8 @@ class PaymentTest extends \PHPUnit_Framework_TestCase
     {
         $data = array();
 
-        foreach(Payment::$patterns as $country => $regexp) {
-            $data[] = array($country, sprintf("/^%s%s$/",$country, Payment::$patterns[$country]));
+        foreach(Payment::$countryPatterns as $country => $regexp) {
+            $data[] = array($country, sprintf("/^%s%s$/",$country, Payment::$countryPatterns[$country]));
         }
 
         return $data;
@@ -85,5 +85,11 @@ class PaymentTest extends \PHPUnit_Framework_TestCase
     {
         $vat = Payment::vat(false, $country);
         $this->assertRegExp($regexp, $vat);
+    }
+
+    public function testVatWithRandomCountry()
+    {
+        $vat = Payment::vat(false, null);
+        $this->assertNotEmpty($vat);
     }
 }
