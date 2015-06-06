@@ -226,7 +226,6 @@ class Payment extends Base
             }
         }
         if ($format === null) {
-            return false;
             $format = array(array('n', $length));
         }
 
