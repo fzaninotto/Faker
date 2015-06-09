@@ -12,11 +12,11 @@ class DateTime extends \Faker\Provider\Base
             return (int) $max;
         }
 
-        if ($max instanceof \DateTime) {
-            return $max->getTimestamp();
+        if (! $max instanceof \DateTime) {
+            $max = new \DateTime($max);
         }
 
-        return strtotime(empty($max) ? 'now' : $max);
+        return $max->format("U");
     }
 
     /**
@@ -53,7 +53,8 @@ class DateTime extends \Faker\Provider\Base
      */
     public static function dateTimeAD($max = 'now')
     {
-        return new \DateTime('@' . mt_rand(-62135597361, static::getMaxTimestamp($max)));
+        $beginningOfTime = new \DateTime('January 1, 001');
+        return static::dateTimeBetween($beginningOfTime, $max);
     }
 
     /**
@@ -105,19 +106,53 @@ class DateTime extends \Faker\Provider\Base
      */
     public static function dateTimeBetween($startDate = '-30 years', $endDate = 'now')
     {
-        $startTimestamp = $startDate instanceof \DateTime ? $startDate->getTimestamp() : strtotime($startDate);
-        $endTimestamp = static::getMaxTimestamp($endDate);
+        if(! $startDate instanceof \DateTime) {
+            $startDate = new \DateTime($startDate);
+        }
+        if(! $endDate instanceof \DateTime) {
+            $endDate = new \DateTime($endDate);
+        }
+        $returnDate = $startDate;
+
+        //getTimestamp alternative for large numbers
+        $startTimestamp = $startDate->format("U");
+        $endTimestamp = $endDate->format("U");
 
         if ($startTimestamp > $endTimestamp) {
             throw new \InvalidArgumentException('Start date must be anterior to end date.');
         }
 
-        $timestamp = mt_rand($startTimestamp, $endTimestamp);
+        //get difference between timestamps
+        $diff = $endTimestamp - $startTimestamp;
 
-        $ts = new \DateTime('@' . $timestamp);
-        $ts->setTimezone(new \DateTimeZone(date_default_timezone_get()));
+        $secondsPerDay = 86400;
 
-        return $ts;
+        //convert to days - floor isn't really random but should be sufficient
+        $daysDifference = floor($diff / $secondsPerDay);
+
+        $addDays = mt_rand(0, $daysDifference);
+
+        //modify the returnDate
+        $returnDate->modify('+'.$addDays.' days');
+
+        //if the new date is equal to the start or end, limit the time appropriately
+        $timeMin = (($returnDate->format('Y-m-d') == $startDate->format('Y-m-d')) ? $startDate->format('H:i:s') : '00:00:00');
+        $timeMax = (($returnDate->format('Y-m-d') == $endDate->format('Y-m-d')) ? $endDate->format('H:i:s') : '23:59:59');
+
+        //convert times to seconds
+        $timeSecondsMin = strtotime($timeMin) - strtotime('TODAY');
+        $timeSecondsMax = strtotime($timeMax) - strtotime('TODAY');
+
+        //random number of seconds - will be used as "since midnight" on our new day
+        $randomSeconds = mt_rand($timeSecondsMin, $timeSecondsMax);
+
+        //fix to midnight, add the seconds
+        $returnDate->setTime(0,0,0);
+        $returnDate->modify('+'.$randomSeconds.' seconds');
+
+        $returnDate->setTimezone(new \DateTimeZone(date_default_timezone_get()));
+
+        return $returnDate;
     }
 
     /**
