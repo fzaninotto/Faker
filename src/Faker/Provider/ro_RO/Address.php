@@ -173,4 +173,20 @@ class Address extends \Faker\Provider\Address
 
         return $this->generator->parse($format);
     }
+
+    /**
+     * @example '47.93106635'
+     */
+    public static function latitude()
+    {
+        return (float) number_format(mt_rand(44308126, 47931066)/1000000, 6);
+    }
+
+    /**
+     * @example '27.542724'
+     */
+    public static function longitude()
+    {
+        return (float) number_format(mt_rand(22115478, 27542724)/1000000, 6);
+    }
 }
