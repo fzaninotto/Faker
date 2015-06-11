@@ -132,7 +132,7 @@ class Payment extends Base
     /**
      * Returns the String of a credit card number.
      *
-     * @param string  $type      Supporting any of 'Visa', 'MasterCard', 'Amercian Express', and 'Discover'
+     * @param string  $type      Supporting any of 'Visa', 'MasterCard', 'American Express', and 'Discover'
      * @param boolean $formatted Set to true if the output string should contain one separator every 4 digits
      * @param string  $separator Separator string for formatting card number. Defaults to dash (-).
      * @return string
