@@ -42,7 +42,7 @@ namespace Faker;
  * @property string $creditCardDetails
  * @property string $bankAccountNumber
  * @property string $swiftBicNumber
- * @property string $vat
+ * @method string vat($country, $spacedNationalPrefix = true)
  *
  * @property string $word
  * @property string|array $words
