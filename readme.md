@@ -258,9 +258,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     // with more chances to be close to 20
     biasedNumberBetween($min = 10, $max = 20, $function = 'sqrt')
 
-### `Faker\Provider\Imei`
 
-    imei                    // 720084494799532
 
 ## Unique and Optional modifiers
 
