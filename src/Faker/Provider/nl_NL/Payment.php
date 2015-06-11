@@ -16,4 +16,20 @@ class Payment extends \Faker\Provider\Payment
     {
         return static::iban($countryCode, $prefix, $length);
     }
+    
+    /**
+     * Value Added Tax (VAT)
+     *
+     * @example 'NL123456789B01'
+     *
+     * @see http://ec.europa.eu/taxation_customs/vies/faq.html?locale=en#item_11
+     * @see http://www.iecomputersystems.com/ordering/eu_vat_numbers.htm
+     * @see http://en.wikipedia.org/wiki/VAT_identification_number
+     *
+     * @return string VAT Number
+     */
+    public static function vat()
+    {
+        return sprintf("NL%dB%d", self::randomNumber(9, true), self::randomNumber(2, true));
+    }
 }
