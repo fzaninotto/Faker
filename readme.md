@@ -1042,6 +1042,7 @@ echo $faker->cityName;
 * [xml-faker](https://github.com/prewk/xml-faker): Create fake XML with Faker
 * [faker-context](https://github.com/denheck/faker-context): Behat context using Faker to generate testdata
 * [CronExpressionGenerator](https://github.com/swekaj/CronExpressionGenerator): Faker provider for generating random, valid cron expressions.
+* [pragmafabrik/Pomm2Faker](https://github.com/pragmafabrik/Pomm2Faker): Faker client for Pomm ORM (PostgreSQL)
 
 ## License
 
