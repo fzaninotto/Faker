@@ -2,6 +2,7 @@
 
 namespace Faker\Provider;
 
+use Faker\Calculator\Iban;
 use Faker\Calculator\Luhn;
 
 class Payment extends Base
@@ -254,27 +255,7 @@ class Payment extends Base
 
         $result = static::addBankCodeChecksum($result, $countryCode);
 
-        $tempResult = str_split($result . $countryCode . '00');
-
-        // Convert letters to numbers
-        foreach ($tempResult as &$letter) {
-            $num = ord($letter) - 55;
-            if ($num >= 10 && $num <= 35) {
-                $letter = str_pad($num, 2, '0', STR_PAD_LEFT);
-            }
-        }
-        unset($letter);
-        $tempResult = join('', $tempResult);
-
-        // perform MOD97-10 checksum calculation
-        $checksum = (int) $tempResult[0];
-        for ($i = 1, $size = strlen($tempResult); $i < $size; $i++) {
-            $checksum = (10 * $checksum + (int) $tempResult[$i]) % 97;
-        }
-        $checksum = 98 - $checksum;
-        if ($checksum < 10) {
-            $checksum = '0'.$checksum;
-        }
+        $checksum = Iban::checksum($countryCode . '00' . $result);
 
         return $countryCode . $checksum . $result;
     }
