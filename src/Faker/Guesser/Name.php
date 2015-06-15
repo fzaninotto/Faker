@@ -15,7 +15,7 @@ class Name
 
     /**
      * @param string $name
-     * @param int $size
+     * @param int|null $size Length of field, if known
      * @return callable
      */
     public function guessFormat($name, $size = null)
@@ -110,6 +110,7 @@ class Name
                             return $generator->country;
                         };
                 }
+                break;
             case 'locale':
                 return function () use ($generator) {
                     return $generator->locale;
