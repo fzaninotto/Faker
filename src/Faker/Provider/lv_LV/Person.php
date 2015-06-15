@@ -2,6 +2,8 @@
 
 namespace Faker\Provider\lv_LV;
 
+use Faker\Calculator\Luhn;
+
 class Person extends \Faker\Provider\Person
 {
     /**
@@ -57,5 +59,25 @@ class Person extends \Faker\Provider\Person
     public function passportNumber()
     {
         return $this->bothify("??#######");
+    }
+
+    /**
+     * National Personal Identity number (personas kods)
+     * @link https://en.wikipedia.org/wiki/National_identification_number#Latvia
+     * @param \DateTime $birthdate
+     * @return string on format XXXXXX-XXXXX
+     */
+    public function personalIdentityNumber(\DateTime $birthdate = null)
+    {
+        if (!$birthdate) {
+            $birthdate = \Faker\Provider\DateTime::dateTimeThisCentury();
+        }
+
+        $datePart = $birthdate->format('dmy');
+        $randomDigits = (string) static::numerify('####');
+
+        $checksum = Luhn::computeCheckDigit($datePart . $randomDigits);
+
+        return $datePart . '-' . $randomDigits . $checksum;
     }
 }

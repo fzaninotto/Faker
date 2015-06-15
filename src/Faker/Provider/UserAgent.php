@@ -34,7 +34,7 @@ class UserAgent extends \Faker\Provider\Base
     }
 
     /**
-     * Generrate linux processor
+     * Generate linux processor
      *
      * @return string
      */
@@ -156,6 +156,6 @@ class UserAgent extends \Faker\Provider\Base
 
     public static function linuxPlatformToken()
     {
-        return 'X11; Linux' . static::randomElement(static::$linuxProcessor);
+        return 'X11; Linux ' . static::randomElement(static::$linuxProcessor);
     }
 }

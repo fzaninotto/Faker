@@ -16,15 +16,22 @@
         "phpunit/phpunit": "~4.0",
         "squizlabs/php_codesniffer": "~1.5"
     },
+    "suggest": {
+         "ext-intl": "*"
+     },
     "autoload": {
-        "psr-0": {
-            "Faker": "src/",
-            "Faker\\PHPUnit": "test/"
+        "psr-4": {
+            "Faker\\": "src/Faker/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Faker\\PHPUnit\\": "test/Faker/"
         }
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.4.x-dev"
+            "dev-master": "1.5.x-dev"
         }
     }
 }

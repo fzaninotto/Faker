@@ -14,7 +14,7 @@ Before proposing a pull request, check the following:
 * If your new formatters are specific to a certain locale, document them in the [Language-specific formatters](https://github.com/fzaninotto/Faker#language-specific-formatters) list instead.
 * Avoid changing existing sets of data. Some developers use Faker with seeding for unit tests ; changing the data makes their tests fail.
 * Speed is important in all Faker usages. Make sure your code is optimized to generate thousands of fake items in no time, without consuming too much memory or CPU.
-* If you commit a new feature, be prepared to help maintaining it. Watch the project on GitHub, and please comment on issues or PRs regarding the feature you contributed. 
+* If you commit a new feature, be prepared to help maintaining it. Watch the project on GitHub, and please comment on issues or PRs regarding the feature you contributed.
 
 Once your code is merged, it is available for free to everybody under the MIT License. Publishing your Pull Request on the Faker GitHub repository means that you agree with this license for your contribution.
 

@@ -579,6 +579,10 @@ class File extends \Faker\Provider\Base
             throw new \InvalidArgumentException(sprintf('Target directory %s does not exist or is not a directory.', $targetDirectory));
         }
 
+        if ($sourceDirectory == $targetDirectory) {
+            throw new \InvalidArgumentException('Source and target directories must differ.');
+        }
+
         // Drop . and .. and reset array keys
         $files = array_values(array_diff(scandir($sourceDirectory), array('.', '..')));
 

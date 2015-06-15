@@ -5,6 +5,8 @@ namespace Faker\Provider;
 abstract class Text extends \Faker\Provider\Base
 {
     protected static $baseText = '';
+    protected static $separator = ' ';
+    protected static $separatorLen = 1;
     protected $explodedText = null;
     protected $consecutiveWords = array();
 
@@ -16,8 +18,8 @@ abstract class Text extends \Faker\Provider\Base
      * possible following words as the value.
      *
      * @example 'Alice, swallowing down her flamingo, and began by taking the little golden key'
-     * @param  integer $maxNbChars Maximum number of characters the text should contain (minimum: 10)
-     * @param  integer $indexSize  Determines how many words are considered for the generation of the next word.
+     * @param integer $maxNbChars Maximum number of characters the text should contain (minimum: 10)
+     * @param integer $indexSize  Determines how many words are considered for the generation of the next word.
      *                             The minimum is 1, and it produces the higher level of randomness, although the
      *                             generated text usually doesn't make sense. Higher index sizes (up to 5)
      *                             produce more correct text, at the price of less randomness.
@@ -37,6 +39,7 @@ abstract class Text extends \Faker\Provider\Base
             throw new \InvalidArgumentException('indexSize must be at most 5');
         }
 
+
         $words = $this->getConsecutiveWords($indexSize);
         $result = array();
         $resultLength = 0;
@@ -47,28 +50,28 @@ abstract class Text extends \Faker\Provider\Base
             $word = static::randomElement($words[$next]);
 
             // calculate next index
-            $currentWords = explode(' ', $next);
+            $currentWords = static::explode($next);
             $currentWords[] = $word;
             array_shift($currentWords);
-            $next = implode(' ', $currentWords);
+            $next = static::implode($currentWords);
 
             // ensure text starts with an uppercase letter
-            if ($resultLength == 0 && !preg_match('/^\p{Lu}/u', $word)) {
+            if ($resultLength == 0 && !static::validStart($word)) {
                 continue;
             }
 
             // append the element
             $result[] = $word;
-            $resultLength += strlen($word) + 1;
+            $resultLength += static::strlen($word) + static::$separatorLen;
         }
 
         // remove the element that caused the text to overflow
         array_pop($result);
 
         // build result
-        $result = implode(' ', $result);
+        $result = static::implode($result);
 
-        return $result.'.';
+        return static::appendEnd($result);
     }
 
     protected function getConsecutiveWords($indexSize)
@@ -82,7 +85,7 @@ abstract class Text extends \Faker\Provider\Base
             }
 
             for ($i = 0, $count = count($parts); $i < $count; $i++) {
-                $stringIndex = implode(' ', $index);
+                $stringIndex = static::implode($index);
                 if (!isset($words[$stringIndex])) {
                     $words[$stringIndex] = array();
                 }
@@ -101,9 +104,34 @@ abstract class Text extends \Faker\Provider\Base
     protected function getExplodedText()
     {
         if ($this->explodedText === null) {
-            $this->explodedText = explode(' ', preg_replace('/\s+/u', ' ', static::$baseText));
+            $this->explodedText = static::explode(preg_replace('/\s+/u', ' ', static::$baseText));
         }
 
         return $this->explodedText;
+    }
+
+    protected static function explode($text)
+    {
+        return explode(static::$separator, $text);
+    }
+
+    protected static function implode($words)
+    {
+        return implode(static::$separator, $words);
+    }
+
+    protected static function strlen($text)
+    {
+        return function_exists('mb_strlen') ? mb_strlen($text, 'UTF-8') : strlen($text);
+    }
+
+    protected static function validStart($word)
+    {
+        return preg_match('/^\p{Lu}/u', $word);
+    }
+
+    protected static function appendEnd($text)
+    {
+        return $text.'.';
     }
 }

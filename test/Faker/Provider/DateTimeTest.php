@@ -13,7 +13,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($timestamp >= 0);
         $this->assertTrue($timestamp <= time());
     }
-    
+
     public function testDateTime()
     {
         $date = DateTimeProvider::dateTime();
@@ -21,7 +21,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
         $this->assertGreaterThanOrEqual(new \DateTime('@0'), $date);
         $this->assertLessThanOrEqual(new \DateTime(), $date);
     }
-    
+
     public function testDateTimeAD()
     {
         $date = DateTimeProvider::dateTimeAD();
@@ -29,7 +29,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
         $this->assertGreaterThanOrEqual(new \DateTime('0000-01-01 00:00:00'), $date);
         $this->assertLessThanOrEqual(new \DateTime(), $date);
     }
-    
+
     public function testIso8601()
     {
         $date = DateTimeProvider::iso8601();
@@ -37,7 +37,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
         $this->assertGreaterThanOrEqual(new \DateTime('@0'), new \DateTime($date));
         $this->assertLessThanOrEqual(new \DateTime(), new \DateTime($date));
     }
-    
+
     public function testDate()
     {
         $date = DateTimeProvider::date();
@@ -45,15 +45,15 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
         $this->assertGreaterThanOrEqual(new \DateTime('@0'), new \DateTime($date));
         $this->assertLessThanOrEqual(new \DateTime(), new \DateTime($date));
     }
-    
+
     public function testTime()
     {
         $date = DateTimeProvider::time();
         $this->assertRegExp('/^\d{2}:\d{2}:\d{2}$/', $date);
     }
-    
+
     /**
-     * 
+     *
      * @dataProvider providerDateTimeBetween
      */
     public function testDateTimeBetween($start, $end)
@@ -63,7 +63,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
         $this->assertGreaterThanOrEqual(new \DateTime($start), $date);
         $this->assertLessThanOrEqual(new \DateTime($end), $date);
     }
-    
+
     public function providerDateTimeBetween()
     {
         return array(
@@ -73,11 +73,11 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
             array('-1 day', 'now'),
         );
     }
-    
+
     public function testFixedSeedWithMaximumTimestamp()
     {
         $max = '2018-03-01 12:00:00';
-        
+
         mt_srand(1);
         $unixTime = DateTimeProvider::unixTime($max);
         $datetimeAD = DateTimeProvider::dateTimeAD($max);
@@ -97,7 +97,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
         $year = DateTimeProvider::year($max);
         $dateTimeThisYear = DateTimeProvider::dateTimeThisYear($max);
         mt_srand();
-        
+
         //regenerate Random Date with same seed and same maximum end timestamp
         mt_srand(1);
         $this->assertEquals($unixTime, DateTimeProvider::unixTime($max));
@@ -116,7 +116,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($month, DateTimeProvider::month($max));
         $this->assertEquals($monthName, DateTimeProvider::monthName($max));
         $this->assertEquals($year, DateTimeProvider::year($max));
-        $this->assertEquals($dateTimeThisYear, DateTimeProvider::dateTimeThisYear($max)); 
+        $this->assertEquals($dateTimeThisYear, DateTimeProvider::dateTimeThisYear($max));
         mt_srand();
     }
 }

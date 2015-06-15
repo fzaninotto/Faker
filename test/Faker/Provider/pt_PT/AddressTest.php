@@ -12,7 +12,7 @@ class AddressTest extends \PHPUnit_Framework_TestCase
      * @var Generator
      */
     private $faker;
-    
+
     public function setUp()
     {
         $faker = new Generator();

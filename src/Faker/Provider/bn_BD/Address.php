@@ -48,7 +48,7 @@ class Address extends \Faker\Provider\Address
 
     public static function streetNumber()
     {
-        return Utils::getBanglaNumber(static::randomNumber(1, 100));
+        return Utils::getBanglaNumber(static::numberBetween(1, 100));
     }
 
     public static function banglaStreetName()

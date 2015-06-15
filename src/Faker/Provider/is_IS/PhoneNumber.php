@@ -8,7 +8,7 @@ namespace Faker\Provider\is_IS;
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
     /**
-     * @var array Icelandic phonenumber formats.
+     * @var array Icelandic phone number formats.
      */
     protected static $formats = array(
         '+354 ### ####',

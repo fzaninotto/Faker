@@ -16,7 +16,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
         $faker->addProvider(new Person($faker));
         $this->assertContains($faker->firstName($gender), $expected);
     }
-    
+
     public function firstNameProvider()
     {
         return array(
@@ -31,12 +31,12 @@ class PersonTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertContains(Person::firstNameMale(), array('John'));
     }
-    
+
     public function testFirstNameFemale()
     {
         $this->assertContains(Person::firstNameFemale(), array('Jane'));
     }
-    
+
     /**
      * @dataProvider titleProvider
      */
@@ -46,7 +46,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
         $faker->addProvider(new Person($faker));
         $this->assertContains($faker->title($gender), $expected);
     }
-    
+
     public function titleProvider()
     {
         return array(
@@ -61,12 +61,12 @@ class PersonTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertContains(Person::titleMale(), array('Mr.', 'Dr.', 'Prof.'));
     }
-    
+
     public function testTitleFemale()
     {
         $this->assertContains(Person::titleFemale(), array('Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.'));
     }
-    
+
     public function testLastNameReturnsDoe()
     {
         $faker = new Generator();

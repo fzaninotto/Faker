@@ -5,13 +5,17 @@ namespace Faker\Provider\ru_RU;
 class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = array(
-        '{{firstNameMale}} {{middleName}} {{lastName}}',
-        '{{lastName}} {{firstNameMale}} {{middleName}}',
+        '{{firstNameMale}} {{middleNameMale}} {{lastName}}',
+        '{{lastName}} {{firstNameMale}} {{middleNameMale}}',
     );
 
+    /**
+     * This provider uses wikipedia's 250 top russian last names
+     * That list of MALE last names could be safely extended to FEMALE list just by adding 'a' letter at the end
+     */
     protected static $femaleNameFormats = array(
-        '{{firstNameFemale}} {{middleName}} {{lastName}}',
-        '{{lastName}} {{firstNameFemale}} {{middleName}}',
+        '{{firstNameFemale}} {{middleNameFemale}} {{lastName}}а',
+        '{{lastName}}а {{firstNameFemale}} {{middleNameFemale}}',
     );
 
     /**
@@ -29,12 +33,7 @@ class Person extends \Faker\Provider\Person
         'Мирослав', 'Михаил', 'Назар', 'Нестор', 'Никита', 'Никодим', 'Николай', 'Олег', 'Павел', 'Платон', 'Прохор', 'Пётр',
         'Радислав', 'Рафаил', 'Роберт', 'Родион', 'Роман', 'Ростислав', 'Руслан', 'Сава', 'Савва', 'Святослав', 'Семён', 'Сергей',
         'Спартак', 'Станислав', 'Степан', 'Стефан', 'Тарас', 'Тимофей', 'Тимур', 'Тит', 'Трофим', 'Феликс', 'Филипп', 'Фёдор',
-        'Эдуард', 'Эрик', 'Юлиан', 'Юлий', 'Юрий', 'Яков', 'Ян', 'Ярослав', 'артемий', 'богдан', 'болеслав', 'борис',
-        'бронислав', 'валериан', 'валерий', 'вениамин', 'викентий', 'виктор', 'виль', 'витольд', 'владислав', 'владлен', 'всеволод', 'вячеслав',
-        'геннадий', 'георгий', 'герасим', 'герман', 'глеб', 'гордей', 'григорий', 'давид', 'дан', 'даниил', 'данила', 'добрыня',
-        'донат', 'егор', 'ефим', 'захар', 'игнат', 'игнатий', 'илларион', 'иннокентий', 'иосиф', 'ираклий', 'клим', 'кузьма',
-        'лаврентий', 'лев', 'макар', 'марк', 'матвей', 'милан', 'мирослав', 'назар', 'никодим', 'платон', 'прохор', 'радислав',
-        'рафаил', 'родион', 'ростислав', 'сава', 'савва', 'святослав', 'семён', 'степан',
+        'Эдуард', 'Эрик', 'Юлиан', 'Юлий', 'Юрий', 'Яков', 'Ян', 'Ярослав', 'Милан',
     );
 
     /**
@@ -47,14 +46,20 @@ class Person extends \Faker\Provider\Person
         'Инна', 'Ирина', 'Искра', 'Капитолина', 'Клавдия', 'Клара', 'Клементина', 'Кристина', 'Ксения', 'Лада', 'Лариса', 'Лидия',
         'Лилия', 'Любовь', 'Людмила', 'Люся', 'Майя', 'Мальвина', 'Маргарита', 'Марина', 'Мария', 'Марта', 'Надежда', 'Наталья',
         'Нелли', 'Ника', 'Нина', 'Нонна', 'Оксана', 'Олеся', 'Ольга', 'Полина', 'Рада', 'Раиса', 'Регина', 'Рената',
-        'Розалина', 'Светлана', 'Софья/София', 'Таисия', 'Тамара', 'Татьяна', 'Ульяна', 'Фаина', 'Федосья', 'Флорентина', 'Эльвира', 'Эмилия',
+        'Розалина', 'Светлана', 'Софья', 'София', 'Таисия', 'Тамара', 'Татьяна', 'Ульяна', 'Фаина', 'Федосья', 'Флорентина', 'Эльвира', 'Эмилия',
         'Эмма', 'Юлия', 'Яна', 'Ярослава',
     );
 
-    protected static $middleName = array(
+    protected static $middleNameMale = array(
         'Александрович', 'Алексеевич', 'Андреевич', 'Дмитриевич', 'Евгеньевич',
         'Сергеевич', 'Иванович', 'Фёдорович', 'Львович', 'Романович', 'Владимирович',
         'Борисович', 'Максимович',
+    );
+
+    protected static $middleNameFemale = array(
+        'Александровна', 'Алексеевна', 'Андреевна', 'Дмитриевна', 'Евгеньевна',
+        'Сергеевна', 'Ивановна', 'Фёдоровна', 'Львовна', 'Романовна', 'Владимировна',
+        'Борисовна', 'Максимовна',
     );
 
     /**
@@ -101,7 +106,7 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
-     * Return middle name
+     * Return male middle name
      *
      * @example 'Иванович'
      *
@@ -109,8 +114,22 @@ class Person extends \Faker\Provider\Person
      *
      * @return string Middle name
      */
-    public function middleName()
+    public function middleNameMale()
     {
-        return static::randomElement(static::$middleName);
+        return static::randomElement(static::$middleNameMale);
+    }
+
+    /**
+     * Return female middle name
+     *
+     * @example 'Ивановна'
+     *
+     * @access public
+     *
+     * @return string Middle name
+     */
+    public function middleNameFemale()
+    {
+        return static::randomElement(static::$middleNameFemale);
     }
 }

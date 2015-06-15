@@ -15,9 +15,11 @@ class Image extends Base
     /**
      * Generate the URL that will return a random image
      *
-     * @example 'http://lorempixel.com/640/480/'
+     * Set randomize to false to remove the random GET parameter at the end of the url.
+     *
+     * @example 'http://lorempixel.com/640/480/?12345'
      */
-    public static function imageUrl($width = 640, $height = 480, $category = null)
+    public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true)
     {
         $url = "http://lorempixel.com/{$width}/{$height}/";
         if ($category) {
@@ -25,6 +27,10 @@ class Image extends Base
                 throw new \InvalidArgumentException(sprintf('Unkown image category "%s"', $category));
             }
             $url .= "{$category}/";
+        }
+
+        if ($randomize) {
+            $url .= '?' . static::randomNumber(5, true);
         }
 
         return $url;
@@ -37,8 +43,9 @@ class Image extends Base
      *
      * @example '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
      */
-    public static function image($dir = '/tmp', $width = 640, $height = 480, $category = null, $fullPath = true)
+    public static function image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true)
     {
+        $dir = is_null($dir) ? sys_get_temp_dir() : $dir; // GNU/Linux / OS X / Windows compatible
         // Validate directory path
         if (!is_dir($dir) || !is_writable($dir)) {
             throw new \InvalidArgumentException(sprintf('Cannot write to directory "%s"', $dir));

@@ -23,9 +23,26 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(BaseProvider::randomDigitNotNull() < 10);
     }
 
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testRandomNumberThrowsExceptionWhenCalledWithAMax()
+    {
+        BaseProvider::randomNumber(5, 200);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testRandomNumberThrowsExceptionWhenCalledWithATooHighNumberOfDigits()
+    {
+        BaseProvider::randomNumber(10);
+    }
+
     public function testRandomNumberReturnsInteger()
     {
         $this->assertTrue(is_integer(BaseProvider::randomNumber()));
+        $this->assertTrue(is_integer(BaseProvider::randomNumber(5, false)));
     }
 
     public function testRandomNumberReturnsDigit()
@@ -34,13 +51,9 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(BaseProvider::randomNumber(3) < 1000);
     }
 
-    public function testRandomNumberAcceptsMinMax()
+    public function testRandomNumberAcceptsStrictParamToEnforceNumberSize()
     {
-        $min = 5;
-        $max = 6;
-
-        $this->assertGreaterThanOrEqual($min, BaseProvider::randomNumber($min, $max));
-        $this->assertGreaterThanOrEqual(BaseProvider::randomNumber($min, $max), $max);
+        $this->assertEquals(5, strlen((string) BaseProvider::randomNumber(5, true)));
     }
 
     public function testNumberBetween()
@@ -89,6 +102,22 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(strpos($lowercaseLetters, BaseProvider::randomLetter()) !== false);
     }
 
+    public function testRandomAsciiReturnsString()
+    {
+        $this->assertTrue(is_string(BaseProvider::randomAscii()));
+    }
+
+    public function testRandomAsciiReturnsSingleCharacter()
+    {
+        $this->assertEquals(1, strlen(BaseProvider::randomAscii()));
+    }
+
+    public function testRandomAsciiReturnsAsciiCharacter()
+    {
+        $lowercaseLetters = '!"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
+        $this->assertTrue(strpos($lowercaseLetters, BaseProvider::randomAscii()) !== false);
+    }
+
     public function testRandomElementReturnsNullWhenArrayEmpty()
     {
         $this->assertNull(BaseProvider::randomElement(array()));
@@ -104,6 +133,96 @@ class BaseTest extends \PHPUnit_Framework_TestCase
     {
         $elements = array('tata' => '23', 'toto' => 'e', 'tutu' => 32, 'titi' => '#');
         $this->assertContains(BaseProvider::randomElement($elements), $elements);
+    }
+
+    public function testShuffleReturnsStringWhenPassedAStringArgument()
+    {
+        $this->assertInternalType('string', BaseProvider::shuffle('foo'));
+    }
+
+    public function testShuffleReturnsArrayWhenPassedAnArrayArgument()
+    {
+        $this->assertInternalType('array', BaseProvider::shuffle(array(1, 2, 3)));
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testShuffleThrowsExceptionWhenPassedAnInvalidArgument()
+    {
+        BaseProvider::shuffle(false);
+    }
+
+    public function testShuffleArraySupportsEmptyArrays()
+    {
+        $this->assertEquals(array(), BaseProvider::shuffleArray(array()));
+    }
+
+    public function testShuffleArrayReturnsAnArrayOfTheSameSize()
+    {
+        $array = array(1, 2, 3, 4, 5);
+        $this->assertSameSize($array, BaseProvider::shuffleArray($array));
+    }
+
+    public function testShuffleArrayReturnsAnArrayWithSameElements()
+    {
+        $array = array(2, 4, 6, 8, 10);
+        $shuffleArray = BaseProvider::shuffleArray($array);
+        $this->assertContains(2, $shuffleArray);
+        $this->assertContains(4, $shuffleArray);
+        $this->assertContains(6, $shuffleArray);
+        $this->assertContains(8, $shuffleArray);
+        $this->assertContains(10, $shuffleArray);
+    }
+
+    public function testShuffleArrayReturnsADifferentArrayThanTheOriginal()
+    {
+        $arr = array(1, 2, 3, 4, 5);
+        $shuffledArray = BaseProvider::shuffleArray($arr);
+        $this->assertNotEquals($arr, $shuffledArray);
+    }
+
+    public function testShuffleArrayLeavesTheOriginalArrayUntouched()
+    {
+        $arr = array(1, 2, 3, 4, 5);
+        BaseProvider::shuffleArray($arr);
+        $this->assertEquals($arr, array(1, 2, 3, 4, 5));
+    }
+
+    public function testShuffleStringSupportsEmptyStrings()
+    {
+        $this->assertEquals('', BaseProvider::shuffleString(''));
+    }
+
+    public function testShuffleStringReturnsAnStringOfTheSameSize()
+    {
+        $string = 'abcdef';
+        $this->assertEquals(strlen($string), strlen(BaseProvider::shuffleString($string)));
+    }
+
+    public function testShuffleStringReturnsAnStringWithSameElements()
+    {
+        $string = 'acegi';
+        $shuffleString = BaseProvider::shuffleString($string);
+        $this->assertContains('a', $shuffleString);
+        $this->assertContains('c', $shuffleString);
+        $this->assertContains('e', $shuffleString);
+        $this->assertContains('g', $shuffleString);
+        $this->assertContains('i', $shuffleString);
+    }
+
+    public function testShuffleStringReturnsADifferentStringThanTheOriginal()
+    {
+        $string = 'abcdef';
+        $shuffledString = BaseProvider::shuffleString($string);
+        $this->assertNotEquals($string, $shuffledString);
+    }
+
+    public function testShuffleStringLeavesTheOriginalStringUntouched()
+    {
+        $string = 'abcdef';
+        BaseProvider::shuffleString($string);
+        $this->assertEquals($string, 'abcdef');
     }
 
     public function testNumerifyReturnsSameStringWhenItContainsNoHashSign()
@@ -126,12 +245,18 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertNotEquals('0', BaseProvider::numerify('%'));
     }
 
+    public function testNumerifyCanGenerateALargeNumberOfDigits()
+    {
+        $largePattern = str_repeat('#', 20); // definitely larger than PHP_INT_MAX on all systems
+        $this->assertEquals(20, strlen(BaseProvider::numerify($largePattern)));
+    }
+
     public function testLexifyReturnsSameStringWhenItContainsNoQuestionMark()
     {
         $this->assertEquals('fooBar#', BaseProvider::lexify('fooBar#'));
     }
 
-    public function testNumerifyReturnsStringWithQuestionMarksReplacedByLetters()
+    public function testLexifyReturnsStringWithQuestionMarksReplacedByLetters()
     {
         $this->assertRegExp('/foo[a-z]Ba[a-z]r/', BaseProvider::lexify('foo?Ba?r'));
     }
@@ -139,6 +264,62 @@ class BaseTest extends \PHPUnit_Framework_TestCase
     public function testBothifyCombinesNumerifyAndLexify()
     {
         $this->assertRegExp('/foo[a-z]Ba\dr/', BaseProvider::bothify('foo?Ba#r'));
+    }
+
+    public function testAsciifyReturnsSameStringWhenItContainsNoStarSign()
+    {
+        $this->assertEquals('fooBar?', BaseProvider::asciify('fooBar?'));
+    }
+
+    public function testAsciifyReturnsStringWithStarSignsReplacedByAsciiChars()
+    {
+        $this->assertRegExp('/foo.Ba.r/', BaseProvider::asciify('foo*Ba*r'));
+    }
+
+    public function regexifyBasicDataProvider()
+    {
+        return array(
+            array('azeQSDF1234', 'azeQSDF1234', 'does not change non regex chars'),
+            array('foo(bar){1}', 'foobar', 'replaces regex characters'),
+            array('', '', 'supports empty string'),
+            array('/^foo(bar){1}$/', 'foobar', 'ignores regex delimiters')
+        );
+    }
+
+    /**
+     * @dataProvider regexifyBasicDataProvider
+     */
+    public function testRegexifyBasicFeatures($input, $output, $message)
+    {
+        $this->assertEquals($output, BaseProvider::regexify($input), $message);
+    }
+
+    public function regexifyDataProvider()
+    {
+        return array(
+            array('\d', 'numbers'),
+            array('\w', 'letters'),
+            array('(a|b)', 'alternation'),
+            array('[aeiou]', 'basic character class'),
+            array('[a-z]', 'character class range'),
+            array('[a-z1-9]', 'multiple character class range'),
+            array('a*b+c?', 'single character quantifiers'),
+            array('a{2}', 'brackets quantifiers'),
+            array('a{2,3}', 'min-max brackets quantifiers'),
+            array('[aeiou]{2,3}', 'brackets quantifiers on basic character class'),
+            array('[a-z]{2,3}', 'brackets quantifiers on character class range'),
+            array('(a|b){2,3}', 'brackets quantifiers on alternation'),
+            array('\.\*\?\+', 'escaped characters'),
+            array('[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}', 'complex regex')
+        );
+    }
+
+    /**
+     * @dataProvider regexifyDataProvider
+     */
+    public function testRegexifySupportedRegexSyntax($pattern, $message)
+    {
+        $this->assertRegExp('/' . $pattern . '/', BaseProvider::regexify($pattern), 'Regexify supports ' . $message);
     }
 
     public function testOptionalReturnsProviderValueWhenCalledWithWeight1()

@@ -4,14 +4,14 @@ php:
     - 5.3
     - 5.4
     - 5.5
+    - 5.6
+    - 7.0
     - hhvm
 
-matrix:
-    allow_failures:
-        - php: hhvm
+sudo: false
 
 before_script:
-    - composer self-update
-    - composer install --dev
+    - travis_retry composer self-update
+    - travis_retry composer install --no-interaction --prefer-source --dev
 
 script: make sniff test

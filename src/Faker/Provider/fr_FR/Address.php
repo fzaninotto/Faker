@@ -5,7 +5,7 @@ namespace Faker\Provider\fr_FR;
 class Address extends \Faker\Provider\Address
 {
     protected static $citySuffix = array('Ville', 'Bourg', '-les-Bains', '-sur-Mer', '-la-Forêt', 'boeuf', 'nec', 'dan');
-    protected static $streetPrefix = array('rue', 'rue', 'chemin', 'avenue', 'boulevard');
+    protected static $streetPrefix = array('rue', 'rue', 'chemin', 'avenue', 'boulevard', 'place', 'impasse');
     protected static $cityFormats = array(
         '{{lastName}}',
         '{{lastName}}',
