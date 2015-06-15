@@ -155,10 +155,15 @@ class PaymentTest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider localeDataProvider
      */
-    public function testIban($locale)
+    public function testBankAccountNumber($locale)
     {
         $parts = explode('_', $locale);
         $countryCode = array_pop($parts);
+
+        if (!isset($this->ibanFormats[$countryCode])) {
+            // No IBAN format available
+            return;
+        }
 
         $this->loadLocalProviders($locale);
 
@@ -166,11 +171,34 @@ class PaymentTest extends \PHPUnit_Framework_TestCase
             $iban = $this->faker->bankAccountNumber;
         } catch (\InvalidArgumentException $e) {
             // Not implemented, nothing to test
+            $this->markTestSkipped("bankAccountNumber not implemented for $locale");
             return;
         }
 
         // Test format
         $this->assertRegExp($this->ibanFormats[$countryCode], $iban);
+
+        // Test checksum
+        $this->assertTrue(Iban::isValid($iban), "Checksum for $iban is invalid");
+    }
+
+    public function ibanFormatProvider()
+    {
+        $return = array();
+        foreach ($this->ibanFormats as $countryCode => $regex) {
+            $return[] = array($countryCode, $regex);
+        }
+        return $return;
+    }
+    /**
+     * @dataProvider ibanFormatProvider
+     */
+    public function testIban($countryCode, $regex)
+    {
+        $iban = $this->faker->iban($countryCode);
+
+        // Test format
+        $this->assertRegExp($regex, $iban);
 
         // Test checksum
         $this->assertTrue(Iban::isValid($iban), "Checksum for $iban is invalid");
