@@ -213,7 +213,7 @@ class Payment extends Base
      */
     public static function iban($countryCode, $prefix = '', $length = null)
     {
-        $countryCode = is_null($countryCode) ? array_rand(self::$ibanFormats) : strtoupper($countryCode);
+        $countryCode = is_null($countryCode) ? self::randomKey(self::$ibanFormats) : strtoupper($countryCode);
 
         $format = !isset(static::$ibanFormats[$countryCode]) ? null : static::$ibanFormats[$countryCode];
         if ($length === null) {
