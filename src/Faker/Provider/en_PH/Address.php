@@ -396,7 +396,7 @@ class Address extends \Faker\Provider\Address
     );
 
     protected static $barangay = array(
-        'Poblacion'
+        'Poblacion', 'Kapitan Tomas Monteverde', 'Duterte', 'Agdao Proper', 'San Isidro'
     );
 
     public function province()
