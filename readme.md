@@ -735,6 +735,14 @@ echo $faker->formattedDate; // "12. listopadu 2015"
 
 ```
 
+### `Faker\Provider\cs_CZ\Person`
+```php
+<?php
+
+echo $faker->birthNumber; // "7304243452"
+
+```
+
 ### `Faker\Provider\da_DK\Person`
 
 ```php
