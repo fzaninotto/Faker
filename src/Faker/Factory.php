@@ -8,16 +8,15 @@ class Factory
 
     protected static $defaultProviders = array('Address', 'Barcode', 'Biased', 'Color', 'Company', 'DateTime', 'File', 'Image', 'Internet', 'Lorem', 'Miscellaneous', 'Payment', 'Person', 'PhoneNumber', 'Text', 'UserAgent', 'Uuid');
 
-	protected static $defaultLocale = null;
+    protected static $defaultLocale = null;
 
     public static function create($locale = null)
     {
         $generator = new Generator();
 
-		if(!$locale)
-		{
-			$locale = static::getDefaultLocale();
-		}
+        if (!$locale) {
+            $locale = static::getDefaultLocale();
+        }
 
         foreach (static::$defaultProviders as $provider) {
             $providerClassName = self::getProviderClassname($provider, $locale);
@@ -52,13 +51,13 @@ class Factory
         }
     }
 
-	public static function setDefaultLocale($locale)
-	{
-		static::$defaultLocale = $locale;
-	}
+    public static function setDefaultLocale($locale)
+    {
+        static::$defaultLocale = $locale;
+    }
 
-	public static function getDefaultLocale()
-	{
-		return isset(static::$defaultLocale) ? static::$defaultLocale : static::DEFAULT_LOCALE;
-	}
+    public static function getDefaultLocale()
+    {
+        return isset(static::$defaultLocale) ? static::$defaultLocale : static::DEFAULT_LOCALE;
+    }
 }
