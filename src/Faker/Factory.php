@@ -31,15 +31,25 @@ class Factory
         if ($providerClass = self::findProviderClassname($provider, $locale)) {
             return $providerClass;
         }
+
         // fallback to default locale
         if ($providerClass = self::findProviderClassname($provider, static::getDefaultLocale())) {
             return $providerClass;
         }
+
+        if (static::DEFAULT_LOCALE != static::getDefaultLocale()) {
+            // fallback to DEFAULT_LOCALE
+            if ($providerClass = self::findProviderClassname($provider, static::DEFAULT_LOCALE)) {
+                return $providerClass;
+            }
+        }
+
         // fallback to no locale
         $providerClass = self::findProviderClassname($provider);
         if (class_exists($providerClass)) {
             return $providerClass;
         }
+		
         throw new \InvalidArgumentException(sprintf('Unable to find provider "%s" with locale "%s"', $provider, $locale));
     }
 
