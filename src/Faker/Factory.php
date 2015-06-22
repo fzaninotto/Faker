@@ -49,7 +49,7 @@ class Factory
         if (class_exists($providerClass)) {
             return $providerClass;
         }
-		
+
         throw new \InvalidArgumentException(sprintf('Unable to find provider "%s" with locale "%s"', $provider, $locale));
     }
 
