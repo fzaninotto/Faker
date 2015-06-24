@@ -91,7 +91,7 @@ class Person extends \Faker\Provider\Person
         'طلفاح',
         'عابدين', 'عباد', 'عجلون', 'عقلة', 'عناسوة',
         'مطير', 'معاني',
-        'وادي',
+        'وادي', 'الزلط',
     );
 
     protected static $titleMale = array('السيد', 'الأستاذ', 'الدكتور', 'المهندس');
