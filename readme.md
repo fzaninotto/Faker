@@ -201,6 +201,8 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     creditCardExpirationDate // 04/13
     creditCardExpirationDateString // '04/13'
     creditCardDetails       // array('MasterCard', '4485480221084675', 'Aleksander Nowak', '04/13')
+    // Generates a random IBAN. Set $countryCode to null for a random country
+    iban($countryCode)      // 'IT31A8497112740YZ575DJ28BP4'
     swiftBicNumber          // RZTIAT22263
 
 ### `Faker\Provider\Color`
@@ -802,6 +804,16 @@ echo $faker->region; // "Saint-Pierre-et-Miquelon"
 
 ```
 
+### `Faker\Provider\hu_HU\Payment`
+
+```php
+<?php
+
+// Generates a random bank account number
+echo $faker->bankAccountNumber; // "HU09904437680048220079300783"
+
+```
+
 ### `Faker\Provider\ja_JP\Person`
 
 ```php
@@ -817,6 +829,16 @@ echo $faker->firstKanaName; // "ハルカ"
 echo $faker->lastKanaName; // "ナカジマ"
 ```
 
+### `Faker\Provider\ka_GE\Payment`
+
+```php
+<?php
+
+// Generates a random bank account number
+echo $faker->bankAccountNumber; // "GE33ZV9773853617253389"
+
+```
+
 ### `Faker\Provider\kk_KZ\Company`
 
 ```php
@@ -824,6 +846,19 @@ echo $faker->lastKanaName; // "ナカジマ"
 
 // Generates an business identification number
 echo $faker->businessIdentificationNumber; // "150140000019"
+
+```
+
+### `Faker\Provider\kk_KZ\Payment`
+
+```php
+<?php
+
+// Generates a random bank name
+echo $faker->bank; // "Қазкоммерцбанк"
+
+// Generates a random bank account number
+echo $faker->bankAccountNumber; // "KZ1076321LO4H6X41I37"
 
 ```
 
@@ -858,6 +893,16 @@ echo $faker->borough; // "강남구"
 
 // Generates a random personal identity card number
 echo $faker->personalIdentityNumber; // "140190-12301"
+
+```
+
+### `Faker\Provider\no_NO\Payment`
+
+```php
+<?php
+
+// Generates a random bank account number
+echo $faker->bankAccountNumber; // "NO3246764709816"
 
 ```
 
@@ -947,6 +992,26 @@ echo $faker->rg;         // '84.405.736-3'
 echo $faker->cnpj;       // '23.663.478/0001-24'
 ```
 
+### `Faker\Provider\ro_MD\Payment`
+
+```php
+<?php
+
+// Generates a random bank account number
+echo $faker->bankAccountNumber; // "MD83BQW1CKMUW34HBESDP3A8"
+
+```
+
+### `Faker\Provider\ro_RO\Payment`
+
+```php
+<?php
+
+// Generates a random bank account number
+echo $faker->bankAccountNumber; // "RO55WRJE3OE8X3YQI7J26U1E"
+
+```
+
 ### `Faker\Provider\ro_RO\Person`
 
 ```php
@@ -1004,6 +1069,16 @@ echo $faker->tollFreeNumber; // "0800 123 456"
 
 // Area Code
 echo $faker->areaCode; // "03"
+```
+
+### `Faker\Provider\sv_SE\Payment`
+
+```php
+<?php
+
+// Generates a random bank account number
+echo $faker->bankAccountNumber; // "SE5018548608468284909192"
+
 ```
 
 ### `Faker\Provider\sv_SE\Person`
