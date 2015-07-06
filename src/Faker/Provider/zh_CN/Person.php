@@ -12,11 +12,13 @@ class Person extends \Faker\Provider\Person
         '{{lastName}}{{firstNameFemale}}',
     );
 
+    /**
+     * According to http://baike.baidu.com/view/6109935.htm,
+     * these are the top 300 lastnames from the 6th Chinese national census of population,
+     * containing 299 single-character surname and 1 double-character surname '欧阳',
+     * so you can get random names including double-character surname but not too many.
+     */
     protected static $lastName = array(
-        // According to http://baike.baidu.com/view/6109935.htm,
-        // these are the top 300 lastnames from the 6th Chinese national census of population,
-        // containing 299 single-character surname and 1 double-character surname '欧阳',
-        // so you can get random names including double-character surname but not too many.
         '李','王','张','刘','陈','杨','赵','黄','周','吴',
         '徐','孙','胡','朱','高','林','何','郭','马','罗',
         '梁','宋','郑','谢','韩','唐','冯','于','董','萧',
