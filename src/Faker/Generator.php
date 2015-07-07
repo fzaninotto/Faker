@@ -33,6 +33,7 @@ namespace Faker;
  *
  * @property string $company
  * @property string $companySuffix
+ * @property string $jobTitle
  *
  * @property string $creditCardType
  * @property string $creditCardNumber
