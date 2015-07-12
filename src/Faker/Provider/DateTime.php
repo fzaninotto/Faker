@@ -121,6 +121,29 @@ class DateTime extends \Faker\Provider\Base
     }
 
     /**
+     * Get a DateTime object based on a random date between one given date and
+     * an interval
+     * Accepts date string that can be recognized by strtotime().
+     *
+     * @param string $date      Defaults to 30 years ago
+     * @param string $interval  Defaults to 5 days after
+     * @example dateTimeInInterval('1999-02-02 11:42:52', '+ 5 days')
+     * @return \DateTime
+     */
+    public static function dateTimeInInterval($date = '-30 years', $interval = '+5 days')
+    {
+        $intervalObject = \DateInterval::createFromDateString($interval);
+        $datetime       = $date instanceof \DateTime ? $date : new \DateTime($date);
+        $otherDatetime  = clone $datetime;
+        $otherDatetime->add($intervalObject);
+        
+        $begin = $datetime > $otherDatetime ? $otherDatetime : $datetime;
+        $end = $datetime===$begin ? $otherDatetime : $datetime;
+
+        return static::dateTimeBetween($begin, $end);
+    }
+
+    /**
      * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
      * @example DateTime('1964-04-04 11:02:02')
      * @return \DateTime
