@@ -49,6 +49,11 @@ class PhoneNumberTest extends \PHPUnit_Framework_TestCase
         }
     }
 
+    public function testTollFreeAreaCode()
+    {
+        $this->assertContains($this->faker->tollFreeAreaCode, array(800, 822, 833, 844, 855, 866, 877, 888, 880, 887, 889));
+    }
+
     public function testTollFreePhoneNumber()
     {
         for ($i = 0; $i < 100; $i++) {

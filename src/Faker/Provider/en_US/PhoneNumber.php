@@ -51,18 +51,20 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     );
     protected static $tollFreeFormats = array(
         // Standard formats
-        '{{areaCode}}-{{exchangeCode}}-####',
-        '({{areaCode}}) {{exchangeCode}}-####',
-        '1-{{areaCode}}-{{exchangeCode}}-####',
-        '{{areaCode}}.{{exchangeCode}}.####',
+        '{{tollFreeAreaCode}}-{{exchangeCode}}-####',
+        '({{tollFreeAreaCode}}) {{exchangeCode}}-####',
+        '1-{{tollFreeAreaCode}}-{{exchangeCode}}-####',
+        '{{tollFreeAreaCode}}.{{exchangeCode}}.####',
     );
+
+    public function tollFreeAreaCode()
+    {
+        return self::randomElement(static::$tollFreeAreaCodes);
+    }
 
     public function tollFreePhoneNumber()
     {
-        $areaCode = self::randomElement(static::$tollFreeAreaCodes);
         $format = self::randomElement(static::$tollFreeFormats);
-
-        $format = str_replace('{{areaCode}}', $areaCode, $format);
 
         return self::numerify($this->generator->parse($format));
     }
