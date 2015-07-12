@@ -103,19 +103,4 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
         return join('', $digits);
     }
-
-    /**
-     * Generates a random digit, which cannot be $except
-     *
-     * @param int $except
-     * @return int
-     */
-    private static function randomDigitNot($except)
-    {
-        $result = self::numberBetween(0, 8);
-        if ($result >= $except) {
-            $result++;
-        }
-        return $result;
-    }
 }
