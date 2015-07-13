@@ -98,8 +98,8 @@ class DateTime extends \Faker\Provider\Base
      * Get a DateTime object based on a random date between two given dates.
      * Accepts date strings that can be recognized by strtotime().
      *
-     * @param string $startDate Defaults to 30 years ago
-     * @param string $endDate   Defaults to "now"
+     * @param \DateTime|string $startDate Defaults to 30 years ago
+     * @param \DateTime|string $endDate   Defaults to "now"
      * @example DateTime('1999-02-02 11:42:52')
      * @return \DateTime
      */
