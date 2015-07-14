@@ -105,7 +105,7 @@ for ($i=0; $i < 10; $i++) {
 Each of the generator properties (like `name`, `address`, and `lorem`) are called "formatters". A faker generator has many of them, packaged in "providers". Here is a list of the bundled formatters in the default locale.
 
 ### `Faker\Provider\Base`
-
+```php
     randomDigit             // 7
     randomDigitNotNull      // 5
     randomNumber($nbDigits = NULL) // 79907610
@@ -121,9 +121,10 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     bothify('Hello ##??') // 'Hello 42jz'
     asciify('Hello ***') // 'Hello R6+'
     regexify('[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}'); // sm0@y8k96a.ej
+```
 
 ### `Faker\Provider\Lorem`
-
+```php
     word                    // 'aut'
     words($nb = 3)          // array('porro', 'sed', 'magni')
     sentence($nbWords = 6)  // 'Sit vitae voluptas sint non voluptates.'
@@ -131,9 +132,10 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     paragraph($nbSentences = 3) // 'Ut ab voluptas sed a nam. Sint autem inventore aut officia aut aut blanditiis. Ducimus eos odit amet et est ut eum.'
     paragraphs($nb = 3)     // array('Quidem ut sunt et quidem est accusamus aut. Fuga est placeat rerum ut. Enim ex eveniet facere sunt.', 'Aut nam et eum architecto fugit repellendus illo. Qui ex esse veritatis.', 'Possimus omnis aut incidunt sunt. Asperiores incidunt iure sequi cum culpa rem. Rerum exercitationem est rem.')
     text($maxNbChars = 200) // 'Fuga totam reiciendis qui architecto fugiat nemo. Consequatur recusandae qui cupiditate eos quod.'
+```
 
 ### `Faker\Provider\en_US\Person`
-
+```php
     title($gender = null|'male'|'female')     // 'Ms.'
     titleMale                                 // 'Mr.'
     titleFemale                               // 'Ms.'
@@ -143,9 +145,10 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     firstNameMale                             // 'Maynard'
     firstNameFemale                           // 'Rachel'
     lastName                                  // 'Zulauf'
+```
 
 ### `Faker\Provider\en_US\Address`
-
+```php
     cityPrefix              // 'Lake'
     secondaryAddress        // 'Suite 961'
     state                   // 'NewMexico'
@@ -161,24 +164,28 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     country                 // 'Falkland Islands (Malvinas)'
     latitude                // 77.147489
     longitude               // 86.211205
+```
 
 ### `Faker\Provider\en_US\PhoneNumber`
-
+```php
     phoneNumber             // '132-149-0269x3767'
+```
 
 ### `Faker\Provider\en_US\Company`
-
+```php
     catchPhrase             // 'Monitored regional contingency'
     bs                      // 'e-enable robust architectures'
     company                 // 'Bogan-Treutel'
     companySuffix           // 'and Sons'
+```
 
 ### `Faker\Provider\en_US\Text`
-
+```php
     realText($maxNbChars = 200, $indexSize = 2) // "And yet I wish you could manage it?) 'And what are they made of?' Alice asked in a shrill, passionate voice. 'Would YOU like cats if you were never even spoke to Time!' 'Perhaps not,' Alice replied."
+```
 
 ### `Faker\Provider\DateTime`
-
+```php
     unixTime($max = 'now')                // 58781813
     dateTime($max = 'now')                // DateTime('2008-04-25 08:37:17')
     dateTimeAD($max = 'now')              // DateTime('1800-04-29 20:38:49')
@@ -199,9 +206,10 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     year($max = 'now')                    // '1993'
     century                               // 'VI'
     timezone                              // 'Europe/Paris'
+```
 
 ### `Faker\Provider\Internet`
-
+```php
     email                   // 'tkshlerin@collins.com'
     safeEmail               // 'king.alford@example.org'
     freeEmail               // 'bradley72@gmail.com'
@@ -219,44 +227,49 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     localIpv4               // '10.242.58.8'
     ipv6                    // '8e65:933d:22ee:a232:f1c1:2741:1f10:117c'
     macAddress              // '43:85:B7:08:10:CA'
+```
 
 ### `Faker\Provider\UserAgent`
-
+```php
     userAgent              // 'Mozilla/5.0 (Windows CE) AppleWebKit/5350 (KHTML, like Gecko) Chrome/13.0.888.0 Safari/5350'
     chrome                 // 'Mozilla/5.0 (Macintosh; PPC Mac OS X 10_6_5) AppleWebKit/5312 (KHTML, like Gecko) Chrome/14.0.894.0 Safari/5312'
     firefox                // 'Mozilla/5.0 (X11; Linuxi686; rv:7.0) Gecko/20101231 Firefox/3.6'
     safari                 // 'Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10_7_1 rv:3.0; en-US) AppleWebKit/534.11.3 (KHTML, like Gecko) Version/4.0 Safari/534.11.3'
     opera                  // 'Opera/8.25 (Windows NT 5.1; en-US) Presto/2.9.188 Version/10.00'
     internetExplorer       // 'Mozilla/5.0 (compatible; MSIE 7.0; Windows 98; Win 9x 4.90; Trident/3.0)'
+```
 
 ### `Faker\Provider\Payment`
-
+```php
     creditCardType          // 'MasterCard'
     creditCardNumber        // '4485480221084675'
     creditCardExpirationDate // 04/13
     creditCardExpirationDateString // '04/13'
     creditCardDetails       // array('MasterCard', '4485480221084675', 'Aleksander Nowak', '04/13')
     swiftBicNumber          // RZTIAT22263
+```
 
 ### `Faker\Provider\Color`
-
+```php
     hexcolor               // '#fa3cc2'
     rgbcolor               // '0,255,122'
     rgbColorAsArray        // array(0,255,122)
     rgbCssColor            // 'rgb(0,255,122)'
     safeColorName          // 'fuchsia'
     colorName              // 'Gainsbor'
+```
 
 ### `Faker\Provider\File`
-
+```php
     fileExtension          // 'avi'
     mimeType               // 'video/x-msvideo'
     // Copy a random file from the source to the target directory and returns the fullpath or filename
     file($sourceDir = '/tmp', $targetDir = '/tmp') // '/path/to/targetDir/13b73edae8443990be1aa8f1a483bc27.jpg'
     file($sourceDir, $targetDir, false) // '13b73edae8443990be1aa8f1a483bc27.jpg'
+```
 
 ### `Faker\Provider\Image`
-
+```php
     // Image generation provided by LoremPixel (http://lorempixel.com/)
     imageUrl($width = 640, $height = 480) // 'http://lorempixel.com/640/480/'
     imageUrl($width, $height, 'cats')     // 'http://lorempixel.com/800/600/cats/'
@@ -264,20 +277,23 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     image($dir = '/tmp', $width = 640, $height = 480) // '/tmp/13b73edae8443990be1aa8f1a483bc27.jpg'
     image($dir, $width, $height, 'cats')  // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat!
     image($dir, $width, $height, 'cats', true, 'Faker') // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat with Faker text
+```
 
 ### `Faker\Provider\Uuid`
-
+```php
     uuid                   // '7e57d004-2b97-0e7a-b45f-5387367791cd'
+```
 
 ### `Faker\Provider\Barcode`
-
+```php
     ean13          // '4006381333931'
     ean8           // '73513537'
     isbn13         // '9790404436093'
     isbn10         // '4881416324'
+```
 
 ### `Faker\Provider\Miscellaneous`
-
+```php
     boolean($chanceOfGettingTrue = 50) // true
     md5           // 'de99a620c50f2990e87144735cd357e7'
     sha1          // 'f08e7f04ca1a413807ebc47551a40a20a0b4de5c'
@@ -286,12 +302,14 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     countryCode   // UK
     languageCode  // en
     currencyCode  // EUR
+```
 
 ### `Faker\Provider\Biased`
-
+```php
     // get a random number between 10 and 20,
     // with more chances to be close to 20
     biasedNumberBetween($min = 10, $max = 20, $function = 'sqrt')
+```
 
 ## Unique and Optional modifiers
 
