@@ -20,6 +20,27 @@ class Company extends \Faker\Provider\Company
     );
 
     /**
+<<<<<<< HEAD
+=======
+     * @example 'Kladionice Ćorluka', 'Marić Security'
+     */
+    public function company()
+    {
+        $format = static::randomElement(static::$formats);
+
+        return $this->generator->parse($format);
+    }
+
+    /**
+     * @example 'Ltd'
+     */
+    public static function companySuffix()
+    {
+        return static::randomElement(static::$companySuffix);
+    }
+
+    /**
+>>>>>>> ffa809311559752cb5a6c383eb8cbf9eea9d1479
      * @example 'Ltd'
      */
     public static function companyPrefix()
