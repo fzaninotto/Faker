@@ -6,7 +6,7 @@ If you've written a new formatter, adapted Faker to a new locale, or fixed a bug
 Before proposing a pull request, check the following:
 
 * Your code should follow the [PSR-2 coding standard](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) (and use [php-cs-fixer](https://github.com/fabpot/PHP-CS-Fixer) to fix inconsistencies).
-* Unit tests should still pass after your patch
+* Unit tests should still pass after your patch. Run the tests on your dev server (with `make test`) or check the continuous integration status for your pull request.
 * As much as possible, add unit tests for your code
 * Never use `rand()` in your providers. Faker uses the Mersenne Twister Randomizer, so use `mt_rand()` or any of the base generators (`randomNumber`, `randomElement`, etc.) instead.
 * If you add new providers (or new locales) and that they embed a lot of data for random generation (e.g. first names in a new language), please add a `@link` to the reference you used for this list (example [in the ru_RU locale](https://github.com/fzaninotto/Faker/blob/master/src/Faker/Provider/ru_RU/Person.php#L13)). This will ease future updates of the list and debates about the most relevant data for this provider.
