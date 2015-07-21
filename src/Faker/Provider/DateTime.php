@@ -99,11 +99,13 @@ class DateTime extends \Faker\Provider\Base
      * Accepts date strings that can be recognized by strtotime().
      *
      * @param string $startDate Defaults to 30 years ago
-     * @param string $endDate   Defaults to "now"
-     * @example DateTime('1999-02-02 11:42:52')
+     * @param string $endDate Defaults to "now"
+     * @param string $format Defaults to "ISO8601"
+     *
      * @return \DateTime
+     * @example DateTime('1999-02-02 11:42:52')
      */
-    public static function dateTimeBetween($startDate = '-30 years', $endDate = 'now')
+    public static function dateTimeBetween($startDate = '-30 years', $endDate = 'now', $format = \DateTime::ISO8601)
     {
         $startTimestamp = $startDate instanceof \DateTime ? $startDate->getTimestamp() : strtotime($startDate);
         $endTimestamp = static::getMaxTimestamp($endDate);
@@ -113,11 +115,10 @@ class DateTime extends \Faker\Provider\Base
         }
 
         $timestamp = mt_rand($startTimestamp, $endTimestamp);
-
         $ts = new \DateTime('@' . $timestamp);
         $ts->setTimezone(new \DateTimeZone(date_default_timezone_get()));
 
-        return $ts;
+        return new \DateTime($ts->format($format));
     }
 
     /**
