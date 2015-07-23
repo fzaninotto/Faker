@@ -10,7 +10,7 @@ class Factory
 
     /**
      * Create a new generator
-     * 
+     *
      * @param string $locale
      * @return Generator
      */
