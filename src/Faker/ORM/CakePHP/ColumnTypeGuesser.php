@@ -23,11 +23,11 @@ class ColumnTypeGuesser
                 };
             case 'integer':
                 return function () use ($generator) {
-                    return $generator->randomNumber(10);
+                    return mt_rand(0, intval('2147483647'));
                 };
             case 'biginteger':
                 return function () use ($generator) {
-                    return $generator->randomNumber(20);
+                    return mt_rand(0, intval('9223372036854775807'));
                 };
             case 'decimal':
             case 'float':
