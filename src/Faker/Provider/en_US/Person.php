@@ -128,7 +128,7 @@ class Person extends \Faker\Provider\Person
         }
         if ($dashed) {
             $ssn = (string)$ssn;
-            $ssn = implode("-", [substr($ssn, 0, 3), substr($ssn, 3, 2), substr($ssn, 5, 4)]);
+            $ssn = implode("-", array(substr($ssn, 0, 3), substr($ssn, 3, 2), substr($ssn, 5, 4)));
         }
         return $ssn;
     }
