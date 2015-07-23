@@ -19,7 +19,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
     public function testSsnReturnsValidSsn()
     {
         $ssn = $this->faker->ssn();
-        $this->assertRegExp("/(?!000)(?!666)(?!9)[0-9]{3}[ -]?(?!00)[0-9]{2}[ -]?(?!0000)[0-9]{4}/", (string)$ssn);
+        $this->assertRegExp("/(?!000)(?!666)(?!9)[0-9]{3}(?!00)[0-9]{2}(?!0000)[0-9]{4}/", (string)$ssn);
         $this->assertEquals(9, strlen($ssn));
     }
 
