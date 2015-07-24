@@ -119,6 +119,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @example '444114444' or '444-11-4444'
+     * @param boolean|null $dashed true, false or null
      */
     public function ssn($dashed = false)
     {
