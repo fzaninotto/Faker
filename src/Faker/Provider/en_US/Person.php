@@ -116,4 +116,21 @@ class Person extends \Faker\Provider\Person
     {
         return static::randomElement(static::$suffix);
     }
+
+    /**
+     * @example '444114444' or '444-11-4444'
+     * @param boolean|null $dashed true, false or null
+     */
+    public function ssn($dashed = false)
+    {
+        $ssn = static::randomNumber(9);
+        while (!preg_match('/(?!000)(?!666)(?!9)[0-9]{3}(?!00)[0-9]{2}(?!0000)[0-9]{4}/', $ssn)) {
+            $ssn = static::randomNumber(9);
+        }
+        if ($dashed) {
+            $ssn = (string)$ssn;
+            $ssn = implode("-", array(substr($ssn, 0, 3), substr($ssn, 3, 2), substr($ssn, 5, 4)));
+        }
+        return $ssn;
+    }
 }

@@ -1049,6 +1049,18 @@ echo $faker->tollFreeNumber; // "0800 123 456"
 echo $faker->areaCode; // "03"
 ```
 
+### `Faker\Provider\en_US\Person`
+```php
+<?php
+
+//Generates a valid US SSN by format. e.g. can't start with 666 and 900+ 
+echo $faker->ssn; // '333221111'
+
+//Generates a valid US SSN with dashes already inserted
+echo $faker->ssn(true); // '333-22-1111'
+
+```
+
 ### `Faker\Provider\sv_SE\Person`
 ```php
 <?php
