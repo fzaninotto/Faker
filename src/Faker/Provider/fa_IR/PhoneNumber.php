@@ -5,7 +5,7 @@ namespace Faker\Provider\fa_IR;
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
     protected static $formats = array(
-    	// Mobile
+        // Mobile
         '091########',
         '092########',
         '093########',

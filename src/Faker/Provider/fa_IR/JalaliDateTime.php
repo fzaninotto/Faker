@@ -19,7 +19,7 @@ namespace Faker\Provider\fa_IR;
  *
  * 1- The above copyright notice and this permission notice shall be included
  * in all copies or substantial portions of the Software.
- * 
+ *
  * 2- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -35,7 +35,7 @@ namespace Faker\Provider\fa_IR;
  * http://www.php.net/manual/en/timezones.php
  *
  *
- * @package    jDateTime
+ * @package    JalaliDateTime
  * @author     Sallar Kaboli <sallar.kaboli@gmail.com>
  * @author     Omid Pilevar <omid.pixel@gmail.com>
  * @copyright  2003-2012 Sallar Kaboli
@@ -44,7 +44,7 @@ namespace Faker\Provider\fa_IR;
  * @see        DateTime
  * @version    2.2.0
  */
-class jDateTime
+class JalaliDateTime
 {
 
     /**
@@ -56,11 +56,11 @@ class jDateTime
     private static $temp = array();
 
     /**
-     * jDateTime::Constructor
+     * JalaliDateTime::Constructor
      *
      * Pass these parameteres when creating a new instance
      * of this Class, and they will be used as defaults.
-     * e.g $obj = new jDateTime(false, true, 'Asia/Tehran');
+     * e.g $obj = new JalaliDateTime(false, true, 'Asia/Tehran');
      * To use system defaults pass null for each one or just
      * create the object without any parameters.
      *
@@ -71,13 +71,21 @@ class jDateTime
      */
     public function __construct($convert = null, $jalali = null, $timezone = null)
     {
-        if ( $jalali   !== null ) self::$jalali   = (bool) $jalali;
-        if ( $convert  !== null ) self::$convert  = (bool) $convert;
-        if ( $timezone !== null ) self::$timezone = $timezone;
+        if ($jalali !== null) {
+            self::$jalali = (bool) $jalali;
+        }
+
+        if ($convert !== null) {
+            self::$convert = (bool) $convert;
+        }
+
+        if ($timezone !== null) {
+            self::$timezone = $timezone;
+        }
     }
 
     /**
-     * jDateTime::Date
+     * JalaliDateTime::Date
      *
      * Formats and returns given timestamp just like php's
      * built in date() function.
@@ -101,14 +109,12 @@ class jDateTime
         $obj      = new \DateTime('@' . $stamp, new \DateTimeZone($timezone));
         $obj->setTimezone(new \DateTimeZone($timezone));
 
-        if ( (self::$jalali === false && $jalali === null) || $jalali === false ) {
+        if ((self::$jalali === false && $jalali === null) || $jalali === false) {
             return $obj->format($format);
-        }
-        else {
-            
+        } else {
             //Find what to replace
             $chars  = (preg_match_all('/([a-zA-Z]{1})/', $format, $chars)) ? $chars[0] : array();
-            
+
             //Intact Keys
             $intact = array('B','h','H','g','G','i','s','I','U','u','Z','O','P');
             $intact = self::filterArray($chars, $intact);
@@ -129,7 +135,6 @@ class jDateTime
             $values = array();
 
             foreach ($keys as $k => $key) {
-
                 $v = '';
                 switch ($key) {
                     //Day
@@ -157,8 +162,7 @@ class jDateTime
                     case 'z':
                         if ($jmonth > 6) {
                             $v = 186 + (($jmonth - 6 - 1) * 30) + $jday;
-                        }
-                        else {
+                        } else {
                             $v = (($jmonth - 1) * 31) + $jday;
                         }
                         self::$temp['z'] = $v;
@@ -181,10 +185,15 @@ class jDateTime
                         $v = $jmonth;
                         break;
                     case 't':
-                    	if ($jmonth>=1 && $jmonth<=6) $v=31;
-                    	else if ($jmonth>=7 && $jmonth<=11) $v=30;
-                    	else if($jmonth==12 && $jyear % 4 ==3) $v=30;
-                    	else if ($jmonth==12 && $jyear % 4 !=3) $v=29;
+                        if ($jmonth>=1 && $jmonth<=6) {
+                            $v=31;
+                        } else if ($jmonth>=7 && $jmonth<=11) {
+                            $v=30;
+                        } else if ($jmonth==12 && $jyear % 4 ==3) {
+                            $v=30;
+                        } else if ($jmonth==12 && $jyear % 4 !=3) {
+                            $v=29;
+                        }
                         break;
                     //Year
                     case 'L':
@@ -237,7 +246,7 @@ class jDateTime
             return
                 ($convert === false ||
                 ($convert === null && self::$convert === false) ||
-                ( $jalali === false || $jalali === null && self::$jalali === false ))
+                ($jalali === false || $jalali === null && self::$jalali === false))
                 ? $ret : self::convertNumbers($ret);
 
         }
@@ -245,9 +254,9 @@ class jDateTime
     }
 
     /**
-     * jDateTime::gDate
+     * JalaliDateTime::gDate
      *
-     * Same as jDateTime::Date method
+     * Same as JalaliDateTime::Date method
      * but this one works as a helper and returns Gregorian Date
      * in case someone doesn't like to pass all those false arguments
      * to Date method.
@@ -266,9 +275,9 @@ class jDateTime
     {
         return self::date($format, $stamp, false, false, $timezone);
     }
-    
+
     /**
-     * jDateTime::Strftime
+     * JalaliDateTime::Strftime
      *
      * Format a local time/date according to locale settings
      * built in strftime() function.
@@ -295,7 +304,7 @@ class jDateTime
             '%c', '%D', '%F', '%s', '%x',
             '%n', '%t', '%%'
         );
-        
+
         $date_format_code = array(
             'D', 'l', 'd', 'j', 'z', 'N', 'w',
             'W', 'W', 'W',
@@ -312,9 +321,9 @@ class jDateTime
         //Convert to date
         return self::date($format, $stamp, $convert, $jalali, $timezone);
     }
-	
+
    /**
-     * jDateTime::Mktime
+     * JalaliDateTime::Mktime
      *
      * Creates a Unix Timestamp (Epoch Time) based on given parameters
      * works like php's built in mktime() function.
@@ -346,26 +355,25 @@ class jDateTime
         $year  = (intval($year)  == 0) ? self::date('Y') : $year;
 
         //Convert to Gregorian if necessary
-        if ( $jalali === true || ($jalali === null && self::$jalali === true) ) {
+        if ($jalali === true || ($jalali === null && self::$jalali === true)) {
             list($year, $month, $day) = self::toGregorian($year, $month, $day);
         }
 
         //Create a new object and set the timezone if available
         $date = $year.'-'.sprintf('%02d', $month).'-'.sprintf('%02d', $day).' '.$hour.':'.$minute.':'.$second;
 
-        if ( self::$timezone != null || $timezone != null ) {
+        if (self::$timezone != null || $timezone != null) {
             $obj = new \DateTime($date, new \DateTimeZone(($timezone != null) ? $timezone : self::$timezone));
-        }
-        else {
+        } else {
             $obj = new \DateTime($date);
         }
 
         //Return
         return $obj->format('U');
     }
-    
+
     /**
-     * jDateTime::Checkdate
+     * JalaliDateTime::Checkdate
      *
      * Checks the validity of the date formed by the arguments.
      * A date is considered valid if each parameter is properly defined.
@@ -392,24 +400,20 @@ class jDateTime
         $month = (intval($month) == 0) ? self::date('n') : intval($month);
         $day   = (intval($day)   == 0) ? self::date('j') : intval($day);
         $year  = (intval($year)  == 0) ? self::date('Y') : intval($year);
-        
+
         //Check if its jalali date
-        if ( $jalali === true || ($jalali === null && self::$jalali === true) )
-        {
+        if ($jalali === true || ($jalali === null && self::$jalali === true)) {
             $epoch = self::mktime(0, 0, 0, $month, $day, $year);
-            
-            if( self::date('Y-n-j', $epoch,false) == "$year-$month-$day" ) {
+
+            if (self::date('Y-n-j', $epoch, false) == "$year-$month-$day") {
                 $ret = true;
+            } else {
+                $ret = false;
             }
-            else{
-                $ret = false; 
-            }
-        }
-        else //Gregorian Date
-        { 
+        } else {//Gregorian Date
             $ret = checkdate($month, $day, $year);
         }
-        
+
         //Return
         return $ret;
     }
@@ -418,7 +422,7 @@ class jDateTime
      * System Helpers below
      * ------------------------------------------------------
      */
-    
+
     /**
      * Filters out an array
      */
@@ -426,7 +430,7 @@ class jDateTime
     {
         return array_intersect(array_merge($needle, $always), $heystack);
     }
-    
+
     /**
      * Returns correct names for week days
      */
@@ -487,10 +491,9 @@ class jDateTime
      */
     private static function substr($str, $start, $len)
     {
-        if( function_exists('mb_substr') ){
+        if (function_exists('mb_substr')) {
             return mb_substr($str, $start, $len, 'UTF-8');
-        }
-        else{
+        } else {
             return substr($str, $start, $len * 2);
         }
     }
@@ -511,10 +514,14 @@ class jDateTime
 
         $g_day_no = 365*$gy+self::div($gy+3, 4)-self::div($gy+99, 100)+self::div($gy+399, 400);
 
-        for ($i=0; $i < $gm; ++$i)
+        for ($i=0; $i < $gm; ++$i) {
             $g_day_no += $g_days_in_month[$i];
-        if ($gm>1 && (($gy%4==0 && $gy%100!=0) || ($gy%400==0)))
+        }
+
+        if ($gm>1 && (($gy%4==0 && $gy%100!=0) || ($gy%400==0))) {
             $g_day_no++;
+        }
+
         $g_day_no += $gd;
 
         $j_day_no = $g_day_no-79;
@@ -531,8 +538,10 @@ class jDateTime
             $j_day_no = ($j_day_no-1)%365;
         }
 
-        for ($i = 0; $i < 11 && $j_day_no >= $j_days_in_month[$i]; ++$i)
+        for ($i = 0; $i < 11 && $j_day_no >= $j_days_in_month[$i]; ++$i) {
             $j_day_no -= $j_days_in_month[$i];
+        }
+
         $jm = $i+1;
         $jd = $j_day_no+1;
 
@@ -556,8 +565,10 @@ class jDateTime
         $jd = $j_d-1;
 
         $j_day_no = 365*$jy + self::div($jy, 33)*8 + self::div($jy%33+3, 4);
-        for ($i=0; $i < $jm; ++$i)
+        
+        for ($i=0; $i < $jm; ++$i) {
             $j_day_no += $j_days_in_month[$i];
+        }
 
         $j_day_no += $jd;
 
@@ -569,13 +580,14 @@ class jDateTime
         $leap = true;
         if ($g_day_no >= 36525) {
             $g_day_no--;
-            $gy += 100*self::div($g_day_no,  36524);
+            $gy += 100 * self::div($g_day_no, 36524);
             $g_day_no = $g_day_no % 36524;
 
-            if ($g_day_no >= 365)
+            if ($g_day_no >= 365) {
                 $g_day_no++;
-            else
+            } else {
                 $leap = false;
+            }
         }
 
         $gy += 4*self::div($g_day_no, 1461);
@@ -589,13 +601,14 @@ class jDateTime
             $g_day_no = $g_day_no % 365;
         }
 
-        for ($i = 0; $g_day_no >= $g_days_in_month[$i] + ($i == 1 && $leap); $i++)
+        for ($i = 0; $g_day_no >= $g_days_in_month[$i] + ($i == 1 && $leap); $i++) {
             $g_day_no -= $g_days_in_month[$i] + ($i == 1 && $leap);
+        }
+
         $gm = $i+1;
         $gd = $g_day_no+1;
 
         return array($gy, $gm, $gd);
 
     }
-
 }
