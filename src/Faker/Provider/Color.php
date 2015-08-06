@@ -26,7 +26,7 @@ class Color extends Base
         'DeepSkyBlue', 'DimGray', 'DimGrey', 'DodgerBlue', 'FireBrick',
         'FloralWhite', 'ForestGreen', 'Fuchsia', 'Gainsboro', 'GhostWhite',
         'Gold', 'GoldenRod', 'Gray', 'Green', 'GreenYellow', 'HoneyDew',
-        'HotPink', 'IndianRed ', 'Indigo ', 'Ivory', 'Khaki', 'Lavender',
+        'HotPink', 'IndianRed', 'Indigo', 'Ivory', 'Khaki', 'Lavender',
         'LavenderBlush', 'LawnGreen', 'LemonChiffon', 'LightBlue', 'LightCoral',
         'LightCyan', 'LightGoldenRodYellow', 'LightGray', 'LightGreen', 'LightPink',
         'LightSalmon', 'LightSeaGreen', 'LightSkyBlue', 'LightSlateGray', 'LightSteelBlue',
