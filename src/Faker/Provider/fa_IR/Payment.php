@@ -69,6 +69,6 @@ class Payment extends \Faker\Provider\Payment
 
         $expirationDateFormat = is_null($expirationDateFormat) ? static::$expirationDateFormat : $expirationDateFormat;
 
-        return jDateTime::date($expirationDateFormat, $datetime->getTimestamp(), $convertChars);
+        return JalaliDateTime::date($expirationDateFormat, $datetime->getTimestamp(), $convertChars);
     }
 }
