@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-        "php": "^5.3.3|^7.0"
+        "php": "^5.3.3|^7.0",
+        "miladr/jalali": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0",
