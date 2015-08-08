@@ -2,6 +2,8 @@
 
 namespace Faker\Provider\fa_IR;
 
+use Miladr\Jalali\jDateTime;
+
 class DateTime extends \Faker\Provider\DateTime
 {
     /**
@@ -15,7 +17,7 @@ class DateTime extends \Faker\Provider\DateTime
      */
     public static function date($format = 'Y-m-d', $max = 'now', $convertChars = false)
     {
-        return JalaliDateTime::date($format, static::dateTime($max)->getTimestamp(), $convertChars);
+        return jDateTime::date($format, static::dateTime($max)->getTimestamp(), $convertChars);
     }
 
     /**
@@ -25,7 +27,7 @@ class DateTime extends \Faker\Provider\DateTime
      */
     public static function amPm($max = 'now')
     {
-        return JalaliDateTime::date('a', static::dateTime($max)->getTimestamp());
+        return jDateTime::date('a', static::dateTime($max)->getTimestamp());
     }
 
     /**
@@ -36,7 +38,7 @@ class DateTime extends \Faker\Provider\DateTime
      */
     public static function dayOfMonth($max = 'now', $convertChars = false)
     {
-        return JalaliDateTime::date('d', static::dateTime($max)->getTimestamp(), $convertChars);
+        return jDateTime::date('d', static::dateTime($max)->getTimestamp(), $convertChars);
     }
 
     /**
@@ -46,7 +48,7 @@ class DateTime extends \Faker\Provider\DateTime
      */
     public static function dayOfWeek($max = 'now')
     {
-        return JalaliDateTime::date('l', static::dateTime($max)->getTimestamp());
+        return jDateTime::date('l', static::dateTime($max)->getTimestamp());
     }
 
     /**
@@ -57,7 +59,7 @@ class DateTime extends \Faker\Provider\DateTime
      */
     public static function month($max = 'now', $convertChars = false)
     {
-        return JalaliDateTime::date('m', static::dateTime($max)->getTimestamp(), $convertChars);
+        return jDateTime::date('m', static::dateTime($max)->getTimestamp(), $convertChars);
     }
 
     /**
@@ -67,7 +69,7 @@ class DateTime extends \Faker\Provider\DateTime
      */
     public static function monthName($max = 'now')
     {
-        return JalaliDateTime::date('F', static::dateTime($max)->getTimestamp());
+        return jDateTime::date('F', static::dateTime($max)->getTimestamp());
     }
 
     /**
@@ -78,6 +80,6 @@ class DateTime extends \Faker\Provider\DateTime
      */
     public static function year($max = 'now', $convertChars = false)
     {
-        return JalaliDateTime::date('Y', static::dateTime($max)->getTimestamp(), $convertChars);
+        return jDateTime::date('Y', static::dateTime($max)->getTimestamp(), $convertChars);
     }
 }
