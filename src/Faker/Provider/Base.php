@@ -420,7 +420,7 @@ class Base
             return str_repeat($matches[1], Base::randomElement(range($matches[2], $matches[3])));
         }, $regex);
         // (this|that) becomes 'this' or 'that'
-        $regex = preg_replace_callback('/\((.*?)\)/', function ($matches) {
+        $regex = preg_replace_callback('/(?<!\\\)\((.*?)\)/', function ($matches) {
             return Base::randomElement(explode('|', str_replace(array('(', ')'), '', $matches[1])));
         }, $regex);
         // All A-F inside of [] become ABCDEF
