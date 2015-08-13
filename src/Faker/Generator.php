@@ -12,6 +12,10 @@ namespace Faker;
  * @property string $titleMale
  * @property string $titleFemale
  *
+ * @property string $cityPrefix
+ * @property string $secondaryAddress
+ * @property string $state
+ * @property string $stateAbbr
  * @property string $citySuffix
  * @property string $streetSuffix
  * @property string $buildingNumber
