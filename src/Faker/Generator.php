@@ -5,7 +5,12 @@ namespace Faker;
 /**
  * @property string $name
  * @property string $firstName
+ * @property string $firstNameMale
+ * @property string $firstNameFemale
  * @property string $lastName
+ * @property string $title
+ * @property string $titleMale
+ * @property string $titleFemale
  *
  * @property string $citySuffix
  * @property string $streetSuffix
@@ -21,6 +26,8 @@ namespace Faker;
  *
  * @property string $ean13
  * @property string $ean8
+ * @property string $isbn13
+ * @property string $isbn10
  *
  * @property string $phoneNumber
  *
@@ -29,20 +36,29 @@ namespace Faker;
  *
  * @property string $creditCardType
  * @property string $creditCardNumber
- * @property string $creditCardExpirationDate
+ * @method string creditCardNumber($type = null, $formatted = false, $separator = '-')
+ * @property \DateTime $creditCardExpirationDate
  * @property string $creditCardExpirationDateString
  * @property string $creditCardDetails
  * @property string $bankAccountNumber
+ * @property string $swiftBicNumber
+ * @property string $vat
  *
  * @property string $word
- * @method string words()
- * @method string sentence()
- * @method string sentences()
- * @method string paragraph()
- * @method string paragraphs()
- * @method string text()
+ * @property string|array $words
+ * @method string|array words($nb = 3, $asText = false)
+ * @property string $sentence
+ * @method string sentence($nbWords = 6, $variableNbWords = true)
+ * @property string|array $sentences
+ * @method string|array sentences($nb = 3, $asText = false)
+ * @property string $paragraph
+ * @method string paragraph($nbSentences = 3, $variableNbSentences = true)
+ * @property string|array $paragraphs
+ * @method string|array paragraphs($nb = 3, $asText = false)
+ * @property string $text
+ * @method string text($maxNbChars = 200)
  *
- * @method string realText()
+ * @method string realText($maxNbChars = 200, $indexSize = 2)
  *
  * @property string $email
  * @property string $safeEmail
@@ -51,13 +67,17 @@ namespace Faker;
  * @property string $freeEmailDomain
  * @property string $safeEmailDomain
  * @property string $userName
+ * @property string $password
+ * @method string password($minLength = 6, $maxLength = 20)
  * @property string $domainName
  * @property string $domainWord
  * @property string $tld
  * @property string $url
+ * @property string $slug
+ * @method string slug($nbWords = 6, $variableNbWords = true)
  * @property string $ipv4
  * @property string $ipv6
- * @property string $internalIpv4
+ * @property string $localIpv4
  * @property string $macAddress
  *
  * @property int       $unixTime
@@ -76,50 +96,70 @@ namespace Faker;
  * @property int       $year
  * @property int       $century
  * @property string    $timezone
- * @method string date()
- * @method string time()
- * @method \DateTime dateTimeBetween()
+ * @method string date($format = 'Y-m-d', $max = 'now')
+ * @method string time($format = 'H:i:s', $max = 'now')
+ * @method \DateTime dateTimeBetween($startDate = '-30 years', $endDate = 'now')
  *
  * @property string $md5
  * @property string $sha1
  * @property string $sha256
  * @property string $locale
  * @property string $countryCode
+ * @property string $countryISOAlpha3
  * @property string $languageCode
- * @method boolean boolean()
+ * @property string $currencyCode
+ * @method boolean boolean($chanceOfGettingTrue = 50)
  *
  * @property int    $randomDigit
  * @property int    $randomDigitNotNull
  * @property string $randomLetter
- * @method int randomNumber()
- * @method mixed randomKey()
- * @method int numberBetween()
- * @method float randomFloat()
- * @method string randomElement()
- * @method string numerify()
- * @method string lexify()
- * @method string bothify()
- * @method string toLower()
- * @method string toUpper()
- * @method mixed optional()
- * @method UniqueGenerator unique()
+ * @property string $randomAscii
+ * @method int randomNumber($nbDigits = null, $strict = false)
+ * @method int|string|null randomKey(array $array = array())
+ * @method int numberBetween($min = 0, $max = 2147483647)
+ * @method float randomFloat($nbMaxDecimals = null, $min = 0, $max = null)
+ * @method mixed randomElement(array $array = array('a', 'b', 'c'))
+ * @method array randomElements(array $array = array('a', 'b', 'c'), $count = 1)
+ * @method array|string shuffle($arg = '')
+ * @method array shuffleArray(array $array = array())
+ * @method string shuffleString($string = '', $encoding = 'UTF-8')
+ * @method string numerify($string = '###')
+ * @method string lexify($string = '????')
+ * @method string bothify($string = '## ??')
+ * @method string asciify($string = '****')
+ * @method string regexify($regex = '')
+ * @method string toLower($string = '')
+ * @method string toUpper($string = '')
+ * @method Generator optional($weight = 0.5, $default = null)
+ * @method Generator unique($reset = false, $maxRetries = 10000)
  *
+ * @method integer biasedNumberBetween($min = 0, $max = 100, $function = 'sqrt')
+ *
+ * @property string $macProcessor
+ * @property string $linuxProcessor
  * @property string $userAgent
  * @property string $chrome
  * @property string $firefox
  * @property string $safari
  * @property string $opera
  * @property string $internetExplorer
+ * @property string $windowsPlatformToken
+ * @property string $macPlatformToken
+ * @property string $linuxPlatformToken
  *
  * @property string $uuid
  *
  * @property string $mimeType
  * @property string $fileExtension
+ * @method string file($sourceDirectory = '/tmp', $targetDirectory = '/tmp', $fullPath = true)
  *
- * @property string $hexcolor
+ * @method string imageUrl($width = 640, $height = 480, $category = null, $randomize = true)
+ * @method string image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true)
+ *
+ * @property string $hexColor
  * @property string $safeHexColor
- * @property string $rgbcolor
- * @property string $rgbColorAsArray
+ * @property string $rgbColor
+ * @property array $rgbColorAsArray
  * @property string $rgbCssColor
  * @property string $safeColorName
  * @property string $colorName
@@ -141,7 +181,11 @@ class Generator
 
     public function seed($seed = null)
     {
-        mt_srand($seed);
+        if ($seed === null) {
+            mt_srand();
+        } else {
+            mt_srand((int) $seed);
+        }
     }
 
     public function format($formatter, $arguments = array())

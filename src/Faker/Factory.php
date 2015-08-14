@@ -6,8 +6,14 @@ class Factory
 {
     const DEFAULT_LOCALE = 'en_US';
 
-    protected static $defaultProviders = array('Address', 'Barcode', 'Color', 'Company', 'DateTime', 'File', 'Image', 'Internet', 'Lorem', 'Miscellaneous', 'Payment', 'Person', 'PhoneNumber', 'Text', 'UserAgent', 'Uuid');
+    protected static $defaultProviders = array('Address', 'Barcode', 'Biased', 'Color', 'Company', 'DateTime', 'File', 'Image', 'Internet', 'Lorem', 'Miscellaneous', 'Payment', 'Person', 'PhoneNumber', 'Text', 'UserAgent', 'Uuid');
 
+    /**
+     * Create a new generator
+     * 
+     * @param string $locale
+     * @return Generator
+     */
     public static function create($locale = self::DEFAULT_LOCALE)
     {
         $generator = new Generator();

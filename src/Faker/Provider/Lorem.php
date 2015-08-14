@@ -46,6 +46,7 @@ class Lorem extends \Faker\Provider\Base
 
     /**
      * @example 'Lorem'
+     * @return string
      */
     public static function word()
     {
@@ -73,7 +74,7 @@ class Lorem extends \Faker\Provider\Base
     /**
      * Generate a random sentence
      *
-      * @example 'Lorem ipsum dolor sit amet.'
+     * @example 'Lorem ipsum dolor sit amet.'
      * @param integer $nbWords         around how many words the sentence should contain
      * @param boolean $variableNbWords set to false if you want exactly $nbWords returned,
      *                                  otherwise $nbWords may vary by +/-40% with a minimum of 1

@@ -2,6 +2,7 @@
 
 namespace Faker\Provider;
 
+use Faker\Calculator\Iban;
 use Faker\Calculator\Luhn;
 
 class Payment extends Base
@@ -87,7 +88,7 @@ class Payment extends Base
         'IL' => array(array('n', 3),    array('n', 3),  array('n', 13)),
         'IS' => array(array('n', 4),    array('n', 2),  array('n', 6),  array('n', 10)),
         'IT' => array(array('a', 1),    array('n', 5),  array('n', 5),  array('c', 12)),
-        'KW' => array(array('a', 4),    array('c', 22)),
+        'KW' => array(array('a', 4),    array('n', 22)),
         'KZ' => array(array('n', 3),    array('c', 13)),
         'LB' => array(array('n', 4),    array('c', 20)),
         'LI' => array(array('n', 5),    array('c', 12)),
@@ -115,7 +116,7 @@ class Payment extends Base
         'SK' => array(array('n', 4),    array('n', 6),  array('n', 10)),
         'SM' => array(array('a', 1),    array('n', 5),  array('n', 5),  array('c', 12)),
         'TN' => array(array('n', 2),    array('n', 3),  array('n', 13), array('n', 2)),
-        'TR' => array(array('n', 5),    array('c', 1),  array('c', 16)),
+        'TR' => array(array('n', 5),    array('n', 1),  array('c', 16)),
         'VG' => array(array('a', 4),    array('n', 16)),
     );
 
@@ -132,9 +133,10 @@ class Payment extends Base
     /**
      * Returns the String of a credit card number.
      *
-     * @param string  $type      Supporting any of 'Visa', 'MasterCard', 'Amercian Express', and 'Discover'
+     * @param string  $type      Supporting any of 'Visa', 'MasterCard', 'American Express', and 'Discover'
      * @param boolean $formatted Set to true if the output string should contain one separator every 4 digits
      * @param string  $separator Separator string for formatting card number. Defaults to dash (-).
+     * @return string
      *
      * @example '4485480221084675'
      */
@@ -161,6 +163,7 @@ class Payment extends Base
 
     /**
      * @param boolean $valid True (by default) to get a valid expiration date, false to get a maybe valid date
+     * @return \DateTime
      * @example 04/13
      */
     public function creditCardExpirationDate($valid = true)
@@ -175,6 +178,7 @@ class Payment extends Base
     /**
      * @param boolean $valid                True (by default) to get a valid expiration date, false to get a maybe valid date
      * @param string  $expirationDateFormat
+     * @return string
      * @example '04/13'
      */
     public function creditCardExpirationDateString($valid = true, $expirationDateFormat = null)
@@ -184,7 +188,7 @@ class Payment extends Base
 
     /**
      * @param  boolean $valid True (by default) to get a valid expiration date, false to get a maybe valid date
-     * @return array()
+     * @return array
      */
     public function creditCardDetails($valid = true)
     {
@@ -210,7 +214,7 @@ class Payment extends Base
     protected static function iban($countryCode, $prefix = '', $length = null)
     {
         $countryCode = strtoupper($countryCode);
-        $format = !isset(static::$ibanFormats[$countryCode]) ? array() : static::$ibanFormats[$countryCode];
+        $format = !isset(static::$ibanFormats[$countryCode]) ? null : static::$ibanFormats[$countryCode];
         if ($length === null) {
             if ($format === null) {
                 $length = 24;
@@ -222,22 +226,19 @@ class Payment extends Base
                 }
             }
         }
+        if ($format === null) {
+            $format = array(array('n', $length));
+        }
+
+        $expandedFormat = '';
+        foreach ($format as $item) {
+            list($class, $length) = $item;
+            $expandedFormat .=  str_repeat($class, $length);
+        }
 
         $result = $prefix;
-        $length -= strlen($prefix);
-        $nextPart = array_shift($format);
-        if ($nextPart !== false) {
-            list($class, $groupCount) = $nextPart;
-        } else {
-            $class = 'n';
-            $groupCount = 0;
-        }
-        $groupCount = $nextPart === false ? 0 : $nextPart[1];
-        for ($i = 0; $i < $length; $i++) {
-            if ($nextPart !== false && $groupCount-- < 1) {
-                $nextPart = array_shift($format);
-                list($class, $groupCount) = $nextPart;
-            }
+        $expandedFormat = substr($expandedFormat, strlen($result));
+        foreach (str_split($expandedFormat) as $class) {
             switch ($class) {
                 default:
                 case 'c':
@@ -254,17 +255,7 @@ class Payment extends Base
 
         $result = static::addBankCodeChecksum($result, $countryCode);
 
-        $countryNumber = 100 * (ord($countryCode[0])-55) + (ord($countryCode[1])-55);
-        $tempResult = $result . $countryNumber . '00';
-        // perform MOD97-10 checksum calculation
-        $checksum = (int) $tempResult[0];
-        for ($i = 1, $size = strlen($tempResult); $i < $size; $i++) {
-            $checksum = (10 * $checksum + (int) $tempResult[$i]) % 97;
-        }
-        $checksum = 98 - $checksum;
-        if ($checksum < 10) {
-            $checksum = '0'.$checksum;
-        }
+        $checksum = Iban::checksum($countryCode . '00' . $result);
 
         return $countryCode . $checksum . $result;
     }
@@ -279,5 +270,17 @@ class Payment extends Base
     protected static function addBankCodeChecksum($iban, $countryCode = '')
     {
         return $iban;
+    }
+
+    /**
+     * Return the String of a SWIFT/BIC number
+     *
+     * @example 'RZTIAT22263'
+     * @link    http://en.wikipedia.org/wiki/ISO_9362
+     * @return  string Swift/Bic number
+     */
+    public static function swiftBicNumber()
+    {
+        return self::regexify("^([A-Z]){4}([A-Z]){2}([0-9A-Z]){2}([0-9A-Z]{3})?$");
     }
 }

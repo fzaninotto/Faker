@@ -43,18 +43,18 @@ class Address extends \Faker\Provider\Address
         'Zambia', 'Zimbabue'
     );
     protected static $cityFormats = array(
-        '{{cityPrefix}} {{firstName}}{{citySuffix}}',
+        '{{cityPrefix}} {{firstName}} {{citySuffix}}',
         '{{cityPrefix}} {{firstName}}',
-        '{{firstName}}{{citySuffix}}',
-        '{{lastName}}{{citySuffix}}',
+        '{{firstName}} {{citySuffix}}',
+        '{{lastName}} {{citySuffix}}',
     );
     protected static $streetNameFormats = array(
         '{{firstName}} {{streetSuffix}}',
         '{{lastName}} {{streetSuffix}}'
     );
     protected static $streetAddressFormats = array(
-        '{{buildingNumber}} {{streetName}}',
-        '{{buildingNumber}} {{streetName}} {{secondaryAddress}}',
+        '{{streetName}} {{buildingNumber}}',
+        '{{streetName}} {{buildingNumber}} {{secondaryAddress}}',
     );
     protected static $addressFormats = array(
         "{{streetAddress}}\n{{city}}, {{stateAbbr}} {{postcode}}",

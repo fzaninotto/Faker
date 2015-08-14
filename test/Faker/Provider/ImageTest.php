@@ -6,19 +6,33 @@ use Faker\Provider\Image;
 
 class ImageTest extends \PHPUnit_Framework_TestCase
 {
-    public function testUrlWithDefaults()
+    public function testImageUrlUses640x680AsTheDefaultSize()
     {
-        $this->assertEquals(Image::imageUrl(), 'http://lorempixel.com/640/480/');
+        $this->assertRegExp('#^http://lorempixel.com/640/480/#', Image::imageUrl());
     }
 
-    public function testUrlWithDimensions()
+    public function testImageUrlAcceptsCustomWidthAndHeight()
     {
-        $this->assertEquals(Image::imageUrl(800, 400), 'http://lorempixel.com/800/400/');
+        $this->assertRegExp('#^http://lorempixel.com/800/400/#', Image::imageUrl(800, 400));
     }
 
-    public function testUrlWithDimensionsAndCategory()
+    public function testImageUrlAcceptsCustomCategory()
     {
-        $this->assertEquals(Image::imageUrl(800, 400, 'nature'), 'http://lorempixel.com/800/400/nature/');
+        $this->assertRegExp('#^http://lorempixel.com/800/400/nature/#', Image::imageUrl(800, 400, 'nature'));
+    }
+
+    public function testImageUrlAcceptsCustomText()
+    {
+        $this->assertRegExp('#^http://lorempixel.com/800/400/nature/Faker#', Image::imageUrl(800, 400, 'nature', false, 'Faker'));
+    }
+
+    public function testImageUrlAddsARandomGetParameterByDefault()
+    {
+        $url = Image::imageUrl(800, 400);
+        $splitUrl = preg_split('/\?/', $url);
+
+        $this->assertEquals(count($splitUrl), 2);
+        $this->assertRegexp('#\d{5}#', $splitUrl[1]);
     }
 
     /**

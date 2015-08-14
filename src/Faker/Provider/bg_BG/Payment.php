@@ -16,4 +16,28 @@ class Payment extends \Faker\Provider\Payment
     {
         return static::iban($countryCode, $prefix, $length);
     }
+
+    /**
+     * Value Added Tax (VAT)
+     *
+     * @example 'BG1234567890', ('spaced') 'BG 1234567890'
+     *
+     * @see http://ec.europa.eu/taxation_customs/vies/faq.html?locale=en#item_11
+     * @see http://en.wikipedia.org/wiki/VAT_identification_number
+     *
+     * @param bool $spacedNationalPrefix
+     *
+     * @return string VAT Number
+     */
+    public static function vat($spacedNationalPrefix = true)
+    {
+        $prefix = ($spacedNationalPrefix) ? "BG " : "BG";
+
+        return sprintf(
+            "%s%d%d",
+            $prefix,
+            self::randomNumber(5, true), // workaround for mt_getrandmax() limitation
+            self::randomNumber(self::randomElement(array(4, 5)), true)
+        );
+    }
 }

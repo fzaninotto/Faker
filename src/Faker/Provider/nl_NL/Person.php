@@ -99,7 +99,7 @@ class Person extends \Faker\Provider\Person
         'van Hostaden', 'Houdijk', 'van \'t Houteveen', 'Huberts', 'Huel', 'Huijben', 'Huijbrechts', 'Huijs',
         'Huijzing', 'Huisman', 'Huls', 'Hulshouts', 'Hulskes', 'Hulst', 'van Hulten', 'Huurdeman', 'van het Heerenveen',
         'Jaceps', 'Jacobi', 'Jacobs', 'Jacquot', 'de Jager', 'Jans', 'Jansdr', 'Janse', 'Jansen', 'Jansen', 'Jansse',
-        'Janssen', 'Janssens', 'Jasperdr.', 'Jdotte', 'Jeggij', 'Jekel', 'Jerusalem', 'Jochems', 'de Jode Vastraedsd',
+        'Janssen', 'Janssens', 'Jasper dr.', 'Jdotte', 'Jeggij', 'Jekel', 'Jerusalem', 'Jochems', 'de Jode Vastraedsd',
         'Jones', 'de Jong', 'Jonkman', 'Joosten', 'Jorlink', 'Jorrisen', 'van Jumiège', 'Jurrijens', 'Köster',
         'van der Kaay', 'de Kale', 'Kallen', 'Kalman', 'Kamp', 'Kamper', 'Karels', 'Kas', 'van Kasteelen', 'Kathagen',
         'Keijser', 'de Keijser', 'Keijzer', 'de Keijzer', 'Keltenie', 'van Kempen', 'Kerkhof', 'Ketel', 'Ketting',
@@ -184,10 +184,10 @@ class Person extends \Faker\Provider\Person
     );
 
     protected static $longLastNames = array(
-        'Albinus genaamd Weiss von Weissenlöw', 'van Bol’es Rijnbende', 'Doris Bin Sijlvanus',
+        'Albinus genaamd Weiss von Weissenlöw', "van Bol'es Rijnbende", 'Doris Bin Sijlvanus',
         'Douglas tot Springwoodpark', 'Dubbeldemuts van der Sluys', 'Duhme auf der Heide sive Heydahrens',
-        'Elsjan of Wipper', 'de la Fontaine und d’Harnoncourt Unverzagt', 'Franse Storm', 'von Frijtag Drabbe Künzel',
-        'Gansneb genaamd Tengnagel tot Bonkenhave', 'Grinwis Plaat Stuitjes', 'von Heinrich d’Omóróvicza',
+        'Elsjan of Wipper', "de la Fontaine und d'Harnoncourt Unverzagt", 'Franse Storm', 'von Frijtag Drabbe Künzel',
+        'Gansneb genaamd Tengnagel tot Bonkenhave', 'Grinwis Plaat Stuitjes', "von Heinrich d'Omóróvicza",
         'van Hugenpoth tot den Berenclauw', 'Jansz Muskus te Pasque', 'Kijk in de Vegte', 'Kleine Pier', 'Koning Knol',
         'Martena van Burmania Vegilin van Claerbergen', 'Paspoort van Grijpskerke en Poppendamme',
         'de Pruyssenaere de la Woestijne', 'Rahajoe genaamd en geschreven ten Kate', 'de la Rive Box',
