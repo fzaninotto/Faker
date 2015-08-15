@@ -11,8 +11,12 @@ class Address extends \Faker\Provider\Address
         'g.', 'gatvė', 'prospektas', 'alėja',
     );
 
-    protected static $buildingNumber = array('##'); protected static $postcode = array('LT-#####'); protected static
-    $country = array('Afganistanas', 'Airija', 'Alandų salos', 'Albanija', 'Alžyras', 'Amerikos Samoa', 'Andora',
+    protected static $buildingNumber = array('##');
+
+    protected static $postcode = array('LT-#####');
+
+    protected static $country = array(
+    'Afganistanas', 'Airija', 'Alandų salos', 'Albanija', 'Alžyras', 'Amerikos Samoa', 'Andora',
     'Angilija', 'Angola', 'Antarktis', 'Antigva ir Barbuda', 'Argentina', 'Armėnija', 'Aruba', 'Australija', 'Austrija',
     'Azerbaidžanas', 'Bahamos', 'Bahreinas', 'Baltarusija', 'Bangladešas', 'Barbadosas', 'Belgija', 'Belizas',
     'Beninas', 'Bermuda', 'Bisau Gvinėja', 'Bolivija', 'Bosnija ir Hercegovina', 'Botsvana', 'Bouvet sala', 'Brazilija',

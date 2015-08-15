@@ -333,7 +333,7 @@ class Person extends \Faker\Provider\Person
      * @param int $time [1|2]
      * @return int
      */
-    private static function calculateSum( $numbers, $time = 1)
+    private static function calculateSum($numbers, $time = 1)
     {
         if ($time == 1) {
             $multipliers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1 ];
