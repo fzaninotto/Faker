@@ -17,7 +17,7 @@ class ColorTest extends \PHPUnit_Framework_TestCase
     public function testIfSafeColorNameCanReturnData()
     {
         $safeColorName = $this->faker->safeColorName();
-        $this->assertNotEmpty($bankShortName);
+        $this->assertNotEmpty($safeColorName);
     }
     
     public function testIfColorNameReturnData()
