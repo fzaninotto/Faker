@@ -845,6 +845,15 @@ echo $faker->region; // "Saint-Pierre-et-Miquelon"
 
 ```
 
+### `Faker\Provider\id_ID\Payment`
+```php
+<?php
+
+echo $faker->bankShortName; // "Mandiri" - PT Bank Mandiri Tbk short name
+echo $faker->accountNumber('Mandiri'); // "0111101043072" - account number example for Bank Mandiri
+
+```
+
 ### `Faker\Provider\ja_JP\Person`
 
 ```php
