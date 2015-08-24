@@ -91,6 +91,14 @@ class Color extends Base
     }
 
     /**
+     * @example 'rgba(0,255,122,0.8)'
+     */
+    public static function rgbaCssColor()
+    {
+        return 'rgba(' . static::rgbColor() . ',' . static::randomFloat(1, 0, 1) . ')';
+    }
+
+    /**
      * @example 'blue'
      */
     public static function safeColorName()
