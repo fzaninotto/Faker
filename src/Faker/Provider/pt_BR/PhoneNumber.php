@@ -124,7 +124,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      * Randomizes between complete cellphone and landline numbers.
      * @return mixed
      */
-    public static function phoneNumber()
+    public function phoneNumber()
     {
         $method = static::randomElement(array('cellphoneNumber', 'landlineNumber'));
         return call_user_func("static::$method", true);

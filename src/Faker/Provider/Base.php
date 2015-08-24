@@ -47,6 +47,21 @@ class Base
     }
 
     /**
+     * Generates a random digit, which cannot be $except
+     *
+     * @param int $except
+     * @return int
+     */
+    public static function randomDigitNot($except)
+    {
+        $result = self::numberBetween(0, 8);
+        if ($result >= $except) {
+            $result++;
+        }
+        return $result;
+    }
+
+    /**
      * Returns a random integer with 0 to $nbDigits digits.
      *
      * The maximum value returned is mt_getrandmax()

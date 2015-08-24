@@ -164,7 +164,8 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
 ### `Faker\Provider\en_US\PhoneNumber`
 
-    phoneNumber             // '132-149-0269x3767'
+    phoneNumber             // '201-886-0269 x3767'
+    tollFreePhoneNumber     // '(888) 937-7238'
 
 ### `Faker\Provider\en_US\Company`
 
