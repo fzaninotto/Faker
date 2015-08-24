@@ -82,7 +82,8 @@ class EntityPopulator
                 continue;
             }
 
-            if ($formatter = $nameGuesser->guessFormat($fieldName)) {
+            $size = isset($this->class->fieldMappings[$fieldName]['length']) ? $this->class->fieldMappings[$fieldName]['length'] : null;
+            if ($formatter = $nameGuesser->guessFormat($fieldName, $size)) {
                 $formatters[$fieldName] = $formatter;
                 continue;
             }
