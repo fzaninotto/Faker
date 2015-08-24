@@ -4,61 +4,9 @@ namespace Faker\Provider\ar_JO;
 
 class Text extends \Faker\Provider\Text
 {
-
-    /**
-     * generates text string in arabic
-     *
-     * @example ' ولا النوم ولا القرار وكان يقال: لا يجد المريض لذة الطعام والشراب'
-     * @param  integer                   $maxNbChars
-     * @param  integer                   $indexSize
-     * @return string
-     * @throws \InvalidArgumentException
-     */
-    public function realText($maxNbChars = 200, $indexSize = 2)
+    protected static function validStart($word)
     {
-        if ($maxNbChars < 10) {
-            throw new \InvalidArgumentException('maxNbChars must be at least 10');
-        }
-
-        if ($indexSize < 1) {
-            throw new \InvalidArgumentException('indexSize must be at least 1');
-        }
-
-        if ($indexSize > 5) {
-            throw new \InvalidArgumentException('indexSize must be at most 5');
-        }
-
-        $words = $this->getConsecutiveWords($indexSize);
-        $result = array();
-        $resultLength = 0;
-        // take a random starting point
-        $next = static::randomKey($words);
-        while ($resultLength < $maxNbChars && isset($words[$next])) {
-            // fetch a random word to append
-            $word = static::randomElement($words[$next]);
-
-            // calculate next index
-            $currentWords = explode(' ', $next);
-
-            $currentWords[] = $word;
-            array_shift($currentWords);
-            $next = implode(' ', $currentWords);
-
-            if ($resultLength == 0 && !preg_match('/^\p{Arabic}/u', $word)) {
-                continue;
-            }
-            // append the element
-            $result[] = $word;
-            $resultLength += strlen($word) + 1;
-        }
-
-        // remove the element that caused the text to overflow
-        array_pop($result);
-
-        // build result
-        $result = implode(' ', $result);
-
-        return $result.'.';
+        return preg_match('/^\p{Arabic}/u', $word);
     }
 
     /**
