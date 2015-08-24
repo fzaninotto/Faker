@@ -720,6 +720,16 @@ Fugiat non in itaque sunt nobis totam. Sed nesciunt est deleniti cumque alias. R
 
 ## Language specific formatters
 
+### `Faker\Provider\ar_SA\Person`
+```php
+<?php
+
+echo $faker->idNumber;      // ID number
+echo $faker->nationalIdNumber // Citizen ID number
+echo $faker->foreignerIdNumber // Foreigner ID number
+
+```
+
 ### `Faker\Provider\at_AT\Payment`
 ```php
 <?php
