@@ -211,9 +211,10 @@ class Payment extends Base
      * @param  integer $length      total length without country code and 2 check digits
      * @return string
      */
-    protected static function iban($countryCode, $prefix = '', $length = null)
+    public static function iban($countryCode, $prefix = '', $length = null)
     {
-        $countryCode = strtoupper($countryCode);
+        $countryCode = is_null($countryCode) ? self::randomKey(self::$ibanFormats) : strtoupper($countryCode);
+
         $format = !isset(static::$ibanFormats[$countryCode]) ? null : static::$ibanFormats[$countryCode];
         if ($length === null) {
             if ($format === null) {

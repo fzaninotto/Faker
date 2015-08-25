@@ -164,7 +164,8 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
 ### `Faker\Provider\en_US\PhoneNumber`
 
-    phoneNumber             // '132-149-0269x3767'
+    phoneNumber             // '201-886-0269 x3767'
+    tollFreePhoneNumber     // '(888) 937-7238'
 
 ### `Faker\Provider\en_US\Company`
 
@@ -236,6 +237,8 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     creditCardExpirationDate // 04/13
     creditCardExpirationDateString // '04/13'
     creditCardDetails       // array('MasterCard', '4485480221084675', 'Aleksander Nowak', '04/13')
+    // Generates a random IBAN. Set $countryCode to null for a random country
+    iban($countryCode)      // 'IT31A8497112740YZ575DJ28BP4'
     swiftBicNumber          // RZTIAT22263
 
 ### `Faker\Provider\Color`
@@ -717,6 +720,16 @@ Fugiat non in itaque sunt nobis totam. Sed nesciunt est deleniti cumque alias. R
 
 ## Language specific formatters
 
+### `Faker\Provider\ar_SA\Person`
+```php
+<?php
+
+echo $faker->idNumber;      // ID number
+echo $faker->nationalIdNumber // Citizen ID number
+echo $faker->foreignerIdNumber // Foreigner ID number
+
+```
+
 ### `Faker\Provider\at_AT\Payment`
 ```php
 <?php
@@ -845,12 +858,13 @@ echo $faker->region; // "Saint-Pierre-et-Miquelon"
 
 ```
 
-### `Faker\Provider\id_ID\Payment`
+### `Faker\Provider\hu_HU\Payment`
+
 ```php
 <?php
 
-echo $faker->bankShortName; // "Mandiri" - PT Bank Mandiri Tbk short name
-echo $faker->accountNumber('Mandiri'); // "0111101043072" - account number example for Bank Mandiri
+// Generates a random bank account number
+echo $faker->bankAccountNumber; // "HU09904437680048220079300783"
 
 ```
 
@@ -869,6 +883,16 @@ echo $faker->firstKanaName; // "ハルカ"
 echo $faker->lastKanaName; // "ナカジマ"
 ```
 
+### `Faker\Provider\ka_GE\Payment`
+
+```php
+<?php
+
+// Generates a random bank account number
+echo $faker->bankAccountNumber; // "GE33ZV9773853617253389"
+
+```
+
 ### `Faker\Provider\kk_KZ\Company`
 
 ```php
@@ -876,6 +900,19 @@ echo $faker->lastKanaName; // "ナカジマ"
 
 // Generates an business identification number
 echo $faker->businessIdentificationNumber; // "150140000019"
+
+```
+
+### `Faker\Provider\kk_KZ\Payment`
+
+```php
+<?php
+
+// Generates a random bank name
+echo $faker->bank; // "Қазкоммерцбанк"
+
+// Generates a random bank account number
+echo $faker->bankAccountNumber; // "KZ1076321LO4H6X41I37"
 
 ```
 
@@ -910,6 +947,16 @@ echo $faker->borough; // "강남구"
 
 // Generates a random personal identity card number
 echo $faker->personalIdentityNumber; // "140190-12301"
+
+```
+
+### `Faker\Provider\no_NO\Payment`
+
+```php
+<?php
+
+// Generates a random bank account number
+echo $faker->bankAccountNumber; // "NO3246764709816"
 
 ```
 
@@ -999,6 +1046,26 @@ echo $faker->rg;         // '84.405.736-3'
 echo $faker->cnpj;       // '23.663.478/0001-24'
 ```
 
+### `Faker\Provider\ro_MD\Payment`
+
+```php
+<?php
+
+// Generates a random bank account number
+echo $faker->bankAccountNumber; // "MD83BQW1CKMUW34HBESDP3A8"
+
+```
+
+### `Faker\Provider\ro_RO\Payment`
+
+```php
+<?php
+
+// Generates a random bank account number
+echo $faker->bankAccountNumber; // "RO55WRJE3OE8X3YQI7J26U1E"
+
+```
+
 ### `Faker\Provider\ro_RO\Person`
 
 ```php
@@ -1058,6 +1125,16 @@ echo $faker->tollFreeNumber; // "0800 123 456"
 echo $faker->areaCode; // "03"
 ```
 
+### `Faker\Provider\sv_SE\Payment`
+
+```php
+<?php
+
+// Generates a random bank account number
+echo $faker->bankAccountNumber; // "SE5018548608468284909192"
+
+```
+
 ### `Faker\Provider\sv_SE\Person`
 ```php
 <?php
@@ -1085,7 +1162,7 @@ echo $faker->cityName;
 
 * Symfony2 bundles:
   * [BazingaFakerBundle](https://github.com/willdurand/BazingaFakerBundle): Put the awesome Faker library into the Symfony2 DIC and populate your database with fake data.
-  * [AliceBundle](https://github.com/hautelook/AliceBundle), [AliceFixturesBundle](https://github.com/h4cc/AliceFixturesBundle): Bbundles for using Alice and Faker with data fixtures. Able to use Doctrine ORM as well as Doctrine MongoDB ODM.
+  * [AliceBundle](https://github.com/hautelook/AliceBundle), [AliceFixturesBundle](https://github.com/h4cc/AliceFixturesBundle): Bundles for using [Alice](https://packagist.org/packages/nelmio/alice) and Faker with data fixtures. Able to use Doctrine ORM as well as Doctrine MongoDB ODM.
 * [FakerServiceProvider](https://github.com/EmanueleMinotto/FakerServiceProvider): Faker Service Provider for Silex
 * [faker-cli](https://github.com/bit3/faker-cli): Command Line Tool for the Faker PHP library
 * [Factory Muffin](https://github.com/thephpleague/factory-muffin): enable the rapid creation of objects (PHP port of factory-girl)
@@ -1096,6 +1173,7 @@ echo $faker->cityName;
 * [faker-context](https://github.com/denheck/faker-context): Behat context using Faker to generate testdata
 * [CronExpressionGenerator](https://github.com/swekaj/CronExpressionGenerator): Faker provider for generating random, valid cron expressions.
 * [pragmafabrik/Pomm2Faker](https://github.com/pragmafabrik/Pomm2Faker): Faker client for Pomm ORM (PostgreSQL)
+* [nelmio/alice](https://packagist.org/packages/nelmio/alice): Fixtures/object generator with a yaml DSL that can use Faker as data generator.
 
 ## License
 
