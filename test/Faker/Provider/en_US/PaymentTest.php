@@ -4,7 +4,6 @@
 namespace Faker\Provider\en_US;
 
 use Faker\Generator;
-use Faker\Provider\en_US\Payment;
 
 class PaymentTest extends \PHPUnit_Framework_TestCase
 {
