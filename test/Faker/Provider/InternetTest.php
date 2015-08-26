@@ -110,7 +110,7 @@ class InternetTest extends \PHPUnit_Framework_TestCase
 
     public function testIpv4NotLocalNetwork()
     {
-        $this->assertNotEquals('1.0.0.0', long2ip(ip2long($this->faker->ipv4()) & (-1 << (32 - 8))));
+        $this->assertNotRegExp('/\A1\./', $this->faker->ipv4());
     }
 
     public function testIpv4NotBroadcast()
