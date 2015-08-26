@@ -108,6 +108,16 @@ class InternetTest extends \PHPUnit_Framework_TestCase
         $this->assertNotFalse(filter_var($this->faker->ipv4(), FILTER_VALIDATE_IP, FILTER_FLAG_IPV4));
     }
 
+    public function testIpv4NotLocalNetwork()
+    {
+        $this->assertNotRegExp('/\A1\./', $this->faker->ipv4());
+    }
+
+    public function testIpv4NotBroadcast()
+    {
+        $this->assertNotEquals('255.255.255.255', $this->faker->ipv4());
+    }
+
     public function testIpv6()
     {
         $this->assertNotFalse(filter_var($this->faker->ipv6(), FILTER_VALIDATE_IP, FILTER_FLAG_IPV6));
