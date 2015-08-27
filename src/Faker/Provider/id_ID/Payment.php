@@ -55,7 +55,7 @@ class Payment extends \Faker\Provider\Payment
      *
      * @example '1234567890'
      */
-    public static function accountNumber($bank = null)
+    public static function bankAccountNumber($bank = null)
     {
         if (is_null($bank)) {
             $bank = static::bankShortName();

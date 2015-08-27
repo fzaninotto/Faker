@@ -873,7 +873,8 @@ echo $faker->bankAccountNumber; // "HU09904437680048220079300783"
 <?php
 
 echo $faker->bankShortName; // "Mandiri" - PT Bank Mandiri Tbk short name
-echo $faker->accountNumber('Mandiri'); // "0111101043072" - account number example for Bank Mandiri
+echo $faker->bankAccountNumber; // "0111101043072" - account number example for Bank Mandiri
+echo $faker->bankAccountNumber('Mandiri'); // "0111101043072" - account number example for Bank Mandiri
 ```
 
 ### `Faker\Provider\ja_JP\Person`

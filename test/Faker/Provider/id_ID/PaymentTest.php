@@ -5,7 +5,7 @@ namespace Faker\Test\Provider\id_ID;
 use Faker\Generator;
 use Faker\Provider\id_ID\Payment;
 
-class BankTest extends \PHPUnit_Framework_TestCase
+class PaymentTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
@@ -22,25 +22,25 @@ class BankTest extends \PHPUnit_Framework_TestCase
     
     public function testIfAccountNumberCanReturnData()
     {
-        $accountNumber = $this->faker->accountNumber();
+        $accountNumber = $this->faker->bankAccountNumber();
         $this->assertNotEmpty($accountNumber);
     }
     
-    public function testIfAccountNumberRightFormat()
+    public function testIfbBankAccountNumberRightFormat()
     {
-        $accountNumber = $this->faker->accountNumber('Bukopin');
+        $accountNumber = $this->faker->bankAccountNumber('Bukopin');
         $this->assertEquals(10, strlen($accountNumber));
         
-        $accountNumber = $this->faker->accountNumber('Mandiri');
+        $accountNumber = $this->faker->bankAccountNumber('Mandiri');
         $this->assertEquals(13, strlen($accountNumber));
         
-        $accountNumber = $this->faker->accountNumber('BCA');
+        $accountNumber = $this->faker->bankAccountNumber('BCA');
         $this->assertEquals(10, strlen($accountNumber));
         
-        $accountNumber = $this->faker->accountNumber('BNI');
+        $accountNumber = $this->faker->bankAccountNumber('BNI');
         $this->assertEquals(10, strlen($accountNumber));
         
-        $accountNumber = $this->faker->accountNumber('BRI');
+        $accountNumber = $this->faker->bankAccountNumber('BRI');
         $this->assertEquals(15, strlen($accountNumber));
     }
 }
