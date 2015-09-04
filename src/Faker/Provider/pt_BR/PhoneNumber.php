@@ -33,14 +33,13 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      * Generates a 8/9-digit cellphone number without formatting characters.
      * @param bool $formatted [def: true] If it should return a formatted number or not.
      * @param bool $ninth     [def: false] If the number should have a nine in the beginning or not.
-     *                        If the generated number begins with 7 this is ignored.
      * @return string
      */
     public static function cellphone($formatted = true, $ninth = false)
     {
         $number = static::numerify(static::randomElement(static::$cellphoneFormats));
 
-        if ($ninth && $number[0] != 7) {
+        if ($ninth) {
             $number = "9$number";
         }
 
