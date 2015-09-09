@@ -1,10 +1,12 @@
 <?php namespace Faker\Provider\el_GR;
 
-
- class Company extends \Faker\Provider\Company
- {
+class Company extends \Faker\Provider\Company
+{
     protected static $companySuffix = array(
-        'Ο.Ε','Ε.Ε','Α.Ε','Ε.Π.Ε'
+        'Ο.Ε',
+        'Ε.Ε',
+        'Α.Ε',
+        'Ε.Π.Ε'
     );
 
     protected static $companyFormats = array(
@@ -15,9 +17,29 @@
     protected static $grafm = array('#########');
 
 
-
     protected static $doy = array(
-        'Α\' Αθήνας','Β\' Αθήνας','Γ\' Αθήνας','ΣΤ\' Αθήνας','Γαλάτσιου', 'Α\' Πειραιά','Β\' Πειραιά','Γ\' Πειραιά', 'Α\' Θεσσαλονίκης','Β\' Θεσσαλονίκης','Γλυφάδας','Ωροπού','Καλιθέας','Αγίου Δημητρίου','Νέας Σμύρνης','Αμαρουσίου','Θήρας','Αμοργού','Πατρών','ΔΟΥ ΠΛΟΙΩΝ','ΦΑΕΕ ΑΘΗΝΩΝ');
+        'Α\' Αθήνας',
+        'Β\' Αθήνας',
+        'Γ\' Αθήνας',
+        'ΣΤ\' Αθήνας',
+        'Γαλάτσιου',
+        'Α\' Πειραιά',
+        'Β\' Πειραιά',
+        'Γ\' Πειραιά',
+        'Α\' Θεσσαλονίκης',
+        'Β\' Θεσσαλονίκης',
+        'Γλυφάδας',
+        'Ωροπού',
+        'Καλιθέας',
+        'Αγίου Δημητρίου',
+        'Νέας Σμύρνης',
+        'Αμαρουσίου',
+        'Θήρας',
+        'Αμοργού',
+        'Πατρών',
+        'ΔΟΥ ΠΛΟΙΩΝ',
+        'ΦΑΕΕ ΑΘΗΝΩΝ'
+    );
 
 
     protected static $οbject = array(
@@ -38,7 +60,7 @@
         'Κομπάρσος',
         'Καλλιτεχνικός πράκτορας',
         'Εισαγωγαί-εξαγωγαί',
-      'Ωρολογοποιός',
+        'Ωρολογοποιός',
         'Καθεκλοποιός',
     );
 
@@ -47,17 +69,16 @@
      */
     public static function doy()
     {
-     return static::randomElement(static::$doy);
+        return static::randomElement(static::$doy);
     }
 
     /**
      * Return The profession of a company
+     *
      * @example 'Δημοσιογράφος'
      */
     public static function object()
     {
-     return static::randomElement(static::$οbject);
+        return static::randomElement(static::$οbject);
     }
-
-
- }
+}
