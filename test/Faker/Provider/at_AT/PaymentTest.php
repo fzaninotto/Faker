@@ -23,8 +23,6 @@ class PaymentTest extends \PHPUnit_Framework_TestCase
     public function testVatIsValid()
     {
         $vat = $this->faker->vat();
-        $unspacedVat = $this->faker->vat(false);
-        $this->assertRegExp('/^(AT U\d{8})$/', $vat);
-        $this->assertRegExp('/^(ATU\d{8})$/', $unspacedVat);
+        $this->assertRegExp('/^(ATU\d{8})$/', $vat);
     }
 }
