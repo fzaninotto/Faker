@@ -870,8 +870,6 @@ echo $faker->personalIdentityNumber; // "140190-12301"
 echo $faker->pesel; // "40061451555"
 // Generates a random personal identity card number
 echo $faker->personalIdentityNumber; // "AKX383360"
-// Generates a random taxpayer identification number (NIP)
-echo $faker->taxpayerIdentificationNumber; // '8211575109'
 
 ```
 
@@ -896,16 +894,6 @@ echo $faker->regonLocal; // "15346111382836"
 echo $faker->bank; // "Narodowy Bank Polski"
 // Generates a random bank account number
 echo $faker->bankAccountNumber; // "PL14968907563953822118075816"
-
-```
-
-### `Faker\Provider\pt_PT\Person`
-
-```php
-<?php
-
-// Generates a random taxpayer identification number (in portuguese - Número de Identificação Fiscal NIF)
-echo $faker->taxpayerIdentificationNumber; // '165249277'
 
 ```
 

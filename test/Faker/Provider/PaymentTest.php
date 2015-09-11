@@ -67,29 +67,9 @@ class PaymentTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(array('type', 'number', 'name', 'expirationDate'), array_keys($cardDetails));
     }
 
-    public function countriesProvider()
-    {
-        $data = array();
-
-        foreach(Payment::$countryPatterns as $country => $regexp) {
-            $data[] = array($country, sprintf("/^%s%s$/",$country, Payment::$countryPatterns[$country]));
-        }
-
-        return $data;
-    }
-
-    /**
-     * @dataProvider countriesProvider
-     */
-    public function testVat($country, $regexp)
-    {
-        $vat = Payment::vat(false, $country);
-        $this->assertRegExp($regexp, $vat);
-    }
-
     public function testVatWithRandomCountry()
     {
-        $vat = Payment::vat(false, null);
+        $vat = Payment::vat(null);
         $this->assertNotEmpty($vat);
     }
 }

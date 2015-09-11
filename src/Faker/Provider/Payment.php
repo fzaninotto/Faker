@@ -3,91 +3,10 @@
 namespace Faker\Provider;
 
 use Faker\Calculator\Luhn;
+use Faker\Calculator\Mod11;
 
 class Payment extends Base
 {
-    /**
-     * Regular expression patterns per country code.
-     *
-     * @var array
-     *
-     * @link http://ec.europa.eu/taxation_customs/vies/faq.html?locale=lt#item_11
-     * @link http://www.iecomputersystems.com/ordering/eu_vat_numbers.htm
-     * @link http://en.wikipedia.org/wiki/VAT_identification_number
-     * @link https://github.com/ronanguilloux/IsoCodes/blob/master/src/IsoCodes/Vat.php
-     */
-    public static $countryPatterns = array(
-        'AT' => 'U\d{8}',
-        'BE' => '0\d{9}',
-        'BG' => '\d{9,10}',
-        'CY' => '\d{8}[A-Z]',
-        'CZ' => '\d{8,10}',
-        'DE' => '\d{9}',
-        'DK' => '(\d{2} ?){3}\d{2}',
-        'EE' => '\d{9}',
-        'EL' => '\d{9}',
-        // ES: The first and last characters may be alpha or numeric; but they may not both be numeric:
-        'ES' => '[A-Z]\d{7}[A-Z]|\d{8}[A-Z]|[A-Z]\d{8}',
-        'FI' => '\d{8}',
-        'FR' => '([A-Z]{2}|\d{2})\d{9}',
-        'GB' => '\d{9}|\d{12}|(GD|HA)\d{3}',
-        'HU' => '\d{8}',
-        // IE: Seven digits and one last letter or six digits and two letters (second & last)
-        'IE' => '\d{7}[A-Z]|\d[A-Z]\d{5}[A-Z]',
-        'IT' => '\d{11}',
-        'LT' => '(\d{9}|\d{12})',
-        'LU' => '\d{8}',
-        'LV' => '\d{11}',
-        'MT' => '\d{8}',
-        // NL: The 10th position following the prefix is always "B".
-        'NL' => '\d{9}B\d{2}',
-        'PL' => '\d{10}',
-        'PT' => '\d{9}',
-        'RO' => '\d{2,10}',
-        'SE' => '\d{12}',
-        'SI' => '\d{8}',
-        'SK' => '\d{10}',
-        'AL' => '[KJ]\d{8}L',
-        'AU' => '\d{9}',
-        'BY' => '\d{9}',
-        'HR' => '\d{11}',
-        'NO' => '\d{9}MVA',
-        'PH' => '\d{12}',
-        'RU' => '(\d{10}|\d{12})',
-        'TR' => '\d{10}',
-        'UA' => '\d{12}',
-        'AR' => '\d{11}',
-        'CL' => '\d{8}-\d',
-        'CO' => '\d{10}',
-        'EC' => '\d{13}',
-        'GT' => '\d{7}-\d',
-        'MX' => '\d{3} \d{6} \d{3}',
-        'VE' => '[JGVE]-\d{8}-?\d',
-    );
-
-    /**
-     * Generate a national VAT number.
-     *
-     * The Value Added Tax, or VAT, is a general, broadly based consumption tax
-     * assessed on the value added to goods and services.
-     *
-     * @link http://ec.europa.eu/taxation_customs/vies/faq.html for European VAT numbers rules
-     * @example (belgian) BE0629078028, (polish, spaced) PL 5206136094
-     * @param bool   $spacedNationalPrefix
-     * @param string $country              country code (ex: 'BE')
-     * @return string a fake valid VAT number
-     */
-    public static function vat($spacedNationalPrefix = true, $country = null)
-    {
-        $country = is_null($country) ? array_rand(self::$countryPatterns) : $country;
-        $prefix = ($spacedNationalPrefix) ? " " : "";
-        if (!array_key_exists($country, self::$countryPatterns)) {
-            throw new \InvalidArgumentException(sprintf("There is no VAT generator for %s so far.", $country));
-        }
-
-        return self::regexify(sprintf("^%s%s%s$", $country, $prefix, self::$countryPatterns[$country]));
-    }
-
     public static $expirationDateFormat = "m/y";
 
     protected static $cardVendors = array(
@@ -199,6 +118,94 @@ class Payment extends Base
         'TN' => array(array('n', 2),    array('n', 3),  array('n', 13), array('n', 2)),
         'TR' => array(array('n', 5),    array('c', 1),  array('c', 16)),
         'VG' => array(array('a', 4),    array('n', 16)),
+    );
+
+    /**
+     * A list of format patterns indexed by country code.
+     * Each format is an array of character descriptors that can be a:
+     * * single, constant character
+     * * an atom, which is an array with two elements:
+     *      * a 'c', 'n' or 'a' character that stands for random alfanumeric, digit or letter
+     *        or an array of other atoms
+     *      * number of repeated characters or an array of such numbers
+     * * a callable (if string, can't be a single character)
+     *
+     * @var array
+     * @link http://ec.europa.eu/taxation_customs/vies/faq.html?locale=lt#item_11
+     * @link http://www.iecomputersystems.com/ordering/eu_vat_numbers.htm
+     * @link http://en.wikipedia.org/wiki/VAT_identification_number
+     * @link https://github.com/ronanguilloux/IsoCodes/blob/master/src/IsoCodes/Vat.php
+     */
+    public static $vatFormats = array(
+        'AL' => array(array(array('K', 'J'), 1), array('n', 8), 'L'),
+        'AR' => array(array('n', 11)),
+        'AT' => array('U', array('n', 8)),
+        'AU' => array(array('n', 9)),
+        'BE' => array('0', array('n', 9)),
+        'BG' => array(array('n', array(9, 10))),
+        'BY' => array(array('n', 9)),
+        'CL' => array(array('n', 8), '-', array('n', 1)),
+        'CO' => array(array('n', 10)),
+        'CY' => array(array('n', 8), array('a', 1)),
+        'CZ' => array(array('n', array(8, 9, 10))),
+        'DE' => array(array('n', 9)),
+        //'DK' => '(\d{2} ?){3}\d{2}',
+        'EC' => array(array('n', 13)),
+        'EE' => array(array('n', 9)),
+        'EL' => array(array('n', 9)),
+        // ES: The first and last characters may be alpha or numeric; but they may not both be numeric:
+        //'ES' => '[A-Z]\d{7}[A-Z]|\d{8}[A-Z]|[A-Z]\d{8}',
+        'FI' => array(array('n', 8)),
+        //'FR' => '([A-Z]{2}|\d{2})\d{9}',
+        //'GB' => '\d{9}|\d{12}|(GD|HA)\d{3}',
+        'GT' => array(array('n', 11), '-', array('n', 1)),
+        'HR' => array(array('n', 11)),
+        'HU' => array(array('n', 8)),
+        // IE: Seven digits and one last letter or six digits and two letters (second & last)
+        'IE' => array(array('n', 6), array('c', 1), array('a', 1)),
+        'IT' => array(array('n', 11)),
+        'LT' => array(array('n', array(9, 12))),
+        'LU' => array(array('n', 8)),
+        'LV' => array(array('n', 11)),
+        'MT' => array(array('n', 8)),
+        'MX' => array(array('n', 3), ' ', array('n', 6), ' ', array('n', 3)),
+        // NL: The 10th position following the prefix is always "B".
+        'NL' => array(array('n', 9), 'B', array('n', 2)),
+        'NO' => array(array('n', 9), 'M', 'V', 'A'),
+        'PH' => array(array('n', 12)),
+        'PL' => array(array('n', 10), '\Faker\Calculator\Mod11::checksum16'),
+        'PT' => array(
+            array(
+                array(
+                    array('1', array('n', 1)),
+                    array('2', array('n', 1)),
+                    array('3', array('n', 1)),
+                    array('4', '5'),
+                    array('5', array('n', 1)),
+                    array('6', array('n', 1)),
+                    array('7', '0'),
+                    array('7', '1'),
+                    array('7', '2'),
+                    array('7', '7'),
+                    array('7', '9'),
+                    array('8', array('n', 1)),
+                    array('9', '0'),
+                    array('9', '8'),
+                    array('9', '9'),
+                ),
+                1,
+            ),
+            array('n', 6),
+            '\Faker\Calculator\Mod11::checksum1',
+        ),
+        'RO' => array(array('n', array(2, 3, 4, 5, 6, 7, 8, 9, 10))),
+        'RU' => array(array('n', array(10, 12))),
+        'SE' => array(array('n', 12)),
+        'SI' => array(array('n', 8)),
+        'SK' => array(array('n', 10)),
+        'TR' => array(array('n', 10)),
+        'UA' => array(array('n', 12)),
+        'VE' => array(array(array('J', 'G', 'V', 'E'), 1), '-', array('n', 8), array(array('-', ''), 1), array('n', 1)),
     );
 
     /**
@@ -376,5 +383,63 @@ class Payment extends Base
     public static function swiftBicNumber()
     {
         return self::regexify("^([A-Z]){4}([A-Z]){2}([0-9A-Z]){2}([0-9A-Z]{3})?$");
+    }
+
+    private static function processAtoms($atoms, $totalResult)
+    {
+        $result = '';
+        foreach ($atoms as $atom) {
+            if (!is_array($atom)) {
+                $result .= strlen($atom) <= 1 ? $atom : call_user_func($atom, $totalResult . $result);
+                continue;
+            }
+            list($class, $groupCount) = $atom;
+
+            if (is_array($groupCount)) {
+                $groupCount = static::randomElement($groupCount);
+            }
+            for ($i = 0; $i < $groupCount; $i++) {
+                if (is_array($class)) {
+                    $result .= self::processAtoms(static::randomElement($class), $result);
+                    continue;
+                }
+                switch ($class) {
+                    default:
+                    case 'c':
+                        $result .= mt_rand(0, 100) <= 50 ? static::randomDigit() : strtoupper(static::randomLetter());
+                        break;
+                    case 'a':
+                        $result .= strtoupper(static::randomLetter());
+                        break;
+                    case 'n':
+                        $result .= static::randomDigit();
+                        break;
+
+                }
+            }
+        }
+        return $result;
+    }
+
+    /**
+     * Generate a national VAT number.
+     *
+     * The Value Added Tax, or VAT, is a general, broadly based consumption tax
+     * assessed on the value added to goods and services.
+     *
+     * @link http://ec.europa.eu/taxation_customs/vies/faq.html for European VAT numbers rules
+     * @example (belgian) BE0629078028, (polish) PL5206136094
+     * @param string $country              country code (ex: 'BE')
+     * @param bool $addPrefix
+     * @return string a fake valid VAT number
+     */
+    public static function vat($country = null, $addPrefix = true)
+    {
+        $country = is_null($country) ? self::randomElement(array_keys(self::$vatFormats)) : $country;
+        if (!array_key_exists($country, self::$vatFormats)) {
+            throw new \InvalidArgumentException(sprintf("There is no VAT generator for %s so far.", $country));
+        }
+
+        return ($addPrefix ? $country : '') . self::processAtoms(self::$vatFormats[$country], '');
     }
 }

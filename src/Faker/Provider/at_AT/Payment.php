@@ -21,13 +21,13 @@ class Payment extends \Faker\Provider\Payment
      * @see http://www.iecomputersystems.com/ordering/eu_vat_numbers.htm
      * @see http://en.wikipedia.org/wiki/VAT_identification_number
      *
-     * @param bool   $spacedNationalPrefix
      * @param string $country country code (ex: 'BE')
+     * @param bool   $addPrefix
      *
      * @return string VAT Number
      */
-    public static function vat($spacedNationalPrefix = true, $country = 'AT')
+    public static function vat($country = 'AT', $addPrefix = true)
     {
-        return parent::vat($spacedNationalPrefix, $country);
+        return parent::vat($country, $addPrefix);
     }
 }

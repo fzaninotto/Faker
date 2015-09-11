@@ -3,7 +3,7 @@
 namespace Faker\Calculator;
 
 /**
- * Utility class for generating Luhn checksum and validating a number
+ * Utility class for generating Luhn (mod10) checksum and validating a number
  *
  * Luhn algorithm is used to validate credit card numbers, IMEI numbers, and
  * National Provider Identifier numbers.
