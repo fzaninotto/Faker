@@ -150,15 +150,51 @@ class Payment extends Base
         'CY' => array(array('n', 8), array('a', 1)),
         'CZ' => array(array('n', array(8, 9, 10))),
         'DE' => array(array('n', 9)),
-        //'DK' => '(\d{2} ?){3}\d{2}',
+        'DK' => array(
+            array(
+                array(
+                    array(array('n', 2), ''),
+                    array(array('n', 2), ' '),
+                ),
+                3,
+            ),
+            array('n', 2),
+        ),
         'EC' => array(array('n', 13)),
         'EE' => array(array('n', 9)),
         'EL' => array(array('n', 9)),
         // ES: The first and last characters may be alpha or numeric; but they may not both be numeric:
-        //'ES' => '[A-Z]\d{7}[A-Z]|\d{8}[A-Z]|[A-Z]\d{8}',
+        'ES' => array(
+            array(
+                array(
+                    array(array('a', 1), array('n', 7)),
+                    array(array('n', 8)),
+                    array(array('n', 7), array('a', 1)),
+                ),
+                1,
+            ),
+        ),
         'FI' => array(array('n', 8)),
-        //'FR' => '([A-Z]{2}|\d{2})\d{9}',
-        //'GB' => '\d{9}|\d{12}|(GD|HA)\d{3}',
+        'FR' => array(
+            array(
+                array(
+                    array(array('a', 2)),
+                    array(array('n', 2)),
+                ),
+                1,
+            ),
+            array('n', 9),
+        ),
+        'GB' => array(
+            array(
+                array(
+                    array(array('n', array(9, 12))),
+                    array('G', 'D', array('n', 3)),
+                    array('H', 'A', array('n', 3)),
+                ),
+                1,
+            ),
+        ),
         'GT' => array(array('n', 11), '-', array('n', 1)),
         'HR' => array(array('n', 11)),
         'HU' => array(array('n', 8)),
