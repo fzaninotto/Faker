@@ -130,7 +130,11 @@ class EntityPopulator
         }
 
         $pk = $table->primaryKey();
-        return $entity->{$pk};
+        if (is_string($pk)) {
+            return $entity->{$pk};
+        }
+
+        return $entity->{$pk[0]};
     }
 
     public function setConnection($name)

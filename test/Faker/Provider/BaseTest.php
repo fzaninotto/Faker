@@ -23,6 +23,16 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(BaseProvider::randomDigitNotNull() < 10);
     }
 
+
+    public function testRandomDigitNotReturnsValidDigit()
+    {
+        for ($i = 0; $i <= 9; $i++) {
+            $this->assertTrue(BaseProvider::randomDigitNot($i) >= 0);
+            $this->assertTrue(BaseProvider::randomDigitNot($i) < 10);
+            $this->assertTrue(BaseProvider::randomDigitNot($i) !== $i);
+        }
+    }
+
     /**
      * @expectedException \InvalidArgumentException
      */

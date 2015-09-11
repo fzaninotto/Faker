@@ -4,7 +4,7 @@ namespace Faker\Provider\bn_BD;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
-    public static function phoneNumber()
+    public function phoneNumber()
     {
         $number = "+880";
         $number .= static::randomNumber(7);

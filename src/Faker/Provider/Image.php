@@ -24,7 +24,7 @@ class Image extends Base
         $url = "http://lorempixel.com/{$width}/{$height}/";
         if ($category) {
             if (!in_array($category, static::$categories)) {
-                throw new \InvalidArgumentException(sprintf('Unkown image category "%s"', $category));
+                throw new \InvalidArgumentException(sprintf('Unknown image category "%s"', $category));
             }
             $url .= "{$category}/";
             if ($word) {

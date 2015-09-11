@@ -9,8 +9,8 @@ class PhoneNumber extends \Faker\Provider\Base
     /**
      * @example '555-123-546'
      */
-    public static function phoneNumber()
+    public function phoneNumber()
     {
-        return static::numerify(static::randomElement(static::$formats));
+        return static::numerify($this->generator->parse(static::randomElement(static::$formats)));
     }
 }

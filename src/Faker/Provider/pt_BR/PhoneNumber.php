@@ -32,15 +32,15 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     /**
      * Generates a 8/9-digit cellphone number without formatting characters.
      * @param bool $formatted [def: true] If it should return a formatted number or not.
-     * @param bool $ninth     [def: false] If the number should have a nine in the beginning or not.
-     *                        If the generated number begins with 7 this is ignored.
+     * @param int|bool $area  [def: false] A specific area code to which the number will belong.
+     *                        If a boolean is used, will add (or not) the ninth digit.
      * @return string
      */
-    public static function cellphone($formatted = true, $ninth = false)
+    public static function cellphone($formatted = true, $area = false)
     {
         $number = static::numerify(static::randomElement(static::$cellphoneFormats));
 
-        if ($ninth && $number[0] != 7) {
+        if ($area === true || in_array($area, static::$ninthDigitAreaCodes)) {
             $number = "9$number";
         }
 
@@ -124,7 +124,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      * Randomizes between complete cellphone and landline numbers.
      * @return mixed
      */
-    public static function phoneNumber()
+    public function phoneNumber()
     {
         $method = static::randomElement(array('cellphoneNumber', 'landlineNumber'));
         return call_user_func("static::$method", true);

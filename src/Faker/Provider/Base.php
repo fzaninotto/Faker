@@ -47,6 +47,21 @@ class Base
     }
 
     /**
+     * Generates a random digit, which cannot be $except
+     *
+     * @param int $except
+     * @return int
+     */
+    public static function randomDigitNot($except)
+    {
+        $result = self::numberBetween(0, 8);
+        if ($result >= $except) {
+            $result++;
+        }
+        return $result;
+    }
+
+    /**
      * Returns a random integer with 0 to $nbDigits digits.
      *
      * The maximum value returned is mt_getrandmax()
@@ -106,16 +121,18 @@ class Base
     }
 
     /**
-     * Returns a random number between $min and $max
+     * Returns a random number between $int1 and $int2 (any order)
      *
-     * @param integer $min default to 0
-     * @param integer $max defaults to 32 bit max integer, ie 2147483647
+     * @param integer $int1 default to 0
+     * @param integer $int2 defaults to 32 bit max integer, ie 2147483647
      * @example 79907610
      *
      * @return integer
      */
-    public static function numberBetween($min = 0, $max = 2147483647)
+    public static function numberBetween($int1 = 0, $int2 = 2147483647)
     {
+        $min = $int1 < $int2 ? $int1 : $int2;
+        $max = $int1 < $int2 ? $int2 : $int1;
         return mt_rand($min, $max);
     }
 
