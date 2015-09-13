@@ -137,110 +137,123 @@ class Payment extends Base
      * @link https://github.com/ronanguilloux/IsoCodes/blob/master/src/IsoCodes/Vat.php
      */
     public static $vatFormats = array(
-        'AL' => array(array(array('K', 'J'), 1), array('n', 8), 'L'),
-        'AR' => array(array('n', 11)),
-        'AT' => array('U', array('n', 8)),
-        'AU' => array(array('n', 9)),
-        'BE' => array('0', array('n', 9)),
-        'BG' => array(array('n', array(9, 10))),
-        'BY' => array(array('n', 9)),
-        'CL' => array(array('n', 8), '-', array('n', 1)),
-        'CO' => array(array('n', 10)),
-        'CY' => array(array('n', 8), array('a', 1)),
-        'CZ' => array(array('n', array(8, 9, 10))),
-        'DE' => array(array('n', 9)),
-        'DK' => array(
-            array(
-                array(
-                    array(array('n', 2), ''),
-                    array(array('n', 2), ' '),
-                ),
-                3,
-            ),
-            array('n', 2),
+        'AL' => array(
+            'K########L',
+            'J########L',
         ),
-        'EC' => array(array('n', 13)),
-        'EE' => array(array('n', 9)),
-        'EL' => array(array('n', 9)),
-        // ES: The first and last characters may be alpha or numeric; but they may not both be numeric:
+        'AR' => '###########',
+        'AT' => 'U########',
+        'AU' => '#########',
+        'BE' => '0#########',
+        'BG' => array(
+            '#########',
+            '##########',
+        ),
+        'BY' => '#########',
+        'CL' => '########-#',
+        'CO' => '##########',
+        'CY' => '########?',
+        'CZ' => array(
+            '########',
+            '#########',
+            '##########',
+        ),
+        'DE' => '#########',
+        'DK' => '## ## ## ##',
+        'EC' => '#############',
+        'EE' => '#########',
+        'EL' => '#########',
         'ES' => array(
-            array(
-                array(
-                    array(array('a', 1), array('n', 7)),
-                    array(array('n', 8)),
-                    array(array('n', 7), array('a', 1)),
-                ),
-                1,
-            ),
+            '?#######',
+            '########',
+            '#######?',
         ),
-        'FI' => array(array('n', 8)),
+        'FI' => '########',
         'FR' => array(
-            array(
-                array(
-                    array(array('a', 2)),
-                    array(array('n', 2)),
-                ),
-                1,
-            ),
-            array('n', 9),
+            '??#########',
+            '###########',
         ),
         'GB' => array(
-            array(
-                array(
-                    array(array('n', array(9, 12))),
-                    array('G', 'D', array('n', 3)),
-                    array('H', 'A', array('n', 3)),
-                ),
-                1,
-            ),
+            '#########',
+            '############',
+            'GD0##',
+            'GD1##',
+            'GD2##',
+            'GD3##',
+            'GD4##',
+            'HA5##',
+            'HA6##',
+            'HA7##',
+            'HA8##',
+            'HA9##',
         ),
-        'GT' => array(array('n', 11), '-', array('n', 1)),
-        'HR' => array(array('n', 11)),
-        'HU' => array(array('n', 8)),
-        // IE: Seven digits and one last letter or six digits and two letters (second & last)
-        'IE' => array(array('n', 6), array('c', 1), array('a', 1)),
-        'IT' => array(array('n', 11)),
-        'LT' => array(array('n', array(9, 12))),
-        'LU' => array(array('n', 8)),
-        'LV' => array(array('n', 11)),
-        'MT' => array(array('n', 8)),
-        'MX' => array(array('n', 3), ' ', array('n', 6), ' ', array('n', 3)),
-        // NL: The 10th position following the prefix is always "B".
-        'NL' => array(array('n', 9), 'B', array('n', 2)),
-        'NO' => array(array('n', 9), 'M', 'V', 'A'),
-        'PH' => array(array('n', 12)),
-        'PL' => array('#########'),
+        'GT' => '###########-#',
+        'HR' => '###########',
+        'HU' => '########',
+        'IE' => array(
+            '########',
+            '######?#',
+        ),
+        'IT' => '###########',
+        'LT' => array(
+            '#########',
+            '############',
+        ),
+        'LU' => '########',
+        'LV' => '###########',
+        'MT' => '########',
+        'MX' => '### ###### ###',
+        'NL' => '#########B##',
+        'NO' => '#########MVA',
+        'PH' => '############',
+        'PL' => '#########',
         'PT' => array(
-            array(
-                array(
-                    array('1', array('n', 1)),
-                    array('2', array('n', 1)),
-                    array('3', array('n', 1)),
-                    array('4', '5'),
-                    array('5', array('n', 1)),
-                    array('6', array('n', 1)),
-                    array('7', '0'),
-                    array('7', '1'),
-                    array('7', '2'),
-                    array('7', '7'),
-                    array('7', '9'),
-                    array('8', array('n', 1)),
-                    array('9', '0'),
-                    array('9', '8'),
-                    array('9', '9'),
-                ),
-                1,
-            ),
-            array('n', 6),
+            '1#######',
+            '2#######',
+            '3#######',
+            '45######',
+            '5#######',
+            '6#######',
+            '70######',
+            '71######',
+            '72######',
+            '77######',
+            '79######',
+            '8#######',
+            '90######',
+            '98######',
+            '99######',
         ),
-        'RO' => array(array('n', array(2, 3, 4, 5, 6, 7, 8, 9, 10))),
-        'RU' => array(array('n', array(10, 12))),
-        'SE' => array(array('n', 12)),
-        'SI' => array(array('n', 8)),
-        'SK' => array(array('n', 10)),
-        'TR' => array(array('n', 10)),
-        'UA' => array(array('n', 12)),
-        'VE' => array(array(array('J', 'G', 'V', 'E'), 1), '-', array('n', 8), array(array('-', ''), 1), array('n', 1)),
+        'RO' => array(
+            '##',
+            '###',
+            '####',
+            '#####',
+            '######',
+            '#######',
+            '########',
+            '#########',
+            '##########',
+        ),
+        'RU' => array(
+            '##########',
+            '############',
+        ),
+        'SE' => '############',
+        'SI' => '########',
+        'SK' => '##########',
+        'TR' => '##########',
+        'UA' => '############',
+        'VE' => array(
+            'J########-#',
+            'G########-#',
+            'V########-#',
+            'E########-#',
+            'J#########',
+            'G#########',
+            'V#########',
+            'E#########',
+        ),
     );
 
     /**
@@ -417,45 +430,6 @@ class Payment extends Base
         return self::regexify("^([A-Z]){4}([A-Z]){2}([0-9A-Z]){2}([0-9A-Z]{3})?$");
     }
 
-    private static function processAtom($atom)
-    {
-        if (!is_array($atom)) {
-            return static::bothify($atom);
-        }
-        list($class, $groupCount) = $atom;
-
-        if (is_array($groupCount)) {
-            $groupCount = static::randomElement($groupCount);
-        }
-        $result = '';
-        for ($i = 0; $i < $groupCount; $i++) {
-            if (is_array($class)) {
-                $subatoms = static::randomElement($class);
-                if (!is_array($subatoms)) {
-                    $subatoms = array($subatoms);
-                }
-                foreach ($subatoms as $subatom) {
-                    $result .= self::processAtom($subatom);
-                }
-                continue;
-            }
-            switch ($class) {
-                default:
-                case 'c':
-                    $result .= mt_rand(0, 100) <= 50 ? static::randomDigit() : strtoupper(static::randomLetter());
-                    break;
-                case 'a':
-                    $result .= strtoupper(static::randomLetter());
-                    break;
-                case 'n':
-                    $result .= static::randomDigit();
-                    break;
-
-            }
-        }
-        return $result;
-    }
-
     /**
      * Generate a national VAT number.
      *
@@ -474,10 +448,11 @@ class Payment extends Base
         if (!array_key_exists($country, self::$vatFormats)) {
             throw new \InvalidArgumentException(sprintf("There is no VAT generator for %s so far.", $country));
         }
-        $vat = '';
-        foreach (self::$vatFormats[$country] as $atom) {
-            $vat .= self::processAtom($atom);
+        $format = self::$vatFormats[$country];
+        if (is_array($format)) {
+            $format = self::randomElement($format);
         }
+        $vat = static::bothify($format);
         if (isset(self::$vatChecksums[$country])) {
             $vat .= call_user_func(self::$vatChecksums[$country], $vat);
         }
