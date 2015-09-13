@@ -205,6 +205,22 @@ class PaymentTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(Iban::isValid($iban), "Checksum for $iban is invalid");
     }
 
+    public function vatCountriesProvider()
+    {
+        return array_map(function ($country) {
+            return array($country);
+        }, array_keys(Payment::$vatFormats));
+    }
+
+    /**
+     * @dataProvider vatCountriesProvider
+     */
+    public function testVat($country)
+    {
+        $vat = Payment::vat($country);
+        $this->assertNotEmpty($vat);
+    }
+
     public function testVatWithRandomCountry()
     {
         $vat = Payment::vat(null);

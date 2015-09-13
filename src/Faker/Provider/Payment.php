@@ -123,13 +123,12 @@ class Payment extends Base
 
     /**
      * A list of format patterns indexed by country code.
-     * Each format is an array of character descriptors that can be a:
-     * * single, constant character
+     * Each format is an array of:
+     * * a format string, passed to static::bothify()
      * * an atom, which is an array with two elements:
      *      * a 'c', 'n' or 'a' character that stands for random alfanumeric, digit or letter
      *        or an array of other atoms
      *      * number of repeated characters or an array of such numbers
-     * * a callable (if string, can't be a single character)
      *
      * @var array
      * @link http://ec.europa.eu/taxation_customs/vies/faq.html?locale=lt#item_11
@@ -210,7 +209,7 @@ class Payment extends Base
         'NL' => array(array('n', 9), 'B', array('n', 2)),
         'NO' => array(array('n', 9), 'M', 'V', 'A'),
         'PH' => array(array('n', 12)),
-        'PL' => array(array('n', 10), '\Faker\Calculator\Mod11::checksum16'),
+        'PL' => array('#########'),
         'PT' => array(
             array(
                 array(
@@ -233,7 +232,6 @@ class Payment extends Base
                 1,
             ),
             array('n', 6),
-            '\Faker\Calculator\Mod11::checksum1',
         ),
         'RO' => array(array('n', array(2, 3, 4, 5, 6, 7, 8, 9, 10))),
         'RU' => array(array('n', array(10, 12))),
@@ -243,6 +241,15 @@ class Payment extends Base
         'TR' => array(array('n', 10)),
         'UA' => array(array('n', 12)),
         'VE' => array(array(array('J', 'G', 'V', 'E'), 1), '-', array('n', 8), array(array('-', ''), 1), array('n', 1)),
+    );
+
+    /**
+     * A list of callbacks to calculate vat number checksums, indexed by country code.
+     * @var array
+     */
+    private static $vatChecksums = array(
+        'PL' => '\Faker\Calculator\Mod11::checksum16',
+        'PT' => '\Faker\Calculator\Mod11::checksum1',
     );
 
     /**
@@ -410,37 +417,40 @@ class Payment extends Base
         return self::regexify("^([A-Z]){4}([A-Z]){2}([0-9A-Z]){2}([0-9A-Z]{3})?$");
     }
 
-    private static function processAtoms($atoms, $totalResult)
+    private static function processAtom($atom)
     {
+        if (!is_array($atom)) {
+            return static::bothify($atom);
+        }
+        list($class, $groupCount) = $atom;
+
+        if (is_array($groupCount)) {
+            $groupCount = static::randomElement($groupCount);
+        }
         $result = '';
-        foreach ($atoms as $atom) {
-            if (!is_array($atom)) {
-                $result .= strlen($atom) <= 1 ? $atom : call_user_func($atom, $totalResult . $result);
+        for ($i = 0; $i < $groupCount; $i++) {
+            if (is_array($class)) {
+                $subatoms = static::randomElement($class);
+                if (!is_array($subatoms)) {
+                    $subatoms = array($subatoms);
+                }
+                foreach ($subatoms as $subatom) {
+                    $result .= self::processAtom($subatom);
+                }
                 continue;
             }
-            list($class, $groupCount) = $atom;
+            switch ($class) {
+                default:
+                case 'c':
+                    $result .= mt_rand(0, 100) <= 50 ? static::randomDigit() : strtoupper(static::randomLetter());
+                    break;
+                case 'a':
+                    $result .= strtoupper(static::randomLetter());
+                    break;
+                case 'n':
+                    $result .= static::randomDigit();
+                    break;
 
-            if (is_array($groupCount)) {
-                $groupCount = static::randomElement($groupCount);
-            }
-            for ($i = 0; $i < $groupCount; $i++) {
-                if (is_array($class)) {
-                    $result .= self::processAtoms(static::randomElement($class), $result);
-                    continue;
-                }
-                switch ($class) {
-                    default:
-                    case 'c':
-                        $result .= mt_rand(0, 100) <= 50 ? static::randomDigit() : strtoupper(static::randomLetter());
-                        break;
-                    case 'a':
-                        $result .= strtoupper(static::randomLetter());
-                        break;
-                    case 'n':
-                        $result .= static::randomDigit();
-                        break;
-
-                }
             }
         }
         return $result;
@@ -464,7 +474,14 @@ class Payment extends Base
         if (!array_key_exists($country, self::$vatFormats)) {
             throw new \InvalidArgumentException(sprintf("There is no VAT generator for %s so far.", $country));
         }
+        $vat = '';
+        foreach (self::$vatFormats[$country] as $atom) {
+            $vat .= self::processAtom($atom);
+        }
+        if (isset(self::$vatChecksums[$country])) {
+            $vat .= call_user_func(self::$vatChecksums[$country], $vat);
+        }
 
-        return ($addPrefix ? $country : '') . self::processAtoms(self::$vatFormats[$country], '');
+        return ($addPrefix ? $country : '') . $vat;
     }
 }
