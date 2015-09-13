@@ -219,6 +219,9 @@ class PaymentTest extends \PHPUnit_Framework_TestCase
     {
         $vat = Payment::vat($country);
         $this->assertNotEmpty($vat);
+        if (method_exists('\Faker\Calculator\Vat', 'checksum' . $country)) {
+            $this->assertTrue(\Faker\Calculator\Vat::isValid($vat), $vat);
+        }
     }
 
     public function testVatWithRandomCountry()

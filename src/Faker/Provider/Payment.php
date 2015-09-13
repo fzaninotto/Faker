@@ -4,7 +4,7 @@ namespace Faker\Provider;
 
 use Faker\Calculator\Iban;
 use Faker\Calculator\Luhn;
-use Faker\Calculator\Mod11;
+use Faker\Calculator\Vat;
 
 class Payment extends Base
 {
@@ -135,6 +135,7 @@ class Payment extends Base
      * @link http://www.iecomputersystems.com/ordering/eu_vat_numbers.htm
      * @link http://en.wikipedia.org/wiki/VAT_identification_number
      * @link https://github.com/ronanguilloux/IsoCodes/blob/master/src/IsoCodes/Vat.php
+     * @link http://www.braemoor.co.uk/software/_private/jsvatx.js
      */
     public static $vatFormats = array(
         'AL' => array(
@@ -144,7 +145,10 @@ class Payment extends Base
         'AR' => '###########',
         'AT' => 'U########',
         'AU' => '#########',
-        'BE' => '0#########',
+        'BE' => array(
+            '0#########',
+            '#########',
+        ),
         'BG' => array(
             '#########',
             '##########',
@@ -152,16 +156,38 @@ class Payment extends Base
         'BY' => '#########',
         'CL' => '########-#',
         'CO' => '##########',
-        'CY' => '########?',
+        'CH' => array(
+            '#########',
+            '#########MWST',
+        ),
+        'CY' => array(
+            '0#######?',
+            '1#######?',
+            '2#######?',
+            '3#######?',
+            '4#######?',
+            '5#######?',
+            '9#######?',
+        ),
         'CZ' => array(
             '########',
             '#########',
             '##########',
         ),
-        'DE' => '#########',
+        'DE' => array(
+            '1########',
+            '2########',
+            '3########',
+            '4########',
+            '5########',
+            '6########',
+            '7########',
+            '8########',
+            '9########',
+        ),
         'DK' => '## ## ## ##',
         'EC' => '#############',
-        'EE' => '#########',
+        'EE' => '10#######',
         'EL' => '#########',
         'ES' => array(
             '?#######',
@@ -171,6 +197,8 @@ class Payment extends Base
         'FI' => '########',
         'FR' => array(
             '??#########',
+            '#?#########',
+            '?##########',
             '###########',
         ),
         'GB' => array(
@@ -201,7 +229,17 @@ class Payment extends Base
         ),
         'LU' => '########',
         'LV' => '###########',
-        'MT' => '########',
+        'MT' => array(
+            '1#######',
+            '2#######',
+            '3#######',
+            '4#######',
+            '5#######',
+            '6#######',
+            '7#######',
+            '8#######',
+            '9#######',
+        ),
         'MX' => '### ###### ###',
         'NL' => '#########B##',
         'NO' => '#########MVA',
@@ -239,8 +277,18 @@ class Payment extends Base
             '##########',
             '############',
         ),
-        'SE' => '############',
-        'SI' => '########',
+        'SE' => '##########01',
+        'SI' => array(
+            '1#######',
+            '2#######',
+            '3#######',
+            '4#######',
+            '5#######',
+            '6#######',
+            '7#######',
+            '8#######',
+            '9#######',
+        ),
         'SK' => '##########',
         'TR' => '##########',
         'UA' => '############',
@@ -254,15 +302,6 @@ class Payment extends Base
             'V#########',
             'E#########',
         ),
-    );
-
-    /**
-     * A list of callbacks to calculate vat number checksums, indexed by country code.
-     * @var array
-     */
-    private static $vatChecksums = array(
-        'PL' => '\Faker\Calculator\Mod11::checksum16',
-        'PT' => '\Faker\Calculator\Mod11::checksum1',
     );
 
     /**
@@ -453,8 +492,8 @@ class Payment extends Base
             $format = self::randomElement($format);
         }
         $vat = static::bothify($format);
-        if (isset(self::$vatChecksums[$country])) {
-            $vat .= call_user_func(self::$vatChecksums[$country], $vat);
+        if (method_exists('\Faker\Calculator\Vat', 'checksum' . $country)) {
+            $vat .= call_user_func('\Faker\Calculator\Vat::checksum' . $country, $vat);
         }
 
         return ($addPrefix ? $country : '') . $vat;
