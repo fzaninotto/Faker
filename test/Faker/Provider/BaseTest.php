@@ -276,6 +276,11 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertRegExp('/foo[a-z]Ba\dr/', BaseProvider::bothify('foo?Ba#r'));
     }
 
+    public function testBothifyAsterisk()
+    {
+        $this->assertRegExp('/foo([a-z]|\d)Ba([a-z]|\d)r/', BaseProvider::bothify('foo*Ba*r'));
+    }
+
     public function testAsciifyReturnsSameStringWhenItContainsNoStarSign()
     {
         $this->assertEquals('fooBar?', BaseProvider::asciify('fooBar?'));
