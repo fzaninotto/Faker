@@ -276,53 +276,15 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertRegExp('/foo[a-z]Ba\dr/', BaseProvider::bothify('foo?Ba#r'));
     }
 
-    public function allUtfCharsDataProvider()
-    {
-        // create test data
-        /** @link http://stackoverflow.com/questions/2748956/how-would-you-create-a-string-of-all-utf-8-characters */
-        function unichr($i)
-        {
-            return iconv('UCS-4LE', 'UTF-8', pack('V', $i));
-        }
-        $codeunits = array();
-        for ($i = 0; $i<0xD800; $i++) {
-            $codeunits[] = unichr($i);
-        }
-        for ($i = 0xE000; $i<0xFFFF; $i++) {
-            $codeunits[] = unichr($i);
-        }
-        $data = implode($codeunits);
-        // end of test data
-
-        return array(
-            array('#', $data),
-            array('?', $data),
-            array('*', $data),
-        );
-    }
-
-    /**
-     * @dataProvider allUtfCharsDataProvider
-     */
-    public function testStrposOnUtf($char, $data)
-    {
-        $pos = 0;
-        $mbpos = 0;
-        $count = 0;
-        $mbcount = 0;
-        while (($mbpos = mb_strpos($data, $char, $mbpos + 1, 'UTF-8')) !== false) {
-            $mbcount++;
-        }
-        while (($pos = strpos($data, $char, $pos + 1)) !== false) {
-            $count++;
-        }
-        $this->assertEquals(1, $mbcount);
-        $this->assertEquals(1, $count);
-    }
-
     public function testBothifyAsterisk()
     {
         $this->assertRegExp('/foo([a-z]|\d)Ba([a-z]|\d)r/', BaseProvider::bothify('foo*Ba*r'));
+    }
+
+    public function testBothifyUtf()
+    {
+        $utf = 'œ∑´®†¥¨ˆøπ“‘和製╯°□°╯︵ ┻━┻🐵 🙈 ﺚﻣ ﻦﻔﺳ ﺲﻘﻄﺗ ﻮﺑﺎﻠﺘﺣﺪﻳﺩ،, ﺝﺰﻳﺮﺘﻳ ﺏﺎﺴﺘﺧﺩﺎﻣ ﺄﻧ ﺪﻧﻭ. ﺇﺫ ﻪﻧﺍ؟ ﺎﻠﺴﺗﺍﺭ ﻮﺘ';
+        $this->assertRegExp('/'.$utf.'foo\dB[a-z]a([a-z]|\d)r/u', BaseProvider::bothify($utf.'foo#B?a*r'));
     }
 
     public function testAsciifyReturnsSameStringWhenItContainsNoStarSign()
