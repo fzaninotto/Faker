@@ -5,6 +5,18 @@ namespace Faker\Calculator;
 /**
  * Utility class for generating mod11 checksum and validating a number.
  * Some code ported from @link http://www.braemoor.co.uk/software/vat.shtml
+ *
+ * Calculates checksums for the following country codes:
+ * AT,
+ * BE (append 2 digits),
+ * BG, CH,
+ * CY (append 1 letter),
+ * CZ, DE, DK, EE, EL, ES, FI,
+ * FR (prepend 2 digits),
+ * GB, HR, HU, IE, IT, LT, LU ,LV,
+ * MT (append 2 digits, which may have leading zero),
+ * NL, NO, PL, PT, RO, RS, RU,
+ * SE, SI, SK
  */
 class Vat
 {
@@ -32,7 +44,12 @@ class Vat
             $country = substr($number, 0, 2);
             $number = substr($number, 2);
         }
-        return self::computeCheckDigit(substr($number, 0, -1), $country) === (int)substr($number, -1);
+        $methodName = 'validate' . $country;
+        if (method_exists('\Faker\Calculator\Vat', $methodName)) {
+            return self::$methodName($number);
+        }
+        $checkNumber = (string)self::computeCheckDigit(substr($number, 0, -1), $country);
+        return empty($checkNumber) || $checkNumber === substr($number, -1);
     }
 
     /**
@@ -67,14 +84,24 @@ class Vat
             $number = '0' . $number;
         }
 
-        return 97 - (int)substr($number, 0, 8) % 97;
+        return str_pad(97 - (int)substr($number, 0, 8) % 97, 2, '0', STR_PAD_LEFT);
+    }
+
+    /**
+     * @param string $number
+     * @return bool
+     */
+    public static function validateBE($number)
+    {
+
+        return self::checksumBE(substr($number, 0, -2)) === (string)substr($number, -2);
     }
 
     /**
      * @param string $number
      * @return int
      */
-    public static function checksumBG($number)
+    /*public static function checksumBG($number)
     {
         if (strlen($number) === 9) {
             $sum = 0;
@@ -132,7 +159,7 @@ class Vat
 
         // miscellaneous
 
-        /*$weights = array(4, 3, 2, 7, 6, 5, 4, 3, 2);
+        / *$weights = array(4, 3, 2, 7, 6, 5, 4, 3, 2);
         $sum = 0;
         for ($i = 0; $i < 9; $i++) {
             $sum += (int)$number * $weights[i];
@@ -145,8 +172,8 @@ class Vat
             $sum = 0;
         }
 
-        return $sum;*/
-    }
+        return $sum;* /
+    }*/
 
     /**
      * @param string $number
@@ -161,13 +188,20 @@ class Vat
             $sum += (int)$number * $weights[$i];
         }
 
-
         $sum = 11 - $sum % 11;
-        //if (total == 10) return false;
+        if ($sum === 10) {
+            return '';
+        }
         if ($sum === 11) {
-            $sum = 0;
+            return 0;
         }
         return $sum;
+    }
+
+    public static function validateCH($number)
+    {
+        $checkNumber = self::checksumCH(substr($number, 0, 8));
+        return empty($checkNumber) || $checkNumber === (int)substr($number, 8, 1);
     }
 
     /**
@@ -204,43 +238,19 @@ class Vat
     {
         $sum = 0;
         $weights = array(8, 7, 6, 5, 4, 3, 2);
-        if (strlen($number) === 7) {
-            // Legal entities
-            for ($i = 0; $i < 7; $i++) {
-                $sum += (int)$number{$i} * $weights[$i];
-            }
-
-            $sum = 11 - $sum % 11;
-            if ($sum === 10) {
-                $sum = 0;
-            }
-            if ($sum === 11) {
-                $sum = 1;
-            }
-
-            return $sum;
-        } elseif (strlen($number) === 8 && (int)$number{0} === 6) {
-            for ($i = 0; $i < 7; $i++) {
-                $sum += (int)$number{$i+1} * $weights[$i];
-            }
-            $sum = 11 - $sum % 11;
-            if ($sum === 10) {
-                $sum = 0;
-            }
-            if ($sum === 11) {
-                $sum = 1;
-            }
-            $lookups = array(8,7,6,5,4,3,2,1,0,9,10);
-            return $lookups[$sum - 1];
-        } else {
-            $temp = 0;
-            for ($i = 0; $i < 10; $i += 2) {
-                $temp += (int)substr($number, $i, 2);
-            }
-
-            //! @todo
-            return $sum % 11;
+        for ($i = 0; $i < 7; $i++) {
+            $sum += (int)$number{$i} * $weights[$i];
         }
+
+        $sum = 11 - $sum % 11;
+        if ($sum === 10) {
+            $sum = 0;
+        }
+        if ($sum === 11) {
+            $sum = 1;
+        }
+
+        return $sum;
     }
 
     /**
@@ -259,7 +269,7 @@ class Vat
             $factor = ($sum * 2) % 11;
         }
 
-        return 11 - $factor === 10 ? 0 : $factor;
+        return (11 - $factor) === 10 ? 0 : (11 - $factor);
     }
 
     /**
@@ -269,13 +279,14 @@ class Vat
     public static function checksumDK($number)
     {
         $sum = 0;
-        $weights = array(2, 7, 6, 5, 4, 3, 2, 1);
+        $weights = array(2, 7, 6, 5, 4, 3, 2);
 
-        for ($i = 0; $i < 8; $i++) {
+        for ($i = 0; $i < 7; $i++) {
             $sum += (int)$number{$i} * $weights[$i];
         }
 
-        return $sum % 11;
+        $sum %= 11;
+        return (11 - $sum) === 10 ? 0 : (11 - $sum);
     }
 
     /**
@@ -430,7 +441,16 @@ class Vat
      */
     public static function checksumFR($number)
     {
-        return ((int)substr($number, 2) * 100 + 12) % 97;
+        return (12 + 3 * ($number % 97)) % 97;
+    }
+
+    /**
+     * @param string $number
+     * @return bool
+     */
+    public static function validateFR($number)
+    {
+        return self::checksumFR(substr($number, 2)) === (int)substr($number, 0, 2);
     }
 
     /**
@@ -636,7 +656,16 @@ class Vat
             $sum += (int)$number{$i} * $weights[$i];
         }
 
-        return  37 - $sum % 37;
+        return str_pad(37 - ($sum % 37), 2, '0', STR_PAD_LEFT);
+    }
+
+    /**
+     * @param string $number
+     * @return bool
+     */
+    public static function validateMT($number)
+    {
+        return self::checksumMT(substr($number, 0, -2)) === (string)substr($number, -2);
     }
 
     /**

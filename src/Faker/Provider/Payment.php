@@ -138,54 +138,47 @@ class Payment extends Base
      * @link http://www.braemoor.co.uk/software/_private/jsvatx.js
      */
     public static $vatFormats = array(
-        'AL' => array(
+        'AL' => array( // no checksum / unknown
             'K########L',
             'J########L',
         ),
-        'AR' => '###########',
-        'AT' => 'U########',
-        'AU' => '#########',
-        'BE' => array(
-            '0#########',
-            '#########',
+        'AR' => '###########', // no checksum / unknown
+        'AT' => 'U#######', // 1 digit checksum suffix
+        'AU' => '11#########', // 2 digit checksum prefix, not implemented
+        'BE' => array( // 2 digit checksum suffix
+            '0#######',
+            '#######',
         ),
-        'BG' => array(
-            '#########',
-            '##########',
-        ),
-        'BY' => '#########',
-        'CL' => '########-#',
-        'CO' => '##########',
-        'CH' => array(
-            '#########',
-            '#########MWST',
-        ),
-        'CY' => array(
-            '0#######?',
-            '1#######?',
-            '2#######?',
-            '3#######?',
-            '4#######?',
-            '5#######?',
-            '9#######?',
-        ),
-        'CZ' => array(
+        'BG' => array( // 1 digit checksum suffix, not implemented
             '########',
             '#########',
-            '##########',
         ),
-        'DE' => array(
-            '1########',
-            '2########',
-            '3########',
-            '4########',
-            '5########',
-            '6########',
-            '7########',
-            '8########',
-            '9########',
+        'BY' => '#########', // no checksum / unknown
+        'CL' => '########-#', // no checksum / unknown
+        'CO' => '##########', // 1 digit checksum suffix, not implemented
+        'CH' => '########', // 1 or 0 digit checksum suffix, other suffixes as an exception
+        'CY' => array( // 1 character checksum suffix
+            '0#######',
+            '1#######',
+            '2#######',
+            '3#######',
+            '4#######',
+            '5#######',
+            '9#######',
         ),
-        'DK' => '## ## ## ##',
+        'CZ' => '#######', // 1 checksum digit suffix
+        'DE' => array( // 1 digit checksum suffix
+            '1#######',
+            '2#######',
+            '3#######',
+            '4#######',
+            '5#######',
+            '6#######',
+            '7#######',
+            '8#######',
+            '9#######',
+        ),
+        'DK' => '#######', // 1 digit checksum suffix
         'EC' => '#############',
         'EE' => '10#######',
         'EL' => '#########',
@@ -195,12 +188,7 @@ class Payment extends Base
             '#######?',
         ),
         'FI' => '########',
-        'FR' => array(
-            '??#########',
-            '#?#########',
-            '?##########',
-            '###########',
-        ),
+        'FR' => '#########',
         'GB' => array(
             '#########',
             '############',
@@ -224,21 +212,21 @@ class Payment extends Base
         ),
         'IT' => '###########',
         'LT' => array(
-            '#########',
-            '############',
+            '########',
+            '###########',
         ),
         'LU' => '########',
         'LV' => '###########',
         'MT' => array(
-            '1#######',
-            '2#######',
-            '3#######',
-            '4#######',
-            '5#######',
-            '6#######',
-            '7#######',
-            '8#######',
-            '9#######',
+            '1#####',
+            '2#####',
+            '3#####',
+            '4#####',
+            '5#####',
+            '6#####',
+            '7#####',
+            '8#####',
+            '9#####',
         ),
         'MX' => '### ###### ###',
         'NL' => '#########B##',
@@ -274,8 +262,8 @@ class Payment extends Base
             '##########',
         ),
         'RU' => array(
-            '##########',
-            '############',
+            '#########',
+            '###########',
         ),
         'SE' => '##########01',
         'SI' => array(
@@ -493,7 +481,14 @@ class Payment extends Base
         }
         $vat = static::bothify($format);
         if (method_exists('\Faker\Calculator\Vat', 'checksum' . $country)) {
-            $vat .= call_user_func('\Faker\Calculator\Vat::checksum' . $country, $vat);
+            $checkNumber = call_user_func('\Faker\Calculator\Vat::checksum' . $country, $vat);
+            if ($country === 'CH') {
+                $vat .= $checkNumber . self::randomElement(array('TVA', 'MWST', 'IVA'));
+            } elseif ($country === 'FR') {
+                $vat = $checkNumber . $vat;
+            } else {
+                $vat .= $checkNumber;
+            }
         }
 
         return ($addPrefix ? $country : '') . $vat;
