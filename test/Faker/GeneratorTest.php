@@ -3,6 +3,7 @@
 namespace Faker\Test;
 
 use Faker\Generator;
+use Faker\Provider\Base;
 
 class GeneratorTest extends \PHPUnit_Framework_TestCase
 {
@@ -123,6 +124,31 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
         $generator->seed('10');
         $this->assertTrue(true, 'seeding with a non int value doesn\'t throw an exception');
     }
+
+    public function testTakeFive()
+    {
+        $count = 5;
+
+        $callable = function ($i) {
+            return $i;
+        };
+
+        $generator = new Generator();
+
+        $generator->addProvider(new BazProvider(
+            $generator,
+            $callable
+        ));
+
+        $result = $generator->take($count)->baz;
+
+        $this->assertInternalType('array', $result);
+        $this->assertCount($count, $result);
+
+        for ($i = 0; $i < $count; $i++) {
+            $this->assertSame($callable($i), $result[$i]);
+        }
+    }
 }
 
 class FooProvider
@@ -143,5 +169,26 @@ class BarProvider
     public function fooFormatter()
     {
         return 'barfoo';
+    }
+}
+
+class BazProvider extends Base
+{
+    private $callable;
+
+    public function __construct(Generator $generator, $callable)
+    {
+        parent::__construct($generator);
+
+        $this->callable = $callable;
+    }
+
+    public function baz()
+    {
+        static $invocation = 0;
+
+        return call_user_func_array($this->callable, array(
+            $invocation++
+        ));
     }
 }

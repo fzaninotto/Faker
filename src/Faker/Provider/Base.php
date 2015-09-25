@@ -4,6 +4,7 @@ namespace Faker\Provider;
 
 use Faker\Generator;
 use Faker\DefaultGenerator;
+use Faker\TakeGenerator;
 use Faker\UniqueGenerator;
 
 class Base
@@ -541,5 +542,18 @@ class Base
         }
 
         return $this->unique;
+    }
+
+    /**
+     * @param int $count
+     *
+     * @return TakeGenerator
+     */
+    public function take($count)
+    {
+        return new TakeGenerator(
+            $this->generator,
+            $count
+        );
     }
 }
