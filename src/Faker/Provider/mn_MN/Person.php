@@ -3,9 +3,9 @@
 namespace Faker\Provider\mn_MN;
 
 class Person extends \Faker\Provider\Person
-{   
+{
     /**
-     * @source http://ner.query.mn/son
+     * @link http://ner.query.mn/son
      */
     protected static $firstNameMale = array(
         'Агь-Од', 'Адархидай', 'Адхираг', 'Ажай', 'Аз-Оргил', 'Алаг-Наяа', 'Алахуш-дигитхури', 'Алдиэр', 'Алтаннар', 'Алхуй', 'Алчи', 'Алчидай', 'Амал', 'Амбагай', 'Амин-Эрдэнэ', 'Анхлан', 'Арачиан', 'Аргасун', 'Арин', 'Арулад', 'Архай Хасар', 'Аучу', 'Ачиг-Чирүн', 'Ачиг-Ширүн', 'Аша-хамбу',
@@ -36,7 +36,7 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
-     * @source http://ner.query.mn/daugther
+     * @link http://ner.query.mn/daugther
      */
     protected static $firstNameFemale = array(
         'Агь-Од', 'Алагабэх', 'Алалтун', 'Алахчит', 'Амин-Эрдэнэ', 'Анхлан',
