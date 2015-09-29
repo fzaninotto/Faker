@@ -156,6 +156,7 @@ namespace Faker;
  *
  * @method string imageUrl($width = 640, $height = 480, $category = null, $randomize = true)
  * @method string image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true)
+ * @method string imageGenerator($dir = null, $width = 640, $height = 480, $format = 'jpg', $fullPath = true, $word = null, $backgroundColor = null, $textColor = null)
  *
  * @property string $hexColor
  * @property string $safeHexColor
