@@ -114,16 +114,19 @@ class EntityPopulator
 
             $index = 0;
             $formatters[$assocName] = function ($inserted) use ($relatedClass, &$index, $unique, $optional) {
-                if ($unique && isset($inserted[$relatedClass])) {
-                    $related = null;
-                    if (isset($inserted[$relatedClass][$index]) || !$optional) {
-                        $related = $inserted[$relatedClass][$index];
+
+                if (isset($inserted[$relatedClass])) {
+                    if ($unique) {
+                        $related = null;
+                        if (isset($inserted[$relatedClass][$index]) || !$optional) {
+                            $related = $inserted[$relatedClass][$index];
+                        }
+
+                        $index++;
+
+                        return $related;
                     }
 
-                    $index++;
-
-                    return $related;
-                } elseif (isset($inserted[$relatedClass])) {
                     return $inserted[$relatedClass][mt_rand(0, count($inserted[$relatedClass]) - 1)];
                 }
 
@@ -186,7 +189,7 @@ class EntityPopulator
 
         $id = null;
         do {
-            $id = rand();
+            $id = mt_rand();
         } while (in_array($id, $ids));
 
         return $id;
