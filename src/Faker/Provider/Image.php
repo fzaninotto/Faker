@@ -102,7 +102,7 @@ class Image extends Base
      * @param string $backgroundColor Background color in hexadecimal format (eg. #7f7f7f), default to black
      * @param string $textColor Text color in hexadecimal format, default to white
      */
-    public function imageGenerator($dir = null, $width = 640, $height = 480, $format = 'jpg', $fullPath = true, $word = null, $backgroundColor = null, $textColor = null)
+    public static function imageGenerator($dir = null, $width = 640, $height = 480, $format = 'jpg', $fullPath = true, $word = null, $backgroundColor = null, $textColor = null)
     {
         $dir = is_null($dir) ? sys_get_temp_dir() : $dir; // GNU/Linux / OS X / Windows compatible
                                                           // Validate directory path

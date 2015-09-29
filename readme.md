@@ -262,6 +262,8 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     image($dir = '/tmp', $width = 640, $height = 480) // '/tmp/13b73edae8443990be1aa8f1a483bc27.jpg'
     image($dir, $width, $height, 'cats')  // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat!
     image($dir, $width, $height, 'cats', true, 'Faker') // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat with Faker text
+    // Image generation using PHP and GD
+    imageGenerator($dir, $width, $height, 'jpg', true, 'Faker', '#1F1F1F', '#FF2222') // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' Generated image with Faker text
 
 ### `Faker\Provider\Uuid`
 
