@@ -49,7 +49,7 @@ class Image extends Base
     public static function image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true, $randomize = true, $word = null)
     {
         $dir = is_null($dir) ? sys_get_temp_dir() : $dir; // GNU/Linux / OS X / Windows compatible
-                                                          // Validate directory path
+        // Validate directory path
         if (! is_dir($dir) || ! is_writable($dir)) {
             throw new \InvalidArgumentException(sprintf('Cannot write to directory "%s"', $dir));
         }
@@ -105,7 +105,7 @@ class Image extends Base
     public static function imageGenerator($dir = null, $width = 640, $height = 480, $format = 'jpg', $fullPath = true, $word = null, $backgroundColor = null, $textColor = null)
     {
         $dir = is_null($dir) ? sys_get_temp_dir() : $dir; // GNU/Linux / OS X / Windows compatible
-                                                          // Validate directory path
+        // Validate directory path
         if (! is_dir($dir) || ! is_writable($dir)) {
             throw new \InvalidArgumentException(sprintf('Cannot write to directory "%s"', $dir));
         }
