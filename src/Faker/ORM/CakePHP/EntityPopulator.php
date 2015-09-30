@@ -99,7 +99,6 @@ class EntityPopulator
                 }
 
                 $foreignKey = $foreignKeys[array_rand($foreignKeys)];
-                $primaryKey = $table->primaryKey();
                 $data[$assoc->foreignKey()] = $foreignKey;
                 return $data;
             };
