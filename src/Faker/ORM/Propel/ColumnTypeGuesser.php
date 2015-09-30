@@ -92,7 +92,8 @@ class ColumnTypeGuesser
                 };
             case PropelColumnTypes::OBJECT:
             case PropelColumnTypes::PHP_ARRAY:
-                // no smart way to guess what the user expects here
+            default:
+            // no smart way to guess what the user expects here
                 return null;
         }
     }
