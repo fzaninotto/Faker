@@ -45,6 +45,7 @@ class Iban
      *
      * @param string $number Numeric string
      * @param int
+     * @return int
      */
     public static function mod97($number)
     {
