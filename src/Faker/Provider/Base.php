@@ -263,7 +263,7 @@ class Base
      * @param array $array The set to shuffle
      * @return array The shuffled set
      */
-    public static function shuffleArray($array = array())
+    public static function shuffleArray(array $array = array())
     {
         $shuffledArray = array();
         $i = 0;
@@ -314,7 +314,7 @@ class Base
         } else {
             $array = str_split($string, 1);
         }
-        return join('', static::shuffleArray($array));
+        return implode('', static::shuffleArray($array));
     }
 
     private static function replaceWildcard($string, $wildcard = '#', $callback = 'static::randomDigit')
@@ -462,7 +462,7 @@ class Base
         // All A-F inside of [] become ABCDEF
         $regex = preg_replace_callback('/\[([^\]]+)\]/', function ($matches) {
             return '[' . preg_replace_callback('/(\w|\d)\-(\w|\d)/', function ($range) {
-                return join(range($range[1], $range[2]), '');
+                return implode(range($range[1], $range[2]), '');
             }, $matches[1]) . ']';
         }, $regex);
         // All [ABC] become B (or A or C)

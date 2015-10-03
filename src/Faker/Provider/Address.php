@@ -2,7 +2,7 @@
 
 namespace Faker\Provider;
 
-class Address extends \Faker\Provider\Base
+class Address extends Base
 {
     protected static $citySuffix = array('Ville');
     protected static $streetSuffix = array('Street');
