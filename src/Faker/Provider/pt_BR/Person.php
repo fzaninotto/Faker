@@ -2,8 +2,6 @@
 
 namespace Faker\Provider\pt_BR;
 
-require_once "check_digit.php";
-
 class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = array(
@@ -111,8 +109,8 @@ class Person extends \Faker\Provider\Person
     public function cpf($formatted = true)
     {
         $n = $this->generator->numerify('#########');
-        $n .= check_digit($n);
-        $n .= check_digit($n);
+        $n .= LocalUtils::checkDigit($n);
+        $n .= LocalUtils::checkDigit($n);
 
         return $formatted? vsprintf('%d%d%d.%d%d%d.%d%d%d-%d%d', str_split($n)) : $n;
     }
@@ -126,7 +124,7 @@ class Person extends \Faker\Provider\Person
     public function rg($formatted = true)
     {
         $n = $this->generator->numerify('########');
-        $n .= check_digit($n);
+        $n .= LocalUtils::checkDigit($n);
 
         return $formatted? vsprintf('%d%d.%d%d%d.%d%d%d-%s', str_split($n)) : $n;
     }
