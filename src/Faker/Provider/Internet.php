@@ -156,7 +156,7 @@ class Internet extends \Faker\Provider\Base
         if (function_exists('transliterator_transliterate') && $transliterator = \Transliterator::create($transId)) {
             $transString = $transliterator->transliterate($string);
         } else {
-            $transString = static::toAscii($string);
+            $transString = static::toLower(static::toAscii($string));
         }
 
         return preg_replace('/[^A-Za-z0-9_.]/u', '', $transString);
