@@ -263,7 +263,7 @@ class Base
      * @param array $array The set to shuffle
      * @return array The shuffled set
      */
-    public static function shuffleArray(array $array = array())
+    public static function shuffleArray($array = array())
     {
         $shuffledArray = array();
         $i = 0;
