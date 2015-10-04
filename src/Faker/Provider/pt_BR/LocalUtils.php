@@ -2,7 +2,6 @@
 
 namespace Faker\Provider\pt_BR;
 
-
 class LocalUtils
 {
     /**
@@ -36,5 +35,4 @@ class LocalUtils
 
         return $verifier;
     }
-
 }
