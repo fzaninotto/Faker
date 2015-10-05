@@ -4,7 +4,7 @@ namespace Faker\Provider\pt_PT;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
-     /*
+    /*
      * @link http://en.wikipedia.org/wiki/Telephone_numbers_in_Portugal
      */
     protected static $formats = array(

@@ -4,7 +4,6 @@ namespace Faker\Provider\kk_KZ;
 
 class Payment extends \Faker\Provider\Payment
 {
-
     protected static $banks = array(
         'Қазкоммерцбанк',
         'Халық Банкі',

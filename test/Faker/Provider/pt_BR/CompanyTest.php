@@ -7,7 +7,6 @@ use Faker\Provider\pt_BR\Company;
 
 class CompanyTest extends \PHPUnit_Framework_TestCase
 {
-
     public function setUp()
     {
         $faker = new Generator();

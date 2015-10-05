@@ -9,7 +9,6 @@ use Faker\Provider\de_AT\Company;
 
 class InternetTest extends \PHPUnit_Framework_TestCase
 {
-
     /**
      * @var Generator
      */

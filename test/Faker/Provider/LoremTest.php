@@ -51,7 +51,7 @@ class LoremTest extends \PHPUnit_Framework_TestCase
 
     public function testSentenceWithPositiveNbWordsReturnsAtLeastOneWord()
     {
-         $sentence = Lorem::sentence(1);
+        $sentence = Lorem::sentence(1);
 
         $this->assertGreaterThan(1, strlen($sentence));
         $this->assertGreaterThanOrEqual(1, count(explode(' ', $sentence)));
@@ -90,7 +90,6 @@ class LoremTest extends \PHPUnit_Framework_TestCase
 
 class TestableLorem extends Lorem
 {
-
     public static function word()
     {
         return 'word';

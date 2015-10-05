@@ -7,7 +7,6 @@ use Faker\Provider\uk_UA\Address;
 
 class AddressTest extends \PHPUnit_Framework_TestCase
 {
-
     /**
      * @var Generator
      */

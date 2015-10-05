@@ -3,7 +3,6 @@ namespace Faker\Provider;
 
 class File extends \Faker\Provider\Base
 {
-
     /**
      * MIME types from the apache.org file. Some types are truncated.
      *

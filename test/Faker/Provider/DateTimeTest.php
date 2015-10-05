@@ -85,10 +85,10 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
         
         $_interval = \DateInterval::createFromDateString($interval);
         $_start = new \DateTime($start);
-        if($isInFutur){
+        if ($isInFutur) {
             $this->assertGreaterThanOrEqual($_start, $date);
             $this->assertLessThanOrEqual($_start->add($_interval), $date);
-        }else{
+        } else {
             $this->assertLessThanOrEqual($_start, $date);
             $this->assertGreaterThanOrEqual($_start->add($_interval), $date);
         }
