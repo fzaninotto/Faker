@@ -152,7 +152,7 @@ class Internet extends \Faker\Provider\Base
     
     private static function transliterate($string)
     {
-        $transId = 'Any-Latin; Latin-ASCII; NFD; [:Nonspacing Mark:] Remove; NFC; Lower();';
+        $transId = 'Any-Latin; Latin-ASCII; NFD; [:Nonspacing Mark:] Remove; NFC;';
         if (function_exists('transliterator_transliterate') && $transliterator = \Transliterator::create($transId)) {
             $transString = $transliterator->transliterate($string);
         } else {
@@ -225,7 +225,7 @@ class Internet extends \Faker\Provider\Base
         $format = static::randomElement(static::$userNameFormats);
         $username = static::bothify($this->generator->parse($format));
 
-        return static::transliterate($username);
+        return static::toLower(static::transliterate($username));
     }
     /**
      * @example 'fY4èHdZv68'
@@ -252,7 +252,7 @@ class Internet extends \Faker\Provider\Base
     {
         $lastName = $this->generator->format('lastName');
 
-        return static::transliterate($lastName);
+        return static::toLower(static::transliterate($lastName));
     }
 
     /**
