@@ -8,3 +8,6 @@ sniff: vendor/autoload.php
 .PHONY: test
 test: vendor/autoload.php
 	vendor/bin/phpunit --verbose
+
+cs:
+	php-cs-fixer fix . --verbose

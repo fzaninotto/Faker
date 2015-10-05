@@ -6,7 +6,6 @@ use Faker\Calculator\Iban;
 
 class IbanTest extends \PHPUnit_Framework_TestCase
 {
-
     public function checksumProvider()
     {
         return array(

@@ -73,7 +73,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
             is_string($cnp)
             && (bool) preg_match(static::TEST_CNP_REGEX, $cnp)
             && checkdate(substr($cnp, 3, 2), substr($cnp, 5, 2), substr($cnp, 1, 2))
-        ){
+        ) {
             $checkNumber = 279146358279;
 
             $checksum = 0;
@@ -85,7 +85,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
             if (
                 ($checksum < 10 && $checksum == substr($cnp, -1))
                 || ($checksum == 10 && substr($cnp, -1) == 1)
-            ){
+            ) {
                 return true;
             }
         }

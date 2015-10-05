@@ -7,7 +7,6 @@ use Faker\Provider\at_AT\Payment;
 
 class PaymentTest extends \PHPUnit_Framework_TestCase
 {
-
     /**
      * @var Generator
      */

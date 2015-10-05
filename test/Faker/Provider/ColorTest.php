@@ -6,7 +6,6 @@ use Faker\Provider\Color;
 
 class ColorTest extends \PHPUnit_Framework_TestCase
 {
-
     public function testHexColor()
     {
         $this->assertRegExp('/^#[a-f0-9]{6}$/i', Color::hexColor());

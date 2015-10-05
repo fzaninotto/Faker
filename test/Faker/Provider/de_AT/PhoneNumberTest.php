@@ -7,7 +7,6 @@ use Faker\Provider\de_AT\PhoneNumber;
 
 class PhoneNumberTest extends \PHPUnit_Framework_TestCase
 {
-
     /**
      * @var Generator
      */

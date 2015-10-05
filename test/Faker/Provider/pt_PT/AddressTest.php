@@ -7,7 +7,6 @@ use Faker\Provider\pt_PT\Address;
 
 class AddressTest extends \PHPUnit_Framework_TestCase
 {
-
     /**
      * @var Generator
      */

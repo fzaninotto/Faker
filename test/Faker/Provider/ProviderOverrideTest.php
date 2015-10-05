@@ -168,7 +168,7 @@ class ProviderOverrideTest extends \PHPUnit_Framework_TestCase
     {
         static $locales = array();
 
-        if ( ! empty($locales)) {
+        if (! empty($locales)) {
             return $locales;
         }
 

@@ -7,7 +7,6 @@ use Faker\Provider\uk_UA\PhoneNumber;
 
 class PhoneNumberTest extends \PHPUnit_Framework_TestCase
 {
-
     /**
      * @var Generator
      */
@@ -29,7 +28,5 @@ class PhoneNumberTest extends \PHPUnit_Framework_TestCase
             1,
             'Phone number format ' . $phoneNumber . ' is wrong!'
         );
-
     }
-
 }

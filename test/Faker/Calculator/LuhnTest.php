@@ -6,7 +6,6 @@ use Faker\Calculator\Luhn;
 
 class LuhnTest extends \PHPUnit_Framework_TestCase
 {
-
     public function checkDigitProvider()
     {
         return array(
