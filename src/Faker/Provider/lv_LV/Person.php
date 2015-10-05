@@ -3,6 +3,7 @@
 namespace Faker\Provider\lv_LV;
 
 use Faker\Calculator\Luhn;
+use Faker\Provider\DateTime;
 
 class Person extends \Faker\Provider\Person
 {
@@ -70,7 +71,7 @@ class Person extends \Faker\Provider\Person
     public function personalIdentityNumber(\DateTime $birthdate = null)
     {
         if (!$birthdate) {
-            $birthdate = \Faker\Provider\DateTime::dateTimeThisCentury();
+            $birthdate = DateTime::dateTimeThisCentury();
         }
 
         $datePart = $birthdate->format('dmy');

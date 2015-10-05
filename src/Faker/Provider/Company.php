@@ -2,7 +2,7 @@
 
 namespace Faker\Provider;
 
-class Company extends \Faker\Provider\Base
+class Company extends Base
 {
     protected static $formats = array(
         '{{lastName}} {{companySuffix}}',

@@ -6,11 +6,11 @@ namespace Faker\Provider;
  * @see http://en.wikipedia.org/wiki/EAN-13
  * @see http://en.wikipedia.org/wiki/ISBN
  */
-class Barcode extends \Faker\Provider\Base
+class Barcode extends Base
 {
     private function ean($length = 13)
     {
-        $code = $this->numerify(str_repeat('#', $length - 1));
+        $code = static::numerify(str_repeat('#', $length - 1));
 
         return $code . static::eanChecksum($code);
     }
@@ -20,7 +20,7 @@ class Barcode extends \Faker\Provider\Base
      */
     protected static function eanChecksum($input)
     {
-        $sequence = (strlen($input) - 1) == 8 ? array(3, 1) : array(1, 3);
+        $sequence = (strlen($input) - 1) === 8 ? array(3, 1) : array(1, 3);
         $sums = 0;
         foreach (str_split($input) as $n => $digit) {
             $sums += $digit * $sequence[$n % 2];
@@ -43,7 +43,7 @@ class Barcode extends \Faker\Provider\Base
         // so, the length of the input should be 9
         $length = 9;
 
-        if (strlen($input) != $length) {
+        if (strlen($input) !== $length) {
             throw new \LengthException(sprintf('Input length should be equal to %d', $length));
         }
 
@@ -89,7 +89,7 @@ class Barcode extends \Faker\Provider\Base
      */
     public function isbn10()
     {
-        $code = $this->numerify(str_repeat('#', 9));
+        $code = static::numerify(str_repeat('#', 9));
 
         return $code . static::isbnChecksum($code);
     }
@@ -103,7 +103,7 @@ class Barcode extends \Faker\Provider\Base
      */
     public function isbn13()
     {
-        $code = '97' . static::numberBetween(8, 9) . $this->numerify(str_repeat('#', 9));
+        $code = '97' . static::numberBetween(8, 9) . static::numerify(str_repeat('#', 9));
 
         return $code . static::eanChecksum($code);
     }
