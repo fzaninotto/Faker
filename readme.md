@@ -31,7 +31,7 @@ Faker requires PHP >= 5.3.3.
 	- [Barcode](#fakerproviderbarcode)
 	- [Miscellaneous](#fakerprovidermiscellaneous)
 	- [Biased](#fakerproviderbiased)
-- [Unique and Optional modifiers](#unique-and-optional-modifiers)
+- [Unique, Optional and Take modifiers](#unique-optional-and-take-modifiers)
 - [Localization](#localization)
 - [Populating Entities Using an ORM or an ODM](#populating-entities-using-an-orm-or-an-odm)
 - [Seeding the Generator](#seeding-the-generator)
@@ -291,9 +291,9 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     // with more chances to be close to 20
     biasedNumberBetween($min = 10, $max = 20, $function = 'sqrt')
 
-## Unique and Optional modifiers
+## Unique, Optional and Take modifiers
 
-Faker provides two special providers, `unique()` and `optional()`, to be called before any provider. `optional()` can be useful for seeding non-required fields, like a mobile telephone number; `unique()` is required to populate fields that cannot accept twice the same value, like primary identifiers.
+Faker provides three special providers, `unique()`, `optional()` and `take()`,  to be called before any provider. `optional()` can be useful for seeding non-required fields, like a mobile telephone number; `unique()` is required to populate fields that cannot accept twice the same value, like primary identifiers; `take()` can be useful when you need an array of results.
 
 ```php
 // unique() forces providers to return unique values
@@ -335,6 +335,10 @@ $faker->optional($weight = 0.9)->randomDigit; // 10% chance of NULL
 // Defaults to NULL.
 $faker->optional($weight = 0.5, $default = false)->randomDigit; // 50% chance of FALSE
 $faker->optional($weight = 0.9, $default = 'abc')->word; // 10% chance of 'abc'
+
+// take() accepts an integer greater than 0
+$faker->take(5)->sentence(); // returns an array with 5 sentences
+$faker->take(3)->randomNumber; // returns an array with 3 random numbers
 ```
 
 ## Localization
