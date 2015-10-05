@@ -291,6 +291,8 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     // with more chances to be close to 20
     biasedNumberBetween($min = 10, $max = 20, $function = 'sqrt')
 
+
+
 ## Unique and Optional modifiers
 
 Faker provides two special providers, `unique()` and `optional()`, to be called before any provider. `optional()` can be useful for seeding non-required fields, like a mobile telephone number; `unique()` is required to populate fields that cannot accept twice the same value, like primary identifiers.
