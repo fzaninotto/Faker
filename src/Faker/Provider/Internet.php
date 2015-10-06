@@ -30,7 +30,7 @@ class Internet extends \Faker\Provider\Base
         'https://{{domainName}}/{{slug}}.html',
     );
     
-    public static function toAscii($string)
+    protected static function toAscii($string)
     {
         static $arrayFrom, $arrayTo;
 
@@ -150,7 +150,7 @@ class Internet extends \Faker\Provider\Base
         return str_replace($arrayFrom, $arrayTo, $string);
     }
     
-    private static function transliterate($string)
+    protected static function transliterate($string)
     {
         $transId = 'Any-Latin; Latin-ASCII; NFD; [:Nonspacing Mark:] Remove; NFC;';
         if (function_exists('transliterator_transliterate') && $transliterator = \Transliterator::create($transId)) {
