@@ -225,7 +225,7 @@ class Internet extends \Faker\Provider\Base
         $format = static::randomElement(static::$userNameFormats);
         $username = static::bothify($this->generator->parse($format));
 
-        return static::toLower(static::transliterate($username));
+        return strtolower(static::transliterate($username));
     }
     /**
      * @example 'fY4èHdZv68'
@@ -252,7 +252,7 @@ class Internet extends \Faker\Provider\Base
     {
         $lastName = $this->generator->format('lastName');
 
-        return static::toLower(static::transliterate($lastName));
+        return strtolower(static::transliterate($lastName));
     }
 
     /**
