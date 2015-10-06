@@ -1170,6 +1170,7 @@ echo $faker->cityName;
 * [pragmafabrik/Pomm2Faker](https://github.com/pragmafabrik/Pomm2Faker): Faker client for Pomm ORM (PostgreSQL)
 * [nelmio/alice](https://packagist.org/packages/nelmio/alice): Fixtures/object generator with a yaml DSL that can use Faker as data generator.
 * [CakePHP 2.x Fake Seeder Plugin](https://github.com/ravage84/cakephp-fake-seeder) A CakePHP 2.x shell to seed your database with fake and/or fixed data.
+* [images-generator](https://github.com/bruceheller/images-generator): An image generator provider using GD for placeholder type pictures
 
 ## License
 
