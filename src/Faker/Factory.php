@@ -35,8 +35,7 @@ class Factory
             return $providerClass;
         }
         // fallback to no locale
-        $providerClass = self::findProviderClassname($provider);
-        if (class_exists($providerClass)) {
+        if ($providerClass = self::findProviderClassname($provider)) {
             return $providerClass;
         }
         throw new \InvalidArgumentException(sprintf('Unable to find provider "%s" with locale "%s"', $provider, $locale));
