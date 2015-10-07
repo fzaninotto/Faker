@@ -127,4 +127,6 @@ class InternetTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertRegExp('/^([0-9A-F]{2}[:]){5}([0-9A-F]{2})$/i', Internet::macAddress());
     }
+
+
 }

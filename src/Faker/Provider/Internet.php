@@ -29,7 +29,7 @@ class Internet extends \Faker\Provider\Base
         'http://{{domainName}}/{{slug}}.html',
         'https://{{domainName}}/{{slug}}.html',
     );
-    
+
     public static function toAscii($string)
     {
         static $arrayFrom, $arrayTo;
@@ -149,7 +149,7 @@ class Internet extends \Faker\Provider\Base
 
         return str_replace($arrayFrom, $arrayTo, $string);
     }
-    
+
     private static function transliterate($string)
     {
         $transId = 'Any-Latin; Latin-ASCII; NFD; [:Nonspacing Mark:] Remove; NFC;';
@@ -161,14 +161,14 @@ class Internet extends \Faker\Provider\Base
 
         return preg_replace('/[^A-Za-z0-9_.]/u', '', $transString);
     }
-    
+
     /**
      * @example 'jdoe@acme.biz'
      */
     public function email()
     {
         $format = static::randomElement(static::$emailFormats);
-        
+
         return $this->generator->parse($format);
     }
 

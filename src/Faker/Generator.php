@@ -81,6 +81,8 @@ namespace Faker;
  * @property string $localIpv4
  * @property string $macAddress
  *
+ * @property string $htmlTag
+ *
  * @property int       $unixTime
  * @property \DateTime $dateTime
  * @property \DateTime $dateTimeAD
