@@ -19,7 +19,7 @@ class Address extends Base
         '{{streetAddress}} {{postcode}} {{city}}',
     );
 
-    protected static $buildingNumber = array('##');
+    protected static $buildingNumber = array('%#');
     protected static $postcode = array('#####');
     protected static $country = array();
 
