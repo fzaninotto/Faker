@@ -347,7 +347,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
     {
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
-        $this->assertNotNull($faker->optional(1)->randomDigit);
+        $this->assertNotNull($faker->optional(100)->randomDigit);
     }
 
     public function testOptionalReturnsNullWhenCalledWithWeight0()
@@ -362,7 +362,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         $faker->addProvider(new \ArrayObject(array(1))); // hack because method_exists forbids stubs
-        $this->assertEquals(1, $faker->optional(1)->count);
+        $this->assertEquals(1, $faker->optional(100)->count);
         $this->assertNull($faker->optional(0)->count);
     }
 
@@ -371,7 +371,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         $faker->addProvider(new \ArrayObject(array(1))); // hack because method_exists forbids stubs
-        $this->assertEquals(1, $faker->optional(1)->count());
+        $this->assertEquals(1, $faker->optional(100)->count());
         $this->assertNull($faker->optional(0)->count());
     }
 
@@ -384,6 +384,35 @@ class BaseTest extends \PHPUnit_Framework_TestCase
             $values[]= $faker->optional()->randomDigit;
         }
         $this->assertContains(null, $values);
+
+        $values = array();
+        for ($i=0; $i < 10; $i++) {
+            $values[]= $faker->optional(50)->randomDigit;
+        }
+        $this->assertContains(null, $values);
+    }
+
+    /**
+     * @link https://github.com/fzaninotto/Faker/issues/265
+     */
+    public function testOptionalPercentageAndWeight()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $faker->addProvider(new \Faker\Provider\Miscellaneous($faker));
+
+        $valuesOld = array();
+        $valuesNew = array();
+
+        for ($i = 0; $i < 10000; ++$i) {
+            $valuesOld[] = $faker->optional(0.5)->boolean(100);
+            $valuesNew[] = $faker->optional(50)->boolean(100);
+        }
+
+        $this->assertEquals(
+            round(array_sum($valuesOld) / 10000, 2),
+            round(array_sum($valuesNew) / 10000, 2)
+        );
     }
 
     public function testUniqueAllowsChainingPropertyAccess()
