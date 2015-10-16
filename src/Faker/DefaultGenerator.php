@@ -10,9 +10,6 @@ class DefaultGenerator
 {
     protected $default;
 
-    /**
-     * @param $default
-     */
     public function __construct($default = null)
     {
         $this->default = $default;

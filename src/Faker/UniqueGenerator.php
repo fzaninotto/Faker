@@ -14,7 +14,6 @@ class UniqueGenerator
 
     /**
      * @param Generator $generator
-     * @param $maxRetries
      */
     public function __construct(Generator $generator, $maxRetries)
     {
