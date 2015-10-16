@@ -24,26 +24,42 @@ class EntityPopulator
         $this->class = $class;
     }
 
+    /**
+     * @return string
+     */
     public function getClass()
     {
         return $this->class;
     }
 
+    /**
+     * @param $columnFormatters
+     */
     public function setColumnFormatters($columnFormatters)
     {
         $this->columnFormatters = $columnFormatters;
     }
 
+    /**
+     * @return array
+     */
     public function getColumnFormatters()
     {
         return $this->columnFormatters;
     }
 
+    /**
+     * @param $columnFormatters
+     */
     public function mergeColumnFormattersWith($columnFormatters)
     {
         $this->columnFormatters = array_merge($this->columnFormatters, $columnFormatters);
     }
 
+    /**
+     * @param \Faker\Generator $generator
+     * @return array
+     */
     public function guessColumnFormatters(\Faker\Generator $generator)
     {
         $formatters = array();
@@ -80,6 +96,10 @@ class EntityPopulator
         return $formatters;
     }
 
+    /**
+     * @param ColumnMap $columnMap
+     * @return bool
+     */
     protected function isColumnBehavior(ColumnMap $columnMap)
     {
         foreach ($columnMap->getTable()->getBehaviors() as $name => $params) {
@@ -103,21 +123,34 @@ class EntityPopulator
         return false;
     }
 
+    /**
+     * @param $modifiers
+     */
     public function setModifiers($modifiers)
     {
         $this->modifiers = $modifiers;
     }
 
+    /**
+     * @return array
+     */
     public function getModifiers()
     {
         return $this->modifiers;
     }
 
+    /**
+     * @param $modifiers
+     */
     public function mergeModifiersWith($modifiers)
     {
         $this->modifiers = array_merge($this->modifiers, $modifiers);
     }
 
+    /**
+     * @param \Faker\Generator $generator
+     * @return array
+     */
     public function guessModifiers(\Faker\Generator $generator)
     {
         $modifiers = array();
@@ -151,6 +184,9 @@ class EntityPopulator
 
     /**
      * Insert one new record using the Entity class.
+     * @param $con
+     * @param $insertedEntities
+     * @return
      */
     public function execute($con, $insertedEntities)
     {

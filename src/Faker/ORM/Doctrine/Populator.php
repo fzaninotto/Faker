@@ -16,6 +16,10 @@ class Populator
     protected $quantities = array();
     protected $generateId = array();
 
+    /**
+     * @param \Faker\Generator $generator
+     * @param ObjectManager|null $manager
+     */
     public function __construct(\Faker\Generator $generator, ObjectManager $manager = null)
     {
         $this->generator = $generator;

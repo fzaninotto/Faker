@@ -12,31 +12,52 @@ class EntityPopulator
     protected $columnFormatters = [];
     protected $modifiers = [];
 
+    /**
+     * @param $class
+     */
     public function __construct($class)
     {
         $this->class = $class;
     }
 
+    /**
+     * @param $name
+     * @return mixed
+     */
     public function __get($name)
     {
         return $this->{$name};
     }
 
+    /**
+     * @param $name
+     * @param $value
+     */
     public function __set($name, $value)
     {
         $this->{$name} = $value;
     }
 
+    /**
+     * @param $columnFormatters
+     */
     public function mergeColumnFormattersWith($columnFormatters)
     {
         $this->columnFormatters = array_merge($this->columnFormatters, $columnFormatters);
     }
 
+    /**
+     * @param $modifiers
+     */
     public function mergeModifiersWith($modifiers)
     {
         $this->modifiers = array_merge($this->modifiers, $modifiers);
     }
 
+    /**
+     * @param $populator
+     * @return array
+     */
     public function guessColumnFormatters($populator)
     {
         $formatters = [];
@@ -71,7 +92,10 @@ class EntityPopulator
         return $formatters;
     }
 
-    public function guessModifiers($populator)
+    /**
+     * @return array
+     */
+    public function guessModifiers()
     {
         $modifiers = [];
         $table = $this->getTable($this->class);
@@ -109,6 +133,12 @@ class EntityPopulator
         return $modifiers;
     }
 
+    /**
+     * @param $class
+     * @param $insertedEntities
+     * @param array $options
+     * @return mixed
+     */
     public function execute($class, $insertedEntities, $options = [])
     {
         $table = $this->getTable($class);
@@ -136,11 +166,18 @@ class EntityPopulator
         return $entity->{$pk[0]};
     }
 
+    /**
+     * @param $name
+     */
     public function setConnection($name)
     {
         $this->connectionName = $name;
     }
 
+    /**
+     * @param $class
+     * @return mixed
+     */
     protected function getTable($class)
     {
         $options = [];

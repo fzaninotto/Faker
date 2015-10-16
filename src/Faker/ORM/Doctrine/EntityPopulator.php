@@ -42,36 +42,58 @@ class EntityPopulator
         return $this->class->getName();
     }
 
+    /**
+     * @param $columnFormatters
+     */
     public function setColumnFormatters($columnFormatters)
     {
         $this->columnFormatters = $columnFormatters;
     }
 
+    /**
+     * @return array
+     */
     public function getColumnFormatters()
     {
         return $this->columnFormatters;
     }
 
+    /**
+     * @param $columnFormatters
+     */
     public function mergeColumnFormattersWith($columnFormatters)
     {
         $this->columnFormatters = array_merge($this->columnFormatters, $columnFormatters);
     }
 
+    /**
+     * @param array $modifiers
+     */
     public function setModifiers(array $modifiers)
     {
         $this->modifiers = $modifiers;
     }
 
+    /**
+     * @return array
+     */
     public function getModifiers()
     {
         return $this->modifiers;
     }
 
+    /**
+     * @param array $modifiers
+     */
     public function mergeModifiersWith(array $modifiers)
     {
         $this->modifiers = array_merge($this->modifiers, $modifiers);
     }
 
+    /**
+     * @param \Faker\Generator $generator
+     * @return array
+     */
     public function guessColumnFormatters(\Faker\Generator $generator)
     {
         $formatters = array();
@@ -139,6 +161,10 @@ class EntityPopulator
 
     /**
      * Insert one new record using the Entity class.
+     * @param ObjectManager $manager
+     * @param $insertedEntities
+     * @param bool $generateId
+     * @return
      */
     public function execute(ObjectManager $manager, $insertedEntities, $generateId = false)
     {
@@ -160,6 +186,10 @@ class EntityPopulator
         return $obj;
     }
 
+    /**
+     * @param $obj
+     * @param $insertedEntities
+     */
     private function fillColumns($obj, $insertedEntities)
     {
         foreach ($this->columnFormatters as $field => $format) {
@@ -170,6 +200,10 @@ class EntityPopulator
         }
     }
 
+    /**
+     * @param $obj
+     * @param $insertedEntities
+     */
     private function callMethods($obj, $insertedEntities)
     {
         foreach ($this->getModifiers() as $modifier) {
@@ -177,6 +211,12 @@ class EntityPopulator
         }
     }
 
+    /**
+     * @param $obj
+     * @param $column
+     * @param EntityManagerInterface $manager
+     * @return int|null
+     */
     private function generateId($obj, $column, EntityManagerInterface $manager)
     {
         /* @var $repository \Doctrine\ORM\EntityRepository */

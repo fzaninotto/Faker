@@ -10,16 +10,26 @@ class DefaultGenerator
 {
     protected $default;
 
+    /**
+     * @param $default
+     */
     public function __construct($default = null)
     {
         $this->default = $default;
     }
 
+    /**
+     * @param $attribute
+     */
     public function __get($attribute)
     {
         return $this->default;
     }
 
+    /**
+     * @param $method
+     * @param $attributes
+     */
     public function __call($method, $attributes)
     {
         return $this->default;

@@ -25,6 +25,11 @@ class Factory
         return $generator;
     }
 
+    /**
+     * @param $provider
+     * @param string $locale
+     * @return string
+     */
     protected static function getProviderClassname($provider, $locale = '')
     {
         if ($providerClass = self::findProviderClassname($provider, $locale)) {
@@ -41,6 +46,11 @@ class Factory
         throw new \InvalidArgumentException(sprintf('Unable to find provider "%s" with locale "%s"', $provider, $locale));
     }
 
+    /**
+     * @param $provider
+     * @param string $locale
+     * @return string
+     */
     protected static function findProviderClassname($provider, $locale = '')
     {
         $providerClass = 'Faker\\' . ($locale ? sprintf('Provider\%s\%s', $locale, $provider) : sprintf('Provider\%s', $provider));
