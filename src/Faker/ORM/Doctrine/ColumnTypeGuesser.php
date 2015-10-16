@@ -17,7 +17,6 @@ class ColumnTypeGuesser
     }
 
     /**
-     * @param $fieldName
      * @param ClassMetadata $class
      * @return \Closure|null
      */

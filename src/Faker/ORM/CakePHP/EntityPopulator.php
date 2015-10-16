@@ -12,17 +12,13 @@ class EntityPopulator
     protected $columnFormatters = [];
     protected $modifiers = [];
 
-    /**
-     * @param $class
-     */
     public function __construct($class)
     {
         $this->class = $class;
     }
 
     /**
-     * @param $name
-     * @return mixed
+     * @param string $name
      */
     public function __get($name)
     {
@@ -30,32 +26,24 @@ class EntityPopulator
     }
 
     /**
-     * @param $name
-     * @param $value
+     * @param string $name
      */
     public function __set($name, $value)
     {
         $this->{$name} = $value;
     }
 
-    /**
-     * @param $columnFormatters
-     */
     public function mergeColumnFormattersWith($columnFormatters)
     {
         $this->columnFormatters = array_merge($this->columnFormatters, $columnFormatters);
     }
 
-    /**
-     * @param $modifiers
-     */
     public function mergeModifiersWith($modifiers)
     {
         $this->modifiers = array_merge($this->modifiers, $modifiers);
     }
 
     /**
-     * @param $populator
      * @return array
      */
     public function guessColumnFormatters($populator)
@@ -134,10 +122,7 @@ class EntityPopulator
     }
 
     /**
-     * @param $class
-     * @param $insertedEntities
      * @param array $options
-     * @return mixed
      */
     public function execute($class, $insertedEntities, $options = [])
     {
@@ -166,18 +151,11 @@ class EntityPopulator
         return $entity->{$pk[0]};
     }
 
-    /**
-     * @param $name
-     */
     public function setConnection($name)
     {
         $this->connectionName = $name;
     }
 
-    /**
-     * @param $class
-     * @return mixed
-     */
     protected function getTable($class)
     {
         $options = [];

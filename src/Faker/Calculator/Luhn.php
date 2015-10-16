@@ -13,7 +13,7 @@ namespace Faker\Calculator;
 class Luhn
 {
     /**
-     * @param $number
+     * @param string $number
      * @return int
      */
     private static function checksum($number)
@@ -48,7 +48,7 @@ class Luhn
     /**
      * Checks whether a number (partial number + check digit) is Luhn compliant
      *
-     * @param $number
+     * @param string $number
      * @return bool
      */
     public static function isValid($number)

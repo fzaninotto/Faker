@@ -19,7 +19,7 @@ class DefaultGenerator
     }
 
     /**
-     * @param $attribute
+     * @param string $attribute
      */
     public function __get($attribute)
     {
@@ -27,8 +27,8 @@ class DefaultGenerator
     }
 
     /**
-     * @param $method
-     * @param $attributes
+     * @param string $method
+     * @param array $attributes
      */
     public function __call($method, $attributes)
     {

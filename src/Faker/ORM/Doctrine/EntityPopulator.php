@@ -58,9 +58,6 @@ class EntityPopulator
         return $this->columnFormatters;
     }
 
-    /**
-     * @param $columnFormatters
-     */
     public function mergeColumnFormattersWith($columnFormatters)
     {
         $this->columnFormatters = array_merge($this->columnFormatters, $columnFormatters);
@@ -162,9 +159,8 @@ class EntityPopulator
     /**
      * Insert one new record using the Entity class.
      * @param ObjectManager $manager
-     * @param $insertedEntities
      * @param bool $generateId
-     * @return
+     * @return EntityPopulator
      */
     public function execute(ObjectManager $manager, $insertedEntities, $generateId = false)
     {
@@ -186,10 +182,6 @@ class EntityPopulator
         return $obj;
     }
 
-    /**
-     * @param $obj
-     * @param $insertedEntities
-     */
     private function fillColumns($obj, $insertedEntities)
     {
         foreach ($this->columnFormatters as $field => $format) {
@@ -200,10 +192,6 @@ class EntityPopulator
         }
     }
 
-    /**
-     * @param $obj
-     * @param $insertedEntities
-     */
     private function callMethods($obj, $insertedEntities)
     {
         foreach ($this->getModifiers() as $modifier) {
@@ -212,8 +200,6 @@ class EntityPopulator
     }
 
     /**
-     * @param $obj
-     * @param $column
      * @param EntityManagerInterface $manager
      * @return int|null
      */

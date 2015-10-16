@@ -25,7 +25,6 @@ class Iban
     }
 
     /**
-     * @param $match
      * @return int
      */
     private static function alphaToNumberCallback($match)
@@ -62,7 +61,7 @@ class Iban
     /**
      * Checks whether an IBAN has a valid checksum
      *
-     * @param $iban
+     * @param string $iban
      * @return boolean
      */
     public static function isValid($iban)

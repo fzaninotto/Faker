@@ -31,9 +31,6 @@ class EntityPopulator
         return $this->class;
     }
 
-    /**
-     * @param $columnFormatters
-     */
     public function setColumnFormatters($columnFormatters)
     {
         $this->columnFormatters = $columnFormatters;
@@ -47,9 +44,6 @@ class EntityPopulator
         return $this->columnFormatters;
     }
 
-    /**
-     * @param $columnFormatters
-     */
     public function mergeColumnFormattersWith($columnFormatters)
     {
         $this->columnFormatters = array_merge($this->columnFormatters, $columnFormatters);
@@ -100,8 +94,6 @@ class EntityPopulator
     /**
      * Insert one new record using the Entity class.
      * @param Mandango $mandango
-     * @param $insertedEntities
-     * @return
      */
     public function execute(Mandango $mandango, $insertedEntities)
     {

@@ -35,7 +35,6 @@ class Populator
     }
 
     /**
-     * @param $name
      * @return $this
      */
     public function removeGuesser($name)
@@ -47,7 +46,6 @@ class Populator
     }
 
     /**
-     * @param $class
      * @return $this
      * @throws \Exception
      */
@@ -66,13 +64,11 @@ class Populator
     }
 
     /**
-     * @param $entity
-     * @param $number
      * @param array $customColumnFormatters
      * @param array $customModifiers
      * @return $this
      */
-    public function addEntity($entity, $number, $customColumnFormatters = [], $customModifiers = [])
+    public function addEntEntityPopulatority($entity, $number, $customColumnFormatters = [], $customModifiers = [])
     {
         if (!$entity instanceof EntityPopulator) {
             $entity = new EntityPopulator($entity);

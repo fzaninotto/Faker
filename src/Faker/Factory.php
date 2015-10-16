@@ -26,7 +26,6 @@ class Factory
     }
 
     /**
-     * @param $provider
      * @param string $locale
      * @return string
      */
@@ -47,7 +46,6 @@ class Factory
     }
 
     /**
-     * @param $provider
      * @param string $locale
      * @return string
      */

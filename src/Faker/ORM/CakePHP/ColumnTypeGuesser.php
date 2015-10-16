@@ -12,8 +12,6 @@ class ColumnTypeGuesser
     }
 
     /**
-     * @param $column
-     * @param $table
      * @return \Closure|null
      */
     public function guessFormat($column, $table)
