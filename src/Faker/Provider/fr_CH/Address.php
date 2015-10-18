@@ -15,7 +15,7 @@ class Address extends \Faker\Provider\Address
     );
 
     protected static $canton = array(
-        array('short' => 'AG', 'name' => 'Argovie'), array('short' => 'AI', 'name' => 'Appenzell Rhodes-Intérieures'), array('short' => 'AR', 'name' => 'Appenzell Rhodes-Extérieures'), array('short' => 'BE', 'name' => 'Berne'), array('short' => 'BL', 'name' => 'Bâle-Campagne'), array('short' => 'BS', 'name' => 'Bâle-Ville'), array('short' => 'FR', 'name' => 'Fribourg'), array('short' => 'GE', 'name' => 'Genève'), array('short' => 'GL', 'name' => 'Glaris'), array('short' => 'GR', 'name' => 'Grisons'), array('short' => 'JU', 'name' => 'Jura')), array('short' => 'LU', 'name' => 'Lucerne'), array('short' => 'NE', 'name' => 'Neuchâtel'), array('short' => 'NW', 'name' => 'Nidwald'), array('short' => 'OW', 'name' => 'Obwald'), array('short' => 'SG', 'name' => 'Saint-Gall'), array('short' => 'SH', 'name' => 'Schaffhouse'), array('short' => 'SO', 'name' => 'Soleure'), array('short' => 'SZ', 'name' => 'Schwytz'), array('short' => 'TG', 'name' => 'Thurgovie'), array('short' => 'TI', 'name' => 'Tessin'), array('short' => 'UR', 'name' => 'Uri'), array('short' => 'VD', 'name' => 'Vaud'), array('short' => 'VS', 'name' => 'Valais'), array('short' => 'ZG', 'name' => 'Zoug'), array('short' => 'ZH', 'name' => 'Zurich')
+        array('short' => 'AG', 'name' => 'Argovie'), array('short' => 'AI', 'name' => 'Appenzell Rhodes-Intérieures'), array('short' => 'AR', 'name' => 'Appenzell Rhodes-Extérieures'), array('short' => 'BE', 'name' => 'Berne'), array('short' => 'BL', 'name' => 'Bâle-Campagne'), array('short' => 'BS', 'name' => 'Bâle-Ville'), array('short' => 'FR', 'name' => 'Fribourg'), array('short' => 'GE', 'name' => 'Genève'), array('short' => 'GL', 'name' => 'Glaris'), array('short' => 'GR', 'name' => 'Grisons'), array('short' => 'JU', 'name' => 'Jura'), array('short' => 'LU', 'name' => 'Lucerne'), array('short' => 'NE', 'name' => 'Neuchâtel'), array('short' => 'NW', 'name' => 'Nidwald'), array('short' => 'OW', 'name' => 'Obwald'), array('short' => 'SG', 'name' => 'Saint-Gall'), array('short' => 'SH', 'name' => 'Schaffhouse'), array('short' => 'SO', 'name' => 'Soleure'), array('short' => 'SZ', 'name' => 'Schwytz'), array('short' => 'TG', 'name' => 'Thurgovie'), array('short' => 'TI', 'name' => 'Tessin'), array('short' => 'UR', 'name' => 'Uri'), array('short' => 'VD', 'name' => 'Vaud'), array('short' => 'VS', 'name' => 'Valais'), array('short' => 'ZG', 'name' => 'Zoug'), array('short' => 'ZH', 'name' => 'Zurich')
     );
 
     protected static $country = array(
@@ -41,6 +41,16 @@ class Address extends \Faker\Provider\Address
     protected static $addressFormats = array(
         "{{streetAddress}}\n{{postcode}} {{city}}",
     );
+
+    /**
+     * Returns a street prefix
+     * @example Rue
+     * @return string
+     */
+    public static function streetPrefix()
+    {
+        return static::randomElement(static::$streetPrefix);
+    }
 
     public function cityName()
     {
