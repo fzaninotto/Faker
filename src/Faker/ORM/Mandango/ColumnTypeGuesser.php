@@ -6,11 +6,17 @@ class ColumnTypeGuesser
 {
     protected $generator;
 
+    /**
+     * @param \Faker\Generator $generator
+     */
     public function __construct(\Faker\Generator $generator)
     {
         $this->generator = $generator;
     }
 
+    /**
+     * @return \Closure|null
+     */
     public function guessFormat($field)
     {
         $generator = $this->generator;

@@ -42,11 +42,17 @@ class EntityPopulator
         return $this->class->getName();
     }
 
+    /**
+     * @param $columnFormatters
+     */
     public function setColumnFormatters($columnFormatters)
     {
         $this->columnFormatters = $columnFormatters;
     }
 
+    /**
+     * @return array
+     */
     public function getColumnFormatters()
     {
         return $this->columnFormatters;
@@ -57,21 +63,34 @@ class EntityPopulator
         $this->columnFormatters = array_merge($this->columnFormatters, $columnFormatters);
     }
 
+    /**
+     * @param array $modifiers
+     */
     public function setModifiers(array $modifiers)
     {
         $this->modifiers = $modifiers;
     }
 
+    /**
+     * @return array
+     */
     public function getModifiers()
     {
         return $this->modifiers;
     }
 
+    /**
+     * @param array $modifiers
+     */
     public function mergeModifiersWith(array $modifiers)
     {
         $this->modifiers = array_merge($this->modifiers, $modifiers);
     }
 
+    /**
+     * @param \Faker\Generator $generator
+     * @return array
+     */
     public function guessColumnFormatters(\Faker\Generator $generator)
     {
         $formatters = array();
@@ -139,6 +158,9 @@ class EntityPopulator
 
     /**
      * Insert one new record using the Entity class.
+     * @param ObjectManager $manager
+     * @param bool $generateId
+     * @return EntityPopulator
      */
     public function execute(ObjectManager $manager, $insertedEntities, $generateId = false)
     {
@@ -177,6 +199,10 @@ class EntityPopulator
         }
     }
 
+    /**
+     * @param EntityManagerInterface $manager
+     * @return int|null
+     */
     private function generateId($obj, $column, EntityManagerInterface $manager)
     {
         /* @var $repository \Doctrine\ORM\EntityRepository */

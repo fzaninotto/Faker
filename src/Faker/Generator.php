@@ -228,11 +228,18 @@ class Generator
         return $this->format($matches[1]);
     }
 
+    /**
+     * @param string $attribute
+     */
     public function __get($attribute)
     {
         return $this->format($attribute);
     }
 
+    /**
+     * @param string $method
+     * @param array $attributes
+     */
     public function __call($method, $attributes)
     {
         return $this->format($method, $attributes);

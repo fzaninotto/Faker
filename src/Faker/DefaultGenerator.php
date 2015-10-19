@@ -15,11 +15,18 @@ class DefaultGenerator
         $this->default = $default;
     }
 
+    /**
+     * @param string $attribute
+     */
     public function __get($attribute)
     {
         return $this->default;
     }
 
+    /**
+     * @param string $method
+     * @param array $attributes
+     */
     public function __call($method, $attributes)
     {
         return $this->default;

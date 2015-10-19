@@ -11,6 +11,9 @@ class ColumnTypeGuesser
         $this->generator = $generator;
     }
 
+    /**
+     * @return \Closure|null
+     */
     public function guessFormat($column, $table)
     {
         $generator = $this->generator;
