@@ -15,12 +15,64 @@ class Address extends \Faker\Provider\Address
 
     protected static $postcode = array('####');
 
+    /**
+     * @link https://de.wikipedia.org/wiki/Liste_der_St%C3%A4dte_in_der_Schweiz
+     */
     protected static $cityNames = array(
-         'Aarau', 'Aarberg', 'Aarburg', 'Adliswil', 'Aesch', 'Affoltern am Albis', 'Agno', 'Aigle', 'Allschwil', 'Altdorf', 'Altstätten', 'Amriswil', 'Appenzell', 'Arbon', 'Arth', 'Ascona', 'Aubonne', 'Avenches', 'Baar', 'Bad Zurzach', 'Baden', 'Basel', 'Bassersdorf', 'Bellinzona', 'Belp', 'Bern', 'Beromünster', 'Biasca', 'Biel/Bienne', 'Binningen', 'Birsfelden', 'Bischofszell', 'Boudry', 'Bourg-Saint-Pierre', 'Bremgarten', 'Brig-Glis', 'Brig', 'Brugg', 'Buchs', 'Bulle', 'Burgdorf', 'Bülach', 'Carouge', 'Cham', 'Chur', 'Châtel-Saint-Denis', 'Chêne-Bougeries', 'Conthey', 'Coppet', 'Cossonay', 'Croglio', 'Cudrefin', 'Cully', 'Davos', 'Delsberg', 'Diessenhofen', 'Dietikon', 'Dübendorf', 'Ebikon', 'Echallens', 'Ecublens', 'Eglisau', 'Einsiedeln', 'Elgg', 'Emmen', 'Erlach', 'Estavayer-le-Lac', 'Flawil', 'Frauenfeld', 'Freiburg', 'Freienbach', 'Fürstenau', 'Genf', 'Gland', 'Glarus', 'Gordola', 'Gossau', 'Grandcour', 'Grandson', 'Greifensee', 'Grenchen', 'Greyerz', 'Grüningen', 'Herisau', 'Hermance', 'Hinwil', 'Horgen', 'Horw', 'Huttwil', 'Ilanz', 'Illnau-Effretikon', 'Ittigen', 'Kaiserstuhl', 'Klingnau', 'Kloten', 'Kreuzlingen', 'Kriens', 'Köniz', 'Küsnacht', 'La Chaux-de-Fonds', 'La Neuveville', 'La Sarraz', 'La Tour-de-Peilz', 'La Tour-de-Trême', 'Lachen', 'Lancy', 'Langenthal', 'Laufen', 'Laufenburg', 'Laupen', 'Lausanne', 'Le Grand-Saconnex', 'Le Landeron', 'Le Locle', 'Lenzburg', 'Les Clées', 'Leuk', 'Lichtensteig', 'Liestal', 'Locarno', 'Losone', 'Lugano', 'Lutry', 'Luzern', 'Lyss', 'Maienfeld', 'Martigny', 'Meilen', 'Mellingen', 'Mendrisio', 'Meyrin', 'Monthey', 'Montreux', 'Morcote', 'Morges', 'Moudon', 'Moutier', 'Muri bei Bern', 'Murten', 'Muttenz', 'Männedorf', 'Möhlin', 'Münchenstein', 'Münsingen', 'Neuenburg', 'Neuhausen am Rheinfall', 'Neunkirch', 'Nidau', 'Nyon', 'Oberwil', 'Oftringen', 'Olten', 'Onex', 'Opfikon', 'Orbe', 'Orsières', 'Ostermundigen', 'Payerne', 'Pfäffikon', 'Plan-les-Ouates', 'Pratteln', 'Prilly', 'Pruntrut', 'Pully', 'Rapperswil-Jona', 'Regensberg', 'Regensdorf', 'Reinach', 'Renens', 'Rheinau', 'Rheineck', 'Rheinfelden', 'Richterswil', 'Riehen', 'Risch', 'Riva San Vitale', 'Rolle', 'Romainmôtier', 'Romanshorn', 'Romont', 'Rorschach', 'Rue', 'Rüti', 'Saillon', 'Saint-Maurice', 'Saint-Prex', 'Saint-Ursanne', 'Sala', 'Sargans', 'Sarnen', 'Schaffhausen', 'Schlieren', 'Schwyz', 'Sembrancher', 'Sempach', 'Siders', 'Sitten', 'Solothurn', 'Spiez', 'Splügen', 'Spreitenbach', 'St. Gallen', 'Stans', 'Steckborn', 'Steffisburg', 'Stein am Rhein', 'Stäfa', 'Sursee', 'Thalwil', 'Thun', 'Thusis', 'Thônex', 'Unterseen', 'Uster', 'Uznach', 'Uzwil', 'Val-de-Travers NE', 'Valangin', 'Vernier', 'Versoix', 'Vevey', 'Veyrier GE', 'Villars-sur-Glâne', 'Villeneuve', 'Visp', 'Volketswil', 'Waldenburg', 'Walenstadt', 'Wallisellen', 'Wangen an der Aare', 'Weinfelden', 'Werdenberg', 'Wettingen', 'Wetzikon', 'Wiedlisbach', 'Willisau', 'Wil', 'Winterthur', 'Wohlen', 'Worb', 'Wädenswil', 'Yverdon-les-Bains', 'Zofingen', 'Zollikon', 'Zug', 'Zürich'
+        'Aarau', 'Aarberg', 'Aarburg', 'Adliswil', 'Aesch', 'Affoltern am Albis', 'Agno', 'Aigle', 'Allschwil', 'Altdorf', 'Altstätten', 'Amriswil', 'Appenzell', 'Arbon', 'Arth', 'Ascona', 'Aubonne', 'Avenches',
+        'Baar', 'Bad Zurzach', 'Baden', 'Basel', 'Bassersdorf', 'Bellinzona', 'Belp', 'Bern', 'Beromünster', 'Biasca', 'Biel/Bienne', 'Binningen', 'Birsfelden', 'Bischofszell', 'Boudry', 'Bourg-Saint-Pierre', 'Bremgarten', 'Brig-Glis', 'Brig', 'Brugg', 'Buchs', 'Bulle', 'Burgdorf', 'Bülach',
+        'Carouge', 'Cham', 'Chur', 'Châtel-Saint-Denis', 'Chêne-Bougeries', 'Conthey', 'Coppet', 'Cossonay', 'Croglio', 'Cudrefin', 'Cully',
+        'Davos', 'Delsberg', 'Diessenhofen', 'Dietikon', 'Dübendorf',
+        'Ebikon', 'Echallens', 'Ecublens', 'Eglisau', 'Einsiedeln', 'Elgg', 'Emmen', 'Erlach', 'Estavayer-le-Lac',
+        'Flawil', 'Frauenfeld', 'Freiburg', 'Freienbach', 'Fürstenau',
+        'Genf', 'Gland', 'Glarus', 'Gordola', 'Gossau', 'Grandcour', 'Grandson', 'Greifensee', 'Grenchen', 'Greyerz', 'Grüningen',
+        'Herisau', 'Hermance', 'Hinwil', 'Horgen', 'Horw', 'Huttwil',
+        'Ilanz', 'Illnau-Effretikon', 'Ittigen',
+        'Kaiserstuhl', 'Klingnau', 'Kloten', 'Kreuzlingen', 'Kriens', 'Köniz', 'Küsnacht',
+        'La Chaux-de-Fonds', 'La Neuveville', 'La Sarraz', 'La Tour-de-Peilz', 'La Tour-de-Trême', 'Lachen', 'Lancy', 'Langenthal', 'Laufen', 'Laufenburg', 'Laupen', 'Lausanne', 'Le Grand-Saconnex', 'Le Landeron', 'Le Locle', 'Lenzburg', 'Les Clées', 'Leuk', 'Lichtensteig', 'Liestal', 'Locarno', 'Losone', 'Lugano', 'Lutry', 'Luzern', 'Lyss',
+        'Maienfeld', 'Martigny', 'Meilen', 'Mellingen', 'Mendrisio', 'Meyrin', 'Monthey', 'Montreux', 'Morcote', 'Morges', 'Moudon', 'Moutier', 'Muri bei Bern', 'Murten', 'Muttenz', 'Männedorf', 'Möhlin', 'Münchenstein', 'Münsingen',
+        'Neuenburg', 'Neuhausen am Rheinfall', 'Neunkirch', 'Nidau', 'Nyon',
+        'Oberwil', 'Oftringen', 'Olten', 'Onex', 'Opfikon', 'Orbe', 'Orsières', 'Ostermundigen', 'Payerne', 'Pfäffikon', 'Plan-les-Ouates', 'Pratteln', 'Prilly', 'Pruntrut', 'Pully',
+        'Rapperswil-Jona', 'Regensberg', 'Regensdorf', 'Reinach', 'Renens', 'Rheinau', 'Rheineck', 'Rheinfelden', 'Richterswil', 'Riehen', 'Risch', 'Riva San Vitale', 'Rolle', 'Romainmôtier', 'Romanshorn', 'Romont', 'Rorschach', 'Rue', 'Rüti',
+        'Saillon', 'Saint-Maurice', 'Saint-Prex', 'Saint-Ursanne', 'Sala', 'Sargans', 'Sarnen', 'Schaffhausen', 'Schlieren', 'Schwyz', 'Sembrancher', 'Sempach', 'Siders', 'Sitten', 'Solothurn', 'Spiez', 'Splügen', 'Spreitenbach', 'St. Gallen', 'Stans', 'Steckborn', 'Steffisburg', 'Stein am Rhein', 'Stäfa', 'Sursee',
+        'Thalwil', 'Thun', 'Thusis', 'Thônex',
+        'Unterseen', 'Uster', 'Uznach', 'Uzwil',
+        'Val-de-Travers NE', 'Valangin', 'Vernier', 'Versoix', 'Vevey', 'Veyrier GE', 'Villars-sur-Glâne', 'Villeneuve', 'Visp', 'Volketswil',
+        'Waldenburg', 'Walenstadt', 'Wallisellen', 'Wangen an der Aare', 'Weinfelden', 'Werdenberg', 'Wettingen', 'Wetzikon', 'Wiedlisbach', 'Willisau', 'Wil', 'Winterthur', 'Wohlen', 'Worb', 'Wädenswil',
+        'Yverdon-les-Bains',
+        'Zofingen', 'Zollikon', 'Zug', 'Zürich'
     );
 
+    /**
+     * @link https://de.wikipedia.org/wiki/Kanton_(Schweiz)
+     */
     protected static $canton = array(
-        array('short' => 'AG', 'name' => 'Aargau'), array('short' => 'AI', 'name' => 'Appenzell Innerrhoden'), array('short' => 'AR', 'name' => 'Appenzell Ausserrhoden'), array('short' => 'BE', 'name' => 'Bern'), array('short' => 'BL', 'name' => 'Basel-Landschaft'), array('short' => 'BS', 'name' => 'Basel-Stadt'), array('short' => 'FR', 'name' => 'Freiburg'), array('short' => 'GE', 'name' => 'Genf'), array('short' => 'GL', 'name' => 'Glarus'), array('short' => 'GR', 'name' => 'Graubünden'), array('short' => 'JU', 'name' => 'Jura',), array('short' => 'LU', 'name' => 'Luzern'), array('short' => 'NE', 'name' => 'Neuenburg'), array('short' => 'NW', 'name' => 'Nidwalden'), array('short' => 'OW', 'name' => 'Obwalden'), array('short' => 'SG', 'name' => 'St. Gallen'), array('short' => 'SH', 'name' => 'Schaffhausen'), array('short' => 'SO', 'name' => 'Solothurn'), array('short' => 'SZ', 'name' => 'Schwyz'), array('short' => 'TG', 'name' => 'Thurgau'), array('short' => 'TI', 'name' => 'Tessin'), array('short' => 'UR', 'name' => 'Uri'), array('short' => 'VD', 'name' => 'Waadt'), array('short' => 'VS', 'name' => 'Wallis'), array('short' => 'ZG', 'name' => 'Zug'), array('short' => 'ZH', 'name' => 'Zürich')
+        array('short' => 'AG', 'name' => 'Aargau'),
+        array('short' => 'AI', 'name' => 'Appenzell Innerrhoden'),
+        array('short' => 'AR', 'name' => 'Appenzell Ausserrhoden'),
+        array('short' => 'BE', 'name' => 'Bern'),
+        array('short' => 'BL', 'name' => 'Basel-Landschaft'),
+        array('short' => 'BS', 'name' => 'Basel-Stadt'),
+        array('short' => 'FR', 'name' => 'Freiburg'),
+        array('short' => 'GE', 'name' => 'Genf'),
+        array('short' => 'GL', 'name' => 'Glarus'),
+        array('short' => 'GR', 'name' => 'Graubünden'),
+        array('short' => 'JU', 'name' => 'Jura',),
+        array('short' => 'LU', 'name' => 'Luzern'),
+        array('short' => 'NE', 'name' => 'Neuenburg'),
+        array('short' => 'NW', 'name' => 'Nidwalden'),
+        array('short' => 'OW', 'name' => 'Obwalden'),
+        array('short' => 'SG', 'name' => 'St. Gallen'),
+        array('short' => 'SH', 'name' => 'Schaffhausen'),
+        array('short' => 'SO', 'name' => 'Solothurn'),
+        array('short' => 'SZ', 'name' => 'Schwyz'),
+        array('short' => 'TG', 'name' => 'Thurgau'),
+        array('short' => 'TI', 'name' => 'Tessin'),
+        array('short' => 'UR', 'name' => 'Uri'),
+        array('short' => 'VD', 'name' => 'Waadt'),
+        array('short' => 'VS', 'name' => 'Wallis'),
+        array('short' => 'ZG', 'name' => 'Zug'),
+        array('short' => 'ZH', 'name' => 'Zürich')
     );
 
     protected static $country = array(
@@ -66,16 +118,31 @@ class Address extends \Faker\Provider\Address
         "{{streetAddress}}\n{{postcode}} {{city}}",
     );
 
+    /**
+     * Returns a random city name.
+     * @example Luzern
+     * @return string
+     */
     public function cityName()
     {
         return static::randomElement(static::$cityNames);
     }
 
+    /**
+     * Returns a random street suffix.
+     * @example str.
+     * @return string
+     */
     public function streetSuffixShort()
     {
         return static::randomElement(static::$streetSuffixShort);
     }
 
+    /**
+     * Returns a random street suffix.
+     * @example Strasse
+     * @return string
+     */
     public function streetSuffixLong()
     {
         return static::randomElement(static::$streetSuffixLong);
@@ -83,7 +150,7 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Returns a canton
-     * @example array('BE' => 'Bern')
+     * @example array('short' => 'BE', 'name' => 'Bern')
      * @return array
      */
     public static function canton()

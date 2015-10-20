@@ -10,12 +10,65 @@ class Address extends \Faker\Provider\Address
 
     protected static $postcode = array('####');
 
+    /**
+     * @link https://it.wikipedia.org/wiki/Citt%C3%A0_svizzere
+     */
     protected static $cityNames = array(
-        'Aarau', 'Adliswil', 'Aesch', 'Affoltern am Albis', 'Allschwil', 'Altstätten', 'Amriswil', 'Arbon', 'Arth', 'Baar', 'Baden', 'Basilea', 'Bassersdorf', 'Bellinzona', 'Belp', 'Berna', 'Bienne', 'Binningen', 'Birsfelden', 'Briga-Glis', 'Brugg', 'Buchs', 'Bulle', 'Burgdorf', 'Bülach', 'Carouge', 'Cham', 'Chêne-Bougeries', 'Coira', 'Davos', 'Delémont', 'Dietikon', 'Dübendorf', 'Ebikon', 'Ecublens', 'Einsiedeln', 'Emmen', 'Frauenfeld', 'Freienbach', 'Friburgo', 'Ginevra', 'Gland', 'Gossau', 'Grenchen', 'Herisau', 'Hinwil', 'Horgen', 'Horw', 'Illnau-Effretikon', 'Ittigen', 'Kloten', 'Kreuzlingen', 'Kriens', 'Köniz', 'Küsnacht', 'Küssnacht', 'La Chaux-de-Fonds', 'La Tour-de-Peilz', 'Lancy', 'Langenthal', 'Le Grand-Saconnex', 'Le Locle', 'Liestal', 'Locarno', 'Losanna', 'Lucerna', 'Lugano', 'Lyss', 'Martigny', 'Meilen', 'Mendrisio', 'Meyrin', 'Monthey', 'Montreux', 'Morges', 'Muri bei Bern', 'Muttenz', 'Männedorf', 'Möhlin', 'Münchenstein', 'Münsingen', 'Neuchâtel', 'Neuhausen am Rheinfall', 'Nyon', 'Oberwil', 'Oftringen', 'Olten', 'Onex', 'Opfikon', 'Ostermundigen', 'Pfäffikon', 'Pratteln', 'Prilly', 'Pully', 'Rapperswil-Jona', 'Regensdorf', 'Reinach', 'Renens', 'Rheinfelden', 'Richterswil', 'Riehen', 'Rüti', 'San Gallo', 'Schlieren', 'Sciaffusa', 'Sierre', 'Sion', 'Soletta', 'Spiez', 'Spreitenbach', 'Steffisburg', 'Stäfa', 'Svitto', 'Thalwil', 'Thun', 'Thônex', 'Uster', 'Uzwil', 'Val-de-Travers', 'Vernier', 'Versoix', 'Vevey', 'Veyrier', 'Villars-sur-Glâne', 'Volketswil', 'Wallisellen', 'Weinfelden', 'Wettingen', 'Wetzikon', 'Wil', 'Winterthur', 'Wohlen', 'Worb', 'Wädenswil', 'Yverdon-les-Bains', 'Zofingen', 'Zollikon', 'Zugo', 'Zurigo'
+        'Aarau', 'Adliswil', 'Aesch', 'Affoltern am Albis', 'Allschwil', 'Altstätten', 'Amriswil', 'Arbon', 'Arth',
+        'Baar', 'Baden', 'Basilea', 'Bassersdorf', 'Bellinzona', 'Belp', 'Berna', 'Bienne', 'Binningen', 'Birsfelden', 'Briga-Glis', 'Brugg', 'Buchs', 'Bulle', 'Burgdorf', 'Bülach',
+        'Carouge', 'Cham', 'Chêne-Bougeries', 'Coira',
+        'Davos', 'Delémont', 'Dietikon', 'Dübendorf', 'Ebikon',
+        'Ecublens', 'Einsiedeln', 'Emmen',
+        'Frauenfeld', 'Freienbach', 'Friburgo',
+        'Ginevra', 'Gland', 'Gossau', 'Grenchen',
+        'Herisau', 'Hinwil', 'Horgen', 'Horw',
+        'Illnau-Effretikon', 'Ittigen',
+        'Kloten', 'Kreuzlingen', 'Kriens', 'Köniz', 'Küsnacht', 'Küssnacht',
+        'La Chaux-de-Fonds', 'La Tour-de-Peilz', 'Lancy', 'Langenthal', 'Le Grand-Saconnex', 'Le Locle', 'Liestal', 'Locarno', 'Losanna', 'Lucerna', 'Lugano', 'Lyss',
+        'Martigny', 'Meilen', 'Mendrisio', 'Meyrin', 'Monthey', 'Montreux', 'Morges', 'Muri bei Bern', 'Muttenz', 'Männedorf', 'Möhlin', 'Münchenstein', 'Münsingen',
+        'Neuchâtel', 'Neuhausen am Rheinfall', 'Nyon',
+        'Oberwil', 'Oftringen', 'Olten', 'Onex', 'Opfikon', 'Ostermundigen',
+        'Pfäffikon', 'Pratteln', 'Prilly', 'Pully',
+        'Rapperswil-Jona', 'Regensdorf', 'Reinach', 'Renens', 'Rheinfelden', 'Richterswil', 'Riehen', 'Rüti',
+        'San Gallo', 'Schlieren', 'Sciaffusa', 'Sierre', 'Sion', 'Soletta', 'Spiez', 'Spreitenbach', 'Steffisburg', 'Stäfa', 'Svitto',
+        'Thalwil', 'Thun', 'Thônex',
+        'Uster', 'Uzwil',
+        'Val-de-Travers', 'Vernier', 'Versoix', 'Vevey', 'Veyrier', 'Villars-sur-Glâne', 'Volketswil',
+        'Wallisellen', 'Weinfelden', 'Wettingen', 'Wetzikon', 'Wil', 'Winterthur', 'Wohlen', 'Worb', 'Wädenswil',
+        'Yverdon-les-Bains',
+        'Zofingen', 'Zollikon', 'Zugo', 'Zurigo'
     );
 
+    /**
+     * @link https://it.wikipedia.org/wiki/Cantoni_della_Svizzera
+     */
     protected static $canton = array(
-        array('short' => 'AG', 'name' => 'Argovia'), array('short' => 'AI', 'name' => 'Appenzello Interno'), array('short' => 'AR', 'name' => 'Appenzello Esterno'), array('short' => 'BE', 'name' => 'Berna'), array('short' => 'BL', 'name' => 'Basilea Campagna'), array('short' => 'BS', 'name' => 'Basilea Città'), array('short' => 'FR', 'name' => 'Friburgo'), array('short' => 'GE', 'name' => 'Ginevra'), array('short' => 'GL', 'name' => 'Glarona'), array('short' => 'GR', 'name' => 'Grigioni'), array('short' => 'JU', 'name' => 'Giura'), array('short' => 'LU', 'name' => 'Lucerna'), array('short' => 'NE', 'name' => 'Neuchâtel'), array('short' => 'NW', 'name' => 'Nidvaldo'), array('short' => 'OW', 'name' => 'Obvaldo'), array('short' => 'SG', 'name' => 'San Gallo'), array('short' => 'SH', 'name' => 'Sciaffusa'), array('short' => 'SO', 'name' => 'Soletta'), array('short' => 'SZ', 'name' => 'Svitto'), array('short' => 'TG', 'name' => 'Turgovia'), array('short' => 'TI', 'name' => 'Ticino'), array('short' => 'UR', 'name' => 'Uri'), array('short' => 'VD', 'name' => 'Vaud'), array('short' => 'VS', 'name' => 'Vallese'), array('short' => 'ZG', 'name' => 'Zugo'), array('short' => 'ZH', 'name' => 'Zurigo')
+        array('short' => 'AG', 'name' => 'Argovia'),
+        array('short' => 'AI', 'name' => 'Appenzello Interno'),
+        array('short' => 'AR', 'name' => 'Appenzello Esterno'),
+        array('short' => 'BE', 'name' => 'Berna'),
+        array('short' => 'BL', 'name' => 'Basilea Campagna'),
+        array('short' => 'BS', 'name' => 'Basilea Città'),
+        array('short' => 'FR', 'name' => 'Friburgo'),
+        array('short' => 'GE', 'name' => 'Ginevra'),
+        array('short' => 'GL', 'name' => 'Glarona'),
+        array('short' => 'GR', 'name' => 'Grigioni'),
+        array('short' => 'JU', 'name' => 'Giura'),
+        array('short' => 'LU', 'name' => 'Lucerna'),
+        array('short' => 'NE', 'name' => 'Neuchâtel'),
+        array('short' => 'NW', 'name' => 'Nidvaldo'),
+        array('short' => 'OW', 'name' => 'Obvaldo'),
+        array('short' => 'SG', 'name' => 'San Gallo'),
+        array('short' => 'SH', 'name' => 'Sciaffusa'),
+        array('short' => 'SO', 'name' => 'Soletta'),
+        array('short' => 'SZ', 'name' => 'Svitto'),
+        array('short' => 'TG', 'name' => 'Turgovia'),
+        array('short' => 'TI', 'name' => 'Ticino'),
+        array('short' => 'UR', 'name' => 'Uri'),
+        array('short' => 'VD', 'name' => 'Vaud'),
+        array('short' => 'VS', 'name' => 'Vallese'),
+        array('short' => 'ZG', 'name' => 'Zugo'),
+        array('short' => 'ZH', 'name' => 'Zurigo')
     );
 
     protected static $country = array(
@@ -62,6 +115,21 @@ class Address extends \Faker\Provider\Address
         "{{streetAddress}}\n{{postcode}} {{city}}",
     );
 
+    /**
+     * Returns a random street prefix
+     * @example Via
+     * @return string
+     */
+    public static function streetPrefix()
+    {
+        return static::randomElement(static::$streetPrefix);
+    }
+
+    /**
+     * Returns a random city name.
+     * @example Luzern
+     * @return string
+     */
     public function cityName()
     {
         return static::randomElement(static::$cityNames);
@@ -69,7 +137,7 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Returns a canton
-     * @example array('BE' => 'Bern')
+     * @example array('short' => 'BE', 'name' => 'Bern')
      * @return array
      */
     public static function canton()
