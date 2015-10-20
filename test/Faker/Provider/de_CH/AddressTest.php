@@ -4,6 +4,7 @@ namespace Faker\Test\Provider\de_CH;
 
 use Faker\Generator;
 use Faker\Provider\de_CH\Address;
+use Faker\Provider\de_CH\Person;
 
 class AddressTest extends \PHPUnit_Framework_TestCase
 {
@@ -17,6 +18,7 @@ class AddressTest extends \PHPUnit_Framework_TestCase
     {
         $faker = new Generator();
         $faker->addProvider(new Address($faker));
+        $faker->addProvider(new Person($faker));
         $this->faker = $faker;
     }
 
@@ -49,5 +51,13 @@ class AddressTest extends \PHPUnit_Framework_TestCase
         $cantonShort = $this->faker->cantonShort();
         $this->assertInternalType('string', $cantonShort);
         $this->assertEquals(2, strlen($cantonShort));
+    }
+
+    /**
+     * @test
+     */
+    public function address (){
+        $address = $this->faker->address();
+        $this->assertInternalType('string', $address);
     }
 }
