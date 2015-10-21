@@ -43,32 +43,32 @@ class Address extends \Faker\Provider\Address
      * @link https://it.wikipedia.org/wiki/Cantoni_della_Svizzera
      */
     protected static $canton = array(
-        array('short' => 'AG', 'name' => 'Argovia'),
-        array('short' => 'AI', 'name' => 'Appenzello Interno'),
-        array('short' => 'AR', 'name' => 'Appenzello Esterno'),
-        array('short' => 'BE', 'name' => 'Berna'),
-        array('short' => 'BL', 'name' => 'Basilea Campagna'),
-        array('short' => 'BS', 'name' => 'Basilea Città'),
-        array('short' => 'FR', 'name' => 'Friburgo'),
-        array('short' => 'GE', 'name' => 'Ginevra'),
-        array('short' => 'GL', 'name' => 'Glarona'),
-        array('short' => 'GR', 'name' => 'Grigioni'),
-        array('short' => 'JU', 'name' => 'Giura'),
-        array('short' => 'LU', 'name' => 'Lucerna'),
-        array('short' => 'NE', 'name' => 'Neuchâtel'),
-        array('short' => 'NW', 'name' => 'Nidvaldo'),
-        array('short' => 'OW', 'name' => 'Obvaldo'),
-        array('short' => 'SG', 'name' => 'San Gallo'),
-        array('short' => 'SH', 'name' => 'Sciaffusa'),
-        array('short' => 'SO', 'name' => 'Soletta'),
-        array('short' => 'SZ', 'name' => 'Svitto'),
-        array('short' => 'TG', 'name' => 'Turgovia'),
-        array('short' => 'TI', 'name' => 'Ticino'),
-        array('short' => 'UR', 'name' => 'Uri'),
-        array('short' => 'VD', 'name' => 'Vaud'),
-        array('short' => 'VS', 'name' => 'Vallese'),
-        array('short' => 'ZG', 'name' => 'Zugo'),
-        array('short' => 'ZH', 'name' => 'Zurigo')
+        array('AG' => 'Argovia'),
+        array('AI' => 'Appenzello Interno'),
+        array('AR' => 'Appenzello Esterno'),
+        array('BE' => 'Berna'),
+        array('BL' => 'Basilea Campagna'),
+        array('BS' => 'Basilea Città'),
+        array('FR' => 'Friburgo'),
+        array('GE' => 'Ginevra'),
+        array('GL' => 'Glarona'),
+        array('GR' => 'Grigioni'),
+        array('JU' => 'Giura'),
+        array('LU' => 'Lucerna'),
+        array('NE' => 'Neuchâtel'),
+        array('NW' => 'Nidvaldo'),
+        array('OW' => 'Obvaldo'),
+        array('SG' => 'San Gallo'),
+        array('SH' => 'Sciaffusa'),
+        array('SO' => 'Soletta'),
+        array('SZ' => 'Svitto'),
+        array('TG' => 'Turgovia'),
+        array('TI' => 'Ticino'),
+        array('UR' => 'Uri'),
+        array('VD' => 'Vaud'),
+        array('VS' => 'Vallese'),
+        array('ZG' => 'Zugo'),
+        array('ZH' => 'Zurigo')
     );
 
     protected static $country = array(
@@ -137,7 +137,7 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Returns a canton
-     * @example array('short' => 'BE', 'name' => 'Bern')
+     * @example array('BE' => 'Bern')
      * @return array
      */
     public static function canton()
@@ -152,7 +152,7 @@ class Address extends \Faker\Provider\Address
     public static function cantonShort()
     {
         $canton = static::canton();
-        return $canton['short'];
+        return key($canton);
     }
 
     /**
@@ -162,6 +162,6 @@ class Address extends \Faker\Provider\Address
     public static function cantonName()
     {
         $canton = static::canton();
-        return $canton['name'];
+        return current($canton);
     }
 }

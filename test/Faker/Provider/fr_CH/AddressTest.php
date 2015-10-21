@@ -29,8 +29,14 @@ class AddressTest extends \PHPUnit_Framework_TestCase
     {
         $canton = $this->faker->canton();
         $this->assertInternalType('array', $canton);
-        $this->assertArrayHasKey('short', $canton);;
-        $this->assertArrayHasKey('name', $canton);
+        $this->assertCount(1, $canton);
+
+        foreach ($canton as $cantonShort => $cantonName){
+            $this->assertInternalType('string', $cantonShort);
+            $this->assertEquals(2, strlen($cantonShort));
+            $this->assertInternalType('string', $cantonName);
+            $this->assertGreaterThan(2, strlen($cantonName));
+        }
     }
 
     /**

@@ -43,32 +43,32 @@ class Address extends \Faker\Provider\Address
      * @link https://fr.wikipedia.org/wiki/Canton_suisse
      */
     protected static $canton = array(
-        array('short' => 'AG', 'name' => 'Argovie'),
-        array('short' => 'AI', 'name' => 'Appenzell Rhodes-Intérieures'),
-        array('short' => 'AR', 'name' => 'Appenzell Rhodes-Extérieures'),
-        array('short' => 'BE', 'name' => 'Berne'),
-        array('short' => 'BL', 'name' => 'Bâle-Campagne'),
-        array('short' => 'BS', 'name' => 'Bâle-Ville'),
-        array('short' => 'FR', 'name' => 'Fribourg'),
-        array('short' => 'GE', 'name' => 'Genève'),
-        array('short' => 'GL', 'name' => 'Glaris'),
-        array('short' => 'GR', 'name' => 'Grisons'),
-        array('short' => 'JU', 'name' => 'Jura'),
-        array('short' => 'LU', 'name' => 'Lucerne'),
-        array('short' => 'NE', 'name' => 'Neuchâtel'),
-        array('short' => 'NW', 'name' => 'Nidwald'),
-        array('short' => 'OW', 'name' => 'Obwald'),
-        array('short' => 'SG', 'name' => 'Saint-Gall'),
-        array('short' => 'SH', 'name' => 'Schaffhouse'),
-        array('short' => 'SO', 'name' => 'Soleure'),
-        array('short' => 'SZ', 'name' => 'Schwytz'),
-        array('short' => 'TG', 'name' => 'Thurgovie'),
-        array('short' => 'TI', 'name' => 'Tessin'),
-        array('short' => 'UR', 'name' => 'Uri'),
-        array('short' => 'VD', 'name' => 'Vaud'),
-        array('short' => 'VS', 'name' => 'Valais'),
-        array('short' => 'ZG', 'name' => 'Zoug'),
-        array('short' => 'ZH', 'name' => 'Zurich')
+        array('AG' => 'Argovie'),
+        array('AI' => 'Appenzell Rhodes-Intérieures'),
+        array('AR' => 'Appenzell Rhodes-Extérieures'),
+        array('BE' => 'Berne'),
+        array('BL' => 'Bâle-Campagne'),
+        array('BS' => 'Bâle-Ville'),
+        array('FR' => 'Fribourg'),
+        array('GE' => 'Genève'),
+        array('GL' => 'Glaris'),
+        array('GR' => 'Grisons'),
+        array('JU' => 'Jura'),
+        array('LU' => 'Lucerne'),
+        array('NE' => 'Neuchâtel'),
+        array('NW' => 'Nidwald'),
+        array('OW' => 'Obwald'),
+        array('SG' => 'Saint-Gall'),
+        array('SH' => 'Schaffhouse'),
+        array('SO' => 'Soleure'),
+        array('SZ' => 'Schwytz'),
+        array('TG' => 'Thurgovie'),
+        array('TI' => 'Tessin'),
+        array('UR' => 'Uri'),
+        array('VD' => 'Vaud'),
+        array('VS' => 'Valais'),
+        array('ZG' => 'Zoug'),
+        array('ZH' => 'Zurich')
     );
 
     protected static $country = array(
@@ -117,7 +117,7 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Returns a canton
-     * @example array('short' => 'BE', 'name' => 'Bern')
+     * @example array('BE' => 'Bern')
      * @return array
      */
     public static function canton()
@@ -132,7 +132,7 @@ class Address extends \Faker\Provider\Address
     public static function cantonShort()
     {
         $canton = static::canton();
-        return $canton['short'];
+        return key($canton);
     }
 
     /**
@@ -142,6 +142,6 @@ class Address extends \Faker\Provider\Address
     public static function cantonName()
     {
         $canton = static::canton();
-        return $canton['name'];
+        return current($canton);
     }
 }
