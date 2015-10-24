@@ -5,13 +5,13 @@ namespace Faker\Provider\uk_UA;
 class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = array(
-        '{{firstNameMale}} {{middleName}} {{lastName}}',
-        '{{lastName}} {{firstNameMale}} {{middleName}}',
+        '{{firstNameMale}} {{middleNameMale}} {{lastName}}',
+        '{{lastName}} {{firstNameMale}} {{middleNameMale}}',
     );
 
     protected static $femaleNameFormats = array(
-        '{{lastName}} {{firstNameFemale}} {{middleName}}',
-        '{{firstNameFemale}} {{middleName}} {{lastName}}',
+        '{{lastName}} {{firstNameFemale}} {{middleNameFemale}}',
+        '{{firstNameFemale}} {{middleNameFemale}} {{lastName}}',
     );
 
     protected static $firstNameMale = array(
@@ -29,12 +29,17 @@ class Person extends \Faker\Provider\Person
         'Юлія', 'Ярослава'
     );
 
-    protected static $middleName = array(
+    protected static $middleNameMale = array(
         'Олександрович', 'Олексійович', 'Андрійович', 'Євгенович', 'Сергійович', 'Іванович',
         'Федорович', 'Тарасович', 'Васильович', 'Романович', 'Петрович', 'Миколайович',
         'Борисович', 'Йосипович', 'Михайлович', 'Валентинович', 'Янович', 'Анатолійович',
         'Євгенійович', 'Володимирович'
     );
+    
+    protected static $middleNameFemale = array(
+        'Олександрівна', 'Олексієвна', 'Андріївна', 'Дмитрівна', 'Євгенівна', 'Сергіївна', 'Іванівна', 
+        'Федорівна', 'Львівна', 'Романівна', 'Володимирівна', 'Борисівна', 'Максимівна',
+    );    
 
     protected static $lastName = array(
         'Антоненко', 'Василенко', 'Васильчук', 'Васильєв', 'Гнатюк', 'Дмитренко',
