@@ -112,6 +112,7 @@ class ProviderOverrideTest extends \PHPUnit_Framework_TestCase
         $faker = Faker\Factory::create($locale);
 
         $this->assertRegExp(static::TEST_STRING_REGEX, $faker->phoneNumber);
+        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->e164PhoneNumber);
     }
 
 
