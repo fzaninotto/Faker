@@ -46,15 +46,10 @@ class Lorem extends Base
 
     /**
      * @example 'Lorem'
-     * @param bool $fullDictionary
-     * @param int $numberOfWordsRequired
      * @return string
      */
-    public static function word($fullDictionary = false, $numberOfWordsRequired = 150)
+    public static function word()
     {
-        if($fullDictionary){
-            static::loadFullDictionary($numberOfWordsRequired);
-        }
         return static::randomElement(static::$wordList);
     }
 
@@ -62,17 +57,15 @@ class Lorem extends Base
      * Generate an array of random words
      *
      * @example array('Lorem', 'ipsum', 'dolor')
-     * @param  integer $nb how many words to return
-     * @param  bool $asText if true the sentences are returned as one string
-     * @param bool $fullDictionary
-     * @param int $numberOfWordsRequired
+     * @param  integer      $nb     how many words to return
+     * @param  bool         $asText if true the sentences are returned as one string
      * @return array|string
      */
-    public static function words($nb = 3, $asText = false, $fullDictionary = false, $numberOfWordsRequired = 150)
+    public static function words($nb = 3, $asText = false)
     {
         $words = array();
         for ($i=0; $i < $nb; $i++) {
-            $words []= static::word($fullDictionary, $numberOfWordsRequired);
+            $words []= static::word();
         }
 
         return $asText ? implode(' ', $words) : $words;
@@ -82,14 +75,12 @@ class Lorem extends Base
      * Generate a random sentence
      *
      * @example 'Lorem ipsum dolor sit amet.'
-     * @param integer $nbWords around how many words the sentence should contain
+     * @param integer $nbWords         around how many words the sentence should contain
      * @param boolean $variableNbWords set to false if you want exactly $nbWords returned,
      *                                  otherwise $nbWords may vary by +/-40% with a minimum of 1
-     * @param bool $fullDictionary
-     * @param int $numberOfWordsRequired
      * @return string
      */
-    public static function sentence($nbWords = 6, $variableNbWords = true, $fullDictionary = false, $numberOfWordsRequired = 150)
+    public static function sentence($nbWords = 6, $variableNbWords = true)
     {
         if ($nbWords <= 0) {
             return '';
@@ -98,7 +89,7 @@ class Lorem extends Base
             $nbWords = self::randomizeNbElements($nbWords);
         }
 
-        $words = static::words($nbWords, false, $fullDictionary, $numberOfWordsRequired);
+        $words = static::words($nbWords);
         $words[0] = ucwords($words[0]);
 
         return implode($words, ' ') . '.';
@@ -108,17 +99,15 @@ class Lorem extends Base
      * Generate an array of sentences
      *
      * @example array('Lorem ipsum dolor sit amet.', 'Consectetur adipisicing eli.')
-     * @param  integer $nb how many sentences to return
-     * @param  bool $asText if true the sentences are returned as one string
-     * @param bool $fullDictionary
-     * @param int $numberOfWordsRequired
+     * @param  integer      $nb     how many sentences to return
+     * @param  bool         $asText if true the sentences are returned as one string
      * @return array|string
      */
-    public static function sentences($nb = 3, $asText = false, $fullDictionary = false, $numberOfWordsRequired = 150)
+    public static function sentences($nb = 3, $asText = false)
     {
         $sentences = array();
         for ($i=0; $i < $nb; $i++) {
-            $sentences []= static::sentence(6, true, $fullDictionary, $numberOfWordsRequired);
+            $sentences []= static::sentence();
         }
 
         return $asText ? implode(' ', $sentences) : $sentences;
@@ -127,15 +116,13 @@ class Lorem extends Base
     /**
      * Generate a single paragraph
      *
-     * @example 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'
-     * @param integer $nbSentences around how many sentences the paragraph should contain
+      * @example 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'
+     * @param integer $nbSentences         around how many sentences the paragraph should contain
      * @param boolean $variableNbSentences set to false if you want exactly $nbSentences returned,
      *                                      otherwise $nbSentences may vary by +/-40% with a minimum of 1
-     * @param bool $fullDictionary
-     * @param int $numberOfWordsRequired
      * @return string
      */
-    public static function paragraph($nbSentences = 3, $variableNbSentences = true, $fullDictionary = false, $numberOfWordsRequired = 150)
+    public static function paragraph($nbSentences = 3, $variableNbSentences = true)
     {
         if ($nbSentences <= 0) {
             return '';
@@ -144,24 +131,22 @@ class Lorem extends Base
             $nbSentences = self::randomizeNbElements($nbSentences);
         }
 
-        return implode(static::sentences($nbSentences, false, $fullDictionary, $numberOfWordsRequired), ' ');
+        return implode(static::sentences($nbSentences), ' ');
     }
 
     /**
      * Generate an array of paragraphs
      *
      * @example array($paragraph1, $paragraph2, $paragraph3)
-     * @param  integer $nb how many paragraphs to return
-     * @param  bool $asText if true the paragraphs are returned as one string, separated by two newlines
-     * @param bool $fullDictionary
-     * @param int $numberOfWordsRequired
+     * @param  integer      $nb     how many paragraphs to return
+     * @param  bool         $asText if true the paragraphs are returned as one string, separated by two newlines
      * @return array|string
      */
-    public static function paragraphs($nb = 3, $asText = false, $fullDictionary = false, $numberOfWordsRequired = 150)
+    public static function paragraphs($nb = 3, $asText = false)
     {
         $paragraphs = array();
         for ($i=0; $i < $nb; $i++) {
-            $paragraphs []= static::paragraph(3, true, $fullDictionary, $numberOfWordsRequired);
+            $paragraphs []= static::paragraph();
         }
 
         return $asText ? implode("\n\n", $paragraphs) : $paragraphs;
@@ -226,47 +211,5 @@ class Lorem extends Base
     protected static function randomizeNbElements($nbElements)
     {
         return (int) ($nbElements * mt_rand(60, 140) / 100) + 1;
-    }
-
-    public static function loadFullDictionary($numberOfWordsRequired = 150){
-        static $loaded = false;
-
-        if($loaded === true){
-            return;
-        }
-
-        $numberOfWordsRequired = $numberOfWordsRequired * 2; // to cater for multiple loops to ensure uniqueness
-
-        if(count(static::$wordList) >= $numberOfWordsRequired){
-            return;
-        }
-
-        $file = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'Dictionary' . DIRECTORY_SEPARATOR . 'en';
-        if(!file_exists($file)){
-            $loaded = true;
-            return;
-        }
-
-        $fp = fopen($file, 'r');
-        while (($line = fgets($fp, 4096)) !== false) {
-            if(strpos($line, '%') !== false){
-                continue;
-            }
-
-            $word = trim($line);
-            if(!in_array($word, static::$wordList)) {
-                static::$wordList[] = $word;
-            }
-
-            if(count(static::$wordList) >= $numberOfWordsRequired){
-                fclose($fp);
-                $loaded = true;
-                return;
-            }
-        }
-        fclose($fp);
-        $loaded = true;
-
-        echo 'Dictionary loaded' . PHP_EOL;
     }
 }
