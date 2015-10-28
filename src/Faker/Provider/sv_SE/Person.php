@@ -106,7 +106,7 @@ class Person extends \Faker\Provider\Person
         'Nilsson', 'Norberg', 'Nordin', 'Nordström', 'Nyberg', 'Nyström',
         'Olofsson', 'Olsson',
         'Persson', 'Pettersson', 'Pålsson',
-        'Samuelsson', 'Sandberg', 'Sandström', 'Sjöberg', 'Sjögren', 'Ström', 'Strömberg', 'Sundberg', 'Sundqvist', 'Sundström', 'Svensson', 'Söderberg',
+        'Samuelsson', 'Sandberg', 'Sandström', 'Sjöberg', 'Sjögren', 'Sjösten', 'Ström', 'Strömberg', 'Sundberg', 'Sundqvist', 'Sundström', 'Svensson', 'Söderberg',
         'Viklund',
         'Wallin', 'Wikström',
         'Åberg', 'Åkesson', 'Åström',
