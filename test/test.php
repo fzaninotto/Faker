@@ -10,6 +10,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
 <?php for ($i=0; $i < 10; $i++): ?>
   <contact firstName="<?php echo $faker->firstName ?>" lastName="<?php echo $faker->lastName ?>" email="<?php echo $faker->email ?>" >
     <phone number="<?php echo $faker->phoneNumber ?>"/>
+    <phone number="<?php echo $faker->e164PhoneNumber ?>" format="E164"/>
 <?php if ($faker->boolean(25)): ?>
     <birth date="<?php echo $faker->dateTimeThisCentury->format('Y-m-d') ?>" place="<?php echo $faker->city ?>"/>
 <?php endif; ?>
