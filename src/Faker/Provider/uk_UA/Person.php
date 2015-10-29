@@ -5,13 +5,13 @@ namespace Faker\Provider\uk_UA;
 class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = array(
-        '{{firstNameMale}} {{middleName}} {{lastName}}',
-        '{{lastName}} {{firstNameMale}} {{middleName}}',
+        '{{firstNameMale}} {{middleNameMale}} {{lastName}}',
+        '{{lastName}} {{firstNameMale}} {{middleNameMale}}',
     );
 
     protected static $femaleNameFormats = array(
-        '{{lastName}} {{firstNameFemale}} {{middleName}}',
-        '{{firstNameFemale}} {{middleName}} {{lastName}}',
+        '{{lastName}} {{firstNameFemale}} {{middleNameFemale}}',
+        '{{firstNameFemale}} {{middleNameFemale}} {{lastName}}',
     );
 
     protected static $firstNameMale = array(
@@ -29,15 +29,22 @@ class Person extends \Faker\Provider\Person
         'Юлія', 'Ярослава'
     );
 
-    protected static $middleName = array(
+    protected static $middleNameMale = array(
         'Олександрович', 'Олексійович', 'Андрійович', 'Євгенович', 'Сергійович', 'Іванович',
         'Федорович', 'Тарасович', 'Васильович', 'Романович', 'Петрович', 'Миколайович',
         'Борисович', 'Йосипович', 'Михайлович', 'Валентинович', 'Янович', 'Анатолійович',
-        'Євгенійович', 'Володимирович'
+        'Володимирович'
+    );
+
+    protected static $middleNameFemale = array(
+        'Олександрівна', 'Олексіївна', 'Андріївна', 'Євгенівна', 'Сергіївна', 'Іванівна',
+        'Федорівна', 'Тарасівна', 'Василівна', 'Романівна', 'Петрівна', 'Миколаївна',
+        'Борисівна', 'Йосипівна', 'Михайлівна', 'Валентинівна', 'Янівна', 'Анатоліївна',
+        'Володимирівна'
     );
 
     protected static $lastName = array(
-        'Антоненко', 'Василенко', 'Васильчук', 'Васильєв', 'Гнатюк', 'Дмитренко',
+        'Антоненко', 'Василенко', 'Васильчук', 'Гнатюк', 'Дмитренко',
         'Захарчук', 'Іванченко', 'Микитюк', 'Павлюк', 'Панасюк', 'Петренко', 'Романченко',
         'Сергієнко', 'Середа', 'Таращук', 'Боднаренко', 'Броваренко', 'Броварчук', 'Кравченко',
         'Кравчук', 'Крамаренко', 'Крамарчук', 'Мельниченко', 'Мірошниченко', 'Шевченко', 'Шевчук',
@@ -45,13 +52,30 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
-     * Return middle name
+     * Return male middle name
+     *
      * @example 'Іванович'
+     *
      * @access public
+     *
      * @return string Middle name
      */
-    public function middleName()
+    public function middleNameMale()
     {
-        return static::randomElement(static::$middleName);
+        return static::randomElement(static::$middleNameMale);
+    }
+    
+    /**
+     * Return female middle name
+     *
+     * @example 'Іванівна'
+     *
+     * @access public
+     *
+     * @return string Middle name
+     */
+    public function middleNameFemale()
+    {
+        return static::randomElement(static::$middleNameFemale);
     }
 }
