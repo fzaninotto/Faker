@@ -834,6 +834,15 @@ echo $faker->siren; // 082 250 104
 echo $faker->siret; // 347 355 708 00224
 ```
 
+### `Faker\Provider\en_ZA\Company`
+
+```php
+<?php
+
+// Generates a random company registration number
+echo $faker->companyNumber; // 1999/789634/01
+```
+
 ### `Faker\Provider\fr_FR\Address`
 
 ```php
