@@ -18,7 +18,7 @@ class Person extends \Faker\Provider\Person
         '{{titleFemale}} {{$firstNameFemale}} {{lastName}}',
     );
 
-    protected static $firstNameMale =array(
+    protected static $firstNameMale = array(
         'Abraham', 'Adriaan', 'Adrian', 'Ahmed', 'Alan', 'Albert', 'Alex', 'Alexander', 'Alfred', 'Allan', 'Andile', 'Andre', 'Andrew',
         'André', 'Anthony', 'Anton', 'Arnold', 'Arthur', 'Ayanda', 'Barry', 'Ben', 'Benjamin', 'Bernard', 'Bongani', 'Bradley',
         'Brandon', 'Brent', 'Brett', 'Brian', 'Bruce', 'Bryan', 'Carel', 'Carl', 'Charl', 'Charles', 'Chris', 'Christiaan',
@@ -121,6 +121,6 @@ class Person extends \Faker\Provider\Person
         'Mulder', 'Enslin', 'Truter', 'Khuzwayo', 'Makhanya', 'Harmse', 'Loubser', 'Kleynhans', 'Paul', 'Nieuwoudt', 'Horn',
         'Vosloo', 'Wentzel', 'Munyai', 'Kelly', 'Walters', 'Nzimande', 'Hoosen', 'Mkhabela', 'Madlala', 'Saunders', 'Palmer',
         'Hughes', 'Hanekom', 'Ally', 'Schmidt', 'Butler', 'Mtsweni', 'Maphumulo', 'Manamela', 'Hoffman', 'Wolmarans', 'Duma',
-        'Pule', 'Hlophe', 'Miya', 'Moagi'
+        'Pule', 'Hlophe', 'Miya', 'Moagi',
     );
 }

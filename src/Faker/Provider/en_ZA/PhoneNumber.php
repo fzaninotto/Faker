@@ -12,6 +12,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '0##-###-####',
         '(0##)###-####',
         '0-800-###-####',
-        '### ####'
+        '### ####',
     );
 }
