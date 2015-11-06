@@ -25,4 +25,10 @@ class PhoneNumberTest extends \PHPUnit_Framework_TestCase
       $number = $this->faker->phoneNumber;
       $this->assertNotEmpty($number);
     }
+
+    public function testPhoneNumberFormat()
+    {
+      $number = $this->faker->phoneNumber;
+      $this->assertRegExp('/^(?:\+?61|0)[2-478](?:[ -]?[0-9]){8}$/', $number);
+    }
 }
