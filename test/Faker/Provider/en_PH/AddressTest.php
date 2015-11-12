@@ -4,7 +4,6 @@ namespace Faker\Test\Provider\en_PH;
 
 use Faker\Generator;
 use Faker\Provider\en_PH\Address;
-use Faker\Provider\en_PH\Person;
 
 class AddressTest extends \PHPUnit_Framework_TestCase
 {
