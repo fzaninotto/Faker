@@ -4,7 +4,7 @@ namespace Faker\Provider\es_ES;
 
 class Person extends \Faker\Provider\Person
 {
-    private static $letters=array('T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T');
+    private static $crcMap=array('T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T');
 
     protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastName}}',
@@ -75,7 +75,7 @@ class Person extends \Faker\Provider\Person
     {
         $number=static::numerify('########');
 
-        $letter=self::$letters[$number%23];
+        $letter=self::$crcMap[$number%23];
         return $number.$letter;
     }
 }
