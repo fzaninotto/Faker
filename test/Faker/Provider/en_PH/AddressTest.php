@@ -23,18 +23,21 @@ class AddressTest extends \PHPUnit_Framework_TestCase
     public function testProvince()
     {
       $province = $this->faker->province();
+      $this->assertNotEmpty($province);
       $this->assertInternalType('string', $province);
     }
 
     public function testCity()
     {
       $city = $this->faker->city();
+      $this->assertNotEmpty($city);
       $this->assertInternalType('string', $city);
     }
 
     public function testMunicipality()
     {
       $municipality = $this->faker->municipality();
+      $this->assertNotEmpty($municipality);
       $this->assertInternalType('string', $municipality);
     }
 
