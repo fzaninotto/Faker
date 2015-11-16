@@ -68,7 +68,7 @@ class Populator
      * @param array $customModifiers
      * @return $this
      */
-    public function addEntEntityPopulatority($entity, $number, $customColumnFormatters = [], $customModifiers = [])
+    public function addEntity($entity, $number, $customColumnFormatters = [], $customModifiers = [])
     {
         if (!$entity instanceof EntityPopulator) {
             $entity = new EntityPopulator($entity);
