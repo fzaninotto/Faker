@@ -9,7 +9,7 @@ abstract class Text extends Base
     protected static $separatorLen = 1;
     protected $explodedText;
     protected $consecutiveWords = array();
-    protected $textStartsWithUppercase = true;
+    protected static $textStartsWithUppercase = true;
 
     /**
      * Generate a text string by the Markov chain algorithm.
@@ -129,7 +129,7 @@ abstract class Text extends Base
     protected static function validStart($word)
     {
         $isValid = true;
-        if ($this->textStartsWithUppercase) {
+        if (self::$textStartsWithUppercase) {
             $isValid = preg_match('/^\p{Lu}/u', $word);
         }
         return $isValid;
