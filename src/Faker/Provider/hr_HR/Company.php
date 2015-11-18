@@ -15,13 +15,9 @@ class Company extends \Faker\Provider\Company
     );
 
     protected static $companyPrefix = array(
-        'Prijevoznički obrt', 'Informatički obrt', 'Autoškola', 'Market', 'Suvenirnica', 'Cvjećarnica',
-        'Mesnica', 'Voćarna', 'Kamenorezački obrt', 'Turistička agencija', 'Kladionice'
+        'Autoškola', 'Cvjećarnica', 'Informatički obrt', 'Kamenorezački obrt', 'Kladionice', 'Market', 'Mesnica', 'Prijevoznički obrt', 'Suvenirnica', 'Turistička agencija', 'Voćarna'
     );
 
-    /**
-     * @example 'Autoškola'
-     */
     public static function companyPrefix()
     {
         return static::randomElement(static::$companyPrefix);
