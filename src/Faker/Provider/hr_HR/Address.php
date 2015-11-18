@@ -27,6 +27,9 @@ class Address extends \Faker\Provider\Address
         '{{cityName}}',
     );
 
+    protected static $postcode = array('#####');
+
+
     /**
      * @link https://hr.wikipedia.org/wiki/Dodatak:Popis_gradova_u_Hrvatskoj
      */
@@ -56,20 +59,11 @@ class Address extends \Faker\Provider\Address
 
     public static function street()
     {
-        return static::randomElement(static::$street);
+        return static::randomElement(static::$streets);
     }
 
     public function cityName()
     {
         return static::randomElement(static::$cityNames);
-    }
-
-    /**
-     * Post codes in Croatia are integers ranging from 10000 to 53296
-     * @example 10000
-     */
-    public static function postcode()
-    {
-        return rand(10000, 53296);
     }
 }
