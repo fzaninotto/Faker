@@ -13,10 +13,6 @@ class Address extends \Faker\Provider\Address
 
     protected static $buildingNumber = array('###');
     protected static $postcode = array('0#####');
-    protected static $country = array(
-        'Қазақстан',
-        'Ресей',
-    );
 
     protected static $region = array(
         'Алматы',
@@ -87,11 +83,6 @@ class Address extends \Faker\Provider\Address
         $format = static::randomElement(static::$addressFormats);
 
         return $this->generator->parse($format);
-    }
-
-    public static function country()
-    {
-        return static::randomElement(static::$country);
     }
 
     public static function postcode()

@@ -20,9 +20,7 @@ class Address extends \Faker\Provider\Address
         'dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie','opolskie','podkarpackie',
         'podlaskie','pomorskie','śląskie','świętokrzyskie','warmińsko-mazurskie','wielkopolskie','zachodniopomorskie'
     );
-    protected static $country = array(
-        'Polska',
-    );
+
     /**
      * @var array 250 Polish cities with biggest number of streets. Extracted from data issued by the official public postal service of Poland. @link http://www.poczta-polska.pl/
      */
