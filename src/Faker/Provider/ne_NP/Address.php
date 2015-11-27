@@ -6,7 +6,7 @@ class Address extends \Faker\Provider\Address
 {
     protected static $wardNumber = array('##', '#');
     protected static $streetSuffix = array(
-        'bagh', 'bazaar', 'besi', 'chowk', 'gaun', 'kot', 'mandir', 'marg', 'nagar', 'sahar', 'sthan', 'tar'
+        'bagh', 'bazaar', 'besi', 'chowk', 'gaun', 'kot', 'mandir', 'marg', 'nagar', 'sahar', 'sthan', 'tar',
     );
 
     protected static $postcode = array('#####');
@@ -32,7 +32,7 @@ class Address extends \Faker\Provider\Address
         'Ramechhap', 'Rasuwa', 'Rautahat', 'Rolpa', 'Rukum', 'Rupandehi',
         'Salyan', 'Sankhuwasabha', 'Saptari', 'Sarlahi', 'Sindhuli', 'Sindhupalchok', 'Siraha', 'Solukhumbu', 'Sunsari', 'Surkhet', 'Syangja',
         'Tanahu', 'Taplejung', 'Terhathum',
-        'Udayapur'
+        'Udayapur',
     );
 
     /**
@@ -64,17 +64,17 @@ class Address extends \Faker\Provider\Address
 
     protected static $country = ['Nepal'];
     protected static $cityFormats = array(
-        '{{cityName}}'
+        '{{cityName}}',
     );
     protected static $streetNameFormats = array(
         '{{firstName}}{{streetSuffix}}',
-        '{{lastName}}{{streetSuffix}}'
+        '{{lastName}}{{streetSuffix}}',
     );
     protected static $streetAddressFormats = array(
         '{{streetName}}',
     );
     protected static $addressFormats = array(
-        "{{city}}-{{wardNumber}}, {{streetAddress}}, {{district}} {{postcode}}",
+        '{{city}}-{{wardNumber}}, {{streetAddress}}, {{district}} {{postcode}}',
     );
 
     /**
