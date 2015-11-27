@@ -13,6 +13,11 @@ class Address extends \Faker\Provider\Address
 
     protected static $buildingNumber = array('###');
     protected static $postcode = array('0#####');
+    // FIXME list all country names in the world
+    protected static $country = array(
+        'Қазақстан',
+        'Ресей',
+    );
 
     protected static $region = array(
         'Алматы',
