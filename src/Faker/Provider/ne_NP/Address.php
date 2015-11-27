@@ -62,7 +62,8 @@ class Address extends \Faker\Provider\Address
         'Yala', 'Yalbang', 'Yamphodin', 'Yrsa',
     );
 
-    protected static $country = ['Nepal'];
+    protected static $country = array('Nepal');
+
     protected static $cityFormats = array(
         '{{cityName}}',
     );
