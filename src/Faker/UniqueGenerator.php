@@ -37,9 +37,6 @@ class UniqueGenerator
      */
     public function __call($name, $arguments)
     {
-        if (!isset($this->uniques[$name])) {
-            $this->uniques[$name] = array();
-        }
         $i = 0;
         do {
             $i++;
@@ -48,9 +45,9 @@ class UniqueGenerator
             }
             $res = call_user_func_array(array($this->generator, $name), $arguments);
             $serialized = serialize($res);
-        } while (array_key_exists($serialized, $this->uniques[$name]));
+        } while (isset($this->uniques[$name][$serialized]));
 
-        $this->uniques[$name][$serialized]= null;
+        $this->uniques[$name][$serialized] = true;
 
         return $res;
     }
