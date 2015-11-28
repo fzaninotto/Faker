@@ -4,7 +4,7 @@ namespace Faker\Provider;
 
 class Miscellaneous extends Base
 {
-    protected static $languageCode = array('cn', 'de', 'en', 'es', 'fr', 'it', 'pt', 'ru');
+    protected static $languageCode = array('cn', 'de', 'en', 'es', 'fr', 'it', 'pt', 'ru','hi','mr');
 
     /**
      * @link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
