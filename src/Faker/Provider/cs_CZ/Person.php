@@ -2,8 +2,6 @@
 
 namespace Faker\Provider\cs_CZ;
 
-use Faker\Provider\Miscellaneous;
-
 class Person extends \Faker\Provider\Person
 {
     protected static $lastNameFormat = array(

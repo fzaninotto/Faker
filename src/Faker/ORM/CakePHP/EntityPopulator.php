@@ -3,7 +3,6 @@
 namespace Faker\ORM\CakePHP;
 
 use Cake\ORM\TableRegistry;
-use Faker\Guesser\Name as NameGuesser;
 
 class EntityPopulator
 {
