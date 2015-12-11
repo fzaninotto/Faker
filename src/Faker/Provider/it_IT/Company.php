@@ -69,6 +69,6 @@ class Company extends \Faker\Provider\Company
      */
     public static function vatId()
     {
-        return static::regexify('/^IT[0-9]{11}$/');
+        return static::numerify('IT###########');
     }
 }
