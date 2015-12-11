@@ -796,6 +796,16 @@ echo $faker->cpr; // "051280-2387"
 
 ```
 
+### `Faker\Provider\it_IT\Person`
+
+```php
+<?php
+
+// Generates a random Tax Id code (Codice fiscale) 
+echo $faker->taxId(); // "DIXDPZ44E08F367A"
+
+```
+
 ### `Faker\Provider\da_DK\Address`
 
 ```php
@@ -943,6 +953,14 @@ echo $faker->borough; // "강남구"
 
 ```
 
+### `Faker\Provider\it_IT\Company`
+
+```php
+<?php
+
+// Generates a random Vat Id
+echo $faker->vatId(); // "IT98746784967"
+```
 
 ### `Faker\Provider\lv_LV\Person`
 
