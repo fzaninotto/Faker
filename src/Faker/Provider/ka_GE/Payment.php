@@ -4,6 +4,40 @@ namespace Faker\Provider\ka_GE;
 
 class Payment extends \Faker\Provider\Payment
 {
+
+    /**
+     * @see list of Georgian banks (2015-12-26), source: https://www.nbg.gov.ge/index.php?m=403
+     */
+    protected static $banks = array(
+        'ბანკი რესპუბლიკა',
+        'თიბისი ბანკი',
+        'საქართველოს ბანკი',
+        'ლიბერთი ბანკი',
+        'ბაზისბანკი',
+        'ვითიბი ბანკი ჯორჯია',
+        'ბანკი ქართუ',
+        'პროკრედიტ ბანკი',
+        'სილქ როუდ ბანკი ',
+        'კაპიტალ ბანკი ',
+        'აზერბაიჯანის საერთაშორისო ბანკი - საქართველო ',
+        'ზირაათ ბანკის თბილისის ფილიალი ',
+        'კავკასიის განვითარების ბანკი - საქართველო',
+        'იშ ბანკი საქართველო',
+        'პროგრეს ბანკი',
+        'კორ სტანდარტ ბანკი',
+        'ხალიკ ბანკი საქართველო ',
+        'პაშა ბანკი საქართველო',
+        'ფინკა ბანკი საქართველო',
+    );
+
+    /**
+     * @example 'თიბისი ბანკი'
+     */
+    public static function bank()
+    {
+        return static::randomElement(static::$banks);
+    }
+
     /**
      * International Bank Account Number (IBAN)
      * @link http://en.wikipedia.org/wiki/International_Bank_Account_Number

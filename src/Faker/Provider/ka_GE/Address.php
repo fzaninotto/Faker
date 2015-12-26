@@ -9,12 +9,12 @@ class Address extends \Faker\Provider\Address
     protected static $regionSuffix = array('რაიონი');
     protected static $streetPrefix = array(
         'ჩიხი', 'ქ.', 'გამზირი', 'ქუჩა', 'გზატკეცილი', 'მოედანი', 'ბულვარი',
-        'აღმართი', 'ხეივანი'
+        'აღმართი', 'ხეივანი',
     );
 
     protected static $buildingNumber = array('##');
-    protected static $postcode = array('####');
-    protected static $country = array(
+    protected static $postcode       = array('####');
+    protected static $country        = array(
         'ავსტრალია', 'ავსტრია', 'ავღანეთი', 'აზერბაიჯანი', 'ალანდის კუნძულები', 'ალბანეთი',
         'ალჟირი', 'ამერიკის სამოა', 'ანგილია', 'ანგოლა', 'ანდორა', 'ანტარქტიდა', 'ანტიგუა და ბარბუდა',
         'არაბთა გაერთიანებული საამიროები', 'არგენტინა', 'არუბა', 'აღმოსავლეთი ტიმორი', 'აშშ',
@@ -59,7 +59,7 @@ class Address extends \Faker\Provider\Address
 
     protected static $region = array(
         'აფხაზეთი', 'აჭარა ', 'იმერეთი', 'სამეგრელო-ზემო სვანეთი', 'მცხეთა-მთიანეთი', 'სამცხე-ჯავახეთი ',
-        'შიდა ქართლი', 'კახეთი', 'რაჭა-ლეჩხუმი და ქვემო სვანეთი', 'გურია', 'ქვემო ქართლი'
+        'შიდა ქართლი', 'კახეთი', 'რაჭა-ლეჩხუმი და ქვემო სვანეთი', 'გურია', 'ქვემო ქართლი',
     );
 
     protected static $city = array(
@@ -83,30 +83,8 @@ class Address extends \Faker\Provider\Address
     );
 
     protected static $streetAddressFormats = array(
-        "{{street}} {{streetPrefix}}, {{buildingNumber}}"
+        "{{street}} {{streetPrefix}}, {{buildingNumber}}",
     );
-
-    public static function buildingNumber()
-    {
-        return static::numerify(static::randomElement(static::$buildingNumber));
-    }
-
-    public function address()
-    {
-        $format = static::randomElement(static::$addressFormats);
-
-        return $this->generator->parse($format);
-    }
-
-    public static function country()
-    {
-        return static::randomElement(static::$country);
-    }
-
-    public static function postcode()
-    {
-        return static::toUpper(static::bothify(static::randomElement(static::$postcode)));
-    }
 
     public static function regionSuffix()
     {
@@ -121,11 +99,6 @@ class Address extends \Faker\Provider\Address
     public static function cityPrefix()
     {
         return static::randomElement(static::$cityPrefix);
-    }
-
-    public function city()
-    {
-        return static::randomElement(static::$city);
     }
 
     public static function streetPrefix()
