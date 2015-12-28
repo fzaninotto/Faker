@@ -97,10 +97,3 @@ namespace Faker\Provider {
     const UUID = 'Uuid';
 
 }
-
-// global namespace
-namespace {
-
-    const NOT_FOUND = -1;
-
-}
