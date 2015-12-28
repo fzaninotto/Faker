@@ -202,6 +202,7 @@ class Generator
         if (isset($this->formatters[$formatter])) {
             return $this->formatters[$formatter];
         }
+
         foreach ($this->providers as $provider) {
             if (method_exists($provider, $formatter)) {
                 $this->formatters[$formatter] = array($provider, $formatter);
@@ -209,13 +210,14 @@ class Generator
                 return $this->formatters[$formatter];
             }
         }
+
         throw new \InvalidArgumentException(sprintf('Unknown formatter "%s"', $formatter));
     }
 
     /**
      * Replaces tokens ('{{ tokenName }}') with the result from the token method call
      *
-     * @param  string $string String that needs to bet parsed
+     * @param  string $string String that needs to be parsed
      * @return string
      */
     public function parse($string)

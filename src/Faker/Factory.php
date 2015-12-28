@@ -2,60 +2,53 @@
 
 namespace Faker;
 
+use Faker\Locale;
+
+require_once dirname(__FILE__).'/init.php';
+
 class Factory
 {
-    const DEFAULT_LOCALE = 'en_US';
-
-    protected static $defaultProviders = array('Address', 'Barcode', 'Biased', 'Color', 'Company', 'DateTime', 'File', 'Image', 'Internet', 'Lorem', 'Miscellaneous', 'Payment', 'Person', 'PhoneNumber', 'Text', 'UserAgent', 'Uuid');
+    private static $fallbackQualificationCascade;
+    private static $localeFactory;
+    private static $providerFactory;
 
     /**
-     * Create a new generator
-     * 
-     * @param string $locale
-     * @return Generator
+     * dependency injection method, called from init.php
+     * @param  Locale\Factory                      $localeFactory
+     * @param  Locale\ProviderQualificationCascade $fallbackQualificationCascade
+     * @param  Provider\Factory                    $providerFactory
+     * @access public
      */
-    public static function create($locale = self::DEFAULT_LOCALE)
+    public static function init(
+        Locale\Factory $localeFactory,
+        Locale\ProviderQualificationCascade $fallbackQualificationCascade,
+        Provider\Factory $providerFactory
+    ) {
+        self::$providerFactory = $providerFactory;
+        self::$fallbackQualificationCascade = $fallbackQualificationCascade;
+        self::$localeFactory = $localeFactory;
+    }
+
+    /**
+     * create a new Generator instance loaded with all default providers
+     * @param string $localeCode the locale code to use providers within the returned Generator instance
+     * @return Generator Generator instance loaded with all default providers
+     */
+    public static function create($localeCode = Locale\DEFAULT_LOCALE)
     {
         $generator = new Generator();
-        foreach (static::$defaultProviders as $provider) {
-            $providerClassName = self::getProviderClassname($provider, $locale);
-            $generator->addProvider(new $providerClassName($generator));
+        $preferredLocale = self::$localeFactory->create($localeCode);
+
+        $providerInstances =
+            self::$providerFactory->createDefaultProvidersForGenerator(
+                $generator,
+                self::$fallbackQualificationCascade->forPreferredLocale($preferredLocale)
+            );
+
+        foreach ($providerInstances as $providerInstance) {
+            $generator->addProvider($providerInstance);
         }
 
         return $generator;
-    }
-
-    /**
-     * @param string $provider
-     * @param string $locale
-     * @return string
-     */
-    protected static function getProviderClassname($provider, $locale = '')
-    {
-        if ($providerClass = self::findProviderClassname($provider, $locale)) {
-            return $providerClass;
-        }
-        // fallback to default locale
-        if ($providerClass = self::findProviderClassname($provider, static::DEFAULT_LOCALE)) {
-            return $providerClass;
-        }
-        // fallback to no locale
-        if ($providerClass = self::findProviderClassname($provider)) {
-            return $providerClass;
-        }
-        throw new \InvalidArgumentException(sprintf('Unable to find provider "%s" with locale "%s"', $provider, $locale));
-    }
-
-    /**
-     * @param string $provider
-     * @param string $locale
-     * @return string
-     */
-    protected static function findProviderClassname($provider, $locale = '')
-    {
-        $providerClass = 'Faker\\' . ($locale ? sprintf('Provider\%s\%s', $locale, $provider) : sprintf('Provider\%s', $provider));
-        if (class_exists($providerClass, true)) {
-            return $providerClass;
-        }
     }
 }
