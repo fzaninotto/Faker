@@ -43,7 +43,7 @@ class Geo extends \Faker\Provider\Base
      */
     public static function geoPoint()
     {
-        return [static::longitude(), static::latitude()];
+        return array(static::longitude(), static::latitude());
     }
 
     /**
