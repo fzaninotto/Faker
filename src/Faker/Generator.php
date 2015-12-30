@@ -21,8 +21,6 @@ namespace Faker;
  * @property string $postcode
  * @property string $address
  * @property string $country
- * @property float  $latitude
- * @property float  $longitude
  *
  * @property string $ean13
  * @property string $ean8
@@ -164,6 +162,12 @@ namespace Faker;
  * @property string $rgbCssColor
  * @property string $safeColorName
  * @property string $colorName
+ *
+ * Geo Provider:
+ * @property float longitude
+ * @property float latitude
+ * @property array geoPoint
+ * @property string sqlGeoPoint
  */
 class Generator
 {
