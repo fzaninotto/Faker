@@ -284,6 +284,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     countryCode   // UK
     languageCode  // en
     currencyCode  // EUR
+    imei          // 301935954802131
 
 ### `Faker\Provider\Biased`
 
