@@ -2,6 +2,7 @@
 
 namespace Faker\Test\Provider;
 
+use Faker\Calculator\Luhn;
 use Faker\Provider\Miscellaneous;
 
 class MiscellaneousTest extends \PHPUnit_Framework_TestCase
@@ -51,4 +52,12 @@ class MiscellaneousTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertRegExp('/^[A-Z]{3}$/', Miscellaneous::currencyCode());
     }
+
+    public function testImei()
+    {
+        $imei = Miscellaneous::imei();
+        $this->assertRegExp('/^[0-9]{14,16}$/', $imei);
+        $this->assertTrue(Luhn::isValid($imei));
+    }
+
 }

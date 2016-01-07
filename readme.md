@@ -31,7 +31,7 @@ Faker requires PHP >= 5.3.3.
 	- [Barcode](#fakerproviderbarcode)
 	- [Miscellaneous](#fakerprovidermiscellaneous)
 	- [Biased](#fakerproviderbiased)
-- [Unique and Optional modifiers](#unique-and-optional-modifiers)
+- [Modifiers](#modifiers)
 - [Localization](#localization)
 - [Populating Entities Using an ORM or an ODM](#populating-entities-using-an-orm-or-an-odm)
 - [Seeding the Generator](#seeding-the-generator)
@@ -284,6 +284,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     countryCode   // UK
     languageCode  // en
     currencyCode  // EUR
+    imei          // 301935954802131
 
 ### `Faker\Provider\Biased`
 
@@ -291,9 +292,9 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     // with more chances to be close to 20
     biasedNumberBetween($min = 10, $max = 20, $function = 'sqrt')
 
-## Unique and Optional modifiers
+## Modifiers
 
-Faker provides two special providers, `unique()` and `optional()`, to be called before any provider. `optional()` can be useful for seeding non-required fields, like a mobile telephone number; `unique()` is required to populate fields that cannot accept twice the same value, like primary identifiers.
+Faker provides four special providers, `unique()`, `optional()`, `multi()` and `order()`, to be called before any provider. `optional()` can be useful for seeding non-required fields, like a mobile telephone number. `unique()` is required to populate fields that cannot accept twice the same value, like primary identifiers. `multi` allows generating multiple values with single call and return the values as array. `order` works the same way with `multi` modifier but it also allows ordering the return values.
 
 ```php
 // unique() forces providers to return unique values
@@ -335,6 +336,14 @@ $faker->optional($weight = 0.9)->randomDigit; // 10% chance of NULL
 // Defaults to NULL.
 $faker->optional($weight = 0.5, $default = false)->randomDigit; // 50% chance of FALSE
 $faker->optional($weight = 0.9, $default = 'abc')->word; // 10% chance of 'abc'
+
+// multi() allows generating multiple values with single call and returning them as array
+$faker->multi($count = 5)->randomDigit; // [2, 7, 3, 5, 7]
+
+// order() allows generating multiple values with single call and ordering them either ascending or descenging
+$faker->order($count = 5, $order = 'asc')->randomDigit; [2, 3, 5, 7, 7]
+$faker->order($count = 5, $order = 'desc')->randomDigit; [7, 7, 5, 3, 2]
+
 ```
 
 ## Localization

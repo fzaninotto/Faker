@@ -255,4 +255,38 @@ class Miscellaneous extends Base
     {
         return static::randomElement(static::$currencyCode);
     }
+
+    /**
+     * @example '301935954802131'
+     */
+    public static function imei()
+    {
+        $code = Base::numerify(str_repeat('#', 14));
+
+        $position = 0;
+        $total = 0;
+        while ($position < 14) {
+            if ($position % 2 == 0) {
+                $prod = 1;
+            } else {
+                $prod = 2;
+            }
+            $actualNum = $prod * $code[$position];
+            if ($actualNum > 9) {
+                $strNum = strval($actualNum);
+                $total += $strNum[0] + $strNum[1];
+            } else {
+                $total += $actualNum;
+            }
+            $position++;
+        }
+
+        $last = 10 - ($total % 10);
+        if ($last == 10) {
+            $imei = $code . 0;
+        } else {
+            $imei = $code . $last;
+        }
+        return $imei;
+    }
 }
