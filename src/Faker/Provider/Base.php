@@ -5,6 +5,8 @@ namespace Faker\Provider;
 use Faker\Generator;
 use Faker\DefaultGenerator;
 use Faker\UniqueGenerator;
+use Faker\MultiGenerator;
+use Faker\OrderGenerator;
 
 class Base
 {
@@ -550,5 +552,39 @@ class Base
         }
 
         return $this->unique;
+    }
+
+    /**
+     * Allows generating multiple values
+     *
+     * <code>
+     * $faker->multi($num = 5)->randomElement(array(1, 2, 3));
+     * </code>
+     *
+     * @param integer $count Number of entities to generate
+     *
+     * @return MultiGenerator A proxy class returning multiple values
+     */
+    public function multi($count = 5)
+    {
+        return new MultiGenerator($this->generator, $count);
+    }
+
+    /**
+     * Allows generating multiple values and ordering them
+     *
+     * <code>
+     * $faker->order($num = 5)->randomElement(array(1, 2, 3));
+     * </code>
+     *
+     * @param integer $count Number of entities to generate
+     * @param string  $order String for ordering the results. Must be either 'asc' or 'desc'
+     * @throws \InvalidArgumentException If wrong type of order given
+     *
+     * @return OrderGenerator A proxy class returning multiple values in specific order
+     */
+    public function order($count = 5, $order = OrderGenerator::ORDER_ASC)
+    {
+        return new OrderGenerator($this->generator, $count, $order);
     }
 }

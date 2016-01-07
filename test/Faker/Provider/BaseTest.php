@@ -472,6 +472,42 @@ class BaseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testOrderGeneratorInvalidOrder()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $faker->order(5, 'invalid')->randomDigit;
+    }
+
+    public function testOrderGeneratorNumberOrderAsc()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $items = 10;
+        $values = $faker->order($items, 'asc')->randomDigit;
+        $this->assertTrue(is_array($values));
+        $this->assertCount($items, $values);
+        for ($i = 1; $i < $items; $i++) {
+            $this->assertGreaterThanOrEqual($values[$i - 1], $values[$i]);
+        }
+    }
+
+    public function testOrderGeneratorNumberOrderDesc()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $items = 12;
+        $values = $faker->order($items, 'desc')->randomDigit;
+        $this->assertTrue(is_array($values));
+        $this->assertCount($items, $values);
+        for ($i = 1; $i < $items; $i++) {
+            $this->assertLessThanOrEqual($values[$i - 1], $values[$i]);
+        }
+    }
+
+    /**
      * @expectedException LengthException
      * @expectedExceptionMessage Cannot get 2 elements, only 1 in array
      */
