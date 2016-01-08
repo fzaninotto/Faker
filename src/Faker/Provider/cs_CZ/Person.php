@@ -434,7 +434,7 @@ class Person extends \Faker\Provider\Person
 
     public function birthNumber($gender = null, $minAge = 0, $maxAge = 100, $slashProbability = 50)
     {
-        if ($gender == null) {
+        if ($gender === null) {
             $gender = $this->generator->boolean() ? static::GENDER_MALE : static::GENDER_FEMALE;
         }
 
