@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <phpunit
-    bootstrap="vendor/autoload.php"
+    bootstrap="testing_bootstrap.php"
     colors="true"
 >
+
+    <filter>
+      <whitelist processUncoveredFilesFromWhitelist="true">
+        <directory suffix=".php">./src/Faker/</directory>
+        <!-- <file>/path/to/file</file>
+        <exclude>
+          <directory suffix=".php">/path/to/files</directory>
+          <file>/path/to/file</file>
+        </exclude> -->
+      </whitelist>
+    </filter>
+
     <testsuites>
         <testsuite name="Faker Test Suite">
             <directory>./test/Faker/</directory>
