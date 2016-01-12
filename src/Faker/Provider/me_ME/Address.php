@@ -109,25 +109,11 @@ class Address extends \Faker\Provider\Address
         return static::randomElement(static::$cityNames);
     }
 
-    /**
-     * @example '77.147489'
-     * @param float|int $min
-     * @param float|int $max
-     * @return float Uses signed degrees format (returns a float number between -90 and 90)
-     */
-    public static function latitude($min = 42.43, $max = 42.45)
+    public static function localCoordinates()
     {
-        return static::randomFloat(6, $min, $max);
-    }
-
-    /**
-     * @example '86.211205'
-     * @param float|int $min
-     * @param float|int $max
-     * @return float Uses signed degrees format (returns a float number between -180 and 180)
-     */
-    public static function longitude($min = 19.16, $max = 19.27)
-    {
-        return static::randomFloat(6, $min, $max);
+        return array(
+            'latitude' => static::latitude(42.43, 42.45),
+            'longitude' => static::longitude(19.16, 19.27)
+        );
     }
 }

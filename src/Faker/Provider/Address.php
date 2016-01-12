@@ -124,4 +124,16 @@ class Address extends \Faker\Provider\Base
     {
         return static::randomFloat(6, $min, $max);
     }
+
+    /**
+     * @example array('77.147489', '86.211205')
+     * @return array | latitude, longitude
+     */
+    public static function localCoordinates()
+    {
+        return array(
+            'latitude' => static::latitude(),
+            'longitude' => static::longitude()
+        );
+    }
 }
