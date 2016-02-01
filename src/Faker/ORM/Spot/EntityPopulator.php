@@ -123,7 +123,7 @@ class EntityPopulator
         $columnTypeGuesser = new ColumnTypeGuesser($generator);
         $fields = $this->mapper->fields();
         foreach ($fields as $fieldName => $field) {
-            if ($field['primary'] == true) {
+            if ($field['primary'] === true) {
                 continue;
             }
             if ($formatter = $nameGuesser->guessFormat($fieldName)) {
