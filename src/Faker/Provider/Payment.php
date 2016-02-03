@@ -54,7 +54,7 @@ class Payment extends Base
     );
 
     /**
-     * @var array list of IBAN formats, source: @link http://www.swift.com/dsp/resources/documents/IBAN_Registry.txt
+     * @var array list of IBAN formats, source: @link https://www.swift.com/file/5996/download?token=drIlKLW-
      */
     protected static $ibanFormats = array(
         'AD' => array(array('n', 4),    array('n', 4),  array('c', 12)),
