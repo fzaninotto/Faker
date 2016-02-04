@@ -38,20 +38,20 @@ class ColumnTypeGuesser
                     return $generator->randomNumber($size + 2) / 100;
                 };
             case 'smallint':
-                return function () {
-                    return mt_rand(0, 65535);
+                return function () use ($generator) {
+                    return $generator->numberBetween(0, 65535);
                 };
             case 'integer':
-                return function () {
-                    return mt_rand(0, intval('2147483647'));
+                return function () use ($generator) {
+                    return $generator->numberBetween(0, intval('2147483647'));
                 };
             case 'bigint':
-                return function () {
-                    return mt_rand(0, intval('18446744073709551615'));
+                return function () use ($generator) {
+                    return $generator->numberBetween(0, intval('18446744073709551615'));
                 };
             case 'float':
-                return function () {
-                    return mt_rand(0, intval('4294967295'))/mt_rand(1, intval('4294967295'));
+                return function () use ($generator) {
+                    return $generator->randomFloat(null, 0, intval('4294967295'));
                 };
             case 'string':
                 $size = isset($field['length']) ? $field['length'] : 255;
