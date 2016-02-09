@@ -198,6 +198,8 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
+     * @deprecated Deprecated since version 1.6.0, please use \Faker\Provider\Payment::vat() instead
+     *
      * Taxpayer Identification Number (NIP in Polish)
      * @link http://en.wikipedia.org/wiki/PESEL#Other_identifiers
      * @link http://pl.wikipedia.org/wiki/NIP
@@ -205,22 +207,6 @@ class Person extends \Faker\Provider\Person
      */
     public static function taxpayerIdentificationNumber()
     {
-        $weights = array(6, 5, 7, 2, 3, 4, 5, 6, 7);
-        $result = array();
-        do {
-            $result = array(
-                static::randomDigitNotNull(), static::randomDigitNotNull(), static::randomDigitNotNull(),
-                static::randomDigit(), static::randomDigit(), static::randomDigit(),
-                static::randomDigit(), static::randomDigit(), static::randomDigit(),
-            );
-            $checksum = 0;
-            for ($i = 0, $size = count($result); $i < $size; $i++) {
-                $checksum += $weights[$i] * $result[$i];
-            }
-            $checksum %= 11;
-        } while ($checksum == 10);
-        $result[] = $checksum;
-
-        return implode('', $result);
+        return \Faker\Provider\Payment::vat('PL', false);
     }
 }

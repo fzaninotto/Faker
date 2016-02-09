@@ -20,24 +20,21 @@ class Payment extends \Faker\Provider\Payment
     /**
      * Value Added Tax (VAT)
      *
+     * (this method is kept for backwards compatibility purpose only, until 1.6.0)
+     * @deprecated Deprecated since 1.6.0, please use \Faker\Provider\Payment::vat() instead
+     *
      * @example 'BG1234567890', ('spaced') 'BG 1234567890'
      *
      * @see http://ec.europa.eu/taxation_customs/vies/faq.html?locale=en#item_11
      * @see http://en.wikipedia.org/wiki/VAT_identification_number
      *
-     * @param bool $spacedNationalPrefix
+     * @param string $country country code (ex: 'BE')
+     * @param bool   $addPrefix
      *
      * @return string VAT Number
      */
-    public static function vat($spacedNationalPrefix = true)
+    public static function vat($country = 'BG', $addPrefix = true)
     {
-        $prefix = ($spacedNationalPrefix) ? "BG " : "BG";
-
-        return sprintf(
-            "%s%d%d",
-            $prefix,
-            self::randomNumber(5, true), // workaround for mt_getrandmax() limitation
-            self::randomNumber(self::randomElement(array(4, 5)), true)
-        );
+        return parent::vat($country, $addPrefix);
     }
 }

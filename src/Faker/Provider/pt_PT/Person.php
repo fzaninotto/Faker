@@ -30,25 +30,10 @@ class Person extends \Faker\Provider\Person
     protected static $titleMale = array('Sr.', 'Dr.', 'Exmo.', 'Eng.', 'Eng.º', 'Ex.', 'Exº');
     protected static $titleFemale = array('Sra.', 'Dra.', 'Exma', 'Eng.ª', 'Exª');
 
-    protected static $firstEightDigitsFormat = array(
-      '1#######',
-      '2#######',
-      '3#######',
-      '45######',
-      '5#######',
-      '6#######',
-      '70######',
-      '71######',
-      '72######',
-      '77######',
-      '79######',
-      '8#######' ,
-      '90######',
-      '98######',
-      '99######'
-    );
 
     /**
+     * @deprecated Deprecated since version 1.6.0, please use \Faker\Provider\Payment::vat() instead
+     *
      * Taxpayer Identification Number (NIF in Portugal)
      *
      * @link http://pt.wikipedia.org/wiki/N%C3%BAmero_de_identifica%C3%A7%C3%A3o_fiscal
@@ -57,45 +42,7 @@ class Person extends \Faker\Provider\Person
      */
     public static function taxpayerIdentificationNumber()
     {
-        $firstEightDigits = static::numerify(static::randomElement(static::$firstEightDigitsFormat));
-        $lastDigit = static::dvCalcMod11($firstEightDigits);
-
-        return $firstEightDigits.$lastDigit;
-    }
-
-    /**
-     * Generate module
-     *
-     * @link http://pt.wikipedia.org/wiki/D%C3%ADgito_verificador
-     *
-     * @param string $number number
-     *
-     * @return int
-     */
-    public static function dvCalcMod11($number)
-    {
-        $base = 9;
-        $sum = 0;
-        $factor = 2;
-
-        for ($i = strlen($number); $i > 0; $i--) {
-            $numbers[$i] = substr($number, $i - 1, 1);
-            $partial[$i] = $numbers[$i] * $factor;
-            $sum += $partial[$i];
-            if ($factor == $base) {
-                $factor = 1;
-            }
-            $factor++;
-        }
-        $res = $sum % 11;
-
-        if ($res == 0 || $res == 1) {
-            $digit = 0;
-        } else {
-            $digit = 11 - $res;
-        }
-
-        return $digit;
+        return \Faker\Provider\Payment::vat('PT', false);
     }
 
     /**

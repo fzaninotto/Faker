@@ -4,6 +4,7 @@ namespace Faker\Provider;
 
 use Faker\Calculator\Iban;
 use Faker\Calculator\Luhn;
+use Faker\Calculator\Vat;
 
 class Payment extends Base
 {
@@ -118,6 +119,177 @@ class Payment extends Base
         'TN' => array(array('n', 2),    array('n', 3),  array('n', 13), array('n', 2)),
         'TR' => array(array('n', 5),    array('n', 1),  array('c', 16)),
         'VG' => array(array('a', 4),    array('n', 16)),
+    );
+
+    /**
+     * A list of format patterns indexed by country code.
+     * Each format is an array of:
+     * * a format string, passed to static::bothify()
+     * * an atom, which is an array with two elements:
+     *      * a 'c', 'n' or 'a' character that stands for random alfanumeric, digit or letter
+     *        or an array of other atoms
+     *      * number of repeated characters or an array of such numbers
+     *
+     * @var array
+     * @link http://ec.europa.eu/taxation_customs/vies/faq.html?locale=lt#item_11
+     * @link http://www.iecomputersystems.com/ordering/eu_vat_numbers.htm
+     * @link http://en.wikipedia.org/wiki/VAT_identification_number
+     * @link https://github.com/ronanguilloux/IsoCodes/blob/master/src/IsoCodes/Vat.php
+     * @link http://www.braemoor.co.uk/software/_private/jsvatx.js
+     */
+    public static $vatFormats = array(
+        'AL' => array( // no checksum / unknown
+            'K########L',
+            'J########L',
+        ),
+        'AR' => '###########', // no checksum / unknown
+        'AT' => 'U#######', // 1 digit checksum suffix
+        'AU' => '11#########', // 2 digit checksum prefix, not implemented
+        'BE' => array( // 2 digit checksum suffix
+            '0#######',
+            '#######',
+        ),
+        'BG' => array( // 1 digit checksum suffix, not implemented
+            '########',
+            '#########',
+        ),
+        'BY' => '#########', // no checksum / unknown
+        'CL' => '########-#', // no checksum / unknown
+        'CO' => '##########', // 1 digit checksum suffix, not implemented
+        'CH' => '########', // 1 or 0 digit checksum suffix, other suffixes as an exception
+        'CY' => array( // 1 character checksum suffix
+            '0#######',
+            '1#######',
+            '2#######',
+            '3#######',
+            '4#######',
+            '5#######',
+            '9#######',
+        ),
+        'CZ' => '#######', // 1 checksum digit suffix
+        'DE' => array( // 1 digit checksum suffix
+            '1#######',
+            '2#######',
+            '3#######',
+            '4#######',
+            '5#######',
+            '6#######',
+            '7#######',
+            '8#######',
+            '9#######',
+        ),
+        'DK' => '#######', // 1 digit checksum suffix
+        'EC' => '#############',
+        'EE' => '10#######',
+        'EL' => '#########',
+        'ES' => array(
+            '?#######',
+            '########',
+            '#######?',
+        ),
+        'FI' => '########',
+        'FR' => '#########',
+        'GB' => array(
+            '#########',
+            '############',
+            'GD0##',
+            'GD1##',
+            'GD2##',
+            'GD3##',
+            'GD4##',
+            'HA5##',
+            'HA6##',
+            'HA7##',
+            'HA8##',
+            'HA9##',
+        ),
+        'GT' => '###########-#',
+        'HR' => '###########',
+        'HU' => '########',
+        'IE' => array(
+            '########',
+            '######?#',
+        ),
+        'IT' => '###########',
+        'LT' => array(
+            '########',
+            '###########',
+        ),
+        'LU' => '########',
+        'LV' => '###########',
+        'MT' => array(
+            '1#####',
+            '2#####',
+            '3#####',
+            '4#####',
+            '5#####',
+            '6#####',
+            '7#####',
+            '8#####',
+            '9#####',
+        ),
+        'MX' => '### ###### ###',
+        'NL' => '#########B##',
+        'NO' => '#########MVA',
+        'PH' => '############',
+        'PL' => '#########',
+        'PT' => array(
+            '1#######',
+            '2#######',
+            '3#######',
+            '45######',
+            '5#######',
+            '6#######',
+            '70######',
+            '71######',
+            '72######',
+            '77######',
+            '79######',
+            '8#######',
+            '90######',
+            '98######',
+            '99######',
+        ),
+        'RO' => array(
+            '##',
+            '###',
+            '####',
+            '#####',
+            '######',
+            '#######',
+            '########',
+            '#########',
+            '##########',
+        ),
+        'RU' => array(
+            '#########',
+            '###########',
+        ),
+        'SE' => '##########01',
+        'SI' => array(
+            '1#######',
+            '2#######',
+            '3#######',
+            '4#######',
+            '5#######',
+            '6#######',
+            '7#######',
+            '8#######',
+            '9#######',
+        ),
+        'SK' => '##########',
+        'TR' => '##########',
+        'UA' => '############',
+        'VE' => array(
+            'J########-#',
+            'G########-#',
+            'V########-#',
+            'E########-#',
+            'J#########',
+            'G#########',
+            'V#########',
+            'E#########',
+        ),
     );
 
     /**
@@ -283,5 +455,42 @@ class Payment extends Base
     public static function swiftBicNumber()
     {
         return self::regexify("^([A-Z]){4}([A-Z]){2}([0-9A-Z]){2}([0-9A-Z]{3})?$");
+    }
+
+    /**
+     * Generate a national VAT number.
+     *
+     * The Value Added Tax, or VAT, is a general, broadly based consumption tax
+     * assessed on the value added to goods and services.
+     *
+     * @link http://ec.europa.eu/taxation_customs/vies/faq.html for European VAT numbers rules
+     * @example (belgian) BE0629078028, (polish) PL5206136094
+     * @param string $country              country code (ex: 'BE')
+     * @param bool $addPrefix
+     * @return string a fake valid VAT number
+     */
+    public static function vat($country = null, $addPrefix = true)
+    {
+        $country = is_null($country) ? self::randomElement(array_keys(self::$vatFormats)) : $country;
+        if (!array_key_exists($country, self::$vatFormats)) {
+            throw new \InvalidArgumentException(sprintf("There is no VAT generator for %s so far.", $country));
+        }
+        $format = self::$vatFormats[$country];
+        if (is_array($format)) {
+            $format = self::randomElement($format);
+        }
+        $vat = static::bothify($format);
+        if (method_exists('\Faker\Calculator\Vat', 'checksum' . $country)) {
+            $checkNumber = call_user_func('\Faker\Calculator\Vat::checksum' . $country, $vat);
+            if ($country === 'CH') {
+                $vat .= $checkNumber . self::randomElement(array('TVA', 'MWST', 'IVA'));
+            } elseif ($country === 'FR') {
+                $vat = $checkNumber . $vat;
+            } else {
+                $vat .= $checkNumber;
+            }
+        }
+
+        return ($addPrefix ? $country : '') . $vat;
     }
 }
