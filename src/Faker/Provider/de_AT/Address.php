@@ -40,6 +40,10 @@ class Address extends \Faker\Provider\Address
         'Zell am See', 'Zeltweg', 'Zistersdorf', 'Zwettl',
     );
 
+    protected static $state = array(
+        'Burgenland', 'Kärnten', 'Niederösterreich', 'Oberösterreich', 'Salzburg', 'Steiermark', 'Tirol', 'Vorarlberg', 'Wien'
+    );
+
     protected static $country = array(
         'Afghanistan', 'Alandinseln', 'Albanien', 'Algerien', 'Amerikanisch-Ozeanien', 'Amerikanisch-Samoa', 'Amerikanische Jungferninseln', 'Andorra', 'Angola', 'Anguilla', 'Antarktis', 'Antigua und Barbuda', 'Argentinien', 'Armenien', 'Aruba', 'Aserbaidschan', 'Australien', 'Ägypten', 'Äquatorialguinea', 'Äthiopien', 'Äußeres Ozeanien',
         'Bahamas', 'Bahrain', 'Bangladesch', 'Barbados', 'Belarus', 'Belgien', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivien', 'Bosnien und Herzegowina', 'Botsuana', 'Bouvetinsel', 'Brasilien', 'Britische Jungferninseln', 'Britisches Territorium im Indischen Ozean', 'Brunei Darussalam', 'Bulgarien', 'Burkina Faso', 'Burundi',
@@ -95,5 +99,13 @@ class Address extends \Faker\Provider\Address
     public function streetSuffixLong()
     {
         return static::randomElement(static::$streetSuffixLong);
+    }
+
+    /**
+     * @example 'Wien'
+     */
+    public static function state()
+    {
+        return static::randomElement(static::$state);
     }
 }
