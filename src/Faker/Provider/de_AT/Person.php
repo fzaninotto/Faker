@@ -25,50 +25,56 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
-         * 30 most popular names in 1985, 1995, 2005 and 2015
+         * 60 most popular names in 1985, 1995, 2005 and 2015
          * {@link} http://www.statistik.at/wcm/idc/idcplg?IdcService=GET_PDF_FILE&RevisionSelectionMethod=LatestReleased&dDocName=021130
          **/
     protected static $firstNameMale = array(
-        'Alexander', 'Andreas',
-        'Benjamin', 'Bernhard',
-        'Christian', 'Christoph',
+        'Adrian', 'Alexander', 'Andreas', 'Anton',
+        'Ben', 'Benedikt', 'Benjamin', 'Bernd', 'Bernhard',
+        'Christian', 'Christoph', 'Christopher', 'Clemens',
         'Daniel', 'David', 'Dominik',
-        'Elias',
-        'Fabian', 'Felix', 'Florian',
-        'Georg',
-        'Harald',
-        'Jakob', 'Johannes', 'Jonas', 'Joseph', 'Julian', 'Jürgen',
-        'Kevin',
-        'Leo', 'Leon', 'Luca', 'Lukas',
-        'Manuel', 'Marcel', 'Marco', 'Mario', 'Markus', 'Martin', 'Matteo', 'Matthias', 'Maximilian', 'Michael', 'Moritz',
-        'Nico', 'Niklas', 'Noah',
-        'Patrick', 'Patrik', 'Paul', 'Peter', 'Philipp',
-        'Raphael', 'René', 'Robert', 'Roland',
-        'Samuel', 'Sebastian', 'Simon', 'Stefan',
-        'Thomas', 'Tobias',
-        'Wolfgang',
+        'Elias', 'Emil', 'Erik',
+        'Fabian', 'Fabio', 'Felix', 'Finn', 'Florian', 'Franz',
+        'Gabriel', 'Georg', 'Gerald', 'Gerhard', 'Gernot', 'Gregor', 'Günther',
+        'Hannes', 'Harald', 'Helmut', 'Herbert',
+        'Jakob', 'Jan', 'Johann', 'Johannes', 'Jonas', 'Jonathan', 'Josef', 'Joseph', 'Julian', 'Justin', 'Jürgen',
+        'Karl', 'Kevin', 'Kilian', 'Klaus', 'Konstantin',
+        'Leo', 'Leon', 'Lorenz', 'Luca', 'Luis', 'Lukas',
+        'Manfred', 'Manuel', 'Marc', 'Marcel', 'Marco', 'Mario', 'Markus', 'Martin', 'Marvin', 'Matteo', 'Matthias', 'Max', 'Maximilian', 'Michael', 'Moritz',
+        'Nico', 'Nicolas', 'Niklas', 'Noah',
+        'Oliver', 'Oskar',
+        'Pascal', 'Patrick', 'Patrik', 'Paul', 'Peter', 'Philipp',
+        'Ralph', 'Raphael', 'Reinhard', 'René', 'Richard', 'Robert', 'Roland', 'Roman',
+        'Samuel', 'Sandro', 'Sascha', 'Sebastian', 'Simon', 'Stefan',
+        'Theo', 'Theodor', 'Thomas', 'Tim', 'Tobias',
+        'Valentin', 'Vincent',
+        'Werner', 'Wolfgang',
     );
 
     /**
-         * 30 most popular names in 1985, 1995, 2005 and 2015
+         * 60 most popular names in 1985, 1995, 2005 and 2015
          * {@link} http://www.statistik.at/wcm/idc/idcplg?IdcService=GET_PDF_FILE&RevisionSelectionMethod=LatestReleased&dDocName=021130
          **/
     protected static $firstNameFemale = array(
-        'Alina', 'Amelie', 'Andrea', 'Anna',
+        'Alexandra', 'Alexandrea', 'Algelika', 'Alina', 'Amelie', 'Andrea', 'Angelina', 'Anita', 'Anja', 'Anna', 'Anna-Lena', 'Annika', 'Astrid',
         'Barbara', 'Bettina', 'Bianca', 'Birgit',
-        'Carina', 'Christina', 'Clara', 'Claudia', 'Cornelia',
-        'Daniela', 'Denise',
-        'Elena', 'Elisabeth', 'Emilia', 'Emily', 'Emma', 'Eva', 'Hannah',
-        'Isabella',
-        'Jacqueline', 'Jana', 'Jasmin', 'Jennifer', 'Johanna', 'Julia',
+        'Carina', 'Caroline', 'Celina', 'Chiara', 'Christina', 'Christine', 'Clara', 'Claudia', 'Cornelia',
+        'Daniela', 'Denise', 'Dorins',
+        'Elena', 'Elisa', 'Elisabeth', 'Ella', 'Emely', 'Emilia', 'Emily', 'Emma', 'Eva', 'Eva-Maria',
+        'Franziska',
+        'Hanna', 'Hannah', 'Helena',
+        'Ines', 'Iris', 'Isabel', 'Isabella',
+        'Jacqueline', 'Jacquline', 'Jana', 'Janine', 'Jasmin', 'Jennifer', 'Jessica', 'Johanna', 'Julia',
         'Karin', 'Katharina', 'Katrin', 'Kerstin',
-        'Lara', 'Laura', 'Lea', 'Lena', 'Leonie', 'Lisa', 'Luisa',
-        'Magdalena', 'Manuela', 'Maria', 'Marie', 'Marlene', 'Martina', 'Melanie', 'Mia', 'Michaela', 'Michelle', 'Miriam',
-        'Nadine', 'Nicole', 'Nina',
-        'Petra',
-        'Sabine', 'Sabrina', 'Sandra', 'Sarah', 'Selina', 'Sonja', 'Sophia', 'Sophie', 'Stefanie',
-        'Tanja', 'Theresa',
-        'Valentina', 'Vanessa', 'Verena', 'Viktoria',
+        'Lara', 'Larissa', 'Laura', 'Lea', 'Lena', 'Leonie', 'Lilly', 'Lina', 'Lisa', 'Livia', 'Luisa',
+        'Magdalena', 'Maja', 'Manuela', 'Maria', 'Marie', 'Marion', 'Marlene', 'Martina', 'Melanie', 'Melina', 'Mia', 'Michaela', 'Michelle', 'Miriam', 'Mona', 'Monika',
+        'Nadine', 'Natalie', 'Nicole', 'Nina', 'Nora',
+        'Patricia', 'Paula', 'Petra', 'Pia',
+        'Rebecca', 'Rosa',
+        'Sabine', 'Sabrina', 'Sandra', 'Sarah', 'Selina', 'Silvia', 'Simone', 'Sonja', 'Sophia', 'Sophie', 'Stefanie', 'Susanne',
+        'Tamara', 'Tanja', 'Theresa',
+        'Valentina', 'Valerie', 'Vanessa', 'Verena', 'Viktoria',
+        'Yvonne',
     );
 
     /**
