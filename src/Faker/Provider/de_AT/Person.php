@@ -54,21 +54,21 @@ class Person extends \Faker\Provider\Person
          * {@link} http://www.statistik.at/wcm/idc/idcplg?IdcService=GET_PDF_FILE&RevisionSelectionMethod=LatestReleased&dDocName=021130
          **/
     protected static $firstNameFemale = array(
-    'Alina', 'Amelie', 'Andrea', 'Anna',
-    'Barbara', 'Bettina', 'Bianca', 'Birgit',
-    'Carina', 'Christina', 'Clara', 'Claudia', 'Cornelia',
-    'Daniela', 'Denise',
-    'Elena', 'Elisabeth', 'Emilia', 'Emily', 'Emma', 'Eva', 'Hannah',
-    'Isabella',
-    'Jacqueline', 'Jana', 'Jasmin', 'Jennifer', 'Johanna', 'Julia',
-    'Karin', 'Katharina', 'Katrin', 'Kerstin',
-    'Lara', 'Laura', 'Lea', 'Lena', 'Leonie', 'Lisa', 'Luisa',
-    'Magdalena', 'Manuela', 'Maria', 'Marie', 'Marlene', 'Martina', 'Melanie', 'Mia', 'Michaela', 'Michelle', 'Miriam',
-    'Nadine', 'Nicole', 'Nina',
-    'Petra',
-    'Sabine', 'Sabrina', 'Sandra', 'Sarah', 'Selina', 'Sonja', 'Sophia', 'Sophie', 'Stefanie',
-    'Tanja', 'Theresa',
-    'Valentina', 'Vanessa', 'Verena', 'Viktoria',
+        'Alina', 'Amelie', 'Andrea', 'Anna',
+        'Barbara', 'Bettina', 'Bianca', 'Birgit',
+        'Carina', 'Christina', 'Clara', 'Claudia', 'Cornelia',
+        'Daniela', 'Denise',
+        'Elena', 'Elisabeth', 'Emilia', 'Emily', 'Emma', 'Eva', 'Hannah',
+        'Isabella',
+        'Jacqueline', 'Jana', 'Jasmin', 'Jennifer', 'Johanna', 'Julia',
+        'Karin', 'Katharina', 'Katrin', 'Kerstin',
+        'Lara', 'Laura', 'Lea', 'Lena', 'Leonie', 'Lisa', 'Luisa',
+        'Magdalena', 'Manuela', 'Maria', 'Marie', 'Marlene', 'Martina', 'Melanie', 'Mia', 'Michaela', 'Michelle', 'Miriam',
+        'Nadine', 'Nicole', 'Nina',
+        'Petra',
+        'Sabine', 'Sabrina', 'Sandra', 'Sarah', 'Selina', 'Sonja', 'Sophia', 'Sophie', 'Stefanie',
+        'Tanja', 'Theresa',
+        'Valentina', 'Vanessa', 'Verena', 'Viktoria',
     );
 
     /**
