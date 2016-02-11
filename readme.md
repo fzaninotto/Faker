@@ -1169,6 +1169,39 @@ echo $faker->personalIdentityNumber('female') // '950910-0781'
 
 ```
 
+### `Faker\Provider\th_TH\Address`
+```php
+<?php
+
+//Generates a random province
+echo $faker->province // 'กรุงเทพมหานคร'
+
+```
+
+### `Faker\Provider\th_TH\Payment`
+
+```php
+<?php
+
+// Generates a Thai bank name (based on list of real Thai banks)
+echo $faker->bank; // "ธนาคารกสิกรไทย"
+```
+
+### `Faker\Provider\th_TH\Person`
+```php
+<?php
+
+//Generates a Thai nickname of any gender
+echo $faker->nickname // 'โอ'
+
+//Generates a Thai male nickname
+echo $faker->femaleNickname // 'โอ'
+
+//Generates a Thai female nickname
+echo $faker->femaleNickname // 'พลอย'
+
+```
+
 ### `Faker\Provider\ne_NP\Address`
 ```php
 <?php
