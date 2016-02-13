@@ -25,10 +25,10 @@ class Address extends \Faker\Provider\Address
         'SP', 'SE', 'TO'
     );
     protected static $region = array(
-        'Centro-Oeste', 'Nordeste', 'Norte', 'Sudeste', 'Sul' 
+        'Centro-Oeste', 'Nordeste', 'Norte', 'Sudeste', 'Sul'
     );
     protected static $regionAbbr = array(
-        'CO', 'N', 'NE', 'SE', 'S' 
+        'CO', 'N', 'NE', 'SE', 'S'
     );
     protected static $country = array(
         'Afeganistão', 'África do Sul', 'Albânia', 'Alemanha', 'Andorra',
