@@ -37,6 +37,10 @@ class Address extends \Faker\Provider\Address
     // TODO list all country names in the world
     protected static $country = array(
         'ישראל',
+        'טורקיה',
+        'וייטנאם',
+        'הרפובליקה_העממית_של_סין',
+        'טאיוואן'
     );
     protected static $cityFormats = array(
         '{{citySuffix}}',
