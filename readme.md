@@ -1030,6 +1030,18 @@ echo $faker->taxpayerIdentificationNumber; // '165249277'
 
 ```
 
+### `Faker\Provider\pt_BR\Address`
+
+```php
+<?php
+
+// Generates a random region name
+echo $faker->region; // 'Nordeste'
+
+// Generates a random region abbreviation
+echo $faker->regionAbbr; // 'NE'
+```
+
 ### `Faker\Provider\pt_BR\PhoneNumber`
 
 ```php
