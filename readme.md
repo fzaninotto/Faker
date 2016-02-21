@@ -31,6 +31,7 @@ Faker requires PHP >= 5.3.3.
 	- [Barcode](#fakerproviderbarcode)
 	- [Miscellaneous](#fakerprovidermiscellaneous)
 	- [Biased](#fakerproviderbiased)
+	- [Geo](#fakerprovidergeo) (Geographical and spatial data)
 - [Unique and Optional modifiers](#unique-and-optional-modifiers)
 - [Localization](#localization)
 - [Populating Entities Using an ORM or an ODM](#populating-entities-using-an-orm-or-an-odm)
@@ -154,8 +155,6 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     postcode                // '17916'
     address                 // '8888 Cummings Vista Apt. 101, Susanbury, NY 95473'
     country                 // 'Falkland Islands (Malvinas)'
-    latitude                // 77.147489
-    longitude               // 86.211205
 
 ### `Faker\Provider\en_US\PhoneNumber`
 
@@ -290,6 +289,17 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     // get a random number between 10 and 20,
     // with more chances to be close to 20
     biasedNumberBetween($min = 10, $max = 20, $function = 'sqrt')
+
+### `Faker\Provider\Geo`
+Geographical (Spatial) data generator
+
+By [Mev-Rael](https://github.com/mevrael)
+If you need any support with Geo Provider or have suggestions then mention me with @mevrael in issue.
+
+    longitude        // 86.211205
+    latitude         // 77.147489
+    geoPoint         // numeric array of longitude (x) and latitude (y)
+    sqlGeoPoint      // An SQL value command used to insert longitude and latitude into POINT column. Example: POINT(86.211205, 77.147489)
 
 ## Unique and Optional modifiers
 

@@ -102,22 +102,4 @@ class Address extends Base
     {
         return static::randomElement(static::$country);
     }
-
-    /**
-     * @example 77.147489
-     * @return float Uses signed degrees format (returns a float number between -90 and 90)
-     */
-    public static function latitude()
-    {
-        return static::randomFloat(6, 0, 180) - 90;
-    }
-
-    /**
-     * @example 86.211205
-     * @return float Uses signed degrees format (returns a float number between -180 and 180)
-     */
-    public static function longitude()
-    {
-        return static::randomFloat(6, 0, 360) - 180;
-    }
 }
