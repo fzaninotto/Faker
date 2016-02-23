@@ -853,6 +853,21 @@ echo $faker->siret; // 347 355 708 00224
 echo $faker->companyNumber; // 1999/789634/01
 ```
 
+### `Faker\Provider\en_ZA\PhoneNumber`
+
+```php
+<?php
+
+// Generates a special rate phone number
+echo $faker->phoneNumber; // 0800 555 5555
+
+// Generates a special rate phone number
+echo $faker->tollFreeNumber; // 0800 555 5555
+
+// Generates a mobile phone number
+echo $faker->mobileNumber; // 082 123 5555
+```
+
 ### `Faker\Provider\fr_FR\Address`
 
 ```php
