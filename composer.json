@@ -24,7 +24,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Faker\\PHPUnit\\": "test/Faker/"
+            "Faker\\Test\\": "test/Faker/"
         }
     },
     "extra": {
