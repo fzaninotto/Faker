@@ -20,17 +20,13 @@ class PhoneNumberTest extends \PHPUnit_Framework_TestCase
         $this->faker = $faker;
     }
 
-    /**
-     * @test
-     * @dataProvider phoneNumberFormatProvider
-     */
-    public function phoneNumberFormat()
+    public function testPhoneNumber()
     {
-        $number = $this->faker->phoneNumber;
-        $this->assertRegExp('/^0\d{2} ?\d{3} ?\d{2} ?\d{2}|\+44 ?(\(0\))?\d{2} ?\d{3} ?\d{2} ?\d{2}$/', $number);
+        $this->assertRegExp('/^0\d{2} ?\d{3} ?\d{2} ?\d{2}|\+41 ?(\(0\))?\d{2} ?\d{3} ?\d{2} ?\d{2}$/', $this->faker->phoneNumber());
     }
 
-    public function phoneNumberFormatProvider (){
-        return array(array(), array(), array(), array(), array(), array(), array(), array(), array(), array());
+    public function testMobileNumber()
+    {
+        $this->assertRegExp('/^07[56789] ?\d{3} ?\d{2} ?\d{2}$/', $this->faker->mobileNumber());
     }
 }
