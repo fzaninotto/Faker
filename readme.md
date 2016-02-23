@@ -883,6 +883,15 @@ echo $faker->tollFreeNumber; // 0800 555 5555
 echo $faker->mobileNumber; // 082 123 5555
 ```
 
+### `Faker\Provider\es_ES\Person`
+
+```php
+<?php
+
+// Generates a Documento Nacional de Identidad (DNI) number
+echo $faker->dni; // '77446565E'
+```
+
 ### `Faker\Provider\fr_FR\Address`
 
 ```php

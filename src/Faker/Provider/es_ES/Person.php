@@ -27,7 +27,6 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
-     *
      * {@link} http://www.ine.es/daco/daco42/nombyapel/nombyapel.htm
      */
     protected static $firstNameMale = array(
@@ -71,11 +70,18 @@ class Person extends \Faker\Provider\Person
         return static::randomElement(static::$suffix);
     }
 
+    /**
+     * Generate a Documento Nacional de Identidad (DNI) number
+     *
+     * @example '77446565E'
+     *
+     * @link https://es.wikibooks.org/wiki/Algoritmo_para_obtener_la_letra_del_NIF#Algoritmo
+     */
     public static function dni()
     {
-        $number=static::numerify('########');
+        $number = static::numerify('########');
+        $letter = self::$crcMap[$number%23];
 
-        $letter=self::$crcMap[$number%23];
-        return $number.$letter;
+        return $number . $letter;
     }
 }
