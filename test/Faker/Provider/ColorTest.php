@@ -37,7 +37,7 @@ class ColorTest extends \PHPUnit_Framework_TestCase
     public function testRgbaCssColor()
     {
         $regexp = '([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])';
-        $regexpAlpha = '([01]?\.[0-9])';
+        $regexpAlpha = '([01]?(\.\d+)?)';
         $this->assertRegExp('/^rgba\(' . $regexp . ',' . $regexp . ',' . $regexp . ',' . $regexpAlpha . '\)$/i', Color::rgbaCssColor());
     }
 
