@@ -1,6 +1,5 @@
 <?php
 require __DIR__ .'/../vendor/autoload.php';
-date_default_timezone_set('GMT');
 $faker = Faker\Factory::create();
 $faker->seed(5);
 
@@ -18,7 +17,6 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
       <city><?php echo $faker->city ?></city>
       <postcode><?php echo $faker->postcode ?></postcode>
       <state><?php echo $faker->state ?></state>
-        <coordinate><?php echo $faker->localCoordinates['latitude'].','.$faker->localCoordinates['longitude'] ?></coordinate>
     </address>
     <company name="<?php echo $faker->company ?>" catchPhrase="<?php echo $faker->catchPhrase ?>">
 <?php if ($faker->boolean(33)): ?>
