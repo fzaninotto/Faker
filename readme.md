@@ -31,7 +31,7 @@ Faker requires PHP >= 5.3.3.
 	- [Barcode](#fakerproviderbarcode)
 	- [Miscellaneous](#fakerprovidermiscellaneous)
 	- [Biased](#fakerproviderbiased)
-- [Unique and Optional modifiers](#unique-and-optional-modifiers)
+- [Modifiers](#unique-and-optional-modifiers)
 - [Localization](#localization)
 - [Populating Entities Using an ORM or an ODM](#populating-entities-using-an-orm-or-an-odm)
 - [Seeding the Generator](#seeding-the-generator)
@@ -291,9 +291,9 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     // with more chances to be close to 20
     biasedNumberBetween($min = 10, $max = 20, $function = 'sqrt')
 
-## Unique and Optional modifiers
+## Modifiers
 
-Faker provides two special providers, `unique()` and `optional()`, to be called before any provider. `optional()` can be useful for seeding non-required fields, like a mobile telephone number; `unique()` is required to populate fields that cannot accept twice the same value, like primary identifiers.
+Faker provides three special providers, `unique()`, `optional()`, and `valid()`, to be called before any provider.
 
 ```php
 // unique() forces providers to return unique values
@@ -335,6 +335,24 @@ $faker->optional($weight = 0.9)->randomDigit; // 10% chance of NULL
 // Defaults to NULL.
 $faker->optional($weight = 0.5, $default = false)->randomDigit; // 50% chance of FALSE
 $faker->optional($weight = 0.9, $default = 'abc')->word; // 10% chance of 'abc'
+
+// valid() only accepts valid values according to the passed validator functions
+$values = array();
+$evenValidator = function($digit) {
+	return $digit % 2 === 0;
+};
+for ($i=0; $i < 10; $i++) {
+	$values []= $faker->valid($evenValidator)->randomDigit;
+}
+print_r($values); // [0, 4, 8, 4, 2, 6, 0, 8, 8, 6]
+
+// just like unique(), valid() throws an overflow exception when it can't generate a valid value
+$values = array();
+try {
+  $faker->valid($evenValidator)->randomElement(1, 3, 5, 7, 9);
+} catch (\OverflowException $e) {
+  echo "Can't pick an even number in that set!";
+}
 ```
 
 ## Localization

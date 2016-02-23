@@ -5,6 +5,7 @@ namespace Faker\Provider;
 use Faker\Generator;
 use Faker\DefaultGenerator;
 use Faker\UniqueGenerator;
+use Faker\ValidGenerator;
 
 class Base
 {
@@ -519,7 +520,7 @@ class Base
         if ($weight > 0 && $weight < 1 && mt_rand() / mt_getrandmax() <= $weight) {
             return $this->generator;
         }
-        
+
         // new system with percentage
         if (is_int($weight) && mt_rand(1, 100) <= $weight) {
             return $this->generator;
@@ -550,5 +551,10 @@ class Base
         }
 
         return $this->unique;
+    }
+
+    public function valid($validator = null, $maxRetries = 10000)
+    {
+        return new ValidGenerator($this->generator, $validator, $maxRetries);
     }
 }
