@@ -5,6 +5,7 @@ namespace Faker\Provider;
 use Faker\Generator;
 use Faker\DefaultGenerator;
 use Faker\UniqueGenerator;
+use Faker\ValidGenerator;
 
 class Base
 {
@@ -519,7 +520,7 @@ class Base
         if ($weight > 0 && $weight < 1 && mt_rand() / mt_getrandmax() <= $weight) {
             return $this->generator;
         }
-        
+
         // new system with percentage
         if (is_int($weight) && mt_rand(1, 100) <= $weight) {
             return $this->generator;
@@ -550,5 +551,33 @@ class Base
         }
 
         return $this->unique;
+    }
+
+    /**
+     * Chainable method for forcing any formatter to return only valid values.
+     *
+     * The value validity is determined by a function passed as first argument.
+     *
+     * <code>
+     * $values = array();
+     * $evenValidator = function ($digit) {
+     * 	 return $digit % 2 === 0;
+     * };
+     * for ($i=0; $i < 10; $i++) {
+     * 	 $values []= $faker->valid($evenValidator)->randomDigit;
+     * }
+     * print_r($values); // [0, 4, 8, 4, 2, 6, 0, 8, 8, 6]
+     * </code>
+     *
+     * @param Closure $validator  A function returning true for valid values
+     * @param integer $maxRetries Maximum number of retries to find a unique value,
+     *                            After which an OverflowException is thrown.
+     * @throws \OverflowException When no valid value can be found by iterating $maxRetries times
+     *
+     * @return ValidGenerator A proxy class returning only valid values
+     */
+    public function valid($validator = null, $maxRetries = 10000)
+    {
+        return new ValidGenerator($this->generator, $validator, $maxRetries);
     }
 }

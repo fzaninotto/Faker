@@ -471,6 +471,61 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(array(0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9), $values);
     }
 
+    public function testValidAllowsChainingPropertyAccess()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $this->assertLessThan(10, $faker->valid()->randomDigit);
+    }
+
+    public function testValidAllowsChainingMethodCall()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $this->assertLessThan(10, $faker->valid()->numberBetween(5, 9));
+    }
+
+    public function testValidReturnsOnlyValidValues()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $values = array();
+        $evenValidator = function($digit) {
+            return $digit % 2 === 0;
+        };
+        for ($i=0; $i < 50; $i++) {
+            $values[$faker->valid($evenValidator)->randomDigit] = true;
+        }
+        $uniqueValues = array_keys($values);
+        sort($uniqueValues);
+        $this->assertEquals(array(0, 2, 4, 6, 8), $uniqueValues);
+    }
+
+    /**
+     * @expectedException OverflowException
+     */
+    public function testValidThrowsExceptionWhenNoValidValueCanBeGenerated()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $evenValidator = function($digit) {
+            return $digit % 2 === 0;
+        };
+        for ($i=0; $i < 11; $i++) {
+            $faker->valid($evenValidator)->randomElement(array(1, 3, 5, 7, 9));
+        }
+    }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testValidThrowsExceptionWhenParameterIsNotCollable()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $faker->valid(12)->randomElement(array(1, 3, 5, 7, 9));
+    }
+
     /**
      * @expectedException LengthException
      * @expectedExceptionMessage Cannot get 2 elements, only 1 in array
