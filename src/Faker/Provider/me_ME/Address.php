@@ -109,19 +109,11 @@ class Address extends \Faker\Provider\Address
         return static::randomElement(static::$cityNames);
     }
 
-    /**
-     * @example '77.147489'
-     */
-    public static function latitude()
+    public static function localCoordinates()
     {
-        return number_format(mt_rand(42430000, 42450000)/1000000, 6);
-    }
-
-    /**
-     * @example '86.211205'
-     */
-    public static function longitude()
-    {
-        return number_format(mt_rand(19260000, 19270000)/1000000, 6);
+        return array(
+            'latitude' => static::latitude(42.43, 42.45),
+            'longitude' => static::longitude(19.16, 19.27)
+        );
     }
 }
