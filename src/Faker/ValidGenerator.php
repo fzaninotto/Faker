@@ -21,6 +21,8 @@ class ValidGenerator
             $validator = function () {
                 return true;
             };
+        } elseif (!is_callable($validator)) {
+            throw new \InvalidArgumentException('valid() only accepts callables as first argument');
         }
         $this->generator = $generator;
         $this->validator = $validator;

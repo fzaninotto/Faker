@@ -517,6 +517,16 @@ class BaseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testValidThrowsExceptionWhenParameterIsNotCollable()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $faker->valid(12)->randomElement(array(1, 3, 5, 7, 9));
+    }
+
+    /**
      * @expectedException LengthException
      * @expectedExceptionMessage Cannot get 2 elements, only 1 in array
      */
