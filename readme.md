@@ -801,7 +801,7 @@ echo $faker->cpr; // "051280-2387"
 ```php
 <?php
 
-// Generates a random Tax Id code (Codice fiscale) 
+// Generates a random Tax Id code (Codice fiscale)
 echo $faker->taxId(); // "DIXDPZ44E08F367A"
 
 ```
@@ -858,10 +858,7 @@ echo $faker->companyNumber; // 1999/789634/01
 ```php
 <?php
 
-// Generates a special rate phone number
-echo $faker->phoneNumber; // 0800 555 5555
-
-// Generates a special rate phone number
+// Generates a special rate toll free phone number
 echo $faker->tollFreeNumber; // 0800 555 5555
 
 // Generates a mobile phone number
