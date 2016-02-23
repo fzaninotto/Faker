@@ -235,8 +235,6 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     // Generates a random IBAN. Set $countryCode to null for a random country
     iban($countryCode)      // 'IT31A8497112740YZ575DJ28BP4'
     swiftBicNumber          // 'RZTIAT22263'
-    bankAccountNumber       // '51915734310'
-    bankRoutingNumber       // '212240302'
 
 ### `Faker\Provider\Color`
 
@@ -718,74 +716,74 @@ Fugiat non in itaque sunt nobis totam. Sed nesciunt est deleniti cumque alias. R
 ## Language specific formatters
 
 ### `Faker\Provider\ar_SA\Person`
+
 ```php
 <?php
 
 echo $faker->idNumber;      // ID number
 echo $faker->nationalIdNumber // Citizen ID number
 echo $faker->foreignerIdNumber // Foreigner ID number
-
 ```
 
 ### `Faker\Provider\at_AT\Payment`
+
 ```php
 <?php
 
 echo $faker->vat;           // "AT U12345678" - Austrian Value Added Tax number
 echo $faker->vat(false);    // "ATU12345678" - unspaced Austrian Value Added Tax number
-
 ```
 
 ### `Faker\Provider\be_BE\Payment`
+
 ```php
 <?php
 
 echo $faker->vat;           // "BE 0123456789" - Belgian Value Added Tax number
 echo $faker->vat(false);    // "BE0123456789" - unspaced Belgian Value Added Tax number
-
 ```
 
 ### `Faker\Provider\bg_BG\Payment`
+
 ```php
 <?php
 
 echo $faker->vat;           // "BG 0123456789" - Bulgarian Value Added Tax number
 echo $faker->vat(false);    // "BG0123456789" - unspaced Bulgarian Value Added Tax number
-
 ```
 
 ### `Faker\Provider\cs_CZ\Address`
+
 ```php
 <?php
 
 echo $faker->region; // "Liberecký kraj"
-
 ```
 
 ### `Faker\Provider\cs_CZ\Company`
+
 ```php
 <?php
 
 // Generates a valid IČO
 echo $faker->ico; // "69663963"
-
 ```
 
 ### `Faker\Provider\cs_CZ\DateTime`
+
 ```php
 <?php
 
 echo $faker->monthNameGenitive; // "prosince"
 echo $faker->formattedDate; // "12. listopadu 2015"
-
 ```
 
 ### `Faker\Provider\cs_CZ\Person`
+
 ```php
 <?php
 
 echo $faker->birthNumber; // "7304243452"
-
 ```
 
 ### `Faker\Provider\da_DK\Person`
@@ -795,17 +793,6 @@ echo $faker->birthNumber; // "7304243452"
 
 // Generates a random CPR number
 echo $faker->cpr; // "051280-2387"
-
-```
-
-### `Faker\Provider\it_IT\Person`
-
-```php
-<?php
-
-// Generates a random Tax Id code (Codice fiscale)
-echo $faker->taxId(); // "DIXDPZ44E08F367A"
-
 ```
 
 ### `Faker\Provider\da_DK\Address`
@@ -818,7 +805,6 @@ echo $faker->kommune; // "Frederiksberg"
 
 // Generates a random region name
 echo $faker->region; // "Region Sjælland"
-
 ```
 
 ### `Faker\Provider\da_DK\Company`
@@ -831,19 +817,30 @@ echo $faker->cvr; // "32458723"
 
 // Generates a random P number
 echo $faker->p; // "5398237590"
-
 ```
 
-### `Faker\Provider\fr_FR\Company`
+### `Faker\Provider\en_NZ\Phone`
 
 ```php
 <?php
 
-// Generates a random SIREN number
-echo $faker->siren; // 082 250 104
+// Generates a cell (mobile) phone number
+echo $faker->cellNumber; // "021 123 4567"
 
-// Generates a random SIRET number
-echo $faker->siret; // 347 355 708 00224
+// Generates a toll free number
+echo $faker->tollFreeNumber; // "0800 123 456"
+
+// Area Code
+echo $faker->areaCode; // "03"
+```
+
+### `Faker\Provider\en_US\Payment`
+
+```php
+<?php
+
+echo $faker->bankAccountNumber;  // '51915734310'
+echo $faker->bankRoutingNumber;  // '212240302'
 ```
 
 ### `Faker\Provider\en_ZA\Company`
@@ -883,7 +880,18 @@ $faker->department; // array('18' => 'Cher');
 
 // Generates a random region
 echo $faker->region; // "Saint-Pierre-et-Miquelon"
+```
 
+### `Faker\Provider\fr_FR\Company`
+
+```php
+<?php
+
+// Generates a random SIREN number
+echo $faker->siren; // 082 250 104
+
+// Generates a random SIRET number
+echo $faker->siret; // 347 355 708 00224
 ```
 
 ### `Faker\Provider\hu_HU\Payment`
@@ -893,7 +901,24 @@ echo $faker->region; // "Saint-Pierre-et-Miquelon"
 
 // Generates a random bank account number
 echo $faker->bankAccountNumber; // "HU09904437680048220079300783"
+```
 
+### `Faker\Provider\it_IT\Company`
+
+```php
+<?php
+
+// Generates a random Vat Id
+echo $faker->vatId(); // "IT98746784967"
+```
+
+### `Faker\Provider\it_IT\Person`
+
+```php
+<?php
+
+// Generates a random Tax Id code (Codice fiscale)
+echo $faker->taxId(); // "DIXDPZ44E08F367A"
 ```
 
 ### `Faker\Provider\ja_JP\Person`
@@ -918,7 +943,6 @@ echo $faker->lastKanaName; // "ナカジマ"
 
 // Generates a random bank account number
 echo $faker->bankAccountNumber; // "GE33ZV9773853617253389"
-
 ```
 
 ### `Faker\Provider\kk_KZ\Company`
@@ -928,7 +952,6 @@ echo $faker->bankAccountNumber; // "GE33ZV9773853617253389"
 
 // Generates an business identification number
 echo $faker->businessIdentificationNumber; // "150140000019"
-
 ```
 
 ### `Faker\Provider\kk_KZ\Payment`
@@ -941,7 +964,6 @@ echo $faker->bank; // "Қазкоммерцбанк"
 
 // Generates a random bank account number
 echo $faker->bankAccountNumber; // "KZ1076321LO4H6X41I37"
-
 ```
 
 ### `Faker\Provider\kk_KZ\Person`
@@ -951,7 +973,6 @@ echo $faker->bankAccountNumber; // "KZ1076321LO4H6X41I37"
 
 // Generates an individual identification number
 echo $faker->individualIdentificationNumber; // "780322300455"
-
 ```
 
 ### `Faker\Provider\ko_KR\Address`
@@ -964,16 +985,6 @@ echo $faker->metropolitanCity; // "서울특별시"
 
 // Generates a borough
 echo $faker->borough; // "강남구"
-
-```
-
-### `Faker\Provider\it_IT\Company`
-
-```php
-<?php
-
-// Generates a random Vat Id
-echo $faker->vatId(); // "IT98746784967"
 ```
 
 ### `Faker\Provider\lv_LV\Person`
@@ -983,7 +994,18 @@ echo $faker->vatId(); // "IT98746784967"
 
 // Generates a random personal identity card number
 echo $faker->personalIdentityNumber; // "140190-12301"
+```
 
+### `Faker\Provider\ne_NP\Address`
+
+```php
+<?php
+
+//Generates a Nepali district name
+echo $faker->district;
+
+//Generates a Nepali city name
+echo $faker->cityName;
 ```
 
 ### `Faker\Provider\no_NO\Payment`
@@ -993,7 +1015,6 @@ echo $faker->personalIdentityNumber; // "140190-12301"
 
 // Generates a random bank account number
 echo $faker->bankAccountNumber; // "NO3246764709816"
-
 ```
 
 ### `Faker\Provider\pl_PL\Person`
@@ -1007,7 +1028,6 @@ echo $faker->pesel; // "40061451555"
 echo $faker->personalIdentityNumber; // "AKX383360"
 // Generates a random taxpayer identification number (NIP)
 echo $faker->taxpayerIdentificationNumber; // '8211575109'
-
 ```
 
 ### `Faker\Provider\pl_PL\Company`
@@ -1019,7 +1039,6 @@ echo $faker->taxpayerIdentificationNumber; // '8211575109'
 echo $faker->regon; // "714676680"
 // Generates a random local REGON number
 echo $faker->regonLocal; // "15346111382836"
-
 ```
 
 ### `Faker\Provider\pl_PL\Payment`
@@ -1031,7 +1050,6 @@ echo $faker->regonLocal; // "15346111382836"
 echo $faker->bank; // "Narodowy Bank Polski"
 // Generates a random bank account number
 echo $faker->bankAccountNumber; // "PL14968907563953822118075816"
-
 ```
 
 ### `Faker\Provider\pt_PT\Person`
@@ -1041,7 +1059,6 @@ echo $faker->bankAccountNumber; // "PL14968907563953822118075816"
 
 // Generates a random taxpayer identification number (in portuguese - Número de Identificação Fiscal NIF)
 echo $faker->taxpayerIdentificationNumber; // '165249277'
-
 ```
 
 ### `Faker\Provider\pt_BR\Address`
@@ -1101,7 +1118,6 @@ echo $faker->cnpj;       // '23.663.478/0001-24'
 
 // Generates a random bank account number
 echo $faker->bankAccountNumber; // "MD83BQW1CKMUW34HBESDP3A8"
-
 ```
 
 ### `Faker\Provider\ro_RO\Payment`
@@ -1111,7 +1127,6 @@ echo $faker->bankAccountNumber; // "MD83BQW1CKMUW34HBESDP3A8"
 
 // Generates a random bank account number
 echo $faker->bankAccountNumber; // "RO55WRJE3OE8X3YQI7J26U1E"
-
 ```
 
 ### `Faker\Provider\ro_RO\Person`
@@ -1158,21 +1173,6 @@ echo $faker->premiumRatePhoneNumber; // "0900123456"
 echo $faker->bank; // "ОТП Банк"
 ```
 
-### `Faker\Provider\en_NZ\Phone`
-
-```php
-<?php
-
-// Generates a cell (mobile) phone number
-echo $faker->cellNumber; // "021 123 4567"
-
-// Generates a toll free number
-echo $faker->tollFreeNumber; // "0800 123 456"
-
-// Area Code
-echo $faker->areaCode; // "03"
-```
-
 ### `Faker\Provider\sv_SE\Payment`
 
 ```php
@@ -1180,10 +1180,10 @@ echo $faker->areaCode; // "03"
 
 // Generates a random bank account number
 echo $faker->bankAccountNumber; // "SE5018548608468284909192"
-
 ```
 
 ### `Faker\Provider\sv_SE\Person`
+
 ```php
 <?php
 
@@ -1192,18 +1192,6 @@ echo $faker->personalIdentityNumber() // '950910-0799'
 
 //Since the numbers are different for male and female persons, optionally you can specify gender.
 echo $faker->personalIdentityNumber('female') // '950910-0781'
-
-```
-
-### `Faker\Provider\ne_NP\Address`
-```php
-<?php
-
-//Generates a Nepali district name
-echo $faker->district;
-
-//Generates a Nepali city name
-echo $faker->cityName;
 ```
 
 ## Third-Party Libraries Extending/Based On Faker
