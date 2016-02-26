@@ -277,6 +277,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
 ### `Faker\Provider\Miscellaneous`
 
+    boolean // false
     boolean($chanceOfGettingTrue = 50) // true
     md5           // 'de99a620c50f2990e87144735cd357e7'
     sha1          // 'f08e7f04ca1a413807ebc47551a40a20a0b4de5c'

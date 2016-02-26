@@ -110,6 +110,7 @@ namespace Faker;
  * @property string $countryISOAlpha3
  * @property string $languageCode
  * @property string $currencyCode
+ * @property boolean boolean
  * @method boolean boolean($chanceOfGettingTrue = 50)
  *
  * @property int    $randomDigit
