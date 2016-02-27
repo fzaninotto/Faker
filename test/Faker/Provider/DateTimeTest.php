@@ -6,6 +6,18 @@ use Faker\Provider\DateTime as DateTimeProvider;
 
 class DateTimeTest extends \PHPUnit_Framework_TestCase
 {
+    public function setUp()
+    {
+        $this->originalTz = date_default_timezone_get();
+        $this->defaultTz = 'UTC';
+        date_default_timezone_set($this->defaultTz);
+    }
+
+    public function tearDown()
+    {
+        date_default_timezone_set($this->originalTz);
+    }
+
     public function testUnixTime()
     {
         $timestamp = DateTimeProvider::unixTime();
@@ -20,7 +32,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('\DateTime', $date);
         $this->assertGreaterThanOrEqual(new \DateTime('@0'), $date);
         $this->assertLessThanOrEqual(new \DateTime(), $date);
-        $this->assertEquals($date->getTimezone(), new \DateTimeZone('UTC'));
+        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
     public function testDateTimeWithTimezone()
@@ -35,7 +47,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('\DateTime', $date);
         $this->assertGreaterThanOrEqual(new \DateTime('0000-01-01 00:00:00'), $date);
         $this->assertLessThanOrEqual(new \DateTime(), $date);
-        $this->assertEquals($date->getTimezone(), new \DateTimeZone('UTC'));
+        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
     public function testIso8601()
@@ -70,7 +82,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('\DateTime', $date);
         $this->assertGreaterThanOrEqual(new \DateTime($start), $date);
         $this->assertLessThanOrEqual(new \DateTime($end), $date);
-        $this->assertEquals($date->getTimezone(), new \DateTimeZone('UTC'));
+        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
     public function providerDateTimeBetween()
