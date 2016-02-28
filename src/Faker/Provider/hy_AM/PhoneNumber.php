@@ -14,20 +14,25 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     );
 
     protected static $formats = array(
-        '0{code} {numberFormat}',
-        '(0{code}) {numberFormat}',
-        '+374{code} {numberFormat}',
-        '+374 {code} {numberFormat}',
+        '0{{code}} {{numberFormat}}',
+        '(0{{code}}) {{numberFormat}}',
+        '+374{{code}} {{numberFormat}}',
+        '+374 {{code}} {{numberFormat}}',
     );
 
     public function phoneNumber()
     {
-        $format = static::randomElement(static::$formats);
-        $code = static::randomElement(static::$codes);
-        $numberFormat = static::randomElement(static::$numberFormats);
+        return static::numerify($this->generator->parse(static::randomElement(static::$formats)));
+    }
 
-        $number = str_replace(array('{code}', '{numberFormat}'), array($code, $numberFormat), $format);
+    public function code() {
+        return static::randomElement(static::$codes);
+    }
 
-        return static::numerify($this->generator->parse($number));
+    /**
+     * @return mixed
+     */
+    public function numberFormat() {
+        return static::randomElement(static::$numberFormats);
     }
 }
