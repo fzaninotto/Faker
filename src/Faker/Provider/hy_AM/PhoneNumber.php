@@ -25,14 +25,16 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         return static::numerify($this->generator->parse(static::randomElement(static::$formats)));
     }
 
-    public function code() {
+    public function code()
+    {
         return static::randomElement(static::$codes);
     }
 
     /**
      * @return mixed
      */
-    public function numberFormat() {
+    public function numberFormat()
+    {
         return static::randomElement(static::$numberFormats);
     }
 }
