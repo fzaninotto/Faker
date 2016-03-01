@@ -14,6 +14,7 @@ class Internet extends \Faker\Provider\Internet
     protected static $safeEmailTld = array(
         'com', 'ir', 'me', 'net', 'org',
     );
+
 	/**
      * @link https://en.wikipedia.org/wiki/.ir
 	 */
