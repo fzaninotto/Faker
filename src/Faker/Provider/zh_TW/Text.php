@@ -163,7 +163,9 @@ EOT;
 
         $chars = str_split($text);
 
-        for ($i = 0; $i < count($chars); ++$i) {
+        $countChars = count($chars);
+
+        for ($i = 0; $i < $countChars; ++$i) {
             $temp = $chars[$i];
 
             $ord = ord($chars[$i]);
