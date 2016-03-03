@@ -1,5 +1,6 @@
 <?php
 namespace Faker\Provider\fa_IR;
+
 class Address extends \Faker\Provider\Address
 {
     protected static $country = array(
