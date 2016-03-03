@@ -156,7 +156,7 @@ class Base
     }
 
     /**
-     * Returns random elements from a provided array
+     * Returns randomly ordered subsequence of $count elements from a provided array
      *
      * @param  array            $array Array to take elements from. Defaults to a-f
      * @param  integer          $count Number of elements to take.
