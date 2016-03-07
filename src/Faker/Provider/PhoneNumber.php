@@ -13,4 +13,14 @@ class PhoneNumber extends Base
     {
         return static::numerify($this->generator->parse(static::randomElement(static::$formats)));
     }
+
+    /**
+     * @example +27113456789
+     * @return string
+     */
+    public function e164PhoneNumber()
+    {
+        $formats = array('+#############');
+        return static::numerify($this->generator->parse(static::randomElement($formats)));
+    }
 }
