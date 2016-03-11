@@ -25,7 +25,7 @@ class ColumnTypeGuesser
     {
         $generator = $this->generator;
         if ($column->isTemporal()) {
-            if ($column->isEpochTemporal()) {
+            if ($column->getType() == PropelTypes::BU_DATE || $column->getType() == PropelTypes::BU_TIMESTAMP) {
                 return function () use ($generator) {
                     return $generator->dateTime;
                 };
