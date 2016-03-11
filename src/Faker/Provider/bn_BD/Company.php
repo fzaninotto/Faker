@@ -9,11 +9,11 @@ class Company extends \Faker\Provider\Company
     );
 
     protected static $names = array(
-        'রহিম', 'করিম', 'বাবলু'
+        'রহিম', 'করিম', 'বাবলু' , 'আজাদ' , 'ট্রান্সেন্ডিও' , 'আড়ং' , 'রহমান' , 'ভাই ভাই' , 'নিউজ ক্রেড'
     );
 
     protected static $types = array(
-        'সিমেন্ট', 'সার', 'ঢেউটিন'
+        'সিমেন্ট', 'সার', 'ঢেউটিন' , 'সফটওয়্যার' , 'কোং' , 'গার্মেন্টস' , 'স্টার্ট আপ'
     );
 
     public static function companyType()

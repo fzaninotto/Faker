@@ -5,18 +5,18 @@ namespace Faker\Provider\bn_BD;
 class Address extends \Faker\Provider\Address
 {
     protected static $cityPrefix = array('দক্ষিন', 'পূর্ব', 'পশ্চিম', 'উত্তর', 'নতুন', 'লেইক', 'পোর্ট');
-    protected static $citySuffix = array('টাউন', 'তলা', 'হাট', 'খানা');
+    protected static $citySuffix = array('টাউন', 'তলা', 'হাট', 'খানা' , 'মোড়');
 
     protected static $streetNames = array(
-        'বরকত', 'হাজী', 'করিমউদ্দিন'
+        'বরকত', 'হাজী', 'করিমউদ্দিন' , 'মাহাবুব' , 'আফজাল' , 'লিমিটেড হাউসিং' , 'জিগাতলা' , 'শঙ্কর' , 'বারিধারা'
     );
 
     protected static $streetSuffix = array(
-        'তলী', 'গলি', 'চিপা', 'ব্রীজ', 'সড়ক', 'বাইপাস', 'ক্যাম্প',
+        'তলী', 'গলি', 'চিপা', 'ব্রীজ', 'সড়ক', 'বাইপাস', 'ক্যাম্প' , 'পাড়া'
     );
     protected static $postcode = array('#####', '#####-####');
     protected static $state = array(
-        'খুলনা', 'বরিশাল', 'চিটাগং', 'ঢাকা', 'রাজশাহী', 'সিলেট', 'কুমিল্লা'
+        'খুলনা', 'বরিশাল', 'চিটাগং', 'ঢাকা', 'রাজশাহী', 'সিলেট', 'ময়মনসিংহ' , 'রংপুর'
     );
     protected static $country = array(
         'অস্ট্রিয়া',
