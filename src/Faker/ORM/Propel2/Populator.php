@@ -87,6 +87,6 @@ class Populator
 
         $peer = $class::TABLE_MAP;
 
-        return Propel::getConnection($peer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+        return Propel::getConnection($peer::DATABASE_NAME, ServiceContainerInterface::CONNECTION_WRITE);
     }
 }
