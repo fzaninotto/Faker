@@ -55,19 +55,19 @@ class Image extends Base
      * @example 'https://unsplash.it/500/600/?random'
      */
 
-     public static function imageUnsplashUrl($width = 500, $height = 600, $randomize = true, $gray = false)
+    public static function imageUnsplashUrl($width = 500, $height = 600, $randomize = true, $gray = false)
      {
          $baseUrl = "https://unsplash.it/";
          $url = "{$width}/{$height}/";
 
-         if ($gray) {
+        if ($gray) {
              $url = "g/".$url."/?random" ;
              return $url;
          }
 
 
 
-         if ($randomize) {
+        if ($randomize) {
              $url .= '?random' ;
          }
 
