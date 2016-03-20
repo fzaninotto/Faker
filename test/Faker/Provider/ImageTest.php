@@ -6,6 +6,16 @@ use Faker\Provider\Image;
 
 class ImageTest extends \PHPUnit_Framework_TestCase
 {
+    public function testPlaceholderImageUrlUses640x680AsTheDefaultSize()
+    {
+        $this->assertRegExp('#^http://placehold.it/640x480#', Image::placeholderImageUrl());
+    }
+
+    public function testPlaceholderImageUrlAcceptsCustomWidthAndHeight()
+    {
+        $this->assertRegExp('#^http://placehold.it/800x400#', Image::imageUrl(800, 400));
+    }
+
     public function testImageUrlUses640x680AsTheDefaultSize()
     {
         $this->assertRegExp('#^http://lorempixel.com/640/480/#', Image::imageUrl());
