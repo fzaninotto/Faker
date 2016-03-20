@@ -13,6 +13,21 @@ class Image extends Base
     );
 
     /**
+     * Generate the URL that will return a random placeholder image
+     *
+     * Set randomize to false to remove the random GET parameter at the end of the url.
+     *
+     * @example 'http://placehold.it/640x480'
+     */
+    public static function placeholderImageUrl($width = 640, $height = 480)
+    {
+        $baseUrl = "http://placehold.it/";
+        $url = "{$width}x{$height}";
+        
+        return $baseUrl . $url;
+    }
+
+    /**
      * Generate the URL that will return a random image
      *
      * Set randomize to false to remove the random GET parameter at the end of the url.
