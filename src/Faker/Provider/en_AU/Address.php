@@ -80,4 +80,31 @@ class Address extends \Faker\Provider\en_US\Address
     {
         return static::toUpper(static::randomElement(static::$buildingLetters));
     }
+
+    /**
+     * Returns a sane city prefix
+     * @example West
+     */
+    public static function cityPrefix()
+    {
+        return static::randomElement(static::$cityPrefix);
+    }
+
+    /**
+     * Returns a sane street suffix
+     * @example Beach
+     */
+    public static function streetSuffix()
+    {
+        return static::randomElement(static::$streetSuffix);
+    }
+
+    /**
+     * Returns a sane state
+     * @example New South Wales
+     */
+    public static function state()
+    {
+        return static::randomElement(static::$state);
+    }
 }
