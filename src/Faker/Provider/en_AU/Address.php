@@ -78,7 +78,7 @@ class Address extends \Faker\Provider\en_US\Address
      */
     public static function buildingLetter()
     {
-      return static::toUpper(static::randomElement(static::$buildingLetters));
+        return static::toUpper(static::randomElement(static::$buildingLetters));
     }
 
     /**
@@ -87,7 +87,7 @@ class Address extends \Faker\Provider\en_US\Address
      */
     public static function cityPrefix()
     {
-      return static::randomElement(static::$cityPrefix);
+        return static::randomElement(static::$cityPrefix);
     }
 
     /**
@@ -96,7 +96,7 @@ class Address extends \Faker\Provider\en_US\Address
      */
     public static function streetSuffix()
     {
-      return static::randomElement(static::$streetSuffix);
+        return static::randomElement(static::$streetSuffix);
     }
 
     /**
@@ -105,6 +105,6 @@ class Address extends \Faker\Provider\en_US\Address
      */
     public static function state()
     {
-      return static::randomElement(static::$state);
+        return static::randomElement(static::$state);
     }
 }
