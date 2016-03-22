@@ -4,33 +4,33 @@ namespace Faker\Provider\id_ID;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $lastNameFormat = array(
+    protected static $lastNameFormat = [
         '{{lastNameMale}}',
         '{{lastNameFemale}}',
-    );
+    ];
 
-    protected static $maleNameFormats = array(
+    protected static $maleNameFormats = [
         '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}} {{suffix}}',
         '{{firstNameMale}} {{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{firstNameMale}} {{lastNameMale}} {{suffix}}',
-    );
+    ];
 
-    protected static $femaleNameFormats = array(
+    protected static $femaleNameFormats = [
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}} {{suffix}}',
         '{{firstNameFemale}} {{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{firstNameFemale}} {{lastNameFemale}} {{suffix}}',
-    );
+    ];
 
     /**
      * @link http://www.nama.web.id/search.php?gender=male&origin=Indonesia+-+Jawa&letter=&submit=Search
      */
-    protected static $firstNameMale = array(
+    protected static $firstNameMale = [
         'Abyasa', 'Ade', 'Adhiarja', 'Adiarja', 'Adika', 'Adikara', 'Adinata',
         'Aditya', 'Agus', 'Ajiman', 'Ajimat', 'Ajimin', 'Ajiono', 'Akarsana',
         'Alambana', 'Among', 'Anggabaya', 'Anom', 'Argono', 'Aris', 'Arta',
@@ -102,17 +102,17 @@ class Person extends \Faker\Provider\Person
         'Wahyu', 'Wira', 'Wisnu', 'Wadi', 'Wardi', 'Warji', 'Waluyo', 'Wakiman',
         'Wage', 'Wardaya', 'Warsa', 'Warsita', 'Warta', 'Wasis', 'Wawan',
         'Xanana', 'Yahya', 'Yusuf', 'Yosef', 'Yono', 'Yoga',
-    );
+    ];
 
     /**
      * @link http://namafb.com/2010/08/12/top-1000-nama-populer-indonesia/
      */
-    protected static $firstNameFemale = array(
+    protected static $firstNameFemale = [
         'Ade', 'Agnes', 'Ajeng', 'Amalia', 'Anita', 'Ayu', 'Aisyah', 'Ana',
         'Ami', 'Ani', 'Azalea', 'Aurora', 'Alika', 'Anastasia', 'Amelia',
         'Almira', 'Bella', 'Betania', 'Belinda', 'Citra', 'Cindy', 'Chelsea',
         'Clara', 'Cornelia', 'Cinta', 'Cinthia', 'Ciaobella', 'Cici', 'Carla',
-        'Calista', 'Devi', 'Dewi','Dian', 'Diah', 'Diana', 'Dina', 'Dinda',
+        'Calista', 'Devi', 'Dewi', 'Dian', 'Diah', 'Diana', 'Dina', 'Dinda',
         'Dalima', 'Eka', 'Eva', 'Endah', 'Elisa', 'Eli', 'Ella', 'Ellis',
         'Elma', 'Elvina', 'Fitria', 'Fitriani', 'Febi', 'Faizah', 'Farah',
         'Farhunnisa', 'Fathonah', 'Gabriella', 'Gasti', 'Gawati', 'Genta',
@@ -138,13 +138,13 @@ class Person extends \Faker\Provider\Person
         'Violet', 'Winda', 'Widya', 'Wulan', 'Wirda', 'Wani', 'Yani', 'Yessi',
         'Yulia', 'Yuliana', 'Yuni', 'Yunita', 'Yance', 'Zahra', 'Zalindra',
         'Zaenab', 'Zulfa', 'Zizi', 'Zulaikha', 'Zamira', 'Zelda', 'Zelaya',
-    );
+    ];
 
     /**
      * @link http://namafb.com/2010/08/12/top-1000-nama-populer-indonesia/
      * @link http://id.wikipedia.org/wiki/Daftar_marga_suku_Batak_di_Toba
      */
-    protected static $lastNameMale = array(
+    protected static $lastNameMale = [
         'Adriansyah', 'Ardianto', 'Anggriawan', 'Budiman', 'Budiyanto',
         'Damanik', 'Dongoran', 'Dabukke', 'Firmansyah', 'Firgantoro',
         'Gunarto', 'Gunawan', 'Hardiansyah', 'Habibi', 'Hakim', 'Halim',
@@ -163,12 +163,12 @@ class Person extends \Faker\Provider\Person
         'Siregar', 'Situmorang', 'Tampubolon', 'Thamrin', 'Tamba', 'Tarihoran',
         'Utama', 'Uwais', 'Wahyudin', 'Waluyo', 'Wibowo', 'Winarno', 'Wibisono',
         'Wijaya', 'Widodo', 'Wacana', 'Waskita', 'Wasita', 'Zulkarnain',
-    );
+    ];
 
     /**
      * @link http://namafb.com/2010/08/12/top-1000-nama-populer-indonesia/
      */
-    protected static $lastNameFemale = array(
+    protected static $lastNameFemale = [
         'Agustina', 'Andriani', 'Anggraini', 'Aryani', 'Astuti',
         'Fujiati', 'Farida', 'Handayani', 'Hassanah', 'Hartati', 'Hasanah',
         'Haryanti', 'Hariyah', 'Hastuti', 'Halimah', 'Kusmawati', 'Kuswandari',
@@ -181,28 +181,29 @@ class Person extends \Faker\Provider\Person
         'Susanti', 'Safitri', 'Oktaviani', 'Utami', 'Usamah', 'Usada',
         'Uyainah', 'Yuniar', 'Yuliarti', 'Yulianti', 'Yolanda', 'Wahyuni',
         'Wijayanti', 'Widiastuti', 'Winarsih', 'Wulandari', 'Wastuti', 'Zulaika',
-    );
+    ];
 
     /**
      * @link http://id.wikipedia.org/wiki/Gelar_akademik
      */
-    protected static $titleMale = array('dr.', 'drg.', 'Dr.', 'Drs.', 'Ir.', 'H.');
+    protected static $titleMale = ['dr.', 'drg.', 'Dr.', 'Drs.', 'Ir.', 'H.'];
 
     /**
      * @link http://id.wikipedia.org/wiki/Gelar_akademik
      */
-    protected static $titleFemale = array('dr.', 'drg.', 'Dr.', 'Hj.');
+    protected static $titleFemale = ['dr.', 'drg.', 'Dr.', 'Hj.'];
 
     /**
-     * For academic title
+     * For academic title.
+     *
      * @link http://id.wikipedia.org/wiki/Gelar_akademik
      */
-    private static $suffix = array('S.Ked', 'S.Gz', 'S.Pt', 'S.IP', 'S.E.I',
+    private static $suffix = ['S.Ked', 'S.Gz', 'S.Pt', 'S.IP', 'S.E.I',
         'S.E.', 'S.Kom', 'S.H.', 'S.T.', 'S.Pd', 'S.Psi', 'S.I.Kom',
-        'S.Sos', 'S.Farm', 'M.M.', 'M.Kom.', 'M.TI.', 'M.Pd', 'M.Farm', 'M.Ak', );
+        'S.Sos', 'S.Farm', 'M.M.', 'M.Kom.', 'M.TI.', 'M.Pd', 'M.Farm', 'M.Ak', ];
 
     /**
-     * Return last name
+     * Return last name.
      *
      * @param string|null $gender male or female or null for any
      *
@@ -222,9 +223,8 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * Return last name for male
+     * Return last name for male.
      *
-     * @access public
      * @return string last name
      */
     public static function lastNameMale()
@@ -233,9 +233,8 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * Return last name for female
+     * Return last name for female.
      *
-     * @access public
      * @return string last name
      */
     public static function lastNameFemale()
@@ -244,9 +243,8 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * For academic title
+     * For academic title.
      *
-     * @access public
      * @return string suffix
      */
     public static function suffix()

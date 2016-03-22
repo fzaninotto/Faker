@@ -4,31 +4,30 @@ namespace Faker\Provider\kk_KZ;
 
 class Person extends \Faker\Provider\Person
 {
-
     /**
      * @see https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D0%BA%D0%B0%D1%8F_%D1%84%D0%B0%D0%BC%D0%B8%D0%BB%D0%B8%D1%8F
      *
      * @var array
      */
-    protected static $maleNameFormats = array(
+    protected static $maleNameFormats = [
         '{{lastName}}ұлы {{firstNameMale}}',
-    );
+    ];
 
     /**
      * @see https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D0%BA%D0%B0%D1%8F_%D1%84%D0%B0%D0%BC%D0%B8%D0%BB%D0%B8%D1%8F
      *
      * @var array
      */
-    protected static $femaleNameFormats = array(
+    protected static $femaleNameFormats = [
         '{{lastName}}қызы {{firstNameFemale}}',
-    );
+    ];
 
     /**
      * @see http://koshpendi.kz/index.php/nomad/imena/
      *
      * @var array
      */
-    protected static $firstNameMale = array(
+    protected static $firstNameMale = [
         'Аылғазы',
         'Әбдіқадыр',
         'Бабағожа',
@@ -57,14 +56,14 @@ class Person extends \Faker\Provider\Person
         'Шаттық',
         'Ыстамбақы',
         'Ібни',
-    );
+    ];
 
     /**
      * @see http://koshpendi.kz/index.php/nomad/imena/
      *
      * @var array
      */
-    protected static $firstNameFemale = array(
+    protected static $firstNameFemale = [
         'Асылтас',
         'Әужа',
         'Бүлдіршін',
@@ -94,7 +93,7 @@ class Person extends \Faker\Provider\Person
         'Шырынгүл',
         'Ырысты',
         'Іңкәр',
-    );
+    ];
 
     /**
      * @see http://koshpendi.kz/index.php/nomad/imena/
@@ -102,7 +101,7 @@ class Person extends \Faker\Provider\Person
      *
      * @var array
      */
-    protected static $lastName = array(
+    protected static $lastName = [
         'Адырбай',
         'Әжібай',
         'Байбөрі',
@@ -131,13 +130,15 @@ class Person extends \Faker\Provider\Person
         'Шілдебай',
         'Ыстамбақы',
         'Ісмет',
-    );
+    ];
 
     /**
-     * National Individual Identification Numbers
+     * National Individual Identification Numbers.
      *
      * @link   http://egov.kz/wps/portal/!utWCM/p/b1/04_Sj9S1tDAwMzY1NjLTj9CPykssy0xPLMnMz0vMAfGjzOKDvDxNnJwMHQ0sTMOMDBxNPJ2dggNCg13MDIEKIpEVGFiGOIMUuIcFOJkZGxgYE6ffAAdwNCCkP1w_ClUJFheAFeCxws8jPzdVPzcqx83SU9cRADxWbyg!/dl4/d5/L0lDUmlTUSEhL3dHa0FKRnNBLzRKVXFDQSEhL2Vu/
-     * @param  \DateTime $birthDate
+     *
+     * @param \DateTime $birthDate
+     *
      * @return string 12 digits, like 780322300455
      */
     public static function individualIdentificationNumber(\DateTime $birthDate = null)
@@ -146,10 +147,10 @@ class Person extends \Faker\Provider\Person
             $birthDate = \Faker\Provider\DateTime::dateTimeBetween();
         }
 
-        $dateAsString       = $birthDate->format('ymd');
+        $dateAsString = $birthDate->format('ymd');
         $genderAndCenturyId = (string) static::numberBetween(1, 6);
-        $randomDigits       = (string) static::numerify('#####');
+        $randomDigits = (string) static::numerify('#####');
 
-        return $dateAsString . $genderAndCenturyId . $randomDigits;
+        return $dateAsString.$genderAndCenturyId.$randomDigits;
     }
 }

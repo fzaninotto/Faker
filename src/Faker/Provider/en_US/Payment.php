@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Faker\Provider\en_US;
-
 
 class Payment extends \Faker\Provider\Payment
 {
@@ -17,14 +15,14 @@ class Payment extends \Faker\Provider\Payment
     public function bankRoutingNumber()
     {
         $district = self::numberBetween(1, 12);
-        $type = self::randomElement(array(0, 0, 0, 0, 20, 20, 60));
+        $type = self::randomElement([0, 0, 0, 0, 20, 20, 60]);
         $clearingCenter = self::randomDigitNotNull();
         $state = self::randomDigit();
         $institution = self::randomNumber(4, true);
 
         $result = sprintf('%02d%01d%01d%04d', $district + $type, $clearingCenter, $state, $institution);
 
-        return $result . self::calculateRoutingNumberChecksum($result);
+        return $result.self::calculateRoutingNumberChecksum($result);
     }
 
     public static function calculateRoutingNumberChecksum($routing)

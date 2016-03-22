@@ -4,16 +4,16 @@ namespace Faker\Provider\lv_LV;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $cityPrefix = array('pilsēta');
+    protected static $cityPrefix = ['pilsēta'];
 
-    protected static $regionSuffix = array('reģions');
-    protected static $streetPrefix = array(
+    protected static $regionSuffix = ['reģions'];
+    protected static $streetPrefix = [
         'iela', 'bulvāris', 'skvērs', 'gāte',
-    );
+    ];
 
-    protected static $buildingNumber = array('##');
-    protected static $postcode = array('LV ####');
-    protected static $country = array(
+    protected static $buildingNumber = ['##'];
+    protected static $postcode = ['LV ####'];
+    protected static $country = [
         'Afghanistan', 'Albania', 'Algeria', 'American Samoa', 'Andorra', 'Angola', 'Anguilla', 'Antarctica (the territory South of 60 deg S)', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan',
         'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Bouvet Island (Bouvetoya)', 'Brazil', 'British Indian Ocean Territory (Chagos Archipelago)', 'British Virgin Islands', 'Brunei Darussalam', 'Bulgaria', 'Burkina Faso', 'Burundi',
         'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Cayman Islands', 'Central African Republic', 'Chad', 'Chile', 'China', 'Christmas Island', 'Cocos (Keeling) Islands', 'Colombia', 'Comoros', 'Congo', 'Congo', 'Cook Islands', 'Costa Rica', 'Cote d\'Ivoire', 'Croatia', 'Cuba', 'Cyprus', 'Czech Republic',
@@ -38,27 +38,27 @@ class Address extends \Faker\Provider\Address
         'Vanuatu', 'Venezuela', 'Vietnam',
         'Wallis and Futuna', 'Western Sahara',
         'Yemen',
-        'Zambia', 'Zimbabwe'
-    );
+        'Zambia', 'Zimbabwe',
+    ];
 
-    protected static $region = array(
-        'Kurzemes', 'Latgales', 'Rīgas', 'Vidzemes', 'Zemgales'
-    );
+    protected static $region = [
+        'Kurzemes', 'Latgales', 'Rīgas', 'Vidzemes', 'Zemgales',
+    ];
 
-    protected static $city = array('Aizkraukle' ,'Aluksne','Balvi', 'Bauska','Cesis',
-        'Daugavpils', 'Dobele','Gulbene', 'Jekabpils', 'Jelgava', 'Kraslava', 'Kuldiga', 'Liepaja',
-        'Limbazi', 'Ludza', 'Madona', 'Mobile Phones', 'Ogre', 'Preili', 'Rezekne', 'Rīga', 'Ventspils'
-    );
+    protected static $city = ['Aizkraukle', 'Aluksne', 'Balvi', 'Bauska', 'Cesis',
+        'Daugavpils', 'Dobele', 'Gulbene', 'Jekabpils', 'Jelgava', 'Kraslava', 'Kuldiga', 'Liepaja',
+        'Limbazi', 'Ludza', 'Madona', 'Mobile Phones', 'Ogre', 'Preili', 'Rezekne', 'Rīga', 'Ventspils',
+    ];
 
-    protected static $street = array(
+    protected static $street = [
         'Alfrēda Kalniņa', 'Alksnāja', 'Amatu', 'Anglikāņu', 'Arhitektu', 'Arsenāla', 'Artilērijas',
         'Aspazijas', 'Atgriežu', 'Audēju', 'Basteja', 'Baumaņa', 'Bīskapa', 'Blaumaņa', 'Brīvības', 'Brīvības',
-        'Bruņinieku', 'Dainas', 'Daugavas'
-    );
+        'Bruņinieku', 'Dainas', 'Daugavas',
+    ];
 
-    protected static $addressFormats = array(
-        "{{postcode}}, {{region}} {{regionSuffix}}, {{city}} {{cityPrefix}}, {{street}} {{streetPrefix}}, {{buildingNumber}}",
-    );
+    protected static $addressFormats = [
+        '{{postcode}}, {{region}} {{regionSuffix}}, {{city}} {{cityPrefix}}, {{street}} {{streetPrefix}}, {{buildingNumber}}',
+    ];
 
     public static function buildingNumber()
     {

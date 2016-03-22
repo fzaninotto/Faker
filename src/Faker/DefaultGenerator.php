@@ -25,7 +25,7 @@ class DefaultGenerator
 
     /**
      * @param string $method
-     * @param array $attributes
+     * @param array  $attributes
      */
     public function __call($method, $attributes)
     {

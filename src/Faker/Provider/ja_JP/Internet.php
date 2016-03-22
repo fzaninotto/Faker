@@ -4,28 +4,28 @@ namespace Faker\Provider\ja_JP;
 
 class Internet extends \Faker\Provider\Internet
 {
-    protected static $userNameFormats = array(
+    protected static $userNameFormats = [
         '{{lastNameAscii}}.{{firstNameAscii}}',
         '{{firstNameAscii}}.{{lastNameAscii}}',
         '{{firstNameAscii}}##',
         '?{{lastNameAscii}}',
-    );
-    protected static $safeEmailTld = array(
+    ];
+    protected static $safeEmailTld = [
         'org', 'com', 'net', 'jp', 'jp', 'jp',
-    );
-    protected static $freeEmailDomain = array(
-        'gmail.com', 'yahoo.co.jp', 'hotmail.co.jp', 'mail.goo.ne.jp'
-    );
-    protected static $tld = array(
+    ];
+    protected static $freeEmailDomain = [
+        'gmail.com', 'yahoo.co.jp', 'hotmail.co.jp', 'mail.goo.ne.jp',
+    ];
+    protected static $tld = [
         'com', 'com', 'com', 'biz', 'info', 'net', 'org', 'jp', 'jp', 'jp',
-    );
+    ];
 
-    protected static $lastNameAscii = array(
-        'uno', 'kudo', 'suzuki', 'tanabe', 'nagisa', 'hirokawa', 'yoshimoto'
-    );
-    protected static $firstNameAscii = array(
-        'akira', 'kana', 'taro', 'naoko', 'hiroshi', 'momoko', 'rika'
-    );
+    protected static $lastNameAscii = [
+        'uno', 'kudo', 'suzuki', 'tanabe', 'nagisa', 'hirokawa', 'yoshimoto',
+    ];
+    protected static $firstNameAscii = [
+        'akira', 'kana', 'taro', 'naoko', 'hiroshi', 'momoko', 'rika',
+    ];
 
     public static function lastNameAscii()
     {
@@ -52,6 +52,6 @@ class Internet extends \Faker\Provider\Internet
      */
     public function domainName()
     {
-        return static::randomElement(static::$lastNameAscii) . '.' . $this->tld();
+        return static::randomElement(static::$lastNameAscii).'.'.$this->tld();
     }
 }

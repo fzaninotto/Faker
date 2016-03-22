@@ -4,7 +4,7 @@ namespace Faker\Provider\uk_UA;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
-    protected static $formats = array(
+    protected static $formats = [
 
         // International format (mobile)
         '+38050#######',
@@ -24,6 +24,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
         // More generic formats
         '+38(0##)#######',
-        '+38(0###)######'
-    );
+        '+38(0###)######',
+    ];
 }

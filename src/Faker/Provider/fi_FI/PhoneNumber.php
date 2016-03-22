@@ -4,7 +4,7 @@ namespace Faker\Provider\fi_FI;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
-    protected static $formats = array(
+    protected static $formats = [
         '+358 (40) ### ####',
         '+358 (50) ### ####',
         '+358 40 ### ####',
@@ -15,6 +15,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '### #######',
         '040-#######',
         '050-#######',
-        '(###) #######'
-    );
+        '(###) #######',
+    ];
 }

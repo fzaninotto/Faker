@@ -11,7 +11,6 @@ namespace Faker;
  * @property string $title
  * @property string $titleMale
  * @property string $titleFemale
- *
  * @property string $citySuffix
  * @property string $streetSuffix
  * @property string $buildingNumber
@@ -23,43 +22,52 @@ namespace Faker;
  * @property string $country
  * @property float  $latitude
  * @property float  $longitude
- *
  * @property string $ean13
  * @property string $ean8
  * @property string $isbn13
  * @property string $isbn10
- *
  * @property string $phoneNumber
- *
  * @property string $company
  * @property string $companySuffix
  * @property string $jobTitle
- *
  * @property string $creditCardType
  * @property string $creditCardNumber
+ *
  * @method string creditCardNumber($type = null, $formatted = false, $separator = '-')
+ *
  * @property \DateTime $creditCardExpirationDate
  * @property string $creditCardExpirationDateString
  * @property string $creditCardDetails
  * @property string $bankAccountNumber
+ *
  * @method string iban($countryCode = null, $prefix = '', $length = null)
+ *
  * @property string $swiftBicNumber
  * @property string $vat
- *
  * @property string $word
  * @property string|array $words
- * @method string|array words($nb = 3, $asText = false)
- * @property string $sentence
- * @method string sentence($nbWords = 6, $variableNbWords = true)
- * @property string|array $sentences
- * @method string|array sentences($nb = 3, $asText = false)
- * @property string $paragraph
- * @method string paragraph($nbSentences = 3, $variableNbSentences = true)
- * @property string|array $paragraphs
- * @method string|array paragraphs($nb = 3, $asText = false)
- * @property string $text
- * @method string text($maxNbChars = 200)
  *
+ * @method string|array words($nb = 3, $asText = false)
+ *
+ * @property string $sentence
+ *
+ * @method string sentence($nbWords = 6, $variableNbWords = true)
+ *
+ * @property string|array $sentences
+ *
+ * @method string|array sentences($nb = 3, $asText = false)
+ *
+ * @property string $paragraph
+ *
+ * @method string paragraph($nbSentences = 3, $variableNbSentences = true)
+ *
+ * @property string|array $paragraphs
+ *
+ * @method string|array paragraphs($nb = 3, $asText = false)
+ *
+ * @property string $text
+ *
+ * @method string text($maxNbChars = 200)
  * @method string realText($maxNbChars = 200, $indexSize = 2)
  *
  * @property string $email
@@ -70,18 +78,21 @@ namespace Faker;
  * @property string $safeEmailDomain
  * @property string $userName
  * @property string $password
+ *
  * @method string password($minLength = 6, $maxLength = 20)
+ *
  * @property string $domainName
  * @property string $domainWord
  * @property string $tld
  * @property string $url
  * @property string $slug
+ *
  * @method string slug($nbWords = 6, $variableNbWords = true)
+ *
  * @property string $ipv4
  * @property string $ipv6
  * @property string $localIpv4
  * @property string $macAddress
- *
  * @property int       $unixTime
  * @property \DateTime $dateTime
  * @property \DateTime $dateTimeAD
@@ -98,6 +109,7 @@ namespace Faker;
  * @property int       $year
  * @property int       $century
  * @property string    $timezone
+ *
  * @method string date($format = 'Y-m-d', $max = 'now')
  * @method string time($format = 'H:i:s', $max = 'now')
  * @method \DateTime dateTimeBetween($startDate = '-30 years', $endDate = 'now')
@@ -110,13 +122,15 @@ namespace Faker;
  * @property string $countryISOAlpha3
  * @property string $languageCode
  * @property string $currencyCode
- * @property boolean boolean
- * @method boolean boolean($chanceOfGettingTrue = 50)
+ * @property bool boolean
+ *
+ * @method bool boolean($chanceOfGettingTrue = 50)
  *
  * @property int    $randomDigit
  * @property int    $randomDigitNotNull
  * @property string $randomLetter
  * @property string $randomAscii
+ *
  * @method int randomNumber($nbDigits = null, $strict = false)
  * @method int|string|null randomKey(array $array = array())
  * @method int numberBetween($min = 0, $max = 2147483647)
@@ -135,8 +149,7 @@ namespace Faker;
  * @method string toUpper($string = '')
  * @method Generator optional($weight = 0.5, $default = null)
  * @method Generator unique($reset = false, $maxRetries = 10000)
- *
- * @method integer biasedNumberBetween($min = 0, $max = 100, $function = 'sqrt')
+ * @method int biasedNumberBetween($min = 0, $max = 100, $function = 'sqrt')
  *
  * @property string $macProcessor
  * @property string $linuxProcessor
@@ -149,13 +162,11 @@ namespace Faker;
  * @property string $windowsPlatformToken
  * @property string $macPlatformToken
  * @property string $linuxPlatformToken
- *
  * @property string $uuid
- *
  * @property string $mimeType
  * @property string $fileExtension
- * @method string file($sourceDirectory = '/tmp', $targetDirectory = '/tmp', $fullPath = true)
  *
+ * @method string file($sourceDirectory = '/tmp', $targetDirectory = '/tmp', $fullPath = true)
  * @method string imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null)
  * @method string image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true)
  *
@@ -169,8 +180,8 @@ namespace Faker;
  */
 class Generator
 {
-    protected $providers = array();
-    protected $formatters = array();
+    protected $providers = [];
+    protected $formatters = [];
 
     public function addProvider($provider)
     {
@@ -191,13 +202,13 @@ class Generator
         }
     }
 
-    public function format($formatter, $arguments = array())
+    public function format($formatter, $arguments = [])
     {
         return call_user_func_array($this->getFormatter($formatter), $arguments);
     }
 
     /**
-     * @return Callable
+     * @return callable
      */
     public function getFormatter($formatter)
     {
@@ -206,7 +217,7 @@ class Generator
         }
         foreach ($this->providers as $provider) {
             if (method_exists($provider, $formatter)) {
-                $this->formatters[$formatter] = array($provider, $formatter);
+                $this->formatters[$formatter] = [$provider, $formatter];
 
                 return $this->formatters[$formatter];
             }
@@ -215,14 +226,15 @@ class Generator
     }
 
     /**
-     * Replaces tokens ('{{ tokenName }}') with the result from the token method call
+     * Replaces tokens ('{{ tokenName }}') with the result from the token method call.
      *
-     * @param  string $string String that needs to bet parsed
+     * @param string $string String that needs to bet parsed
+     *
      * @return string
      */
     public function parse($string)
     {
-        return preg_replace_callback('/\{\{\s?(\w+)\s?\}\}/u', array($this, 'callFormatWithMatches'), $string);
+        return preg_replace_callback('/\{\{\s?(\w+)\s?\}\}/u', [$this, 'callFormatWithMatches'], $string);
     }
 
     protected function callFormatWithMatches($matches)
@@ -240,7 +252,7 @@ class Generator
 
     /**
      * @param string $method
-     * @param array $attributes
+     * @param array  $attributes
      */
     public function __call($method, $attributes)
     {

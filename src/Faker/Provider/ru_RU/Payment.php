@@ -6,11 +6,12 @@ class Payment extends \Faker\Provider\Payment
 {
     /**
      * @see list of Russian banks (2015-04-04), source: http://www.banki.ru/banks/
+     *
      * @example "cat *.html | grep 'b-cb-list__name' | iconv --f windows-1251 --t utf-8 | grep -o '>.*<' | \
      * sed -r 's/&mdash;//' | sed -r 's/[\<\>]//g' | sed -r "s/(^|$)/'/g" | sed -r 's/$/,/' | sed -r 's/\&(laquo|raquo);/"/g' | \
      * sed -r 's/\s+/ /g'"
      */
-    protected static $banks = array(
+    protected static $banks = [
         'Новый Промышленный Банк',
         'Новый Символ',
         'Нокссбанк',
@@ -799,7 +800,7 @@ class Payment extends \Faker\Provider\Payment
         'Новый Век',
         'Новый Кредитный Союз',
         'Новый Московский Банк',
-    );
+    ];
 
     /**
      * @example 'Новый Московский Банк'

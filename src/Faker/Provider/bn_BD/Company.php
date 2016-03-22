@@ -4,17 +4,17 @@ namespace Faker\Provider\bn_BD;
 
 class Company extends \Faker\Provider\Company
 {
-    protected static $formats = array(
-        '{{companyName}} {{companyType}}'
-    );
+    protected static $formats = [
+        '{{companyName}} {{companyType}}',
+    ];
 
-    protected static $names = array(
-        'রহিম', 'করিম', 'বাবলু'
-    );
+    protected static $names = [
+        'রহিম', 'করিম', 'বাবলু',
+    ];
 
-    protected static $types = array(
-        'সিমেন্ট', 'সার', 'ঢেউটিন'
-    );
+    protected static $types = [
+        'সিমেন্ট', 'সার', 'ঢেউটিন',
+    ];
 
     public static function companyType()
     {

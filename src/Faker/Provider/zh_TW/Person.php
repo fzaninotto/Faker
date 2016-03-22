@@ -4,21 +4,21 @@ namespace Faker\Provider\zh_TW;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $maleNameFormats = array(
+    protected static $maleNameFormats = [
         '{{lastName}}{{firstNameMale}}',
-    );
+    ];
 
-    protected static $femaleNameFormats = array(
+    protected static $femaleNameFormats = [
         '{{lastName}}{{firstNameFemale}}',
-    );
+    ];
 
-    protected static $titleMale = array('先生', '博士', '教授');
-    protected static $titleFemale = array('小姐', '太太', '博士', '教授');
+    protected static $titleMale = ['先生', '博士', '教授'];
+    protected static $titleFemale = ['小姐', '太太', '博士', '教授'];
 
     /**
      * @link http://zh.wikipedia.org/wiki/%E7%99%BE%E5%AE%B6%E5%A7%93
      */
-    protected static $lastName = array(
+    protected static $lastName = [
         '趙', '錢', '孫', '李', '周', '吳', '鄭', '王', '馮',
         '陳', '褚', '衛', '蔣', '沈', '韓', '楊', '朱', '秦',
         '尤', '許', '何', '呂', '施', '張', '孔', '曹', '嚴',
@@ -84,27 +84,27 @@ class Person extends \Faker\Provider\Person
         '左丘', '東門', '西門', '商', '牟', '佘', '佴',
         '伯', '賞', '南宮', '墨', '哈', '譙', '笪', '年',
         '愛', '陽', '佟', '第五', '言', '福',
-    );
+    ];
 
     /**
      * @link http://technology.chtsai.org/namefreq/
      */
-    protected static $characterMale = array(
+    protected static $characterMale = [
         '佳', '俊', '信', '偉', '傑', '冠', '君', '哲',
         '嘉', '威', '宇', '安', '宏', '宗', '宜', '家',
         '庭', '廷', '建', '彥', '心', '志', '思', '承',
         '文', '柏', '樺', '瑋', '穎', '美', '翰', '華',
         '詩', '豪', '賢', '軒', '銘', '霖',
-    );
+    ];
 
-    protected static $characterFemale = array(
+    protected static $characterFemale = [
         '伶', '佩', '佳', '依', '儀', '冠', '君', '嘉',
         '如', '娟', '婉', '婷', '安', '宜', '家', '庭',
         '心', '思', '怡', '惠', '慧', '文', '欣', '涵',
         '淑', '玲', '珊', '琪', '琬', '瑜', '穎', '筑',
         '筱', '美', '芬', '芳', '華', '萍', '萱', '蓉',
         '詩', '貞', '郁', '鈺', '雅', '雯', '靜', '馨',
-    );
+    ];
 
     public static function randomName($pool, $n)
     {
@@ -112,6 +112,7 @@ class Person extends \Faker\Provider\Person
         for ($i = 0; $i < $n; ++$i) {
             $name .= static::randomElement($pool);
         }
+
         return $name;
     }
 

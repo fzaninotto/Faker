@@ -4,7 +4,7 @@ namespace Faker\Provider\en_UG;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
-    protected static $formats = array(
+    protected static $formats = [
         '+256 7## ### ###',
         '+2567########',
         '+256 4## ### ###',
@@ -12,6 +12,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '07## ### ###',
         '07########',
         '04## ### ###',
-        '04########'
-    );
+        '04########',
+    ];
 }

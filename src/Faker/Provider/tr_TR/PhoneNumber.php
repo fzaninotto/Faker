@@ -4,7 +4,7 @@ namespace Faker\Provider\tr_TR;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
-    protected static $formats = array(
+    protected static $formats = [
         '050########',
         '053########',
         '054########',
@@ -28,6 +28,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '+90 (50#) ### ## ##',
         '+90 (53#) ### ## ##',
         '+90 (54#) ### ## ##',
-        '+90 (55#) ### ## ##'
-    );
+        '+90 (55#) ### ## ##',
+    ];
 }

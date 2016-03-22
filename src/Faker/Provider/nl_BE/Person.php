@@ -4,7 +4,7 @@ namespace Faker\Provider\nl_BE;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $firstNameMale = array(
+    protected static $firstNameMale = [
         'Aaron', 'Adam', 'Adrien', 'Alessio', 'Alexander', 'Alexandre', 'Alexis',
         'Antoine', 'Arne', 'Arthur', 'Axel', 'Ayoub', 'Baptiste', 'Benjamin',
         'Clément', 'Daan', 'David', 'Diego', 'Dylan', 'Elias', 'Emiel', 'Emile',
@@ -17,10 +17,10 @@ class Person extends \Faker\Provider\Person
         'Noah', 'Noé', 'Nolan', 'Nore', 'Quinten', 'Raphaël', 'Rayan', 'Robbe',
         'Robin', 'Romain', 'Ruben', 'Rune', 'Sacha', 'Sam', 'Samuel', 'Sander',
         'Seppe', 'Simon', 'Stan', 'Théo', 'Thomas', 'Tibo', 'Tom', 'Tristan', 'Tuur',
-        'Vic', 'Victor', 'Vince', 'Warre', 'Xander', 'Yanis'
-    );
+        'Vic', 'Victor', 'Vince', 'Warre', 'Xander', 'Yanis',
+    ];
 
-    protected static $firstNameFemale = array(
+    protected static $firstNameFemale = [
         'Alexia', 'Alice', 'Alicia', 'Alyssa', 'Amber', 'Amélie', 'Amy', 'Anaïs',
         'Anna', 'Anouk', 'Axelle', 'Aya', 'Bo', 'Camille', 'Célia', 'Charlotte',
         'Chiara', 'Chloé', 'Clara', 'Clémence', 'Elena', 'Elias', 'Eline', 'Elisa',
@@ -32,10 +32,10 @@ class Person extends \Faker\Provider\Person
         'Malak', 'Manon', 'Margaux', 'Margot', 'Marie', 'Marion', 'Maya', 'Merel',
         'Mila', 'Nina', 'Noa', 'Noémie', 'Noor', 'Nora', 'Océane', 'Olivia', 'Pauline',
         'Rania', 'Robin', 'Romane', 'Roos', 'Salma', 'Sara', 'Sarah', 'Senne',
-        'Siebe', 'Sofia','Tess', 'Victoria', 'Wout', 'Yana', 'Yasmine', 'Zoé', 'Zoë'
-    );
+        'Siebe', 'Sofia', 'Tess', 'Victoria', 'Wout', 'Yana', 'Yasmine', 'Zoé', 'Zoë',
+    ];
 
-    protected static $lastName = array(
+    protected static $lastName = [
         'Adam', 'Aerts', 'Amrani', 'André', 'Antoine', 'Baert', 'Bah', 'Barry',
         'Bastin', 'Bauwens', 'Benali', 'Bernard', 'Bertrand', 'Bodart', 'Bogaert',
         'Bogaerts', 'Borremans', 'Bosmans', 'Boulanger', 'Bourgeois', 'Brasseur',
@@ -67,6 +67,6 @@ class Person extends \Faker\Provider\Person
         'Vandamme', 'Vandenberghe', 'Verbeeck', 'Verbeke', 'Verbruggen', 'Vercammen',
         'Verhaegen', 'Verhaeghe', 'Verhelst', 'Verheyen', 'Verhoeven', 'Verlinden',
         'Vermeersch', 'Vermeiren', 'Vermeulen', 'Verschueren', 'Verstraete', 'Verstraeten',
-        'Vervoort', 'Wauters', 'Willems', 'Wouters', 'Wuyts', 'Yildirim', 'Yilmaz'
-    );
+        'Vervoort', 'Wauters', 'Willems', 'Wouters', 'Wuyts', 'Yildirim', 'Yilmaz',
+    ];
 }

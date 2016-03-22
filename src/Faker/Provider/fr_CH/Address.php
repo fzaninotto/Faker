@@ -4,16 +4,16 @@ namespace Faker\Provider\fr_CH;
 
 class Address extends \Faker\Provider\fr_FR\Address
 {
-    protected static $buildingNumber = array('###', '##', '#', '#a', '#b', '#c');
+    protected static $buildingNumber = ['###', '##', '#', '#a', '#b', '#c'];
 
-    protected static $streetPrefix = array('Rue', 'Rue', 'Chemin', 'Avenue', 'Boulevard', 'Place', 'Impasse');
+    protected static $streetPrefix = ['Rue', 'Rue', 'Chemin', 'Avenue', 'Boulevard', 'Place', 'Impasse'];
 
-    protected static $postcode = array('####');
+    protected static $postcode = ['####'];
 
     /**
      * @link https://fr.wikipedia.org/wiki/Villes_de_Suisse
      */
-    protected static $cityNames = array(
+    protected static $cityNames = [
         'Aarau', 'Aarberg', 'Aarburg', 'Agno', 'Aigle VD', 'Altdorf', 'Altstätten', 'Appenzell', 'Arbon', 'Ascona', 'Aubonne', 'Avenches',
         'Baden', 'Bad Zurzach', 'Bâle', 'Bellinzone', 'Berne', 'Beromünster', 'Berthoud', 'Biasca', 'Bienne', 'Bischofszell', 'Boudry', 'Bourg-Saint-Pierre', 'Bremgarten AG', 'Brigue', 'Brugg', 'Bulle', 'Bülach',
         'Cerlier', 'Châtel-Saint-Denis',
@@ -36,61 +36,63 @@ class Address extends \Faker\Provider\fr_FR\Address
         'Valangin', 'Vevey', 'Villeneuve', 'Viège',
         'Waldenburg', 'Walenstadt', 'Wangen an der Aare', 'Werdenberg', 'Wiedlisbach', 'Wil', 'Willisau', 'Winterthour',
         'Yverdon-les-Bains',
-        'Zofingue', 'Zoug', 'Zurich'
-    );
+        'Zofingue', 'Zoug', 'Zurich',
+    ];
 
     /**
      * @link https://fr.wikipedia.org/wiki/Canton_suisse
      */
-    protected static $canton = array(
-        array('AG' => 'Argovie'),
-        array('AI' => 'Appenzell Rhodes-Intérieures'),
-        array('AR' => 'Appenzell Rhodes-Extérieures'),
-        array('BE' => 'Berne'),
-        array('BL' => 'Bâle-Campagne'),
-        array('BS' => 'Bâle-Ville'),
-        array('FR' => 'Fribourg'),
-        array('GE' => 'Genève'),
-        array('GL' => 'Glaris'),
-        array('GR' => 'Grisons'),
-        array('JU' => 'Jura'),
-        array('LU' => 'Lucerne'),
-        array('NE' => 'Neuchâtel'),
-        array('NW' => 'Nidwald'),
-        array('OW' => 'Obwald'),
-        array('SG' => 'Saint-Gall'),
-        array('SH' => 'Schaffhouse'),
-        array('SO' => 'Soleure'),
-        array('SZ' => 'Schwytz'),
-        array('TG' => 'Thurgovie'),
-        array('TI' => 'Tessin'),
-        array('UR' => 'Uri'),
-        array('VD' => 'Vaud'),
-        array('VS' => 'Valais'),
-        array('ZG' => 'Zoug'),
-        array('ZH' => 'Zurich')
-    );
+    protected static $canton = [
+        ['AG' => 'Argovie'],
+        ['AI' => 'Appenzell Rhodes-Intérieures'],
+        ['AR' => 'Appenzell Rhodes-Extérieures'],
+        ['BE' => 'Berne'],
+        ['BL' => 'Bâle-Campagne'],
+        ['BS' => 'Bâle-Ville'],
+        ['FR' => 'Fribourg'],
+        ['GE' => 'Genève'],
+        ['GL' => 'Glaris'],
+        ['GR' => 'Grisons'],
+        ['JU' => 'Jura'],
+        ['LU' => 'Lucerne'],
+        ['NE' => 'Neuchâtel'],
+        ['NW' => 'Nidwald'],
+        ['OW' => 'Obwald'],
+        ['SG' => 'Saint-Gall'],
+        ['SH' => 'Schaffhouse'],
+        ['SO' => 'Soleure'],
+        ['SZ' => 'Schwytz'],
+        ['TG' => 'Thurgovie'],
+        ['TI' => 'Tessin'],
+        ['UR' => 'Uri'],
+        ['VD' => 'Vaud'],
+        ['VS' => 'Valais'],
+        ['ZG' => 'Zoug'],
+        ['ZH' => 'Zurich'],
+    ];
 
-    protected static $cityFormats = array(
+    protected static $cityFormats = [
         '{{cityName}}',
-    );
+    ];
 
-    protected static $streetNameFormats = array(
+    protected static $streetNameFormats = [
         '{{streetPrefix}} {{lastName}}',
         '{{streetPrefix}} de {{cityName}}',
-        '{{streetPrefix}} de {{lastName}}'
-    );
+        '{{streetPrefix}} de {{lastName}}',
+    ];
 
-    protected static $streetAddressFormats = array(
+    protected static $streetAddressFormats = [
         '{{streetName}} {{buildingNumber}}',
-    );
-    protected static $addressFormats = array(
+    ];
+    protected static $addressFormats = [
         "{{streetAddress}}\n{{postcode}} {{city}}",
-    );
+    ];
 
     /**
-     * Returns a random street prefix
+     * Returns a random street prefix.
+     *
      * @example Rue
+     *
      * @return string
      */
     public static function streetPrefix()
@@ -100,7 +102,9 @@ class Address extends \Faker\Provider\fr_FR\Address
 
     /**
      * Returns a random city name.
+     *
      * @example Luzern
+     *
      * @return string
      */
     public function cityName()
@@ -109,8 +113,10 @@ class Address extends \Faker\Provider\fr_FR\Address
     }
 
     /**
-     * Returns a canton
+     * Returns a canton.
+     *
      * @example array('BE' => 'Bern')
+     *
      * @return array
      */
     public static function canton()
@@ -120,21 +126,25 @@ class Address extends \Faker\Provider\fr_FR\Address
 
     /**
      * Returns the abbreviation of a canton.
+     *
      * @return string
      */
     public static function cantonShort()
     {
         $canton = static::canton();
+
         return key($canton);
     }
 
     /**
      * Returns the name of canton.
+     *
      * @return string
      */
     public static function cantonName()
     {
         $canton = static::canton();
+
         return current($canton);
     }
 }

@@ -4,7 +4,7 @@ namespace Faker;
 
 /**
  * Proxy for other generators, to return only valid values. Works with
- * Faker\Generator\Base->valid()
+ * Faker\Generator\Base->valid().
  */
 class ValidGenerator
 {
@@ -30,25 +30,27 @@ class ValidGenerator
     }
 
     /**
-     * Catch and proxy all generator calls but return only valid values
+     * Catch and proxy all generator calls but return only valid values.
+     *
      * @param string $attribute
      */
     public function __get($attribute)
     {
-        return $this->__call($attribute, array());
+        return $this->__call($attribute, []);
     }
 
     /**
-     * Catch and proxy all generator calls with arguments but return only valid values
+     * Catch and proxy all generator calls with arguments but return only valid values.
+     *
      * @param string $name
-     * @param array $arguments
+     * @param array  $arguments
      */
     public function __call($name, $arguments)
     {
         $i = 0;
         do {
-            $res = call_user_func_array(array($this->generator, $name), $arguments);
-            $i++;
+            $res = call_user_func_array([$this->generator, $name], $arguments);
+            ++$i;
             if ($i > $this->maxRetries) {
                 throw new \OverflowException(sprintf('Maximum retries of %d reached without finding a valid value', $this->maxRetries));
             }

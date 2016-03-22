@@ -4,31 +4,30 @@ namespace Faker\Provider\en_IN;
 
 class Address extends \Faker\Provider\Address
 {
-
-    protected static $city = array(
-        'Agra','Ahmedabad','Ajmer','Alwar',
-        'Bengaluru','Bhubhaneshwar','Bhopal','Bikaner',
-        'Chennai','Chandigarh',
-        'Darjeeling','Dehra Dun','Delhi',
+    protected static $city = [
+        'Agra', 'Ahmedabad', 'Ajmer', 'Alwar',
+        'Bengaluru', 'Bhubhaneshwar', 'Bhopal', 'Bikaner',
+        'Chennai', 'Chandigarh',
+        'Darjeeling', 'Dehra Dun', 'Delhi',
         'Faridabad',
-        'Gandhinagar','Guwahati','Gangtok','Gurgaon',
-        'Hyderabad','Hisar',
+        'Gandhinagar', 'Guwahati', 'Gangtok', 'Gurgaon',
+        'Hyderabad', 'Hisar',
         'Indore',
-        'Jaipur','Jodhpur','Jammu','Jamnagar','Jabalpur',
-        'Kolkata','Kanpur','Kota','Kochi',
-        'Ludhiana','Lucknow',
-        'Mumbai','Meerut','Mysore',
-        'Nagpur','Nashik','Noida','New Delhi',
-        'Pune','Patna','Panaji','Pilani','Pondicherry',
-        'Ratlam','Raipur','Ranchi','Rajkot',
-        'Surat','Simla','Srinagar',
-        'Thiruvananthapuram','Trichy',
+        'Jaipur', 'Jodhpur', 'Jammu', 'Jamnagar', 'Jabalpur',
+        'Kolkata', 'Kanpur', 'Kota', 'Kochi',
+        'Ludhiana', 'Lucknow',
+        'Mumbai', 'Meerut', 'Mysore',
+        'Nagpur', 'Nashik', 'Noida', 'New Delhi',
+        'Pune', 'Patna', 'Panaji', 'Pilani', 'Pondicherry',
+        'Ratlam', 'Raipur', 'Ranchi', 'Rajkot',
+        'Surat', 'Simla', 'Srinagar',
+        'Thiruvananthapuram', 'Trichy',
         'Udaipur',
-        'Vishakhapattanam','Vadodara',
+        'Vishakhapattanam', 'Vadodara',
         'Warangal',
-    );
+    ];
 
-    protected static $country = array(
+    protected static $country = [
         'Afghanistan', 'Albania', 'Algeria', 'American Samoa', 'Andorra', 'Angola', 'Anguilla', 'Antarctica (the territory South of 60 deg S)', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan',
         'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Bouvet Island (Bouvetoya)', 'Brazil', 'British Indian Ocean Territory (Chagos Archipelago)', 'British Virgin Islands', 'Brunei Darussalam', 'Bulgaria', 'Burkina Faso', 'Burundi',
         'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Cayman Islands', 'Central African Republic', 'Chad', 'Chile', 'China', 'Christmas Island', 'Cocos (Keeling) Islands', 'Colombia', 'Comoros', 'Congo', 'Congo', 'Cook Islands', 'Costa Rica', 'Cote d\'Ivoire', 'Croatia', 'Cuba', 'Cyprus', 'Czech Republic',
@@ -53,45 +52,45 @@ class Address extends \Faker\Provider\Address
         'Vanuatu', 'Venezuela', 'Vietnam',
         'Wallis and Futuna', 'Western Sahara',
         'Yemen',
-        'Zambia', 'Zimbabwe'
-    );
-    protected static $localityName = array(
-        'Aundh','Andheri',
-        'Borivali','Bandra',
-        'Chinchwad','Chandpole','Churchgate','Cyber City',
-        'Dadar','Deccan Gymkhana',
+        'Zambia', 'Zimbabwe',
+    ];
+    protected static $localityName = [
+        'Aundh', 'Andheri',
+        'Borivali', 'Bandra',
+        'Chinchwad', 'Chandpole', 'Churchgate', 'Cyber City',
+        'Dadar', 'Deccan Gymkhana',
         'Goregaon',
-        'Hadapsar','Harmada','Hinjewadi',
-        'Kormangala','Kharadi',
-        'Marathahalli','Model Town','Mansarovar','Malad',
+        'Hadapsar', 'Harmada', 'Hinjewadi',
+        'Kormangala', 'Kharadi',
+        'Marathahalli', 'Model Town', 'Mansarovar', 'Malad',
         'Sodala',
-        'Virar','Vikhroli',
-        'Yerwada','Yeshwanthpura',
-    );
-    protected static $areaSuffix = array(
-        ' Nagar','Pur','Garh','Gunj',' Chowk',
-    );
-    protected static $postcode = array(
-        '1#####','2#####','3#####','4#####','5#####',
-    );
-    protected static $localityFormats = array (
+        'Virar', 'Vikhroli',
+        'Yerwada', 'Yeshwanthpura',
+    ];
+    protected static $areaSuffix = [
+        ' Nagar', 'Pur', 'Garh', 'Gunj', ' Chowk',
+    ];
+    protected static $postcode = [
+        '1#####', '2#####', '3#####', '4#####', '5#####',
+    ];
+    protected static $localityFormats = [
         '{{firstName}}{{areaSuffix}}',
-        '{{localityName}}'
-    );
-    protected static $addressFormats = array(
+        '{{localityName}}',
+    ];
+    protected static $addressFormats = [
         '{{streetAddress}} {{city}} - {{postcode}}',
-    );
-    protected static $societySuffix = array(
-        'Society','Apartments','Heights','Villas',
-    );
-    protected static $societyNameFormat = array(
-        '{{firstName}} {{societySuffix}}'
-    );
-    protected static $streetAddressFormats = array(
-        
+    ];
+    protected static $societySuffix = [
+        'Society', 'Apartments', 'Heights', 'Villas',
+    ];
+    protected static $societyNameFormat = [
+        '{{firstName}} {{societySuffix}}',
+    ];
+    protected static $streetAddressFormats = [
+
         '{{buildingNumber}}, {{locality}},',
         '{{buildingNumber}}, {{societyName}}, {{locality}}',
-    );
+    ];
     public function societySuffix()
     {
         return static::randomElement(static::$societySuffix);
