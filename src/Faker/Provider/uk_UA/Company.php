@@ -4,26 +4,26 @@ namespace Faker\Provider\uk_UA;
 
 class Company extends \Faker\Provider\Company
 {
-    protected static $formats = array(
+    protected static $formats = [
         '{{companyName}}',                                      // Вектор
         '{{companyPrefix}} "{{companyName}}"',                  // ТОВ "Інфоком"
         '{{companyName}}-{{companySuffix}}',                    // Сервіс-Плюс
-        '{{companyPrefix}} "{{companyName}}-{{companySuffix}}"',// ПАТ "Альфа-Стиль"
-    );
+        '{{companyPrefix}} "{{companyName}}-{{companySuffix}}"', // ПАТ "Альфа-Стиль"
+    ];
 
-    protected static $urlFormats = array(
+    protected static $urlFormats = [
         '{{companyName}}',
         '{{companyName}}-{{companySuffix}}',
-    );
+    ];
 
-    protected static $companyPrefix = array('ТОВ', 'ПП', 'ПАТ','ПрАТ');
-    protected static $companySuffix = array('Сервіс','Плюс', 'Груп', 'Стиль', 'Дизайн');
+    protected static $companyPrefix = ['ТОВ', 'ПП', 'ПАТ', 'ПрАТ'];
+    protected static $companySuffix = ['Сервіс', 'Плюс', 'Груп', 'Стиль', 'Дизайн'];
 
-    protected static $companyName = array(
+    protected static $companyName = [
         'Вектор', 'Едельвейс', 'Смарт', 'Альфа', 'Система', 'Універсал',
         'Інфоком', 'Макс', 'Планета', 'Вектор', 'Приват', 'Еко', 'Мега',
-        'Мегамакс', 'Мульти', 'Майнер'
-    );
+        'Мегамакс', 'Мульти', 'Майнер',
+    ];
 
     public function companyUrl()
     {

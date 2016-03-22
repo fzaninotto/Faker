@@ -31,11 +31,11 @@ class EntityPopulator
     /**
      * @var array
      */
-    protected $columnFormatters = array();
+    protected $columnFormatters = [];
     /**
      * @var array
      */
-    protected $modifiers = array();
+    protected $modifiers = [];
 
     /**
      * @var bool
@@ -45,7 +45,7 @@ class EntityPopulator
     /**
      * Class constructor.
      *
-     * @param Mapper $mapper
+     * @param Mapper  $mapper
      * @param Locator $locator
      * @param $useExistingData
      */
@@ -114,11 +114,12 @@ class EntityPopulator
 
     /**
      * @param Generator $generator
+     *
      * @return array
      */
     public function guessColumnFormatters(Generator $generator)
     {
-        $formatters = array();
+        $formatters = [];
         $nameGuesser = new Name($generator);
         $columnTypeGuesser = new ColumnTypeGuesser($generator);
         $fields = $this->mapper->fields();
@@ -141,7 +142,6 @@ class EntityPopulator
         foreach ($relations as $relation) {
             // We don't need any other relation here.
             if ($relation instanceof BelongsTo) {
-
                 $fieldName = $relation->localKey();
                 $entityName = $relation->entityName();
                 $field = $fields[$fieldName];
@@ -159,17 +159,16 @@ class EntityPopulator
                             $mapper = $this->locator->mapper($entityName);
                             $records = $mapper->all()->limit(self::RELATED_FETCH_COUNT)->toArray();
                             if (empty($records)) {
-                                return null;
+                                return;
                             }
                             $id = $records[mt_rand(0, count($records) - 1)]['id'];
 
                             return $id;
                         } else {
-                            return null;
+                            return;
                         }
                     }
                 };
-
             }
         }
 
@@ -180,6 +179,7 @@ class EntityPopulator
      * Insert one new record using the Entity class.
      *
      * @param $insertedEntities
+     *
      * @return string
      */
     public function execute($insertedEntities)
@@ -190,7 +190,6 @@ class EntityPopulator
         $this->callMethods($obj, $insertedEntities);
 
         $this->mapper->insert($obj);
-
 
         return $obj;
     }

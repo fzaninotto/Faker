@@ -4,7 +4,7 @@ namespace Faker\Provider;
 
 class DateTime extends Base
 {
-    protected static $century = array('I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV','XVI','XVII','XVIII','XIX','XX','XXI');
+    protected static $century = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV', 'XVI', 'XVII', 'XVIII', 'XIX', 'XX', 'XXI'];
 
     protected static function getMaxTimestamp($max = 'now')
     {
@@ -20,9 +20,10 @@ class DateTime extends Base
     }
 
     /**
-     * Get a timestamp between January 1, 1970 and now
+     * Get a timestamp between January 1, 1970 and now.
      *
      * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     *
      * @return int
      *
      * @example 1061306726
@@ -33,34 +34,40 @@ class DateTime extends Base
     }
 
     /**
-     * Get a datetime object for a date between January 1, 1970 and now
+     * Get a datetime object for a date between January 1, 1970 and now.
      *
      * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     *
      * @example DateTime('2005-08-16 20:39:21')
+     *
      * @return \DateTime
      */
     public static function dateTime($max = 'now')
     {
-        return new \DateTime('@' . static::unixTime($max));
+        return new \DateTime('@'.static::unixTime($max));
     }
 
     /**
-     * Get a datetime object for a date between January 1, 001 and now
+     * Get a datetime object for a date between January 1, 001 and now.
      *
      * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     *
      * @example DateTime('1265-03-22 21:15:52')
+     *
      * @return \DateTime
      */
     public static function dateTimeAD($max = 'now')
     {
-        return new \DateTime('@' . mt_rand(-62135597361, static::getMaxTimestamp($max)));
+        return new \DateTime('@'.mt_rand(-62135597361, static::getMaxTimestamp($max)));
     }
 
     /**
-     * get a date string formatted with ISO8601
+     * get a date string formatted with ISO8601.
      *
      * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     *
      * @return string
+     *
      * @example '2003-10-21T16:05:52+0000'
      */
     public static function iso8601($max = 'now')
@@ -69,11 +76,13 @@ class DateTime extends Base
     }
 
     /**
-     * Get a date string between January 1, 1970 and now
+     * Get a date string between January 1, 1970 and now.
      *
      * @param string               $format
      * @param \DateTime|int|string $max    maximum timestamp used as random end limit, default to "now"
+     *
      * @return string
+     *
      * @example '2008-11-27'
      */
     public static function date($format = 'Y-m-d', $max = 'now')
@@ -82,11 +91,13 @@ class DateTime extends Base
     }
 
     /**
-     * Get a time string (24h format by default)
+     * Get a time string (24h format by default).
      *
      * @param string               $format
      * @param \DateTime|int|string $max    maximum timestamp used as random end limit, default to "now"
+     *
      * @return string
+     *
      * @example '15:02:34'
      */
     public static function time($format = 'H:i:s', $max = 'now')
@@ -100,7 +111,9 @@ class DateTime extends Base
      *
      * @param \DateTime|string $startDate Defaults to 30 years ago
      * @param \DateTime|string $endDate   Defaults to "now"
+     *
      * @example DateTime('1999-02-02 11:42:52')
+     *
      * @return \DateTime
      */
     public static function dateTimeBetween($startDate = '-30 years', $endDate = 'now')
@@ -114,7 +127,7 @@ class DateTime extends Base
 
         $timestamp = mt_rand($startTimestamp, $endTimestamp);
 
-        $ts = new \DateTime('@' . $timestamp);
+        $ts = new \DateTime('@'.$timestamp);
         $ts->setTimezone(new \DateTimeZone(date_default_timezone_get()));
 
         return $ts;
@@ -125,27 +138,31 @@ class DateTime extends Base
      * an interval
      * Accepts date string that can be recognized by strtotime().
      *
-     * @param string $date      Defaults to 30 years ago
-     * @param string $interval  Defaults to 5 days after
+     * @param string $date     Defaults to 30 years ago
+     * @param string $interval Defaults to 5 days after
+     *
      * @example dateTimeInInterval('1999-02-02 11:42:52', '+ 5 days')
+     *
      * @return \DateTime
      */
     public static function dateTimeInInterval($date = '-30 years', $interval = '+5 days')
     {
         $intervalObject = \DateInterval::createFromDateString($interval);
-        $datetime       = $date instanceof \DateTime ? $date : new \DateTime($date);
-        $otherDatetime  = clone $datetime;
+        $datetime = $date instanceof \DateTime ? $date : new \DateTime($date);
+        $otherDatetime = clone $datetime;
         $otherDatetime->add($intervalObject);
-        
+
         $begin = $datetime > $otherDatetime ? $otherDatetime : $datetime;
-        $end = $datetime===$begin ? $otherDatetime : $datetime;
+        $end = $datetime === $begin ? $otherDatetime : $datetime;
 
         return static::dateTimeBetween($begin, $end);
     }
 
     /**
      * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     *
      * @example DateTime('1964-04-04 11:02:02')
+     *
      * @return \DateTime
      */
     public static function dateTimeThisCentury($max = 'now')
@@ -155,7 +172,9 @@ class DateTime extends Base
 
     /**
      * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     *
      * @example DateTime('2010-03-10 05:18:58')
+     *
      * @return \DateTime
      */
     public static function dateTimeThisDecade($max = 'now')
@@ -165,7 +184,9 @@ class DateTime extends Base
 
     /**
      * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     *
      * @example DateTime('2011-09-19 09:24:37')
+     *
      * @return \DateTime
      */
     public static function dateTimeThisYear($max = 'now')
@@ -175,7 +196,9 @@ class DateTime extends Base
 
     /**
      * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     *
      * @example DateTime('2011-10-05 12:51:46')
+     *
      * @return \DateTime
      */
     public static function dateTimeThisMonth($max = 'now')
@@ -185,7 +208,9 @@ class DateTime extends Base
 
     /**
      * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     *
      * @return string
+     *
      * @example 'am'
      */
     public static function amPm($max = 'now')
@@ -195,7 +220,9 @@ class DateTime extends Base
 
     /**
      * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     *
      * @return string
+     *
      * @example '22'
      */
     public static function dayOfMonth($max = 'now')
@@ -205,7 +232,9 @@ class DateTime extends Base
 
     /**
      * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     *
      * @return string
+     *
      * @example 'Tuesday'
      */
     public static function dayOfWeek($max = 'now')
@@ -215,7 +244,9 @@ class DateTime extends Base
 
     /**
      * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     *
      * @return string
+     *
      * @example '7'
      */
     public static function month($max = 'now')
@@ -225,7 +256,9 @@ class DateTime extends Base
 
     /**
      * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     *
      * @return string
+     *
      * @example 'September'
      */
     public static function monthName($max = 'now')
@@ -235,7 +268,9 @@ class DateTime extends Base
 
     /**
      * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     *
      * @return int
+     *
      * @example 1673
      */
     public static function year($max = 'now')
@@ -245,6 +280,7 @@ class DateTime extends Base
 
     /**
      * @return string
+     *
      * @example 'XVII'
      */
     public static function century()
@@ -254,6 +290,7 @@ class DateTime extends Base
 
     /**
      * @return string
+     *
      * @example 'Europe/Paris'
      */
     public static function timezone()

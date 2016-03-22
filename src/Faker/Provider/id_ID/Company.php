@@ -4,25 +4,25 @@ namespace Faker\Provider\id_ID;
 
 class Company extends \Faker\Provider\Company
 {
-    protected static $formats = array(
+    protected static $formats = [
         '{{companyPrefix}} {{lastName}}',
         '{{companyPrefix}} {{lastName}} {{lastName}}',
         '{{companyPrefix}} {{lastName}} {{companySuffix}}',
         '{{companyPrefix}} {{lastName}} {{lastName}} {{companySuffix}}',
-    );
+    ];
 
     /**
      * @link http://id.wikipedia.org/wiki/Jenis_badan_usaha
      */
-    protected static $companyPrefix = array('PT', 'CV', 'UD', 'PD', 'Perum');
+    protected static $companyPrefix = ['PT', 'CV', 'UD', 'PD', 'Perum'];
 
     /**
      * @link http://id.wikipedia.org/wiki/Jenis_badan_usaha
      */
-    protected static $companySuffix = array('(Persero) Tbk', 'Tbk');
+    protected static $companySuffix = ['(Persero) Tbk', 'Tbk'];
 
     /**
-     * Get company prefix
+     * Get company prefix.
      *
      * @return string company prefix
      */
@@ -32,7 +32,7 @@ class Company extends \Faker\Provider\Company
     }
 
     /**
-     * Get company suffix
+     * Get company suffix.
      *
      * @return string company suffix
      */

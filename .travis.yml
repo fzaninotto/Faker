@@ -1,8 +1,6 @@
 language: php
 
 php:
-    - 5.3
-    - 5.4
     - 5.5
     - 5.6
     - 7.0
@@ -18,4 +16,4 @@ before_script:
     - travis_retry composer self-update
     - travis_retry composer install --no-interaction --prefer-dist
 
-script: make sniff test
+script: ./vendor/bin/php-cs-fixer --version && ./vendor/bin/php-cs-fixer fix -v --diff --dry-run

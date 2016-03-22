@@ -7,7 +7,7 @@ class Payment extends \Faker\Provider\Payment
     /**
      * @var array list of Polish banks, source: http://www.nbp.pl/banki_w_polsce/ewidencja/ewidencja.html
      */
-    protected static $banks = array(
+    protected static $banks = [
         '251' => 'Aareal Bank Aktiengesellschaft (Spółka Akcyjna) - Oddział w Polsce',
         '249' => 'Alior Bank SA',
         '247' => 'Banco Espirito Santo de Investimento, S.A. Spółka Akcyjna Oddział w Polsce',
@@ -80,7 +80,7 @@ class Payment extends \Faker\Provider\Payment
         '257' => 'UBS Limited (spółka z ograniczoną odpowiedzialnością) Oddział w Polsce',
         '261' => 'Vanquis Bank Limited (spółka z ograniczoną odpowiedzialnością) Oddział w Polsce',
         '213' => 'VOLKSWAGEN BANK POLSKA SA',
-    );
+    ];
 
     /**
      * @example 'Euro Bank SA'
@@ -91,11 +91,14 @@ class Payment extends \Faker\Provider\Payment
     }
 
     /**
-     * International Bank Account Number (IBAN)
+     * International Bank Account Number (IBAN).
+     *
      * @link http://en.wikipedia.org/wiki/International_Bank_Account_Number
-     * @param  string  $prefix      for generating bank account number of a specific bank
-     * @param  string  $countryCode ISO 3166-1 alpha-2 country code
-     * @param  integer $length      total length without country code and 2 check digits
+     *
+     * @param string $prefix      for generating bank account number of a specific bank
+     * @param string $countryCode ISO 3166-1 alpha-2 country code
+     * @param int    $length      total length without country code and 2 check digits
+     *
      * @return string
      */
     public static function bankAccountNumber($prefix = '', $countryCode = 'PL', $length = null)
@@ -105,16 +108,16 @@ class Payment extends \Faker\Provider\Payment
 
     protected static function addBankCodeChecksum($iban, $countryCode = 'PL')
     {
-        if ($countryCode != "PL" || strlen($iban) <= 8) {
+        if ($countryCode != 'PL' || strlen($iban) <= 8) {
             return $iban;
         }
         $checksum = 0;
-        $weights = array(7, 1, 3, 9, 7, 1, 3);
-        for ($i = 0; $i < 7; $i++) {
+        $weights = [7, 1, 3, 9, 7, 1, 3];
+        for ($i = 0; $i < 7; ++$i) {
             $checksum += $weights[$i] * (int) $iban[$i];
         }
         $checksum = $checksum % 10;
 
-        return substr($iban, 0, 7) . $checksum . substr($iban, 8);
+        return substr($iban, 0, 7).$checksum.substr($iban, 8);
     }
 }

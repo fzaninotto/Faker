@@ -18,11 +18,11 @@ class EntityPopulator
     /**
      * @var array
      */
-    protected $columnFormatters = array();
+    protected $columnFormatters = [];
     /**
      * @var array
      */
-    protected $modifiers = array();
+    protected $modifiers = [];
 
     /**
      * Class constructor.
@@ -89,11 +89,12 @@ class EntityPopulator
 
     /**
      * @param \Faker\Generator $generator
+     *
      * @return array
      */
     public function guessColumnFormatters(\Faker\Generator $generator)
     {
-        $formatters = array();
+        $formatters = [];
         $nameGuesser = new \Faker\Guesser\Name($generator);
         $columnTypeGuesser = new ColumnTypeGuesser($generator);
         foreach ($this->class->getFieldNames() as $fieldName) {
@@ -141,7 +142,7 @@ class EntityPopulator
                             $related = $inserted[$relatedClass][$index];
                         }
 
-                        $index++;
+                        ++$index;
 
                         return $related;
                     }
@@ -149,7 +150,7 @@ class EntityPopulator
                     return $inserted[$relatedClass][mt_rand(0, count($inserted[$relatedClass]) - 1)];
                 }
 
-                return null;
+                return;
             };
         }
 
@@ -158,8 +159,10 @@ class EntityPopulator
 
     /**
      * Insert one new record using the Entity class.
+     *
      * @param ObjectManager $manager
-     * @param bool $generateId
+     * @param bool          $generateId
+     *
      * @return EntityPopulator
      */
     public function execute(ObjectManager $manager, $insertedEntities, $generateId = false)
@@ -201,6 +204,7 @@ class EntityPopulator
 
     /**
      * @param EntityManagerInterface $manager
+     *
      * @return int|null
      */
     private function generateId($obj, $column, EntityManagerInterface $manager)

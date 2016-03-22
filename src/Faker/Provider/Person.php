@@ -7,41 +7,43 @@ class Person extends Base
     const GENDER_MALE = 'male';
     const GENDER_FEMALE = 'female';
 
-    protected static $titleFormat = array(
+    protected static $titleFormat = [
       '{{titleMale}}',
       '{{titleFemale}}',
-    );
+    ];
 
-    protected static $firstNameFormat = array(
+    protected static $firstNameFormat = [
       '{{firstNameMale}}',
       '{{firstNameFemale}}',
-    );
+    ];
 
-    protected static $maleNameFormats = array(
+    protected static $maleNameFormats = [
         '{{firstNameMale}} {{lastName}}',
-    );
+    ];
 
-    protected static $femaleNameFormats = array(
+    protected static $femaleNameFormats = [
         '{{firstNameFemale}} {{lastName}}',
-    );
+    ];
 
-    protected static $firstNameMale = array(
+    protected static $firstNameMale = [
         'John',
-    );
+    ];
 
-    protected static $firstNameFemale = array(
+    protected static $firstNameFemale = [
         'Jane',
-    );
+    ];
 
-    protected static $lastName = array('Doe');
+    protected static $lastName = ['Doe'];
 
-    protected static $titleMale = array('Mr.', 'Dr.', 'Prof.');
+    protected static $titleMale = ['Mr.', 'Dr.', 'Prof.'];
 
-    protected static $titleFemale = array('Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.');
+    protected static $titleFemale = ['Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.'];
 
     /**
      * @param string|null $gender 'male', 'female' or null for any
+     *
      * @return string
+     *
      * @example 'John Doe'
      */
     public function name($gender = null)
@@ -59,7 +61,9 @@ class Person extends Base
 
     /**
      * @param string|null $gender 'male', 'female' or null for any
+     *
      * @return string
+     *
      * @example 'John'
      */
     public function firstName($gender = null)
@@ -85,6 +89,7 @@ class Person extends Base
 
     /**
      * @example 'Doe'
+     *
      * @return string
      */
     public function lastName()
@@ -94,7 +99,9 @@ class Person extends Base
 
     /**
      * @example 'Mrs.'
+     *
      * @param string|null $gender 'male', 'female' or null for any
+     *
      * @return string
      */
     public function title($gender = null)

@@ -12,12 +12,12 @@ class Populator
 {
     protected $generator;
     protected $manager;
-    protected $entities = array();
-    protected $quantities = array();
-    protected $generateId = array();
+    protected $entities = [];
+    protected $quantities = [];
+    protected $generateId = [];
 
     /**
-     * @param \Faker\Generator $generator
+     * @param \Faker\Generator   $generator
      * @param ObjectManager|null $manager
      */
     public function __construct(\Faker\Generator $generator, ObjectManager $manager = null)
@@ -32,11 +32,11 @@ class Populator
      * @param mixed $entity A Doctrine classname, or a \Faker\ORM\Doctrine\EntityPopulator instance
      * @param int   $number The number of entities to populate
      */
-    public function addEntity($entity, $number, $customColumnFormatters = array(), $customModifiers = array(), $generateId = false)
+    public function addEntity($entity, $number, $customColumnFormatters = [], $customModifiers = [], $generateId = false)
     {
         if (!$entity instanceof \Faker\ORM\Doctrine\EntityPopulator) {
             if (null === $this->manager) {
-                throw new \InvalidArgumentException("No entity manager passed to Doctrine Populator.");
+                throw new \InvalidArgumentException('No entity manager passed to Doctrine Populator.');
             }
             $entity = new \Faker\ORM\Doctrine\EntityPopulator($this->manager->getClassMetadata($entity));
         }
@@ -65,14 +65,14 @@ class Populator
             $entityManager = $this->manager;
         }
         if (null === $entityManager) {
-            throw new \InvalidArgumentException("No entity manager passed to Doctrine Populator.");
+            throw new \InvalidArgumentException('No entity manager passed to Doctrine Populator.');
         }
 
-        $insertedEntities = array();
+        $insertedEntities = [];
         foreach ($this->quantities as $class => $number) {
             $generateId = $this->generateId[$class];
-            for ($i=0; $i < $number; $i++) {
-                $insertedEntities[$class][]= $this->entities[$class]->execute($entityManager, $insertedEntities, $generateId);
+            for ($i = 0; $i < $number; ++$i) {
+                $insertedEntities[$class][] = $this->entities[$class]->execute($entityManager, $insertedEntities, $generateId);
             }
             $entityManager->flush();
         }

@@ -4,7 +4,7 @@ namespace Faker\Provider;
 
 class PhoneNumber extends Base
 {
-    protected static $formats = array('###-###-###');
+    protected static $formats = ['###-###-###'];
 
     /**
      * @example '555-123-546'
@@ -16,11 +16,13 @@ class PhoneNumber extends Base
 
     /**
      * @example +27113456789
+     *
      * @return string
      */
     public function e164PhoneNumber()
     {
-        $formats = array('+#############');
+        $formats = ['+#############'];
+
         return static::numerify($this->generator->parse(static::randomElement($formats)));
     }
 }

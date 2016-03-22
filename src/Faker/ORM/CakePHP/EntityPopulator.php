@@ -59,9 +59,9 @@ class EntityPopulator
                     return true;
                 }
             }
+
             return false;
         };
-
 
         foreach ($schema->columns() as $column) {
             if ($column == $pk[0] || $isForeignKey($column)) {
@@ -89,7 +89,7 @@ class EntityPopulator
 
         $belongsTo = $table->associations()->type('BelongsTo');
         foreach ($belongsTo as $assoc) {
-            $modifiers['belongsTo' . $assoc->name()] = function ($data, $insertedEntities) use ($assoc) {
+            $modifiers['belongsTo'.$assoc->name()] = function ($data, $insertedEntities) use ($assoc) {
                 $table = $assoc->target();
                 $foreignModel = $table->alias();
 
@@ -111,6 +111,7 @@ class EntityPopulator
 
                 $foreignKey = $foreignKeys[array_rand($foreignKeys)];
                 $data[$assoc->foreignKey()] = $foreignKey;
+
                 return $data;
             };
         }
@@ -161,6 +162,7 @@ class EntityPopulator
         if (!empty($this->connectionName)) {
             $options['connection'] = $this->connectionName;
         }
+
         return TableRegistry::get($class, $options);
     }
 }

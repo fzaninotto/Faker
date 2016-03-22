@@ -4,7 +4,7 @@ namespace Faker\Provider\no_NO;
 
 class Company extends \Faker\Provider\Company
 {
-    protected static $formats = array(
+    protected static $formats = [
         '{{lastName}} {{companySuffix}}',
         '{{lastName}} {{companySuffix}}',
         '{{lastName}} {{companySuffix}}',
@@ -12,8 +12,8 @@ class Company extends \Faker\Provider\Company
         '{{lastName}} & {{lastName}} {{companySuffix}}',
         '{{lastName}} & {{lastName}}',
         '{{lastName}} og {{lastName}}',
-        '{{lastName}} og {{lastName}} {{companySuffix}}'
-    );
+        '{{lastName}} og {{lastName}} {{companySuffix}}',
+    ];
 
-    protected static $companySuffix = array('AS', 'DA', 'NUF');
+    protected static $companySuffix = ['AS', 'DA', 'NUF'];
 }

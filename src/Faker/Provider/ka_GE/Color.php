@@ -4,13 +4,13 @@ namespace Faker\Provider\ka_GE;
 
 class Color extends \Faker\Provider\Color
 {
-    protected static $safeColorNames = array(
+    protected static $safeColorNames = [
         'ალისფერი', 'ვარდისფერი', 'თეთრი', 'იასამნისფერი', 'ლურჯი', 'მუქი ლურჯი', 'მწვანე', 'ნარინჯისფერი',
         'ნაცრისფერი', 'სალათისფერი', 'ღია მწვანე', 'ყავისფერი', 'ყვითელი', 'ცისფერი', 'წითელი',
-    );
+    ];
 
-    protected static $allColorNames = array(
+    protected static $allColorNames = [
         'ალისფერი', 'ვარდისფერი', 'თეთრი', 'იასამნისფერი', 'ლურჯი', 'მუქი ლურჯი', 'მწვანე', 'ნარინჯისფერი',
         'ნაცრისფერი', 'სალათისფერი', 'ღია მწვანე', 'ყავისფერი', 'ყვითელი', 'ცისფერი', 'წითელი',
-    );
+    ];
 }

@@ -2,7 +2,7 @@
 
 namespace Faker\Guesser;
 
-use \Faker\Provider\Base;
+use Faker\Provider\Base;
 
 class Name
 {
@@ -17,8 +17,9 @@ class Name
     }
 
     /**
-     * @param string $name
+     * @param string   $name
      * @param int|null $size Length of field, if known
+     *
      * @return callable
      */
     public function guessFormat($name, $size = null)

@@ -5,7 +5,7 @@ namespace Faker\Provider\nl_NL;
 class Text extends \Faker\Provider\Text
 {
     /**
-     * Project Gutenberg's Dichtertje - De Uitvreter - Titaantjes, by Nescio
+     * Project Gutenberg's Dichtertje - De Uitvreter - Titaantjes, by Nescio.
      *
      * This eBook is for the use of anyone anywhere at no cost and with
      * almost no restrictions whatsoever.  You may copy it, give it away or
@@ -40,6 +40,7 @@ class Text extends \Faker\Provider\Text
      * 1911. "Titaantjes" in "Groot-Nederland" van Juni 1915.
      *
      * @see http://www.gutenberg.org/cache/epub/29719/pg29719.txt
+     *
      * @var string
      */
     protected static $baseText = <<<'EOT'

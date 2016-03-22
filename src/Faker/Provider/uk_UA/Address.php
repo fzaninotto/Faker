@@ -4,14 +4,14 @@ namespace Faker\Provider\uk_UA;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $cityPrefix = array('місто');
-    protected static $regionSuffix = array('область');
-    protected static $streetPrefix = array(
-        'вул.', 'пров.', 'пл.', 'просп.'
-    );
-    protected static $buildingNumber = array('##');
-    protected static $postcode = array('#####');
-    protected static $country = array(
+    protected static $cityPrefix = ['місто'];
+    protected static $regionSuffix = ['область'];
+    protected static $streetPrefix = [
+        'вул.', 'пров.', 'пл.', 'просп.',
+    ];
+    protected static $buildingNumber = ['##'];
+    protected static $postcode = ['#####'];
+    protected static $country = [
         'Афганістан',
         'Албанія',
         'Алжир',
@@ -202,9 +202,9 @@ class Address extends \Faker\Provider\Address
         'Ємен',
         'Замбія',
         'Зімбабве',
-    );
+    ];
 
-    protected static $region = array(
+    protected static $region = [
         'Вінницька',
         'Волинська',
         'Дніпропетровська',
@@ -228,10 +228,10 @@ class Address extends \Faker\Provider\Address
         'Хмельницька',
         'Черкаська',
         'Чернівецька',
-        'Чернігівська'
-    );
+        'Чернігівська',
+    ];
 
-    protected static $city = array(
+    protected static $city = [
         'Вінниця',
         'Луцьк',
         'Дніпропетровськ',
@@ -255,10 +255,10 @@ class Address extends \Faker\Provider\Address
         'Хмельницьк',
         'Черкаси',
         'Чернівці',
-        'Чернігів'
-    );
+        'Чернігів',
+    ];
 
-    protected static $street = array(
+    protected static $street = [
         'Тараса Шевченка',
         'Лесі Українки',
         'Леніна',
@@ -270,15 +270,15 @@ class Address extends \Faker\Provider\Address
         'Генерала Жадова',
         'Пацаєва',
         'Волкова',
-    );
+    ];
 
-    protected static $addressFormats = array(
-        "{{postcode}}, {{cityAndRegion}}, {{streetPrefix}} {{streetName}}, {{buildingNumber}}",
-    );
+    protected static $addressFormats = [
+        '{{postcode}}, {{cityAndRegion}}, {{streetPrefix}} {{streetName}}, {{buildingNumber}}',
+    ];
 
-    protected static $streetAddressFormats = array(
-        "{{streetPrefix}} {{streetName}}, {{buildingNumber}}"
-    );
+    protected static $streetAddressFormats = [
+        '{{streetPrefix}} {{streetName}}, {{buildingNumber}}',
+    ];
 
     public static function citySuffix()
     {
@@ -324,8 +324,10 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Get city and region together
-     * We need it because city and region must comply each other in Ukraine
+     * We need it because city and region must comply each other in Ukraine.
+     *
      * @example 'Закарпатська область, місто Ужгород'
+     *
      * @return string
      */
     public function cityAndRegion()

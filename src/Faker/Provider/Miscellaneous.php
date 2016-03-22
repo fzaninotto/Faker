@@ -4,13 +4,13 @@ namespace Faker\Provider;
 
 class Miscellaneous extends Base
 {
-    protected static $languageCode = array('cn', 'de', 'en', 'es', 'fr', 'it', 'pt', 'ru');
+    protected static $languageCode = ['cn', 'de', 'en', 'es', 'fr', 'it', 'pt', 'ru'];
 
     /**
      * @link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      * On date of 2014-10-19
      */
-    protected static $countryCode = array(
+    protected static $countryCode = [
         'AD', 'AE', 'AF', 'AG', 'AI', 'AL', 'AM', 'AO', 'AQ', 'AR',
         'AS', 'AT', 'AU', 'AW', 'AX', 'AZ', 'BA', 'BB', 'BD', 'BE',
         'BF', 'BG', 'BH', 'BI', 'BJ', 'BL', 'BM', 'BN', 'BO', 'BQ',
@@ -36,13 +36,13 @@ class Miscellaneous extends Base
         'TL', 'TM', 'TN', 'TO', 'TR', 'TT', 'TV', 'TW', 'TZ', 'UA',
         'UG', 'UM', 'US', 'UY', 'UZ', 'VA', 'VC', 'VE', 'VG', 'VI',
         'VN', 'VU', 'WF', 'WS', 'YE', 'YT', 'ZA', 'ZM', 'ZW',
-    );
+    ];
 
     /**
      * @link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
      * On date of 2014-10-19
      */
-    protected static $countryISOAlpha3 = array(
+    protected static $countryISOAlpha3 = [
         'ABW', 'AFG', 'AGO', 'AIA', 'ALA', 'ALB', 'AND', 'ARE', 'ARG', 'ARM',
         'ASM', 'ATA', 'ATF', 'ATG', 'AUS', 'AUT', 'AZE', 'BDI', 'BEL', 'BEN',
         'BES', 'BFA', 'BGD', 'BGR', 'BHR', 'BHS', 'BIH', 'BLM', 'BLR', 'BLZ',
@@ -68,9 +68,9 @@ class Miscellaneous extends Base
         'TKL', 'TKM', 'TLS', 'TON', 'TTO', 'TUN', 'TUR', 'TUV', 'TWN', 'TZA',
         'UGA', 'UKR', 'UMI', 'URY', 'USA', 'UZB', 'VAT', 'VCT', 'VEN', 'VGB',
         'VIR', 'VNM', 'VUT', 'WLF', 'WSM', 'YEM', 'ZAF', 'ZMB', 'ZWE',
-    );
+    ];
 
-    protected static $localeData = array(
+    protected static $localeData = [
         'aa_DJ', 'aa_ER', 'aa_ET',
         'af_NA', 'af_ZA', 'ak_GH',
         'am_ET', 'ar_AE', 'ar_BH', 'ar_DZ',
@@ -151,13 +151,13 @@ class Miscellaneous extends Base
         'wal_ET', 'wo_SN', 'xh_ZA',
         'yo_NG', 'zh_CN', 'zh_HK',
         'zh_MO', 'zh_SG', 'zh_TW', 'zu_ZA',
-    );
+    ];
 
     /**
      * @link http://en.wikipedia.org/wiki/ISO_4217
      * On date of 2015-01-10
      */
-    protected static $currencyCode = array(
+    protected static $currencyCode = [
         'AED', 'AFN', 'ALL', 'AMD', 'ANG', 'AOA', 'ARS', 'AUD', 'AWG', 'AZN',
         'BAM', 'BBD', 'BDT', 'BGN', 'BHD', 'BIF', 'BMD', 'BND', 'BOB', 'BRL',
         'BSD', 'BTC', 'BTN', 'BWP', 'BYR', 'BZD', 'CAD', 'CDF', 'CHF', 'CLF',
@@ -174,14 +174,16 @@ class Miscellaneous extends Base
         'SHP', 'SLL', 'SOS', 'SRD', 'STD', 'SVC', 'SYP', 'SZL', 'THB', 'TJS',
         'TMT', 'TND', 'TOP', 'TRY', 'TTD', 'TWD', 'TZS', 'UAH', 'UGX', 'USD',
         'UYU', 'UZS', 'VEF', 'VND', 'VUV', 'WST', 'XAF', 'XAG', 'XAU', 'XCD',
-        'XDR', 'XOF', 'XPF', 'YER', 'ZAR', 'ZMK', 'ZMW', 'ZWL'
-    );
+        'XDR', 'XOF', 'XPF', 'YER', 'ZAR', 'ZMK', 'ZMW', 'ZWL',
+    ];
 
     /**
-     * Return a boolean, true or false
+     * Return a boolean, true or false.
      *
-     * @param integer $chanceOfGettingTrue Between 0 (always get false) and 100 (always get true).
+     * @param int $chanceOfGettingTrue Between 0 (always get false) and 100 (always get true).
+     *
      * @return bool
+     *
      * @example true
      */
     public static function boolean($chanceOfGettingTrue = 50)
@@ -223,6 +225,7 @@ class Miscellaneous extends Base
 
     /**
      * @example 'FR'
+     *
      * @link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      */
     public static function countryCode()
@@ -232,6 +235,7 @@ class Miscellaneous extends Base
 
     /**
      * @example 'FRA'
+     *
      * @link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
      */
     public static function countryISOAlpha3()
@@ -249,6 +253,7 @@ class Miscellaneous extends Base
 
     /**
      * @example 'EUR'
+     *
      * @link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      */
     public static function currencyCode()

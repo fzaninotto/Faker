@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Faker\ORM\Spot;
 
 use Spot\Locator;
@@ -12,13 +11,14 @@ class Populator
 {
     protected $generator;
     protected $locator;
-    protected $entities = array();
-    protected $quantities = array();
+    protected $entities = [];
+    protected $quantities = [];
 
     /**
      * Populator constructor.
+     *
      * @param \Faker\Generator $generator
-     * @param Locator|null $locator
+     * @param Locator|null     $locator
      */
     public function __construct(\Faker\Generator $generator, Locator $locator = null)
     {
@@ -38,13 +38,13 @@ class Populator
     public function addEntity(
         $entityName,
         $number,
-        $customColumnFormatters = array(),
-        $customModifiers = array(),
+        $customColumnFormatters = [],
+        $customModifiers = [],
         $useExistingData = false
     ) {
         $mapper = $this->locator->mapper($entityName);
         if (null === $mapper) {
-            throw new \InvalidArgumentException("No mapper can be found for entity " . $entityName);
+            throw new \InvalidArgumentException('No mapper can be found for entity '.$entityName);
         }
         $entity = new EntityPopulator($mapper, $this->locator, $useExistingData);
 
@@ -71,12 +71,12 @@ class Populator
             $locator = $this->locator;
         }
         if (null === $locator) {
-            throw new \InvalidArgumentException("No entity manager passed to Spot Populator.");
+            throw new \InvalidArgumentException('No entity manager passed to Spot Populator.');
         }
 
-        $insertedEntities = array();
+        $insertedEntities = [];
         foreach ($this->quantities as $entityName => $number) {
-            for ($i = 0; $i < $number; $i++) {
+            for ($i = 0; $i < $number; ++$i) {
                 $insertedEntities[$entityName][] = $this->entities[$entityName]->execute(
                     $insertedEntities
                 );

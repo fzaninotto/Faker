@@ -7,7 +7,7 @@ class Person extends \Faker\Provider\Person
     /**
      * @link http://ner.query.mn/son
      */
-    protected static $firstNameMale = array(
+    protected static $firstNameMale = [
         'Агь-Од', 'Адархидай', 'Адхираг', 'Ажай', 'Аз-Оргил', 'Алаг-Наяа', 'Алахуш-дигитхури', 'Алдиэр', 'Алтаннар', 'Алхуй', 'Алчи', 'Алчидай', 'Амал', 'Амбагай', 'Амин-Эрдэнэ', 'Анхлан', 'Арачиан', 'Аргасун', 'Арин', 'Арулад', 'Архай Хасар', 'Аучу', 'Ачиг-Чирүн', 'Ачиг-Ширүн', 'Аша-хамбу',
         'Баарьдай', 'Багу-Чорхи', 'Байшинхор', 'Бала', 'Бала-Чэрби', 'Балхачи', 'Барула', 'Баруладай', 'Бахажи', 'Баярмагнай', 'Бодончар', 'Боржигидай', 'Боролдай', 'Боролдайсуялби', 'Бужир', 'Буйраг', 'Булуган', 'Бурьбулчиру', 'Буту', 'Буха-Төмөр', 'Бухатай', 'Бухату', 'Бучаран', 'Бэсүдэй', 'Бүлтэчү', 'Бүри', 'Бүри-Бөхө', 'Бүрибөх', 'Бүхэдэй', 'Бөгэн',
         'Гилүгэтэй', 'Гэнигэдэй', 'Гүнгуа', 'Гүр-Хан', 'Гүчүгүр', 'Гүчүд',
@@ -32,13 +32,13 @@ class Person extends \Faker\Provider\Person
         'Шижуудай', 'Шинч', 'Шинэсочи', 'Ширахул',
         'Эди', 'Элжгэдэй', 'Элхудур', 'Эрххар', 'Эхлэлсайхан',
         'Ю-Хунан', 'Юрүхан',
-        'Ядир', 'Ялавач', 'Ялбаг'
-    );
+        'Ядир', 'Ялавач', 'Ялбаг',
+    ];
 
     /**
      * @link http://ner.query.mn/daugther
      */
-    protected static $firstNameFemale = array(
+    protected static $firstNameFemale = [
         'Агь-Од', 'Алагабэх', 'Алалтун', 'Алахчит', 'Амин-Эрдэнэ', 'Анхлан',
         'Баргужин-Гуа', 'Баярмагнай', 'Борогчин-Гуа',
         'Гүрбэсү',
@@ -53,22 +53,22 @@ class Person extends \Faker\Provider\Person
         'Хожинбэх', 'Хорижин', 'Хуагчин', 'Хутугтай', 'Хуурчин',
         'Цотан',
         'Чаалун', 'Чаурбэх', 'Чэчэйхэн',
-        'Эбэхэй'
-    );
+        'Эбэхэй',
+    ];
 
-    protected static $namePrefix = array('А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'К', 'Л', 'М', 'Н', 'О', 'Ө', 'П', 'Р', 'С', 'Т', 'У', 'Ү', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Э', 'Ю', 'Я');
+    protected static $namePrefix = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'К', 'Л', 'М', 'Н', 'О', 'Ө', 'П', 'Р', 'С', 'Т', 'У', 'Ү', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Э', 'Ю', 'Я'];
 
-    protected static $alphabet = array('А', 'Л', 'Х', 'Б', 'М', 'Ц', 'В', 'Н', 'Ч', 'Г', 'О', 'Ш', 'Д', 'Ө', 'Щ', 'Е', 'П', 'Ъ', 'Ё', 'Р', 'Ы', 'Ж', 'С', 'Ь', 'З', 'Т', 'Э', 'И', 'У', 'Ю', 'Й', 'Ү', 'Я', 'К', 'Ф');
+    protected static $alphabet = ['А', 'Л', 'Х', 'Б', 'М', 'Ц', 'В', 'Н', 'Ч', 'Г', 'О', 'Ш', 'Д', 'Ө', 'Щ', 'Е', 'П', 'Ъ', 'Ё', 'Р', 'Ы', 'Ж', 'С', 'Ь', 'З', 'Т', 'Э', 'И', 'У', 'Ю', 'Й', 'Ү', 'Я', 'К', 'Ф'];
 
-    protected static $maleNameFormats = array(
-        '{{namePrefix}}.{{firstNameMale}}'
-    );
+    protected static $maleNameFormats = [
+        '{{namePrefix}}.{{firstNameMale}}',
+    ];
 
-    protected static $femaleNameFormats = array(
-        '{{namePrefix}}.{{firstNameFemale}}'
-    );
+    protected static $femaleNameFormats = [
+        '{{namePrefix}}.{{firstNameFemale}}',
+    ];
 
-    protected static $idNumberFormat = "{{alphabet}}{{alphabet}}########";
+    protected static $idNumberFormat = '{{alphabet}}{{alphabet}}########';
 
     /**
      * Generate an identification number.
@@ -82,6 +82,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @return string
+     *
      * @example 'Ф'
      */
     public function alphabet()
@@ -91,6 +92,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @return string
+     *
      * @example 'Э'
      */
     public function namePrefix()

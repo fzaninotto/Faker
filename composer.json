@@ -10,11 +10,11 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3"
+        "php": ">=5.5.9"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0",
-        "squizlabs/php_codesniffer": "~1.5",
+        "fabpot/php-cs-fixer": "1.*",
         "ext-intl": "*"
     },
     "autoload": {

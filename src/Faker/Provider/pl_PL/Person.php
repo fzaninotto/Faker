@@ -3,35 +3,36 @@
 namespace Faker\Provider\pl_PL;
 
 /**
- * Most popular first and last names published by Ministry of the Interior:
+ * Most popular first and last names published by Ministry of the Interior:.
+ *
  * @link https://msw.gov.pl/pl/sprawy-obywatelskie/ewidencja-ludnosci-dowo/statystyki-imion-i-nazw
  */
 class Person extends \Faker\Provider\Person
 {
-    protected static $lastNameFormat = array(
+    protected static $lastNameFormat = [
         '{{lastNameMale}}',
         '{{lastNameFemale}}',
-    );
+    ];
 
-    protected static $maleNameFormats = array(
+    protected static $maleNameFormats = [
         '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
         '{{title}} {{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
         '{{title}} {{title}} {{firstNameMale}} {{lastNameMale}}',
-    );
+    ];
 
-    protected static $femaleNameFormats = array(
+    protected static $femaleNameFormats = [
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{title}} {{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{title}} {{title}} {{firstNameFemale}} {{lastNameFemale}}',
-    );
+    ];
 
-    protected static $firstNameMale = array(
+    protected static $firstNameMale = [
         'Adam', 'Adrian', 'Alan', 'Albert', 'Aleks', 'Aleksander', 'Alex', 'Andrzej', 'Antoni', 'Arkadiusz', 'Artur',
         'Bartek', 'Błażej', 'Borys', 'Bruno', 'Cezary', 'Cyprian', 'Damian', 'Daniel', 'Dariusz', 'Dawid', 'Dominik',
         'Emil', 'Ernest', 'Eryk', 'Fabian', 'Filip', 'Franciszek', 'Fryderyk', 'Gabriel', 'Grzegorz', 'Gustaw', 'Hubert',
@@ -41,9 +42,9 @@ class Person extends \Faker\Provider\Person
         'Michał', 'Mieszko', 'Mikołaj', 'Miłosz', 'Natan', 'Nataniel', 'Nikodem', 'Norbert', 'Olaf', 'Olgierd', 'Oliwier', 'Oskar',
         'Patryk', 'Paweł', 'Piotr', 'Przemysław', 'Radosław', 'Rafał', 'Robert', 'Ryszard', 'Sebastian', 'Stanisław', 'Stefan', 'Szymon',
         'Tadeusz', 'Tomasz', 'Tymon', 'Tymoteusz', 'Wiktor', 'Witold', 'Wojciech',
-    );
+    ];
 
-    protected static $firstNameFemale = array(
+    protected static $firstNameFemale = [
         'Ada', 'Adrianna', 'Agata', 'Agnieszka', 'Aleksandra', 'Alicja', 'Amelia', 'Anastazja', 'Angelika', 'Aniela', 'Anita',
         'Anna', 'Anna', 'Antonina', 'Apolonia', 'Aurelia', 'Barbara', 'Bianka', 'Blanka', 'Dagmara', 'Daria', 'Dominika', 'Dorota',
         'Eliza', 'Elżbieta', 'Emilia', 'Ewa', 'Ewelina', 'Gabriela', 'Hanna', 'Helena', 'Ida', 'Iga', 'Inga', 'Izabela',
@@ -53,9 +54,9 @@ class Person extends \Faker\Provider\Person
         'Melania', 'Michalina', 'Milena', 'Monika', 'Nadia', 'Natalia', 'Natasza', 'Nela', 'Nicole', 'Nikola', 'Nina',
         'Olga', 'Oliwia', 'Patrycja', 'Paulina', 'Pola', 'Roksana', 'Rozalia', 'Róża', 'Sandra', 'Sara', 'Sonia', 'Sylwia',
         'Tola', 'Urszula', 'Weronika', 'Wiktoria', 'Zofia', 'Zuzanna',
-    );
+    ];
 
-    protected static $lastNameMale = array(
+    protected static $lastNameMale = [
         'Adamczyk', 'Adamski', 'Andrzejewski', 'Baran', 'Baranowski', 'Bąk', 'Błaszczyk', 'Borkowski', 'Borowski', 'Brzeziński',
         'Chmielewski', 'Cieślak', 'Czarnecki', 'Czerwiński', 'Dąbrowski', 'Duda', 'Dudek', 'Gajewski', 'Głowacki', 'Górski', 'Grabowski',
         'Jabłoński', 'Jakubowski', 'Jankowski', 'Jasiński', 'Jaworski', 'Kaczmarczyk', 'Kaczmarek', 'Kalinowski', 'Kamiński', 'Kaźmierczak',
@@ -65,9 +66,9 @@ class Person extends \Faker\Provider\Person
         'Rutkowski', 'Sadowski', 'Sawicki', 'Sikora', 'Sikorski', 'Sobczak', 'Sokołowski', 'Stępień', 'Szczepański', 'Szewczyk', 'Szulc', 'Szymański', 'Szymczak',
         'Tomaszewski', 'Urbański', 'Walczak', 'Wasilewski', 'Wieczorek', 'Wilk', 'Wiśniewski', 'Witkowski', 'Włodarczyk', 'Wojciechowski',
         'Woźniak', 'Wójcik', 'Wróbel', 'Wróblewski', 'Wysocki', 'Zając', 'Zakrzewski', 'Zalewski', 'Zawadzki', 'Zieliński', 'Ziółkowski',
-    );
+    ];
 
-    protected static $lastNameFemale = array(
+    protected static $lastNameFemale = [
         'Adamczyk', 'Adamska', 'Andrzejewska', 'Baran', 'Baranowska', 'Bąk', 'Błaszczyk', 'Borkowska', 'Borowska', 'Brzezińska',
         'Chmielewska', 'Cieślak', 'Czarnecka', 'Czerwińska', 'Dąbrowska', 'Duda', 'Dudek', 'Gajewska', 'Głowacka', 'Górecka', 'Górska', 'Grabowska',
         'Jabłońska', 'Jakubowska', 'Jankowska', 'Jasińska', 'Jaworska', 'Kaczmarczyk', 'Kaczmarek', 'Kalinowska', 'Kamińska', 'Kaźmierczak',
@@ -77,18 +78,18 @@ class Person extends \Faker\Provider\Person
         'Rutkowska', 'Sadowska', 'Sawicka', 'Sikora', 'Sikorska', 'Sobczak', 'Sokołowska', 'Stępień', 'Szczepańska', 'Szewczyk', 'Szulc', 'Szymańska', 'Szymczak',
         'Tomaszewska', 'Urbańska', 'Walczak', 'Wasilewska', 'Wieczorek', 'Wilk', 'Wiśniewska', 'Witkowska', 'Włodarczyk', 'Wojciechowska',
         'Woźniak', 'Wójcik', 'Wróbel', 'Wróblewska', 'Wysocka', 'Zając', 'Zakrzewska', 'Zalewska', 'Zawadzka', 'Zielińska', 'Ziółkowska',
-    );
+    ];
 
     /**
-     *
-     * Unisex academic degree
+     * Unisex academic degree.
      *
      * @var string
      */
-    protected static $title = array('mgr','inż.', 'dr', 'doc.');
+    protected static $title = ['mgr', 'inż.', 'dr', 'doc.'];
 
     /**
      * @param string|null $gender 'male', 'female' or null for any
+     *
      * @example 'Adamczyk'
      */
     public function lastName($gender = null)
@@ -118,7 +119,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * replaced by specific unisex Polish title
+     * replaced by specific unisex Polish title.
      */
     public static function titleMale()
     {
@@ -126,7 +127,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * replaced by specific unisex Polish title
+     * replaced by specific unisex Polish title.
      */
     public static function titleFemale()
     {
@@ -134,11 +135,14 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * PESEL - Universal Electronic System for Registration of the Population
+     * PESEL - Universal Electronic System for Registration of the Population.
+     *
      * @link http://en.wikipedia.org/wiki/PESEL
-     * @param  DateTime $birthdate
-     * @param  string   $sex       M for male or F for female
-     * @return string   11 digit number, like 44051401358
+     *
+     * @param DateTime $birthdate
+     * @param string   $sex       M for male or F for female
+     *
+     * @return string 11 digit number, like 44051401358
      */
     public static function pesel($birthdate = null, $sex = null)
     {
@@ -146,26 +150,26 @@ class Person extends \Faker\Provider\Person
             $birthdate = \Faker\Provider\DateTime::dateTimeThisCentury();
         }
 
-        $weights = array(1, 3, 7, 9, 1, 3, 7, 9, 1, 3);
+        $weights = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3];
         $length = count($weights);
 
         $fullYear = (int) $birthdate->format('Y');
         $year = (int) $birthdate->format('y');
-        $month = $birthdate->format('m') + (((int) ($fullYear/100) - 14) % 5) * 20;
+        $month = $birthdate->format('m') + (((int) ($fullYear / 100) - 14) % 5) * 20;
         $day = $birthdate->format('d');
 
-        $result = array((int) ($year / 10), $year % 10, (int) ($month / 10), $month % 10, (int) ($day / 10), $day % 10);
+        $result = [(int) ($year / 10), $year % 10, (int) ($month / 10), $month % 10, (int) ($day / 10), $day % 10];
 
-        for ($i = 6; $i < $length; $i++) {
+        for ($i = 6; $i < $length; ++$i) {
             $result[$i] = static::randomDigit();
         }
-        if ($sex == "M") {
+        if ($sex == 'M') {
             $result[$length - 1] |= 1;
-        } elseif ($sex == "F") {
+        } elseif ($sex == 'F') {
             $result[$length - 1] ^= 1;
         }
         $checksum = 0;
-        for ($i = 0; $i < $length; $i++) {
+        for ($i = 0; $i < $length; ++$i) {
             $checksum += $weights[$i] * $result[$i];
         }
         $checksum = (10 - ($checksum % 10)) % 10;
@@ -175,22 +179,24 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * National Identity Card number
+     * National Identity Card number.
+     *
      * @link http://en.wikipedia.org/wiki/Polish_National_Identity_Card
+     *
      * @return string 3 letters and 6 digits, like ABA300000
      */
     public static function personalIdentityNumber()
     {
-        $range = str_split("ABCDEFGHIJKLMNPRSTUVWXYZ");
-        $low = array("A", static::randomElement($range), static::randomElement($range));
-        $high = array(static::randomDigit(), static::randomDigit(), static::randomDigit(), static::randomDigit(), static::randomDigit());
-        $weights = array(7, 3, 1, 7, 3, 1, 7, 3);
+        $range = str_split('ABCDEFGHIJKLMNPRSTUVWXYZ');
+        $low = ['A', static::randomElement($range), static::randomElement($range)];
+        $high = [static::randomDigit(), static::randomDigit(), static::randomDigit(), static::randomDigit(), static::randomDigit()];
+        $weights = [7, 3, 1, 7, 3, 1, 7, 3];
         $checksum = 0;
-        for ($i = 0, $size = count($low); $i < $size; $i++) {
+        for ($i = 0, $size = count($low); $i < $size; ++$i) {
             $checksum += $weights[$i] * (ord($low[$i]) - 55);
         }
-        for ($i = 0, $size = count($high); $i < $size; $i++) {
-            $checksum += $weights[$i+3] * $high[$i];
+        for ($i = 0, $size = count($high); $i < $size; ++$i) {
+            $checksum += $weights[$i + 3] * $high[$i];
         }
         $checksum %= 10;
 
@@ -198,23 +204,25 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * Taxpayer Identification Number (NIP in Polish)
+     * Taxpayer Identification Number (NIP in Polish).
+     *
      * @link http://en.wikipedia.org/wiki/PESEL#Other_identifiers
      * @link http://pl.wikipedia.org/wiki/NIP
+     *
      * @return string 10 digit number
      */
     public static function taxpayerIdentificationNumber()
     {
-        $weights = array(6, 5, 7, 2, 3, 4, 5, 6, 7);
-        $result = array();
+        $weights = [6, 5, 7, 2, 3, 4, 5, 6, 7];
+        $result = [];
         do {
-            $result = array(
+            $result = [
                 static::randomDigitNotNull(), static::randomDigitNotNull(), static::randomDigitNotNull(),
                 static::randomDigit(), static::randomDigit(), static::randomDigit(),
                 static::randomDigit(), static::randomDigit(), static::randomDigit(),
-            );
+            ];
             $checksum = 0;
-            for ($i = 0, $size = count($result); $i < $size; $i++) {
+            for ($i = 0, $size = count($result); $i < $size; ++$i) {
                 $checksum += $weights[$i] * $result[$i];
             }
             $checksum %= 11;

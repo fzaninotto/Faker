@@ -7,72 +7,72 @@ class Address extends \Faker\Provider\Address
     /**
      * @link http://bandung.go.id/images/download/daftarruasjalan.htm
      **/
-    protected static $street = array(
-        "Abang", "Abdul", "Abdul Muis", "Abdul Rahmat", "Abdul. Muis", "Abdullah",
-        "Aceh", "Achmad", "Achmad Yani", "Acordion", "Adisucipto",
-        "Adisumarmo", "Agus Salim", "Ahmad Dahlan", "Antapani Lama", "Arifin",
-        "Asia Afrika", "Astana Anyar", "B.Agam 1", "B.Agam Dlm", "BKR",
-        "Baabur Royan", "Baan", "Babadak", "Babadan", "Babah",
-        "Babakan", "Bacang", "Badak", "Bagas Pati", "Bagis Utama",
-        "Bagonwoto ", "Bah Jaya", "Baha", "Bahagia", "Bahagia ",
-        "Baiduri", "Baik", "Baing", "Baja", "Baja Raya",
-        "Bak Air", "Bak Mandi", "Bakaru", "Bakau", "Bakau Griya Utama",
-        "Bakhita", "Bakin", "Bakit ", "Bakti", "Baladewa",
-        "Bambon", "Bambu", "Banal", "Banceng Pondok", "Banda",
-        "Bank Dagang Negara", "Bappenas", "Bara", "Bara Tambar", "Baranang",
-        "Baranang Siang", "Baranang Siang Indah", "Baranangsiang", "Barasak", "Barat",
-        "Basket", "Basmol Raya", "Basoka", "Basoka Raya", "Bass",
-        "Basudewo", "Basuki", "Basuki Rahmat ", "Bata Putih", "Batako",
-        "Baung", "Bawal", "Baya Kali Bungur", "Bayam", "Bayan",
-        "Bazuka Raya", "Bhayangkara", "Camar", "Casablanca", "Cemara",
-        "Cihampelas", "Cikapayang", "Cikutra Barat", "Cikutra Timur", "Ciumbuleuit",
-        "Ciwastra", "Cokroaminoto", "Cut Nyak Dien", "Daan", "Dago",
-        "Dahlia", "Dewi Sartika", "Dipatiukur", "Dipenogoro", "Diponegoro",
-        "Dr. Junjunan", "Eka", "Ekonomi", "Elang", "Fajar",
-        "Flora", "Flores", "Gading", "Gajah", "Gajah Mada",
-        "Gambang", "Gardujati", "Gatot Subroto", "Gedebage Selatan", "Gegerkalong Hilir",
-        "Gotong Royong", "Gremet", "HOS. Cjokroaminoto (Pasirkaliki)", "Haji", "Halim",
-        "Hang", "Hasanuddin", "Honggowongso", "Ikan", "Imam",
-        "Imam Bonjol", "Industri", "Ir. H. Juanda", "Jagakarsa", "Jakarta",
-        "Jaksa", "Jambu", "Jamika", "Jayawijaya", "Jend. A. Yani",
-        "Jend. Sudirman", "Juanda", "K.H. Maskur", "K.H. Wahid Hasyim (Kopo)", "Kali",
-        "Kalimalang", "Kalimantan", "Karel S. Tubun", "Kartini", "Katamso",
-        "Kebangkitan Nasional", "Kebonjati", "Ketandan", "Ki Hajar Dewantara",
-        "Kiaracondong", "Krakatau", "Kusmanto", "Kyai Gede", "Kyai Mojo", "Labu",
-        "Lada", "Laksamana", "Laswi", "Lembong", "Lumban Tobing",
-        "M.T. Haryono", "Madiun", "Madrasah", "Mahakam", "Merdeka",
-        "Moch. Ramdan", "Moch. Toha", "Moch. Yamin", "Monginsidi", "Mulyadi",
-        "Muwardi", "Nakula", "Nanas", "Nangka", "Orang",
-        "Otista", "Otto", "PHH. Mustofa", "Pacuan Kuda", "Padang",
-        "Padma", "Pahlawan", "Panjaitan", "Pasir Koja", "Pasirkoja",
-        "Pasteur", "Pattimura", "Pelajar Pejuang 45", "Perintis Kemerdekaan", "Peta",
-        "Qrisdoren", "R.E. Martadinata", "R.M. Said", "Raden", "Raden Saleh",
-        "Radio", "Rajawali", "Rajawali Barat", "Rajawali Timur", "Rajiman",
-        "Raya Setiabudhi", "Raya Ujungberung", "Reksoninten", "Ronggowarsito",
-        "Rumah Sakit", "S. Parman", "Sadang Serang", "Salak", "Salam", "Salatiga",
-        "Sam Ratulangi", "Samanhudi", "Sampangan", "Sentot Alibasa", "Setia Budi",
-        "Setiabudhi", "Siliwangi", "Soekarno Hatta", "Sudiarto", "Sudirman",
-        "Sugiono", "Sugiyopranoto", "Suharso", "Sukabumi", "Sukajadi",
-        "Sumpah Pemuda", "Sunaryo", "Suniaraja", "Supomo", "Supono",
-        "Suprapto", "Surapati", "Suryo", "Suryo Pranoto", "Sutami",
-        "Sutan Syahrir", "Sutarjo", "Sutarto", "Sutoyo", "Taman",
-        "Tambak", "Tambun", "Tangkuban Perahu", "Tentara Pelajar", "Ters. Buah Batu",
-        "Ters. Jakarta", "Ters. Kiaracondong", "Ters. Pasir Koja", "Teuku Umar",
-        "Thamrin", "Tubagus Ismail", "Ujung", "Uluwatu", "Umalas", "Untung Suropati",
-        "Urip Sumoharjo", "Veteran", "Villa", "W.R. Supratman", "Wahid",
-        "Wahid Hasyim", "Wahidin", "Wahidin Sudirohusodo", "Warga", "Wora Wari",
-        "Yap Tjwan Bing", "Yoga", "Yogyakarta", "Yohanes", "Yos",
-        "Yos Sudarso", "Yosodipuro", "Zamrud",
-    );
+    protected static $street = [
+        'Abang', 'Abdul', 'Abdul Muis', 'Abdul Rahmat', 'Abdul. Muis', 'Abdullah',
+        'Aceh', 'Achmad', 'Achmad Yani', 'Acordion', 'Adisucipto',
+        'Adisumarmo', 'Agus Salim', 'Ahmad Dahlan', 'Antapani Lama', 'Arifin',
+        'Asia Afrika', 'Astana Anyar', 'B.Agam 1', 'B.Agam Dlm', 'BKR',
+        'Baabur Royan', 'Baan', 'Babadak', 'Babadan', 'Babah',
+        'Babakan', 'Bacang', 'Badak', 'Bagas Pati', 'Bagis Utama',
+        'Bagonwoto ', 'Bah Jaya', 'Baha', 'Bahagia', 'Bahagia ',
+        'Baiduri', 'Baik', 'Baing', 'Baja', 'Baja Raya',
+        'Bak Air', 'Bak Mandi', 'Bakaru', 'Bakau', 'Bakau Griya Utama',
+        'Bakhita', 'Bakin', 'Bakit ', 'Bakti', 'Baladewa',
+        'Bambon', 'Bambu', 'Banal', 'Banceng Pondok', 'Banda',
+        'Bank Dagang Negara', 'Bappenas', 'Bara', 'Bara Tambar', 'Baranang',
+        'Baranang Siang', 'Baranang Siang Indah', 'Baranangsiang', 'Barasak', 'Barat',
+        'Basket', 'Basmol Raya', 'Basoka', 'Basoka Raya', 'Bass',
+        'Basudewo', 'Basuki', 'Basuki Rahmat ', 'Bata Putih', 'Batako',
+        'Baung', 'Bawal', 'Baya Kali Bungur', 'Bayam', 'Bayan',
+        'Bazuka Raya', 'Bhayangkara', 'Camar', 'Casablanca', 'Cemara',
+        'Cihampelas', 'Cikapayang', 'Cikutra Barat', 'Cikutra Timur', 'Ciumbuleuit',
+        'Ciwastra', 'Cokroaminoto', 'Cut Nyak Dien', 'Daan', 'Dago',
+        'Dahlia', 'Dewi Sartika', 'Dipatiukur', 'Dipenogoro', 'Diponegoro',
+        'Dr. Junjunan', 'Eka', 'Ekonomi', 'Elang', 'Fajar',
+        'Flora', 'Flores', 'Gading', 'Gajah', 'Gajah Mada',
+        'Gambang', 'Gardujati', 'Gatot Subroto', 'Gedebage Selatan', 'Gegerkalong Hilir',
+        'Gotong Royong', 'Gremet', 'HOS. Cjokroaminoto (Pasirkaliki)', 'Haji', 'Halim',
+        'Hang', 'Hasanuddin', 'Honggowongso', 'Ikan', 'Imam',
+        'Imam Bonjol', 'Industri', 'Ir. H. Juanda', 'Jagakarsa', 'Jakarta',
+        'Jaksa', 'Jambu', 'Jamika', 'Jayawijaya', 'Jend. A. Yani',
+        'Jend. Sudirman', 'Juanda', 'K.H. Maskur', 'K.H. Wahid Hasyim (Kopo)', 'Kali',
+        'Kalimalang', 'Kalimantan', 'Karel S. Tubun', 'Kartini', 'Katamso',
+        'Kebangkitan Nasional', 'Kebonjati', 'Ketandan', 'Ki Hajar Dewantara',
+        'Kiaracondong', 'Krakatau', 'Kusmanto', 'Kyai Gede', 'Kyai Mojo', 'Labu',
+        'Lada', 'Laksamana', 'Laswi', 'Lembong', 'Lumban Tobing',
+        'M.T. Haryono', 'Madiun', 'Madrasah', 'Mahakam', 'Merdeka',
+        'Moch. Ramdan', 'Moch. Toha', 'Moch. Yamin', 'Monginsidi', 'Mulyadi',
+        'Muwardi', 'Nakula', 'Nanas', 'Nangka', 'Orang',
+        'Otista', 'Otto', 'PHH. Mustofa', 'Pacuan Kuda', 'Padang',
+        'Padma', 'Pahlawan', 'Panjaitan', 'Pasir Koja', 'Pasirkoja',
+        'Pasteur', 'Pattimura', 'Pelajar Pejuang 45', 'Perintis Kemerdekaan', 'Peta',
+        'Qrisdoren', 'R.E. Martadinata', 'R.M. Said', 'Raden', 'Raden Saleh',
+        'Radio', 'Rajawali', 'Rajawali Barat', 'Rajawali Timur', 'Rajiman',
+        'Raya Setiabudhi', 'Raya Ujungberung', 'Reksoninten', 'Ronggowarsito',
+        'Rumah Sakit', 'S. Parman', 'Sadang Serang', 'Salak', 'Salam', 'Salatiga',
+        'Sam Ratulangi', 'Samanhudi', 'Sampangan', 'Sentot Alibasa', 'Setia Budi',
+        'Setiabudhi', 'Siliwangi', 'Soekarno Hatta', 'Sudiarto', 'Sudirman',
+        'Sugiono', 'Sugiyopranoto', 'Suharso', 'Sukabumi', 'Sukajadi',
+        'Sumpah Pemuda', 'Sunaryo', 'Suniaraja', 'Supomo', 'Supono',
+        'Suprapto', 'Surapati', 'Suryo', 'Suryo Pranoto', 'Sutami',
+        'Sutan Syahrir', 'Sutarjo', 'Sutarto', 'Sutoyo', 'Taman',
+        'Tambak', 'Tambun', 'Tangkuban Perahu', 'Tentara Pelajar', 'Ters. Buah Batu',
+        'Ters. Jakarta', 'Ters. Kiaracondong', 'Ters. Pasir Koja', 'Teuku Umar',
+        'Thamrin', 'Tubagus Ismail', 'Ujung', 'Uluwatu', 'Umalas', 'Untung Suropati',
+        'Urip Sumoharjo', 'Veteran', 'Villa', 'W.R. Supratman', 'Wahid',
+        'Wahid Hasyim', 'Wahidin', 'Wahidin Sudirohusodo', 'Warga', 'Wora Wari',
+        'Yap Tjwan Bing', 'Yoga', 'Yogyakarta', 'Yohanes', 'Yos',
+        'Yos Sudarso', 'Yosodipuro', 'Zamrud',
+    ];
 
-    protected static $streetPrefix = array(
-        "Ds.", "Dk.", "Gg.", "Jln.", "Jr.", "Kpg.", "Ki.", "Psr."
-    );
+    protected static $streetPrefix = [
+        'Ds.', 'Dk.', 'Gg.', 'Jln.', 'Jr.', 'Kpg.', 'Ki.', 'Psr.',
+    ];
 
     /**
      * @link http://kodepos.nomor.net/_kodepos.php?_i=provinsi-kodepos
      */
-    protected static $state = array(
+    protected static $state = [
         'Aceh', 'Sumatera Utara', 'Sumatera Barat', 'Jambi', 'Bangka Belitung', 'Riau',
         'Kepulauan Riau', 'Bengkulu', 'Sumatera Selatan', 'Lampung', 'Banten',
         'DKI Jakarta', 'Jawa Barat', 'Jawa Tengah', 'Jawa Timur', 'Nusa Tenggara Timur',
@@ -80,26 +80,27 @@ class Address extends \Faker\Provider\Address
         'Kalimantan Tengah', 'Kalimantan Selatan', 'Kalimantan Timur',
         'Kalimantan Utara', 'Sulawesi Selatan', 'Sulawesi Utara', 'Gorontalo',
         'Sulawesi Tengah', 'Sulawesi Barat', 'Sulawesi Tenggara', 'Maluku',
-        'Maluku Utara', 'Papua Barat', 'Papua'
-    );
+        'Maluku Utara', 'Papua Barat', 'Papua',
+    ];
 
     /**
      * Abbreviated State Names.
-     * Currently this is all just a guesswork, but should be highly accurate
+     * Currently this is all just a guesswork, but should be highly accurate.
+     *
      * @var array
      */
-    protected static $stateAbbr = array(
+    protected static $stateAbbr = [
        'Aceh', 'SumUt', 'SumBar', 'Jambi', 'BaBel', 'Riau', 'KepR', 'Bengkulu', 'SumSel',
        'Lampung', 'Banten', 'DKI', 'JaBar', 'JaTeng', 'JaTim', 'NTT', 'DIY',
        'Bali', 'NTB', 'KalBar', 'KalTeng', 'KalSel', 'KalTim', 'KalUt', 'SulSel',
        'SulUt', 'Gorontalo', 'SulTeng', 'SulBar', 'SulTra', 'Maluku', 'MalUt',
-       'PapBar', 'Papua'
-    );
+       'PapBar', 'Papua',
+    ];
 
     /**
-    * @link http://id.wikipedia.org/wiki/Daftar_negara-negara_di_dunia
-    **/
-    protected static $country = array(
+     * @link http://id.wikipedia.org/wiki/Daftar_negara-negara_di_dunia
+     **/
+    protected static $country = [
         'Afganistan', 'Afrika Selatan', 'Albania', 'Aljazair',
         'Amerika Serikat', 'Andorra', 'Angola', 'Anguilla',
 
@@ -218,58 +219,58 @@ class Address extends \Faker\Provider\Address
         // http://id.wikipedia.org/wiki/United_States_Virgin_Islands
         'Wilayah Samudra Hindia Britania',
 
-        'Wilayah Selatan Perancis', 'Yaman', 'Yunani', 'Zambia', 'Zimbabwe'
-    );
+        'Wilayah Selatan Perancis', 'Yaman', 'Yunani', 'Zambia', 'Zimbabwe',
+    ];
 
     /**
      * @link http://id.wikipedia.org/wiki/Daftar_kabupaten_dan_kota_Indonesia#Daftar_kota
      */
-    protected static $cityNames = array(
-        "Administrasi Jakarta Barat", "Administrasi Jakarta Pusat",
-        "Administrasi Jakarta Selatan", "Administrasi Jakarta Timur",
-        "Administrasi Jakarta Utara", "Ambon", "Balikpapan", "Banda Aceh",
-        "Bandar Lampung", "Bandung", "Banjar", "Banjarbaru", "Banjarmasin",
-        "Batam", "Batu", "Bau-Bau", "Bekasi",
-        "Bengkulu", "Bima", "Binjai", "Bitung",
-        "Blitar", "Bogor", "Bontang", "Bukittinggi",
-        "Cilegon", "Cimahi", "Cirebon", "Denpasar",
-        "Depok", "Dumai", "Gorontalo", "Gunungsitoli",
-        "Jambi", "Jayapura", "Kediri", "Kendari",
-        "Kotamobagu", "Kupang", "Langsa", "Lhokseumawe",
-        "Lubuklinggau", "Madiun", "Magelang", "Makassar",
-        "Malang", "Manado", "Mataram", "Medan",
-        "Metro", "Mojokerto", "Padang", "Padangpanjang",
-        "Padangsidempuan", "Pagar Alam", "Palangka Raya", "Palembang",
-        "Palopo", "Palu", "Pangkal Pinang", "Parepare",
-        "Pariaman", "Pasuruan", "Payakumbuh", "Pekalongan",
-        "Pekanbaru", "Pematangsiantar", "Pontianak", "Prabumulih",
-        "Probolinggo", "Sabang", "Salatiga", "Samarinda",
-        "Sawahlunto", "Semarang", "Serang", "Sibolga",
-        "Singkawang", "Solok", "Sorong", "Subulussalam",
-        "Sukabumi", "Sungai Penuh", "Surabaya", "Surakarta",
-        "Tangerang", "Tangerang Selatan", "Tanjung Pinang", "Tanjungbalai",
-        "Tarakan", "Tasikmalaya", "Tebing Tinggi", "Tegal",
-        "Ternate", "Tidore Kepulauan", "Tomohon", "Tual",
-        "Yogyakarta",
-    );
+    protected static $cityNames = [
+        'Administrasi Jakarta Barat', 'Administrasi Jakarta Pusat',
+        'Administrasi Jakarta Selatan', 'Administrasi Jakarta Timur',
+        'Administrasi Jakarta Utara', 'Ambon', 'Balikpapan', 'Banda Aceh',
+        'Bandar Lampung', 'Bandung', 'Banjar', 'Banjarbaru', 'Banjarmasin',
+        'Batam', 'Batu', 'Bau-Bau', 'Bekasi',
+        'Bengkulu', 'Bima', 'Binjai', 'Bitung',
+        'Blitar', 'Bogor', 'Bontang', 'Bukittinggi',
+        'Cilegon', 'Cimahi', 'Cirebon', 'Denpasar',
+        'Depok', 'Dumai', 'Gorontalo', 'Gunungsitoli',
+        'Jambi', 'Jayapura', 'Kediri', 'Kendari',
+        'Kotamobagu', 'Kupang', 'Langsa', 'Lhokseumawe',
+        'Lubuklinggau', 'Madiun', 'Magelang', 'Makassar',
+        'Malang', 'Manado', 'Mataram', 'Medan',
+        'Metro', 'Mojokerto', 'Padang', 'Padangpanjang',
+        'Padangsidempuan', 'Pagar Alam', 'Palangka Raya', 'Palembang',
+        'Palopo', 'Palu', 'Pangkal Pinang', 'Parepare',
+        'Pariaman', 'Pasuruan', 'Payakumbuh', 'Pekalongan',
+        'Pekanbaru', 'Pematangsiantar', 'Pontianak', 'Prabumulih',
+        'Probolinggo', 'Sabang', 'Salatiga', 'Samarinda',
+        'Sawahlunto', 'Semarang', 'Serang', 'Sibolga',
+        'Singkawang', 'Solok', 'Sorong', 'Subulussalam',
+        'Sukabumi', 'Sungai Penuh', 'Surabaya', 'Surakarta',
+        'Tangerang', 'Tangerang Selatan', 'Tanjung Pinang', 'Tanjungbalai',
+        'Tarakan', 'Tasikmalaya', 'Tebing Tinggi', 'Tegal',
+        'Ternate', 'Tidore Kepulauan', 'Tomohon', 'Tual',
+        'Yogyakarta',
+    ];
 
-    protected static $cityFormats = array(
+    protected static $cityFormats = [
         '{{cityName}}',
-    );
+    ];
 
-    protected static $streetNameFormats = array(
-        '{{street}}'
-    );
+    protected static $streetNameFormats = [
+        '{{street}}',
+    ];
 
-    protected static $streetAddressFormats = array(
+    protected static $streetAddressFormats = [
         '{{streetPrefix}} {{street}} No. {{buildingNumber}}',
-    );
+    ];
 
-    protected static $addressFormats = array(
-        "{{streetAddress}}, {{city}} {{postcode}}, {{stateAbbr}}",
-    );
+    protected static $addressFormats = [
+        '{{streetAddress}}, {{city}} {{postcode}}, {{stateAbbr}}',
+    ];
 
-    protected static $postcode = array('%####');
+    protected static $postcode = ['%####'];
 
     /**
      * @example 'Kalimantan Tengah'
