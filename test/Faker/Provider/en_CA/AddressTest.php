@@ -43,6 +43,14 @@ class AddressTest extends \PHPUnit_Framework_TestCase
     $this->assertInternalType('string', $postcodeLetter);
     $this->assertRegExp('/^[A-Z]{1}$/', $postcodeLetter);
   }
+
+  public function testPostcode()
+  {
+    $postcode = $this->faker->postcode();
+    $this->assertNotEmpty($postcode);
+    $this->assertInternalType('string', $postcode);
+    $this->assertRegExp('/^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/', $postcode);
+  }
 }
 
 ?>
