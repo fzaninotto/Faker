@@ -20,6 +20,9 @@ class AddressTest extends \PHPUnit_Framework_TestCase
     $this->faker = $faker;
   }
 
+  /**
+   * Test the validity of province
+   */
   public function testProvince()
   {
     $province = $this->faker->province();
@@ -28,6 +31,9 @@ class AddressTest extends \PHPUnit_Framework_TestCase
     $this->assertRegExp('/[A-Z][a-z]+/', $province);
   }
 
+  /**
+   * Test the validity of province abbreviation
+   */
   public function testProvinceAbbr()
   {
     $provinceAbbr = $this->faker->provinceAbbr();
@@ -36,6 +42,9 @@ class AddressTest extends \PHPUnit_Framework_TestCase
     $this->assertRegExp('/^[A-Z]{2}$/', $provinceAbbr);
   }
 
+  /**
+   * Test the validity of postcode letter
+   */
   public function testPostcodeLetter()
   {
     $postcodeLetter = $this->faker->randomPostcodeLetter();
@@ -44,6 +53,9 @@ class AddressTest extends \PHPUnit_Framework_TestCase
     $this->assertRegExp('/^[A-Z]{1}$/', $postcodeLetter);
   }
 
+  /**
+   * Test the validity of Canadian postcode
+   */
   public function testPostcode()
   {
     $postcode = $this->faker->postcode();
