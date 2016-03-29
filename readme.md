@@ -1039,6 +1039,14 @@ echo $faker->district;
 echo $faker->cityName;
 ```
 
+### `Faker\Provider\nl_NL\Company`
+
+```php
+<?php
+echo $faker->vat; // "NL123456789B01" - Dutch Value Added Tax number
+echo $faker->btw; // "NL123456789B01" - Dutch Value Added Tax number (alias)
+```
+
 ### `Faker\Provider\no_NO\Payment`
 
 ```php
