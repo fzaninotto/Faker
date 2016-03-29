@@ -211,7 +211,7 @@ class Person extends \Faker\Provider\Person
 
     protected static $titleMale = [];
     protected static $titleFemale = [];
-   private static $prefix = ['بن ', 'بو'];
+   private static $prefix = ['بن '];
 
     /**
      * @example 'بن'
