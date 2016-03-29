@@ -54,11 +54,7 @@ class ImageTest extends \PHPUnit_Framework_TestCase
         $httpCode = curl_getinfo($curlPing, CURLINFO_HTTP_CODE);
         curl_close($curlPing);
 
-        /**
-         *  If HTTP response is something else than 200-299, skip the test
-         */
-        if ($httpCode < 200 | $httpCode > 300)
-        {
+        if ($httpCode < 200 | $httpCode > 300) {
             $this->markTestSkipped("LoremPixel is offline, skipping image download");
         }
 
