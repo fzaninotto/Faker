@@ -54,21 +54,23 @@ class ImageTest extends \PHPUnit_Framework_TestCase
         $httpCode = curl_getinfo($curlPing, CURLINFO_HTTP_CODE);
         curl_close($curlPing);
 
-        if ($httpCode >= 200 && $httpCode < 300)
+        if ($httpCode < 200 | $httpCode > 300)
         {
-            $file = Image::image(sys_get_temp_dir());
-            $this->assertFileExists($file);
-            if (function_exists('getimagesize')) {
-                list($width, $height, $type, $attr) = getimagesize($file);
-                $this->assertEquals(640, $width);
-                $this->assertEquals(480, $height);
-                $this->assertEquals(constant('IMAGETYPE_JPEG'), $type);
-            } else {
-                $this->assertEquals('jpg', pathinfo($file, PATHINFO_EXTENSION));
-            }
-            if (file_exists($file)) {
-                unlink($file);
-            }
+            $this->markTestSkipped("LoremPixel is offline, skipping image download");
+        }
+
+        $file = Image::image(sys_get_temp_dir());
+        $this->assertFileExists($file);
+        if (function_exists('getimagesize')) {
+            list($width, $height, $type, $attr) = getimagesize($file);
+            $this->assertEquals(640, $width);
+            $this->assertEquals(480, $height);
+            $this->assertEquals(constant('IMAGETYPE_JPEG'), $type);
+        } else {
+            $this->assertEquals('jpg', pathinfo($file, PATHINFO_EXTENSION));
+        }
+        if (file_exists($file)) {
+            unlink($file);
         }
     }
 }
