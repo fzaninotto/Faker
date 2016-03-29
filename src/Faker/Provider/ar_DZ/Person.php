@@ -6,18 +6,22 @@ class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = [
         '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}}',
+        '{{lastName}} {{firstNameMale}}',
+        '{{firstNameMale}} {{prefix}}{{lastName}}',
+        '{{firstNameMale}} {{prefix}}{{firstNameMale}}',
+        '{{prefix}}{{lastName}} {{firstNameMale}}',
         '{{firstNameMale}} {{lastName}}',
         '{{titleMale}} {{firstNameMale}} {{lastName}}',
     ];
 
     protected static $femaleNameFormats = [
-        '{{firstNameFemale}} {{lastName}}',
-        '{{firstNameFemale}} {{lastName}}',
-        '{{firstNameFemale}} {{lastName}}',
-        '{{firstNameFemale}} {{lastName}}',
-        '{{titleFemale}} {{firstNameFemale}} {{lastName}}',
+     '{{firstNameFemale}} {{lastName}}',
+     '{{lastName}} {{firstNameFemale}}',
+     '{{firstNameFemale}} {{prefix}}{{lastName}}',
+     '{{firstNameFemale}} {{prefix}}{{firstNameMale}}',
+     '{{prefix}}{{lastName}} {{firstNameFemale}}',
+     '{{firstNameFemale}} {{lastName}}',
+     '{{titleMale}} {{firstNameFemale}} {{lastName}}',
     ];
 
     /**
@@ -181,12 +185,12 @@ class Person extends \Faker\Provider\Person
     'رحماني',
     ];
 
-    protected static $titleMale = ['السيد', 'الأستاذ', 'الدكتور', 'المهندس'];
-    protected static $titleFemale = ['السيدة', 'الآنسة', 'الدكتورة', 'المهندسة'];
-    private static $prefix = ['أ.', 'د.'];
+    protected static $titleMale = [];
+    protected static $titleFemale = [];
+   private static $prefix = ['بن ', 'بو'];
 
     /**
-     * @example 'أ.'
+     * @example 'بن'
      */
     public static function prefix()
     {
