@@ -28,6 +28,14 @@ class AddressTest extends \PHPUnit_Framework_TestCase
         $this->assertRegExp('/\p{Arabic}/u', $cityPrefix);
     }
 
+    public function testStreetPrefix()
+    {
+      $streetPrefix = $this->faker->streetPrefix();
+      $this->assertNotEmpty($streetPrefix);
+      $this->assertInternalType('string', $streetPrefix);
+      $this->assertRegExp('/\p{Arabic}/u', $streetPrefix);
+    }
+
     public function testCityName()
     {
         $cityName = $this->faker->cityName();
