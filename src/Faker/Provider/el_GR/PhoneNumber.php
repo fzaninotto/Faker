@@ -4,6 +4,9 @@ namespace Faker\Provider\el_GR;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
+    /**
+     * @link https://en.wikipedia.org/wiki/Telephone_numbers_in_Greece
+     */
     protected static $formats = array(
         // International formats
         '+30 2# ########',
