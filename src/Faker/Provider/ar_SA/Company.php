@@ -2,6 +2,8 @@
 
 namespace Faker\Provider\ar_SA;
 
+use Faker\Calculator\Luhn;
+
 class Company extends \Faker\Provider\Company
 {
     protected static $formats = array(
@@ -59,5 +61,15 @@ class Company extends \Faker\Provider\Company
         }
 
         return join($result, ' ');
+    }
+
+    /**
+     * example 7001010101
+     **/
+    public static function companyIdNumber()
+    {
+        while (!Luhn::isValid($number = static::numerify('700#######')));
+
+        return $number;
     }
 }
