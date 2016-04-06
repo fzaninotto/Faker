@@ -89,7 +89,9 @@ class Person extends \Faker\Provider\Person
 
     protected static function luhnCompatibleFromPattern($pattern)
     {
-        while (!Luhn::isValid($number = static::numerify($pattern)));
+        do {
+            $number = static::numerify($pattern);
+        } while (!Luhn::isValid($number));
 
         return $number;
     }
@@ -104,7 +106,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * @example
+     * @example 1010101010
      */
     public static function nationalIdNumber()
     {
@@ -112,11 +114,10 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * @example
+     * @example 2010101010
      */
     public static function foreignerIdNumber()
     {
         return static::luhnCompatibleFromPattern('2#########');
     }
-
 }
