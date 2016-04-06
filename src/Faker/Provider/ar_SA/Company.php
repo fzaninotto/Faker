@@ -68,7 +68,9 @@ class Company extends \Faker\Provider\Company
      **/
     public static function companyIdNumber()
     {
-        while (!Luhn::isValid($number = static::numerify('700#######')));
+        do {
+            $number = static::numerify('700#######');
+        } while (!Luhn::isValid($number));
 
         return $number;
     }
