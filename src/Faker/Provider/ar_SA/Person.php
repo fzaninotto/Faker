@@ -101,7 +101,7 @@ class Person extends \Faker\Provider\Person
      */
     public static function idNumber()
     {
-        $firstDigit = static::randomElement([1, 2]);
+        $firstDigit = static::randomElement(array(1, 2));
         return static::luhnCompatibleFromPattern($firstDigit . '#########');
     }
 
