@@ -1233,6 +1233,16 @@ echo $faker->personalIdentityNumber() // '950910-0799'
 echo $faker->personalIdentityNumber('female') // '950910-0781'
 ```
 
+
+### `Faker\Provider\zh_CN\Payment`
+
+```php
+<?php
+
+// Generates a random bank name (based on list of real chinese banks)
+echo $faker->bank; // '中国建设银行'
+```
+
 ## Third-Party Libraries Extending/Based On Faker
 
 * Symfony2 bundles:
