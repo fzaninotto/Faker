@@ -3,6 +3,7 @@
 namespace Faker\Provider\ar_SA;
 
 use Faker\Calculator\Luhn;
+use Faker\Provider\ar_SA\Utils;
 
 class Company extends \Faker\Provider\Company
 {
@@ -68,10 +69,6 @@ class Company extends \Faker\Provider\Company
      **/
     public static function companyIdNumber()
     {
-        do {
-            $number = static::numerify('700#######');
-        } while (!Luhn::isValid($number));
-
-        return $number;
+        return Utils::generateLuhnNumber(700, 10);
     }
 }

@@ -3,6 +3,7 @@
 namespace Faker\Provider\ar_SA;
 
 use Faker\Calculator\Luhn;
+use Faker\Provider\ar_SA\Utils;
 
 class Person extends \Faker\Provider\Person
 {
@@ -87,22 +88,13 @@ class Person extends \Faker\Provider\Person
         return static::randomElement(static::$prefix);
     }
 
-    protected static function luhnCompatibleFromPattern($pattern)
-    {
-        do {
-            $number = static::numerify($pattern);
-        } while (!Luhn::isValid($number));
-
-        return $number;
-    }
-
     /**
      * @example 1010101010
      */
     public static function idNumber()
     {
         $firstDigit = static::randomElement(array(1, 2));
-        return static::luhnCompatibleFromPattern($firstDigit . '#########');
+        return Utils::generateLuhnNumber($firstDigit, 10);
     }
 
     /**
@@ -110,7 +102,7 @@ class Person extends \Faker\Provider\Person
      */
     public static function nationalIdNumber()
     {
-        return static::luhnCompatibleFromPattern('1#########');
+        return Utils::generateLuhnNumber(1, 10);
     }
 
     /**
@@ -118,6 +110,6 @@ class Person extends \Faker\Provider\Person
      */
     public static function foreignerIdNumber()
     {
-        return static::luhnCompatibleFromPattern('2#########');
+        return Utils::generateLuhnNumber(2, 10);
     }
 }
