@@ -2,7 +2,6 @@
 
 namespace Faker\Provider\ar_SA;
 
-use Faker\Calculator\Luhn;
 use Faker\Provider\ar_SA\Utils;
 
 class Company extends \Faker\Provider\Company
