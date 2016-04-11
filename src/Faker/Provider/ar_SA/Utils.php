@@ -1,6 +1,7 @@
 <?php
 
 namespace Faker\Provider\ar_SA;
+
 use Faker\Calculator\Luhn;
 use Faker\Provider\Base as BaseProvider;
 
