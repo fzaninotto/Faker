@@ -1147,7 +1147,19 @@ echo $faker->name; // 'Sr. Luis Adriano Sepúlveda Filho'
 echo $faker->cpf;        // '145.343.345-76'
 echo $faker->cpf(false); // '45623467866'
 echo $faker->rg;         // '84.405.736-3'
-echo $faker->cnpj;       // '23.663.478/0001-24'
+```
+
+### `Faker\Provider\pt_BR\Company`
+
+```php
+<?php
+
+// Localized company name
+echo $faker->company; // 'Colaço e Ramos'
+
+// Valid document generators have a boolean argument to remove formatting
+echo $faker->cnpj;        // '23.663.478/0001-24'
+echo $faker->cnpj(false); // '23663478000124'
 ```
 
 ### `Faker\Provider\ro_MD\Payment`
