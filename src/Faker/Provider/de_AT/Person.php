@@ -59,7 +59,7 @@ class Person extends \Faker\Provider\Person
         'Alexandra', 'Alexandrea', 'Algelika', 'Alina', 'Amelie', 'Andrea', 'Angelina', 'Anita', 'Anja', 'Anna', 'Anna-Lena', 'Annika', 'Astrid',
         'Barbara', 'Bettina', 'Bianca', 'Birgit',
         'Carina', 'Caroline', 'Celina', 'Chiara', 'Christina', 'Christine', 'Clara', 'Claudia', 'Cornelia',
-        'Daniela', 'Denise', 'Dorins',
+        'Daniela', 'Denise', 'Doris',
         'Elena', 'Elisa', 'Elisabeth', 'Ella', 'Emely', 'Emilia', 'Emily', 'Emma', 'Eva', 'Eva-Maria',
         'Franziska',
         'Hanna', 'Hannah', 'Helena',
