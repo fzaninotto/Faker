@@ -1154,10 +1154,7 @@ echo $faker->rg;         // '84.405.736-3'
 ```php
 <?php
 
-// Localized company name
-echo $faker->company; // 'Colaço e Ramos'
-
-// Valid document generators have a boolean argument to remove formatting
+// Generates a Brazilian formated and valid CNPJ
 echo $faker->cnpj;        // '23.663.478/0001-24'
 echo $faker->cnpj(false); // '23663478000124'
 ```
