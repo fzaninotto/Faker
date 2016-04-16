@@ -91,6 +91,19 @@ class Address extends \Faker\Provider\Address
 
     protected static $buildingNumber = array('###', '##', '##', '#');
 
+    /**
+     * Coordinates inside the border of Hungary
+     * 
+     * @example array('47.049242', '18.355119')
+     * @return array | latitude, longitude
+     */
+    public static function localCoordinates()
+    {
+        return array(
+            'latitude' => static::latitude(46.262740, 47.564721),
+            'longitude' => static::longitude(17.077949, 20.604560)
+        );
+    }
 
     /* ----------- DATA -------------------- */
 
