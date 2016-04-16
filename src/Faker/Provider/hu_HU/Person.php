@@ -16,6 +16,9 @@ class Person extends \Faker\Provider\Person
         '{{title}} {{lastName}} {{firstNameFemale}}',
         '{{lastName}} {{firstNameFemale}} {{suffix}}',
         '{{title}} {{lastName}} {{firstNameFemale}} {{suffix}}',
+        /* ..né*/
+        '{{lastName}} {{firstNameMaleNe}}',
+        '{{title}} {{lastName}} {{firstNameMaleNe}}',
     );
 
     protected static $firstNameMale = array(
@@ -23,6 +26,13 @@ class Person extends \Faker\Provider\Person
         'Kevin', 'Kornél', 'Kristóf', 'László', 'Milán', 'Noel', 'Olivér', 'Ottó', 'Patrik', 'Péter', 'Richárd', 'Rudolf',
         'Sándor', 'Vilmos', 'Vince', 'Zoltán', 'Zsolt', 'Ádám', 'Ármin', 'Áron', 'Antal', 'Barna', 'Barnabás', 'Bendegúz',
         'Benedek', 'Hunor', 'Jenő', 'János', 'Mihály', 'Mátyás', 'Szervác', 'Zsombor', 'Zétény', 'Árpád',
+    );
+
+    protected static $firstNameMaleNe = array(
+        'Albertné', 'Attiláné', 'Balázsné', 'Bencéné', 'Botondné', 'Doriánné', 'Endrené', 'Ernőné', 'Gáborné', 'Gézané', 'Imréné', 'Istvánné',
+        'Kevinné', 'Kornélné', 'Kristófné', 'Lászlóné', 'Milánné', 'Noelné', 'Olivérné', 'Ottóné', 'Patrikné', 'Péterné', 'Richárdné', 'Rudolfné',
+        'Sándorné', 'Vilmosné', 'Vincéné', 'Zoltánné', 'Zsoltné', 'Ádámné', 'Árminné', 'Áronné', 'Antalné', 'Barnáné', 'Barnabásné', 'Bendegúz',
+        'Benedekné', 'Hunorné', 'Jenőné', 'Jánosné', 'Mihályné', 'Mátyásné', 'Szervácné', 'Zsomborné', 'Zétényné', 'Árpádné',
     );
 
     protected static $firstNameFemale = array(
@@ -53,6 +63,14 @@ class Person extends \Faker\Provider\Person
     public static function titleMale()
     {
         return static::randomElement(static::$title);
+    }
+
+    /**
+     * specific Hungarian name format for females after marriage
+     */
+    public static function firstNameMaleNe()
+    {
+        return static::randomElement(static::$firstNameMaleNe);
     }
 
     /**
