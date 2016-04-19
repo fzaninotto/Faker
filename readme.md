@@ -895,6 +895,24 @@ echo $faker->mobileNumber; // 082 123 5555
 echo $faker->dni; // '77446565E'
 ```
 
+### `Faker\Provider\fi_FI\Payment`
+
+```php
+<?php
+
+// Generates Finnish Value Added Tax number
+echo $faker->vat; // "FI12345678"
+```
+
+### `Faker\Provider\fi_FI\Person`
+
+```php
+<?php
+
+// Generates National identification number or 'Henkilötunnus'
+echo $faker->nationalIdNumber // 190496-913P
+```
+
 ### `Faker\Provider\fr_FR\Address`
 
 ```php
