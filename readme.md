@@ -170,7 +170,6 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     bs                      // 'e-enable robust architectures'
     company                 // 'Bogan-Treutel'
     companySuffix           // 'and Sons'
-    jobTitle                // 'Cashier'
 
 ### `Faker\Provider\en_US\Text`
 
