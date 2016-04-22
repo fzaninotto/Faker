@@ -71,5 +71,4 @@ class Text extends \Faker\Provider\Text
     Оны қайтып қосады ол ант атқан?
 
 EOT;
-
 }
