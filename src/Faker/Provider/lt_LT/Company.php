@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\lt_lt;
+namespace Faker\Provider\lt_LT;
 
 class Company extends \Faker\Provider\Company
 {
