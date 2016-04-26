@@ -756,15 +756,6 @@ echo $faker->vat;           // "AT U12345678" - Austrian Value Added Tax number
 echo $faker->vat(false);    // "ATU12345678" - unspaced Austrian Value Added Tax number
 ```
 
-### `Faker\Provider\be_BE\Payment`
-
-```php
-<?php
-
-echo $faker->vat;           // "BE 0123456789" - Belgian Value Added Tax number
-echo $faker->vat(false);    // "BE0123456789" - unspaced Belgian Value Added Tax number
-```
-
 ### `Faker\Provider\bg_BG\Payment`
 
 ```php
@@ -893,6 +884,15 @@ echo $faker->mobileNumber; // 082 123 5555
 
 // Generates a Documento Nacional de Identidad (DNI) number
 echo $faker->dni; // '77446565E'
+```
+
+### `Faker\Provider\fr_BE\Payment`
+
+```php
+<?php
+
+echo $faker->vat;           // "BE 0123456789" - Belgian Value Added Tax number
+echo $faker->vat(false);    // "BE0123456789" - unspaced Belgian Value Added Tax number
 ```
 
 ### `Faker\Provider\fr_FR\Address`
@@ -1039,10 +1039,20 @@ echo $faker->district;
 echo $faker->cityName;
 ```
 
+### `Faker\Provider\nl_BE\Payment`
+
+```php
+<?php
+
+echo $faker->vat;           // "BE 0123456789" - Belgian Value Added Tax number
+echo $faker->vat(false);    // "BE0123456789" - unspaced Belgian Value Added Tax number
+```
+
 ### `Faker\Provider\nl_NL\Company`
 
 ```php
 <?php
+
 echo $faker->vat; // "NL123456789B01" - Dutch Value Added Tax number
 echo $faker->btw; // "NL123456789B01" - Dutch Value Added Tax number (alias)
 ```
