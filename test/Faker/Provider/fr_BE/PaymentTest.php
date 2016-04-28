@@ -1,13 +1,12 @@
 <?php
 
-namespace Faker\Test\Provider\be_BE;
+namespace Faker\Test\Provider\fr_BE;
 
 use Faker\Generator;
-use Faker\Provider\be_BE\Payment;
+use Faker\Provider\fr_BE\Payment;
 
 class PaymentTest extends \PHPUnit_Framework_TestCase
 {
-
     /**
      * @var Generator
      */
