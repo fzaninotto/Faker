@@ -114,8 +114,8 @@ class Person extends \Faker\Provider\Person
         'Zander', 'Zeller', 'Ziegler', 'Zimmer', 'Zimmermann',
     );
 
-    protected static $titleMale = array('Herr', 'Dr.', 'Ing.', 'Dipl.-Ing.', 'Prof.', 'Univ.Prof.');
-    protected static $titleFemale = array('Frau', 'Dr.', 'Ing.', 'Dipl.-Ing.', 'Prof.', 'Univ.Prof.');
+    protected static $titleMale = array('Herr', 'Herr Dr.', 'Herr Prof.', 'Herr Prof. Dr.');
+    protected static $titleFemale = array('Frau', 'Frau Dr.', 'Frau Prof.', 'Frau Prof. Dr.');
 
     protected static $suffix = array('B.Sc.', 'B.A.', 'B.Eng.', 'MBA.');
 
