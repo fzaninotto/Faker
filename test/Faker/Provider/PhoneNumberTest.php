@@ -13,7 +13,7 @@ class PhoneNumberTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $faker = new Generator();
-        $faker->addProvider(new PhoneNumber($faker));
+        $faker->addProvider(new PhoneNumberProvider($faker));
         $this->faker = $faker;
     }
 
