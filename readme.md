@@ -887,7 +887,6 @@ echo $faker->dni; // '77446565E'
 ```
 
 ### `Faker\Provider\fi_FI\Payment`
-=======
 
 ```php
 <?php
