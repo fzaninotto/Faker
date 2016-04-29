@@ -34,7 +34,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     );
 
     // http://en.wikipedia.org/wiki/Telephone_numbers_in_Singapore#Numbering_plan
-    protected static $sgPhoneNumberFormats = array(
+    protected static $formats = array(
         '{{mobileNumber}}',
         '{{fixedLineNumber}}',
     );
@@ -108,23 +108,5 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     public function oneToNine()
     {
         return static::randomElement(static::$oneToNine);
-    }
-
-    public function sgPhoneNumber()
-    {
-        $format = static::randomElement(static::$sgPhoneNumberFormats);
-
-        return $this->generator->parse($format);
-    }
-
-    /**
-     * this overrides the static function in Faker\Provider\PhoneNumber
-     * @return string PhoneNumber in string format
-     */
-    public static function phoneNumber()
-    {
-        $faker = Factory::create('en_SG');
-        $sgPhoneNumber = new PhoneNumber($faker);
-        return $sgPhoneNumber->sgPhoneNumber();
     }
 }
