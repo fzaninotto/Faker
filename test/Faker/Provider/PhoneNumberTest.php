@@ -8,12 +8,16 @@ use Faker\Provider\PhoneNumber;
 
 class PhoneNumberTest extends \PHPUnit_Framework_TestCase
 {
+
+    /**
+     * @var Generator
+     */
     private $faker;
 
     public function setUp()
     {
         $faker = new Generator();
-        $faker->addProvider(new PhoneNumberProvider($faker));
+        $faker->addProvider(new PhoneNumber($faker));
         $this->faker = $faker;
     }
 
