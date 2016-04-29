@@ -923,6 +923,9 @@ echo $faker->siren; // 082 250 104
 
 // Generates a random SIRET number
 echo $faker->siret; // 347 355 708 00224
+
+// Generates a random job title
+echo $faker->jobTitle; // Technicien de fabrication
 ```
 
 ### `Faker\Provider\hu_HU\Payment`
