@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\no_NO;
+namespace Faker\Provider\nb_NO;
 
 class Person extends \Faker\Provider\Person
 {
@@ -293,13 +293,13 @@ class Person extends \Faker\Provider\Person
             $birthdate = \Faker\Provider\DateTime::dateTimeThisCentury();
         }
         $datePart = $birthdate->format('dmy');
-        
+
         /**
         * @todo These number should be random based on birth year
         * @link http://no.wikipedia.org/wiki/F%C3%B8dselsnummer
         */
         $randomDigits = (string)static::numerify('##');
-        
+
         switch($gender) {
             case static::GENDER_MALE:
                 $genderDigit = static::randomElement(array(1,3,5,7,9));
@@ -310,16 +310,16 @@ class Person extends \Faker\Provider\Person
             default:
                 $genderDigit = (string)static::numerify('#');
         }
-        
-        
+
+
         $digits = $datePart.$randomDigits.$genderDigit;
-        
+
         /**
         * @todo Calculate modulo 11 of $digits
         * @link http://no.wikipedia.org/wiki/F%C3%B8dselsnummer
         */
         $checksum = (string)static::numerify('##');
-        
+
 
         return $digits.$checksum;
     }
