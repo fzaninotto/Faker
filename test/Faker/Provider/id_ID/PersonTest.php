@@ -37,4 +37,45 @@ class PersonTest extends \PHPUnit_Framework_TestCase
         $lastNameFemale = $this->faker->lastNameFemale();
         $this->assertNotEmpty($lastNameFemale);
     }
+    
+    public function testIfVehicleLicenseNumberReturnData()
+    {
+        $vehicleLicenseNumber = $this->faker->vehicleLicenseNumber();
+        $this->assertNotEmpty($vehicleLicenseNumber);
+    }
+    
+    public function testIfPersonalLicenseNumberReturnData()
+    {
+        $personalLicenseNumber = $this->faker->personalLicenseNumber();
+        $this->assertNotEmpty($personalLicenseNumber);
+    }
+    
+    public function testIfGovLicenseNumberReturnData()
+    {
+        $govLicenseNumber = $this->faker->govLicenseNumber();
+        $this->assertNotEmpty($govLicenseNumber);
+    }
+    
+    public function testIfAmbassadorLicenseNumberReturnData()
+    {
+        $ambassadorLicenseNumber = $this->faker->ambassadorLicenseNumber();
+        $this->assertNotEmpty($ambassadorLicenseNumber);
+    }
+    
+    public function testIfVehicleLicenseNumberFormat()
+    {
+        $pattern = '/^([A-Za-z]{1,2})(\s|-)*([0-9]{1,4})(\s|-)*([A-Za-z]{0,3})/i';
+        
+        $vehicleLicenseNumber = $this->faker->vehicleLicenseNumber();
+        $this->assertRegExp($pattern, $vehicleLicenseNumber);
+        
+        $personalLicenseNumber = $this->faker->vehicleLicenseNumber();
+        $this->assertRegExp($pattern, $personalLicenseNumber);
+        
+        $govLicenseNumber = $this->faker->vehicleLicenseNumber();
+        $this->assertRegExp($pattern, $govLicenseNumber);
+        
+        $ambassadorLicenseNumber = $this->faker->vehicleLicenseNumber();
+        $this->assertRegExp($pattern, $ambassadorLicenseNumber);
+    }
 }
