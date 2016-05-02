@@ -73,7 +73,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '09 ## ## ## ##',
     );
 
-    // Mobile phone numbers start by 06 and 073 to 079 
+    // Mobile phone numbers start by 06 and 073 to 079
     // 06 is the most common prefix
     protected static $mobileFormats  = array(
         '+33 6 ## ## ## ##',
