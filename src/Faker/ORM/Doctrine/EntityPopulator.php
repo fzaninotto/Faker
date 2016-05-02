@@ -3,8 +3,7 @@
 namespace Faker\ORM\Doctrine;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\Mapping\ClassMetadata;
+use Doctrine\Common\Persistence\Mapping\ClassMetadata;
 
 /**
  * Service class for populating a table through a Doctrine Entity class.
@@ -120,13 +119,26 @@ class EntityPopulator
             $relatedClass = $this->class->getAssociationTargetClass($assocName);
 
             $unique = $optional = false;
-            $mappings = $this->class->getAssociationMappings();
-            foreach ($mappings as $mapping) {
-                if ($mapping['targetEntity'] == $relatedClass) {
-                    if ($mapping['type'] == ClassMetadata::ONE_TO_ONE) {
-                        $unique = true;
-                        $optional = isset($mapping['joinColumns'][0]['nullable']) ? $mapping['joinColumns'][0]['nullable'] : false;
-                        break;
+            if ($this->class instanceof \Doctrine\ORM\Mapping\ClassMetadata) {
+                $mappings = $this->class->getAssociationMappings();
+                foreach ($mappings as $mapping) {
+                    if ($mapping['targetEntity'] == $relatedClass) {
+                        if ($mapping['type'] == \Doctrine\ORM\Mapping\ClassMetadata::ONE_TO_ONE) {
+                            $unique = true;
+                            $optional = isset($mapping['joinColumns'][0]['nullable']) ? $mapping['joinColumns'][0]['nullable'] : false;
+                            break;
+                        }
+                    }
+                }
+            } elseif ($this->class instanceof \Doctrine\ODM\MongoDB\Mapping\ClassMetadata) {
+                $mappings = $this->class->associationMappings;
+                foreach ($mappings as $mapping) {
+                    if ($mapping['targetDocument'] == $relatedClass) {
+                        if ($mapping['type'] == \Doctrine\ODM\MongoDB\Mapping\ClassMetadata::ONE && $mapping['association'] == \Doctrine\ODM\MongoDB\Mapping\ClassMetadata::REFERENCE_ONE) {
+                            $unique = true;
+                            $optional = isset($mapping['nullable']) ? $mapping['nullable'] : false;
+                            break;
+                        }
                     }
                 }
             }
@@ -216,18 +228,18 @@ class EntityPopulator
     }
 
     /**
-     * @param EntityManagerInterface $manager
+     * @param ObjectManager $manager
      * @return int|null
      */
-    private function generateId($obj, $column, EntityManagerInterface $manager)
+    private function generateId($obj, $column, ObjectManager $manager)
     {
-        /* @var $repository \Doctrine\ORM\EntityRepository */
+        /* @var $repository \Doctrine\Common\Persistence\ObjectRepository */
         $repository = $manager->getRepository(get_class($obj));
         $result = $repository->createQueryBuilder('e')
                 ->select(sprintf('e.%s', $column))
                 ->getQuery()
-                ->getResult();
-        $ids = array_map('current', $result);
+                ->execute();
+        $ids = array_map('current', $result->toArray());
 
         $id = null;
         do {
