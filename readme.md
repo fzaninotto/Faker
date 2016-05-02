@@ -962,22 +962,6 @@ echo $faker->govLicenseNumber; // "RI 1"
 echo $faker->ambassadorLicenseNumber; // "CD 53"
 ```
 
-### `Faker\Provider\id_ID\Company`
-```php
-<?php
-
-echo $faker->business; // "Komunikasi dan Informatika"
-```
-
-### `Faker\Provider\id_ID\Payment`
-```php
-<?php
-
-echo $faker->bankShortName; // "Mandiri" - PT Bank Mandiri Tbk short name
-echo $faker->bankAccountNumber; // "0111101043072" - account number example for Bank Mandiri
-echo $faker->bankAccountNumber('Mandiri'); // "0111101043072" - account number example for Bank Mandiri
-```
-
 ### `Faker\Provider\ja_JP\Person`
 
 ```php
