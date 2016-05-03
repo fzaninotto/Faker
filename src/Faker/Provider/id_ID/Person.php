@@ -236,7 +236,7 @@ class Person extends \Faker\Provider\Person
     );
 
     private static $vehicleThirdSuffixCode = array(
-        '', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
         'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
     );
 
@@ -299,7 +299,7 @@ class Person extends \Faker\Provider\Person
      *
      * @return string vehicle license number
      */
-    public static function vehicleLicenseNumber()
+    public function vehicleLicenseNumber()
     {
         return static::personalLicenseNumber();
     }
@@ -309,17 +309,17 @@ class Person extends \Faker\Provider\Person
      *
      * @return string vehicle license number
      */
-    public static function personalLicenseNumber()
+    public function personalLicenseNumber()
     {
-        $license = static::randomElement(static::$vehicleAreaCode);
-        $license .= ' ';
-        $license .= static::numerify(static::randomElement(static::$vehicleNumberFormats));
-        $license .= ' ';
-        $license .= static::randomElement(static::$vehicleFirstSuffixCode);
-        $license .= static::randomElement(static::$vehicleSecondSuffixCode);
-        $license .= static::randomElement(static::$vehicleSecondSuffixCode);
-
-        return $license;
+        $vehicleAreaCode = static::randomElement(static::$vehicleAreaCode);
+        $vehicleNumber = static::numerify(static::randomElement(static::$vehicleNumberFormats));
+        $vehicleSuffixCode = implode('', array(
+            static::randomElement(static::$vehicleFirstSuffixCode),
+            static::randomElement(static::$vehicleSecondSuffixCode),
+            static::randomElement(static::$vehicleSecondSuffixCode)
+        ));
+        
+        return trim(implode(' ', array($vehicleAreaCode, $vehicleNumber, $vehicleSuffixCode)));
     }
 
     /**
@@ -329,11 +329,7 @@ class Person extends \Faker\Provider\Person
      */
     public static function govLicenseNumber()
     {
-        $license = 'RI';
-        $license .= ' ';
-        $license .= static::numberBetween(1, 53);
-
-        return $license;
+        return trim(implode(' ', array('RI', static::numberBetween(1, 53))));
     }
 
     /**
@@ -343,10 +339,12 @@ class Person extends \Faker\Provider\Person
      */
     public static function ambassadorLicenseNumber()
     {
-        $license = 'CD';
-        $license .= ' ';
-        $license .= static::randomElement([static::numberBetween(12, 126), 130]);
-
-        return $license;
+        return trim(implode(' ', array(
+            'CD',
+            static::randomElement(array(
+                static::numberBetween(12, 126),
+                130
+            ))
+        )));
     }
 }
