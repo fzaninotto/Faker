@@ -166,17 +166,25 @@ class Person extends \Faker\Provider\Person
         return static::randomElement(static::$suffix);
     }
 
+    /**
+     * @example 500620/842
+     *
+     * @link https://en.wikipedia.org/wiki/National_identification_number#Slovakia
+     * @param  \DateTime|null $birthDate date when person to be generated was born
+     * @param  string $gender person gender
+     * @return string generated birth number
+     */
     public static function birthNumber($birthDate = null, $gender = null)
     {
         $birthNumber='';
-        $gender = $gender?$gender:\Faker\Provider\Base::randomElement([static::GENDER_MALE,static::GENDER_FEMALE]);
+        $gender = $gender?$gender:\Faker\Provider\Base::randomElement([static::GENDER_MALE, static::GENDER_FEMALE]);
         /**
          * @var \DateTime
          */
         $birthDate = $birthDate?$birthDate:\Faker\Provider\DateTime::dateTime();
 
         $birthNumber .= $birthDate->format('y');
-        $birthNumber .= $gender==static::GENDER_MALE? $birthDate->format('m'): ($birthDate->format('m')+50);
+        $birthNumber .= $gender==static::GENDER_MALE? $birthDate->format('m'): ($birthDate->format('m')+50); // females are indicated by birth date month number +50
         $birthNumber .= $birthDate->format('d');
 
         $padding = \Faker\Provider\Base::numberBetween(100, 999);
@@ -189,6 +197,12 @@ class Person extends \Faker\Provider\Person
         return ($birthNumber.'/'.$padding.(9-$crc));
     }
 
+    /**
+     * @example ry432655
+     *
+     * @link https://en.wikipedia.org/wiki/National_identification_number#Slovakia
+     * @return string generated IdCard number
+     */
     public static function idCard()
     {
         return \Faker\Provider\Base::bothify('??######');
