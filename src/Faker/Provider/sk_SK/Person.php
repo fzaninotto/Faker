@@ -198,7 +198,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * @example ry432655
+     * @example RY432655
      *
      * @link https://en.wikipedia.org/wiki/National_identification_number#Slovakia
      * @return string generated IdCard number
