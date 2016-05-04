@@ -205,6 +205,6 @@ class Person extends \Faker\Provider\Person
      */
     public static function idCard()
     {
-        return \Faker\Provider\Base::bothify('??######');
+        return \Faker\Provider\Base::regexify('[A-Z]{2}[0-9]{6}');
     }
 }
