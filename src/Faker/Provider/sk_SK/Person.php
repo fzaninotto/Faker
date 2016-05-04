@@ -177,7 +177,7 @@ class Person extends \Faker\Provider\Person
     public static function birthNumber($birthDate = null, $gender = null)
     {
         $birthNumber='';
-        $gender = $gender?$gender:\Faker\Provider\Base::randomElement([static::GENDER_MALE, static::GENDER_FEMALE]);
+        $gender = $gender?$gender:\Faker\Provider\Base::randomElement(array(static::GENDER_MALE, static::GENDER_FEMALE));
         /**
          * @var \DateTime
          */
