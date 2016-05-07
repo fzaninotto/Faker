@@ -2,7 +2,7 @@
 
 namespace Faker\Provider\ar_SA;
 
-use Faker\Provider\ar_SA\Utils;
+use Faker\Calculator\Luhn;
 
 class Company extends \Faker\Provider\Company
 {
@@ -68,6 +68,6 @@ class Company extends \Faker\Provider\Company
      **/
     public static function companyIdNumber()
     {
-        return Utils::generateLuhnNumber(700, 10);
+        return Luhn::generateLuhnNumber(700, 10);
     }
 }

@@ -2,8 +2,11 @@
 
 namespace Faker\Calculator;
 
+use Faker\Provider\Base as BaseProvider;
+use InvalidArgumentException;
+
 /**
- * Utility class for generating Luhn checksum and validating a number
+ * Utility class for generating and validating Luhn numbers.
  *
  * Luhn algorithm is used to validate credit card numbers, IMEI numbers, and
  * National Provider Identifier numbers.
@@ -54,5 +57,42 @@ class Luhn
     public static function isValid($number)
     {
         return self::checksum($number) === 0;
+    }
+
+    /**
+     * Generate a Luhn compliant number.
+     *
+     * @param string $prefix
+     * @param int $length
+     * @return string
+     */
+    public static function generateLuhnNumber($prefix, $length)
+    {
+        $length = intval($length);
+        $prefix = trim($prefix);
+
+        if (!preg_match('/^\d*$/', $prefix)) {
+            throw new InvalidArgumentException('prefix should be all digits.');
+        }
+
+        if ($length <= 0) {
+            throw new InvalidArgumentException('length should be greater than zero.');
+        }
+
+        if (strlen($prefix) > $length) {
+            throw new InvalidArgumentException('prefix should be longer than the length.');
+        }
+
+        if (strlen($prefix) == $length) {
+            if (static::isValid($prefix)) {
+                return $prefix;
+            } else {
+                throw new InvalidArgumentException('prefix length equals length but prefix is not a Luhn number.');
+            }
+        }
+
+        $pattern = $prefix . str_repeat('#', $length - strlen($prefix) - 1);
+        $partialValue = BaseProvider::numerify($pattern);
+        return $partialValue . Luhn::computeCheckDigit($partialValue);
     }
 }

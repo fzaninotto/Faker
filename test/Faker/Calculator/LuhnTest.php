@@ -59,4 +59,60 @@ class LuhnTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals($isValid, Luhn::isValid($number));
     }
+
+    public function generateLuhnNumberProvider()
+    {
+        return array(
+            array(' ', 5),
+            array(null, 7),
+            array(443, 10),
+            array(5, 15),
+            array(203, 25),
+        );
+    }
+
+    /**
+     * @dataProvider generateLuhnNumberProvider
+     */
+    public function testGenerateLuhnNumber($prefix, $length)
+    {
+        $this->assertEquals($length, strlen(Luhn::generateLuhnNumber($prefix, $length)));
+        $this->assertTrue(Luhn::isValid(Luhn::generateLuhnNumber($prefix, $length)));
+    }
+
+    /**
+     * @expectedException        InvalidArgumentException
+     * @expectedExceptionMessage prefix should be all digits.
+     */
+    public function testGenerateLuhnNumberWithInvalidPrefix()
+    {
+        Luhn::generateLuhnNumber('abc', 10);
+    }
+
+    /**
+     * @expectedException        InvalidArgumentException
+     * @expectedExceptionMessage length should be greater than zero.
+     */
+    public function testGenerateLuhnNumberWithNegativeLength()
+    {
+        Luhn::generateLuhnNumber(1, -5);
+    }
+
+    /**
+     * @expectedException        InvalidArgumentException
+     * @expectedExceptionMessage prefix should be longer than the length.
+     */
+    public function testGenerateLuhnNumberWithPrefixGreaterThanLength()
+    {
+        Luhn::generateLuhnNumber(123456, 5);
+    }
+
+    /**
+     * @expectedException        InvalidArgumentException
+     * @expectedExceptionMessage prefix length equals length but prefix is not a Luhn number.
+     */
+    public function testGenerateLuhnNumberWithPrefixEqualLengthButInvalid()
+    {
+        Luhn::generateLuhnNumber(123457, 6);
+    }
 }
