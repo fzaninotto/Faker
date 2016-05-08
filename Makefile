@@ -1,5 +1,5 @@
 vendor/autoload.php:
-	composer install --no-interaction --prefer-source
+	composer install --no-interaction --prefer-dist
 
 .PHONY: sniff
 sniff: vendor/autoload.php
