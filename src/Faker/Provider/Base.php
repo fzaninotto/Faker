@@ -110,6 +110,9 @@ class Base
 
         if (null === $max) {
             $max = static::randomNumber();
+            if ($min > $max) {
+                $max = $min;
+            }
         }
 
         if ($min > $max) {
