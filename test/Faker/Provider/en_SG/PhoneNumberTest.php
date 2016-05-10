@@ -7,11 +7,13 @@ use Faker\Provider\en_SG\PhoneNumber;
 
 class PhoneNumberTest extends \PHPUnit_Framework_TestCase
 {
+    private $faker;
+
     public function setUp()
     {
-        $faker = Factory::create('en_SG');
-        $faker->addProvider(new PhoneNumber($faker));
-        $this->faker = $faker;
+        $this->faker = Factory::create('en_SG');
+        $this->faker->seed(1);
+        $this->faker->addProvider(new PhoneNumber($this->faker));
     }
 
     // http://en.wikipedia.org/wiki/Telephone_numbers_in_Singapore#Numbering_plan

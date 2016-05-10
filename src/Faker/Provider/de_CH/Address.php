@@ -4,7 +4,7 @@ namespace Faker\Provider\de_CH;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $buildingNumber = array('###', '##', '#', '#a', '#b', '#c');
+    protected static $buildingNumber = array('###', '##', '#', '##[abc]', '#[abc]');
 
     protected static $streetSuffixLong = array(
         'Gasse', 'Platz', 'Ring', 'Strasse', 'Weg', 'Allee'
@@ -176,5 +176,10 @@ class Address extends \Faker\Provider\Address
     {
         $canton = static::canton();
         return current($canton);
+    }
+
+    public static function buildingNumber()
+    {
+        return static::regexify(self::numerify(static::randomElement(static::$buildingNumber)));
     }
 }
