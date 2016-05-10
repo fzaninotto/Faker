@@ -4,7 +4,7 @@ namespace Faker\Provider\de_DE;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $buildingNumber = array('###', '##', '#', '#/#');
+    protected static $buildingNumber = array('###', '##', '#', '#/#', '##[abc]', '#[abc]');
 
     protected static $streetSuffixLong = array(
         'Gasse', 'Platz', 'Ring', 'Straße', 'Weg', 'Allee'
@@ -86,5 +86,10 @@ class Address extends \Faker\Provider\Address
     public static function state()
     {
         return static::randomElement(static::$state);
+    }
+
+    public static function buildingNumber()
+    {
+        return static::regexify(self::numerify(static::randomElement(static::$buildingNumber)));
     }
 }
