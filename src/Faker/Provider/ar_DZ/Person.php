@@ -4,7 +4,7 @@ namespace Faker\Provider\ar_DZ;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $maleNameFormats = [
+    protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastName}}',
         '{{lastName}} {{firstNameMale}}',
         '{{firstNameMale}} {{prefix}}{{lastName}}',
@@ -12,9 +12,9 @@ class Person extends \Faker\Provider\Person
         '{{prefix}}{{lastName}} {{firstNameMale}}',
         '{{firstNameMale}} {{lastName}}',
         '{{titleMale}} {{firstNameMale}} {{lastName}}',
-    ];
+    );
 
-    protected static $femaleNameFormats = [
+    protected static $femaleNameFormats = array(
      '{{firstNameFemale}} {{lastName}}',
      '{{lastName}} {{firstNameFemale}}',
      '{{firstNameFemale}} {{prefix}}{{lastName}}',
@@ -22,12 +22,12 @@ class Person extends \Faker\Provider\Person
      '{{prefix}}{{lastName}} {{firstNameFemale}}',
      '{{firstNameFemale}} {{lastName}}',
      '{{titleMale}} {{firstNameFemale}} {{lastName}}',
-    ];
+    );
 
     /**
      * @link http://www.studentsoftheworld.info/penpals/stats.php3?Pays=ALG
      */
-    protected static $firstNameMale = [
+    protected static $firstNameMale = array(
     'محمد',
     'كريم',
     'أمين',
@@ -107,12 +107,12 @@ class Person extends \Faker\Provider\Person
     'عبد الحق',
     'أيوب',
 
-    ];
+    );
 
     /**
      * @link http://www.studentsoftheworld.info/penpals/stats.php3?Pays=ALG
      */
-    protected static $firstNameFemale = [
+    protected static $firstNameFemale = array(
     'ياسمين',
     'أمينة',
     'إمان',
@@ -178,9 +178,9 @@ class Person extends \Faker\Provider\Person
     'يسرى',
     'ليليا',
 
-    ];
+    );
 
-    protected static $lastName = [
+    protected static $lastName = array(
     'رحماني',
     'شرفاوي',
     'يخلف',
@@ -207,11 +207,11 @@ class Person extends \Faker\Provider\Person
     'مرابط',
     'معمر',
     'مبروكي',
-    ];
+    );
 
-    protected static $titleMale = [];
-    protected static $titleFemale = [];
-    private static $prefix = ['بن '];
+    protected static $titleMale = array();
+    protected static $titleFemale = array();
+    private static $prefix = array('بن ');
 
     /**
      * @example 'بن'
