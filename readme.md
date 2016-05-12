@@ -24,6 +24,7 @@ Faker requires PHP >= 5.3.3.
 	- [Internet](#fakerproviderinternet)
 	- [User Agent](#fakerprovideruseragent)
 	- [Payment](#fakerproviderpayment)
+    - [Finance](#fakerproviderfinance)
 	- [Color](#fakerprovidercolor)
 	- [File](#fakerproviderfile)
 	- [Image](#fakerproviderimage)
@@ -238,6 +239,11 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     // Generates a random IBAN. Set $countryCode to null for a random country
     iban($countryCode)      // 'IT31A8497112740YZ575DJ28BP4'
     swiftBicNumber          // 'RZTIAT22263'
+
+### `Faker\Provider\Finance`
+
+    // Generates a random ISIN. Set $countryCode to null for a random country
+    isin($countryCode)     // 'US0378331005'
 
 ### `Faker\Provider\Color`
 
