@@ -26,5 +26,4 @@ class Finance extends Base
 
         return $countryCode . $nsin . $checkdigit;
     }
-
 }
