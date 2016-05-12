@@ -177,17 +177,17 @@ class Person extends \Faker\Provider\Person
     public static function birthNumber($birthDate = null, $gender = null)
     {
         $birthNumber='';
-        $gender = $gender?$gender:\Faker\Provider\Base::randomElement(array(static::GENDER_MALE, static::GENDER_FEMALE));
+        $gender = $gender?$gender:self::randomElement(array(static::GENDER_MALE, static::GENDER_FEMALE));
         /**
          * @var \DateTime
          */
-        $birthDate = $birthDate?$birthDate:\Faker\Provider\DateTime::dateTime();
+        $birthDate = $birthDate?$birthDate:self::dateTime();
 
         $birthNumber .= $birthDate->format('y');
         $birthNumber .= $gender==static::GENDER_MALE? $birthDate->format('m'): ($birthDate->format('m')+50); // females are indicated by birth date month number +50
         $birthNumber .= $birthDate->format('d');
 
-        $padding = \Faker\Provider\Base::numberBetween(100, 999);
+        $padding = self::numberBetween(100, 999);
 
         if ($birthDate->format('U')<-504921600) { // if born before 1954-01-01 then there is no check digit
             return ($birthNumber.'/'.$padding);
@@ -205,6 +205,6 @@ class Person extends \Faker\Provider\Person
      */
     public static function idCard()
     {
-        return \Faker\Provider\Base::regexify('[A-Z]{2}[0-9]{6}');
+        return self::regexify('[A-Z]{2}[0-9]{6}');
     }
 }
