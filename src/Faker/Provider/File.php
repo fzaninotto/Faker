@@ -1,7 +1,7 @@
 <?php
 namespace Faker\Provider;
 
-class File extends \Faker\Provider\Base
+class File extends Base
 {
 
     /**

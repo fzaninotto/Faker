@@ -61,4 +61,14 @@ class Company extends \Faker\Provider\Company
 
         return join($result, ' ');
     }
+
+    /**
+     * Italian VAT number (Partita iva)
+     * @link https://it.wikipedia.org/wiki/Partita_IVA
+     * @return string
+     */
+    public static function vatId()
+    {
+        return static::numerify('IT###########');
+    }
 }

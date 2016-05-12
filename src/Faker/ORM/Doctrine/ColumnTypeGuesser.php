@@ -8,11 +8,18 @@ class ColumnTypeGuesser
 {
     protected $generator;
 
+    /**
+     * @param \Faker\Generator $generator
+     */
     public function __construct(\Faker\Generator $generator)
     {
         $this->generator = $generator;
     }
 
+    /**
+     * @param ClassMetadata $class
+     * @return \Closure|null
+     */
     public function guessFormat($fieldName, ClassMetadata $class)
     {
         $generator = $this->generator;

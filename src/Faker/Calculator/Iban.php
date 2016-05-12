@@ -24,6 +24,9 @@ class Iban
         return str_pad($checksum, 2, '0', STR_PAD_LEFT);
     }
 
+    /**
+     * @return int
+     */
     private static function alphaToNumberCallback($match)
     {
         return self::alphaToNumber($match[0]);
@@ -44,7 +47,7 @@ class Iban
      * Calculates mod97 on a numeric string
      *
      * @param string $number Numeric string
-     * @param int
+     * @return int
      */
     public static function mod97($number)
     {
@@ -58,6 +61,7 @@ class Iban
     /**
      * Checks whether an IBAN has a valid checksum
      *
+     * @param string $iban
      * @return boolean
      */
     public static function isValid($iban)
