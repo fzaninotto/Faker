@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: Lenovo
- * Date: 5/14/2016
- * Time: 4:32 AM
- */
 
 namespace Faker\Provider\ka_GE;
 
