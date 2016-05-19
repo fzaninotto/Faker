@@ -620,7 +620,7 @@ EOT;
     {
         // extract the last char of $text
         if (function_exists('mb_substr')) {
-            $last = mb_substr($text, mb_strlen($text)-1, 'UTF-8');
+            $last = mb_substr($text, mb_strlen($text)-1, null, 'UTF-8');
         } else {
             $chars = static::split($text);
             $last = end($chars);
