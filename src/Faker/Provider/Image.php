@@ -12,6 +12,8 @@ class Image extends Base
         'fashion', 'people', 'nature', 'sports', 'technics', 'transport'
     );
 
+
+
     /**
      * Generate the URL that will return a random image
      *
@@ -23,11 +25,11 @@ class Image extends Base
     {
         $baseUrl = "http://lorempixel.com/";
         $url = "{$width}/{$height}/";
-        
+
         if ($gray) {
             $url = "gray/" . $url;
         }
-        
+
         if ($category) {
             if (!in_array($category, static::$categories)) {
                 throw new \InvalidArgumentException(sprintf('Unknown image category "%s"', $category));
@@ -44,6 +46,35 @@ class Image extends Base
 
         return $baseUrl . $url;
     }
+
+    /**
+     * Generate the URL of unsplash-it site that will return a random image from unsplash.com
+     *
+     * Set randomize to false to remove the random GET parameter at the end of the url.
+     *
+     * @example 'https://unsplash.it/500/600/?random'
+     */
+
+    public static function imageUnsplashUrl($width = 500, $height = 600, $randomize = true, $gray = false)
+    {
+        $baseUrl = "https://unsplash.it/";
+        $url = "{$width}/{$height}/";
+
+        if ($gray) {
+            $url = "g/".$url."/?random" ;
+            return $url;
+        }
+
+
+
+        if ($randomize) {
+            $url .= '?random' ;
+        }
+
+        return $baseUrl . $url;
+    }
+
+
 
     /**
      * Download a remote random image to disk and return its location
