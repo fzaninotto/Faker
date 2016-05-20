@@ -51,7 +51,7 @@ class Company extends \Faker\Provider\Company
     /**
      * @var array Company suffixes.
      */
-    protected static $companySuffix = array('SA', 'S.A.', 'SARL', 'S.A.R.L.', 'S.A.S.', 'et Fils');
+    protected static $companySuffix = array('SA', 'S.A.', 'SARL', 'S.A.R.L.', 'SAS', 'S.A.S.', 'et Fils');
 
     protected static $siretNicFormats = array('####', '0###', '00#%');
 
