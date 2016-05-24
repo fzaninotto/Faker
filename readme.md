@@ -1120,6 +1120,14 @@ echo $faker->region; // 'Nordeste'
 
 // Generates a random region abbreviation
 echo $faker->regionAbbr; // 'NE'
+
+// More functions
+echo $faker->streetPrefix; // 'R.', 'Avenida'
+echo $faker->cityPrefix; // 'São', 'Santa'
+echo $faker->citySuffix; // 'do Sul', 'd'Oeste'
+echo $faker->secondaryAddress; // '6º Andar', 'Fundos'
+echo $faker->state; // 'Santa Catarina'
+echo $faker->stateAbbr; // 'SC'
 ```
 
 ### `Faker\Provider\pt_BR\PhoneNumber`
@@ -1157,6 +1165,14 @@ echo $faker->name; // 'Sr. Luis Adriano Sepúlveda Filho'
 echo $faker->cpf;        // '145.343.345-76'
 echo $faker->cpf(false); // '45623467866'
 echo $faker->rg;         // '84.405.736-3'
+
+// More functions
+echo $faker->titleMale; // 'Sr.'
+echo $faker->titleFemale; // 'Srta.'
+echo $faker->suffix; // 'Jr.'
+echo $faker->firstNameMale; // 'Felipe'
+echo $faker->firstNameFemale; // 'Daniela'
+echo $faker->lastName; // 'Duarte'
 ```
 
 ### `Faker\Provider\pt_BR\Company`
@@ -1167,6 +1183,34 @@ echo $faker->rg;         // '84.405.736-3'
 // Generates a Brazilian formated and valid CNPJ
 echo $faker->cnpj;        // '23.663.478/0001-24'
 echo $faker->cnpj(false); // '23663478000124'
+
+// More functions
+echo $faker->companySuffix; // 'e Associados'
+```
+
+### `Faker\Provider\pt_BR\Internet`
+
+```php
+<?php
+
+// Generates common free email domains
+echo $faker->freeEmailDomain; // 'terra.com.br', 'yahoo.com'
+
+// Generates random tld (top-level domain)
+echo $faker->tld; // 'com.br', 'org'
+```
+
+### `Faker\Provider\pt_BR\Payment`
+
+```php
+<?php
+
+// Generates random bank name (FEBRABAN)
+echo $faker->bank; // 'Banco do Brasil S.A.'
+
+// More functions
+echo $faker->creditCardType; // 'Hipercard', 'Visa'
+print_r($faker->creditCardDetails); //array('type' => 'Elo', 'number' => '5067289663816302', 'name' => 'Paulina Bittencourt', 'expirationDate' => '08/16')
 ```
 
 ### `Faker\Provider\ro_MD\Payment`
