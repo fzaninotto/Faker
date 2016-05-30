@@ -4,6 +4,14 @@ namespace Faker\Provider\ka_GE;
 
 class Person extends \Faker\Provider\Person
 {
+
+    const ID_OLD = 'OLD';
+    const ID_NEW = 'NEW';
+
+    protected static $georgianLetters = array(
+        'ა','ბ','გ','დ','ე','ვ','ზ','თ','ი','კ','ლ','მ','ნ','ო','პ','ჟ','რ','ს','ტ','უ','ფ','ქ','ღ','ყ','შ','ჩ','ც','ძ','წ','ჭ','ხ','ჯ','ჰ'
+    );
+
     protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastName}}',
     );
@@ -60,4 +68,23 @@ class Person extends \Faker\Provider\Person
     protected static $titleMale = array('ბნ.', 'დოქ.', 'პროფ.');
 
     protected static $titleFemale = array('ქნ.', 'დოქ.', 'პროფ.');
+
+    /**
+     * @link http://www.refworld.org/docid/3ae6accf24.html
+     */
+    public static function personalNo()
+    {
+        return static::numerify('###########');
+    }
+
+    public static function idNumber($type = null)
+    {
+        if (!$type) {
+            $type = static::randomElement(array(static::ID_NEW, static::ID_OLD));
+        }
+        if ($type == static::ID_NEW) {
+            return strtoupper(static::bothify('##??#####'));
+        }
+        return static::randomElement(self::$georgianLetters).static::numerify('#######');
+    }
 }
