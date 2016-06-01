@@ -101,6 +101,7 @@ namespace Faker;
  * @method string date($format = 'Y-m-d', $max = 'now')
  * @method string time($format = 'H:i:s', $max = 'now')
  * @method \DateTime dateTimeBetween($startDate = '-30 years', $endDate = 'now')
+ * @method \DateTime dateTimeInInterval($date = '-30 years', $interval = '+5 days', $timezone = null)
  *
  * @property string $md5
  * @property string $sha1
