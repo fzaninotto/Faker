@@ -1,4 +1,6 @@
-<?php namespace Faker\Provider\el_CY;
+<?php
+
+namespace Faker\Provider\el_CY;
 
 class Company extends \Faker\Provider\Company
 {
@@ -13,6 +15,4 @@ class Company extends \Faker\Provider\Company
         '{{lastName}} {{companySuffix}}',
         '{{lastName}}-{{lastName}}',
     );
-
-
 }

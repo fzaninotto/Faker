@@ -7,7 +7,7 @@ class Address extends \Faker\Provider\Address
     protected static $citySuffix = array('Λευκωσία', 'Λεμεσός', 'Λάρνακα', 'Πάφος');
     protected static $streetSuffix = array();
     protected static $streetPrefix = array(
-        'Όδος', 'Οδός', 'Λεωφόρος'
+        'Όδος', 'Οδός', 'Λεωφόρος',
     );
     protected static $cityFormats = array(
         '{{citySuffix}}',
@@ -42,7 +42,7 @@ class Address extends \Faker\Provider\Address
         'Ταϊβάν', 'Ταϊλάνδη', 'Τανζανία', 'Τατζικιστάν', 'Τζαμάικα', 'Τόγκο', 'Τόνγκα', 'Τουβαλού', 'Τουρκία', 'Τουρκμενιστάν', 'Τσεχία', 'Τυνησία',
         'Υεμένη',
         'Φιλιππίνες', 'Φινλανδία',
-        'Χιλή'
+        'Χιλή',
     );
 
     /**
