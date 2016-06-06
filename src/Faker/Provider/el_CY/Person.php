@@ -4,6 +4,10 @@ namespace Faker\Provider\el_CY;
 
 class Person extends \Faker\Provider\Person
 {
+    /**
+     * @var array
+     * @link http://www.mof.gov.cy/mof/cystat/statistics.nsf/populationcondition_22main_gr/populationcondition_22main_gr?OpenForm&sub=2&sel=2
+     */
     protected static $firstNameMale = array(
         'Άγγελος',
         'Αλέξανδρος',
@@ -42,6 +46,11 @@ class Person extends \Faker\Provider\Person
         'Χριστόδουλος',
         'Χριστόφορος',
     );
+
+    /**
+     * @var array
+     * @link http://www.mof.gov.cy/mof/cystat/statistics.nsf/populationcondition_22main_gr/populationcondition_22main_gr?OpenForm&sub=2&sel=2
+     */
     protected static $firstNameFemale = array(
         'Άννα',
         'Αγγέλα',
@@ -85,6 +94,11 @@ class Person extends \Faker\Provider\Person
         'Χριστιάνα',
         'Χρυστάλλα',
     );
+
+    /**
+     * @var array
+     * @link http://www.mof.gov.cy/mof/cystat/statistics.nsf/populationcondition_22main_gr/populationcondition_22main_gr?OpenForm&sub=2&sel=2
+     */
     protected static $lastName = array(
         'Αλεξάνδρου',
         'Αναστασίου',
