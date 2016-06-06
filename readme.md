@@ -832,6 +832,18 @@ echo $faker->cvr; // "32458723"
 echo $faker->p; // "5398237590"
 ```
 
+### `Faker\Provider\el_CY\Payment`
+
+```php
+<?php
+
+// Generates a random bank name
+echo $faker->bank; // "Τράπεζα Κύπρου"
+
+// Generates a random bank account number
+echo $faker->bankAccountNumber; // "CY34051335838U3DOH6FJPW35003"
+```
+
 ### `Faker\Provider\en_NZ\Phone`
 
 ```php
