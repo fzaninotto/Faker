@@ -173,6 +173,16 @@ class Address extends \Faker\Provider\Address
         return static::randomElement(static::$cityNames);
     }
 
+    public static function kommune()
+    {
+        return static::randomElement(static::$kommuneNames);
+    }
+
+    public static function county()
+    {
+        return static::randomElement(static::$countyNames);
+    }
+
     public static function streetSuffixWord()
     {
         return static::randomElement(static::$streetSuffixWord);
