@@ -267,7 +267,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     image($dir, $width, $height, 'cats', true) // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a full path to file
     image($dir, $width, $height, 'cats', true, false) // it's a no randomize images (default: `true`)
     image($dir, $width, $height, 'cats', true, true, 'Faker') // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat with 'Faker' text. Default, `null`.
-    image($dir, $width, $height, 'cats', true, true, 'Faker', 30) // Timeout while waiting for downloading images, and a cat with 'Faker' text. (Default, `30` seconds for a timeout & `null` for a text.)
+    image($dir, $width, $height, 'cats', true, true, 'Faker', 30) // Timeout while waiting for downloading images, and a cat with 'Faker' text. (Default, `null` for a timeout & `null` for a text.)
 
 ### `Faker\Provider\Uuid`
 
