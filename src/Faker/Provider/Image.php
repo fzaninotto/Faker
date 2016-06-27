@@ -76,7 +76,7 @@ class Image extends Base
             curl_setopt($ch, CURLOPT_FILE, $fp);
             
             // If not empty $timeout parameter, then using timeout parameter.
-            if(!empty($timeout)){
+            if(!empty($timeout) && typeof($timeout) == 'integer'){
                 curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
                 curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
             }
