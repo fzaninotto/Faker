@@ -52,7 +52,7 @@ class Image extends Base
      *
      * @example '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
      */
-    public static function image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true, $randomize = true, $word = null)
+    public static function image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true, $randomize = true, $word = null, $timeout = null)
     {
         $dir = is_null($dir) ? sys_get_temp_dir() : $dir; // GNU/Linux / OS X / Windows compatible
         // Validate directory path
@@ -74,6 +74,13 @@ class Image extends Base
             $fp = fopen($filepath, 'w');
             $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_FILE, $fp);
+            
+            // If not empty $timeout parameter, then using timeout parameter.
+            if(!empty($timeout) && typeof($timeout) == 'integer'){
+                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+                curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
+            }
+            
             $success = curl_exec($ch);
             curl_close($ch);
             fclose($fp);
