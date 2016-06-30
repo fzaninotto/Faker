@@ -169,27 +169,25 @@ class Base
      */
     public static function randomElements(array $array = array('a', 'b', 'c'), $count = 1)
     {
-        $allKeys = array_keys($array);
-        $numKeys = count($allKeys);
-
-        if ($numKeys < $count) {
-            throw new \LengthException(sprintf('Cannot get %d elements, only %d in array', $count, $numKeys));
+        if ($count == 0) {
+            return array();
         }
 
-        $highKey = $numKeys - 1;
-        $keys = $elements = array();
-        $numElements = 0;
-
-        while ($numElements < $count) {
-            $num = mt_rand(0, $highKey);
-            if (isset($keys[$num])) {
-                continue;
-            }
-
-            $keys[$num] = true;
-            $elements[] = $array[$allKeys[$num]];
-            $numElements++;
+        $numItems = count($array);
+        if ($numItems < $count) {
+            throw new \LengthException(sprintf('Cannot get %d elements, only %d in array', $count, $numItems));
         }
+
+        if ($count == 1) {
+            return array($array[array_rand($array)]);
+        }
+
+        $elements = array();
+        foreach (array_rand($array, $count) as $key) {
+            $elements[] = $array[$key];
+        }
+
+        shuffle($elements);
 
         return $elements;
     }
