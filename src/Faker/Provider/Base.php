@@ -169,6 +169,10 @@ class Base
      */
     public static function randomElements(array $array = array('a', 'b', 'c'), $count = 1)
     {
+        if ($count == 0) {
+            return array();
+        }
+
         $numItems = count($array);
         if ($numItems < $count) {
             throw new \LengthException(sprintf('Cannot get %d elements, only %d in array', $count, $numItems));
