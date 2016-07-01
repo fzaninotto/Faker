@@ -185,10 +185,10 @@ class Internet extends \Faker\Provider\Base
     {
         if (static::numberBetween(0, 1) === 0) {
             // 10.x.x.x range
-            $ip = long2ip(static::numberBetween(167772160, 184549375));
+            $ip = long2ip(static::numberBetween(ip2long("10.0.0.0"), ip2long("10.255.255.255")));
         } else {
             // 192.168.x.x range
-            $ip = long2ip(static::numberBetween(3232235520, 3232301055));
+            $ip = long2ip(static::numberBetween(ip2long("192.168.0.0"), ip2long("192.168.255.255")));
         }
 
         return $ip;
