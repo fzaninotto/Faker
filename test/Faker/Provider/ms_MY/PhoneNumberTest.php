@@ -38,4 +38,22 @@ class PhoneNumberTest extends \PHPUnit_Framework_TestCase
         $this->assertNotEmpty($number);
     }
 
+    /**
+     * @group ms_MY
+     */
+    public function testAreaCode(){
+
+        $areaCode = $this->faker->areaCode;
+        $this->assertNotEmpty($areaCode);
+    }
+
+    /**
+     * @group ms_MY
+     */
+    public function testMobileCode(){
+
+        $mobileOperatorCode = $this->faker->mobileOperatorCode;
+        $this->assertNotEmpty($mobileOperatorCode);
+    }
+
 }
