@@ -1030,6 +1030,33 @@ echo $faker->borough; // "강남구"
 echo $faker->personalIdentityNumber; // "140190-12301"
 ```
 
+### `Faker\Provider\ms_MY\Person`
+
+```php
+<?php
+
+// Prefix
+echo $faker->prefix; // "Y.Bhg"
+
+// Second Personal Name Male
+echo $faker->secondPersonalNameMale; // "Mohammad"
+
+// Second Personal Name Female
+echo $faker->secondPersonalNameMale; // "Siti"
+```
+
+### `Faker\Provider\ms_MY\PhoneNumber`
+
+```php
+<?php
+
+// Area Code
+echo $faker->areaCode; // "03"
+
+// Mobile Operator Code
+echo $faker->mobileOperatorCode; // "011"
+```
+
 ### `Faker\Provider\ne_NP\Address`
 
 ```php
