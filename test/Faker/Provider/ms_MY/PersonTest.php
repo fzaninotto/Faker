@@ -101,5 +101,28 @@ class PersonTest extends \PHPUnit_Framework_TestCase
         $this->assertInternalType('string', $firstNameFemale);
 
     }
+
+    /**
+     * @group  ms_MY
+     * Test the validity of secondPersonalNameMale
+     */
+    public function testIfSecondaryPersonalNameMaleCanReturnData()
+    {
+        $secondPersonalNameMale = $this->faker->secondPersonalNameMale;
+        $this->assertNotEmpty($secondPersonalNameMale);
+        $this->assertInternalType('string', $secondPersonalNameMale);
+    }
+
+    /**
+     * @group  ms_MY
+     * Test the validity of secondPersonalNameFemale
+     */
+    public function testIfSecondaryPersonalNameFemaleCanReturnData()
+    {
+        $secondPersonalNameMale = $this->faker->secondPersonalNameFemale;
+        $this->assertNotEmpty($secondPersonalNameMale);
+        $this->assertInternalType('string', $secondPersonalNameMale);
+    }
+
 }
 ?>

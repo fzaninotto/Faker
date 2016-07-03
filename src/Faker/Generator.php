@@ -11,6 +11,8 @@ namespace Faker;
  * @property string $title
  * @property string $titleMale
  * @property string $titleFemale
+ * @property string $secondPersonalNameMale
+ * @property string $secondPersonalNameFemale
  *
  * @property string $citySuffix
  * @property string $streetSuffix

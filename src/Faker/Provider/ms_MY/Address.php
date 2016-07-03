@@ -213,5 +213,4 @@ class Address extends \Faker\Provider\Address
         'Yemen',
         'Zambia', 'Zimbabwe'
     );
-    
 }
