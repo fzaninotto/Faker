@@ -85,6 +85,17 @@ class AddressTest extends \PHPUnit_Framework_TestCase
     $this->assertNotEmpty($postcode);
     $this->assertInternalType('string', $postcode);
   }
+
+  /**
+   * Test the validity of Canadian postcode
+   * @group  ms_MY
+   */
+  public function testCountry(){
+    $country = $this->faker->country;
+    $this->assertNotEmpty($country);
+    $this->assertInternalType('string', $country);
+    $this->assertRegExp('/[A-Z][a-z]+/', $country);
+  }
 }
 
 ?>
