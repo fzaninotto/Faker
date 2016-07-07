@@ -155,7 +155,7 @@ class DateTime extends Base
         $datetime       = $date instanceof \DateTime ? $date : new \DateTime($date);
         $otherDatetime  = clone $datetime;
         $otherDatetime->add($intervalObject);
-        
+
         $begin = $datetime > $otherDatetime ? $otherDatetime : $datetime;
         $end = $datetime===$begin ? $otherDatetime : $datetime;
 
