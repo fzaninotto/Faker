@@ -86,4 +86,15 @@ class Address extends \Faker\Provider\Address
     {
         return static::randomElement(static::$county);
     }
+
+    /**
+     * Attempt to generate something that looks like valid postcode
+     *
+     * @link http://stackoverflow.com/questions/164979/uk-postcode-regex-comprehensive
+     * @example 'N6 5AA'
+     */
+    public static function postcode()
+    {
+        return self::regexify("^(GIR 0AA)|((([A-Z-[QVX]][0-9][0-9]?)|(([A-Z-[QVX]][A-Z-[IJZ]][0-9][0-9]?)|(([A-Z-[QVX‌​]][0-9][A-HJKSTUW])|([A-Z-[QVX]][A-Z-[IJZ]][0-9][ABEHMNPRVWXY]))))\s?[0-9][A-Z-[C‌​IKMOV]]{2})?$");
+    }
 }
