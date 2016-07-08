@@ -1042,7 +1042,7 @@ echo $faker->prefix; // "Y.Bhg"
 echo $faker->secondPersonalNameMale; // "Mohammad"
 
 // Second Personal Name Female
-echo $faker->secondPersonalNameMale; // "Siti"
+echo $faker->secondPersonalNameFemale; // "Siti"
 ```
 
 ### `Faker\Provider\ms_MY\PhoneNumber`
