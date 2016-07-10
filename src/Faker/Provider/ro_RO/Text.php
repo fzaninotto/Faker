@@ -5,10 +5,6 @@ namespace Faker\Provider\ro_RO;
 class Text extends \Faker\Provider\Text
 {
     /**
-     * From uk.wikisource.org
-     * Text available under Creative Commons Attribution-ShareAlike 3.0 Unported
-     *
-     *
      * Title: Neghiniţă
      * Author: Barbu Ştefănescu Delavrancea
      *
