@@ -1203,15 +1203,6 @@ echo $faker->prefixFemale; // "d-na."
 echo $faker->firstNameMale; // "Adrian"
 // Generates a random female fist name
 echo $faker->firstNameFemale; // "Miruna"
-
-// Generates a random Personal Numerical Code (CNP)
-echo $faker->cnp; // "2800523081231"
-echo $faker->cnp($gender = NULL, $century = NULL, $county = NULL);
-
-// Valid option values:
-//  $gender: m, f, 1, 2
-//  $century: 1800, 1900, 2000, 1, 2, 3, 4, 5, 6
-//  $county: 2 letter ISO 3166-2:RO county codes and B1-B6 for Bucharest's 6 sectors
 ```
 
 ### `Faker\Provider\ro_RO\PhoneNumber`
