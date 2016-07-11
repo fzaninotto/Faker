@@ -43,13 +43,16 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @link https://en.wikipedia.org/wiki/List_of_Malaysians
+     * @link http://www.studentsoftheworld.info/penpals/stats.php3?Pays=MLS
      */
     protected static $firstNameMale = array(
         'Sudirman', 'Awal', 'Asmawi', 'Azhar', 'Sean', 'Aziddin', 'Shanon', 'Hani', 'Mohsin', 'Aziz', 'Azmyl', 'Aznil',
         'Din', 'Zamil', 'Adnan', 'Saidi', 'Syarif', 'Anwar', 'Fazal', 'Nasimuddin', 'Halim', 'Azman', 'Nasir', 'Anuar',
         'Zain', 'Afifi', 'Akim', 'Fitri', 'Ibrahim', 'Asif', 'Harfan', 'Kamal', 'Khairul', 'Izuan', 'Nazirul', 'Naim',
         'Irfan', 'Fadhli', 'Azmi', 'Khyril', 'Safee', 'Rudie', 'Fadzli', 'Safiq', 'Fahmi', 'Norshahrul', 'Akmal', 'Rizal',
-        'Fakri', 'Nazmi', 'Mokhtar', 'Fairuz', 'Fariqe', 'Zulfahmi', 'Norman'
+        'Fakri', 'Nazmi', 'Mokhtar', 'Fairuz', 'Fariqe', 'Zulfahmi', 'Norman', 'Aiman', 'Harris', 'Ryan', 'Ahmad', 'Luqman',
+        'Syafiq', 'Akmal', 'Amin', 'Hilmi', 'Haziq', 'Rayzal', 'Ariff', 'Taufik', 'Hariz', 'Aisar', 'Arden', 'Syukri',
+        'Syukri', 'Amirul', 'Ameer', 'Danish', 'Lokman', 'Syaimtiaz', 'Ghazlan'
     );
 
     /**
@@ -60,17 +63,21 @@ class Person extends \Faker\Provider\Person
         'Shila', 'Yasmin', 'Kasma', 'Erra', 'Fazira', 'Fauziah', 'Sheila', 'Amy', 'Nurhaliza', 'Misha', 'Fasha Sandha',
         'Hannah', 'Scha', 'Adira', 'Aini', 'Yuna', 'Nurhaliza', 'Sophia', 'Damia', 'Zara', 'Aishah', 'Alya', 'Humaira',
         'Farah', 'Sofea', 'Mira', 'Wani', 'Husna' ,'Nadia', 'Insyirah', 'Sasha', 'Sabrina', 'Aziah', 'Aqila', 'Suriani',
-        'Adibah', 'Fatimah', 'Khadijah', 'Zainon', 'Khasnor', 'Salmi', 'Azalia', 'Dina', 'Irene'
+        'Adibah', 'Fatimah', 'Khadijah', 'Zainon', 'Khasnor', 'Salmi', 'Azalia', 'Dina', 'Irene', 'Hana', 'Hani', 'Najwa',
+        'Aisyah', 'Aina', 'Wani', 'Izzati', 'Nana', 'Alia', 'Amanina', 'Haninah', 'Atiqah', 'Nabilah', 'Fatin', 'Najihah',
+        'Aziah', 'Maisarah', 'Ainaa', 'Elina', 'Hanim', 'Ayuni', 'Ashikin', 'Nuha', 'Rubini'
     );
 
     /**
      * @link https://en.wikipedia.org/wiki/List_of_Malaysians
+     * @link http://www.studentsoftheworld.info/penpals/stats.php3?Pays=MLS
      */
     protected static $lastName = array(
         'Amzah', 'Arshad', 'Ashaari', 'Ani', 'Othman', 'Booty', 'Ghazi', 'Latiff', 'Majid', 'Yusof', 'Shah', 'Omar',
         'Yunor', 'Nawawi', 'Alyahya', 'Suhaimi', 'Masahor', 'Mazlan', 'Hashim', 'Razak', 'Ibrahim', 'Zain', 'Zamli',
         'Fazail', 'Shas', 'Muslim', 'Zambri', 'Sali', 'Ramli', 'Saari', 'Rahim', 'Idlan', 'Rakhli', 'Saarani', 'Faiz',
-        'Dahari', 'Fauzy', 'Hairuman', 'Khairuddin'
+        'Dahari', 'Fauzy', 'Hairuman', 'Khairuddin', 'Salahuddin', 'Aimam', 'Mustahfa', 'Muhaimin', 'Wazir', 'Faizal',
+        'Nizam', 'Bazil', 'Yusri', 'Faizin', 'Zakwan', 'Zakaria', 'Nash', 'Ammar', 'Imran', 'Taufiq', 'Naqib', 'Nadzrin'
     );
 
     /**
