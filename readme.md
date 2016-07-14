@@ -889,6 +889,14 @@ echo $faker->mobileNumber; // 082 123 5555
 echo $faker->dni; // '77446565E'
 ```
 
+### `Faker\Provider\es_ES\Payment`
+
+```php
+<?php
+// Generates a Código de identificación Fiscal (CIF) number
+echo $faker->vat;           // "A35864370"
+```
+
 ### `Faker\Provider\fr_BE\Payment`
 
 ```php
