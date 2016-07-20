@@ -73,8 +73,7 @@ class HtmlNode implements Node
     {
         if(!$this->type){
             return "";
-        }
-        if(count($this->nodes) == 0){
+        } elseif(count($this->nodes) == 0){
             return "<" . $this->type . $this->compileAttributes() . "/>";
         }
         return "<" . $this->type . $this->compileAttributes() . ">" . $this->compileNodes() .  "</" . $this->type . ">";
@@ -99,7 +98,8 @@ class HtmlNode implements Node
     }
 
     /** @return HtmlNode */
-    public static function newInstance($type = null){
+    public static function newInstance($type = null)
+    {
         $node = new HtmlNode($type);
         return $node;
     }

@@ -33,11 +33,10 @@ class HtmlLorem extends Base
         }
 
         $siblings = mt_rand(1, $depth * 5);
-        for($i = 0; $i < $siblings; $i++){
+        for ($i = 0; $i < $siblings; $i++) {
             if($depth == 1){
                 $root->addNode($this->randomLeaf());
-            }
-            else{
+            } else{
                 $sibling = new HtmlNode(HtmlNode::DIV);
                 $this->addRandomAttribute($sibling);
                 $this->randomSubTree($sibling, mt_rand(0, $depth--));
@@ -98,12 +97,12 @@ class HtmlLorem extends Base
     public static function randomP()
     {
         return HtmlNode::newInstance("p")
-            ->addNode(TextNode::newInstance(Lorem::sentence(mt_rand(1,30))));
+            ->addNode(TextNode::newInstance(Lorem::sentence(mt_rand(1, 30))));
     }
 
     public static function randomText()
     {
-        return TextNode::newInstance(Lorem::sentence(mt_rand(1,30)));
+        return TextNode::newInstance(Lorem::sentence(mt_rand(1, 30)));
     }
 
     public static function randomA()
@@ -203,8 +202,8 @@ class HtmlLorem extends Base
 
     public static function randomTable()
     {
-        $cols = mt_rand(1,6);
-        $rows = mt_rand(1,10);
+        $cols = mt_rand(1, 6);
+        $rows = mt_rand(1, 10);
 
         $table = HtmlNode::newInstance(HtmlNode::TABLE);
         $thead = HtmlNode::newInstance(HtmlNode::THEAD);
@@ -218,31 +217,30 @@ class HtmlLorem extends Base
         $thead->addNode($tr);
         for($i = 0; $i < $cols; $i++){
             $th  = HtmlNode::newInstance("th");
-            $th->addNode(TextNode::newInstance(Lorem::sentence(mt_rand(1,4))));
+            $th->addNode(TextNode::newInstance(Lorem::sentence(mt_rand(1, 4))));
             $tr->addNode($th);
-        };
+        }
         for($i = 0; $i < $rows; $i++){
             $tr = HtmlNode::newInstance("tr");
             $tbody->addNode($tr);
             for($j = 0; $j < $cols; $j++){
                 $th  = HtmlNode::newInstance("td");
-                $th->addNode(TextNode::newInstance(Lorem::sentence(mt_rand(1,10))));
+                $th->addNode(TextNode::newInstance(Lorem::sentence(mt_rand(1, 10))));
                 $tr->addNode($th);
-            };
-        };
+            }
+        }
         return $table;
     }
 
     public static function randomUL()
     {
-        $num = mt_rand(1,10);
+        $num = mt_rand(1, 10);
         $ul = HtmlNode::newInstance(HtmlNode::UL);
         for($i = 0; $i < $num; $i++){
             $li  = HtmlNode::newInstance(HtmlNode::LI);
-            $li->addNode(TextNode::newInstance(Lorem::sentence(mt_rand(1,4))));
+            $li->addNode(TextNode::newInstance(Lorem::sentence(mt_rand(1, 4))));
             $ul->addNode($li);
         }
         return $ul;
     }
-
 }

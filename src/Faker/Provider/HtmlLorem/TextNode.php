@@ -30,7 +30,8 @@ class TextNode implements Node{
     }
 
     /** @return TextNode */
-    public static function newInstance($text = null){
+    public static function newInstance($text = null)
+    {
         return new TextNode($text);
     }
 
