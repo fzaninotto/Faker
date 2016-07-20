@@ -57,7 +57,8 @@ class HtmlNode implements Node
     }
 
     /** @return HtmlNode */
-    public function addAttribute($key, $value){
+    public function addAttribute($key, $value)
+    {
         $this->attributes[$key] = $value;
         return $this;
     }
@@ -71,9 +72,9 @@ class HtmlNode implements Node
 
     public function compile()
     {
-        if(!$this->type){
+        if (!$this->type) {
             return "";
-        } elseif(count($this->nodes) == 0){
+        } elseif (count($this->nodes) == 0) {
             return "<" . $this->type . $this->compileAttributes() . "/>";
         }
         return "<" . $this->type . $this->compileAttributes() . ">" . $this->compileNodes() .  "</" . $this->type . ">";
@@ -82,7 +83,7 @@ class HtmlNode implements Node
     private function compileNodes()
     {
         $nodes = "";
-        foreach($this->nodes as $node){
+        foreach ($this->nodes as $node) {
             $nodes = $nodes . $node->compile();
         }
         return $nodes;
@@ -91,7 +92,7 @@ class HtmlNode implements Node
     private function compileAttributes()
     {
         $attributes = "";
-        foreach($this->attributes as $key => $value){
+        foreach ($this->attributes as $key => $value) {
             $attributes = $attributes . " " . $key . "=\"" . $value . "\"";
         }
         return $attributes;
@@ -103,5 +104,4 @@ class HtmlNode implements Node
         $node = new HtmlNode($type);
         return $node;
     }
-
 }
