@@ -8,7 +8,8 @@
 
 namespace Faker\Provider\HtmlLorem;
 
-class TextNode implements Node{
+class TextNode implements Node
+{
 
     private $text = "";
 
@@ -17,7 +18,7 @@ class TextNode implements Node{
         $this->text = $text;
     }
 
-    function compile()
+    public function compile()
     {
         return $this->text;
     }
@@ -34,5 +35,4 @@ class TextNode implements Node{
     {
         return new TextNode($text);
     }
-
 }
