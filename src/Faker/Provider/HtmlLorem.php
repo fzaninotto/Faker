@@ -28,15 +28,15 @@ class HtmlLorem extends Base
 
     private function randomSubTree(HtmlNode $root, $depth)
     {
-        if($depth <= 0){
+        if ($depth <= 0) {
             return $root;
         }
 
         $siblings = mt_rand(1, $depth * 5);
         for ($i = 0; $i < $siblings; $i++) {
-            if($depth == 1){
+            if ($depth == 1) {
                 $root->addNode($this->randomLeaf());
-            } else{
+            } else {
                 $sibling = new HtmlNode(HtmlNode::DIV);
                 $this->addRandomAttribute($sibling);
                 $this->randomSubTree($sibling, mt_rand(0, $depth--));
@@ -50,7 +50,7 @@ class HtmlLorem extends Base
     private function randomLeaf()
     {
         $node = new TextNode();
-        $rand = mt_rand(1,10);
+        $rand = mt_rand(1, 10);
         switch($rand){
             case 1:
                 $node = HtmlLorem::randomP();
@@ -88,8 +88,8 @@ class HtmlLorem extends Base
 
     private function addRandomAttribute(HtmlNode $node)
     {
-        $rand = mt_rand(1,100);
-        if($rand <= 50){
+        $rand = mt_rand(1, 100);
+        if ($rand <= 50) {
             $node->addAttribute("class", Lorem::word());
         }
     }
@@ -215,15 +215,15 @@ class HtmlLorem extends Base
 
         $tr = HtmlNode::newInstance("tr");
         $thead->addNode($tr);
-        for($i = 0; $i < $cols; $i++){
+        for ($i = 0; $i < $cols; $i++) {
             $th  = HtmlNode::newInstance("th");
             $th->addNode(TextNode::newInstance(Lorem::sentence(mt_rand(1, 4))));
             $tr->addNode($th);
         }
-        for($i = 0; $i < $rows; $i++){
+        for ($i = 0; $i < $rows; $i++) {
             $tr = HtmlNode::newInstance("tr");
             $tbody->addNode($tr);
-            for($j = 0; $j < $cols; $j++){
+            for ($j = 0; $j < $cols; $j++) {
                 $th  = HtmlNode::newInstance("td");
                 $th->addNode(TextNode::newInstance(Lorem::sentence(mt_rand(1, 10))));
                 $tr->addNode($th);
@@ -236,7 +236,7 @@ class HtmlLorem extends Base
     {
         $num = mt_rand(1, 10);
         $ul = HtmlNode::newInstance(HtmlNode::UL);
-        for($i = 0; $i < $num; $i++){
+        for ($i = 0; $i < $num; $i++) {
             $li  = HtmlNode::newInstance(HtmlNode::LI);
             $li->addNode(TextNode::newInstance(Lorem::sentence(mt_rand(1, 4))));
             $ul->addNode($li);
