@@ -61,4 +61,11 @@ class HtmlLoremTest extends \PHPUnit_Framework_TestCase
         $this->assertStringEndsWith("</i>", $node);
     }
 
+    public function testRandomHtml(){
+        $node = HtmlLorem::randomHtml();
+        $this->assertStringStartsWith("<html>", $node);
+        $this->assertStringEndsWith("</html>", $node);
+
+    }
+
 }

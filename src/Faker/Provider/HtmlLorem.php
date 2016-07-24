@@ -13,7 +13,7 @@ class HtmlLorem extends Base
     /**
      * @return string
      */
-    public function randomHtml($maxDepth = 8)
+    public static function randomHtml($maxDepth = 8)
     {
         $html = new HtmlNode(HtmlNode::HTML);
         $head = new HtmlNode(HtmlNode::HEAD);
@@ -22,11 +22,11 @@ class HtmlLorem extends Base
         $html->addNode($body);
         $head->addNode(HtmlLorem::randomTitle());
         $body->addNode(HtmlLorem::loginForm());
-        $this->randomSubTree($body, $maxDepth);
+        static::randomSubTree($body, $maxDepth);
         return $html->compile();
     }
 
-    private function randomSubTree(HtmlNode $root, $depth)
+    private static function randomSubTree(HtmlNode $root, $depth)
     {
         if ($depth <= 0) {
             return $root;
@@ -35,11 +35,11 @@ class HtmlLorem extends Base
         $siblings = mt_rand(1, $depth * 5);
         for ($i = 0; $i < $siblings; $i++) {
             if ($depth == 1) {
-                $root->addNode($this->randomLeaf());
+                $root->addNode(static::randomLeaf());
             } else {
                 $sibling = new HtmlNode(HtmlNode::DIV);
-                $this->addRandomAttribute($sibling);
-                $this->randomSubTree($sibling, mt_rand(0, $depth--));
+                static::addRandomAttribute($sibling);
+                static::randomSubTree($sibling, mt_rand(0, $depth--));
                 $root->addNode($sibling);
             }
 
@@ -47,7 +47,7 @@ class HtmlLorem extends Base
         return $root;
     }
 
-    private function randomLeaf()
+    private static function randomLeaf()
     {
         $node = new TextNode();
         $rand = mt_rand(1, 10);
@@ -86,7 +86,7 @@ class HtmlLorem extends Base
         return $node;
     }
 
-    private function addRandomAttribute(HtmlNode $node)
+    private static function addRandomAttribute(HtmlNode $node)
     {
         $rand = mt_rand(1, 2);
         switch ($rand) {
@@ -121,7 +121,7 @@ class HtmlLorem extends Base
             ->addNode($text);
     }
 
-    public function randomTitle($maxLength = 10)
+    public static function randomTitle($maxLength = 10)
     {
         $text = TextNode::newInstance()
             ->setText(Lorem::sentence(mt_rand(1, $maxLength)));
