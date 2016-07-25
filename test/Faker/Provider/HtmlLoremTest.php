@@ -2,13 +2,14 @@
 
 namespace Faker\Test\Provider;
 
+use Faker\Generator;
 use Faker\Provider\HtmlLorem;
 
 class HtmlLoremTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testRandomP(){
-        $node = HtmlLorem::randomP()->compile();
+        $node = HtmlLorem::randomP()->ownerDocument->saveHTML();
         $this->assertStringStartsWith("<p>", $node);
         $this->assertStringEndsWith("</p>", $node);
     }
@@ -65,7 +66,14 @@ class HtmlLoremTest extends \PHPUnit_Framework_TestCase
         $node = HtmlLorem::randomHtml();
         $this->assertStringStartsWith("<html>", $node);
         $this->assertStringEndsWith("</html>", $node);
+    }
 
+    public function testProvider(){
+        $faker = new Generator();
+        $faker->addProvider(new HtmlLorem($faker));
+        $node = $faker->randomHtml();
+        $this->assertStringStartsWith("<html>", $node);
+        $this->assertStringEndsWith("</html>", $node);
     }
 
 }

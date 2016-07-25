@@ -8,13 +8,49 @@ use Faker\Provider\HtmlLorem\TextNode;
 class HtmlLorem extends Base
 {
 
-    const MAX_LENGTH = 30;
+    const HTML = "html";
+    const HEAD = "head";
+    const BODY = "body";
+    const DIV = "div";
+    const A = "a";
+    const SPAN = "span";
+    const TABLE = "table";
+    const THEAD = "thead";
+    const TBODY = "tbody";
+    const UL = "ul";
+    const LI = "li";
+    const H1 = "h1";
+    const H2 = "h2";
+    const H3 = "h3";
+    const B= "b";
+    const I = "i";
+    const TITLE = "title";
+    const FORM = "form";
+    const INPUT = "input";
+    const LABEL = "label";
+
+    /** @var  \DOMDocument */
+    private static $document;
 
     /**
      * @return string
      */
     public static function randomHtml($maxDepth = 8)
     {
+        $html = self::document()->createElement("html");
+        $head = self::document()->createElement("head");
+        $body = self::document()->createElement("body");
+
+        $html->appendChild($head);
+        $html->appendChild($body);
+
+        self::document()->appendChild($html);
+
+        static::randomSubTree($body, $maxDepth);
+
+        return self::document()->saveHTML();
+
+        /*
         $html = new HtmlNode(HtmlNode::HTML);
         $head = new HtmlNode(HtmlNode::HEAD);
         $body = new HtmlNode(HtmlNode::BODY);
@@ -24,10 +60,32 @@ class HtmlLorem extends Base
         $body->addNode(HtmlLorem::loginForm());
         static::randomSubTree($body, $maxDepth);
         return $html->compile();
+        */
     }
 
-    private static function randomSubTree(HtmlNode $root, $depth)
+    private static function randomSubTree(\DOMElement $root, $depth)
     {
+
+        if ($depth <= 0) {
+            return $root;
+        }
+
+        $siblings = mt_rand(1, $depth * 5);
+        for ($i = 0; $i < $siblings; $i++) {
+            if ($depth == 1) {
+                $root->appendChild(static::randomLeaf());
+            } else {
+                $sibling = $root->ownerDocument->createElement("div");
+                static::addRandomAttribute($sibling);
+                static::randomSubTree($sibling, mt_rand(0, $depth--));
+                $root->appendChild($sibling);
+
+            }
+
+        };
+        return $root;
+
+        /*
         if ($depth <= 0) {
             return $root;
         }
@@ -45,64 +103,70 @@ class HtmlLorem extends Base
 
         };
         return $root;
+        */
     }
 
     private static function randomLeaf()
     {
-        $node = new TextNode();
-        $rand = mt_rand(1, 10);
+        $rand = mt_rand(1, 9);
+        $rand = 1;
         switch($rand){
             case 1:
-                $node = HtmlLorem::randomP();
+                return HtmlLorem::randomP();
                 break;
             case 2:
-                $node = HtmlLorem::randomText();
+                return HtmlLorem::randomA();
                 break;
             case 3:
-                $node = HtmlLorem::randomA();
+                return HtmlLorem::randomSpan();
                 break;
             case 4:
-                $node = HtmlLorem::randomSpan();
+                return HtmlLorem::randomUL();
                 break;
             case 5:
-                $node = HtmlLorem::randomUL();
+                return HtmlLorem::randomH1();
                 break;
             case 6:
-                $node = HtmlLorem::randomH1();
+                return HtmlLorem::randomH2();
                 break;
             case 7:
-                $node = HtmlLorem::randomH2();
+                return HtmlLorem::randomH3();
                 break;
             case 8:
-                $node = HtmlLorem::randomH3();
+                return HtmlLorem::randomB();
                 break;
             case 9:
-                $node = HtmlLorem::randomB();
+                return HtmlLorem::randomI();
                 break;
-            case 10:
-                $node = HtmlLorem::randomI();
+            default:
+                return HtmlLorem::randomText();
                 break;
         }
-        return $node;
     }
 
-    private static function addRandomAttribute(HtmlNode $node)
+    private static function addRandomAttribute(\DOMElement $node)
     {
         $rand = mt_rand(1, 2);
         switch ($rand) {
             case 1:
-                $node->addAttribute("class", Lorem::word());
+                $node->setAttribute("class", Lorem::word());
                 break;
             case 2:
-                $node->addAttribute("id", Base::randomNumber(5));
+                $node->setAttribute("id", (string)Base::randomNumber(5));
                 break;
         }
     }
 
     public static function randomP($maxLength = 10)
     {
+
+        $node = self::document()->createElement("p");
+        $node->textContent = Lorem::sentence(mt_rand(1, $maxLength));
+        return $node;
+        /*
         return HtmlNode::newInstance("p")
             ->addNode(TextNode::newInstance(Lorem::sentence(mt_rand(1, $maxLength))));
+        */
     }
 
     public static function randomText($maxLength = 10)
@@ -247,5 +311,12 @@ class HtmlLorem extends Base
             $ul->addNode($li);
         }
         return $ul;
+    }
+
+    private static function document(){
+        if(!self::$document){
+            self::$document = new \DOMDocument();
+        }
+        return self::$document;
     }
 }
