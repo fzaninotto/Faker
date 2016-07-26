@@ -2,144 +2,105 @@
 
 namespace Faker\Provider;
 
-use Faker\Provider\HtmlLorem\HtmlNode;
-use Faker\Provider\HtmlLorem\TextNode;
-
 class HtmlLorem extends Base
 {
 
-    const HTML = "html";
-    const HEAD = "head";
-    const BODY = "body";
-    const DIV = "div";
-    const A = "a";
-    const SPAN = "span";
-    const TABLE = "table";
-    const THEAD = "thead";
-    const TBODY = "tbody";
-    const UL = "ul";
-    const LI = "li";
-    const H1 = "h1";
-    const H2 = "h2";
-    const H3 = "h3";
-    const B= "b";
-    const I = "i";
-    const TITLE = "title";
-    const FORM = "form";
-    const INPUT = "input";
-    const LABEL = "label";
-
-    /** @var  \DOMDocument */
-    private static $document;
+    const HTML_TAG = "html";
+    const HEAD_TAG = "head";
+    const BODY_TAG = "body";
+    const DIV_TAG = "div";
+    const P_TAG = "p";
+    const A_TAG = "a";
+    const SPAN_TAG = "span";
+    const TABLE_TAG = "table";
+    const THEAD_TAG = "thead";
+    const TBODY_TAG = "tbody";
+    const TR_TAG = "tr";
+    const TD_TAG = "td";
+    const TH_TAG = "th";
+    const UL_TAG = "ul";
+    const LI_TAG = "li";
+    const H_TAG = "h";
+    const B_TAG = "b";
+    const I_TAG = "i";
+    const TITLE_TAG = "title";
+    const FORM_TAG = "form";
+    const INPUT_TAG = "input";
+    const LABEL_TAG = "label";
 
     /**
      * @return string
      */
-    public static function randomHtml($maxDepth = 8)
+    public static function randomHtml($maxDepth = 4)
     {
-        $html = self::document()->createElement("html");
-        $head = self::document()->createElement("head");
-        $body = self::document()->createElement("body");
+        $document = new \DOMDocument();
 
+        $head = $document->createElement("head");
+        static::addRandomTitle($head);
+
+        $body = $document->createElement("body");
+        static::addLoginForm($body);
+        static::addRandomSubTree($body, $maxDepth);
+
+        $html = $document->createElement("html");
         $html->appendChild($head);
         $html->appendChild($body);
 
-        self::document()->appendChild($html);
-
-        static::randomSubTree($body, $maxDepth);
-
-        return self::document()->saveHTML();
-
-        /*
-        $html = new HtmlNode(HtmlNode::HTML);
-        $head = new HtmlNode(HtmlNode::HEAD);
-        $body = new HtmlNode(HtmlNode::BODY);
-        $html->addNode($head);
-        $html->addNode($body);
-        $head->addNode(HtmlLorem::randomTitle());
-        $body->addNode(HtmlLorem::loginForm());
-        static::randomSubTree($body, $maxDepth);
-        return $html->compile();
-        */
+        $document->appendChild($html);
+        return $document->saveHTML();
     }
 
-    private static function randomSubTree(\DOMElement $root, $depth)
+    private static function addRandomSubTree(\DOMElement $root, $depth)
     {
-
+        $depth--;
         if ($depth <= 0) {
             return $root;
         }
 
-        $siblings = mt_rand(1, $depth * 5);
+        $siblings = mt_rand(1, $depth * 10);
         for ($i = 0; $i < $siblings; $i++) {
             if ($depth == 1) {
-                $root->appendChild(static::randomLeaf());
+                static::addRandomLeaf($root);
             } else {
                 $sibling = $root->ownerDocument->createElement("div");
-                static::addRandomAttribute($sibling);
-                static::randomSubTree($sibling, mt_rand(0, $depth--));
                 $root->appendChild($sibling);
-
-            }
-
-        };
-        return $root;
-
-        /*
-        if ($depth <= 0) {
-            return $root;
-        }
-
-        $siblings = mt_rand(1, $depth * 5);
-        for ($i = 0; $i < $siblings; $i++) {
-            if ($depth == 1) {
-                $root->addNode(static::randomLeaf());
-            } else {
-                $sibling = new HtmlNode(HtmlNode::DIV);
                 static::addRandomAttribute($sibling);
-                static::randomSubTree($sibling, mt_rand(0, $depth--));
-                $root->addNode($sibling);
+                static::addRandomSubTree($sibling, mt_rand(0, $depth));
             }
-
         };
         return $root;
-        */
     }
 
-    private static function randomLeaf()
+    private static function addRandomLeaf(\DOMElement $node)
     {
-        $rand = mt_rand(1, 9);
-        $rand = 1;
+        $rand = mt_rand(1, 10);
         switch($rand){
             case 1:
-                return HtmlLorem::randomP();
+                static::addRandomP($node);
                 break;
             case 2:
-                return HtmlLorem::randomA();
+                static::addRandomA($node);
                 break;
             case 3:
-                return HtmlLorem::randomSpan();
+                static::addRandomSpan($node);
                 break;
             case 4:
-                return HtmlLorem::randomUL();
+                static::addRandomUL($node);
                 break;
             case 5:
-                return HtmlLorem::randomH1();
+                static::addRandomH($node);
                 break;
             case 6:
-                return HtmlLorem::randomH2();
+                static::addRandomB($node);
                 break;
             case 7:
-                return HtmlLorem::randomH3();
+                static::addRandomI($node);
                 break;
             case 8:
-                return HtmlLorem::randomB();
-                break;
-            case 9:
-                return HtmlLorem::randomI();
+                static::addRandomTable($node);
                 break;
             default:
-                return HtmlLorem::randomText();
+                static::addRandomText($node);
                 break;
         }
     }
@@ -157,166 +118,145 @@ class HtmlLorem extends Base
         }
     }
 
-    public static function randomP($maxLength = 10)
+    private static function addRandomP(\DOMElement $element, $maxLength = 10)
     {
 
-        $node = self::document()->createElement("p");
+        $node = $element->ownerDocument->createElement(HtmlLorem::P_TAG);
         $node->textContent = Lorem::sentence(mt_rand(1, $maxLength));
-        return $node;
-        /*
-        return HtmlNode::newInstance("p")
-            ->addNode(TextNode::newInstance(Lorem::sentence(mt_rand(1, $maxLength))));
-        */
+        $element->appendChild($node);
     }
 
-    public static function randomText($maxLength = 10)
+    private static function addRandomText(\DOMElement $element, $maxLength = 10)
     {
-        return TextNode::newInstance(Lorem::sentence(mt_rand(1, $maxLength)));
+        $text = $element->ownerDocument->createTextNode(Lorem::sentence(mt_rand(1, $maxLength)));
+        $element->appendChild($text);
     }
 
-    public static function randomA($maxLength = 10)
+    private static function addRandomA(\DOMElement $element, $maxLength = 10)
     {
-        $text = TextNode::newInstance()
-            ->setText(Lorem::sentence(mt_rand(1, $maxLength)));
-
-        return HtmlNode::newInstance()
-            ->setType(HtmlNode::A)
-            ->addAttribute("href", Internet::safeEmailDomain())
-            ->addNode($text);
+        $text = $element->ownerDocument->createTextNode(Lorem::sentence(mt_rand(1, $maxLength)));
+        $node = $element->ownerDocument->createElement(HtmlLorem::A_TAG);
+        $node->setAttribute("href", Internet::safeEmailDomain());
+        $node->appendChild($text);
+        $element->appendChild($node);
     }
 
-    public static function randomTitle($maxLength = 10)
+    private static function addRandomTitle(\DOMElement $element, $maxLength = 10)
     {
-        $text = TextNode::newInstance()
-            ->setText(Lorem::sentence(mt_rand(1, $maxLength)));
-        return HtmlNode::newInstance()
-            ->setType(HtmlNode::TITLE)
-            ->addNode($text);
+        $text = $element->ownerDocument->createTextNode(Lorem::sentence(mt_rand(1, $maxLength)));
+        $node = $element->ownerDocument->createElement(HtmlLorem::TITLE_TAG);
+        $node->appendChild($text);
+        $element->appendChild($node);
     }
 
-    public static function randomH1($maxLength = 10)
+    private static function addRandomH(\DOMElement $element, $maxLength = 10)
     {
-        $text = TextNode::newInstance()
-            ->setText(Lorem::sentence(mt_rand(1, $maxLength)));
-        return HtmlNode::newInstance(HtmlNode::H1)
-            ->addNode($text);
+        $h = HtmlLorem::H_TAG . (string)mt_rand(1,3);
+        $text = $element->ownerDocument->createTextNode(Lorem::sentence(mt_rand(1, $maxLength)));
+        $node = $element->ownerDocument->createElement($h);
+        $node->appendChild($text);
+        $element->appendChild($node);
+
     }
 
-    public static function randomH2()
+    private static function addRandomB(\DOMElement $element, $maxLength = 10)
     {
-        $text = TextNode::newInstance($maxLength = 10)
-            ->setText(Lorem::sentence(mt_rand(1, $maxLength)));
-        return HtmlNode::newInstance(HtmlNode::H2)
-            ->addNode($text);
+        $text = $element->ownerDocument->createTextNode(Lorem::sentence(mt_rand(1, $maxLength)));
+        $node = $element->ownerDocument->createElement(HtmlLorem::B_TAG);
+        $node->appendChild($text);
+        $element->appendChild($node);
     }
 
-    public static function randomH3()
+    private static function addRandomI(\DOMElement $element, $maxLength = 10)
     {
-        $text = TextNode::newInstance($maxLength = 10)
-            ->setText(Lorem::sentence(mt_rand(1, $maxLength)));
-        return HtmlNode::newInstance(HtmlNode::H3)
-            ->addNode($text);
+        $text = $element->ownerDocument->createTextNode(Lorem::sentence(mt_rand(1, $maxLength)));
+        $node = $element->ownerDocument->createElement(HtmlLorem::I_TAG);
+        $node->appendChild($text);
+        $element->appendChild($node);
     }
 
-    public static function randomB($maxLength = 10)
+    private static function addRandomSpan(\DOMElement $element, $maxLength = 10)
     {
-        $text = TextNode::newInstance()
-            ->setText(Lorem::sentence(mt_rand(1, $maxLength)));
-        return HtmlNode::newInstance(HtmlNode::B)
-            ->addNode($text);
+        $text = $element->ownerDocument->createTextNode(Lorem::sentence(mt_rand(1, $maxLength)));
+        $node = $element->ownerDocument->createElement(HtmlLorem::SPAN_TAG);
+        $node->appendChild($text);
+        $element->appendChild($node);
     }
 
-    public static function randomI($maxLength = 10)
+    private static function addLoginForm(\DOMElement $element)
     {
-        $text = TextNode::newInstance()
-            ->setText(Lorem::sentence(mt_rand(1, $maxLength)));
-        return HtmlNode::newInstance(HtmlNode::I)
-            ->addNode($text);
+
+        $textInput = $element->ownerDocument->createElement(HtmlLorem::INPUT_TAG);
+        $textInput->setAttribute("type", "text");
+        $textInput->setAttribute("id", "username");
+
+        $textLabel = $element->ownerDocument->createElement(HtmlLorem::LABEL_TAG);
+        $textLabel->setAttribute("for", "username");
+        $textLabel->textContent = Lorem::word();
+
+        $passwordInput = $element->ownerDocument->createElement(HtmlLorem::INPUT_TAG);
+        $passwordInput->setAttribute("type", "password");
+        $passwordInput->setAttribute("id", "password");
+
+        $passwordLabel = $element->ownerDocument->createElement(HtmlLorem::LABEL_TAG);
+        $passwordLabel->setAttribute("for", "password");
+        $passwordLabel->textContent = Lorem::word();
+
+        $submit = $element->ownerDocument->createElement(HtmlLorem::INPUT_TAG);
+        $submit->setAttribute("type", "submit");
+        $submit->setAttribute("value", Lorem::word());
+
+        $submit = $element->ownerDocument->createElement(HtmlLorem::FORM_TAG);
+        $submit->setAttribute("action", Internet::safeEmailDomain());
+        $submit->SetAttribute("method", "POST");
+        $submit->appendChild($textLabel);
+        $submit->appendChild($textInput);
+        $submit->appendChild($passwordLabel);
+        $submit->appendChild($passwordInput);
+        $element->appendChild($submit);;
     }
 
-    public static function randomSpan($maxLength = 10)
-    {
-        $text = TextNode::newInstance()
-            ->setText(Lorem::sentence(mt_rand(1, $maxLength)));
-        return HtmlNode::newInstance(HtmlNode::SPAN)
-            ->addNode($text);
-    }
-
-    public static function loginForm()
-    {
-        $textInput = HtmlNode::newInstance(HtmlNode::INPUT)
-            ->addAttribute("type", "text")
-            ->addAttribute("id", "username");
-        $textLabel = HtmlNode::newInstance(HtmlNode::LABEL)
-            ->addAttribute("for", "username")
-            ->addNode(TextNode::newInstance(Lorem::word()));
-        $passwordInput = HtmlNode::newInstance(HtmlNode::INPUT)
-            ->addAttribute("type", "password")
-            ->addAttribute("id", "password");
-        $passwordLabel = HtmlNode::newInstance(HtmlNode::LABEL)
-            ->addAttribute("for", "password")
-            ->addNode(TextNode::newInstance(Lorem::word()));
-        $submit = HtmlNode::newInstance(HtmlNode::INPUT)
-            ->addAttribute("type", "submit")
-            ->addAttribute("value", Lorem::word());
-        return HtmlNode::newInstance(HtmlNode::FORM)
-            ->addAttribute("action", Internet::safeEmailDomain())
-            ->addAttribute("method", "POST")
-            ->addNode($textLabel)
-            ->addNode($textInput)
-            ->addNode($passwordLabel)
-            ->addNode($passwordInput)
-            ->addNode($submit);
-    }
-
-    public static function randomTable($maxRows = 10, $maxCols = 6, $maxTitle = 4, $maxLength = 10)
+    private static function addRandomTable(\DOMElement $element, $maxRows = 10, $maxCols = 6, $maxTitle = 4, $maxLength = 10)
     {
         $rows = mt_rand(1, $maxRows);
         $cols = mt_rand(1, $maxCols);
 
-        $table = HtmlNode::newInstance(HtmlNode::TABLE);
-        $thead = HtmlNode::newInstance(HtmlNode::THEAD);
-        $tbody = HtmlNode::newInstance(HtmlNode::TBODY);
+        $table = $element->ownerDocument->createElement(HtmlLorem::TABLE_TAG);
+        $thead = $element->ownerDocument->createElement(HtmlLorem::THEAD_TAG);
+        $tbody = $element->ownerDocument->createElement(HtmlLorem::TBODY_TAG);
 
-        $table
-            ->addNode($thead)
-            ->addNode($tbody);
+        $table->appendChild($thead);
+        $table->appendChild($tbody);
 
-        $tr = HtmlNode::newInstance("tr");
-        $thead->addNode($tr);
+        $tr = $element->ownerDocument->createElement(HtmlLorem::TR_TAG);
+        $thead->appendChild($tr);
         for ($i = 0; $i < $cols; $i++) {
-            $th  = HtmlNode::newInstance("th");
-            $th->addNode(TextNode::newInstance(Lorem::sentence(mt_rand(1, $maxTitle))));
-            $tr->addNode($th);
+            $th = $element->ownerDocument->createElement(HtmlLorem::TR_TAG);
+            $th->textContent = Lorem::sentence(mt_rand(1, $maxTitle));
+            $tr->appendChild($th);
         }
         for ($i = 0; $i < $rows; $i++) {
-            $tr = HtmlNode::newInstance("tr");
-            $tbody->addNode($tr);
+            $tr = $element->ownerDocument->createElement("tr");
+            $tbody->appendChild($tr);
             for ($j = 0; $j < $cols; $j++) {
-                $th  = HtmlNode::newInstance("td");
-                $th->addNode(TextNode::newInstance(Lorem::sentence(mt_rand(1, $maxLength))));
-                $tr->addNode($th);
+                $th = $element->ownerDocument->createElement("td");
+                $th->textContent = Lorem::sentence(mt_rand(1, $maxLength));
+                $tr->appendChild($th);
             }
         }
-        return $table;
+        $element->appendChild($table);
     }
 
-    public static function randomUL($maxItems = 11, $maxLength = 4)
+    private static function addRandomUL(\DOMElement $element, $maxItems = 11, $maxLength = 4)
     {
         $num = mt_rand(1, $maxItems);
-        $ul = HtmlNode::newInstance(HtmlNode::UL);
+        $ul = $element->ownerDocument->createElement(HtmlLorem::UL_TAG);
         for ($i = 0; $i < $num; $i++) {
-            $li  = HtmlNode::newInstance(HtmlNode::LI);
-            $li->addNode(TextNode::newInstance(Lorem::sentence(mt_rand(1, $maxLength))));
-            $ul->addNode($li);
+            $li = $element->ownerDocument->createElement(HtmlLorem::LI_TAG);
+            $li->textContent = Lorem::sentence(mt_rand(1, $maxLength));
+            $ul->appendChild($li);
         }
-        return $ul;
+        $element->appendChild($ul);
     }
 
-    private static function document(){
-        if(!self::$document){
-            self::$document = new \DOMDocument();
-        }
-        return self::$document;
-    }
 }
