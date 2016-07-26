@@ -151,7 +151,7 @@ class HtmlLorem extends Base
 
     private static function addRandomH(\DOMElement $element, $maxLength = 10)
     {
-        $h = HtmlLorem::H_TAG . (string)mt_rand(1,3);
+        $h = HtmlLorem::H_TAG . (string)mt_rand(1, 3);
         $text = $element->ownerDocument->createTextNode(Lorem::sentence(mt_rand(1, $maxLength)));
         $node = $element->ownerDocument->createElement($h);
         $node->appendChild($text);
@@ -213,7 +213,7 @@ class HtmlLorem extends Base
         $submit->appendChild($textInput);
         $submit->appendChild($passwordLabel);
         $submit->appendChild($passwordInput);
-        $element->appendChild($submit);;
+        $element->appendChild($submit);
     }
 
     private static function addRandomTable(\DOMElement $element, $maxRows = 10, $maxCols = 6, $maxTitle = 4, $maxLength = 10)
@@ -258,5 +258,4 @@ class HtmlLorem extends Base
         }
         $element->appendChild($ul);
     }
-
 }
