@@ -13,7 +13,7 @@ class HtmlLoremTest extends \PHPUnit_Framework_TestCase
         $faker->addProvider(new HtmlLorem($faker));
         $node = $faker->randomHtml();
         $this->assertStringStartsWith("<html>", $node);
-        $this->assertStringEndsWith("</html>", $node);
+        $this->assertStringEndsWith("</html>\n", $node);
     }
 
 }
