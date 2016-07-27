@@ -12,7 +12,7 @@ class Person extends \Faker\Provider\Person
         '{{firstNameFemale}} {{lastNameFather}} {{lastNameMother}}',
     );
 
-    private static $stateAbbr = array(
+    protected static $stateAbbr = array(
         'AS', 'BC', 'BS', 'CC', 'CL', 'CM', 'CS', 'CH', 'DF', 'DG', 'GT', 'GR', 'HG', 'JC', 'MC', 'MN', 'MS', 'NT', 'NL', 'OC', 'PL', 'QT', 'QR', 'SP', 'SL', 'SR', 'TC', 'TS', 'TL', 'VZ', 'YN', 'ZS'
     );
 
@@ -36,20 +36,20 @@ class Person extends \Faker\Provider\Person
 
     public function lastNameMother()
     {
-        return static::randomElement(static::$lastName);
+        return static::randomElement(static::$lastNames);
     }
 
     public function lastNameFather()
     {
-        return static::randomElement(static::$lastName);
+        return static::randomElement(static::$lastNames);
     }
     /**
      * generates CURP
      * 
      * @param      string  $firstName  The first name
      * @param      string  $lastName   The last name
-     * @param      string  $gender     The gender
      * @param      \DateTime  $birthDate  The birth date
+     * @param      string  $gender     The gender
      * @param      string  $state      The person birth state
      *
      * @return     string  generated curp
@@ -57,8 +57,259 @@ class Person extends \Faker\Provider\Person
      * @link       https://github.com/hectorip/RFC-CURP-Mexico/blob/master/src/mxk.js ported from this
      * @link       https://en.wikipedia.org/wiki/Unique_Population_Registry_Code
      */
-    public static function curp($firstName = null, $lastName = null, $gender = null, $birthDate = null, $state = null)
+    public static function curp($firstName = null, $lastNameFather = null, $lastNameMother = null, $birthDate = null, $gender = null, $state = null)
     {
-        
+        $gender = in_array($gender, array(Person::GENDER_MALE,Person::GENDER_FEMALE))?$gender:static::randomElement(array(Person::GENDER_MALE,Person::GENDER_FEMALE));
+
+        if ($gender === Person::GENDER_MALE) {
+            $firstName = self::removeAccents(self::removeCommonNames(mb_strtoupper($firstName?$firstName: static::firstNameMale())));
+        } else {
+            $firstName = self::removeAccents(self::removeCommonNames(mb_strtoupper($firstName?$firstName: static::firstNameFemale())));
+        }
+
+        $lastNameFather = self::removeAccents(self::removePrefixes(mb_strtoupper($lastNameFather?$lastNameFather: static::lastNameFather())));
+        $lastNameMother = self::removeAccents(self::removePrefixes(mb_strtoupper($lastNameMother?$lastNameMother: static::lastNameMother())));
+        $birthDate = $birthDate?$birthDate:\Faker\Provider\DateTime::dateTimeBetween();
+
+        $curp = self::commonPart('curp', $firstName, $lastNameFather, $lastNameMother, $birthDate);
+
+        if ($gender == Person::GENDER_MALE) {
+            $curp .='H';
+        } else {
+            $curp .='M';
+        }
+        $curp .= in_array($state, self::$states)?$state: 'NE';
+
+        $curp .= self::firstInternalConsonant($lastNameFather);
+        $curp .= self::firstInternalConsonant($lastNameMother);
+        $curp .= self::firstInternalConsonant($firstName);
+
+        if ($birthDate->format('Y')<=2000) {
+            $curp .= strtoupper(static::bothify('??'));
+        } else {
+            $curp .= static::bothify('##');
+        }
+
+        return $curp;
     }
+
+    public static function rfc($firstName = null, $lastNameFather = null, $lastNameMother = null, $birthDate = null, $gender = null)
+    {
+        $curp = self::commonPart('rfc', $firstName, $lastNameFather, $lastNameMother, $birthDate);
+    }
+
+
+
+    /**
+     * HELPERS
+     */
+
+
+
+
+
+
+
+    protected static function commonPart($type, $firstName = null, $lastNameFather = null, $lastNameMother = null, $birthDate = null)
+    {
+        $common  = substr($lastNameFather, 0,1);
+        $common .= self::firstInternalVowel($lastNameFather);
+        $common .= $lastNameMother?substr($lastNameMother, 0,1):'X';
+        $common .= substr($firstName, 0,1);
+        if ($type == 'curp') {
+            $common = str_replace(array_keys(self::$badWordsCURP), array_values(self::$badWordsCURP), $common);
+        } else {
+            $common = str_replace(array_keys(self::$badWordsRFC), array_values(self::$badWordsRFC), $common);
+        }
+        $common .=$birthDate->format('ymd');
+        return $common;
+    }
+
+    protected static function firstInternalVowel($word)
+    {
+        if(preg_match('([AEIOU])', $word, $matches)){
+            return $matches[0];
+        }
+        return 'X';
+    }
+
+    protected static function firstInternalConsonant($word)
+    {
+        if(preg_match('([BCDFGHJKLMNPQRSTUVWXYZ])', $word, $matches)){
+            return $matches[0];
+        }
+        return 'X';
+    }
+
+    protected static function removeCommonNames($name)
+    {
+        foreach (self::$notAcceptedNames as $notAcceptedName) {
+            $name = preg_replace($notAcceptedName,'',$name);
+        }
+        return $name;
+    }
+    protected static function removePrefixes($name)
+    {
+        foreach (self::$prefixes as $prefix) {
+            $name = preg_replace($prefix,'',$name);
+        }
+        return $name;
+    }
+    protected static function removeAccents($name)
+    {
+        return str_replace(array_keys(self::$accents), array_values(self::$accents), $name);
+    }
+
+    protected static $notAcceptedNames = array(
+        '/^MARIA DEL /',
+        '/^MARIA DE LOS /',
+        '/^MARIA /',
+        '/^JOSE DE /',
+        '/^JOSE /',
+        '/^MA. /',
+        '/^MA /',
+        '/^M. /',
+        '/^J. /',
+        '/^J /'
+    );
+
+    protected static $prefixes = array(
+        '/^DE /',
+        '/^DEL /'
+    );
+
+    protected static $badWordsCURP = array(
+        "BACA" => "BXCA",
+        "LOCO" => "LXCO",
+        "BAKA" => "BXKA",
+        "BUEI" => "BXEI",
+        "BUEY" => "BXEY",
+        "CACA" => "CXCA",
+        "CACO" => "CXCO",
+        "CAGA" => "CXGA",
+        "CAGO" => "CXGO",
+        "CAKA" => "CXKA",
+        "CAKO" => "CXKO",
+        "COGE" => "CXGE",
+        "COGI" => "CXGI",
+        "COJA" => "CXJA",
+        "COJE" => "CXJE",
+        "COJI" => "CXJI",
+        "COJO" => "CXJO",
+        "COLA" => "CXLA",
+        "CULO" => "CXLO",
+        "FALO" => "FXLO",
+        "FETO" => "FXTO",
+        "GETA" => "GXTA",
+        "GUEI" => "GXEI",
+        "GUEY" => "GXEY",
+        "JETA" => "JXTA",
+        "JOTO" => "JXTO",
+        "KACA" => "KXCA",
+        "KACO" => "KXCO",
+        "KAGA" => "KXGA",
+        "KAGO" => "KXGO",
+        "KAKA" => "KXKA",
+        "KAKO" => "KXKO",
+        "KOGE" => "KXGE",
+        "KOGI" => "KXGI",
+        "KOJA" => "KXJA",
+        "KOJE" => "KXJE",
+        "KOJI" => "KXJI",
+        "KOJO" => "KXJO",
+        "KOLA" => "KXLA",
+        "KULO" => "KXLO",
+        "LILO" => "LXLO",
+        "LOKA" => "LXKA",
+        "LOKO" => "LXKO",
+        "MAME" => "MXME",
+        "MAMO" => "MXMO",
+        "MEAR" => "MXAR",
+        "MEAS" => "MXAS",
+        "MEON" => "MXON",
+        "MIAR" => "MXAR",
+        "MION" => "MXON",
+        "MOCO" => "MXCO",
+        "MOKO" => "MXKO",
+        "MULA" => "MXLA",
+        "MULO" => "MXLO",
+        "NACA" => "NXCA",
+        "NACO" => "NXCO",
+        "PEDA" => "PXDA",
+        "PEDO" => "PXDO",
+        "PENE" => "PXNE",
+        "PIPI" => "PXPI",
+        "PITO" => "PXTO",
+        "POPO" => "PXPO",
+        "PUTA" => "PXTA",
+        "PUTO" => "PXTO",
+        "QULO" => "QXLO",
+        "RATA" => "RXTA",
+        "ROBA" => "RXBA",
+        "ROBE" => "RXBE",
+        "ROBO" => "RXBO",
+        "RUIN" => "RXIN",
+        "SENO" => "SXNO",
+        "TETA" => "TXTA",
+        "VACA" => "VXCA",
+        "VAGA" => "VXGA",
+        "VAGO" => "VXGO",
+        "VAKA" => "VXKA",
+        "VUEI" => "VXEI",
+        "VUEY" => "VXEY",
+        "WUEI" => "WXEI",
+        "WUEY" => "WXEY"
+    );
+
+    protected static $badWordsRFC = array(
+        "BUEI" => "BUEX",
+        "BUEY" => "BUEX",
+        "CACA" => "CACX",
+        "CACO" => "CACX",
+        "CAGA" => "CAGX",
+        "CAGO" => "CAGX",
+        "CAKA" => "CAKX",
+        "COGE" => "COGX",
+        "COJA" => "COJX",
+        "COJE" => "COJX",
+        "COJI" => "COJX",
+        "COJO" => "COJX",
+        "CULO" => "CULX",
+        "FETO" => "FETX",
+        "GUEY" => "GUEX",
+        "JOTO" => "JOTX",
+        "KACA" => "KACX",
+        "KACO" => "KACX",
+        "KAGA" => "KAGX",
+        "KAGO" => "KAGX",
+        "KOGE" => "KOGX",
+        "KOJO" => "KOJX",
+        "KAKA" => "KAKX",
+        "KULO" => "KULX",
+        "MAME" => "MAMX",
+        "MAMO" => "MAMX",
+        "MEAR" => "MEAX",
+        "MEON" => "MEOX",
+        "MION" => "MIOX",
+        "MOCO" => "MOCX",
+        "MULA" => "MULX",
+        "PEDA" => "PEDX",
+        "PEDO" => "PEDX",
+        "PENE" => "PENX",
+        "PUTA" => "PUTX",
+        "PUTO" => "PUTX",
+        "QULO" => "QULX",
+        "RATA" => "RATX",
+        "RUIN" => "RUIX",
+    );
+
+    protected static $accents = array(
+        'Á' => 'A',
+        'É' => 'E',
+        'Í' => 'I',
+        'Ó' => 'O',
+        'Ú' => 'U'
+    );
+
+    protected static $states = array('AS', 'BC', 'BS', 'CC', 'CL', 'CM', 'CS', 'CH', 'DF', 'DG', 'GT', 'GR', 'HG', 'JC', 'MC', 'MN', 'MS', 'NT', 'NL', 'OC', 'PL', 'QT', 'QR', 'SP', 'SL', 'SR', 'TC', 'TS', 'TL', 'VZ', 'YN', 'ZS');
 }
