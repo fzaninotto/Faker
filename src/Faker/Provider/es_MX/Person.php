@@ -134,10 +134,10 @@ class Person extends \Faker\Provider\Person
 
     protected static function commonPart($type, $firstName = null, $lastNameFather = null, $lastNameMother = null, $birthDate = null)
     {
-        $common  = substr($lastNameFather, 0,1);
+        $common  = substr($lastNameFather, 0, 1);
         $common .= self::firstInternalVowel($lastNameFather);
-        $common .= $lastNameMother?substr($lastNameMother, 0,1):'X';
-        $common .= substr($firstName, 0,1);
+        $common .= $lastNameMother?substr($lastNameMother, 0, 1):'X';
+        $common .= substr($firstName, 0, 1);
         if ($type == 'curp') {
             $common = str_replace(array_keys(self::$badWordsCURP), array_values(self::$badWordsCURP), $common);
         } else {
@@ -149,7 +149,7 @@ class Person extends \Faker\Provider\Person
 
     protected static function firstInternalVowel($word)
     {
-        if(preg_match('([AEIOU])', $word, $matches)){
+        if (preg_match('([AEIOU])', $word, $matches)) {
             return $matches[0];
         }
         return 'X';
@@ -157,7 +157,7 @@ class Person extends \Faker\Provider\Person
 
     protected static function firstInternalConsonant($word)
     {
-        if(preg_match('([BCDFGHJKLMNPQRSTUVWXYZ])', $word, $matches)){
+        if (preg_match('([BCDFGHJKLMNPQRSTUVWXYZ])', $word, $matches)) {
             return $matches[0];
         }
         return 'X';
@@ -166,14 +166,14 @@ class Person extends \Faker\Provider\Person
     protected static function removeCommonNames($name)
     {
         foreach (self::$notAcceptedNames as $notAcceptedName) {
-            $name = preg_replace($notAcceptedName,'',$name);
+            $name = preg_replace($notAcceptedName, '', $name);
         }
         return $name;
     }
     protected static function removePrefixes($name)
     {
         foreach (self::$prefixes as $prefix) {
-            $name = preg_replace($prefix,'',$name);
+            $name = preg_replace($prefix, '', $name);
         }
         return $name;
     }
