@@ -68,8 +68,8 @@ class Person extends \Faker\Provider\Person
             $firstName = self::removeAccents(self::removeCommonNames(mb_strtoupper($firstName?$firstName: static::firstNameFemale())));
         }
 
-        $lastNameFather = self::removeAccents(self::removePrefixes(mb_strtoupper($lastNameFather?$lastNameFather: static::lastNameFather())));
-        $lastNameMother = self::removeAccents(self::removePrefixes(mb_strtoupper($lastNameMother?$lastNameMother: static::lastNameMother())));
+        $lastNameFather = self::removeAccents(self::removePrefixes(mb_strtoupper($lastNameFather?$lastNameFather: static::randomElement(static::$lastNames))));
+        $lastNameMother = self::removeAccents(self::removePrefixes(mb_strtoupper($lastNameMother?$lastNameMother: static::randomElement(static::$lastNames))));
         $birthDate = $birthDate?$birthDate:\Faker\Provider\DateTime::dateTimeBetween();
 
         $curp = self::commonPart('curp', $firstName, $lastNameFather, $lastNameMother, $birthDate);
@@ -118,8 +118,8 @@ class Person extends \Faker\Provider\Person
             $firstName = self::removeAccents(mb_strtoupper($firstName?$firstName: static::firstNameFemale()));
         }
 
-        $lastNameFather = self::removeAccents(mb_strtoupper($lastNameFather?$lastNameFather: static::lastNameFather()));
-        $lastNameMother = self::removeAccents(mb_strtoupper($lastNameMother?$lastNameMother: static::lastNameMother()));
+        $lastNameFather = self::removeAccents(mb_strtoupper($lastNameFather?$lastNameFather: static::randomElement(static::$lastNames)));
+        $lastNameMother = self::removeAccents(mb_strtoupper($lastNameMother?$lastNameMother: static::randomElement(static::$lastNames)));
         $birthDate = $birthDate?$birthDate:\Faker\Provider\DateTime::dateTimeBetween();
 
         $rfc = self::commonPart('rfc', $firstName, $lastNameFather, $lastNameMother, $birthDate);
