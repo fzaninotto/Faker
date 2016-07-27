@@ -21,6 +21,12 @@ class PersonTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(static::dni($curp));
     }
 
+    public function testRFC()
+    {
+        $rfc = $this->faker->rfc;
+        $this->assertRegExp('/^[a-zA-Z]{3,4}[0-9]{2}[0-1]{1}[0-9]{1}[0-3]{1}[0-9]{1}[a-zA-Z0-9]{3}$/',$rfc);
+    }
+
     /**
      * Validates the DNI (CURP)
      *
