@@ -45,15 +45,16 @@ class Person extends \Faker\Provider\Person
     }
     /**
      * generates CURP
-     * 
-     * @param      string  $firstName  The first name
-     * @param      string  $lastName   The last name
-     * @param      \DateTime  $birthDate  The birth date
-     * @param      string  $gender     The gender
-     * @param      string  $state      The person birth state
+     *
+     * @param      string  $firstName       First name
+     * @param      string  $lastNameFather  Fathers last name
+     * @param      string  $lastNameMother  Mothers last name
+     * @param      \DateTime  $birthDate    Birth date
+     * @param      string  $gender          Gender
+     * @param      string  $state           State of birth
      *
      * @return     string  generated curp
-     * 
+     *
      * @link       https://github.com/hectorip/RFC-CURP-Mexico/blob/master/src/mxk.js ported from this
      * @link       https://en.wikipedia.org/wiki/Unique_Population_Registry_Code
      */
@@ -93,7 +94,21 @@ class Person extends \Faker\Provider\Person
         return $curp;
     }
 
-    public static function rfc($firstName = null, $lastNameFather = null, $lastNameMother = null, $birthDate = null, $gender = null)
+    /**
+     * generates RFC
+     *
+     * @param      string  $firstName       First name
+     * @param      string  $lastNameFather  Fathers last name
+     * @param      string  $lastNameMother  Mothers last name
+     * @param      \DateTime  $birthDate    Birth date
+     * @param      string  $gender          Gender
+     *
+     * @return     string  Generated RFC
+     * 
+     * @link       https://github.com/hectorip/RFC-CURP-Mexico/blob/master/src/mxk.js ported from this
+     * @link       https://es.wikipedia.org/wiki/Registro_Federal_de_Contribuyentes_(México)
+     */
+    public static function personRfc($firstName = null, $lastNameFather = null, $lastNameMother = null, $birthDate = null, $gender = null)
     {
         $gender = in_array($gender, array(Person::GENDER_MALE,Person::GENDER_FEMALE))?$gender:static::randomElement(array(Person::GENDER_MALE,Person::GENDER_FEMALE));
 
