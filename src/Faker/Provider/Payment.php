@@ -123,7 +123,7 @@ class Payment extends Base
     /**
      * @see list of top 150 largest banks (USA) http://onlinebankingreport.com/resources/100.html
      * @var array
-     */    
+     */
     protected static $banks = array(
         'JP Morgan Chase & Co.',
         'Bank of America',
@@ -275,7 +275,7 @@ class Payment extends Base
         'Banner Corp.',
         'First Merchants Corp',
         'Community Bank System',
-    );    
+    );
 
     /**
      * @return string Returns a credit card vendor name
@@ -448,5 +448,5 @@ class Payment extends Base
     public static function bank()
     {
         return static::randomElement(static::$banks);
-    }    
+    }
 }
