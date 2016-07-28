@@ -203,4 +203,9 @@ class PaymentTest extends \PHPUnit_Framework_TestCase
         // Test checksum
         $this->assertTrue(Iban::isValid($iban), "Checksum for $iban is invalid");
     }
+    
+    public function testBank()
+    {
+        $this->assertInternalType('string', $this->faker->bank, "Error generating bank name");
+    }
 }

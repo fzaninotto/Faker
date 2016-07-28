@@ -45,6 +45,7 @@ namespace Faker;
  * @method string iban($countryCode = null, $prefix = '', $length = null)
  * @property string $swiftBicNumber
  * @property string $vat
+ * @property string $bank
  *
  * @property string $word
  * @property string|array $words
