@@ -31,7 +31,7 @@ class HtmlLorem extends Base
     /**
      * @return string
      */
-    public static function randomHtml($maxDepth = 4)
+    public static function randomHtml($maxDepth = 4, $maxWidth = 4)
     {
         $document = new \DOMDocument();
 
@@ -40,7 +40,7 @@ class HtmlLorem extends Base
 
         $body = $document->createElement("body");
         static::addLoginForm($body);
-        static::addRandomSubTree($body, $maxDepth);
+        static::addRandomSubTree($body, $maxDepth, $maxWidth);
 
         $html = $document->createElement("html");
         $html->appendChild($head);
@@ -50,22 +50,22 @@ class HtmlLorem extends Base
         return $document->saveHTML();
     }
 
-    private static function addRandomSubTree(\DOMElement $root, $depth)
+    private static function addRandomSubTree(\DOMElement $root, $maxDepth, $maxWidth)
     {
-        $depth--;
-        if ($depth <= 0) {
+        $maxDepth--;
+        if ($maxDepth <= 0) {
             return $root;
         }
 
-        $siblings = mt_rand(1, $depth * 10);
+        $siblings = mt_rand(1, $maxWidth);
         for ($i = 0; $i < $siblings; $i++) {
-            if ($depth == 1) {
+            if ($maxDepth == 1) {
                 static::addRandomLeaf($root);
             } else {
                 $sibling = $root->ownerDocument->createElement("div");
                 $root->appendChild($sibling);
                 static::addRandomAttribute($sibling);
-                static::addRandomSubTree($sibling, mt_rand(0, $depth));
+                static::addRandomSubTree($sibling, mt_rand(0, $maxDepth), $maxWidth);
             }
         };
         return $root;
