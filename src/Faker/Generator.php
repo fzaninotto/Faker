@@ -167,6 +167,11 @@ namespace Faker;
  * @property string $rgbCssColor
  * @property string $safeColorName
  * @property string $colorName
+ *
+ * @property string $adjective
+ * @property string $materialName
+ * @property string $productName
+ * @property string $departmentName
  */
 class Generator
 {
