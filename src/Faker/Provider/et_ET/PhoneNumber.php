@@ -48,19 +48,19 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      * An array of et:ET country code for calling from outside the country
      * @var string
      */
-    protected static $countryCode = "372";    
+    protected static $countryCode = "372";
     /**
      * An Emergency phone number 
      * @var string
      */
-    protected static $emergency = "112";    
+    protected static $emergency = "112";
 
     /**
      * An array of et:ET mobile (cell) phone number formats
      * @var array
      */
     protected static $landlineFormats = array(
-      // Local      
+      // Local
       '32# ####',      //Landline  (Rakvere)
       '33# ####',      //Landline  (Kohtla-Järve)
       '35# ####',      //Landline  (Narva)
@@ -74,17 +74,17 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
       '48# ####',      //Landline  (Rapla)
       '6## ####',      //Landline  (Tallinn and Harju County)
       '7## ####',      //Landline  (Tartu)
-      '71# ####',      //Landline 
-      '72# ####',      //Landline 
-      '73# ####',      //Landline 
-      '74# ####',      //Landline 
-      '75# ####',      //Landline 
+      '71# ####',      //Landline
+      '72# ####',      //Landline
+      '73# ####',      //Landline
+      '74# ####',      //Landline
+      '75# ####',      //Landline
       '76# ####',      //Landline  (Valga)
       '77# ####',      //Landline  (Jõgeva)
       '78# ####',      //Landline  (Võru)
       '79# ####',      //Landline  (Põlva)
-      '88# ####',      //Landline 
-      '901 ####'       //Landline 
+      '88# ####',      //Landline
+      '901 ####'       //Landline
     );
     
 
@@ -93,12 +93,12 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      * @var array
      */
     protected static $mobileFormats = array(
-      // Local      
-      '5## ####',      //Mobile 
-      '5### ####',     //Mobile 
-      '81## ####',    //Mobile 
-      '82## ####',     //Mobile 
-      '83## ####',     //Mobile 
+      // Local
+      '5## ####',      //Mobile
+      '5### ####',     //Mobile
+      '81## ####',    //Mobile
+      '82## ####',     //Mobile
+      '83## ####',     //Mobile
       '870001000000'   //Mobile  (M2M mobiiltelefoninumbrid)
     );
 
@@ -185,5 +185,4 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     {
         return self::randomElement(static::$personalFormats);
     }
-   
 }
