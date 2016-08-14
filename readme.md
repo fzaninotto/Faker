@@ -31,6 +31,7 @@ Faker requires PHP >= 5.3.3.
 	- [Barcode](#fakerproviderbarcode)
 	- [Miscellaneous](#fakerprovidermiscellaneous)
 	- [Biased](#fakerproviderbiased)
+	- [Commerce](#fakerprovidercommerce)
 - [Modifiers](#modifiers)
 - [Localization](#localization)
 - [Populating Entities Using an ORM or an ODM](#populating-entities-using-an-orm-or-an-odm)
@@ -297,6 +298,12 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     // get a random number between 10 and 20,
     // with more chances to be close to 20
     biasedNumberBetween($min = 10, $max = 20, $function = 'sqrt')
+
+### `Faker\Provider\Commerce`
+
+    departmentName // Computers
+    materialName // Aluminum
+    productName // Ergonomic Cotton Bottle
 
 ## Modifiers
 
