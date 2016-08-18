@@ -750,7 +750,6 @@ echo $faker->nationalIdNumber // Citizen ID number
 echo $faker->foreignerIdNumber // Foreigner ID number
 ```
 
-
 ### `Faker\Provider\at_AT\Payment`
 
 ```php
