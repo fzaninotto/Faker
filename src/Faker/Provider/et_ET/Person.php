@@ -36,9 +36,7 @@ class Person extends \Faker\Provider\Person
         'Ingrid', 'Marika', 'Kathleen', 'Kätlin', 'Harriet', 'Dorrit', 'Ruta', 'Anne', "Kaili",
     );
 
-    /**
-     * @link http://www.eki.ee/books/ekk09/index.php?p=6&p1=5&id=548
-     */
+  
     protected static $lastName = array(
         'Vihalem', 'Ilu', 'Miilet', 'Markus', 'Joonas', 'Laretei', 'Suubi', 'Tarto', 'Tallinn',
         'Nurst', 'Soome', 'Betlem', 'Hamburg', 'London', 'Koit', 'Kõue', 'Vihma', 'Mäger', 'Kotkas',

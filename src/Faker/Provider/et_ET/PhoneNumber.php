@@ -49,6 +49,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      * @var string
      */
     protected static $countryCode = "372";
+
     /**
      * An Emergency phone number 
      * @var string
@@ -87,7 +88,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
       '901 ####'       //Landline
     );
     
-
     /**
      * An array of Estonian mobile (cell) phone number formats
      * @var array
@@ -99,7 +99,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
       '81## ####',    //Mobile
       '82## ####',     //Mobile
       '83## ####',     //Mobile
-      '870001000000'   //Mobile  (M2M mobiiltelefoninumbrid)
+      '87## #### ####'   //Mobile  (M2M mobiiltelefoninumbrid)
     );
 
     /**
@@ -110,7 +110,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
       '40## ####'     //Special services
     );
 
-
     /**
      * An array of Estonian Premium services formats
      * @var array
@@ -118,7 +117,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     protected static $premiumFormats = array(
       '70## ####'     //Premium
     );
-
 
     /**
      * An array of Estonian Personal services formats
@@ -128,10 +126,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
       '900 ####',      //Personal
     );
 
-
-
-
-//////////////   FUNCTIONS
     /**
      * get Estonian country calling number
      * @return string

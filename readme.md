@@ -750,6 +750,7 @@ echo $faker->nationalIdNumber // Citizen ID number
 echo $faker->foreignerIdNumber // Foreigner ID number
 ```
 
+
 ### `Faker\Provider\at_AT\Payment`
 
 ```php
@@ -766,6 +767,17 @@ echo $faker->vat(false);    // "ATU12345678" - unspaced Austrian Value Added Tax
 
 echo $faker->vat;           // "BG 0123456789" - Bulgarian Value Added Tax number
 echo $faker->vat(false);    // "BG0123456789" - unspaced Bulgarian Value Added Tax number
+```
+
+### `Faker\Provider\et_ET\Address`
+
+```php
+<?php
+ // Estonian country name in different languages, 
+ // randomly added to the end of address -
+ // people sometimes write country names in their native language
+
+echo $faker->eesti;  // e.g. "Estonia", "Viro", "Estland", "Eesti"
 ```
 
 ### `Faker\Provider\cs_CZ\Address`
