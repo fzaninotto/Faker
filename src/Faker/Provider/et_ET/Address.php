@@ -83,7 +83,7 @@ class Address extends \Faker\Provider\Address
 
     /**
      * @link https://et.wikipedia.org/wiki/Kategooria:Tartu_t%C3%A4navad
-     */     
+     */
     protected static $street = array(
         'Aardla','Aardlavälja','Aasa','Adra','Aianduse','Aiaääre','Aida','Akadeemia','Alasi','Aleksandri','Alevi','Allika','Anne','Annemõisa','Arbi','P. Areni','Arhitekti','Aroonia','Aru','Arukase','Aruküla tee','Astri',
         'K. E. von Baeri','Bajadeeri','Betooni','Bordoo',
