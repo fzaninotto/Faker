@@ -20,7 +20,12 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      */
     public static function areaCode()
     {
-        $digits = [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67];
+        $digits = array(
+            30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
+            49,
+            50, 51, 52, 53, 54, 55, 56, 57, 58, 59,
+            60, 61, 62, 63, 64, 65, 66, 67
+        );
 
         return $digits[array_rand($digits)];
     }
