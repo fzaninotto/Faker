@@ -72,4 +72,25 @@ class ImageTest extends \PHPUnit_Framework_TestCase
             unlink($file);
         }
     }
+
+    public function testCreateImage()
+    {
+        $file = Image::createImage( sys_get_temp_dir(), $width = 800, $height = 600, $fullPath = true, $word = null);
+        
+        $this->assertFileExists($file);
+        $this->assertEquals('jpg', pathinfo($file, PATHINFO_EXTENSION));
+
+        if (function_exists('getimagesize')) {
+            list($width, $height, $type, $attr) = getimagesize($file);
+            $this->assertEquals(800, $width);
+            $this->assertEquals(600, $height);
+            $this->assertEquals(constant('IMAGETYPE_JPEG'), $type);
+        } else {
+            $this->assertEquals('jpg', pathinfo($file, PATHINFO_EXTENSION));
+        }
+
+        if (file_exists($file)) {
+            unlink($file);
+        }
+    }
 }
