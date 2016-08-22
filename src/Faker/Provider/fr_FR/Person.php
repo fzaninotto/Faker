@@ -69,7 +69,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * Generates a NIR number (13 digits + 2 digits for the key)
+     * Generates a NIR / Sécurité Sociale number (13 digits + 2 digits for the key)
      *
      * @see https://fr.wikipedia.org/wiki/Num%C3%A9ro_de_s%C3%A9curit%C3%A9_sociale_en_France
      * @return string
@@ -102,7 +102,7 @@ class Person extends \Faker\Provider\Person
             $nir .= $this->numerify('##');
         }
 
-        // Born number (dependending of town and month of birth)
+        // Born number (depending of town and month of birth)
         $nir .= $this->numerify('###');
 
         /**
