@@ -85,7 +85,7 @@ class Person extends \Faker\Provider\Person
         $curp .= self::firstInternalConsonant($lastNameMother);
         $curp .= self::firstInternalConsonant($firstName);
 
-        if ($birthDate->format('Y')<=2000) {
+        if ($birthDate->format('Y') >= 2000) {
             $curp .= strtoupper(static::bothify('??'));
         } else {
             $curp .= static::bothify('##');
