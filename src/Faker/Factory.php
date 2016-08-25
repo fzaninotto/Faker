@@ -8,7 +8,7 @@ class Factory
 
     protected static $defaultProviders = array('Address', 'Barcode', 'Biased', 'Color', 'Company', 'DateTime', 'File', 'Image', 'Internet', 'Lorem', 'Miscellaneous', 'Payment', 'Person', 'PhoneNumber', 'Text', 'UserAgent', 'Uuid');
 
-    private static $instances = [];
+    private static $instances;
 
     /**
      * Singleton
@@ -18,6 +18,9 @@ class Factory
      */
     public static function load($locale = self::DEFAULT_LOCALE)
     {
+        if (self::$instances === null) {
+            self::$instances = array();
+        }
         if (!isset(self::$instances[$locale])) {
             self::$instances[$locale] = self::create($locale);
         }
