@@ -95,6 +95,16 @@ for ($i=0; $i < 10; $i++) {
 
 **Tip**: For a quick generation of fake data, you can also use Faker as a command line tool thanks to [faker-cli](https://github.com/bit3/faker-cli).
 
+### As Singleton
+
+You may also reuse the same instance for each locale. Useful if you're running into memory issues due to many instances of Faker being created.
+
+```php
+// Loads a previously created instance for the given locale
+// If none exists, a new one is created through Faker\Factory::create()
+$faker = Faker\Factory::load();
+```
+
 ## Formatters
 
 Each of the generator properties (like `name`, `address`, and `lorem`) are called "formatters". A faker generator has many of them, packaged in "providers". Here is a list of the bundled formatters in the default locale.
