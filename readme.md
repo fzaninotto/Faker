@@ -750,6 +750,14 @@ echo $faker->nationalIdNumber // Citizen ID number
 echo $faker->foreignerIdNumber // Foreigner ID number
 ```
 
+### `Faker\Provider\ar_SA\Payment`
+
+```php
+<?php
+
+echo $faker->bankAccountNumber // "SA0218IBYZVZJSEC8536V4XC"
+```
+
 ### `Faker\Provider\at_AT\Payment`
 
 ```php
@@ -928,6 +936,22 @@ echo $faker->siren; // 082 250 104
 echo $faker->siret; // 347 355 708 00224
 ```
 
+### `Faker\Provider\he_IL\Payment`
+
+```php
+<?php
+
+echo $faker->bankAccountNumber // "IL392237392219429527697"
+```
+
+### `Faker\Provider\hr_HR\Payment`
+
+```php
+<?php
+
+echo $faker->bankAccountNumber // "HR3789114847226078672"
+```
+
 ### `Faker\Provider\hu_HU\Payment`
 
 ```php
@@ -1019,6 +1043,14 @@ echo $faker->metropolitanCity; // "서울특별시"
 
 // Generates a borough
 echo $faker->borough; // "강남구"
+```
+
+### `Faker\Provider\lt_LT\Payment`
+
+```php
+<?php
+
+echo $faker->bankAccountNumber // "LT300848876740317118"
 ```
 
 ### `Faker\Provider\lv_LV\Person`
