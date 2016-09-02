@@ -98,5 +98,4 @@ class Payment extends \Faker\Provider\Payment
     {
         return static::randomElement(static::$banks);
     }
-
 }
