@@ -253,4 +253,34 @@ class Person extends \Faker\Provider\Person
     {
         return static::randomElement(static::$suffix);
     }
+
+    /**
+     * Generates Nomor Induk Kependudukan (NIK)
+     *
+     * @param null|string $gender
+     * @param null|\DateTime $birthDate
+     * @return string
+     */
+    public function nik($gender = null, $birthDate = null)
+    {
+        $nik = $this->generator->numerify('######');
+
+        if (!$birthDate) {
+            $birthDate = $this->generator->dateTimeBetween();
+        }
+
+        if (!$gender) {
+            $gender = $this->generator->randomElement([self::GENDER_MALE, self::GENDER_FEMALE]);
+        }
+
+        if ($gender == self::GENDER_FEMALE) {
+            $nik .= $birthDate->format('dmy') + 400000;
+        } else {
+            $nik .= $birthDate->format('dmy');
+        }
+
+        $nik.= $this->generator->numerify('####');
+
+        return $nik;
+    }
 }
