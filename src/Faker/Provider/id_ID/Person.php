@@ -257,12 +257,15 @@ class Person extends \Faker\Provider\Person
     /**
      * Generates Nomor Induk Kependudukan (NIK)
      *
+     * @link https://en.wikipedia.org/wiki/National_identification_number#Indonesia
+     *
      * @param null|string $gender
      * @param null|\DateTime $birthDate
      * @return string
      */
     public function nik($gender = null, $birthDate = null)
     {
+        # generate first numbers (region data)
         $nik = $this->generator->numerify('######');
 
         if (!$birthDate) {
@@ -273,12 +276,16 @@ class Person extends \Faker\Provider\Person
             $gender = $this->generator->randomElement([self::GENDER_MALE, self::GENDER_FEMALE]);
         }
 
+        # if gender is female, add 40 to days
         if ($gender == self::GENDER_FEMALE) {
-            $nik .= $birthDate->format('dmy') + 400000;
+            $nik .= $birthDate->format('d') + 40;
         } else {
-            $nik .= $birthDate->format('dmy');
+            $nik .= $birthDate->format('d');
         }
 
+        $nik .= $birthDate->format('my');
+
+        # add last random digits
         $nik.= $this->generator->numerify('####');
 
         return $nik;
