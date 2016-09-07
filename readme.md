@@ -979,6 +979,16 @@ echo $faker->vatId(); // "IT98746784967"
 echo $faker->taxId(); // "DIXDPZ44E08F367A"
 ```
 
+### `Faker\Provider\id_ID\Person`
+```php
+<?php
+
+echo $faker->vehicleLicenseNumber; // "B 1234 XYZ"
+echo $faker->personalLicenseNumber; // "B 1234 XYZ"
+echo $faker->govLicenseNumber; // "RI 1"
+echo $faker->ambassadorLicenseNumber; // "CD 53"
+```
+
 ### `Faker\Provider\ja_JP\Person`
 
 ```php

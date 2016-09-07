@@ -112,7 +112,7 @@ class Person extends \Faker\Provider\Person
         'Ami', 'Ani', 'Azalea', 'Aurora', 'Alika', 'Anastasia', 'Amelia',
         'Almira', 'Bella', 'Betania', 'Belinda', 'Citra', 'Cindy', 'Chelsea',
         'Clara', 'Cornelia', 'Cinta', 'Cinthia', 'Ciaobella', 'Cici', 'Carla',
-        'Calista', 'Devi', 'Dewi','Dian', 'Diah', 'Diana', 'Dina', 'Dinda',
+        'Calista', 'Devi', 'Dewi', 'Dian', 'Diah', 'Diana', 'Dina', 'Dinda',
         'Dalima', 'Eka', 'Eva', 'Endah', 'Elisa', 'Eli', 'Ella', 'Ellis',
         'Elma', 'Elvina', 'Fitria', 'Fitriani', 'Febi', 'Faizah', 'Farah',
         'Farhunnisa', 'Fathonah', 'Gabriella', 'Gasti', 'Gawati', 'Genta',
@@ -194,7 +194,8 @@ class Person extends \Faker\Provider\Person
     protected static $titleFemale = array('dr.', 'drg.', 'Dr.', 'Hj.');
 
     /**
-     * For academic title
+     * For academic title.
+     *
      * @link http://id.wikipedia.org/wiki/Gelar_akademik
      */
     private static $suffix = array('S.Ked', 'S.Gz', 'S.Pt', 'S.IP', 'S.E.I',
@@ -202,7 +203,49 @@ class Person extends \Faker\Provider\Person
         'S.Sos', 'S.Farm', 'M.M.', 'M.Kom.', 'M.TI.', 'M.Pd', 'M.Farm', 'M.Ak', );
 
     /**
-     * Return last name
+     * Vehicle (police) license number codes.
+     *
+     * @link https://id.wikipedia.org/wiki/Tanda_nomor_kendaraan_bermotor
+     */
+    private static $vehicleAreaCode = array(
+        // Sumatera
+        'BA', 'BB', 'BD', 'BE', 'BG', 'BH', 'BK', 'BL', 'BM', 'BN', 'BP',
+        // Kalimantan/Borneo
+        'DA', 'KB', 'KH', 'KT',
+        // Java & Madura
+        'A', 'B', 'D', 'E', 'F', 'T', 'Z', 'G', 'H', 'K', 'R', 'AA', 'AB',
+        'AD', 'L', 'M', 'N', 'P', 'S', 'W', 'AE', 'AG',
+        // Sulawesi
+        'DB', 'DC', 'DD', 'DL', 'DM', 'DN', 'DP', 'DT', 'DW',
+        // Bali & Nusa Tenggara
+        'DH', 'DK', 'DR', 'EA', 'EB', 'ED',
+        // Maluku
+        'DE', 'DG',
+        // Papua
+        'DS', 'PB',
+    );
+
+    private static $vehicleFirstSuffixCode = array(
+        'U', 'B', 'P', 'S', 'T', 'Z', 'E', 'N', 'C', 'V', 'K', 'F', 'Y',
+        'W', 'G', 'X', 'R',
+    );
+
+    private static $vehicleSecondSuffixCode = array(
+        'A', 'B', 'D', 'E', 'W', 'F', 'K', 'O', 'Z', 'R', 'Y', 'V', 'P',
+        'M', 'G', 'U', 'H', 'J', 'C', 'L', 'T', 'Q',
+    );
+
+    private static $vehicleThirdSuffixCode = array(
+        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+        'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+    );
+
+    private static $vehicleNumberFormats = array(
+        '#', '##', '###', '####',
+    );
+
+    /**
+     * Return last name.
      *
      * @param string|null $gender male or female or null for any
      *
@@ -222,9 +265,8 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * Return last name for male
+     * Return last name for male.
      *
-     * @access public
      * @return string last name
      */
     public static function lastNameMale()
@@ -233,9 +275,8 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * Return last name for female
+     * Return last name for female.
      *
-     * @access public
      * @return string last name
      */
     public static function lastNameFemale()
@@ -244,13 +285,66 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * For academic title
+     * For academic title.
      *
-     * @access public
      * @return string suffix
      */
     public static function suffix()
     {
         return static::randomElement(static::$suffix);
+    }
+
+    /**
+     * Return vehicle license (police) number.
+     *
+     * @return string vehicle license number
+     */
+    public function vehicleLicenseNumber()
+    {
+        return static::personalLicenseNumber();
+    }
+
+    /**
+     * Return vehicle license (police) number.
+     *
+     * @return string vehicle license number
+     */
+    public function personalLicenseNumber()
+    {
+        $vehicleAreaCode = static::randomElement(static::$vehicleAreaCode);
+        $vehicleNumber = static::numerify(static::randomElement(static::$vehicleNumberFormats));
+        $vehicleSuffixCode = implode('', array(
+            static::randomElement(static::$vehicleFirstSuffixCode),
+            static::randomElement(static::$vehicleSecondSuffixCode),
+            static::randomElement(static::$vehicleSecondSuffixCode)
+        ));
+        
+        return trim(implode(' ', array($vehicleAreaCode, $vehicleNumber, $vehicleSuffixCode)));
+    }
+
+    /**
+     * Return vehicle license (police) number for Governments.
+     *
+     * @return string vehicle license number
+     */
+    public static function govLicenseNumber()
+    {
+        return trim(implode(' ', array('RI', static::numberBetween(1, 53))));
+    }
+
+    /**
+     * Return vehicle license (police) number for Ambassador.
+     *
+     * @return string vehicle license number
+     */
+    public static function ambassadorLicenseNumber()
+    {
+        return trim(implode(' ', array(
+            'CD',
+            static::randomElement(array(
+                static::numberBetween(12, 126),
+                130
+            ))
+        )));
     }
 }
