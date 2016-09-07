@@ -74,9 +74,15 @@ class Image extends Base
             $fp = fopen($filepath, 'w');
             $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_FILE, $fp);
-            $success = curl_exec($ch);
+            $success = curl_exec($ch) && curl_getinfo($ch, CURLINFO_HTTP_CODE) === 200;
+
+            if ($success) {
+                fclose($fp);
+            } else {
+                unlink($filepath);
+            }
+
             curl_close($ch);
-            fclose($fp);
         } elseif (ini_get('allow_url_fopen')) {
             // use remote fopen() via copy()
             $success = copy($url, $filepath);
