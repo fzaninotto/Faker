@@ -273,7 +273,7 @@ class Person extends \Faker\Provider\Person
         }
 
         if (!$gender) {
-            $gender = $this->generator->randomElement([self::GENDER_MALE, self::GENDER_FEMALE]);
+            $gender = $this->generator->randomElement(array(self::GENDER_MALE, self::GENDER_FEMALE));
         }
 
         # if gender is female, add 40 to days

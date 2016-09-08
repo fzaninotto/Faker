@@ -937,6 +937,18 @@ echo $faker->siret; // 347 355 708 00224
 echo $faker->bankAccountNumber; // "HU09904437680048220079300783"
 ```
 
+### `Faker\Provider\id_ID\Person`
+
+```php
+<?php
+
+// Generates a random Nomor Induk Kependudukan (NIK)
+
+// first argument is gender, either Person::GENDER_MALE or Person::GENDER_FEMALE, if none specified random gender is used
+// second argument is birth date (DateTime object), if none specified, random birth date is used
+echo $faker->nik(); // "8522246001570940"
+```
+
 ### `Faker\Provider\it_IT\Company`
 
 ```php
