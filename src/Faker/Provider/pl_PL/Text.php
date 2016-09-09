@@ -48,7 +48,7 @@ class Text extends \Faker\Provider\Text
      *
      *
      *
-     * Produced by Pawel Sobkowiak--Scanned and proofread by
+     * Produced by Pawel Sobkowiak - Scanned and proofread by
      * Polska Biblioteka Internetowa
      *
      *
@@ -75,13 +75,13 @@ starszym bratem na pastwę białych od żaru i oszołamiających dni letnich.
 Wertowaliśmy, odurzeni światłem, w tej wielkiej księdze wakacji, której
 wszystkie karty pałały od blasku i miały na dnie słodki do omdlenia
 miąższ złotych gruszek. Adela wracała w świetliste poranki, jak Pomona z
-ognia dnia rozżagwionego, wysypując z koszyka barwną urodę słońca--
+ognia dnia rozżagwionego, wysypując z koszyka barwną urodę słońca - 
 lśniące, pełne wody pod przejrzystą skórką czereśnie, tajemnicze, czarne
 wiśnie, których woń przekraczała to, co ziszczało się w smaku; morele, w
 których miąższu złotym był rdzeń długich popołudni; a obok tej czystej
 poezji owoców wyładowywała nabrzmiałe siłą i pożywnością płaty mięsa z
 klawiaturą żeber cielęcych, wodorosty jarzyn, niby zabite głowonogi i
-meduzy--surowy materiał obiadu o smaku jeszcze nie uformowanym i
+meduzy - surowy materiał obiadu o smaku jeszcze nie uformowanym i
 jałowym, wegetatywne i telluryczne ingrediencje obiadu o zapachu dzikim
 i polnym. Przez ciemne mieszkanie na pierwszym piętrze kamienicy w rynku
 przechodziło co dzień na wskroś całe wielkie lato: cisza drgających
@@ -99,10 +99,10 @@ słoneczną kąpiel dnia. Przechodnie, brodząc w złocie, mieli oczy
 zmrużone od żaru, jakby zalepione miodem, a podciągnięta górna warga
 odsłaniała im dziąsła i zęby. I wszyscy brodzący w tym dniu złocistym
 mieli ów grymas skwaru, jak gdyby słońce nałożyło swym wyznawcom jedną i
-tę samą maskę--złotą maskę bractwa słonecznego; i wszyscy, którzy szli
+tę samą maskę - złotą maskę bractwa słonecznego; i wszyscy, którzy szli
 dziś ulicami, spotykali się, mijali, starcy i młodzi, dzieci i kobiety,
 pozdrawiali się w przejściu tą maską, namalowaną grubą, złotą farbą na
-twarzy, szczerzyli do siebie ten grymas bakchiczny--barbarzyńską maskę
+twarzy, szczerzyli do siebie ten grymas bakchiczny - barbarzyńską maskę
 kultu pogańskiego. Rynek był pusty i żółty od żaru, wymieciony z kurzu
 gorącymi wiatrami, jak biblijna pustynia. Cierniste akacje, wyrosłe z
 pustki żółtego placu, kipiały nad nim jasnym listowiem, bukietami
@@ -129,7 +129,7 @@ troskliwie chorego męża z rozpalonego siodła, ażeby go po chłodnych
 schodach wnieść ostrożnie na pachnące szabasem piętro. Tak wędrowaliśmy
 z matką przez dwie słoneczne strony rynku, wodząc nasze załamane cienie
 po wszystkich domach, jak po klawiszach. Kwadraty bruku mijały powoli
-pod naszymi miękkimi i płaskimi krokami--jedne bladoróżowe jak skóra
+pod naszymi miękkimi i płaskimi krokami - jedne bladoróżowe jak skóra
 ludzka, inne złote i sine, wszystkie płaskie, ciepłe, aksamitne na
 słońcu, jak jakieś twarze słoneczne, zadeptane stopami aż do niepoznaki,
 do błogiej nicości. Aż wreszcie na rogu ulicy Stryjskiej weszliśmy w
@@ -227,9 +227,9 @@ w dziwnie prostej syntezie życie tych ludzi, alembik rasy, gatunek krwi
 i sekret ich losu, zawarty niedostrzegalnie w codziennym mijaniu ich
 własnego, odrębnego czasu. Stare, mądre drzwi, których ciemne
 westchnienia wpuszczały i wypuszczały tych ludzi, milczący świadkowie
-wchodzenia i wychodzenia matki, córek i synów--otworzyły się bezgłośnie
+wchodzenia i wychodzenia matki, córek i synów - otworzyły się bezgłośnie
 jak odrzwia szafy i weszliśmy w ich życie. Siedzieli jakby w cieniu
-swego losu i nie bronili się--w pierwszych niezręcznych gestach
+swego losu i nie bronili się - w pierwszych niezręcznych gestach
 wydalinam swoją tajemnicę. Czyż nie byliśmy krwią i losem spokrewnieni z
 nimi? Pokój był ciemny i aksamitny od granatowych obić ze złotym
 deseniem, lecz echo dnia płomiennego drgało i tutaj jeszcze mosiądzem na
@@ -288,7 +288,7 @@ oczyma, wychodząc do drugiego pokoju. Podążyłem za nim. Siedział nisko
 na małej kozetce, z kolanami krzyżującymi się niemal na wysokości głowy,
 łysej jak kula bilardowa. Zdawało się, że to ubranie samo leży,
 fałdziste, zmięte, przerzucone przez fotel. Twarz jego była jak
-tchnienie twarzy--smuga, którą nieznany przechodzień zostawił w
+tchnienie twarzy - smuga, którą nieznany przechodzień zostawił w
 powietrzu. Trzymał w bladych, emaliowanych błękitnie dłoniach portfel, w
 którym coś oglądał. Z mgły twarzy wyłoniło się z trudem wypukłe bielmo
 bladego oka, wabiąc mnie figlarnym mruganiem. Czułem doń nieprzepartą
@@ -301,13 +301,13 @@ i zbiegł mię dreszczem niepokoju, falą nagłego zrozumienia. Ale
 tymczasem ta mgiełka uśmiechu, która się zarysowała pod miękkim i
 pięknym jego wąsem, zawiązek pożądania, który napiął się na jego
 skroniach pulsującą żyłą, natężenie trzymające przez chwilę jego rysy w
-skupieniu--upadły z powrotem w nicość i twarz odeszła w nieobecność,
+skupieniu - upadły z powrotem w nicość i twarz odeszła w nieobecność,
 zapomniała o sobie, rozwiała się,
 
 NAWIEDZENIE 1 Już wówczas miasto nasze popadało coraz bardziej w
 chroniczną szarość zmierzchu, porastało na krawędziach liszajem cienia,
 puszystą pleśnią i mchem koloru żelaza. Ledwo rozpowity z brunatnych
-dymów i mgieł poranka--przechylał się dzień od razu w niskie
+dymów i mgieł poranka - przechylał się dzień od razu w niskie
 bursztynowe popołudnie, stawał się przez chwilę przezroczysty i złoty
 jak ciemne piwo, ażeby potem zejść pod wielokrotnie rozczłonkowane,
 fantastyczne sklepienia kolorowych i rozległych nocy. Mieszkaliśmy w
@@ -337,7 +337,7 @@ bokami po podłodze i ścianach; szedł budzić ciężko chrapiących z
 twardego jak kamień snu. W świetle pozostawionej przezeń świecy wywijali
 się leniwie z brudnej pościeli, wystawiali, siadając na łóżkach, bose i
 brzydkie nogi i z skarpetką w ręce oddawali się jeszcze przez chwilę
-rozkoszy ziewania--ziewania przeciągniętego aż do lubieżności, do
+rozkoszy ziewania - ziewania przeciągniętego aż do lubieżności, do
 bolesnego skurczu podniebienia, jak przy tęgich wymiotach. W kątach
 siedziały nieruchomo wielkie karakony, wyogromnione własnym cieniem,
 którym obarczała każdego płonąca świeca i który nie odłączał się od nich
@@ -365,7 +365,7 @@ bezradnie, jakby czegoś szukając. Wówczas bywało, że zbiegał po cichu z
 to rodzaj klepsydry wodnej albo wielkiej fioli szklanej, podzielonej na
 uncje i napełnionej ciemnym fluidem. Mój ojciec łączył się z tym
 instrumentem długą kiszką gumową, jakby krętą, bolesną pępowiną, i tak
-połączony z żałosnym przyrządem--nieruchomiał w skupieniu, a oczy jego
+połączony z żałosnym przyrządem - nieruchomiał w skupieniu, a oczy jego
 ciemniały, zaś na twarz przybladłą występował wyraz cierpienia czy
 jakiejś występnej rozkoszy. Potem znów przychodziły dni cichej skupionej
 pracy, przeplatanej samotnymi monologami. Gdy tak siedział w świetle
@@ -386,7 +386,7 @@ nocy tapety więdły, zwijały się, gubiły liście i kwiaty i przerzedzały
 się jesiennie, przepuszczając dalekie świtanie. Wtedy wśród świergotu
 tapetowych ptaków, w żółtym zimowym świcie zasypiał na parę godzin
 gęstym, czarnym snem. Od dni, od tygodni, gdy zdawał się być pogrążonym
-w zawiłych konto-korrentach--myśl jego zapuszczała się tajnie w
+w zawiłych konto-korrentach - myśl jego zapuszczała się tajnie w
 labirynty własnych wnętrzności. Wstrzymywał oddech i nasłuchiwał. I gdy
 wzrok jego wracał zbielały i mętny z tamtych głębin, uspokajał go
 uśmiechem. Nie wierzył jeszcze i odrzucał jak absurd te uroszczenia, te
@@ -405,7 +405,7 @@ który jeszcze urąga. Nie widziałem nigdy proroków Starego Testamentu,
 ale na widok tego męża, którego gniew boży obalił, rozkraczonego szeroko
 na ogromnym porcelanowym urynale, zakrytego wichrem ramion, chmurą
 rozpaczliwych łamańców, nad którymi wyżej jeszcze unosił się głos jego,
-obcy i twardy--zrozumiałem gniew boży świętych mężów. Był to dialog
+obcy i twardy - zrozumiałem gniew boży świętych mężów. Był to dialog
 groźny jak mowa piorunów. Łamańce rak jego rozrywały niebo na sztuki, a
 w szczelinach ukazywała się twarz Jehowy, wzdęta gniewem i plująca
 przekleństwa. Nie patrząc widziałem go, groźnego Demiurga, jak leżąc na
@@ -491,14 +491,14 @@ pozostało, to trochę cielesnej powłoki i ta garść bezsensownych dziwactw
 PTAKI Nadeszły żółte, pełne nudy dni zimowe. Zrudziałą ziemię pokrywał
 dziurawy, przetarty, za krótki obrus śniegu. Na wiele dachów nie
 starczyło go i stały czarne lub rdzawe, gontowe strzechy i arki kryjące
-w sobie zakopcone przestrzenie strychów--czarne, zwęglone katedry,
-najeżone żebrami krokwi, płatwi i bantów--ciemne płuca wichrów
+w sobie zakopcone przestrzenie strychów - czarne, zwęglone katedry,
+najeżone żebrami krokwi, płatwi i bantów - ciemne płuca wichrów
 zimowych. Każdy świt odkrywał nowe kominy i dymniki, wyrosłe w nocy,
 wydęte przez wicher nocny, czarne piszczałki organów diabelskich.
 Kominiarze nie mogli opędzić się od wron, które na kształt żywych
 czarnych liści obsiadały wieczorem gałęzie drzew pod kościołem, odrywały
 się znów, trzepocąc, by wreszcie przylgnąć, każda do właściwego miejsca
-na właściwej gałęzi, a o świcie ulatywały wielkimi stadami--tumany
+na właściwej gałęzi, a o świcie ulatywały wielkimi stadami - tumany
 sadzy, płatki kopciu, falujące i fantastyczne, plamiąc migotliwym
 krakaniem mętnożółte smugi świtu. Dni stwardniały od zimna i nudy, jak
 zeszłoroczne bochenki chleba. Napoczynano je tępymi nożami, bez apetytu,
@@ -507,8 +507,8 @@ studiował nigdy niezgłębioną istotę ognia, wyczuwał słony, metaliczny
 posmak i wędzony zapach zimowych płomieni, chłodną pieszczotę
 salamander, liżących błyszczącą sadzę w gardzieli komina. Z zamiłowaniem
 wykonywał w owych dniach wszystkie reparatury w górnych regionach
-pokoju. O każdej porze dnia można go było widzieć, jak--przykucnięty na
-szczycie drabiny--majstrował coś przy suficie, przy kamiszach wysokich
+pokoju. O każdej porze dnia można go było widzieć, jak - przykucnięty na
+szczycie drabiny - majstrował coś przy suficie, przy kamiszach wysokich
 okien, przy kulach i łańcuchach lamp wiszących. Zwyczajem malarzy
 posługiwał się drabiną jak ogromnymi szczudłami i czuł się dobrze w tej
 ptasiej perspektywie, w pobliżu malowanego nieba, arabesek i ptaków
@@ -519,7 +519,7 @@ słuchał jej z roztargnieniem, pełen niepokoju, z drgawkami w nieobecnej
 twarzy. I bywało, że przerywał jej nagle zaklinającym gestem ręki, ażeby
 pobiec w kąt pokoju, przylgnąć uchem do szpary w podłodze i z
 podniesionymi palcami wskazującymi obu rąk, wyrażającymi najwyższą
-ważność badania--nasłuchiwać. Nie rozumieliśmy wówczas jeszcze smutnego
+ważność badania - nasłuchiwać. Nie rozumieliśmy wówczas jeszcze smutnego
 tła tych ekstrawagancji, opłakanego kompleksu, który dojrzewał w głębi.
 Matka nie miała nań żadnego wpływu, natomiast wielką czcią i uwagą
 darzył Adelę. Sprzątanie pokoju było dlań wielką i ważną ceremonią,
@@ -546,11 +546,11 @@ na światło dzienne. Zaczęło się to od wylęgania jaj ptasich. Z wielkim
 nakładem trudu i pieniędzy sprowadzał ojciec z Hamburga, z Holandii, z
 afrykańskich stacji zoologicznych zapłodnione jaja ptasie, które dawał
 do wylęgania ogromnym kurom belgijskim. Był to proceder nader zajmujący
-i dla mnie--to wykluwanie się piskląt, prawdziwych dziwotworów w
+i dla mnie - to wykluwanie się piskląt, prawdziwych dziwotworów w
 kształcie i ubarwieniu. Nie podobna było dopatrzyć się w tych monstrach
 o ogromnych, fantastycznych dziobach, które natychmiast po urodzeniu
 rozdzierały się szeroko, sycząc żarłocznie czeluściami gardła, w tych
-jaszczurach o wątłym, nagim ciele garbusów--przyszłych pawi, bażantów,
+jaszczurach o wątłym, nagim ciele garbusów - przyszłych pawi, bażantów,
 głuszców i kondorów. Umieszczony w koszykach, w wacie, smoczy ten pomiot
 podnosił na cienkich szyjach ślepe, bielmem zarosle głowy, kwacząc
 bezgłośnie z niemych gardzieli. Mój ojciec chodził wzdłuż półek w
@@ -575,13 +575,13 @@ godności w całym zachowaniu, kierujący się żelaznym ceremoniałem swego
 wielkiego rodu. Gdy siedział naprzeciw ojca, nieruchomy w swej
 monumentalnej pozycji odwiecznych bóstw egipskich, z okiem zawleczonym
 białawym bielmem, które zasuwał z boku na źrenice, ażeby zamknąć się
-zupełnie w kontemplacji swej dostojnej samotności--wydawał się ze swym
+zupełnie w kontemplacji swej dostojnej samotności - wydawał się ze swym
 kamiennym profilem starszym bratem mego ojca. Ta sama materia ciała,
 ścięgien i pomarszczonej twardej skóry, ta sama twarz wyschła i
 koścista, te same zrogowaciałe, głębokie oczodoły. Nawet ręce, silne w
 węzłach, długie, chude dłonie ojca, z wypukłymi paznokciami, miały swój
 analogon w szponach kondora. Nie mogłem się oprzeć wrażeniu, widząc go
-tak uśpionego, że mam przed sobą mumię--wyschłą i dlatego pomniejszoną
+tak uśpionego, że mam przed sobą mumię - wyschłą i dlatego pomniejszoną
 mumię mego ojca. Sądzę, że i uwagi matki nie uszło to przedziwne
 podobieństwo, chociaż nigdy nie poruszaliśmy tego tematu.
 Charakterystyczne jest, że kondor używał wspólnego z moim ojcem naczynia
@@ -594,7 +594,7 @@ wszelkiego rodzaju skrzydlacze z dalekich stron. Nawet długo po
 zlikwidowaniu ptasiego gospodarstwa utrzymywała się w świecie ptasim ta
 tradycja naszego domu i w okresie wiosennych wędrówek spadały nieraz na
 nasz dach całe chmary żurawi, pelikanów, pawi i wszelkiego ptactwa.
-Impreza ta wzięła jednak niebawem--po krótkiej świetności--smutny
+Impreza ta wzięła jednak niebawem - po krótkiej świetności - smutny
 obrót. Wkrótce okazała się bowiem konieczna translokacja ojca do dwóch
 pokojów na poddaszu, które służyły za rupieciarnie. Stamtąd dochodził
 już o wczesnym świcie zmieszany klangor głosów ptasich. Drewniane pudła
@@ -618,7 +618,7 @@ przerażeniu próbował wznieść się w powietrze. Zwolna przerzedzał się
 tuman skrzydlaty, aż w końcu na pobojowisku została sama Adela,
 wyczerpana, dysząca, oraz mój ojciec z miną zafrasowaną i zawstydzoną,
 gotów do przyjęcia każdej kapitulacji. W chwilę później schodził mój
-ojciec ze schodów swojego dominium--człowiek złamany, król-banita,
+ojciec ze schodów swojego dominium - człowiek złamany, król-banita,
 który stracił tron i królowanie.
 
 MANEKINY Ta ptasia impreza mego ojca była ostatnim wybuchem kolorowości,
@@ -698,7 +698,7 @@ fizjonomię. Subiekci spożywali go z namaszczeniem, z powagą
 kalendarzowej ceremonii. Zapach pieprzu rozchodził się po pokoju. A gdy
 wytarli bułką ostatek galarety ze swych talerzy, rozważając w myśli
 heraldykę następnych dni tygodnia, i na półmisku zostawały tylko głowy z
-wygotowanymi oczyma--czuliśmy wszyscy, że dzień został wspólnymi siłami
+wygotowanymi oczyma - czuliśmy wszyscy, że dzień został wspólnymi siłami
 pokonany i że reszta nie wchodziła już w rachubę. W samej rzeczy z
 resztą tą, wydaną na jej łaskę, Adela nie robiła sobie długich
 ceregieli. Wśród brzęku garnków i chlustów zimnej wody likwidowała z
@@ -732,7 +732,7 @@ lekkomyślnych i płochych, którymi zasypać mogły cale miasto, jak
 kolorową fantastyczną śnieżycą. Nagle było im gorąco i otwierały okno,
 ażeby w niecierpliwości swej samotni, w głodzie obcych twarzy,
 przynajmniej bezimienną twarz zobaczyć, do okna przyciśniętą. Wachlowały
-rozpalone swe policzki przed wzbierającą firankami nocą zimową--
+rozpalone swe policzki przed wzbierającą firankami nocą zimową - 
 odsłaniały płonące dekolty, pełne nienawiści do siebie i rywalizacji,
 gotowe stanąć do walki o tego pierrota, którego by ciemny powiew nocy
 przywiał na okno. Ach! jak mało wymagały one od rzeczywistości. Miały
@@ -753,26 +753,26 @@ drzwi podniósł firanki u okna, panienki dawały się oglądać, kręcąc się 
 biodrach, polśniewając emalią oczu, lakiem skrzypiących pantofelków,
 sprzączkami podwiązek pod wzdętą od wiatru sukienką; szmatki jęły umykać
 po podłodze, jak szczury, ku uchylonym drzwiom ciemnego pokoju, a ojciec
-mój przyglądał się uważnie prychającym osóbkom, szepcąc półgłosem:--
+mój przyglądał się uważnie prychającym osóbkom, szepcąc półgłosem: - 
 Genus avium... jeśli się nie mylę, scansores albo pistacci... w
 najwyższym stopniu godne uwagi. Przypadkowe to spotkanie stało się
 początkiem całej serii seansów, podczas których ojciec mój zdołał rychło
 oczarować obie panienki urokiem swej przedziwnej osobistości. Odpłacając
 się za pełną galanterii i dowcipu konwersację, którą zapełniał im pustkę
-wieczorów--dziewczęta pozwalały zapalonemu badaczowi studiować
+wieczorów - dziewczęta pozwalały zapalonemu badaczowi studiować
 strukturę swych szczupłych i tandetnych ciałek. Działo się to w toku
 konwersacji, z powagą i wytwornością, która najryzykowniejszym punktom
 tych badań odbierała dwuznaczny ich pozór. Odsuwając pończoszkę z kolana
 Pauliny i studiując rozmiłowanymi oczyma zwięzłą i szlachetną
-konstrukcję przegubu, ojciec mój mówił:--Jakże pełna uroku i jak
+konstrukcję przegubu, ojciec mój mówił: - Jakże pełna uroku i jak
 szczęśliwa jest forma bytu, którą panie obrały. Jakże piękna i prosta
 jest teza, którą dano wam swym życiem ujawnić. Lecz za to z jakim
 mistrzostwem, z jaką finezją wywiązują się panie z tego zadania. Gdybym
 odrzucając respekt przed Stwórcą, chciał się zabawić w krytykę
-stworzenia, wołałbym:--mniej treści, więcej formy! Ach, jakby ulżył
+stworzenia, wołałbym: - mniej treści, więcej formy! Ach, jakby ulżył
 światu ten ubytek treści. Więcej skromności w zamierzeniach, więcej
-wstrzemięźliwości w pretensjach--panowie demiurdzy--a świat byłby
-doskonalszy!--wołał mój ojciec akurat w momencie, gdy dłoń jego
+wstrzemięźliwości w pretensjach - panowie demiurdzy - a świat byłby
+doskonalszy! - wołał mój ojciec akurat w momencie, gdy dłoń jego
 wyłuskiwała białą łydkę Pauliny z uwięzi pończoszki. W tej chwili Adela
 stanęła w otwartych drzwiach jadalni, niosąc tacę z podwieczorkiem. Było
 to pierwsze spotkanie dwu tych wrogich potęg od czasu wielkiej rozprawy.
@@ -802,8 +802,8 @@ należytą ostrożnością, i unikając zgorszenia, tę nader kacerską
 doktrynę, która opętała wówczas na długie miesiące mego ojca i opanowała
 wszystkie jego poczynania.
 
-TRAKTAT O MANEKINACH ALBO WTÓRA KSIĘGA RODZAJU Demiurgos--mówił mój
-ojciec--nie posiadł monopolu na tworzenie--tworzenie jest przywilejem
+TRAKTAT O MANEKINACH ALBO WTÓRA KSIĘGA RODZAJU Demiurgos - mówił mój
+ojciec - nie posiadł monopolu na tworzenie - tworzenie jest przywilejem
 wszystkich duchów. Materii dana jest nieskończona płodność,
 niewyczerpana moc życiowa i zarazem uwodna siła pokusy, która nas nęci
 do formowania. W głębi materii kształtują się niewyraźne uśmiechy,
@@ -813,7 +813,7 @@ dreszczami. Czekając na ożywcze tchnienie ducha, przelewa się ona w
 sobie bez końca, kusi tysiącem słodkich okrąglizn i miękkości, które z
 siebie w ślepych rojeniach wymajacza. Pozbawiona własnej inicjatywy,
 lubieżnie podatna, po kobiecemu plastyczna, uległa wobec wszystkich
-impulsów--stanowi ona teren wyjęty spod prawa, otwarty dla wszelkiego
+impulsów - stanowi ona teren wyjęty spod prawa, otwarty dla wszelkiego
 rodzaju szarlatanerii i dyletantyzmów, domenę wszelkich nadużyć i
 wątpliwych manipulacji demiurgicznych. Materia jest najbierniejszą i
 najbezbronniejszą istotą w kosmosie. Każdy może ją ugniatać, formować,
@@ -824,8 +824,8 @@ Jest ono nieraz koniecznym gwałtem wobec opornych i skostniałych form
 bytu, które przestały być zajmujące. W interesie ciekawego i ważnego
 eksperymentu może ono nawet stanowić zasługę. Tu jest punkt wyjścia dla
 nowej apologii sadyzmu. Mój ojciec był niewyczerpany w gloryfikacji tego
-przedziwnego elementu, jakim była materia.--Nie ma materii martwej--
-nauczał--martwota jest jedynie pozorem, za którym ukrywają się nieznane
+przedziwnego elementu, jakim była materia. - Nie ma materii martwej - 
+nauczał - martwota jest jedynie pozorem, za którym ukrywają się nieznane
 formy życia. Skala tych form jest nieskończona, a odcienie i niuanse
 niewyczerpane. Demiurgos był w posiadaniu ważnych i ciekawych recept
 twórczych. Dzięki nim stworzył on mnogość rodzajów, odnawiających się
@@ -848,20 +848,20 @@ ironicznym palcem, póki nie dołaskotał się błysku zrozumienia i śmiechu,
 kapitulować. Dziewczęta siedziały nieruchomo, lampa kopciła, sukno pod
 igłą maszyny dawno się zsunęło, a maszyna stukotała pusto, stębnując
 czarne, bezgwiezdne sukno, odwijające się z postawu nocy zimowej za
-oknem.--Zbyt długo żyliśmy pod terrorem niedościgłej doskonałości
-Demiurga--mówił mój ojciec--zbyt długo doskonałość jego tworu
+oknem. - Zbyt długo żyliśmy pod terrorem niedościgłej doskonałości
+Demiurga - mówił mój ojciec - zbyt długo doskonałość jego tworu
 paraliżowała naszą własną twórczość. Nie chcemy z nim konkurować. Nie
 mamy ambicji mu dorównać. Chcemy być twórcami we własnej, niższej
 sferze, pragniemy dla siebie twórczości, pragniemy rozkoszy twórczej,
-pragniemy--jednym słowem--demiurgii.--Nie wiem, w czyim imieniu
+pragniemy - jednym słowem - demiurgii. - Nie wiem, w czyim imieniu
 proklamował mój ojciec te postulaty, jaka zbiorowość, jaka korporacja,
 sekta czy zakon, nadawała swą solidarnością patos jego słowom. Co do
 nas, to byliśmy dalecy od wszelkich zakusów demłurgicznych. Lecz ojciec
 mój rozwinął tymczasem program tej wtórej demiurgii, obraz tej drugiej
 generacji stworzeń, która stanąć miała w otwartej opozycji do panującej
-epoki.--Nie zależy nam--mówił on--na tworach o długim oddechu, na
+epoki. - Nie zależy nam - mówił on - na tworach o długim oddechu, na
 istotach na daleką metę. Nasze kreatury nie będą bohaterami romansów w
-wielu tomach. Ich role będą krótkie, lapidarne, ich charaktery--bez
+wielu tomach. Ich role będą krótkie, lapidarne, ich charaktery - bez
 dalszych planów. Często dla jednego gestu, dla jednego słowa podejmiemy
 się trudu powołania ich do życia na tę jedną chwilę. Przyznajemy
 otwarcie: nie będziemy kładli nacisku na trwałość ani solidność
@@ -876,9 +876,9 @@ powołamy do życia innego człowieka. Taki jest nasz smak, to będzie świat
 według naszego gustu. Demiurgos kochał się w wytrawnych, doskonałych i
 skomplikowanych materiałach, my dajemy pierwszeństwo tandecie. Po prostu
 porywa nas, zachwyca taniość, lichota, tandetność materiału. Czy
-rozumiecie--pytał mój ojciec--głęboki sens tej słabości, tej pasji do
+rozumiecie - pytał mój ojciec - głęboki sens tej słabości, tej pasji do
 pstrej bibułki, do papier mâ ché , do lakowej farby, do kłaków i
-trociny? To jest--mówił z bolesnym uśmiechem--nasza miłość do materii
+trociny? To jest - mówił z bolesnym uśmiechem - nasza miłość do materii
 jako takiej, do jej puszystości i porowatości, do jej jedynej,
 mistycznej konsystencji. Demiurgos, ten wielki mistrz i artysta, czyni
 ją niewidzialną, każe jej zniknąć pod grą życia. My, przeciwnie, kochamy
@@ -887,8 +887,8 @@ gestem, pod każdym ruchem widzieć jej ociężały wysiłek, jej bezwład, jej
 słodką niedźwiedziowatość. Dziewczęta siedziały nieruchomo z szklanymi
 oczyma. Twarze ich były wyciągnięte i zgłupiałe zasłuchaniem, policzki
 podmalowane wypiekami, trudno było w tej chwili ocenić, czy należą do
-pierwszej, czy do drugiej generacji stworzenia.--Słowem--konkludował
-mój ojciec--chcemy stworzyć po raz wtóry człowieka, na obraz i
+pierwszej, czy do drugiej generacji stworzenia. - Słowem - konkludował
+mój ojciec - chcemy stworzyć po raz wtóry człowieka, na obraz i
 podobieństwo manekinu. Tu musimy dla wierności sprawozdawczej opisać
 pewien drobny i błahy incydent, który zaszedł w tym punkcie prelekcji i
 do którego nie przywiązujemy żadnej wagi. Incydent ten, całkowicie
@@ -907,11 +907,11 @@ po obu bokach. Wszystkie trzy patrzyły rozszerzonymi oczami na ojca. Mój
 ojciec chrząknął, zamilkł, pochylił się i stał się nagle bardzo
 czerwony. W jednej chwili lineatura jego twarzy, dopiero co tak
 rozwichrzona i pełna wibracji, zamknęła się na spokorniałych rysach. On
-- herezjarcha natchniony, ledwo wypuszczony z wichru uniesienia--złożył
+- herezjarcha natchniony, ledwo wypuszczony z wichru uniesienia - złożył
 się nagle w sobie, zapadł i zwinął. A może wymieniono go na innego. Ten
 inny siedział sztywny, bardzo czerwony, ze spuszczonymi oczyma. Panna
 Polda podeszła i pochyliła się nad nim. Klepiąc go lekko po plecach,
-mówiła tonem łagodnej zachęty:--Jakub będzie rozsądny, Jakub posłucha,
+mówiła tonem łagodnej zachęty: - Jakub będzie rozsądny, Jakub posłucha,
 Jakub nie będzie uparty. No, proszę... Jakub, Jakub... Wypięty
 pantofelek Adeli drżał lekko i błyszczał jak języczek węża. Mój ojciec
 podniósł się powoli ze spuszczonymi oczyma, postąpił krok naprzód, jak
@@ -924,8 +924,8 @@ odnowioną swadą ciemny i zawiły swój temat. Lineatura jego zmarszczek
 rozwijała się i zawijała z wyrafinowaną chytrością. W każdej spirali
 ukryty był pocisk ironii. Ale czasami inspiracja rozszerzała kręgi jego
 zmarszczek, które rosły jakąś ogromną wirującą grozą, uchodząc w
-milczących wolutach w głąb nocy zimowej.--Figury panopticum, moje panie
-- zaczął on--kalwaryjskie parodie manekinów, ale nawet w tej postaci
+milczących wolutach w głąb nocy zimowej. - Figury panopticum, moje panie
+- zaczął on - kalwaryjskie parodie manekinów, ale nawet w tej postaci
 strzeżcie się lekko je traktować. Materia nie zna żartów. Jest ona
 zawsze pełna tragicznej powagi. Kto ośmiela się myśleć, że można igrać z
 materią, że kształtować ją można dla żartu, że żart nie wrasta w nią,
@@ -971,9 +971,9 @@ zażądała bardzo dobitnie... Panienki siedziały sztywno, ze spuszczonymi
 oczyma, w dziwnej drętwości...
 
 TRAKTAT O MANEKINACH Dokończenie Któregoś z następnych wieczorów ojciec
-mój w te słowa ciągnął dalej swą prelekcję:--Nie o tych
+mój w te słowa ciągnął dalej swą prelekcję: - Nie o tych
 nieporozumieniach ucieleśnionych, nie o tych smutnych parodiach, moje
-panie, owocach prostackiej i wulgarnej niepowściągliwości--chciałem
+panie, owocach prostackiej i wulgarnej niepowściągliwości - chciałem
 mówić zapowiadając mą rzecz o manekinach. Miałem na myśli coś innego. Tu
 ojciec mój zaczął budować przed naszymi oczyma obraz tej wymarzonej
 przez niego „generaiio aequivoca”, jakiegoś pokolenia istot na wpół
@@ -984,8 +984,8 @@ mylił. Były to w istocie istoty amorfne, bez wewnętrznej struktury,
 płody imitatywnej tendencji materii, która obdarzona pamięcią, powtarza
 z przyzwyczajenia raz przyjęte kształty. Skala morfologii, której
 podlega materia, jest w ogóle ograniczona i pewien zasób form powtarza
-się wciąż na różnych kondygnacjach bytu. Istoty te--ruchliwe, wrażliwe
-na bodźce, a jednak dalekie od prawdziwego życia--można było otrzymać
+się wciąż na różnych kondygnacjach bytu. Istoty te - ruchliwe, wrażliwe
+na bodźce, a jednak dalekie od prawdziwego życia - można było otrzymać
 zawieszając pewne skomplikowane koloidy w roztworach soli kuchennej.
 Koloidy te po kilku dniach formowały się, organizowały w pewne
 zagęszczenia substancji przypominającej niższe formy fauny. U istot tak
@@ -995,8 +995,8 @@ białkowych ani w ogóle związków węgla. Wszelako prymitywne te formy były
 niczym w porównaniu z bogactwem kształtów i wspaniałości pseudofauny i
 flory, która pojawia się niekiedy w pewnych ściśle określonych
 środowiskach. Środowiskami tymi są stare mieszkania, przesycone
-emanacjami wielu żywotów i zdarzeń--zużyte atmosfery, bogate w
-specyficzne ingrediencje marzeń ludzkich--rumowiska, obfitujące w humus
+emanacjami wielu żywotów i zdarzeń - zużyte atmosfery, bogate w
+specyficzne ingrediencje marzeń ludzkich - rumowiska, obfitujące w humus
 wspomnień, tęsknot, jałowej nudy. Na takiej glebie owa pseudowegetacja
 kiełkowała szybko i powierzchownie, pasożytowała obficie i efemerycznie,
 pędziła krótkotrwałe generacje, które rozkwitały raptownie i świetnie,
@@ -1006,15 +1006,15 @@ kadencjach rytmów; nic dziwnego, że schodzą na manowce dalekich,
 ryzykownych rojeń. Rdzeń mebli, ich substancja musi już być rozluźniona,
 zdegenerowana i podległa występnym pokusom: wtedy na tej chorej,
 zmęczonej i zdziczałej glebie wykwita, jak piękna wysypka, nalot
-fantastyczny, kolorowa, bujająca pleśń.--Wiedzą panie--mówił ojciec
-mój--że w starych mieszkaniach bywają pokoje, o których się zapomina.
+fantastyczny, kolorowa, bujająca pleśń. - Wiedzą panie - mówił ojciec
+mój - że w starych mieszkaniach bywają pokoje, o których się zapomina.
 Nie odwiedzane miesiącami, więdną w opuszczeniu między starymi murami i
 zdarza się, że zasklepiają się w sobie, zarastają cegłą i, raz na zawsze
 stracone dla naszej pamięci, powoli tracą też swą egzystencję. Drzwi,
 prowadzące do nich z jakiegoś podestu tylnych schodów, mogą być tak
 dhigo przeoczane przez domowników, aż wrastają, wchodzą w ścianę, która
-zaciera ich ślad w fantastycznym rysunku pęknięć i rys.--Wszedłem raz--
-mówił ojciec mój--wczesnym rankiem na schyłku zimy, po wielu miesiącach
+zaciera ich ślad w fantastycznym rysunku pęknięć i rys. - Wszedłem raz - 
+mówił ojciec mój - wczesnym rankiem na schyłku zimy, po wielu miesiącach
 nieobecności, do takiego na wpół zapomnianego traktu i zdumiony byłem
 wyglądem tych pokojów. Z wszystkich szpar w podłodze, z wszystkich
 gzymsów i framug wystrzelały cienkie pędy i napełniały szare powietrze
@@ -1026,14 +1026,14 @@ fontanny koronkowego listowia, bijące aż pod malowane niebo sufitu
 rozpylonym chlorofilem. W przyspieszonym procesie kwitnienia kiełkowały
 w tym listowiu ogromne, białe i różowe kwiaty, pączkowały w oczach,
 bujały od środka różowym miąższem i przelewały się przez brzegi, gubiąc
-płatki i rozpadając się w prędkim przekwitaniu.--Byłem szczęśliwy--
-mówił mój ojciec--z tego niespodzianego rozkwitu, który napełnił
+płatki i rozpadając się w prędkim przekwitaniu. - Byłem szczęśliwy - 
+mówił mój ojciec - z tego niespodzianego rozkwitu, który napełnił
 powietrze migotliwym szelestem, łagodnym szumem, przesypującym się jak
 kolorowe confetti przez cienkie rózgi gałązek. Widziałem, jak z drgania
 powietrza, z fermentacji zbyt bogatej aury wydziela się i materializuje
 to pospieszne kwitnienie, przelewanie się i rozpadanie fantastycznych
 oleandrów, które napełniły pokój rzadką, leniwą śnieżycą wielkich,
-różowych kiści kwietnych.--Nim zapadł wieczór--kończył ojciec--nie
+różowych kiści kwietnych. - Nim zapadł wieczór - kończył ojciec - nie
 było już śladu tego świetnego rozkwitu. Cała złudna ta fatamorgana była
 tylko mistyfikacją, wypadkiem dziwnej symulacji materii, która podszywa
 się pod pozór życia. Ojciec mój był dnia tego dziwnie ożywiony,
@@ -1043,8 +1043,8 @@ odcieni, jakie przybierała wielokształtna materia. Fascynowały go formy
 graniczne, wątpliwe i problematyczne, jak ektoplazma somnambulików,
 pseudomateria, emanacja kataleptyczna mózgu, która w pewnych wypadkach
 rozrastała się z ust uśpionego na cały stół, napełniała cały pokój, jako
-bujająca, rzadka tkanka, astralne ciasto, na pograniczu ciała i ducha.--
-Kto wie--mówił--ile jest cierpiących, okaleczonych, fragmentarycznych
+bujająca, rzadka tkanka, astralne ciasto, na pograniczu ciała i ducha. - 
+Kto wie - mówił - ile jest cierpiących, okaleczonych, fragmentarycznych
 postaci życia, jak sztucznie sklecone, gwoździami na gwałt zbite życie
 szaf i stołów, ukrzyżowanego drzewa, cichych męczenników okrutnej
 pomysłowości ludzkiej. Straszliwe transplantacje obcych i nienawidzących
@@ -1056,9 +1056,9 @@ gdy to mówił, rozeszła się zamyśloną lineaturą zmarszczek, stała się
 podobna do sęków i słojów starej deski, z której zheblowano wszystkie
 wspomnienia. Przez chwilę myśleliśmy, że ojciec popadnie w stan
 drętwoty, który nawiedzał go czasem, ale ocknął się nagle, opamiętał i
-tak ciągnął dalej:--Dawne, mistyczne plemiona balsamowały swych
+tak ciągnął dalej: - Dawne, mistyczne plemiona balsamowały swych
 umarłych. W ściany ich mieszkań były wprawione, wmurowane ciała, twarze:
-w salonie stał ojciec--wypchany, wygarbowana żona-nieboszczka była
+w salonie stał ojciec - wypchany, wygarbowana żona-nieboszczka była
 dywanem pod stołem. Znałem pewnego kapitana, który miał w swej kajucie
 lampę-meluzynę, zrobioną przez malajskich balsamistów z jego
 zamordowanej kochanki. Na głowie miała ogromne rogi jelenie. W ciszy
@@ -1068,8 +1068,8 @@ pękająca od cichego szeptu. Głowonogi, żółwie i ogromne kraby,
 zawieszone na belkach sufitu jako kandelabry i pająki, przebierały w tej
 ciszy bez końca nogami, szły i szły na miejscu... Twarz mojego ojca
 przybrała naraz wyraz troski i smutku, gdy myśli jego na drogach nie
-wiedzieć jakich asocjacji przeszły do nowych przykładów:--Czy mam
-przemilczeć--mówił przyciszonym głosem--że brat mój na skutek długiej
+wiedzieć jakich asocjacji przeszły do nowych przykładów: - Czy mam
+przemilczeć - mówił przyciszonym głosem - że brat mój na skutek długiej
 i nieuleczalnej choroby zamienił się stopniowo w zwój kiszek gumowych,
 że biedna moja kuzynka dniem i nocą nosiła go w poduszkach, nucąc
 nieszczęśliwemu stworzeniu nieskończone kołysanki nocy zimowych? Czy
@@ -1077,8 +1077,8 @@ może być coś smutniejszego niż człowiek zamieniony w kiszkę hegarową? Co
 za rozczarowanie dla rodziców, co za dezorientacja dla ich uczuć, co za
 rozwianie wszystkich nadziei, wiązanych z obiecującym młodzieńcem! A
 jednak wierna miłość biednej kuzynki towarzyszyła mu i w tej przemianie.
-- Ach! nie mogę już dłużej, nie mogę tego słuchać!--jęknęła Polda
-przechylając się na krześle.--Ucisz go, Adelo... Dziewczęta wstały,
+- Ach! nie mogę już dłużej, nie mogę tego słuchać! - jęknęła Polda
+przechylając się na krześle. - Ucisz go, Adelo... Dziewczęta wstały,
 Adela podeszła do ojca i wyciągniętym palcem uczyniła ruch zaznaczający
 łaskotanie. Ojciec stropił się, zamilkł i zaczął, pełen przerażenia,
 cofać się tyłem przed kiwającym się palcem Adeli. Ta szła za nim ciągle,
@@ -1095,9 +1095,9 @@ pierwszego wejrzenia zdobyła sobie ta kruszynka życia cały zachwyt, cały
 entuzjazm chłopięcej duszy. Z jakiego nieba spadł tak niespodzianie ten
 ulubieniec bogów, milszy sercu od najpiękniejszych zabawek? Że też
 stare, zgoła nieinteresujące pomywaczki wpadają niekiedy na tak świetne
-pomysły i przynoszą z przedmieścia--o całkiem wczesnej,
-transcendentalnej porannej godzinie--takiego oto pieska do naszej
-kuchni! Ach! było się jeszcze--niestety--nieobecnym, nieurodzonym z
+pomysły i przynoszą z przedmieścia - o całkiem wczesnej,
+transcendentalnej porannej godzinie - takiego oto pieska do naszej
+kuchni! Ach! było się jeszcze - niestety - nieobecnym, nieurodzonym z
 ciemnego łona snu, a już to szczęście ziściło się, już czekało na nas,
 niedołężnie leżące na chłodnej podłodze kuchni, nie docenione przez
 Adelę i domowników. Dlaczego nie obudzono mnie wcześniej! Talerzyk mleka
@@ -1131,16 +1131,16 @@ mordkę z kroplą mleka na brodzie i wycofać się niedołężnie z kąpieli
 mlecznej. Chód jego był niezgrabnym toczeniem się, bokiem na ukos w
 niezdecydowanym kierunku, po linii trochę pijanej i chwiejnej. Dominantą
 jego nastroju była jakaś nieokreślona i zasadnicza żałość, sieroctwo i
-bezradność--niezdolność do zapełnienia czymś pustki życia pomiędzy
+bezradność - niezdolność do zapełnienia czymś pustki życia pomiędzy
 sensacjami posiłków. Objawiało się to bezplanowością i niekonsekwencją
 ruchów, irracjonalnymi napadami nostalgii z żałosnym skomleniem i
 niemożnością znalezienia sobie miejsca. Nawet jeszcze w głębi snu, w
 którym potrzebę oparcia się i przytulenia zaspokajać musiał używając do
-tego własnej swej osoby, zwiniętej w kłębek drżący--towarzyszyło mu
-poczucie osamotnienia i bezdomności. Ach, życie--młode i wątłe życie,
+tego własnej swej osoby, zwiniętej w kłębek drżący - towarzyszyło mu
+poczucie osamotnienia i bezdomności. Ach, życie - młode i wątłe życie,
 wypuszczone z zaufanej ciemności, z przytulnego ciepła łona
 macierzystego w wielki i obcy, świetlany świat, jakże kurczy się ono i
-cofa, jak wzdraga się zaakceptować tę imprezę, którą mu proponują--
+cofa, jak wzdraga się zaakceptować tę imprezę, którą mu proponują - 
 pełne awersji i zniechęcenia! Lecz zwolna mały Nemrod (otrzymał był to
 dumne i wojownicze imię) zaczyna smakować w życiu. Wyłączne opanowanie
 obrazem macierzystej prajedni ustępuje urokowi wielości. Świat zaczyna
@@ -1149,23 +1149,23 @@ czworobok porannego słońca na podłodze, na którym tak dobrze jest
 położyć się, ruchy własnych członków, własne łapki, ogonek, figlarnie
 wyzywający do zabawy z samym sobą, pieszczoty ręki ludzkiej, pod którymi
 zwolna dojrzewa pewna swawolność, wesołość rozpierająca ciało i rodząca
-potrzebę zgoła nowych, gwałtownych i ryzykownych ruchów--wszystko to
+potrzebę zgoła nowych, gwałtownych i ryzykownych ruchów - wszystko to
 przekupuje, przekonywa i zachęca do przyjęcia, do pogodzenia się z
 eksperymentem życia. I jeszcze jedno. Nemrod zaczyna rozumieć, że to, co
 mu się tu podsuwa, mimo pozorów nowości jest w gruncie rzeczy czymś, co
-już było--było wiele razy--nieskończenie wiele razy. Jego ciało
+już było - było wiele razy - nieskończenie wiele razy. Jego ciało
 poznaje sytuacje, wrażenia i przedmioty. W gruncie rzeczy to wszystko
 nie dziwi go zbytnio. W obliczu każdej nowej sytuacji daje nura w swoją
-pamięć, w głęboką pamięć ciała, i szuka omackiem, gorączkowo--i bywa,
+pamięć, w głęboką pamięć ciała, i szuka omackiem, gorączkowo - i bywa,
 że znajduje w sobie odpowiednią reakcję już gotową: mądrość pokoleń,
 złożoną w jego plazmie, w jego nerwach. Znajduje jakieś czyny, decyzje,
 o których sam nie wiedział, że już w nim dojrzały, że czekały na to, by
 wyskoczyć. Sceneria jego młodego życia, kuchnia z wonnymi cebrami, ze
 ścierkami o skomplikowanej i intrygującej woni, z kłapaniem pantofli
-Adeli, z jej hałaśliwym krzątaniem się--nie straszy go więcej. Przywykł
+Adeli, z jej hałaśliwym krzątaniem się - nie straszy go więcej. Przywykł
 uważać ją za swoją domenę, zadomowił się w niej i począł rozwijać w
 stosunku do niej niejasne poczucie przynależności, ojczyzny. Chyba że
-niespodzianie spadał nań kataklizm w postaci szorowania podłogi--
+niespodzianie spadał nań kataklizm w postaci szorowania podłogi - 
 obalenie praw natury, chlusty ciepłego ługu, podmywające wszystkie
 meble, i groźny szurgot szczotek Adeli. Ale niebezpieczeństwo mija,
 szczotka uspokojona i nieruchoma leży cicho w kącie, schnąca podłoga
@@ -1191,13 +1191,13 @@ odwiecznym karakonim rytuałem. Wszelako uczucia nienawiści nie mają
 jeszcze trwałości i mocy w duszy pieska. Nowoobudzona radość życia
 przeistacza każde uczucie w wesołość. Nemrod szczeka jeszcze, lecz sens
 tego szczekania zmienił się niepostrzeżenie, stało się ono swoją własną
-parodią--pragnąc w gruncie rzeczy wysłowić niewymowną udatność tej
+parodią - pragnąc w gruncie rzeczy wysłowić niewymowną udatność tej
 świetnej imprezy życia, pełnej pikanterii, niespodzianych dreszczyków i
 point.
 
 PAN W kącie między tylnymi ścianami szop i przybudówek był zaułek
 podwórza, najdalsza, ostatnia odnoga, zamknięta między komorę, wychodek
-i tylną ścianę kurnika--głucha zatoka, poza którą nie było już wyjścia.
+i tylną ścianę kurnika - głucha zatoka, poza którą nie było już wyjścia.
 Był to najdalszy przylądek, Gibraltar tego podwórza, bijący rozpaczliwie
 głową w ślepy parkan z poziomych desek, zamykającą i ostateczną ścianę
 tego świata. Spod jego omszonych dyli wyciekała strużka czarnej,
@@ -1241,7 +1241,7 @@ chwastem wszelkim, aż w samym końcu między ścianami, w szerokiej
 prostokątnej zatoce tracił wszelką miarę i wpadał w szał. Tam to nie był
 już sad, tylko paroksyzm szaleństwa, wybuch wściekłości, cyniczny
 bezwstyd i rozpusta. Tam, rozbestwione, dając upust swej pasji,
-panoszyły się puste, zdziczałe kapusty łopuchów--ogromne wiedźmy,
+panoszyły się puste, zdziczałe kapusty łopuchów - ogromne wiedźmy,
 rozdziewające się w biały dzień ze swych szerokich spódnic, zrzucając je
 z siebie, spódnica za spódnicą, aż ich wzdęte, szelestne, dziurawe
 łachmany oszalałymi płatami grzebały pod sobą kłótliwe to plemię
@@ -1258,13 +1258,13 @@ w obłęd. O tej godzinie opanowywał mnie szał łowienia motyli, pasja
 ścigania tych migocących plamek, tych błędnych, białych płatków,
 trzęsących się w rozognionym powietrzu niedołężnym gzygzakiem. I
 zdarzyło się wówczas, że któraś z tych jaskrawych plamek rozpadła się w
-locie na dwie, potem na trzy--i ten drgający, oślepiająco biały
+locie na dwie, potem na trzy - i ten drgający, oślepiająco biały
 trójpunkt wiódł mnie, jak błędny ognik, przez szał bodiaków, palących
 się w słońcu. Dopiero na granicy łopuchów zatrzymałem się, nie śmiejąc
 się pogrążyć w to głuche zapadlisko. Wtedy nagle ujrzałem go. Zanurzony
 po pachy w łopuchach, kucał przede mną. Widziałem jego grube bary w
 brudnej koszuli i niechlujny strzęp surduta. Przyczajony jak do skoku,
-siedział tak--z barami jakby wielkim ciężarem zgarbionymi. Ciało jego
+siedział tak - z barami jakby wielkim ciężarem zgarbionymi. Ciało jego
 dyszało z natężenia, a z miedzianej, błyszczącej w słońcu twarzy lał się
 pot. Nieruchomy, zdawał się ciężko pracować, mocować się bez ruchu z
 jakimś ogromnym brzemieniem. Stałem, przygwożdżony jego wzrokiem, który
@@ -1283,7 +1283,7 @@ wybaczał się coraz bardziej, aż wyłamał się ryczącym, charczącym kaszlem
 śmiechu. Do głębi wstrząśnięty, widziałem, jak hucząc śmiechem z
 potężnych piersi, dźwignął się powoli z kucek i zgarbiony jak goryl, z
 rękoma w opadających łachmanach spodni, uciekał, człapiąc przez łopocące
-blachy łopuchów, wielkimi skokami--Pan bez fletu, cofający się w
+blachy łopuchów, wielkimi skokami - Pan bez fletu, cofający się w
 popłochu do swych ojczystych kniei.
 
 PAN KAROL Po południu w sobotę mój wuj, Karol, wdowiec słomiany,
@@ -1305,17 +1305,17 @@ się o szarym świcie zdyszany, oblany potem, wyrzucony na brzeg tego
 stosu pościeli, którego zmóc nie mógł w ciężkich zapasach nocnych. Tak
 na wpół wyrzucony z toni snu, wisiał przez chwilę nieprzytomny na
 krawędzi nocy, chwytając piersiami powietrze, a pościel rosła dokoła
-niego, puchła i nakisała--i zarastała go znowu zwałem ciężkiego,
+niego, puchła i nakisała - i zarastała go znowu zwałem ciężkiego,
 białawego ciasta. Spał tak do późnego przedpołudnia, podczas gdy
 poduszki układały się w wielką, białą, płaską równinę, po której
 wędrował uspokojony sen jego. Tymi białymi gościńcami powracał powoli do
-siebie, do dnia, do jawy--i wreszcie otwierał oczy, jak śpiący pasażer,
+siebie, do dnia, do jawy - i wreszcie otwierał oczy, jak śpiący pasażer,
 gdy pociąg zatrzymuje się na stacji. W pokoju panował odstały półmrok z
 osadem wielu dni samotności i ciszy. Tylko okno kipiało od rannego
 rojowiska much i story płonęły jaskrawo. Pan Karol wyziewał ze swego
 ciała, z głębi jam cielesnych, resztki dnia wczorajszego. To ziewanie
 chwytało go tak konwulsyjnie, jak gdyby chciało go odwrócić na nice. Tak
-wyrzucał z siebie ten piasek, te ciężary--nie strawione restancje dnia
+wyrzucał z siebie ten piasek, te ciężary - nie strawione restancje dnia
 wczorajszego. Ulżywszy sobie w ten sposób, i swobodniejszy, wciągał do
 notesu wydatki, kalkulował, obliczał i marzył. Potem leżał długo
 nieruchomy, z szklanymi oczyma, które były koloru wody, wypukłe i
@@ -1346,7 +1346,7 @@ otumanieni z tych zatraconych dali powracał znów do siebie i do chwili;
 widział swe stopy na dywanie, tłuste i delikatne jak u kobiety, i powoli
 wyjmował złote spinki z mankietów dziennej koszuli. Potem szedł do
 kuchni i znajdował tam w cienistym kącie wiaderko z wodą, krążek
-cichego, czujnego zwierciadła, które nań tam czekało--jedyna żywa i
+cichego, czujnego zwierciadła, które nań tam czekało - jedyna żywa i
 wiedząca istota w tym pustym mieszkaniu. Nalewał do miednicy wody i
 kosztował skórą jej młodej i odstałej, słodkawej mokrości. Długo i
 starannie robił toaletę, nie spiesząc się i włączając pauzy między
@@ -1362,19 +1362,19 @@ toaletę wśród tych mebli, które tolerowały go w milczeniu, z nieobecną
 miną, i wreszcie był gotów, to stojąc na odejściu z kapeluszem w ręku,
 czuł się zażenowany, że i w ostatniej chwili nie mógł znaleźć słowa,
 które by rozwiązało to wrogie milczenie, i odchodził ku drzwiom
-zrezygnowany, zwolna, ze spuszczoną głową--gdy w przeciwną stronę
-oddalał się tymczasem bez pośpiechu--w głąb zwierciadła--ktoś
-odwrócony na zawsze plecami--przez pustą amfiladę pokojów, które nie
+zrezygnowany, zwolna, ze spuszczoną głową - gdy w przeciwną stronę
+oddalał się tymczasem bez pośpiechu - w głąb zwierciadła - ktoś
+odwrócony na zawsze plecami - przez pustą amfiladę pokojów, które nie
 istniały.
 
 SKLEPY CYNAMONOWE W okresie najkrótszych, sennych dni zimowych, ujętych
 z obu stron, od poranku i od wieczora, w futrzane krawędzie zmierzchów,
 gdy miasto rozgałęziało się coraz głębiej w labirynty zimowych nocy, z
-trudem przywoływane przez krótki świt do opamiętania, do powrotu--
+trudem przywoływane przez krótki świt do opamiętania, do powrotu - 
 ojciec mój był już zatracony, zaprzedany, zaprzysiężony tamtej sferze.
 Twarz jego i głowa zarastały wówczas bujnie i dziko siwym włosem,
 sterczącym nieregularnie wiechciami, szczecinami, długimi pędzlami,
-strzelającymi z brodawek, z brwi, z dziurek od nosa--co nadawało jego
+strzelającymi z brodawek, z brwi, z dziurek od nosa - co nadawało jego
 fizjonomii wygląd starego, nastroszonego lisa. Węch jego i słuch
 zaostrzał się niepomiernie i znać było po grze jego milczącej i napiętej
 twarzy, że za pośrednictwem tych zmysłów pozostaje on w ciągłym
@@ -1470,7 +1470,7 @@ spuszczonymi oczyma, w dyskretnym milczeniu, i pełni byli mądrości i
 wyrozumienia dla ich najtajniejszych życzeń. Ale nade wszystko była tam
 jedna księgarnia, w której raz oglądałem rzadkie i zakazane druki,
 publikacje tajnych klubów, zdejmując zasłonę z tajemnic dręczących i
-upojnych. Tak rzadko zdarzała się sposobność odwiedzania tych sklepów--
+upojnych. Tak rzadko zdarzała się sposobność odwiedzania tych sklepów - 
 i w dodatku z małą, lecz wystarczającą sumą pieniędzy w kieszeni. Nie
 można było pominąć tej okazji mimo ważności misji powierzonej naszej
 gorliwości. Trzeba się było zapuścić według mego obliczenia w boczną
@@ -1484,7 +1484,7 @@ konfiguracja ulic nie odpowiadała oczekiwanemu obrazowi. Sklepów ani
 śladu. Szedłem ulicą, której domy nie miały nigdzie bramy wchodowej,
 tylko okna szczelnie zamknięte, ślepe odblaskiem księżyca. Po drugiej
 stronie tych domów musi prowadzić właściwa ulica, od której te domy są
-dostępne--myślałem sobie. Z niepokojem przyspieszałem kroku, rezygnując
+dostępne - myślałem sobie. Z niepokojem przyspieszałem kroku, rezygnując
 w duchu z myśli zwiedzenia sklepów. Byle tylko wydostać się stąd prędko
 w znane okolice miasta. Zbliżałem się do wylotu, pełen niepokoju, gdzie
 też ona mnie wyprowadzi. Wyszedłem na szeroki, rzadko zabudowany
@@ -1494,7 +1494,7 @@ ozdobne budynki bogaczy. W przerwach między nimi widniały parki i mury
 sadów. Obraz przypominał z daleka ulicę Leszniańską w jej dolnych i
 rzadko zwiedzanych okolicach. Światło księżyca, rozpuszczone w
 tysiącznych barankach, w łuskach srebrnych na niebie, było blade i tak
-jasne jak w dzień--tylko parki i ogrody czerniały w tym srebrnym
+jasne jak w dzień - tylko parki i ogrody czerniały w tym srebrnym
 krajobrazie. Przyjrzawszy się bacznie jednemu z budynków, doszedłem do
 przekonania, że mam przed sobą tylną i nigdy nie widzianą stronę gmachu
 gimnazjalnego. Właśnie dochodziłem do bramy, która ku memu zdziwieniu
@@ -1513,7 +1513,7 @@ stawiał zbyt ścisłych wymagań. Niektórzy przynosili sobie z domu
 poduszki i układali się na ławkach do powierzchownej drzemki. I tylko
 najpilniejsi rysowali pod samą świecą, w złotym kręgu jej blasku.
 Czekaliśmy zazwyczaj długo na przyjście profesora, nudząc się wśród
-sennych rozmów. Wreszcie otwierały się drzwi jego pokoju i wchodził--
+sennych rozmów. Wreszcie otwierały się drzwi jego pokoju i wchodził - 
 mały, z piękną brodą, pełen ezoterycznych uśmiechów, dyskretnych
 przemilczeń i aromatu tajemnicy. Szybko zaciskał za sobą drzwi gabinetu,
 przez które w momencie otworzenia tłoczyła się za jego głową ciżba
@@ -1521,7 +1521,7 @@ gipsowych cieni, fragmentów klasycznych, bolesnych Niobid, Danaid i
 Tantalidów, cały smutny i jałowy Olimp, więdnący od lat w tym muzeum
 gipsów. Zmierzch tego pokoju mętniał i za dnia i przelewał się sennie od
 gipsowych marzeń, pustych spojrzeń, blednących owali i zamyśleń
-odchodzących w nicość. Lubiliśmy nieraz podsłuchiwać pod drzwiami--
+odchodzących w nicość. Lubiliśmy nieraz podsłuchiwać pod drzwiami - 
 ciszy, pełnej westchnień i szeptów tego kruszejącego w pajęczynach
 rumowiska, tego rozkładającego się w nudzie i monotonii zmierzchu bogów.
 Profesor przechadzał się dostojnie, pełen namaszczenia, wzdłuż pustych
@@ -1587,7 +1587,7 @@ bijącym sercem, gotów do ucieczki za najlżejszym szmerem. Jakże mógłbym,
 przyłapany, usprawiedliwić to moje nocne szpiegowanie, moje zuchwałe
 wścibstwo? W którymś z głębokich pluszowych foteli mogła, nie
 dostrzeżona i cicha, siedzieć córeczka dyrektora i podnieść nagle na
-mnie oczy znad książki--czarne, sybilińskie, spokojne oczy, których
+mnie oczy znad książki - czarne, sybilińskie, spokojne oczy, których
 spojrzenia nikt z nas wytrzymać nie umiał. Ale cofnąć się w połowie
 drogi, nie dokonawszy powziętego planu, poczytałbym był sobie za
 tchórzostwo. Zresztą głęboka cisza panowała dookoła w pełnych przepychu
@@ -1611,7 +1611,7 @@ jeszcze nieskończoną drogę i, zatopiony w swych zawiłych procederach
 niebieskich, nie myślał o świcie. Na ulicy czerniało kilka dorożek,
 rozjechanych i rozklekotanych jak kalekie, drzemiące kraby czy karakony.
 Woźnica nachylił się z wysokiego kozła. Miał twarz drobną, czerwoną i
-dobroduszną.--Pojedziemy, paniczu?--zapytał. Powóz zadygotał we
+dobroduszną. - Pojedziemy, paniczu? - zapytał. Powóz zadygotał we
 wszystkich stawach i przegubach swego wieloczłonkowego ciała i ruszył na
 lekkich obręczach. Ale kto w taką noc powierza się kaprysom
 nieobliczalnego dorożkarza? Wśród klekotu szprych, wśród dudnienia pudła
@@ -1622,8 +1622,8 @@ kiwając nań przyjaźnie rękami. Odpowiedział im coś radośnie, po czym nie
 zatrzymując pojazdu, rzucił mi lejce na kolana, spuścił się z kozła i
 przyłączył do gromady kolegów. Koń, stary mądry koń dorożkarski,
 oglądnął się pobieżnie i pojechał dalej jednostajnym, dorożkarskim
-kłusem. Właściwie koń ten budził zaufanie--wydawał się mądrzejszy od
-woźnicy. Ale powozić nie umiałem--trzeba się było zdać na jego wolę.
+kłusem. Właściwie koń ten budził zaufanie - wydawał się mądrzejszy od
+woźnicy. Ale powozić nie umiałem - trzeba się było zdać na jego wolę.
 Wjechaliśmy na podmiejską ulicę ujętą z obu stron w ogrody. Ogrody te
 przechodziły zwolna, w miarę posuwania się, w parki wielkodrzewne, a te
 w lasy. Nie zapomnę nigdy tej jazdy świetlistej w najjaśniejszą noc
@@ -1647,8 +1647,8 @@ zbierał się wał białej piany śnieżnej, coraz wyższy i wyższy. Z trudem
 przekopywał się koń przez czystą i świeżą jego masę. Wreszcie ustał.
 Wyszedłem z dorożki. Dyszał ciężko ze zwieszoną głową. Przytuliłem jego
 łeb do piersi, w jego wielkich czarnych oczach lśniły łzy. Wtedy
-ujrzałem na jego brzuchu okrągłą czarną ranę.---Dlaczego mi nie
-powiedziałeś?--szepnąłem ze łzami.--Drogi mój--to dla ciebie--rzekł
+ujrzałem na jego brzuchu okrągłą czarną ranę. - -Dlaczego mi nie
+powiedziałeś? - szepnąłem ze łzami. - Drogi mój - to dla ciebie - rzekł
 i stał się bardzo mały, jak konik z drzewa. Opuściłem go. Czułem się
 dziwnie lekki i szczęśliwy. Zastanawiałem się, czy czekać na małą
 kolejkę lokalną, która tu zajeżdżała, czy też pieszo wrócić do miasta.
@@ -1741,7 +1741,7 @@ intymności, brudnego zmieszania. Dzielnica ta była eldoradem takich
 dezerterów moralnych, takich zbiegów spod sztandaru godności własnej.
 Wszystko zdawało się tam podejrzane i dwuznaczne, wszystko zapraszało
 sekretnym mrugnięciem, cynicznie artykułowanym gestem, wyraźnie
-przymrużonym perskim okiem--do nieczystych nadziei, wszystko wyzwalało
+przymrużonym perskim okiem - do nieczystych nadziei, wszystko wyzwalało
 z pęt niską naturę. Mało kto, nie uprzedzony, spostrzegał dziwną
 osobliwość tej dzielnicy: brak barw, jak gdyby w tym tandetnym, w
 pośpiechu wyrosłym mieście nie można było sobie pozwolić na luksus
@@ -1753,11 +1753,11 @@ rubrykach komercjalnych ogłoszeń, wśród których zagnieździły się
 pasożytniczo podejrzane anonse, drażliwe notatki, wątpliwe ilustracje; i
 wędrówki te były równie jałowe i bez rezultatu jak ekscytacje fantazji,
 pędzonej przez szpalty i kolumny pornograficznych druków. Wchodziło się
-do jakiegoś krawca, żeby zamówić ubranie--ubranie o taniej elegancji,
+do jakiegoś krawca, żeby zamówić ubranie - ubranie o taniej elegancji,
 tak charakterystycznej dla tej dzielnicy. Lokal był wielki i pusty,
 bardzo wysoki i bezbarwny. Ogromne wielopiętrowe półki wznoszą się jedne
 nad drugimi w nie określoną wysokość tej hali. Kondygnacje pustych półek
-wyprowadzają wzrok w górę aż pod sufit, który może być niebem--lichym,
+wyprowadzają wzrok w górę aż pod sufit, który może być niebem - lichym,
 bezbarwnym, odrapanym niebem tej dzielnicy. Natomiast dalsze magazyny,
 które widać przez otwarte drzwi, pełne są aż pod sufit pudeł i kartonów,
 piętrzących się ogromną kartoteką, która rozpada się w górze, pod
@@ -1888,7 +1888,7 @@ pertraktacje z przekupnymi urzędnikami linii żelaznej. Zanim te
 negocjacje się kończą, pociąg rusza, odprowadzany przez wolno sunący,
 rozczarowany tłum, który odprowadza go daleko, ażeby się wreszcie
 rozproszyć. Ulica, zacieśniona na chwilę do tego zaimprowizowanego
-dworca, pełnego zmierzchu i tchnienia dalekich dróg--rozwidnia się
+dworca, pełnego zmierzchu i tchnienia dalekich dróg - rozwidnia się
 znowu, rozszerza i przepuszcza znów swym korytem beztroski monotonny
 tłum spacerowiczów, który wędruje wśród gwaru rozmów wzdłuż wystaw
 sklepowych, tych brudnych, szarych czworoboków, pełnych tandetnych
@@ -1899,14 +1899,14 @@ drapieżnym, posuwistym krokiem i mają w niedobrych, zepsutych twarzach
 nieznaczną skazę, która je przekreśla: zezują czarnym, krzywym zezem lub
 mają usta rozdarte, lub brak im koniuszka nosa. Mieszkańcy miasta dumni
 są z tego odoru zepsucia, którym tchnie Ulica Krokodyli. Nie mamy
-potrzeby niczego sobie odmawiać--myślą z dumą--stać nas i na prawdziwą
+potrzeby niczego sobie odmawiać - myślą z dumą - stać nas i na prawdziwą
 wielkomiejską rozpustę. Twierdzą oni, że każda kobieta w tej dzielnicy
-jest kokotą. W istocie wystarczy zwrócić uwagę na którąś--a natychmiast
+jest kokotą. W istocie wystarczy zwrócić uwagę na którąś - a natychmiast
 spotyka się to uporczywe, lepkie spojrzenie, które nas zmraża rozkoszną
 pewnością. Nawet dziewczęta szkolne noszą tu w pewien charakterystyczny
 sposób kokardy, stawiają swoistą manierą smukłe nogi i mają tę nieczystą
 skazę w spojrzeniu, w której leży preformowane przyszłe zepsucie. A
-jednak--a jednak czy mamy zdradzić ostatnią tajemnicę tej dzielnicy,
+jednak - a jednak czy mamy zdradzić ostatnią tajemnicę tej dzielnicy,
 troskliwie ukrywany sekret Ulicy Krokodyli? Kilkakrotnie w trakcie
 naszego sprawozdania stawialiśmy pewne znaki ostrzegawcze, dawaliśmy w
 delikatny sposób wyraz naszym zastrzeżeniom. Uważny czytelnik nie będzie
@@ -1919,7 +1919,7 @@ giętkość. Powiedzmy bez ogródek: fatalnością tej dzielnicy jest, że nic
 w niej nie dochodzi do skutku, nic nie odbiega od swego definitivum,
 wszystkie ruchy rozpoczęte zawisają w powietrzu, wszystkie gesty
 wyczerpują się przedwcześnie i nie mogą przekroczyć pewnego martwego
-punktu. Mogliśmy już zauważyć wielką bujność i rozrzutność--w
+punktu. Mogliśmy już zauważyć wielką bujność i rozrzutność - w
 intencjach, w projektach i antycypacjach, która cechuje tę dzielnicę.
 Cała ona nie jest niczym innym jak fermentacją pragnień, przedwcześnie
 wybujałą i dlatego bezsilną i pustą. W atmosferze nadmiernej łatwości
@@ -1973,11 +1973,11 @@ pierze, które Adela raz w tygodniu wymiatała wraz z bezimiennym kurzem
 pokoju. W wyłysiałych miejscach widać było workowe, grube płótno, z
 którego wyłaziły kłaki konopne. Miałem ukryty żal do matki za łatwość, z
 jaką przeszła do porządku dziennego nad stratą ojca. Nigdy go nie
-kochała--myślałem--a ponieważ ojciec nie był zakorzeniony w sercu
+kochała - myślałem - a ponieważ ojciec nie był zakorzeniony w sercu
 żadnej kobiety, przeto nie mógł też wróść w żadną realność i unosił się
 wiecznie na peryferii życia, w półrealnych regionach, na krawędziach
-rzeczywistosci. Nawet na uczciwą obywatelską śmierć nie zasłużył sobie--
-myślałem--wszystko u niego musiało, być dziwaczne i wątpliwe.
+rzeczywistosci. Nawet na uczciwą obywatelską śmierć nie zasłużył sobie - 
+myślałem - wszystko u niego musiało, być dziwaczne i wątpliwe.
 Postanowiłem w stosownej chwili zaskoczyć matkę otwartą rozmową. Owego
 dnia (był ciężki dzień zimowy i od rana już sypał się miękki puch
 zmierzchu) matka miała migrenę i leżała na sofie samotnie w salonie. W
@@ -1998,21 +1998,21 @@ nie mogły się powstrzymać, robiły perskie oczko, dawały sobie znaki,
 mówiły niemym, kolorowym alfabetem, pełnym sekretnych znaczeń. Irytowało
 mnie to szydercze porozumienie, ta migotliwa zmowa poza mymi plecami. Z
 kolanami przyciśniętymi do sofy matki, badając dwoma palcami, jakby w
-zamyśleniu, delikatną materię jej szlafroka, rzekłem niby mimochodem:--
-Chciałem cię już od dawna zapytać: prawda, że to jest on?--I chociaż
+zamyśleniu, delikatną materię jej szlafroka, rzekłem niby mimochodem: - 
+Chciałem cię już od dawna zapytać: prawda, że to jest on? - I chociaż
 nie wskazałem nawet spojrzeniem na kondora, matka odgadła od razu,
 zmieszała się bardzo i spuściła oczy. Dałem umyślnie upłynąć chwili,
 żeby wykosztować jej zmieszanie, po czym z całym spokojem, opanowując
-wzbierający gniew, spytałem:--Jaki sens mają w takim razie te wszystkie
+wzbierający gniew, spytałem: - Jaki sens mają w takim razie te wszystkie
 plotki i kłamstwa, które rozsiewasz o ojcu? Lecz jej rysy, które w
 pierwszej chwili rozpadły się były w panice, zaczęły się znowu
-porządkować.--Jakie kłamstwa?--spytała mrugając oczyma, które były
-puste, nalane ciemnym błękitem, bez białka.--Znam je od Adeli--rzekłem
+porządkować. - Jakie kłamstwa? - spytała mrugając oczyma, które były
+puste, nalane ciemnym błękitem, bez białka. - Znam je od Adeli - rzekłem
 - ale wiem, że pochodzą od ciebie; chcę wiedzieć prawdę. Usta jej drżały
-lekko, źrenice, unikając mego wzroku, powędrowały w kąt oka.--Nie
-kłamałam--rzekła, a usta- jej napęczniały i stały się małe zarazem.
-Uczułem, że mnie kokietuje jak kobieta mężczyznę.--Z tymi karakonami to
-prawda--sam przecież pamiętasz...--Zmieszałem się. Pamiętałem w
+lekko, źrenice, unikając mego wzroku, powędrowały w kąt oka. - Nie
+kłamałam - rzekła, a usta- jej napęczniały i stały się małe zarazem.
+Uczułem, że mnie kokietuje jak kobieta mężczyznę. - Z tymi karakonami to
+prawda - sam przecież pamiętasz... - Zmieszałem się. Pamiętałem w
 istocie tę inwazję karakonów, ten zalew czarnego rojowiska, które
 napełniało ciemność nocną, pajęczą bieganiną. Wszystkie szpary pełne
 były drgających wąsów, każda szczelina mogła wystrzelić z nagła
@@ -2052,18 +2052,18 @@ opętany fascynacją awersji, która go wciągała w głąb swych zawiłych
 dróg. Mój ojciec poruszał się wieloczłonkowym, skomplikowanym ruchem
 dziwnego rytuału, w którym ze zgrozą poznałem imitację ceremoniału
 karakoniego. Od tego czasu wyrzekliśmy się ojca. Podobieństwo do
-karakona występowało z dniem każdym wyraźniej--mój ojciec zamieniał się
+karakona występowało z dniem każdym wyraźniej - mój ojciec zamieniał się
 w karakona. Zaczęliśmy się przyzwyczajać do tego. Widywaliśmy go coraz
-rzadziej, całymi tygodniami znikał gdzieś na swych karakonich drogach--
+rzadziej, całymi tygodniami znikał gdzieś na swych karakonich drogach - 
 przestaliśmy go odróżniać, zlał się w zupełności z tym czarnym
 niesamowitym plemieniem. Kto mógł powiedzieć, czy żył gdzieś jeszcze w
 jakiejś szparze podłogi, czy przebiegał nocami pokoje, zaplątany w afery
 karakonie, czy też był może między tymi martwymi owadami, które Adela co
 rana znaj-dowała brzuchem do góry leżące i najeżone nogami i które ze
-wstrętem brała na śmietniczkę i wyrzucała?--A jednak--powiedziałem
-zdetonowany--jestem pewny, że ten kondor to on.--Matka spojrzała na
-mnie spod rzęs:--Nie dręcz mnie, drogi--mówiłam ci już przecież, że
-ojciec podróżuje jako komiwojażer po kraju--przecież wiesz, że czasem w
+wstrętem brała na śmietniczkę i wyrzucała? - A jednak - powiedziałem
+zdetonowany - jestem pewny, że ten kondor to on. - Matka spojrzała na
+mnie spod rzęs: - Nie dręcz mnie, drogi - mówiłam ci już przecież, że
+ojciec podróżuje jako komiwojażer po kraju - przecież wiesz, że czasem w
 nocy przyjeżdża do domu, ażeby przed świtem jeszcze dalej odjechać.
 
 WICHURA Tej długiej i pustej zimy obrodziła ciemność w naszym mieście
@@ -2094,9 +2094,9 @@ doklęły swego. Przywołane rechotem naczyń, rozplotkowanym od brzegu do
 brzegu, nadeszły wreszcie karawany, nadciągnęły potężne tabory wichru i
 stanęły nad nocą. Ogromne obozowisko, czarny ruchomy amfiteatr zstępować
 zaczął w potężnych kręgach ku miastu. I wybuchła ciemność ogromną
-wzburzoną wichurą i szalała przez trzy dni i trzy noce...--Nie
-pójdziesz dziś do szkoły--rzekła rano matka--jest straszna wichura na
-dworze.--W pokoju unosił się delikatny welon dymu, pachnący żywicą. Piec
+wzburzoną wichurą i szalała przez trzy dni i trzy noce... - Nie
+pójdziesz dziś do szkoły - rzekła rano matka - jest straszna wichura na
+dworze. - W pokoju unosił się delikatny welon dymu, pachnący żywicą. Piec
 wył i gwizdał, jak gdyby uwiązana w nim była cała sfora psów czy
 demonów. Wielki bohomaz, wymalowany na jego pękatym brzuchu, wykrzywiał
 się kolorowym grymasem i fantastyczniał wzdętymi policzkami. Pobiegłem
@@ -2141,8 +2141,8 @@ Pokój drżał z lekka, obrazy na ścianach brzęczały. Szyby lśniły się
 tłustym odblaskiem lampy. Firanki na oknie wisiały wzdęte i pełne
 tchnienia tej burzliwej nocy. Przypomnieliśmy sobie, że ojca od rana nie
 widziano. Wczesnym rankiem, domyślaliśmy się, musiał udać się do sklepu,
-gdzie go zaskóczyła wichura, odcinając mu powrót.--Cały dzień nic nie
-jadł--biadała matka. Starszy subiekt Teodor podjął się wyprawić w noc i
+gdzie go zaskóczyła wichura, odcinając mu powrót. - Cały dzień nic nie
+jadł - biadała matka. Starszy subiekt Teodor podjął się wyprawić w noc i
 wichurę, żeby zanieść mu posiłek. Brat mój przyłączył się do wyprawy.
 Okutani w wielkie niedźwiedzie futra, obciążyli kieszenie żelazkami i
 moździerzami, balastem, który miał zapobiec porwaniu ich przez wichurę.
@@ -2227,7 +2227,7 @@ grymasy, podnosił wysoko brwi i śmiał się do siebie.
 
 NOC WIELKIEGO SEZONU Każdy wie, że w szeregu zwykłych, normalnych lat
 rodzi niekiedy zdziwaczały czas ze swego łona lata inne, lata osobliwe,
-lata wyrodne, którym--jak szósty, mały palec u ręki--wyrasta kędyś
+lata wyrodne, którym - jak szósty, mały palec u ręki - wyrasta kędyś
 trzynasty, fałszywy miesiąc. Mówimy fałszywy, gdyż rzadko dochodzi on do
 pełnego rozwoju. Jak dzieci późno spłodzone, pozostaje on w tyle ze
 wzrostem, miesiąc garbusek, odrośl w połowie uwiędła i raczej domyślna
@@ -2235,7 +2235,7 @@ niż rzeczywista. Winna jest temu starcza niepowściągliwość lata, jego
 rozpustna i późna żywotność. Bywa czasem, że sierpień minie, a stary
 gruby pień lata rodzi z przyzwyczajenia jeszcze dalej, pędzi ze swego
 próchna te dni-dziczki, dni-chwasty, jałowe i idiotyczne, dorzuca na
-dokładkę, za darmo, dni-kaczany, puste i niejadalne--dni białe,
+dokładkę, za darmo, dni-kaczany, puste i niejadalne - dni białe,
 zdziwione i niepotrzebne. Wyrastają one, nieregularne i nierówne, nie
 wykształcone i zrośnięte z sobą, jak palce potworkowatej ręki,
 pączkujące i zwinięte w figę. Inni porównywają te dni do apokryfów,
@@ -2316,7 +2316,7 @@ jaskrawo w wielkie, gulgocące, rozpluskane narośle albo wykogucić się w
 głupią kogucią maskę, czerwoną i piejącą, w kolorowe jesienne maszkary
 fantastyczne i absurdalne. Zdawało się, że tak nadęte i piejące wzniosą
 się w powietrze długimi kolorowymi łańcuchami i jak jesienne klucze
-ptaków przeciągać będą nad miastem--fantastyczne flotylle z bibułki i
+ptaków przeciągać będą nad miastem - fantastyczne flotylle z bibułki i
 pogody jesiennej. Albo woziły się wśród krzyków na małych zgiełkliwych
 wózkach, grających kolorowym turkotem kółek, szprych i dyszli. Wózki
 zjeżdżały naładowane ich krzykiem i staczały się w dół ulicy aż do nisko
@@ -2339,9 +2339,9 @@ cichej zamieszce, w panice prędkiego rozkładu, w górze utrzymywał się i
 rósł coraz wyżej milczący alarm zorzy, drgający świergotem miliona
 cichych dzwonków, wzbierających wzlotem miliona cichych skowronków
 lecących razem w jedną wielką, srebrną nieskończoność. Potem była już
-nagle noc--wielka noc, rosnąca jeszcze podmuchami wiatru, które ją
+nagle noc - wielka noc, rosnąca jeszcze podmuchami wiatru, które ją
 rozszerzały. W jej wielokrotnym labiryncie wyłupane były gniazda jasne:
-sklepy--wielkie, kolorowe latarnie, pełne spiętrzonego towaru i zgiełku
+sklepy - wielkie, kolorowe latarnie, pełne spiętrzonego towaru i zgiełku
 kupujących. Przez jasne szyby tych latani można było śledzić zgiełkliwy
 i pełen dziwacznego ceremoniału obrzęd zakupów jesiennych. Ta wielka,
 fałdzista noc jesienna, rosnąca cieniami, roszerzona wiatrami, kryła w
@@ -2353,12 +2353,12 @@ tandety, złoconych błahostek, cynfolii, trąbek, andrutów i kolorowych
 miętówek, były stacjami lekkomyślności, grzechotkami beztroski,
 rozsianymi na wiszarach ogromnej, labiryntowej, rozłopotanej wiatrami
 nocy. Wielkie i ciemne tłumy płynęły w ciemności, w hałaśliwym
-zmieszaniu, w szurgocie tysięcy nóg, w gwarze tysięcy ust--rojna,
+zmieszaniu, w szurgocie tysięcy nóg, w gwarze tysięcy ust - rojna,
 splątana wędrówka, ciągnąca arteriami jesiennego miasta. Tak płynęła ta
 rzeka, pełna gwaru, ciemnych spojrzeń, chytrych łypnięć, pokawałkowana
 rozmową, posiekana gawędą, wielka miazga plotek, śmiechów i zgiełku.
 Zdawało się, że to ruszyły tłumami jesienne, suche makówki sypiące
-makiem--głowygrzechotki, ludzie-kołatki. Mój ojciec chodził
+makiem - głowygrzechotki, ludzie-kołatki. Mój ojciec chodził
 zdenerwowany i kolorowy od wypieków, z błyszczącymi oczyma, w jasno
 oświetlonym sklepie, i nasłuchiwał. Przez szyby wystawy i portalu
 dochodził tu z daleka szum miasta, stłumiony gwar płynącej ciżby. Nad
@@ -2407,7 +2407,7 @@ ojciec mój jednym skokiem wspiął się na półki z suknem i, uwisły wysoko
 nad tłumem, dął z całej siły w wielki puzon z rogu i trąbił na alarm.
 Ale sklepienie nie napełniło się szumem aniołów, śpieszących na pomoc, a
 zamiast tego każdemu jękowi trąby odpowiadał wielki, roześmiany chór
-tłumu.--Jakubie, handlować! Jakubie, sprzedawać!--wołali wszyscy, a
+tłumu. - Jakubie, handlować! Jakubie, sprzedawać! - wołali wszyscy, a
 wołanie to, wciąż powtarzane, rytmizowało się w chórze i przechodziło
 powoli w melodię refrenu, śpiewaną przez wszystkie gardła. Wtedy mój
 ojciec dał za wygraną, zeskoczył z wysokiego gzymsu i ruszył z krzykiem
@@ -2460,7 +2460,7 @@ był błysk uśmiechniętej ironii. Wśród tych grup przewijał się pospolity
 lud, bezpostaciowy tłum, gawiedź bez twarzy i indywidualności. Wypełniał
 on niejako luki w krajobrazie, wyścielał tło dzwonkami i grzechotkami
 bezmyślnego gadania. Był to element błazeński, roztańczony tłum
-poliszynelów i arlekinów, który--sam bez poważnych intencyj handlowych
+poliszynelów i arlekinów, który - sam bez poważnych intencyj handlowych
 - doprowadzał do absurdu gdzieniegdzie nawiązujące się tansakcje swymi
 błazeńskimi figlami. Stopniowo jednak, znudzony błaznowaniem, wesoły ten
 ludek rozpraszał się w dalszych okolicach krajobrazu i tam powoli gubił
@@ -2475,7 +2475,7 @@ ciemne ich sylwety zaludniały całą tę pustynną wyżynę, nad którą zwisł
 ciężkie i ciemne niebo, sfałdowane i chmurne, poorane w długie
 równoległe bruzdy, w srebrne i białe skiby, ukazujące w głębi coraz
 dalsze pokłady swego uwarstwienia. Światło lampy stwarzało sztuczny
-dzień w owej krainie--dzień dziwny, dzień bez świtu i wieczoru. Ojciec
+dzień w owej krainie - dzień dziwny, dzień bez świtu i wieczoru. Ojciec
 mój uspokajał się powoli. Gniew jego układał się i zastygał w pokładach
 i warstwach krajobrazu. Siedział teraz na galeriach wysokich półek i
 patrzył w jesienniejący, rozległy kraj. Widział, jak na dalekich
@@ -2536,7 +2536,7 @@ wachlarzami, w które niepojętym sposobem tchnięto jakiś pozór życia.
 Widziałem smutny powrót mego ojca. Sztuczny dzień zabarwiał się już
 powoli kolorami zwyczajnego poranka. W spustoszałym sklepie najwyższe
 półki syciły się barwami rannego nieba. Wśród fragmentów zgasłego
-pejzażu, wśród zburzonych kulis nocnej scenerii--ojciec widział
+pejzażu, wśród zburzonych kulis nocnej scenerii - ojciec widział
 wstających ze snu subiektów. Podnosili się spomiędzy bali sukna i
 ziewali do słońca. W kuchni, na piętrze, Adela, ciepła od snu i ze
 zmierzwionymi włosami, mełła kawę na młynku, przyciskając go do białej
@@ -2552,7 +2552,7 @@ EOT;
     Corrected EDITIONS of our eBooks get a new NUMBER, sklep11.txt
     VERSIONS based on separate sources get new LETTER, sklep10a.txt
 
-    Produced by Pawel Sobkowiak--Scanned and proofread by
+    Produced by Pawel Sobkowiak - Scanned and proofread by
     Polska Biblioteka Internetowa
 
     Project Gutenberg eBooks are often created from several printed
