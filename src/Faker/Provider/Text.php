@@ -137,6 +137,6 @@ abstract class Text extends Base
 
     protected static function appendEnd($text)
     {
-        return $text.'.';
+        return rtrim($text, ',').'.';
     }
 }
