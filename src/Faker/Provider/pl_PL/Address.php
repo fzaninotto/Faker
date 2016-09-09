@@ -202,4 +202,9 @@ class Address extends \Faker\Provider\Address
     {
         return static::randomElement(static::$street);
     }
+
+    public function state()
+    {
+        return static::randomElement(static::$state);
+    }
 }
