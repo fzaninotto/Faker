@@ -298,6 +298,10 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     // with more chances to be close to 20
     biasedNumberBetween($min = 10, $max = 20, $function = 'sqrt')
 
+### `Faker\Provider\HtmlLorem`
+
+    randomHtml(2)   // <html><head><title>Ut nihil aut ut amet sit.</title></head><body><form action="example.com" method="POST"><label for="username">culpa</label><input type="text" id="username"><label for="password">rerum</label><input type="password" id="password"></form><i>Recusandae repellat voluptatem dolorem fugiat maiores provident perferendis.</i><a href="example.net">Qui distinctio.</a>Magni eligendi aut.<p>Reprehenderit dolorem animi et enim dolores assumenda omnis explicabo.</p></body></html>
+
 ## Modifiers
 
 Faker provides three special providers, `unique()`, `optional()`, and `valid()`, to be called before any provider.
