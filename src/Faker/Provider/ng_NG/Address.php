@@ -26,6 +26,9 @@ class Address extends \Faker\Provider\Address
         'Zamfara'
     );
 
+    private static $regions = array( 'Umuahia', 'Yola' 'Uyo' 'Awka' 'Bauchi' 'Yenagoa' 'Makurdi' 'Maiduguri' 'Calabar' 'Asaba' 'Abakaliki' 'City' 'Ekiti' 'Enugu' 'Gombe' 'Owerri' 'Dutse' 'Kaduna' 'Kano' 'Katsina' 'Kebbi' 'Lokoja' 'Ilorin' 'Ikeja' 'Lafia' 'Minna' 'Abeokuta' 'Akure' 'Oshogbo' 'Ibadan' 'Jos' 'Harcourt' 'Sokoto' 'Jalingo' 'Damaturu' 'Gusau'
+    );
+
     /**
      * Randomly returns a Nigerian state or county.
      *
@@ -33,8 +36,20 @@ class Address extends \Faker\Provider\Address
      *
      * @return string
      */
-    public static function region()
+    public static function county()
     {
         return static::randomElement(static::$county);
+    }
+
+    /**
+     * Randomly returns a Nigerian region of a state.
+     *
+     * @example 'Ikeja'
+     *
+     * @return string
+     */
+    public static function region()
+    {
+        return static::randomElement(static::$regions);
     }
 }
