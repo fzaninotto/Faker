@@ -6,67 +6,57 @@ class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastName}}',
+        '{{firstNameMale}} {{firstNameMale}} {{lastName}}'
     );
 
     protected static $femaleNameFormats = array(
         '{{firstNameFemale}} {{lastName}}',
+        '{{firstNameFemale}} {{firstNameFemale}} {{lastName}}'
     );
 
     /**
      * An array of typical Nigerian male firstnames.
      */
     protected static $firstNameMale = array(
-        'Abimbola','Abisola','Abisoye','Adaobi', 'Adaugo','Adeboye','Adedayo','Adegoke', 'Akande', 'Akanni', 'Akunna', 'Alade', 'Aminat', 'Aminu', 'Augustina', 'Ayebatari', 'Ayinde', 'Azubuike',
+        'Abimbola','Abisola','Abisoye','Adeboye','Adedayo','Adegoke', 'Akande', 'Akanni', 'Alade', 'Ayinde', 'Azubuike',
         'Banji', 'Bankole', 'Buchi', 'Bukola',
-        'Cherechi', 'Chiamaka', 'Chimamanda', 'Chinedu', 'Chinyere', 'Chisom', 'Chizoba', 'Chukwu',
+        'Chinedu', 'Chisom', 'Chukwu',
         'Damilare', 'Damilola', 'Danjuma',
-        'Ebiere', 'Ebiowei', 'Efe', 'Emeka', 'Emmanuel', 'Esse',
-        'Fatima', 'Funmilade', 'Funmilayo',
+        'Ebiowei', 'Emeka', 'Emmanuel', 'Esse',
+        'Funmilade', 'Funmilayo',
         'Gbeminiyi', 'Gbemisola',
         'Habiba', 'Ifeanyichukwu',
-        'Ifeoma', 'Ifunanya', 'Ikenna', 'Ikhidie', 'Ireti', 'Isioma',
-        'Jadesola', 'Johnson', 'Jolayemi',
+        'Ikenna', 'Ikhidie', 'Ireti',
+        'Jadesola', 'Johnson',
         'Kayode', 'Kemi', 'Kubra', 'Kubura',
-        'Lola', 'Lolade',
+        'Lolade',
         'Makinwa', 'Mohammed', 'Musa', 'Muyiwa',
         'Nnamdi',
-        'Obioma', 'Olaide', 'Olufunmi', 'Olumide', 'Oluwunmi', 'Omawunmi', 'Omolara', 'Onome', 'Onoriode',
-        'Rasheedah', 'Remilekun', 'Rotimi',
-        'Sekinat', 'Shade', 'Shalewa', 'Simisola', 'Sname', 'Sumayyah',
-        'Tari', 'Temitope', 'Titi', 'Titilayo', 'Titilope', 'Tobiloba', 'Toke', 'Toluwani', 'Tomiloba', 'Tope',
+        'Olaide', 'Olufunmi', 'Olumide', 'Oluwunmi', 'Onoriode',
+        'Remilekun', 'Rotimi',
+        'Shade', 'Shalewa', 'Sname',
+        'Tari', 'Temitope', 'Titilope', 'Tobiloba', 'Toke', 'Tomiloba', 'Tope',
         'Uzodimma',
         'Wale',
         'Yakubu', 'Yusuf', 'Yusuf',
-        'Zainab'
     );
 
     /**
      * An array of typical Nigerian female firstnames.
      */
     protected static $firstNameFemale = array(
-        'Abimbola','Abisola','Abisoye','Adaobi', 'Adaugo','Adeboye','Adedayo','Adegoke', 'Akande', 'Akanni', 'Akunna', 'Alade', 'Aminat', 'Aminu', 'Augustina', 'Ayebatari', 'Ayinde', 'Azubuike',
-        'Banji', 'Bankole', 'Buchi', 'Bukola',
-        'Cherechi', 'Chiamaka', 'Chimamanda', 'Chinedu', 'Chinyere', 'Chisom', 'Chizoba', 'Chukwu',
-        'Damilare', 'Damilola', 'Danjuma',
-        'Ebiere', 'Ebiowei', 'Efe', 'Emeka', 'Emmanuel', 'Esse',
-        'Fatima', 'Funmilade', 'Funmilayo',
-        'Gbeminiyi', 'Gbemisola',
-        'Habiba', 'Ifeanyichukwu',
-        'Ifeoma', 'Ifunanya', 'Ikenna', 'Ikhidie', 'Ireti', 'Isioma',
-        'Jadesola', 'Johnson', 'Jolayemi',
-        'Kayode', 'Kemi', 'Kubra', 'Kubura',
-        'Lola', 'Lolade',
-        'Makinwa', 'Mohammed', 'Musa', 'Muyiwa',
-        'Nnamdi',
-        'Obioma', 'Olaide', 'Olufunmi', 'Olumide', 'Oluwunmi', 'Omawunmi', 'Omolara', 'Onome', 'Onoriode',
-        'Rasheedah', 'Remilekun', 'Rotimi',
-        'Sekinat', 'Shade', 'Shalewa', 'Simisola', 'Sname', 'Sumayyah',
-        'Tari', 'Temitope', 'Titi', 'Titilayo', 'Titilope', 'Tobiloba', 'Toke', 'Toluwani', 'Tomiloba', 'Tope',
-        'Uzodimma',
-        'Wale',
-        'Yakubu', 'Yusuf', 'Yusuf',
-        'Zainab'
-        'Chioma', 'Omawunmi', 'Fatima'
+        'Adaugo', 'Akunna', 'Aminat', 'Aminu', 'Augustina', 'Ayebatari',
+        'Cherechi', 'Chiamaka', 'Chimamanda', 'Chinyere', 'Chizoba',
+        'Ebiere', 'Efe',
+        'Fatima', 'Ifeoma',
+        'Ifunanya', 'Isioma',
+        'Jolayemi',
+        'Lola',
+        'Obioma', 'Omawunmi', 'Omolara', 'Onome',
+        'Rasheedah',
+        'Sekinat', 'Simisola', 'Sumayyah',
+        'Titi', 'Titilayo', 'Toluwani',
+        'Zainab' 
     );
 
     /**
@@ -93,5 +83,6 @@ class Person extends \Faker\Provider\Person
         'Taiwo', 'Tamunoemi', 'Tella', 'Temitope', 'Tolulope', 
         'Uchechi',
         'Wasiu', 'Wilcox', 'Wuraola',
-        'Yaqub', 'Yussuf' );
+        'Yaqub', 'Yussuf'
+    );
 }
