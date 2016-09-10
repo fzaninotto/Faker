@@ -31,6 +31,7 @@ Faker requires PHP >= 5.3.3.
 	- [Barcode](#fakerproviderbarcode)
 	- [Miscellaneous](#fakerprovidermiscellaneous)
 	- [Biased](#fakerproviderbiased)
+	- [Html Lorem](#fakerproviderhtmllorem)
 - [Modifiers](#modifiers)
 - [Localization](#localization)
 - [Populating Entities Using an ORM or an ODM](#populating-entities-using-an-orm-or-an-odm)
