@@ -4,7 +4,6 @@ namespace Faker\Provider\ng_NG;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $buildingNumber = array('%', '%#', '%#', '%#', '%##');
     protected static $postcode = array('#####', '## ###');
 
     private static $county = array(
@@ -26,7 +25,7 @@ class Address extends \Faker\Provider\Address
         'Zamfara'
     );
 
-    private static $regions = array( 'Umuahia', 'Yola' 'Uyo' 'Awka' 'Bauchi' 'Yenagoa' 'Makurdi' 'Maiduguri' 'Calabar' 'Asaba' 'Abakaliki' 'City' 'Ekiti' 'Enugu' 'Gombe' 'Owerri' 'Dutse' 'Kaduna' 'Kano' 'Katsina' 'Kebbi' 'Lokoja' 'Ilorin' 'Ikeja' 'Lafia' 'Minna' 'Abeokuta' 'Akure' 'Oshogbo' 'Ibadan' 'Jos' 'Harcourt' 'Sokoto' 'Jalingo' 'Damaturu' 'Gusau'
+    private static $regions = array( 'Umuahia', 'Yola', 'Uyo', 'Awka', 'Bauchi', 'Yenagoa', 'Makurdi', 'Maiduguri', 'Calabar', 'Asaba', 'Abakaliki', 'City', 'Ekiti', 'Enugu', 'Gombe', 'Owerri', 'Dutse', 'Kaduna', 'Kano', 'Katsina', 'Kebbi', 'Lokoja', 'Ilorin', 'Ikeja', 'Lafia', 'Minna', 'Abeokuta', 'Akure', 'Oshogbo', 'Ibadan', 'Jos', 'Harcourt', 'Sokoto', 'Jalingo', 'Damaturu', 'Gusau'
     );
 
     /**

@@ -56,7 +56,7 @@ class Person extends \Faker\Provider\Person
         'Rasheedah',
         'Sekinat', 'Simisola', 'Sumayyah',
         'Titi', 'Titilayo', 'Toluwani',
-        'Zainab' 
+        'Zainab'
     );
 
     /**
@@ -80,7 +80,7 @@ class Person extends \Faker\Provider\Person
         'Obiageli', 'Obianuju', 'Odunayo', 'Odunayo', 'Ogunbanwo', 'Ogunwande', 'Okonkwo', 'Okunola', 'Oladeji', 'Oladimeji', 'Olaoluwa', 'Olasunkanmi', 'Olasunkanmi-fasayo', 'Olawale', 'Olubukola', 'Olubunmi', 'Olufeyikemi', 'Olumide', 'Olutola', 'Oluwakemi', 'Oluwanisola', 'Oluwaseun', 'Oluwaseyi', 'Oluwashina', 'Oluwatosin', 'Omobolaji', 'Omobolanle', 'Omolara', 'Omowale', 'Onohinosen', 'Onose', 'Onyinyechukwu', 'Opeyemi', 'Osuagwu', 'Oyebola', 'Oyelude', 'Oyinkansola',
         'Peter',
         'Sabdat', 'Saheed', 'Salami', 'Samuel', 'Sanusi', 'Sarah', 'Segunmaru', 'Sekinat', 'Sulaimon', 'Sylvester',
-        'Taiwo', 'Tamunoemi', 'Tella', 'Temitope', 'Tolulope', 
+        'Taiwo', 'Tamunoemi', 'Tella', 'Temitope', 'Tolulope',
         'Uchechi',
         'Wasiu', 'Wilcox', 'Wuraola',
         'Yaqub', 'Yussuf'
