@@ -16,6 +16,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * An array of typical Nigerian male firstnames.
+     * @link http://www.top-100-baby-names-search.com/baby-names-nigeria.html
      */
     protected static $firstNameMale = array(
         'Abimbola','Abisola','Abisoye','Adeboye','Adedayo','Adegoke', 'Akande', 'Akanni', 'Alade', 'Ayinde', 'Azubuike',
