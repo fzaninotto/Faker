@@ -843,6 +843,16 @@ echo $faker->cvr; // "32458723"
 echo $faker->p; // "5398237590"
 ```
 
+### `Faker\Provider\de_DE\Payment`
+
+```php
+<?php
+
+echo $faker->bankAccountNumber; // "DE41849025553661169313"
+echo $faker->bank; // "Volksbank Stuttgart"
+
+```
+
 ### `Faker\Provider\en_NZ\Phone`
 
 ```php
