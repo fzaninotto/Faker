@@ -4,9 +4,8 @@ namespace Faker\Provider\ng_NG;
 
 use Faker\Generator;
 use Faker\Provider\ng_NG\Address;
-use Faker\Test\Provider\ng_NG\MainTest;
 
-class AddressTest extends MainTest
+class AddressTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -24,25 +23,34 @@ class AddressTest extends MainTest
     /**
      *
      */
-    public function testPostcode()
+    public function testPostcodeIsNotEmptyAndIsValid()
     {
-        $this->performTest($this->faker->postcode());
+        $postcode = $this->faker->postcode();
+
+        $this->assertNotEmpty($postcode);
+        $this->assertInternalType('string', $postcode);
     }
 
     /**
      * Test the name of the Nigerian State/County
      */
-    public function testCounty()
+    public function testCountyIsAValidString()
     {
-        $this->performTest($this->faker->county);
+        $county = $this->faker->county;
+
+        $this->assertNotEmpty($county);
+        $this->assertInternalType('string', $county);
     }
 
     /**
      * Test the name of the Nigerian Region in a State.
      */
-    public function testRegion()
+    public function testRegionIsAValidString()
     {
-        $this->performTest($this->faker->region);
+        $region = $this->faker->region;
+
+        $this->assertNotEmpty($region);
+        $this->assertInternalType('string', $region);
     }
 
 }

@@ -4,9 +4,8 @@ namespace Faker\Test\Provider\ng_NG;
 
 use Faker\Generator;
 use Faker\Provider\ng_NG\Person;
-use Faker\Test\Provider\ng_NG\MainTest;
 
-class PersonTest extends MainTest
+class PersonTest extends \PHPUnit_Framework_TestCase
 {
      /**
      * @var Generator
@@ -20,8 +19,11 @@ class PersonTest extends MainTest
         $this->faker = $faker;
     }
 
-    public function testFirstName()
+    public function testPersonNameIsAValidString()
     {
-        $this->performTest($this->faker->name);
+        $name = $this->faker->name;
+
+        $this->assertNotEmpty($name);
+        $this->assertInternalType('string', $name);
     }
 }

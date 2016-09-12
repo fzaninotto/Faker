@@ -1,5 +1,7 @@
 <?php
 
+// data source
+
 namespace Faker\Provider\ng_NG;
 
 class Person extends \Faker\Provider\Person
@@ -16,7 +18,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * An array of typical Nigerian male firstnames.
-     * @link http://www.top-100-baby-names-search.com/baby-names-nigeria.html
+     * @link https://andela-celisha-wigwe.github.io/names.html
      */
     protected static $firstNameMale = array(
         'Abimbola','Abisola','Abisoye','Adeboye','Adedayo','Adegoke', 'Akande', 'Akanni', 'Alade', 'Ayinde', 'Azubuike',
@@ -43,7 +45,7 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
-     * An array of typical Nigerian female firstnames.
+     * @link https://andela-celisha-wigwe.github.io/names.html
      */
     protected static $firstNameFemale = array(
         'Adaugo', 'Akunna', 'Aminat', 'Aminu', 'Augustina', 'Ayebatari',
@@ -61,7 +63,7 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
-     * An array of typical Nigerian lastnames.
+     * @link https://andela-celisha-wigwe.github.io/names.html
      */
     protected static $lastName = array(
         'Abiodun', 'Abiola', 'Abodunrin', 'Abosede', 'Adaobi', 'Adebayo', 'Adegboye', 'Adegoke', 'Ademayowa', 'Ademola', 'Adeniyan', 'Adeoluwa', 'Aderinsola', 'Aderonke', 'Adesina', 'Adewale', 'Adewale', 'Adewale', 'Adewunmi', 'Adewura', 'Adeyemo', 'Afolabi', 'Afunku', 'Agboola', 'Agboola', 'Agnes', 'Aigbiniode', 'Ajakaiye', 'Ajose-adeogun', 'Akeem-omosanya', 'Akerele', 'Akintade', 'Aligbe', 'Amaechi', 'Aminat', 'Aremu', 'Atanda', 'Ayisat', 'Ayobami', 'Ayomide', 'Ayomide',

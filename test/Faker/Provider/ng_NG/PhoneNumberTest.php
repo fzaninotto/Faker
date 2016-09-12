@@ -4,9 +4,8 @@ namespace Faker\Test\Provider\ng_NG;
 
 use Faker\Generator;
 use Faker\Provider\ng_NG\PhoneNumber;
-use Faker\Test\Provider\ng_NG\MainTest;
 
-class PhoneNumberTest extends MainTest
+class PhoneNumberTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
@@ -15,8 +14,12 @@ class PhoneNumberTest extends MainTest
         $this->faker = $faker;
     }
 
-    public function testPhoneNumberReturnsPhoneNumberWithOrWithoutPrefix()
+    public function testPhoneNumberReturnsPhoneNumberWithOrWithoutCountryCode()
     {
-        $this->assertRegExp('/^0(7|8)(0)(3|5)(\s)?/', $this->faker->phoneNumber());
+        $phoneNumber = $this->faker->phoneNumber();
+
+        $this->assertNotEmpty($phoneNumber);
+        $this->assertInternalType('string', $phoneNumber);
+        $this->assertRegExp('/^(0|(\+234))\s?[789][01]\d\s?(\d{3}\s?\d{4})/', $phoneNumber);
     }
 }
