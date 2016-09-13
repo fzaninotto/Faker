@@ -53,7 +53,23 @@ class Address extends \Faker\Provider\Address
         'Zambia', 'Zimbabwe'
     );
 
-    private static $regions = array( 'Umuahia', 'Yola', 'Uyo', 'Awka', 'Bauchi', 'Yenagoa', 'Makurdi', 'Maiduguri', 'Calabar', 'Asaba', 'Abakaliki', 'City', 'Ekiti', 'Enugu', 'Gombe', 'Owerri', 'Dutse', 'Kaduna', 'Kano', 'Katsina', 'Kebbi', 'Lokoja', 'Ilorin', 'Ikeja', 'Lafia', 'Minna', 'Abeokuta', 'Akure', 'Oshogbo', 'Ibadan', 'Jos', 'Harcourt', 'Sokoto', 'Jalingo', 'Damaturu', 'Gusau'
+    private static $regions = array(
+        'Abakaliki', 'Abeokuta', 'Akure', 'Asaba', 'Awka',
+        'Bauchi',
+        'Calabar', 'City',
+        'Damaturu', 'Dutse',
+        'Ekiti', 'Enugu',
+        'Gombe', 'Gusau'
+        'Ibadan', 'Ikeja', 'Ilorin',
+        'Jalingo', 'Jos',
+        'Kaduna', 'Kano', 'Katsina', 'Kebbi',
+        'Lafia', 'Lokoja',
+        'Maiduguri', 'Makurdi', 'Minna',
+        'Oshogbo', 'Owerri'
+        'Port-Harcourt',
+        'Sokoto',
+        'Umuahia', 'Uyo',
+        'Yenagoa', 'Yola'
     );
 
     /**
