@@ -59,13 +59,13 @@ class Address extends \Faker\Provider\Address
         'Calabar', 'City',
         'Damaturu', 'Dutse',
         'Ekiti', 'Enugu',
-        'Gombe', 'Gusau'
+        'Gombe', 'Gusau',
         'Ibadan', 'Ikeja', 'Ilorin',
         'Jalingo', 'Jos',
         'Kaduna', 'Kano', 'Katsina', 'Kebbi',
         'Lafia', 'Lokoja',
         'Maiduguri', 'Makurdi', 'Minna',
-        'Oshogbo', 'Owerri'
+        'Oshogbo', 'Owerri',
         'Port-Harcourt',
         'Sokoto',
         'Umuahia', 'Uyo',
