@@ -1,97 +1,1 @@
-<?php
-
-namespace Faker\Provider\tr_TR;
-
-class Person extends \Faker\Provider\Person
-{
-    /**
-     * @var array Turkish person name formats.
-     */
-    protected static $maleNameFormats = array(
-        '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}}',
-        '{{titleMale}} {{firstNameMale}} {{lastName}}',
-    );
-
-    protected static $femaleNameFormats = array(
-        '{{firstNameFemale}} {{lastName}}',
-        '{{firstNameFemale}} {{lastName}}',
-        '{{firstNameFemale}} {{lastName}}',
-        '{{titleFemale}} {{firstNameFemale}} {{lastName}}',
-    );
-
-    /**
-     * @link http://www.guzelisimler.com/en_cok_aranan_erkek_isimleri.php
-     *
-     * @var array Turkish first names.
-     */
-    protected static $firstNameMale = array(
-        'Ahmet', 'Ali', 'Alp', 'Armağan', 'Atakan', 'Aşkın', 'Baran', 'Bartu', 'Berk', 'Berkay', 'Berke', 'Bora', 'Burak', 'Canberk',
-        'Cem', 'Cihan', 'Deniz', 'Efe', 'Ege', 'Ege', 'Emir', 'Emirhan', 'Emre', 'Ferid', 'Göktürk', 'Görkem', 'Güney',
-        'Kağan', 'Kerem', 'Koray', 'Kutay', 'Mert', 'Onur', 'Ogün', 'Polat', 'Rüzgar', 'Sarp', 'Serhan', 'Toprak', 'Tuna',
-        'Türker', 'Utku', 'Yağız', 'Yiğit', 'Çınar', 'Derin', 'Meriç', 'Barlas', 'Dağhan', 'Doruk', 'Çağan'
-    );
-
-    /**
-     * @link http://www.guzelisimler.com/en_cok_aranan_kiz_isimleri.php
-     *
-     * @var array Turkish first names.
-     */
-    protected static $firstNameFemale = array(
-        'Ada', 'Esma', 'Emel', 'Ebru', 'Şahnur', 'Ümran', 'Sinem', 'İrem', 'Rüya', 'Ece', 'Burcu'
-    );
-
-    /**
-     * @link http://tr.wikipedia.org/wiki/Kategori:T%C3%BCrk%C3%A7e_soyadlar%C4%B1
-     *
-     * @var array Turkish last names.
-     */
-    protected static $lastName = array(
-        'Abacı', 'Abadan', 'Aclan', 'Adal', 'Adan', 'Adıvar', 'Akal', 'Akan', 'Akar', 'Akay',
-        'Akaydın', 'Akbulut', 'Akgül', 'Akışık', 'Akman', 'Akyürek', 'Akyüz', 'Akşit', 'Alnıaçık',
-        'Alpuğan', 'Alyanak', 'Arıcan', 'Arslanoğlu', 'Atakol', 'Atan', 'Avan', 'Ayaydın', 'Aybar',
-        'Aydan', 'Aykaç', 'Ayverdi', 'Ağaoğlu', 'Aşıkoğlu', 'Babacan', 'Babaoğlu', 'Bademci',
-        'Bakırcıoğlu', 'Balaban', 'Balcı', 'Barbarosoğlu', 'Baturalp', 'Baykam', 'Başoğlu', 'Berberoğlu',
-        'Beşerler', 'Beşok', 'Biçer', 'Bolatlı', 'Dalkıran', 'Dağdaş', 'Dağlaroğlu', 'Demirbaş', 'Demirel',
-        'Denkel', 'Dizdar', 'Doğan', 'Durak', 'Durmaz', 'Duygulu', 'Düşenkalkar', 'Egeli', 'Ekici', 'Ekşioğlu',
-        'Eliçin', 'Elmastaşoğlu', 'Elçiboğa', 'Erbay', 'Erberk', 'Erbulak', 'Erdoğan', 'Erez', 'Erginsoy',
-        'Erkekli', 'Eronat', 'Ertepınar', 'Ertürk', 'Erçetin', 'Evliyaoğlu', 'Fahri', 'Gönültaş', 'Gümüşpala',
-        'Günday', 'Gürmen', 'Ilıcalı', 'Kahveci', 'Kaplangı', 'Karabulut', 'Karaböcek', 'Karadaş', 'Karaduman',
-        'Karaer', 'Kasapoğlu', 'Kavaklıoğlu', 'Kaya', 'Keseroğlu', 'Keçeci', 'Kılıççı', 'Kıraç', 'Kocabıyık',
-        'Korol', 'Koyuncu', 'Koç', 'Koçoğlu', 'Koçyiğit', 'Kuday', 'Kulaksızoğlu', 'Kumcuoğlu', 'Kunt',
-        'Kunter', 'Kurutluoğlu', 'Kutlay', 'Kuzucu', 'Körmükçü', 'Köybaşı', 'Köylüoğlu', 'Küçükler', 'Limoncuoğlu',
-        'Mayhoş', 'Menemencioğlu', 'Mertoğlu', 'Nalbantoğlu', 'Nebioğlu', 'Numanoğlu', 'Okumuş', 'Okur', 'Oraloğlu',
-        'Orbay', 'Ozansoy', 'Paksüt', 'Pekkan', 'Pektemek', 'Polat', 'Poyrazoğlu', 'Poçan', 'Sadıklar', 'Samancı',
-        'Sandalcı', 'Sarıoğlu', 'Saygıner', 'Sepetçi', 'Sezek', 'Sinanoğlu', 'Solmaz', 'Sözeri', 'Süleymanoğlu',
-        'Tahincioğlu', 'Tanrıkulu', 'Tazegül', 'Taşlı', 'Taşçı', 'Tekand', 'Tekelioğlu', 'Tokatlıoğlu', 'Tokgöz',
-        'Topaloğlu', 'Topçuoğlu', 'Toraman', 'Tunaboylu', 'Tunçeri', 'Tuğlu', 'Tuğluk', 'Türkdoğan', 'Türkyılmaz',
-        'Tütüncü', 'Tüzün', 'Uca', 'Uluhan', 'Velioğlu', 'Yalçın', 'Yazıcı', 'Yetkiner', 'Yeşilkaya', 'Yıldırım',
-        'Yıldızoğlu', 'Yılmazer', 'Yorulmaz', 'Çamdalı', 'Çapanoğlu', 'Çatalbaş', 'Çağıran', 'Çetin', 'Çetiner',
-        'Çevik', 'Çörekçi', 'Önür', 'Örge', 'Öymen', 'Özberk', 'Özbey', 'Özbir', 'Özdenak', 'Özdoğan', 'Özgörkey',
-        'Özkara', 'Özkök', 'Öztonga', 'Öztuna'
-    );
-
-    protected static $title = array('Doç. Dr.', 'Dr.', 'Prof. Dr.');
-
-    public function title($gender = null)
-    {
-        return static::titleMale();
-    }
-
-    /**
-     * replaced by specific unisex Turkish title
-     */
-    public static function titleMale()
-    {
-        return static::randomElement(static::$title);
-    }
-
-    /**
-     * replaced by specific unisex Turkish title
-     */
-    public static function titleFemale()
-    {
-        return static::titleMale();
-    }
-}
+<?phpnamespace Faker\Provider\tr_TR;class Person extends \Faker\Provider\Person{    /**     * @var array Turkish person name formats.     */    protected static $maleNameFormats = array(        '{{firstNameMale}} {{lastName}}',        '{{firstNameMale}} {{lastName}}',        '{{firstNameMale}} {{lastName}}',        '{{titleMale}} {{firstNameMale}} {{lastName}}',    );    protected static $femaleNameFormats = array(        '{{firstNameFemale}} {{lastName}}',        '{{firstNameFemale}} {{lastName}}',        '{{firstNameFemale}} {{lastName}}',        '{{titleFemale}} {{firstNameFemale}} {{lastName}}',    );    /**     * @link http://www.guzelisimler.com/en_cok_aranan_erkek_isimleri.php     *     * @var array Turkish first names.     */    protected static $firstNameMale = array(        'Ahmet', 'Ali', 'Alp', 'Armağan', 'Atakan', 'Aşkın', 'Baran', 'Bartu', 'Berk', 'Berkay', 'Berke', 'Bora', 'Burak', 'Canberk',        'Cem', 'Cihan', 'Deniz', 'Efe', 'Ege', 'Ege', 'Emir', 'Emirhan', 'Emre', 'Ferid', 'Göktürk', 'Görkem', 'Güney',        'Kağan', 'Kerem', 'Koray', 'Kutay', 'Mert', 'Onur', 'Ogün', 'Polat', 'Rüzgar', 'Sarp', 'Serhan', 'Toprak', 'Tuna',        'Türker', 'Utku', 'Yağız', 'Yiğit', 'Çınar', 'Derin', 'Meriç', 'Barlas', 'Dağhan', 'Doruk', 'Çağan'    );    /**     * @link http://www.guzelisimler.com/en_cok_aranan_kiz_isimleri.php     *     * @var array Turkish first names.     */    protected static $firstNameFemale = array(        'Abiye','Açalya','Açelya','Ada','Alanur','Alin','Alisa','Alise','Aliye','Amira',        'Arin','Arya','Arzu','Asena','Asiye','Aslı','Asude','Aybala','Aybike','Aybüke',        'Ayça','Ayda','Ayfer','Ayla','Aylin','Aynisa','Aynur','Ayse','Aysel','Ayser',        'Aysim','Aysima','Aysuna','Ayşe','Ayşegül','Ayten','Azelya','Azime','Azra','Bade','Bahar','Banu',        'Barika','Bedia','Bedriye','Begüm','Behice','Belgin','Belin','Beliz','Belma','Benan',        'Benay','Bennu','Bensu','Berat','Berceste','Berfu','Beria','Berra',        'Berrak','Berrin','Besime','Betül','Beyza','Bihter','Buket','Burcu','Burcu',        'Buse','Büke','Büşra','Can','Canan','Cansu','Cemile','Ceren','Ceyda','Ceyhun',        'Ceylan','Cin','Cisil','Çağla','Çiğdem','Damla','Daye','Defne','Derin','Devin',        'Devrim','Diba','Didar','Didem','Dilâ','Dilan','Dilara','Dilay','Dilda','Dilek',        'Dilem','Dilfiruz','Dilge','Dilrüba','Dudu','Duru','Duygu','Ebru','Ebru','Ece',        'Ecenur','Ecmel','Edanur','Efe','Efla','Efsu','Efsun','Efza','Ege','Egemen','Elanur',        'Elçin','Elena','Elenay','Elgin','Elif','Elin','Elis','Elvan','Elvin','Elvina',        'Elya','Emel','Emel','Emine','Enise','Ennur','Era','Eray','Erem','Ervin','Esin','Esma','Esma',        'Esra','Esrin','Evin','Eylem','Ezgi','Fadime','Faize','Fatma','Feraye',        'Feride','Feriha','Fermude','Fethiye','Feyza','Figen','Fikriye','Filiz','Firdevs',        'Fulya','Funda','Gamze','Ganime','Gaye','Gizem','Gök','Gökçe','Görkem','Gözde',        'Gül','Gülay','Gülce','Gülru','Gülsüm','Güntülü','Hacer','Hadra','Hafize',        'Halide','Halime','Halise','Hamdiye','Hamide','Hamra','Handan','Hande','Hanife',        'Hasibe','Hatice','Havva','Hayriye','Hazal','Hazel','Hicran','Hilal','Hira',        'Huban','Hulya','Hülya','Hümeyra','Idil','Ilay','Ilayda','Ilda','Ilgın','Ilgın','Ilsu','Ipek','Irem',        'Kadriye','Kamile','Kaniye','Kardelen','Karya','Kay','Kebire','Kevser',        'Kezban','Kübra','Lamia','Lara','Lena','Leya','Leyan','Leyla','Leyli',        'Marziye','Mavi','Maya','Mebruke','Mebrure','Mediha','Medine','Mehlika','Mehtap',        'Melda','Melek','Meliha','Melike','Melis','Melisa','Melissa',        'Meltem','Memduha','Mensure','Meray','Mercan','Merve','Meryem','Merzuka','Mesude','Meyra','Mihriban',        'Mina','Mine','Mira','Miran','Miya','Miyase','Muazzez','Munise','Müge',        'Naciye','Nafiye','Nagehan','Nahide','Naile','Naime','Narin','Naz','Nazan','Nazen',        'Nazenin','Nazife','Nazire','Nazmiye','Nebahat','Nebile','Necibe','Necla','Nehir',        'Nejla','Nergis','Neriman','Nermin','Nesibe','Nesli','Neslihan','Nesrin','Nesteren',        'Neval','Nevin','Nevriye','Neyra','Neyran','Nigar','Nihal',        'Nihan','Nil','Nila','Nilay','Nilsu','Niran','Nisa','Nisan','Nur','Nurbanu',        'Nuriye','Nursima','Nurten','Oya','Özlem','Pakize','Pamir','Pelin','Peri','Perihan',        'Perin','Perizat','Pervin','Peyker','Peyman','Piraye','Rabia','Rahil','Rahime','Raife',        'Raziye','Refia','Refika','Refiye','Remziye','Rengin','Reyhan','Reyya',        'Ruhsar','Rukiye','Ruziye','Rüveyda','Rüya','Sabriye','Sadberk','Sadiye','Safa',        'Safiye','Sahra','Sakine','Saliha','Sanem','Sar','Sara','Sare','Seba','Sebahat',        'Sebile','Seda','Sedef','Seden','Sefa','Seher','Selay','Selcan','Selda','Selen',        'Selime','Selin','Selma','Selmin','Selva','Selvet','Sema','Semanur','Semira','Semiye',        'Semra','Sena','Senem','Seniha','Sera','Serap','Seray','Seren','Serfiraz','Sermin',        'Serpil','Serra','Seval','Sevgi','Sevil','Sevilay','Sevim','Seyra','Sezin','Sibel',        'Sima','Simay','Simru','Sinem','Sinem','Songül','Suat','Sude',        'Sudiye','Sulbiye','Sultan','Sumru','Suna','Sunay','Suzan','Süeda','Sümeyra','Şah',        'Şahnur','Şerife','Şevval','Şeyda','Şeyma','Şule','Tanju','Tansel','Tansu',        'Tanzer','Tomris','Toprak','Tuba','Tuğçe','Tulca','Tulu',        'Tun','Tutku','Tuvana','Umut','Utku','Utkun','Ümran','Verda','Vildan','Vuslat','Yağmur',        'Yasemin','Yekta','Yelda','Yeliz','Yosma','Zade','Zahide','Zehra','Zeliha','Zerrin',        'Zeynep','Zuhal','Zülal','Züleyha','Zümra',    );    /**     * @link http://tr.wikipedia.org/wiki/Kategori:T%C3%BCrk%C3%A7e_soyadlar%C4%B1     *     * @var array Turkish last names.     */    protected static $lastName = array(        'Abacı', 'Abadan', 'Aclan', 'Adal', 'Adan', 'Adıvar', 'Akal', 'Akan', 'Akar', 'Akay',        'Akaydın', 'Akbulut', 'Akgül', 'Akışık', 'Akman', 'Akyürek', 'Akyüz', 'Akşit', 'Alnıaçık',        'Alpuğan', 'Alyanak', 'Arıcan', 'Arslanoğlu', 'Atakol', 'Atan', 'Avan', 'Ayaydın', 'Aybar',        'Aydan', 'Aykaç', 'Ayverdi', 'Ağaoğlu', 'Aşıkoğlu', 'Babacan', 'Babaoğlu', 'Bademci',        'Bakırcıoğlu', 'Balaban', 'Balcı', 'Barbarosoğlu', 'Baturalp', 'Baykam', 'Başoğlu', 'Berberoğlu',        'Beşerler', 'Beşok', 'Biçer', 'Bolatlı', 'Dalkıran', 'Dağdaş', 'Dağlaroğlu', 'Demirbaş', 'Demirel',        'Denkel', 'Dizdar', 'Doğan', 'Durak', 'Durmaz', 'Duygulu', 'Düşenkalkar', 'Egeli', 'Ekici', 'Ekşioğlu',        'Eliçin', 'Elmastaşoğlu', 'Elçiboğa', 'Erbay', 'Erberk', 'Erbulak', 'Erdoğan', 'Erez', 'Erginsoy',        'Erkekli', 'Eronat', 'Ertepınar', 'Ertürk', 'Erçetin', 'Evliyaoğlu', 'Fahri', 'Gönültaş', 'Gümüşpala',        'Günday', 'Gürmen', 'Ilıcalı', 'Kahveci', 'Kaplangı', 'Karabulut', 'Karaböcek', 'Karadaş', 'Karaduman',        'Karaer', 'Kasapoğlu', 'Kavaklıoğlu', 'Kaya', 'Keseroğlu', 'Keçeci', 'Kılıççı', 'Kıraç', 'Kocabıyık',        'Korol', 'Koyuncu', 'Koç', 'Koçoğlu', 'Koçyiğit', 'Kuday', 'Kulaksızoğlu', 'Kumcuoğlu', 'Kunt',        'Kunter', 'Kurutluoğlu', 'Kutlay', 'Kuzucu', 'Körmükçü', 'Köybaşı', 'Köylüoğlu', 'Küçükler', 'Limoncuoğlu',        'Mayhoş', 'Menemencioğlu', 'Mertoğlu', 'Nalbantoğlu', 'Nebioğlu', 'Numanoğlu', 'Okumuş', 'Okur', 'Oraloğlu',        'Orbay', 'Ozansoy', 'Paksüt', 'Pekkan', 'Pektemek', 'Polat', 'Poyrazoğlu', 'Poçan', 'Sadıklar', 'Samancı',        'Sandalcı', 'Sarıoğlu', 'Saygıner', 'Sepetçi', 'Sezek', 'Sinanoğlu', 'Solmaz', 'Sözeri', 'Süleymanoğlu',        'Tahincioğlu', 'Tanrıkulu', 'Tazegül', 'Taşlı', 'Taşçı', 'Tekand', 'Tekelioğlu', 'Tokatlıoğlu', 'Tokgöz',        'Topaloğlu', 'Topçuoğlu', 'Toraman', 'Tunaboylu', 'Tunçeri', 'Tuğlu', 'Tuğluk', 'Türkdoğan', 'Türkyılmaz',        'Tütüncü', 'Tüzün', 'Uca', 'Uluhan', 'Velioğlu', 'Yalçın', 'Yazıcı', 'Yetkiner', 'Yeşilkaya', 'Yıldırım',        'Yıldızoğlu', 'Yılmazer', 'Yorulmaz', 'Çamdalı', 'Çapanoğlu', 'Çatalbaş', 'Çağıran', 'Çetin', 'Çetiner',        'Çevik', 'Çörekçi', 'Önür', 'Örge', 'Öymen', 'Özberk', 'Özbey', 'Özbir', 'Özdenak', 'Özdoğan', 'Özgörkey',        'Özkara', 'Özkök', 'Öztonga', 'Öztuna'    );    protected static $title = array('Doç. Dr.', 'Dr.', 'Prof. Dr.');    public function title($gender = null)    {        return static::titleMale();    }    /**     * replaced by specific unisex Turkish title     */    public static function titleMale()    {        return static::randomElement(static::$title);    }    /**     * replaced by specific unisex Turkish title     */    public static function titleFemale()    {        return static::titleMale();    }}
