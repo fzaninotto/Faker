@@ -123,32 +123,41 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @link http://tr.wikipedia.org/wiki/Kategori:T%C3%BCrk%C3%A7e_soyadlar%C4%B1
-     *
+     * @link http://www.nvi.gov.tr/Files/File/Istatistikler/Isimler/en%20%C3%A7ok%20kullan%C4%B1lan%20soyad.pdf
+     * 
      * @var array Turkish last names.
      */
     protected static $lastName = array(
-        'Abacı', 'Abadan', 'Aclan', 'Adal', 'Adan', 'Adıvar', 'Akal', 'Akan', 'Akar', 'Akay',
-        'Akaydın', 'Akbulut', 'Akgül', 'Akışık', 'Akman', 'Akyürek', 'Akyüz', 'Akşit', 'Alnıaçık',
-        'Alpuğan', 'Alyanak', 'Arıcan', 'Arslanoğlu', 'Atakol', 'Atan', 'Avan', 'Ayaydın', 'Aybar',
-        'Aydan', 'Aykaç', 'Ayverdi', 'Ağaoğlu', 'Aşıkoğlu', 'Babacan', 'Babaoğlu', 'Bademci',
-        'Bakırcıoğlu', 'Balaban', 'Balcı', 'Barbarosoğlu', 'Baturalp', 'Baykam', 'Başoğlu', 'Berberoğlu',
-        'Beşerler', 'Beşok', 'Biçer', 'Bolatlı', 'Dalkıran', 'Dağdaş', 'Dağlaroğlu', 'Demirbaş', 'Demirel',
-        'Denkel', 'Dizdar', 'Doğan', 'Durak', 'Durmaz', 'Duygulu', 'Düşenkalkar', 'Egeli', 'Ekici', 'Ekşioğlu',
-        'Eliçin', 'Elmastaşoğlu', 'Elçiboğa', 'Erbay', 'Erberk', 'Erbulak', 'Erdoğan', 'Erez', 'Erginsoy',
-        'Erkekli', 'Eronat', 'Ertepınar', 'Ertürk', 'Erçetin', 'Evliyaoğlu', 'Fahri', 'Gönültaş', 'Gümüşpala',
-        'Günday', 'Gürmen', 'Ilıcalı', 'Kahveci', 'Kaplangı', 'Karabulut', 'Karaböcek', 'Karadaş', 'Karaduman',
-        'Karaer', 'Kasapoğlu', 'Kavaklıoğlu', 'Kaya', 'Keseroğlu', 'Keçeci', 'Kılıççı', 'Kıraç', 'Kocabıyık',
-        'Korol', 'Koyuncu', 'Koç', 'Koçoğlu', 'Koçyiğit', 'Kuday', 'Kulaksızoğlu', 'Kumcuoğlu', 'Kunt',
-        'Kunter', 'Kurutluoğlu', 'Kutlay', 'Kuzucu', 'Körmükçü', 'Köybaşı', 'Köylüoğlu', 'Küçükler', 'Limoncuoğlu',
-        'Mayhoş', 'Menemencioğlu', 'Mertoğlu', 'Nalbantoğlu', 'Nebioğlu', 'Numanoğlu', 'Okumuş', 'Okur', 'Oraloğlu',
-        'Orbay', 'Ozansoy', 'Paksüt', 'Pekkan', 'Pektemek', 'Polat', 'Poyrazoğlu', 'Poçan', 'Sadıklar', 'Samancı',
-        'Sandalcı', 'Sarıoğlu', 'Saygıner', 'Sepetçi', 'Sezek', 'Sinanoğlu', 'Solmaz', 'Sözeri', 'Süleymanoğlu',
-        'Tahincioğlu', 'Tanrıkulu', 'Tazegül', 'Taşlı', 'Taşçı', 'Tekand', 'Tekelioğlu', 'Tokatlıoğlu', 'Tokgöz',
-        'Topaloğlu', 'Topçuoğlu', 'Toraman', 'Tunaboylu', 'Tunçeri', 'Tuğlu', 'Tuğluk', 'Türkdoğan', 'Türkyılmaz',
-        'Tütüncü', 'Tüzün', 'Uca', 'Uluhan', 'Velioğlu', 'Yalçın', 'Yazıcı', 'Yetkiner', 'Yeşilkaya', 'Yıldırım',
-        'Yıldızoğlu', 'Yılmazer', 'Yorulmaz', 'Çamdalı', 'Çapanoğlu', 'Çatalbaş', 'Çağıran', 'Çetin', 'Çetiner',
-        'Çevik', 'Çörekçi', 'Önür', 'Örge', 'Öymen', 'Özberk', 'Özbey', 'Özbir', 'Özdenak', 'Özdoğan', 'Özgörkey',
-        'Özkara', 'Özkök', 'Öztonga', 'Öztuna'
+        'Abacı','Abadan','Acar','Aclan','Adal','Adan','Adıvar','Ağaoğlu','Akal','Akan',
+        'Akar','Akay','Akaydın','Akbulut','Akgül','Akışık','Akman','Aksoy','Akşit',
+        'Aktaş','Akyürek','Akyüz','Alnıaçık','Alpuğan','Alyanak','Arıcan','Arslan',
+        'Arslanoğlu','Aslan','Aşıkoğlu','Atakol','Atan','Ateş','Avan','Avci','Ayaydın',
+        'Aybar','Aydan','Aydin','Aykaç','Ayverdi','Babacan','Babaoğlu','Bademci','Bakırcıoğlu',
+        'Balaban','Balcı','Barbarosoğlu','Başoğlu','Baturalp','Baykam','Berberoğlu',
+        'Beşerler','Beşok','Biçer','Bolatlı','Bozkurt','Bulut','Can','Çağıran','Çakir',
+        'Çamdalı','Çapanoğlu','Çatalbaş','Çelik','Çetin','Çetiner','Çevik','Çörekçi',
+        'Dağdaş','Dağlaroğlu','Dalkıran','Demir','Demirbaş','Demirel','Denkel','Dizdar',
+        'Doğan','Durak','Durmaz','Duygulu','Düşenkalkar','Egeli','Ekici','Ekşioğlu',
+        'Elçiboğa','Eliçin','Elmastaşoğlu','Erbay','Erberk','Erbulak','Erçetin','Erdoğan',
+        'Erez','Erginsoy','Erkekli','Eronat','Ertepınar','Ertürk','Evliyaoğlu','Fahri',
+        'Gönültaş','Gül','Güler','Gümüşpala','Günday','Güneş','Gürmen','Ilıcalı',
+        'Işik','Kahveci','Kaplan','Kaplangı','Kara','Karaböcek','Karabulut','Karadaş',
+        'Karaduman','Karaer','Kasapoğlu','Kavaklıoğlu','Kaya','Keçeci','Keseroğlu',
+        'Keskin','Kılıççı','Kıraç','Kiliç','Kocabıyık','Koç','Koçoğlu','Koçyiğit',
+        'Korkmaz','Korol','Koyuncu','Körmükçü','Köse','Köybaşı','Köylüoğlu','Kuday',
+        'Kulaksızoğlu','Kumcuoğlu','Kunt','Kunter','Kurt','Kurutluoğlu','Kutlay','Kuzucu',
+        'Küçükler','Limoncuoğlu','Mayhoş','Menemencioğlu','Mertoğlu','Nalbantoğlu',
+        'Nebioğlu','Numanoğlu','Okumuş','Okur','Oraloğlu','Orbay','Ozansoy','Önür',
+        'Örge','Öymen','Özberk','Özbey','Özbir','Özcan','Özdemir','Özdenak','Özdoğan',
+        'Özer','Özgörkey','Özkan','Özkara','Özkök','Öztonga','Öztuna','Öztürk',
+        'Paksüt','Pekkan','Pektemek','Poçan','Polat','Poyrazoğlu','Sadıklar','Samancı',
+        'Sandalcı','Sarıoğlu','Sari','Saygıner','Sepetçi','Sezek','Sinanoğlu','Solmaz',
+        'Sözeri','Süleymanoğlu','Şahin','Şen','Şimşek','Tahincioğlu','Tanrıkulu',
+        'Taş','Taşçı','Taşlı','Tazegül','Tekand','Tekelioğlu','Tekin','Tokatlıoğlu',
+        'Tokgöz','Topaloğlu','Topçuoğlu','Toraman','Tuğlu','Tuğluk','Tunaboylu','Tunçeri',
+        'Turan','Türkdoğan','Türkyılmaz','Tütüncü','Tüzün','Uca','Uluhan','Ünal',
+        'Velioğlu','Yalçın','Yalçin','Yavuz','Yazıcı','Yeşilkaya','Yetkiner','Yıldırım',
+        'Yıldızoğlu','Yılmazer','Yildirim','Yildiz','Yilmaz','Yorulmaz','Yüksel'
     );
 
     protected static $title = array('Doç. Dr.', 'Dr.', 'Prof. Dr.');
