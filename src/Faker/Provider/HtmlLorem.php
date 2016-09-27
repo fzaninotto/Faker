@@ -231,15 +231,15 @@ class HtmlLorem extends Base
         $tr = $element->ownerDocument->createElement(HtmlLorem::TR_TAG);
         $thead->appendChild($tr);
         for ($i = 0; $i < $cols; $i++) {
-            $th = $element->ownerDocument->createElement(HtmlLorem::TR_TAG);
+            $th = $element->ownerDocument->createElement(HtmlLorem::TH_TAG);
             $th->textContent = Lorem::sentence(mt_rand(1, $maxTitle));
             $tr->appendChild($th);
         }
         for ($i = 0; $i < $rows; $i++) {
-            $tr = $element->ownerDocument->createElement("tr");
+            $tr = $element->ownerDocument->createElement(HtmlLorem::TR_TAG);
             $tbody->appendChild($tr);
             for ($j = 0; $j < $cols; $j++) {
-                $th = $element->ownerDocument->createElement("td");
+                $th = $element->ownerDocument->createElement(HtmlLorem::TD_TAG);
                 $th->textContent = Lorem::sentence(mt_rand(1, $maxLength));
                 $tr->appendChild($th);
             }
