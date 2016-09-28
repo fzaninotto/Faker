@@ -4,7 +4,7 @@ namespace Faker\Provider\ar_PS;
 
 class Text extends \Faker\Provider\Text
 {
-    protected static function validStart($word) 
+    protected static function validStart($word)
     {
         return preg_match('/^\p{Arabic}/u', $word);
     }
