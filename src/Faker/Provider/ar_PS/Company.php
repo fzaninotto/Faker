@@ -36,7 +36,8 @@ class Company extends \Faker\Provider\Company
     /**
      * @example 'Robust full-range hub'
      */
-    public function catchPhrase() {
+    public function catchPhrase() 
+    {
 
         $result = array();
         foreach (static::$catchPhraseWords as &$word) {
@@ -49,7 +50,8 @@ class Company extends \Faker\Provider\Company
     /**
      * @example 'integrate extensible convergence'
      */
-    public function bs() {
+    public function bs() 
+    {
         $result = array();
 
         foreach (static::$bsWords as &$word) {
