@@ -24,7 +24,6 @@ class HtmlLoremTest extends \PHPUnit_Framework_TestCase
         $dom = new \DOMDocument();
         $error = $dom->loadHTML($node);
         $this->assertTrue($error);
-
     }
 
 }

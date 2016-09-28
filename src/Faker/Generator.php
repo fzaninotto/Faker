@@ -167,6 +167,9 @@ namespace Faker;
  * @property string $rgbCssColor
  * @property string $safeColorName
  * @property string $colorName
+ *
+ * @method string randomHtml($maxDepth = 4, $maxWidth = 4)
+ *
  */
 class Generator
 {
