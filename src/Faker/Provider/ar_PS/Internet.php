@@ -17,12 +17,41 @@ class Internet extends \Faker\Provider\Internet
     protected static $tld = array(
         'biz', 'com', 'info', 'jo', 'net', 'org',
     );
-
+    
+    /**
+     * Arabic masculine given names
+     * @link    https://en.wikipedia.org/wiki/Category:Arabic_masculine_given_names
+     */
     protected static $lastNameAscii = array(
-        'abbad', 'abbadi', 'abbas', 'abulebbeh', 'flefel', 'hadi', 'hamad', 'hasan', 'jabri', 'kanaan', 'karam', 'maanee', 'melhem', 'nimry', 'obaisi', 'qasem', 'qawasmee', 'rabee', 'rashwani', 'shami', 'zaloum',
+        
+        'alaa', 'aman', 'amer', 'amir', 'amjad', 'ammar', 
+        'barkat', 'bashar', 'bashir', 'bilal', 'burhan', 'daud',
+        'fikri', 'habib', 'hadi', 'hafeez', 'haitham', 'hakam',
+        'ilyas', 'imad', 'imran', 'inaam', 'iqbal', 'jaber',
+        'labib', 'latif', 'luay', 'mahir', 'majid', 'mamdouh',
+        'muammer', 'muhsin', 'mukhtar', 'munir', 'murad', 'musa',
+        'nasir', 'nasrallah', 'nawfal', 'nihad', 'numan', 'nur',
+        'rashad', 'ramzi', 'rifat', 'rushdi', 'saad', 'sabri',
+        'shawki', 'shukri', 'suhail', 'sultan', 'taha', 'taher',
+        'waleed', 'wasim', 'yacine', 'yasser', 'yunus', 'yusuf',
     );
+
+    /**
+     * Arabic masculine given names
+     * @link    https://en.wikipedia.org/wiki/Category:Arabic_masculine_given_names
+     */
     protected static $firstNameAscii = array(
-        'abd', 'abdullah', 'ahmad', 'akram', 'amr', 'bashar', 'bilal', 'fadi', 'ibrahim', 'khaled', 'layth', 'mohammad', 'mutaz', 'omar', 'osama', 'rami', 'saleem', 'samer', 'sami', 'yazan',
+        'abbad', 'adeel', 'abbas', 'adnan', 'ahmad', 'akram', 
+        'amr', 'anis', 'asem', 'atif', 'awad', 'ayman', 
+        'ekram', 'fadel', 'fadi', 'fahd', 'faheem', 'fahmi',
+        'harun', 'hatem', 'hossam', 'hussein', 'idris', 'ihab',
+        'jalal', 'jamal', 'jameel', 'jawdat', 'kamil', 'karem',
+        'mansur', 'marwan', 'masoud', 'midhat', 'moeen', 'mohannad',
+        'nabih', 'nabil', 'nader', 'naim', 'naji', 'najib',
+        'omar', 'osama', 'qusay', 'raed', 'rafiq', 'raji',
+        'sadik', 'sajid', 'salah', 'salim', 'samir', 'shakir',
+        'talal', 'tariq', 'tawfik', 'uday', 'wafi', 'wajdi',
+        'zahir', 'zaid', 'zakariya', 'zaki', 'ziad'
     );
 
     public static function lastNameAscii()
