@@ -48,7 +48,8 @@ class Company extends \Faker\Provider\Company
     /**
      * @example 'integrate extensible convergence'
      */
-    public function bs() {
+    public function bs()
+    {
         $result = array();
 
         foreach (static::$bsWords as &$word) {
