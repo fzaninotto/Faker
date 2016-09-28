@@ -101,9 +101,8 @@ class Person extends \Faker\Provider\Person
     /**
      * @example 'أ.'
      */
-    public static function prefix() {
-        
+    public static function prefix()
+    {
         return static::randomElement(static::$prefix);
     }
-
 }
