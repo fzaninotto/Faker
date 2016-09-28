@@ -7,28 +7,28 @@ use Faker\Generator;
 class HtmlLorem extends Base
 {
 
-    public static $HTML_TAG = "html";
-    public static $HEAD_TAG = "head";
-    public static $BODY_TAG = "body";
-    public static $DIV_TAG = "div";
-    public static $P_TAG = "p";
-    public static $A_TAG = "a";
-    public static $SPAN_TAG = "span";
-    public static $TABLE_TAG = "table";
-    public static $THEAD_TAG = "thead";
-    public static $TBODY_TAG = "tbody";
-    public static $TR_TAG = "tr";
-    public static $TD_TAG = "td";
-    public static $TH_TAG = "th";
-    public static $UL_TAG = "ul";
-    public static $LI_TAG = "li";
-    public static $H_TAG = "h";
-    public static $B_TAG = "b";
-    public static $I_TAG = "i";
-    public static $TITLE_TAG = "title";
-    public static $FORM_TAG = "form";
-    public static $INPUT_TAG = "input";
-    public static $LABEL_TAG = "label";
+    protected static $HTML_TAG = "html";
+    protected static $HEAD_TAG = "head";
+    protected static $BODY_TAG = "body";
+    protected static $DIV_TAG = "div";
+    protected static $P_TAG = "p";
+    protected static $A_TAG = "a";
+    protected static $SPAN_TAG = "span";
+    protected static $TABLE_TAG = "table";
+    protected static $THEAD_TAG = "thead";
+    protected static $TBODY_TAG = "tbody";
+    protected static $TR_TAG = "tr";
+    protected static $TD_TAG = "td";
+    protected static $TH_TAG = "th";
+    protected static $UL_TAG = "ul";
+    protected static $LI_TAG = "li";
+    protected static $H_TAG = "h";
+    protected static $B_TAG = "b";
+    protected static $I_TAG = "i";
+    protected static $TITLE_TAG = "title";
+    protected static $FORM_TAG = "form";
+    protected static $INPUT_TAG = "input";
+    protected static $LABEL_TAG = "label";
 
     public function __construct(Generator $generator)
     {
