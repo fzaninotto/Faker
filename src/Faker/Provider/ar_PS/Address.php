@@ -56,7 +56,7 @@ class Address extends \Faker\Provider\Address
     /**
      * @example 'القدس'
      */
-    public static function cityName() 
+    public static function cityName()
     {
         return static::randomElement(static::$cityName);
     }
@@ -64,7 +64,7 @@ class Address extends \Faker\Provider\Address
     /**
      * @example 'شارع'
      */
-    public static function streetPrefix() 
+    public static function streetPrefix()
     {
         return static::randomElement(static::$streetPrefix);
     }
@@ -72,7 +72,7 @@ class Address extends \Faker\Provider\Address
     /**
      * @example 'شقة رقم. 350'
      */
-    public static function secondaryAddress() 
+    public static function secondaryAddress()
     {
         return static::numerify(static::randomElement(static::$secondaryAddressFormats));
     }
@@ -80,7 +80,7 @@ class Address extends \Faker\Provider\Address
     /**
      * @example 'محافظة القدس'
      */
-    public static function governorate() 
+    public static function governorate()
     {
         return static::randomElement(static::$governorates);
     }
