@@ -43,7 +43,7 @@ class Person extends \Faker\Provider\Person
         'Ada', 'Esma', 'Emel', 'Ebru', 'Şahnur', 'Ümran', 'Sinem', 'İrem', 'Rüya', 'Ece', 'Burcu', 'Nisa', 'Ayşe', 'Leyla', 'Deniz', 
         'Zeynep', 'Begüm', 'Esra', 'Hatice', 'Özlem', 'Selin', 'Ecrin', 'Gülsüm', 'Aliye', 'Merve', 'Melis', 'Kerime', 'Bahar', 'Başak', 
         'Sıla', 'Yaren', 'Yeliz', 'Yağmur', 'Melisa', 'Nurcan', 'Cansu', 'Canan', 'Buse', 'Gizem', 'Beyza', 'Aybüke', 'Seher', 'Feyza', 
-        'Dilan', 'Selen', 'Betül', 'Elif', 'Birgül', 'Nur', 'Nurten', 'Damla', 'Burcu', 'Aslı', 'Aslıhan', 'Dilara', 'Ayşegül', 'Sevcan'
+        'Dilan', 'Selen', 'Betül', 'Elif', 'Birgül', 'Nur', 'Nurten', 'Damla', 'Burcu', 'Aslı', 'Aslıhan', 'Dilara', 'Ayşegül', 'Sevcan',
         'Zehra', 'Asena', 'Kader', 'Gül', 'Gülcan', 'Adile', 'Ezgi', 'Ceren', 'Şeyma', 'Şeyda', 'Su', 'Serenay', 'Sevda', 'Cemile'
     );
 
