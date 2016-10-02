@@ -2,6 +2,8 @@
 
 namespace Faker\Provider\fi_FI;
 
+use Faker\Provider\DateTime;
+
 class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = array(
@@ -85,4 +87,97 @@ class Person extends \Faker\Provider\Person
     protected static $titleMale = array('Hra.', 'Tri.');
 
     protected static $titleFemale = array('Rva.', 'Nti.', 'Tri.');
+
+    /**
+     * Personal identity code (Henkilötunnus)
+     *
+     * @example '200496-901Y'
+     * @param  \Datetime $birthDate
+     * @see http://www.vrk.fi/default.aspx?id=45
+     *
+     * @return string Personal identity code
+     */
+    public static function nationalIdNumber(\DateTime $birthDate = null)
+    {
+        if (!$birthDate) {
+            $birthDate = \Faker\Provider\DateTime::dateTimeBetween('1.1.1900', 'now');
+        }
+
+        // Form separator, suffix and checksum
+        $separator = static::getNationalIdSeparator($birthDate);
+        $suffix = static::numberBetween(900, 999);
+        $checksum = static::getNationalIdChecksum($birthDate, $suffix);
+
+        return $birthDate->format('dmy') . $separator . str_pad($suffix, 3, 0, STR_PAD_LEFT) . $checksum;
+    }
+
+    /**
+     * Determines the separator based on century
+     * @param  \Datetime $birthDate
+     * @see http://www.vrk.fi/default.aspx?id=45
+     * @return string Separator (+, - or A)
+     */
+    public static function getNationalIdSeparator(\Datetime $birthDate)
+    {
+        switch (substr($birthDate->format('Y'), 0, 2)) {
+            case '18':
+                $separator = '+';
+                break;
+            case '19':
+                $separator = '-';
+                break;
+            case '20':
+                $separator = 'A';
+                break;
+        }
+
+        return $separator;
+    }
+
+    /**
+     * Calculates the checksum for the personal identity code
+     * @param  \Datetime $birthDate
+     * @param  int       $suffix
+     * @see http://www.vrk.fi/default.aspx?id=45
+     * @return string Number between 1 and 10 or alphabet excluding G, I, O, Q and Z
+     */
+    public static function getNationalIdChecksum(\Datetime $birthDate, $suffix)
+    {
+        $combined = $birthDate->format('dmy') . $suffix;
+        
+        $remainder = (int) $combined % 31;
+
+        // If remainder is less than 10, that is the checksum. Otherwise use mapping table to alphabetical characters.
+        if ($remainder <= 9) {
+            $checksum = $remainder;
+        } else {
+            $mappingTable = array(
+                10 => 'A',
+                11 => 'B',
+                12 => 'C',
+                13 => 'D',
+                14 => 'E',
+                15 => 'F',
+                16 => 'H',
+                17 => 'J',
+                18 => 'K',
+                19 => 'L',
+                20 => 'M',
+                21 => 'N',
+                22 => 'P',
+                23 => 'R',
+                24 => 'S',
+                25 => 'T',
+                26 => 'U',
+                27 => 'V',
+                28 => 'W',
+                29 => 'X',
+                30 => 'Y',
+            );
+
+            $checksum = $mappingTable[$remainder];
+        }
+        
+        return $checksum;
+    }
 }
