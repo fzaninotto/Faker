@@ -140,11 +140,11 @@ class Person extends \Faker\Provider\Person
     public function idNumber($minAge = 16, $maxAge = 100, $citizen = true, $gender = null)
     {
         switch (strtolower($gender)) {
-            case static::GENDER_MALE:
-                $genderDigit = static::numberBetween(0, 4);
-                break;
             case static::GENDER_FEMALE:
-                $genderDigit = static::numberBetween(5, 9);
+                $genderDigit = self::numberBetween(0, 4);
+                break;
+            case static::GENDER_MALE:
+                $genderDigit = self::numberBetween(5, 9);
                 break;
             default:
                 $genderDigit = rand(0, 9);
@@ -154,9 +154,9 @@ class Person extends \Faker\Provider\Person
 
         $birthDateString = DateTime::dateTimeBetween(sprintf('-%d years', $maxAge), sprintf('-%d years', $minAge))->format('ymd');
 
-        $sequenceDigits = str_pad(static::randomNumber(3), 3, 0, STR_PAD_BOTH);
+        $sequenceDigits = str_pad(self::randomNumber(3), 3, 0, STR_PAD_BOTH);
 
-        $raceDigit = static::randomNumber(1);
+        $raceDigit = self::randomNumber(1);
 
         $partialIdNumber = $birthDateString . $genderDigit . $sequenceDigits . $citizenDigit . $raceDigit;
 
