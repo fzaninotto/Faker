@@ -68,6 +68,7 @@ class Company extends \Faker\Provider\Company
      **/
     public static function companyIdNumber()
     {
-        return Luhn::generateLuhnNumber(700, 10);
+        $partialValue = static::numerify(700 . str_repeat('#', 6));
+        return Luhn::generateLuhnNumber($partialValue);
     }
 }

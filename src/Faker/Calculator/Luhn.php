@@ -63,36 +63,13 @@ class Luhn
      * Generate a Luhn compliant number.
      *
      * @param string $prefix
-     * @param int $length
      * @return string
      */
-    public static function generateLuhnNumber($prefix, $length)
+    public static function generateLuhnNumber($partialValue)
     {
-        $length = intval($length);
-        $prefix = trim($prefix);
-
-        if (!preg_match('/^\d*$/', $prefix)) {
-            throw new InvalidArgumentException('prefix should be all digits.');
+        if(!preg_match('/^\d+$/', $partialValue)) {
+            throw new InvalidArgumentException('Argument should be an integer.');
         }
-
-        if ($length <= 0) {
-            throw new InvalidArgumentException('length should be greater than zero.');
-        }
-
-        if (strlen($prefix) > $length) {
-            throw new InvalidArgumentException('prefix should be longer than the length.');
-        }
-
-        if (strlen($prefix) == $length) {
-            if (static::isValid($prefix)) {
-                return $prefix;
-            } else {
-                throw new InvalidArgumentException('prefix length equals length but prefix is not a Luhn number.');
-            }
-        }
-
-        $pattern = $prefix . str_repeat('#', $length - strlen($prefix) - 1);
-        $partialValue = BaseProvider::numerify($pattern);
         return $partialValue . Luhn::computeCheckDigit($partialValue);
     }
 }

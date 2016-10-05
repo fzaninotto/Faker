@@ -92,8 +92,9 @@ class Person extends \Faker\Provider\Person
      */
     public static function idNumber()
     {
-        $firstDigit = static::randomElement(array(1, 2));
-        return Luhn::generateLuhnNumber($firstDigit, 10);
+        $partialValue = static::numerify(
+            static::randomElement(array(1, 2)) . str_repeat('#', 8));
+        return Luhn::generateLuhnNumber($partialValue);
     }
 
     /**
@@ -101,7 +102,8 @@ class Person extends \Faker\Provider\Person
      */
     public static function nationalIdNumber()
     {
-        return Luhn::generateLuhnNumber(1, 10);
+        $partialValue = static::numerify(1 . str_repeat('#', 8));
+        return Luhn::generateLuhnNumber($partialValue);
     }
 
     /**
@@ -109,6 +111,7 @@ class Person extends \Faker\Provider\Person
      */
     public static function foreignerIdNumber()
     {
-        return Luhn::generateLuhnNumber(2, 10);
+        $partialValue = static::numerify(2 . str_repeat('#', 8));
+        return Luhn::generateLuhnNumber($partialValue);
     }
 }
