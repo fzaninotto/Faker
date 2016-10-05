@@ -67,7 +67,7 @@ class Luhn
      */
     public static function generateLuhnNumber($partialValue)
     {
-        if(!preg_match('/^\d+$/', $partialValue)) {
+        if (!preg_match('/^\d+$/', $partialValue)) {
             throw new InvalidArgumentException('Argument should be an integer.');
         }
         return $partialValue . Luhn::computeCheckDigit($partialValue);
