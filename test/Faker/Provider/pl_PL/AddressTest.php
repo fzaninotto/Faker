@@ -28,4 +28,12 @@ class AddressTest extends \PHPUnit_Framework_TestCase
         $this->assertInternalType('string', $state);
         $this->assertRegExp('/[a-z]+/', $state);
     }
+
+    public function testCounty()
+    {
+        $county = $this->faker->county();
+        $this->assertNotEmpty($county);
+        $this->assertInternalType('string', $county);
+        $this->assertRegExp('/[a-z]+/', $county);
+    }
 }
