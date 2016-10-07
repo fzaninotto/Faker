@@ -59,4 +59,13 @@ class LuhnTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals($isValid, Luhn::isValid($number));
     }
+
+    /**
+     * @expectedException        InvalidArgumentException
+     * @expectedExceptionMessage Argument should be an integer.
+     */
+    public function testGenerateLuhnNumberWithInvalidPrefix()
+    {
+        Luhn::generateLuhnNumber('abc');
+    }
 }
