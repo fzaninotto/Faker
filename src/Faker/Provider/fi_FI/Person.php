@@ -116,7 +116,7 @@ class Person extends \Faker\Provider\Person
                 throw new \InvalidArgumentException('Year must be between 1800 and 2099 inclusive.');
         }
 
-        $randomDigits = self::numberBetween(0,89);
+        $randomDigits = self::numberBetween(0, 89);
         if ($gender && $gender == static::GENDER_MALE) {
             if ($randomDigits === 0) {
                 $randomDigits .= static::randomElement(array(3,5,7,9));
@@ -131,7 +131,7 @@ class Person extends \Faker\Provider\Person
             }
         } else {
             if ($randomDigits === 0) {
-                $randomDigits .= self::numberBetween(2,9);
+                $randomDigits .= self::numberBetween(2, 9);
             } else {
                 $randomDigits .= (string)static::numerify('#');
             }
