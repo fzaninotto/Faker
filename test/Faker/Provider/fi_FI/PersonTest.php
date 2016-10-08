@@ -3,6 +3,7 @@
 namespace Faker\Test\Provider\fi_FI;
 
 use Faker\Generator;
+use Faker\Provider\DateTime;
 use Faker\Provider\fi_FI\Person;
 
 class PersonTest extends \PHPUnit_Framework_TestCase
@@ -13,6 +14,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $faker = new Generator();
+        $faker->addProvider(new DateTime($faker));
         $faker->addProvider(new Person($faker));
         $this->faker = $faker;
     }
@@ -41,9 +43,20 @@ class PersonTest extends \PHPUnit_Framework_TestCase
 
     public function testPersonalIdentityNumberGeneratesCompliantNumbers()
     {
-        for ($i = 0; $i < 1000; $i++) {
-            $pin = $this->faker->personalIdentityNumber();
-            $this->assertRegExp('/^[0-9]{6}[+\-A][0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
+        for ($i = 0; $i < 10; $i++) {
+            $birthdate = $this->faker->dateTimeBetween('1800-01-01 00:00:00', '1899-12-31 23:59:59');
+            $pin = $this->faker->personalIdentityNumber($birthdate);
+            $this->assertRegExp('/^[0-9]{6}\+[0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
+        }
+        for ($i = 0; $i < 10; $i++) {
+            $birthdate = $this->faker->dateTimeBetween('1900-01-01 00:00:00', '1999-12-31 23:59:59');
+            $pin = $this->faker->personalIdentityNumber($birthdate);
+            $this->assertRegExp('/^[0-9]{6}-[0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
+        }
+        for ($i = 0; $i < 10; $i++) {
+            $birthdate = $this->faker->dateTimeBetween('2000-01-01 00:00:00', '2099-12-31 23:59:59');
+            $pin = $this->faker->personalIdentityNumber($birthdate);
+            $this->assertRegExp('/^[0-9]{6}A[0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
         }
     }
 
