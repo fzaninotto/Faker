@@ -31,7 +31,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
 
         $genderDigit = substr($idNumber, 6, 1);
 
-        $this->assertContains($genderDigit, ['5', '6', '7', '8', '9']);
+        $this->assertContains($genderDigit, array('5', '6', '7', '8', '9'));
     }
 
     public function testIdNumberForFemales()
@@ -40,6 +40,6 @@ class PersonTest extends \PHPUnit_Framework_TestCase
 
         $genderDigit = substr($idNumber, 6, 1);
 
-        $this->assertContains($genderDigit, ['0', '1', '2', '3', '4']);
+        $this->assertContains($genderDigit, array('0', '1', '2', '3', '4'));
     }
 }
