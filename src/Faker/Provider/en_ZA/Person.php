@@ -2,6 +2,9 @@
 
 namespace Faker\Provider\en_ZA;
 
+use Faker\Calculator\Luhn;
+use Faker\Provider\DateTime;
+
 class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = array(
@@ -123,4 +126,42 @@ class Person extends \Faker\Provider\Person
         'Hughes', 'Hanekom', 'Ally', 'Schmidt', 'Butler', 'Mtsweni', 'Maphumulo', 'Manamela', 'Hoffman', 'Wolmarans', 'Duma',
         'Pule', 'Hlophe', 'Miya', 'Moagi',
     );
+
+    /**
+     * @link https://en.wikipedia.org/wiki/National_identification_number#South_Africa
+     *
+     * @param int    $minAge
+     * @param int    $maxAge
+     * @param bool   $citizen
+     * @param string $gender
+     *
+     * @return string
+     */
+    public function idNumber($minAge = 16, $maxAge = 100, $citizen = true, $gender = null)
+    {
+        switch (strtolower($gender)) {
+            case static::GENDER_FEMALE:
+                $genderDigit = self::numberBetween(0, 4);
+                break;
+            case static::GENDER_MALE:
+                $genderDigit = self::numberBetween(5, 9);
+                break;
+            default:
+                $genderDigit = rand(0, 9);
+        }
+
+        $citizenDigit = ($citizen === true) ? '0' : '1';
+
+        $birthDateString = DateTime::dateTimeBetween(sprintf('-%d years', $maxAge), sprintf('-%d years', $minAge))->format('ymd');
+
+        $sequenceDigits = str_pad(self::randomNumber(3), 3, 0, STR_PAD_BOTH);
+
+        $raceDigit = self::randomNumber(1);
+
+        $partialIdNumber = $birthDateString . $genderDigit . $sequenceDigits . $citizenDigit . $raceDigit;
+
+        $idNumber = $partialIdNumber . Luhn::computeCheckDigit($partialIdNumber);
+
+        return $idNumber;
+    }
 }
