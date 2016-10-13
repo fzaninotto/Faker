@@ -4,11 +4,14 @@ namespace Faker;
 
 /**
  * @property string $name
+ * @method string name(string $gender = null)
  * @property string $firstName
+ * @method string firstName(string $gender = null)
  * @property string $firstNameMale
  * @property string $firstNameFemale
  * @property string $lastName
  * @property string $title
+ * @method string title(string $gender = null)
  * @property string $titleMale
  * @property string $titleFemale
  *
