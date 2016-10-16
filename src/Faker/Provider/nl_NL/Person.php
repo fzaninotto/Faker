@@ -70,7 +70,7 @@ class Person extends \Faker\Provider\Person
         'Coreth von und zu Coredo und Starkenberg', 'Cornelisse', 'Cornelissen', 'Cornelisz', 'van den Corput',
         'Corstiaens', 'Cosman', 'van de Coterlet', 'Courtier', 'van Cuijck', 'van Daal', 'Dachgelder', 'Dachgeldt',
         'Dachgelt', 'van Dagsburg', 'van Dalem', 'van Dam', 'van de Darnau', 'David', 'Dekker', 'Demmendaal',
-        'Dennenberg', 'Die Bont', 'Diesbergen', 'van Dijk', 'Dijkman', 'van Dillen', 'Dircken', 'Dirksen', 'Dirven',
+        'Dennenberg', 'die Bont', 'Diesbergen', 'van Dijk', 'Dijkman', 'van Dillen', 'Dircken', 'Dirksen', 'Dirven',
         'Doesburg', 'van Dokkum', 'van Dommelen', 'van Dongen', 'van Dooren', 'Doorhof', 'Doornhem', 'Dorsman',
         'Doyle', 'Draaisma', 'van Drenthe', 'Dries', 'Drysdale', 'Dubois', 'van Duivenvoorde', 'Duivenvoorden',
         'van Duvenvoirde', 'van Duyvenvoorde', 'die Bont', 'die Pelser', 'die Witte', 'van Eck', 'Eckhardt', 'Eelman',
@@ -89,17 +89,17 @@ class Person extends \Faker\Provider\Person
         'Groote', 'de Grote', 'Gruijl', 'de Gruijl', 'de Gruijter', 'de Gruil', 'de Grunt', 'de Gruson', 'le Guellec',
         'Guit', 'le Gulcher', 'Höning', 'Haack', 'den Haag', 'van Haarlem', 'de Haas', 'van Haeften', 'Haengreve',
         'van Hagen', 'Hagendoorn', 'Hak', 'Hakker', 'van Ham', 'van Hamaland', 'Haneberg', 'Hanegraaff', 'Haring',
-        'Haselaar', 'van Haspengouw Hesbaye', 'van Haspengouw', 'Hazenveld', 'de Heer', 'Heere', 'Heerkens',
+        'Haselaar', 'van Haspengouw', 'Hazenveld', 'de Heer', 'Heere', 'Heerkens',
         'Heerschop', 'Hehl', 'van der Heiden', 'van der Heijden', 'Heijman', 'Heijmans', 'Heijmen', 'Heinrichs',
-        'Hekker', 'Hellevoort', 'Helmerhorst', 'van Hemert', 'Hemma van Allemanië', 'Hendricks', 'Hendriks',
-        'Hendrikse', 'van Henegouwen', 'Henric van den Nuwenhuse', 'van den Henst', 'Heribert van Laon', 'd\' Heripon',
+        'Hekker', 'Hellevoort', 'Helmerhorst', 'van Hemert', 'Hemma', 'Hendricks', 'Hendriks',
+        'Hendrikse', 'van Henegouwen',  'van den Henst', 'Heribert van Laon', 'd\' Heripon',
         'Hermans', 'van Herstal', 'van Heusden', 'Hexspoor', 'Heymans', 'Heyne', 'Hoedemakers', 'van den Hoek', 'Hoeks',
         'Hoelen', 'Hoes', 'van Hoevel en van Zwindrecht', 'van der Hoeven', 'van Holland', 'Hollander', 'Holthuis',
         'Hondeveld', 'Honing', 'de Hoog', 'Hoogers', 'de Hoogh', 'Hoppenbrouwer', 'Horrocks', 'van der Horst',
         'van Hostaden', 'Houdijk', 'van \'t Houteveen', 'Huberts', 'Huel', 'Huijben', 'Huijbrechts', 'Huijs',
         'Huijzing', 'Huisman', 'Huls', 'Hulshouts', 'Hulskes', 'Hulst', 'van Hulten', 'Huurdeman', 'van het Heerenveen',
         'Jaceps', 'Jacobi', 'Jacobs', 'Jacquot', 'de Jager', 'Jans', 'Jansdr', 'Janse', 'Jansen', 'Jansen', 'Jansse',
-        'Janssen', 'Janssens', 'Jasper dr', 'Jdotte', 'Jeggij', 'Jekel', 'Jerusalem', 'Jochems', 'de Jode Vastraedsd',
+        'Janssen', 'Janssens', 'Jasper dr', 'Jdotte', 'Jeggij', 'Jekel', 'Jerusalem', 'Jochems',
         'Jones', 'de Jong', 'Jonkman', 'Joosten', 'Jorlink', 'Jorrisen', 'van Jumiège', 'Jurrijens', 'Köster',
         'van der Kaay', 'de Kale', 'Kallen', 'Kalman', 'Kamp', 'Kamper', 'Karels', 'Kas', 'van Kasteelen', 'Kathagen',
         'Keijser', 'de Keijser', 'Keijzer', 'de Keijzer', 'Keltenie', 'van Kempen', 'Kerkhof', 'Ketel', 'Ketting',
@@ -152,20 +152,20 @@ class Person extends \Faker\Provider\Person
         'van Stralen', 'van der Strigt', 'de Strigter', 'Strijker', 'Strik', 'Stuivenberg', 'Suijker', 'van Suinvorde',
         'van Susa', 'de Swart', 'Symons', 'Takkelenburg', 'Tammerijn', 'Tamsma', 'Terry', 'den Teuling', 'Teunissen',
         'Texier', 'Thatcher', 'The Elder', 'Thomas', 'Thout', 'Tielemans', 'Tillmanno', 'Timmerman', 'Timmermans',
-        'Tins', 'Tirie', 'Totwiller', 'van Tours', 'van Tuijl', 'Tuithof', 'Uit de Willigen', 'Uittenbosch', 'Ulrich',
-        'Unruoch Hunerik', 'Uphaus', 'Uphuis', 'Uphus', 'VI', 'Vaessen', 'Vallenduuk', 'Van Bragt', 'Vandenbergh',
+        'Tins', 'Tirie', 'Totwiller', 'van Tours', 'van Tuijl', 'Tuithof', 'Uittenbosch', 'Ulrich',
+        'Uphaus', 'Uphuis', 'Uphus', 'VI', 'Vaessen', 'Vallenduuk', 'Van Bragt', 'Vandenbergh',
         'Vastenhouw', 'Veenendaal', 'Vegt', 'van der Veiver', 'Velderman', 'van Velthoven', 'Veltman', 'van Velzen',
         'van de Ven', 'van Venrooy', 'Verbeeck', 'Verbeek', 'Verboom', 'Verbruggen', 'Verda', 'van Verdun', 'Vergeer',
         'Verhaar', 'Verhagen', 'Verharen', 'Verheij', 'Verheuvel', 'Verhoeven', 'Verkade', 'van Vermandois',
         'Vermeulen', 'Verschuere', 'Verschut', 'Versluijs', 'Vertoor', 'Vertooren', 'Vervoort', 'Verwoert', 'Vial',
         'Vierdag', 'Vignon', 'van Vlaanderen', 'Volcke', 'van Voorhout', 'van Voorst', 'Voortman', 'Vos', 'Vrancken',
         'de Vries', 'de Vroege', 'de Vrome', 'ter Waarbeek', 'Waardeloo', 'van Waas', 'Wagenvoort', 'van Wallaert',
-        'Walsteijn', 'Walter', 'Waltrade Walderade', 'van Wassenaar', 'van de Water', 'Weeldenburg', 'Weerdenburg',
+        'Walsteijn', 'Walter', 'van Wassenaar', 'van de Water', 'Weeldenburg', 'Weerdenburg',
         'Weijland', 'Weijters', 'van Wel', 'van \'t Wel', 'Welf', 'Wendt', 'Wensen', 'de Werd', 'Werdes',
-        'Werl-Arnsberg, van', 'van Wessex', 'West-Francië, van', 'Westerbeek', 'Westerburg', 'Westermann',
+        'van Wessex', 'Westerbeek', 'Westerburg', 'Westermann',
         'van Westfalen', 'van de Weterink', 'Wever', 'Weyland', 'Weylant', 'van Wickerode', 'van de Wiel', 'Wigman',
         'Wijland', 'van Wijland', 'Wilcken', 'Wildschut', 'Willems', 'Willems van Lier', 'Willemsen', 'Wilmont',
-        'Wilson', 'Winnrich', 'Winters', 'Wipstrik', 'de Wit', 'van den Wittenboer', 'Wolffel', 'Wolfsdr',
+        'Wilson', 'Winnrich', 'Winters', 'Wipstrik', 'de Wit', 'van den Wittenboer', 'Wolffel',
         'Wolfswinkel', 'Wolters', 'Wolzak', 'Wooning', 'Woudenberg', 'Wouters', 'Wouters van Eijndhoven', 'Woutersz',
         'Wright', 'Wunderink', 'Wutke', 'Zaal', 'Zeemans', 'Zeldenrust', 'Zevenboom', 'van der Zijl', 'Zijlemans',
         'Zijlmans', 'Zuidweg', 'Zuijdveld', 'van Zwaben', 'Zwart', 'Zwijsen'
@@ -248,14 +248,14 @@ class Person extends \Faker\Provider\Person
      */
     public function lastName()
     {
-        $determinator = static::numberBetween(0, 3);
+        $determinator = static::numberBetween(0, 25);
         if ($determinator === 0) {
             $lastName = static::randomElement(static::$longLastNames);
-        } elseif ($determinator === 1) {
+        } elseif ($determinator <= 10) {
             $lastName = static::randomElement(static::$commonDutchLastNames);
-        } elseif ($determinator === 2) {
+        } elseif ($determinator <= 15) {
             $lastName = static::randomElement(static::$commonForeignLastNames);
-        } elseif ($determinator === 3) {
+        } else {
             $lastName = static::randomElement(static::$dutchLastNames);
         }
 
