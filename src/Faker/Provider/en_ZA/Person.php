@@ -137,8 +137,12 @@ class Person extends \Faker\Provider\Person
      *
      * @return string
      */
-    public function idNumber($minAge = 16, $maxAge = 100, $citizen = true, $gender = null)
+    public function idNumber(\DateTime $birthdate = null, $citizen = true, $gender = null)
     {
+        if (!$birthdate) {
+            $birthdate = $this->generator->dateTimeThisCentury();
+        }
+        $birthDateString = $birthdate->format('ymd');
         switch (strtolower($gender)) {
             case static::GENDER_FEMALE:
                 $genderDigit = self::numberBetween(0, 4);
@@ -147,21 +151,14 @@ class Person extends \Faker\Provider\Person
                 $genderDigit = self::numberBetween(5, 9);
                 break;
             default:
-                $genderDigit = rand(0, 9);
+                $genderDigit = self::numberBetween(0, 9);
         }
-
-        $citizenDigit = ($citizen === true) ? '0' : '1';
-
-        $birthDateString = DateTime::dateTimeBetween(sprintf('-%d years', $maxAge), sprintf('-%d years', $minAge))->format('ymd');
-
         $sequenceDigits = str_pad(self::randomNumber(3), 3, 0, STR_PAD_BOTH);
-
+        $citizenDigit = ($citizen === true) ? '0' : '1';
         $raceDigit = self::randomNumber(1);
 
         $partialIdNumber = $birthDateString . $genderDigit . $sequenceDigits . $citizenDigit . $raceDigit;
 
-        $idNumber = $partialIdNumber . Luhn::computeCheckDigit($partialIdNumber);
-
-        return $idNumber;
+        return $partialIdNumber . Luhn::computeCheckDigit($partialIdNumber);
     }
 }

@@ -893,6 +893,15 @@ echo $faker->bankRoutingNumber;  // '212240302'
 echo $faker->companyNumber; // 1999/789634/01
 ```
 
+### `Faker\Provider\en_ZA\Person`
+
+```php
+<?php
+
+// Generates a random national identifiaction number
+echo $faker->idNumber; // 6606192211041
+```
+
 ### `Faker\Provider\en_ZA\PhoneNumber`
 
 ```php
