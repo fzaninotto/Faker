@@ -4,6 +4,7 @@ namespace Faker\Test\Provider\en_ZA;
 
 use Faker\Generator;
 use Faker\Provider\en_ZA\Person;
+use Faker\Provider\DateTime;
 
 class PersonTest extends \PHPUnit_Framework_TestCase
 {
@@ -13,6 +14,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
+        $faker->addProvider(new DateTime($faker));
         $this->faker = $faker;
     }
 
@@ -27,7 +29,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
 
     public function testIdNumberForMales()
     {
-        $idNumber = $this->faker->idNumber(16, 100, true, 'male');
+        $idNumber = $this->faker->idNumber(new \DateTime(), true, 'male');
 
         $genderDigit = substr($idNumber, 6, 1);
 
@@ -36,7 +38,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
 
     public function testIdNumberForFemales()
     {
-        $idNumber = $this->faker->idNumber(16, 100, true, 'female');
+        $idNumber = $this->faker->idNumber(new \DateTime(), true, 'female');
 
         $genderDigit = substr($idNumber, 6, 1);
 
