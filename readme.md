@@ -1165,6 +1165,17 @@ echo $faker->bank; // "Narodowy Bank Polski"
 echo $faker->bankAccountNumber; // "PL14968907563953822118075816"
 ```
 
+### `Faker\Provider\pl_PL\Address`
+
+```php
+<?php
+
+// Generates a random county
+echo $faker->county; //chrzanowski
+// Generates a random county for the given voivodeship
+echo $faker->county('łódzkie'); //brzeziński
+```
+
 ### `Faker\Provider\pt_PT\Person`
 
 ```php
