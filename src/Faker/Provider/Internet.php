@@ -6,6 +6,7 @@ class Internet extends \Faker\Provider\Base
 {
     protected static $freeEmailDomain = array('gmail.com', 'yahoo.com', 'hotmail.com');
     protected static $tld = array('com', 'com', 'com', 'com', 'com', 'com', 'biz', 'info', 'net', 'org');
+    protected static $dynamicEmailDomain = array('maildrop.cc', 'yopmail.com', 'mailinator.com');
 
     protected static $userNameFormats = array(
         '{{lastName}}.{{firstName}}',
@@ -57,6 +58,14 @@ class Internet extends \Faker\Provider\Base
     }
 
     /**
+     * @example 'jdoe@gmail.com'
+     */
+    public function dynamicEmail()
+    {
+        return preg_replace('/\s/u', '', $this->userName() . '@' . static::dynamicEmailDomain());
+    }
+
+    /**
      * @example 'jdoe@dawson.com'
      */
     public function companyEmail()
@@ -70,6 +79,14 @@ class Internet extends \Faker\Provider\Base
     public static function freeEmailDomain()
     {
         return static::randomElement(static::$freeEmailDomain);
+    }
+
+    /**
+     * @example 'maildrop.cc'
+     */
+    public static function dynamicEmailDomain()
+    {
+        return static::randomElement(static::$dynamicEmailDomain);
     }
 
     /**
