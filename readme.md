@@ -370,7 +370,7 @@ try {
 
 ## Localization
 
-`Faker\Factory` can take a locale as an argument, to return localized data. If no localized provider is found, the factory fallbacks to the default locale (en_EN).
+`Faker\Factory` can take a locale as an argument, to return localized data. If no localized provider is found, the factory fallbacks to the default locale (en_US).
 
 ```php
 <?php
@@ -891,6 +891,15 @@ echo $faker->bankRoutingNumber;  // '212240302'
 
 // Generates a random company registration number
 echo $faker->companyNumber; // 1999/789634/01
+```
+
+### `Faker\Provider\en_ZA\Person`
+
+```php
+<?php
+
+// Generates a random national identifiaction number
+echo $faker->idNumber; // 6606192211041
 ```
 
 ### `Faker\Provider\en_ZA\PhoneNumber`
