@@ -5,8 +5,7 @@ namespace Faker\Provider\ar_PS;
 class Company extends \Faker\Provider\Company
 {
     protected static $formats = array(
-        '{{lastName}} {{companySuffix}}',
-        '{{companyPrefix}} {{lastName}} {{companySuffix}}',
+        '{{lastName}} {{companySuffix}}', '{{companyPrefix}} {{lastName}} {{companySuffix}}',
         '{{companyPrefix}} {{lastName}}',
     );
 
@@ -15,11 +14,13 @@ class Company extends \Faker\Provider\Company
     );
 
     protected static $catchPhraseWords = array(
-        array('الخدمات','الحلول','الانظمة','التقنيات'),
-        array('الذهبية','الذكية','المتطورة','المتقدمة', 'الدولية', 'المتخصصه', 'السريعة', 'الابداعية', 'المتكاملة', 'المتغيرة', 'المثالية')
+        array('الخدمات', 'الحلول', 'الانظمة', 'التقنيات'), array(
+            'الذهبية', 'الذكية', 'المتطورة', 'المتقدمة', 'الدولية', 'المتخصصه', 'السريعة', 'الابداعية', 'المتكاملة',
+            'المتغيرة', 'المثالية'
+        )
     );
 
-    protected static $companyPrefix = array('شركة','مؤسسة','مجموعة','مكتب','أكاديمية','معرض');
+    protected static $companyPrefix = array('شركة', 'مؤسسة', 'مجموعة', 'مكتب', 'أكاديمية', 'معرض');
 
     protected static $companySuffix = array('وأولاده', 'للمساهمة المحدودة', ' ذ.م.م', 'مساهمة عامة', 'وشركائه');
 
