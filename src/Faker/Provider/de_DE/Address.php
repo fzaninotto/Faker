@@ -125,6 +125,18 @@ class Address extends \Faker\Provider\Address
     {
         return static::randomElement(static::$state);
     }
+    
+    public static function stateShort()
+    {
+        $state = static::state();
+        return key($state);
+    }
+    
+    public static function stateName()
+    {
+        $state = static::state();
+        return current($state);
+    }
 
     public static function buildingNumber()
     {
