@@ -126,7 +126,7 @@ namespace Faker;
  * @method int numberBetween($min = 0, $max = 2147483647)
  * @method float randomFloat($nbMaxDecimals = null, $min = 0, $max = null)
  * @method mixed randomElement(array $array = array('a', 'b', 'c'))
- * @method array randomElements(array $array = array('a', 'b', 'c'), $count = 1)
+ * @method array randomElements(array $array = array('a', 'b', 'c'), $count = 1, $allowDuplicates = false)
  * @method array|string shuffle($arg = '')
  * @method array shuffleArray(array $array = array())
  * @method string shuffleString($string = '', $encoding = 'UTF-8')
