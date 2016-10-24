@@ -43,7 +43,22 @@ class Address extends \Faker\Provider\Address
     );
 
     protected static $state = array(
-        'Baden-Württemberg', 'Bayern', 'Berlin', 'Brandenburg', 'Bremen', 'Hamburg', 'Hessen', 'Mecklenburg-Vorpommern', 'Niedersachsen', 'Nordrhein-Westfalen', 'Rheinland-Pfalz', 'Saarland', 'Sachsen', 'Sachsen-Anhalt', 'Schleswig-Holstein', 'Thüringen'
+        array('BW' => 'Baden-Württemberg'),
+        array('BY' => 'Bayern'),
+        array('BE' => 'Berlin'),
+        array('BB' => 'Brandenburg'),
+        array('HB' => 'Bremen'),
+        array('HH' => 'Hamburg'),
+        array('HE' => 'Hessen'),
+        array('MV' => 'Mecklenburg-Vorpommern'),
+        array('NI' => 'Niedersachsen'),
+        array('NW' => 'Nordrhein-Westfalen'),
+        array('RP' => 'Rheinland-Pfalz'),
+        array('SL' => 'Saarland'),
+        array('SN' => 'Sachsen'),
+        array('ST' => 'Sachsen-Anhalt'),
+        array('SH' => 'Schleswig-Holstein'),
+        array('TH' => 'Thüringen')
     );
 
     protected static $country = array(
