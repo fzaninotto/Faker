@@ -16,7 +16,7 @@ class UniqueGenerator
      * @param Generator $generator
      * @param $maxRetries
      */
-    public function __construct(Generator $generator, $maxRetries)
+    public function __construct(Generator $generator, $maxRetries = 10000)
     {
         $this->generator = $generator;
         $this->maxRetries = $maxRetries;

@@ -3,6 +3,7 @@
 namespace Faker\Provider;
 
 use Faker\Generator;
+use Faker\UniqueGenerator;
 
 class HtmlLorem extends Base
 {
@@ -30,6 +31,8 @@ class HtmlLorem extends Base
     const INPUT_TAG = "input";
     const LABEL_TAG = "label";
 
+    private $idGenerator;
+
     public function __construct(Generator $generator)
     {
         parent::__construct($generator);
@@ -43,6 +46,7 @@ class HtmlLorem extends Base
     public function randomHtml($maxDepth = 4, $maxWidth = 4)
     {
         $document = new \DOMDocument();
+        $this->idGenerator = new UniqueGenerator($this->generator);
 
         $head = $document->createElement("head");
         $this->addRandomTitle($head);
@@ -122,7 +126,7 @@ class HtmlLorem extends Base
                 $node->setAttribute("class", $this->generator->word);
                 break;
             case 2:
-                $node->setAttribute("id", (string)$this->generator->randomNumber(5));
+                $node->setAttribute("id", (string)$this->idGenerator->randomNumber(5));
                 break;
         }
     }
