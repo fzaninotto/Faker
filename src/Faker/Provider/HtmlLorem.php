@@ -46,7 +46,7 @@ class HtmlLorem extends Base
     public function randomHtml($maxDepth = 4, $maxWidth = 4)
     {
         $document = new \DOMDocument();
-        $this->idGenerator = new UniqueGenerator($this->generator, 10000);
+        $this->idGenerator = new UniqueGenerator($this->generator);
 
         $head = $document->createElement("head");
         $this->addRandomTitle($head);
