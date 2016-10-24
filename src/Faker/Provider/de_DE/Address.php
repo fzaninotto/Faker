@@ -14,7 +14,10 @@ class Address extends \Faker\Provider\Address
     );
 
     protected static $postcode = array('#####');
-
+    
+    /**
+     * @link https://de.wikipedia.org/wiki/Liste_der_St%C3%A4dte_in_Deutschland
+     */
     protected static $cityNames = array(
         'Augsburg', 'Aschaffenburg', 'Aachen', 'Auerbach', 'Ahaus', 'Amberg', 'Ansbach', 'Angermünde', 'Anklam', 'Altötting', 'Apolda', 'Arnstadt', 'Artern', 'Altentreptow', 'Aue', 'Aurich',
         'Berlin', 'Bamberg', 'Bad Aibling', 'Bad Brückenau', 'Bad Doberan', 'Bad Freienwalde', 'Bad Kissingen', 'Bad Kreuznach', 'Bad Langensalza', 'Bad Liebenwerda', 'Bad Mergentheim', 'Bad Salzungen', 'Böblingen', 'Bernburg', 'Brand-Erbisdorf', 'Beilngries', 'Belzig', 'Berchtesgaden', 'Biedenkopf', 'Bischofswerda', 'Backnang', 'Borna', 'Bogen', 'Borken', 'Bruchsal', 'Brandenburg', 'Burg', 'Brilon', 'Bremervörde', 'Bersenbrück', 'Beeskow', 'Bayreuth', 'Bitterfeld', 'Burgdorf', 'Burglengenfeld', 'Büsingenm Hochrhein', 'Bützow', 'Bautzen', 'Bergzabern',
@@ -41,7 +44,10 @@ class Address extends \Faker\Provider\Address
         'Warendorf', 'Wittenberg', 'Worbis', 'Wiedenbrück', 'Werdau', 'Weimar', 'Wertingen', 'Wesel', 'Wolfenbüttel', 'Witzenhausen', 'Wittstock', 'Wolgast', 'Wolmirstedt', 'Wolfach', 'Wolfratshausen', 'Wernigerode', 'Waren', 'Weißenfels', 'Weißwasser', 'Wittmund', 'Waldmünchen', 'Wunsiedel', 'Wurzen', 'Wetzlar', 'Wanzleben',
         'Zerbst', 'Zschopau', 'Zeulenroda', 'Zossen'
     );
-
+    
+    /**
+     * @link https://de.wikipedia.org/wiki/Land_(Deutschland)
+     */
     protected static $state = array(
         array('BW' => 'Baden-Württemberg'),
         array('BY' => 'Bayern'),
@@ -102,42 +108,74 @@ class Address extends \Faker\Provider\Address
     protected static $addressFormats = array(
         "{{streetAddress}}\n{{postcode}} {{city}}",
     );
-
+    
+    /**
+     * Returns a random city name
+     * @example München
+     * @return string
+     */
     public function cityName()
     {
         return static::randomElement(static::$cityNames);
     }
-
+    
+    /**
+     * Returns a random street suffix
+     * @example str.
+     * @return string
+     */
     public function streetSuffixShort()
     {
         return static::randomElement(static::$streetSuffixShort);
     }
-
+    
+    /**
+     * Returns a random street suffix.
+     * @example Straße
+     * @return string
+     */
     public function streetSuffixLong()
     {
         return static::randomElement(static::$streetSuffixLong);
     }
 
     /**
-     * @example 'Berlin'
+     * Returns a random state
+     * @example array('BY' => 'Bayern')
+     * @return array
      */
     public static function state()
     {
         return static::randomElement(static::$state);
     }
     
+    /**
+     * Returns the abbreviation of a state
+     * @example BY
+     * @return string
+     */
     public static function stateShort()
     {
         $state = static::state();
         return key($state);
     }
     
+    /**
+     * Returns the name of a state
+     * @example Bayern
+     * @return string
+     */
     public static function stateName()
     {
         $state = static::state();
         return current($state);
     }
-
+    
+    /**
+     * Returns a building number
+     * @example 23a
+     * @return string
+     */
     public static function buildingNumber()
     {
         return static::regexify(self::numerify(static::randomElement(static::$buildingNumber)));
