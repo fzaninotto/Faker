@@ -214,7 +214,7 @@ class Internet extends \Faker\Provider\Base
         }
 
         $transId = 'Any-Latin; Latin-ASCII; NFD; [:Nonspacing Mark:] Remove; NFC;';
-        if (function_exists('transliterator_transliterate') && $transliterator = \Transliterator::create($transId)) {
+        if (class_exists('Transliterator') && $transliterator = \Transliterator::create($transId)) {
             $transString = $transliterator->transliterate($string);
         } else {
             $transString = static::toAscii($string);
