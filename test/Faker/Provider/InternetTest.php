@@ -64,9 +64,39 @@ class InternetTest extends \PHPUnit_Framework_TestCase
         }
 
         $this->loadLocalProviders($locale);
-        $pattern = '/^[A-Za-z0-9._]+$/';
+        $pattern = '/^[A-Za-z0-9]+([._][A-Za-z0-9]+)*$/';
         $username = $this->faker->username();
         $this->assertRegExp($pattern, $username);
+    }
+
+    /**
+     * @dataProvider localeDataProvider
+     */
+    public function testDomainnameIsValid($locale)
+    {
+        if ($locale !== 'en_US' && !class_exists('Transliterator')) {
+            $this->markTestSkipped('Transliterator class not available (intl extension)');
+        }
+
+        $this->loadLocalProviders($locale);
+        $pattern = '/^[a-z]+(\.[a-z]+)+$/';
+        $domainName = $this->faker->domainName();
+        $this->assertRegExp($pattern, $domainName);
+    }
+
+    /**
+     * @dataProvider localeDataProvider
+     */
+    public function testDomainwordIsValid($locale)
+    {
+        if ($locale !== 'en_US' && !class_exists('Transliterator')) {
+            $this->markTestSkipped('Transliterator class not available (intl extension)');
+        }
+
+        $this->loadLocalProviders($locale);
+        $pattern = '/^[a-z]+$/';
+        $domainWord = $this->faker->domainWord();
+        $this->assertRegExp($pattern, $domainWord);
     }
 
     public function loadLocalProviders($locale)
