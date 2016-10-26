@@ -38,7 +38,7 @@ class Address extends \Faker\Provider\Address
         'Milad adası', 'Misir', 'Myanma', 'Moldova', 'Monako', 'Monqolustan', 'Montserrat', 'Mozambik',
         'Müqəddəs Yelena, Askenson və Tristan-da-Kunya adaları', 'Namibiya', 'Nauru', 'Nepal', 'Niderland',
         'Niderland Antil adaları', 'Niger', 'Nigeriya', 'Nikaraqua', 'Niue', 'Norfolk adası', 'Norveç',
-        'Oman', 'Özbəkistan', 'Pakistan', 'Palau', 'Panama', 'Papua-Yeni Qvineya', 'Paraqvay', 'Peru'
+        'Oman', 'Özbəkistan', 'Pakistan', 'Palau', 'Panama', 'Papua-Yeni Qvineya', 'Paraqvay', 'Peru',
         'Pitkern adaları', 'Polşa', 'Portuqaliya', 'Prednestroviya', 'Puerto-Riko', 'Ruanda', 'Rumıniya',
         'Rusiya', 'Salvador', 'Samoa', 'San-Marino', 'San-Tome və Prinsipi', 'Seneqal', 'Sen-Bartelemi',
         'Sent-Kits və Nevis', 'Sent-Lüsiya', 'Sen-Marten', 'Sen-Pyer və Mikelon', 'Sent-Vinsent və Qrenadina',
