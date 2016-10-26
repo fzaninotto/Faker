@@ -204,7 +204,8 @@ class Generator
 
     public function format($formatter, $arguments = array())
     {
-        return call_user_func_array($this->getFormatter($formatter), $arguments);
+        return call_user_func_array(
+            $this->getFormatter($formatter), $arguments);
     }
 
     /**
@@ -222,7 +223,8 @@ class Generator
                 return $this->formatters[$formatter];
             }
         }
-        throw new \InvalidArgumentException(sprintf('Unknown formatter "%s"', $formatter));
+        throw new \InvalidArgumentException(
+            sprintf('Unknown formatter "%s"', $formatter));
     }
 
     /**
@@ -233,7 +235,8 @@ class Generator
      */
     public function parse($string)
     {
-        return preg_replace_callback('/\{\{\s?(\w+)\s?\}\}/u', array($this, 'callFormatWithMatches'), $string);
+        return preg_replace_callback('/\{\{\s?(\w+)\s?\}\}/u',
+            array($this, 'callFormatWithMatches'), $string);
     }
 
     protected function callFormatWithMatches($matches)
