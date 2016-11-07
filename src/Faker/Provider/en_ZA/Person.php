@@ -18,7 +18,7 @@ class Person extends \Faker\Provider\Person
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
-        '{{titleFemale}} {{$firstNameFemale}} {{lastName}}',
+        '{{titleFemale}} {{firstNameFemale}} {{lastName}}',
     );
 
     protected static $firstNameMale = array(
