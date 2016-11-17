@@ -45,19 +45,28 @@ class Person extends \Faker\Provider\Person
         '若松', '渡辺',
     );
 
-    protected static $kanaFormats = array(
-        '{{lastKanaName}} {{firstKanaName}}'
+    protected static $firstKanaNameFormat = array(
+        '{{firstKanaNameMale}}',
+        '{{firstKanaNameFemale}}',
     );
 
-    protected static $firstKanaName = array(
-        'アキラ', 'アケミ', 'アスカ', 'アツシ', 'オサム',
-        'カオリ', 'カナ', 'キョウスケ', 'ケンイチ', 'クミコ', 'ケンイチ',
-        'サユリ', 'ジュン', 'ソウタロウ',
-        'タイチ', 'タロウ', 'チヨ', 'タクマ', 'ツバサ', 'トモミ', 'トモヤ',
-        'ナオキ', 'ナオコ', 'ナオト', 'ナナカ',
-        'ハナコ', 'ヒデキ', 'ハルカ', 'ヒロシ',
-        'マアヤ', 'マイ', 'マナブ', 'ミキ', 'ミツル', 'ミノル', 'モモコ', 'ヒロキ',
-        'ユイ', 'ユウタ', 'ヤスヒロ', 'ヨウイチ', 'ヨウコ', 'ヨウスケ', 'ユミコ', 'リョウスケ', 'リョウヘイ', 'レイ', 'リカ',
+    protected static $maleKanaNameFormats = array(
+        '{{lastKanaName}} {{firstKanaNameMale}}',
+    );
+
+    protected static $femaleKanaNameFormats = array(
+        '{{lastKanaName}} {{firstKanaNameFemale}}',
+    );
+
+    protected static $firstKanaNameMale = array(
+        'アキラ', 'アツシ', 'オサム', 'カズヤ', 'キョウスケ', 'ケンイチ', 'シュウヘイ', 'ショウタ', 'ジュン', 'ソウタロウ',
+        'タイチ', 'タロウ', 'タクマ', 'ツバサ', 'トモヤ', 'ナオキ', 'ナオト', 'ヒデキ', 'ヒロシ', 'マナブ', 'ミツル', 'ミノル',
+        'ユウキ', 'ユウタ', 'ヤスヒロ', 'ヨウイチ', 'ヨウスケ', 'リョウスケ', 'リョウヘイ', 'レイ',
+    );
+
+    protected static $firstKanaNameFemale = array(
+        'アケミ', 'アスカ', 'カオリ', 'カナ', 'クミコ', 'サユリ', 'サトミ', 'チヨ',
+        'ナオコ', 'ナナミ', 'ハナコ', 'ハルカ', 'マアヤ', 'マイ', 'ミカコ', 'ミキ', 'モモコ', 'ユイ', 'ユミコ', 'ヨウコ', 'リカ',
     );
 
     protected static $lastKanaName = array(
@@ -73,25 +82,57 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
+     * @param string|null $gender 'male', 'female' or null for any
+     * @return string
      * @example 'アオタ アキラ'
      */
-    public function kanaName()
+    public function kanaName($gender = null)
     {
-        $format = static::randomElement(static::$kanaFormats);
+        if ($gender === static::GENDER_MALE) {
+            $format = static::randomElement(static::$maleKanaNameFormats);
+        } elseif ($gender === static::GENDER_FEMALE) {
+            $format = static::randomElement(static::$femaleKanaNameFormats);
+        } else {
+            $format = static::randomElement(array_merge(static::$maleKanaNameFormats, static::$femaleKanaNameFormats));
+        }
 
         return $this->generator->parse($format);
     }
 
     /**
-     * @example 'アオタ'
+     * @param string|null $gender 'male', 'female' or null for any
+     * @return string
+     * @example 'アキラ'
      */
-    public static function firstKanaName()
+    public function firstKanaName($gender = null)
     {
-        return static::randomElement(static::$firstKanaName);
+        if ($gender === static::GENDER_MALE) {
+            return static::firstKanaNameMale();
+        } elseif ($gender === static::GENDER_FEMALE) {
+            return static::firstKanaNameFemale();
+        }
+
+        return $this->generator->parse(static::randomElement(static::$firstKanaNameFormat));
     }
 
     /**
      * @example 'アキラ'
+     */
+    public static function firstKanaNameMale()
+    {
+        return static::randomElement(static::$firstKanaNameMale);
+    }
+
+    /**
+     * @example 'アケミ'
+     */
+    public static function firstKanaNameFemale()
+    {
+        return static::randomElement(static::$firstKanaNameFemale);
+    }
+
+    /**
+     * @example 'アオタ'
      */
     public static function lastKanaName()
     {
