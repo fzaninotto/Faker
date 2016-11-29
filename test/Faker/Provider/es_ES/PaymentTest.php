@@ -26,8 +26,10 @@ class PaymentTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($this->isValidCIF($vat));
     }
 
-    // validation taken from https://github.com/amnesty/drupal-nif-nie-cif-validator/
-    // @link https://github.com/amnesty/drupal-nif-nie-cif-validator/blob/master/includes/nif-nie-cif.php
+    /**
+     * Validation taken from https://github.com/amnesty/drupal-nif-nie-cif-validator/
+     * @link https://github.com/amnesty/drupal-nif-nie-cif-validator/blob/master/includes/nif-nie-cif.php
+     */
     function isValidCIF($docNumber)
     {
         $fixedDocNumber = strtoupper($docNumber);
@@ -37,14 +39,9 @@ class PaymentTest extends \PHPUnit_Framework_TestCase
 
     function isValidCIFFormat($docNumber)
     {
-        return
-            $this->respectsDocPattern(
-                $docNumber,
-                '/^[PQSNWR][0-9][0-9][0-9][0-9][0-9][0-9][0-9][A-Z0-9]/')
-            or
-            $this->respectsDocPattern(
-                $docNumber,
-                '/^[ABCDEFGHJUV][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]/');
+        return $this->respectsDocPattern($docNumber, '/^[PQSNWR][0-9][0-9][0-9][0-9][0-9][0-9][0-9][A-Z0-9]/')
+                ||
+               $this->respectsDocPattern($docNumber, '/^[ABCDEFGHJUV][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]/');
     }
 
     function respectsDocPattern($givenString, $pattern)
