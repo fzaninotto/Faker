@@ -65,7 +65,7 @@ class Person extends \Faker\Provider\Person
     private static $prefix = array('أ.', 'د.', 'أ.د', 'م.');
 
     /**
-     * @example 'بن'
+     * @example 'أ.'
      */
     public static function prefix()
     {
