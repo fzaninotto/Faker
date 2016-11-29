@@ -931,6 +931,24 @@ echo $faker->dni; // '77446565E'
 echo $faker->vat;           // "A35864370"
 ```
 
+### `Faker\Provider\fi_FI\Payment`
+
+```php
+<?php
+
+// Generates Finnish Value Added Tax number
+echo $faker->vat; // "FI12345678"
+```
+
+### `Faker\Provider\fi_FI\Person`
+
+```php
+<?php
+
+// Generates National identification number or 'Henkilötunnus'
+echo $faker->nationalIdNumber // 190496-913P
+```
+
 ### `Faker\Provider\fr_BE\Payment`
 
 ```php
