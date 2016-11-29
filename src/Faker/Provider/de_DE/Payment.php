@@ -28,7 +28,7 @@ class Payment extends \Faker\Provider\Payment
      */
     protected static $banks = array(
         'Bank 1 Saar', 'Bayerische Landesbank', 'BBBank', 'Berliner Sparkasse', 'Berliner Volksbank', 'Braunschweigische Landessparkasse',
-        'Commerzbank',
+        'Commerzbank', 'BW-Bank',
         'DekaBank Deutsche Girozentrale', 'Deutsche Apotheker- und Ärztebank', 'Deutsche Bank', 'Deutsche Kreditbank', 'Deutsche Pfandbriefbank', 'Dortmunder Volksbank', 'DZ Bank',
         'Erzgebirgssparkasse',
         'Frankfurter Sparkasse', 'Frankfurter Volksbank',
