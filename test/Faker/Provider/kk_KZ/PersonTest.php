@@ -4,9 +4,6 @@ namespace Faker\Test\Provider\kk_KZ;
 use Faker\Generator;
 use Faker\Provider\kk_KZ\Person;
 
-/**
- * Person test
- */
 class PersonTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -20,9 +17,6 @@ class PersonTest extends \PHPUnit_Framework_TestCase
         $this->faker->addProvider(new Person($this->faker));
     }
 
-    /**
-     * @see \Faker\Provider\kk_KZ\Person::individualIdentificationNumber
-     */
     public function testIndividualIdentificationNumberIsValid()
     {
         $birthDate                      = new \DateTime('now');

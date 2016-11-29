@@ -4,9 +4,6 @@ namespace Faker\Test\Provider\kk_KZ;
 use Faker\Generator;
 use Faker\Provider\kk_KZ\Company;
 
-/**
- * Company test
- */
 class CompanyTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -20,9 +17,6 @@ class CompanyTest extends \PHPUnit_Framework_TestCase
         $this->faker->addProvider(new Company($this->faker));
     }
 
-    /**
-     * @see \Faker\Provider\kk_KZ\Person::businessIdentificationNumber
-     */
     public function testBusinessIdentificationNumberIsValid()
     {
         $registrationDate             = new \DateTime('now');
