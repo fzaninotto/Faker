@@ -123,11 +123,11 @@ class Address extends \Faker\Provider\Address
     }
 
     /**
-     * @example '陕西省西安市未央区罗家湾路'
+     * @example '陕西省西安市未央区罗家湾路32号'
      */
     public function address()
     {
-         return $this->province() . $this->city() . $this->streetName() . static::buildingNumber() . static::randomElement(static::$secondaryAddressSuffix);
+         return $this->province() . $this->city() . static::area() . $this->streetName() . static::buildingNumber() . static::randomElement(static::$secondaryAddressSuffix);
     }
 
     public static function postcode()
