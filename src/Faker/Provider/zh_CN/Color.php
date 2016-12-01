@@ -79,5 +79,4 @@ class Color extends \Faker\Provider\Color
     {
         return static::randomElement(static::$allColorNamesCN);
     }
-
 }
