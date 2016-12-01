@@ -61,22 +61,25 @@ class Color extends \Faker\Provider\Color
         '浅珊瑚红', '暖粉红', '勃根第酒红', '尖晶石红',
         '胭脂红', '浅粉红', '枢机红', '薰衣草紫红', '灰紫红',
         '樱桃红', '浅鲑红', '绯红', '粉红', '亮粉红', '壳黄红',
-        '茜红',
+        '茜红'
     );
 
     /**
      * @example '蓝色'
+     *
+     * @param   boolean $maxNbChars (最小参数 5)
+     *
      */
-    public static function safeColorNameCn()
+    public static function safeColorName($switch = false)
     {
-        return static::randomElement(static::$safeColorNamesCn);
+        return static::randomElement($switch ? static::$safeColorNames : static::$safeColorNamesCn);
     }
 
     /**
      * @example '山茶红'
      */
-    public static function colorNameCn()
+    public static function colorName($switch = false)
     {
-        return static::randomElement(static::$allColorNamesCn);
+        return static::randomElement($switch ? static::$allColorNames : static::$allColorNamesCn);
     }
 }
