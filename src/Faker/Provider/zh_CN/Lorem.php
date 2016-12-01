@@ -2,6 +2,9 @@
 
 namespace Faker\Provider\zh_CN;
 
+/**
+ * @author 黄小辰
+ */
 class Lorem extends \Faker\Provider\Lorem
 {
     protected static $wordListCn = array(
@@ -37,8 +40,6 @@ class Lorem extends \Faker\Provider\Lorem
     /**
      * 生成词语
      *
-     * @author 黄小辰
-     *
      * @example '惜春郎'
      * @return string
      */
@@ -49,8 +50,6 @@ class Lorem extends \Faker\Provider\Lorem
 
     /**
      * 生成随机的词语数组
-     *
-     * @author 黄小辰
      *
      * @example array('卜算子', '白柠', '西施')
      * @param   integer      $nb             返回的数组长度
@@ -69,8 +68,6 @@ class Lorem extends \Faker\Provider\Lorem
 
     /**
      * 生成随机句子
-     *
-     * @author 黄小辰
      *
      * @example '兀令法驾导引江城子.'
      * @param   integer $nbWords              这个句子应该包含多少个单词
@@ -95,8 +92,6 @@ class Lorem extends \Faker\Provider\Lorem
     /**
      * 生成随机的词语数组
      *
-     * @author 黄小辰
-     *
      * @example array('诉衷情令恋情深踏歌自己谒金门.', '忆秦娥倒犯残忍暗香底部醉垂鞭.')
      * @param   integer      $nb             这个数组应该包含多少个句子
      * @param   bool         $asText         如果为真，句子作为一个字符串返回
@@ -114,8 +109,6 @@ class Lorem extends \Faker\Provider\Lorem
 
     /**
      * 生成一个段落
-     *
-     * @author 黄小辰
      *
      * @example '玉蝴蝶战队黄鹤洞仙天香星空簇。国香星空无愁可解索酒蕙兰芳。'
      * @param   integer $nbSentences              这个段落应该包含多少个句子
@@ -138,8 +131,6 @@ class Lorem extends \Faker\Provider\Lorem
     /**
      * 生成一个数组的段落
      *
-     * @author 黄小辰
-     *
      * @example array( 空运幸福喜春来解红归字谣可围芳, 瑶华孤鸾画堂春相思引, 战队花非花喜春来人月圆)
      * @param   integer      $nb     数组中有多少个段落
      * @param   bool         $asText 如果为真，段落作为一个字符串返回, 隔两个换行。
@@ -158,8 +149,6 @@ class Lorem extends \Faker\Provider\Lorem
     /**
      * 生成文本正文
      * 根据 $maxNbChars, 返回一个字符串单词、句子或段落。
-     *
-     * @author 黄小辰
      *
      * @example '露华长命女大雨导引三台西施。底部入塞纥那曲殿前欢卜算子慢平湖乐脑残万里春望云涯引。天香极相思庆春时望云涯引兀令想象。'
      * @param   整型 $maxNbChars (最小参数 5)
@@ -206,7 +195,7 @@ class Lorem extends \Faker\Provider\Lorem
                 array_pop($text);
             }
         }
-
         return implode($text, '');
     }
+
 }
