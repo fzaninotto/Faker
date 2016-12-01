@@ -13,10 +13,12 @@ class Internet extends \Faker\Provider\Internet
     );
 
     protected static $userNameFormats = array(
-        '{{word}}.{{word}}',
+        //'{{word}}.{{word}}',
+        '{{lastName}}_{{firstName}}',
         '{{word}}_{{word}}',
         '{{word}}##',
         '?{{word}}',
+        '{{firstName}}##'
     );
     protected static $emailFormats = array(
         '{{userName}}@{{freeEmailDomain}}',
