@@ -4,7 +4,7 @@ namespace Faker\Provider\zh_CN;
 
 class Lorem extends \Faker\Provider\Lorem
 {
-    protected static $wordListCN = array(
+    protected static $wordListCn = array(
         '美丽', '自己', '佐德', '战队', '想象', '星空', '底部', '三台', '解红', '塞姑', '戚氏',
         '布布', '脑残', '可爱', '伊布', '火车', '空运', '幸福', '薄媚', '渔父', '望江', '孤鸾',
         '姑娘', '男子', '真理', '等于', '类似', '大雨', '残忍', '西施', '韵令', '侧犯', '西河',
@@ -42,9 +42,9 @@ class Lorem extends \Faker\Provider\Lorem
      * @example '惜春郎'
      * @return string
      */
-    public static function wordCN()
+    public static function wordCn()
     {
-        return static::randomElement(static::$wordListCN);
+        return static::randomElement(static::$wordListCn);
     }
 
     /**
@@ -57,11 +57,11 @@ class Lorem extends \Faker\Provider\Lorem
      * @param   bool         $asText         如果为真正，作为一个句子字符串返回
      * @return  array|string
      */
-    public static function wordsCN($nb = 3, $asText = false)
+    public static function wordsCn($nb = 3, $asText = false)
     {
         $words = array();
         for ($i=0; $i < $nb; $i++) {
-            $words []= static::wordCN();
+            $words []= static::wordCn();
         }
 
         return $asText ? implode('', $words) : $words;
@@ -78,7 +78,7 @@ class Lorem extends \Faker\Provider\Lorem
      *                                      否则 $nbWords 会有 +/-40% 浮动并且最小值为 1
      * @return string
      */
-    public static function sentenceCN($nbWords = 6, $variableNbWords = true)
+    public static function sentenceCn($nbWords = 6, $variableNbWords = true)
     {
         if ($nbWords <= 0) {
             return '';
@@ -87,7 +87,7 @@ class Lorem extends \Faker\Provider\Lorem
             $nbWords = self::randomizeNbElements($nbWords);
         }
 
-        $words = static::wordsCN($nbWords);
+        $words = static::wordsCn($nbWords);
 
         return implode($words, '') . '。';
     }
@@ -102,11 +102,11 @@ class Lorem extends \Faker\Provider\Lorem
      * @param   bool         $asText         如果为真，句子作为一个字符串返回
      * @return  array|string
      */
-    public static function sentencesCN($nb = 3, $asText = false)
+    public static function sentencesCn($nb = 3, $asText = false)
     {
         $sentences = array();
         for ($i=0; $i < $nb; $i++) {
-            $sentences []= static::sentenceCN();
+            $sentences []= static::sentenceCn();
         }
 
         return $asText ? implode('', $sentences) : $sentences;
@@ -123,7 +123,7 @@ class Lorem extends \Faker\Provider\Lorem
      *                                          否则 $nbWords 会有 +/-40% 浮动并且最小值为 1
      * @return  string
      */
-    public static function paragraphCN($nbSentences = 3, $variableNbSentences = true)
+    public static function paragraphCn($nbSentences = 3, $variableNbSentences = true)
     {
         if ($nbSentences <= 0) {
             return '';
@@ -132,7 +132,7 @@ class Lorem extends \Faker\Provider\Lorem
             $nbSentences = self::randomizeNbElements($nbSentences);
         }
 
-        return implode(static::sentencesCN($nbSentences), '');
+        return implode(static::sentencesCn($nbSentences), '');
     }
 
     /**
@@ -145,11 +145,11 @@ class Lorem extends \Faker\Provider\Lorem
      * @param   bool         $asText 如果为真，段落作为一个字符串返回, 隔两个换行。
      * @return  array|string
      */
-    public static function paragraphsCN($nb = 3, $asText = false)
+    public static function paragraphsCn($nb = 3, $asText = false)
     {
         $paragraphs = array();
         for ($i=0; $i < $nb; $i++) {
-            $paragraphs []= static::paragraphCN();
+            $paragraphs []= static::paragraphCn();
         }
 
         return $asText ? implode("\n", $paragraphs) : $paragraphs;
@@ -165,7 +165,7 @@ class Lorem extends \Faker\Provider\Lorem
      * @param   整型 $maxNbChars (最小参数 5)
      * @return  string
      */
-    public static function textCN($maxNbChars = 200)
+    public static function textCn($maxNbChars = 200)
     {
         $text = array();
         if ($maxNbChars < 5) {
@@ -175,7 +175,7 @@ class Lorem extends \Faker\Provider\Lorem
             while (empty($text)) {
                 $size = 0;
                 while ($size < $maxNbChars) {
-                    $word = ($size ? '' : '') . static::wordCN();
+                    $word = ($size ? '' : '') . static::wordCn();
                     $text []= $word;
                     $size += strlen($word);
                 }
@@ -188,7 +188,7 @@ class Lorem extends \Faker\Provider\Lorem
             while (empty($text)) {
                 $size = 0;
                 while ($size < $maxNbChars) {
-                    $sentence = ($size ? '' : '') . static::sentenceCN();
+                    $sentence = ($size ? '' : '') . static::sentenceCn();
                     $text []= $sentence;
                     $size += strlen($sentence);
                 }
@@ -199,7 +199,7 @@ class Lorem extends \Faker\Provider\Lorem
             while (empty($text)) {
                 $size = 0;
                 while ($size < $maxNbChars) {
-                    $paragraph = ($size ? "\n" : '') . static::paragraphCN();
+                    $paragraph = ($size ? "\n" : '') . static::paragraphCn();
                     $text []= $paragraph;
                     $size += strlen($paragraph);
                 }
@@ -208,10 +208,5 @@ class Lorem extends \Faker\Provider\Lorem
         }
 
         return implode($text, '');
-    }
-
-    protected static function randomizeNbElements($nbElements)
-    {
-        return (int) ($nbElements * mt_rand(60, 140) / 100) + 1;
     }
 }
