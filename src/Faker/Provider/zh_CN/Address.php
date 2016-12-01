@@ -4,6 +4,14 @@ namespace Faker\Provider\zh_CN;
 
 class Address extends \Faker\Provider\Address
 {
+    
+    protected static $addressFormats = array(
+        '{{province}}{{city}}{{area}}{{streetAddress}}' ,
+    );
+
+    protected static $streetAddressFormats = array(
+        '{{streetName}}{{buildingNumber}}'
+    );
 
     protected static $stateAbbr = array(
         '京', '皖', '渝', '闽',
@@ -61,17 +69,14 @@ class Address extends \Faker\Provider\Address
     );
 
     protected static $streets = array(
-        '吴家山', '走马岭', '新沟', '长青', '慈惠', '径河',
-        '金银湖', '将军路', '郑店', '流芳', '澄月', '金湖',
-        '洪山嘴', '罗家桥', '酂阳', '新华', '中兴', '开源',
-        '罗家湾', '马家寺', '建设', '长安', '紫金', '五一'
+        '吴家山路', '走马岭路', '新沟路', '长青路', '慈惠路', '径河路',
+        '金银湖路', '将军路路', '郑店路', '流芳路', '澄月路', '金湖路',
+        '洪山嘴路', '罗家桥路', '酂阳路', '新华路', '中兴路', '开源路',
+        '罗家湾路', '马家寺路', '建设路', '长安路', '紫金路', '五一路'
     );
 
-    protected static $streetSuffix = array(
-        '路', '街'
-    );
-    protected static $secondaryAddressSuffix = array(
-        '号', '栋'
+    protected static $buildingNumberSuffix = array(
+        '号', '栋', '室', '楼'
     );
 
     /**
@@ -115,11 +120,28 @@ class Address extends \Faker\Provider\Address
     }
 
     /**
-     * @example '罗家湾'
+     * @example '罗家湾路'
      */
     public function streetName()
     {
-        return static::randomElement(static::$streets).static::randomElement(static::$streetSuffix);
+        return static::randomElement(static::$streets);
+    }
+
+    /** 
+     * @example '79号'
+     */
+    public static function buildingNumber()
+    {
+        return mt_rand(10, 100) . static::randomElement(static::$buildingNumberSuffix);
+    }
+
+    /**
+     * @example '罗家湾路32号'
+     */
+    public function streetAddress()
+    {
+        $format = static::randomElement(static::$streetAddressFormats);
+        return $this->generator->parse($format);
     }
 
     /**
@@ -127,7 +149,8 @@ class Address extends \Faker\Provider\Address
      */
     public function address()
     {
-         return $this->province() . $this->city() . static::area() . $this->streetName() . static::buildingNumber() . static::randomElement(static::$secondaryAddressSuffix);
+        $format = static::randomElement(static::$addressFormats);
+        return $this->generator->parse($format);
     }
 
     public static function postcode()
