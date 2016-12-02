@@ -552,4 +552,33 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertCount(3, $allowDuplicates);
         $this->assertContainsOnly('string', $allowDuplicates);
     }
+
+    public function testRandomKeys()
+    {
+        $this->assertNull(BaseProvider::randomKeys(array(), 'Returns null on empty array'));
+
+        $input = array('a' => 'A', 'b' => 'B', 'c' => 'C', 'd' => 'D', 'e' => 'E');
+
+        $output = BaseProvider::randomKeys($input, 2);
+        $this->assertCount(2, $output);
+        $this->assertArrayNotHasKey('f', $output);
+        $this->assertCount(2, array_intersect_assoc($input, $output));
+
+        $wholeArray = BaseProvider::randomKeys($input, 5);
+        $this->assertCount(5, $wholeArray);
+        $this->assertArrayNotHasKey('f', $wholeArray);
+        $this->assertCount(5, array_intersect_assoc($input, $wholeArray));
+    }
+
+    public function testRandomKeysCountTooHigh()
+    {
+        $this->setExpectedException(
+            \InvalidArgumentException::class,
+            'randomKeys() count must be lower or equals to the count of the array'
+        );
+
+        $input = array('a' => 'A', 'b' => 'B', 'c' => 'C', 'd' => 'D', 'e' => 'E');
+        BaseProvider::randomKeys($input, 8);
+    }
+
 }

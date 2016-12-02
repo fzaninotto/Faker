@@ -111,6 +111,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     // returns randomly ordered subsequence of a provided array
     randomElements($array = array ('a','b','c'), $count = 1) // array('c')
     randomElement($array = array ('a','b','c')) // 'b'
+    randomKeys($array = array('a' => 'A', 'b' => 'B', 'c' => 'C'), $count = 1) // array('b' => 'B')
     shuffle('hello, world') // 'rlo,h eoldlw'
     shuffle(array(1, 2, 3)) // array(2, 1, 3)
     numerify('Hello ###') // 'Hello 609'
