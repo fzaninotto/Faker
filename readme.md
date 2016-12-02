@@ -1283,9 +1283,9 @@ echo $faker->bankAccountNumber; // "RO55WRJE3OE8X3YQI7J26U1E"
 echo $faker->prefixMale; // "ing."
 // Generates a random female name prefix/title
 echo $faker->prefixFemale; // "d-na."
-// Generates a random male fist name
+// Generates a random male first name
 echo $faker->firstNameMale; // "Adrian"
-// Generates a random female fist name
+// Generates a random female first name
 echo $faker->firstNameFemale; // "Miruna"
 
 
