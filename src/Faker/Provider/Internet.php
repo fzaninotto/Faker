@@ -209,6 +209,10 @@ class Internet extends \Faker\Provider\Base
 
     protected static function transliterate($string)
     {
+        if (0 === preg_match('/[^A-Za-z0-9_.]/', $string)) {
+            return $string;
+        }
+
         $transId = 'Any-Latin; Latin-ASCII; NFD; [:Nonspacing Mark:] Remove; NFC;';
         if (function_exists('transliterator_transliterate') && $transliterator = \Transliterator::create($transId)) {
             $transString = $transliterator->transliterate($string);
