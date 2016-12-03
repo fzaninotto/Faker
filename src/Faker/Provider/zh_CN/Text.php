@@ -152,5 +152,4 @@ EOT;
 
         return $encoding;
     }
-    
 }
