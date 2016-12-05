@@ -573,7 +573,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
     public function testRandomKeysCountTooHigh()
     {
         $this->setExpectedException(
-            \InvalidArgumentException::class,
+            'InvalidArgumentException',
             'randomKeys() count must be lower or equals to the count of the array'
         );
 
