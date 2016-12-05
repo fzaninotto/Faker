@@ -250,7 +250,7 @@ class Base
 
         $keys = array_keys($array);
         shuffle($keys);
-        $keys = array_splice( $keys, 0, $count );
+        $keys = array_splice($keys, 0, $count);
         $output = array();
         foreach ($keys as $key) {
             $output[$key] = $array[$key];
