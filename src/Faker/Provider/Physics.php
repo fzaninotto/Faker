@@ -23,7 +23,7 @@ class Physics extends Base
             throw new \InvalidArgumentException('temperature() generates degrees of temperature basead on a random number. To generate degrees, use C for Celsis, F for  Fahrenheit and k for kelvin in the first argument.');
         }
 
-        $degree = static::numberBetween(-300, 300) . '°' . $degree;
+        $degree = static::numberBetween($int1, $int2) . '°' . $degree;
 
         return $degree;
     }
