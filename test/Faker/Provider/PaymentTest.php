@@ -55,7 +55,7 @@ class PaymentTest extends \PHPUnit_Framework_TestCase
         return array(
             array('Discover Card', '/^6011\d{12}$/'),
             array('Visa', '/^4\d{12,15}$/'),
-            array('MasterCard', '/^5[1-5]\d{14}$/')
+            array('MasterCard', '/^(5[1-5]|2[2-7])\d{14}$/')
         );
     }
 
