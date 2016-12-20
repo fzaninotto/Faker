@@ -121,11 +121,11 @@ class ImagePlaceholderTest extends \PHPUnit_Framework_TestCase
 
     public function wrongSizeProvider()
     {
-        return [
-            [0, 0],
-            [10, 0],
-            [0, 10]
-        ];
+        return array(
+            array(0, 0),
+            array(10, 0),
+            array(0, 10)
+        );
     }
 
     /**
