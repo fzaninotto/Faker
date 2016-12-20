@@ -78,10 +78,10 @@ class ImagePlaceholderTest extends \PHPUnit_Framework_TestCase
 
     public function typeProvider()
     {
-        return [
-            ['png', IMAGETYPE_PNG],
-            ['gif', IMAGETYPE_GIF]
-        ];
+        return array(
+            array('png', IMAGETYPE_PNG),
+            array('gif', IMAGETYPE_GIF)
+        );
     }
 
     /**
