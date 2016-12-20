@@ -270,6 +270,15 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     image($dir, $width, $height, 'cats', true, false) // it's a no randomize images (default: `true`)
     image($dir, $width, $height, 'cats', true, true, 'Faker') // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat with 'Faker' text. Default, `null`.
 
+### `Faker\Provider\ImagePlaceholder`
+
+    imagePlaceholder($dir = '/tmp', $width = 640, $height = 480) // '/tmp/13b73edae8443990be1aa8f1a483bc27.jpg' 640x480 image 
+    imagePlaceholder($dir, $width, $height, false) // '13b73edae8443990be1aa8f1a483bc27.jpg' it's a filename without path
+    imagePlaceholder($dir, $width, $height, true, 'f00', '00f') // with red background and blue text
+    imagePlaceholder($dir, $width, $height, true, 'ccc', '000', 'png') // 'tmp/13b73edae8443990be1aa8f1a483bc27.png' image in png format
+    imagePlaceholder($dir, $width, $height, true, 'ccc', '000', 'jpg', 'verdana.ttf') // specify font. Default is arial
+    imagePlaceholder($dir, $width, $height, true, 'ccc', '000', 'jpg', null, 'Faker') // display text 'Faker'. Default is '640x480' (width x height)
+
 ### `Faker\Provider\Uuid`
 
     uuid                   // '7e57d004-2b97-0e7a-b45f-5387367791cd'
