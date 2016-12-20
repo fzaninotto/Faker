@@ -23,6 +23,7 @@ namespace Faker;
  * @property string $streetAddress
  * @property string $postcode
  * @property string $address
+ * @property string $state
  * @property string $country
  * @property float  $latitude
  * @property float  $longitude
