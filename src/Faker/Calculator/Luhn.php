@@ -2,7 +2,6 @@
 
 namespace Faker\Calculator;
 
-use Faker\Provider\Base as BaseProvider;
 use InvalidArgumentException;
 
 /**
