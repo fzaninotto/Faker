@@ -4,7 +4,6 @@ namespace Faker\Provider\en_IN;
 
 class Address extends \Faker\Provider\Address
 {
-
     protected static $city = array(
         'Agra','Ahmedabad','Ajmer','Alwar',
         'Bengaluru','Bhubhaneshwar','Bhopal','Bikaner',
@@ -26,6 +25,39 @@ class Address extends \Faker\Provider\Address
         'Udaipur',
         'Vishakhapattanam','Vadodara',
         'Warangal',
+    );
+
+    protected static $state = array(
+        
+        // States
+        'Andhra Pradesh', 'Arunachal Pradesh', 'Assam',
+        'Bihar',
+        'Chhattisgarh',
+        'Goa', 'Gujarat',
+        'Haryana', 'Himachal Pradesh',
+        'Jammu and Kashmir',
+        'Jharkhand',
+        'Karnataka', 'Kerala',
+        'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram',
+        'Nagaland',
+        'Odisha',
+        'Punjab',
+        'Rajasthan',
+        'Sikkim',
+        'Tamil Nadu', 'Telangana', 'Tripura',
+        'Uttar Pradesh', 'Uttarakhand',
+        'West Bengal',
+        
+        // Union Territories
+        'Andaman and Nicobar Islands',
+        'Chandigarh',
+        'Dadra and Nagar Haveli', 'Daman and Diu', 'Delhi',
+        'Lakshadweep',
+        'Puducherry'
+    );
+
+    protected static $stateAbbr = array(
+       'AP', 'AR', 'AS', 'BR', 'CG', 'GA', 'GJ', 'HR', 'HP', 'JK', 'JH', 'KA', 'KL', 'MP', 'MH', 'MN', 'ML', 'MZ', 'NL', 'OD', 'PB', 'RJ', 'SK', 'TN', 'TS', 'TR', 'UP', 'UK', 'WB', 'AN', 'CH', 'DN', 'DD', 'DL', 'LD', 'PY'
     );
 
     protected static $country = array(
@@ -74,7 +106,7 @@ class Address extends \Faker\Provider\Address
     protected static $postcode = array(
         '1#####','2#####','3#####','4#####','5#####',
     );
-    protected static $localityFormats = array (
+    protected static $localityFormats = array(
         '{{firstName}}{{areaSuffix}}',
         '{{localityName}}'
     );
@@ -130,5 +162,21 @@ class Address extends \Faker\Provider\Address
     public function areaSuffix()
     {
         return static::randomElement(static::$areaSuffix);
+    }
+
+    /**
+     * @example 'Delhi'
+     */
+    public static function state()
+    {
+        return static::randomElement(static::$state);
+    }
+
+    /**
+     * @example 'DL'
+     */
+    public static function stateAbbr()
+    {
+        return static::randomElement(static::$stateAbbr);
     }
 }
