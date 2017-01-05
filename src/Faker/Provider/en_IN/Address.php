@@ -28,32 +28,32 @@ class Address extends \Faker\Provider\Address
     );
 
     protected static $state = array(
-		
-		// States
+        
+        // States
         'Andhra Pradesh', 'Arunachal Pradesh', 'Assam',
-		'Bihar',
-		'Chhattisgarh',
-		'Goa', 'Gujarat',
-		'Haryana', 'Himachal Pradesh',
-		'Jammu and Kashmir',
-		'Jharkhand',
-		'Karnataka', 'Kerala',
-		'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram',
-		'Nagaland',
-		'Odisha',
-		'Punjab',
-		'Rajasthan',
-		'Sikkim',
-		'Tamil Nadu', 'Telangana', 'Tripura',
-		'Uttar Pradesh', 'Uttarakhand',
-		'West Bengal',
-		
-		// Union Territories
-		'Andaman and Nicobar Islands',
-		'Chandigarh',
-		'Dadra and Nagar Haveli', 'Daman and Diu', 'Delhi',
-		'Lakshadweep',
-		'Puducherry'
+        'Bihar',
+        'Chhattisgarh',
+        'Goa', 'Gujarat',
+        'Haryana', 'Himachal Pradesh',
+        'Jammu and Kashmir',
+        'Jharkhand',
+        'Karnataka', 'Kerala',
+        'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram',
+        'Nagaland',
+        'Odisha',
+        'Punjab',
+        'Rajasthan',
+        'Sikkim',
+        'Tamil Nadu', 'Telangana', 'Tripura',
+        'Uttar Pradesh', 'Uttarakhand',
+        'West Bengal',
+        
+        // Union Territories
+        'Andaman and Nicobar Islands',
+        'Chandigarh',
+        'Dadra and Nagar Haveli', 'Daman and Diu', 'Delhi',
+        'Lakshadweep',
+        'Puducherry'
     );
 
     protected static $stateAbbr = array(
@@ -106,7 +106,7 @@ class Address extends \Faker\Provider\Address
     protected static $postcode = array(
         '1#####','2#####','3#####','4#####','5#####',
     );
-    protected static $localityFormats = array (
+    protected static $localityFormats = array(
         '{{firstName}}{{areaSuffix}}',
         '{{localityName}}'
     );
