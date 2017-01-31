@@ -265,23 +265,9 @@ class Payment extends Base
             }
         }
 
-        $result = static::addBankCodeChecksum($result, $countryCode);
-
         $checksum = Iban::checksum($countryCode . '00' . $result);
 
         return $countryCode . $checksum . $result;
-    }
-
-    /**
-     * Calculates a checksum for the national bank and branch code part in the IBAN.
-     *
-     * @param  string $iban        randomly generated $iban
-     * @param  string $countryCode ISO 3166-1 alpha-2 country code
-     * @return string IBAN with one character altered to a proper checksum
-     */
-    protected static function addBankCodeChecksum($iban, $countryCode = '')
-    {
-        return $iban;
     }
 
     /**
