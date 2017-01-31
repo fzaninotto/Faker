@@ -991,6 +991,15 @@ echo $faker->siren; // 082 250 104
 echo $faker->siret; // 347 355 708 00224
 ```
 
+### `Faker\Provider\fr_FR\Person`
+
+```php
+<?php
+
+// Generates a random NIR / Sécurité Sociale number
+echo $faker->nir; // 1 88 07 35 127 571 - 19
+```
+
 ### `Faker\Provider\he_IL\Payment`
 
 ```php
