@@ -10,7 +10,7 @@ class AddressTest extends \PHPUnit_Framework_TestCase
 {
     
     /**
-     * @var Faker\Generator
+     * @var Generator
      */
     private $faker;
     
@@ -21,48 +21,35 @@ class AddressTest extends \PHPUnit_Framework_TestCase
         $faker->addProvider(new Person($faker));
         $this->faker = $faker;
     }
-    
-    /**
-     * @test
-     */
-    public function state ()
+
+    public function state()
     {
         $state = $this->faker->state();
         $this->assertInternalType('array', $state);
         $this->assertCount(1, $state);
-        
-        foreach ($state as $stateShort => $stateName){
-            $this->assertInternalType('string', $stateShort);
-            $this->assertEquals(2, strlen($stateShort));
-            $this->assertInternalType('string', $stateName);
-            $this->assertGreaterThan(2, strlen($stateName));
-        }
+
+        $this->assertInternalType('string', key($state));
+        $this->assertEquals(2, strlen(key($state)));
+        $this->assertInternalType('string', current($state));
+        $this->assertGreaterThan(2, strlen(current($state)));
     }
-    
-    /**
-     * @test
-     */
-    public function stateName ()
+
+    public function stateName()
     {
         $stateName = $this->faker->stateName();
         $this->assertInternalType('string', $stateName);
         $this->assertGreaterThan(2, strlen($stateName));
     }
-    
-    /**
-     * @test
-     */
-    public function stateShort ()
+
+    public function stateShort()
     {
         $stateShort = $this->faker->stateShort();
         $this->assertInternalType('string', $stateShort);
         $this->assertEquals(2, strlen($stateShort));
     }
-    
-    /**
-     * @test
-     */
-    public function address (){
+
+    public function address()
+    {
         $address = $this->faker->address();
         $this->assertInternalType('string', $address);
     }
