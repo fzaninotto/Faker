@@ -66,6 +66,4 @@ class Person extends \Faker\Provider\Person
         $partialValue = static::numerify(1 . str_repeat('#', 14));
         return Luhn::generateLuhnNumber($partialValue);
     }
-
-
 }
