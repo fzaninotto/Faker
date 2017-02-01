@@ -93,7 +93,18 @@ class Internet extends \Faker\Provider\Base
         $format = static::randomElement(static::$userNameFormats);
         $username = static::bothify($this->generator->parse($format));
 
-        return strtolower(static::transliterate($username));
+        $username = strtolower(static::transliterate($username));
+
+        // check if transliterate() didn't support the language and removed all letters
+        if (trim($username, '._') === '') {
+            throw new \Exception('userName failed with the selected locale. Try a different locale or activate the "intl" PHP extension.');
+        }
+
+        // clean possible trailing dots from first/last names
+        $username = str_replace('..', '.', $username);
+        $username = rtrim($username, '.');
+
+        return $username;
     }
     /**
      * @example 'fY4èHdZv68'
@@ -120,7 +131,17 @@ class Internet extends \Faker\Provider\Base
     {
         $lastName = $this->generator->format('lastName');
 
-        return strtolower(static::transliterate($lastName));
+        $lastName = strtolower(static::transliterate($lastName));
+
+        // check if transliterate() didn't support the language and removed all letters
+        if (trim($lastName, '._') === '') {
+            throw new \Exception('domainWord failed with the selected locale. Try a different locale or activate the "intl" PHP extension.');
+        }
+
+        // clean possible trailing dot from last name
+        $lastName = rtrim($lastName, '.');
+
+        return $lastName;
     }
 
     /**
@@ -214,7 +235,7 @@ class Internet extends \Faker\Provider\Base
         }
 
         $transId = 'Any-Latin; Latin-ASCII; NFD; [:Nonspacing Mark:] Remove; NFC;';
-        if (function_exists('transliterator_transliterate') && $transliterator = \Transliterator::create($transId)) {
+        if (class_exists('Transliterator') && $transliterator = \Transliterator::create($transId)) {
             $transString = $transliterator->transliterate($string);
         } else {
             $transString = static::toAscii($string);
