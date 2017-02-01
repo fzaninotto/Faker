@@ -25,9 +25,7 @@ class Person extends \Faker\Provider\Person
         '{{titleFemale}} {{firstNameFemale}} {{lastName}}',
     );
 
-    /**
-     * @link http://muslim-names.us/
-     */
+
     protected static $firstNameMale = array(
         "Ahmed", "Ali", "Islam", "Khaled", "Mohamed", "Ramy", "Hassan", "Mahmoud", "Adel", "Eyad", "Sameh", "Nabeel", "Tamer", "Mohannad",
         "Kareem", "Amr", "Omar", "Ashraf", "Belal", "Saad", "Ayman", "Hany", "Waael", "Alaa",
@@ -40,9 +38,7 @@ class Person extends \Faker\Provider\Person
 
     );
 
-    /**
-     * @link http://muslim-names.us/
-     */
+
     protected static $firstNameFemale = array(
         'Eman', 'Amyra', 'Abeer', 'Joudy', 'Joumana', 'Jana', 'Janna', 'Sabah', "Noha",
         "Enas", "Ghada", "Hanan", "Madeeha", "Mervat", "Mona", "Maha", "Suzan", "Mariem", "Shery",
