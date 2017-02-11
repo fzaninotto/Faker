@@ -4,6 +4,9 @@ namespace Faker\Provider\es_MX;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
+    /**
+     * @link https://en.wikipedia.org/wiki/Telephone_numbers_in_Mexico
+     */
     protected static $formats = array(
         '55 #### ####',
         '81 #### ####',

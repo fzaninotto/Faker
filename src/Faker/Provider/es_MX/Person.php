@@ -17,11 +17,66 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
-     * {@link} http://www.studentsoftheworld.info/penpals/stats.php3?Pays=MEX
+     * {@link} https://es.wikipedia.org/wiki/Categoría:Nombres_masculinos
      */
-    protected static $firstNameMale = array('Carlos', 'Daniel', 'Jose', 'Eduardo', 'Luis', 'Jorge', 'Angel', 'Alejandro', 'Fernando', 'Sergio', 'Ivan', 'Jesus', 'Isaac', 'Cesar', 'Christian', 'Juan Carlos', 'Juan', 'Oscar', 'Adrian', 'Arturo', 'David', 'Diego', 'Enrique', 'Rafael', 'Emmanuel', 'Alex', 'Armando', 'Antonio', 'Rodrigo', 'Erick', 'Alberto', 'José Luis', 'Roberto', 'Andrès', 'Pablo', 'Jonathan', 'Alexis', 'Julio', 'Kevin', 'Edgar', 'Ramiro', 'Miguel', 'Martin', 'Francisco', 'Hugo', 'Ricardo', 'Victor', 'Ruben', 'Humberto', 'MARIO', 'Luis Fernando', 'Gabriel', 'Mauricio', 'Joaquín', 'Israel', 'Heriberto', 'Mariana', 'Rene', 'Raul', 'Hector', 'Hibram', 'Bryan', 'Horacio', 'Benjamin', 'Fede', 'Alan', 'Moises', 'Pepe', 'Fidel', 'Frank', 'Marco antonio', 'Chris', 'Michael', 'Omar', 'Saul Omar', 'Sebastian', 'Aldair', 'Diana', 'Gerardo', 'Eliseo', 'Brian', 'Alexander', 'Roger', 'Juan Manuel', 'Brandon', 'Yoet', 'Abraham', 'Cristian', 'Javier', 'Lalo', 'Marco', 'Maximiliano', 'Salvador', 'Fredy', 'Claudio', 'Esteban', 'Memo', 'Andre', 'Rivera', 'Josue');
+    protected static $firstNameMale = array('Aarón', 'Abdías', 'Abdón', 'Abel', 'Abelardo', 'Abraham', 'Absalón', 'Abundio', 'Acacio', 'Achiuta', 'Acisclo', 'Adalberto', 'Adalberón', 'Adán', 'Adem', 'Adolfo', 'Adrista', 'Adrián', 'Afrodisio', 'Agamenón', 'Agapito', 'Agastia', 'Agatoclio', 'Aghásura', 'Agni', 'Agustín', 'Aitor', 'Aladino', 'Alarico', 'Albano', 'Alberto', 'Albino', 'Alcibíades', 'Alcides', 'Aldo', 'Alec', 'Alejandro', 'Alejo', 'Alfonso', 'Alfredo', 'Alois', 'Álvaro', 'Amadeo', 'Amado', 'Amador', 'Amancio', 'Amara Simja', 'Amara-kosha', 'Ambrosio', 'Amenhotep', 'Amit', 'Amsha', 'Américo', 'Amílcar', 'Amós', 'Anacleto', 'Ananías', 'Anastasio', 'Anatole', 'Anatolio', 'Ander', 'Andhaka', 'Andrea', 'Andrei', 'Andrés', 'Andrónico', 'Ángel', 'Aníbal', 'Aniceto', 'Anselmo', 'Antenor', 'Antoni', 'Antonino', 'Antonio', 'Āpastamba', 'Apolinar', 'Apolo', 'Apolonio', 'Aquiles', 'Argimiro', 'Aristarco', 'Arístides', 'Aristóteles', 'Arjuna', 'Armand', 'Armando', 'Arnaldo', 'Arnulfo', 'Arquímedes', 'Arsenio', 'Aruná', 'Aryaman', 'Ascanio', 'Asdrúbal', 'Ashuatama', 'Aśoka', 'Ashuin', 'Atanasio', 'Augurio', 'Augusto', 'Aureliano', 'Aurelio', 'Avelino', 'Axel',
+        'Bala Krisna', 'Balam', 'Balarama', 'Balbino', 'Baldomero', 'Balduino', 'Baltasar', 'Banásura', 'Bartolomé', 'Basilio', 'Baudhāyana', 'Bautista', 'Beato', 'Belisario', 'Beltrán', 'Benedicto', 'Benigno', 'Benito', 'Benjamín', 'Bento', 'Berengario', 'Bernabé', 'Bernardino', 'Bernardo', 'Bernhard', 'Bernie', 'Berto', 'Betuel', 'Bhaga', 'Bhajan', 'Bharadvaya', 'Bharata', 'Bhavaviveka', 'Bhima', 'Bhishmá', 'Biagio', 'Bienvenido', 'Blas', 'Bobo', 'Bogdan', 'Bogumil', 'Bogusław', 'Boleslao', 'Boni', 'Bonifacio', 'Borja', 'Bosco', 'Boutros', 'Boyan', 'Braulio', 'Brfxxccxxmnpcccclllmmnprxvclmnckssqlbb11116', 'Brian', 'Brijadratha', 'Brihaspati', 'Bronisław', 'Bruno', 'Burgess',
+        'Calixto', 'Camilo', 'Cancio', 'Canek', 'Canuto', 'Carlos', 'Carmelo', 'Casimiro', 'Casio', 'Casiodoro', 'Casto', 'Cayetano', 'Cayo', 'Cecilio', 'Ceferino', 'Celedonio', 'Celestino', 'Celso', 'Cháraka', 'Chiávana', 'Cipriano', 'Ciriaco', 'Ciriaco', 'Cirilo', 'Ciro', 'Claudio', 'Clemente', 'Columbano', 'Columbano', 'Conrado', 'Constancio', 'Constantino', 'Cornelio', 'Corono', 'Cosme', 'Crescencio', 'Crisanto', 'Crispín', 'Cristián', 'Cristóbal', 'Crisóstomo', 'Cuauhtémoc', 'Czesław', 'Cándido', 'César',
+        'Dadhichi', 'Daksha', 'Dalmacio', 'Dalmacio', 'Damián', 'Daniel', 'Danilo', 'Darío', 'Dasharatha', 'David', 'Demetrio', 'Demi', 'Deodato', 'Deogracias', 'Desiderio', 'Devabhuti', 'Devala', 'Diego', 'Dieus', 'Dimas', 'Diodoro', 'Dionisio', 'Dobromir', 'Domingo', 'Donato', 'Doroteo', 'Dritarastra', 'Drona', 'Drupada', 'Durvasa', 'Duryodhana', 'Dámaso',
+        'Edelmiro', 'Edgar', 'Edmundo', 'Eduardo', 'Edwin', 'Eero', 'Efraím', 'Egidio', 'Eleazar', 'Eleuterio', 'Eliseo', 'Eloy', 'Elías', 'Emerico', 'Emeterio', 'Emilio', 'Enoc', 'Enrique', 'Enzo', 'Enós', 'Epifanio', 'Erasmo', 'Eric', 'Ernesto', 'Esaú', 'Esdras', 'Espartaco', 'Estanislao', 'Esteban', 'Etelfrido', 'Ethelbaldo', 'Eudes', 'Eugenio', 'Eulogio', 'Eusebio', 'Eustaquio', 'Evangelista', 'Evaristo', 'Ezequiel',
+        'Fabio', 'Fabián', 'Fabricio', 'Facundo', 'Faustino', 'Fausto', 'Federico', 'Feliciano', 'Felipe', 'Fermín', 'Fernando', 'Fidel', 'Fidel', 'Filemón', 'Finnian', 'Fiódor', 'Florencio', 'Florentino', 'Florián', 'Forrest', 'Fortunato', 'Francisco', 'Froilán', 'Fructuoso', 'Fulgencio', 'Félix',
+        'Gabino', 'Gabriel', 'Gamaliel', 'Gandharva', 'Ganesha', 'Garga Muni', 'Garuda', 'Gaspar', 'Gastón', 'Gaudencio', 'Gedeón', 'George', 'Gerardo', 'Germano', 'Germán', 'Germán', 'Gerson', 'Gervasio', 'Gianluca', 'Gianni', 'Gilberto', 'Ginés', 'Ginés', 'Gisbert', 'Godofredo', 'Goliat', 'Gonzalo', 'Gopala', 'Gorō', 'Aksapada Gótama', 'Gottlieb', 'Govinda', 'Gregorio', 'Gritsa Madá', 'Guido', 'Guillermo', 'Guillén', 'Gumaro', 'Gustavo', 'Guy',
+        'Hamza', 'Harold', 'Haroldo', 'Harry', 'Hassan', 'Héctor', 'Heihachi', 'Heihachirō', 'Heinz', 'Heliodoro', 'Henrik', 'Henrique', 'Henrique', 'Heraclio', 'Hercle', 'Heriberto', 'Herman', 'Hermann', 'Hermenegildo', 'Herodes', 'Heráclides', 'Higinio', 'Hilario', 'Hipólito', 'Hisashi', 'Homero', 'Homobono', 'Honorato', 'Honorio', 'Horacio', 'Horatio', 'Hormisdas', 'Huberto', 'Hugo', 'Humberto', 'Hércules',
+        'Iaksa', 'Ichirō', 'Ignacio', 'Iker',
+        'Iksuaku', 'Indalecio', 'Isaac', 'Isaías', 'Isidoro', 'Isidro', 'Ismael', 'Israel', 'Iudistira', 'Ivo', 'Iván', 'Izan',
+        'Jacobo', 'Jael', 'Jaganatha', 'Jaime', 'Jair', 'Jairo', 'Jalaiuda', 'Jamie', 'Janto', 'Jarischandra', 'Javier', 'Jean-François', 'Jean-Pierre', 'Jemachandra', 'Jenaro', 'Jeremías', 'Jerónimo', 'Jirania Kashipú', 'Jirō', 'Joachim', 'Joaquín', 'Job', 'Joel', 'Johann', 'Jorge', 'Josefino', 'Josmar', 'Jossmar', 'Josu', 'Josué', 'José', 'José Luis', 'José María', 'Josías', 'Juan', 'Juanelo', 'Judá', 'Julio', 'Julián',
+        'Kailash', 'Kalidasa', 'Kanua', 'Kardama', 'Karttikeya', 'Kavi', 'Kedara', 'Kedarnath', 'Kemuel', 'Kenneth', 'Kenzō', 'Kintuillang', 'Kojirō', 'Ksatri', 'Kumbhá Karna', 'Kushika',
+        'Labán', 'Ladislao', 'Lain', 'Lalo', 'Laureano', 'Lautaro', 'Leandro', 'Leonardo', 'Leopoldo', 'Leví', 'Licas', 'Lior', 'Loïc', 'Lokapala', 'Lorenzo', 'Lubomir', 'Lucas', 'Ludovico', 'Ludovico', 'Luis', 'Lázaro',
+        'Maffeo', 'Maia Asura', 'Mamerto', 'Mansur', 'Manuel', 'Marcelino', 'Marcelo', 'Marcos', 'Mariano', 'Mario', 'Martiño', 'Martín', 'Matariswan', 'Mateo', 'Mauricio', 'Medardo', 'Michel', 'Miguel', 'Mikel', 'Miqueas', 'Mirko', 'Miroslav', 'Moritz', 'Mstislav', 'Muhammad', 'Mustafá', 'Mázatl',
+        'Nahuel', 'Nahum', 'Nala', 'Nandi', 'Narakasura', 'Nataraja', 'Nath', 'Natán', 'Nehemías', 'Nelson', 'Nepomuk', 'Néstor', 'Nicolás', 'Nikita', 'Nimi', 'Norberto', 'Noé', 'Námaste', 'Níriti',
+        'Odón', 'Oier', 'Omar', 'Onesíforo', 'Ordoño', 'Orlando', 'Óscar', 'Osmar', 'Osvaldo', 'Oswaldo',
+        'Pablo', 'Panagiotis', 'Pándava', 'Pandú', 'Pantaleón', 'Paolo', 'Parashurama', 'Pariksit', 'Parsuá', 'Paryania', 'Pascual', 'Patricio', 'Pedro', 'Philippe', 'Pol', 'Pradiumna', 'Premislao', 'Primitivo', 'Prithú', 'Prudencio', 'Publio', 'Pulaja', 'Puloman', 'Purushottama', 'Pánfilo', 'Púrusha',
+        'Quirico',
+        'Radomir', 'Radosław', 'Rafael', 'Raghú', 'Raimundo', 'Rainer', 'Rajú', 'Ravana', 'Raúl', 'Regis', 'Remigio', 'Renato', 'René', 'Reto', 'Reza', 'Ribhu',
+        'Ricardo', 'Rinchen Gyaltsen', 'Rishikesh', 'Roberto', 'Rodolfo', 'Rodrigo', 'Rogelio', 'Roger', 'Rommel', 'Rosendo', 'Ráksasa',
+        'Saburō', 'Sadrac', 'Sajádeva', 'Sakya Trizin', 'Salvador', 'Sambor', 'Samuel', 'Sancho', 'Santiago', 'Santiago', 'Sanyaia', 'Šarūnas', 'Satrayit', 'Saúl', 'Selim', 'Laksman Sen', 'Senén', 'Sergio', 'Shalivájana', 'Adi Shankara', 'Shinzō', 'Shirō', 'Shiva', 'Siddha', 'Sidonio', 'Simón', 'Slavko', 'Slawomir', 'Srivatsa', 'Stefano', 'Sudraka', 'Sukra', 'Suleimán', 'Suyog',
+        'Taichi', 'Takumi', 'Tal', 'Timoteo', 'Tinia', 'Tito', 'Tobías', 'Togarma', 'Tomás', 'Tonatiuh', 'Toussaint', 'Tuastri',
+        'Ubaldo', 'Uranius', 'Urbano', 'Urbano', 'Uriel', 'Urso', 'Urías',
+        'Václav', 'Vairochana', 'Vaiu', 'Vajrapani', 'Valerio', 'Valéry', 'Vasudeva', 'Vicente', 'Víctor', 'Vidura', 'Vishua Karma', 'Visnú', 'Vito',
+        'Zabulón', 'Zacarías', 'Zanobi', 'Zaqueo', 'Zbigniew', 'Zoran'
+    );
 
-    protected static $firstNameFemale = array('Diana', 'Daniela', 'Fernanda', 'Andrea', 'Ana', 'María', 'Alejandra', 'Mariana', 'Karla', 'Gabriela', 'Adriana', 'Jazmin', 'Samantha', 'Itzel', 'Rosa', 'Elizabeth', 'Viridiana', 'Brenda', 'Melissa', 'Sara', 'Jessica', 'Gaby', 'Miriam', 'Karen', 'Esmeralda', 'Laura', 'Frida', 'Alondra', 'Rocio', 'Karina', 'Paola', 'Marisol', 'Ali', 'Dulce', 'Valeria', 'Flor', 'Marian', 'Alexa', 'Tania', 'Paula', 'Michelle', 'Alma', 'Carolina', 'Claudia', 'Yazmin', 'Paulina', 'Cynthia', 'Liz', 'Lorna', 'Erika', 'Denisse', 'Clarisa', 'Perla', 'Natalia', 'Lizeth', 'Rebeca', 'Anahí', 'Fanny', 'LETICIA', 'Mayra', 'Maribel', 'Maria Fernanda', 'Marcela', 'Julia', 'Cecilia', 'Giselle', 'Violeta', 'Nelly', 'Sandy', 'Estefania', 'Abril', 'Cris', 'Silvia', 'Sofia', 'Lupita', 'Beatriz', 'Areli', 'Aimee', 'Victoria', 'Susy Benvidez', 'Noemi', 'Aranza', 'Cristina', 'Naomi', 'LeTy', 'Yesenia', 'Gabby', 'Eunice', 'Jenny', 'Leonor', 'Clarissa', 'Vale', 'Pasett', 'Sarai', 'Jhoaly', 'Annie', 'Angie', 'Dafne', 'Tonantzin', 'Lucy');
+    /**
+     * {@link} https://es.wikipedia.org/wiki/Categoría:Nombres_femeninos
+     */
+    protected static $firstNameFemale = array('Abigaíl', 'Adela', 'Adelaida', 'Áditi', 'Adoración', 'Adriana', 'África', 'Aglaé', 'Agripina', 'Águeda', 'Ai', 'Aída', 'Ailén', 'Ainhoa', 'Aitana', 'Alaksmí', 'Alba', 'Alejandra', 'Alicia', 'Alida', 'Almudena', 'Aloïse', 'Altagracia', 'Amalia', 'Amanda', 'Amatallah', 'Amaya', 'Ambá', 'Amelia', 'Amparo', 'Ana', 'Ana María', 'Anahí', 'Andrea', 'Ángela', 'Ángeles', 'Angelina', 'Angustias', 'Angélica', 'Anneliese', 'Antonella', 'Anunciación', 'Apsará', 'Araceli', 'Aránzazu', 'Ariadna', 'Ariel', 'Arlette', 'Arminda', 'Arundhati', 'Astrid', 'Asunción', 'Aurora', 'Ayelén', 'Aylin', 'Ayodhya', 'Azahara', 'Azucena',
+        'Beatrice', 'Beatriz', 'Begoña', 'Belinda', 'Belén', 'Berenguela', 'Berenice', 'Bernie', 'Berta', 'Betsabé', 'Blanca', 'Blasa', 'Bogna', 'Bogumila', 'Bożena', 'Briseida', 'Brígida', 'Bárbara',
+        'Camila', 'Candelaria', 'Caridad', 'Carmela', 'Carmen', 'Casandra', 'Casia', 'Catalina', 'Cecilia', 'Cecilia', 'Celia', 'Chiquinquirá', 'Cilia', 'Citlalli', 'Clara', 'Claudia', 'Clementina', 'Cleopatra', 'Clotilde', 'Concepción', 'Consolación', 'Constanza', 'Consuelo', 'Covadonga', 'Cristal', 'Cristina', 'Cunegunda', 'Cynthia',
+        'Dafne', 'Dalila', 'Dámaris', 'Dania', 'Débora', 'Delia', 'Delilah', 'Demetria', 'Denisa', 'Denise', 'Devakī', 'Devájuti', 'Deyanira', 'Dharani', 'Diana', 'Diti', 'Dolores', 'Dorcas', 'Dorotea', 'Draupadi', 'Drusila', 'Dánae',
+        'Edurne', 'Efigenia', 'Eiko', 'Elena', 'Elisa', 'Elizabeth', 'Eloísa', 'Elsa', 'Elvira', 'Emma', 'Engracia', 'Enriqueta', 'Erin', 'Escarlata', 'Esperanza', 'Estefanía', 'Ester', 'Eudoxia', 'Éunice', 'Eva',
+        'Fe', 'Felicidad', 'Fernanda', 'Flora', 'Florencia', 'Francina', 'Françoise', 'Fátima',
+        'Gabriela', 'Gema', 'Genoveva', 'Genoveva', 'Georgina', 'Gertrudis', 'Ginebra', 'Giovanna', 'Gisela', 'Gloria', 'Gopi', 'Gracia',
+        'Harriet', 'Haydée', 'Helga', 'Herminia', 'Hitomi', 'Holi', 'Hortensia', 'Hosanna',
+        'Iaksi', 'Idoia', 'Ileana', 'Imelda', 'Ingeborg', 'Ingrid', 'Inés', 'Irene', 'Iris', 'Isabel', 'Isidora', 'Isidoro', 'Itziar',
+        'Jacqueline', 'Jadwiga',
+        'Jael', 'Jessica', 'Jimena', 'Josefa', 'Jovita', 'Juana', 'Judit', 'Julia', 'Julieta',
+        'Kaede', 'Kali', 'Kalpa', 'Kámala', 'Kamalátmika', 'Karen', 'Karina', 'Keiko', 'Keila', 'Kira', 'Kirara', 'Kumiko', 'Kundalini', 'Kuntí',
+        'Laura', 'Leila', 'Leilani', 'Leire', 'Leticia', 'Liberata', 'Liliana', 'Linda', 'Llacolén', 'Lopa Mudra', 'Lorena', 'Lourdes', 'Lucía', 'Ludmila', 'Luisa', 'Luz',
+        'Macarena', 'Magali', 'Magdalena', 'Maite', 'Majá Vidiá', 'Malena', 'Małgorzata', 'Malinalli', 'Mantra', 'Marcelina', 'Margaret', 'Margarita', 'Marguerite', 'Mariana', 'Maribel', 'Mariel', 'Mariela', 'Marina', 'Marta', 'Martina de Roma', 'María', 'María Amalia', 'María Ana', 'María Cristina', 'María del Mar', 'María Luisa', 'María Pía', 'María Teresa', 'Matrikas', 'Megumi', 'Melania', 'Melisa', 'Mencía', 'Mia', 'Michelle', 'Milca', 'Millaray', 'Miranda', 'Mireya', 'Mirtha', 'Mónica', 'Montserrat', 'Muriel', 'Máxima',
+        'Nadezhda', 'Nadia', 'Nahia', 'Nancy', 'Natalia', 'Nayra', 'Nell', 'Nerea', 'Nicole', 'Nikté', 'Noelia', 'Noemí', 'Norma', 'Nuria', 'Níriti',
+        'Ofelia', 'Olga', 'Olinta', 'Olivia', 'Ophelia',
+        'Paloma', 'Pamela', 'Paola', 'Parvati', 'Patricia', 'Patricia', 'Paula', 'Paulina', 'Paz', 'Petra', 'Pilar', 'Prakriti', 'Pritiví',
+        'Radha', 'Rajasuya', 'Raminta', 'Rayén', 'Rebeca', 'Renata', 'Richa', 'Richa', 'Rita', 'Rocío', 'Rosalba', 'Rosalinda', 'Rosario', 'Rut',
+        'Sabine', 'Sabrina', 'Sadako', 'Sakti', 'Salma', 'Samhita', 'Samira', 'Sancha', 'Sandra', 'Sara', 'Saramá', 'Saraniú', 'Sarasvati', 'Satiá Bhama', 'Sattva', 'Selene', 'Setefilla', 'Shakha', 'Shakira', 'Shakuntalá', 'Shirin', 'Sigrid', 'Silvia', 'Sinivalí', 'Sinéad', 'Sita', 'Sofía', 'Sonia', 'Sophie', 'Soraya', 'Suargá', 'Subhadrá', 'Sulamita', 'Susana', 'Sāṃkhya',
+        'Taciana', 'Talía', 'Tamar', 'Tamara', 'Tania', 'Tania', 'Teresa', 'Triana',
+        'Úrsula', 'Urvashí',
+        'Valentina', 'Valeria', 'Valme', 'Vanessa', 'Vega', 'Vera', 'Verónica', 'Vicenta',
+        'Victoria', 'Virginia',
+        'Wendy',
+        'Xiomara', 'Xóchitl',
+        'Yambavati', 'Iashodá', 'Yolanda', 'Yuko', 'Yólotl',
+        'Zoe', 'Zoraida', 'Zulema'
+    );
 
     /**
      * {@link} http://surnames.behindthename.com/submit/names/usage/mexican
@@ -31,7 +86,7 @@ class Person extends \Faker\Provider\Person
 
     public function lastName()
     {
-        return static::randomElement(static::$lastName).' '.static::randomElement(static::$lastName);
+        return static::randomElement(static::$lastName) . ' ' . static::randomElement(static::$lastName);
     }
 
     public function lastNameMother()
@@ -44,7 +99,7 @@ class Person extends \Faker\Provider\Person
         return static::randomElement(static::$lastNames);
     }
     /**
-     * generates CURP
+     * generates CURP (uique identity code for both citizens and residents of Mexico)
      *
      * @param      string  $firstName       First name
      * @param      string  $lastNameFather  Fathers last name
@@ -60,32 +115,32 @@ class Person extends \Faker\Provider\Person
      */
     public static function curp($firstName = null, $lastNameFather = null, $lastNameMother = null, $birthDate = null, $gender = null, $state = null)
     {
-        $gender = in_array($gender, array(Person::GENDER_MALE,Person::GENDER_FEMALE))?$gender:static::randomElement(array(Person::GENDER_MALE,Person::GENDER_FEMALE));
+        $gender = in_array($gender, array(Person::GENDER_MALE, Person::GENDER_FEMALE)) ? $gender : static::randomElement(array(Person::GENDER_MALE, Person::GENDER_FEMALE));
 
         if ($gender === Person::GENDER_MALE) {
-            $firstName = self::removeAccents(self::removeCommonNames(mb_strtoupper($firstName?$firstName: static::firstNameMale())));
+            $firstName = self::removeAccents(self::removeCommonNames(mb_strtoupper($firstName ? $firstName : static::firstNameMale())));
         } else {
-            $firstName = self::removeAccents(self::removeCommonNames(mb_strtoupper($firstName?$firstName: static::firstNameFemale())));
+            $firstName = self::removeAccents(self::removeCommonNames(mb_strtoupper($firstName  ?$firstName : static::firstNameFemale())));
         }
 
-        $lastNameFather = self::removeAccents(self::removePrefixes(mb_strtoupper($lastNameFather?$lastNameFather: static::randomElement(static::$lastNames))));
-        $lastNameMother = self::removeAccents(self::removePrefixes(mb_strtoupper($lastNameMother?$lastNameMother: static::randomElement(static::$lastNames))));
-        $birthDate = $birthDate?$birthDate:\Faker\Provider\DateTime::dateTimeBetween();
+        $lastNameFather = self::removeAccents(self::removePrefixes(mb_strtoupper($lastNameFather ? $lastNameFather : static::randomElement(static::$lastNames))));
+        $lastNameMother = self::removeAccents(self::removePrefixes(mb_strtoupper($lastNameMother ? $lastNameMother : static::randomElement(static::$lastNames))));
+        $birthDate = $birthDate ? $birthDate:\Faker\Provider\DateTime::dateTimeBetween();
 
         $curp = self::commonPart('curp', $firstName, $lastNameFather, $lastNameMother, $birthDate);
 
         if ($gender == Person::GENDER_MALE) {
-            $curp .='H';
+            $curp .= 'H';
         } else {
-            $curp .='M';
+            $curp .= 'M';
         }
-        $curp .= in_array($state, self::$states)?$state: 'NE';
+        $curp .= in_array($state, self::$states) ? $state : 'NE';
 
-        $curp .= self::firstInternalConsonant($lastNameFather);
-        $curp .= self::firstInternalConsonant($lastNameMother);
-        $curp .= self::firstInternalConsonant($firstName);
+        $curp .= self::secondInternalConsonant($lastNameFather);
+        $curp .= self::secondInternalConsonant($lastNameMother);
+        $curp .= self::secondInternalConsonant($firstName);
 
-        if ($birthDate->format('Y') >= 2000) {
+        if ($birthDate->format('Y') <= 2000) {
             $curp .= strtoupper(static::bothify('??'));
         } else {
             $curp .= static::bothify('##');
@@ -104,7 +159,7 @@ class Person extends \Faker\Provider\Person
      * @param      string  $gender          Gender
      *
      * @return     string  Generated RFC
-     * 
+     *
      * @link       https://github.com/hectorip/RFC-CURP-Mexico/blob/master/src/mxk.js ported from this
      * @link       https://es.wikipedia.org/wiki/Registro_Federal_de_Contribuyentes_(México)
      */
@@ -136,7 +191,7 @@ class Person extends \Faker\Provider\Person
     {
         $common  = substr($lastNameFather, 0, 1);
         $common .= self::firstInternalVowel($lastNameFather);
-        $common .= $lastNameMother?substr($lastNameMother, 0, 1):'X';
+        $common .= $lastNameMother ? substr($lastNameMother, 0, 1) : 'X';
         $common .= substr($firstName, 0, 1);
         if ($type == 'curp') {
             $common = str_replace(array_keys(self::$badWordsCURP), array_values(self::$badWordsCURP), $common);
@@ -149,16 +204,16 @@ class Person extends \Faker\Provider\Person
 
     protected static function firstInternalVowel($word)
     {
-        if (preg_match('([AEIOU])', $word, $matches)) {
-            return $matches[0];
+        if (preg_match('/([AEIOU])/', substr($word, 1), $matches)) {
+            return $matches[1];
         }
         return 'X';
     }
 
-    protected static function firstInternalConsonant($word)
+    protected static function secondInternalConsonant($word)
     {
-        if (preg_match('([BCDFGHJKLMNPQRSTUVWXYZ])', $word, $matches)) {
-            return $matches[0];
+        if (preg_match('/.[AEIOU]*([BCDFGHJKLMNPQRSTUVWXYZ]{1})/', $word, $matches)) {
+            return $matches[1];
         }
         return 'X';
     }

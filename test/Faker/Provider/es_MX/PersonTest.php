@@ -24,7 +24,34 @@ class PersonTest extends \PHPUnit_Framework_TestCase
     public function testRFC()
     {
         $rfc = $this->faker->personRfc;
-        $this->assertRegExp('/^[a-zA-Z]{3,4}[0-9]{2}[0-1]{1}[0-9]{1}[0-3]{1}[0-9]{1}[a-zA-Z0-9]{3}$/',$rfc);
+        $this->assertRegExp('/^[a-zA-Z]{3,4}[0-9]{2}[0-1]{1}[0-9]{1}[0-3]{1}[0-9]{1}[a-zA-Z0-9]{3}$/', $rfc);
+    }
+
+    public function testCurpWithFirstNames()
+    {
+        $curp = $this->faker->curp('Darío');
+
+        $this->assertEquals('D', substr($curp, 3, 1));
+    }
+
+    public function testCurpWithFathersLastName()
+    {
+        $curp = $this->faker->curp('Darío', 'Estrada');
+        $this->assertEquals('E', substr($curp, 0, 1));
+        $this->assertEquals('A', substr($curp, 1, 1));
+    }
+
+    public function testCurpWithMothersLastName()
+    {
+        $curp = $this->faker->curp(null, null, 'Estrada');
+        $this->assertEquals('E', substr($curp, 2, 1));
+    }
+
+    public function testCurpFirstPart()
+    {
+        $curp = $this->faker->curp('Darío', 'Estrada', 'Lucía', new \DateTime('1981-04-27'), Person::GENDER_FEMALE, 'PL');
+
+        $this->assertEquals('EALD810427MPLSCR', substr($curp, 0, 16));
     }
 
     /**
@@ -38,11 +65,12 @@ class PersonTest extends \PHPUnit_Framework_TestCase
      *
      * @access  public
      * @return  bool    Passed / Not passed
-     * 
+     *
      * @link       https://github.com/pear/Validate_esMX/blob/master/Validate/esMX.php (Validator taken from there)
      */
     public static function dni($dni)
     {
+        
         $dns = strtoupper($dni);
         //Clean it
         $dni = str_replace(array('-', ' '), '', $dni);
