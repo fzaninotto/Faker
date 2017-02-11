@@ -114,7 +114,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
                 //CURP algorithm to get the digitVerifier.
                 $algChar            = '';
                 $curpVerifier       = '';
-                $counterDigit       = '';
+                $counterDigit       = 0;
                 $l_digito           = '';
                 $l_posicion         = '';
                 $digitModule        = '';
