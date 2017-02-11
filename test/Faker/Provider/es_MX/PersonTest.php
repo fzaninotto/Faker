@@ -85,7 +85,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
             //Check the region.
             if (isset($matches[6])) {
                 //Not a state or NE (foreign)
-                if ($matches[6] != 'NE' && !static::region($matches[6])) {
+                if ($matches[6] != 'NE' && !static::isRegionValid($matches[6])) {
                     return false;
                 }
             } else {
@@ -138,7 +138,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
                     }
                 }
                 for ($i=1; $i<strlen($dni); $i++) {
-                    $counterDigit += $curpVerifier{($i*2-1)} * (19 - $i);
+                    $counterDigit += (int)$curpVerifier{($i * 2 - 1)} * (19 - $i);
                 }
                 $digitModule = $counterDigit % 10;
                 if ($digitModule == 0) {
@@ -168,41 +168,41 @@ class PersonTest extends \PHPUnit_Framework_TestCase
      * @access  public
      * @return  bool    Passed / Not passed
      */
-    public static function region($region)
+    public static function isRegionValid($region)
     {
         switch (strtoupper($region)) {
-        case 'AS': //Aguascalientes
-        case 'BC': //Baja California
-        case 'BS': //Baja California Sur
-        case 'CC': //Campeche
-        case 'CL': //Coahuila
-        case 'CM': //Colima
-        case 'CS': //Chiapas
-        case 'CH': //Chihuahua
-        case 'DF': //Distrito Federal
-        case 'DG': //Durango
-        case 'GT': //Guanajuato
-        case 'GR': //Guerrero
-        case 'HG': //Hidalgo
-        case 'JC': //Jalisco
-        case 'MC': //Mexico
-        case 'MN': //Michoacán
-        case 'MS': //Morelos
-        case 'NT': //Nayarit
-        case 'NL': //Nuevo León
-        case 'OC': //Oaxaca
-        case 'PL': //Puebla
-        case 'QT': //Querétaro
-        case 'QR': //Quintana Roo
-        case 'SP': //San Luis Potosí
-        case 'SL': //Sinaloa
-        case 'SR': //Sonora
-        case 'TC': //Tabasco
-        case 'TS': //Tamaulipas
-        case 'TL': //Tlaxcala
-        case 'VZ': //Veracruz
-        case 'YN': //Yucatán
-        case 'ZS': //Zacatecas
+            case 'AS': //Aguascalientes
+            case 'BC': //Baja California
+            case 'BS': //Baja California Sur
+            case 'CC': //Campeche
+            case 'CL': //Coahuila
+            case 'CM': //Colima
+            case 'CS': //Chiapas
+            case 'CH': //Chihuahua
+            case 'DF': //Distrito Federal
+            case 'DG': //Durango
+            case 'GT': //Guanajuato
+            case 'GR': //Guerrero
+            case 'HG': //Hidalgo
+            case 'JC': //Jalisco
+            case 'MC': //Mexico
+            case 'MN': //Michoacán
+            case 'MS': //Morelos
+            case 'NT': //Nayarit
+            case 'NL': //Nuevo León
+            case 'OC': //Oaxaca
+            case 'PL': //Puebla
+            case 'QT': //Querétaro
+            case 'QR': //Quintana Roo
+            case 'SP': //San Luis Potosí
+            case 'SL': //Sinaloa
+            case 'SR': //Sonora
+            case 'TC': //Tabasco
+            case 'TS': //Tamaulipas
+            case 'TL': //Tlaxcala
+            case 'VZ': //Veracruz
+            case 'YN': //Yucatán
+            case 'ZS': //Zacatecas
             return true;
         }
         return false;

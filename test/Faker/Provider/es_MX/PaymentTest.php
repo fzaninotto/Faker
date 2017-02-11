@@ -29,10 +29,10 @@ class PaymentTest extends \PHPUnit_Framework_TestCase
         $weights = array(3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7);
 
         $weighted = array_map(function ($i, $w) {
-            return substr(($i*$w)%10, -1);
+            return substr(($i * $w) % 10, -1);
         }, str_split($number), $weights);
 
-        $product = array_sum($weighted)%10;
+        $product = array_sum($weighted) % 10;
         return $crc == (10-$product);
     }
 }
