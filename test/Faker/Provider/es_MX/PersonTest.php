@@ -18,7 +18,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
     public function testCurp()
     {
         $curp = $this->faker->curp;
-        $this->assertTrue(static::dni($curp));
+        $this->assertTrue(static::dni($curp), 'curp is valid');
     }
 
     public function testRFC()

@@ -18,12 +18,12 @@ class Payment extends \Faker\Provider\Payment
         $accountNumber = $bank . static::numerify('##############');
 
         $weighted = array_map(function ($item, $weight) {
-            return substr(($item * $weight)%10, -1);
+            return substr(($item * $weight) % 10, -1);
         }, str_split($accountNumber), static::$weight);
 
         $product = array_sum($weighted) % 10;
-        $crc = 10 - $product;
+        $crc = (10 - $product) % 10;
 
-        return $accountNumber.$crc;
+        return $accountNumber . $crc;
     }
 }
