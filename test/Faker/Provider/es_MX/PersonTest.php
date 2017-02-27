@@ -18,7 +18,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
     public function testCurp()
     {
         $curp = $this->faker->curp;
-        $this->assertTrue(static::dni($curp), 'curp is valid');
+        $this->assertTrue(static::dni($curp));
     }
 
     public function testRFC()
@@ -31,6 +31,12 @@ class PersonTest extends \PHPUnit_Framework_TestCase
     {
         $curp = $this->faker->curp('Darío');
 
+        $this->assertEquals('D', substr($curp, 3, 1));
+    }
+
+    public function testWithNotAcceptableNames()
+    {
+        $curp = $this->faker->curp('Jose de Darío');
         $this->assertEquals('D', substr($curp, 3, 1));
     }
 
@@ -70,7 +76,6 @@ class PersonTest extends \PHPUnit_Framework_TestCase
      */
     public static function dni($dni)
     {
-        
         $dns = strtoupper($dni);
         //Clean it
         $dni = str_replace(array('-', ' '), '', $dni);

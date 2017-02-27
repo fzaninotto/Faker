@@ -141,12 +141,74 @@ class Person extends \Faker\Provider\Person
         $curp .= self::secondInternalConsonant($firstName);
 
         if ($birthDate->format('Y') <= 2000) {
-            $curp .= strtoupper(static::bothify('??'));
+            $curp .= strtoupper(static::bothify('?'));
         } else {
-            $curp .= static::bothify('##');
+            $curp .= static::bothify('#');
         }
-
+        $curp .= self::getLastChar($curp);
         return $curp;
+    }
+
+    private static function getLastChar($curp)
+    {
+        $characters = [
+            '0' => '00',
+            '1' => '01',
+            '2' => '02',
+            '3' => '03',
+            '4' => '04',
+            '5' => '05',
+            '6' => '06',
+            '7' => '07',
+            '8' => '08',
+            '9' => '09',
+            'A' => '10',
+            'B' => '11',
+            'C' => '12',
+            'D' => '13',
+            'E' => '14',
+            'F' => '15',
+            'G' => '16',
+            'H' => '17',
+            'I' => '18',
+            'J' => '19',
+            'K' => '20',
+            'L' => '21',
+            'M' => '22',
+            'N' => '23',
+            '-' => '24',
+            'O' => '25',
+            'P' => '26',
+            'Q' => '27',
+            'R' => '28',
+            'S' => '29',
+            'T' => '30',
+            'U' => '31',
+            'V' => '32',
+            'W' => '33',
+            'X' => '34',
+            'Y' => '35',
+            'Z' => '36',
+            '*' => '37',
+        ];
+
+        $curpVerifier = '';
+        foreach (str_split($curp) as $curpChar) {
+            $curpVerifier .= key_exists($curpChar, $characters) ? $characters[$curpChar] : '00';
+        }
+        $counterDigit = 0;
+        for ($i = 1; $i <= strlen($curp); $i++) {
+            $counterDigit += (int)$curpVerifier{($i * 2 - 1)} * (19 - $i);
+        }
+        $digitModule = $counterDigit % 10;
+        if ($digitModule > 0) {
+            $digitVerifier = 10 - $digitModule;
+            if (strlen($digitVerifier) > 1) {
+                $digitVerifier = substr($digitVerifier, -1);
+            }
+            return $digitVerifier;
+        }
+        return $digitModule;
     }
 
     /**
