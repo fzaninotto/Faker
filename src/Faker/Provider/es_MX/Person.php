@@ -151,7 +151,7 @@ class Person extends \Faker\Provider\Person
 
     private static function getLastChar($curp)
     {
-        $characters = [
+        $characters = array(
             '0' => '00',
             '1' => '01',
             '2' => '02',
@@ -190,7 +190,7 @@ class Person extends \Faker\Provider\Person
             'Y' => '35',
             'Z' => '36',
             '*' => '37',
-        ];
+        );
 
         $curpVerifier = '';
         foreach (str_split($curp) as $curpChar) {
