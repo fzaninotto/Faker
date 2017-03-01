@@ -39,7 +39,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
                 if ($refCrc == 10) {
                     $refCrc = 0;
                 }
-                $this->assertEquals($crc, $refCrc, "Birth number $birthNumber: checksum $crc doesn't match expected $refCrc.");;
+                $this->assertEquals($crc, $refCrc, "Birth number $birthNumber: checksum $crc doesn't match expected $refCrc.");
             }
         }
     }
