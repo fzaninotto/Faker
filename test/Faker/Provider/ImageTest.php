@@ -21,18 +21,29 @@ class ImageTest extends \PHPUnit_Framework_TestCase
         $this->assertRegExp('#^http://lorempixel.com/800/400/nature/#', Image::imageUrl(800, 400, 'nature'));
     }
 
+    /**
+     * Test if the url contains the custom text as the last url path part if images are randomized.
+     */
     public function testImageUrlAcceptsCustomText()
     {
-        $this->assertRegExp('#^http://lorempixel.com/800/400/nature/Faker#', Image::imageUrl(800, 400, 'nature', false, 'Faker'));
+        $this->assertRegExp('#^http://lorempixel.com/640/480/nature/Faker#', Image::imageUrl(640, 480, 'nature', true, 'Faker'));
     }
 
-    public function testImageUrlAddsARandomGetParameterByDefault()
+    /**
+     * Test if the url contains a resource id following the category if images are not randomized.
+     * The id is a digit between 1 and 10.
+     */
+    public function testImageUrlAddsResourceId()
     {
-        $url = Image::imageUrl(800, 400);
-        $splitUrl = preg_split('/\?/', $url);
+        $this->assertRegExp('#^http:\/\/lorempixel.com\/640\/480\/nature\/[1-9]0?#', Image::imageUrl(640, 480, 'nature', false));
+    }
 
-        $this->assertEquals(count($splitUrl), 2);
-        $this->assertRegexp('#\d{5}#', $splitUrl[1]);
+    /**
+     * Test if the url has custom text after the resource id.
+     */
+    public function testImageUrlAddsResourceIdAndCustomText()
+    {
+        $this->assertRegExp('#^http:\/\/lorempixel.com\/640\/480\/nature\/([1-9]0?)/Faker#', Image::imageUrl(640, 480, 'nature', false, 'Faker'));
     }
 
     /**
