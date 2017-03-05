@@ -6,7 +6,7 @@ use Faker\Provider\Image;
 
 class ImageTest extends \PHPUnit_Framework_TestCase
 {
-    public function testImageUrlUses640x680AsTheDefaultSize()
+    public function testImageUrlUses640x480AsTheDefaultSize()
     {
         $this->assertRegExp('#^http://lorempixel.com/640/480/#', Image::imageUrl());
     }
