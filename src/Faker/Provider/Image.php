@@ -39,15 +39,16 @@ class Image extends Base
             if (!in_array($category, static::$categories)) {
                 throw new \InvalidArgumentException(sprintf('Unknown image category "%s"', $category));
             }
+
             $url .= "{$category}/";
-        }
 
-        if (!$randomize) {
-            $url .= static::numberBetween(1, 10) . '/';
-        }
+            if (!$randomize) {
+                $url .= static::numberBetween(1, 10) . '/';
+            }
 
-        if ($word) {
-            $url .= "{$word}/";
+            if ($word) {
+                $url .= "{$word}/";
+            }
         }
 
         return $baseUrl . $url;
