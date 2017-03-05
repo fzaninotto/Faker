@@ -18,7 +18,7 @@ class ImageTest extends \PHPUnit_Framework_TestCase
 
     public function testImageUrlAcceptsCustomCategory()
     {
-        $this->assertRegExp('#^http://lorempixel.com/800/400/nature/#', Image::imageUrl(800, 400, 'nature'));
+        $this->assertRegExp('#^http://lorempixel.com/640/480/nature/#', Image::imageUrl(640, 480, 'nature'));
     }
 
     /**
