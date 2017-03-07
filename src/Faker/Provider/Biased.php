@@ -2,6 +2,7 @@
 
 namespace Faker\Provider;
 
+
 class Biased extends Base
 {
     /**
@@ -24,41 +25,35 @@ class Biased extends Base
         do {
             $x = mt_rand() / mt_getrandmax();
             $y = mt_rand() / (mt_getrandmax() + 1);
-        } while (call_user_func($function, $x) < $y);
-        
+        } while (self::formula($function, $x) < $y);
+
         return floor($x * ($max - $min + 1) + $min);
     }
 
-    /**
-     * 'unbiased' creates an unbiased distribution by giving
-     * each value the same value of one.
-     *
-     * @return integer
-     */
-    protected static function unbiased($x)
+    protected static function formula($function, $x)
     {
-        return 1;
-    }
-
-    /**
-     * 'linearLow' favors lower numbers. The probability decreases
-     * in a linear fashion.
-     *
-     * @return integer
-     */
-    protected static function linearLow($x)
-    {
-        return 1 - $x;
-    }
-
-    /**
-     * 'linearHigh' favors higher numbers. The probability increases
-     * in a linear fashion.
-     *
-     * @return integer
-     */
-    protected static function linearHigh($x)
-    {
-        return $x;
+        switch ($function) {
+            case 'unbiased':
+                return 1;
+                break;
+            case 'linearLow':
+                return 1 - $x;
+                break;
+            case 'linearHigh':
+                return $x;
+                break;
+            case 'sqrt':
+                return sqrt($x);
+                break;
+            case 'square':
+                return $x ** 2;
+                break;
+            case 'cube':
+                return $x ** 3;
+                break;
+            default:
+                return 1;
+                break;
+        }
     }
 }
