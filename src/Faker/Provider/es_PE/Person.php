@@ -33,7 +33,8 @@ class Person extends \Faker\Provider\Person
         'Juan Pablo', 'Juan Sebastián', 'Julián', 'Kevin', 'Lautaro', 'Leonardo', 'Lorenzo', 'Lucas', 'Luciano', 'Luis', 'Manuel', 'Mario',
         'Martín', 'Mateo', 'Matthew', 'Matías', 'Maximiliano', 'Miguel', 'Miguel Ángel', 'Máximo', 'Nahuel', 'Pablo', 'Pedro', 'Rafael',
         'Ricardo', 'Rodrigo', 'Samuel', 'Santiago', 'Santino', 'Sebastián', 'Sergio', 'Simón', 'Thiago', 'Tomas', 'Valentino', 'Valentín',
-        'Vicente', 'Bautista', 'Hidalgo', 'Juan Esteban',
+        'Vicente', 'Bautista', 'Hidalgo', 'Juan Esteban', 'Jaime', 'Gerardo', 'Raúl', 'Emmanuel', 'Bernabé', 'Moisés', 'Abraham', 'Noé',
+        'Arturo', 'Federico',
     );
 
     protected static $firstNameFemale = array(
@@ -45,7 +46,8 @@ class Person extends \Faker\Provider\Person
         'Mariana', 'Mariangel', 'Martina', 'María', 'María Alejandra', 'María Camila', 'María Fernanda', 'María José', 'María Paula', 'Micaela', 'Michelle', 'Miranda',
         'Montserrat', 'Mía', 'Nadia', 'Natalia', 'Nicole', 'Oliva', 'Olivia', 'Ornela', 'Paula', 'Paulina', 'Rafaela', 'Rebeca',
         'Regina', 'Renata', 'Romina', 'Salomé', 'Samantha', 'Sara', 'Silvana ', 'Sofía', 'Sophie', 'Valentina', 'Valeria', 'Valery ',
-        'Victoria', 'Violeta', 'Zoe', 'Aitana', 'Sara Sofía', 'Ximena', 'Jimena',
+        'Victoria', 'Violeta', 'Zoe', 'Aitana', 'Sara Sofía', 'Ximena', 'Jimena', 'Thalía', 'Tania', 'Betania', 'Graciela', 'Lucy',
+        'Betsabé', 'Ester', 'Ruth', 'Jocabed', 'Marta',
     );
 
     protected static $lastName = array(
@@ -86,5 +88,20 @@ class Person extends \Faker\Provider\Person
     public static function suffix()
     {
         return static::randomElement(static::$suffix);
+    }
+
+    /**
+     * Generate a Documento Nacional de Identidad (DNI) number
+     *
+     * Doesn't include a checksum, as peruvians commonly use only the first
+     * 8 digits.
+     *
+     * @example '70025425'
+     *
+     * @link http://www2.sunat.gob.pe/pdt/pdtModulos/independientes/p695/TipoDoc.htm
+     */
+    public static function dni()
+    {
+        return static::numerify('########');
     }
 }
