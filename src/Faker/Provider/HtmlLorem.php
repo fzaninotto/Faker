@@ -59,6 +59,30 @@ class HtmlLorem extends Base
         return $document->saveHTML();
     }
 
+    /**
+     * @return string
+     */
+    public function randomBody($maxDepth = 4, $maxWidth = 4)
+    {
+        $document = new \DOMDocument();
+
+        $body = $document->createElement("body");
+        $this->addRandomSubTree($body, $maxDepth, $maxWidth);
+        $document->appendChild($body);
+        return $document->saveHTML();
+    }
+
+    /**
+     * @return string
+     */
+    public function randomBodyFragments($maxDepth = 4, $maxWidth = 4)
+    {
+        $html = $this->randomBody($maxDepth, $maxWidth);
+        $matches = array();
+        preg_match("/\<body\>(.*)<\/body\>/", $html, $matches);
+        return $matches[1];
+    }
+
     private function addRandomSubTree(\DOMElement $root, $maxDepth, $maxWidth)
     {
         $maxDepth--;
