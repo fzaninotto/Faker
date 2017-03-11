@@ -66,6 +66,36 @@ class HtmlLorem extends Base
         return $document->saveHTML();
     }
 
+    /**
+     * @param int $maxDepth
+     * @param int $maxWidth
+     *
+     * @return string
+     */
+    public function randomHTMLBody($maxDepth = 4, $maxWidth = 4)
+    {
+        $document = new \DOMDocument();
+
+        $body = $document->createElement("body");
+        $this->addRandomSubTree($body, $maxDepth, $maxWidth);
+        $document->appendChild($body);
+        return $document->saveHTML();
+    }
+
+    /**
+     * @param int $maxDepth
+     * @param int $maxWidth
+     *
+     * @return string
+     */
+    public function randomBodyFragments($maxDepth = 4, $maxWidth = 4)
+    {
+        $html = $this->randomHTMLBody($maxDepth, $maxWidth);
+        $matches = array();
+        preg_match("/\<body\>(.*)<\/body\>/", $html, $matches);
+        return $matches[1];
+    }
+
     private function addRandomSubTree(\DOMElement $root, $maxDepth, $maxWidth)
     {
         $maxDepth--;
@@ -129,7 +159,8 @@ class HtmlLorem extends Base
                 $node->setAttribute("class", $this->generator->word);
                 break;
             case 2:
-                $node->setAttribute("id", (string)$this->idGenerator->randomNumber(5));
+            	  $randomNumber = $this->generator->randomNumber(5);
+                $node->setAttribute("id", (string)$randomNumber);
                 break;
         }
     }
