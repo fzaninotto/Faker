@@ -931,6 +931,15 @@ echo $faker->dni; // '77446565E'
 echo $faker->vat;           // "A35864370"
 ```
 
+### `Faker\Provider\es_PE\Person`
+
+```php
+<?php
+
+// Generates a Peruvian Documento Nacional de Identidad (DNI) number
+echo $faker->dni; // '83367512'
+```
+
 ### `Faker\Provider\fi_FI\Payment`
 
 ```php
