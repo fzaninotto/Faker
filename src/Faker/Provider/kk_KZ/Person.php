@@ -179,16 +179,16 @@ class Person extends \Faker\Provider\Person
     /**
      * @param  integer $year
      *
-     * @return integer
+     * @return integer|null
      */
     private static function getCenturyByYear($year)
     {
-        if ($year >= 1800 && $year <= 1899) {
-            return self::CENTURY_19TH;
-        } elseif ($year >= 1900 && $year <= 1999) {
-            return self::CENTURY_20TH;
-        } elseif ($year >= 2000 && $year <= DateTime::year()) {
+        if ($year >= 2000 && $year <= DateTime::year()) {
             return self::CENTURY_21ST;
+        } elseif ($year >= 1900) {
+            return self::CENTURY_20TH;
+        } elseif ($year >= 1800) {
+            return self::CENTURY_19TH;
         }
     }
 
