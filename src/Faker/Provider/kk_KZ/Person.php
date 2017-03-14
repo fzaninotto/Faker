@@ -10,17 +10,17 @@ class Person extends \Faker\Provider\Person
     const GENDER_MALE = 0;
     const GENDER_FEMALE = 1;
 
-    const CENTURY_19th = 0;
-    const CENTURY_20th = 1;
-    const CENTURY_21st = 2;
+    const CENTURY_19TH = 0;
+    const CENTURY_20TH = 1;
+    const CENTURY_21ST = 2;
 
-    const MALE_CENTURY_19th = 1;
-    const MALE_CENTURY_20th = 3;
-    const MALE_CENTURY_21st = 5;
+    const MALE_CENTURY_19TH = 1;
+    const MALE_CENTURY_20TH = 3;
+    const MALE_CENTURY_21ST = 5;
 
-    const FEMALE_CENTURY_19th = 2;
-    const FEMALE_CENTURY_20th = 4;
-    const FEMALE_CENTURY_21st = 6;
+    const FEMALE_CENTURY_19TH = 2;
+    const FEMALE_CENTURY_20TH = 4;
+    const FEMALE_CENTURY_21ST = 6;
 
     /**
      * @var array
@@ -37,14 +37,14 @@ class Person extends \Faker\Provider\Person
      */
     protected static $genderCenturyMap = array(
         self::GENDER_MALE   => array(
-            self::CENTURY_19th => self::MALE_CENTURY_19th,
-            self::CENTURY_20th => self::MALE_CENTURY_20th,
-            self::CENTURY_21st => self::MALE_CENTURY_21st,
+            self::CENTURY_19TH => self::MALE_CENTURY_19TH,
+            self::CENTURY_20TH => self::MALE_CENTURY_20TH,
+            self::CENTURY_21ST => self::MALE_CENTURY_21ST,
         ),
         self::GENDER_FEMALE => array(
-            self::CENTURY_19th => self::FEMALE_CENTURY_19th,
-            self::CENTURY_20th => self::FEMALE_CENTURY_20th,
-            self::CENTURY_21st => self::FEMALE_CENTURY_21st,
+            self::CENTURY_19TH => self::FEMALE_CENTURY_19TH,
+            self::CENTURY_20TH => self::FEMALE_CENTURY_20TH,
+            self::CENTURY_21ST => self::FEMALE_CENTURY_21ST,
         ),
     );
 
@@ -184,11 +184,11 @@ class Person extends \Faker\Provider\Person
     private static function getCenturyByYear($year)
     {
         if ($year >= 1800 && $year <= 1899) {
-            return self::CENTURY_19th;
+            return self::CENTURY_19TH;
         } elseif ($year >= 1900 && $year <= 1999) {
-            return self::CENTURY_20th;
+            return self::CENTURY_20TH;
         } elseif ($year >= 2000 && $year <= DateTime::year()) {
-            return self::CENTURY_21st;
+            return self::CENTURY_21ST;
         }
     }
 
