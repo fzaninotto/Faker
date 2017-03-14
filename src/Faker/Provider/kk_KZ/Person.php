@@ -25,17 +25,17 @@ class Person extends \Faker\Provider\Person
     /**
      * @var array
      */
-    protected static $firstSequenceBitWeights = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
+    public static $firstSequenceBitWeights = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
 
     /**
      * @var array
      */
-    protected static $secondSequenceBitWeights = array(3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 2);
+    public static $secondSequenceBitWeights = array(3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 2);
 
     /**
      * @var array
      */
-    protected static $genderCenturyMap = array(
+    public static $genderCenturyMap = array(
         self::GENDER_MALE   => array(
             self::CENTURY_19TH => self::MALE_CENTURY_19TH,
             self::CENTURY_20TH => self::MALE_CENTURY_20TH,
