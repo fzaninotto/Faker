@@ -16,62 +16,62 @@ class Person extends \Faker\Provider\Person
 
     const MALE_CENTURY_19th = 1;
     const MALE_CENTURY_20th = 3;
-    const MALE_CENTURY_21th = 5;
+    const MALE_CENTURY_21st = 5;
 
     const FEMALE_CENTURY_19th = 2;
     const FEMALE_CENTURY_20th = 4;
-    const FEMALE_CENTURY_21th = 6;
+    const FEMALE_CENTURY_21st = 6;
 
     /**
      * @var array
      */
-    protected static $firstSequenceBitWeights = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    protected static $firstSequenceBitWeights = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
 
     /**
      * @var array
      */
-    protected static $secondSequenceBitWeights = [3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 2];
+    protected static $secondSequenceBitWeights = array(3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 2);
 
     /**
      * @var array
      */
-    protected static $genderCenturyMap = [
-        self::GENDER_MALE   => [
+    protected static $genderCenturyMap = array(
+        self::GENDER_MALE   => array(
             self::CENTURY_19th => self::MALE_CENTURY_19th,
             self::CENTURY_20th => self::MALE_CENTURY_20th,
-            self::CENTURY_21st => self::MALE_CENTURY_21th,
-        ],
-        self::GENDER_FEMALE => [
+            self::CENTURY_21st => self::MALE_CENTURY_21st,
+        ),
+        self::GENDER_FEMALE => array(
             self::CENTURY_19th => self::FEMALE_CENTURY_19th,
             self::CENTURY_20th => self::FEMALE_CENTURY_20th,
-            self::CENTURY_21st => self::FEMALE_CENTURY_21th,
-        ],
-    ];
+            self::CENTURY_21st => self::FEMALE_CENTURY_21st,
+        ),
+    );
 
     /**
      * @see https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D0%BA%D0%B0%D1%8F_%D1%84%D0%B0%D0%BC%D0%B8%D0%BB%D0%B8%D1%8F
      *
      * @var array
      */
-    protected static $maleNameFormats = [
+    protected static $maleNameFormats = array(
         '{{lastName}}ұлы {{firstNameMale}}',
-    ];
+    );
 
     /**
      * @see https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D0%BA%D0%B0%D1%8F_%D1%84%D0%B0%D0%BC%D0%B8%D0%BB%D0%B8%D1%8F
      *
      * @var array
      */
-    protected static $femaleNameFormats = [
+    protected static $femaleNameFormats = array(
         '{{lastName}}қызы {{firstNameFemale}}',
-    ];
+    );
 
     /**
      * @see http://koshpendi.kz/index.php/nomad/imena/
      *
      * @var array
      */
-    protected static $firstNameMale = [
+    protected static $firstNameMale = array(
         'Аылғазы',
         'Әбдіқадыр',
         'Бабағожа',
@@ -100,14 +100,14 @@ class Person extends \Faker\Provider\Person
         'Шаттық',
         'Ыстамбақы',
         'Ібни',
-    ];
+    );
 
     /**
      * @see http://koshpendi.kz/index.php/nomad/imena/
      *
      * @var array
      */
-    protected static $firstNameFemale = [
+    protected static $firstNameFemale = array(
         'Асылтас',
         'Әужа',
         'Бүлдіршін',
@@ -137,7 +137,7 @@ class Person extends \Faker\Provider\Person
         'Шырынгүл',
         'Ырысты',
         'Іңкәр',
-    ];
+    );
 
     /**
      * @see http://koshpendi.kz/index.php/nomad/imena/
@@ -145,7 +145,7 @@ class Person extends \Faker\Provider\Person
      *
      * @var array
      */
-    protected static $lastName = [
+    protected static $lastName = array(
         'Адырбай',
         'Әжібай',
         'Байбөрі',
@@ -174,7 +174,7 @@ class Person extends \Faker\Provider\Person
         'Шілдебай',
         'Ыстамбақы',
         'Ісмет',
-    ];
+    );
 
     /**
      * @param  integer $year
