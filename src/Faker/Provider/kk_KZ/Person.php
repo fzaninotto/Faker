@@ -214,7 +214,7 @@ class Person extends \Faker\Provider\Person
         $century          = self::getCenturyByYear((int)$birthDate->format('Y'));
         $iin              = $dateAsString;
         $sum              = 0;
-        $calculatedResult = [];
+        $calculatedResult = array();
 
         $iin .= (string)self::$genderCenturyMap[$gender][$century];
         $iin .= (string)$totalPopulation;
