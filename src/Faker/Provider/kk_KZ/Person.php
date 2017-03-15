@@ -209,48 +209,46 @@ class Person extends \Faker\Provider\Person
             $birthDate = DateTime::dateTimeBetween();
         }
 
-        $totalPopulation  = mt_rand(1000, 2000);
-        $century          = self::getCenturyByYear((int)$birthDate->format('Y'));
-        $iin              = $birthDate->format('ymd');
-        $calculatedResult = array();
+        $population = mt_rand(1000, 2000);
+        $century    = self::getCenturyByYear((int) $birthDate->format('Y'));
 
-        $iin .= (string)self::$genderCenturyMap[$gender][$century];
-        $iin .= (string)$totalPopulation;
+        $iin  = $birthDate->format('ymd');
+        $iin .= (string) self::$genderCenturyMap[$gender][$century];
+        $iin .= (string) $population;
 
-        $controlDigit         = self::checkSum($iin, $calculatedResult);
-        $calculatedResult[11] = $controlDigit;
-
-        return implode('', $calculatedResult);
+        return  $iin . (string) self::checkSum($iin);
     }
 
     /**
-     * @param  string $iinValue
-     * @param  array  $calculatedResult
+     * @param string $iinValue
      *
      * @return integer
      */
-    public static function checkSum($iinValue, &$calculatedResult = array())
+    public static function checkSum($iinValue)
+    {
+        $controlDigit = self::getControlDigit($iinValue, self::$firstSequenceBitWeights);
+
+        if ($controlDigit === 10) {
+            return self::getControlDigit($iinValue, self::$secondSequenceBitWeights);
+        }
+
+        return $controlDigit;
+    }
+
+    /**
+     * @param string $iinValue
+     * @param array $sequence
+     *
+     * @return integer
+     */
+    protected static function getControlDigit($iinValue, $sequence)
     {
         $sum = 0;
 
         for ($i = 0; $i <= 10; $i++) {
-            $calculatedResult[$i] = (int)substr($iinValue, $i, 1);
-            $sum += $calculatedResult[$i] * Person::$firstSequenceBitWeights[$i];
+            $sum += (int) $iinValue[$i] * $sequence[$i];
         }
 
-        $controlDigit = $sum % 11;
-
-        if ($controlDigit === 10) {
-            $sum = 0;
-
-            for ($i = 0; $i <= 10; $i++) {
-                $calculatedResult[$i] = (int)substr($iinValue, $i, 1);
-                $sum += $calculatedResult[$i] * Person::$secondSequenceBitWeights[$i];
-            }
-
-            $controlDigit = $sum % 11;
-        }
-
-        return $controlDigit;
+        return $sum % 11;
     }
 }
