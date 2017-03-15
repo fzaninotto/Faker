@@ -829,6 +829,9 @@ echo $faker->businessIdentificationNumber; // "150140000019"
 // Generates an individual identification number
 echo $faker->individualIdentificationNumber; // "780322300455"
 
+// Generates an individual identification number based on his/her birth date
+echo $faker->individualIdentificationNumber(new \DateTime('1999-03-01')); // "990301300455"
+
 ```
 
 ### `Faker\Provider\ko_KR\Address`
