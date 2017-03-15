@@ -209,36 +209,48 @@ class Person extends \Faker\Provider\Person
             $birthDate = DateTime::dateTimeBetween();
         }
 
-        $dateAsString     = $birthDate->format('ymd');
-        $totalPopulation  = rand(1000, 2000);
+        $totalPopulation  = mt_rand(1000, 2000);
         $century          = self::getCenturyByYear((int)$birthDate->format('Y'));
-        $iin              = $dateAsString;
-        $sum              = 0;
+        $iin              = $birthDate->format('ymd');
         $calculatedResult = array();
 
         $iin .= (string)self::$genderCenturyMap[$gender][$century];
         $iin .= (string)$totalPopulation;
 
+        $controlDigit         = self::checkSum($iin, $calculatedResult);
+        $calculatedResult[11] = $controlDigit;
+
+        return implode('', $calculatedResult);
+    }
+
+    /**
+     * @param  string $iinValue
+     * @param  array  $calculatedResult
+     *
+     * @return integer
+     */
+    public static function checkSum($iinValue, &$calculatedResult = array())
+    {
+        $sum = 0;
+
         for ($i = 0; $i <= 10; $i++) {
-            $calculatedResult[$i] = (int)substr($iin, $i, 1);
-            $sum += $calculatedResult[$i] * self::$firstSequenceBitWeights[$i];
+            $calculatedResult[$i] = (int)substr($iinValue, $i, 1);
+            $sum += $calculatedResult[$i] * Person::$firstSequenceBitWeights[$i];
         }
 
-        $controlDigit         = $sum % 11;
-        $calculatedResult[11] = $controlDigit;
+        $controlDigit = $sum % 11;
 
         if ($controlDigit === 10) {
             $sum = 0;
 
             for ($i = 0; $i <= 10; $i++) {
-                $calculatedResult[$i] = (int)substr($iin, $i, 1);
-                $sum += $calculatedResult[$i] * self::$secondSequenceBitWeights[$i];
+                $calculatedResult[$i] = (int)substr($iinValue, $i, 1);
+                $sum += $calculatedResult[$i] * Person::$secondSequenceBitWeights[$i];
             }
 
-            $controlDigit         = $sum % 11;
-            $calculatedResult[11] = $controlDigit;
+            $controlDigit = $sum % 11;
         }
 
-        return implode('', $calculatedResult);
+        return $controlDigit;
     }
 }
