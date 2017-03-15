@@ -36,7 +36,7 @@ class Internet extends \Faker\Provider\Base
     public function email()
     {
         $format = static::randomElement(static::$emailFormats);
-        
+
         return $this->generator->parse($format);
     }
 
@@ -360,5 +360,18 @@ class Internet extends \Faker\Provider\Base
         }
 
         return str_replace($arrayFrom, $arrayTo, $string);
+    }
+
+    /**
+     * Return a youtube url of a random video (Using randomyt.com service)
+     *
+     * @return String
+     * @example https://www.youtube.com/watch?v=XXXXXXXXX
+     */
+    public function youtube()
+    {
+        $html = file_get_contents('http://randomyt.com/');
+        preg_match("/ext_VideoID\ \=\ \'([\w\d]*)/", $html, $r);
+        return "https://www.youtube.com/watch?v=" . $r[1];
     }
 }

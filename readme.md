@@ -219,6 +219,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     localIpv4               // '10.242.58.8'
     ipv6                    // '8e65:933d:22ee:a232:f1c1:2741:1f10:117c'
     macAddress              // '43:85:B7:08:10:CA'
+    youtube              		// 'https://www.youtube.com/watch?v=XXXXXXXXX' (That could be slow - Using randomyt.com)
 
 ### `Faker\Provider\UserAgent`
 
@@ -291,6 +292,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     locale        // en_UK
     countryCode   // UK
     languageCode  // en
+    currencyCode  // EUR
     currencyCode  // EUR
 
 ### `Faker\Provider\Biased`
