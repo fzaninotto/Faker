@@ -87,4 +87,20 @@ class Person extends \Faker\Provider\Person
     {
         return static::randomElement(static::$suffix);
     }
+    
+    
+    /**
+     * Generate a Documento Nacional de Identidad (DNI) number
+     *
+     * Doesn't include a checksum, as peruvians commonly use only the first
+     * 8 digits.
+     *
+     * @example '83367512'
+     *
+     * @link http://www2.sunat.gob.pe/pdt/pdtModulos/independientes/p695/TipoDoc.htm
+     */
+    public static function dni()
+    {
+        return static::numerify('########');
+    }
 }

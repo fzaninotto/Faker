@@ -23,6 +23,16 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(BaseProvider::randomDigitNotNull() < 10);
     }
 
+
+    public function testRandomDigitNotReturnsValidDigit()
+    {
+        for ($i = 0; $i <= 9; $i++) {
+            $this->assertTrue(BaseProvider::randomDigitNot($i) >= 0);
+            $this->assertTrue(BaseProvider::randomDigitNot($i) < 10);
+            $this->assertTrue(BaseProvider::randomDigitNot($i) !== $i);
+        }
+    }
+
     /**
      * @expectedException \InvalidArgumentException
      */
@@ -266,6 +276,17 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertRegExp('/foo[a-z]Ba\dr/', BaseProvider::bothify('foo?Ba#r'));
     }
 
+    public function testBothifyAsterisk()
+    {
+        $this->assertRegExp('/foo([a-z]|\d)Ba([a-z]|\d)r/', BaseProvider::bothify('foo*Ba*r'));
+    }
+
+    public function testBothifyUtf()
+    {
+        $utf = 'œ∑´®†¥¨ˆøπ“‘和製╯°□°╯︵ ┻━┻🐵 🙈 ﺚﻣ ﻦﻔﺳ ﺲﻘﻄﺗ ﻮﺑﺎﻠﺘﺣﺪﻳﺩ،, ﺝﺰﻳﺮﺘﻳ ﺏﺎﺴﺘﺧﺩﺎﻣ ﺄﻧ ﺪﻧﻭ. ﺇﺫ ﻪﻧﺍ؟ ﺎﻠﺴﺗﺍﺭ ﻮﺘ';
+        $this->assertRegExp('/'.$utf.'foo\dB[a-z]a([a-z]|\d)r/u', BaseProvider::bothify($utf.'foo#B?a*r'));
+    }
+
     public function testAsciifyReturnsSameStringWhenItContainsNoStarSign()
     {
         $this->assertEquals('fooBar?', BaseProvider::asciify('fooBar?'));
@@ -326,7 +347,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
     {
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
-        $this->assertNotNull($faker->optional(1)->randomDigit);
+        $this->assertNotNull($faker->optional(100)->randomDigit);
     }
 
     public function testOptionalReturnsNullWhenCalledWithWeight0()
@@ -341,7 +362,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         $faker->addProvider(new \ArrayObject(array(1))); // hack because method_exists forbids stubs
-        $this->assertEquals(1, $faker->optional(1)->count);
+        $this->assertEquals(1, $faker->optional(100)->count);
         $this->assertNull($faker->optional(0)->count);
     }
 
@@ -350,7 +371,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         $faker->addProvider(new \ArrayObject(array(1))); // hack because method_exists forbids stubs
-        $this->assertEquals(1, $faker->optional(1)->count());
+        $this->assertEquals(1, $faker->optional(100)->count());
         $this->assertNull($faker->optional(0)->count());
     }
 
@@ -363,6 +384,35 @@ class BaseTest extends \PHPUnit_Framework_TestCase
             $values[]= $faker->optional()->randomDigit;
         }
         $this->assertContains(null, $values);
+
+        $values = array();
+        for ($i=0; $i < 10; $i++) {
+            $values[]= $faker->optional(50)->randomDigit;
+        }
+        $this->assertContains(null, $values);
+    }
+
+    /**
+     * @link https://github.com/fzaninotto/Faker/issues/265
+     */
+    public function testOptionalPercentageAndWeight()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $faker->addProvider(new \Faker\Provider\Miscellaneous($faker));
+
+        $valuesOld = array();
+        $valuesNew = array();
+
+        for ($i = 0; $i < 10000; ++$i) {
+            $valuesOld[] = $faker->optional(0.5)->boolean(100);
+            $valuesNew[] = $faker->optional(50)->boolean(100);
+        }
+
+        $this->assertEquals(
+            round(array_sum($valuesOld) / 10000, 2),
+            round(array_sum($valuesNew) / 10000, 2)
+        );
     }
 
     public function testUniqueAllowsChainingPropertyAccess()
@@ -421,6 +471,61 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(array(0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9), $values);
     }
 
+    public function testValidAllowsChainingPropertyAccess()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $this->assertLessThan(10, $faker->valid()->randomDigit);
+    }
+
+    public function testValidAllowsChainingMethodCall()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $this->assertLessThan(10, $faker->valid()->numberBetween(5, 9));
+    }
+
+    public function testValidReturnsOnlyValidValues()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $values = array();
+        $evenValidator = function($digit) {
+            return $digit % 2 === 0;
+        };
+        for ($i=0; $i < 50; $i++) {
+            $values[$faker->valid($evenValidator)->randomDigit] = true;
+        }
+        $uniqueValues = array_keys($values);
+        sort($uniqueValues);
+        $this->assertEquals(array(0, 2, 4, 6, 8), $uniqueValues);
+    }
+
+    /**
+     * @expectedException OverflowException
+     */
+    public function testValidThrowsExceptionWhenNoValidValueCanBeGenerated()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $evenValidator = function($digit) {
+            return $digit % 2 === 0;
+        };
+        for ($i=0; $i < 11; $i++) {
+            $faker->valid($evenValidator)->randomElement(array(1, 3, 5, 7, 9));
+        }
+    }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testValidThrowsExceptionWhenParameterIsNotCollable()
+    {
+        $faker = new \Faker\Generator();
+        $faker->addProvider(new \Faker\Provider\Base($faker));
+        $faker->valid(12)->randomElement(array(1, 3, 5, 7, 9));
+    }
+
     /**
      * @expectedException LengthException
      * @expectedExceptionMessage Cannot get 2 elements, only 1 in array
@@ -442,5 +547,9 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertContains('foo', $shuffled);
         $this->assertContains('bar', $shuffled);
         $this->assertContains('baz', $shuffled);
+
+        $allowDuplicates = BaseProvider::randomElements(array('foo', 'bar'), 3, true);
+        $this->assertCount(3, $allowDuplicates);
+        $this->assertContainsOnly('string', $allowDuplicates);
     }
 }

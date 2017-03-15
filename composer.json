@@ -10,15 +10,13 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3"
+        "php": "^5.3.3|^7.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0",
-        "squizlabs/php_codesniffer": "~1.5"
+        "squizlabs/php_codesniffer": "~1.5",
+        "ext-intl": "*"
     },
-    "suggest": {
-         "ext-intl": "*"
-     },
     "autoload": {
         "psr-4": {
             "Faker\\": "src/Faker/"
@@ -26,12 +24,12 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Faker\\PHPUnit\\": "test/Faker/"
+            "Faker\\Test\\": "test/Faker/"
         }
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.5.x-dev"
+            "dev-master": "1.6.x-dev"
         }
     }
 }

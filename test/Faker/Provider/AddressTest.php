@@ -31,4 +31,16 @@ class AddressTest extends \PHPUnit_Framework_TestCase
         $this->assertGreaterThanOrEqual(-180, $longitude);
         $this->assertLessThanOrEqual(180, $longitude);
     }
+
+    public function testCoordinate()
+    {
+        $coordinate = $this->faker->localCoordinates();
+        $this->assertInternalType('array', $coordinate);
+        $this->assertInternalType('float', $coordinate['latitude']);
+        $this->assertGreaterThanOrEqual(-90, $coordinate['latitude']);
+        $this->assertLessThanOrEqual(90, $coordinate['latitude']);
+        $this->assertInternalType('float', $coordinate['longitude']);
+        $this->assertGreaterThanOrEqual(-180, $coordinate['longitude']);
+        $this->assertLessThanOrEqual(180, $coordinate['longitude']);
+    }
 }

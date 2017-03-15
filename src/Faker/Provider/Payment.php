@@ -2,6 +2,7 @@
 
 namespace Faker\Provider;
 
+use Faker\Calculator\Iban;
 use Faker\Calculator\Luhn;
 
 class Payment extends Base
@@ -14,7 +15,11 @@ class Payment extends Base
         'American Express', 'Discover Card'
     );
 
-    // see http://en.wikipedia.org/wiki/Bank_card_number for a reference of existing prefixes
+    /**
+     * @var array List of card brand masks for generating valid credit card numbers
+     * @see https://en.wikipedia.org/wiki/Payment_card_number Reference for existing prefixes
+     * @see https://www.mastercard.us/en-us/issuers/get-support/2-series-bin-expansion.html MasterCard 2017 2-Series BIN Expansion
+     */
     protected static $cardParams = array(
         'Visa' => array(
             "4539########",
@@ -37,6 +42,12 @@ class Payment extends Base
             "4##############"
         ),
         'MasterCard' => array(
+            "2221###########",
+            "23#############",
+            "24#############",
+            "25#############",
+            "26#############",
+            "2720###########",
             "51#############",
             "52#############",
             "53#############",
@@ -53,7 +64,7 @@ class Payment extends Base
     );
 
     /**
-     * @var array list of IBAN formats, source: @link http://www.swift.com/dsp/resources/documents/IBAN_Registry.txt
+     * @var array list of IBAN formats, source: @link https://www.swift.com/standards/data-standards/iban
      */
     protected static $ibanFormats = array(
         'AD' => array(array('n', 4),    array('n', 4),  array('c', 12)),
@@ -75,6 +86,7 @@ class Payment extends Base
         'DO' => array(array('c', 4),    array('n', 20)),
         'EE' => array(array('n', 2),    array('n', 2),  array('n', 11), array('n', 1)),
         'ES' => array(array('n', 4),    array('n', 4),  array('n', 1),  array('n', 1),  array('n', 10)),
+        'FI' => array(array('n', 6),    array('n', 7),  array('n', 1)),
         'FR' => array(array('n', 5),    array('n', 5),  array('c', 11), array('n', 2)),
         'GB' => array(array('a', 4),    array('n', 6),  array('n', 8)),
         'GE' => array(array('a', 2),    array('n', 16)),
@@ -87,7 +99,7 @@ class Payment extends Base
         'IL' => array(array('n', 3),    array('n', 3),  array('n', 13)),
         'IS' => array(array('n', 4),    array('n', 2),  array('n', 6),  array('n', 10)),
         'IT' => array(array('a', 1),    array('n', 5),  array('n', 5),  array('c', 12)),
-        'KW' => array(array('a', 4),    array('c', 22)),
+        'KW' => array(array('a', 4),    array('n', 22)),
         'KZ' => array(array('n', 3),    array('c', 13)),
         'LB' => array(array('n', 4),    array('c', 20)),
         'LI' => array(array('n', 5),    array('c', 12)),
@@ -115,7 +127,7 @@ class Payment extends Base
         'SK' => array(array('n', 4),    array('n', 6),  array('n', 10)),
         'SM' => array(array('a', 1),    array('n', 5),  array('n', 5),  array('c', 12)),
         'TN' => array(array('n', 2),    array('n', 3),  array('n', 13), array('n', 2)),
-        'TR' => array(array('n', 5),    array('c', 1),  array('c', 16)),
+        'TR' => array(array('n', 5),    array('n', 1),  array('c', 16)),
         'VG' => array(array('a', 4),    array('n', 16)),
     );
 
@@ -132,7 +144,7 @@ class Payment extends Base
     /**
      * Returns the String of a credit card number.
      *
-     * @param string  $type      Supporting any of 'Visa', 'MasterCard', 'Amercian Express', and 'Discover'
+     * @param string  $type      Supporting any of 'Visa', 'MasterCard', 'American Express', and 'Discover'
      * @param boolean $formatted Set to true if the output string should contain one separator every 4 digits
      * @param string  $separator Separator string for formatting card number. Defaults to dash (-).
      * @return string
@@ -210,10 +222,11 @@ class Payment extends Base
      * @param  integer $length      total length without country code and 2 check digits
      * @return string
      */
-    protected static function iban($countryCode, $prefix = '', $length = null)
+    public static function iban($countryCode, $prefix = '', $length = null)
     {
-        $countryCode = strtoupper($countryCode);
-        $format = !isset(static::$ibanFormats[$countryCode]) ? array() : static::$ibanFormats[$countryCode];
+        $countryCode = is_null($countryCode) ? self::randomKey(self::$ibanFormats) : strtoupper($countryCode);
+
+        $format = !isset(static::$ibanFormats[$countryCode]) ? null : static::$ibanFormats[$countryCode];
         if ($length === null) {
             if ($format === null) {
                 $length = 24;
@@ -225,22 +238,19 @@ class Payment extends Base
                 }
             }
         }
+        if ($format === null) {
+            $format = array(array('n', $length));
+        }
+
+        $expandedFormat = '';
+        foreach ($format as $item) {
+            list($class, $length) = $item;
+            $expandedFormat .=  str_repeat($class, $length);
+        }
 
         $result = $prefix;
-        $length -= strlen($prefix);
-        $nextPart = array_shift($format);
-        if ($nextPart !== false) {
-            list($class, $groupCount) = $nextPart;
-        } else {
-            $class = 'n';
-            $groupCount = 0;
-        }
-        $groupCount = $nextPart === false ? 0 : $nextPart[1];
-        for ($i = 0; $i < $length; $i++) {
-            if ($nextPart !== false && $groupCount-- < 1) {
-                $nextPart = array_shift($format);
-                list($class, $groupCount) = $nextPart;
-            }
+        $expandedFormat = substr($expandedFormat, strlen($result));
+        foreach (str_split($expandedFormat) as $class) {
             switch ($class) {
                 default:
                 case 'c':
@@ -255,33 +265,9 @@ class Payment extends Base
             }
         }
 
-        $result = static::addBankCodeChecksum($result, $countryCode);
-
-        $countryNumber = 100 * (ord($countryCode[0])-55) + (ord($countryCode[1])-55);
-        $tempResult = $result . $countryNumber . '00';
-        // perform MOD97-10 checksum calculation
-        $checksum = (int) $tempResult[0];
-        for ($i = 1, $size = strlen($tempResult); $i < $size; $i++) {
-            $checksum = (10 * $checksum + (int) $tempResult[$i]) % 97;
-        }
-        $checksum = 98 - $checksum;
-        if ($checksum < 10) {
-            $checksum = '0'.$checksum;
-        }
+        $checksum = Iban::checksum($countryCode . '00' . $result);
 
         return $countryCode . $checksum . $result;
-    }
-
-    /**
-     * Calculates a checksum for the national bank and branch code part in the IBAN.
-     *
-     * @param  string $iban        randomly generated $iban
-     * @param  string $countryCode ISO 3166-1 alpha-2 country code
-     * @return string IBAN with one character altered to a proper checksum
-     */
-    protected static function addBankCodeChecksum($iban, $countryCode = '')
-    {
-        return $iban;
     }
 
     /**

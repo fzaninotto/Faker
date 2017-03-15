@@ -4,6 +4,8 @@ namespace Faker\Provider\es_ES;
 
 class Person extends \Faker\Provider\Person
 {
+    private static $crcMap=array('T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T');
+
     protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}',
@@ -25,7 +27,6 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
-     *
      * {@link} http://www.ine.es/daco/daco42/nombyapel/nombyapel.htm
      */
     protected static $firstNameMale = array(
@@ -67,5 +68,20 @@ class Person extends \Faker\Provider\Person
     public static function suffix()
     {
         return static::randomElement(static::$suffix);
+    }
+
+    /**
+     * Generate a Documento Nacional de Identidad (DNI) number
+     *
+     * @example '77446565E'
+     *
+     * @link https://es.wikibooks.org/wiki/Algoritmo_para_obtener_la_letra_del_NIF#Algoritmo
+     */
+    public static function dni()
+    {
+        $number = static::numerify('########');
+        $letter = self::$crcMap[$number%23];
+
+        return $number . $letter;
     }
 }

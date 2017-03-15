@@ -119,6 +119,9 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
         $this->assertNotEquals($mtRandWithSeedZero, $mtRandWithoutSeed, 'seed() should be different than seed(0)');
         $generator->seed();
         $this->assertNotEquals($mtRandWithoutSeed, mt_rand(), 'seed() should not be deterministic.');
+
+        $generator->seed('10');
+        $this->assertTrue(true, 'seeding with a non int value doesn\'t throw an exception');
     }
 }
 

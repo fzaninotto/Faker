@@ -425,6 +425,66 @@ class Person extends \Faker\Provider\Person
         'Bc.', 'Ing.', 'MUDr.', 'MVDr.', 'Mgr.', 'JUDr.', 'PhDr.', 'RNDr.', 'doc.', 'Dr.'
     );
 
+    /**
+     * @return czech birth number
+     * @param string|null $gender 'male', 'female' or null for any
+     * @param int $minAge minimal age of "generated person" in years
+     * @param int $maxAge maximal age of "generated person" in years
+     */
+
+    public function birthNumber($gender = null, $minAge = 0, $maxAge = 100, $slashProbability = 50)
+    {
+        if ($gender === null) {
+            $gender = $this->generator->boolean() ? static::GENDER_MALE : static::GENDER_FEMALE;
+        }
+
+        $startTimestamp = strtotime("-${maxAge} year");
+        $endTimestamp = strtotime("-${minAge} year");
+        $randTimestamp = static::numberBetween($startTimestamp, $endTimestamp);
+
+        $year = intval(date('Y', $randTimestamp));
+        $month = intval(date('n', $randTimestamp));
+        $day = intval(date('j', $randTimestamp));
+        $suffix = static::numberBetween(0, 999);
+
+        // women has +50 to month
+        if ($gender == static::GENDER_FEMALE) {
+            $month += 50;
+        }
+        // from year 2004 everyone has +20 to month when birth numbers in one day are exhausted
+        if ($year >= 2004 && $this->generator->boolean(10)) {
+            $month += 20;
+        }
+
+        $birthNumber = sprintf('%02d%02d%02d%03d', $year % 100, $month, $day, $suffix);
+
+        // from year 1954 birth number includes CRC
+        if ($year >= 1954) {
+            $crc = intval($birthNumber, 10) % 11;
+            if ($crc == 10) {
+                $crc = 0;
+            }
+            $birthNumber .= sprintf('%d', $crc);
+        }
+
+        // add slash
+        if ($this->generator->boolean($slashProbability)) {
+            $birthNumber = substr($birthNumber, 0, 6) . '/' . substr($birthNumber, 6);
+        }
+
+        return $birthNumber;
+    }
+
+    public static function birthNumberMale()
+    {
+        return static::birthNumber(static::GENDER_MALE);
+    }
+
+    public static function birthNumberFemale()
+    {
+        return static::birthNumber(static::GENDER_FEMALE);
+    }
+
     public function title($gender = null)
     {
         return static::titleMale();

@@ -2,7 +2,7 @@
 
 namespace Faker\Provider\en_PH;
 
-class Address extends \Faker\Provider\Address
+class Address extends \Faker\Provider\en_US\Address
 {
     protected static $streetNameFormats = array(
         '{{lastName}} {{streetSuffix}}'
@@ -15,10 +15,6 @@ class Address extends \Faker\Provider\Address
 
     protected static $buildingNumber = array('##A', '##', '##A/##', '##/##');
     protected static $postcode = array('####');
-
-    protected static $country = array(
-        'Philippines',
-    );
 
     //http://en.wikipedia.org/wiki/Provinces_of_the_Philippines
     protected static $province = array(

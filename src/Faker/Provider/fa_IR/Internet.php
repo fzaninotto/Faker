@@ -15,8 +15,11 @@ class Internet extends \Faker\Provider\Internet
         'com', 'ir', 'me', 'net', 'org',
     );
 
+    /**
+     * @link https://en.wikipedia.org/wiki/.ir
+     */
     protected static $tld = array(
-        'biz', 'com', 'info', 'ir', 'net', 'org',
+        'biz', 'com', 'info', 'ac.ir', 'sch.ir', 'co.ir', 'ir', 'net', 'org',
     );
 
     /**

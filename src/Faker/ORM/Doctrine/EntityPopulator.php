@@ -3,8 +3,7 @@
 namespace Faker\ORM\Doctrine;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\Mapping\ClassMetadata;
+use Doctrine\Common\Persistence\Mapping\ClassMetadata;
 
 /**
  * Service class for populating a table through a Doctrine Entity class.
@@ -42,11 +41,17 @@ class EntityPopulator
         return $this->class->getName();
     }
 
+    /**
+     * @param $columnFormatters
+     */
     public function setColumnFormatters($columnFormatters)
     {
         $this->columnFormatters = $columnFormatters;
     }
 
+    /**
+     * @return array
+     */
     public function getColumnFormatters()
     {
         return $this->columnFormatters;
@@ -57,21 +62,34 @@ class EntityPopulator
         $this->columnFormatters = array_merge($this->columnFormatters, $columnFormatters);
     }
 
+    /**
+     * @param array $modifiers
+     */
     public function setModifiers(array $modifiers)
     {
         $this->modifiers = $modifiers;
     }
 
+    /**
+     * @return array
+     */
     public function getModifiers()
     {
         return $this->modifiers;
     }
 
+    /**
+     * @param array $modifiers
+     */
     public function mergeModifiersWith(array $modifiers)
     {
         $this->modifiers = array_merge($this->modifiers, $modifiers);
     }
 
+    /**
+     * @param \Faker\Generator $generator
+     * @return array
+     */
     public function guessColumnFormatters(\Faker\Generator $generator)
     {
         $formatters = array();
@@ -82,7 +100,8 @@ class EntityPopulator
                 continue;
             }
 
-            if ($formatter = $nameGuesser->guessFormat($fieldName)) {
+            $size = isset($this->class->fieldMappings[$fieldName]['length']) ? $this->class->fieldMappings[$fieldName]['length'] : null;
+            if ($formatter = $nameGuesser->guessFormat($fieldName, $size)) {
                 $formatters[$fieldName] = $formatter;
                 continue;
             }
@@ -100,29 +119,45 @@ class EntityPopulator
             $relatedClass = $this->class->getAssociationTargetClass($assocName);
 
             $unique = $optional = false;
-            $mappings = $this->class->getAssociationMappings();
-            foreach ($mappings as $mapping) {
-                if ($mapping['targetEntity'] == $relatedClass) {
-                    if ($mapping['type'] == ClassMetadata::ONE_TO_ONE) {
-                        $unique = true;
-                        $optional = isset($mapping['joinColumns'][0]['nullable']) ? $mapping['joinColumns'][0]['nullable'] : false;
-                        break;
+            if ($this->class instanceof \Doctrine\ORM\Mapping\ClassMetadata) {
+                $mappings = $this->class->getAssociationMappings();
+                foreach ($mappings as $mapping) {
+                    if ($mapping['targetEntity'] == $relatedClass) {
+                        if ($mapping['type'] == \Doctrine\ORM\Mapping\ClassMetadata::ONE_TO_ONE) {
+                            $unique = true;
+                            $optional = isset($mapping['joinColumns'][0]['nullable']) ? $mapping['joinColumns'][0]['nullable'] : false;
+                            break;
+                        }
+                    }
+                }
+            } elseif ($this->class instanceof \Doctrine\ODM\MongoDB\Mapping\ClassMetadata) {
+                $mappings = $this->class->associationMappings;
+                foreach ($mappings as $mapping) {
+                    if ($mapping['targetDocument'] == $relatedClass) {
+                        if ($mapping['type'] == \Doctrine\ODM\MongoDB\Mapping\ClassMetadata::ONE && $mapping['association'] == \Doctrine\ODM\MongoDB\Mapping\ClassMetadata::REFERENCE_ONE) {
+                            $unique = true;
+                            $optional = isset($mapping['nullable']) ? $mapping['nullable'] : false;
+                            break;
+                        }
                     }
                 }
             }
 
             $index = 0;
             $formatters[$assocName] = function ($inserted) use ($relatedClass, &$index, $unique, $optional) {
-                if ($unique && isset($inserted[$relatedClass])) {
-                    $related = null;
-                    if (isset($inserted[$relatedClass][$index]) || !$optional) {
-                        $related = $inserted[$relatedClass][$index];
+
+                if (isset($inserted[$relatedClass])) {
+                    if ($unique) {
+                        $related = null;
+                        if (isset($inserted[$relatedClass][$index]) || !$optional) {
+                            $related = $inserted[$relatedClass][$index];
+                        }
+
+                        $index++;
+
+                        return $related;
                     }
 
-                    $index++;
-
-                    return $related;
-                } elseif (isset($inserted[$relatedClass])) {
                     return $inserted[$relatedClass][mt_rand(0, count($inserted[$relatedClass]) - 1)];
                 }
 
@@ -135,6 +170,9 @@ class EntityPopulator
 
     /**
      * Insert one new record using the Entity class.
+     * @param ObjectManager $manager
+     * @param bool $generateId
+     * @return EntityPopulator
      */
     public function execute(ObjectManager $manager, $insertedEntities, $generateId = false)
     {
@@ -160,8 +198,24 @@ class EntityPopulator
     {
         foreach ($this->columnFormatters as $field => $format) {
             if (null !== $format) {
-                $value = is_callable($format) ? $format($insertedEntities, $obj) : $format;
-                $this->class->reflFields[$field]->setValue($obj, $value);
+                // Add some extended debugging information to any errors thrown by the formatter
+                try {
+                    $value = is_callable($format) ? $format($insertedEntities, $obj) : $format;
+                } catch (\InvalidArgumentException $ex) {
+                    throw new \InvalidArgumentException(sprintf(
+                        "Failed to generate a value for %s::%s: %s",
+                        get_class($obj),
+                        $field,
+                        $ex->getMessage()
+                    ));
+                }
+                // Try a standard setter if it's available, otherwise fall back on reflection
+                $setter = sprintf("set%s", ucfirst($field));
+                if (method_exists($obj, $setter)) {
+                    $obj->$setter($value);
+                } else {
+                    $this->class->reflFields[$field]->setValue($obj, $value);
+                }
             }
         }
     }
@@ -173,19 +227,23 @@ class EntityPopulator
         }
     }
 
-    private function generateId($obj, $column, EntityManagerInterface $manager)
+    /**
+     * @param ObjectManager $manager
+     * @return int|null
+     */
+    private function generateId($obj, $column, ObjectManager $manager)
     {
-        /* @var $repository \Doctrine\ORM\EntityRepository */
+        /* @var $repository \Doctrine\Common\Persistence\ObjectRepository */
         $repository = $manager->getRepository(get_class($obj));
         $result = $repository->createQueryBuilder('e')
                 ->select(sprintf('e.%s', $column))
                 ->getQuery()
-                ->getResult();
-        $ids = array_map('current', $result);
+                ->execute();
+        $ids = array_map('current', $result->toArray());
 
         $id = null;
         do {
-            $id = rand();
+            $id = mt_rand();
         } while (in_array($id, $ids));
 
         return $id;

@@ -16,6 +16,10 @@ class Populator
     protected $quantities = array();
     protected $generateId = array();
 
+    /**
+     * @param \Faker\Generator $generator
+     * @param ObjectManager|null $manager
+     */
     public function __construct(\Faker\Generator $generator, ObjectManager $manager = null)
     {
         $this->generator = $generator;
@@ -51,7 +55,7 @@ class Populator
     /**
      * Populate the database using all the Entity classes previously added.
      *
-     * @param EntityManager $entityManager A Doctrine connection object
+     * @param null|EntityManager $entityManager A Doctrine connection object
      *
      * @return array A list of the inserted PKs
      */
