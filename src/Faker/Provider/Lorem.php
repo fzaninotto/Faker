@@ -156,53 +156,41 @@ class Lorem extends Base
      * Generate a text string.
      * Depending on the $maxNbChars, returns a string made of words, sentences, or paragraphs.
      *
-      * @example 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'
+     * @example 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'
+     *
      * @param  integer $maxNbChars Maximum number of characters the text should contain (minimum 5)
+     *
      * @return string
      */
     public static function text($maxNbChars = 200)
     {
-        $text = array();
         if ($maxNbChars < 5) {
             throw new \InvalidArgumentException('text() can only generate text of at least 5 characters');
-        } elseif ($maxNbChars < 25) {
-            // join words
-            while (empty($text)) {
-                $size = 0;
-                // determine how many words are needed to reach the $maxNbChars once;
-                while ($size < $maxNbChars) {
-                    $word = ($size ? ' ' : '') . static::word();
-                    $text []= $word;
-                    $size += strlen($word);
-                }
-                array_pop($text);
+        }
+
+        $type = ($maxNbChars < 25) ? 'word' : (($maxNbChars < 100) ? 'sentence' : 'paragraph');
+
+        $text = array();
+        while (empty($text)) {
+            $size = 0;
+
+            // until $maxNbChars is reached
+            while ($size < $maxNbChars) {
+                $word   = ($size ? ' ' : '') . static::$type();
+                $text[] = $word;
+
+                $size += strlen($word);
             }
-            $text[0][0] = static::toUpper($text[0][0]);
+
+            array_pop($text);
+        }
+
+        if ($type === 'word') {
+            // capitalize first letter
+            $text[0] = ucwords($text[0]);
+
+            // end sentence with full stop
             $text[count($text) - 1] .= '.';
-        } elseif ($maxNbChars < 100) {
-            // join sentences
-            while (empty($text)) {
-                $size = 0;
-                // determine how many sentences are needed to reach the $maxNbChars once;
-                while ($size < $maxNbChars) {
-                    $sentence = ($size ? ' ' : '') . static::sentence();
-                    $text []= $sentence;
-                    $size += strlen($sentence);
-                }
-                array_pop($text);
-            }
-        } else {
-            // join paragraphs
-            while (empty($text)) {
-                $size = 0;
-                // determine how many paragraphs are needed to reach the $maxNbChars once;
-                while ($size < $maxNbChars) {
-                    $paragraph = ($size ? "\n" : '') . static::paragraph();
-                    $text []= $paragraph;
-                    $size += strlen($paragraph);
-                }
-                array_pop($text);
-            }
         }
 
         return implode($text, '');
