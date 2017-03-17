@@ -168,28 +168,6 @@ class Lorem extends Base
             throw new \InvalidArgumentException('text() can only generate text of at least 5 characters');
         }
 
-        $text = static::generate($maxNbChars);
-
-        if ($maxNbChars < 25) {
-            // capitalize first letter
-            $text[0] = ucwords($text[0]);
-
-            // end sentence with full stop
-            $text[count($text) - 1] .= '.';
-        }
-
-        return implode($text, '');
-    }
-
-    /**
-     * Generate word, sentence or paragraph depending on $maxNbChars.
-     *
-     * @param integer $maxNbChars Maximum number of characters the text should contain
-     *
-     * @return array
-     */
-    protected static function generate($maxNbChars)
-    {
         $type = ($maxNbChars < 25) ? 'word' : (($maxNbChars < 100) ? 'sentence' : 'paragraph');
 
         $text = array();
@@ -207,7 +185,15 @@ class Lorem extends Base
             array_pop($text);
         }
 
-        return $text;
+        if ($type === 'word') {
+            // capitalize first letter
+            $text[0] = ucwords($text[0]);
+
+            // end sentence with full stop
+            $text[count($text) - 1] .= '.';
+        }
+
+        return implode($text, '');
     }
 
     protected static function randomizeNbElements($nbElements)
