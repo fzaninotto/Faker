@@ -52,4 +52,4 @@ class AddressTest extends \PHPUnit_Framework_TestCase
     $this->assertRegExp('/[A-Z][a-z]+/', $areaSuffix);
   }
 }
-?>
+
