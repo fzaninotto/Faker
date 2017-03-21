@@ -176,7 +176,7 @@ class Person extends \Faker\Provider\Person
         $birthPlace = self::randomKey(self::$idBirthplaceCode);
         $birthPlaceCode = self::$idBirthplaceCode[$birthPlace];
 
-        $gender = ($gender != null) ? $gender : self::randomElement(array(self::GENDER_FEMALE, self::GENDER_MALE));
+        $gender = ($gender !== null) ? $gender : self::randomElement(array(self::GENDER_FEMALE, self::GENDER_MALE));
         $genderCode = ($gender === self::GENDER_MALE) ? 1 : 2;
 
         $randomNumberCode = self::randomNumber(7, true);
