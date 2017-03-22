@@ -276,7 +276,7 @@ class Base
         $shuffledArray = array();
         $i = 0;
         reset($array);
-        while (list($key, $value) = each($array)) {
+        foreach ($array as $key => $value) {
             if ($i == 0) {
                 $j = 0;
             } else {
