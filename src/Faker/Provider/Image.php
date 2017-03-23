@@ -13,11 +13,18 @@ class Image extends Base
     );
 
     /**
-     * Generate the URL that will return a random image
+     * Generate the URL that will return an image
      *
-     * Set randomize to false to remove the random GET parameter at the end of the url.
+     * @example 'http://lorempixel.com/gray/640/480/sports/1'
      *
-     * @example 'http://lorempixel.com/640/480/?12345'
+     * @param int $width - the image width
+     * @param int $height - the image height
+     * @param string $category - a category from the available categories
+     * @param bool $randomize - whether the image is randomized on each request
+     * @param string $word - an optional text to write into the image
+     * @param bool $gray - whether the image should be in grayscale
+     *
+     * @return string
      */
     public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
     {
@@ -32,14 +39,16 @@ class Image extends Base
             if (!in_array($category, static::$categories)) {
                 throw new \InvalidArgumentException(sprintf('Unknown image category "%s"', $category));
             }
+
             $url .= "{$category}/";
+
+            if (!$randomize) {
+                $url .= static::numberBetween(1, 10) . '/';
+            }
+
             if ($word) {
                 $url .= "{$word}/";
             }
-        }
-
-        if ($randomize) {
-            $url .= '?' . static::randomNumber(5, true);
         }
 
         return $baseUrl . $url;
