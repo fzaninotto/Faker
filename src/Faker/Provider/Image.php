@@ -3,32 +3,35 @@
 namespace Faker\Provider;
 
 /**
- * Depends on image generation from http://lorempixel.com/
+ * Depends on image generation from https://unsplash.it/.
  */
 class Image extends Base
 {
     protected static $categories = array(
         'abstract', 'animals', 'business', 'cats', 'city', 'food', 'nightlife',
-        'fashion', 'people', 'nature', 'sports', 'technics', 'transport'
+        'fashion', 'people', 'nature', 'sports', 'technics', 'transport',
     );
 
     /**
-     * Generate the URL that will return a random image
+     * Generate the URL that will return a random image.
      *
      * Set randomize to false to remove the random GET parameter at the end of the url.
      *
-     * @example 'http://lorempixel.com/640/480/?12345'
+     * @example 'https://unsplash.it/640/480/?12345'
      */
-    public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
+    public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false, $blur = false, $gravity = null)
     {
-        $baseUrl = "http://lorempixel.com/";
+        $baseUrl = 'https://unsplash.it/';
         $url = "{$width}/{$height}/";
-        
+        $query_params = [];
+
         if ($gray) {
-            $url = "gray/" . $url;
+            $url = 'g/'.$url;
         }
-        
+
         if ($category) {
+            // only support categories for lorempixel
+            $baseUrl = 'http://lorempixel.com/';
             if (!in_array($category, static::$categories)) {
                 throw new \InvalidArgumentException(sprintf('Unknown image category "%s"', $category));
             }
@@ -39,14 +42,25 @@ class Image extends Base
         }
 
         if ($randomize) {
-            $url .= '?' . static::randomNumber(5, true);
+            $rand_string = ($category) ? static::randomNumber(5, true) : 'random';
+            array_push($query_params, $rand_string);
         }
 
-        return $baseUrl . $url;
+        if ($blur) {
+            array_push($query_params, 'blur');
+        }
+
+        if ($gravity) {
+            array_push($query_params, 'gravity');
+        }
+
+        $append = (count($query_params)) ? '?'.implode('&', $query_params) : '';
+
+        return $baseUrl.$url.$append;
     }
 
     /**
-     * Download a remote random image to disk and return its location
+     * Download a remote random image to disk and return its location.
      *
      * Requires curl, or allow_url_fopen to be on in php.ini.
      *
