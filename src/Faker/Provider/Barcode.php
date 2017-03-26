@@ -17,6 +17,10 @@ class Barcode extends Base
 
     /**
      * Utility function for computing EAN checksums
+     *
+     * @param string $input
+     *
+     * @return integer
      */
     protected static function eanChecksum($input)
     {

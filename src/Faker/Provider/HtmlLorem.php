@@ -41,6 +41,9 @@ class HtmlLorem extends Base
     }
 
     /**
+     * @param integer $maxDepth
+     * @param integer $maxWidth
+     *
      * @return string
      */
     public function randomHtml($maxDepth = 4, $maxWidth = 4)
