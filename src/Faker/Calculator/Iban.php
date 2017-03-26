@@ -25,6 +25,8 @@ class Iban
     }
 
     /**
+     * @param string $match
+     *
      * @return int
      */
     private static function alphaToNumberCallback($match)

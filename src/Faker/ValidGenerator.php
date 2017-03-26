@@ -14,6 +14,8 @@ class ValidGenerator
 
     /**
      * @param Generator $generator
+     * @param callable|null $validator
+     * @param integer $maxRetries
      */
     public function __construct(Generator $generator, $validator = null, $maxRetries = 10000)
     {
@@ -32,6 +34,8 @@ class ValidGenerator
     /**
      * Catch and proxy all generator calls but return only valid values
      * @param string $attribute
+     *
+     * @return mixed
      */
     public function __get($attribute)
     {
@@ -42,6 +46,8 @@ class ValidGenerator
      * Catch and proxy all generator calls with arguments but return only valid values
      * @param string $name
      * @param array $arguments
+     *
+     * @return mixed
      */
     public function __call($name, $arguments)
     {

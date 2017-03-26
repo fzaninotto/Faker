@@ -41,6 +41,9 @@ class HtmlLorem extends Base
     }
 
     /**
+     * @param integer $maxDepth
+     * @param integer $maxWidth
+     *
      * @return string
      */
     public function randomHtml($maxDepth = 4, $maxWidth = 4)
@@ -221,7 +224,7 @@ class HtmlLorem extends Base
 
         $submit = $element->ownerDocument->createElement(static::FORM_TAG);
         $submit->setAttribute("action", $this->generator->safeEmailDomain);
-        $submit->SetAttribute("method", "POST");
+        $submit->setAttribute("method", "POST");
         $submit->appendChild($textLabel);
         $submit->appendChild($textInput);
         $submit->appendChild($passwordLabel);

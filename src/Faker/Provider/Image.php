@@ -18,16 +18,25 @@ class Image extends Base
      * Set randomize to false to remove the random GET parameter at the end of the url.
      *
      * @example 'http://lorempixel.com/640/480/?12345'
+     *
+     * @param integer $width
+     * @param integer $height
+     * @param string|null $category
+     * @param bool $randomize
+     * @param string|null $word
+     * @param bool $gray
+     *
+     * @return string
      */
     public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
     {
         $baseUrl = "http://lorempixel.com/";
         $url = "{$width}/{$height}/";
-        
+
         if ($gray) {
             $url = "gray/" . $url;
         }
-        
+
         if ($category) {
             if (!in_array($category, static::$categories)) {
                 throw new \InvalidArgumentException(sprintf('Unknown image category "%s"', $category));

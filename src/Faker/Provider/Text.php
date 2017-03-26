@@ -40,7 +40,6 @@ abstract class Text extends Base
             throw new \InvalidArgumentException('indexSize must be at most 5');
         }
 
-
         $words = $this->getConsecutiveWords($indexSize);
         $result = array();
         $resultLength = 0;

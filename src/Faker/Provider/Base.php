@@ -260,7 +260,7 @@ class Base
      * Returns a shuffled version of the array.
      *
      * This function does not mutate the original array. It uses the
-     * Fisher–Yates algorithm, which is unbiaised, together with a Mersenne
+     * Fisher–Yates algorithm, which is unbiased, together with a Mersenne
      * twister random generator. This function is therefore more random than
      * PHP's shuffle() function, and it is seedable.
      *
@@ -297,7 +297,7 @@ class Base
      * Returns a shuffled version of the string.
      *
      * This function does not mutate the original string. It uses the
-     * Fisher–Yates algorithm, which is unbiaised, together with a Mersenne
+     * Fisher–Yates algorithm, which is unbiased, together with a Mersenne
      * twister random generator. This function is therefore more random than
      * PHP's shuffle() function, and it is seedable. Additionally, it is
      * UTF8 safe if the mb extension is available.
@@ -422,7 +422,7 @@ class Base
      * Regex delimiters '/.../' and begin/end markers '^...$' are ignored.
      *
      * Only supports a small subset of the regex syntax. For instance,
-     * unicode, negated classes, unbouned ranges, subpatterns, back references,
+     * unicode, negated classes, unbounded ranges, subpatterns, back references,
      * assertions, recursive patterns, and comments are not supported. Escaping
      * support is extremely fragile.
      *

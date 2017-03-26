@@ -61,7 +61,8 @@ class Luhn
     /**
      * Generate a Luhn compliant number.
      *
-     * @param string $prefix
+     * @param string $partialValue
+     *
      * @return string
      */
     public static function generateLuhnNumber($partialValue)
