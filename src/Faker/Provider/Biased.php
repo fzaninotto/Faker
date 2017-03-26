@@ -35,7 +35,7 @@ class Biased extends Base
      *
      * @return integer
      */
-    protected static function unbiased($x)
+    protected static function unbiased()
     {
         return 1;
     }

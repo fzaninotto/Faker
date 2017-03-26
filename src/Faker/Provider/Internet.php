@@ -2,7 +2,7 @@
 
 namespace Faker\Provider;
 
-class Internet extends \Faker\Provider\Base
+class Internet extends Base
 {
     protected static $freeEmailDomain = array('gmail.com', 'yahoo.com', 'hotmail.com');
     protected static $tld = array('com', 'com', 'com', 'com', 'com', 'com', 'biz', 'info', 'net', 'org');
@@ -36,7 +36,7 @@ class Internet extends \Faker\Provider\Base
     public function email()
     {
         $format = static::randomElement(static::$emailFormats);
-        
+
         return $this->generator->parse($format);
     }
 
@@ -206,13 +206,11 @@ class Internet extends \Faker\Provider\Base
     {
         if (static::numberBetween(0, 1) === 0) {
             // 10.x.x.x range
-            $ip = long2ip(static::numberBetween(ip2long("10.0.0.0"), ip2long("10.255.255.255")));
-        } else {
-            // 192.168.x.x range
-            $ip = long2ip(static::numberBetween(ip2long("192.168.0.0"), ip2long("192.168.255.255")));
+            return long2ip(static::numberBetween(ip2long("10.0.0.0"), ip2long("10.255.255.255")));
         }
 
-        return $ip;
+        // 192.168.x.x range
+        return long2ip(static::numberBetween(ip2long("192.168.0.0"), ip2long("192.168.255.255")));
     }
 
     /**
