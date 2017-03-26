@@ -23,11 +23,11 @@ class Image extends Base
     {
         $baseUrl = "http://lorempixel.com/";
         $url = "{$width}/{$height}/";
-        
+
         if ($gray) {
             $url = "gray/" . $url;
         }
-        
+
         if ($category) {
             if (!in_array($category, static::$categories)) {
                 throw new \InvalidArgumentException(sprintf('Unknown image category "%s"', $category));
