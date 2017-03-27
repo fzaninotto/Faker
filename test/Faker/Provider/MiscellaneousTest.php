@@ -51,4 +51,9 @@ class MiscellaneousTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertRegExp('/^[A-Z]{3}$/', Miscellaneous::currencyCode());
     }
+
+    public function testEmoji()
+    {
+        $this->assertRegExp('/^[\x{1F600}-\x{1F636}]$/u', Miscellaneous::emoji());
+    }
 }
