@@ -292,7 +292,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     countryCode   // UK
     languageCode  // en
     currencyCode  // EUR
-    emoji         // &#128513;
+    emoji         // 😁
 
 ### `Faker\Provider\Biased`
 
