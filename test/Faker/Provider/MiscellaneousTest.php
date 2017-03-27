@@ -6,7 +6,6 @@ use Faker\Provider\Miscellaneous;
 
 class MiscellaneousTest extends \PHPUnit_Framework_TestCase
 {
-
     public function testBoolean()
     {
         $this->assertContains(Miscellaneous::boolean(), array(true, false));

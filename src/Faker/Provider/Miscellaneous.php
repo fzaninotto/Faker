@@ -4,7 +4,6 @@ namespace Faker\Provider;
 
 class Miscellaneous extends Base
 {
-
     /**
      * @link https://en.wikipedia.org/wiki/Emoji#Unicode_blocks
      * On date of 2017-03-26
@@ -23,7 +22,7 @@ class Miscellaneous extends Base
         "\u{1F628}", "\u{1F629}", "\u{1F62A}", "\u{1F62B}", "\u{1F62C}",
         "\u{1F62D}", "\u{1F62E}", "\u{1F62F}", "\u{1F630}", "\u{1F631}",
         "\u{1F632}", "\u{1F633}", "\u{1F634}", "\u{1F635}", "\u{1F636}",
-        "\u{1F637}"
+        "\u{1F637}",
     );
 
     /**
@@ -220,14 +219,16 @@ class Miscellaneous extends Base
         'SHP', 'SLL', 'SOS', 'SRD', 'STD', 'SVC', 'SYP', 'SZL', 'THB', 'TJS',
         'TMT', 'TND', 'TOP', 'TRY', 'TTD', 'TWD', 'TZS', 'UAH', 'UGX', 'USD',
         'UYU', 'UZS', 'VEF', 'VND', 'VUV', 'WST', 'XAF', 'XAG', 'XAU', 'XCD',
-        'XDR', 'XOF', 'XPF', 'YER', 'ZAR', 'ZMK', 'ZMW', 'ZWL'
+        'XDR', 'XOF', 'XPF', 'YER', 'ZAR', 'ZMK', 'ZMW', 'ZWL',
     );
 
     /**
-     * Return a boolean, true or false
+     * Return a boolean, true or false.
      *
-     * @param integer $chanceOfGettingTrue Between 0 (always get false) and 100 (always get true).
+     * @param int $chanceOfGettingTrue Between 0 (always get false) and 100 (always get true)
+     *
      * @return bool
+     *
      * @example true
      */
     public static function boolean($chanceOfGettingTrue = 50)
@@ -269,6 +270,7 @@ class Miscellaneous extends Base
 
     /**
      * @example 'FR'
+     *
      * @link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      */
     public static function countryCode()
@@ -278,6 +280,7 @@ class Miscellaneous extends Base
 
     /**
      * @example 'FRA'
+     *
      * @link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
      */
     public static function countryISOAlpha3()
@@ -295,6 +298,7 @@ class Miscellaneous extends Base
 
     /**
      * @example 'EUR'
+     *
      * @link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      */
     public static function currencyCode()
@@ -303,7 +307,7 @@ class Miscellaneous extends Base
     }
 
     /**
-     * Returns an encoded Unicode Character between U+1F600 and U+1F637
+     * Returns an encoded Unicode Character between U+1F600 and U+1F637.
      *
      * @link https://en.wikipedia.org/wiki/Emoji#Unicode_blocks
      */
