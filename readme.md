@@ -898,7 +898,7 @@ echo $faker->companyNumber; // 1999/789634/01
 ```php
 <?php
 
-// Generates a random national identifiaction number
+// Generates a random national identification number
 echo $faker->idNumber; // 6606192211041
 ```
 
@@ -1270,8 +1270,8 @@ echo $faker->cellphone(true, true); // 98983-3945 or 7343-1290
 // Using the "Number" suffix adds area code to the phone
 echo $faker->cellphoneNumber;       // (11) 98309-2935
 echo $faker->landlineNumber(false); // 3522835934
-echo $faker->phoneNumber;           // formatted, random landline or cellphone (obbeying the 9th digit rule)
-echo $faker->phoneNumberCleared;    // not formatted, random landline or cellphone (obbeying the 9th digit rule)
+echo $faker->phoneNumber;           // formatted, random landline or cellphone (obeying the 9th digit rule)
+echo $faker->phoneNumberCleared;    // not formatted, random landline or cellphone (obeying the 9th digit rule)
 ```
 
 ### `Faker\Provider\pt_BR\Person`
@@ -1293,7 +1293,7 @@ echo $faker->rg;         // '84.405.736-3'
 ```php
 <?php
 
-// Generates a Brazilian formated and valid CNPJ
+// Generates a Brazilian formatted and valid CNPJ
 echo $faker->cnpj;        // '23.663.478/0001-24'
 echo $faker->cnpj(false); // '23663478000124'
 ```
