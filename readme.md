@@ -559,7 +559,7 @@ $faker = Faker\Factory::create();
 <?xml version="1.0" encoding="UTF-8"?>
 <contacts>
 <?php for ($i=0; $i < 10; $i++): ?>
-  <contact firstName="<?php echo $faker->firstName ?>" lastName="<?php echo $faker->lastName ?>" email="<?php echo $faker->email ?>"/>
+  <contact firstName="<?php echo $faker->firstName ?>" lastName="<?php echo $faker->lastName ?>" email="<?php echo $faker->email ?>">
     <phone number="<?php echo $faker->phoneNumber ?>"/>
 <?php if ($faker->boolean(25)): ?>
     <birth date="<?php echo $faker->dateTimeThisCentury->format('Y-m-d') ?>" place="<?php echo $faker->city ?>"/>
@@ -595,7 +595,7 @@ Running this script produces a document looking like:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <contacts>
-  <contact firstName="Ona" lastName="Bednar" email="schamberger.frank@wuckert.com"/>
+  <contact firstName="Ona" lastName="Bednar" email="schamberger.frank@wuckert.com">
     <phone number="1-265-479-1196x714"/>
     <address>
       <street>182 Harrison Cove</street>
@@ -613,7 +613,7 @@ Illum commodi molestiae aut repellat id. Et sit consequuntur aut et ullam asperi
 ]]>
     </details>
   </contact>
-  <contact firstName="Aurelie" lastName="Paucek" email="alfonzo55@durgan.com"/>
+  <contact firstName="Aurelie" lastName="Paucek" email="alfonzo55@durgan.com">
     <phone number="863.712.1363x9425"/>
     <address>
       <street>90111 Hegmann Inlet</street>
@@ -624,7 +624,7 @@ Illum commodi molestiae aut repellat id. Et sit consequuntur aut et ullam asperi
     <company name="Krajcik-Grimes" catchPhrase="Switchable cohesive instructionset">
     </company>
   </contact>
-  <contact firstName="Clifton" lastName="Kshlerin" email="kianna.wiegand@framiwyman.info"/>
+  <contact firstName="Clifton" lastName="Kshlerin" email="kianna.wiegand@framiwyman.info">
     <phone number="692-194-4746"/>
     <address>
       <street>9791 Nona Corner</street>
@@ -635,7 +635,7 @@ Illum commodi molestiae aut repellat id. Et sit consequuntur aut et ullam asperi
     <company name="Rosenbaum-Aufderhar" catchPhrase="Realigned asynchronous encryption">
     </company>
   </contact>
-  <contact firstName="Alexandre" lastName="Orn" email="thelma37@erdmancorwin.biz"/>
+  <contact firstName="Alexandre" lastName="Orn" email="thelma37@erdmancorwin.biz">
     <phone number="189.655.8677x027"/>
     <address>
       <street>11161 Schultz Via</street>
@@ -654,7 +654,7 @@ Aut asperiores nihil eius repellendus. Vero nihil corporis voluptatem explicabo 
 ]]>
     </details>
   </contact>
-  <contact firstName="Katelynn" lastName="Kohler" email="reinger.trudie@stiedemannjakubowski.com"/>
+  <contact firstName="Katelynn" lastName="Kohler" email="reinger.trudie@stiedemannjakubowski.com">
     <phone number="(665)713-1657"/>
     <address>
       <street>6106 Nader Village Suite 753</street>
@@ -667,7 +667,7 @@ Aut asperiores nihil eius repellendus. Vero nihil corporis voluptatem explicabo 
       <director name="Arden Deckow" />
     </company>
   </contact>
-  <contact firstName="Blanca" lastName="Stark" email="tad27@feest.net"/>
+  <contact firstName="Blanca" lastName="Stark" email="tad27@feest.net">
     <phone number="168.719.4692x87177"/>
     <address>
       <street>7546 Kuvalis Plaza</street>
@@ -678,7 +678,7 @@ Aut asperiores nihil eius repellendus. Vero nihil corporis voluptatem explicabo 
     <company name="Upton, Braun and Rowe" catchPhrase="Visionary leadingedge pricingstructure">
     </company>
   </contact>
-  <contact firstName="Rene" lastName="Spencer" email="anibal28@armstrong.info"/>
+  <contact firstName="Rene" lastName="Spencer" email="anibal28@armstrong.info">
     <phone number="715.222.0095x175"/>
     <birth date="2008-08-07" place="Zulaufborough"/>
     <address>
@@ -699,7 +699,7 @@ Et similique qui non expedita quia dolorum. Ex rem incidunt ea accusantium tempo
 ]]>
     </details>
   </contact>
-  <contact firstName="Alessandro" lastName="Hagenes" email="tbreitenberg@oharagorczany.com"/>
+  <contact firstName="Alessandro" lastName="Hagenes" email="tbreitenberg@oharagorczany.com">
     <phone number="1-284-958-6768"/>
     <address>
       <street>1251 Koelpin Mission</street>
@@ -710,7 +710,7 @@ Et similique qui non expedita quia dolorum. Ex rem incidunt ea accusantium tempo
     <company name="Stiedemann-Bruen" catchPhrase="Re-engineered 24/7 success">
     </company>
   </contact>
-  <contact firstName="Novella" lastName="Rutherford" email="claud65@bogisich.biz"/>
+  <contact firstName="Novella" lastName="Rutherford" email="claud65@bogisich.biz">
     <phone number="(091)825-7971"/>
     <address>
       <street>6396 Langworth Hills Apt. 446</street>
@@ -722,7 +722,7 @@ Et similique qui non expedita quia dolorum. Ex rem incidunt ea accusantium tempo
       <director name="Earlene Bayer" />
     </company>
   </contact>
-  <contact firstName="Andreane" lastName="Mann" email="meggie17@ornbaumbach.com"/>
+  <contact firstName="Andreane" lastName="Mann" email="meggie17@ornbaumbach.com">
     <phone number="941-659-9982x5689"/>
     <birth date="1934-02-21" place="Stantonborough"/>
     <address>
