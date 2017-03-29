@@ -1413,6 +1413,15 @@ echo $faker->personalIdentityNumber; // A223456789
 echo $faker->VAT; //23456789
 ```
 
+### `Faker\Provider\uk_UA\Payment`
+
+```php
+<?php
+
+// Generates an Ukraine bank name (based on list of real Ukraine banks)
+echo $faker->bank; // "Ощадбанк"
+```
+
 
 ## Third-Party Libraries Extending/Based On Faker
 
