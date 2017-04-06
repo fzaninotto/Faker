@@ -12,6 +12,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '026#######',
         '031#######',
     );
+
     protected static $mobileNumberPrefixes = array(
         '0910#######',//mci
         '0911#######',
@@ -39,6 +40,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '0937#######',
         '0937#######',
     );
+
     public static function mobileNumber()
     {
         return static::numerify(static::randomElement(static::$mobileNumberPrefixes));
