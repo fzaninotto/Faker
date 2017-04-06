@@ -1395,6 +1395,15 @@ echo $faker->personalIdentityNumber('female') // '950910-0781'
 echo $faker->bank; // '中国建设银行'
 ```
 
+### `Faker\Provider\uk_UA\Payment`
+
+```php
+<?php
+
+// Generates an Ukraine bank name (based on list of real Ukraine banks)
+echo $faker->bank; // "Ощадбанк"
+```
+
 ### `Faker\Provider\zh_TW\Person`
 
 ```php
