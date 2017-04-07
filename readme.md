@@ -944,8 +944,6 @@ echo $faker->dni; // '83367512'
 
 ```php
 <?php
-// Generates a random address
-echo $faker->address; // "استان زنجان خیابان بهار ساختمان آفتاب پلاک 24"
 
 // Generates a random building name
 echo $faker->building; // "ساختمان آفتاب"
@@ -958,9 +956,6 @@ echo $faker->city // "استان زنجان"
 
 ```php
 <?php
-
-// Generates a random company name
-echo $faker->company; // "شرکت نساجی امیدی"
 
 // Generates a random contract type
 echo $faker->contract; // "رسمی"
