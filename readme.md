@@ -941,6 +941,27 @@ echo $faker->vat;           // "A35864370"
 echo $faker->dni; // '83367512'
 ```
 
+### `Faker\Provider\fa_IR\Address`
+
+```php
+<?php
+
+// Generates a random building name
+echo $faker->building; // "ساختمان آفتاب"
+
+// Returns a random city name
+echo $faker->city // "استان زنجان"
+```
+
+### `Faker\Provider\fa_IR\Company`
+
+```php
+<?php
+
+// Generates a random contract type
+echo $faker->contract; // "رسمی"
+```
+
 ### `Faker\Provider\fi_FI\Payment`
 
 ```php
