@@ -101,10 +101,24 @@ namespace Faker;
  * @property int       $year
  * @property int       $century
  * @property string    $timezone
+ * @method string amPm($max = 'now')
  * @method string date($format = 'Y-m-d', $max = 'now')
+ * @method string dayOfMonth($max = 'now')
+ * @method string dayOfWeek($max = 'now')
+ * @method string iso8601($max = 'now')
+ * @method string month($max = 'now')
+ * @method string monthName($max = 'now')
  * @method string time($format = 'H:i:s', $max = 'now')
+ * @method string unixTime($max = 'now')
+ * @method string year($max = 'now')
+ * @method \DateTime dateTime($max = 'now', $timezone = null)
+ * @method \DateTime dateTimeAd($max = 'now', $timezone = null)
  * @method \DateTime dateTimeBetween($startDate = '-30 years', $endDate = 'now')
  * @method \DateTime dateTimeInInterval($date = '-30 years', $interval = '+5 days', $timezone = null)
+ * @method \DateTime dateTimeThisCentury($max = 'now', $timezone = null)
+ * @method \DateTime dateTimeThisDecade($max = 'now', $timezone = null)
+ * @method \DateTime dateTimeThisYear($max = 'now', $timezone = null)
+ * @method \DateTime dateTimeThisMonth($max = 'now', $timezone = null)
  *
  * @property string $md5
  * @property string $sha1
