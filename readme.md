@@ -463,6 +463,11 @@ $faker = Faker\Factory::create();
 $faker->seed(1234);
 
 echo $faker->name; // 'Jess Mraz I';
+
+// even when seeded, this line will return different results because $max varies (on dateTime provider methods)
+$faker->dateTime(); // equivalent to $faker->dateTime($max = 'now')
+// make sure you fix the $max parameter
+$faker->dateTime('2014-02-25 08:37:17'); // will return always the same date when seeded
 ```
 
 > **Tip**: DateTime formatters won't reproduce the same fake data if you don't fix the `$max` value:
