@@ -32,27 +32,28 @@ class Biased extends Base
      * Returns a random element from a provided array.
      * Each element has a given probability to come out.
      *
-     * @param  array            $array           Array to take elements from. Defaults to a-f
+     * @param  array            $array           Array to take elements from.
      * @param  $array           $bias            Array of float probabilities. Their sum must be 1.
      *
      * @throws \LengthException When array and bias don't have the same size
      * @throws \LogicException When the sum of bias elements isn't equal to 1.0
-     * @return mixed
+     * @return mixed null if $array is empty, or one of its elements
      */
-    public function biasedElementBetween(array $array = array('a', 'b'), array $bias = array(.50,.50)) {
+    public function biasedElementBetween(array $array = array('a', 'b'), array $bias = array(.50,.50)) 
+    {
         $b_count = count($bias);
         $a_count = count($array);
-        if($b_count!=$a_count){
+        if ($b_count!=$a_count) {
             throw new \LengthException(sprintf('array has %d elements, while bias has %d', $a_count, $b_count));
         }
         $tot_bias = array_sum($bias);
-        if($tot_bias != 1.0){
+        if ($tot_bias != 1.0) {
             throw new \LogicException(sprintf('Summing all elements of bias returns %f instead of 1', $tot_bias));
         }
-        if($a_count == 1){
+        if ($a_count == 1) {
             return $a[0];
         }
-        if($a_count == 0){
+        if ($a_count == 0) {
             return null;
         }
         $element = mt_rand();
@@ -61,11 +62,11 @@ class Biased extends Base
         $thresh = 0;
         do {
             $thresh = $thresh + $max*$bias[$i];
-            if($element<$thresh){
+            if ($element<$thresh) {
                 return $array[$i];
             }
             $i++;
-        } while($i<$a_count);
+        } while ($i<$a_count);
     }
 
     /**
