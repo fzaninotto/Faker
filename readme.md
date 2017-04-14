@@ -301,7 +301,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     biasedNumberBetween($min = 10, $max = 20, $function = 'sqrt')
     // get a random element of array, each one having a given
     //probability
-    biasedElementBetween($array=array('a','b'),$bias=array(.5,.5))
+    biasedElementIn($array=array('a','b'),$bias=array(.5,.5))
 
 ### `Faker\Provider\HtmlLorem`
 

@@ -39,7 +39,7 @@ class Biased extends Base
      * @throws \LogicException When the sum of bias elements isn't equal to 1.0
      * @return mixed null if $array is empty, or one of its elements
      */
-    public function biasedElementBetween(array $array = array('a', 'b'), array $bias = array(.50,.50))
+    public function biasedElementIn(array $array = array('a', 'b'), array $bias = array(.50,.50))
     {
         $b_count = count($bias);
         $a_count = count($array);

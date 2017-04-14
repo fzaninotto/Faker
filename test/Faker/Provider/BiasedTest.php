@@ -71,14 +71,14 @@ class BiasedTest extends \PHPUnit_Framework_TestCase
         }
     }
 
-    public function testBiasedElementBetween()
+    public function testBiasedElementIn()
     {
         $this->generator = new Generator();
         $this->generator->addProvider(new Biased($this->generator));
         $res = array('a'=>0,'b'=>0,'c'=>0);
         $bias = array(.1,.8,.1);
         for ($i=0; $i<self::NUMBERS; $i++) {
-            $el = $this->generator->biasedElementBetween(array('a','b','c'), $bias);
+            $el = $this->generator->biasedElementIn(array('a','b','c'), $bias);
             $res[$el]++;
         }
         $i=0;
