@@ -181,6 +181,10 @@ class Generator
 
     public function addProvider($provider)
     {
+        if ($provider instanceof \Faker\Provider\Base && ! $provider->hasGenerator()) {
+            $provider->setGenerator($this);
+        }
+
         array_unshift($this->providers, $provider);
     }
 
