@@ -46,9 +46,8 @@ class UniqueGenerator
         $i = 0;
         do {
             $res = call_user_func_array(array($this->generator, $name), $arguments);
-            $i++;
-            if ($i > $this->maxRetries) {
-                throw new \OverflowException(sprintf('Maximum retries of %d reached without finding a unique value', $this->maxRetries));
+            if (++$i > $this->maxRetries) {
+                throw new \OverflowException('Maximum retries of '.($i-1).' reached without finding a unique value.');
             }
         } while (array_key_exists(serialize($res), $this->uniques[$name]));
         $this->uniques[$name][serialize($res)]= null;
