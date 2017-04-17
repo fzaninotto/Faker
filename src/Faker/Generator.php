@@ -49,6 +49,8 @@ namespace Faker;
  * @property string $swiftBicNumber
  * @property string $vat
  *
+ * @method string isin($countryCode = null)
+ *
  * @property string $word
  * @property string|array $words
  * @method string|array words($nb = 3, $asText = false)
