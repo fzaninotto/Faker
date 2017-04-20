@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\es_ES;
+namespace Faker\Provider\es_MX;
 
 class Person extends \Faker\Provider\Person
 {
@@ -53,20 +53,5 @@ class Person extends \Faker\Provider\Person
     public static function suffix()
     {
         return static::randomElement(static::$suffix);
-    }
-
-    /**
-     * Generate a Documento Nacional de Identidad (DNI) number
-     *
-     * @example '77446565E'
-     *
-     * @link https://es.wikibooks.org/wiki/Algoritmo_para_obtener_la_letra_del_NIF#Algoritmo
-     */
-    public static function dni()
-    {
-        $number = static::numerify('########');
-        $letter = self::$crcMap[$number%23];
-
-        return $number . $letter;
     }
 }
