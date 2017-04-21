@@ -27,11 +27,6 @@ class Internet extends \Faker\Provider\Internet
         'edu.hk',
         'org.hk',
         'idv.hk',
-        '香港',
-        '公司.香港',
-        '教育.香港',
-        '組織.香港',
-        '個人.香港',
     );
 
 }
