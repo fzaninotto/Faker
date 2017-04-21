@@ -91,8 +91,6 @@ class Address extends \Faker\Provider\Address
         'Hip',
         'Hit',
         'Hiu',
-        'Hm',
-        'Hng',
         'Ho',
         'Hoi',
         'Hok',
@@ -189,7 +187,6 @@ class Address extends \Faker\Provider\Address
         'Lun',
         'Lung',
         'Lut',
-        'M',
         'Ma',
         'Mai',
         'Mak',
@@ -481,9 +478,64 @@ class Address extends \Faker\Provider\Address
         'Yung',
     );
 
+    protected static $streetAddressFormats = array(
+        '{{buildingNumber}} {{streetName}}',
+        '{{buildingNumber}} {{village}}',
+        'Block {{buildingNumber}}, {{estate}}',
+    );
 
     protected static $addressFormats = array(
         "{{streetAddress}}\n{{town}}\n{{city}}",
+    );
+
+    protected static $villageNameFormats = array(
+        '{{syllable}} {{syllable}} {{villageSuffix}}',
+        '{{syllable}} {{syllable}} {{villageSuffix}}',
+        '{{syllable}} {{syllable}} {{villageSuffix}}',
+        '{{syllable}} {{syllable}} {{villageSuffix}}',
+        '{{syllable}} {{syllable}} {{villageSuffix}}',
+        '{{syllable}} {{syllable}} {{villageSuffix}}',
+        '{{syllable}} {{syllable}} {{villageSuffix}}',
+        '{{syllable}} {{syllable}} {{syllable}} {{villageSuffix}}',
+        '{{syllable}} {{syllable}} {{syllable}} {{villageSuffix}}',
+        '{{syllable}} {{syllable}} {{syllable}} {{villageSuffix}}',
+        '{{syllable}} {{syllable}} {{syllable}} {{villageSuffix}}',
+        '{{syllable}} {{syllable}} {{syllable}} {{villageSuffix}}',
+        '{{syllable}} {{syllable}} {{syllable}} {{villageSuffix}}',
+        '{{syllable}} {{syllable}} {{syllable}} {{villageSuffix}}',
+        '{{syllable}} {{syllable}} {{syllable}} {{villageSuffix}}',
+        '{{syllable}} {{syllable}}',
+        '{{syllable}} {{syllable}}',
+        '{{syllable}} {{syllable}}',
+        '{{syllable}} {{syllable}} {{syllable}}',
+        '{{syllable}} {{syllable}} {{syllable}}',
+        '{{syllable}} {{syllable}} {{syllable}}',
+        '{{town}}',
+        '{{town}} {{villageSuffix}}',
+    );
+
+    protected static $estateNameFormats = array(
+        '{{syllable}} {{syllable}} {{estateSuffix}}',
+        '{{syllable}} {{syllable}} {{estateSuffix}}',
+        '{{syllable}} {{syllable}} {{estateSuffix}}',
+        '{{syllable}} {{syllable}} {{syllable}} {{estateSuffix}}',
+        '{{syllable}} {{syllable}} {{syllable}} {{estateSuffix}}',
+        '{{syllable}} {{syllable}} {{syllable}} {{estateSuffix}}',
+        '{{town}} {{estateSuffix}}',
+    );
+
+
+    protected static $villageSuffixes = array(
+        'Village',
+        'Tsuen',
+        'San Tsuen',
+        'New Village',
+        'Wai',
+    );
+
+    protected static $estateSuffixes = array(
+        'Estate',
+        'Court',
     );
 
     protected static $streetNameFormats = array(
@@ -528,7 +580,7 @@ class Address extends \Faker\Provider\Address
         'West',
     );
 
-    protected static $cities = array('HONG KONG', 'KOWLOON', 'NEW TERRITORIES');
+    protected static $cities = array('Hong Kong', 'Kowloon', 'New Territories');
 
     protected static $towns = array(
         '{{syllable}} {{syllable}}',
@@ -579,5 +631,25 @@ class Address extends \Faker\Provider\Address
     public function englishStreetName()
     {
         return static::randomElement(static::$englishStreetNames);
+    }
+
+    public function villageSuffix()
+    {
+        return static::randomElement(static::$villageSuffixes);
+    }
+
+    public function estateSuffix()
+    {
+        return static::randomElement(static::$estateSuffixes);
+    }
+
+    public function village()
+    {
+        return $this->generator->parse(static::randomElement(static::$villageNameFormats));
+    }
+
+    public function estate()
+    {
+        return $this->generator->parse(static::randomElement(static::$estateNameFormats));
     }
 }
