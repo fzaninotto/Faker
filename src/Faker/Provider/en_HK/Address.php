@@ -4,6 +4,8 @@ namespace Faker\Provider\en_HK;
 
 class Address extends \Faker\Provider\Address
 {
+    protected static $country = array('Hong Kong');
+
     protected static $syllables = array(
         'A', 'Ai', 'Ak', 'Am', 'An', 'Ang', 'Ap', 'At', 'Au',
         'Cha', 'Chai', 'Chak', 'Cham', 'Chan', 'Chang', 'Chap', 'Chat', 'Chau',
