@@ -1415,6 +1415,12 @@ echo $faker->premiumRatePhoneNumber; // "0900123456"
 
 // Generates a Russian bank name (based on list of real russian banks)
 echo $faker->bank; // "ОТП Банк"
+
+//Generate a Russian Tax Payment Number for Company
+echo $faker->inn; //  7813540735
+
+//Generate a Russian Tax Code for Company
+echo $faker->kpp; // 781301001
 ```
 
 ### `Faker\Provider\sv_SE\Payment`
