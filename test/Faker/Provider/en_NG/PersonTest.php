@@ -3,7 +3,7 @@
 namespace Faker\Test\Provider\ng_NG;
 
 use Faker\Generator;
-use Faker\Provider\ng_NG\Person;
+use Faker\Provider\en_NG\Person;
 
 class PersonTest extends \PHPUnit_Framework_TestCase
 {

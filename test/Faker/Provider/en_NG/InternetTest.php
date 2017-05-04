@@ -3,8 +3,8 @@
 namespace Faker\Test\Provider\ng_NG;
 
 use Faker\Generator;
-use Faker\Provider\ng_NG\Person;
-use Faker\Provider\ng_NG\Internet;
+use Faker\Provider\en_NG\Person;
+use Faker\Provider\en_NG\Internet;
 
 class InternetTest extends \PHPUnit_Framework_TestCase
 {

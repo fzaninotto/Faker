@@ -3,7 +3,7 @@
 namespace Faker\Provider\ng_NG;
 
 use Faker\Generator;
-use Faker\Provider\ng_NG\Address;
+use Faker\Provider\en_NG\Address;
 
 class AddressTest extends \PHPUnit_Framework_TestCase
 {
