@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\ng_NG;
+namespace Faker\Provider\en_NG;
 
 class Address extends \Faker\Provider\Address
 {

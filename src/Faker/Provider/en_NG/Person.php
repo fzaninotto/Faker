@@ -2,7 +2,7 @@
 
 // data source
 
-namespace Faker\Provider\ng_NG;
+namespace Faker\Provider\en_NG;
 
 class Person extends \Faker\Provider\Person
 {
