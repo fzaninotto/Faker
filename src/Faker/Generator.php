@@ -43,7 +43,7 @@ namespace Faker;
  * @method string creditCardNumber($type = null, $formatted = false, $separator = '-')
  * @property \DateTime $creditCardExpirationDate
  * @property string $creditCardExpirationDateString
- * @property string $creditCardDetails
+ * @property array $creditCardDetails
  * @property string $bankAccountNumber
  * @method string iban($countryCode = null, $prefix = '', $length = null)
  * @property string $swiftBicNumber
