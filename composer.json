@@ -17,6 +17,9 @@
         "squizlabs/php_codesniffer": "~1.5",
         "ext-intl": "*"
     },
+    "require-dev": {
+        "phpunit/phpunit": "4.0.*"
+    },    
     "autoload": {
         "psr-4": {
             "Faker\\": "src/Faker/"
