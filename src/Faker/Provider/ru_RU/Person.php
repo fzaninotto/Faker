@@ -132,4 +132,23 @@ class Person extends \Faker\Provider\Person
     {
         return static::randomElement(static::$middleNameFemale);
     }
+
+    /**
+     * Return middle name for the specified gender.
+     *
+     * @access public
+     * @param string|null $gender A gender the middle name should be generated
+     *     for. If the argument is skipped a random gender will be used.
+     * @return string Middle name
+     */
+    public function middleName($gender = null)
+    {
+        if ($gender === static::GENDER_MALE) {
+            return $this->middleNameMale();
+        } elseif ($gender === static::GENDER_FEMALE) {
+            return $this->middleNameFemale();
+        }
+
+        return $this->middleName(static::randomElement([static::GENDER_MALE, static::GENDER_FEMALE]));
+    }
 }
