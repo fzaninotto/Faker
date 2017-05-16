@@ -11,6 +11,15 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '021########',
         '026########',
         '031########',
+        '025########',
+        '051########',
+        '031########',
+        '041########',
+        '044########',
+        '045########',
+        '028########',
+        '011########',
+
     );
     protected static $mobileNumberPrefixes = array(
         '0910#######',//mci
@@ -36,8 +45,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '0939#######',
         '0920#######',
         '0921#######',
-        '0937#######',
-        '0937#######',
+        '0922#######',
+        '0931#######',
+        '0934#######',
     );
     public static function mobileNumber()
     {

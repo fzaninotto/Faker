@@ -6,8 +6,8 @@ class Address extends \Faker\Provider\Address
 {
     protected static $cityPrefix = array('استان');
     protected static $streetPrefix = array('خیابان');
-    protected static $buildingNamePrefix = array('ساختمان');
-    protected static $buildingNumberPrefix = array('پلاک', 'قطعه');
+    protected static $buildingNamePrefix = array('ساختمان' , 'مجموعه');
+    protected static $buildingNumberPrefix = array('پلاک', 'قطعه', 'بلوک', 'طبقه');
     protected static $postcodePrefix = array('کد پستی');
 
     protected static $cityName = array(
