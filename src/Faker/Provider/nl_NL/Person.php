@@ -94,7 +94,7 @@ class Person extends \Faker\Provider\Person
         'Elberts', 'Elbertse', 'Ellis', 'Elsemulder', 'Elsenaar', 'van de Elzas', 'van Embden', 'van Emmelen', 'Emmen',
         'van Engeland', 'van Engelen', 'Engels', 'van Enschot', 'Erhout', 'Ernst', 'van \'t Erve', 'van Es', 'van Este',
         'Estey', 'van Evelingen', 'Everde', 'Everts', 'Fechant', 'Feenstra', 'Feltzer', 'Ferran', 'Fiere',
-        'van der Flaas', 'de la Fleche', 'Flink', 'le Floch', 'van Formbach', 'Fortuyn', 'François', 'Françoise',
+        'van der Flaas', 'van der Velden', 'Flink', 'le Floch', 'van Formbach', 'Fortuyn', 'François', 'Françoise',
         'Frankhuizen', 'Fredriks', 'Fremie', 'Frerichs', 'Freshour', 'Friehus', 'Furda', 'Galenzone', 'Galijn',
         'le Gallen', 'Garret', 'van Gastel', 'van Geenen', 'Geerling', 'Geerts', 'Geertsen', 'van Geest', 'van Geffen',
         'Geldens', 'van Gelder', 'Gellemeyer', 'Gemen', 'van Gemert', 'Geneart', 'Genefaas', 'van Gent',
@@ -200,15 +200,15 @@ class Person extends \Faker\Provider\Person
     );
 
     protected static $longLastNames = array(
-        'Albinus genaamd Weiss von Weissenlöw', "van Bol'es Rijnbende", 'Doris Bin Sijlvanus',
-        'Douglas tot Springwoodpark', 'Dubbeldemuts van der Sluys', 'Duhme auf der Heide sive Heydahrens',
-        'Elsjan of Wipper', "de la Fontaine und d'Harnoncourt Unverzagt", 'Franse Storm', 'von Frijtag Drabbe Künzel',
-        'Gansneb genaamd Tengnagel tot Bonkenhave', 'Grinwis Plaat Stuitjes', "von Heinrich d'Omóróvicza",
+        'Albinus genaamd graaf van Werterbork', "van Bol en Rijnbende", 'Doris Bin Sijlvanus',
+        'Douglas tot Springwoodpark', 'Dubbeldemuts van der Sluys', 'van der Velde-Nassau',
+        'Elsjan of Wipper', 'Franse Storm', 'von Frijtag Drabbe Künzel',
+        'Gansneb genaamd Tengnagel tot Bonkenhave', 'Grinwis Plaat Stuitjes', "van Hendriks en Bommel",
         'van Hugenpoth tot den Berenclauw', 'Jansz Muskus te Pasque', 'Kijk in de Vegte', 'Kleine Pier', 'Koning Knol',
-        'Martena van Burmania Vegilin van Claerbergen', 'Paspoort van Grijpskerke en Poppendamme',
-        'de Pruyssenaere de la Woestijne', 'Rahajoe genaamd en geschreven ten Kate', 'de la Rive Box',
-        'Spiegelmaker Spanjaard', 'Spring in ‘t Veld', 'Vos Specht', 'Vroeg in de Wei', 'Zowran von Ranzow',
-        'Zuérius Boxhorn van Miggrode', 'Zum Vörde Sive Vörding'
+        'Martena van Burmania Vegilin van Klaarbergen', 'Paspoort van Grijpskerke en Poppendamme',
+        'de Pruyssenaere van den Woestijne', 'Rahajoe genaamd en geschreven ten Kate', 'de la Rive Box',
+        'Spiegelmaker Spanjaard', 'Spring in ‘t Veld', 'Vos Specht', 'Vroeg in de Wei', 'Zowran van Ranzow',
+        'Zuérius Boxhorn van Miggrode'
     );
 
     protected static $firstNameFemale = array(
