@@ -10,6 +10,7 @@ class Address extends \Faker\Provider\Address
 
     /**
      * @link http://ar.wikipedia.org/wiki/%D9%85%D9%84%D8%AD%D9%82:%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D9%85%D8%AF%D9%86_%D8%A7%D9%84%D8%A3%D8%B1%D8%AF%D9%86
+     * @link http://www.marefa.org/index.php/قائمة_مدن_لبنان
      */
     protected static $cityName = array(
         'اربد', 'أبو نصير', 'الجبيهه', 'الحصن', 'الرصيفة', 'الرمثا', 'الزرقاء', 'السلط', 'الشهيد عزمي', 'الصريح', 'الضليل', 'الطفيلة', 'العقبة',     'القويسمة', 'الكرك', 'المشارع', 'المفرق', 'الهاشمية', 'ام قصير', 'ايدون',
@@ -25,6 +26,21 @@ class Address extends \Faker\Provider\Address
         'مادبا', 'مخيم البقعه', 'مخيم حطين', 'مرج الحمام', 'معان',
         'ناعور',
         'وادي السير',
+        'بيروت',
+        'بنت جبيل',
+        'بعبدا',
+        'بعلبك',
+        'جزّين',
+        'جونية',
+        'الدمور',
+        'دير القمر',
+        'زحلة',
+        'الشوف',
+        'صور',
+        'صيدا',
+        'طرابلس',
+        'عكار',
+        'النبطيّة',
     );
 
     protected static $buildingNumber = array('#####', '####', '##');
@@ -52,7 +68,7 @@ class Address extends \Faker\Provider\Address
     );
 
     protected static $stateAbbr = array(
-       'AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA', 'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD', 'ME', 'MI', 'MN', 'MO', 'MS', 'MT', 'NC', 'ND', 'NE', 'NH', 'NJ', 'NM', 'NV', 'NY', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VA', 'VT', 'WA', 'WI', 'WV', 'WY'
+        'AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA', 'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD', 'ME', 'MI', 'MN', 'MO', 'MS', 'MT', 'NC', 'ND', 'NE', 'NH', 'NJ', 'NM', 'NV', 'NY', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VA', 'VT', 'WA', 'WI', 'WV', 'WY'
     );
 
     /**
