@@ -119,6 +119,10 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     asciify('Hello ***') // 'Hello R6+'
     regexify('[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}'); // sm0@y8k96a.ej
 
+### 'Faker\Provider\Vehicle'
+
+    manufacturer($country = 'Germany'|'GreatBritain'|'Japan')   // 'Subaru'
+
 ### `Faker\Provider\Lorem`
 
     word                                             // 'aut'
