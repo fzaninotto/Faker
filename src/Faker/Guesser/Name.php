@@ -23,7 +23,6 @@ class Name
      */
     public function guessFormat($name, $size = null)
     {
-        $name = Base::toLower($name);
         $generator = $this->generator;
         if (preg_match('/^is[_A-Z]/', $name)) {
             return function () use ($generator) {
@@ -35,7 +34,7 @@ class Name
                 return $generator->dateTime;
             };
         }
-        switch (str_replace('_', '', $name)) {
+        switch (str_replace('_', '', Base::toLower($name))) {
             case 'firstname':
                 return function () use ($generator) {
                     return $generator->firstName;
