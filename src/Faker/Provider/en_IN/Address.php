@@ -7,23 +7,24 @@ class Address extends \Faker\Provider\Address
     protected static $city = array(
         'Agra','Ahmedabad','Ajmer','Alwar',
         'Bengaluru','Bhubhaneshwar','Bhopal','Bikaner',
-        'Chennai','Chandigarh',
-        'Darjeeling','Dehra Dun','Delhi',
+        'Chennai','Chandigarh', 'Coimbatore', 'Chengalpat',
+        'Darjeeling','Dehra Dun','Delhi', 'Darmapuri',
         'Faridabad',
         'Gandhinagar','Guwahati','Gangtok','Gurgaon',
         'Hyderabad','Hisar',
         'Indore',
         'Jaipur','Jodhpur','Jammu','Jamnagar','Jabalpur',
-        'Kolkata','Kanpur','Kota','Kochi',
+        'Kolkata','Kanpur','Kota','Kochi', 'Kovilpatti', 'Kodaikanal',
         'Ludhiana','Lucknow',
-        'Mumbai','Meerut','Mysore',
-        'Nagpur','Nashik','Noida','New Delhi',
+        'Madurai', 'Mumbai','Meerut','Mysore',
+        'Nagpur','Nashik','Noida','New Delhi', 'Nagerkovil',
+        'Ooty',
         'Pune','Patna','Panaji','Pilani','Pondicherry',
         'Ratlam','Raipur','Ranchi','Rajkot',
-        'Surat','Simla','Srinagar',
-        'Thiruvananthapuram','Trichy',
+        'Salem', 'Surat','Simla','Srinagar', 'Sivakasi',
+        'Thiruvananthapuram','Trichy', 'Thirunelveli', 'Theni',
         'Udaipur',
-        'Vishakhapattanam','Vadodara',
+        'Vishakhapattanam','Vadodara','Vellore',
         'Warangal',
     );
 
@@ -88,7 +89,7 @@ class Address extends \Faker\Provider\Address
         'Zambia', 'Zimbabwe'
     );
     protected static $localityName = array(
-        'Aundh','Andheri',
+        'Aundh','Andheri', 'Anna Nagar',
         'Borivali','Bandra',
         'Chinchwad','Chandpole','Churchgate','Cyber City',
         'Dadar','Deccan Gymkhana',
@@ -97,6 +98,7 @@ class Address extends \Faker\Provider\Address
         'Kormangala','Kharadi',
         'Marathahalli','Model Town','Mansarovar','Malad',
         'Sodala',
+        'Thambaram',
         'Virar','Vikhroli',
         'Yerwada','Yeshwanthpura',
     );
