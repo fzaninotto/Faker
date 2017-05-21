@@ -54,7 +54,8 @@ class Iban
     public static function mod97($number)
     {
         $checksum = (int)$number[0];
-        for ($i = 1, $size = strlen($number); $i < $size; $i++) {
+        $size = strlen($number);
+        for ($i = 1; $i < $size; $i++) {
             $checksum = (10 * $checksum + (int) $number[$i]) % 97;
         }
         return $checksum;
