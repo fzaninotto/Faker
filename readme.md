@@ -239,6 +239,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     // Generates a random IBAN. Set $countryCode to null for a random country
     iban($countryCode)      // 'IT31A8497112740YZ575DJ28BP4'
     swiftBicNumber          // 'RZTIAT22263'
+    bank                    // 'JP Morgan Chase & Co.'
 
 ### `Faker\Provider\Color`
 
