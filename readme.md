@@ -1031,6 +1031,18 @@ echo $faker->licenceCode; // B
 echo $faker->vat;           // "A35864370"
 ```
 
+### `Faker\Provider\es_ES\PhoneNumber`
+
+```php
+<?php
+
+// Generates a special rate toll free phone number
+echo $faker->tollFreeNumber; // 900 123 456
+
+// Generates a mobile phone number
+echo $faker->mobileNumber; // +34 612 12 24
+```
+
 ### `Faker\Provider\es_PE\Person`
 
 ```php
