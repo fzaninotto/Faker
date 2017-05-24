@@ -28,6 +28,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * {@link} http://www.ine.es/daco/daco42/nombyapel/nombyapel.htm
+     * Manually added accent marks because the source lacks of them
      */
     protected static $firstNameMale = array(
         'Aaron', 'Adam', 'Adrián', 'Aitor', 'Alberto', 'Aleix', 'Alejandro', 'Alex', 'Alonso', 'Álvaro', 'Ander', 'Andrés',
