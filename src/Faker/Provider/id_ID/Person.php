@@ -194,7 +194,8 @@ class Person extends \Faker\Provider\Person
     protected static $titleFemale = array('dr.', 'drg.', 'Dr.', 'Hj.');
 
     /**
-     * For academic title
+     * For academic title.
+     *
      * @link http://id.wikipedia.org/wiki/Gelar_akademik
      */
     private static $suffix = array('S.Ked', 'S.Gz', 'S.Pt', 'S.IP', 'S.E.I',
@@ -202,7 +203,7 @@ class Person extends \Faker\Provider\Person
         'S.Sos', 'S.Farm', 'M.M.', 'M.Kom.', 'M.TI.', 'M.Pd', 'M.Farm', 'M.Ak', );
 
     /**
-     * Return last name
+     * Return last name.
      *
      * @param string|null $gender male or female or null for any
      *
@@ -222,9 +223,8 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * Return last name for male
+     * Return last name for male.
      *
-     * @access public
      * @return string last name
      */
     public static function lastNameMale()
@@ -233,9 +233,8 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * Return last name for female
+     * Return last name for female.
      *
-     * @access public
      * @return string last name
      */
     public static function lastNameFemale()
@@ -244,9 +243,8 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * For academic title
+     * For academic title.
      *
-     * @access public
      * @return string suffix
      */
     public static function suffix()

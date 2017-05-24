@@ -1136,6 +1136,15 @@ echo $faker->vatId(); // "IT98746784967"
 echo $faker->taxId(); // "DIXDPZ44E08F367A"
 ```
 
+### `Faker\Provider\id_ID\Payment`
+```php
+<?php
+
+echo $faker->bankShortName; // "Mandiri" - PT Bank Mandiri Tbk short name
+echo $faker->bankAccountNumber; // "0111101043072" - account number example for Bank Mandiri
+echo $faker->bankAccountNumber('Mandiri'); // "0111101043072" - account number example for Bank Mandiri
+```
+
 ### `Faker\Provider\ja_JP\Person`
 
 ```php
