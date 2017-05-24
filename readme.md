@@ -982,6 +982,13 @@ echo $faker->dni; // '77446565E'
 echo $faker->vat;           // "A35864370"
 ```
 
+### `Faker\Provider\es_ES\Text`
+
+```php
+// Generates a piece of real
+echo $faker->realText(200, 2) // "Luego me llevó consigo a misa, haciéndome cargar la banqueta, y en la escuadra, además de que un genio más picón que un genio tan raro, y como sus compañeros, quienes, reputándole como el gladiador."
+```
+
 ### `Faker\Provider\es_PE\Person`
 
 ```php
