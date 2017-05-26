@@ -106,4 +106,52 @@ class Image extends Base
 
         return $fullPath ? $filepath : $filename;
     }
+
+
+
+    /**
+     * Create an image Fake
+     *
+     *
+     * @example '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
+     */
+    public static function createImage($dir = null, $width = 640, $height = 480, $fullPath = true, $word = null)
+    {
+        $dir = is_null($dir) ? sys_get_temp_dir() : $dir; // GNU/Linux / OS X / Windows compatible
+        // Validate directory path
+        if (!is_dir($dir) || !is_writable($dir)) {
+            throw new \InvalidArgumentException(sprintf('Cannot write to directory "%s"', $dir));
+        }
+
+        $name = md5(uniqid(empty($_SERVER['SERVER_ADDR']) ? '' : $_SERVER['SERVER_ADDR'], true));
+        $filename = $name .'.jpg';
+        $filepath = $dir . DIRECTORY_SEPARATOR . $filename;
+
+        $word = isset($word) ? $word : "{$width}x{$height}";
+
+        $im = imagecreatetruecolor($width, $height);
+        $black = imagecolorallocate($im, 102, 102, 102);
+        $white = imagecolorallocate($im, 224, 224, 224);
+
+        imagefilledrectangle($im, 0, 0, $width, $height, $white);
+
+        $font = __DIR__.'/../fonts/mplus-1c-medium.ttf';
+        
+        $length = ($width) / ( strlen($word));
+        if($length > $height)
+        {
+            $length = $height-10;
+        }
+        
+        $bbox = imageftbbox($length, 0, $font, $word);
+
+        $x = $bbox[0] + (imagesx($im) / 2) - ($bbox[4] / 2) - 5;
+        $y = $bbox[1] + (imagesy($im) / 2) - ($bbox[5] / 2) - 5;
+
+        imagefttext($im, $length, 0, $x, $y, $black, $font, $word);
+        imagejpeg($im, $filepath, 100);
+        imagedestroy($im);
+
+        return $fullPath == true ? $filepath : $filename;
+    }
 }
