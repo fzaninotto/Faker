@@ -217,15 +217,20 @@ class Base
     /**
      * Returns a random key from a passed associative array
      *
-     * @param  array $array
+     * @param array       $array  Array to return key from
+     * @param null|string $search Value to search within Array for
+     *
+     * @example 'static::randomKey(array('foo' => 'bar', 'boo' => 'baz'));'
+     * @example 'static::randomKey(array('foo', 'bar', 'boo' => 'baz'), 'bar');'
+     *
      * @return int|string|null
      */
-    public static function randomKey($array = array())
+    public static function randomKey($array = array(), $search = null)
     {
         if (!$array) {
             return null;
         }
-        $keys = array_keys($array);
+        $keys = ($search === null) ? array_keys($array) : array_keys($array, $search);
         $key = $keys[mt_rand(0, count($keys) - 1)];
 
         return $key;
