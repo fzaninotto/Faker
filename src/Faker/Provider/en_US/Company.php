@@ -90,4 +90,12 @@ class Company extends \Faker\Provider\Company
 
         return join($result, ' ');
     }
+
+    /**
+     * @example 'Hand Trimmer'
+     */
+    public function jobTitle()
+    {
+        return static::randomElement(static::$jobTitle);
+    }
 }
