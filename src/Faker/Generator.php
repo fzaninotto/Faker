@@ -153,6 +153,7 @@ namespace Faker;
  * @method string toUpper($string = '')
  * @method Generator optional($weight = 0.5, $default = null)
  * @method Generator unique($reset = false, $maxRetries = 10000)
+ * @method Generator valid($validator = null, $maxRetries = 10000)
  *
  * @method integer biasedNumberBetween($min = 0, $max = 100, $function = 'sqrt')
  *
