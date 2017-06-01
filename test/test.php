@@ -36,3 +36,4 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
   </contact>
 <?php endfor; ?>
 </contacts>
+<animal><?php echo $faker->animal ?></animal>
