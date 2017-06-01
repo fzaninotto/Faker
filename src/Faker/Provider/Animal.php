@@ -160,8 +160,8 @@ class Animal extends Base {
         'Greyhound',
         'Grouse',
         'Guanaco',
-        'Guinea fowl',
-        'Guinea pig',
+        'Guinea Fowl',
+        'Guinea Pig',
         'Gull',
         'Guppy',
         'Hamster',
@@ -188,14 +188,13 @@ class Animal extends Base {
         'Jaguar',
         'Javanese',
         'Jay',
-        'Jay, Blue',
         'Jellyfish',
         'Kakapo',
         'Kangaroo',
         'Kingfisher',
         'Kiwi',
         'Koala',
-        'Komodo dragon',
+        'Komodo Dragon',
         'Kouprey',
         'Kudu',
         'Labradoodle',
@@ -251,7 +250,7 @@ class Animal extends Base {
         'Okapi',
         'Olm',
         'Opossum',
-        'Orang-utan',
+        'Orangutan',
         'Oryx',
         'Ostrich',
         'Otter',
@@ -299,8 +298,8 @@ class Animal extends Base {
         'Rat',
         'Rattlesnake',
         'Raven',
-        'Red deer',
-        'Red panda',
+        'Red Deer',
+        'Red Panda',
         'Reindeer',
         'Rhinoceros',
         'Robin',
@@ -369,7 +368,7 @@ class Animal extends Base {
         'Walrus',
         'Warthog',
         'Wasp',
-        'Water buffalo',
+        'Water Buffalo',
         'Weasel',
         'Whale',
         'Whippet',
@@ -395,5 +394,18 @@ class Animal extends Base {
      */
     public static function animal() {
         return static::randomElement( static::$animalNames );
+    }
+    
+    public static function coloredAnimal() {
+        return Color::colorName() . " " . self::animal();
+    }
+    
+    public static function coloredAnimalAlliteration() {
+        $color = Color::colorName();
+        $validAnimals = array_filter( static::$animalNames, function ( $animal ) use ( $color ) {
+            return $color[0] === $animal[0];
+        } );
+        
+        return "$color " . static::randomElement( $validAnimals );
     }
 }
