@@ -9,7 +9,7 @@ namespace Faker\Provider;
 class Animal extends Base
 {
 
-    protected static $animalNames = [
+    protected static $animalNames = array(
         'Aardvark',
         'Abyssinian',
         'Affenpinscher',
@@ -388,7 +388,7 @@ class Animal extends Base
         'Zebu',
         'Zonkey',
         'Zorse',
-    ];
+    );
 
     /**
      * @example 'Vulture'
