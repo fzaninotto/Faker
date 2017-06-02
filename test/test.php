@@ -36,3 +36,6 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
   </contact>
 <?php endfor; ?>
 </contacts>
+<animal><?php echo $faker->animal ?></animal>
+<colored-animal><?php echo $faker->coloredAnimal ?></colored-animal>
+<colored-animal-alliteration><?php echo $faker->coloredAnimalAlliteration ?></colored-animal-alliteration>

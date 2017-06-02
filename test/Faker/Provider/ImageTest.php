@@ -6,6 +6,7 @@ use Faker\Provider\Image;
 
 class ImageTest extends \PHPUnit_Framework_TestCase
 {
+
     public function testImageUrlUses640x680AsTheDefaultSize()
     {
         $this->assertRegExp('#^https://lorempixel.com/640/480/#', Image::imageUrl());
@@ -45,7 +46,7 @@ class ImageTest extends \PHPUnit_Framework_TestCase
 
     public function testDownloadWithDefaults()
     {
-        $url = "http://www.lorempixel.com/";
+        $url = "http://lorempixel.com/";
         $curlPing = curl_init($url);
         curl_setopt($curlPing, CURLOPT_TIMEOUT, 5);
         curl_setopt($curlPing, CURLOPT_CONNECTTIMEOUT, 5);
