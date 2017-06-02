@@ -6,8 +6,9 @@ namespace Faker\Provider;
 /**
  * @author edmandiesamonte
  */
-class Animal extends Base {
-    
+class Animal extends Base
+{
+
     protected static $animalNames = [
         'Aardvark',
         'Abyssinian',
@@ -388,24 +389,27 @@ class Animal extends Base {
         'Zonkey',
         'Zorse',
     ];
-    
+
     /**
      * @example 'Vulture'
      */
-    public static function animal() {
-        return static::randomElement( static::$animalNames );
+    public static function animal()
+    {
+        return static::randomElement(static::$animalNames);
     }
-    
-    public static function coloredAnimal() {
+
+    public static function coloredAnimal()
+    {
         return Color::colorName() . " " . self::animal();
     }
-    
-    public static function coloredAnimalAlliteration() {
+
+    public static function coloredAnimalAlliteration()
+    {
         $color = Color::colorName();
-        $validAnimals = array_filter( static::$animalNames, function ( $animal ) use ( $color ) {
+        $validAnimals = array_filter(static::$animalNames, function ($animal) use ($color) {
             return $color[0] === $animal[0];
-        } );
-        
-        return "$color " . static::randomElement( $validAnimals );
+        });
+
+        return "$color " . static::randomElement($validAnimals);
     }
 }
