@@ -33,7 +33,7 @@ class Person extends \Faker\Provider\Person
     );
 
     protected static $firstNameMale = array(
-        'Aadarsh', 'Aadesh', 'Aaditya', 'Aakash', 'Aanand', 'Abud', 'Achyut', 'Ajay', 'Ajit', 'Akhil', 'Akshar', 'Akshay', 'Amar', 'Amir', 'Amit', 'Amod', 'Amrit', 'Amulya', 'Ananta', 'Angel', 'Angikar', 'Anil', 'Ankit', 'Ankur', 'Anmol', 'Anshu', 'Anuj', 'Arjun', 'Arun', 'Ashish', 'Ashok', 'Ashutosh', 'Atal', 'Avinash', 'Ayush',
+        'Aadarsh', 'Aadesh', 'Aaditya', 'Aakash', 'Aanand', 'Abud', 'Achyut', 'Ajay', 'Ajit', 'Akhil', 'Akshar', 'Akshay', 'Amar', 'Amir', 'Amit', 'Amod', 'Amrit', 'Amulya', 'Ananta', 'Angel', 'Angikar', 'Anil', 'Ankit', 'Ankur', 'Anmol', 'Anshu', 'Anuj','Anubhav','Anupam' 'Arjun', 'Arun', 'Ashish', 'Ashok', 'Ashutosh','Asish','Atal', 'Avinash', 'Ayush',
         'Babish', 'Badal', 'Badri', 'Baibhav', 'Bhagwam', 'Bhakti', 'Bhanu', 'Bibek', 'Bicky', 'Bidur', 'Bidwan', 'Bikal', 'Bikash', 'Bikesh', 'Bikram', 'Bimal', 'Binamra', 'Binay', 'Bipin', 'Biplav', 'Bipul', 'Biraj', 'Birendra', 'Bishal', 'Bisu', 'Biswas', 'Brijesh', 'Buddha',
         'Chaitanya', 'Chandan', 'Chandra', 'Chirag',
         'Darpan', 'Deep', 'Deepak', 'Dev', 'Dhairya', 'Dharma', 'Dharmendra', 'Dhiren', 'Diwakar', 'Diwash',
@@ -47,9 +47,9 @@ class Person extends \Faker\Provider\Person
         'Madhav', 'Madhukar', 'Madhur', 'Mandeep', 'Manish', 'Manjul', 'Manoj', 'Milan', 'Mohit', 'Mridul',
         'Nabin', 'Nakul', 'Narayan', 'Narendra', 'Naresh', 'Neil', 'Nerain', 'Nirajan', 'Nirajan', 'Nirmal', 'Nirupam', 'Nischal', 'Nishad', 'Nishant', 'Nutan',
         'Om',
-        'Paras', 'Parikshit', 'Parimal', 'Pawan', 'Piyush', 'Prabal', 'Prabesh', 'Prabhat', 'Prabin', 'Prajwal', 'Prakash', 'Pramesh', 'Pramod', 'Pranaya', 'Pranil', 'Prasanna', 'Prashant', 'Prasun', 'Pratap', 'Pratik', 'Prayag', 'Prianshu', 'Prithivi', 'Purna', 'Pushkar',
+        'Paras', 'Parikshit', 'Parimal', 'Pawan', 'Piyush', 'Prabal', 'Prabesh', 'Prabhat', 'Prabin', 'Prajwal', 'Prakash', 'Pramesh', 'Pramod', 'Pranaya', 'Pranil','Pranish','Prasanna', 'Prashant', 'Prasun', 'Pratap', 'Pratik', 'Prayag', 'Prianshu', 'Prithivi', 'Purna', 'Pushkar',
         'Raghab', 'Rahul', 'Rajan', 'Rajesh', 'Rakesh', 'Ramesh', 'Ranjan', 'Ranjit', 'Ricky', 'Rijan', 'Rishab', 'Rishikesh', 'Rohan', 'Rohit', 'Roshan',
-        'Sabin', 'Sachit', 'Safal', 'Sahaj', 'Sahan', 'Sajal', 'Sakar', 'Samir', 'Sanchit', 'Sandesh', 'Sanjay', 'Sanjeev', 'Sankalpa', 'Santosh', 'Sarad', 'Saroj', 'Sashi', 'Saumya', 'Sevak', 'Shailesh', 'Shakti', 'Shamundra', 'Shantanu', 'Shashank', 'Shashwat', 'Shekar', 'Shyam', 'Siddhartha', 'Sitaram', 'Sohan', 'Sohil', 'Soviet', 'Spandan', 'Subal', 'Subham', 'Subodh', 'Sudan', 'Sudhir', 'Sudin', 'Sudip', 'Sujan', 'Sujit', 'Sukanta', 'Sumel', 'Sunil', 'Suraj', 'Suraj', 'Surendra', 'Surya', 'Sushant', 'Sushil', 'Suyash', 'Suyog', 'Swagat', 'Swapnil', 'Swarup',
+        'Sabin', 'Sachit', 'Safal', 'Sahaj', 'Sahan', 'Sajal', 'Sakar', 'Samir', 'Sanchit', 'Sandesh', 'Sanjay', 'Sanjeev', 'Sankalpa', 'Santosh', 'Sarad', 'Saroj', 'Sashi','Swornim','Saumya', 'Sevak', 'Shailesh', 'Shakti', 'Shamundra', 'Shantanu', 'Shashank', 'Shashwat', 'Shekar', 'Shyam', 'Siddhartha', 'Sitaram', 'Sohan', 'Sohil', 'Soviet', 'Spandan', 'Subal', 'Subham', 'Subodh', 'Sudan', 'Sudhir', 'Sudin', 'Sudip', 'Sujan', 'Sujit', 'Sukanta', 'Sumel', 'Sunil', 'Suraj', 'Suraj', 'Surendra', 'Surya', 'Sushant', 'Sushil', 'Suyash', 'Suyog', 'Swagat', 'Swapnil', 'Swarup',
         'Tej', 'Tilak', 'Tirtha', 'Trailokya', 'Trilochan',
         'Udit', 'Ujjwal', 'Umesh', 'Uttam',
         'Yogendra', 'Yogesh', 'Yuvaraj',
@@ -101,7 +101,7 @@ class Person extends \Faker\Provider\Person
     );
 
     private static $middleNameMale = array('Bahadur', 'Dev', 'Kumar', 'Man', 'Mani', 'Nath', 'Prasad', 'Raj', 'Ratna');
-    private static $middleNameFemale = array('Devi', 'Kumari');
+    private static $middleNameFemale = array('Devi', 'Kumari','Maya','Pyrai');
 
     /**
      * @example 'Bahadur'
