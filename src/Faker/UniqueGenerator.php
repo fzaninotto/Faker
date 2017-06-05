@@ -40,18 +40,17 @@ class UniqueGenerator
      */
     public function __call($name, $arguments)
     {
-        if (!isset($this->uniques[$name])) {
-            $this->uniques[$name] = array();
-        }
         $i = 0;
         do {
-            $res = call_user_func_array(array($this->generator, $name), $arguments);
             $i++;
             if ($i > $this->maxRetries) {
                 throw new \OverflowException(sprintf('Maximum retries of %d reached without finding a unique value', $this->maxRetries));
             }
-        } while (array_key_exists(serialize($res), $this->uniques[$name]));
-        $this->uniques[$name][serialize($res)]= null;
+            $res = call_user_func_array(array($this->generator, $name), $arguments);
+            $serialized = serialize($res);
+        } while (isset($this->uniques[$name][$serialized]));
+
+        $this->uniques[$name][$serialized] = true;
 
         return $res;
     }
