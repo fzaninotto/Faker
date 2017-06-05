@@ -2,18 +2,21 @@
 
 namespace Faker\Provider\zh_CN;
 
+/**
+ * @author 黄小辰
+ */
 class Color extends \Faker\Provider\Color
 {
     /**
      * @link https://zh.wikipedia.org/zh-cn/%E9%A2%9C%E8%89%B2%E5%88%97%E8%A1%A8
      */
-    protected static $safeColorNames = array(
+    protected static $safeColorNamesCn = array(
         '黑色', '粟色', '绿色', '藏青', '橄榄色',
-        '紫', '凫绿', '鲜绿色', '蓝色', '银色',
-        '灰色', '黄色', '品红', '水色', '白色'
+        '紫色', '凫绿', '鲜绿色', '蓝色', '银色',
+        '灰色', '黄色', '品红色', '水色', '白色'
     );
 
-    protected static $allColorNames = array(
+    protected static $allColorNamesCn = array(
         '黑色', '昏灰', '灰色', '暗灰', '银色', '亮灰色',
         '庚斯博罗灰', '白烟色', '白色', '雪色', '铁灰色',
         '沙棕', '玫瑰褐', '亮珊瑚色', '印度红', '褐色',
@@ -61,6 +64,28 @@ class Color extends \Faker\Provider\Color
         '浅珊瑚红', '暖粉红', '勃根第酒红', '尖晶石红',
         '胭脂红', '浅粉红', '枢机红', '薰衣草紫红', '灰紫红',
         '樱桃红', '浅鲑红', '绯红', '粉红', '亮粉红', '壳黄红',
-        '茜红',
+        '茜红'
     );
+
+    /**
+     * @example '蓝色'
+     *
+     * @param   boolean $switch
+     *
+     */
+    public static function safeColorName($switch = false)
+    {
+        return static::randomElement($switch ? static::$safeColorNames : static::$safeColorNamesCn);
+    }
+
+    /**
+     * @example '山茶红'
+     *
+     * @param   boolean $switch
+     *
+     */
+    public static function colorName($switch = false)
+    {
+        return static::randomElement($switch ? static::$allColorNames : static::$allColorNamesCn);
+    }
 }
