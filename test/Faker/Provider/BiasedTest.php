@@ -70,4 +70,23 @@ class BiasedTest extends \PHPUnit_Framework_TestCase
             $this->assertLessThan(self::NUMBERS * $assumed * 1.1, $amount, "Value was more than 10 percent over the expected value");
         }
     }
+
+    public function testBiasedElementIn()
+    {
+        $this->generator = new Generator();
+        $this->generator->addProvider(new Biased($this->generator));
+        $res = array('a'=>0,'b'=>0,'c'=>0);
+        $bias = array(.1,.8,.1);
+        for ($i=0; $i<self::NUMBERS; $i++) {
+            $el = $this->generator->biasedElementIn(array('a','b','c'), $bias);
+            $res[$el]++;
+        }
+        $i=0;
+        foreach ($res as $key => $value) {
+            $assumed = self::NUMBERS * $bias[$i];
+            $this->assertGreaterThan($assumed * .9, $value, "Value was more than 10 percent under the expected value");
+            $this->assertLessThan($assumed * 1.1, $value, "Value was more than 10 percent over the expected value");
+            $i++;
+        }
+    }
 }
