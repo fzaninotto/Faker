@@ -8,6 +8,25 @@ class Factory
 
     protected static $defaultProviders = array('Address', 'Barcode', 'Biased', 'Color', 'Company', 'DateTime', 'File', 'HtmlLorem', 'Image', 'Internet', 'Lorem', 'Miscellaneous', 'Payment', 'Person', 'PhoneNumber', 'Text', 'UserAgent', 'Uuid');
 
+    private static $instances;
+
+    /**
+     * Singleton
+     *
+     * @param string $locale
+     * @return Generator
+     */
+    public static function load($locale = self::DEFAULT_LOCALE)
+    {
+        if (self::$instances === null) {
+            self::$instances = array();
+        }
+        if (!isset(self::$instances[$locale])) {
+            self::$instances[$locale] = self::create($locale);
+        }
+        return self::$instances[$locale];
+    }
+
     /**
      * Create a new generator
      *
