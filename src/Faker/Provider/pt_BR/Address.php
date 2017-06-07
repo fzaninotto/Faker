@@ -44,7 +44,7 @@ class Address extends \Faker\Provider\Address
         'Djibouti', 'Domênica', 'Equador', 'Egito', 'El Salvador',
         'Emirados Árabes Unidos', 'Eritrea', 'Eslováquia', 'Eslovênia',
         'Espanha', 'Estados Unidos da América', 'Estônia', 'Etiópia',
-        'Filipinas', 'Finlândia', 'Fiji','França', 'Gabão', 'Gâmbia',
+        'Filipinas', 'Finlândia', 'Fiji', 'França', 'Gabão', 'Gâmbia',
         'Georgia', 'Gana', 'Granada', 'Grécia', 'Guatemala',
         'Guiné Equatorial', 'Guiné Bissau', 'Guiana', 'Haiti', 'Honduras',
         'Hungria', 'Índia', 'Indonésia', 'Iraque', 'Irlanda', 'Irã',
@@ -95,6 +95,20 @@ class Address extends \Faker\Provider\Address
         '#º Andar', '##º Andar', '###º Andar', 'Apto #', 'Apto ##', 'Apto ###',
         'Apto ####', 'F', 'Fundos', 'Anexo'
     );
+
+    /**
+     * Generates an 9-digit zipcode number without formatting characters.
+     * @param bool $formatted [def: true] If it should return a formatted number or not.
+     * @return string
+     */
+    public static function postcode($formatted = true)
+    {
+        $postcode = static::numerify(static::randomElement(static::$postcode));
+        if (!$formatted) {
+            $postcode = strtr($postcode, array('-' => ''));
+        }
+        return $postcode;
+    }
 
     /**
      * @example 'Avenida'
