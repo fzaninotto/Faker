@@ -19,6 +19,7 @@ namespace Faker;
  * @property string $streetSuffix
  * @property string $buildingNumber
  * @property string $city
+ * @property string $state
  * @property string $streetName
  * @property string $streetAddress
  * @property string $postcode
