@@ -24,9 +24,9 @@ class Company extends \Faker\Provider\Company
             ),
     );
 
-    protected static $companyPrefix = array('شركة', 'مؤسسة', 'مجموعة', 'مكتب', 'أكاديمية', 'معرض');
+    protected static $companyPrefix = array('شركة', 'مؤسسة', 'مجموعة', 'مكتب', 'أكاديمية', 'معرض', 'مركز');
 
-    protected static $companySuffix = array('وأولاده', 'للمساهمة المحدودة', ' ذ.م.م', 'مساهمة عامة', 'وشركائه');
+    protected static $companySuffix = array('وأولاده', 'للمساهمة المحدودة', ' ذ.م.م', 'مساهمة عامة', 'وشركائه', 'ش.م.م', 'التجارية', 'القابضة', 'للخدمات', 'الهندسية');
 
     /**
      * @example 'مؤسسة'

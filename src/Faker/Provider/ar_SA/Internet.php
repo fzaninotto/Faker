@@ -11,18 +11,22 @@ class Internet extends \Faker\Provider\Internet
         '?{{lastNameAscii}}',
     );
     protected static $safeEmailTld = array(
-        'com', 'jo', 'me', 'net', 'org',
+        'com', 'jo', 'me', 'net', 'org', 'com.eg',
     );
 
     protected static $tld = array(
-        'biz', 'com', 'info', 'sa', 'net', 'org',
+        'biz', 'com', 'info', 'sa', 'net', 'org', 'com.eg',
     );
 
     protected static $lastNameAscii = array(
-        'abbad', 'abbadi', 'abbas', 'abulebbeh', 'flefel', 'hadi', 'hamad', 'hasan', 'jabri', 'kanaan', 'karam', 'maanee', 'melhem', 'nimry', 'obaisi', 'qasem', 'qawasmee', 'rabee', 'rashwani', 'shami', 'zaloum',
+        'abbad', 'abbadi', 'abbas', 'abulebbeh', 'flefel', 'hadi', 'hamad', 'hasan', 'jabri', 'kanaan', 'karam', 'maanee', 'melhem',
+        'nimry', 'obaisi', 'qasem', 'qawasmee', 'rabee', 'rashwani', 'shami', 'zaloum', 'moaaz', 'gouda', 'hussien', 'samy', 'amr', 'gamal',
+        'khalil', 'shaker', 'dawood', 'ezz', 'abd alrahman', 'anas', 'kamal', 'kamel', 'masry', 'saied', 'sayed', 'moussa', 'eissa', 'ibrahim',
+        'ramez', 'hady', 'refaat', 'raafat', 'soliman', 'fouad', 'guhar', 'selim', 'metwally', 'medhat', 'omar', 'islam',
     );
     protected static $firstNameAscii = array(
-        'abd', 'abdullah', 'ahmad', 'akram', 'amr', 'bashar', 'bilal', 'fadi', 'ibrahim', 'khaled', 'layth', 'mohammad', 'mutaz', 'omar', 'osama', 'rami', 'saleem', 'samer', 'sami', 'yazan',
+        'abd', 'abdullah', 'ahmad', 'akram', 'amr', 'bashar', 'bilal', 'fadi', 'ibrahim', 'khaled', 'layth', 'mohammad', 'mutaz', 'omar', 
+        'osama', 'rami', 'saleem', 'samer', 'sami', 'yazan',
     );
 
     public static function lastNameAscii()
