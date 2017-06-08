@@ -232,6 +232,33 @@ class Base
     }
 
     /**
+     * Returns multiple associative arrays
+     *
+     * @param array $array The array you want to get data from
+     * @param int $count How many elements do you want
+     * @return array ['b' => 'b', 'c' => 'c']
+     */
+    public static function randomKeys($array = array('a' => 'a', 'b' => 'b', 'c' => 'c'), $count = 1)
+    {
+        if (!$array) {
+            return null;
+        }
+
+        if ($count > count($array)) {
+            throw new \InvalidArgumentException('randomKeys() count must be lower or equals to the count of the array');
+        }
+
+        $keys = array_keys($array);
+        shuffle($keys);
+        $keys = array_splice($keys, 0, $count);
+        $output = array();
+        foreach ($keys as $key) {
+            $output[$key] = $array[$key];
+        }
+        return $output;
+    }
+
+    /**
      * Returns a shuffled version of the argument.
      *
      * This function accepts either an array, or a string.

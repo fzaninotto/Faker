@@ -137,6 +137,7 @@ namespace Faker;
  * @property string $randomAscii
  * @method int randomNumber($nbDigits = null, $strict = false)
  * @method int|string|null randomKey(array $array = array())
+ * @method array randomKeys(array $array = array('a' => 'A', 'b' => 'B', 'c' => 'C'), $count = 1)
  * @method int numberBetween($min = 0, $max = 2147483647)
  * @method float randomFloat($nbMaxDecimals = null, $min = 0, $max = null)
  * @method mixed randomElement(array $array = array('a', 'b', 'c'))
