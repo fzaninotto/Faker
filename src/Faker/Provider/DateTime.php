@@ -1,6 +1,7 @@
 <?php
 
 namespace Faker\Provider;
+date_default_timezone_set('UTC');
 
 class DateTime extends Base
 {
