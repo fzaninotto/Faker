@@ -22,8 +22,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '0{{oneToNine}}## ####',
         '01#########',
         '01### ######',
-        '01### ### ###'
-        
+        '01### ### ###',
     );
 
     protected static $fixedLineNumberFormats = array(
