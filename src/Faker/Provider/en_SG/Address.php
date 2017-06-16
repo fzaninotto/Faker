@@ -99,6 +99,11 @@ class Address extends \Faker\Provider\Address
         return static::randomElement(static::$streetPrefix);
     }
 
+    public function streetName()
+    {
+        return static::randomElement(static::$streetName);
+    }
+
     public function streetNumber()
     {
         return static::numerify(static::randomElement(static::$streetNumber));

@@ -6,28 +6,12 @@ class Address extends \Faker\Provider\Address
 {
 
     // https://en.wikipedia.org/wiki/Addresses_in_Malaysia
-    protected static $streetNumber = array('##', '###');
+    protected static $streetNumber = array('##', '###', '####');
 
-    // https://en.wikipedia.org/wiki/Addresses_in_Malaysia
-    protected static $blockNumber = array(
-        'Blk ##',
-        'Blk ###',
-        'Blk ###A',
-        'Blk ###B',
-        'Blk ###C',
-        'Blk ###D',
-        'Blk ###E',
-        'Blk ###F',
-        'Blk ###G',
-        'Blk ###H',
-    );
 
     // http://www.streetdirectory.com/malaysia/kl/asia_travel/street/
     protected static $streetSuffix = array(
-        'Avenue',
-        'Bridge',
-        'Highway', 'Hill', 'Height',
-        'Park',
+        
     );
 
     // http://www.streetdirectory.com/malaysia/kl/asia_travel/street/
@@ -56,27 +40,18 @@ class Address extends \Faker\Provider\Address
         'Queen', 'Qinzhou',
         'Rektor', 'Ramsey', 'Ramli', 'Rambai', 'Rindu',
         'SS 2', 'SS 7', 'Stanley', 'Saintis', 'Shenton', 'Sultan', 'Sunway', 'Selayang', 
-        'Tebing', 'Temple', 'Tentera', 'Tiara', 'Tun', 'Tan Chen Lock', 'Tikus', 'Tawau'
+        'Tebing', 'Temple', 'Tentera', 'Tiara', 'Tun', 'Tan Chen Lock', 'Tikus', 'Tawau',
         'Usahawan', 'Vista', 'Villa', 'Xiwang', 'Youssef', 'Zainia', 'Zaid'
     );
 
     protected static $streetAddressFormats = array(
         '{{streetPrefix}} {{streetName}}',
-        '{{streetName}} {{streetSuffix}}',
     );
 
-    protected static $floorNumber = array(
-        '##', '0#',
-    );
-
-    protected static $apartmentNumber = array(
-        '##', '###',
-    );
 
     // https://en.wikipedia.org/wiki/Addresses_in_Malaysia
     protected static $addressFormats = array(
-        "{{streetNumber}} {{streetAddress}}\n{{townName}} {{postcode}}",
-        "{{blockNumber}} {{streetAddress}}\n{{floorNumber}} {{apartmentNumber}}\n{{postcode}} {{townName}}",
+        "{{streetNumber}} {{streetAddress}},\n{{postcode}} {{townName}},\n{{country}}",
     );
 
     protected static $townName = array(
@@ -87,7 +62,7 @@ class Address extends \Faker\Provider\Address
     protected static $postcode = array('#####');
 
     protected static $country = array(
-        'MALAYSIA',
+        'Malaysia',
     );
 
     public function streetPrefix()
@@ -95,25 +70,16 @@ class Address extends \Faker\Provider\Address
         return static::randomElement(static::$streetPrefix);
     }
 
+    public function streetName()
+    {
+        return static::randomElement(static::$streetName);
+    }
+
     public function streetNumber()
     {
         return static::numerify(static::randomElement(static::$streetNumber));
     }
 
-    public function blockNumber()
-    {
-        return static::numerify(static::randomElement(static::$blockNumber));
-    }
-
-    public function floorNumber()
-    {
-        return static::randomElement(static::$floorNumber);
-    }
-
-    public function apartmentNumber()
-    {
-        return static::randomElement(static::$apartmentNumber);
-    }
 
     public function townName()
     {
