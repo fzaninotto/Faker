@@ -39,7 +39,7 @@ class Address extends \Faker\Provider\Address
         'Penang', 'PJU', 'PJS', 'Perpustakawan', 'Pelukis', 'Pudu', 'Petaling', 'Pantai',
         'Queen', 'Qinzhou',
         'Rektor', 'Ramsey', 'Ramli', 'Rambai', 'Rindu',
-        'SS 2', 'SS 7', 'Stanley', 'Saintis', 'Shenton', 'Sultan', 'Sunway', 'Selayang', 
+        'SS 2', 'SS 7', 'Stanley', 'Saintis', 'Shenton', 'Sultan', 'Sunway', 'Selayang',
         'Tebing', 'Temple', 'Tentera', 'Tiara', 'Tun', 'Tan Chen Lock', 'Tikus', 'Tawau',
         'Usahawan', 'Vista', 'Villa', 'Xiwang', 'Youssef', 'Zainia', 'Zaid'
     );

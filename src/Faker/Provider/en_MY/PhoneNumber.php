@@ -9,14 +9,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '60',
     );
 
-    protected static $zeroToEight = array(0, 1, 2, 3, 4, 5, 6, 7, 8);
-
     protected static $oneToNine = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
 
     protected static $mobileNumberFormats = array(
-        '{{internationalCodePrefix}}1{{zeroToEight}}## ####',
-        '{{internationalCodePrefix}} 1{{zeroToEight}}## ####',
-        '0{{zeroToEight}}## ####',
         '{{internationalCodePrefix}}1{{oneToNine}}## ####',
         '{{internationalCodePrefix}} 1{{oneToNine}}## ####',
         '0{{oneToNine}}## ####',
@@ -79,11 +74,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         $format = static::randomElement(static::$internationalCodePrefix);
 
         return $this->generator->parse($format);
-    }
-
-    public function zeroToEight()
-    {
-        return static::randomElement(static::$zeroToEight);
     }
 
     public function oneToNine()
