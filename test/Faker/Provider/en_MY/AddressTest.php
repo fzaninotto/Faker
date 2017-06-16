@@ -19,8 +19,4 @@ class AddressTest extends \PHPUnit_Framework_TestCase
         $this->assertRegExp('/^\d{2,3}$/', $this->faker->streetNumber());
     }
 
-    public function testBlockNumber()
-    {
-        $this->assertRegExp('/^Blk\s*\d{2,3}[A-H]*$/i', $this->faker->blockNumber());
-    }
 }

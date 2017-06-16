@@ -29,5 +29,4 @@ class PhoneNumberTest extends \PHPUnit_Framework_TestCase
 
         $this->assertRegExp('/^(\+60|60)?\s*1\s*[0-8]{3}\s*\d{4}$/', $mobileNumber);
     }
-
 }
