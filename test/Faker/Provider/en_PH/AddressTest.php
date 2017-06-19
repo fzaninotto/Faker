@@ -44,6 +44,14 @@ class AddressTest extends \PHPUnit_Framework_TestCase
     public function testBarangay()
     {
       $barangay = $this->faker->barangay();
+      $this->assertNotEmpty($barangay);
       $this->assertInternalType('string', $barangay);
+    }
+
+    public function testPurok()
+    {
+        $purok = $this->faker->purok();
+        $this->assertNotEmpty($purok);
+        $this->assertInternalType('string', $purok);
     }
 }

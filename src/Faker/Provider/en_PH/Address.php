@@ -2,21 +2,53 @@
 
 namespace Faker\Provider\en_PH;
 
+/**
+ * Class Address
+ * @see https://en.wikipedia.org/wiki/Postal_addresses_in_the_Philippines
+ * @package Faker\Provider\en_PH
+ */
 class Address extends \Faker\Provider\en_US\Address
 {
+
+    /**
+     * Street name format
+     * @var array
+     */
     protected static $streetNameFormats = array(
         '{{lastName}} {{streetSuffix}}'
     );
 
-    //http://en.wikipedia.org/wiki/Postal_addresses_in_the_Philippines
+    /**
+     * Address Format
+     * @link http://en.wikipedia.org/wiki/Postal_addresses_in_the_Philippines
+     * @var array
+     */
     protected static $addressFormats = array(
         '{{streetAddress}}, {{barangay}}, {{city}} {{postcode}} {{province}}', '{{streetAddress}}, {{municipality}} {{postcode}} {{province}}'
     );
 
-    protected static $buildingNumber = array('##A', '##', '##A/##', '##/##');
-    protected static $postcode = array('####');
 
-    //http://en.wikipedia.org/wiki/Provinces_of_the_Philippines
+    /**
+     * An array of en-PH building number
+     * @var array
+     */
+    protected static $buildingNumber = array('##A', '##', '##A/##', '##/##');
+
+    /**
+     * An array of en-PH postcode
+     * @link https://en.wikipedia.org/wiki/List_of_ZIP_codes_in_the_Philippines
+     * @var array
+     */
+    protected static $postcode = array(
+        // Abra, Benguet, Cebu, Metro Manila, Pampanga, Pangasinan
+        '28##', '26##', '60##', '1###', '20##', '24##'
+    );
+
+    /**
+     * An array of en-PH provinces
+     * @link http://en.wikipedia.org/wiki/Provinces_of_the_Philippines
+     * @var array
+     */
     protected static $province = array(
         'Abra', 'Agusan del Norte', 'Agusan del Sur', 'Aklan', 'Albay',
         'Antique', 'Apayao', 'Aurora', 'Basilan', 'Bataan', 'Batanes',
@@ -40,7 +72,11 @@ class Address extends \Faker\Provider\en_US\Address
         'Zamboanga del Sur', 'Zamboanga Sibugay', 'Metro Manila'
     );
 
-    //http://en.wikipedia.org/wiki/List_of_cities_in_the_Philippines
+    /**
+     * An array of en-PH cities
+     * @link http://en.wikipedia.org/wiki/List_of_cities_in_the_Philippines
+     * @var array
+     */
     protected static $city = array(
         'Caloocan', 'Las Piñas', 'Makati', 'Malabon', 'Mandaluyong',
         'Manila', 'Marikina', 'Muntinlupa', 'Navotas', 'Parañaque', 'Pasay',
@@ -70,7 +106,11 @@ class Address extends \Faker\Provider\en_US\Address
         'Dapitan', 'Dipolog', 'Pagadian', 'Zamboanga City'
     );
 
-    //http://en.wikipedia.org/wiki/List_of_Philippine_cities_and_municipalities_by_population
+    /**
+     * An array of en-PH municipalities
+     * @link http://en.wikipedia.org/wiki/List_of_Philippine_cities_and_municipalities_by_population
+     * @var array
+     */
     protected static $municipality = array(
         'Bangued', 'Boliney', 'Bucay', 'Bucloc', 'Daguioman', 'Danglas',
         'Dolores', 'La Paz', 'Lacub', 'Lagangilang', 'Lagayan', 'Langiden',
@@ -391,25 +431,102 @@ class Address extends \Faker\Provider\en_US\Address
         'Talusan', 'Titay', 'Tungawan'
     );
 
+    /**
+     * An array of en-PH barangay
+     * @link https://en.wikipedia.org/wiki/Barangay
+     * @var array
+     */
     protected static $barangay = array(
-        'Poblacion'
+
+        // https://en.wikipedia.org/wiki/Baguio
+        'A. Bonifacio-Caguioa-Rimando - ABCR', 'Abanao-Zandueta-Kayong-Chugum-Otek - AZKCO',
+        'Alfonso Tabora', 'Ambiong', 'Andres Bonifacio - Lower Bokawkan',
+        'Apugan-Loakan', 'Asin Road', 'Atok Trail', 'Aurora Hill Proper - Malvar-Sgt. Floresca',
+        'Aurora Hill, North Central', 'Aurora Hill, South Central', 'Bagong Lipunan - Market Area',
+        'Bakakeng Central', 'Bakakeng North', 'Bal-Marcoville - Marcoville', 'Balsigan',
+        'Bayan Park East', 'Bayan Park Village', 'Bayan Park West - Bayan Park','BGH Compound',
+        'Brookside','Brookspoint', 'Cabinet Hill-Teachers Camp', 'Camdas Subdivision', 'Camp 7',
+        'Camp 8', 'Camp Allen', 'Campo Filipino', 'City Camp Central', 'City Camp Proper',
+        'Country Club Village', 'Cresencia Village', 'Dagsian, Lower', 'Dagsian, Upper',
+        'Dizon Subdivision', 'Dominican Hill-Mirador', 'Dontogan', 'DPS Area', 'Engineers Hill',
+        'Fairview Village', 'Ferdinand - Happy Homes-Campo Sioco', 'Fort del Pilar',
+        'Gabriela Silang', 'General Emilio F. Aguinaldo - Quirino‑Magsaysay,&nbsp;Lower',
+        'General Luna, Upper', 'General Luna, Lower', 'Gibraltar', 'Greenwater Village',
+        'Guisad Central', 'Guisad Sorong', 'Happy Hollow', 'Happy Homes - Happy Homes-Lucban',
+        'Harrison-Claudio Carantes', 'Hillside', 'Holy Ghost Extension', 'Holy Ghost Proper',
+        'Honeymoon - Honeymoon-Holy Ghost', 'Imelda R. Marcos - La Salle', 'Imelda Village',
+        'Irisan', 'Kabayanihan','Kagitingan', 'Kayang Extension', 'Kayang-Hilltop', 'Kias',
+        'Legarda-Burnham-Kisad','Liwanag-Loakan', 'Loakan Proper', 'Lopez Jaena',
+        'Lourdes Subdivision Extension', 'Lourdes Subdivision, Lower', 'Lourdes Subdivision, Proper',
+        'Lualhati', 'Lucnab', 'Magsaysay Private Road', 'Magsaysay, Lower', 'Magsaysay, Upper',
+        'Malcolm Square-Perfecto - Jose Abad Santos', 'Manuel A. Roxas', 'Market Subdivision, Upper',
+        'Middle Quezon Hill Subdivision - Quezon Hill Middle', 'Military Cut-off', 'Mines View Park',
+        'Modern Site, East', 'Modern Site, West', 'MRR-Queen of Peace', 'New Lucban', 'Outlook Drive',
+        'Pacdal', 'Padre Burgos', 'Padre Zamora', 'Palma-Urbano - Cariño-Palma', 'Phil-Am', 'Pinget',
+        'Pinsao Pilot Project', 'Pinsao Proper', 'Poliwes', 'Pucsusan', 'Quezon Hill Proper',
+        'Quezon Hill, Upper', 'Quirino Hill, East', 'Quirino Hill, Lower', 'Quirino Hill, Middle',
+        'Quirino Hill, West', 'Quirino-Magsaysay, Upper - Upper QM', 'Rizal Monument Area',
+        'Rock Quarry, Lower', 'Rock Quarry, Middle', 'Rock Quarry, Upper', 'Saint Joseph Village',
+        'Salud Mitra', 'San Antonio Village', 'San Luis Village', 'San Roque Village', 'San Vicente',
+        'Sanitary Camp, North', 'Sanitary Camp, South', 'Santa Escolastica', 'Santo Rosario',
+        'Santo Tomas Proper', 'Santo Tomas School Area', 'Scout Barrio', 'Session Road Area',
+        'Slaughter House Area - Santo Niño Slaughter', 'SLU-SVP Housing Village', 'South Drive',
+        'Teodora Alonzo', 'Trancoville', 'Victoria Village'
+
     );
 
+    /**
+     * An array en-PH purok
+     * @link https://en.wikipedia.org/wiki/Purok
+     * @var array
+     */
+    protected static $purok = array(
+        'Purok 1', 'Purok 2', 'Purok 3', 'Purok 4', 'Purok 5',
+        'Purok 6', 'Purok 7', 'Purok 8', 'Purok 9', 'Purok 10',
+        'Purok 11', 'Purok 12', 'Purok 13', 'Purok 14', 'Purok 15',
+        'Purok 16', 'Purok 17', 'Purok 18', 'Purok 19', 'Purok 20'
+    );
+
+    /**
+     * Returns a random Purok
+     * @return string
+     */
+    public function purok()
+    {
+        return static::randomElement(static::$purok);
+    }
+
+    /**
+     * Returns a random Province
+     * @return string
+     */
     public function province()
     {
         return static::randomElement(static::$province);
     }
 
+    /**
+     * Returns a random City
+     * @return string
+     */
     public function city()
     {
         return static::randomElement(static::$city);
     }
 
+    /**
+     * Returns a random Municipality
+     * @return string
+     */
     public function municipality()
     {
         return static::randomElement(static::$municipality);
     }
 
+    /**
+     * Returns a random Barangay
+     * @return string
+     */
     public function barangay()
     {
         return static::randomElement(static::$barangay);
