@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="PHP" type="php">
+        <CLASSES>
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/composer" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/dnoegel/php-xdg-base-dir" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/doctrine/inflector" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/doctrine/instantiator" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/erusev/parsedown" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/facebook/webdriver" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/fzaninotto/faker" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/guzzlehttp/guzzle" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/guzzlehttp/promises" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/guzzlehttp/psr7" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/hamcrest/hamcrest-php" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/jakub-onderka/php-console-color" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/jakub-onderka/php-console-highlighter" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/laravel/dusk" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/laravel/framework" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/laravel/tinker" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/league/flysystem" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/mockery/mockery" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/monolog/monolog" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/mtdowling/cron-expression" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/myclabs/deep-copy" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/nesbot/carbon" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/nikic/php-parser" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/paragonie/random_compat" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/phpdocumentor/reflection-common" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/phpdocumentor/reflection-docblock" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/phpdocumentor/type-resolver" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/phpspec/prophecy" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/phpunit/php-code-coverage" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/phpunit/php-file-iterator" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/phpunit/php-text-template" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/phpunit/php-timer" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/phpunit/php-token-stream" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/phpunit/phpunit" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/phpunit/phpunit-mock-objects" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/psr/http-message" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/psr/log" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/psy/psysh" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/ramsey/uuid" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/sebastian/code-unit-reverse-lookup" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/sebastian/comparator" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/sebastian/diff" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/sebastian/environment" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/sebastian/exporter" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/sebastian/global-state" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/sebastian/object-enumerator" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/sebastian/recursion-context" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/sebastian/resource-operations" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/sebastian/version" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/swiftmailer/swiftmailer" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/console" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/css-selector" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/debug" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/event-dispatcher" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/finder" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/http-foundation" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/http-kernel" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/polyfill-mbstring" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/process" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/routing" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/translation" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/var-dumper" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/yaml" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/tijsverkoyen/css-to-inline-styles" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/vlucas/phpdotenv" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/webmozart/assert" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/composer" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/dnoegel/php-xdg-base-dir" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/doctrine/inflector" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/doctrine/instantiator" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/erusev/parsedown" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/facebook/webdriver" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/fzaninotto/faker" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/guzzlehttp/guzzle" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/guzzlehttp/promises" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/guzzlehttp/psr7" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/hamcrest/hamcrest-php" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/jakub-onderka/php-console-color" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/jakub-onderka/php-console-highlighter" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/laravel/dusk" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/laravel/framework" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/laravel/tinker" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/league/flysystem" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/mockery/mockery" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/monolog/monolog" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/mtdowling/cron-expression" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/myclabs/deep-copy" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/nesbot/carbon" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/nikic/php-parser" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/paragonie/random_compat" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/phpdocumentor/reflection-common" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/phpdocumentor/reflection-docblock" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/phpdocumentor/type-resolver" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/phpspec/prophecy" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/phpunit/php-code-coverage" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/phpunit/php-file-iterator" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/phpunit/php-text-template" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/phpunit/php-timer" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/phpunit/php-token-stream" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/phpunit/phpunit" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/phpunit/phpunit-mock-objects" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/psr/http-message" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/psr/log" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/psy/psysh" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/ramsey/uuid" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/sebastian/code-unit-reverse-lookup" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/sebastian/comparator" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/sebastian/diff" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/sebastian/environment" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/sebastian/exporter" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/sebastian/global-state" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/sebastian/object-enumerator" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/sebastian/recursion-context" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/sebastian/resource-operations" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/sebastian/version" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/swiftmailer/swiftmailer" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/console" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/css-selector" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/debug" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/event-dispatcher" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/finder" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/http-foundation" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/http-kernel" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/polyfill-mbstring" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/process" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/routing" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/translation" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/var-dumper" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/symfony/yaml" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/tijsverkoyen/css-to-inline-styles" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/vlucas/phpdotenv" />
+          <root url="file://$USER_HOME$/Code/docfiks.dev/vendor/webmozart/assert" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="PHARS">
+        <CLASSES>
+          <root url="phar://$USER_HOME$/Code/docfiks.dev/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
+        </CLASSES>
+        <SOURCES>
+          <root url="phar://$USER_HOME$/Code/docfiks.dev/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>

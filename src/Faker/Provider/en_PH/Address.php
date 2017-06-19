@@ -390,8 +390,11 @@ class Address extends \Faker\Provider\en_US\Address
         'Malangas', 'Naga', 'Olutanga', 'Payao', 'Roseller Lim', 'Siay',
         'Talusan', 'Titay', 'Tungawan'
     );
-    
-    // https://en.wikipedia.org/wiki/Barangay
+
+    /**
+     * @link https://en.wikipedia.org/wiki/Barangay
+     * @var array
+     */
     protected static $barangay = array(
 
         // https://en.wikipedia.org/wiki/Baguio
@@ -431,35 +434,60 @@ class Address extends \Faker\Provider\en_US\Address
         //End of Baguio City Barangay
 
     );
-    
-    // https://en.wikipedia.org/wiki/Purok
+
+    /**
+     * @link https://en.wikipedia.org/wiki/Purok
+     * @var array
+     */
     protected static $purok = array(
         'Purok 1', 'Purok 2', 'Purok 3', 'Purok 4', 'Purok 5',
         'Purok 6', 'Purok 7', 'Purok 8', 'Purok 9', 'Purok 10',
         'Purok 11', 'Purok 12', 'Purok 13', 'Purok 14', 'Purok 15',
         'Purok 16', 'Purok 17', 'Purok 18', 'Purok 19', 'Purok 20'
     );
-    
+
+    /**
+     * returns a random Purok
+     * also known as zone, is a political subdivision of a Barangay
+     * It is the smallest unit of governance in the Philippines
+     * @return string
+     */
     public function purok()
     {
         return static::randomElement(static::$purok);
     }
-    
+
+    /**
+     * Returns a random Province
+     * @return string
+     */
     public function province()
     {
         return static::randomElement(static::$province);
     }
 
+    /**
+     * Returns a random City
+     * @return string
+     */
     public function city()
     {
         return static::randomElement(static::$city);
     }
 
+    /**
+     * Returns a random Municipality
+     * @return string
+     */
     public function municipality()
     {
         return static::randomElement(static::$municipality);
     }
 
+    /**
+     * Returns a random Barangay
+     * @return string
+     */
     public function barangay()
     {
         return static::randomElement(static::$barangay);
