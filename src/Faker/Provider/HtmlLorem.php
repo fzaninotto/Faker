@@ -67,6 +67,9 @@ class HtmlLorem extends Base
     }
 
     /**
+     * @param int $maxDepth
+     * @param int $maxWidth
+     *
      * @return string
      */
     public function randomBody($maxDepth = 4, $maxWidth = 4)
@@ -80,6 +83,9 @@ class HtmlLorem extends Base
     }
 
     /**
+     * @param int $maxDepth
+     * @param int $maxWidth
+     *
      * @return string
      */
     public function randomBodyFragments($maxDepth = 4, $maxWidth = 4)
@@ -153,7 +159,7 @@ class HtmlLorem extends Base
                 $node->setAttribute("class", $this->generator->word);
                 break;
             case 2:
-            	  $randomNumber = $this->generator->randomNumber(5);
+                $randomNumber = $this->generator->randomNumber(5);
                 $node->setAttribute("id", (string)$randomNumber);
                 break;
         }
