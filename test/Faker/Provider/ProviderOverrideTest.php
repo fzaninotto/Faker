@@ -77,6 +77,10 @@ class ProviderOverrideTest extends \PHPUnit_Framework_TestCase
      */
     public function testInternet($locale = null)
     {
+        if ($locale && $locale !== 'en_US' && !class_exists('Transliterator')) {
+            $this->markTestSkipped('Transliterator class not available (intl extension)');
+        }
+
         $faker = Faker\Factory::create($locale);
 
         $this->assertRegExp(static::TEST_STRING_REGEX, $faker->userName);

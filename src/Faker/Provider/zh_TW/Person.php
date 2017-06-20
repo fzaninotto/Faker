@@ -4,6 +4,39 @@ namespace Faker\Provider\zh_TW;
 
 class Person extends \Faker\Provider\Person
 {
+    /**
+     * @see https://zh.wikipedia.org/wiki/%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E5%9C%8B%E6%B0%91%E8%BA%AB%E5%88%86%E8%AD%89
+     */
+    public static $idBirthplaceCode = array(
+        'A' => 10,
+        'B' => 11,
+        'C' => 12,
+        'D' => 13,
+        'E' => 14,
+        'F' => 15,
+        'G' => 16,
+        'H' => 17,
+        'I' => 34,
+        'J' => 18,
+        'K' => 19,
+        'M' => 21,
+        'N' => 22,
+        'O' => 35,
+        'p' => 23,
+        'Q' => 24,
+        'T' => 27,
+        'U' => 28,
+        'V' => 29,
+        'W' => 32,
+        'X' => 30,
+        'Z' => 33
+    );
+
+    /**
+     * @see https://zh.wikipedia.org/wiki/%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E5%9C%8B%E6%B0%91%E8%BA%AB%E5%88%86%E8%AD%89
+     */
+    public static $idDigitValidator = array(1, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1);
+
     protected static $maleNameFormats = array(
         '{{lastName}}{{firstNameMale}}',
     );
@@ -128,5 +161,41 @@ class Person extends \Faker\Provider\Person
     public static function suffix()
     {
         return '';
+    }
+
+    /**
+     * @param string $gender Person::GENDER_MALE || Person::GENDER_FEMALE
+     *
+     * @see https://en.wikipedia.org/wiki/National_Identification_Card_(Republic_of_China)
+     *
+     * @return string Length 10 alphanumeric characters, begins with 1 latin character (birthplace),
+     * 1 number (gender) and then 8 numbers (the last one is check digit).
+     */
+    public function personalIdentityNumber($gender = null)
+    {
+        $birthPlace = self::randomKey(self::$idBirthplaceCode);
+        $birthPlaceCode = self::$idBirthplaceCode[$birthPlace];
+
+        $gender = ($gender != null) ? $gender : self::randomElement(array(self::GENDER_FEMALE, self::GENDER_MALE));
+        $genderCode = ($gender === self::GENDER_MALE) ? 1 : 2;
+
+        $randomNumberCode = self::randomNumber(7, true);
+
+        $codes = str_split($birthPlaceCode . $genderCode . $randomNumberCode);
+        $total = 0;
+
+        foreach ($codes as $key => $code) {
+            $total += $code * self::$idDigitValidator[$key];
+        }
+
+        $checkSumDigit = 10 - ($total % 10);
+
+        if ($checkSumDigit == 10) {
+            $checkSumDigit = 0;
+        }
+
+        $id = $birthPlace . $genderCode . $randomNumberCode . $checkSumDigit;
+
+        return $id;
     }
 }

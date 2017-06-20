@@ -6,7 +6,6 @@ use Faker\Provider\Miscellaneous;
 
 class MiscellaneousTest extends \PHPUnit_Framework_TestCase
 {
-
     public function testBoolean()
     {
         $this->assertContains(Miscellaneous::boolean(), array(true, false));
@@ -50,5 +49,10 @@ class MiscellaneousTest extends \PHPUnit_Framework_TestCase
     public function testCurrencyCode()
     {
         $this->assertRegExp('/^[A-Z]{3}$/', Miscellaneous::currencyCode());
+    }
+
+    public function testEmoji()
+    {
+        $this->assertRegExp('/^[\x{1F600}-\x{1F636}]$/u', Miscellaneous::emoji());
     }
 }

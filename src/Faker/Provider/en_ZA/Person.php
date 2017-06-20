@@ -2,6 +2,9 @@
 
 namespace Faker\Provider\en_ZA;
 
+use Faker\Calculator\Luhn;
+use Faker\Provider\DateTime;
+
 class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = array(
@@ -15,7 +18,7 @@ class Person extends \Faker\Provider\Person
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
-        '{{titleFemale}} {{$firstNameFemale}} {{lastName}}',
+        '{{titleFemale}} {{firstNameFemale}} {{lastName}}',
     );
 
     protected static $firstNameMale = array(
@@ -123,4 +126,39 @@ class Person extends \Faker\Provider\Person
         'Hughes', 'Hanekom', 'Ally', 'Schmidt', 'Butler', 'Mtsweni', 'Maphumulo', 'Manamela', 'Hoffman', 'Wolmarans', 'Duma',
         'Pule', 'Hlophe', 'Miya', 'Moagi',
     );
+
+    /**
+     * @link https://en.wikipedia.org/wiki/National_identification_number#South_Africa
+     *
+     * @param int    $minAge
+     * @param int    $maxAge
+     * @param bool   $citizen
+     * @param string $gender
+     *
+     * @return string
+     */
+    public function idNumber(\DateTime $birthdate = null, $citizen = true, $gender = null)
+    {
+        if (!$birthdate) {
+            $birthdate = $this->generator->dateTimeThisCentury();
+        }
+        $birthDateString = $birthdate->format('ymd');
+        switch (strtolower($gender)) {
+            case static::GENDER_FEMALE:
+                $genderDigit = self::numberBetween(0, 4);
+                break;
+            case static::GENDER_MALE:
+                $genderDigit = self::numberBetween(5, 9);
+                break;
+            default:
+                $genderDigit = self::numberBetween(0, 9);
+        }
+        $sequenceDigits = str_pad(self::randomNumber(3), 3, 0, STR_PAD_BOTH);
+        $citizenDigit = ($citizen === true) ? '0' : '1';
+        $raceDigit = self::randomNumber(1);
+
+        $partialIdNumber = $birthDateString . $genderDigit . $sequenceDigits . $citizenDigit . $raceDigit;
+
+        return $partialIdNumber . Luhn::computeCheckDigit($partialIdNumber);
+    }
 }

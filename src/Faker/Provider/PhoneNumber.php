@@ -22,7 +22,7 @@ class PhoneNumber extends Base
      */
     public function e164PhoneNumber()
     {
-        $formats = array('+#############');
+        $formats = array('+%############');
         return static::numerify($this->generator->parse(static::randomElement($formats)));
     }
 

@@ -3,32 +3,35 @@
 namespace Faker\Provider;
 
 use Faker\Generator;
+use Faker\UniqueGenerator;
 
 class HtmlLorem extends Base
 {
 
-    protected static $HTML_TAG = "html";
-    protected static $HEAD_TAG = "head";
-    protected static $BODY_TAG = "body";
-    protected static $DIV_TAG = "div";
-    protected static $P_TAG = "p";
-    protected static $A_TAG = "a";
-    protected static $SPAN_TAG = "span";
-    protected static $TABLE_TAG = "table";
-    protected static $THEAD_TAG = "thead";
-    protected static $TBODY_TAG = "tbody";
-    protected static $TR_TAG = "tr";
-    protected static $TD_TAG = "td";
-    protected static $TH_TAG = "th";
-    protected static $UL_TAG = "ul";
-    protected static $LI_TAG = "li";
-    protected static $H_TAG = "h";
-    protected static $B_TAG = "b";
-    protected static $I_TAG = "i";
-    protected static $TITLE_TAG = "title";
-    protected static $FORM_TAG = "form";
-    protected static $INPUT_TAG = "input";
-    protected static $LABEL_TAG = "label";
+    const HTML_TAG = "html";
+    const HEAD_TAG = "head";
+    const BODY_TAG = "body";
+    const DIV_TAG = "div";
+    const P_TAG = "p";
+    const A_TAG = "a";
+    const SPAN_TAG = "span";
+    const TABLE_TAG = "table";
+    const THEAD_TAG = "thead";
+    const TBODY_TAG = "tbody";
+    const TR_TAG = "tr";
+    const TD_TAG = "td";
+    const TH_TAG = "th";
+    const UL_TAG = "ul";
+    const LI_TAG = "li";
+    const H_TAG = "h";
+    const B_TAG = "b";
+    const I_TAG = "i";
+    const TITLE_TAG = "title";
+    const FORM_TAG = "form";
+    const INPUT_TAG = "input";
+    const LABEL_TAG = "label";
+
+    private $idGenerator;
 
     public function __construct(Generator $generator)
     {
@@ -38,11 +41,15 @@ class HtmlLorem extends Base
     }
 
     /**
+     * @param integer $maxDepth
+     * @param integer $maxWidth
+     *
      * @return string
      */
     public function randomHtml($maxDepth = 4, $maxWidth = 4)
     {
         $document = new \DOMDocument();
+        $this->idGenerator = new UniqueGenerator($this->generator);
 
         $head = $document->createElement("head");
         $this->addRandomTitle($head);
@@ -146,7 +153,7 @@ class HtmlLorem extends Base
                 $node->setAttribute("class", $this->generator->word);
                 break;
             case 2:
-            	$randomNumber = $this->generator->randomNumber(5);
+            	  $randomNumber = $this->generator->randomNumber(5);
                 $node->setAttribute("id", (string)$randomNumber);
                 break;
         }
@@ -155,7 +162,7 @@ class HtmlLorem extends Base
     private function addRandomP(\DOMElement $element, $maxLength = 10)
     {
 
-        $node = $element->ownerDocument->createElement(HtmlLorem::$P_TAG);
+        $node = $element->ownerDocument->createElement(static::P_TAG);
         $node->textContent = $this->generator->sentence(mt_rand(1, $maxLength));
         $element->appendChild($node);
     }
@@ -169,7 +176,7 @@ class HtmlLorem extends Base
     private function addRandomA(\DOMElement $element, $maxLength = 10)
     {
         $text = $element->ownerDocument->createTextNode($this->generator->sentence(mt_rand(1, $maxLength)));
-        $node = $element->ownerDocument->createElement(HtmlLorem::$A_TAG);
+        $node = $element->ownerDocument->createElement(static::A_TAG);
         $node->setAttribute("href", $this->generator->safeEmailDomain);
         $node->appendChild($text);
         $element->appendChild($node);
@@ -178,14 +185,14 @@ class HtmlLorem extends Base
     private function addRandomTitle(\DOMElement $element, $maxLength = 10)
     {
         $text = $element->ownerDocument->createTextNode($this->generator->sentence(mt_rand(1, $maxLength)));
-        $node = $element->ownerDocument->createElement(HtmlLorem::$TITLE_TAG);
+        $node = $element->ownerDocument->createElement(static::TITLE_TAG);
         $node->appendChild($text);
         $element->appendChild($node);
     }
 
     private function addRandomH(\DOMElement $element, $maxLength = 10)
     {
-        $h = HtmlLorem::$H_TAG . (string)mt_rand(1, 3);
+        $h = static::H_TAG . (string)mt_rand(1, 3);
         $text = $element->ownerDocument->createTextNode($this->generator->sentence(mt_rand(1, $maxLength)));
         $node = $element->ownerDocument->createElement($h);
         $node->appendChild($text);
@@ -196,7 +203,7 @@ class HtmlLorem extends Base
     private function addRandomB(\DOMElement $element, $maxLength = 10)
     {
         $text = $element->ownerDocument->createTextNode($this->generator->sentence(mt_rand(1, $maxLength)));
-        $node = $element->ownerDocument->createElement(HtmlLorem::$B_TAG);
+        $node = $element->ownerDocument->createElement(static::B_TAG);
         $node->appendChild($text);
         $element->appendChild($node);
     }
@@ -204,7 +211,7 @@ class HtmlLorem extends Base
     private function addRandomI(\DOMElement $element, $maxLength = 10)
     {
         $text = $element->ownerDocument->createTextNode($this->generator->sentence(mt_rand(1, $maxLength)));
-        $node = $element->ownerDocument->createElement(HtmlLorem::$I_TAG);
+        $node = $element->ownerDocument->createElement(static::I_TAG);
         $node->appendChild($text);
         $element->appendChild($node);
     }
@@ -212,7 +219,7 @@ class HtmlLorem extends Base
     private function addRandomSpan(\DOMElement $element, $maxLength = 10)
     {
         $text = $element->ownerDocument->createTextNode($this->generator->sentence(mt_rand(1, $maxLength)));
-        $node = $element->ownerDocument->createElement(HtmlLorem::$SPAN_TAG);
+        $node = $element->ownerDocument->createElement(static::SPAN_TAG);
         $node->appendChild($text);
         $element->appendChild($node);
     }
@@ -220,29 +227,29 @@ class HtmlLorem extends Base
     private function addLoginForm(\DOMElement $element)
     {
 
-        $textInput = $element->ownerDocument->createElement(HtmlLorem::$INPUT_TAG);
+        $textInput = $element->ownerDocument->createElement(static::INPUT_TAG);
         $textInput->setAttribute("type", "text");
         $textInput->setAttribute("id", "username");
 
-        $textLabel = $element->ownerDocument->createElement(HtmlLorem::$LABEL_TAG);
+        $textLabel = $element->ownerDocument->createElement(static::LABEL_TAG);
         $textLabel->setAttribute("for", "username");
         $textLabel->textContent = $this->generator->word;
 
-        $passwordInput = $element->ownerDocument->createElement(HtmlLorem::$INPUT_TAG);
+        $passwordInput = $element->ownerDocument->createElement(static::INPUT_TAG);
         $passwordInput->setAttribute("type", "password");
         $passwordInput->setAttribute("id", "password");
 
-        $passwordLabel = $element->ownerDocument->createElement(HtmlLorem::$LABEL_TAG);
+        $passwordLabel = $element->ownerDocument->createElement(static::LABEL_TAG);
         $passwordLabel->setAttribute("for", "password");
         $passwordLabel->textContent = $this->generator->word;
 
-        $submit = $element->ownerDocument->createElement(HtmlLorem::$INPUT_TAG);
+        $submit = $element->ownerDocument->createElement(static::INPUT_TAG);
         $submit->setAttribute("type", "submit");
         $submit->setAttribute("value", $this->generator->word);
 
-        $submit = $element->ownerDocument->createElement(HtmlLorem::$FORM_TAG);
+        $submit = $element->ownerDocument->createElement(static::FORM_TAG);
         $submit->setAttribute("action", $this->generator->safeEmailDomain);
-        $submit->SetAttribute("method", "POST");
+        $submit->setAttribute("method", "POST");
         $submit->appendChild($textLabel);
         $submit->appendChild($textInput);
         $submit->appendChild($passwordLabel);
@@ -255,25 +262,25 @@ class HtmlLorem extends Base
         $rows = mt_rand(1, $maxRows);
         $cols = mt_rand(1, $maxCols);
 
-        $table = $element->ownerDocument->createElement(HtmlLorem::$TABLE_TAG);
-        $thead = $element->ownerDocument->createElement(HtmlLorem::$THEAD_TAG);
-        $tbody = $element->ownerDocument->createElement(HtmlLorem::$TBODY_TAG);
+        $table = $element->ownerDocument->createElement(static::TABLE_TAG);
+        $thead = $element->ownerDocument->createElement(static::THEAD_TAG);
+        $tbody = $element->ownerDocument->createElement(static::TBODY_TAG);
 
         $table->appendChild($thead);
         $table->appendChild($tbody);
 
-        $tr = $element->ownerDocument->createElement(HtmlLorem::$TR_TAG);
+        $tr = $element->ownerDocument->createElement(static::TR_TAG);
         $thead->appendChild($tr);
         for ($i = 0; $i < $cols; $i++) {
-            $th = $element->ownerDocument->createElement(HtmlLorem::$TH_TAG);
+            $th = $element->ownerDocument->createElement(static::TH_TAG);
             $th->textContent = $this->generator->sentence(mt_rand(1, $maxTitle));
             $tr->appendChild($th);
         }
         for ($i = 0; $i < $rows; $i++) {
-            $tr = $element->ownerDocument->createElement(HtmlLorem::$TR_TAG);
+            $tr = $element->ownerDocument->createElement(static::TR_TAG);
             $tbody->appendChild($tr);
             for ($j = 0; $j < $cols; $j++) {
-                $th = $element->ownerDocument->createElement(HtmlLorem::$TD_TAG);
+                $th = $element->ownerDocument->createElement(static::TD_TAG);
                 $th->textContent = $this->generator->sentence(mt_rand(1, $maxLength));
                 $tr->appendChild($th);
             }
@@ -284,9 +291,9 @@ class HtmlLorem extends Base
     private function addRandomUL(\DOMElement $element, $maxItems = 11, $maxLength = 4)
     {
         $num = mt_rand(1, $maxItems);
-        $ul = $element->ownerDocument->createElement(HtmlLorem::$UL_TAG);
+        $ul = $element->ownerDocument->createElement(static::UL_TAG);
         for ($i = 0; $i < $num; $i++) {
-            $li = $element->ownerDocument->createElement(HtmlLorem::$LI_TAG);
+            $li = $element->ownerDocument->createElement(static::LI_TAG);
             $li->textContent = $this->generator->sentence(mt_rand(1, $maxLength));
             $ul->appendChild($li);
         }

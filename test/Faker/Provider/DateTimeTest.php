@@ -50,6 +50,66 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
+    public function testDateTimeThisCentury()
+    {
+        $date = DateTimeProvider::dateTimeThisCentury();
+        $this->assertInstanceOf('\DateTime', $date);
+        $this->assertGreaterThanOrEqual(new \DateTime('-100 year'), $date);
+        $this->assertLessThanOrEqual(new \DateTime(), $date);
+        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
+    }
+
+    public function testDateTimeThisDecade()
+    {
+        $date = DateTimeProvider::dateTimeThisDecade();
+        $this->assertInstanceOf('\DateTime', $date);
+        $this->assertGreaterThanOrEqual(new \DateTime('-10 year'), $date);
+        $this->assertLessThanOrEqual(new \DateTime(), $date);
+        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
+    }
+
+    public function testDateTimeThisYear()
+    {
+        $date = DateTimeProvider::dateTimeThisYear();
+        $this->assertInstanceOf('\DateTime', $date);
+        $this->assertGreaterThanOrEqual(new \DateTime('-1 year'), $date);
+        $this->assertLessThanOrEqual(new \DateTime(), $date);
+        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
+    }
+
+    public function testDateTimeThisMonth()
+    {
+        $date = DateTimeProvider::dateTimeThisMonth();
+        $this->assertInstanceOf('\DateTime', $date);
+        $this->assertGreaterThanOrEqual(new \DateTime('-1 month'), $date);
+        $this->assertLessThanOrEqual(new \DateTime(), $date);
+        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
+    }
+
+    public function testDateTimeThisCenturyWithTimezone()
+    {
+        $date = DateTimeProvider::dateTimeThisCentury('now', 'America/New_York');
+        $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
+    }
+
+    public function testDateTimeThisDecadeWithTimezone()
+    {
+        $date = DateTimeProvider::dateTimeThisDecade('now', 'America/New_York');
+        $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
+    }
+
+    public function testDateTimeThisYearWithTimezone()
+    {
+        $date = DateTimeProvider::dateTimeThisYear('now', 'America/New_York');
+        $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
+    }
+
+    public function testDateTimeThisMonthWithTimezone()
+    {
+        $date = DateTimeProvider::dateTimeThisMonth('now', 'America/New_York');
+        $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
+    }
+
     public function testIso8601()
     {
         $date = DateTimeProvider::iso8601();
@@ -103,7 +163,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
     {
         $date = DateTimeProvider::dateTimeInInterval($start, $interval);
         $this->assertInstanceOf('\DateTime', $date);
-        
+
         $_interval = \DateInterval::createFromDateString($interval);
         $_start = new \DateTime($start);
         if ($isInFuture) {

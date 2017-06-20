@@ -161,18 +161,19 @@ class Base
     /**
      * Returns randomly ordered subsequence of $count elements from a provided array
      *
-     * @param  array            $array Array to take elements from. Defaults to a-f
-     * @param  integer          $count Number of elements to take.
+     * @param  array            $array           Array to take elements from. Defaults to a-f
+     * @param  integer          $count           Number of elements to take.
+     * @param  boolean          $allowDuplicates Allow elements to be picked several times. Defaults to false
      * @throws \LengthException When requesting more elements than provided
      *
      * @return array New array with $count elements from $array
      */
-    public static function randomElements(array $array = array('a', 'b', 'c'), $count = 1)
+    public static function randomElements(array $array = array('a', 'b', 'c'), $count = 1, $allowDuplicates = false)
     {
         $allKeys = array_keys($array);
         $numKeys = count($allKeys);
 
-        if ($numKeys < $count) {
+        if (!$allowDuplicates && $numKeys < $count) {
             throw new \LengthException(sprintf('Cannot get %d elements, only %d in array', $count, $numKeys));
         }
 
@@ -182,11 +183,14 @@ class Base
 
         while ($numElements < $count) {
             $num = mt_rand(0, $highKey);
-            if (isset($keys[$num])) {
-                continue;
+
+            if (!$allowDuplicates) {
+                if (isset($keys[$num])) {
+                    continue;
+                }
+                $keys[$num] = true;
             }
 
-            $keys[$num] = true;
             $elements[] = $array[$allKeys[$num]];
             $numElements++;
         }
@@ -256,7 +260,7 @@ class Base
      * Returns a shuffled version of the array.
      *
      * This function does not mutate the original array. It uses the
-     * Fisher–Yates algorithm, which is unbiaised, together with a Mersenne
+     * Fisher–Yates algorithm, which is unbiased, together with a Mersenne
      * twister random generator. This function is therefore more random than
      * PHP's shuffle() function, and it is seedable.
      *
@@ -272,7 +276,7 @@ class Base
         $shuffledArray = array();
         $i = 0;
         reset($array);
-        while (list($key, $value) = each($array)) {
+        foreach ($array as $key => $value) {
             if ($i == 0) {
                 $j = 0;
             } else {
@@ -293,7 +297,7 @@ class Base
      * Returns a shuffled version of the string.
      *
      * This function does not mutate the original string. It uses the
-     * Fisher–Yates algorithm, which is unbiaised, together with a Mersenne
+     * Fisher–Yates algorithm, which is unbiased, together with a Mersenne
      * twister random generator. This function is therefore more random than
      * PHP's shuffle() function, and it is seedable. Additionally, it is
      * UTF8 safe if the mb extension is available.
@@ -418,7 +422,7 @@ class Base
      * Regex delimiters '/.../' and begin/end markers '^...$' are ignored.
      *
      * Only supports a small subset of the regex syntax. For instance,
-     * unicode, negated classes, unbouned ranges, subpatterns, back references,
+     * unicode, negated classes, unbounded ranges, subpatterns, back references,
      * assertions, recursive patterns, and comments are not supported. Escaping
      * support is extremely fragile.
      *
