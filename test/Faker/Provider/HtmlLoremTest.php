@@ -29,7 +29,7 @@ class HtmlLoremTest extends \PHPUnit_Framework_TestCase
     public function testRandomBodyReturnsValidHTMLString(){
         $faker = new Generator();
         $faker->addProvider(new HtmlLorem($faker));
-        $node = $faker->randomBody(5, 5);
+        $node = $faker->randomHTMLBody(5, 5);
         $dom = new \DOMDocument();
         $isValidHtml = $dom->loadHTML($node);
         $this->assertTrue($isValidHtml);

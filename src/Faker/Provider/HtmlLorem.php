@@ -62,7 +62,7 @@ class HtmlLorem extends Base
     /**
      * @return string
      */
-    public function randomBody($maxDepth = 4, $maxWidth = 4)
+    public function randomHTMLBody($maxDepth = 4, $maxWidth = 4)
     {
         $document = new \DOMDocument();
 
@@ -77,7 +77,7 @@ class HtmlLorem extends Base
      */
     public function randomBodyFragments($maxDepth = 4, $maxWidth = 4)
     {
-        $html = $this->randomBody($maxDepth, $maxWidth);
+        $html = $this->randomHTMLBody($maxDepth, $maxWidth);
         $matches = array();
         preg_match("/\<body\>(.*)<\/body\>/", $html, $matches);
         return $matches[1];
