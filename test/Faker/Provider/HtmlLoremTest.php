@@ -5,42 +5,79 @@ namespace Faker\Test\Provider;
 use Faker\Generator;
 use Faker\Provider\HtmlLorem;
 
+/**
+ * Note that the tests in here include for loops to increase the chances of
+ * catching edge cases caused by the inherently random nature of the data.
+ */
 class HtmlLoremTest extends \PHPUnit_Framework_TestCase
 {
-
-    public function testProvider()
+    public function testRandomHtmlReturnsValidHTMLString()
     {
-        $faker = new Generator();
-        $faker->addProvider(new HtmlLorem($faker));
-        $node = $faker->randomHtml(6, 10);
-        $this->assertStringStartsWith("<html>", $node);
-        $this->assertStringEndsWith("</html>\n", $node);
+        for ($x = 1; $x <= 100; $x++) {
+            $faker = $this->setupFakerWithProvider();
+
+            $html = $faker->randomHtml(5, 5);
+
+            $this->assertHTMLIsValid($html);
+            $this->assertStringStartsWith("<html>", $html);
+            $this->assertStringEndsWith("</html>\n", $html);
+            $this->assertHTMLContainsHumanReadableContent($html);
+        }
     }
 
-    public function testRandomHtmlReturnsValidHTMLString(){
-        $faker = new Generator();
-        $faker->addProvider(new HtmlLorem($faker));
-        $node = $faker->randomHtml(5, 5);
-        $dom = new \DOMDocument();
-        $error = $dom->loadHTML($node);
-        $this->assertTrue($error);
+    public function testRandomBodyReturnsValidHTMLBodyString()
+    {
+        for ($x = 1; $x <= 100; $x++) {
+            $faker = $this->setupFakerWithProvider();
+
+            $node = $faker->randomHTMLBody(5, 5);
+
+            $this->assertHTMLIsValid($node);
+            $this->assertStringStartsWith("<body>", $node);
+            $this->assertStringEndsWith("</body>\n", $node);
+            $this->assertHTMLContainsHumanReadableContent($node);
+        }
     }
 
-    public function testRandomBodyReturnsValidHTMLString(){
-        $faker = new Generator();
-        $faker->addProvider(new HtmlLorem($faker));
-        $node = $faker->randomHTMLBody(5, 5);
+    public function testRandomHTMLFragmentsReturnsValidHTMLFragmentString()
+    {
+        for ($x = 1; $x <= 100; $x++) {
+            $faker = $this->setupFakerWithProvider();
+
+            $html = $faker->randomHTMLFragments(5, 5);
+
+            $this->assertStringStartsWith("<", $html);
+            $this->assertStringEndsWith(">", $html);
+            $this->assertHTMLContainsHumanReadableContent($html);
+        }
+    }
+
+    /**
+     * @param string $html
+     * @return void
+     */
+    private function assertHTMLIsValid($html)
+    {
         $dom = new \DOMDocument();
-        $isValidHtml = $dom->loadHTML($node);
+        $isValidHtml = $dom->loadHTML($html);
         $this->assertTrue($isValidHtml);
     }
 
-    public function testRandomBodyFragment(){
-        $faker = new Generator();
-        $faker->addProvider(new HtmlLorem($faker));
-        $fragment = $faker->randomBodyFragments(5, 5);
-        $this->assertStringStartsWith("<", $fragment);
-        $this->assertStringEndsWith(">", $fragment);
+    /**
+     * @param string $html
+     */
+    private function assertHTMLContainsHumanReadableContent($html)
+    {
+        $this->assertNotEmpty(strip_tags($html));
     }
 
+    /**
+     * @return Generator
+     */
+    private function setupFakerWithProvider()
+    {
+        $faker = new Generator();
+        $faker->addProvider(new HtmlLorem($faker));
+        return $faker;
+    }
 }
