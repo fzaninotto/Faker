@@ -2,7 +2,7 @@
 
 namespace Faker\Provider;
 
-class Internet extends \Faker\Provider\Base
+class Internet extends Base
 {
     protected static $freeEmailDomain = array('gmail.com', 'yahoo.com', 'hotmail.com');
     protected static $tld = array('com', 'com', 'com', 'com', 'com', 'com', 'biz', 'info', 'net', 'org');
@@ -36,7 +36,7 @@ class Internet extends \Faker\Provider\Base
     public function email()
     {
         $format = static::randomElement(static::$emailFormats);
-        
+
         return $this->generator->parse($format);
     }
 
@@ -93,7 +93,18 @@ class Internet extends \Faker\Provider\Base
         $format = static::randomElement(static::$userNameFormats);
         $username = static::bothify($this->generator->parse($format));
 
-        return strtolower(static::transliterate($username));
+        $username = strtolower(static::transliterate($username));
+
+        // check if transliterate() didn't support the language and removed all letters
+        if (trim($username, '._') === '') {
+            throw new \Exception('userName failed with the selected locale. Try a different locale or activate the "intl" PHP extension.');
+        }
+
+        // clean possible trailing dots from first/last names
+        $username = str_replace('..', '.', $username);
+        $username = rtrim($username, '.');
+
+        return $username;
     }
     /**
      * @example 'fY4èHdZv68'
@@ -120,7 +131,17 @@ class Internet extends \Faker\Provider\Base
     {
         $lastName = $this->generator->format('lastName');
 
-        return strtolower(static::transliterate($lastName));
+        $lastName = strtolower(static::transliterate($lastName));
+
+        // check if transliterate() didn't support the language and removed all letters
+        if (trim($lastName, '._') === '') {
+            throw new \Exception('domainWord failed with the selected locale. Try a different locale or activate the "intl" PHP extension.');
+        }
+
+        // clean possible trailing dot from last name
+        $lastName = rtrim($lastName, '.');
+
+        return $lastName;
     }
 
     /**
@@ -185,13 +206,11 @@ class Internet extends \Faker\Provider\Base
     {
         if (static::numberBetween(0, 1) === 0) {
             // 10.x.x.x range
-            $ip = long2ip(static::numberBetween(ip2long("10.0.0.0"), ip2long("10.255.255.255")));
-        } else {
-            // 192.168.x.x range
-            $ip = long2ip(static::numberBetween(ip2long("192.168.0.0"), ip2long("192.168.255.255")));
+            return long2ip(static::numberBetween(ip2long("10.0.0.0"), ip2long("10.255.255.255")));
         }
 
-        return $ip;
+        // 192.168.x.x range
+        return long2ip(static::numberBetween(ip2long("192.168.0.0"), ip2long("192.168.255.255")));
     }
 
     /**
@@ -209,8 +228,12 @@ class Internet extends \Faker\Provider\Base
 
     protected static function transliterate($string)
     {
+        if (0 === preg_match('/[^A-Za-z0-9_.]/', $string)) {
+            return $string;
+        }
+
         $transId = 'Any-Latin; Latin-ASCII; NFD; [:Nonspacing Mark:] Remove; NFC;';
-        if (function_exists('transliterator_transliterate') && $transliterator = \Transliterator::create($transId)) {
+        if (class_exists('Transliterator') && $transliterator = \Transliterator::create($transId)) {
             $transString = $transliterator->transliterate($string);
         } else {
             $transString = static::toAscii($string);

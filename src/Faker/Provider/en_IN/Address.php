@@ -4,7 +4,6 @@ namespace Faker\Provider\en_IN;
 
 class Address extends \Faker\Provider\Address
 {
-
     protected static $city = array(
         'Agra','Ahmedabad','Ajmer','Alwar',
         'Bengaluru','Bhubhaneshwar','Bhopal','Bikaner',
@@ -28,6 +27,39 @@ class Address extends \Faker\Provider\Address
         'Warangal',
     );
 
+    protected static $state = array(
+        
+        // States
+        'Andhra Pradesh', 'Arunachal Pradesh', 'Assam',
+        'Bihar',
+        'Chhattisgarh',
+        'Goa', 'Gujarat',
+        'Haryana', 'Himachal Pradesh',
+        'Jammu and Kashmir',
+        'Jharkhand',
+        'Karnataka', 'Kerala',
+        'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram',
+        'Nagaland',
+        'Odisha',
+        'Punjab',
+        'Rajasthan',
+        'Sikkim',
+        'Tamil Nadu', 'Telangana', 'Tripura',
+        'Uttar Pradesh', 'Uttarakhand',
+        'West Bengal',
+        
+        // Union Territories
+        'Andaman and Nicobar Islands',
+        'Chandigarh',
+        'Dadra and Nagar Haveli', 'Daman and Diu', 'Delhi',
+        'Lakshadweep',
+        'Puducherry'
+    );
+
+    protected static $stateAbbr = array(
+       'AP', 'AR', 'AS', 'BR', 'CG', 'GA', 'GJ', 'HR', 'HP', 'JK', 'JH', 'KA', 'KL', 'MP', 'MH', 'MN', 'ML', 'MZ', 'NL', 'OD', 'PB', 'RJ', 'SK', 'TN', 'TS', 'TR', 'UP', 'UK', 'WB', 'AN', 'CH', 'DN', 'DD', 'DL', 'LD', 'PY'
+    );
+
     protected static $country = array(
         'Afghanistan', 'Albania', 'Algeria', 'American Samoa', 'Andorra', 'Angola', 'Anguilla', 'Antarctica (the territory South of 60 deg S)', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan',
         'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Bouvet Island (Bouvetoya)', 'Brazil', 'British Indian Ocean Territory (Chagos Archipelago)', 'British Virgin Islands', 'Brunei Darussalam', 'Bulgaria', 'Burkina Faso', 'Burundi',
@@ -44,7 +76,7 @@ class Address extends \Faker\Provider\Address
         'Macao', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Martinique', 'Mauritania', 'Mauritius', 'Mayotte', 'Mexico', 'Micronesia', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat', 'Morocco', 'Mozambique', 'Myanmar',
         'Namibia', 'Nauru', 'Nepal', 'Netherlands Antilles', 'Netherlands', 'New Caledonia', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Niue', 'Norfolk Island', 'Northern Mariana Islands', 'Norway',
         'Oman',
-        'Pakistan', 'Palau', 'Palestinian Territory', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Pitcairn Islands', 'Poland', 'Portugal', 'Puerto Rico',
+        'Pakistan', 'Palau', 'Palestinian Territories', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Pitcairn Islands', 'Poland', 'Portugal', 'Puerto Rico',
         'Qatar',
         'Reunion', 'Romania', 'Russian Federation', 'Rwanda',
         'Saint Barthelemy', 'Saint Helena', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Martin', 'Saint Pierre and Miquelon', 'Saint Vincent and the Grenadines', 'Samoa', 'San Marino', 'Sao Tome and Principe', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia (Slovak Republic)', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'South Georgia and the South Sandwich Islands', 'Spain', 'Sri Lanka', 'Sudan', 'Suriname', 'Svalbard & Jan Mayen Islands', 'Swaziland', 'Sweden', 'Switzerland', 'Syrian Arab Republic',
@@ -74,7 +106,7 @@ class Address extends \Faker\Provider\Address
     protected static $postcode = array(
         '1#####','2#####','3#####','4#####','5#####',
     );
-    protected static $localityFormats = array (
+    protected static $localityFormats = array(
         '{{firstName}}{{areaSuffix}}',
         '{{localityName}}'
     );
@@ -130,5 +162,21 @@ class Address extends \Faker\Provider\Address
     public function areaSuffix()
     {
         return static::randomElement(static::$areaSuffix);
+    }
+
+    /**
+     * @example 'Delhi'
+     */
+    public static function state()
+    {
+        return static::randomElement(static::$state);
+    }
+
+    /**
+     * @example 'DL'
+     */
+    public static function stateAbbr()
+    {
+        return static::randomElement(static::$stateAbbr);
     }
 }

@@ -250,4 +250,16 @@ class Company extends \Faker\Provider\Company
         }
         return $result;
     }
+
+    /**
+     * return standard VAT / Tax ID / Uniform Serial Number
+     *
+     * @example 28263822
+     *
+     * @return int
+     */
+    public function VAT()
+    {
+        return static::randomNumber(8, true);
+    }
 }

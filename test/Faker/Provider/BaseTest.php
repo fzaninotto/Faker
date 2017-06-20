@@ -547,5 +547,9 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         $this->assertContains('foo', $shuffled);
         $this->assertContains('bar', $shuffled);
         $this->assertContains('baz', $shuffled);
+
+        $allowDuplicates = BaseProvider::randomElements(array('foo', 'bar'), 3, true);
+        $this->assertCount(3, $allowDuplicates);
+        $this->assertContainsOnly('string', $allowDuplicates);
     }
 }

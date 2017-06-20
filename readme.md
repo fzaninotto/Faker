@@ -104,7 +104,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
     randomDigit             // 7
     randomDigitNotNull      // 5
-    randomNumber($nbDigits = NULL) // 79907610
+    randomNumber($nbDigits = NULL, $strict = false) // 79907610
     randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL) // 48.8932
     numberBetween($min = 1000, $max = 9000) // 8567
     randomLetter            // 'b'
@@ -187,10 +187,10 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     time($format = 'H:i:s', $max = 'now') // '20:49:42'
     dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = date_default_timezone_get()) // DateTime('2003-03-15 02:00:49', 'Africa/Lagos')
     dateTimeInInterval($startDate = '-30 years', $interval = '+ 5 days', $timezone = date_default_timezone_get()) // DateTime('2003-03-15 02:00:49', 'Antartica/Vostok')
-    dateTimeThisCentury($max = 'now')     // DateTime('1915-05-30 19:28:21')
-    dateTimeThisDecade($max = 'now')      // DateTime('2007-05-29 22:30:48')
-    dateTimeThisYear($max = 'now')        // DateTime('2011-02-27 20:52:14')
-    dateTimeThisMonth($max = 'now')       // DateTime('2011-10-23 13:46:23')
+    dateTimeThisCentury($max = 'now', $timezone = date_default_timezone_get())     // DateTime('1915-05-30 19:28:21', 'UTC')
+    dateTimeThisDecade($max = 'now', $timezone = date_default_timezone_get())      // DateTime('2007-05-29 22:30:48', 'Europe/Paris')
+    dateTimeThisYear($max = 'now', $timezone = date_default_timezone_get())        // DateTime('2011-02-27 20:52:14', 'Africa/Lagos')
+    dateTimeThisMonth($max = 'now', $timezone = date_default_timezone_get())       // DateTime('2011-10-23 13:46:23', 'Antarctica/Vostok')
     amPm($max = 'now')                    // 'pm'
     dayOfMonth($max = 'now')              // '04'
     dayOfWeek($max = 'now')               // 'Friday'
@@ -292,6 +292,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     countryCode   // UK
     languageCode  // en
     currencyCode  // EUR
+    emoji         // 😁
 
 ### `Faker\Provider\Biased`
 
@@ -375,7 +376,7 @@ try {
 
 ## Localization
 
-`Faker\Factory` can take a locale as an argument, to return localized data. If no localized provider is found, the factory fallbacks to the default locale (en_EN).
+`Faker\Factory` can take a locale as an argument, to return localized data. If no localized provider is found, the factory fallbacks to the default locale (en_US).
 
 ```php
 <?php
@@ -399,7 +400,7 @@ You can check available Faker locales in the source code, [under the `Provider` 
 
 ## Populating Entities Using an ORM or an ODM
 
-Faker provides adapters for Object-Relational and Object-Document Mappers (currently, [Propel](http://www.propelorm.org), [Doctrine2](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/), [CakePHP](http://cakephp.org), [Spot2](https://github.com/vlucas/spot2) and [Mandango](https://github.com/mandango/mandango) are supported). These adapters ease the population of databases through the Entity classes provided by an ORM library (or the population of document stores using Document classes provided by an ODM library).
+Faker provides adapters for Object-Relational and Object-Document Mappers (currently, [Propel](http://www.propelorm.org), [Doctrine2](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/), [CakePHP](http://cakephp.org), [Spot2](https://github.com/vlucas/spot2), [Mandango](https://github.com/mandango/mandango) and [Eloquent](https://laravel.com/docs/master/eloquent) are supported). These adapters ease the population of databases through the Entity classes provided by an ORM library (or the population of document stores using Document classes provided by an ODM library).
 
 To populate entities, create a new populator class (using a generator instance as parameter), then list the class and number of all the entities that must be generated. To launch the actual data population, call the `execute()` method.
 
@@ -564,7 +565,7 @@ $faker = Faker\Factory::create();
 <?xml version="1.0" encoding="UTF-8"?>
 <contacts>
 <?php for ($i=0; $i < 10; $i++): ?>
-  <contact firstName="<?php echo $faker->firstName ?>" lastName="<?php echo $faker->lastName ?>" email="<?php echo $faker->email ?>"/>
+  <contact firstName="<?php echo $faker->firstName ?>" lastName="<?php echo $faker->lastName ?>" email="<?php echo $faker->email ?>">
     <phone number="<?php echo $faker->phoneNumber ?>"/>
 <?php if ($faker->boolean(25)): ?>
     <birth date="<?php echo $faker->dateTimeThisCentury->format('Y-m-d') ?>" place="<?php echo $faker->city ?>"/>
@@ -600,7 +601,7 @@ Running this script produces a document looking like:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <contacts>
-  <contact firstName="Ona" lastName="Bednar" email="schamberger.frank@wuckert.com"/>
+  <contact firstName="Ona" lastName="Bednar" email="schamberger.frank@wuckert.com">
     <phone number="1-265-479-1196x714"/>
     <address>
       <street>182 Harrison Cove</street>
@@ -618,7 +619,7 @@ Illum commodi molestiae aut repellat id. Et sit consequuntur aut et ullam asperi
 ]]>
     </details>
   </contact>
-  <contact firstName="Aurelie" lastName="Paucek" email="alfonzo55@durgan.com"/>
+  <contact firstName="Aurelie" lastName="Paucek" email="alfonzo55@durgan.com">
     <phone number="863.712.1363x9425"/>
     <address>
       <street>90111 Hegmann Inlet</street>
@@ -629,7 +630,7 @@ Illum commodi molestiae aut repellat id. Et sit consequuntur aut et ullam asperi
     <company name="Krajcik-Grimes" catchPhrase="Switchable cohesive instructionset">
     </company>
   </contact>
-  <contact firstName="Clifton" lastName="Kshlerin" email="kianna.wiegand@framiwyman.info"/>
+  <contact firstName="Clifton" lastName="Kshlerin" email="kianna.wiegand@framiwyman.info">
     <phone number="692-194-4746"/>
     <address>
       <street>9791 Nona Corner</street>
@@ -640,7 +641,7 @@ Illum commodi molestiae aut repellat id. Et sit consequuntur aut et ullam asperi
     <company name="Rosenbaum-Aufderhar" catchPhrase="Realigned asynchronous encryption">
     </company>
   </contact>
-  <contact firstName="Alexandre" lastName="Orn" email="thelma37@erdmancorwin.biz"/>
+  <contact firstName="Alexandre" lastName="Orn" email="thelma37@erdmancorwin.biz">
     <phone number="189.655.8677x027"/>
     <address>
       <street>11161 Schultz Via</street>
@@ -659,7 +660,7 @@ Aut asperiores nihil eius repellendus. Vero nihil corporis voluptatem explicabo 
 ]]>
     </details>
   </contact>
-  <contact firstName="Katelynn" lastName="Kohler" email="reinger.trudie@stiedemannjakubowski.com"/>
+  <contact firstName="Katelynn" lastName="Kohler" email="reinger.trudie@stiedemannjakubowski.com">
     <phone number="(665)713-1657"/>
     <address>
       <street>6106 Nader Village Suite 753</street>
@@ -672,7 +673,7 @@ Aut asperiores nihil eius repellendus. Vero nihil corporis voluptatem explicabo 
       <director name="Arden Deckow" />
     </company>
   </contact>
-  <contact firstName="Blanca" lastName="Stark" email="tad27@feest.net"/>
+  <contact firstName="Blanca" lastName="Stark" email="tad27@feest.net">
     <phone number="168.719.4692x87177"/>
     <address>
       <street>7546 Kuvalis Plaza</street>
@@ -683,7 +684,7 @@ Aut asperiores nihil eius repellendus. Vero nihil corporis voluptatem explicabo 
     <company name="Upton, Braun and Rowe" catchPhrase="Visionary leadingedge pricingstructure">
     </company>
   </contact>
-  <contact firstName="Rene" lastName="Spencer" email="anibal28@armstrong.info"/>
+  <contact firstName="Rene" lastName="Spencer" email="anibal28@armstrong.info">
     <phone number="715.222.0095x175"/>
     <birth date="2008-08-07" place="Zulaufborough"/>
     <address>
@@ -704,7 +705,7 @@ Et similique qui non expedita quia dolorum. Ex rem incidunt ea accusantium tempo
 ]]>
     </details>
   </contact>
-  <contact firstName="Alessandro" lastName="Hagenes" email="tbreitenberg@oharagorczany.com"/>
+  <contact firstName="Alessandro" lastName="Hagenes" email="tbreitenberg@oharagorczany.com">
     <phone number="1-284-958-6768"/>
     <address>
       <street>1251 Koelpin Mission</street>
@@ -715,7 +716,7 @@ Et similique qui non expedita quia dolorum. Ex rem incidunt ea accusantium tempo
     <company name="Stiedemann-Bruen" catchPhrase="Re-engineered 24/7 success">
     </company>
   </contact>
-  <contact firstName="Novella" lastName="Rutherford" email="claud65@bogisich.biz"/>
+  <contact firstName="Novella" lastName="Rutherford" email="claud65@bogisich.biz">
     <phone number="(091)825-7971"/>
     <address>
       <street>6396 Langworth Hills Apt. 446</street>
@@ -727,7 +728,7 @@ Et similique qui non expedita quia dolorum. Ex rem incidunt ea accusantium tempo
       <director name="Earlene Bayer" />
     </company>
   </contact>
-  <contact firstName="Andreane" lastName="Mann" email="meggie17@ornbaumbach.com"/>
+  <contact firstName="Andreane" lastName="Mann" email="meggie17@ornbaumbach.com">
     <phone number="941-659-9982x5689"/>
     <birth date="1934-02-21" place="Stantonborough"/>
     <address>
@@ -759,6 +760,15 @@ Fugiat non in itaque sunt nobis totam. Sed nesciunt est deleniti cumque alias. R
 echo $faker->idNumber;      // ID number
 echo $faker->nationalIdNumber // Citizen ID number
 echo $faker->foreignerIdNumber // Foreigner ID number
+echo $faker->companyIdNumber // Company ID number
+```
+
+### `Faker\Provider\ar_SA\Payment`
+
+```php
+<?php
+
+echo $faker->bankAccountNumber // "SA0218IBYZVZJSEC8536V4XC"
 ```
 
 ### `Faker\Provider\at_AT\Payment`
@@ -846,6 +856,66 @@ echo $faker->cvr; // "32458723"
 echo $faker->p; // "5398237590"
 ```
 
+### `Faker\Provider\de_DE\Payment`
+
+```php
+<?php
+
+echo $faker->bankAccountNumber; // "DE41849025553661169313"
+echo $faker->bank; // "Volksbank Stuttgart"
+
+```
+
+### `Faker\Provider\en_HK\Address`
+
+```php
+<?php
+
+// Generates a fake town name based on the words commonly found in Hong Kong
+echo $faker->town; // "Yuen Long"
+
+// Generates a fake village name based on the words commonly found in Hong Kong
+echo $faker->village; // "O Tau"
+
+// Generates a fake estate name based on the words commonly found in Hong Kong
+echo $faker->estate; // "Ching Lai Court"
+
+```
+
+### `Faker\Provider\en_HK\Phone`
+
+```php
+<?php
+
+// Generates a Hong Kong mobile number (starting with 5, 6 or 9)
+echo $faker->mobileNumber; // "92150087"
+
+// Generates a Hong Kong landline number (starting with 2 or 3)
+echo $faker->landlineNumber; // "32750132"
+
+// Generates a Hong Kong fax number (starting with 7)
+echo $faker->faxNumber; // "71937729"
+
+```
+
+### `Faker\Provider\en_NG\Address`
+
+```php
+<?php
+
+// Generates a random region name
+echo $faker->region; // 'Katsina'
+```
+
+### `Faker\Provider\en_NG\Person`
+
+```php
+<?php
+
+// Generates a random person name
+echo $faker->name; // 'Oluwunmi Mayowa'
+```
+
 ### `Faker\Provider\en_NZ\Phone`
 
 ```php
@@ -879,6 +949,15 @@ echo $faker->bankRoutingNumber;  // '212240302'
 echo $faker->companyNumber; // 1999/789634/01
 ```
 
+### `Faker\Provider\en_ZA\Person`
+
+```php
+<?php
+
+// Generates a random national identification number
+echo $faker->idNumber; // 6606192211041
+```
+
 ### `Faker\Provider\en_ZA\PhoneNumber`
 
 ```php
@@ -898,6 +977,65 @@ echo $faker->mobileNumber; // 082 123 5555
 
 // Generates a Documento Nacional de Identidad (DNI) number
 echo $faker->dni; // '77446565E'
+```
+
+### `Faker\Provider\es_ES\Payment`
+
+```php
+<?php
+// Generates a Código de identificación Fiscal (CIF) number
+echo $faker->vat;           // "A35864370"
+```
+
+### `Faker\Provider\es_PE\Person`
+
+```php
+<?php
+
+// Generates a Peruvian Documento Nacional de Identidad (DNI) number
+echo $faker->dni; // '83367512'
+```
+
+### `Faker\Provider\fa_IR\Address`
+
+```php
+<?php
+
+// Generates a random building name
+echo $faker->building; // "ساختمان آفتاب"
+
+// Returns a random city name
+echo $faker->city // "استان زنجان"
+```
+
+### `Faker\Provider\fa_IR\Company`
+
+```php
+<?php
+
+// Generates a random contract type
+echo $faker->contract; // "رسمی"
+```
+
+### `Faker\Provider\fi_FI\Payment`
+
+```php
+<?php
+
+// Generates a random bank account number
+echo $faker->bankAccountNumber; // "FI8350799879879616"
+```
+
+### `Faker\Provider\fi_FI\Person`
+
+```php
+<?php
+
+//Generates a valid Finnish personal identity number (in Finnish - Henkilötunnus)
+echo $faker->personalIdentityNumber() // '170974-007J'
+
+//Since the numbers are different for male and female persons, optionally you can specify gender.
+echo $faker->personalIdentityNumber(\DateTime::createFromFormat('Y-m-d', '2015-12-14'), 'female') // '141215A520B'
 ```
 
 ### `Faker\Provider\fr_BE\Payment`
@@ -939,6 +1077,31 @@ echo $faker->siren; // 082 250 104
 echo $faker->siret; // 347 355 708 00224
 ```
 
+### `Faker\Provider\fr_FR\Person`
+
+```php
+<?php
+
+// Generates a random NIR / Sécurité Sociale number
+echo $faker->nir; // 1 88 07 35 127 571 - 19
+```
+
+### `Faker\Provider\he_IL\Payment`
+
+```php
+<?php
+
+echo $faker->bankAccountNumber // "IL392237392219429527697"
+```
+
+### `Faker\Provider\hr_HR\Payment`
+
+```php
+<?php
+
+echo $faker->bankAccountNumber // "HR3789114847226078672"
+```
+
 ### `Faker\Provider\hu_HU\Payment`
 
 ```php
@@ -946,6 +1109,18 @@ echo $faker->siret; // 347 355 708 00224
 
 // Generates a random bank account number
 echo $faker->bankAccountNumber; // "HU09904437680048220079300783"
+```
+
+### `Faker\Provider\id_ID\Person`
+
+```php
+<?php
+
+// Generates a random Nomor Induk Kependudukan (NIK)
+
+// first argument is gender, either Person::GENDER_MALE or Person::GENDER_FEMALE, if none specified random gender is used
+// second argument is birth date (DateTime object), if none specified, random birth date is used
+echo $faker->nik(); // "8522246001570940"
 ```
 
 ### `Faker\Provider\it_IT\Company`
@@ -972,10 +1147,16 @@ echo $faker->taxId(); // "DIXDPZ44E08F367A"
 <?php
 
 // Generates a 'kana' name
-echo $faker->kanaName; // "アオタ ミノル"
+echo $faker->kanaName($gender = null|'male'|'female') // "アオタ ミノル"
 
 // Generates a 'kana' first name
-echo $faker->firstKanaName; // "ハルカ"
+echo $faker->firstKanaName($gender = null|'male'|'female') // "ヒデキ"
+
+// Generates a 'kana' first name on the male
+echo $faker->firstKanaNameMale // "ヒデキ"
+
+// Generates a 'kana' first name on the female
+echo $faker->firstKanaNameFemale // "マアヤ"
 
 // Generates a 'kana' last name
 echo $faker->lastKanaName; // "ナカジマ"
@@ -1018,6 +1199,9 @@ echo $faker->bankAccountNumber; // "KZ1076321LO4H6X41I37"
 
 // Generates an individual identification number
 echo $faker->individualIdentificationNumber; // "780322300455"
+
+// Generates an individual identification number based on his/her birth date
+echo $faker->individualIdentificationNumber(new \DateTime('1999-03-01')); // "990301300455"
 ```
 
 ### `Faker\Provider\ko_KR\Address`
@@ -1030,6 +1214,14 @@ echo $faker->metropolitanCity; // "서울특별시"
 
 // Generates a borough
 echo $faker->borough; // "강남구"
+```
+
+### `Faker\Provider\lt_LT\Payment`
+
+```php
+<?php
+
+echo $faker->bankAccountNumber // "LT300848876740317118"
 ```
 
 ### `Faker\Provider\lv_LV\Person`
@@ -1155,8 +1347,8 @@ echo $faker->cellphone(true, true); // 98983-3945 or 7343-1290
 // Using the "Number" suffix adds area code to the phone
 echo $faker->cellphoneNumber;       // (11) 98309-2935
 echo $faker->landlineNumber(false); // 3522835934
-echo $faker->phoneNumber;           // formatted, random landline or cellphone (obbeying the 9th digit rule)
-echo $faker->phoneNumberCleared;    // not formatted, random landline or cellphone (obbeying the 9th digit rule)
+echo $faker->phoneNumber;           // formatted, random landline or cellphone (obeying the 9th digit rule)
+echo $faker->phoneNumberCleared;    // not formatted, random landline or cellphone (obeying the 9th digit rule)
 ```
 
 ### `Faker\Provider\pt_BR\Person`
@@ -1178,7 +1370,7 @@ echo $faker->rg;         // '84.405.736-3'
 ```php
 <?php
 
-// Generates a Brazilian formated and valid CNPJ
+// Generates a Brazilian formatted and valid CNPJ
 echo $faker->cnpj;        // '23.663.478/0001-24'
 echo $faker->cnpj(false); // '23663478000124'
 ```
@@ -1210,10 +1402,22 @@ echo $faker->bankAccountNumber; // "RO55WRJE3OE8X3YQI7J26U1E"
 echo $faker->prefixMale; // "ing."
 // Generates a random female name prefix/title
 echo $faker->prefixFemale; // "d-na."
-// Generates a random male fist name
+// Generates a random male first name
 echo $faker->firstNameMale; // "Adrian"
-// Generates a random female fist name
+// Generates a random female first name
 echo $faker->firstNameFemale; // "Miruna"
+
+
+// Generates a random Personal Numerical Code (CNP)
+echo $faker->cnp; // "2800523081231"
+// Valid option values:
+//    $gender: null (random), male, female
+//    $dateOfBirth (1800+): null (random), Y-m-d, Y-m (random day), Y (random month and day)
+//          i.e. '1981-06-16', '2015-03', '1900'
+//    $county: 2 letter ISO 3166-2:RO county codes and B1, B2, B3, B4, B5, B6 for Bucharest's 6 sectors
+//    $isResident true/false flag if the person resides in Romania
+echo $faker->cnp($gender = null, $dateOfBirth = null, $county = null, $isResident = true);
+
 ```
 
 ### `Faker\Provider\ro_RO\PhoneNumber`
@@ -1234,6 +1438,12 @@ echo $faker->premiumRatePhoneNumber; // "0900123456"
 
 // Generates a Russian bank name (based on list of real russian banks)
 echo $faker->bank; // "ОТП Банк"
+
+//Generate a Russian Tax Payment Number for Company
+echo $faker->inn; //  7813540735
+
+//Generate a Russian Tax Code for Company
+echo $faker->kpp; // 781301001
 ```
 
 ### `Faker\Provider\sv_SE\Payment`
@@ -1267,6 +1477,34 @@ echo $faker->personalIdentityNumber('female') // '950910-0781'
 echo $faker->bank; // '中国建设银行'
 ```
 
+### `Faker\Provider\uk_UA\Payment`
+
+```php
+<?php
+
+// Generates an Ukraine bank name (based on list of real Ukraine banks)
+echo $faker->bank; // "Ощадбанк"
+```
+
+### `Faker\Provider\zh_TW\Person`
+
+```php
+<?php
+
+// Generates a random personal identify number
+echo $faker->personalIdentityNumber; // A223456789
+```
+
+### `Faker\Provider\zh_TW\Company`
+
+```php
+<?php
+
+// Generates a random VAT / Company Tax number
+echo $faker->VAT; //23456789
+```
+
+
 ## Third-Party Libraries Extending/Based On Faker
 
 * Symfony2 bundles:
@@ -1286,6 +1524,9 @@ echo $faker->bank; // '中国建设银行'
 * [nelmio/alice](https://packagist.org/packages/nelmio/alice): Fixtures/object generator with a yaml DSL that can use Faker as data generator.
 * [CakePHP 2.x Fake Seeder Plugin](https://github.com/ravage84/cakephp-fake-seeder) A CakePHP 2.x shell to seed your database with fake and/or fixed data.
 * [images-generator](https://github.com/bruceheller/images-generator): An image generator provider using GD for placeholder type pictures
+* [pattern-lab/plugin-php-faker](https://github.com/pattern-lab/plugin-php-faker): Pattern Lab is a Styleguide, Component Library, and Prototyping tool. This creates unique content each time Pattern Lab is generated.
+* [guidocella/eloquent-populator](https://github.com/guidocella/eloquent-populator): Adapter for Laravel's Eloquent ORM.
+* [tamperdata/exiges](https://github.com/tamperdata/exiges): Faker provider for generating random temperatures
 
 ## License
 

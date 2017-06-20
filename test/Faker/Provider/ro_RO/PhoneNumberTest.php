@@ -21,7 +21,7 @@ class PhoneNumberTest extends \PHPUnit_Framework_TestCase
 
     public function testTollFreePhoneNumberReturnsTollFreePhoneNumber()
     {
-        $this->assertRegExp('/^08(?:0[1267]|70)\d{6}$/', $this->faker->tollFreePhoneNumber());
+        $this->assertRegExp('/^08(?:0[01267]|70)\d{6}$/', $this->faker->tollFreePhoneNumber());
     }
 
     public function testPremiumRatePhoneNumberReturnsPremiumRatePhoneNumber()
