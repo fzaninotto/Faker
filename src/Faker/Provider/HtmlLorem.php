@@ -146,7 +146,8 @@ class HtmlLorem extends Base
                 $node->setAttribute("class", $this->generator->word);
                 break;
             case 2:
-                $node->setAttribute("id", (string)$this->generator->randomNumber(5));
+            	$randomNumber = $this->generator->randomNumber(5);
+                $node->setAttribute("id", (string)$randomNumber);
                 break;
         }
     }

@@ -30,10 +30,9 @@ class HtmlLoremTest extends \PHPUnit_Framework_TestCase
         $faker = new Generator();
         $faker->addProvider(new HtmlLorem($faker));
         $node = $faker->randomBody(5, 5);
-        echo $node;
         $dom = new \DOMDocument();
-        $error = $dom->loadHTML($node);
-        $this->assertTrue($error);
+        $isValidHtml = $dom->loadHTML($node);
+        $this->assertTrue($isValidHtml);
     }
 
     public function testRandomBodyFragment(){
