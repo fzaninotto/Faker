@@ -11,12 +11,12 @@ use Faker\Provider\HtmlLorem;
  */
 class HtmlLoremTest extends \PHPUnit_Framework_TestCase
 {
-    public function testRandomHtmlReturnsValidHTMLString()
+    public function testRandomHTMLReturnsValidHTMLString()
     {
         for ($x = 1; $x <= 100; $x++) {
             $faker = $this->setupFakerWithProvider();
 
-            $html = $faker->randomHtml(5, 5);
+            $html = $faker->randomHTML(5, 5);
 
             $this->assertHTMLIsValid($html);
             $this->assertStringStartsWith("<html>", $html);

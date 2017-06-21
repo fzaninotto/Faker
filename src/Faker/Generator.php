@@ -186,7 +186,7 @@ namespace Faker;
  * @property string $safeColorName
  * @property string $colorName
  *
- * @method string randomHtml($maxDepth = 4, $maxWidth = 4)
+ * @method string randomHTML($maxDepth = 4, $maxWidth = 4)
  * @method string randomHTMLBody($maxDepth = 4, $maxWidth = 4)
  * @method string randomHTMLFragments($maxDepth = 4, $maxWidth = 4)
  *

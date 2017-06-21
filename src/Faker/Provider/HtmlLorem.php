@@ -56,7 +56,7 @@ class HtmlLorem extends Base
      * @param int $maxWidth
      * @return string
      */
-    public function randomHtml($maxDepth = 4, $maxWidth = 4)
+    public function randomHTML($maxDepth = 4, $maxWidth = 4)
     {
         $document = new \DOMDocument();
         $this->idGenerator = new UniqueGenerator($this->generator);
@@ -122,8 +122,7 @@ class HtmlLorem extends Base
             if ($maxDepth == 1) {
                 $this->addRandomLeaf($root);
             } else {
-                $sibling = $root->ownerDocument->createElement("div");
-                $sibling->textContent = $this->generator->sentence(mt_rand(1, 10));
+                $sibling = $root->ownerDocument->createElement("div", $this->generator->sentence(mt_rand(1, 10)));
                 $root->appendChild($sibling);
                 $this->addRandomAttribute($sibling);
                 $this->addRandomSubTree($sibling, mt_rand(1, $maxDepth), $maxWidth);
@@ -167,11 +166,6 @@ class HtmlLorem extends Base
             default:
                 $this->addRandomText($node);
                 break;
-        }
-
-        // Debug...
-        if (trim(strip_tags($node->textContent)) === '') {
-            throw new \Exception('$rand: ' . $rand . PHP_EOL . '$node->textContent: ' . $node->textContent);
         }
     }
 
@@ -227,7 +221,8 @@ class HtmlLorem extends Base
      */
     private function addRandomText(\DOMElement $element, $maxLength = 10)
     {
-        $text = $element->ownerDocument->createTextNode($this->generator->sentence(mt_rand(1, $maxLength)));
+        $sentence = $this->generator->sentence(mt_rand(1, $maxLength));
+        $text = $element->ownerDocument->createTextNode($sentence);
         $element->appendChild($text);
     }
 
