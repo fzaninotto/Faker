@@ -768,7 +768,7 @@ echo $faker->vat;           // "BG 0123456789" - Bulgarian Value Added Tax numbe
 echo $faker->vat(false);    // "BG0123456789" - unspaced Bulgarian Value Added Tax number
 ```
 
-### `Faker\Provider\et_ET\Address`
+### `Faker\Provider\et_EE\Address`
 
 ```php
 <?php
