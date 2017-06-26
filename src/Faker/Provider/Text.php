@@ -128,7 +128,7 @@ abstract class Text extends Base
     protected static function validStart($word)
     {
         $isValid = true;
-        if (self::$textStartsWithUppercase) {
+        if (static::$textStartsWithUppercase) {
             $isValid = preg_match('/^\p{Lu}/u', $word);
         }
         return $isValid;
