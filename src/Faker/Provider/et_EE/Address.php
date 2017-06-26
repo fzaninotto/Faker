@@ -136,6 +136,10 @@ class Address extends \Faker\Provider\Address
         return static::randomElement(static::$country);
     }
 
+    /**
+     * Provides "Estonia" address suffix in a random language
+     * @return string
+     */
     public static function eesti()
     {
         return static::randomElement(static::$eesti);
