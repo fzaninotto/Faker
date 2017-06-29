@@ -78,7 +78,8 @@ class Image extends Base
         $url = static::imageUrl($width, $height, $category, $randomize, $word);
 
         // save file
-        if (function_exists('curl_exec')) {
+        $curl_exists = function_exists('curl_exec');
+        if ($curl_exists) {
             // use cURL
             $fp = fopen($filepath, 'w');
             $ch = curl_init($url);
@@ -92,10 +93,12 @@ class Image extends Base
             }
 
             curl_close($ch);
-        } elseif (ini_get('allow_url_fopen')) {
+        }
+
+        if (!$success && ini_get('allow_url_fopen')) {
             // use remote fopen() via copy()
             $success = copy($url, $filepath);
-        } else {
+        } elseif(!$curl_exists) {
             return new \RuntimeException('The image formatter downloads an image from a remote HTTP server. Therefore, it requires that PHP can request remote hosts, either via cURL or fopen()');
         }
 
