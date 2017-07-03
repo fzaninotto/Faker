@@ -784,6 +784,17 @@ echo $faker->vat;           // "BG 0123456789" - Bulgarian Value Added Tax numbe
 echo $faker->vat(false);    // "BG0123456789" - unspaced Bulgarian Value Added Tax number
 ```
 
+### `Faker\Provider\et_ET\Address`
+
+```php
+<?php
+ // Estonian country name in different languages, 
+ // randomly added to the end of address -
+ // people sometimes write country names in their native language
+
+echo $faker->eesti;  // e.g. "Estonia", "Viro", "Estland", "Eesti"
+```
+
 ### `Faker\Provider\cs_CZ\Address`
 
 ```php
