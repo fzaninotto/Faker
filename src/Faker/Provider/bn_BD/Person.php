@@ -19,7 +19,7 @@ class Person extends \Faker\Provider\Person
     );
 
     protected static $firstNameMale = array(
-        'অনন্ত', 'আব্দুল্লাহ', 'আহসান',  'ইমরুল', 'করিম', 'জলিল', 'বরকত', 'মাসনুন', 'রহিম',  'রিফাত', 'হাসনাত', 'হাসান',
+      'শাহাদাত', 'তামজীদ', 'বাপ্পী', 'মনির', 'সোহেল', 'অনন্ত', 'আব্দুল্লাহ', 'আহসান',  'ইমরুল', 'করিম', 'জলিল', 'বরকত', 'মাসনুন', 'রহিম',  'রিফাত', 'হাসনাত', 'হাসান',
     );
 
     protected static $firstNameFemale = array(
@@ -27,7 +27,7 @@ class Person extends \Faker\Provider\Person
     );
 
     protected static $lastName = array(
-        'খান', 'শেখ', 'শিকদার', 'আলী', 'তাসনীম', 'তাবাসসুম'
+        'খান', 'শেখ', 'শিকদার', 'আলী', 'তাসনীম', 'তাবাসসুম', 'কাজী', 'মোল্লা', 'ফকির'
     );
 
     protected static $titleMale = array('মি.');
