@@ -21,9 +21,7 @@ class Payment extends \Faker\Provider\Payment
     {
         $prefix = ($spacedNationalPrefix) ? "FR " : "FR";
 
-        $company = new Company($this->generator);
-
-        return sprintf("%s%s%s%s", $prefix, self::randomNumber(2, true), $company->siren($spacedNationalPrefix));
+        return sprintf("%s%s%s%s", $prefix, self::randomNumber(2, true), $this->siren($spacedNationalPrefix));
     }
 
     /**
