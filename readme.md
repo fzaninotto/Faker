@@ -1072,6 +1072,15 @@ echo $faker->siren; // 082 250 104
 echo $faker->siret; // 347 355 708 00224
 ```
 
+### `Faker\Provider\fr_FR\Payment`
+
+```php
+<?php
+
+// Generates a random VAT
+echo $faker->vat; // FR 12 123 456 789
+```
+
 ### `Faker\Provider\fr_FR\Person`
 
 ```php
