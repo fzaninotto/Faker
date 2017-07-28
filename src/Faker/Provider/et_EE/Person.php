@@ -4,8 +4,6 @@ namespace Faker\Provider\et_EE;
 
 class Person extends \Faker\Provider\Person
 {
-
-
     protected static $titleMale = array('Härra', 'Hr.');
 
     protected static $titleFemale = array('Proua', 'Pr.', 'neiu', 'preili');

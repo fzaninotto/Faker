@@ -51,7 +51,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     protected static $countryCode = "372";
 
     /**
-     * An Emergency phone number 
+     * An Emergency phone number
      * @var string
      */
     protected static $emergency = "112";
@@ -136,7 +136,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     }
 
     /**
-     * get Estonian Emergency phone number 
+     * get Estonian Emergency phone number
      * @return string
      */
     public function emergencyNumber()
@@ -144,37 +144,37 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         return self::$emergency;
     }
 
-     /**
-     * get Estonian landline number
-     * @return string
-     */
+    /**
+    * get Estonian landline number
+    * @return string
+    */
     public function landlineNumber()
     {
         return self::randomElement(static::$landlineFormats);
     }
 
-     /**
-     * get Estonian mobile number
-     * @return string
-     */
+    /**
+    * get Estonian mobile number
+    * @return string
+    */
     public function mobileNumber()
     {
         return self::randomElement(static::$mobileFormats);
     }
 
-     /**
-     * get Estonian Special services number
-     * @return string
-     */
+    /**
+    * get Estonian Special services number
+    * @return string
+    */
     public function specialNumber()
     {
         return self::randomElement(static::$specialServicesFormats);
     }
 
-     /**
-     * get Estonian Personal services number
-     * @return string
-     */
+    /**
+    * get Estonian Personal services number
+    * @return string
+    */
     public function personalNumber()
     {
         return self::randomElement(static::$personalFormats);
