@@ -12,17 +12,44 @@ class Address extends \Faker\Provider\Address
      * @link http://ar.wikipedia.org/wiki/%D9%85%D9%84%D8%AD%D9%82:%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D9%85%D8%AF%D9%86_%D8%A7%D9%84%D8%A3%D8%B1%D8%AF%D9%86
      */
     protected static $cityName = array(
-        'اربد', 'أبو نصير', 'الجبيهه', 'الحصن', 'الرصيفة', 'الرمثا', 'الزرقاء', 'السلط', 'الشهيد عزمي', 'الصريح', 'الضليل', 'الطفيلة', 'العقبة',     'القويسمة', 'الكرك', 'المشارع', 'المفرق', 'الهاشمية', 'ام قصير', 'ايدون',
+        'اربد', 
+        'أبو نصير', 
+        'الجبيهه', 
+        'الحصن', 
+        'الرصيفة', 
+        'الرمثا', 
+        'الزرقاء', 
+        'السلط', 
+        'الشهيد عزمي', 
+        'الصريح', 
+        'الضليل', 
+        'الطفيلة', 
+        'العقبة',     
+        'القويسمة', 
+        'الكرك', 
+        'المشارع', 
+        'المفرق', 
+        'الهاشمية', 
+        'ام قصير', 
+        'ايدون',
         'بيت راس',
         'تلاع العلي',
         'جرش',
-        'ساكب', 'سحاب',
+        'ساكب', 
+        'سحاب',
         'شفا بدران',
         'صويلح',
-        'عمان', 'عنجره', 'عين الباشا',
+        'عمان', 
+        'عنجره', 
+        'عين الباشا',
         'غور الصافي',
-        'كريمه', 'كفرنجه',
-        'مادبا', 'مخيم البقعه', 'مخيم حطين', 'مرج الحمام', 'معان',
+        'كريمه', 
+        'كفرنجه',
+        'مادبا', 
+        'مخيم البقعه', 
+        'مخيم حطين', 
+        'مرج الحمام', 
+        'معان',
         'ناعور',
         'وادي السير',
     );
@@ -35,20 +62,66 @@ class Address extends \Faker\Provider\Address
      * @link http://ar.wikipedia.org/wiki/%D9%85%D9%84%D8%AD%D9%82:%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%A7%D9%84%D9%88%D9%84%D8%A7%D9%8A%D8%A7%D8%AA_%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A%D8%A9_%D8%AD%D8%B3%D8%A8_%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%AD%D8%A9
      */
     protected static $state = array(
-        'آيوا', 'أركنساس', 'أريزونا', 'ألاباما', 'ألاسكا', 'أوريغون', 'أوكلاهوما', 'أوهايو', 'أيداهو', 'إلينوي', 'إنديانا', 'الاباما', 'الجزر العذراء الأمريكية',
-        'بنس    يلفانيا', 'بورتو ريكو',
-        'تكساس', 'تينيسي',
-        'جزر ماريانا الشمالية', 'جورجيا',
-        'داكوتا الجنوبية', 'داكوتا الشمالية', 'ديلاوير', 'رود آيلاند',
+        'آيوا', 
+        'أركنساس', 
+        'أريزونا', 
+        'ألاباما',
+        'ألاسكا', 
+        'أوريغون', 
+        'أوكلاهوما', 
+        'أوهايو',
+        'أيداهو', 
+        'إلينوي', 
+        'إنديانا', 
+        'الاباما', 
+        'الجزر العذراء الأمريكية',
+        'بنس    يلفانيا', 
+        'بورتو ريكو',
+        'تكساس', 
+        'تينيسي',
+        'جزر ماريانا الشمالية',
+        'جورجيا',
+        'داكوتا الجنوبية',
+        'داكوتا الشمالية',
+        'ديلاوير', 
+        'رود آيلاند',
         'ساموا الأمريكية',
         'غوام',
-        'فرجينيا الغربية', 'فلوريدا', 'فيرجينيا', 'فيرجينيا الغربية', 'فيرمونت',
-        'كارولاينا الجنوبية', 'كارولاينا الشمالية','كارولينا الشمالية', 'كاليفورنيا', 'كانساس', 'كنتاكي', 'كولورادو', 'كونيتيكت',
+        'فرجينيا الغربية',
+        'فلوريدا', 
+        'فيرجينيا',
+        'فيرجينيا الغربية', 
+        'فيرمونت',
+        'كارولاينا الجنوبية',
+        'كارولاينا الشمالية',
+        'كارولينا الشمالية', 
+        'كاليفورنيا',
+        'كانساس',
+        'كنتاكي',
+        'كولورادو', 
+        'كونيتيكت',
         'لويزيانا',
-        'ماريلاند', 'ماساتشوستس', 'ماين', 'مسيسيبي', 'مونتانا', 'ميريلاند', 'ميزوري', 'ميشيغان', 'مين', 'مينيسوتا',
-        'نبراسكا', 'نيفادا', 'نيو جيرسي', 'نيو ميكسيكو', 'نيوهامشير', 'نيويورك',
+        'ماريلاند', 
+        'ماساتشوستس', 
+        'ماين',
+        'مسيسيبي',
+        'مونتانا', 
+        'ميريلاند', 
+        'ميزوري', 
+        'ميشيغان',
+        'مين', 
+        'مينيسوتا',
+        'نبراسكا', 
+        'نيفادا',
+        'نيو جيرسي', 
+        'نيو ميكسيكو', 
+        'نيوهامشير', 
+        'نيويورك',
         'هاواي',
-        'واشنطن', 'وايومنغ', 'ويسكنسن', 'يوتا',
+        'واشنطن', 
+        'وايومنغ',
+        'ويسكنسن', 
+        'يوتا',
     );
 
     protected static $stateAbbr = array(
@@ -100,14 +173,19 @@ class Address extends \Faker\Provider\Address
         "{{streetAddress}}\n{{city}}",
     );
 
-    protected static $secondaryAddressFormats = array('شقة رقم. ##', 'بناية رقم ##');
+    protected static $secondaryAddressFormats = array(
+        'شقة رقم. ##',
+        'بناية رقم ##'
+    );
 
     /**
      * @example 'شرق'
      */
     public static function cityPrefix()
     {
-        return static::randomElement(static::$cityPrefix);
+        return static::randomElement(
+            static::$cityPrefix
+        );
     }
 
     /**
@@ -115,7 +193,9 @@ class Address extends \Faker\Provider\Address
      */
     public static function cityName()
     {
-        return static::randomElement(static::$cityName);
+        return static::randomElement(
+            static::$cityName
+        );
     }
 
     /**
@@ -123,7 +203,9 @@ class Address extends \Faker\Provider\Address
      */
     public static function streetPrefix()
     {
-        return static::randomElement(static::$streetPrefix);
+        return static::randomElement(
+            static::$streetPrefix
+        );
     }
 
     /**
@@ -131,7 +213,11 @@ class Address extends \Faker\Provider\Address
      */
     public static function secondaryAddress()
     {
-        return static::numerify(static::randomElement(static::$secondaryAddressFormats));
+        return static::numerify(
+            static::randomElement(
+                static::$secondaryAddressFormats
+            )
+        );
     }
 
     /**
@@ -139,7 +225,9 @@ class Address extends \Faker\Provider\Address
      */
     public static function state()
     {
-        return static::randomElement(static::$state);
+        return static::randomElement(
+            static::$state
+        );
     }
 
     /**
@@ -147,6 +235,8 @@ class Address extends \Faker\Provider\Address
      */
     public static function stateAbbr()
     {
-        return static::randomElement(static::$stateAbbr);
+        return static::randomElement(
+            static::$stateAbbr
+        );
     }
 }
