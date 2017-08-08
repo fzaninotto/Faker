@@ -140,6 +140,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     firstNameMale                             // 'Maynard'
     firstNameFemale                           // 'Rachel'
     lastName                                  // 'Zulauf'
+    ssn                                       // '123-45-6789'
 
 ### `Faker\Provider\en_US\Address`
 
