@@ -926,6 +926,15 @@ echo $faker->tollFreeNumber; // "0800 123 456"
 echo $faker->areaCode; // "03"
 ```
 
+### `Faker\Provider\en_US\Company`
+
+```php
+<?php
+
+// Generate a random Employer Identification Number
+echo $faker->ein; // '12-3456789'
+```
+
 ### `Faker\Provider\en_US\Payment`
 
 ```php

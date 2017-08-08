@@ -65,6 +65,12 @@ class Company extends \Faker\Provider\Company
 
     protected static $companySuffix = array('Inc', 'and Sons', 'LLC', 'Group', 'PLC', 'Ltd');
 
+    protected static $einPrefixes = array(
+        10, 12, 60, 67, 50, 53, 01, 02, 03, 04, 05, 06, 11, 13, 14, 16, 21, 22, 23, 25, 34, 51, 52, 54, 55, 56, 57, 58, 59, 65, 30, 32, 35, 36, 37, 38, 61,
+        15, 24, 40, 44, 94, 95, 80, 90, 33, 39, 41, 42, 43, 48, 62, 63, 64, 66, 68, 71, 72, 73, 74, 75, 76, 77, 82, 83, 84, 85, 86, 87, 88, 91, 92, 93, 98,
+        99, 20, 26, 27, 45, 46, 47, 81
+    );
+
     /**
      * @example 'Robust full-range hub'
      */
@@ -89,5 +95,16 @@ class Company extends \Faker\Provider\Company
         }
 
         return join($result, ' ');
+    }
+
+    /**
+     * @example '12-3456789'
+     */
+    public static function ein()
+    {
+        $prefix = static::randomElement(static::$einPrefixes);
+        $serial = static::numberBetween(0, 9999999);
+
+        return sprintf("%02d-%07d", $prefix, $suffix);
     }
 }
