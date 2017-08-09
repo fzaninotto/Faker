@@ -140,7 +140,6 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     firstNameMale                             // 'Maynard'
     firstNameFemale                           // 'Rachel'
     lastName                                  // 'Zulauf'
-    ssn                                       // '123-45-6789'
 
 ### `Faker\Provider\en_US\Address`
 
@@ -934,6 +933,15 @@ echo $faker->areaCode; // "03"
 
 echo $faker->bankAccountNumber;  // '51915734310'
 echo $faker->bankRoutingNumber;  // '212240302'
+```
+
+### `Faker\Provider\en_US\Person`
+
+```php
+<?php
+
+// Generates a random Social Security Number
+echo $faker->ssn; // '123-45-6789'
 ```
 
 ### `Faker\Provider\en_ZA\Company`
