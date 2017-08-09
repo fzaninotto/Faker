@@ -116,4 +116,16 @@ class Person extends \Faker\Provider\Person
     {
         return static::randomElement(static::$suffix);
     }
+
+    /**
+     * @example '123-45-6789'
+     */
+    public static function ssn()
+    {
+        $area = mt_rand(0, 1) ? static::numberBetween(1, 665) : static::numberBetween(667, 899);
+        $group = static::numberBetween(1, 99);
+        $serial = static::numberBetween(1, 9999);
+
+        return sprintf("%03d-%02d-%04d", $area, $group, $serial);
+    }
 }

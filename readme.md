@@ -935,6 +935,15 @@ echo $faker->bankAccountNumber;  // '51915734310'
 echo $faker->bankRoutingNumber;  // '212240302'
 ```
 
+### `Faker\Provider\en_US\Person`
+
+```php
+<?php
+
+// Generates a random Social Security Number
+echo $faker->ssn; // '123-45-6789'
+```
+
 ### `Faker\Provider\en_ZA\Company`
 
 ```php
