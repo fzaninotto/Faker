@@ -1,5 +1,7 @@
 language: php
 
+dist: precise
+
 php:
     - 5.3
     - 5.4
