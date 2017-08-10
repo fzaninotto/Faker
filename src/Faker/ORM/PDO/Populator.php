@@ -2,10 +2,8 @@
 
 namespace Faker\ORM\PDO;
 
-
 /**
- * Service class for populating a database using the Doctrine ORM or ODM.
- * A Populator can populate several tables using ActiveRecord classes.
+ * Service class for populating a database using the native PDO's.
  */
 class Populator
 {
@@ -17,7 +15,7 @@ class Populator
      * @param \Faker\Generator $generator
      * @param PDO|null $connection
      */
-    public function __construct(\Faker\Generator $generator, PDO $connection = null)
+    public function __construct(\Faker\Generator $generator, \PDO $connection = null)
     {
         $this->generator = $generator;
         $this->connection = $connection;
@@ -27,49 +25,95 @@ class Populator
      * Use table name and provided mapping to build INSERT statement
      * @return object PDOStatement object
      */
-    public function prepareStatement()
+    private function prepareStatement($tableKey)
     {
-        $stmt = 'INSERT INTO $table () VALUES ()';
-        return $this->connection->prepare($stmt);
+        $result = null;
+        $columns = array();
+        $placeholders = array();
+
+        foreach ($this->rows[$tableKey][1] as $key => $value) {
+            $columns[] = $key;
+            $placeholders[] = ':' . $key;
+        }
+
+        $columns = implode(', ', $columns);
+        $placeholders = implode(', ', $placeholders);
+        $stmt = 'INSERT INTO '. trim($tableKey) .' (' . $columns . ') VALUES (' . $placeholders . ')';
+        $result = $this->connection->prepare($stmt);
+
+        return $result;
     }
 
     /**
-     * Build row data array
-     * @param array $mapping [description]
+     * Convert the rows corresponding to the supplied table name to
+     * keys for use in pdo execute statement.
+     * @param  string $tableKey The table name this dataset is for.
+     * @return array            The array with placeholder keys
+     */
+    private function convertToPlaceholders($tableKey)
+    {
+        $originalArray = $this->rows[$tableKey];
+        $newArray = array();
+
+        for ($i=0; $i < count($originalArray); $i++) {
+            $newArray[$i] = array();
+            foreach ($originalArray[$i] as $key => $value) {
+                $newArray[$i][':'. $key] = $value;
+            }
+        }
+
+        return $newArray;
+    }
+
+    /**
+     * Build row data array grouped by table name.
+     * @param array $mapping   Column names keys with required data values
      * @param integer $number  The number of data rows to produce
-     * @param string $table   Table name
+     * @param string $table    Table name
      */
     public function addRow($mapping, $number, $table)
     {
-        $result = array();
+        foreach ($mapping as &$value) {
+            $value = trim($value);
+        }
 
-        // trim $mapping method names
+        if (!isset($this->rows[$table])) {
+            $this->rows[$table] = array();
+        }
 
-        // For loop for $number iterations building data
-
-            // foreach mapping generate value and write to new row array
-
-
-        // return data array
-        return $this->rows;
+        for ($i=0; $i < $number; $i++) {
+            $temp = array();
+            foreach ($mapping as $key => &$value) {
+                $temp[$key] = $this->generator->$value;
+            }
+            $this->rows[$table][] = $temp;
+        }
     }
 
-
     /**
-     * Write rows to Database
-     * @param  [type] $entityManager [description]
-     * @return [type]                [description]
+     * Write rows to database
+     * @return array  Rows successfully written to the DB
      */
-    public function execute($entityManager = null)
+    public function execute()
     {
+        $stmt = '';
+        $insertedRows = array();
 
-        // prepare statement
+        if (null === $this->connection) {
+            throw new \InvalidArgumentException("PDO connection not available.");
+        }
 
+        foreach ($this->rows as $key => $value) {
+            $stmt = $this->prepareStatement($key);
+            $placeholders = $this->convertToPlaceholders($key);
+            for ($i=0; $i < count($placeholders); $i++) {
+                $outcome = $stmt->execute($placeholders[$i]);
+                if ($outcome) {
+                    $insertedRows[$key][$i] = $this->rows[$key][$i];
+                }
+            }
+        }
 
-        // loop through data array (inserting)
-
-
-        // return data array on success
-
+        return $insertedRows;
     }
 }
