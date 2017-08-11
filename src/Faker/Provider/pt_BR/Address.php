@@ -121,7 +121,7 @@ class Address extends \Faker\Provider\Address
     }
 
     /**
-     * @example 'Brasília'
+     * @example 'Santa Catarina'
      */
     public static function state()
     {
@@ -135,7 +135,7 @@ class Address extends \Faker\Provider\Address
     {
         return static::randomElement(static::$stateAbbr);
     }
-    
+
     /**
      * @example 'Nordeste'
      */
@@ -143,7 +143,7 @@ class Address extends \Faker\Provider\Address
     {
         return static::randomElement(static::$region);
     }
-    
+
     /**
      * @example 'NE'
      */
