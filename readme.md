@@ -453,6 +453,38 @@ $populator->addEntity('Book', 5, array(), array(
 ));
 ```
 
+
+## Populating Tables Using a PDO
+
+Faker provides an adapter for using a PHP Data Object (PDO) to populate one or more database tables.
+
+To populate a table create a new populator class (using a generator and PDO instance as parameters), then run the `addRows()` method providing a data mapping for your desired table, the number of rows you wish to insert and the table you wish to insert them into.
+
+```php
+<?php
+$generator = \Faker\Factory::create();
+$populator = new Faker\ORM\PDO\Populator($generator, $pdo);
+$populator->addRows($usersMapping, 5, 'users');
+$populator->addRows($recordsMapping, 10, 'records');
+$insertedPKs = $populator->execute();
+```
+
+You can insert rows into multiple tables in one execution by simply using the `addRows()` method for all the tables you want to write to whilst supplying a valid mapping for each.
+
+The mapping data consits of an associate array with table columns as keys and Faker properties / method calls as string values. Currently only method calls using basic parameters are supported.
+
+```php
+<?php
+$usersMapping = array(
+    'firstname' => 'firstNameMale',
+    'lastname' => 'lastName',
+    'age' => 'numberBetween(12, 80)',
+    'telephone' => 'phoneNumber',
+    'address' => 'address'
+);
+```
+
+
 ## Seeding the Generator
 
 You may want to get always the same generated data - for instance when using Faker for unit testing purposes. The generator offers a `seed()` method, which seeds the random number generator. Calling the same script twice with the same seed produces the same results.
