@@ -164,7 +164,7 @@ class Miscellaneous extends Base
         'ko_KR', 'kok_IN', 'kpe_GN',
         'kpe_LR', 'ku_IQ', 'ku_IR', 'ku_SY',
         'ku_TR', 'kw_GB', 'ky_KG',
-        'ln_CD', 'ln_CG', 'lo_LA',
+        'lb_LU', 'ln_CD', 'ln_CG', 'lo_LA',
         'lt_LT', 'lv_LV',
         'mk_MK', 'ml_IN', 'mn_CN',
         'mn_MN', 'mr_IN',
