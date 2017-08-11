@@ -27,11 +27,13 @@ class Person extends \Faker\Provider\Person
      * @var array Turkish first names.
      */
     protected static $firstNameMale = array(
-        'Ahmet', 'Ali', 'Alp', 'Armağan', 'Atakan', 'Aşkın', 'Baran', 'Bartu', 'Berk', 'Berkay', 'Berke', 'Bora', 'Burak', 'Canberk',
-        'Cem', 'Cihan', 'Deniz', 'Efe', 'Ege', 'Ege', 'Emir', 'Emirhan', 'Emre', 'Ferid', 'Göktürk', 'Görkem', 'Güney',
-        'Kağan', 'Kerem', 'Koray', 'Kutay', 'Mert', 'Onur', 'Ogün', 'Polat', 'Rüzgar', 'Sarp', 'Serhan', 'Toprak', 'Tuna',
-        'Türker', 'Utku', 'Yağız', 'Yiğit', 'Çınar', 'Derin', 'Meriç', 'Barlas', 'Dağhan', 'Doruk', 'Çağan', 'Fatih', 'Eray', 'Ömer',
-        'Mehmet', 'Murat', 'İbrahim', 'Levent', 'Eser', 'Aydoğan', 'Mustafa', 'Kudret', 'Lütfi', 'Erman', 'Tugay', 'Ramazan', 'Arda'
+        'Ahmet', 'Ali', 'Alp', 'Arda', 'Armağan', 'Atakan', 'Aydoğan', 'Aşkın', 'Baran', 'Barlas', 
+        'Bartu', 'Berk', 'Berkay', 'Berke', 'Bora', 'Burak', 'Canberk', 'Cem', 'Cihan', 'Dağhan', 
+        'Deniz', 'Derin', 'Doruk', 'Efe', 'Ege', 'Ege', 'Emir', 'Emirhan', 'Emre', 'Eray', 
+        'Erman', 'Eser', 'Fatih', 'Ferid', 'Göktürk', 'Görkem', 'Güney', 'Kağan', 'Kerem', 'Koray', 
+        'Kudret', 'Kutay', 'Levent', 'Lütfi', 'Mehmet', 'Meriç', 'Mert', 'Murat', 'Mustafa', 'Ogün', 
+        'Onur', 'Polat', 'Ramazan', 'Rüzgar', 'Sarp', 'Serhan', 'Toprak', 'Tugay', 'Tuna', 'Türker', 
+        'Utku', 'Yağız', 'Yiğit', 'Çağan', 'Çınar', 'Ömer', 'İbrahim'
     );
 
     /**
@@ -40,11 +42,14 @@ class Person extends \Faker\Provider\Person
      * @var array Turkish first names.
      */
     protected static $firstNameFemale = array(
-        'Ada', 'Esma', 'Emel', 'Ebru', 'Şahnur', 'Ümran', 'Sinem', 'İrem', 'Rüya', 'Ece', 'Burcu', 'Nisa', 'Ayşe', 'Leyla', 'Deniz', 
-        'Zeynep', 'Begüm', 'Esra', 'Hatice', 'Özlem', 'Selin', 'Ecrin', 'Gülsüm', 'Aliye', 'Merve', 'Melis', 'Kerime', 'Bahar', 'Başak', 
-        'Sıla', 'Yaren', 'Yeliz', 'Yağmur', 'Melisa', 'Nurcan', 'Cansu', 'Canan', 'Buse', 'Gizem', 'Beyza', 'Aybüke', 'Seher', 'Feyza', 
-        'Dilan', 'Selen', 'Betül', 'Elif', 'Birgül', 'Nur', 'Nurten', 'Damla', 'Burcu', 'Aslı', 'Aslıhan', 'Dilara', 'Ayşegül', 'Sevcan',
-        'Zehra', 'Asena', 'Kader', 'Gül', 'Gülcan', 'Adile', 'Ezgi', 'Ceren', 'Şeyma', 'Şeyda', 'Su', 'Serenay', 'Sevda', 'Cemile'
+        'Ada', 'Adile', 'Aliye', 'Asena', 'Aslı', 'Aslıhan', 'Aybüke', 'Ayşe', 'Ayşegül', 'Bahar', 
+        'Başak', 'Begüm', 'Betül', 'Beyza', 'Birgül', 'Burcu', 'Burcu', 'Buse', 'Canan', 'Cansu', 
+        'Cemile', 'Ceren', 'Damla', 'Deniz', 'Dilan', 'Dilara', 'Ebru', 'Ece', 'Ecrin', 'Elif', 
+        'Emel', 'Esma', 'Esra', 'Ezgi', 'Feyza', 'Gizem', 'Gül', 'Gülcan', 'Gülsüm', 'Hatice', 
+        'Kader', 'Kerime', 'Leyla', 'Melis', 'Melisa', 'Merve', 'Nisa', 'Nur', 'Nurcan', 'Nurten', 
+        'Rüya', 'Seher', 'Selen', 'Selin', 'Serenay', 'Sevcan', 'Sevda', 'Sinem', 'Su', 'Sıla', 
+        'Yaren', 'Yağmur', 'Yeliz', 'Zehra', 'Zeynep', 'Özlem', 'Ümran', 'İrem', 'Şahnur', 'Şeyda', 
+        'Şeyma',
     );
 
     /**
