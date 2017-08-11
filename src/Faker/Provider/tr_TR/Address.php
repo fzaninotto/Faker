@@ -13,7 +13,8 @@ class Address extends \Faker\Provider\Address
     protected static $postcode = array('#####');
 
     /**
-    * @var array Cities of Turkey, for future updates please use @link https://tr.wikipedia.org/wiki/T%C3%BCrkiye'nin_illeri
+    * @var array Cities of Turkey, for future updates please use
+    * @link https://tr.wikipedia.org/wiki/T%C3%BCrkiye'nin_illeri
     */
     protected static $cityNames = array(
         'Adana','Adıyaman','Afyonkarahisar','Ağrı','Aksaray','Amasya','Ankara','Antalya','Ardahan','Artvin','Aydın',
@@ -43,30 +44,36 @@ class Address extends \Faker\Provider\Address
     * @link https://tr.wikipedia.org/wiki/%C3%9Clkeler_listesi
     */
     protected static $country = array(
-        'Almanya','Amerika Birleşik Devletleri','Arjantin','Arnavutluk','Avustralya','Avusturya','Azerbaycan',
-        'Bahreyn','Belçika','Beyaz Rusya','Birleşik Arap Emirlikleri','Bosna-hersek','Brezilya','Bulgaristan',
-        'Çek Cumhuriyeti','Cezayir','Çin Halk Cumhuriyeti',
-        'Danimarka','Dominik Cumhuriyeti',
-        'Endonezya','Ermenistan','Estonya',
-        'Fas','Filipinler','Filistin','Finlandiya','Fransa',
-        'Güney Afrika Cumhuriyeti','Güney Kore','Gürcistan',
-        'Hindistan','Hırvatistan','Hollanda',
-        'İngiltere','Irak','İran','İrlanda','İskoçya','İspanya','İsrail','İsveç','İsviçre','İtalya',
-        'Jamaika','Japonya',
-        'Kamboçya','Kanada','Karadağ','Kazakistan','Kıbrıs','Kırgızistan','Kosta Rika','Küba','Kuzey Kore',
-        'Letonya','Libya','Litvanya','Lübnan','Lüksemburg',
-        'Macaristan','Makedonya','Maldivler','Malta','Maurıtıus','Mısır',
-        'Nepal',
-        'Özbekistan',
-        'Pakistan','Polonya','Portekiz','Romanya',
-        'Rusya',
-        'Sırbistan','Slovakya','Slovenya',
-        'Sri Lanka','Sudan','Suriye','Suudi Arabistan',
-        'Tacikistan','Tayland','Tayvan','Tunus','Türkiye',
-        'Ukrayna','Umman','Ürdün',
-        'Venezuela','Vietnam',
-        'Yemen','Yeni Zelanda','Yeşil Burun','Yunanistan',
-        'Zambiya','Zimbabve'
+        'Abhazya', 'Afganistan', 'Almanya', 'Amerika Birleşik Devletleri', 'Andora', 'Angola',
+        'Antigua ve Barbuda', 'Arjantin', 'Arnavutluk', 'Avustralya', 'Avusturya', 'Azerbaycan',
+        'Bahamalar', 'Bahreyn', 'Bangladeş', 'Barbados', 'Batı Sahra', 'Belçika', 'Belize',
+        'Benin', 'Beyaz Rusya', 'Bhutan', 'Birleşik Arap Emirlikleri', 'Bolivya', 'Bosna-Hersek',
+        'Botsvana', 'Brezilya', 'Brunei', 'Bulgaristan', 'Burkina Faso', 'Burundi', 'Cezayir',
+        'Cibuti', 'Çad', 'Çek Cumhuriyeti', 'Çin Halk Cumhuriyeti', 'Dağlık Karabağ Cumhuriyeti',
+        'Danimarka', 'Doğu Timor', 'Dominik Cumhuriyeti', 'Dominika', 'Ekvador', 'Ekvator Ginesi',
+        'El Salvador', 'Endonezya', 'Eritre', 'Ermenistan', 'Estonya', 'Etiyopya', 'Fas', 'Fiji',
+        'Fildişi Sahili', 'Filipinler', 'Filistin', 'Finlandiya', 'Fransa', 'Gabon', 'Gambiya',
+        'Gana', 'Gine', 'Gine Bissau', 'Grenada', 'Guatemala', 'Guyana', 'Güney Afrika Cumhuriyeti',
+        'Güney Kore', 'Güney Osetya', 'Güney Sudan', 'Gürcistan', 'Haiti', 'Hırvatistan',
+        'Hindistan', 'Hollanda', 'Honduras', 'Irak', 'İngiltere', 'İran', 'İrlanda', 'İspanya',
+        'İsrail', 'İsveç', 'İsviçre', 'İtalya', 'İzlanda', 'Jamaika', 'Japonya', 'Kamboçya',
+        'Kamerun', 'Kanada', 'Karadağ', 'Katar', 'Kazakistan', 'Kenya', 'Kıbrıs Cumhuriyeti',
+        'Kırgızistan', 'Kiribati', 'Kolombiya', 'Komorlar', 'Kongo', 'Kongo Demokratik Cumhuriyeti',
+        'Kosova', 'Kostarika', 'Kuveyt', 'Kuzey Kıbrıs Türk Cumhuriyeti', 'Kuzey Kore', 'Küba',
+        'Laos', 'Lesotho', 'Letonya', 'Liberya', 'Libya', 'Lihtenştayn', 'Litvanya', 'Lübnan',
+        'Lüksemburg', 'Macaristan', 'Madagaskar', 'Makedonya Cumhuriyeti', 'Malavi', 'Maldiv Adaları',
+        'Malezya', 'Mali', 'Malta', 'Marshall Adaları', 'Meksika', 'Mısır', 'Mikronezya', 'Moğolistan',
+        'Moldova', 'Monako', 'Moritanya', 'Moritius', 'Mozambik', 'Myanmar', 'Namibya', 'Nauru',
+        'Nepal', 'Nijer', 'Nijerya', 'Nikaragua', 'Norveç', 'Orta Afrika Cumhuriyeti', 'Özbekistan',
+        'Pakistan', 'Palau', 'Panama', 'Papua Yeni Gine', 'Paraguay', 'Peru', 'Polonya', 'Portekiz',
+        'Romanya', 'Ruanda', 'Rusya Federasyonu', 'Saint Kitts ve Nevis', 'Saint Lucia', 'Saint Vincent ve Grenadinler',
+        'Samoa', 'San Marino', 'Sao Tome ve Principe', 'Sealand', 'Senegal', 'Seyşeller', 'Sırbistan',
+        'Sierra Leone', 'Singapur', 'Slovakya', 'Slovenya', 'Solomon', 'Somali', 'Somaliland',
+        'Sri Lanka', 'Sudan', 'Surinam', 'Suriye', 'Suudi Arabistan', 'Svaziland', 'Şili', 'Tacikistan',
+        'Tanzanya', 'Tayland', 'Tayvan', 'Togo', 'Tonga', 'Transdinyester', 'Trinidad ve Tobago',
+        'Tunus', 'Tuvalu', 'Türkiye', 'Türkmenistan', 'Uganda', 'Ukrayna', 'Umman', 'Uruguay',
+        'Ürdün', 'Vanuatu', 'Vatikan', 'Venezuela', 'Vietnam', 'Yemen', 'Yeni Zelanda', 'Yeşil Burun',
+        'Yunanistan', 'Zambiya', 'Zimbabwe',
     );
 
     protected static $cityFormats = array(
