@@ -66,12 +66,70 @@ class Populator
     }
 
     /**
+     * Check if $request is a method and if yes run with
+     * any supplied parameters.
+     * @param  string $request String from supplied mapping
+     * @return string          Value returned by method or null
+     */
+    private function runMethod(string $request)
+    {
+        $request = trim($request);
+        $final = null;
+
+        if (strpos($request, '(') !== false &&  strpos($request, ')') !== false) {
+            $start = strpos($request, '(');
+            $name = substr($request, 0, $start);
+            $options = substr($request, ++$start, -1);
+            $vars = explode(',', $options);
+
+            // Convert true, false or null strings.
+            foreach ($vars as &$value) {
+                $val = strtolower($value);
+                $val = trim($val);
+                if ($val === 'true') {
+                    $value = true;
+                }
+                if ($val === 'false') {
+                    $value = false;
+                }
+                if ($val === 'null') {
+                    $value = null;
+                }
+            }
+
+            // Run method
+            switch (count($vars)) {
+                case 1:
+                    $final = $this->generator->$name($vars[0]);
+                    break;
+                case 2:
+                    $final = $this->generator->$name($vars[0], $vars[1]);
+                    break;
+                case 3:
+                    $final = $this->generator->$name($vars[0], $vars[1], $vars[1]);
+                    break;
+                case 4:
+                    $final = $this->generator->$name($vars[0], $vars[1], $vars[1], $vars[3]);
+                    break;
+                case 5:
+                    $final = $this->generator->$name($vars[0], $vars[1], $vars[1], $vars[3], $vars[4]);
+                    break;
+                case 6:
+                    $final = $this->generator->$name($vars[0], $vars[1], $vars[1], $vars[3], $vars[4], $vars[5]);
+                    break;
+            }
+        }
+
+        return $final;
+    }
+
+    /**
      * Build row data array grouped by table name.
      * @param array $mapping   Column names keys with required data values
      * @param integer $number  The number of data rows to produce
      * @param string $table    Table name
      */
-    public function addRow($mapping, $number, $table)
+    public function addRows($mapping, $number, $table)
     {
         foreach ($mapping as &$value) {
             $value = trim($value);
@@ -84,7 +142,12 @@ class Populator
         for ($i=0; $i < $number; $i++) {
             $temp = array();
             foreach ($mapping as $key => &$value) {
-                $temp[$key] = $this->generator->$value;
+                $method =  $this->runMethod($value);
+                if (is_null($method)) {
+                    $temp[$key] = $this->generator->$value;
+                } else {
+                    $temp[$key] = $method;
+                }
             }
             $this->rows[$table][] = $temp;
         }
