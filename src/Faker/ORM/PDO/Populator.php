@@ -71,7 +71,7 @@ class Populator
      * @param  string $request String from supplied mapping
      * @return string          Value returned by method or null
      */
-    private function runMethod(string $request)
+    private function runMethod($request)
     {
         $request = trim($request);
         $final = null;
