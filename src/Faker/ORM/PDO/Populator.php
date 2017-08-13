@@ -82,18 +82,25 @@ class Populator
             $options = substr($request, ++$start, -1);
             $vars = explode(',', $options);
 
-            // Convert true, false or null strings.
+            // Clean string & convert true, false or null.
             foreach ($vars as &$value) {
                 $val = strtolower($value);
                 $val = trim($val);
-                if ($val === 'true') {
-                    $value = true;
-                }
-                if ($val === 'false') {
-                    $value = false;
-                }
-                if ($val === 'null') {
-                    $value = null;
+                $val = str_replace('"', '', $val);
+                $val = str_replace('\'', '', $val);
+                switch ($val) {
+                    case 'true':
+                        $value = true;
+                        break;
+                    case 'false':
+                        $value = true;
+                        break;
+                    case 'null':
+                        $value = null;
+                        break;
+                    default:
+                        $value = $val;
+                        break;
                 }
             }
 
