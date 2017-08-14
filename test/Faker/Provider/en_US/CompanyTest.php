@@ -22,11 +22,9 @@ class CompanyTest extends \PHPUnit_Framework_TestCase
 
     public function testEin()
     {
-        for ($i = 0; $i < 100; $i++) {
-            $number = $this->faker->ein;
+        $number = $this->faker->ein;
 
-            // should be in the format ##-#######, with a valid prefix
-            $this->assertRegExp('/^(0[1-6]||1[0-6]|2[0-7]|[35]\d|[468][0-8]|7[1-7]|9[0-58-9])-\d{7}$/', $number);
-        }
+        // should be in the format ##-#######, with a valid prefix
+        $this->assertRegExp('/^(0[1-6]||1[0-6]|2[0-7]|[35]\d|[468][0-8]|7[1-7]|9[0-58-9])-\d{7}$/', $number);
     }
 }
