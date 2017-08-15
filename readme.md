@@ -471,14 +471,14 @@ $insertedPKs = $populator->execute();
 
 You can insert rows into multiple tables in one execution by simply using the `addRows()` method for all the tables you want to write to whilst supplying a valid mapping for each.
 
-The mapping data consits of an associate array with table columns as keys and Faker properties / method calls as string values. Currently only method calls using basic parameters are supported.
+The mapping data consits of an associate array with table columns as keys and Faker formatter calls as string values or arrays. Values can be a simple formatter call like `firstname`, a method call with no parameters `randomNumber()` or an array containing a method name and array of parameters `array('randomNumber', array(20, 80))`.
 
 ```php
 <?php
 $usersMapping = array(
-    'firstname' => 'firstNameMale',
+    'firstname' => 'firstname()',
     'lastname' => 'lastName',
-    'age' => 'numberBetween(12, 80)',
+    'age' => array('numberBetween', array(20, 80)),
     'telephone' => 'phoneNumber',
     'address' => 'address'
 );
