@@ -10,56 +10,56 @@ class Address extends \Faker\Provider\Address
     /**
      * @var array Danish city suffixes.
      */
-    protected static $citySuffix = array(
+    protected static $citySuffix = [
         'sted', 'bjerg', 'borg', 'rød', 'lund', 'by',
-    );
+    ];
 
     /**
      * @var array Danish street suffixes.
      */
-    protected static $streetSuffix = array(
+    protected static $streetSuffix = [
         'vej', 'gade', 'skov', 'shaven',
-    );
+    ];
 
     /**
      * @var array Danish street word suffixes.
      */
-    protected static $streetSuffixWord = array(
+    protected static $streetSuffixWord = [
         'Vej', 'Gade', 'Allé', 'Boulevard', 'Plads', 'Have',
-    );
+    ];
 
     /**
      * @var array Danish building numbers.
      */
-    protected static $buildingNumber = array(
+    protected static $buildingNumber = [
         '%##', '%#', '%#', '%', '%', '%', '%?', '% ?',
-    );
+    ];
 
     /**
      * @var array Danish building level.
      */
-    protected static $buildingLevel = array(
+    protected static $buildingLevel = [
         'st.', '%.', '%. sal.',
-    );
+    ];
 
     /**
      * @var array Danish building sides.
      */
-    protected static $buildingSide = array(
+    protected static $buildingSide = [
         'tv.', 'th.',
-    );
+    ];
 
     /**
      * @var array Danish zip code.
      */
-    protected static $postcode = array(
+    protected static $postcode = [
         '%###'
-    );
+    ];
 
     /**
      * @var array Danish cities.
      */
-    protected static $cityNames = array(
+    protected static $cityNames = [
         'Aabenraa', 'Aabybro', 'Aakirkeby', 'Aalborg', 'Aalestrup', 'Aars', 'Aarup', 'Agedrup', 'Agerbæk', 'Agerskov',
         'Albertslund', 'Allerød', 'Allinge', 'Allingåbro', 'Almind', 'Anholt', 'Ansager', 'Arden', 'Asaa', 'Askeby',
         'Asnæs', 'Asperup', 'Assens', 'Augustenborg', 'Aulum', 'Auning', 'Bagenkop', 'Bagsværd', 'Balle', 'Ballerup',
@@ -116,12 +116,12 @@ class Address extends \Faker\Provider\Address
         'Vorbasse', 'Vordingborg', 'Væggerløse', 'Værløse', 'Ærøskøbing', 'Ølgod', 'Ølsted', 'Ølstykke', 'Ørbæk',
         'Ørnhøj', 'Ørsted', 'Djurs', 'Østbirk', 'Øster', 'Assels', 'Ulslev', 'Østermarie', 'Østervrå', 'Åbyhøj',
         'Ålbæk', 'Ålsgårde', 'Århus', 'Årre', 'Årslev', 'Haarby', 'Nivå', 'Rømø', 'Omme', 'Vrå', 'Ørum',
-    );
+    ];
 
     /**
      * @var array Danish municipalities, called 'kommuner' in danish.
      */
-    protected static $kommuneNames = array(
+    protected static $kommuneNames = [
         'København', 'Frederiksberg', 'Ballerup', 'Brøndby', 'Dragør', 'Gentofte', 'Gladsaxe', 'Glostrup', 'Herlev',
         'Albertslund', 'Hvidovre', 'Høje Taastrup', 'Lyngby-Taarbæk', 'Rødovre', 'Ishøj', 'Tårnby', 'Vallensbæk',
         'Allerød', 'Fredensborg', 'Helsingør', 'Hillerød', 'Hørsholm', 'Rudersdal', 'Egedal', 'Frederikssund', 'Greve',
@@ -133,21 +133,21 @@ class Address extends \Faker\Provider\Address
         'Norddjurs', 'Favrskov', 'Odder', 'Randers', 'Silkeborg', 'Samsø', 'Skanderborg', 'Aarhus', 'Ikast-Brande',
         'Ringkøbing-Skjern', 'Hedensted', 'Morsø', 'Skive', 'Thisted', 'Viborg', 'Brønderslev', 'Frederikshavn',
         'Vesthimmerlands', 'Læsø', 'Rebild', 'Mariagerfjord', 'Jammerbugt', 'Aalborg', 'Hjørring', 'Køge',
-    );
+    ];
 
     /**
      * @var array Danish regions.
      */
-    protected static $regionNames = array(
+    protected static $regionNames = [
         'Region Nordjylland', 'Region Midtjylland', 'Region Syddanmark', 'Region Hovedstaden', 'Region Sjælland',
-    );
+    ];
 
     /**
      * @link https://github.com/umpirsky/country-list/blob/master/country/cldr/da_DK/country.php
      *
      * @var array Some countries in danish.
      */
-    protected static $country = array(
+    protected static $country = [
         'Andorra', 'Forenede Arabiske Emirater', 'Afghanistan', 'Antigua og Barbuda', 'Anguilla', 'Albanien', 'Armenien',
         'Hollandske Antiller', 'Angola', 'Antarktis', 'Argentina', 'Amerikansk Samoa', 'Østrig', 'Australien', 'Aruba',
         'Åland', 'Aserbajdsjan', 'Bosnien-Hercegovina', 'Barbados', 'Bangladesh', 'Belgien', 'Burkina Faso', 'Bulgarien',
@@ -180,40 +180,40 @@ class Address extends \Faker\Provider\Address
         'USA', 'Uruguay', 'Usbekistan', 'Vatikanstaten', 'St. Vincent og Grenadinerne', 'Venezuela',
         'De britiske jomfruøer', 'De amerikanske jomfruøer', 'Vietnam', 'Vanuatu', 'Wallis og Futunaøerne', 'Samoa',
         'Yemen', 'Mayotte', 'Sydafrika', 'Zambia', 'Zimbabwe',
-    );
+    ];
 
     /**
      * @var array Danish city format.
      */
-    protected static $cityFormats = array(
+    protected static $cityFormats = [
         '{{cityName}}',
-    );
+    ];
 
     /**
      * @var array Danish street's name formats.
      */
-    protected static $streetNameFormats = array(
+    protected static $streetNameFormats = [
         '{{lastName}}{{streetSuffix}}',
         '{{middleName}}{{streetSuffix}}',
         '{{lastName}} {{streetSuffixWord}}',
         '{{middleName}} {{streetSuffixWord}}',
-    );
+    ];
 
     /**
      * @var array Danish street's address formats.
      */
-    protected static $streetAddressFormats = array(
+    protected static $streetAddressFormats = [
         '{{streetName}} {{buildingNumber}}',
         '{{streetName}} {{buildingNumber}}, {{buildingLevel}}',
         '{{streetName}} {{buildingNumber}}, {{buildingLevel}} {{buildingSide}}',
-    );
+    ];
 
     /**
      * @var array Danish address format.
      */
-    protected static $addressFormats = array(
+    protected static $addressFormats = [
         "{{streetAddress}}\n{{postcode}} {{city}}",
-    );
+    ];
 
     /**
      * Randomly return a real city name.

@@ -136,13 +136,13 @@ namespace Faker;
  * @property string $randomLetter
  * @property string $randomAscii
  * @method int randomNumber($nbDigits = null, $strict = false)
- * @method int|string|null randomKey(array $array = array())
+ * @method int|string|null randomKey(array $array = [])
  * @method int numberBetween($min = 0, $max = 2147483647)
  * @method float randomFloat($nbMaxDecimals = null, $min = 0, $max = null)
- * @method mixed randomElement(array $array = array('a', 'b', 'c'))
- * @method array randomElements(array $array = array('a', 'b', 'c'), $count = 1, $allowDuplicates = false)
+ * @method mixed randomElement(array $array = ['a', 'b', 'c'])
+ * @method array randomElements(array $array = ['a', 'b', 'c'], $count = 1, $allowDuplicates = false)
  * @method array|string shuffle($arg = '')
- * @method array shuffleArray(array $array = array())
+ * @method array shuffleArray(array $array = [])
  * @method string shuffleString($string = '', $encoding = 'UTF-8')
  * @method string numerify($string = '###')
  * @method string lexify($string = '????')
@@ -191,8 +191,8 @@ namespace Faker;
  */
 class Generator
 {
-    protected $providers = array();
-    protected $formatters = array();
+    protected $providers = [];
+    protected $formatters = [];
 
     public function addProvider($provider)
     {
@@ -217,7 +217,7 @@ class Generator
         }
     }
 
-    public function format($formatter, $arguments = array())
+    public function format($formatter, $arguments = [])
     {
         return call_user_func_array($this->getFormatter($formatter), $arguments);
     }
@@ -234,7 +234,7 @@ class Generator
         }
         foreach ($this->providers as $provider) {
             if (method_exists($provider, $formatter)) {
-                $this->formatters[$formatter] = array($provider, $formatter);
+                $this->formatters[$formatter] = [$provider, $formatter];
 
                 return $this->formatters[$formatter];
             }
@@ -250,7 +250,7 @@ class Generator
      */
     public function parse($string)
     {
-        return preg_replace_callback('/\{\{\s?(\w+)\s?\}\}/u', array($this, 'callFormatWithMatches'), $string);
+        return preg_replace_callback('/\{\{\s?(\w+)\s?\}\}/u', [$this, 'callFormatWithMatches'], $string);
     }
 
     protected function callFormatWithMatches($matches)

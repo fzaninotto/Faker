@@ -7,21 +7,21 @@ use Faker\Provider\DateTime;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $maleNameFormats = array(
+    protected static $maleNameFormats = [
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}',
         '{{titleMale}} {{firstNameMale}} {{lastName}}',
-    );
+    ];
 
-    protected static $femaleNameFormats = array(
+    protected static $femaleNameFormats = [
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{titleFemale}} {{firstNameFemale}} {{lastName}}',
-    );
+    ];
 
-    protected static $firstNameMale = array(
+    protected static $firstNameMale = [
         'Abraham', 'Adriaan', 'Adrian', 'Ahmed', 'Alan', 'Albert', 'Alex', 'Alexander', 'Alfred', 'Allan', 'Andile', 'Andre', 'Andrew',
         'André', 'Anthony', 'Anton', 'Arnold', 'Arthur', 'Ayanda', 'Barry', 'Ben', 'Benjamin', 'Bernard', 'Bongani', 'Bradley',
         'Brandon', 'Brent', 'Brett', 'Brian', 'Bruce', 'Bryan', 'Carel', 'Carl', 'Charl', 'Charles', 'Chris', 'Christiaan',
@@ -50,9 +50,9 @@ class Person extends \Faker\Provider\Person
         'Lindiwe', 'Marthinus', 'Mashudu', 'Next', 'Nhlanhla', 'Nicolaas', 'Nkosinathi', 'Nompumelelo', 'Nonhlanhla', 'Nonkululeko', 'Nosipho', 'Nozipho',
         'Personal', 'Phumzile', 'Refiloe', 'Sello', 'Sibongile', 'Sifiso', 'Siphokazi', 'Takalani', 'Teboho', 'Thandeka', 'Thandi', 'Thembi',
         'Thulani', 'Tumelo', 'Unathi', 'Vusi', 'Vuyokazi', 'Yolandi', 'Your', 'Zandile',
-    );
+    ];
 
-    protected static $firstNameFemale = array(
+    protected static $firstNameFemale = [
         'Abigail', 'Adele', 'Alicia', 'Alison', 'Amanda', 'Andiswa', 'Andrea', 'Angela', 'Angelique', 'Anita', 'Anna', 'Anne', 'Anthea',
         'Antoinette', 'Asanda', 'Ashley', 'Aubrey', 'Barbara', 'Belinda', 'Beverley', 'Bianca', 'Boitumelo', 'Bongiwe', 'Brenda', 'Bronwyn',
         'Busisiwe', 'Candice', 'Carla', 'Carmen', 'Carol', 'Caroline', 'Catherine', 'Cecilia', 'Celeste', 'Chantal', 'Chantel', 'Chantelle',
@@ -76,9 +76,9 @@ class Person extends \Faker\Provider\Person
         'Lindiwe', 'Marthinus', 'Mashudu', 'Next', 'Nhlanhla', 'Nicolaas', 'Nkosinathi', 'Nompumelelo', 'Nonhlanhla', 'Nonkululeko', 'Nosipho', 'Nozipho',
         'Personal', 'Phumzile', 'Refiloe', 'Sello', 'Sibongile', 'Sifiso', 'Siphokazi', 'Takalani', 'Teboho', 'Thandeka', 'Thandi', 'Thembi',
         'Thulani', 'Tumelo', 'Unathi', 'Vusi', 'Vuyokazi', 'Yolandi', 'Your', 'Zandile',
-    );
+    ];
 
-    protected static $lastName = array(
+    protected static $lastName = [
         'Naidoo', 'Govender', 'Pillay', 'Smith', 'Botha', 'van der Merwe', 'Jacobs', 'Moodley', 'Singh', 'Ndlovu', 'Dlamini',
         'Pretorius', 'Williams', 'Khumalo', 'du Plessis', 'Nkosi', 'Coetzee', 'Venter', 'Nel', 'Fourie', 'Van Wyk', 'Chetty',
         'Smit', 'Kruger', 'Van Zyl', 'Sithole', 'du Toit', 'Adams', 'van Niekerk', 'Reddy', 'Khan', 'Meyer', 'Mahlangu', 'Abrahams',
@@ -125,7 +125,7 @@ class Person extends \Faker\Provider\Person
         'Vosloo', 'Wentzel', 'Munyai', 'Kelly', 'Walters', 'Nzimande', 'Hoosen', 'Mkhabela', 'Madlala', 'Saunders', 'Palmer',
         'Hughes', 'Hanekom', 'Ally', 'Schmidt', 'Butler', 'Mtsweni', 'Maphumulo', 'Manamela', 'Hoffman', 'Wolmarans', 'Duma',
         'Pule', 'Hlophe', 'Miya', 'Moagi',
-    );
+    ];
 
     /**
      * @link https://en.wikipedia.org/wiki/National_identification_number#South_Africa

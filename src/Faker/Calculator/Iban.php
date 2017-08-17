@@ -16,7 +16,7 @@ class Iban
         $checkString = substr($iban, 4) . substr($iban, 0, 2) . '00';
 
         // Replace all letters with their number equivalents
-        $checkString = preg_replace_callback('/[A-Z]/', array('self','alphaToNumberCallback'), $checkString);
+        $checkString = preg_replace_callback('/[A-Z]/', ['self','alphaToNumberCallback'], $checkString);
 
         // Perform mod 97 and subtract from 98
         $checksum = 98 - self::mod97($checkString);

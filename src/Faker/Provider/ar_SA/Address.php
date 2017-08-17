@@ -4,33 +4,33 @@ namespace Faker\Provider\ar_SA;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $streetPrefix = array('شارع', 'طريق', 'ممر');
+    protected static $streetPrefix = ['شارع', 'طريق', 'ممر'];
 
     /**
      * @link https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D9%85%D8%AF%D9%86_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9
      */
-    protected static $cityName = array(
+    protected static $cityName = [
         'الرياض', 'جدة', 'مكة', 'المدينة المنورة', 'تبوك', 'الدمام', 'الأحساء', 'القطيف', 'خميس مشيط', 'المظيلف', 'الهفوف',
         'المبرز', 'الطائف', 'نجران', 'حفر الباطن', 'الجبيل', 'ضباء', 'الخرج', 'الثقبة', 'ينبع البحر', 'الخبر', 'عرعر', 'الحوية',
         'عنيزة', 'سكاكا', 'جيزان', 'القريات', 'الظهران', 'الزلفي', 'الباحة', 'الرس', 'وادي الدواسر', 'بيشة', 'سيهات', 'شرورة',
         'الدوادمي', 'الأفلاج',
-    );
+    ];
 
     /**
      * @link https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AA%D9%82%D8%B3%D9%8A%D9%85_%D8%A7%D9%84%D8%A5%D8%AF%D8%A7%D8%B1%D9%8A_%D9%84%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9_%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9
      */
-    protected static $subdivisions = array(
+    protected static $subdivisions = [
         'منطقة الرياض', 'منطقة القصيم',
         'منطقة مكة المكرمة', 'منطقة المدينة المنورة',
         'منطقة حائل', 'منطقة الجوف', 'منطقة تبوك', 'منطقة الحدود الشمالية',
         'منطقة عسير', 'منطقة جازان', 'منطقة نجران', 'منطقة الباحة',
         'المنطقة الشرقية',
-    );
+    ];
 
     /**
      * @link https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A7%D8%AA_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9
      */
-    protected static $governorates = array(
+    protected static $governorates = [
         'الرياض', 'الدرعية', 'الخرج', 'الدوادمي', 'المجمعة', 'القويعية', 'الأفلاج', 'وادي الدواسر', 'الزلفي', 'شقراء', 'حوطة بني تميم', 'عفيف', 'الغاط', 'السليل', 'ضرما', 'المزاحمية', 'رماح', 'ثادق', 'حريملاء', 'الحريق', 'مرات',
         'مكة المكرمة', 'جدة', 'الطائف', 'القنفذة', 'الليث', 'رابغ', 'خليص', 'الخرمة', 'رنية', 'تربة', 'الجموم', 'الكامل', 'المويه', 'ميسان', 'أضم', 'العرضيات', 'بحرة',
         'المدينة المنورة', 'ينبع', 'العلا', 'مهد الذهب', 'الحناكية', 'بدر', 'خيبر', 'العيص', 'وادي الفرع',
@@ -44,16 +44,16 @@ class Address extends \Faker\Provider\Address
         'نجران', 'شرورة', 'حبونا', 'بدر الجنوب', 'يدمه', 'ثار', 'خباش', 'الخرخير',
         'الباحة', 'بلجرشي', 'المندق', 'المخواة', 'قلوة', 'العقيق', 'القرى', 'غامد الزناد', 'الحجرة', 'بني حسن',
         'سكاكا', 'القريات', 'دومة الجندل', 'طبرجل'
-    );
+    ];
 
-    protected static $buildingNumber = array('#####', '####', '##');
+    protected static $buildingNumber = ['#####', '####', '##'];
 
-    protected static $postcode = array('#####', '#####-####');
+    protected static $postcode = ['#####', '#####-####'];
 
     /**
      * @link http://www.nationsonline.org/oneworld/countrynames_arabic.htm
      */
-    protected static $country = array(
+    protected static $country = [
         'الكاريبي', 'أمريكا الوسطى', 'أنتيجوا وبربودا', 'أنجولا', 'أنجويلا', 'أندورا', 'اندونيسيا', 'أورجواي', 'أوروبا', 'أوزبكستان', 'أوغندا', 'أوقيانوسيا', 'أوقيانوسيا النائية', 'أوكرانيا', 'ايران', 'أيرلندا', 'أيسلندا', 'ايطاليا',
         'بابوا غينيا الجديدة', 'باراجواي', 'باكستان', 'بالاو', 'بتسوانا', 'بتكايرن', 'بربادوس', 'برمودا', 'بروناي', 'بلجيكا', 'بلغاريا', 'بليز', 'بنجلاديش', 'بنما', 'بنين', 'بوتان', 'بورتوريكو', 'بوركينا فاسو', 'بوروندي', 'بولندا', 'بوليفيا', 'بولينيزيا', 'بولينيزيا الفرنسية', 'بيرو',
         'تانزانيا', 'تايلند', 'تايوان', 'تركمانستان', 'تركيا', 'ترينيداد وتوباغو', 'تشاد', 'توجو', 'توفالو', 'توكيلو', 'تونجا', 'تونس', 'تيمور الشرقية',
@@ -75,26 +75,26 @@ class Address extends \Faker\Provider\Address
         'ناميبيا', 'نورو', 'نيبال', 'نيجيريا', 'نيكاراجوا', 'نيوزيلاندا', 'نيوي',
         'هايتي', 'هندوراس', 'هولندا', 'هونج كونج الصينية',
         'وسط آسيا', 'وسط افريقيا',
-    );
+    ];
 
-    protected static $cityFormats = array(
+    protected static $cityFormats = [
         '{{cityName}}',
-    );
+    ];
 
-    protected static $streetNameFormats = array(
+    protected static $streetNameFormats = [
         '{{streetPrefix}} {{firstName}} {{lastName}}',
-    );
+    ];
 
-    protected static $streetAddressFormats = array(
+    protected static $streetAddressFormats = [
         '{{buildingNumber}} {{streetName}}',
         '{{buildingNumber}} {{streetName}} {{secondaryAddress}}',
-    );
+    ];
 
-    protected static $addressFormats = array(
+    protected static $addressFormats = [
         "{{streetAddress}}\n{{city}}",
-    );
+    ];
 
-    protected static $secondaryAddressFormats = array('شقة رقم. ##', 'عمارة رقم ##');
+    protected static $secondaryAddressFormats = ['شقة رقم. ##', 'عمارة رقم ##'];
 
     /**
      * @example 'شرق'

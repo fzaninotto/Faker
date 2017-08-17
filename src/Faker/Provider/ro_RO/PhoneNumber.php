@@ -5,7 +5,7 @@ namespace Faker\Provider\ro_RO;
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
     protected static $normalFormats = array(
-        'landline' => array(
+        'landline' => [
             '021#######', // Bucharest
             '023#######',
             '024#######',
@@ -18,26 +18,26 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
             '035#######',
             '036#######',
             '037#######', // non-geographic
-        ),
-        'mobile' => array(
+        ],
+        'mobile' => [
             '07########',
-        )
+        ]
     );
 
     protected static $specialFormats = array(
-        'toll-free' => array(
+        'toll-free' => [
             '0800######',
             '0801######', // shared-cost numbers
             '0802######', // personal numbering
             '0806######', // virtual cards
             '0807######', // pre-paid cards
             '0870######', // internet dial-up
-        ),
-        'premium-rate' => array(
+        ],
+        'premium-rate' => [
             '0900######',
             '0903######', // financial information
             '0906######', // adult entertainment
-        )
+        ]
     );
 
     /**

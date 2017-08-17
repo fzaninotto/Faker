@@ -4,9 +4,9 @@ namespace Faker\Provider\en_NG;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $postcode = array('#####', '## ###');
+    protected static $postcode = ['#####', '## ###'];
 
-    private static $county = array(
+    private static $county = [
         'Abuja', 'Abia', 'Adamawa', 'Akwa Ibom', 'Anambra',
         'Bauchi', 'Bayelsa', 'Benue', 'Borno',
         'Cross River',
@@ -23,7 +23,7 @@ class Address extends \Faker\Provider\Address
         'Taraba',
         'Yobe',
         'Zamfara'
-    );
+    ];
 
     protected static $country = array(
         'Afghanistan', 'Albania', 'Algeria', 'American Samoa', 'Andorra', 'Angola', 'Anguilla', 'Antarctica (the territory South of 60 deg S)', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan',
@@ -53,7 +53,7 @@ class Address extends \Faker\Provider\Address
         'Zambia', 'Zimbabwe'
     );
 
-    private static $regions = array(
+    private static $regions = [
         'Abakaliki', 'Abeokuta', 'Akure', 'Asaba', 'Awka',
         'Bauchi',
         'Calabar', 'City',
@@ -70,7 +70,7 @@ class Address extends \Faker\Provider\Address
         'Sokoto',
         'Umuahia', 'Uyo',
         'Yenagoa', 'Yola'
-    );
+    ];
 
     /**
      * Randomly returns a Nigerian state or county.

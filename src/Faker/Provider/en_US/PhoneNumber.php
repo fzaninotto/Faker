@@ -46,9 +46,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     /**
      * @see https://en.wikipedia.org/wiki/Toll-free_telephone_number#United_States
      */
-    protected static $tollFreeAreaCodes = array(
+    protected static $tollFreeAreaCodes = [
         800, 844, 855, 866, 877, 888
-    );
+    ];
     protected static $tollFreeFormats = array(
         // Standard formats
         '{{tollFreeAreaCode}}-{{exchangeCode}}-####',

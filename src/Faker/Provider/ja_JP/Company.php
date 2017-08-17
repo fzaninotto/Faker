@@ -4,11 +4,11 @@ namespace Faker\Provider\ja_JP;
 
 class Company extends \Faker\Provider\Company
 {
-    protected static $formats = array(
+    protected static $formats = [
         '{{companyPrefix}} {{lastName}}'
-    );
+    ];
 
-    protected static $companyPrefix = array('株式会社', '有限会社');
+    protected static $companyPrefix = ['株式会社', '有限会社'];
 
     public static function companyPrefix()
     {

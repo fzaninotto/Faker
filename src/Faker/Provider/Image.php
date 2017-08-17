@@ -7,10 +7,10 @@ namespace Faker\Provider;
  */
 class Image extends Base
 {
-    protected static $categories = array(
+    protected static $categories = [
         'abstract', 'animals', 'business', 'cats', 'city', 'food', 'nightlife',
         'fashion', 'people', 'nature', 'sports', 'technics', 'transport'
-    );
+    ];
 
     /**
      * Generate the URL that will return a random image

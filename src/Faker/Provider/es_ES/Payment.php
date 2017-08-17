@@ -4,7 +4,7 @@ namespace Faker\Provider\es_ES;
 
 class Payment extends \Faker\Provider\Payment
 {
-    private static $vatMap = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'N', 'P', 'Q', 'R', 'S', 'U', 'V', 'W');
+    private static $vatMap = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'N', 'P', 'Q', 'R', 'S', 'U', 'V', 'W'];
 
     /**
      * International Bank Account Number (IBAN)

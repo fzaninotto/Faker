@@ -4,7 +4,7 @@ namespace Faker\Provider\en_IN;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $city = array(
+    protected static $city = [
         'Agra','Ahmedabad','Ajmer','Alwar',
         'Bengaluru','Bhubhaneshwar','Bhopal','Bikaner',
         'Chennai','Chandigarh',
@@ -25,9 +25,9 @@ class Address extends \Faker\Provider\Address
         'Udaipur',
         'Vishakhapattanam','Vadodara',
         'Warangal',
-    );
+    ];
 
-    protected static $state = array(
+    protected static $state = [
         
         // States
         'Andhra Pradesh', 'Arunachal Pradesh', 'Assam',
@@ -54,11 +54,11 @@ class Address extends \Faker\Provider\Address
         'Dadra and Nagar Haveli', 'Daman and Diu', 'Delhi',
         'Lakshadweep',
         'Puducherry'
-    );
+    ];
 
-    protected static $stateAbbr = array(
+    protected static $stateAbbr = [
        'AP', 'AR', 'AS', 'BR', 'CG', 'GA', 'GJ', 'HR', 'HP', 'JK', 'JH', 'KA', 'KL', 'MP', 'MH', 'MN', 'ML', 'MZ', 'NL', 'OD', 'PB', 'RJ', 'SK', 'TN', 'TS', 'TR', 'UP', 'UK', 'WB', 'AN', 'CH', 'DN', 'DD', 'DL', 'LD', 'PY'
-    );
+    ];
 
     protected static $country = array(
         'Afghanistan', 'Albania', 'Algeria', 'American Samoa', 'Andorra', 'Angola', 'Anguilla', 'Antarctica (the territory South of 60 deg S)', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan',
@@ -87,7 +87,7 @@ class Address extends \Faker\Provider\Address
         'Yemen',
         'Zambia', 'Zimbabwe'
     );
-    protected static $localityName = array(
+    protected static $localityName = [
         'Aundh','Andheri',
         'Borivali','Bandra',
         'Chinchwad','Chandpole','Churchgate','Cyber City',
@@ -99,31 +99,31 @@ class Address extends \Faker\Provider\Address
         'Sodala',
         'Virar','Vikhroli',
         'Yerwada','Yeshwanthpura',
-    );
-    protected static $areaSuffix = array(
+    ];
+    protected static $areaSuffix = [
         ' Nagar','Pur','Garh','Gunj',' Chowk',
-    );
-    protected static $postcode = array(
+    ];
+    protected static $postcode = [
         '1#####','2#####','3#####','4#####','5#####',
-    );
-    protected static $localityFormats = array(
+    ];
+    protected static $localityFormats = [
         '{{firstName}}{{areaSuffix}}',
         '{{localityName}}'
-    );
-    protected static $addressFormats = array(
+    ];
+    protected static $addressFormats = [
         '{{streetAddress}} {{city}} - {{postcode}}',
-    );
-    protected static $societySuffix = array(
+    ];
+    protected static $societySuffix = [
         'Society','Apartments','Heights','Villas',
-    );
-    protected static $societyNameFormat = array(
+    ];
+    protected static $societyNameFormat = [
         '{{firstName}} {{societySuffix}}'
-    );
-    protected static $streetAddressFormats = array(
+    ];
+    protected static $streetAddressFormats = [
         
         '{{buildingNumber}}, {{locality}},',
         '{{buildingNumber}}, {{societyName}}, {{locality}}',
-    );
+    ];
     public function societySuffix()
     {
         return static::randomElement(static::$societySuffix);

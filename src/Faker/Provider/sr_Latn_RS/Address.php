@@ -4,35 +4,35 @@ namespace Faker\Provider\sr_Latn_RS;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $postcode = array('#####');
+    protected static $postcode = ['#####'];
 
-    protected static $streetPrefix = array(
+    protected static $streetPrefix = [
         'Bulevar',
-    );
+    ];
 
-    protected static $street = array(
+    protected static $street = [
         'Kralja Milana', 'Cara Dušana', 'Nikole Tesle', 'Mihajla Pupina', 'Nikole Pašića',
-    );
+    ];
 
-    protected static $streetNameFormats = array(
+    protected static $streetNameFormats = [
         '{{street}}',
         '{{streetPrefix}} {{street}}',
-    );
+    ];
 
-    protected static $streetAddressFormats = array(
+    protected static $streetAddressFormats = [
         '{{streetName}} {{buildingNumber}}',
-    );
+    ];
 
-    protected static $cityFormats = array(
+    protected static $cityFormats = [
         '{{cityName}}',
-    );
+    ];
 
     /**
      * @link http://sr.wikipedia.org/sr-el/%D0%93%D1%80%D0%B0%D0%B4_%D1%83_%D0%A1%D1%80%D0%B1%D0%B8%D1%98%D0%B8
      */
-    protected static $cityNames = array(
+    protected static $cityNames = [
         'Beograd', 'Valjevo', 'Vranje', 'Zaječar', 'Zrenjanin', 'Jagodina', 'Kragujevac', 'Kraljevo', 'Kruševac', 'Leskovac', 'Loznica', 'Niš', 'Novi Pazar', 'Novi Sad', 'Pančevo', 'Požarevac', 'Priština', 'Smederevo', 'Sombor', 'Sremska Mitrovica', 'Subotica', 'Užice', 'Čačak', 'Šabac',
-    );
+    ];
 
     /**
      * @link https://github.com/umpirsky/country-list/blob/master/country/cldr/sr_Latn/country.php

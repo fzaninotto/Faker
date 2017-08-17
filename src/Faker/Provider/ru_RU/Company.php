@@ -4,31 +4,31 @@ namespace Faker\Provider\ru_RU;
 
 class Company extends \Faker\Provider\Company
 {
-    protected static $companyNameFormats = array(
+    protected static $companyNameFormats = [
         '{{companyPrefix}} {{companyNameElement}}',
         '{{companyPrefix}} {{companyNameElement}}{{companyNameElement}}',
         '{{companyPrefix}} {{companyNameElement}}{{companyNameElement}}{{companyNameElement}}',
         '{{companyPrefix}} {{companyNameElement}}{{companyNameElement}}{{companyNameElement}}{{companyNameSuffix}}',
-    );
+    ];
 
-    protected static $companyPrefixes = array(
+    protected static $companyPrefixes = [
       'ООО', 'ЗАО', 'ООО Компания', 'ОАО', 'ОАО', 'ПАО', 'МКК', 'МФО'
-    );
+    ];
 
-    protected static $companyNameSuffixes = array(
+    protected static $companyNameSuffixes = [
       'Маш', 'Наладка', 'Экспедиция', 'Пром', 'Комплекс', 'Машина', 'Снос', '-М', 'Лизинг', 'Траст', 'Снаб',
       '-H', 'Трест', 'Банк', 'Опт', 'Проф', 'Сбыт', 'Центр'
-    );
+    ];
     /**
      * @note Words and parts of words that usually used in company names
      */
-    protected static $companyElements = array(
+    protected static $companyElements = [
         'ЖелДор', 'Гараж', 'Цемент', 'Асбоцемент', 'Строй', 'Лифт', 'Креп', 'Авто', 'Теле', 'Транс', 'Алмаз', 'Метиз',
         'Мотор', 'Рос', 'Тяж', 'Тех', 'Сантех', 'Урал', 'Башкир', 'Тверь', 'Казань', 'Обл', 'Бух', 'Хоз', 'Электро',
         'Текстиль', 'Восток', 'Орион', 'Юпитер', 'Финанс', 'Микро', 'Радио', 'Мобайл', 'Дизайн', 'Метал', 'Нефть',
         'Телеком', 'Инфо', 'Сервис', 'Софт', 'IT', 'Рыб', 'Глав', 'Вектор', 'Рем', 'Гор', 'Газ', 'Монтаж', 'Мор',
         'Реч', 'Флот', 'Cиб', 'Каз', 'Инж', 'Вод', 'Пив', 'Хмель', 'Мяс', 'Томск', 'Омск', 'Север', 'Лен'
-    );
+    ];
 
     /**
      * @link https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9F%D1%80%D0%BE%D1%84%D0%B5%D1%81%D1%81%D0%B8%D0%B8

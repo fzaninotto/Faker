@@ -5,9 +5,9 @@ namespace Faker\Provider\pt_BR;
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
 
-    protected static $landlineFormats = array('2###-####', '3###-####');
+    protected static $landlineFormats = ['2###-####', '3###-####'];
 
-    protected static $cellphoneFormats = array('9####-####');
+    protected static $cellphoneFormats = ['9####-####'];
 
     /**
      * Generates a 2-digit area code not composed by zeroes.
@@ -28,7 +28,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         $number = static::numerify(static::randomElement(static::$cellphoneFormats));
 
         if (!$formatted) {
-            $number = strtr($number, array('-' => ''));
+            $number = strtr($number, ['-' => '']);
         }
 
         return $number;
@@ -44,7 +44,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         $number = static::numerify(static::randomElement(static::$landlineFormats));
 
         if (!$formatted) {
-            $number = strtr($number, array('-' => ''));
+            $number = strtr($number, ['-' => '']);
         }
 
         return $number;
@@ -58,9 +58,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     public static function phone($formatted = true)
     {
         $options = static::randomElement(array(
-            array('cellphone', false),
-            array('cellphone', true),
-            array('landline', null),
+            ['cellphone', false],
+            ['cellphone', true],
+            ['landline', null],
         ));
 
         return call_user_func("static::{$options[0]}", $formatted, $options[1]);
@@ -108,7 +108,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      */
     public function phoneNumber()
     {
-        $method = static::randomElement(array('cellphoneNumber', 'landlineNumber'));
+        $method = static::randomElement(['cellphoneNumber', 'landlineNumber']);
         return call_user_func("static::$method", true);
     }
 
@@ -118,7 +118,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      */
     public static function phoneNumberCleared()
     {
-        $method = static::randomElement(array('cellphoneNumber', 'landlineNumber'));
+        $method = static::randomElement(['cellphoneNumber', 'landlineNumber']);
         return call_user_func("static::$method", false);
     }
 }

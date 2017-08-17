@@ -4,16 +4,16 @@ namespace Faker\Provider\de_DE;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $buildingNumber = array('###', '##', '#', '#/#', '##[abc]', '#[abc]');
+    protected static $buildingNumber = ['###', '##', '#', '#/#', '##[abc]', '#[abc]'];
 
-    protected static $streetSuffixLong = array(
+    protected static $streetSuffixLong = [
         'Gasse', 'Platz', 'Ring', 'Straße', 'Weg', 'Allee'
-    );
-    protected static $streetSuffixShort = array(
+    ];
+    protected static $streetSuffixShort = [
         'gasse', 'platz', 'ring', 'straße', 'str.', 'weg', 'allee'
-    );
+    ];
 
-    protected static $postcode = array('#####');
+    protected static $postcode = ['#####'];
 
     /**
      * @var array
@@ -49,11 +49,11 @@ class Address extends \Faker\Provider\Address
         'Zeitz', 'Zerbst/Anhalt', 'Zirndorf', 'Zittau', 'Zülpich', 'Zweibrücken', 'Zwickau',
     );
 
-    protected static $state = array(
+    protected static $state = [
         'Baden-Württemberg', 'Bayern', 'Berlin', 'Brandenburg', 'Bremen', 'Hamburg', 'Hessen', 'Mecklenburg-Vorpommern', 'Niedersachsen', 'Nordrhein-Westfalen', 'Rheinland-Pfalz', 'Saarland', 'Sachsen', 'Sachsen-Anhalt', 'Schleswig-Holstein', 'Thüringen'
-    );
+    ];
 
-    protected static $country = array(
+    protected static $country = [
         'Afghanistan', 'Alandinseln', 'Albanien', 'Algerien', 'Amerikanisch-Ozeanien', 'Amerikanisch-Samoa', 'Amerikanische Jungferninseln', 'Andorra', 'Angola', 'Anguilla', 'Antarktis', 'Antigua und Barbuda', 'Argentinien', 'Armenien', 'Aruba', 'Aserbaidschan', 'Australien', 'Ägypten', 'Äquatorialguinea', 'Äthiopien', 'Äußeres Ozeanien',
         'Bahamas', 'Bahrain', 'Bangladesch', 'Barbados', 'Belarus', 'Belgien', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivien', 'Bosnien und Herzegowina', 'Botsuana', 'Bouvetinsel', 'Brasilien', 'Britische Jungferninseln', 'Britisches Territorium im Indischen Ozean', 'Brunei Darussalam', 'Bulgarien', 'Burkina Faso', 'Burundi',
         'Chile', 'China', 'Cookinseln', 'Costa Rica', 'Côte d’Ivoire',
@@ -77,23 +77,23 @@ class Address extends \Faker\Provider\Address
         'Vanuatu', 'Vatikanstadt', 'Venezuela', 'Vereinigte Arabische Emirate', 'Vereinigte Staaten', 'Vereinigtes Königreich', 'Vietnam',
         'Wallis und Futuna', 'Weihnachtsinsel', 'Westsahara',
         'Zentralafrikanische Republik', 'Zypern',
-    );
+    ];
 
-    protected static $cityFormats = array(
+    protected static $cityFormats = [
         '{{cityName}}',
-    );
+    ];
 
-    protected static $streetNameFormats = array(
+    protected static $streetNameFormats = [
         '{{lastName}}{{streetSuffixShort}}',
         '{{firstName}}-{{lastName}}-{{streetSuffixLong}}'
-    );
+    ];
 
-    protected static $streetAddressFormats = array(
+    protected static $streetAddressFormats = [
         '{{streetName}} {{buildingNumber}}',
-    );
-    protected static $addressFormats = array(
+    ];
+    protected static $addressFormats = [
         "{{streetAddress}}\n{{postcode}} {{city}}",
-    );
+    ];
 
     public function cityName()
     {
