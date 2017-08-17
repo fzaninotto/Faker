@@ -4,7 +4,7 @@ namespace Faker\Provider\ko_KR;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
-    protected static $formats = array(
+    protected static $formats = [
         '010-####-####',
         '070-####-####',
         '02-####-####',
@@ -13,5 +13,5 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '05#-####-####',
         '06#-####-####',
         '1588-####',
-    );
+    ];
 }

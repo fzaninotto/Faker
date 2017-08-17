@@ -4,15 +4,15 @@ namespace Faker\Provider\cs_CZ;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $streetAddressFormats = array(
+    protected static $streetAddressFormats = [
         '{{streetName}}',
         '{{streetName}} {{buildingNumber}}',
         '{{streetName}} {{buildingNumber}}',
         '{{streetName}} {{buildingNumber}}',
         '{{streetName}} {{buildingNumber}}',
-    );
+    ];
 
-    protected static $addressFormats = array(
+    protected static $addressFormats = [
         "{{streetAddress}}\n{{region}}\n{{postcode}} {{city}}",
         "{{streetAddress}}\n{{postcode}} {{city}}",
         "{{streetAddress}}\n{{postcode}} {{city}}",
@@ -20,16 +20,16 @@ class Address extends \Faker\Provider\Address
         "{{streetAddress}}\n{{postcode}} {{city}}",
         "{{streetAddress}}\n{{postcode}} {{city}}",
         "{{streetAddress}}\n{{postcode}} {{city}}\nČeská republika",
-    );
+    ];
 
-    protected static $buildingNumber = array('%', '%%', '%/%%', '%%/%%', '%/%%%', '%%/%%%');
+    protected static $buildingNumber = ['%', '%%', '%/%%', '%%/%%', '%/%%%', '%%/%%%'];
 
-    protected static $postcode = array('#####', '### ##');
+    protected static $postcode = ['#####', '### ##'];
 
     /**
      * Source: https://cs.wikipedia.org/wiki/Seznam_m%C4%9Bst_v_%C4%8Cesku_podle_po%C4%8Dtu_obyvatel
      */
-    protected static $city = array(
+    protected static $city = [
         'Brno', 'Břeclav', 'Cheb', 'Chomutov', 'Chrudim', 'Černošice', 'Česká Lípa', 'České Budějovice',
         'Český Těšín', 'Děčín', 'Frýdek-Místek', 'Havlíčkův Brod', 'Havířov', 'Hodonín', 'Hradec Králové',
         'Jablonec nad Nisou', 'Jihlava', 'Karlovy Vary', 'Karviná', 'Kladno', 'Kolín', 'Krnov', 'Kroměříž',
@@ -37,12 +37,12 @@ class Address extends \Faker\Provider\Address
         'Ostrava', 'Pardubice', 'Plzeň', 'Praha', 'Prostějov', 'Písek', 'Přerov', 'Příbram', 'Sokolov', 'Šumperk',
         'Teplice', 'Trutnov', 'Tábor', 'Třebíč', 'Třinec', 'Uherské Hradiště', 'Ústí nad Labem',
         'Valašské Meziříčí', 'Vsetín', 'Zlín', 'Znojmo',
-    );
+    ];
 
     /**
      * Source: https://cs.wikipedia.org/wiki/Seznam_st%C3%A1t%C5%AF_sv%C4%9Bta
      */
-    protected static $country = array(
+    protected static $country = [
         'Afghánistán', 'Albánie', 'Alžírsko', 'Andorra', 'Angola', 'Antigua a Barbuda', 'Argentina',
         'Arménie', 'Austrálie', 'Ázerbájdžán', 'Bahamy', 'Bahrajn', 'Bangladéš', 'Barbados', 'Belgie',
         'Belize', 'Benin', 'Bělorusko', 'Bhútán', 'Bolívie', 'Bosna a Hercegovina', 'Botswana', 'Brazílie',
@@ -67,21 +67,21 @@ class Address extends \Faker\Provider\Address
         'Španělsko', 'Šrí Lanka', 'Švédsko', 'Švýcarsko', 'Tádžikistán', 'Tanzanie', 'Thajsko', 'Togo', 'Tonga',
         'Trinidad a Tobago', 'Tunisko', 'Turecko', 'Turkmenistán', 'Tuvalu', 'Uganda', 'Ukrajina', 'Uruguay',
         'Uzbekistán', 'Vanuatu', 'Vatikán', 'Venezuela', 'Vietnam', 'Východní Timor', 'Zambie', 'Zimbabwe',
-    );
+    ];
 
     /**
      * Source: https://cs.wikipedia.org/wiki/Kraje_v_%C4%8Cesku#Ekonomika
      */
-    private static $regions = array(
+    private static $regions = [
         'Hlavní město Praha', 'Jihomoravský kraj', 'Jihočeský kraj', 'Karlovarský kraj', 'Královéhradecký kraj',
         'Liberecký kraj', 'Moravskoslezský kraj', 'Olomoucký kraj', 'Pardubický kraj', 'Plzeňský kraj',
         'Středočeský kraj', 'Vysočina', 'Zlínský kraj', 'Ústecký kraj',
-    );
+    ];
 
     /**
      * Source: http://aplikace.mvcr.cz/adresy/
      */
-    protected static $street = array(
+    protected static $street = [
         'Alžírská', 'Angelovova', 'Antonínská', 'Arménská', 'Čelkovická', 'Červenkova', 'Československého exilu',
         'Chlumínská', 'Chládkova', 'Diskařská', 'Do Kopečka', 'Do Vozovny', 'Do Vršku', 'Doubravická', 'Doudova',
         'Drahotínská', 'Dělnická', 'Generála Šišky', 'Gončarenkova', 'Gutova', 'Havlínova', 'Havraní', 'Helmova',
@@ -108,7 +108,7 @@ class Address extends \Faker\Provider\Address
         'Újezdská', 'V Jámě', 'V Předním Hloubětíně', 'V Rohu', 'V Uličce', 'Valčíkova', 'Ve Lhotce', 'Ve Vrších',
         'Velenická', 'Violková', 'Vlašská', 'Voděradská', 'Vyderská', 'Vysokoškolská', 'Výpadová', 'Vřesovická',
         'Za Pekárnou', 'Zámecká',
-    );
+    ];
 
     /**
      * Randomly returns a czech city.

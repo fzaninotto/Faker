@@ -4,35 +4,35 @@ namespace Faker\Provider\sr_Cyrl_RS;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $postcode = array('#####');
+    protected static $postcode = ['#####'];
 
-    protected static $streetPrefix = array(
+    protected static $streetPrefix = [
         'Булевар',
-    );
+    ];
 
-    protected static $street = array(
+    protected static $street = [
         'Краља Милана', 'Цара Душана', 'Николе Тесле', 'Михајла Пупина', 'Николе Пашића',
-    );
+    ];
 
-    protected static $streetNameFormats = array(
+    protected static $streetNameFormats = [
         '{{street}}',
         '{{streetPrefix}} {{street}}',
-    );
+    ];
 
-    protected static $streetAddressFormats = array(
+    protected static $streetAddressFormats = [
         '{{streetName}} {{buildingNumber}}',
-    );
+    ];
 
-    protected static $cityFormats = array(
+    protected static $cityFormats = [
         '{{cityName}}',
-    );
+    ];
 
     /**
      * @link http://sr.wikipedia.org/wiki/%D0%93%D1%80%D0%B0%D0%B4%D0%BE%D0%B2%D0%B8_%D1%83_%D0%A1%D1%80%D0%B1%D0%B8%D1%98%D0%B8
      */
-    protected static $cityNames = array(
+    protected static $cityNames = [
         'Београд', 'Ваљево', 'Врање', 'Зајечар', 'Зрењанин', 'Јагодина', 'Крагујевац', 'Краљево', 'Крушевац', 'Лесковац', 'Лозница', 'Ниш', 'Нови Пазар', 'Нови Сад', 'Панчево', 'Пожаревац', 'Приштина', 'Смедерево', 'Сомбор', 'Сремска Митровица', 'Суботица', 'Ужице', 'Чачак', 'Шабац',
-    );
+    ];
 
     /**
      * @link https://github.com/umpirsky/country-list/blob/master/country/cldr/sr_Cyrl/country.php

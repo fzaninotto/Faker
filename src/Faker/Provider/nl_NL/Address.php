@@ -4,23 +4,23 @@ namespace Faker\Provider\nl_NL;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $buildingNumber = array('%', '%#', '%##', '%###', '%-?', '%#-?', '%?', '%#?', '%-#', '%#-##');
+    protected static $buildingNumber = ['%', '%#', '%##', '%###', '%-?', '%#-?', '%?', '%#?', '%-#', '%#-##'];
 
-    protected static $postcode = array('%### ??');
+    protected static $postcode = ['%### ??'];
 
-    protected static $streetNameFormats = array('{{lastName}}{{streetSuffix}}');
+    protected static $streetNameFormats = ['{{lastName}}{{streetSuffix}}'];
 
-    protected static $streetAddressFormats = array('{{streetName}} {{buildingNumber}}');
+    protected static $streetAddressFormats = ['{{streetName}} {{buildingNumber}}'];
 
-    protected static $cityFormats = array('{{cityName}}');
+    protected static $cityFormats = ['{{cityName}}'];
 
-    protected static $addressFormats = array(
+    protected static $addressFormats = [
         "{{streetAddress}}\n{{postcode}} {{city}}",
-    );
+    ];
 
-    protected static $streetSuffix = array(
+    protected static $streetSuffix = [
         'baan', 'boulevard', 'dreef', 'hof', 'laan', 'pad', 'ring', 'singel', 'steeg', 'straat', 'weg',
-    );
+    ];
 
     /**
     * Export of BAG (http://bag.vrom.nl/)
@@ -55,9 +55,9 @@ class Address extends \Faker\Provider\Address
         'Zaamslag', 'Zaandam', 'Zaandijk', 'Zalk', 'Zaltbommel', 'Zandberg', 'Zandeweer', 'Zandhuizen', 'Zandpol', 'Zandvoort', 'Zeddam', 'Zeegse', 'Zeeland', 'Zeerijp', 'Zeewolde', 'Zegge', 'Zegveld', 'Zeijen', 'Zeijerveen', 'Zeijerveld', 'Zeist', 'Zelhem', 'Zenderen', 'Zennewijnen', 'Zennewijnen', 'Zetten', 'Zevenaar', 'Zevenbergen', 'Zevenbergschen Hoek', 'Zevenbergschen Hoek', 'Zevenhoven', 'Zevenhuizen', 'Zevenhuizen', 'Zierikzee', 'Zieuwent', 'Zijderveld', 'Zijdewind', 'Zijldijk', 'Zoelen', 'Zoelmond', 'Zoetermeer', 'Zoeterwoude', 'Zonnemaire', 'Zorgvlied', 'Zoutelande', 'Zoutkamp', 'Zuid-Beijerland', 'Zuid-Scharwoude', 'Zuidbroek', 'Zuiddorpe', 'Zuidermeer', 'Zuiderwoude', 'Zuidhorn', 'Zuidlaarderveen', 'Zuidland', 'Zuidlaren', 'Zuidoostbeemster', 'Zuidschermer', 'Zuidveen', 'Zuidveld', 'Zuidvelde', 'Zuidwolde', 'Zuidwolde', 'Zuidzande', 'Zuilichem', 'Zuna', 'Zundert', 'Zurich', 'Zutphen', 'Zuurdijk', 'Zwaag', 'Zwaagdijk-Oost', 'Zwaagdijk-West', 'Zwaanshoek', 'Zwagerbosch', 'Zwammerdam', 'Zwanenburg', 'Zwartebroek', 'Zwartemeer', 'Zwartewaal', 'Zwartsluis', 'Zweeloo', 'Zweins', 'Zwiggelte', 'Zwijndrecht', 'Zwinderen', 'Zwolle', 'de Hoef', 'de Lutte', 'de Wijk', 'de Woude',
     );
 
-    protected static $state = array(
+    protected static $state = [
         'Drenthe', 'Gelderland', 'Groningen', 'Flevoland', 'Friesland', 'Noord-Brabant', 'Noord-Holland', 'Overijssel', 'Limburg', 'Utrecht', 'Zeeland', 'Zuid-Holland'
-    );
+    ];
 
     protected static $country = array(
         'Afghanistan', 'Albanië', 'Algerije', 'Amerikaans-Samoa', 'Andorra', 'Angola', 'Amerikaanse Virgineilanden', 'Anguilla', 'Antartica', 'Antigua en Barbuda', 'Argentinië', 'Armenië', 'Aruba', 'Australië', 'Azerbeidzjan',

@@ -4,21 +4,21 @@ namespace Faker\Provider\sv_SE;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $buildingNumber = array('%###', '%##', '%#', '%#?', '%', '%?');
+    protected static $buildingNumber = ['%###', '%##', '%#', '%#?', '%', '%?'];
 
-    protected static $streetPrefix = array(
+    protected static $streetPrefix = [
         'Stor', 'Små', 'Lill', 'Sjö', 'Kungs', 'Drottning', 'Hamn', 'Brunns', 'Linné', 'Vasa', 'Ring', 'Freds'
-    );
+    ];
 
-    protected static $streetSuffix = array(
+    protected static $streetSuffix = [
         'vägen', 'gatan', 'gränd', 'stigen', 'backen', 'liden'
-    );
+    ];
 
-    protected static $streetSuffixWord = array(
+    protected static $streetSuffixWord = [
         'Allé', 'Gata', 'Väg', 'Backe'
-    );
+    ];
 
-    protected static $postcode = array('%####', '%## ##');
+    protected static $postcode = ['%####', '%## ##'];
 
     /**
      * @var array Swedish city names
@@ -53,13 +53,13 @@ class Address extends \Faker\Provider\Address
         'Öbonäs', 'Öckerö', 'Ödeborg', 'Ödeshög', 'Ödsmål', 'Ödåkra', 'Öggestorp', 'Öjersjö', 'Ölmanäs', 'Ölmbrotorp', 'Ölme', 'Ölmstad', 'Ölsta', 'Önneköp', 'Önnestad', 'Örbyhus', 'Örebro', 'Öregrund', 'Örkelljunga', 'Örnsköldsvik', 'Örserum', 'Örsjö', 'Örslösa', 'Örsundsbro', 'Örtagården', 'Örtofta', 'Örviken', 'Ösmo', 'Östadkulle', 'Östansjö', 'Östavall', 'Österbybruk', 'Österbymo', 'Österforse', 'Österfärnebo', 'Österhagen och Bergliden', 'Österslöv', 'Österstad', 'Östersund', 'Östervåla', 'Östhammar', 'Östhamra', 'Östmark', 'Östnor', 'Östorp och Ådran', 'Östra Bispgården', 'Östra Frölunda', 'Östra Grevie', 'Östra Husby', 'Östra Kallfors', 'Östra Karup', 'Östra Ljungby', 'Östra Ryd', 'Östra Sönnarslöv', 'Östra Tommarp', 'Östra Ånneröd', 'Östraby', 'Överboda', 'Överhörnäs', 'Överkalix', 'Överlida', 'Övertorneå', 'Överum', 'Övre Soppero', 'Övre Svartlå', 'Öxabäck', 'Öxeryd'
     );
 
-    protected static $cityFormats = array(
+    protected static $cityFormats = [
         '{{cityName}}'
-    );
+    ];
 
-    protected static $state = array();
+    protected static $state = [];
 
-    protected static $stateAbbr = array();
+    protected static $stateAbbr = [];
 
     protected static $country = array(
         'Afghanistan', 'Albanien', 'Algeriet', 'Amerikanska Jungfruöarna', 'Amerikanska Samoa', 'Andorra', 'Angola', 'Anguilla', 'Antarktis', 'Antigua och Barbuda', 'Argentina', 'Armenien', 'Aruba', 'Australien', 'Azerbajdzjan',
@@ -92,7 +92,7 @@ class Address extends \Faker\Provider\Address
     /**
      * @var array Swedish street name formats
      */
-    protected static $streetNameFormats = array(
+    protected static $streetNameFormats = [
         '{{lastName}}{{streetSuffix}}',
         '{{lastName}}{{streetSuffix}}',
         '{{firstName}}{{streetSuffix}}',
@@ -102,21 +102,21 @@ class Address extends \Faker\Provider\Address
         '{{streetPrefix}}{{streetSuffix}}',
         '{{streetPrefix}}{{streetSuffix}}',
         '{{lastName}} {{streetSuffixWord}}'
-    );
+    ];
 
     /**
      * @var array Swedish street address formats
      */
-    protected static $streetAddressFormats = array(
+    protected static $streetAddressFormats = [
         '{{streetName}} {{buildingNumber}}'
-    );
+    ];
 
     /**
      * @var array Swedish address formats
      */
-    protected static $addressFormats = array(
+    protected static $addressFormats = [
         "{{streetAddress}}\n{{postcode}} {{city}}"
-    );
+    ];
 
     /**
      * Randomly return a real city name

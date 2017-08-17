@@ -4,17 +4,17 @@ namespace Faker\Provider\ru_RU;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $cityPrefix = array('город');
+    protected static $cityPrefix = ['город'];
 
-    protected static $regionSuffix = array('область');
-    protected static $streetPrefix = array(
+    protected static $regionSuffix = ['область'];
+    protected static $streetPrefix = [
         'пер.', 'ул.', 'пр.', 'шоссе', 'пл.', 'бульвар',
         'въезд', 'спуск', 'проезд', 'наб.',
-    );
+    ];
 
-    protected static $buildingNumber = array('##');
-    protected static $postcode = array('######');
-    protected static $country = array(
+    protected static $buildingNumber = ['##'];
+    protected static $postcode = ['######'];
+    protected static $country = [
         'Украина', 'Российская Федерация', 'США', 'Канада', 'Австралия', 'Австрия',
         'Азербайджан', 'Аландские острова', 'Албания', 'Алжир', 'Американские острова Самоа', 'Ангилья',
         'Ангола', 'Андорра', 'Антарктика', 'Антигуа и Барбуда', 'Аргентина', 'Армения',
@@ -63,9 +63,9 @@ class Address extends \Faker\Provider\Address
         'Черногория', 'Чешская Республика', 'Чили', 'Швейцария', 'Швеция',
         'Шпицберген и Ян-Майен', 'Шри-Ланка', 'Эквадор', 'Экваториальная Гвинея', 'Эритрея',
         'Эстония', 'Эфиопия', 'Южная Корея', 'Южно-Африканская Республика', 'Ямайка', 'Япония',
-    );
+    ];
 
-    protected static $region = array(
+    protected static $region = [
         'Амурская', 'Архангельская', 'Астраханская', 'Белгородская', 'Брянская',
         'Владимирская', 'Волгоградская', 'Вологодская', 'Воронежская', 'Ивановская',
         'Иркутская', 'Калининградская', 'Калужская', 'Кемеровская', 'Кировская',
@@ -76,9 +76,9 @@ class Address extends \Faker\Provider\Address
         'Сахалинская', 'Свердловская', 'Смоленская', 'Тамбовская', 'Тверская',
         'Томская', 'Тульская', 'Тюменская', 'Ульяновская', 'Челябинская',
         'Читинская', 'Ярославская',
-    );
+    ];
 
-    protected static $city = array(
+    protected static $city = [
         'Балашиха', 'Видное', 'Волоколамск', 'Воскресенск', 'Дмитров',
         'Домодедово', 'Дорохово', 'Егорьевск', 'Зарайск', 'Истра',
         'Кашира', 'Клин', 'Коломна', 'Красногорск', 'Лотошино',
@@ -87,20 +87,20 @@ class Address extends \Faker\Provider\Address
         'Павловский Посад', 'Подольск', 'Пушкино', 'Раменское', 'Сергиев Посад',
         'Серебряные Пруды', 'Серпухов', 'Солнечногорск', 'Ступино', 'Талдом',
         'Чехов', 'Шатура', 'Шаховская', 'Щёлково',
-    );
+    ];
 
-    protected static $street = array(
+    protected static $street = [
         'Косиора', 'Ладыгина', 'Ленина', 'Ломоносова', 'Домодедовская', 'Гоголя', '1905 года', 'Чехова', 'Сталина',
         'Космонавтов', 'Гагарина', 'Славы', 'Бухарестская', 'Будапештсткая', 'Балканская'
-    );
+    ];
 
-    protected static $addressFormats = array(
+    protected static $addressFormats = [
         "{{postcode}}, {{region}} {{regionSuffix}}, {{cityPrefix}} {{city}}, {{streetPrefix}} {{street}}, {{buildingNumber}}",
-    );
+    ];
 
-    protected static $streetAddressFormats = array(
+    protected static $streetAddressFormats = [
         "{{streetPrefix}} {{street}}, {{buildingNumber}}"
-    );
+    ];
 
     public static function buildingNumber()
     {

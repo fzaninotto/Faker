@@ -7,10 +7,10 @@ class Color extends \Faker\Provider\Color
     /**
      * @link http://tr.wikipedia.org/wiki/Renkler_listesi
      */
-    protected static $safeColorNames = array(
+    protected static $safeColorNames = [
         'siyah', 'kırmızı', 'sarı', 'mavi', 'turuncu',
         'yeşil', 'mor', 'gümüş', 'gri', 'pembe',
-    );
+    ];
 
     protected static $allColorNames = array(
         'Alev kırmızısı', 'Alice mavisi', 'Alizarin', 'Altunî', 'Ametist', 'Armut',

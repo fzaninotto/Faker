@@ -4,15 +4,15 @@ namespace Faker\Provider\lv_LV;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $cityPrefix = array('pilsēta');
+    protected static $cityPrefix = ['pilsēta'];
 
-    protected static $regionSuffix = array('reģions');
-    protected static $streetPrefix = array(
+    protected static $regionSuffix = ['reģions'];
+    protected static $streetPrefix = [
         'iela', 'bulvāris', 'skvērs', 'gāte',
-    );
+    ];
 
-    protected static $buildingNumber = array('##');
-    protected static $postcode = array('LV ####');
+    protected static $buildingNumber = ['##'];
+    protected static $postcode = ['LV ####'];
     protected static $country = array(
         'Afghanistan', 'Albania', 'Algeria', 'American Samoa', 'Andorra', 'Angola', 'Anguilla', 'Antarctica (the territory South of 60 deg S)', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan',
         'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Bouvet Island (Bouvetoya)', 'Brazil', 'British Indian Ocean Territory (Chagos Archipelago)', 'British Virgin Islands', 'Brunei Darussalam', 'Bulgaria', 'Burkina Faso', 'Burundi',
@@ -41,24 +41,24 @@ class Address extends \Faker\Provider\Address
         'Zambia', 'Zimbabwe'
     );
 
-    protected static $region = array(
+    protected static $region = [
         'Kurzemes', 'Latgales', 'Rīgas', 'Vidzemes', 'Zemgales'
-    );
+    ];
 
-    protected static $city = array('Aizkraukle' ,'Aluksne','Balvi', 'Bauska','Cesis',
+    protected static $city = ['Aizkraukle' ,'Aluksne','Balvi', 'Bauska','Cesis',
         'Daugavpils', 'Dobele','Gulbene', 'Jekabpils', 'Jelgava', 'Kraslava', 'Kuldiga', 'Liepaja',
         'Limbazi', 'Ludza', 'Madona', 'Mobile Phones', 'Ogre', 'Preili', 'Rezekne', 'Rīga', 'Ventspils'
-    );
+    ];
 
-    protected static $street = array(
+    protected static $street = [
         'Alfrēda Kalniņa', 'Alksnāja', 'Amatu', 'Anglikāņu', 'Arhitektu', 'Arsenāla', 'Artilērijas',
         'Aspazijas', 'Atgriežu', 'Audēju', 'Basteja', 'Baumaņa', 'Bīskapa', 'Blaumaņa', 'Brīvības', 'Brīvības',
         'Bruņinieku', 'Dainas', 'Daugavas'
-    );
+    ];
 
-    protected static $addressFormats = array(
+    protected static $addressFormats = [
         "{{postcode}}, {{region}} {{regionSuffix}}, {{city}} {{cityPrefix}}, {{street}} {{streetPrefix}}, {{buildingNumber}}",
-    );
+    ];
 
     public static function buildingNumber()
     {

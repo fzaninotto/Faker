@@ -4,31 +4,31 @@ namespace Faker\Provider\pt_BR;
 
 class Payment extends \Faker\Provider\Payment
 {
-    protected static $cardVendors = array(
+    protected static $cardVendors = [
         'Visa', 'Visa', 'Visa', 'Visa', 'Visa',
         'MasterCard', 'MasterCard', 'MasterCard', 'MasterCard', 'MasterCard',
         'American Express', 'Discover Card', 'Diners', 'Elo', 'Hipercard'
-    );
+    ];
 
     // see https://gist.github.com/erikhenrique/5931368 / http://pt.stackoverflow.com/q/3715/26461
     protected static $cardParams = array(
-        'Visa' => array(
+        'Visa' => [
             "4##############"
-        ),
-        'MasterCard' => array(
+        ],
+        'MasterCard' => [
             "5##############"
-        ),
-        'American Express' => array(
+        ],
+        'American Express' => [
             "34############",
             "37############"
-        ),
-        'Discover Card' => array(
+        ],
+        'Discover Card' => [
             "6011###########",
             "622############",
             "64#############",
             "65#############"
-        ),
-        'Diners' => array(
+        ],
+        'Diners' => [
             "301############",
             "301##########",
             "305############",
@@ -37,8 +37,8 @@ class Payment extends \Faker\Provider\Payment
             "36###########",
             "38#############",
             "38###########",
-        ),
-        'Elo' => array(
+        ],
+        'Elo' => [
             "636368#########",
             "438935#########",
             "504175#########",
@@ -47,14 +47,14 @@ class Payment extends \Faker\Provider\Payment
             "5067###########",
             "4576###########",
             "4011###########",
-        ),
-        'Hipercard' => array(
+        ],
+        'Hipercard' => [
             "38#############",
             "60#############",
-        ),
-        "Aura" => array(
+        ],
+        "Aura" => [
             "50#############"
-        )
+        ]
     );
 
     /**

@@ -4,7 +4,7 @@ namespace Faker\Provider\fr_CA;
 
 class Address extends \Faker\Provider\fr_FR\Address
 {
-    protected static $cityPrefix = array('Saint-', 'Sainte-', 'St-', 'Ste-');
+    protected static $cityPrefix = ['Saint-', 'Sainte-', 'St-', 'Ste-'];
 
     /**
      * The suffixes come from this list of communities in Québec
@@ -43,45 +43,45 @@ class Address extends \Faker\Provider\fr_FR\Address
     /**
      * @example 'Saint-Marc-des-Carrières' or 'Sainte-Monique'
      */
-    protected static $cityFormats = array(
+    protected static $cityFormats = [
         '{{cityPrefix}}{{firstName}}{{citySuffix}}',
         '{{cityPrefix}}{{firstName}}',
-    );
+    ];
 
-    protected static $buildingNumber = array('#####', '####', '###', '##', '#');
+    protected static $buildingNumber = ['#####', '####', '###', '##', '#'];
 
-    protected static $streetSuffix = array(
+    protected static $streetSuffix = [
         'Autoroute', 'Avenue', 'Boulevard', 'Chemin', 'Route', 'Rue', 'Pont'
-    );
+    ];
 
-    protected static $postcode = array('?#? #?#', '?#?#?#');
+    protected static $postcode = ['?#? #?#', '?#?#?#'];
 
     /**
      * @example 'Avenue Bolduc'
      */
-    protected static $streetNameFormats = array(
+    protected static $streetNameFormats = [
         '{{streetSuffix}} {{firstName}}',
         '{{streetSuffix}} {{lastName}}'
-    );
+    ];
 
-    protected static $streetAddressFormats = array(
+    protected static $streetAddressFormats = [
         '{{buildingNumber}} {{streetName}}',
         '{{buildingNumber}} {{streetName}} {{secondaryAddress}}',
-    );
+    ];
 
-    protected static $addressFormats = array(
+    protected static $addressFormats = [
         "{{streetAddress}}, {{city}}, {{stateAbbr}} {{postcode}}",
-    );
+    ];
 
-    protected static $secondaryAddressFormats = array('Apt. ###', 'Suite ###', 'Bureau ###');
+    protected static $secondaryAddressFormats = ['Apt. ###', 'Suite ###', 'Bureau ###'];
 
-    protected static $state = array(
+    protected static $state = [
         'Alberta', 'Colombie-Brittanique', 'Manitoba', 'Nouveau-Brunswick', 'Terre-Neuve-et-Labrador', 'Nouvelle-Écosse', 'Ontario', 'Île-du-Prince-Édouard', 'Québec', 'Saskatchewan'
-    );
+    ];
 
-    protected static $stateAbbr = array(
+    protected static $stateAbbr = [
         'AB', 'BC', 'MB', 'NB', 'NL', 'NS', 'ON', 'PE', 'QC', 'SK'
-    );
+    ];
 
     /**
      * @example 'Saint-'

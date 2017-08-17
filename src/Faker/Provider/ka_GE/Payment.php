@@ -8,7 +8,7 @@ class Payment extends \Faker\Provider\Payment
     /**
      * @see list of Georgian banks (2015-12-26), source: https://www.nbg.gov.ge/index.php?m=403
      */
-    protected static $banks = array(
+    protected static $banks = [
         'ბანკი რესპუბლიკა',
         'თიბისი ბანკი',
         'საქართველოს ბანკი',
@@ -28,7 +28,7 @@ class Payment extends \Faker\Provider\Payment
         'ხალიკ ბანკი საქართველო ',
         'პაშა ბანკი საქართველო',
         'ფინკა ბანკი საქართველო',
-    );
+    ];
 
     /**
      * @example 'თიბისი ბანკი'

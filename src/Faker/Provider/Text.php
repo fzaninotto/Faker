@@ -8,7 +8,7 @@ abstract class Text extends Base
     protected static $separator = ' ';
     protected static $separatorLen = 1;
     protected $explodedText;
-    protected $consecutiveWords = array();
+    protected $consecutiveWords = [];
     protected static $textStartsWithUppercase = true;
 
     /**
@@ -41,7 +41,7 @@ abstract class Text extends Base
         }
 
         $words = $this->getConsecutiveWords($indexSize);
-        $result = array();
+        $result = [];
         $resultLength = 0;
         // take a random starting point
         $next = static::randomKey($words);
@@ -78,8 +78,8 @@ abstract class Text extends Base
     {
         if (!isset($this->consecutiveWords[$indexSize])) {
             $parts = $this->getExplodedText();
-            $words = array();
-            $index = array();
+            $words = [];
+            $index = [];
             for ($i = 0; $i < $indexSize; $i++) {
                 $index[] = array_shift($parts);
             }
@@ -87,7 +87,7 @@ abstract class Text extends Base
             for ($i = 0, $count = count($parts); $i < $count; $i++) {
                 $stringIndex = static::implode($index);
                 if (!isset($words[$stringIndex])) {
-                    $words[$stringIndex] = array();
+                    $words[$stringIndex] = [];
                 }
                 $word = $parts[$i];
                 $words[$stringIndex][] = $word;

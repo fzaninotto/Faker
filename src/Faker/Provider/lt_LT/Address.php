@@ -4,16 +4,16 @@ namespace Faker\Provider\lt_LT;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $cityPrefix = array('miestas');
+    protected static $cityPrefix = ['miestas'];
 
-    protected static $regionSuffix = array('regionas');
-    protected static $streetSuffix = array(
+    protected static $regionSuffix = ['regionas'];
+    protected static $streetSuffix = [
         'g.', 'gatvė', 'prospektas', 'alėja',
-    );
+    ];
 
-    protected static $buildingNumber = array('##');
+    protected static $buildingNumber = ['##'];
 
-    protected static $postcode = array('LT-#####');
+    protected static $postcode = ['LT-#####'];
 
     protected static $country = array(
     'Afganistanas', 'Airija', 'Alandų salos', 'Albanija', 'Alžyras', 'Amerikos Samoa', 'Andora',
@@ -55,27 +55,27 @@ class Address extends \Faker\Provider\Address
     /**
      * @link https://lt.wikipedia.org/wiki/Lietuvos_etnokult%C5%ABriniai_regionai
      */
-    protected static $region = array(
+    protected static $region = [
         'Aukštaitija', 'Dzūkija', 'Suvalkija', 'Žemaitija'
-    );
+    ];
 
     /**
      * @link https://lt.wikipedia.org/wiki/S%C4%85ra%C5%A1as:Lietuvos_miestai_pagal_gyventojus
      */
-    protected static $city = array('Vilnius', 'Kaunas', 'Klaipėda', 'Šiauliai', 'Panevėžys',
+    protected static $city = ['Vilnius', 'Kaunas', 'Klaipėda', 'Šiauliai', 'Panevėžys',
         'Alytus', 'Marijampolė', 'Mažeikiai', 'Jonava', 'Utena', 'Kėdainiai', 'Telšiai', 'Visaginas', 'Tauragė',
         'Ukmergė'
-    );
+    ];
 
-    protected static $street = array(
+    protected static $street = [
         'Klaipėdos', 'Vilniaus', 'Kauno', 'Žalgirio', 'Saltoniškių', 'Laisvės', 'Didžioji', 'Liepų'
-    );
+    ];
 
-    protected static $addressFormats = array(
+    protected static $addressFormats = [
         "{{street}} {{streetSuffix}} {{buildingNumber}}-{{buildingNumber}}, {{city}}",
         "{{street}} {{streetSuffix}} {{buildingNumber}}, {{city}}",
         "{{street}} {{streetSuffix}} {{buildingNumber}}, {{city}} {{postcode}}",
-    );
+    ];
 
     public static function buildingNumber()
     {

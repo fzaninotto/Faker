@@ -17,7 +17,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      *
      * @var array
      */
-    protected static $mobileFormats = array(
+    protected static $mobileFormats = [
         // Local
         '075 ### ## ##',
         '075#######',
@@ -29,7 +29,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '078#######',
         '079 ### ## ##',
         '079#######',
-    );
+    ];
 
     /**
      * Return a Swiss mobile phone number.

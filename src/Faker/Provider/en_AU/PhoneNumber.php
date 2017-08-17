@@ -31,18 +31,18 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     );
 
     // 04 Mobile telephones (Australia-wide) mostly commonly written 4 - 3 - 3 instead of 2 - 4 - 4
-    protected static $mobileFormats = array(
+    protected static $mobileFormats = [
         '04## ### ###',
         '04##-###-###',
         '04##.###.###',
         '+61 4## ### ###',
         '+61-4##-###-###',
         '+61.4##.###.###',
-    );
+    ];
 
-    protected static $areacodes = array(
+    protected static $areacodes = [
         '2', '3', '7', '8'
-    );
+    ];
 
     public static function mobileNumber()
     {

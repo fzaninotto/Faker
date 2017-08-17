@@ -4,16 +4,16 @@ namespace Faker\Provider\me_ME;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $postcode = array('#####');
+    protected static $postcode = ['#####'];
 
-    protected static $streetPrefix = array(
+    protected static $streetPrefix = [
         '',
-    );
+    ];
 
     /**
      * @link http://podgorica.mapa.in.rs/
      */
-    protected static $street = array(
+    protected static $street = [
         '1. crnogorske brigade narodne odbrane', '1. maja', '1. proleterske brigade', '10. crnogorske brigade', '13. jula', '18. februara', '18. jula', '19. decembra', '2. crnogorskog bataljona', '2. proleterske dalmatinske brigade', '27. marta', '3. sandžačke proleterske brigade', '4. jula', '4. proleterske brigade', '5. proleterske brigade', '6. crnogorske udarne brigade', '7. omladinske brigade', '8. crnogorske udarne brigade', '8. jula', '8. marta', '9. crnogorske brigade',
         'Admirala Zmajevića', 'Aerodromska', 'Aleksandra Ace Prijića', 'Aleksandra Lesa Ivanovića', 'Aleksandra Puškina', 'Alekse Šantića', 'Alfreda Tenisona', 'Andrije Paltašića', 'Andrijevička', 'Antona Čehova', 'Arhitekte Milana Popovića', 'Arsenija Čarnojevića', 'Atinska', 'AVNOJ-a',
         'Balkanska', 'Balšića', 'Barska', 'Belvederska', 'Beogradska', 'Berska', 'Bjelasička', 'Bjelopoljska', 'Blaža Jovanovića', 'Bohinjska', 'Bokeljske mornarice', 'Bokeška', 'Bore i Ramiza', 'Borisa Kidriča', 'Boška Buhe', 'Botunska', 'Bracana Bracanovića', 'Braće Ribar', 'Branislava Lekića', 'Branka Ćopića', 'Branka Deletića', 'Branka Radičevića', 'Bratonožićka', 'Bratstva i jedinstva', 'Bregalnička', 'Buda Tomovića', 'Budvanska', 'Bulevar Džordža Vašingtona', 'Bulevar Ivana Crnojevića', 'Bulevar Mihaila Lalića', 'Bulevar revolucije', 'Bulevar Save Kovačevića',
@@ -36,32 +36,32 @@ class Address extends \Faker\Provider\Address
         'Ulcinjska', 'Užička',
         'Valtazara Bogišića', 'Vardarska', 'Vasa Raičkovića', 'Velimira Stojanovića', 'Velimira Terzića', 'Veljka Jankovića', 'Vezirov most', 'Vinogradska', 'Vitomira Vita Nikolića', 'Vlada Ćetkovića', 'Vlada Martinovića', 'Vladike Danila', 'Vladike Petra I', 'Vladike Vasilija Petrovića', 'Vojisavljevića', 'Vojislava Grujića', 'Vojvode Ilije Plamenca', 'Vojvode Mijajla Nišina', 'Vojvode Mirka Petrovića', 'Vojvode Raduna', 'Vojvode Vase Bracanova', 'Vojvođanska', 'Vrela 2.', 'Vrela 3.', 'Vrela 4.', 'Vrela 5.', 'Vrela 6.', 'Vučedolska', 'Vuka Đurovića', 'Vuka Karadžića', 'Vuka Mandušića', 'Vuka Mićunovića', 'Vukice Mitrović', 'Vukosava Božovića',
         'Zagrebačka', 'Zetskih vladara', 'Zetskog odreda', 'Zmaj Jovina', 'Žabljačka', 'Žarka Zrenjanina', 'Žikice Jovanovića Španca', 'Žrtava fašizma',
-    );
+    ];
 
-    protected static $streetNameFormats = array(
+    protected static $streetNameFormats = [
         '{{street}}',
         '{{streetPrefix}} {{street}}',
-    );
+    ];
 
-    protected static $streetAddressFormats = array(
+    protected static $streetAddressFormats = [
         '{{streetName}} {{buildingNumber}}',
-    );
+    ];
 
-    protected static $cityFormats = array(
+    protected static $cityFormats = [
         '{{cityName}}',
-    );
+    ];
 
     /**
      * @link http://sh.wikipedia.org/wiki/Popis_gradova_u_Crnoj_Gori
      */
-    protected static $cityNames = array(
+    protected static $cityNames = [
        'Bar', 'Budva', 'Herceg Novi',
        'Kotor', 'Tivat', 'Ulcinj', 'Podgorica',
        'Cetinje', 'Nikšić', 'Danilovgrad', 'Žabljak',
        'Kolašin', 'Andrijevica', 'Berane', 'Bijelo Polje',
        'Mojkovac', 'Plav', 'Plužine', 'Pljevlja', 'Rožaje',
        'Šavnik', 'Petnjica', 'Gusinje', 'Petrovac','Sutomore',
-    );
+    ];
 
     /**
      * @link https://github.com/umpirsky/country-list/blob/master/country/cldr/sr_Latn/country.php
