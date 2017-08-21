@@ -57,7 +57,7 @@ class HtmlBlock extends Base
      *
      * @return string
      */
-    public function randomHtml(int $min = 5, int $max = 40): string
+    public function randomHtmlBlock(int $min = 5, int $max = 40): string
     {
         $html = [];
         $args = new \stdClass();
