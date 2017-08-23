@@ -23,58 +23,52 @@ class Person extends \Faker\Provider\Person
     );
 
     protected static $firstNameMale = array(
-        'Aaron', 'Abramo', 'Adriano', 'Akira', 'Alan', 'Alberto', 'Albino', 'Alessandro', 'Alessio', 'Amedeo', 'Amos', 'Anastasio', 'Anselmo',
-        'Antimo', 'Antonino', 'Antonio', 'Ariel', 'Armando', 'Aroldo', 'Arturo', 'Augusto', 'Battista', 'Bernardo', 'Boris', 'Caio',
-        'Carlo', 'Carmelo', 'Ciro', 'Damiano', 'Danny', 'Dante', 'Davide', 'Davis', 'Demis', 'Dimitri', 'Domingo', 'Dylan',
-        'Edilio', 'Egidio', 'Elio', 'Emanuel', 'Emidio', 'Enrico', 'Enzo', 'Ercole', 'Ermes', 'Ethan', 'Ettore', 'Eusebio',
-        'Fabiano', 'Fabio', 'Ferdinando', 'Fernando', 'Fiorenzo', 'Flavio', 'Folco', 'Fulvio', 'Furio', 'Gabriele', 'Gaetano', 'Gastone',
-        'Gavino', 'Gerlando', 'Germano', 'Giacinto', 'Gianantonio', 'Giancarlo', 'Gianmarco', 'Gianmaria', 'Gioacchino', 'Giordano', 'Giorgio', 'Giuliano',
-        'Giulio', 'Graziano', 'Gregorio', 'Guido', 'Harry', 'Hector', 'Iacopo', 'Ian', 'Ilario', 'Italo', 'Ivano', 'Jack',
-        'Jacopo', 'Jari', 'Jarno', 'Joey', 'Joseph', 'Joshua', 'Kai', 'Karim', 'Kris', 'Lamberto', 'Lauro', 'Lazzaro',
-        'Leonardo', 'Liborio', 'Lino', 'Lorenzo', 'Loris', 'Ludovico', 'Luigi', 'Manfredi', 'Manuele', 'Marco', 'Mariano', 'Marino',
-        'Marvin', 'Marzio', 'Matteo', 'Mattia', 'Mauro', 'Max', 'Michael', 'Mirco', 'Mirko', 'Modesto', 'Moreno', 'Nabil',
-        'Nadir', 'Nathan', 'Nazzareno', 'Nick', 'Nico', 'Noah', 'Noel', 'Omar', 'Oreste', 'Osvaldo', 'Pablo', 'Patrizio',
-        'Pietro', 'Priamo', 'Quirino', 'Raoul', 'Renato', 'Renzo', 'Rocco', 'Rodolfo', 'Romeo', 'Romolo', 'Rudy', 'Sabatino',
-        'Sabino', 'Samuel', 'Sandro', 'Santo', 'Sebastian', 'Sesto', 'Silvano', 'Silverio', 'Sirio', 'Siro', 'Timoteo', 'Timothy',
-        'Tommaso', 'Ubaldo', 'Umberto', 'Vinicio', 'Walter', 'Xavier', 'Yago', 'Alighieri', 'Alighiero', 'Amerigo', 'Arcibaldo', 'Arduino',
-        'Artes', 'Audenico', 'Ausonio', 'Bacchisio', 'Baldassarre', 'Bettino', 'Bortolo', 'Caligola', 'Cecco', 'Cirino', 'Cleros',
-        'Costantino', 'Costanzo', 'Danthon', 'Demian','Domiziano', 'Edipo', 'Egisto', 'Eliziario', 'Eriberto', 'Erminio',
-        'Eustachio', 'Evangelista', 'Fiorentino', 'Giacobbe', 'Gianleonardo', 'Gianriccardo', 'Giobbe', 'Ippolito',
-        'Isira', 'Joannes', 'Kociss', 'Laerte', 'Maggiore', 'Muzio', 'Nestore', 'Odino', 'Odone', 'Olo', 'Oretta', 'Orfeo',
-        'Osea', 'Pacifico', 'Pericle', 'Piererminio', 'Pierfrancesco', 'Piersilvio', 'Primo', 'Quarto', 'Quasimodo',
-        'Radames', 'Radio', 'Raniero', 'Rosalino', 'Rosolino', 'Rufo', 'Secondo', 'Tancredi', 'Tazio', 'Terzo', 'Teseo',
-        'Tolomeo',  'Trevis', 'Tristano', 'Ulrico', 'Valdo', 'Zaccaria', 'Dindo', 'Serse'
+        'Adriano', 'Achille', 'Alan', 'Alberto', 'Alessandro', 'Alessio', 'Alfredo', 'Agostino', 'Amedeo', 'Andrea', 'Anselmo', 'Antonino', 
+        'Antonio', 'Armando', 'Aroldo', 'Arturo', 'Augusto', 'Baldassarre', 'Bartolomeo', 'Bernardo', 'Bettino', 'Boris', 'Calogero', 'Carlo', 
+        'Carmelo', 'Ciro', 'Costantino', 'Costanzo', 'Cristian', 'Cristiano', 'Damiano', 'Daniele', 'Dante', 'Davide', 'Dennis', 'Domenico', 
+        'Domiziano', 'Edilio', 'Edoardo', 'Egidio', 'Elia', 'Elio', 'Emanuele', 'Emidio', 'Enrico', 'Enzo', 'Erminio', 'Ettore', 'Eusebio', 'Ezio', 
+        'Fabiano', 'Fabio', 'Fabrizio', 'Ferdinando', 'Fernando', 'Filippo', 'Flavio', 'Francesco', 'Fulvio', 'Furio', 'Gabriele', 'Gaetano', 'Gastone', 
+        'Germano', 'Giacinto', 'Giacobbe', 'Giancarlo', 'Gianleonardo', 'Gianmarco', 'Gianmaria', 'Gianriccardo', 'Gioacchino', 'Giordano', 'Giorgio', 
+        'Giovanni', 'Giuliano', 'Giulio', 'Giuseppe', 'Graziano', 'Gregorio', 'Guido', 'Iacopo', 'Ignazio', 'Ilario', 'Italo', 'Ivan', 'Ivano', 'Jacopo', 
+        'Jari', 'Lamberto', 'Lauro', 'Leonardo', 'Lino', 'Lorenzo', 'Loris', 'Luca', 'Luciano', 'Ludovico', 'Luigi', 'Manfredi', 'Manuele', 
+        'Marco', 'Mariano', 'Marino', 'Mario', 'Marzio', 'Matteo', 'Mattia', 'Mauro', 'Michael', 'Mirco', 'Mirko', 'Moreno', 'Nazzareno', 'Nereo', 
+        'Nico', 'Nicola', 'Norberto', 'Oliviero', 'Omar', 'Oreste', 'Orfeo', 'Osvaldo', 'Paolo', 'Patrizio', 'Pierfrancesco', 'Piero', 'Piersilvio', 
+        'Pietro', 'Primo', 'Quasimodo', 'Quirino', 'Raniero', 'Raul', 'Renato', 'Renzo', 'Riccardo', 'Rocco', 'Rodolfo', 'Romeo', 'Romolo', 
+        'Rosalino', 'Rosolino', 'Rudy', 'Salvatore', 'Samuel', 'Samuele', 'Sandro', 'Santino', 'Saviero', 'Savino', 'Sebastiano', 'Silvano', 'Sirio', 
+        'Tancredi', 'Tazio', 'Teodoro', 'Tiziano', 'Tommaso', 'Ugo', 'Umberto', 'Valentino', 'Valerio', 'Vincenzo', 'Vinicio', 'Vittorio', 'Walter'        
     );
 
     protected static $firstNameFemale = array(
-        'Assia', 'Benedetta', 'Bibiana', 'Brigitta', 'Carmela', 'Celeste', 'Cira', 'Claudia', 'Concetta', 'Cristyn', 'Deborah', 'Demi', 'Diana',
-        'Donatella', 'Doriana', 'Edvige', 'Elda', 'Elga', 'Elsa', 'Emilia', 'Enrica', 'Erminia', 'Evita', 'Fatima', 'Felicia',
-        'Filomena', 'Fortunata', 'Gilda', 'Giovanna', 'Giulietta', 'Grazia', 'Helga', 'Ileana', 'Ingrid', 'Ione', 'Irene', 'Isabel',
-        'Ivonne', 'Jelena', 'Kayla', 'Kristel', 'Laura', 'Leone', 'Lia', 'Lidia', 'Lisa', 'Loredana', 'Loretta', 'Luce',
-        'Lucia', 'Lucrezia', 'Luna', 'Maika', 'Marcella', 'Maria', 'Marianita', 'Mariapia', 'Marina', 'Maristella', 'Maruska', 'Matilde',
-        'Mercedes', 'Michele', 'Miriam', 'Miriana', 'Monia', 'Morgana', 'Naomi', 'Neri', 'Nicoletta', 'Ninfa', 'Noemi', 'Nunzia',
-        'Olimpia', 'Ortensia', 'Penelope', 'Prisca', 'Rebecca', 'Rita', 'Rosalba', 'Rosaria', 'Rosita', 'Ruth', 'Samira', 'Sarita',
-        'Sasha', 'Shaira', 'Thea', 'Ursula', 'Vania', 'Vera', 'Vienna', 'Artemide', 'Cassiopea', 'Cesidia', 'Clea', 'Cleopatra',
-        'Clodovea', 'Cosetta', 'Damiana', 'Danuta', 'Diamante', 'Eufemia', 'Flaviana', 'Gelsomina', 'Genziana', 'Giacinta', 'Guendalina',
-        'Jole', 'Mariagiulia', 'Marieva', 'Mietta', 'Nayade', 'Piccarda', 'Selvaggia', 'Sibilla', 'Soriana', 'Sue ellen', 'Tosca','Violante',
-        'Vitalba', 'Zelida'
+        'Ada', 'Adele', 'Adriana', 'Alessandra', 'Alessia', 'Ambra', 'Angelica', 'Anna', 'Annamaria', 'Antonella', 'Asia', 'Aurora', 
+        'Barbara', 'Beatrice', 'Benedetta', 'Bianca', 'Bibiana', 'Brigida', 'Carmela', 'Caterina', 'Celeste', 'Chiara', 'Cinzia', 
+        'Clara', 'Claudia', 'Concetta', 'Cristiana', 'Cristina', 'Damiana', 'Daniela', 'Debora', 'Diana', 'Donatella', 'Doriana', 
+        'Elda', 'Elena', 'Eleonora', 'Elga', 'Elisa', 'Elisabetta', 'Elsa', 'Emilia', 'Emma', 'Enrica', 'Erminia', 'Eva', 
+        'Fatima', 'Federica', 'Filomena', 'Flaviana', 'Fortunata', 'Francesca', 'Gaia', 'Giovanna', 'Giulia', 'Giulietta', 'Grazia', 
+        'Greta', 'Guendalina', 'Ilaria', 'Ileana', 'Ilenia', 'Irene', 'Isabella', 'Lara', 'Laura', 'Lidia', 'Lisa', 'Loredana', 
+        'Lorella', 'Loretta', 'Lucia', 'Luciana', 'Lucrezia', 'Ludovica', 'Luna', 'Manuela', 'Marcella', 'Margherita', 'Maria', 
+        'Marianna', 'Marika', 'Marina', 'Marta', 'Martina', 'Marzia', 'Matilde', 'Melissa', 'Michela', 'Miriam', 'Monica', 'Morgana', 
+        'Nadia', 'Naomi', 'Natalina', 'Nicoletta', 'Noemi', 'Norma', 'Nunzia', 'Olga', 'Olimpia', 'Oriana', 'Ornella', 'Ortensia', 
+        'Pamela', 'Paola', 'Patrizia', 'Rachele', 'Rebecca', 'Rita', 'Roberta', 'Rosa', 'Rosalba', 'Rosaria', 'Rossana', 'Rossella', 
+        'Sabrina', 'Samanta', 'Sandra', 'Sara', 'Selvaggia', 'Silvia', 'Simona', 'Sonia', 'Susanna', 'Teodora', 'Teresa', 'Tiziana', 'Tosca', 
+        'Valeria', 'Valentina', 'Vanessa', 'Vania', 'Vera', 'Vienna', 'Violante', 'Vittoria', 'Viviana', 'Zoe'
     );
 
     protected static $lastName = array(
-        'Rossi', 'Russo', 'Ferrari', 'Esposito', 'Bianchi', 'Romano', 'Colombo', 'Ricci', 'Marino', 'Greco', 'Bruno', 'Gallo', 'Conti',
-        'De luca', 'Mancini', 'Costa', 'Giordano', 'Rizzo', 'Lombardi', 'Moretti', 'Barbieri', 'Fontana', 'Santoro', 'Mariani',
-        'Rinaldi', 'Caruso', 'Ferrara', 'Galli', 'Martini', 'Leone', 'Longo', 'Gentile', 'Martinelli', 'Vitale', 'Lombardo', 'Serra',
-        'Coppola', 'De Santis', 'D\'angelo', 'Marchetti', 'Parisi', 'Villa', 'Conte', 'Ferraro', 'Ferri', 'Fabbri', 'Bianco',
-        'Marini', 'Grasso', 'Valentini', 'Messina', 'Sala', 'De Angelis', 'Gatti', 'Pellegrini', 'Palumbo', 'Sanna', 'Farina',
-        'Rizzi', 'Monti', 'Cattaneo', 'Morelli', 'Amato', 'Silvestri', 'Mazza', 'Testa', 'Grassi', 'Pellegrino', 'Carbone',
-        'Giuliani', 'Benedetti', 'Barone', 'Rossetti', 'Caputo', 'Montanari', 'Guerra', 'Palmieri', 'Bernardi', 'Martino', 'Fiore',
-        'De rosa', 'Ferretti', 'Bellini', 'Basile', 'Riva', 'Donati', 'Piras', 'Vitali', 'Battaglia', 'Sartori', 'Neri', 'Costantini',
-        'Milani', 'Pagano', 'Ruggiero', 'Sorrentino', 'D\'amico', 'Orlando', 'Damico', 'Negri'
+        'Agnelli', 'Amato', 'Baggio', 'Banfi', 'Barbieri', 'Barone', 'Basile', 'Battaglia', 'Bellini', 'Benedetti', 'Bernardi', 'Bianchi', 
+        'Bianco', 'Biasi', 'Bitta', 'Caputo', 'Carbone', 'Caruso', 'Catalano', 'Cattaneo', 'Colombo', 'Conte', 'Conti', 'Coppola', 
+        'Costa', 'Costantini', 'Damico', 'De Angelis', 'De Gregori', 'De Luca', 'De Marinis', 'De Rosa', 'De Santis', 'Di Marzio', 'Donati', 
+        'Esposito', 'Fabbri', 'Farina', 'Ferrara', 'Ferrari', 'Ferraro', 'Ferretti', 'Ferri', 'Fiore', 'Fontana', 'Galli', 'Gallo', 'Gatti', 
+        'Gentile', 'Gervasi', 'Gianattasio', 'Giordano', 'Giuliani', 'Grassi', 'Grasso', 'Greco', 'Guerra', 'Leone', 'Liguori', 'Lombardi', 
+        'Longhi', 'Longo', 'Maldini', 'Mancini', 'Marchetti', 'Mariani', 'Marini', 'Marino', 'Martinelli', 'Martini', 'Martino', 'Mazza', 
+        'Messina', 'Milani', 'Montanari', 'Monti', 'Morandi', 'Moratti', 'Morelli', 'Moretti', 'Negri', 'Neri', 'Nervi', 'Oriali', 'Orlando', 
+        'Pagano', 'Palmieri', 'Palumbo', 'Parisi', 'Pellegrini', 'Pellegrino', 'Piras', 'Pozzetto', 'Pozzi', 'Rendina', 'Ricci', 'Rinaldi', 
+        'Riva', 'Rizzi', 'Rizzo', 'Rogi', 'Romano', 'Rossetti', 'Rossi', 'Ruggiero', 'Russo', 'Sala', 'Sanna', 'Santoro', 'Savastano', 'Serra', 
+        'Silvestri', 'Sorrentino', 'Tagliabue', 'Toldo', 'Vendola', 'Verdi', 'Veronesi', 'Villa', 'Villaggio', 'Vitale', 'Vitali', 'Viviani'
     );
 
-    protected static $titleMale = array('Sig.', 'Dott.', 'Dr.', 'Ing.');
+    protected static $titleMale = array('Arch.', 'Avv.', 'Dott.', 'Dr.', 'Geom.', 'Ing.', 'Prof.', 'Rag.', 'Sig.');
 
-    protected static $titleFemale = array('Sig.ra', 'Dott.', 'Dr.', 'Ing.');
+    protected static $titleFemale = array('Arch.', 'Avv.', 'Dott.ssa', 'Dr.ssa', 'Geom', 'Ing.', 'Prof.ssa', 'Rag', 'Sig.na', 'Sig.ra');
 
     private static $suffix = array();
 
