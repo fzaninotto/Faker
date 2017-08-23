@@ -97,9 +97,9 @@ class Address extends \Faker\Provider\Address
      */
     public static function fullState()
     {
-        $state = static::randomElement(static::$state);
-        $key = array_keys(array_values(static::$state), $state);
+        $stateAbbr = static::randomElement(static::$stateAbbr);
+        $arrayCombined = array_combine(static::$stateAbbr, static::$state);
 
-        return $state . " (" . array_values(static::$stateAbbr)[reset($key)] . ")";
+        return $arrayCombined[$stateAbbr] . " (" . $stateAbbr . ")";
     }
 }
