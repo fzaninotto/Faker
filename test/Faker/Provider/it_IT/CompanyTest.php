@@ -17,7 +17,7 @@ class CompanyTest extends \PHPUnit_Framework_TestCase
     public function testIfTaxIdCanReturnData()
     {
         $vatId = $this->faker->vatId();
-        $this->assertRegExp('/^IT[0-9]{11}$/', $vatId);
+        $this->assertRegExp('/^(IT)?[0-9]{11}$/', $vatId);
     }
     
 }
