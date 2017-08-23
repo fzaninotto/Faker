@@ -98,8 +98,8 @@ class Address extends \Faker\Provider\Address
     public static function fullState()
     {
         $state = static::randomElement(static::$state);
-        $key = array_keys(array_values(static::$state), $state)[0];
+        $key = array_keys(array_values(static::$state), $state);
 
-        return $state . " (" . array_values(static::$stateAbbr)[$key] . ")";
+        return $state . " (" . array_values(static::$stateAbbr)[reset($key)] . ")";
     }
 }
