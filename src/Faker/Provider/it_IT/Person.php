@@ -70,16 +70,6 @@ class Person extends \Faker\Provider\Person
 
     protected static $titleFemale = array('Arch.', 'Avv.', 'Dott.ssa', 'Dr.ssa', 'Geom', 'Ing.', 'Prof.ssa', 'Rag', 'Sig.na', 'Sig.ra');
 
-    private static $suffix = array();
-
-    /**
-     * @example 'PhD'
-     */
-    public static function suffix()
-    {
-        return static::randomElement(static::$suffix);
-    }
-
     /**
      * TaxCode (CodiceFiscale)
      * @link https://it.wikipedia.org/wiki/Codice_fiscale
