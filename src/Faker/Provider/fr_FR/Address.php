@@ -44,12 +44,9 @@ class Address extends \Faker\Provider\Address
     );
 
     private static $regions = array(
-        'Alsace', 'Aquitaine', 'Auvergne', 'Bourgogne', 'Bretagne', 'Centre', 'Champagne-Ardenne',
-        'Corse', 'Franche-Comté', 'Île-de-France', 'Languedoc-Roussillon', 'Limousin',
-        'Lorraine', 'Midi-Pyrénées', 'Nord-Pas-de-Calais', 'Basse-Normandie', 'Haute-Normandie',
-        'Pays-de-Loire', 'Picardie', 'Poitou-Charentes', "Provence-Alpes-Côte d'Azur", 'Rhone-Alpes',
-        'Guadeloupe', 'Martinique', 'Guyane', 'Réunion', 'Saint-Pierre-et-Miquelon', 'Mayotte',
-        'Saint-Barthélémy', 'Saint-Martin', 'Wallis-et-Futuna', 'Polynésie française', 'Nouvelle-Calédonie'
+        'Auvergne-Rhône-Alpes', 'Bourgogne-Franche-Comté', 'Bretagne', 'Centre-Val de Loire', 'Corse', 'Grand Est',
+        'Guadeloupe', 'Guyane', 'Hauts-de-France', 'Île-de-France', 'La Réunion', 'Martinique', 'Mayotte', 'Normandie',
+        'Nouvelle-Aquitaine', 'Pays de la Loire', 'Provence-Alpes-Côte d\'Azur',
     );
 
     private static $departments = array(
@@ -110,7 +107,7 @@ class Address extends \Faker\Provider\Address
     /**
      * Randomly returns a french department name.
      *
-     * @example 'Ardèche'
+     * @example 'Hauts-de-France'
      *
      * @return string
      */
