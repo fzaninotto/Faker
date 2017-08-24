@@ -4,12 +4,10 @@ namespace Faker\Provider\it_IT;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $cityPrefix = array('San', 'Borgo', 'Sesto', 'Quarto', 'Settimo');
+    protected static $cityPrefix = array('', 'San', 'Borgo', 'Sesto', 'Quarto', 'Settimo');
     protected static $citySuffix = array('a mare', 'lido', 'ligure', 'del friuli', 'salentino', 'calabro', 'veneto', 'nell\'emilia', 'umbro', 'laziale', 'terme', 'sardo');
     protected static $buildingNumber = array('###', '##', '#');
-    protected static $streetSuffix = array(
-        'Piazza', 'Strada', 'Via', 'Borgo', 'Contrada', 'Rotonda', 'Incrocio'
-    );
+    protected static $streetPrefix = array('Piazza', 'Strada', 'Via', 'Borgo', 'Contrada', 'Rotonda', 'Incrocio');
     protected static $postcode = array('#####');
     protected static $state = array(
         'Agrigento', 'Alessandria', 'Ancona', 'Aosta', 'Arezzo', 'Ascoli Piceno', 'Asti', 'Avellino', 'Bari', 'Barletta-Andria-Trani', 'Belluno', 'Benevento', 'Bergamo', 'Biella', 'Bologna', 'Bolzano', 'Brescia', 'Brindisi', 'Cagliari', 'Caltanissetta', 'Campobasso', 'Carbonia-Iglesias', 'Caserta', 'Catania', 'Catanzaro', 'Chieti', 'Como', 'Cosenza', 'Cremona', 'Crotone', 'Cuneo', 'Enna', 'Fermo', 'Ferrara', 'Firenze', 'Foggia', 'Forlì-Cesena', 'Frosinone', 'Genova', 'Gorizia', 'Grosseto', 'Imperia', 'Isernia', 'La Spezia', 'L\'Aquila', 'Latina', 'Lecce', 'Lecco', 'Livorno', 'Lodi', 'Lucca', 'Macerata', 'Mantova', 'Massa-Carrara', 'Matera', 'Messina', 'Milano', 'Modena', 'Monza e della Brianza', 'Napoli', 'Novara', 'Nuoro', 'Olbia-Tempio', 'Oristano', 'Padova', 'Palermo', 'Parma', 'Pavia', 'Perugia', 'Pesaro e Urbino', 'Pescara', 'Piacenza', 'Pisa', 'Pistoia', 'Pordenone', 'Potenza', 'Prato', 'Ragusa', 'Ravenna', 'Reggio Calabria', 'Reggio Emilia', 'Rieti', 'Rimini', 'Roma', 'Rovigo', 'Salerno', 'Sassari', 'Savona', 'Siena', 'Siracusa', 'Sondrio', 'Taranto', 'Teramo', 'Terni', 'Torino', 'Ogliastra', 'Trapani', 'Trento', 'Treviso', 'Trieste', 'Udine', 'Varese', 'Venezia', 'Verbano-Cusio-Ossola', 'Vercelli', 'Verona', 'Vibo Valentia', 'Vicenza', 'Viterbo'
@@ -49,7 +47,7 @@ class Address extends \Faker\Provider\Address
         '{{cityPrefix}} {{lastName}}',
     );
     protected static $streetNameFormats = array(
-        '{{streetSuffix}} {{lastName}}'
+        '{{streetPrefix}} {{lastName}}'
     );
     protected static $streetAddressFormats = array(
         '{{streetName}} {{buildingNumber}}',
@@ -63,9 +61,9 @@ class Address extends \Faker\Provider\Address
     /**
      * @example 'Via'
      */
-    public static function streetSuffix()
+    public static function streetPrefix()
     {
-        return static::randomElement(static::$streetSuffix);
+        return static::randomElement(static::$streetPrefix);
     }
     
     /**
@@ -75,7 +73,6 @@ class Address extends \Faker\Provider\Address
     {
         return static::randomElement(static::$cityPrefix);
     }
-    
     
     /**
      * @example 'Appartamento 30'
