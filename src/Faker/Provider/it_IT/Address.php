@@ -59,17 +59,26 @@ class Address extends \Faker\Provider\Address
         "{{streetAddress}}, {{postcode}} {{fullState}}",
     );
     protected static $secondaryAddressFormats = array('Appartamento ##', 'Piano #');
-
+    
     /**
-     * @example 'East'
+     * @example 'Via'
+     */
+    public static function streetSuffix()
+    {
+        return static::randomElement(static::$streetSuffix);
+    }
+    
+    /**
+     * @example 'Borgo'
      */
     public static function cityPrefix()
     {
         return static::randomElement(static::$cityPrefix);
     }
-
+    
+    
     /**
-     * @example 'Appt. 350'
+     * @example 'Appartamento 30'
      */
     public static function secondaryAddress()
     {
@@ -77,7 +86,7 @@ class Address extends \Faker\Provider\Address
     }
 
     /**
-     * @example 'California'
+     * @example 'Milano'
      */
     public static function state()
     {
@@ -85,7 +94,7 @@ class Address extends \Faker\Provider\Address
     }
 
     /**
-     * @example 'CA'
+     * @example 'MI'
      */
     public static function stateAbbr()
     {
@@ -93,7 +102,7 @@ class Address extends \Faker\Provider\Address
     }
 
     /**
-     * @example 'CA'
+     * @example 'Milano (MI)'
      */
     public static function fullState()
     {
