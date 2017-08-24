@@ -68,7 +68,7 @@ class Person extends \Faker\Provider\Person
 
     protected static $titleMale = array('Arch.', 'Avv.', 'Dott.', 'Dr.', 'Geom.', 'Ing.', 'Prof.', 'Rag.', 'Sig.');
 
-    protected static $titleFemale = array('Arch.', 'Avv.', 'Dott.ssa', 'Dr.ssa', 'Geom', 'Ing.', 'Prof.ssa', 'Rag', 'Sig.na', 'Sig.ra');
+    protected static $titleFemale = array('Arch.', 'Avv.', 'Dott.ssa', 'Dr.ssa', 'Geom.', 'Ing.', 'Prof.ssa', 'Rag.', 'Sig.na', 'Sig.ra');
 
     /**
      * TaxCode (CodiceFiscale)
