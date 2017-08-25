@@ -17,7 +17,7 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
-     * {@link} https://es.wikipedia.org/wiki/Categoría:Nombres_masculinos
+     * @link https://es.wikipedia.org/wiki/Categoría:Nombres_masculinos
      */
     protected static $firstNameMale = array('Aarón', 'Abdías', 'Abdón', 'Abel', 'Abelardo', 'Abraham', 'Absalón', 'Abundio', 'Acacio', 'Achiuta', 'Acisclo', 'Adalberto', 'Adalberón', 'Adán', 'Adem', 'Adolfo', 'Adrista', 'Adrián', 'Afrodisio', 'Agamenón', 'Agapito', 'Agastia', 'Agatoclio', 'Aghásura', 'Agni', 'Agustín', 'Aitor', 'Aladino', 'Alarico', 'Albano', 'Alberto', 'Albino', 'Alcibíades', 'Alcides', 'Aldo', 'Alec', 'Alejandro', 'Alejo', 'Alfonso', 'Alfredo', 'Alois', 'Álvaro', 'Amadeo', 'Amado', 'Amador', 'Amancio', 'Amara Simja', 'Amara-kosha', 'Ambrosio', 'Amenhotep', 'Amit', 'Amsha', 'Américo', 'Amílcar', 'Amós', 'Anacleto', 'Ananías', 'Anastasio', 'Anatole', 'Anatolio', 'Ander', 'Andhaka', 'Andrea', 'Andrei', 'Andrés', 'Andrónico', 'Ángel', 'Aníbal', 'Aniceto', 'Anselmo', 'Antenor', 'Antoni', 'Antonino', 'Antonio', 'Āpastamba', 'Apolinar', 'Apolo', 'Apolonio', 'Aquiles', 'Argimiro', 'Aristarco', 'Arístides', 'Aristóteles', 'Arjuna', 'Armand', 'Armando', 'Arnaldo', 'Arnulfo', 'Arquímedes', 'Arsenio', 'Aruná', 'Aryaman', 'Ascanio', 'Asdrúbal', 'Ashuatama', 'Aśoka', 'Ashuin', 'Atanasio', 'Augurio', 'Augusto', 'Aureliano', 'Aurelio', 'Avelino', 'Axel',
         'Bala Krisna', 'Balam', 'Balarama', 'Balbino', 'Baldomero', 'Balduino', 'Baltasar', 'Banásura', 'Bartolomé', 'Basilio', 'Baudhāyana', 'Bautista', 'Beato', 'Belisario', 'Beltrán', 'Benedicto', 'Benigno', 'Benito', 'Benjamín', 'Bento', 'Berengario', 'Bernabé', 'Bernardino', 'Bernardo', 'Bernhard', 'Bernie', 'Berto', 'Betuel', 'Bhaga', 'Bhajan', 'Bharadvaya', 'Bharata', 'Bhavaviveka', 'Bhima', 'Bhishmá', 'Biagio', 'Bienvenido', 'Blas', 'Bobo', 'Bogdan', 'Bogumil', 'Bogusław', 'Boleslao', 'Boni', 'Bonifacio', 'Borja', 'Bosco', 'Boutros', 'Boyan', 'Braulio', 'Brfxxccxxmnpcccclllmmnprxvclmnckssqlbb11116', 'Brian', 'Brijadratha', 'Brihaspati', 'Bronisław', 'Bruno', 'Burgess',
@@ -47,7 +47,7 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
-     * {@link} https://es.wikipedia.org/wiki/Categoría:Nombres_femeninos
+     * @link https://es.wikipedia.org/wiki/Categoría:Nombres_femeninos
      */
     protected static $firstNameFemale = array('Abigaíl', 'Adela', 'Adelaida', 'Áditi', 'Adoración', 'Adriana', 'África', 'Aglaé', 'Agripina', 'Águeda', 'Ai', 'Aída', 'Ailén', 'Ainhoa', 'Aitana', 'Alaksmí', 'Alba', 'Alejandra', 'Alicia', 'Alida', 'Almudena', 'Aloïse', 'Altagracia', 'Amalia', 'Amanda', 'Amatallah', 'Amaya', 'Ambá', 'Amelia', 'Amparo', 'Ana', 'Ana María', 'Anahí', 'Andrea', 'Ángela', 'Ángeles', 'Angelina', 'Angustias', 'Angélica', 'Anneliese', 'Antonella', 'Anunciación', 'Apsará', 'Araceli', 'Aránzazu', 'Ariadna', 'Ariel', 'Arlette', 'Arminda', 'Arundhati', 'Astrid', 'Asunción', 'Aurora', 'Ayelén', 'Aylin', 'Ayodhya', 'Azahara', 'Azucena',
         'Beatrice', 'Beatriz', 'Begoña', 'Belinda', 'Belén', 'Berenguela', 'Berenice', 'Bernie', 'Berta', 'Betsabé', 'Blanca', 'Blasa', 'Bogna', 'Bogumila', 'Bożena', 'Briseida', 'Brígida', 'Bárbara',
@@ -79,39 +79,51 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
-     * {@link} http://surnames.behindthename.com/submit/names/usage/mexican
+     * @link http://surnames.behindthename.com/submit/names/usage/mexican
      */
     protected static $lastNames = array('Abrego', 'Acero', 'Achio', 'Acuna', 'Aguayo', 'Agüero', 'Águila', 'Alarcón', 'Aldea', 'Alegre', 'Alejandro', 'Alires', 'Almonte', 'Alonso', 'Álvaro', 'Alza', 'Amaro', 'Ambrìz', 'Amore', 'Anguino', 'Apollo', 'Aponte', 'Aràbia', 'Aragon', 'Arands', 'Araquistain', 'Archuleta', 'Arellano', 'Arencibia', 'Arganda', 'Arguedas', 'Ariza', 'Arjona', 'Armenteros', 'Armijo', 'Arrisola', 'Arroyo', 'Arroz', 'Arviso', 'Ascencio', 'Atencio', 'Avamilano', 'Aveiro', 'Avelino', 'Avena', 'Avenida', 'Ávila', 'Azconovieta', 'Badilla', 'Badillo', 'Baez', 'Baeza', 'Baglietto', 'Balceiro', 'Baliao', 'Ballon', 'Banez', 'Barcelona', 'Bardomiano', 'Barrino', 'Barrios', 'Basora', 'Bea', 'Beas', 'Becerra', 'Bega', 'Belasco', 'Benibamonde', 'Bezos', 'Biurrarena', 'Blasco', 'Bolar', 'Bomba', 'Bragado', 'Bravo', 'Brell', 'Bretaña', 'Bustamante', 'Caba', 'Caballero', 'Cabaña', 'Cabañas', 'Cabunilas', 'Caceres', 'Caldera', 'Calderón', 'Calero', 'Calvete', 'Camacho', 'Camargo', 'Campuzano', 'Can', 'Canomanuel', 'Cansino', 'Capella', 'Capriel', 'Caravantes', 'Cárave', 'Cáraves', 'Cárdenas', 'Carrasco', 'Carrasquillo', 'Carrera', 'Casa', 'Casabuena', 'Casagrande', 'Castanati', 'Castañeda', 'Caulin', 'Cava', 'Ceballos', 'Cedena', 'Ceja', 'Celda', 'Cendejas', 'Cespedes', 'Chapin', 'Charvel', 'Chavos', 'Chica', 'Cintron', 'Comica', 'Contreras', 'Cordero', 'Córdoba', 'Córdova', 'Corona', 'Corral', 'Corrales', 'Correa', 'Cortés', 'Cortéz', 'Covarrubias', 'Covarubbias', 'Creus', 'Criado', 'Cuba', 'Cuenca', 'Cuesta', 'Cuneo', 'Cunillera', 'Davila', 'Dealava', 'Debain', 'Delassandis', 'De la torre', 'Delfino', 'De lima', 'Delringo', 'Del río', 'Del rio', 'Del rosario', 'Del yando', 'Descalzo', 'Diego', 'Diez', 'Diola', 'Dos santos', 'Enciñias', 'Enoc', 'Enríquez', 'España', 'Espejo', 'Espinosa de los monteros', 'Estes', 'Estol', 'Estrada', 'Evidente', 'Ferrando', 'Figueroa', 'Fontañez', 'Franch', 'Galarraga', 'Galarza', 'Galíndez', 'Galindo', 'Gall', 'Gamarra', 'Gamio', 'Garnica', 'Garzon', 'Gat', 'Gato', 'Gil de montes', 'Ginebra', 'Gordillo', 'Granado', 'Granados', 'Grande', 'Griego', 'Griminesa', 'Guevera', 'Guillermez', 'Guzmán', 'Hay', 'Henares', 'Hilario', 'Hurtado', 'Ibáñes', 'Iglesias', 'Iniesta', 'Innerarity', 'Jara', 'Jaramillo', 'Jareño', 'Jeremias', 'Junious', 'Kenobi', 'Kuilan', 'Labrador', 'Lacerda', 'Laguna', 'Larrazabal', 'Lazo', 'Leal', 'Ledo', 'León', 'Leonado', 'Leones', 'Leyva', 'Linde', 'Liz', 'Llamas', 'Lorén', 'Lorona', 'Lozano', 'Lucero', 'Lucía', 'Lugo', 'Luján', 'Luna', 'Macarro', 'Madera', 'Madrid', 'Madrigal', 'Madrigale', 'Madriz', 'Maestre', 'Magano', 'Maldonado', 'Manuel', 'Marchant', 'Marco', 'Marrero', 'Marroquin', 'Martelle', 'Marzo', 'Mathias', 'Matias', 'Matta', 'Matute', 'Mauleon', 'Mejia', 'Méla', 'Melillo', 'Mercado', 'Mesa', 'Mesías', 'Milán', 'Miranda', 'Mondragon', 'Montaña', 'Montano', 'Monteblanco', 'Montemayor', 'Montenegro', 'Montoya', 'Monzon', 'Morell', 'Moros', 'Moyano', 'Muñoz', 'Murcia', 'Naranjo', 'Navarrete', 'Navarro', 'Negro', 'Neico', 'Nessim', 'Niave', 'Nieto', 'Niño', 'Odilia', 'Orozco', 'Osuna', 'Pacana', 'Pacheco', 'Padilla', 'Palafox', 'Palencia', 'Pantoja', 'Pardo', 'Paz', 'Pedrosa', 'Pedroza');
 
 
+    /**
+     * @inheritdoc
+     */
     public function lastName()
     {
         return static::randomElement(static::$lastName) . ' ' . static::randomElement(static::$lastName);
     }
 
+    /**
+     * @example Águila
+     * @return string
+     */
     public function lastNameMother()
     {
         return static::randomElement(static::$lastNames);
     }
 
+    /**
+     * @example De lima
+     * @return string
+     */
     public function lastNameFather()
     {
         return static::randomElement(static::$lastNames);
     }
+
     /**
      * generates CURP (uique identity code for both citizens and residents of Mexico)
      *
-     * @param      string  $firstName       First name
-     * @param      string  $lastNameFather  Fathers last name
-     * @param      string  $lastNameMother  Mothers last name
-     * @param      \DateTime  $birthDate    Birth date
-     * @param      string  $gender          Gender
-     * @param      string  $state           State of birth
+     * @param string    $firstName      First name
+     * @param string    $lastNameFather Fathers last name
+     * @param string    $lastNameMother Mothers last name
+     * @param \DateTime $birthDate      Birth date
+     * @param string    $gender         Gender
+     * @param string    $state          State of birth
      *
-     * @return     string  generated curp
+     * @return string  generated curp
      *
-     * @link       https://github.com/hectorip/RFC-CURP-Mexico/blob/master/src/mxk.js ported from this
-     * @link       https://en.wikipedia.org/wiki/Unique_Population_Registry_Code
+     * @link https://github.com/hectorip/RFC-CURP-Mexico/blob/master/src/mxk.js ported from this
+     * @link https://en.wikipedia.org/wiki/Unique_Population_Registry_Code
      */
     public static function curp($firstName = null, $lastNameFather = null, $lastNameMother = null, $birthDate = null, $gender = null, $state = null)
     {
@@ -120,12 +132,12 @@ class Person extends \Faker\Provider\Person
         if ($gender === Person::GENDER_MALE) {
             $firstName = self::removeAccents(self::removeCommonNames(mb_strtoupper($firstName ? $firstName : static::firstNameMale())));
         } else {
-            $firstName = self::removeAccents(self::removeCommonNames(mb_strtoupper($firstName  ?$firstName : static::firstNameFemale())));
+            $firstName = self::removeAccents(self::removeCommonNames(mb_strtoupper($firstName ? $firstName : static::firstNameFemale())));
         }
 
         $lastNameFather = self::removeAccents(self::removePrefixes(mb_strtoupper($lastNameFather ? $lastNameFather : static::randomElement(static::$lastNames))));
         $lastNameMother = self::removeAccents(self::removePrefixes(mb_strtoupper($lastNameMother ? $lastNameMother : static::randomElement(static::$lastNames))));
-        $birthDate = $birthDate ? $birthDate:\Faker\Provider\DateTime::dateTimeBetween();
+        $birthDate = $birthDate ? $birthDate : \Faker\Provider\DateTime::dateTimeBetween();
 
         $curp = self::commonPart('curp', $firstName, $lastNameFather, $lastNameMother, $birthDate);
 
@@ -214,30 +226,30 @@ class Person extends \Faker\Provider\Person
     /**
      * generates RFC
      *
-     * @param      string  $firstName       First name
-     * @param      string  $lastNameFather  Fathers last name
-     * @param      string  $lastNameMother  Mothers last name
-     * @param      \DateTime  $birthDate    Birth date
-     * @param      string  $gender          Gender
+     * @param string    $firstName      First name
+     * @param string    $lastNameFather Fathers last name
+     * @param string    $lastNameMother Mothers last name
+     * @param \DateTime $birthDate      Birth date
+     * @param string    $gender         Gender
      *
-     * @return     string  Generated RFC
+     * @return string  Generated RFC
      *
-     * @link       https://github.com/hectorip/RFC-CURP-Mexico/blob/master/src/mxk.js ported from this
-     * @link       https://es.wikipedia.org/wiki/Registro_Federal_de_Contribuyentes_(México)
+     * @link https://github.com/hectorip/RFC-CURP-Mexico/blob/master/src/mxk.js ported from this
+     * @link https://es.wikipedia.org/wiki/Registro_Federal_de_Contribuyentes_(México)
      */
     public static function personRfc($firstName = null, $lastNameFather = null, $lastNameMother = null, $birthDate = null, $gender = null)
     {
-        $gender = in_array($gender, array(Person::GENDER_MALE,Person::GENDER_FEMALE))?$gender:static::randomElement(array(Person::GENDER_MALE,Person::GENDER_FEMALE));
+        $gender = in_array($gender, array(Person::GENDER_MALE, Person::GENDER_FEMALE)) ? $gender : static::randomElement(array(Person::GENDER_MALE, Person::GENDER_FEMALE));
 
         if ($gender === Person::GENDER_MALE) {
-            $firstName = self::removeAccents(mb_strtoupper($firstName?$firstName: static::firstNameMale()));
+            $firstName = self::removeAccents(mb_strtoupper($firstName ? $firstName : static::firstNameMale()));
         } else {
-            $firstName = self::removeAccents(mb_strtoupper($firstName?$firstName: static::firstNameFemale()));
+            $firstName = self::removeAccents(mb_strtoupper($firstName ? $firstName : static::firstNameFemale()));
         }
 
-        $lastNameFather = self::removeAccents(mb_strtoupper($lastNameFather?$lastNameFather: static::randomElement(static::$lastNames)));
-        $lastNameMother = self::removeAccents(mb_strtoupper($lastNameMother?$lastNameMother: static::randomElement(static::$lastNames)));
-        $birthDate = $birthDate?$birthDate:\Faker\Provider\DateTime::dateTimeBetween();
+        $lastNameFather = self::removeAccents(mb_strtoupper($lastNameFather ? $lastNameFather : static::randomElement(static::$lastNames)));
+        $lastNameMother = self::removeAccents(mb_strtoupper($lastNameMother ? $lastNameMother : static::randomElement(static::$lastNames)));
+        $birthDate = $birthDate ? $birthDate : \Faker\Provider\DateTime::dateTimeBetween();
 
         $rfc = self::commonPart('rfc', $firstName, $lastNameFather, $lastNameMother, $birthDate);
         $rfc .= strtoupper(static::lexify('???'));
