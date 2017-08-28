@@ -328,8 +328,6 @@ class Person extends \Faker\Provider\Person
             $nr[] = rand(0,9);
         }
         $nr[] = rand(0,6);
-
-        $nr = [ 0,9,2,1,5,0,3,0,2];
         if( $nr[7]==0 && $nr[8]==0) $nr[7]=0;
 
         $bsn = (9*$nr[8]) + (8*$nr[7]) + (7*$nr[6]) + (6*$nr[5]) + (5*$nr[4]) + (4*$nr[3]) + (3*$nr[2]) + (2*$nr[1]);
