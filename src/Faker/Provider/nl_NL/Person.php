@@ -316,31 +316,35 @@ class Person extends \Faker\Provider\Person
     }
     
     /**
-     * 11 proof idNumber
+     * @link https://nl.wikipedia.org/wiki/Burgerservicenummer#11-proef
+     *
      * @return string
      */
     public function idNumber()
     {
         $return = '';
-        $nr = [];
-        $nr[] = 0;
-        while(count($nr) < 8) {
-            $nr[] = rand(0,9);
+        $nr     = [];
+        $nr[]   = 0;
+        while (count($nr) < 8) {
+            $nr[] = static::randomDigit();
         }
-        $nr[] = rand(0,6);
-        if( $nr[7]==0 && $nr[8]==0) $nr[7]=0;
+        $nr[] = mt_rand(0, 6);
+        if ($nr[7] == 0 && $nr[8] == 0) {
+            $nr[7] = 0;
+        }
 
-        $bsn = (9*$nr[8]) + (8*$nr[7]) + (7*$nr[6]) + (6*$nr[5]) + (5*$nr[4]) + (4*$nr[3]) + (3*$nr[2]) + (2*$nr[1]);
-        $nr[0] = floor($bsn-floor($bsn/11) * 11);
-        if( $nr[0] > 9) {
-            if( $nr[1]>0) {
-                $nr[0]=8;
+        $bsn   = (9 * $nr[8]) + (8 * $nr[7]) + (7 * $nr[6]) + (6 * $nr[5]) + (5 * $nr[4]) + (4 * $nr[3]) + (3 * $nr[2]) + (2 * $nr[1]);
+        $nr[0] = floor($bsn - floor($bsn / 11) * 11);
+        if ($nr[0] > 9) {
+            if ($nr[1] > 0) {
+                $nr[0] = 8;
                 $nr[1]--;
             } else {
-                $nr[0]=1;
+                $nr[0] = 1;
                 $nr[1]++;
 
             }
         }
-        
+        return implode('',array_reverse($nr));
+    }
 }
