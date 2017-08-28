@@ -188,7 +188,7 @@ namespace Faker;
  *
  * @method string randomHtml($maxDepth = 4, $maxWidth = 4)
  *
- * @method \stdClass user()
+ * @method \stdClass user(array $options = null)
  *
  */
 class Generator

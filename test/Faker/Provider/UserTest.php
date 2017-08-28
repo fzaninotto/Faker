@@ -13,7 +13,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
         $faker->addProvider(new User($faker));
 
         try {
-            $user = $faker->user();
+            $user = $faker->user(array('seed' => 'foobar'));
             $this->assertNotNull($user);
             $this->assertRandomUserStructure($user);
         } catch (\OutOfBoundsException $e) {
