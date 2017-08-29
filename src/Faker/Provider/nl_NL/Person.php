@@ -323,7 +323,7 @@ class Person extends \Faker\Provider\Person
     public function idNumber()
     {
         $return = '';
-        $nr     = [];
+        $nr     = array();
         $nr[]   = 0;
         while (count($nr) < 8) {
             $nr[] = static::randomDigit();
