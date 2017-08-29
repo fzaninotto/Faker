@@ -345,6 +345,6 @@ class Person extends \Faker\Provider\Person
 
             }
         }
-        return implode('',array_reverse($nr));
+        return implode('', array_reverse($nr));
     }
 }
