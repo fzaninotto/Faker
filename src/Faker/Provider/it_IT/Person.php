@@ -21,7 +21,12 @@ class Person extends \Faker\Provider\Person
         '{{firstNameFemale}} {{lastName}}',
         '{{titleFemale}} {{firstNameFemale}} {{lastName}}',
     );
-
+    
+    /**
+     * Most common italian male firstname
+     * @link http://www.nomix.it/nomi-italiani-maschili-e-femminili.php
+     * @return string
+     */
     protected static $firstNameMale = array(
         'Adriano', 'Achille', 'Alan', 'Alberto', 'Alessandro', 'Alessio', 'Alfredo', 'Agostino', 'Amedeo', 'Andrea', 'Anselmo', 'Antonino',
         'Antonio', 'Armando', 'Aroldo', 'Arturo', 'Augusto', 'Baldassarre', 'Bartolomeo', 'Bernardo', 'Bettino', 'Boris', 'Calogero', 'Carlo',
@@ -37,7 +42,12 @@ class Person extends \Faker\Provider\Person
         'Rosalino', 'Rosolino', 'Rudy', 'Salvatore', 'Samuel', 'Samuele', 'Sandro', 'Santino', 'Saviero', 'Savino', 'Sebastiano', 'Silvano', 'Sirio',
         'Tancredi', 'Tazio', 'Teodoro', 'Tiziano', 'Tommaso', 'Ugo', 'Umberto', 'Valentino', 'Valerio', 'Vincenzo', 'Vinicio', 'Vittorio', 'Walter'
     );
-
+    
+    /**
+     * Most common italian female firstname
+     * @link http://www.nomix.it/nomi-italiani-maschili-e-femminili.php
+     * @return string
+     */
     protected static $firstNameFemale = array(
         'Ada', 'Adele', 'Adriana', 'Alessandra', 'Alessia', 'Ambra', 'Angelica', 'Anna', 'Annamaria', 'Antonella', 'Asia', 'Aurora',
         'Barbara', 'Beatrice', 'Benedetta', 'Bianca', 'Bibiana', 'Brigida', 'Carmela', 'Caterina', 'Celeste', 'Chiara', 'Cinzia',
@@ -52,7 +62,12 @@ class Person extends \Faker\Provider\Person
         'Sabrina', 'Samanta', 'Sandra', 'Sara', 'Selvaggia', 'Silvia', 'Simona', 'Sonia', 'Susanna', 'Teodora', 'Teresa', 'Tiziana', 'Tosca',
         'Valeria', 'Valentina', 'Vanessa', 'Vania', 'Vera', 'Vienna', 'Violante', 'Vittoria', 'Viviana', 'Zoe'
     );
-
+    
+    /**
+     * Most common italian surnames
+     * @link http://www.cognomix.it/origine-cognomi-italiani
+     * @return string
+     */
     protected static $lastName = array(
         'Agnelli', 'Amato', 'Baggio', 'Banfi', 'Barbieri', 'Barone', 'Basile', 'Battaglia', 'Bellini', 'Benedetti', 'Bernardi', 'Bianchi',
         'Bianco', 'Biasi', 'Bitta', 'Caputo', 'Carbone', 'Caruso', 'Catalano', 'Cattaneo', 'Colombo', 'Conte', 'Conti', 'Coppola',
