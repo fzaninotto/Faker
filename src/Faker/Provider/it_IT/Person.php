@@ -80,9 +80,13 @@ class Person extends \Faker\Provider\Person
         'Riva', 'Rizzi', 'Rizzo', 'Rogi', 'Romano', 'Rossetti', 'Rossi', 'Ruggiero', 'Russo', 'Sala', 'Sanna', 'Santoro', 'Savastano', 'Serra',
         'Silvestri', 'Sorrentino', 'Tagliabue', 'Toldo', 'Vendola', 'Verdi', 'Veronesi', 'Villa', 'Villaggio', 'Vitale', 'Vitali', 'Viviani'
     );
-
+    
+    /**
+     * Italian titles
+     * @link http://www.paginainizio.com/service/abbreviazioni.htm
+     * @return string
+     */
     protected static $titleMale = array('Arch.', 'Avv.', 'Dott.', 'Dr.', 'Geom.', 'Ing.', 'Prof.', 'Rag.', 'Sig.');
-
     protected static $titleFemale = array('Arch.', 'Avv.', 'Dott.ssa', 'Dr.ssa', 'Geom.', 'Ing.', 'Prof.ssa', 'Rag.', 'Sig.na', 'Sig.ra');
 
     /**
