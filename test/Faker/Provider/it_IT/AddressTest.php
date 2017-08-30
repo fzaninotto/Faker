@@ -27,6 +27,7 @@ class AddressTest extends \PHPUnit_Framework_TestCase
     {
         for ($i = 0; $i < 20; $i++) {
             $this->assertTrue(strlen($this->faker->fullState) > 0);
+            $this->assertRegExp('/^[a-zA-Z\h\'\-]{1,}+\([A-Z]{2,3}\)$/', $this->faker->fullState);
         }
     }
 
