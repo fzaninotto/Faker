@@ -35,6 +35,6 @@ class Company extends \Faker\Provider\Company
      */
     public function taxpayerIdentificationNumber($separator = '')
     {
-        return static::randomElement(array('J', 'G', 'V', 'E', 'P', 'C')) . $separator . static::numerify('#########') . $separator . static::numerify('#');
+        return static::randomElement(array('J', 'G', 'V', 'E', 'P', 'C')) . $separator . static::numerify('########') . $separator . static::numerify('#');
     }
 }
