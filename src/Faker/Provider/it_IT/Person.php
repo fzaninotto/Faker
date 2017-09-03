@@ -24,7 +24,7 @@ class Person extends \Faker\Provider\Person
     
     /**
      * Most common italian male firstname
-     * @link http://www.nomix.it/nomi-italiani-maschili-e-femminili.php
+     * @link https://github.com/Sanfra1407/Gente-italiana/blob/master/male-names.txt
      * @return string
      */
     protected static $firstNameMale = array(
@@ -45,7 +45,7 @@ class Person extends \Faker\Provider\Person
     
     /**
      * Most common italian female firstname
-     * @link http://www.nomix.it/nomi-italiani-maschili-e-femminili.php
+     * @link https://github.com/Sanfra1407/Gente-italiana/blob/master/female-names.txt
      * @return string
      */
     protected static $firstNameFemale = array(
@@ -65,7 +65,7 @@ class Person extends \Faker\Provider\Person
     
     /**
      * Most common italian surnames
-     * @link http://www.cognomix.it/origine-cognomi-italiani
+     * @link https://github.com/Sanfra1407/Gente-italiana/blob/master/surnames.txt
      * @return string
      */
     protected static $lastName = array(
