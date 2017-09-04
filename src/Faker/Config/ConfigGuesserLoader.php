@@ -27,7 +27,14 @@ class ConfigGuesserLoader
 
         $json = json_decode($string, true);
         if (json_last_error() != JSON_ERROR_NONE) {
-            throw new \Exception("Failed to decode config file: $file. Error: " . json_last_error() . ' -  '.json_last_error_msg() . PHP_EOL. "config file content: $string", json_last_error());
+            $message = "Failed to decode config file: $file ";
+            if (version_compare(PHP_VERSION, '5.5.0') >= 0) {
+                $message .= "Error: " . json_last_error() . ' - '.json_last_error_msg();
+            } else {
+                $message .= "Error: " . json_last_error();
+            }
+            $message .= PHP_EOL . "config file content: $string";
+            throw new \Exception($message, json_last_error());
         }
 
         foreach ($json as $entity => $item) {
