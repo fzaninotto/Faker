@@ -74,7 +74,7 @@ class ConfigGuesserLoaderTest extends TestCase
 
     /**
      * @expectedException Exception
-     * @expectedExceptionMessageRegExp /Failed to decode config file: .+ Error: 4 -  Syntax error/
+     * @expectedExceptionMessageRegExp /Failed to decode config file: .+ Error: 4.+/
      */
     public function testLoadInvalidJsonFileShouldThrowsException()
     {
