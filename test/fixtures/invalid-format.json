@@ -1,0 +1,17 @@
+{
+  "project": {
+    "id": "invalid",
+    "description": "text(300)",
+    "department": "randomElement(['a','b','c','d'])",
+    "status": "numberBetween(1,4)",
+    "start": "dateTime('2020-12-31 23:59:59')"
+  },
+  "client": {
+    "fname": "firstName",
+    "lname": "lastName"
+  },
+  "*": {
+    "id": "randomNumber(6, true)",
+    "email": "safeEmail"
+  }
+}
