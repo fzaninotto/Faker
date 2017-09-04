@@ -10,7 +10,8 @@ class Payment extends \Faker\Provider\Payment
     protected static $banks = array(
         'Banca Antonveneta', 'Banca Carige', 'Banca Intesa', 'Banca Mediolanum', 'Banca Montepaschi di Siena',
         'Banca Nazionale del Lavoro', 'Banca Sella', 'Banco BPM', 'Banco di Brescia', 'Banco di Desio e della Brianza',
-        'Banco di Napoli', 'Credito Valtellinese', 'FinecoBank', 'Intesa Sanpaolo', 'Mediobanca', 'UniCredit'
+        'Banco di Napoli', 'Credito Valtellinese', 'Deutsche Bank', 'FinecoBank', 'Intesa Sanpaolo', 'Mediobanca',
+        'Poste italiane', 'UniCredit', 'Unipol Banca', 'WeBank'
     );
     
     public static function bank()
