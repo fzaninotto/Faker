@@ -1,5 +1,6 @@
 <?php
 namespace Faker\Populator;
+
 use Faker\Generator;
 use Faker\Guesser\ConfigGuesser;
 use Faker\Guesser\Name;
@@ -38,7 +39,8 @@ class ObjectPopulator
      *
      * @throws \InvalidArgumentException If the parameter passed is not a valid object
      */
-    public function populate($object) {
+    public function populate($object)
+    {
         $classes = $this->getClassHierarchy($object);
         if (!isset($classes)) {
             throw new \InvalidArgumentException('Failed to retrieve class hierarchy. Make sure you passed a valid object');
@@ -84,7 +86,8 @@ class ObjectPopulator
         }
     }
 
-    private function getClassHierarchy($object) {
+    private function getClassHierarchy($object)
+    {
         if (!is_object($object)) {
             return null;
         }

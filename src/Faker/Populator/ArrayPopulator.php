@@ -1,5 +1,6 @@
 <?php
 namespace Faker\Populator;
+
 use Faker\Generator;
 use Faker\Guesser\ConfigGuesser;
 use Faker\Guesser\Name;
@@ -37,7 +38,8 @@ class ArrayPopulator
      * @param string $entity The name of the entity associated with the array
      *
      */
-    public function populate(array &$array, $entity = '') {
+    public function populate(array &$array, $entity = '')
+    {
         $keys = array_keys($array);
         foreach ($keys as $key) {
             $format = $this->configGuesser->guessFormat($entity, $key);

@@ -57,7 +57,8 @@ class ConfigGuesser
      *
      * @return bool Whether a format has been configured for the entity/property combination provided
      */
-    public function isConfigured($entity, $property) {
+    public function isConfigured($entity, $property)
+    {
         $key = $entity.'.'.$property;
         return array_key_exists($key, $this->formats);
     }
@@ -69,7 +70,8 @@ class ConfigGuesser
      *
      * @return \Closure|null
      */
-    public function guessFormat($entity, $property) {
+    public function guessFormat($entity, $property)
+    {
         $key = $entity.'.'.$property;
         $wildcard = self::WILDCARD.'.'.$property;
 
@@ -104,5 +106,4 @@ class ConfigGuesser
 
         return null;
     }
-
 }

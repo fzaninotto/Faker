@@ -14,7 +14,7 @@ class ConfigGuesserLoader
      *
      * @throws \Exception If the file cannot be loaded
      */
-    static public function loadFile(ConfigGuesser $guesser, $file)
+    public static function loadFile(ConfigGuesser $guesser, $file)
     {
         $parser = new FormatParser();
         $parser->load($guesser->getGenerator());
@@ -41,5 +41,4 @@ class ConfigGuesserLoader
             }
         }
     }
-
 }

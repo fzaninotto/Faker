@@ -27,10 +27,10 @@ class FormatParser
 
         foreach ($lines as $line) {
             $line = ltrim($line, " \t\n\r\0\x0B*");
-            if (strpos($line, "@property") !== FALSE) {
+            if (strpos($line, "@property") !== false) {
                 $property = $this->loadProperty($line);
                 $this->properties[$property->getName()] = $property;
-            } else if (strpos($line, "@method") !== FALSE) {
+            } else if (strpos($line, "@method") !== false) {
                 $method = $this->loadMethod($line);
                 $this->methods[$method->getName()] = $method;
             }
@@ -90,13 +90,13 @@ class FormatParser
                 if ($count > 0) {
                     $params = preg_replace('/(\\[[a-zA-Z0-9_,"\'\\. ]*\\])/', '[]', $params);
                 }
-                $args = explode(',',$params);
+                $args = explode(',', $params);
                 $j = 0;
                 for ($i = 0; $i < count($args); $i++) {
                     if ($args[$i] == '[]') {
                         $arg = array();
                         $innerArgs = explode(',', trim($arrays[0][$j], '[]'));
-                        foreach($innerArgs as $innerArg) {
+                        foreach ($innerArgs as $innerArg) {
                             $arg[] = $this->parseArgument($innerArg);
                         }
                         //$args[$i] = $arrays[0][$j];
