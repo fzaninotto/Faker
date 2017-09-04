@@ -165,7 +165,7 @@ class FormatParser
         if ($index > 0) {
             // This method has parameters
             $items = explode(' ', substr($line, 0, $index));
-            $end = strpos($line, ')', -1);
+            $end = strrpos($line, ')');
             if ($end > $index) {
                 $length = $end - ($index +1);
                 $paramString = substr($line, $index+1, $length);

@@ -38,7 +38,7 @@ class ConfigGuesserTest extends TestCase
 
         $result = $this->guesser->guessFormat($entity, $property);
         self::assertNotNull($result, 'guessFormat returned null');
-        self::assertInstanceOf(\Closure::class, $result,  'guessFormat did not return a Closure instance');
+        self::assertInstanceOf('Closure', $result,  'guessFormat did not return a Closure instance');
 
         $value = $result();
         self::assertEquals($expectedValue, $value, "Formatted value mismatch");
@@ -73,7 +73,7 @@ class ConfigGuesserTest extends TestCase
 
         $result = $this->guesser->guessFormat($entity, $property);
         self::assertNotNull($result, 'guessFormat returned null');
-        self::assertInstanceOf(\Closure::class, $result,  'guessFormat did not return a Closure instance');
+        self::assertInstanceOf('Closure', $result,  'guessFormat did not return a Closure instance');
 
         $value = $result();
         self::assertEquals($expectedValue, $value, "Formatted value mismatch");
