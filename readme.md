@@ -35,6 +35,7 @@ Faker requires PHP >= 5.3.3.
 - [Modifiers](#modifiers)
 - [Localization](#localization)
 - [Populating Entities Using an ORM or an ODM](#populating-entities-using-an-orm-or-an-odm)
+- [Populating Entities Via Configuration](#populating-entities-via-configuration)
 - [Seeding the Generator](#seeding-the-generator)
 - [Faker Internals: Understanding Providers](#faker-internals-understanding-providers)
 - [Real Life Usage](#real-life-usage)
@@ -452,6 +453,110 @@ $populator->addEntity('Book', 5, array(), array(
   function($book) { $book->publish(); },
 ));
 ```
+
+## Populating Entities Via Configuration
+
+Faker provides an easy way to configure the format to use when generating data for a given entity/property combination.
+  
+This can be done via either a simple JSON configuration file or programmatically.
+
+The first step consists in creating a ConfigGuesser object with the generator to use:
+```php
+$generator = \Faker\Factory::create();
+$guesser = new \Faker\Guesser\ConfigGuesser($generator);
+```
+
+Then, you need to tell the guesser which format to use when populating data for a given entity/property combination.
+
+The easiest way to do so is by loading a simple JSON configuration file:
+```php
+\Faker\Config\ConfigGuesserLoader::loadFile($guesser, 'path_to_your_config.json');
+```
+Sample configuration files are available in the project:
+* Simple file: [example-config.json](examples/example-config.json)
+* Configuration with class hierarchy: [guesser-object-config.json](test/fixtures/guesser-object-config.json)
+
+Alternatively, you can also configure the gessuer programmatically using the FormatParser:
+```php
+$parser = new \Faker\Config\FormatParser();
+$parser->load($guesser->getGenerator());
+
+// You can use any property defined in the Generator's PhpDoc
+$format = $parser->parse("firstName");
+$guesser->addFormat('Entity', 'property1', $format);
+
+// Or any method defined in the Generator's PhpDoc
+$format = $parser->parse("numberBetween(0,10)");
+$guesser->addFormat('Entity', 'property2', $format);
+
+// Wildcard define format to use for a given property for any entity
+$format = $parser->parse("uuid");
+$guesser->addFormat(\Faker\Guesser\ConfigGuesser::WILDCARD, 'id', $format);
+
+// Specific entity/property format will always take precedence over a wildcard format
+$format = $parser->parse("isbn10");
+$guesser->addFormat('Book', 'id', $format);
+```
+
+Once the ConfigGuesser has been properly configured, you can use it with a populator to fill an object:
+
+```php
+/* Assuming the Book class has the following properties:
+   - id
+   - property1
+   - property2
+
+  And the ConfigGuesser has been configured with the following JSON:
+  { 
+    "Book": {
+        "id": "isbn10",
+        "property1": "words(5, true)"
+    }
+  }
+ */
+
+// The following would populate the Book object as follow:
+// - 'id' = random ISBN 
+// - 'property1' = random string of 5 words
+// - 'property2' = no update
+
+$populator = new \Faker\Populator\ObjectPopulator($generator, $guesser);
+$book = new Book();
+$populator->populate($book); 
+```
+
+You can also populate any associative array using a similar approach:
+```php
+$array = array(
+    'id' => null,
+    'property1' => null,
+    'property2' => null,
+    'property3' => null);
+
+/*
+  Assuming the ConfigGuesser has been configured with the following JSON:
+  { 
+    "*": {
+      "id": "uuid",
+    },
+    "Entity": {
+        "property1": "name",
+        "property2": "numberBetween(0,10)"
+     }
+  }
+ */
+ 
+// The following would populate the array as an 'Entity' entity as follow:
+// - 'id' = random UUID 
+// - 'property1' = random name
+// - 'property2' = random number between 0 and 10
+// - 'property3' = no update
+
+$populator = new \Faker\Populator\ArrayPopulator($generator, $guesser);
+$populator->populate($array, 'Entity'); 
+```
+
+Detailed examples are available under the [examples folder](examples)
 
 ## Seeding the Generator
 
