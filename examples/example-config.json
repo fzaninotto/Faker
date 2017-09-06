@@ -1,0 +1,19 @@
+{
+  "*": {
+    "id": "uuid"
+  },
+
+  "Book": {
+    "id": "isbn10"
+  },
+
+  "Entity": {
+    "property1": "url",
+    "property2": "numberBetween(0,10)"
+  },
+
+  "Package\\Entity": {
+    "property1": "city",
+    "property2": "words(5, true)"
+  }
+}

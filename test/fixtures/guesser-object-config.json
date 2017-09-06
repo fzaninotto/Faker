@@ -1,0 +1,27 @@
+{
+  "*": {
+    "id": "uuid"
+  },
+
+  "Faker\\Populator\\GrandParent": {
+    "name": "lastName",
+    "origin": "country"
+  },
+
+  "Faker\\Populator\\Father": {
+    "firstName": "firstNameMale",
+    "origin": "city",
+    "job": "company"
+  },
+
+  "Faker\\Populator\\Child": {
+    "firstName": "firstNameFemale",
+    "job": "jobTitle",
+    "phone": "phoneNumber",
+    "note": "sentence"
+  },
+
+  "GrandParent": {
+    "unused": "sentence"
+  }
+}
