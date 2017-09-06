@@ -19,12 +19,12 @@ class PersonTest extends \PHPUnit_Framework_TestCase
     public function testGenerateValidIdNumber()
     {
         $bsn = $this->faker->BSN();
-        $this->assertEquals(9, strlen( $bsn ) );
+        $this->assertEquals(9, strlen($bsn));
 
         $bsn = (string)$bsn;
         $sum = 0;
-        for( $i=0; $i < 8; $i++ ) {
-            $sum += $bsn[ $i ] * (9 - $i);
+        for($i=0;$i<8;$i++) {
+            $sum += $bsn[$i] * (9 - $i);
         }
         $this->assertTrue($sum != 0 && $bsn[8] == $sum % 11);
     }
