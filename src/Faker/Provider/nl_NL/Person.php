@@ -329,17 +329,17 @@ class Person extends \Faker\Provider\Person
      */
     public static function documentNumber()
     {
-        return implode([
+        return implode(array(
             static::randomCappedLetterNotO(),
             static::randomCappedLetterNotO(),
-            static::randomElement([static::randomCappedLetterNotO(), static::randomDigit()]),
-            static::randomElement([static::randomCappedLetterNotO(), static::randomDigit()]),
-            static::randomElement([static::randomCappedLetterNotO(), static::randomDigit()]),
-            static::randomElement([static::randomCappedLetterNotO(), static::randomDigit()]),
-            static::randomElement([static::randomCappedLetterNotO(), static::randomDigit()]),
-            static::randomElement([static::randomCappedLetterNotO(), static::randomDigit()]),
+            static::randomElement(array(static::randomCappedLetterNotO(), static::randomDigit())),
+            static::randomElement(array(static::randomCappedLetterNotO(), static::randomDigit())),
+            static::randomElement(array(static::randomCappedLetterNotO(), static::randomDigit())),
+            static::randomElement(array(static::randomCappedLetterNotO(), static::randomDigit())),
+            static::randomElement(array(static::randomCappedLetterNotO(), static::randomDigit())),
+            static::randomElement(array(static::randomCappedLetterNotO(), static::randomDigit())),
             static::randomDigit(),
-        ]);
+        ));
     }
 
     /**
