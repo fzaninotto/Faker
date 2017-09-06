@@ -332,7 +332,7 @@ class Person extends \Faker\Provider\Person
             $G = rand(0, 9);
             $H = rand(0, 9);
             $I = ($A * 9 + $B * 8 + $C * 7 + $D * 6 + $E * 5 + $F * 4 + $G * 3 + $H * 2) % 11;
-        }while($I == 10);
+        } while($I == 10);
 
         return $A . $B . $C . $D . $E . $F . $G . $H . $I;
     }
