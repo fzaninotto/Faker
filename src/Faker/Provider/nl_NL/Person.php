@@ -278,8 +278,6 @@ class Person extends \Faker\Provider\Person
         return $lastName;
     }
 
-
-
     public function title($gender = null)
     {
         return static::randomElement(static::$title);
