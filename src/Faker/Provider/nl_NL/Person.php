@@ -278,6 +278,8 @@ class Person extends \Faker\Provider\Person
         return $lastName;
     }
 
+
+
     public function title($gender = null)
     {
         return static::randomElement(static::$title);
@@ -314,7 +316,34 @@ class Person extends \Faker\Provider\Person
     {
         return static::randomElement(static::$prefix);
     }
-    
+
+    private static function randomCappedLetterNotO()
+    {
+        $char = chr(mt_rand(65, 90));
+        return ($char !== 'O') ? $char : static::randomCappedLetterNotO();
+    }
+
+    /**
+     * For more information see link, bulletpoint 3.
+     * @link https://nl.wikipedia.org/wiki/Paspoort#Algemeen
+     *
+     * @return string
+     */
+    public static function documentNumber()
+    {
+        return implode([
+            static::randomCappedLetterNotO(),
+            static::randomCappedLetterNotO(),
+            static::randomElement([static::randomCappedLetterNotO(), static::randomDigit()]),
+            static::randomElement([static::randomCappedLetterNotO(), static::randomDigit()]),
+            static::randomElement([static::randomCappedLetterNotO(), static::randomDigit()]),
+            static::randomElement([static::randomCappedLetterNotO(), static::randomDigit()]),
+            static::randomElement([static::randomCappedLetterNotO(), static::randomDigit()]),
+            static::randomElement([static::randomCappedLetterNotO(), static::randomDigit()]),
+            static::randomDigit(),
+        ]);
+    }
+
     /**
      * @link https://nl.wikipedia.org/wiki/Burgerservicenummer#11-proef
      *

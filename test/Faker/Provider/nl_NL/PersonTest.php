@@ -29,4 +29,10 @@ class PersonTest extends \PHPUnit_Framework_TestCase
         }
         $this->assertTrue($sum != 0 && $sum % 11 == 0);
     }
+
+    public function testGenerateValidDocumentNumber()
+    {
+        $documentNumber = $this->faker->documentNumber();
+        $this->assertRegExp('/^[A-NP-Z]{2}[A-NP-Z0-9]{6}[0-9]$/', $documentNumber);
+    }
 }
