@@ -326,6 +326,6 @@ class Miscellaneous extends Base
      */
     public static function semVer()
     {
-        return sprintf('%d.%d.%d', mt_rand(1, 50), mt_rand(1, 50), mt_rand(1, 999));
+        return sprintf('%d.%d.%d', mt_rand(1, 50), mt_rand(0, 50), mt_rand(0, 999));
     }
 }
