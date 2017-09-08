@@ -320,31 +320,20 @@ class Person extends \Faker\Provider\Person
      *
      * @return string
      */
-    public function idNumber()
+    public function BSN()
     {
-        $return = '';
-        $nr     = array();
-        $nr[]   = 0;
-        while (count($nr) < 8) {
-            $nr[] = static::randomDigit();
-        }
-        $nr[] = mt_rand(0, 6);
-        if ($nr[7] == 0 && $nr[8] == 0) {
-            $nr[7] = 0;
-        }
+        do {
+            $A = rand(0, 9);
+            $B = rand(0, 9);
+            $C = rand(0, 9);
+            $D = rand(0, 9);
+            $E = rand(0, 9);
+            $F = rand(0, 9);
+            $G = rand(0, 9);
+            $H = rand(0, 9);
+            $I = ($A * 9 + $B * 8 + $C * 7 + $D * 6 + $E * 5 + $F * 4 + $G * 3 + $H * 2) % 11;
+        } while ($I == 10);
 
-        $bsn   = (9 * $nr[8]) + (8 * $nr[7]) + (7 * $nr[6]) + (6 * $nr[5]) + (5 * $nr[4]) + (4 * $nr[3]) + (3 * $nr[2]) + (2 * $nr[1]);
-        $nr[0] = floor($bsn - floor($bsn / 11) * 11);
-        if ($nr[0] > 9) {
-            if ($nr[1] > 0) {
-                $nr[0] = 8;
-                $nr[1]--;
-            } else {
-                $nr[0] = 1;
-                $nr[1]++;
-
-            }
-        }
-        return implode('', array_reverse($nr));
+        return $A . $B . $C . $D . $E . $F . $G . $H . $I;
     }
 }
