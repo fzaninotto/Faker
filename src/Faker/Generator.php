@@ -130,6 +130,7 @@ namespace Faker;
  * @property string $currencyCode
  * @property boolean $boolean
  * @method boolean boolean($chanceOfGettingTrue = 50)
+ * @property string $semVer
  *
  * @property int    $randomDigit
  * @property int    $randomDigitNotNull
