@@ -316,4 +316,16 @@ class Miscellaneous extends Base
     {
         return json_decode('"' . static::randomElement(static::$emoji) . '"');
     }
+
+    /**
+     * Returns a semantic version number.
+     *
+     * @example '7.1.14'
+     *
+     * @link http://semver.org/
+     */
+    public static function semVer()
+    {
+        return sprintf('%d.%d.%d', mt_rand(1, 50), mt_rand(1, 50), mt_rand(1, 999));
+    }
 }
