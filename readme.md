@@ -1302,7 +1302,7 @@ echo $faker->btw; // "NL123456789B01" - Dutch Value Added Tax number (alias)
 echo $faker->idNumber; // "111222333" - Dutch Personal identification number (BSN)
 ```
 
-### `Faker\Provider\no_NO\Payment`
+### `Faker\Provider\nb_NO\Payment`
 
 ```php
 <?php
