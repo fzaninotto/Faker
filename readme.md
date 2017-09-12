@@ -20,6 +20,7 @@ Faker requires PHP >= 5.3.3.
 	- [Phone Number](#fakerprovideren_usphonenumber)
 	- [Company](#fakerprovideren_uscompany)
 	- [Real Text](#fakerprovideren_ustext)
+    - [Language](#fakerprovideren_uslanguage)
 	- [Date and Time](#fakerproviderdatetime)
 	- [Internet](#fakerproviderinternet)
 	- [User Agent](#fakerprovideruseragent)
