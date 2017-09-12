@@ -5,7 +5,7 @@ namespace Faker\Provider\nb_NO;
 class Language extends \Faker\Provider\Language
 {
     /**
-     * {@link} https://no.wikipedia.org/wiki/Liste_over_offisielle_språk
+     * @link https://no.wikipedia.org/wiki/Liste_over_offisielle_språk
      **/
     protected static $language = array(
       //=== A ===

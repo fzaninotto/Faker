@@ -5,7 +5,7 @@ namespace Faker\Provider\en_US;
 class Language extends \Faker\Provider\Language
 {
     /**
-     * {@link} https://en.wikipedia.org/wiki/List_of_official_languages
+     * @link https://en.wikipedia.org/wiki/List_of_official_languages
      **/
     protected static $language = array(
       //A
