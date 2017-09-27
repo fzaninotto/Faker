@@ -24,10 +24,10 @@ class TextTest extends \PHPUnit_Framework_TestCase
      */
     public function testTextMaxIndex()
     {
-    $generator = new Generator();
+        $generator = new Generator();
         $generator->addProvider(new Text($generator));
         $generator->seed(0);
-    $generator->realText(200, 11);
+        $generator->realText(200, 11);
     }
 
     /**
@@ -35,7 +35,7 @@ class TextTest extends \PHPUnit_Framework_TestCase
      */
     public function testTextMinIndex()
     {
-    $generator = new Generator();
+        $generator = new Generator();
         $generator->addProvider(new Text($generator));
         $generator->seed(0);
         $generator->realText(200, 0);
@@ -46,9 +46,29 @@ class TextTest extends \PHPUnit_Framework_TestCase
      */
     public function testTextMinLength()
     {
-    $generator = new Generator();
+        $generator = new Generator();
         $generator->addProvider(new Text($generator));
         $generator->seed(0);
         $generator->realText(9);
+    }
+
+    /**
+     * @dataProvider provideTextAndExpectedResult
+     */
+    public function testTextAppendEnd($text, $expected)
+    {
+        $appendEndMethod = new \ReflectionMethod('Faker\Provider\Text', 'appendEnd');
+        $appendEndMethod->setAccessible(true);
+        $this->assertEquals($expected, $appendEndMethod->invokeArgs(null, array($text)));
+    }
+
+    public function provideTextAndExpectedResult()
+    {
+        return array(
+            array('Какой-то этакой характер', 'Какой-то этакой характер.'),
+            array('Благонамеренный человек; прокурор,— ', 'Благонамеренный человек; прокурор.'),
+            array('Скоро лишень весна завітає,', 'Скоро лишень весна завітає.'),
+            array('Cat\'s head began fading away ', 'Cat\'s head began fading away.'),
+        );
     }
 }
