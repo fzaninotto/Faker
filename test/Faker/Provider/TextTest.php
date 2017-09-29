@@ -53,7 +53,7 @@ class TextTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @dataProvider provideTextAndExpectedResult
+     * @dataProvider TextAppendEndDataProvider
      */
     public function testTextAppendEnd($text, $expected)
     {
@@ -62,7 +62,7 @@ class TextTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $appendEndMethod->invokeArgs(null, array($text)));
     }
 
-    public function provideTextAndExpectedResult()
+    public function TextAppendEndDataProvider()
     {
         return array(
             array('Какой-то этакой характер', 'Какой-то этакой характер.'),
