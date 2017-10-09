@@ -960,6 +960,9 @@ echo $faker->companyNumber; // 1999/789634/01
 
 // Generates a random national identification number
 echo $faker->idNumber; // 6606192211041
+
+// Generates a random valid licence code
+echo $faker->licenceCode; // EB
 ```
 
 ### `Faker\Provider\en_ZA\PhoneNumber`
