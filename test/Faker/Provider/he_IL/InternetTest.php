@@ -23,6 +23,16 @@ class InternetTest extends \PHPUnit_Framework_TestCase
      $this->faker = $faker;
    }
 
+   /**
+    * @test
+    */
+
+    public function emailIsValid()
+    {
+      $email = $this->faker->email();
+      $this->assertNotFalse(filter_var($email, FILTER_VALIDATE_EMAIL));
+    }
+
 }
 
 ?>
