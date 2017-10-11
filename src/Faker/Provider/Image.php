@@ -86,10 +86,10 @@ class Image extends Base
             $success = curl_exec($ch) && curl_getinfo($ch, CURLINFO_HTTP_CODE) === 200;
             fclose($fp);
             curl_close($ch);
-            
-            if (!$success) {            
+
+            if (!$success) {
                 unlink($filepath);
-                
+
                 // could not contact the distant URL or HTTP error - fail silently.
                 return false;
             }
