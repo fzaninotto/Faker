@@ -3,7 +3,6 @@
 namespace Faker\Provider\en_ZA;
 
 use Faker\Calculator\Luhn;
-use Faker\Provider\DateTime;
 
 class Person extends \Faker\Provider\Person
 {
@@ -126,6 +125,10 @@ class Person extends \Faker\Provider\Person
         'Hughes', 'Hanekom', 'Ally', 'Schmidt', 'Butler', 'Mtsweni', 'Maphumulo', 'Manamela', 'Hoffman', 'Wolmarans', 'Duma',
         'Pule', 'Hlophe', 'Miya', 'Moagi',
     );
+
+    protected static $titleMale = array('Mr.', 'Dr.', 'Prof.', 'Rev.', 'Hon.');
+
+    protected static $titleFemale = array('Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.', 'Rev.', 'Hon.');
 
     protected static $licenceCodes = array('A', 'A1', 'B', 'C', 'C1', 'C2', 'EB', 'EC', 'EC1', 'I', 'L', 'L1');
 
