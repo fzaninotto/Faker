@@ -120,4 +120,9 @@ class Address extends \Faker\Provider\Address
     {
         return static::randomElement(static::$cityNames);
     }
+    
+    public static function postcode()
+    {
+        return static::randomElement(static::$postcodes);
+    }
 }
