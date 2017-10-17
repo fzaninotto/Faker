@@ -6,7 +6,18 @@ class Address extends \Faker\Provider\Address
 {
     protected static $buildingNumber = array('%', '%#', '%##', '%###', '%-?', '%#-?', '%?', '%#?', '%-#', '%#-##');
 
-    protected static $postcode = array('%### ??');
+    protected static $postcode = array(
+        '1056TM', '1064RR', '1066WK', '1075NL', '1187JG', '1211LV', '1214KV', '1222LH', '1271CZ', '1275BC',
+        '1338AT', '1354CL', '1601EN', '1705SV', '1721HG', '1741MB', '1796MK', '1816NS', '1824GJ', '1852XK',
+        '1871TA', '1971DJ', '2105WG', '2133HM', '2134KW', '2225RP', '2242HW', '2544HT', '2571TS', '2597KM',
+        '2622BX', '2719HN', '2957EL', '3055NR', '3073DS', '3076BT', '3083DD', '3333GJ', '3354AW', '3441AA',
+        '3523HH', '3605EJ', '3621VS', '3772ZT', '3817KA', '3823TA', '3831BB', '3951CT', '4003VE', '4223MD',
+        '4261LD', '4707CS', '4761EA', '4882BM', '5043GS', '5066BC', '5409ST', '5663PW', '6043KK', '6245JV',
+        '6373CX', '6413EH', '6431JB', '6461VS', '6535KJ', '6611CA', '6673DD', '6702CG', '6708HJ', '6713AG',
+        '6713HN', '6923CK', '7009JN', '7151AB', '7231PK', '7311PB', '7391JC', '7399RJ', '7419CN', '7461VJ',
+        '7544CL', '7546CV', '7671XW', '7814VN', '7831AV', '7833CZ', '7872PG', '7961GB', '7963CW', '8023AK',
+        '8031MB', '8084EG', '8441CV', '8801ME', '8922CJ', '9402EC', '9411EM', '9501LJ', '9626BG', '9697RT',
+    );
 
     protected static $streetNameFormats = array('{{lastName}}{{streetSuffix}}');
 
