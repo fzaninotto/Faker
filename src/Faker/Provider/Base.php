@@ -155,7 +155,7 @@ class Base
     public static function numberBetweenAndUnique($int1 = 0, $int2 = 2147483647, $identifyId = 1, $maxTries = 1000)
     {
         if (!isset(static::$__localCache[__FUNCTION__][$identifyId])) {
-            static::$__localCache[__FUNCTION__][$identifyId] = [];
+            static::$__localCache[__FUNCTION__][$identifyId] = array();
         }
 
         if ($int1 > $int2) {
