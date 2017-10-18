@@ -10,7 +10,7 @@ use Faker\ValidGenerator;
 class Base
 {
     /** @var array  */
-    public static $__localCache = [];
+    public static $__localCache = array();
 
     /**
      * @var \Faker\Generator
