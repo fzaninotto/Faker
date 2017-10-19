@@ -53,7 +53,13 @@ class ColumnTypeGuesser
                 };
             case 'string':
                 $size = isset($class->fieldMappings[$fieldName]['length']) ? $class->fieldMappings[$fieldName]['length'] : 255;
-
+                
+                if ($size < 5) {    // text doesn't support less than 5 letters
+                    return function () use ($generator, $size) {
+                        return $generator->words($size);
+                    };
+                }
+                
                 return function () use ($generator, $size) {
                     return $generator->text($size);
                 };
