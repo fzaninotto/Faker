@@ -6,7 +6,7 @@ class Address extends \Faker\Provider\Address
 {
     protected static $buildingNumber = array('%', '%#', '%##', '%###', '%-?', '%#-?', '%?', '%#?', '%-#', '%#-##');
 
-    protected static $postcode = array(
+    protected static $postcodes = array(
         '1056TM', '1064RR', '1066WK', '1075NL', '1187JG', '1211LV', '1214KV', '1222LH', '1271CZ', '1275BC',
         '1338AT', '1354CL', '1601EN', '1705SV', '1721HG', '1741MB', '1796MK', '1816NS', '1824GJ', '1852XK',
         '1871TA', '1971DJ', '2105WG', '2133HM', '2134KW', '2225RP', '2242HW', '2544HT', '2571TS', '2597KM',
