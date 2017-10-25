@@ -43,7 +43,7 @@ class Image extends Base
             }
             $url .= "{$category}/";
             if ($word) {
-                $url .= "{$word}/";
+                $url .= rawurlencode($word) . "/";
             }
         }
 
