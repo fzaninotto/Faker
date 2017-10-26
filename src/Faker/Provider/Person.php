@@ -87,7 +87,7 @@ class Person extends Base
      * @example 'Doe'
      * @return string
      */
-    public function lastName()
+    public static function lastName()
     {
         return static::randomElement(static::$lastName);
     }
