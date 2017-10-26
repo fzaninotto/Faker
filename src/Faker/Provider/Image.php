@@ -13,6 +13,16 @@ class Image extends Base
     );
 
     /**
+     * Return the list of available image categories
+     *
+     * @return array
+     */
+    public static function imageCategories()
+    {
+        return static::$categories;
+    }
+
+    /**
      * Generate the URL that will return a random image
      *
      * Set randomize to false to remove the random GET parameter at the end of the url.
