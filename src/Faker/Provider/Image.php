@@ -33,7 +33,7 @@ class Image extends Base
             static::$engine = $engine;
 
             switch ($engine) {
-                case 'lorempixel' :
+                case 'lorempixel':
                     static::$baseUrl = 'https://lorempixel.com/';
                     static::$categories = array(
                         'abstract', 'animals', 'business', 'cats', 'city', 'food', 'nightlife',
@@ -41,12 +41,12 @@ class Image extends Base
                     );
                     break;
 
-                case 'source.unsplash' :
+                case 'source.unsplash':
                     static::$baseUrl = 'https://source.unsplash.com/';
                     static::$categories = null;
                     break;
 
-                case 'loremflickr' :
+                case 'loremflickr':
                     static::$baseUrl = 'https://loremflickr.com/';
                     static::$categories = null;
                     break;
@@ -88,7 +88,7 @@ class Image extends Base
 
 
         switch (static::$engine) {
-            case 'lorempixel' :
+            case 'lorempixel':
                 $url = "{$width}/{$height}/";
 
                 if ($gray) {
@@ -110,7 +110,7 @@ class Image extends Base
                 }
                 break;
 
-            case 'source.unsplash' :
+            case 'source.unsplash':
                 $url = "{$width}x{$height}/";
 
                 if ($category) {
@@ -127,7 +127,7 @@ class Image extends Base
                 }
                 break;
 
-            case 'loremflickr' :
+            case 'loremflickr':
                 $url = "{$width}/{$height}/";
 
                 if ($gray) {
