@@ -1358,6 +1358,15 @@ echo $faker->bankAccountNumber; // "PL14968907563953822118075816"
 echo $faker->taxpayerIdentificationNumber; // '165249277'
 ```
 
+### `Faker\Provider\pt_PT\PhoneNumber`
+
+```php
+<?php
+
+echo $faker->mobileNumber; // '915249277'
+echo $faker->landlineNumber; // '249726158'
+```
+
 ### `Faker\Provider\pt_BR\Address`
 
 ```php
