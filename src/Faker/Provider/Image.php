@@ -113,17 +113,27 @@ class Image extends Base
             case 'source.unsplash':
                 $url = "{$width}x{$height}/";
 
-                if ($category) {
+                if (is_array($category)) {
+                    $parameters = trim($category[0], '/') . '/';
+                    $keywords = $category[1];
+                } else {
+                    $parameters = trim($category, '/') . '/';
+                    $keywords = null;
+                }
+
+                if ($parameters) {
+                    $url = $parameters . $url;
+                }
+
+                if ($keywords) {
                     $url .= '?' . rawurlencode($category);
                 }
 
                 if ($randomize) {
-                    if ($category) {
-                        $url .= '&';
-                    } else {
+                    if (!$keywords) {
                         $url .= '?';
                     }
-                    $url .= static::randomNumber(5, true);
+                    $url .= '&sig=' . static::randomNumber(5, true);
                 }
                 break;
 
@@ -144,6 +154,7 @@ class Image extends Base
                 break;
         }
 
+        dvnotification(static::$baseUrl . $url);
         return static::$baseUrl . $url;
     }
 
