@@ -154,7 +154,6 @@ class Image extends Base
                 break;
         }
 
-        dvnotification(static::$baseUrl . $url);
         return static::$baseUrl . $url;
     }
 
