@@ -9,6 +9,9 @@ use Faker\ValidGenerator;
 
 class Base
 {
+    /** @var array  */
+    public static $__localCache = array();
+
     /**
      * @var \Faker\Generator
      */
@@ -138,6 +141,42 @@ class Base
         $min = $int1 < $int2 ? $int1 : $int2;
         $max = $int1 < $int2 ? $int2 : $int1;
         return mt_rand($min, $max);
+    }
+
+    /**
+     * Returns a unique random number between $int1 and $int2 (any order)
+     *
+     * @param integer $int1 default to 0
+     * @param integer $int2 defaults to 32 bit max integer, ie 2147483647
+     * @example 79907610
+     *
+     * @return integer
+     */
+    public static function numberBetweenAndUnique($int1 = 0, $int2 = 2147483647, $identifyId = 1, $maxTries = 1000)
+    {
+        if (!isset(static::$__localCache[__FUNCTION__][$identifyId])) {
+            static::$__localCache[__FUNCTION__][$identifyId] = array();
+        }
+
+        if ($int1 > $int2) {
+            $max = $int1;
+            $min = $int2;
+        } else {
+            $max = $int2;
+            $min = $int1;
+        }
+
+        $numTry = 0;
+        do {
+            if ($numTry > $maxTries) {
+                throw new \OverflowException(sprintf('Maximum retries of %d reached without finding a unique value', $maxTries));
+            }
+            $res =  mt_rand($min, $max);
+        } while (in_array($res, static::$__localCache[__FUNCTION__][$identifyId]));
+
+        static::$__localCache[__FUNCTION__][$identifyId][] = $res;
+
+        return  $res;
     }
 
     /**
