@@ -55,6 +55,7 @@ class PhoneNumberTest extends \PHPUnit_Framework_TestCase
                 $mobile = $this->faker->mobileNumber();
             } while ('+33 7' != substr($mobile, 0, 5));
             $this->assertRegExp('/^(?:(?:\+33 (?:\(0\))?)|0)7 (?:3|4|5|6|7|8|9)\d(?: \d{2}){3}$/', $mobile);
+            $i++;
         }
     }
 }
