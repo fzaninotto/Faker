@@ -23,7 +23,7 @@ class PhoneNumberTest extends \PHPUnit_Framework_TestCase
     {
         do {
             $mobile = $this->faker->mobileNumber();
-        } while ('06' != substr($mobile, 0, 2));
+        } while (' ' == $mobile[2] || '06' != substr($mobile, 0, 2));
         $this->assertRegExp('/^06(?:\d{2}){4}$/', $mobile);
     }
 
@@ -43,7 +43,7 @@ class PhoneNumberTest extends \PHPUnit_Framework_TestCase
     {
         do {
             $mobile = $this->faker->mobileNumber();
-        } while ('07' != substr($mobile, 0, 2));
+        } while (' ' == $mobile[2] || '07' != substr($mobile, 0, 2));
         $this->assertRegExp('/^07(?:3|4|5|6|7|8|9)\d(?:\d{2}){3}$/', $mobile);
     }
 
