@@ -4,8 +4,9 @@ namespace Faker\Test\Provider\fr_FR;
 
 use Faker\Generator;
 use Faker\Provider\fr_FR\Person;
+use PHPUnit\Framework\TestCase;
 
-class PersonTest extends \PHPUnit_Framework_TestCase
+class PersonTest extends TestCase
 {
     private $faker;
 
@@ -21,13 +22,13 @@ class PersonTest extends \PHPUnit_Framework_TestCase
 		$nir = $this->faker->nir(\Faker\Provider\Person::GENDER_MALE);
 		$this->assertStringStartsWith('1', $nir);
     }
-	
+
 	public function testNIRReturnsTheRightPattern()
     {
 		$nir = $this->faker->nir;
 		$this->assertRegExp("/^[12]\d{5}[0-9A-B]\d{8}$/", $nir);
 	}
-	
+
 	public function testNIRFormattedReturnsTheRightPattern()
     {
 		$nir = $this->faker->nir(null, true);

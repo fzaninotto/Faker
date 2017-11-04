@@ -7,11 +7,11 @@
 
 namespace Faker\Test\Provider\es_VE;
 
-
 use Faker\Generator;
 use Faker\Provider\es_VE\Person;
+use PHPUnit\Framework\TestCase;
 
-class PersonTest extends \PHPUnit_Framework_TestCase
+class PersonTest extends TestCase
 {
 
     /**

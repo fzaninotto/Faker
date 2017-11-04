@@ -4,8 +4,9 @@ namespace Faker\Test\Provider;
 
 use Faker\Generator;
 use Faker\Provider\Uuid as BaseProvider;
+use PHPUnit\Framework\TestCase;
 
-class UuidTest extends \PHPUnit_Framework_TestCase
+class UuidTest extends TestCase
 {
     public function testUuidReturnsUuid()
     {
