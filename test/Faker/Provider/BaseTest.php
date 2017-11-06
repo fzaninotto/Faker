@@ -3,8 +3,9 @@
 namespace Faker\Test\Provider;
 
 use Faker\Provider\Base as BaseProvider;
+use PHPUnit\Framework\TestCase;
 
-class BaseTest extends \PHPUnit_Framework_TestCase
+class BaseTest extends TestCase
 {
     public function testRandomDigitReturnsInteger()
     {

@@ -5,8 +5,9 @@ namespace Faker\Test\Provider\en_ZA;
 use Faker\Generator;
 use Faker\Provider\en_ZA\Person;
 use Faker\Provider\DateTime;
+use PHPUnit\Framework\TestCase;
 
-class PersonTest extends \PHPUnit_Framework_TestCase
+class PersonTest extends TestCase
 {
     private $faker;
 

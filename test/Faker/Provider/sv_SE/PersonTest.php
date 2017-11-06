@@ -5,8 +5,9 @@ namespace Faker\Test\Provider\sv_SE;
 use Faker\Calculator\Luhn;
 use Faker\Generator;
 use Faker\Provider\sv_SE\Person;
+use PHPUnit\Framework\TestCase;
 
-class PersonTest extends \PHPUnit_Framework_TestCase
+class PersonTest extends TestCase
 {
     /** @var Generator */
     protected $faker;

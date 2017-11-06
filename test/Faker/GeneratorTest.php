@@ -3,8 +3,9 @@
 namespace Faker\Test;
 
 use Faker\Generator;
+use PHPUnit\Framework\TestCase;
 
-class GeneratorTest extends \PHPUnit_Framework_TestCase
+class GeneratorTest extends TestCase
 {
     public function testAddProviderGivesPriorityToNewlyAddedProvider()
     {

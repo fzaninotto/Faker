@@ -4,8 +4,9 @@ namespace Faker\Test\Provider;
 
 use Faker\Provider\Person;
 use Faker\Generator;
+use PHPUnit\Framework\TestCase;
 
-class PersonTest extends \PHPUnit_Framework_TestCase
+class PersonTest extends TestCase
 {
     /**
      * @dataProvider firstNameProvider
