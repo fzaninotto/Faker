@@ -44,18 +44,25 @@ class PersonTest extends TestCase
 
     public function testPersonalIdentityNumberGeneratesCompliantNumbers()
     {
-        for ($i = 0; $i < 10; $i++) {
-            $birthdate = $this->faker->dateTimeBetween('1800-01-01 00:00:00', '1899-12-31 23:59:59');
-            $pin = $this->faker->personalIdentityNumber($birthdate);
-            $this->assertRegExp('/^[0-9]{6}\+[0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
+        if (strtotime('1800-01-01 00:00:00')) {
+            $min="1900";
+            $max="2099";
+            for ($i = 0; $i < 10; $i++) {
+                $birthdate = $this->faker->dateTimeBetween('1800-01-01 00:00:00', '1899-12-31 23:59:59');
+                $pin = $this->faker->personalIdentityNumber($birthdate, NULL, true);
+                $this->assertRegExp('/^[0-9]{6}\+[0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
+            }
+        } else { // timestamp limit for 32-bit computer
+            $min="1902";
+            $max="2037";
         }
         for ($i = 0; $i < 10; $i++) {
-            $birthdate = $this->faker->dateTimeBetween('1900-01-01 00:00:00', '1999-12-31 23:59:59');
+            $birthdate = $this->faker->dateTimeBetween("$min-01-01 00:00:00", '1999-12-31 23:59:59');
             $pin = $this->faker->personalIdentityNumber($birthdate);
             $this->assertRegExp('/^[0-9]{6}-[0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
         }
         for ($i = 0; $i < 10; $i++) {
-            $birthdate = $this->faker->dateTimeBetween('2000-01-01 00:00:00', '2099-12-31 23:59:59');
+            $birthdate = $this->faker->dateTimeBetween('2000-01-01 00:00:00', "$max-12-31 23:59:59");
             $pin = $this->faker->personalIdentityNumber($birthdate);
             $this->assertRegExp('/^[0-9]{6}A[0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
         }
