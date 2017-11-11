@@ -15,5 +15,9 @@ class Company extends \Faker\Provider\Company
         '{{lastName}} og {{lastName}} {{companySuffix}}'
     );
 
-    protected static $companySuffix = array('AS', 'DA', 'NUF');
+    /**
+     * Common suffixes
+     * @link https://www.brreg.no/bedrift/organisasjonsformer/
+     */
+    protected static $companySuffix = array('ANS', 'AS', 'ASA', 'BA', 'DA', 'ENK', 'GFS', 'KTRF', 'NUF', 'PK', 'SA', 'SPA', 'STI', 'VIFE');
 }
