@@ -111,11 +111,11 @@ class Person extends \Faker\Provider\Person
         'Hendrikse', 'van Henegouwen',  'van den Henst', 'Heribert van Laon', "d' Heripon",
         'Hermans', 'van Herstal', 'van Heusden', 'Hexspoor', 'Heymans', 'Heyne', 'Hoedemakers', 'van den Hoek', 'Hoeks',
         'Hoelen', 'Hoes', 'van Hoevel en van Zwindrecht', 'van der Hoeven', 'van Holland', 'Hollander', 'Holthuis',
-        'Hondeveld', 'Honing', 'de Hoog', 'Hoogers', 'de Hoogh', 'Hoppenbrouwer', 'Horrocks', 'van der Horst',
-        'van Hostaden', 'Houdijk', "van 't Houteveen", 'Huberts', 'Huel', 'Huijben', 'Huijbrechts', 'Huijs',
-        'Huijzing', 'Huisman', 'Huls', 'Hulshouts', 'Hulskes', 'Hulst', 'van Hulten', 'Huurdeman', 'van het Heerenveen',
-        'Jaceps', 'Jacobi', 'Jacobs', 'Jacquot', 'de Jager', 'Jans', 'Jansdr', 'Janse', 'Jansen', 'Jansen', 'Jansse',
-        'Janssen', 'Janssens', 'Jasper dr', 'Jdotte', 'Jeggij', 'Jekel', 'Jerusalem', 'Jochems',
+        'Hondeveld', 'Honing', 'de Hoog', 'Hoogers', 'de Hoogh', 'Hoogstad', 'Hoppenbrouwer', 'Horrocks',
+        'van der Horst', 'van Hostaden', 'Houdijk', "van 't Houteveen", 'Huberts', 'Huel', 'Huijben', 'Huijbrechts',
+        'Huijs', 'Huijzing', 'Huisman', 'Huls', 'Hulshouts', 'Hulskes', 'Hulst', 'van Hulten', 'Huurdeman',
+        'van het Heerenveen', 'Jaceps', 'Jacobi', 'Jacobs', 'Jacquot', 'de Jager', 'Jans', 'Jansdr', 'Janse', 'Jansen',
+        'Jansen', 'Jansse', 'Janssen', 'Janssens', 'Jasper dr', 'Jdotte', 'Jeggij', 'Jekel', 'Jerusalem', 'Jochems',
         'Jones', 'de Jong', 'Jonkman', 'Joosten', 'Jorlink', 'Jorrisen', 'van Jumiège', 'Jurrijens', 'Köster',
         'van der Kaay', 'de Kale', 'Kallen', 'Kalman', 'Kamp', 'Kamper', 'Karels', 'Kas', 'van Kasteelen', 'Kathagen',
         'Keijser', 'de Keijser', 'Keijzer', 'de Keijzer', 'Keltenie', 'van Kempen', 'Kerkhof', 'Ketel', 'Ketting',
@@ -180,8 +180,8 @@ class Person extends \Faker\Provider\Person
         'Weijland', 'Weijters', 'van Wel', "van 't Wel", 'Welf', 'Wendt', 'Wensen', 'de Werd', 'Werdes',
         'van Wessex', 'Westerbeek', 'Westerburg', 'Westermann',
         'van Westfalen', 'van de Weterink', 'Wever', 'Weyland', 'Weylant', 'van Wickerode', 'van de Wiel', 'Wigman',
-        'Wijland', 'van Wijland', 'Wilcken', 'Wildschut', 'Willems', 'Willems van Lier', 'Willemsen', 'Wilmont',
-        'Wilson', 'Winnrich', 'Winters', 'Wipstrik', 'de Wit', 'van den Wittenboer', 'Wolffel',
+        'Wijland', 'van Wijland', 'Wijngaarden', 'Wilcken', 'Wildschut', 'Willems', 'Willems van Lier', 'Willemsen',
+        'Wilmont', 'Wilson', 'Winnrich', 'Winters', 'Wipstrik', 'de Wit', 'van den Wittenboer', 'Wolffel',
         'Wolfswinkel', 'Wolters', 'Wolzak', 'Wooning', 'Woudenberg', 'Wouters', 'Wouters van Eijndhoven', 'Woutersz',
         'Wright', 'Wunderink', 'Wutke', 'Zaal', 'Zeemans', 'Zeldenrust', 'Zevenboom', 'van der Zijl', 'Zijlemans',
         'Zijlmans', 'Zuidweg', 'Zuijdveld', 'van Zwaben', 'Zwart', 'Zwijsen'
@@ -246,17 +246,17 @@ class Person extends \Faker\Provider\Person
         'Alexander', 'Hendrik', 'Xavi', 'Joey', 'Fabian', 'Justin', 'Keano', 'Cornelis', 'Fedde', 'Casper', 'Morris',
         'Mike', 'Nathan', 'Jacob', 'Mika', 'Owen', 'Abel', 'Emir', 'Sepp', 'Twan', 'Aiden', 'Jonathan', 'Muhammed',
         'Job', 'Mason', 'Stef', 'Chris', 'Gerrit', 'Jesper', 'Lukas', 'Valentijn', 'Melle', 'Wessel', 'Jip', 'Luc',
-        'Rick', 'Sil', 'Loek', 'Dylano', 'Florian', 'Kevin', 'Jort', 'Julius', 'Daniel', 'Maarten', 'Matthijs', 'Jamie',
-        'Jelte', 'Tycho', 'Amir', 'Boris', 'Thijn', 'Sep', 'Wout', 'Sjoerd', 'Joël', 'Aron', 'Bart', 'James', 'Kai',
-        'Lorenzo', 'Raf', 'Lenn', 'Marijn', 'Sebastiaan', 'Senn', 'Jim', 'Brent', 'Rafael', 'Tijs', 'Imran', 'Nout',
-        'Thom', 'Aaron', 'Dirk', 'Oscar', 'Jay', 'Ravi', 'Ali', 'Sami', 'Kian', 'Wouter', 'Giovanni', 'Ian', 'Laurens',
-        'Leon', 'Milo', 'Kay', 'Alex', 'Amin', 'Jayson', 'Berat', 'Jules', 'Sander', 'Seth', 'Ben', 'Jonas', 'Jordy',
-        'Mathijs', 'Colin', 'Tijmen', 'Marinus', 'Wesley', 'Yusuf', 'Maurits', 'Bjorn', 'Bryan', 'Joost', 'Riley',
-        'Victor', 'Felix', 'Ibrahim', 'Luka', 'Bastiaan', 'Hamza', 'Mark', 'Arthur', 'Bradley', 'Dave', 'Rowan',
-        'Collin', 'Luke', 'Merijn', 'Vigo', 'Beau', 'Bilal', 'Jorn', 'Vincent', 'Matthias', 'Ayden', 'Maxim', 'Yassin',
-        'Dion', 'Jake', 'Kyano', 'Kick', 'Mustafa', 'Michael', 'Youssef', 'Elias', 'Naud', 'Senna', 'Brian', 'Jari',
-        'Mehmet', 'Micha', 'Stefan', 'Arie', 'Duuk', 'Zakaria', 'Ayoub', 'Faas', 'Olaf', 'Tristan', 'Mads', 'Berend',
-        'Mart', 'Sten', 'Ivan', 'Philip', 'Giel', 'Lex', 'Rik', 'Tyler'
+        'Richard', 'Rick', 'Sil', 'Loek', 'Dylano', 'Florian', 'Kevin', 'Jort', 'Julius', 'Daniel', 'Maarten',
+        'Matthijs', 'Jamie', 'Jelte', 'Tycho', 'Amir', 'Boris', 'Thijn', 'Sep', 'Wout', 'Sjoerd', 'Joël', 'Aron',
+        'Bart', 'James', 'Kai', 'Lorenzo', 'Raf', 'Lenn', 'Marijn', 'Sebastiaan', 'Senn', 'Jim', 'Brent', 'Rafael',
+        'Tijs', 'Imran', 'Nout', 'Thom', 'Aaron', 'Dirk', 'Oscar', 'Jay', 'Ravi', 'Ali', 'Sami', 'Kian', 'Wouter',
+        'Giovanni', 'Ian','Laurens', 'Leon', 'Milo', 'Kay', 'Alex', 'Amin', 'Jayson', 'Berat', 'Jules', 'Sander',
+        'Seth', 'Ben', 'Jonas', 'Jordy', 'Mathijs', 'Colin', 'Tijmen', 'Marinus', 'Wesley', 'Yusuf', 'Maurits', 'Bjorn',
+        'Bryan', 'Joost','Riley', 'Victor', 'Felix', 'Ibrahim', 'Luka', 'Bastiaan', 'Hamza', 'Mark', 'Arthur',
+        'Bradley', 'Dave', 'Rowan', 'Collin', 'Luke', 'Merijn', 'Vigo', 'Beau', 'Bilal', 'Jorn', 'Vincent', 'Matthias',
+        'Ayden', 'Maxim', 'Yassin', 'Dion', 'Jake', 'Kyano', 'Kick', 'Mustafa', 'Michael', 'Youssef', 'Elias', 'Naud',
+        'Senna', 'Brian', 'Jari','Mehmet', 'Micha', 'Stefan', 'Arie', 'Duuk', 'Zakaria', 'Ayoub', 'Faas', 'Olaf',
+        'Tristan', 'Mads', 'Berend', 'Mart', 'Sten', 'Ivan', 'Philip', 'Giel', 'Lex', 'Rik', 'Tyler'
     );
 
     /**
@@ -314,7 +314,7 @@ class Person extends \Faker\Provider\Person
     {
         return static::randomElement(static::$prefix);
     }
-    
+
     /**
      * @link https://nl.wikipedia.org/wiki/Burgerservicenummer#11-proef
      *
