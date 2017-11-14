@@ -188,6 +188,8 @@ namespace Faker;
  *
  * @method string randomHtml($maxDepth = 4, $maxWidth = 4)
  *
+ * @property string $language
+ *
  */
 class Generator
 {

@@ -20,6 +20,7 @@ Faker requires PHP >= 5.3.3.
 	- [Phone Number](#fakerprovideren_usphonenumber)
 	- [Company](#fakerprovideren_uscompany)
 	- [Real Text](#fakerprovideren_ustext)
+    - [Language](#fakerprovideren_uslanguage)
 	- [Date and Time](#fakerproviderdatetime)
 	- [Internet](#fakerproviderinternet)
 	- [User Agent](#fakerprovideruseragent)
@@ -176,6 +177,10 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 ### `Faker\Provider\en_US\Text`
 
     realText($maxNbChars = 200, $indexSize = 2) // "And yet I wish you could manage it?) 'And what are they made of?' Alice asked in a shrill, passionate voice. 'Would YOU like cats if you were never even spoke to Time!' 'Perhaps not,' Alice replied."
+
+### `Faker\Provider\en_US\Language`
+
+    language                // 'Afrikaans'
 
 ### `Faker\Provider\DateTime`
 
