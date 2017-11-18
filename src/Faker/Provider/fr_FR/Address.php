@@ -75,6 +75,16 @@ class Address extends \Faker\Provider\Address
         array('971' => 'Guadeloupe'), array('972' => 'Martinique'), array('973' => 'Guyane'), array('974' => 'La Réunion'), array('976' => 'Mayotte')
      );
 
+    protected static $secondaryAddressFormats = array('Apt. ###', 'Suite ###', 'Étage ###', "Bât. ###", "Chambre ###");
+
+    /**
+     * @example 'Appt. 350'
+     */
+    public static function secondaryAddress()
+    {
+        return static::numerify(static::randomElement(static::$secondaryAddressFormats));
+    }
+
      /**
      * @example 'rue'
      */
