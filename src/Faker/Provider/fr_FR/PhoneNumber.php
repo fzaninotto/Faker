@@ -82,8 +82,10 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     /**
      * @example '0601020304'
      */
-    public static function mobileNumber()
+    public function mobileNumber()
     {
-        return static::numerify(static::randomElement(static::$mobileFormats));
+        $format = static::randomElement(static::$mobileNumberFormats);
+
+        return static::numerify($this->generator->parse($format));
     }
 }
