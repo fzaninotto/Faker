@@ -56,4 +56,9 @@ class MiscellaneousTest extends TestCase
     {
         $this->assertRegExp('/^[\x{1F600}-\x{1F637}]$/u', Miscellaneous::emoji());
     }
+
+    public function testSemVer()
+    {
+        $this->assertRegExp('/^\d+\.\d+\.\d+$/', Miscellaneous::semVer());
+    }
 }

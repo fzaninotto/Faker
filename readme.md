@@ -293,6 +293,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     languageCode  // en
     currencyCode  // EUR
     emoji         // 😁
+    semVer        // 7.1.14
 
 ### `Faker\Provider\Biased`
 
