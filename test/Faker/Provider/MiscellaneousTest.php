@@ -2,6 +2,7 @@
 
 namespace Faker\Test\Provider;
 
+use Alcohol\ISO4217;
 use Faker\Provider\Miscellaneous;
 use PHPUnit\Framework\TestCase;
 
@@ -50,6 +51,16 @@ class MiscellaneousTest extends TestCase
     public function testCurrencyCode()
     {
         $this->assertRegExp('/^[A-Z]{3}$/', Miscellaneous::currencyCode());
+    }
+
+    public function testValidCurrencyCode()
+    {
+        // fetch all valid currency codes
+        $validCodes = array_column((new ISO4217)->getAll(), 'alpha3');
+        // repeat often to detect errors in randomly generated codes
+        for($i=0; $i < 100; ++$i) {
+            $this->assertContains(Miscellaneous::currencyCode(), $validCodes);
+        }
     }
 
     public function testEmoji()
