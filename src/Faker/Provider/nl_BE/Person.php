@@ -2,6 +2,8 @@
 
 namespace Faker\Provider\nl_BE;
 
+use Faker\Provider\DateTime;
+
 class Person extends \Faker\Provider\Person
 {
     protected static $firstNameMale = array(
@@ -69,4 +71,27 @@ class Person extends \Faker\Provider\Person
         'Vermeersch', 'Vermeiren', 'Vermeulen', 'Verschueren', 'Verstraete', 'Verstraeten',
         'Vervoort', 'Wauters', 'Willems', 'Wouters', 'Wuyts', 'Yildirim', 'Yilmaz'
     );
+
+    public static function rrn($gender = null)
+    {
+        $middle = self::numberBetween(1, 996);
+        if($gender === static::GENDER_MALE)
+        {
+            $middle = $middle %2 === 1 ? $middle : $middle+1;
+        }
+        elseif($gender === static::GENDER_FEMALE)
+        {
+            $middle = $middle %2 === 0 ? $middle : $middle+1;
+        }
+        $middle = sprintf('%03d', $middle);
+        
+        $date = DateTime::dateTimeThisCentury();
+        $dob = $date->format('ymd');
+        $help = $date->format('Y') >= 2000 ? 2 : null; 
+
+        $check = intval($help.$dob.$middle);
+        $rest = sprintf('%02d', 97 - ($check % 97));
+        
+        return intval($dob.$middle.$rest);
+    }
 }
