@@ -72,9 +72,21 @@ class Person extends \Faker\Provider\Person
         'Vervoort', 'Wauters', 'Willems', 'Wouters', 'Wuyts', 'Yildirim', 'Yilmaz'
     );
 
+    /**
+     *  Belgian Rijksregister numbers are used to identify each citizen,
+     *  it consists of three parts, the person's day of birth, in the
+     *  format 'ymd', followed by a number between 1 and 997, odd for
+     *  males, even for females. The last part is used to check if it's
+     *  a valid number.
+     *
+     *  @link https://nl.wikipedia.org/wiki/Rijksregisternummer
+     *
+     *  @param string|null $gender 'male', 'female' or null for any
+     *  @return int
+     */
     public static function rrn($gender = null)
     {
-        $middle = self::numberBetween(1, 996);
+        $middle = self::numberBetween(1, 997);
         if ($gender === static::GENDER_MALE) {
             $middle = $middle %2 === 1 ? $middle : $middle+1;
         } elseif ($gender === static::GENDER_FEMALE) {
