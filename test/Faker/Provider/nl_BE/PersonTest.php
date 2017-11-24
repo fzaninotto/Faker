@@ -30,12 +30,9 @@ class PersonTest extends TestCase
         $dob = DateTime::createFromFormat('ymd', substr($rrn, 0, 6));
         $this->assertLessThanOrEqual(new Datetime(), $dob);
 
-        if((int) $dob->format('Y') >= 2000)
-        {
+        if ((int) $dob->format('Y') >= 2000) {
             $calc = 97 - ((2 . substr($rrn, 0, 9)) % 97);
-        }
-        else
-        {
+        } else {
             $calc = 97 - (substr($rrn, 0, 9) % 97);
         }
         $controle = substr($rrn, 9, 2);
