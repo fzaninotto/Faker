@@ -7,6 +7,9 @@ use Faker\Provider\nl_BE\Person;
 use PHPUnit\Framework\TestCase;
 use Datetime;
 
+/**
+ * @group Person
+ */
 class PersonTest extends TestCase
 {
     /**
@@ -23,24 +26,18 @@ class PersonTest extends TestCase
 
     public function testRrnIsValid()
     {
-        $rrn = $this->faker->rrn('f');
+        $rrn = $this->faker->rrn();
         
         $this->assertEquals(11, strlen($rrn));
 
-        $dob = DateTime::createFromFormat('ymd', substr($rrn, 0, 6));
-        $this->assertLessThanOrEqual(new Datetime(), $dob);
-
-        if ((int) $dob->format('Y') >= 2000) {
-            $calc = 97 - ((2 . substr($rrn, 0, 9)) % 97);
-        } else {
-            $calc = 97 - (substr($rrn, 0, 9) % 97);
-        }
-        $controle = substr($rrn, 9, 2);
-        $this->assertEquals($calc, $controle);
+        $ctrlNumber = substr($rrn, 9, 2);
+        $calcCtrl = 97 - (substr($rrn, 0, 9) % 97);
+        $altcalcCtrl = 97 - ((2 . substr($rrn, 0, 9)) % 97);
+        $this->assertTrue(in_array($ctrlNumber, [$calcCtrl, $altcalcCtrl]));
 
         $middle = substr($rrn, 6, 3);
         $this->assertGreaterThan(1, $middle);
-        $this->assertLessThan(991, $middle);
+        $this->assertLessThan(997, $middle);
     }
 
     public function testRrnIsMale()
