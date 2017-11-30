@@ -16,22 +16,19 @@ class PersonTest extends TestCase
      *
      */
     protected $faker;
-    protected $originalTz;
 
     public function setUp()
     {
-        $this->originalTz = @date_default_timezone_get();
-        date_default_timezone_set('Europe/Bucharest');
-
         $faker = new Generator();
         $faker->addProvider(new DateTime($faker));
         $faker->addProvider(new Person($faker));
+        $faker->setDefaultTimezone('Europe/Bucharest');
         $this->faker = $faker;
     }
 
     public function tearDown()
     {
-        date_default_timezone_set($this->originalTz);
+        $this->faker->setDefaultTimezone();
     }
 
     public function invalidGenderProvider()

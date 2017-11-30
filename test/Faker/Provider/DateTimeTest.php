@@ -9,14 +9,63 @@ class DateTimeTest extends TestCase
 {
     public function setUp()
     {
-        $this->originalTz = date_default_timezone_get();
         $this->defaultTz = 'UTC';
-        date_default_timezone_set($this->defaultTz);
+        DateTimeProvider::setDefaultTimezone($this->defaultTz);
     }
 
     public function tearDown()
     {
-        date_default_timezone_set($this->originalTz);
+        DateTimeProvider::setDefaultTimezone();
+    }
+
+    public function testPreferDefaultTimezoneOverSystemTimezone()
+    {
+        /**
+         * Set the system timezone to something *other* than the timezone used
+         * in setUp().
+         */
+        $originalSystemTimezone = date_default_timezone_get();
+        $systemTimezone = 'Antarctica/Vostok';
+        date_default_timezone_set($systemTimezone);
+
+        /**
+         * Get a new date/time value and assert that it prefers the default
+         * timezone over the system timezone.
+         */
+        $date = DateTimeProvider::dateTime();
+        $this->assertNotSame($systemTimezone, $date->getTimezone()->getName());
+        $this->assertSame($this->defaultTz, $date->getTimezone()->getName());
+
+        /**
+         * Restore the system timezone.
+         */
+        date_default_timezone_set($originalSystemTimezone);
+    }
+
+    public function testUseSystemTimezoneWhenDefaultTimezoneIsNotSet()
+    {
+        /**
+         * Set the system timezone to something *other* than the timezone used
+         * in setUp() *and* reset the default timezone.
+         */
+        $originalSystemTimezone = date_default_timezone_get();
+        $originalDefaultTimezone = DateTimeProvider::getDefaultTimezone();
+        $systemTimezone = 'Antarctica/Vostok';
+        date_default_timezone_set($systemTimezone);
+        DateTimeProvider::setDefaultTimezone();
+
+        /**
+         * Get a new date/time value and assert that it uses the system timezone
+         * and not the system timezone.
+         */
+        $date = DateTimeProvider::dateTime();
+        $this->assertSame($systemTimezone, $date->getTimezone()->getName());
+        $this->assertNotSame($this->defaultTz, $date->getTimezone()->getName());
+
+        /**
+         * Restore the system timezone.
+         */
+        date_default_timezone_set($originalSystemTimezone);
     }
 
     public function testUnixTime()
