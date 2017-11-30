@@ -43,8 +43,25 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '96#######',
     );
 
+    protected static $landlineNumberPrefixes = array(
+        '21#######',
+        '22#######',
+        '23#######',
+        '24#######',
+        '25#######',
+        '26#######',
+        '27#######',
+        '28#######',
+        '29#######',
+    );
+
     public static function mobileNumber()
     {
         return static::numerify(static::randomElement(static::$mobileNumberPrefixes));
+    }
+
+    public static function landlineNumber()
+    {
+        return static::numerify(static::randomElement(static::$landlineNumberPrefixes));
     }
 }
