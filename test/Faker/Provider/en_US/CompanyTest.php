@@ -20,6 +20,9 @@ class CompanyTest extends \PHPUnit_Framework_TestCase
         $this->faker = $faker;
     }
 
+    /**
+     * @link https://stackoverflow.com/questions/4242433/regex-for-ein-number-and-ssn-number-format-in-jquery/35471665#35471665
+     */
     public function testEin()
     {
         $number = $this->faker->ein;
