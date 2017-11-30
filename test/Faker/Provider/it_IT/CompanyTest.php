@@ -18,7 +18,14 @@ class CompanyTest extends TestCase
     public function testIfTaxIdCanReturnData()
     {
         $vatId = $this->faker->vatId();
-        $this->assertRegExp('/^IT[0-9]{11}$/', $vatId);
+        $this->assertRegExp('/^(IT)?[0-9]{11}$/', $vatId);
+    }
+
+    public function testJobTitleLength()
+    {
+        for ($i = 0; $i < 20; $i++) {
+            $this->assertTrue(strlen($this->faker->jobTitle) > 0);
+        }
     }
 
 }
