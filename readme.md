@@ -200,12 +200,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     century                               // 'VI'
     timezone                              // 'Europe/Paris'
 
-For methods that accept a `$timezone` argument, users may opt to explicitly or implicitly pass `null`.  Doing so will result in the timezone being determined by the default timezone, if set, or the "system" timezone, otherwise.
-
-The default timezone can be get and set by calling `getDefaultTimezone()` and `setDefaultTimezone(string $timezone = null)`, respectively.
-
-The "system" timezone can be get and set by calling `date_default_timezone_get()` and `date_default_timezone_set(string $timezone_identifier)`, respectively.  If no
-default timezone has been set, then Faker will call `date_default_timezone_get()` to determine the timezone to use.
+Methods accepting a `$timezone` argument default to `date_default_timezone_get()`. You can pass a custom timezone string to each method, or define a custom timezone for all time methods at once using `$faker::setDefaultTimezone($timezone)`.
 
 ### `Faker\Provider\Internet`
 
