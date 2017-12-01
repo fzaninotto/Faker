@@ -16,7 +16,7 @@ class Address extends \Faker\Provider\Address
     protected static $postcode = array('######');
     
     /**
-     * @link http://www.consultant.ru/document/cons_doc_LAW_34516/1f93873ba975a49a6750550208632ea9ec2bc676/
+     * @link https://ru.wikipedia.org/wiki/Общероссийский_классификатор_стран_мира#Список_стран_согласно_Классификатору
      */
     protected static $country = array(
         'Абхазия', 'Австралия', 'Австрия', 'Азербайджан', 'Албания', 'Алжир', 'Американское Самоа', 'Ангилья', 'Ангола', 'Андорра', 'Антарктида', 'Антигуа и Барбуда', 'Аргентина', 'Армения', 'Аруба', 'Афганистан',
