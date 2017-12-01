@@ -15,7 +15,7 @@ class Address extends \Faker\Provider\Address
     /**
      * @example 'هرات'
      * @example 'ولایت هرات'
-    */
+     */
     protected static $cityFormats = array(
         '{{cityName}}',
         '{{cityPrefix}} {{cityName}}',
@@ -24,7 +24,7 @@ class Address extends \Faker\Provider\Address
     /**
      * @example 'ساختمان پوهنتون هرات پلاک 40 کد پستی 51757'
      * @example 'ساختمان پوهنتون هرات افغانستان'
-    */
+     */
     protected static $addressFormats = array(
         '{{building}} {{postcodePrefix}} {{postcode}}',
         '{{building}} {{country}}',
@@ -34,7 +34,7 @@ class Address extends \Faker\Provider\Address
      * @example 'ساختمان پوهنتون هرات'
      * @example 'ساختمان پوهنتون هرات پلاک 65'
      * @example 'ساختمان پوهنتون هرات گذر 65'
-    */
+     */
     protected static $buildingFormat = array(
         '{{buildingNamePrefix}} {{company}} {{buildingNumberPrefix}} {{buildingNumber}}',
         '{{buildingNamePrefix}} {{company}}',
@@ -43,7 +43,7 @@ class Address extends \Faker\Provider\Address
     /**
      * @example 'جاده پوهنتون هرات'
      * @example 'جاده تعلیم و تربیه کابل'
-    */
+     */
     protected static $streetNameFormats = array(
         '{{streetPrefix}} {{company}}'
     );
@@ -67,7 +67,7 @@ class Address extends \Faker\Provider\Address
     /**
      * @example 'هرات'
      * @example 'کابل'
-    */
+     */
     public static function cityName()
     {
         return static::randomElement(static::$cityName);
@@ -75,7 +75,7 @@ class Address extends \Faker\Provider\Address
 
     /**
      * @example 'جاده/خیابان'
-    */
+     */
     public static function streetPrefix()
     {
         return static::randomElement(static::$streetPrefix);
@@ -83,7 +83,7 @@ class Address extends \Faker\Provider\Address
 
     /**
      * @example 'ساختمان'
-    */
+     */
     public static function buildingNamePrefix()
     {
         return static::randomElement(static::$buildingNamePrefix);
@@ -91,7 +91,7 @@ class Address extends \Faker\Provider\Address
 
     /**
      * @example 'پلاک'
-    */
+     */
     public static function buildingNumberPrefix()
     {
         return static::randomElement(static::$buildingNumberPrefix);
@@ -101,7 +101,7 @@ class Address extends \Faker\Provider\Address
      * @example 'ساختمان پوهنتون هرات'
      * @example 'ساختمان پوهنتون هرات پلاک 65'
      * @example 'ساختمان پوهنتون هرات گذر 65'
-    */
+     */
     public function building()
     {
         $format = static::randomElement(static::$buildingFormat);
@@ -110,7 +110,7 @@ class Address extends \Faker\Provider\Address
 
     /**
      * @example 'کد پستی'
-    */
+     */
     public static function postcodePrefix()
     {
         return static::randomElement(static::$postcodePrefix);

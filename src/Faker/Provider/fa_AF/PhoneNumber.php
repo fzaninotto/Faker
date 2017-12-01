@@ -6,7 +6,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
     /**
      * @link https://en.wikipedia.org/wiki/Telephone_numbers_in_Afghanistan
-    */
+     */
     protected static $formats = array(
         // Landlines
         '+9320#######', // Kabul province - International Landlines (fixed lines) format
@@ -27,7 +27,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     /**
      * @link https://en.wikipedia.org/wiki/Telephone_numbers_in_Afghanistan
-    */
+     */
     protected static $mobileNumberPrefixes = array(
         // AWCC - International Mobile lines (cellular phones) formats
         '+9370#######',
@@ -68,7 +68,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     /**
      * @example '+93743758087'
      * @example '0718872113'
-    */
+     */
     public static function mobileNumber()
     {
         return static::numerify(static::randomElement(static::$mobileNumberPrefixes));
@@ -77,7 +77,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     /**
      * @example '+93408662902'
      * @example '0402811933'
-    */
+     */
     public function phoneNumber()
     {
         return static::numerify(static::randomElement(static::$formats));
