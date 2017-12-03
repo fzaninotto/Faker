@@ -25,6 +25,6 @@ class PersonTest extends TestCase
         $individualIdentificationNumber = $this->faker->individualIdentificationNumber($birthDate);
         $controlDigit                   = Person::checkSum($individualIdentificationNumber);
 
-        $this->assertTrue($controlDigit === (int)substr($individualIdentificationNumber, 11, 1));
+        $this->assertSame($controlDigit, (int)substr($individualIdentificationNumber, 11, 1));
     }
 }

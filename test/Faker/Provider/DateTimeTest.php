@@ -72,8 +72,8 @@ class DateTimeTest extends TestCase
     {
         $timestamp = DateTimeProvider::unixTime();
         $this->assertInternalType('int', $timestamp);
-        $this->assertTrue($timestamp >= 0);
-        $this->assertTrue($timestamp <= time());
+        $this->assertGreaterThanOrEqual(0, $timestamp);
+        $this->assertLessThanOrEqual(time(), $timestamp);
     }
 
     public function testDateTime()

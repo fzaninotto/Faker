@@ -27,13 +27,13 @@ class PersonTest extends TestCase
     public function testRrnIsValid()
     {
         $rrn = $this->faker->rrn();
-        
+
         $this->assertEquals(11, strlen($rrn));
 
         $ctrlNumber = substr($rrn, 9, 2);
         $calcCtrl = 97 - (substr($rrn, 0, 9) % 97);
         $altcalcCtrl = 97 - ((2 . substr($rrn, 0, 9)) % 97);
-        $this->assertTrue(in_array($ctrlNumber, array($calcCtrl, $altcalcCtrl)));
+        $this->assertContains($ctrlNumber, array($calcCtrl, $altcalcCtrl));
 
         $middle = substr($rrn, 6, 3);
         $this->assertGreaterThan(1, $middle);
