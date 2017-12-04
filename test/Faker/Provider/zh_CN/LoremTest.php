@@ -30,7 +30,7 @@ class LoremTest extends TestCase
 
     public function testWordCharacterNumberFrequencyDistribution()
     {
-        $count = [0, 0, 0, 0, 0];
+        $count = array(0, 0, 0, 0, 0);
         for ($i = 0; $i < 10000; ++$i)
         {
             ++$count[mb_strlen(Lorem::word())];

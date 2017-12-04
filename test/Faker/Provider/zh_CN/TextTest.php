@@ -21,8 +21,8 @@ class TextTest extends TestCase
 
     public function testRealTextEndPunctuaction()
     {
-        $notEndPunct = $this->readAttribute(Text::class, 'notEndPunct');
-        $endPunct = $this->readAttribute(Text::class, 'endPunct');
+        $notEndPunct = $this->readAttribute('Faker\Provider\zh_CN\Text', 'notEndPunct');
+        $endPunct = $this->readAttribute('Faker\Provider\zh_CN\Text', 'endPunct');
         $faker = static::getGenerator();
 
         $this->assertTrue(in_array(mb_substr($faker->realText(), -1, 1), $endPunct));
@@ -31,7 +31,7 @@ class TextTest extends TestCase
 
     public function testRealTextBeginPunctuaction()
     {
-        $notBeginPunct = $this->readAttribute(Text::class, 'notBeginPunct');
+        $notBeginPunct = $this->readAttribute('Faker\Provider\zh_CN\Text', 'notBeginPunct');
         $faker = static::getGenerator();
 
         $this->assertFalse(in_array(mb_substr($faker->realText(), 0, 1), $notBeginPunct));
