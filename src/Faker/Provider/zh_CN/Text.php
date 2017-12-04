@@ -4,7 +4,7 @@ namespace Faker\Provider\zh_CN;
 
 class Text extends \Faker\Provider\Text
 {
-    protected static $separator = '';
+    protected static $separator = ''; // not used, use preg_split('//u', $text); instead to split by unicode character
     protected static $separatorLen = 0;
 
     /**

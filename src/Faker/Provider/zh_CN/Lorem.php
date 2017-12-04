@@ -63,21 +63,61 @@ class Lorem extends \Faker\Provider\Lorem
     protected static $encoding = 'UTF-8';
 
     /**
+     * Generate a random single Chinese character
+     * @example '的' '一' '是'
+     * @return string
+     */
+    public static function char()
+    {
+        return static::randomElement(static::$wordList);
+    }
+
+    /**
+     * Generate an array of random characters
+     *
+     * @example array('的', '一', '是')
+     * @param  integer      $nb     how many characters to return
+     * @param  bool         $asText if true the sentences are returned as one string
+     * @return array|string
+     */
+    public static function chars($nb = 3, $asText = false)
+    {
+        $chars = static::randomElements(static::$wordList, $nb);
+        return $asText ? implode('', $chars) : $chars;
+    }
+
+    /**
      * Generate a random word
      * A chinese word usually contains 1 - 4 single character.
+     *
      * Character numbers : Frequency
      * 1 : 10%
      * 2 : 60%
      * 3 : 10%
      * 4 : 20%
-     * The generated words may be not a true word that can be understood by people.
+     * The generated words may be unreadable by people.
+     *
+     * Usage:
+     *     Lorem::word();
+     *     Lorem::word(2); // generate word contains exact 2 chars
+     *
+     * @param  integer  $nb  (optional) how many characters the word contains
      * @example '的' '的一' '的一是' '的一是在'
      * @return string
      */
     public static function word()
     {
-        $chars = static::randomElements(static::$wordList, static::randomizeCharacterNumber());
-        return implode('', $chars);
+        $num_args = func_num_args();
+        if ($num_args >= 1) {
+            $nb = func_get_arg(0);
+            if ($nb > 7)
+            {
+                throw new \InvalidArgumentException('Chinese word must contain no more than 7 characters');
+            }
+        } else {
+            $nb = static::randomizeCharacterNumber();
+        }
+        return static::chars($nb, true);
     }
 
     /**
@@ -237,8 +277,8 @@ class Lorem extends \Faker\Provider\Lorem
         static $characterNumber = array(
             1,
             2, 2, 2, 2, 2, 2,
-            3, 3,
-            4,
+            3,
+            4, 4,
         );
         return $characterNumber[static::numberBetween(0, count($characterNumber) - 1)];
     }
