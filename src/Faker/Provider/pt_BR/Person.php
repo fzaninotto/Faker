@@ -37,55 +37,41 @@ class Person extends \Faker\Provider\Person
     );
 
     protected static $firstNameMale = array(
-        'Aaron', 'Adriano', 'Alan', 'Alexandre', 'Alonso', 'Anderson', 'Andres', 'Antônio', 'Benjamin', 'Bruno', 'Camilo', 'Carlos', 'Christian',
-        'Christopher', 'Cristóvão', 'Daniel', 'Dante', 'David', 'Diego', 'Eduardo', 'Elias', 'Emanuel', 'Emiliano', 'Emílio', 'Estêvão',
-        'Evandro', 'Everton', 'Felipe', 'Fernando', 'Francisco', 'Franco', 'Fábio', 'Gabriel', 'Gian', 'Guilherme', 'Gustavo', 'Henrique',
-        'Hernani', 'Horácio', 'Hugo', 'Ian', 'Inácio', 'Isaac', 'Ivan', 'Jerônimo', 'Joaquin', 'Jorge', 'Josué', 'José',
-        'João', 'Kevin', 'Leandro', 'Leonardo', 'Lucas', 'Luciano', 'Luis', 'Manuel', 'Mateus', 'Matias', 'Miguel', 'Mário',
-        'Máximo', 'Noel', 'Pablo', 'Paulo', 'Pedro', 'Rafael', 'Ricardo', 'Rodrigo', 'Samuel', 'Santiago', 'Simon', 'Sérgio',
-        'Thales', 'Thiago', 'Tomás', 'Valentin', 'Vicente', 'Agostinho', 'Demian', 'Giovane', 'Jácomo', 'Martinho', 'Maximiano', 'Natal', 'Sebastião',
-        'Simão', 'Teobaldo', 'Ziraldo'
+        'Adriano', 'Alan', 'Alessandro', 'Alexandre', 'Anderson', 'André', 'Antônio', 'Arthur', 'Augusto', 'Bernardo', 'Breno', 'Bruno',
+        'Caio', 'Carlos', 'Celso', 'César', 'Cláudio', 'Daniel', 'Danilo', 'Davi', 'David', 'Diego', 'Diogo', 'Douglas', 'Eduardo', 'Elias',
+        'Erick', 'Evandro', 'Everton', 'Fabiano', 'Fábio', 'Felipe', 'Fernando', 'Francisco', 'Frederico', 'Gabriel', 'Gilberto', 'Giovane',
+        'Guilherme', 'Gustavo', 'Heitor', 'Henrique', 'Hugo', 'Igor', 'Itamar', 'Ivan', 'Jean', 'João', 'Joaquim', 'Jonas', 'Jorge', 'José',
+        'Josué', 'Juliano', 'Júlio', 'Leandro', 'Leonardo', 'Lorenzo', 'Luan', 'Lucas', 'Luciano', 'Luis', 'Manoel', 'Marcelo', 'Márcio',
+        'Marcus', 'Mário', 'Marlon', 'Mateus', 'Matheus', 'Mathias', 'Matias', 'Mauro', 'Michel', 'Miguel', 'Murilo', 'Nicolas', 'Otávio',
+        'Pablo', 'Paulo', 'Pedro', 'Rafael', 'Raul', 'Renan', 'Renato', 'Ricardo', 'Rodrigo', 'Samuel', 'Sebastião', 'Sérgio', 'Simão',
+        'Thales', 'Theo', 'Thiago', 'Thomas', 'Tomás', 'Ulisses', 'Valdir', 'Vicente', 'Victor', 'Vinícius', 'William', 'Yuri'
     );
 
     protected static $firstNameFemale = array(
-        'Abril', 'Adriana', 'Agustina', 'Alessandra', 'Alexa', 'Allison', 'Alma', 'Amanda', 'Amélia', 'Ana', 'Andrea', 'Antonieta', 'Ariadna',
-        'Ariana', 'Ashley', 'Beatriz', 'Bianca', 'Camila', 'Carla', 'Carolina', 'Catarina', 'Clara', 'Daniela', 'Elizabeth', 'Emília',
-        'Fabiana', 'Fátima', 'Gabriela', 'Giovana', 'Helena', 'Irene', 'Isabel', 'Isabella', 'Isadora', 'Ivana', 'Jasmin', 'Joana',
-        'Josefina', 'Juliana', 'Julieta', 'Júlia', 'Ketlin', 'Laura', 'Luana', 'Luara', 'Luciana', 'Luna', 'Luzia', 'Madalena',
-        'Maitê', 'Malena', 'Manuela', 'Mariana', 'Mel', 'Melissa', 'Mia', 'Micaela', 'Michele', 'Miranda', 'Natália', 'Nicole',
-        'Noelí', 'Norma', 'Nádia', 'Olívia', 'Ornela', 'Paula', 'Paulina', 'Pâmela', 'Rafaela', 'Rebeca', 'Regina', 'Renata',
-        'Sabrina', 'Salomé', 'Samanta', 'Sara', 'Silvana', 'Sofia', 'Sophie', 'Suzana', 'Taís', 'Tábata', 'Valentina', 'Valéria',
-        'Violeta', 'Vitória', 'Abgail', 'Constância', 'Hortência', 'Tessália', 'Thalissa'
+        'Adriana', 'Alessandra', 'Alice', 'Aline', 'Amanda', 'Ana', 'Andressa', 'Bárbara', 'Beatriz', 'Bianca', 'Bruna', 'Camila', 'Carina',
+        'Carla', 'Carolina', 'Catarina', 'Cecília', 'Cíntia', 'Clara', 'Clarice', 'Daniela', 'Débora', 'Eduarda', 'Elisa', 'Fernanda',
+        'Flávia', 'Gabriela', 'Giovanna', 'Helena', 'Heloísa', 'Isabel', 'Isabella', 'Isadora', 'Jaqueline', 'Joana', 'Joyce', 'Júlia',
+        'Juliana', 'Laila', 'Laís', 'Lara', 'Larissa', 'Laura', 'Letícia', 'Lívia', 'Lorena', 'Louise', 'Luana', 'Luciana', 'Luiza', 'Maitê',
+        'Malu', 'Manuela', 'Marcela', 'Maria', 'Clara', 'Eduarda', 'Fernanda', 'Júlia', 'Laura', 'Mariana', 'Marília', 'Marina', 'Melissa',
+        'Michelle', 'Milena', 'Mirella', 'Mônica', 'Natália', 'Nicole', 'Olívia', 'Paloma', 'Patrícia', 'Paula', 'Priscila', 'Rafaela',
+        'Rebeca', 'Renata', 'Roberta', 'Sandra', 'Sophia', 'Stella', 'Tatiane', 'Thalita', 'Valentina', 'Vanessa', 'Vitória', 'Viviane',
+        'Yasmin'
     );
 
     protected static $lastName = array(
-        'Abreu', 'Azevedo', 'Aguiar', 'Aragão', 'Assunção', 'Aranda', 'Ávila',
-        'Balestero', 'Barreto', 'Barros', 'Batista', 'Bezerra', 'Beltrão',
-        'Benites', 'Bittencourt', 'Branco', 'Bonilha', 'Brito', 'Burgos',
-        'Caldeira', 'Camacho', 'Campos', 'Carmona', 'Carrara', 'Casanova',
-        'Chaves', 'Cervantes', 'Colaço', 'Cordeiro', 'Corona', 'Correia',
-        'Cortês', 'Cruz', 'D\'ávila', 'Delatorre', 'Delgado', 'Delvalle',
-        'Dias', 'Domingues', 'Dominato', 'Duarte', 'Escobar', 'Espinoza',
-        'Esteves', 'Estrada', 'Faria', 'Faro', 'Feliciano', 'Ferminiano',
-        'Fernandes', 'Ferraz', 'Ferreira', 'Fidalgo', 'Furtado',
-        'Ferreira', 'Flores', 'Fonseca', 'Franco', 'Fontes', 'Galindo',
-        'Galhardo', 'Galvão', 'Garcia', 'Gil', 'Godói', 'Gomes', 'Gonçalves',
-        'Grego', 'Guerra', 'Gusmão', 'Jimenes', 'Leal', 'Leon', 'Lira',
-        'Lovato', 'Lozano', 'Lutero', 'Madeira', 'Maldonado', 'Marés', 'Marin',
-        'Marinho', 'Marques', 'Martines', 'Mascarenhas', 'Matias', 'Matos',
-        'Maia', 'Medina', 'Meireles', 'Mendes', 'Mendonça', 'Molina',
-        'Montenegro', 'Neves', 'Oliveira', 'Ortega', 'Ortiz', 'Quintana',
-        'Queirós',  'Pacheco', 'Padilha', 'Padrão', 'Paes', 'Paz', 'Pedrosa',
-        'Pena', 'Pereira', 'Perez', 'Prado', 'Pontes', 'Quintana', 'Queirós',
-        'Ramires', 'Ramos', 'Rangel', 'Rezende', 'Reis', 'Rico', 'Rios',
-        'Rivera', 'Rocha', 'Rodrigues', 'Romero', 'Roque', 'Rosa', 'Salas',
-        'Salazar', 'Sales', 'Salgado', 'Sanches', 'Sandoval', 'Santacruz',
-        'Santana', 'Santiago', 'Saraiva', 'Sepúlveda', 'Serna', 'Serra',
-        'Serrano', 'Soares', 'Solano', 'Soto', 'Tamoio', 'Teles', 'Toledo',
-        'Torres', 'Uchoa', 'Urias', 'Valdez', 'Valência', 'Valentin', 'Vale',
-        'Vasques', 'Vega', 'Velasques', 'Verdugo', 'Verdara', 'Vieira', 'Vila',
-        'Zamana', 'Zambrano', 'Zaragoça', 'da Cruz', 'da Rosa', 'da Silva',
-        'das Dores', 'das Neves', 'de Aguiar', 'de Oliveira', 'de Souza'
+        'Abreu', 'Aguiar', 'Almeida', 'Alves', 'Amaral', 'Andrade', 'Antunes', 'Aragão', 'Assunção', 'Ávila', 'Azevedo', 'Barbosa',
+        'Barreto', 'Barros', 'Batista', 'Beltrão', 'Bezerra', 'Bittencourt', 'Borges', 'Braga', 'Brandão', 'Brito', 'Campos', 'Cardoso',
+        'Carrara', 'Carvalho', 'Chaves', 'Cordeiro', 'Correia', 'Cortês', 'Costa', 'Cruz', 'Cunha', 'da Costa', 'da Cruz', 'da Silva',
+        'da Silveira', 'das Dores', 'das Neves', 'de Aguiar', 'de Alencar', 'de Almeida', 'de Azevedo', 'de Barros', 'de Camargo',
+        'de Carvalho', 'de Faria', 'de Figueiredo', 'de Freitas', 'de Medeiros', 'de Melo', 'de Mendonçaa', 'de Moraes', 'de Oliveira',
+        'de Paula', 'de Rezende', 'de Souza', 'de Toledo', 'Delgado', 'Dias', 'do Nascimento', 'Domingues', 'dos Santos', 'Duarte',
+        'Faria', 'Feliciano', 'Fernandes', 'Ferraz', 'Ferreira', 'Fonseca', 'Fontes', 'Frota', 'Furtado', 'Galvão', 'Garcia', 'Gomes',
+        'Gonçalves', 'Gouvêia', 'Guerra', 'Guimarães', 'Gusmão', 'Leite', 'Lemos', 'Lima', 'Lopes', 'Lovato', 'Lutero', 'Machado', 'Maia',
+        'Marinho', 'Marques', 'Martins', 'Mascarenhas', 'Matias', 'Matos', 'Medeiros', 'Medina', 'Meireles', 'Mendes', 'Mendonça',
+        'Menezes', 'Mesquita', 'Miranda', 'Molina', 'Monteiro', 'Moreira', 'Moura', 'Neves', 'Oliveira', 'Pacheco', 'Padilha', 'Paes',
+        'Paz', 'Peixoto', 'Pena', 'Penedo', 'Pereira', 'Perez', 'Pinheiro', 'Pinto', 'Pires', 'Pontes', 'Prado', 'Queiroz', 'Ramos',
+        'Reis', 'Rezende', 'Ribeiro', 'Rocha', 'Rodrigues', 'Rossi', 'Sales', 'Salgado', 'Sampaio', 'Santana', 'Saraiva', 'Serrano',
+        'Siqueira', 'Soares', 'Tamoio', 'Tavares', 'Teixeira', 'Toledo', 'Torres', 'Veloso', 'Viana', 'Vieira', 'Villela'
     );
 
     protected static $titleMale = array('Sr.', 'Dr.',);
