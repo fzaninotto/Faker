@@ -7,17 +7,22 @@ use PHPUnit\Framework\TestCase;
 
 class LoremTest extends TestCase
 {
+    protected static function getEncoding()
+    {
+        return static::readAttribute('Faker\Provider\zh_CN\Lorem', 'encoding');
+    }
+
     public function testWordCharacterNumberLessThanOrEqual4()
     {
-        $this->assertLessThanOrEqual(4, mb_strlen(Lorem::word()));
+        $this->assertLessThanOrEqual(4, mb_strlen(Lorem::word(), static::getEncoding()));
     }
 
     public function testWordCharacterNumberEquals()
     {
-        $this->assertEquals(1, mb_strlen(Lorem::word(1)));
-        $this->assertEquals(2, mb_strlen(Lorem::word(2)));
-        $this->assertEquals(3, mb_strlen(Lorem::word(3)));
-        $this->assertEquals(4, mb_strlen(Lorem::word(4)));
+        $this->assertEquals(1, mb_strlen(Lorem::word(1), static::getEncoding()));
+        $this->assertEquals(2, mb_strlen(Lorem::word(2), static::getEncoding()));
+        $this->assertEquals(3, mb_strlen(Lorem::word(3), static::getEncoding()));
+        $this->assertEquals(4, mb_strlen(Lorem::word(4), static::getEncoding()));
     }
 
     /**
@@ -31,9 +36,8 @@ class LoremTest extends TestCase
     public function testWordCharacterNumberFrequencyDistribution()
     {
         $count = array(0, 0, 0, 0, 0);
-        for ($i = 0; $i < 10000; ++$i)
-        {
-            ++$count[mb_strlen(Lorem::word())];
+        for ($i = 0; $i < 10000; ++$i) {
+            ++$count[mb_strlen(Lorem::word(), static::getEncoding())];
         }
         $this->assertLessThan(1500, $count[1]);
         $this->assertLessThan(6500, $count[2]);
@@ -100,13 +104,13 @@ class LoremTest extends TestCase
     public function testSentenceWithPositiveNbWordsReturnsAtLeastOneWord()
     {
         $sentence = Lorem::sentence(1);
-        $this->assertGreaterThan(1, mb_strlen($sentence));
+        $this->assertGreaterThan(1, mb_strlen($sentence, static::getEncoding()));
     }
 
     public function testParagraphWithPositiveNbSentencesReturnsAtLeastOneWord()
     {
         $paragraph = Lorem::paragraph(1);
-        $this->assertGreaterThan(1, mb_strlen($paragraph));
+        $this->assertGreaterThan(1, mb_strlen($paragraph, static::getEncoding()));
     }
 
     public function testWordsAsText()
@@ -126,11 +130,11 @@ class LoremTest extends TestCase
 
     public function testTextLengthLessThanOrEqualMaxCharacter()
     {
-        $this->assertLessThanOrEqual(5, mb_strlen(Lorem::text(5)));
-        $this->assertLessThanOrEqual(15, mb_strlen(Lorem::text(15)));
-        $this->assertLessThanOrEqual(50, mb_strlen(Lorem::text(50)));
-        $this->assertLessThanOrEqual(100, mb_strlen(Lorem::text(100)));
-        $this->assertLessThanOrEqual(200, mb_strlen(Lorem::text(200)));
+        $this->assertLessThanOrEqual(5, mb_strlen(Lorem::text(5), static::getEncoding()));
+        $this->assertLessThanOrEqual(15, mb_strlen(Lorem::text(15), static::getEncoding()));
+        $this->assertLessThanOrEqual(50, mb_strlen(Lorem::text(50), static::getEncoding()));
+        $this->assertLessThanOrEqual(100, mb_strlen(Lorem::text(100), static::getEncoding()));
+        $this->assertLessThanOrEqual(200, mb_strlen(Lorem::text(200), static::getEncoding()));
     }
 
     public function testWordNotEndsWithPeriod()

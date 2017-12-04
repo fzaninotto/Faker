@@ -3,11 +3,15 @@
 namespace Faker\Test\Provider\zh_CN;
 
 use Faker\Factory;
-use Faker\Provider\zh_CN\Text;
 use PHPUnit\Framework\TestCase;
 
 class TextTest extends TestCase
 {
+    protected static function getEncoding()
+    {
+        return static::readAttribute('Faker\Provider\zh_CN\Lorem', 'encoding');
+    }
+
     public static function getGenerator()
     {
         return Factory::create('zh_CN');
@@ -25,8 +29,8 @@ class TextTest extends TestCase
         $endPunct = $this->readAttribute('Faker\Provider\zh_CN\Text', 'endPunct');
         $faker = static::getGenerator();
 
-        $this->assertTrue(in_array(mb_substr($faker->realText(), -1, 1), $endPunct));
-        $this->assertFalse(in_array(mb_substr($faker->realText(), -1, 1), $notEndPunct));
+        $this->assertTrue(in_array(mb_substr($faker->realText(), -1, 1, static::getEncoding()), $endPunct));
+        $this->assertFalse(in_array(mb_substr($faker->realText(), -1, 1, static::getEncoding()), $notEndPunct));
     }
 
     public function testRealTextBeginPunctuaction()
@@ -34,6 +38,6 @@ class TextTest extends TestCase
         $notBeginPunct = $this->readAttribute('Faker\Provider\zh_CN\Text', 'notBeginPunct');
         $faker = static::getGenerator();
 
-        $this->assertFalse(in_array(mb_substr($faker->realText(), 0, 1), $notBeginPunct));
+        $this->assertFalse(in_array(mb_substr($faker->realText(), 0, 1, static::getEncoding()), $notBeginPunct));
     }
 }
