@@ -30,7 +30,7 @@ class Person extends \Faker\Provider\Person
     /**
      * @source Afghanistan Kankor (University Entrance Exam) 2003-2017 data.
      * The data collected, preprocessed and prepared by Abdul Rahman Sherzad (absherzad@gmail.com).
-     * @link https://arxiv.org/abs/1612.01378
+     * @link https://sites.google.com/view/absherzad/male-names
      * @license: Creative Commons Attribution-ShareAlike License
      */
     protected static $firstNameMale = array(
@@ -70,7 +70,7 @@ class Person extends \Faker\Provider\Person
     /**
      * @source Afghanistan Kankor (University Entrance Exam) 2003-2017 data.
      * The data collected, preprocessed and prepared by Abdul Rahman Sherzad (absherzad@gmail.com).
-     * @link https://arxiv.org/abs/1612.01378
+     * @link https://sites.google.com/view/absherzad/female-names
      * @license: Creative Commons Attribution-ShareAlike License
      */
     protected static $firstNameFemale = array(
@@ -112,7 +112,7 @@ class Person extends \Faker\Provider\Person
     /**
      * @source Afghanistan Kankor (University Entrance Exam) 2003-2017 data.
      * The data collected, preprocessed and prepared by Abdul Rahman Sherzad (absherzad@gmail.com).
-     * @link https://arxiv.org/abs/1612.01378
+     * @link https://sites.google.com/view/absherzad/family-names
      * @license: Creative Commons Attribution-ShareAlike License
      */
     protected static $lastName = array(

@@ -11,7 +11,7 @@ class Company extends \Faker\Provider\Company
     /**
      * @source Afghanistan Kankor (University Entrance Exam) 2003-2017 data.
      * The data collected, preprocessed and prepared by Abdul Rahman Sherzad (absherzad@gmail.com).
-     * @link https://arxiv.org/abs/1612.01378
+     * @link https://sites.google.com/view/absherzad/institutions
      * @license: Creative Commons Attribution-ShareAlike License
      */
 

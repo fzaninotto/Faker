@@ -46,7 +46,7 @@ class Internet extends \Faker\Provider\Internet
     /**
      * @source Afghanistan Kankor (University Entrance Exam) 2003-2017 data.
      * The data collected, preprocessed and prepared by Abdul Rahman Sherzad (absherzad@gmail.com).
-     * @link https://arxiv.org/abs/1612.01378
+     * @link https://sites.google.com/view/absherzad/family-names
      * @license: Creative Commons Attribution-ShareAlike License
      */
     protected static $lastNameAscii = array(
@@ -78,7 +78,8 @@ class Internet extends \Faker\Provider\Internet
     /**
      * @source Afghanistan Kankor (University Entrance Exam) 2003-2017 data.
      * The data collected, preprocessed and prepared by Abdul Rahman Sherzad (absherzad@gmail.com).
-     * @link https://arxiv.org/abs/1612.01378
+     * @link https://sites.google.com/view/absherzad/male-names
+     * @link https://sites.google.com/view/absherzad/female-names
      * @license: Creative Commons Attribution-ShareAlike License
      */
     protected static $firstNameAscii = array(
