@@ -110,8 +110,7 @@ class Lorem extends \Faker\Provider\Lorem
         $num_args = func_num_args();
         if ($num_args >= 1) {
             $nb = func_get_arg(0);
-            if ($nb > 7)
-            {
+            if ($nb > 7) {
                 throw new \InvalidArgumentException('Chinese word must contain no more than 7 characters');
             }
         } else {
