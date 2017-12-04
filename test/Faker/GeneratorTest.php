@@ -20,7 +20,7 @@ class GeneratorTest extends TestCase
         $generator = new Generator;
         $provider = new FooProvider();
         $generator->addProvider($provider);
-        $this->assertTrue(is_callable($generator->getFormatter('fooFormatter')));
+        $this->assertInternalType('callable', $generator->getFormatter('fooFormatter'));
     }
 
     public function testGetFormatterReturnsCorrectFormatter()

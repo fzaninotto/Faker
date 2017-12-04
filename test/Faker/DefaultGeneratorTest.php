@@ -10,14 +10,14 @@ class DefaultGeneratorTest extends TestCase
     public function testGeneratorReturnsNullByDefault()
     {
         $generator = new DefaultGenerator;
-        $this->assertSame(null, $generator->value);
+        $this->assertNull($generator->value);
     }
 
     public function testGeneratorReturnsDefaultValueForAnyPropertyGet()
     {
         $generator = new DefaultGenerator(123);
         $this->assertSame(123, $generator->foo);
-        $this->assertNotSame(null, $generator->bar);
+        $this->assertNotNull($generator->bar);
     }
 
     public function testGeneratorReturnsDefaultValueForAnyMethodCall()
