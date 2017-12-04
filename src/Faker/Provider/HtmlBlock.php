@@ -57,7 +57,7 @@ class HtmlBlock extends Base
      *
      * @return string
      */
-    public function randomHtmlBlock(int $min = 5, int $max = 40): string
+    public function randomHtmlBlock($min = 5, $max = 40)
     {
         $html = [];
         $args = new \stdClass();
@@ -78,9 +78,9 @@ class HtmlBlock extends Base
     }
 
     /**
-     * @param string $name
-     * @param array  $attr
-     * @param null   $text
+     * @param string      $name
+     * @param array       $attr
+     * @param null|string $text
      *
      * @return bool|string
      */
@@ -116,17 +116,17 @@ class HtmlBlock extends Base
                 $html[] = $text;
             } elseif (in_array($element->name, self::$sets['inline'], true)) {
                 $text = Lorem::text(Base::numberBetween(5, 25));
-                $html[] = mb_substr($text, 0, mb_strlen($text) - 1);
+                $html[] = substr($text, 0, -1);
             } elseif (in_array($element->name, self::$sets['item'], true)) {
                 $text = Lorem::text(Base::numberBetween(10, 60));
-                $html[] = mb_substr($text, 0, mb_strlen($text) - 1);
+                $html[] = substr($text, 0, -1);
             } elseif (in_array($element->name, self::$sets['list'], true)) {
                 for ($i = 0; $i < Base::numberBetween(1, 15); ++$i) {
                     $html[] = $this->element('li');
                 }
             } elseif (in_array($element->name, self::$sets['header'], true)) {
                 $text = Lorem::text(Base::numberBetween(60, 200));
-                $html[] = mb_substr($text, 0, mb_strlen($text) - 1);
+                $html[] = substr($text, 0, -1);
             } else {
                 $html[] = $this->randomApplyElement(
                     'a',
@@ -168,9 +168,9 @@ class HtmlBlock extends Base
     }
 
     /**
-     * @param string $element
-     * @param int    $max
-     * @param null   $text
+     * @param string      $element
+     * @param int         $max
+     * @param null|string $text
      *
      * @return null|string
      */
