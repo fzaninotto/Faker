@@ -1088,6 +1088,9 @@ $faker->department; // array('18' => 'Cher');
 
 // Generates a random region
 echo $faker->region; // "Saint-Pierre-et-Miquelon"
+
+// Generates a random appartement,stair
+echo $faker->secondaryAddress; // "Bat. 961"
 ```
 
 ### `Faker\Provider\fr_FR\Company`
