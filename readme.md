@@ -1003,46 +1003,15 @@ echo $faker->vat;           // "A35864370"
 echo $faker->dni; // '83367512'
 ```
 
-### `Faker\Provider\fa_AF\Person`
-
-```php
-<?php
-// require the Faker autoloader
-require_once '/path/to/Faker/src/autoload.php';
-
-// create a Persian/Dari faker
-$faker = Faker\Factory::create('fa_AF');
-
-// Generates a random male FirstName
-echo $faker->firstNameMale . "<br>"; // "عبدالرحمن"
-
-// Generates a random FullName
-echo $faker->name . "<br>"; //  "عبدالرحمن شیرزاد" || "آقای عبدالرحمن شیرزاد"
-```
-
 ### `Faker\Provider\fa_AF\Internet`
 
 ```php
 <?php
 // Generates a random male/female ASCII FirstName
-echo $faker->firstNameAscii . "<br>"; // "َAbdul Rahman"
+echo $faker->firstNameAscii . "<br>"; // "Abdul Rahman"
 
 // Generates a random ASCII LastName
-echo $faker->lastNameAscii . "<br>"; // "َSherzad"
-
-// Generates a random url
-echo $faker->url . "<br>"; // "َhttp://www.sherzad.af"
-```
-
-### `Faker\Provider\fa_AF\PhoneNumber`
-
-```php
-<?php
-// Generates a random phone number
-echo $faker->phoneNumber . "<br>"; // "َ+93308306219" || "0308306219"
-
-// Generates a random mobile number
-echo $faker->mobileNumber . "<br>"; // "َ+93749794864" || "0749794864"
+echo $faker->lastNameAscii . "<br>"; // "Sherzad"
 ```
 
 ### `Faker\Provider\fa_AF\Address`
@@ -1050,10 +1019,7 @@ echo $faker->mobileNumber . "<br>"; // "َ+93749794864" || "0749794864"
 ```php
 <?php
 // Generates a random city name
-echo $faker->cityName . "<br>"; // "َهرات"
-
-// Generates a random city name with/out prefix
-echo $faker->city . "<br>"; // "ولایت هرات" || "َهرات" 
+echo $faker->cityName . "<br>"; // "هرات"
 ```
 
 ### `Faker\Provider\fa_IR\Address`
