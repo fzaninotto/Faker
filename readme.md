@@ -1016,12 +1016,6 @@ $faker = Faker\Factory::create('fa_AF');
 // Generates a random male FirstName
 echo $faker->firstNameMale . "<br>"; // "عبدالرحمن"
 
-// Generates a random female FirstName
-echo $faker->firstNameFemale . "<br>"; // "زینب"
-
-// Generates a random LastName
-echo $faker->lastName . "<br>"; // "شیرزاد"
-
 // Generates a random FullName
 echo $faker->name . "<br>"; //  "عبدالرحمن شیرزاد" || "آقای عبدالرحمن شیرزاد"
 ```
@@ -1036,12 +1030,6 @@ echo $faker->firstNameAscii . "<br>"; // "َAbdul Rahman"
 // Generates a random ASCII LastName
 echo $faker->lastNameAscii . "<br>"; // "َSherzad"
 
-// Generates a random username
-echo $faker->username . "<br>"; // "َab.sherzad" || "a.sherzad" || "sherzad"
-
-// Generates a random email
-echo $faker->email . "<br>"; // "َab.sherzad@gmail.com"
-
 // Generates a random url
 echo $faker->url . "<br>"; // "َhttp://www.sherzad.af"
 ```
@@ -1051,10 +1039,10 @@ echo $faker->url . "<br>"; // "َhttp://www.sherzad.af"
 ```php
 <?php
 // Generates a random phone number
-echo $faker->phoneNumber . "<br>"; // "َ0308306219"
+echo $faker->phoneNumber . "<br>"; // "َ+93308306219" || "0308306219"
 
 // Generates a random mobile number
-echo $faker->mobileNumber . "<br>"; // "َ+93749794864"
+echo $faker->mobileNumber . "<br>"; // "َ+93749794864" || "0749794864"
 ```
 
 ### `Faker\Provider\fa_AF\Address`
@@ -1065,7 +1053,7 @@ echo $faker->mobileNumber . "<br>"; // "َ+93749794864"
 echo $faker->cityName . "<br>"; // "َهرات"
 
 // Generates a random city name with/out prefix
-echo $faker->city . "<br>"; // "ولایت هرات" || "َهرات"
+echo $faker->city . "<br>"; // "ولایت هرات" || "َهرات" 
 ```
 
 ### `Faker\Provider\fa_IR\Address`
