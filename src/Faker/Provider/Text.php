@@ -136,6 +136,6 @@ abstract class Text extends Base
 
     protected static function appendEnd($text)
     {
-        return rtrim($text, ',-— ').'.';
+        return preg_replace("/([,— ]+$)/us", '', $text).'.';
     }
 }
