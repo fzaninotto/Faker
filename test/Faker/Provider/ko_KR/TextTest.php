@@ -42,5 +42,16 @@ class TextTest extends TestCase
         $this->assertSame(
             '최석(崔晳)으로부터 최후의 편지가!.',
             $this->getMethod('appendEnd')->invokeArgs(null, array('최석(崔晳)으로부터 최후의 편지가! '))
-        );    }
+        );
+
+        $this->assertSame(
+            '최석(崔晳)으로부터 최후의 편지가.',
+            $this->getMethod('appendEnd')->invokeArgs(null, array('최석(崔晳)으로부터 최후의 편지가: '))
+        );
+
+        $this->assertSame(
+            '최석(崔晳)으로부터 최후의 편지가.',
+            $this->getMethod('appendEnd')->invokeArgs(null, array('최석(崔晳)으로부터 최후의 편지가; '))
+        );
+    }
 }

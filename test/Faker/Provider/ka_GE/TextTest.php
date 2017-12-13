@@ -42,5 +42,16 @@ class TextTest extends TestCase
         $this->assertSame(
             'ჭეშმარიტია. ჩვენც ისე!.',
             $this->getMethod('appendEnd')->invokeArgs(null, array('ჭეშმარიტია. ჩვენც ისე! '))
-        );    }
+        );
+
+        $this->assertSame(
+            'ჭეშმარიტია. ჩვენც ისე.',
+            $this->getMethod('appendEnd')->invokeArgs(null, array('ჭეშმარიტია. ჩვენც ისე; '))
+        );
+
+        $this->assertSame(
+            'ჭეშმარიტია. ჩვენც ისე.',
+            $this->getMethod('appendEnd')->invokeArgs(null, array('ჭეშმარიტია. ჩვენც ისე: '))
+        );
+    }
 }
