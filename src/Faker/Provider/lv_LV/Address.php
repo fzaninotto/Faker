@@ -13,32 +13,35 @@ class Address extends \Faker\Provider\Address
 
     protected static $buildingNumber = array('##');
     protected static $postcode = array('LV ####');
+
+    /**
+     * @link https://lv.wikipedia.org/wiki/Suver%C4%93no_valstu_uzskait%C4%ABjums
+     */
     protected static $country = array(
-        'Afghanistan', 'Albania', 'Algeria', 'American Samoa', 'Andorra', 'Angola', 'Anguilla', 'Antarctica (the territory South of 60 deg S)', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan',
-        'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Bouvet Island (Bouvetoya)', 'Brazil', 'British Indian Ocean Territory (Chagos Archipelago)', 'British Virgin Islands', 'Brunei Darussalam', 'Bulgaria', 'Burkina Faso', 'Burundi',
-        'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Cayman Islands', 'Central African Republic', 'Chad', 'Chile', 'China', 'Christmas Island', 'Cocos (Keeling) Islands', 'Colombia', 'Comoros', 'Congo', 'Congo', 'Cook Islands', 'Costa Rica', 'Cote d\'Ivoire', 'Croatia', 'Cuba', 'Cyprus', 'Czech Republic',
-        'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic',
-        'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Ethiopia',
-        'Faroe Islands', 'Falkland Islands (Malvinas)', 'Fiji', 'Finland', 'France', 'French Guiana', 'French Polynesia', 'French Southern Territories',
-        'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Gibraltar', 'Greece', 'Greenland', 'Grenada', 'Guadeloupe', 'Guam', 'Guatemala', 'Guernsey', 'Guinea', 'Guinea-Bissau', 'Guyana',
-        'Haiti', 'Heard Island and McDonald Islands', 'Holy See (Vatican City State)', 'Honduras', 'Hong Kong', 'Hungary',
-        'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Isle of Man', 'Israel', 'Italy',
-        'Jamaica', 'Japan', 'Jersey', 'Jordan',
-        'Kazakhstan', 'Kenya', 'Kiribati', 'Korea', 'Korea', 'Kuwait', 'Kyrgyz Republic',
-        'Lao People\'s Democratic Republic', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libyan Arab Jamahiriya', 'Liechtenstein', 'Lithuania', 'Luxembourg',
-        'Macao', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Martinique', 'Mauritania', 'Mauritius', 'Mayotte', 'Mexico', 'Micronesia', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat', 'Morocco', 'Mozambique', 'Myanmar',
-        'Namibia', 'Nauru', 'Nepal', 'Netherlands Antilles', 'Netherlands', 'New Caledonia', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Niue', 'Norfolk Island', 'Northern Mariana Islands', 'Norway',
-        'Oman',
-        'Pakistan', 'Palau', 'Palestinian Territories', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Pitcairn Islands', 'Poland', 'Portugal', 'Puerto Rico',
-        'Qatar',
-        'Reunion', 'Romania', 'Russian Federation', 'Rwanda',
-        'Saint Barthelemy', 'Saint Helena', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Martin', 'Saint Pierre and Miquelon', 'Saint Vincent and the Grenadines', 'Samoa', 'San Marino', 'Sao Tome and Principe', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia (Slovak Republic)', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'South Georgia and the South Sandwich Islands', 'Spain', 'Sri Lanka', 'Sudan', 'Suriname', 'Svalbard & Jan Mayen Islands', 'Swaziland', 'Sweden', 'Switzerland', 'Syrian Arab Republic',
-        'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', 'Timor-Leste', 'Togo', 'Tokelau', 'Tonga', 'Trinidad and Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Turks and Caicos Islands', 'Tuvalu',
-        'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States of America', 'United States Minor Outlying Islands', 'United States Virgin Islands', 'Uruguay', 'Uzbekistan',
-        'Vanuatu', 'Venezuela', 'Vietnam',
-        'Wallis and Futuna', 'Western Sahara',
-        'Yemen',
-        'Zambia', 'Zimbabwe'
+        'Afganistāna', 'Albānija', 'Alžīrija', 'Amerikas Savienotās Valstis', 'Andora', 'Angola', 'Antigva un Barbuda',
+        'Apvienotie Arābu Emirāti', 'Argentīna', 'Armēnija', 'Austrālija', 'Austrija', 'Austrumtimora', 'Azerbaidžāna',
+        'Bahamas', 'Bahreina', 'Baltkrievija', 'Bangladeša', 'Barbadosa', 'Beliza', 'Beļģija', 'Benina', 'Bolīvija',
+        'Bosnija un Hercegovina', 'Botsvana', 'Brazīlija', 'Bruneja', 'Bulgārija', 'Burkinafaso', 'Burundi', 'Butāna',
+        'Centrālāfrikas Republika', 'Čada', 'Čehija', 'Čīle', 'Dānija', 'Dienvidāfrikas Republika', 'Dienvidkoreja',
+        'Dienvidsudāna', 'Dominika', 'Dominikāna', 'Džibutija', 'Ekvadora', 'Ekvatoriālā Gvineja', 'Eritreja',
+        'Etiopija', 'Ēģipte', 'Fidži', 'Filipīnas', 'Francija', 'Gabona', 'Gajāna', 'Gambija', 'Gana', 'Grenada',
+        'Grieķija', 'Gruzija', 'Gvatemala', 'Gvineja', 'Gvineja-Bisava', 'Haiti', 'Hondurasa', 'Horvātija', 'Igaunija',
+        'Indija', 'Indonēzija', 'Irāka', 'Irāna', 'Islande', 'Itālija', 'Izraēla', 'Īrija', 'Jamaika', 'Japāna',
+        'Jaunzēlande', 'Jemena', 'Jordānija', 'Kaboverde', 'Kambodža', 'Kamerūna', 'Kanāda', 'Katara', 'Kazahstāna',
+        'Kenija', 'Kipra', 'Kirgizstāna', 'Kiribati', 'Kolumbija', 'Komoru Salas', 'Kongo', 'Kongo DR', 'Kostarika',
+        'Kotdivuāra', 'Krievija', 'Kuba', 'Kuveita', 'Ķīna', 'Laosa', 'Latvija', 'Lesoto', 'Libāna', 'Libērija',
+        'Lībija', 'Lielbritānija', 'Lietuva', 'Lihtenšteina', 'Luksemburga', 'Madagaskara', 'Maķedonijas Republika',
+        'Malaizija', 'Malāvija', 'Maldīvija', 'Mali', 'Malta', 'Maroka', 'Māršala Salas', 'Maurīcija', 'Mauritānija',
+        'Meksika', 'Melnkalne', 'Mikronēzija', 'Mjanma', 'Moldova', 'Monako', 'Mongolija', 'Mozambika', 'Namībija',
+        'Nauru', 'Nepāla', 'Nīderlande', 'Nigēra', 'Nigērija', 'Nikaragva', 'Norvēģija', 'Omāna', 'Pakistāna', 'Palau',
+        'Panama', 'Papua-Jaungvineja', 'Paragvaja', 'Peru', 'Polija', 'Portugāle', 'Ruanda', 'Rumānija', 'Salvadora',
+        'Samoa', 'Sanmarīno', 'Santome un Prinsipi', 'Saūda Arābija', 'Seišelu Salas', 'Senegāla',
+        'Sentkitsa un Nevisa', 'Sentlūsija', 'Sentvinsenta un Grenadīnas', 'Serbija', 'Singapūra', 'Sīrija',
+        'Sjerraleone', 'Slovākija', 'Slovēnija', 'Somālija', 'Somija', 'Spānija', 'Sudāna', 'Surinama', 'Svazilenda',
+        'Šrilanka', 'Šveice', 'Tadžikistāna', 'Taizeme', 'Tanzānija', 'Togo', 'Tonga', 'Trinidāda un Tobāgo',
+        'Tunisija', 'Turcija', 'Turkmenistāna', 'Tuvalu', 'Uganda', 'Ukraina', 'Ungārija', 'Urugvaja', 'Uzbekistāna',
+        'Vācija', 'Vanuatu', 'Vatikāns', 'Venecuēla', 'Vjetnama', 'Zālamana Salas', 'Zambija', 'Ziemeļkoreja',
+        'Zimbabve', 'Zviedrija',
     );
 
     protected static $region = array(
