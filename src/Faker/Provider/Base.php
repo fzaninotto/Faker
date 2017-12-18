@@ -171,15 +171,12 @@ class Base
     public static function randomElements($array = array('a', 'b', 'c'), $count = 1, $allowDuplicates = false)
     {
         if ($array instanceof \Traversable) {
-
-            $return = array();
-
             foreach ($array as $element) {
-                $return[] = $element;
+                $traversables[] = $element;
             }
-
-            $array = $return;
         }
+
+        $array = isset($traversables) ? $traversables : $array;
 
         $allKeys = array_keys($array);
         $numKeys = count($allKeys);
