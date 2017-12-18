@@ -137,7 +137,7 @@ class BaseTest extends TestCase
 
     public function testRandomElementReturnsNullWhenCollectionEmpty()
     {
-        $this->assertNull(BaseProvider::randomElement(new Collection([])));
+        $this->assertNull(BaseProvider::randomElement(new Collection(array())));
     }
 
     public function testRandomElementReturnsElementFromArray()
@@ -154,7 +154,7 @@ class BaseTest extends TestCase
 
     public function testRandomElementReturnsElementFromCollection()
     {
-        $collection = new Collection(['one', 'two', 'three']);
+        $collection = new Collection(array('one', 'two', 'three'));
         $this->assertContains(BaseProvider::randomElement($collection), $collection);
     }
 

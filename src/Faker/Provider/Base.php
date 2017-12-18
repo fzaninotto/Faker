@@ -172,7 +172,7 @@ class Base
     {
         if ($array instanceof \Traversable) {
 
-            $return = [];
+            $return = array();
 
             foreach ($array as $element) {
                 $return[] = $element;
