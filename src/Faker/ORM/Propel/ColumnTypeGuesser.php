@@ -29,11 +29,11 @@ class ColumnTypeGuesser
                 return function () use ($generator) {
                     return $generator->dateTime;
                 };
-            } else {
-                return function () use ($generator) {
-                    return $generator->dateTimeAD;
-                };
             }
+
+            return function () use ($generator) {
+                return $generator->dateTimeAD;
+            };
         }
         $type = $column->getType();
         switch ($type) {

@@ -152,22 +152,22 @@ class EntityPopulator
                 $formatters[$fieldName] = function ($inserted) use ($required, $entityName, $locator) {
                     if (!empty($inserted[$entityName])) {
                         return $inserted[$entityName][mt_rand(0, count($inserted[$entityName]) - 1)]->getId();
-                    } else {
-                        if ($required && $this->useExistingData) {
-                            // We did not add anything like this, but it's required,
-                            // So let's find something existing in DB.
-                            $mapper = $this->locator->mapper($entityName);
-                            $records = $mapper->all()->limit(self::RELATED_FETCH_COUNT)->toArray();
-                            if (empty($records)) {
-                                return null;
-                            }
-                            $id = $records[mt_rand(0, count($records) - 1)]['id'];
+                    }
 
-                            return $id;
-                        } else {
+                    if ($required && $this->useExistingData) {
+                        // We did not add anything like this, but it's required,
+                        // So let's find something existing in DB.
+                        $mapper = $this->locator->mapper($entityName);
+                        $records = $mapper->all()->limit(self::RELATED_FETCH_COUNT)->toArray();
+                        if (empty($records)) {
                             return null;
                         }
+                        $id = $records[mt_rand(0, count($records) - 1)]['id'];
+
+                        return $id;
                     }
+
+                    return null;
                 };
 
             }
