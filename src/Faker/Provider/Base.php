@@ -2,8 +2,8 @@
 
 namespace Faker\Provider;
 
-use Faker\Generator;
 use Faker\DefaultGenerator;
+use Faker\Generator;
 use Faker\UniqueGenerator;
 use Faker\ValidGenerator;
 
@@ -174,7 +174,7 @@ class Base
 
             $return = [];
 
-            foreach($array as $element){
+            foreach ($array as $element) {
                 $return[] = $element;
             }
 
