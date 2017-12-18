@@ -9,7 +9,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     /**
     * Since december 2016 all mobile phone numbers in brazil begin with 9 and landlines 2, 3 or 4.
-    * numbershttp://www.anatel.gov.br/Portal/exibirPortalPaginaEspecial.do?org.apache.struts.taglib.html.TOKEN=9594e1d11fbc996d52bda44e608bb744&codItemCanal=1794&pastaSelecionada=2984
+    * @link http://www.anatel.gov.br/Portal/exibirPortalPaginaEspecial.do?org.apache.struts.taglib.html.TOKEN=9594e1d11fbc996d52bda44e608bb744&codItemCanal=1794&pastaSelecionada=2984
     */
     protected static $cellphoneFormats = array('9####-####');
 
