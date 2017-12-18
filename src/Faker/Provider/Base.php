@@ -2,8 +2,8 @@
 
 namespace Faker\Provider;
 
-use Faker\DefaultGenerator;
 use Faker\Generator;
+use Faker\DefaultGenerator;
 use Faker\UniqueGenerator;
 use Faker\ValidGenerator;
 
