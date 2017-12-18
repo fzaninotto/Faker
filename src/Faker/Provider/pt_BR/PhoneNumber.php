@@ -5,8 +5,12 @@ namespace Faker\Provider\pt_BR;
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
 
-    protected static $landlineFormats = array('2###-####', '3###-####');
+    protected static $landlineFormats = array('2###-####', '3###-####', '4###-####');
 
+    /**
+    * Since december 2016 all mobile phone numbers in brazil begin with 9 and landlines 2, 3 or 4.
+    * @link http://www.anatel.gov.br/Portal/exibirPortalPaginaEspecial.do?org.apache.struts.taglib.html.TOKEN=9594e1d11fbc996d52bda44e608bb744&codItemCanal=1794&pastaSelecionada=2984
+    */
     protected static $cellphoneFormats = array('9####-####');
 
     /**
