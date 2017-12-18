@@ -5,7 +5,7 @@ namespace Faker\Provider\pt_BR;
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
 
-    protected static $landlineFormats = array('2###-####', '3###-####');
+    protected static $landlineFormats = array('2###-####', '3###-####', '4###-####');
 
     protected static $cellphoneFormats = array('9####-####');
 
