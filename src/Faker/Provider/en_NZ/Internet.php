@@ -9,6 +9,6 @@ class Internet extends \Faker\Provider\Internet
      * @var array
      */
     protected static $tld = array(
-        'com', 'co.nz', 'ac.nz', 'geek.nz', 'gen.nz', 'kiwi.nz', 'maori.nz', 'net.nz', 'org.nz', 'school.nz', 'govt.nz', 'iwi.nz', 'mil.nz', 'health.nz', 'parliment.nz'
+        'com', 'nz', 'ac.nz', 'co.nz', 'geek.nz', 'gen.nz', 'kiwi.nz', 'maori.nz', 'net.nz', 'org.nz', 'school.nz', 'cri.nz', 'govt.nz', 'health.nz', 'iwi.nz', 'mil.nz', 'parliament.nz',
     );
 }
