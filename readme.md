@@ -995,6 +995,9 @@ echo $faker->mobileNumber; // 082 123 5555
 
 // Generates a Documento Nacional de Identidad (DNI) number
 echo $faker->dni; // '77446565E'
+
+// Generates a random valid licence code
+echo $faker->licenceCode; // B
 ```
 
 ### `Faker\Provider\es_ES\Payment`
