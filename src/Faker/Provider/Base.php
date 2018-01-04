@@ -166,7 +166,7 @@ class Base
     public static function randomAlphaNum($length = 1)
     {
         $str = "";
-        $characters = array_merge(range('a','z'), range('1','9'));
+        $characters = array_merge(range('a', 'z'), range('1', '9'));
         $max = count($characters) - 1;
 
         for ($i = 0; $i < $length; $i++) {
