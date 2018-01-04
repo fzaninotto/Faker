@@ -159,6 +159,25 @@ class Base
     }
 
     /**
+     * Returns an random alpha numeric string of the given length
+     * @param int $length
+     * @return string
+     */
+    public static function randomAlphaNum($length = 1)
+    {
+        $str = "";
+        $characters = array_merge(range('a','z'), range('1','9'));
+        $max = count($characters) - 1;
+
+        for ($i = 0; $i < $length; $i++) {
+            $rand = mt_rand(0, $max);
+            $str .= $characters[$rand];
+        }
+
+        return $str;
+    }
+
+    /**
      * Returns randomly ordered subsequence of $count elements from a provided array
      *
      * @param  array            $array           Array to take elements from. Defaults to a-f
