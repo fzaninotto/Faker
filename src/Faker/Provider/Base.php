@@ -176,9 +176,9 @@ class Base
             }
         }
 
-        $array = isset($traversables) ? $traversables : $array;
+        $arr = isset($traversables) ? $traversables : $array;
 
-        $allKeys = array_keys($array);
+        $allKeys = array_keys($arr);
         $numKeys = count($allKeys);
 
         if (!$allowDuplicates && $numKeys < $count) {
@@ -199,7 +199,7 @@ class Base
                 $keys[$num] = true;
             }
 
-            $elements[] = $array[$allKeys[$num]];
+            $elements[] = $arr[$allKeys[$num]];
             $numElements++;
         }
 
