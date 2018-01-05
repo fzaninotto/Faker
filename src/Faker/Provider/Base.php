@@ -170,7 +170,7 @@ class Base
      */
     public static function randomElements($array = array('a', 'b', 'c'), $count = 1, $allowDuplicates = false)
     {
-        $traversables = [];
+        $traversables = array();
 
         if ($array instanceof \Traversable) {
             foreach ($array as $element) {
