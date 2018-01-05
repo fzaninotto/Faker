@@ -165,16 +165,9 @@ class Base
      */
     public static function randomAlphaNum($length = 1)
     {
-        $str = "";
-        $characters = array_merge(range('a', 'z'), range('1', '9'));
-        $max = count($characters) - 1;
+        $elements = array_merge(range('a', 'z'), range('1', '9'));
 
-        for ($i = 0; $i < $length; $i++) {
-            $rand = mt_rand(0, $max);
-            $str .= $characters[$rand];
-        }
-
-        return $str;
+        return implode('', self::randomElements($elements, $length, true));
     }
 
     /**
