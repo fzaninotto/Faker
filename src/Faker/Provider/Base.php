@@ -159,6 +159,18 @@ class Base
     }
 
     /**
+     * Returns an random alpha numeric string of the given length
+     * @param int $length
+     * @return string
+     */
+    public static function randomAlphaNum($length = 1)
+    {
+        $elements = array_merge(range('a', 'z'), range('1', '9'));
+
+        return implode('', self::randomElements($elements, $length, true));
+    }
+
+    /**
      * Returns randomly ordered subsequence of $count elements from a provided array
      *
      * @param  array            $array           Array to take elements from. Defaults to a-f

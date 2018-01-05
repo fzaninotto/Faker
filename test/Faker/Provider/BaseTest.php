@@ -553,4 +553,13 @@ class BaseTest extends TestCase
         $this->assertCount(3, $allowDuplicates);
         $this->assertContainsOnly('string', $allowDuplicates);
     }
+
+    public function testRandomAlphaNumReturnsAlphaNumericStringOfGivenLength()
+    {
+        $length = 10;
+        $string = BaseProvider::randomAlphaNum($length);
+
+        $this->assertEquals($length, strlen($string));
+        $this->assertTrue(ctype_alnum($string));
+    }
 }
