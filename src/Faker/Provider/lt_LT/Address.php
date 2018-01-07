@@ -68,7 +68,18 @@ class Address extends \Faker\Provider\Address
     );
 
     protected static $street = array(
-        'Klaipėdos', 'Vilniaus', 'Kauno', 'Žalgirio', 'Saltoniškių', 'Laisvės', 'Didžioji', 'Liepų'
+        'Klaipėdos', 'Vilniaus', 'Kauno', 'Žalgirio', 'Saltoniškių', 'Laisvės', 'Didžioji', 'Liepų', 'Miško', 'Beržų',
+        'Sodų', 'Mokyklos', 'Pievų', 'Alyvų', 'Parko', 'Ežero', 'Gėlių', 'Pušyno', 'Ąžuolų', 'Dvaro', 'Lauko',
+        'Kaštonų', 'Klevų', 'Žalioji', 'Kalno', 'Aušros', 'Tvenkinio', 'Naujoji', 'Rožių', 'Vyšnių', 'Draugystės',
+        'Pušų', 'Vilties', 'Šilo', 'Taikos', 'Saulės', 'Lakštingalų', 'Saulėtekio', 'Paupio', 'Laukų', 'Piliakalnio',
+        'Tulpių', 'Kranto', 'Ateities', 'Jaunimo', 'Vytauto', 'Algirdo', 'Mindaugo', 'Paupio', 'Vingio', 'Kreivoji',
+        'Lenktoji', 'Olandų', 'Rygos', 'Helsinkio', 'Talino', 'Ozo', 'Šešuolių', 'Viršuliškių', 'Viršilų', 'Spaudos',
+        'Tujų', 'Buivydiškių', 'Justiniškių', 'Taikos', 'Sudervės', 'Šermukšnių', 'Žvejų', 'Malūno', 'Bažnyčios',
+        'Pakalnės', 'Slėnio', 'Plento', 'Eglių', 'Čiobiškio', 'Musninkų', 'Ukmergės', 'Dūkštų', 'Ažuolyno', 'Deltuvos',
+        'Siesikų', 'Gelvonų', 'Paberžės', 'Fabijoniškių', 'Kaimelio', 'Gabijos', 'Sviliškių', 'Grigalaukio',
+        'Pavilnionių', 'Perkūnkiemio', 'Leičių', 'Pelėdūnų', 'Svarstyklių', 'Mergelės', 'Šaulio', 'Draustinio',
+        'Žemuogių', 'Ramunėlių', 'Draustinio', 'Mėtų', 'Eglių', 'Ažuolų', 'Miglos', 'Tauro', 'Didžioji', 'Kalvų',
+        'Debesylų', 'Vijoklių', 'Ilgoji', 'Riešės', 'Skroblų', 'Dvaro', 'Klonių', 'Vėjų', 'Žiedo', 'Bajorų', 'Bebrų',
     );
 
     protected static $addressFormats = array(
