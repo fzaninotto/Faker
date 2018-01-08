@@ -168,9 +168,19 @@ class Base
      *
      * @return array New array with $count elements from $array
      */
-    public static function randomElements(array $array = array('a', 'b', 'c'), $count = 1, $allowDuplicates = false)
+    public static function randomElements($array = array('a', 'b', 'c'), $count = 1, $allowDuplicates = false)
     {
-        $allKeys = array_keys($array);
+        $traversables = array();
+
+        if ($array instanceof \Traversable) {
+            foreach ($array as $element) {
+                $traversables[] = $element;
+            }
+        }
+
+        $arr = count($traversables) ? $traversables : $array;
+
+        $allKeys = array_keys($arr);
         $numKeys = count($allKeys);
 
         if (!$allowDuplicates && $numKeys < $count) {
@@ -191,7 +201,7 @@ class Base
                 $keys[$num] = true;
             }
 
-            $elements[] = $array[$allKeys[$num]];
+            $elements[] = $arr[$allKeys[$num]];
             $numElements++;
         }
 
@@ -206,7 +216,7 @@ class Base
      */
     public static function randomElement($array = array('a', 'b', 'c'))
     {
-        if (!$array) {
+        if (!$array || ($array instanceof \Traversable && !count($array))) {
             return null;
         }
         $elements = static::randomElements($array, 1);

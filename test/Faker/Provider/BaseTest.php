@@ -4,6 +4,7 @@ namespace Faker\Test\Provider;
 
 use Faker\Provider\Base as BaseProvider;
 use PHPUnit\Framework\TestCase;
+use Traversable;
 
 class BaseTest extends TestCase
 {
@@ -134,6 +135,11 @@ class BaseTest extends TestCase
         $this->assertNull(BaseProvider::randomElement(array()));
     }
 
+    public function testRandomElementReturnsNullWhenCollectionEmpty()
+    {
+        $this->assertNull(BaseProvider::randomElement(new Collection(array())));
+    }
+
     public function testRandomElementReturnsElementFromArray()
     {
         $elements = array('23', 'e', 32, '#');
@@ -144,6 +150,12 @@ class BaseTest extends TestCase
     {
         $elements = array('tata' => '23', 'toto' => 'e', 'tutu' => 32, 'titi' => '#');
         $this->assertContains(BaseProvider::randomElement($elements), $elements);
+    }
+
+    public function testRandomElementReturnsElementFromCollection()
+    {
+        $collection = new Collection(array('one', 'two', 'three'));
+        $this->assertContains(BaseProvider::randomElement($collection), $collection);
     }
 
     public function testShuffleReturnsStringWhenPassedAStringArgument()
@@ -553,4 +565,8 @@ class BaseTest extends TestCase
         $this->assertCount(3, $allowDuplicates);
         $this->assertContainsOnly('string', $allowDuplicates);
     }
+}
+
+class Collection extends \ArrayObject
+{
 }
