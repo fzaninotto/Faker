@@ -157,7 +157,7 @@ class EntityPopulator
                     if ($required && $this->useExistingData) {
                         // We did not add anything like this, but it's required,
                         // So let's find something existing in DB.
-                        $mapper = $this->locator->mapper($entityName);
+                        $mapper = $locator->mapper($entityName);
                         $records = $mapper->all()->limit(self::RELATED_FETCH_COUNT)->toArray();
                         if (empty($records)) {
                             return null;
