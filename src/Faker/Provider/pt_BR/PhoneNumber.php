@@ -28,7 +28,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
             '93', '94', '95', '96', '97', '98', '99'
         );
 
-        return array_rand($areaCodes, 1);
+        return $areaCodes[array_rand($areaCodes, 1)];
     }
 
     /**
