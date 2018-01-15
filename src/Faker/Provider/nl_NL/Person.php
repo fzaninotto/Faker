@@ -76,7 +76,7 @@ class Person extends \Faker\Provider\Person
         'Blewanus', 'Bloemendaal', 'Blokland', 'Blom', 'Blonk', 'de Bock', 'Boddaugh', 'Boer', 'de Boer', 'Boers',
         'Boeser', 'Boetet', 'Bolkesteijn', 'de Bont', 'Booden', 'Boogaerts', 'Borman', 'Bos', 'Bosch', 'Boudewijns',
         'Bouhuizen', 'van Boulogne', 'Bourgondië, van', 'Bouthoorn', 'Bouwhuisen', 'van Boven', 'van Bovene',
-        'van Bovenen', 'van den Brand', 'Brandon', 'Brands', 'Brandt', 'van Brenen', 'Bresé', 'Bresse', 'van Breugel',
+        'van Bovenen', 'van den Brand', 'Brandon', 'Brands', 'Brandt', 'Bravenboer', 'van Brenen', 'Bresé', 'Bresse', 'van Breugel',
         'Breugelensis', 'van Breukeleveen', 'van Breukelveen', 'le Briel', 'Briere', 'Brievingh', 'van den Brink',
         'van der Brink', 'Brisee', 'Brizee', 'Broeckx', 'Broeders', 'Broek', 'van den Broek', 'Broekhoven', 'Broeshart',
         'Bronder', 'Brouwer', 'van Bruchem', 'Bruggeman', 'Brugman', 'de Bruijn', 'Bruijne van der Veen', 'de Bruin',
@@ -145,7 +145,7 @@ class Person extends \Faker\Provider\Person
         'Oda', 'Oemencs', 'Oennen', 'van den Oever', 'van Oirschot', 'van Olst', 'Olthof', 'Olykan', 'van Ommeren',
         'Ooms', 'van Ooste', 'van Oosten', 'van Oostendorp', 'Oosterhek', 'Oosterhout', 'Oostveen', 'van Ooyen',
         'Opmans', 'van Opper-Lotharingen', 'van Orleans', 'Osterhoudt', 'Otte', 'Otto', 'Oude Heer', 'van Oudewater',
-        'Ouwel', 'Ouwerkerk', 'Overdijk', 'Overeem', 'Oversteeg', 'Paillet', 'Palman', 'van Parijs', 'Pasman',
+        'Ouwel', 'Ouwerkerk', 'Overdijk', 'Overeem', 'Oversteeg', 'Oversluizen' 'Paillet', 'Palman', 'van Parijs', 'Pasman',
         'Passchiers', 'Pastoors', 'de Pauw', 'Pauwels', 'van de Pavert', 'Perck', 'Perkins', 'Peronne', 'Perrono',
         'Persijn', 'Peterse', 'Phillipsen', 'Pierson', 'Pieters', 'Pieters van der Maes', 'Pison', 'de Plantard',
         'van de Plas', 'van der Plas', 'van der Ploeg', 'van der Pluijm', 'Poncelet', 'Ponci', 'Pons', 'van Poppel',
@@ -175,7 +175,7 @@ class Person extends \Faker\Provider\Person
         'Verhaar', 'Verhagen', 'Verharen', 'Verheij', 'Verheuvel', 'Verhoeven', 'Verkade', 'van Vermandois',
         'Vermeulen', 'Verschuere', 'Verschut', 'Versluijs', 'Vertoor', 'Vertooren', 'Vervoort', 'Verwoert', 'Vial',
         'Vierdag', 'Vignon', 'van Vlaanderen', 'Volcke', 'van Voorhout', 'van Voorst', 'Voortman', 'Vos', 'Vrancken',
-        'de Vries', 'de Vroege', 'de Vrome', 'ter Waarbeek', 'Waardeloo', 'van Waas', 'Wagenvoort', 'van Wallaert',
+        'de Vries', 'de Vroege', 'de Vrome', 'ter Waarbeek', 'de Waard', 'Waardeloo', 'van Waas', 'Wagenvoort', 'van Wallaert',
         'Walsteijn', 'Walter', 'van Wassenaar', 'van de Water', 'Weeldenburg', 'Weerdenburg',
         'Weijland', 'Weijters', 'van Wel', "van 't Wel", 'Welf', 'Wendt', 'Wensen', 'de Werd', 'Werdes',
         'van Wessex', 'Westerbeek', 'Westerburg', 'Westermann',
@@ -184,7 +184,7 @@ class Person extends \Faker\Provider\Person
         'Wilson', 'Winnrich', 'Winters', 'Wipstrik', 'de Wit', 'van den Wittenboer', 'Wolffel',
         'Wolfswinkel', 'Wolters', 'Wolzak', 'Wooning', 'Woudenberg', 'Wouters', 'Wouters van Eijndhoven', 'Woutersz',
         'Wright', 'Wunderink', 'Wutke', 'Zaal', 'Zeemans', 'Zeldenrust', 'Zevenboom', 'van der Zijl', 'Zijlemans',
-        'Zijlmans', 'Zuidweg', 'Zuijdveld', 'van Zwaben', 'Zwart', 'Zwijsen'
+        'Zijlmans', 'Zuidweg', 'Zuijdveld', 'van Zwaben', 'Zwart', 'Zwerus', 'Zwijsen'
     );
 
     protected static $commonForeignLastNames = array(
