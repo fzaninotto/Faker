@@ -48,14 +48,15 @@ class PaymentTest extends TestCase
 
     public function testCreditCardTypeReturnsValidVendorName()
     {
-        $this->assertContains($this->faker->creditCardType, array('Visa', 'MasterCard', 'American Express', 'Discover Card'));
+        $this->assertContains($this->faker->creditCardType, array('Visa', 'Visa Retired', 'MasterCard', 'American Express', 'Discover Card'));
     }
 
     public function creditCardNumberProvider()
     {
         return array(
             array('Discover Card', '/^6011\d{12}$/'),
-            array('Visa', '/^4\d{12,15}$/'),
+            array('Visa', '/^4\d{15}$/'),
+            array('Visa Retired', '/^4\d{12}$/'),
             array('MasterCard', '/^(5[1-5]|2[2-7])\d{14}$/')
         );
     }
