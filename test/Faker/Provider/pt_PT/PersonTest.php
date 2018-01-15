@@ -44,10 +44,6 @@ class PersonTest extends TestCase
         } else {
             $cd = 11 - $cd;
         }
-        if ($cd === intval($n[8])) {
-            return true;
-        }
-
-        return false;
+        return $cd === intval($n[8]);
     }
 }
