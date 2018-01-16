@@ -1289,26 +1289,11 @@ echo $faker->personalIdentityNumber; // "140190-12301"
 ```php
 <?php
 
-// Generates a random Malaysian street address
-echo $faker->streetAddress; // "No. 123, Jalan Utama 7"
-
 // Generates a random Malaysian township
 echo $faker->township; // "Taman Bahagia"
 
 // Generates a random Malaysian town address with matching postcode and state
 echo $faker->townState; // "55100 Bukit Bintang, Kuala Lumpur"
-
-// Generates a random Malaysian address
-echo $faker->address; // "No. 123, Jalan Utama 7, Taman Bahagia, 55100 Bukit Bintang, Kuala Lumpur"
-```
-
-### `Faker\Provider\ms_MY\Company`
-
-```php
-<?php
-
-// Generates a Malaysian company
-echo $faker->company; // "Lori Zulkefli Sdn Bhd"
 ```
 
 ### `Faker\Provider\ms_MY\Miscellaneous`
@@ -1342,15 +1327,6 @@ echo $faker->swiftCode; // "MBBEMYKLXXX"
 
 ```php
 <?php
-
-// Generates a random person's name
-echo $faker->name($gender = null|'male'|'female');
-// "Nur Syahidah Yusrin binti Isa Murshidi"
-// "Francis Zheng Neu Choong"
-// "Rajeswary Mohinder a/l Baltej Sreenevasan"
-
-// Generates a random title
-echo $faker->title($gender = null|'male'|'female'); // "Datuk"
 
 // Generates a random personal identity card (myKad) number
 echo $faker->myKadNumber($gender = null|'male'|'female', $hyphen = null|true|false); // "710703471796"

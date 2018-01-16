@@ -111,6 +111,8 @@ class Address extends \Faker\Provider\Address
         '{{postcodeKedah}} {{townKedah}}, {{stateKedah}}',
         '{{postcodeKelantan}} {{townKelantan}}, {{stateKelantan}}',
         '{{postcodeKL}} {{townKL}}, {{stateKL}}',
+        '{{postcodeKL}} {{townKL}}, {{stateKL}}',
+        '{{postcodeKL}} {{townKL}}, {{stateKL}}',
         '{{postcodeLabuan}} {{townLabuan}}, {{stateLabuan}}',
         '{{postcodeMelaka}} {{townMelaka}}, {{stateMelaka}}',
         '{{postcodeNSembilan}} {{townNSembilan}}, {{stateNSembilan}}',
@@ -121,6 +123,7 @@ class Address extends \Faker\Provider\Address
         '{{postcodePutrajaya}} {{townPutrajaya}}, {{statePutrajaya}}',
         '{{postcodeSabah}} {{townSabah}}, {{stateSabah}}',
         '{{postcodeSarawak}} {{townSarawak}}, {{stateSarawak}}',
+        '{{postcodeSelangor}} {{townSelangor}}, {{stateSelangor}}',
         '{{postcodeSelangor}} {{townSelangor}}, {{stateSelangor}}',
         '{{postcodeTerengganu}} {{townTerengganu}}, {{stateTerengganu}}',
     );
@@ -143,28 +146,27 @@ class Address extends \Faker\Provider\Address
      * @link https://en.wikipedia.org/wiki/List_of_streets_in_George_Town,_Penang
      */
     protected static $streetSuffix = array(
-        'Abdul Rahim Kajai','Abdul Rashid','Abdul Razak Hussin','Adams','Air Itam','Air Terjun','Alor','Aminuddin Baki','Ampang','Ampang Hilir','Anson','Argyll','Ariffin','Arratoon','Athinahapan',
-        'Bagan Jermal','Balai Polis','Bandar Timah','Bangsar','Barrack','Baru','Belfield','Bellamy','Berhala','Biggs','Birch','Bijih Timah','Brown','Bukit','Bukit Aman','Bukit Bintang','Bukit Ceylon','Bukit Petaling','Bukit Tunku','Burhanuddin Helmi','Burma',
-        'C.M. Yusuf','C. Y. Choy','Cantonment','Carutthers','Cenderasari','Cenderawasih','Ceylon','Chan Sow Lin','Chan Wing','Changkat Stadium','Cheong Fatt Tze','Choo Cheeng Kay','Chow Kit','Chow Thye','Chowrasta','Cinta','Clove Hall','Cochrane','Conlay',
-        'D. S. Ramanathan','Damansara','Dang Wangi','Davis','Dewan Bahasa','Dato Abdul Malek','Dato Abdul Rahman','Dato Bandar Tunggal','Dato Hamzah','Dato\'Keramat','Dato\' Maharaja Lela','Dato Muda Linggi','Dato\' Onn','Dato\' Onn Jaafar','Dato\' Sagor','Dato Sheikh Ahmad','Dato\' Tahwil Azhar','Datuk Ahmad Said','Datuk Sulaiman','Dewan Sultan Sulaiman','Doraisamy','Doktor Latif','Dr. Krishnan','Dr Lim Chwee Leong','Dr. Murugesu','Drury',
-        'Eaton','Esfahan',
-        'Faraday','Fettes','Foss','Free School',
-        'Gallagher','Galloway','Genting Klang','Gereja','Gladstone','Gottlieb','Green Hall','Gurdwara',
-        'Haji Yahya Sheikh Ahmad','Hamid Ismail','Hang Jebat','Hang Kasturi','Hang Lekir','Hang Lekiu','Hang Tuah','Hargreaves','Hogan','Hospital','Hutton',
-        'Ikan','Imbi','Istana',
+        'Air Itam','Alor','Ampang','Ampang Hilir','Anson','Ariffin',
+        'Bangsar','Baru','Bellamy','Birch','Bijih Timah','Bukit Aman','Bukit Bintang','Bukit Petaling','Bukit Tunku',
+        'Cantonment','Cenderawasih','Chan Sow Lin','Chow Kit','Cinta','Cochrane','Conlay',
+        'D. S. Ramanathan','Damansara','Dang Wangi','Davis','Dewan Bahasa','Dato Abdul Rahman','Dato\'Keramat','Dato\' Maharaja Lela','Doraisamy',
+        'Eaton',
+        'Faraday',
+        'Galloway','Genting Klang','Gereja',
+        'Hang Jebat','Hang Kasturi','Hang Lekir','Hang Lekiu','Hang Tuah','Hospital',
+        'Imbi','Istana',
         'Jelutong',
-        'Kampung Attap','Kampung Bandar Dalam','Kampung Kaka','Kampung Kolam','Kampung Malabar','Kang Seng','Kebun Bunga','Kedah','Kelawei','Keliling','Khoo Sian Ewe','Kia Peng','Kinabalu','Kledang','Koo Chong Kong','Kuala Kangsar','Kuching','Kulim',
-        'Langgak Golf','Ledang','Lee Fong Yee','Lembah Permai','Lenggu ak China','Leong Sin Nam','Leong Yew Koh','Limbang','Logan','Loke Yew','Lt. Adnan','Lumba Kuda',
-        'Macalister','Madge','Madras','Magazine','Maharajalela','Mahkamah Persekutuan','Mahkamah Tinggi','Masjid','Masjid India','Masjid Kapitan Keling','Masjid Negeri','Maxwell','Melayu','Mohana Chandran','Mount Erskine','Muda','Munshi Abdullah','Mustapha Al-Bakri',
-        'Nagore',
-        'P. Ramlee','Padang Kota Lama','Padang Victoria','Pahang','Pangkor','Panglima Bukit Gantang Wahab','Pantai Baharu','Parlimen','Pasar','Pasar Besar','Peel','Penang','Penghulu Cantik','Penjara','Perak','Perdana','Petaling','Peirce','Phee Choon','Pigott','Pinhorn','Pintal Tali','Pitt','Prangin','Pudu','Pudu Lama','Punchak',
-        'Raja','Raja Abdullah','Raja Alang','Raja Bot','Raja Chulan','Raja Ekram','Raja Laut','Raja Muda Abdul Aziz','Raja Muda Musa','Raja Musa Aziz','Raja Musa Mahadi','Rakyat','Rangoon','Residensi','Ritchie','Robson','Robertson','Rosli Buang','Ross',
-        'S. P. Chelliah','S.P. Seenivasagam','Saimun Tarikat','Samarahan 1','Samarahan 2','Samarahan 6','Scott','Sek Chuan','Sekerat','Selamat','Semarang','Sempadan','Sentul','Sepoy Lines','Serian 1','Sasaran','Shelley','Silang','Sin Chee','Sin Chew Kee','Singkat','Soo Hong','Sri Amar','Sri Bahari','Stadium','Stewart','Stonor','Sultan Abdul Jalil','Sultan Abdul Samad','Sultan Azlan Shah','Sultan Haji Ahmad Shah','Sultan Hishamuddin','Sultan Idris Shah','Sultan Iskandar','Sultan Ismail','Sultan Mizan Zainal Abidin','Sultan Salahuddin','Sultan Sulaiman','Sultan Yahya Petra','Sultan Yusuf','Sungai Besi','Sungai Ujong','Syed Putra',
-        'Taman Bunga','Tan Cheng Lock','Tan Sri Teh Ewe Lim','Tangsi','Talalla','Temiang','Tengku Kudin','Thambipillay','Thambusamy','Thavers','Toh Aka','Transfer','Tugu','Tuan Haji Satu','Tuanku Abdul Halim','Tuanku Abdul Rahman','Tuanku Munawir','Tun Abang Haji Openg','Tun Abdul Razak','Tun Dr Ismail','Tun H S Lee','Tun Ismail','Tun Mohd Fuad','Tun Perak','Tun Razak','Tun Sambanthan','Tun Syed Sheh Barakbah','Tun Tan Siew Sin','Tunku Putra',
-        'U-Thant','Udini','Utama',
+        'Kampung Attap','Kebun Bunga','Kedah','Keliling','Kia Peng','Kinabalu','Kuala Kangsar','Kuching',
+        'Ledang','Lembah Permai','Loke Yew','Lt. Adnan','Lumba Kuda',
+        'Madras','Magazine','Maharajalela','Masjid','Maxwell','Mohana Chandran','Muda',
+        'P. Ramlee','Padang Kota Lama','Pahang','Pantai Baharu','Parlimen','Pasar','Pasar Besar','Perak','Perdana','Petaling','Prangin','Pudu','Pudu Lama',
+        'Raja','Raja Abdullah','Raja Chulan','Raja Laut','Rakyat','Residensi','Robson',
+        'S.P. Seenivasagam','Samarahan 1','Selamat','Sempadan','Sentul','Serian 1','Sasaran','Sin Chee','Sultan Abdul Samad','Sultan Azlan Shah','Sultan Iskandar','Sultan Ismail','Sultan Sulaiman','Sungai Besi','Syed Putra',
+        'Tan Cheng Lock','Thambipillay','Tugu','Tuanku Abdul Halim','Tuanku Abdul Rahman','Tun Abdul Razak','Tun Dr Ismail','Tun H S Lee','Tun Ismail','Tun Perak','Tun Razak','Tun Sambanthan',
+        'U-Thant','Utama',
         'Vermont','Vivekananda',
-        'Walter Grenier','Wan Kadir','Wesley','Wickham','Wisma Putra',
-        'Yaacob Latif','Yam Tuan','Yap Ah Loy','Yap Ah Shak','Yap Kwan Seng','Yap Tai Chi','Yew','York',
+        'Wan Kadir','Wesley','Wisma Putra',
+        'Yaacob Latif','Yap Ah Loy','Yap Ah Shak','Yap Kwan Seng','Yew',
         'Zaaba','Zainal Abidin'
     );
 
@@ -193,7 +195,7 @@ class Address extends \Faker\Provider\Address
     protected static $townshipPrefix = array(
         'Alam','Apartment','Ara',
         'Bandar','Bandar','Bandar','Bandar','Bandar','Bandar',
-        'Bandar Bukit','Bandar Seri','Bandar Sri','Bandar Baru','Bangunan','Batu','Bukit',
+        'Bandar Bukit','Bandar Seri','Bandar Sri','Bandar Baru','Batu','Bukit',
         'Desa','Damansara',
         'Kampung','Kampung Baru','Kampung Baru','Kondominium','Kota',
         'Laman','Lembah',
@@ -204,23 +206,22 @@ class Address extends \Faker\Provider\Address
         'Taman Desa',
     );
     protected static $townshipSuffix = array(
-        'Abdul Razak','Ainsdale','Ajam','Alif','Aman','Amanjaya','Amelia','Anggerik','Angkasa','Angsana','Antarabangsa','Api-Api','Awan',
-        'Bahagia','Bangsar','Barat','Baru','Belakong','Bendahara','Bestari','Bintang','Brickfields','Budi','Budiman',
-        'Casa','Cassia','Changkat','Cheras','Country Heights',
-        'Dalam','Damansara','Damai','Darulaman','Dato Harun','Delima','Duta',
-        'Enstek',
+        'Aman','Amanjaya','Anggerik','Angkasa','Antarabangsa','Awan',
+        'Bahagia','Bangsar','Baru','Belakong','Bendahara','Bestari','Bintang','Brickfields',
+        'Casa','Changkat','Country Heights',
+        'Damansara','Damai','Dato Harun','Delima','Duta',
         'Flora',
-        'Gajah','Gembira','Genting',
-        'Haji Salleh','Harmoni','Hartamas',
+        'Gembira','Genting',
+        'Harmoni','Hartamas',
         'Impian','Indah','Intan',
         'Jasa','Jaya',
         'Keramat','Kerinchi','Kiara','Kinrara','Kuchai',
-        'Laksamana','Lama',
-        'Mahkota','Maju','Malaysia','Maluri','Manggis','Maung','Maxwell','Medan','Melawati','Melayu','Menjalara','Meru','Mesra','Mewah','Muda','Mulia','Mutiara',
-        'Pahlawan','Padang','Pantai','Pasir','Perdana','Pertama','Permai','Pelangi','Petaling','Pinang','Puchong','Puteri','Putra',
+        'Laksamana',
+        'Mahkota','Maluri','Manggis','Maxwell','Medan','Melawati','Menjalara','Meru','Mulia','Mutiara',
+        'Pahlawan','Perdana','Pertama','Permai','Pelangi','Petaling','Pinang','Puchong','Puteri','Putra',
         'Rahman','Rahmat','Raya','Razak','Ria',
-        'Salak','Satelit','Saujana','Segambut','Sejahtera','Selamat','Selatan','Semarak','Sendayan','Sentosa','Sentral','Seputeh','Serada','Setapak','Setia','Setia Jaya','Simpang','Sinar','Springhill','Sungai Besi','Sungai Buaya','Sungai Jernih','Sungai Long','Sungai Penchala','Suria','Syed Putra',
-        'Tambun','Tanjung Pinang','Tasik Puteri','Tengah','Timur','Tinggi','Tropika','Tun Hussein Onn','Tun Perak','Tunku',
+        'Saujana','Segambut','Selamat','Selatan','Semarak','Sentosa','Seputeh','Setapak','Setia Jaya','Sinar','Sungai Besi','Sungai Buaya','Sungai Long','Suria',
+        'Tasik Puteri','Tengah','Timur','Tinggi','Tropika','Tun Hussein Onn','Tun Perak','Tunku',
         'Ulu','Utama','Utara',
         'Wangi',
     );
@@ -229,22 +230,21 @@ class Address extends \Faker\Provider\Address
      * @link https://en.wikipedia.org/wiki/Template:Johor
      */
     protected static $townJohor = array(
-        'Ayer Bemban','Ayer Hitam','Air Papan',
-        'Bandar Mas','Bandar Penawar','Bandar Tenggara','Batu Anam','Batu Pahat','Bekok','Benut','Bukit Bakri','Bukit Batu','Bukit Gambir','Bukit Kangkar','Bukit Kepong','Bukit Naning','Bukit Pasir','Buloh Kasap',
-        'Chaah',
+        'Ayer Hitam',
+        'Batu Pahat','Bukit Gambir','Bukit Kepong','Bukit Naning',
         'Desaru',
         'Endau',
-        'Gelang Patah','Gemas Baharu','Genuang',
+        'Gelang Patah','Gemas Baharu',
         'Iskandar Puteri',
-        'Jemaluang','Jementah','Johor Lama','Johor Bahru',
-        'Kahang','Kampung Tengah','Kangkar Pulai','Kempas','Kluang','Kong Kong','Kota Iskandar','Kota Tinggi','Kukup','Kulai',
-        'Labis ','Larkin','Layang-Layang','Lenga','Lima Kedai','Lombong',
-        'Machap','Masai','Mengkibol','Mersing','Muar',
-        'Pagoh','Paloh','Parit Bakar','Parit Bunga','Parit Jawa','Parit Raja','Parit Sulong','Parit Yaani','Panchor','Pasir Gudang','Pasir Pelangi','Pekan Air Panas','Pekan Nanas','Pengerang','Permas Jaya','Plentong','Pontian Kechil',
-        'Renggam','Rengit',
-        'Sagil','Saleng','Sedenak','Sedili','Seelong','Segamat','Semerah','Senai','Senggarang','Simpang Renggam','Skudai','Sri Gading','Sri Medan','Stulang','Sungai Balang','Sungai Mati','Sungai Rengit',
-        'Tampoi','Tangkak','Tanjung Balau','Tanjung Kupang','Tanjung Langsat','Tanjung Leman','Tanjung Pelepas','Tanjung Pengelih','Tebrau','Teluk Mahkota','Teluk Ramunia','Teluk Sengat','Tenang','Tenggaroh','Tongkang Pechah',
-        'Ulu Choh','Ulu Tiram',
+        'Jementah','Johor Lama','Johor Bahru',
+        'Kempas','Kluang','Kota Iskandar','Kota Tinggi','Kukup','Kulai',
+        'Labis ','Larkin','Layang-Layang',
+        'Mersing','Muar',
+        'Pagoh','Paloh','Parit Jawa','Pasir Gudang','Pekan Nanas','Permas Jaya','Pontian Kechil',
+        'Renggam',
+        'Segamat','Senai','Simpang Renggam','Skudai','Sri Gading',
+        'Tangkak','Tebrau',
+        'Ulu Tiram',
         'Yong Peng',
     );
 
@@ -252,18 +252,18 @@ class Address extends \Faker\Provider\Address
      * @link https://en.wikipedia.org/wiki/Template:Kedah
      */
     protected static $townKedah = array(
-        'Alor Setar','Alor Tajar','Anak Bukit',
-        'Baling','Bedong','Bukit Kayu Hitam','Bukit Pinang','Bukit Selambau',
+        'Alor Setar',
+        'Baling','Bukit Kayu Hitam',
         'Changlun',
         'Durian Burung',
-        'Guar Chempedak','Gurun',
-        'Jeniang','Jitra',
-        'Kepala Batas','Kodiang','Kota Sarang Semut','Kuah','Kuala Kedah','Kuala Ketil','Kuala Nerang','Kuala Pegang','Kulim','Kupang',
+        'Gurun',
+        'Jitra',
+        'Kepala Batas','Kuah','Kuala Kedah','Kuala Ketil','Kulim',
         'Langgar','Lunas',
         'Merbok',
-        'Padang Matsirat','Padang Serai','Pendang','Pokok Sena',
-        'Semeling','Serdang','Sik','Siong, Kedah','Sintok','Sungai Lalang','Sungai Limau','Sungai Petani',
-        'Tanjung Dawai','Tawar, Baling','Tokai',
+        'Padang Serai','Pendang',
+        'Serdang','Sintok','Sungai Petani',
+        'Tawar, Baling',
         'Yan',
     );
 
@@ -271,17 +271,17 @@ class Address extends \Faker\Provider\Address
      * @link https://en.wikipedia.org/wiki/Template:Kelantan
      */
     protected static $townKelantan = array(
-        'Bachok','Bukit Bunga','Bunut Payong',
+        'Bachok','Bunut Payong',
         'Dabong',
         'Gua Musang',
-        'Jelawat','Jeli',
-        'Ketereh','Kota Bharu','Kuala Krai','Kubang Kerian',
+        'Jeli',
+        'Ketereh','Kota Bharu','Kuala Krai',
         'Lojing',
-        'Machang','Manek Urai',
-        'Pasir Mas','Pasir Puteh','Pengkalan Chepa','Pengkalan Kubor','Pengkalan Pasir','Perupok',
+        'Machang',
+        'Pasir Mas','Pasir Puteh',
         'Rantau Panjang',
         'Salor',
-        'Tanah Merah','Temangan','Tok Bali','Tumpat',
+        'Tok Bali',
         'Wakaf Bharu','Wakaf Che Yeh',
     );
 
@@ -290,19 +290,19 @@ class Address extends \Faker\Provider\Address
      */
     protected static $townMelaka = array(
         'Alor Gajah',
-        'Bandaraya Melaka','Batang Melaka','Batu Berendam','Bemban','Bukit Beruang','Bukit Katil',
+        'Bandaraya Melaka','Batu Berendam','Bukit Beruang','Bukit Katil',
         'Cheng',
         'Durian Tunggal',
         'Hang Tuah Jaya',
         'Jasin',
-        'Klebang','Krubong','Kuala Sungai Baru',
-        'Lendu','Lubuk China',
-        'Machap Baru','Masjid Tanah','Melaka Pindah','Merlimau',
-        'Naning','Nyalas',
-        'Pekan Asahan','Pulau Sebang',
+        'Klebang',
+        'Lubuk China',
+        'Masjid Tanah',
+        'Naning',
+        'Pekan Asahan',
         'Ramuan China',
-        'Selandar','Serkam','Simpang Ampat','Sungai Rambai','Sungai Udang',
-        'Tanjung Bidara','Tanjung Kling','Tanjung Tuan','Telok Mas',
+        'Simpang Ampat',
+        'Tanjung Bidara','Telok Mas',
         'Umbai',
     );
 
@@ -310,59 +310,59 @@ class Address extends \Faker\Provider\Address
      * @link https://en.wikipedia.org/wiki/Template:Negeri_Sembilan
      */
     protected static $townNSembilan = array(
-        'Ayer Kuning','Air Kuning Selatan','Ampangan',
-        'Bahau','Bandar Seri Jempol','Batang Benar','Batu Kikir',
-        'Chembong','Chengkau',
+        'Ayer Kuning','Ampangan',
+        'Bahau','Batang Benar',
+        'Chembong',
         'Dangi',
-        'Gemas','Gemencheh',
-        'Johol','Juasseh',
-        'Kota','Kuala Klawang','Kuala Pilah',
-        'Labu','Lenggeng','Linggi','Lukut',
-        'Mantin','Mambau',
+        'Gemas',
+        'Juasseh',
+        'Kuala Pilah',
+        'Labu','Lenggeng','Linggi',
+        'Mantin',
         'Nilai',
-        'Pajam','Paroi','Pantai','Pasir Panjang','Pedas','Pengkalan Kempas','Pertang','Port Dickson',
-        'Rantau','Rasah','Rembau','Rompin',
-        'Senawang','Sepang Road','Seremban','Seremban 2','Seremban 3','Seri Menanti','Serting','Sikamat','Siliau','Simpang Durian','Simpang Pertang','Sungai Gadut','Sungai Muntoh',
-        'Tampin','Tanjung Ipoh','Teluk Kemang','Tiroi',
+        'Pajam','Pedas','Pengkalan Kempas','Port Dickson',
+        'Rantau','Rompin',
+        'Senawang','Seremban','Sungai Gadut',
+        'Tampin','Tiroi',
     );
 
     /**
      * @link https://en.wikipedia.org/wiki/Template:Pahang
      */
     protected static $townPahang = array(
-        'Bandar Bera','Bandar Muadzam Shah','Bandar Tun Abdul Razak','Bandar Tun Razak','Batu Hitam','Batu Talam','Belimbing','Benta','Bentong','Beserah','Brinchang','Bukit Fraser','Bukit Ibam','Bukit Tinggi',
-        'Ceruk Paluh','Chendor','Chenor','Cheroh',
-        'Gambang','Gebeng','Genting Highlands','Genting Sempah',
+        'Bandar Tun Razak','Bentong','Brinchang','Bukit Fraser','Bukit Tinggi',
+        'Chendor',
+        'Gambang','Genting Highlands','Genting Sempah',
         'Jerantut',
-        'Karak','Kemayan','Kerdau','Ketari','Kota Iskandar','Kota Shahbandar','Kuala Lipis','Kuala Pahang','Kuala Rompin','Kuala Tembeling','Kuantan',
-        'Lanchang','Lentang','Lubuk Paku','Lurah Bilut',
-        'Maran','Mengkarak','Mengkuang','Mentakab','Merapoh',
+        'Karak','Kemayan','Kota Shahbandar','Kuala Lipis','Kuala Pahang','Kuala Rompin','Kuantan',
+        'Lanchang','Lubuk Paku',
+        'Maran','Mengkuang','Mentakab',
         'Nenasi',
-        'Paloh Hinai','Panching',
+        'Panching',
         'Pekan','Penor',
         'Raub',
-        'Sebertak','Sempalit','Sungai Lembing','Sungai Ruan',
-        'Tanah Rata','Tanjung Lumpur','Tanjung Sepat','Tasik Chini','Teluk Cempedak','Temerloh','Teriang','Tringkap',
+        'Sebertak','Sungai Lembing',
+        'Tanah Rata','Tanjung Sepat','Tasik Chini','Temerloh','Teriang','Tringkap',
     );
     
     /**
      * @link https://en.wikipedia.org/wiki/Template:Perak
      */
     protected static $townPerak = array(
-        'Alor Pongsu','Aulong','Ayer Tawar',
-        'Bagan Datoh','Bagan Serai','Bagan Sungai Burong','Banir','Batak Rabit','Batu Gajah','Behrang','Bercham','Beruas','Bidor','Bikam','Bota','Bukit Gantang','Bukit Merah',
-        'Changkat Jering','Changkat Keruing','Chemor','Chenderiang','Chenderong Balai','Chikus',
+        'Ayer Tawar',
+        'Bagan Serai','Batu Gajah','Behrang','Bidor','Bukit Gantang','Bukit Merah',
+        'Changkat Jering','Chemor','Chenderiang',
         'Damar Laut',
         'Gerik','Gopeng','Gua Tempurung',
         'Hutan Melintang',
         'Ipoh',
-        'Jelapang','Jerlun',
-        'Kamunting','Kampar','Kampung Gajah','Karai','Kota Bharu','Kota Setia','Kuala Kangsar','Kuala Kurau','Kuala Sepetang','Kubu Gajah',
-        'Langkap','Lekir','Lenggong','Lumut',
-        'Malim Nawar','Mambang Di Awan','Manjoi','Manong','Menglembu',
-        'Padang Rengas','Pantai Remis','Parit','Parit Buntar','Pasir Salak','Pekan Gurney','Pengkalan Hulu','Pokok Assam','Proton City','Pusing',
-        'Selama','Selekoh','Simpang Empat Semanggol','Simpang Empat','Seri Iskandar','Seri Manjung','Simpang Pulai','Simpang Tiga','Sitiawan','Slim','Slim River','Sungai Siput','Sungkai',
-        'Taiping','Tambun','Tanjung Belanja','Tanjung Malim','Tanjung Piandang','Tanjung Rambutan','Tanjung Tualang','Tapah','Tapah Road','Teluk Batik','Teluk Intan','Teluk Rubiah','Temoh','Temoh Station','Trolak','Terong','Teronoh',
+        'Jelapang',
+        'Kamunting','Kampar','Kuala Kangsar',
+        'Lekir','Lenggong','Lumut',
+        'Malim Nawar','Manong','Menglembu',
+        'Pantai Remis','Parit','Parit Buntar','Pasir Salak','Proton City',
+        'Simpang Pulai','Sitiawan','Slim River','Sungai Siput','Sungkai',
+        'Taiping','Tambun','Tanjung Malim','Tanjung Rambutan','Tapah','Teluk Intan',
         'Ulu Bernam',
     );
     
@@ -385,31 +385,31 @@ class Address extends \Faker\Provider\Address
      */
     protected static $townPenang = array(
         'Air Itam',
-        'Balik Pulau','Batu Ferringhi','Batu Kawan','Batu Lanchang','Bayan Lepas','Bukit Mertajam','Butterworth',
+        'Balik Pulau','Batu Ferringhi','Batu Kawan','Bayan Lepas','Bukit Mertajam','Butterworth',
         'Gelugor','George Town',
-        'Jelutong','Juru',
+        'Jelutong',
         'Kepala Batas',
         'Nibong Tebal',
-        'Paya Terubong','Perai','Permatang Pauh','Pulau Tikus',
+        'Permatang Pauh','Pulau Tikus',
         'Simpang Ampat',
-        'Tasek Gelugor','Tanjung Bungah','Tanjung Tokong','Teluk Bahang','Teluk Kumbar',
+        'Tanjung Bungah','Tanjung Tokong',
     );
     
     /**
      * @link https://en.wikipedia.org/wiki/Template:Sabah
      */
     protected static $townSabah = array(
-        'Beaufort','Beluran','Bingkor','Bongawan',
+        'Beaufort','Bingkor',
         'Donggongon',
         'Inanam',
-        'Keningau','Kinabatangan','Kota Belud','Kota Marudu','Kota Kinabalu','Kuala Penyu','Kudat','Kunak','Kimanis','Kalabakan','Kinarut','Kundasang',
+        'Kinabatangan','Kota Belud','Kota Kinabalu','Kuala Penyu','Kimanis','Kundasang',
         'Lahad Datu','Likas','Lok Kawi',
-        'Membakut','Manggatal','Menumbok',
+        'Manggatal',
         'Nabawan',
-        'Papar','Pensiangan','Pitas','Putatan',
+        'Papar','Pitas',
         'Ranau',
-        'Sandakan','Sapulut','Semporna','Sepanggar','Sindumin','Sipitang','Sook',
-        'Tambunan','Tamparuli','Tanjung Aru','Tawau','Telipok','Telupid','Tenom','Tongod','Tuaran',
+        'Sandakan','Sapulut','Semporna','Sepanggar',
+        'Tambunan','Tanjung Aru','Tawau','Tenom','Tuaran',
         'Weston',
     );
     
@@ -418,17 +418,17 @@ class Address extends \Faker\Provider\Address
      */
     protected static $townSarawak = array(
         'Asajaya',
-        'Ba\'kelalan','Balingian','Bario','Batu Kawa','Batu Niah','Bau','Bekenu','Beladin','Belaga','Belawai','Betong','Bintangor','Bintulu',
-        'Dalat','Daro','Debak',
+        'Ba\'kelalan','Bario','Batu Kawa','Batu Niah','Betong','Bintulu',
+        'Dalat','Daro',
         'Engkilili',
         'Julau',
-        'Kanowit','Kapit','Kota Samarahan','Kuching',
-        'Lawas','Limbang','Lingga','Lubok Antu','Lundu',
-        'Maludam','Marudi','Matu','Meradong','Miri','Mukah',
+        'Kapit','Kota Samarahan','Kuching',
+        'Lawas','Limbang','Lubok Antu',
+        'Marudi','Matu','Miri',
         'Oya',
-        'Pakan','Pusa',
-        'Sadong Jaya','Saratok','Sarikei','Sebauh','Sebuyau','Selangau','Sematan','Serian','Serikin','Sibu','Siburan','Simunjan','Song','Spaoh','Sri Aman','Sungai Tujoh',
-        'Tanjung Kidurong','Tanjung Manis','Tatau','Tebedu',
+        'Pakan',
+        'Sadong Jaya','Sematan','Sibu','Siburan','Song','Sri Aman','Sungai Tujoh',
+        'Tanjung Kidurong','Tanjung Manis','Tatau',
     );
     
     /**
@@ -436,18 +436,18 @@ class Address extends \Faker\Provider\Address
      */
     protected static $townSelangor = array(
         'Ampang','Assam Jawa',
-        'Bagan Lalang','Balakong','Bandar Baru Bangi','Bandar Baru Selayang','Bandar Sunway','Bangi','Banting','Batang Kali','Batu Arang','Batu Caves','Beranang','Bestari Jaya','Broga','Bukit Lanjan','Bukit Raja','Bukit Rotan','Bukit Tagar',
+        'Balakong','Bandar Baru Bangi','Bandar Baru Selayang','Bandar Sunway','Bangi','Banting','Batang Kali','Batu Caves','Bestari Jaya','Bukit Lanjan',
         'Cheras','Cyberjaya',
         'Damansara','Dengkil',
         'Ijok',
-        'Jenjarom','Jeram','Jugra',
-        'Kajang','Kalumpang','Kapar','Kelana Jaya','Kerling','Klang','Kuala Kubu Bharu','Kuala Selangor','Kuala Sungai Buloh','Kuang',
+        'Jenjarom',
+        'Kajang','Kelana Jaya','Klang','Kuala Kubu Bharu','Kuala Selangor','Kuang',
         'Lagong',
-        'Meru','Morib',
-        'Padang Jawa','Pandamaran','Paya Jaras','Petaling Jaya','Port Klang','Puchong',
+        'Morib',
+        'Pandamaran','Paya Jaras','Petaling Jaya','Port Klang','Puchong',
         'Rasa','Rawang',
-        'Sabak','Salak Tinggi','Sekinchan','Selayang','Semenyih','Sepang','Serendah','Seri Kembangan','Shah Alam','Sijangkang','Subang','Subang Jaya','Sungai Ayer Tawar','Sungai Besar','Sungai Buaya','Sungai Buloh','Sungai Burong','Sungai Choh','Sungai Panjang','Sungai Pelek','Sungai Pelong','Sungai Tengi',
-        'Tanjung Harapan','Tanjung Karang','Tanjung Sepat','Teluk Datok','Teluk Gong','Teluk Panglima Garang',
+        'Salak Tinggi','Sekinchan','Selayang','Semenyih','Sepang','Serendah','Seri Kembangan','Shah Alam','Subang','Subang Jaya','Sungai Buloh',
+        'Tanjung Karang','Tanjung Sepat',
         'Ulu Klang','Ulu Yam',
     );
     
@@ -456,13 +456,13 @@ class Address extends \Faker\Provider\Address
      */
     protected static $townTerengganu = array(
         'Ajil',
-        'Bandar Al-Muktafi Billah Shah','Bandar Ketengah Jaya','Bandar Permaisuri','Bandar Seri Bandi','Batu Rakit','Bukit Besi','Bukit Payong',
+        'Bandar Ketengah Jaya','Bandar Permaisuri','Bukit Besi','Bukit Payong',
         'Chukai',
-        'Jabur','Jerangau','Jerteh',
-        'Kampung Raja','Kemasik','Kedai Buluh','Kerteh','Kijal','Kuala Besut','Kuala Berang','Kuala Dungun','Kuala Jeneris','Kuala Telemung','Kuala Terengganu',
+        'Jerteh',
+        'Kampung Raja','Kerteh','Kijal','Kuala Besut','Kuala Berang','Kuala Dungun','Kuala Terengganu',
         'Marang','Merchang',
-        'Paka','Pasir Raja',
-        'Rantau Abang','Rasau Kerteh',
+        'Pasir Raja',
+        'Rantau Abang',
         'Teluk Kalung',
         'Wakaf Tapai',
     );
@@ -471,18 +471,17 @@ class Address extends \Faker\Provider\Address
      * @link https://en.wikipedia.org/wiki/Template:Greater_Kuala_Lumpur
      */
     protected static $townKL = array(
-        'Alam Damai, Cheras','Ampang',
-        'Bandar Baru Sentul','Bandar Malaysia','Bandar Tasik Selatan','Bandar Tun Razak','Bangsar','Bangsar South','Batu','Brickfields','Bukit Bintang','Bukit Jalil','Bukit Kiara','Bukit Nanas','Bukit Petaling','Bukit Tunku',
+        'Ampang',
+        'Bandar Tasik Selatan','Bandar Tun Razak','Bangsar','Batu','Brickfields','Bukit Bintang','Bukit Jalil','Bukit Tunku',
         'Cheras','Chow Kit',
         'Damansara Town Centre','Dang Wangi','Desa Petaling','Desa Tun Hussein Onn',
-        'Federal Hill',
-        'Jalan Cochrane','Jalan Duta','Jinjang',
-        'Kampung Baru','Kampung Datuk Keramat','Kampung Haji Abdullah Hukum','Kampung Kasipillay','Kampung Kerdas','Kampung Malaysia','Kampung Pandan','Kampung Sungai Mulia','Kampung Sungai Penchala','Kepong','KL Eco City','KLCC','Kuchai Lama',
-        'Lake Fields','Lake Gardens','Lembah Pantai',
-        'Maluri, Cheras','Medan Tuanku','Mid Valley City','Mont Kiara',
+        'Jinjang',
+        'Kampung Baru','Kampung Kasipillay','Kampung Pandan','Kampung Sungai Penchala','Kepong','KLCC','Kuchai Lama',
+        'Lake Gardens','Lembah Pantai',
+        'Medan Tuanku','Mid Valley City','Mont Kiara',
         'Pantai Dalam','Pudu',
-        'Salak South','Segambut','Semarak','Sentul','Sentul Raya','Setapak','Setiawangsa','Seputeh','Sri Hartamas','Sri Petaling','Sungai Besi',
-        'Taman Desa','Taman Ibukota','Taman Melati','Taman Melawati','Taman OUG','Taman P. Ramlee','Taman Tun Dr Ismail','Taman U-Thant','Taman Wahyu','Titiwangsa','Tun Razak Exchange',
+        'Salak South','Segambut','Semarak','Sentul','Setapak','Setiawangsa','Seputeh','Sri Hartamas','Sri Petaling','Sungai Besi',
+        'Taman Desa','Taman Melawati','Taman OUG','Taman Tun Dr Ismail','Taman U-Thant','Taman Wahyu','Titiwangsa','Tun Razak Exchange',
         'Wangsa Maju',
     );
     
@@ -500,10 +499,10 @@ class Address extends \Faker\Provider\Address
      * @link https://upload.wikimedia.org/wikipedia/commons/a/ab/Putrajaya_City_Precinct.svg
      */
     protected static $townPutrajaya = array(
-        'Precinct 1','Precinct 2','Precinct 3','Precinct 4','Precinct 5',
-        'Precinct 6','Precinct 7','Precinct 8','Precinct 9','Precinct 10',
-        'Precinct 11','Precinct 12','Precinct 13','Precinct 14','Precinct 15',
-        'Precinct 16','Precinct 17','Precinct 18','Precinct 19','Precinct 20'
+        'Precinct 1','Precinct 4','Precinct 5',
+        'Precinct 6','Precinct 8','Precinct 10',
+        'Precinct 11','Precinct 12','Precinct 13',
+        'Precinct 16','Precinct 18','Precinct 19',
     );
     
     /**
@@ -600,20 +599,6 @@ class Address extends \Faker\Provider\Address
         'Yaman',
         'Zambia','Zimbabwe',
     );
-
-    /**
-     * Return a complete street address
-     * 
-     * @example 'No. 123 Jalan Utama 7'
-     * 
-     * @return @string
-     */
-    public function streetAddress()
-    {
-        $format = static::randomElement(static::$streetAddressFormats);
-
-        return $this->generator->parse($format);
-    }
 
     /**
      * Return a building prefix
