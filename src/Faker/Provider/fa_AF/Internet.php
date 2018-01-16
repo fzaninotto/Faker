@@ -10,7 +10,6 @@ class Internet extends \Faker\Provider\Internet
      * @example 'sherzad20'
      */
     protected static $userNameFormats = array(
-        '{{firstNameAsciiFirstChar}}.{{lastNameAscii}}',
         '{{firstNameAsciiFirstChars}}.{{lastNameAscii}}',
         '{{lastNameAscii}}##',
     );
@@ -118,14 +117,6 @@ class Internet extends \Faker\Provider\Internet
     public static function firstNameAscii()
     {
         return static::randomElement(static::$firstNameAscii);
-    }
-
-    /**
-     * Only getting first character of fristName
-     */
-    public static function firstNameAsciiFirstChar()
-    {
-        return static::randomElement(static::$firstNameAscii)[0];
     }
 
     /**
