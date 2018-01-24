@@ -2,6 +2,7 @@
 
 namespace Faker\ORM\Propel2;
 
+use Faker\Generator;
 use Propel\Runtime\Propel;
 use Propel\Runtime\ServiceContainer\ServiceContainerInterface;
 
@@ -18,7 +19,7 @@ class Populator
     /**
      * @param \Faker\Generator $generator
      */
-    public function __construct(\Faker\Generator $generator)
+    public function __construct(Generator $generator)
     {
         $this->generator = $generator;
     }
@@ -27,12 +28,14 @@ class Populator
      * Add an order for the generation of $number records for $entity.
      *
      * @param mixed $entity A Propel ActiveRecord classname, or a \Faker\ORM\Propel2\EntityPopulator instance
-     * @param int   $number The number of entities to populate
+     * @param int $number The number of entities to populate
+     * @param array $customColumnFormatters
+     * @param array $customModifiers
      */
     public function addEntity($entity, $number, $customColumnFormatters = array(), $customModifiers = array())
     {
-        if (!$entity instanceof \Faker\ORM\Propel2\EntityPopulator) {
-            $entity = new \Faker\ORM\Propel2\EntityPopulator($entity);
+        if (!$entity instanceof EntityPopulator) {
+            $entity = new EntityPopulator($entity);
         }
         $entity->setColumnFormatters($entity->guessColumnFormatters($this->generator));
         if ($customColumnFormatters) {

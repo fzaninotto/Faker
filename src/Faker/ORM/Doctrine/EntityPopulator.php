@@ -4,6 +4,8 @@ namespace Faker\ORM\Doctrine;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\Persistence\Mapping\ClassMetadata;
+use Faker\Generator;
+use Faker\Guesser\Name;
 
 /**
  * Service class for populating a table through a Doctrine Entity class.
@@ -90,10 +92,10 @@ class EntityPopulator
      * @param \Faker\Generator $generator
      * @return array
      */
-    public function guessColumnFormatters(\Faker\Generator $generator)
+    public function guessColumnFormatters(Generator $generator)
     {
         $formatters = array();
-        $nameGuesser = new \Faker\Guesser\Name($generator);
+        $nameGuesser = new Name($generator);
         $columnTypeGuesser = new ColumnTypeGuesser($generator);
         foreach ($this->class->getFieldNames() as $fieldName) {
             if ($this->class->isIdentifier($fieldName) || !$this->class->hasField($fieldName)) {
@@ -171,6 +173,7 @@ class EntityPopulator
     /**
      * Insert one new record using the Entity class.
      * @param ObjectManager $manager
+     * @param $insertedEntities
      * @param bool $generateId
      * @return EntityPopulator
      */
@@ -228,6 +231,8 @@ class EntityPopulator
     }
 
     /**
+     * @param $obj
+     * @param $column
      * @param ObjectManager $manager
      * @return int|null
      */

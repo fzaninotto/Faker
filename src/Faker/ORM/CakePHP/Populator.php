@@ -2,6 +2,8 @@
 
 namespace Faker\ORM\CakePHP;
 
+use Faker\Generator;
+
 class Populator
 {
 
@@ -13,7 +15,7 @@ class Populator
     /**
      * @param \Faker\Generator $generator
      */
-    public function __construct(\Faker\Generator $generator)
+    public function __construct(Generator $generator)
     {
         $this->generator = $generator;
     }
@@ -35,6 +37,7 @@ class Populator
     }
 
     /**
+     * @param $name
      * @return $this
      */
     public function removeGuesser($name)
@@ -46,6 +49,7 @@ class Populator
     }
 
     /**
+     * @param $class
      * @return $this
      * @throws \Exception
      */
@@ -64,6 +68,8 @@ class Populator
     }
 
     /**
+     * @param $entity
+     * @param $number
      * @param array $customColumnFormatters
      * @param array $customModifiers
      * @return $this

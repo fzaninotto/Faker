@@ -90,6 +90,7 @@ class Person extends \Faker\Provider\Person
     /**
      * @param string|null $gender 'male', 'female' or null for any
      * @example 'Чанталиев'
+     * @return mixed|string
      */
     public function lastName($gender = null)
     {
