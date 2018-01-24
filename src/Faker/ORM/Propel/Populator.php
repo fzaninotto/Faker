@@ -3,6 +3,7 @@
 namespace Faker\ORM\Propel;
 
 use Faker\Generator;
+
 /**
  * Service class for populating a database using the Propel ORM.
  * A Populator can populate several tables using ActiveRecord classes.
