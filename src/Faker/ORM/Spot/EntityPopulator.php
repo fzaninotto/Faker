@@ -151,7 +151,7 @@ class EntityPopulator
 
                 $formatters[$fieldName] = function ($inserted) use ($required, $entityName, $locator) {
                     if (!empty($inserted[$entityName])) {
-                        return $inserted[$entityName][mt_rand(0, count($inserted[$entityName]) - 1)]->getId();
+                        return $inserted[$entityName][mt_rand(0, count($inserted[$entityName]) - 1)]->get('id');
                     }
 
                     if ($required && $this->useExistingData) {
