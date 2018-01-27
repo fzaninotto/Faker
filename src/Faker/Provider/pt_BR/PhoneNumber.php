@@ -4,7 +4,6 @@ namespace Faker\Provider\pt_BR;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
-
     protected static $landlineFormats = array('2###-####', '3###-####', '4###-####');
 
     /**
@@ -14,7 +13,8 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     protected static $cellphoneFormats = array('9####-####');
 
     /**
-     * Pick one random entry out of an array of area codes.
+     * Generates a 2-digit area code not composed by zeroes.
+     * @link http://www.anatel.gov.br/legislacao/resolucoes/16-2001/383-resolucao-263.
      * @return string
      */
     public static function areaCode()
@@ -28,7 +28,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
             '93', '94', '95', '96', '97', '98', '99'
         );
 
-        return $areaCodes[array_rand($areaCodes, 1)];
+        return self::randomElement($areaCodes);
     }
 
     /**
