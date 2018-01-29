@@ -42,7 +42,7 @@ class Company extends \Faker\Provider\Company
     );
 
 
-    protected static $οbject = array(
+    protected static $object = array(
         'Προγραμματιστής',
         'Δικηγόρος',
         'Γιατρός',
@@ -79,6 +79,6 @@ class Company extends \Faker\Provider\Company
      */
     public static function object()
     {
-        return static::randomElement(static::$οbject);
+        return static::randomElement(static::$object);
     }
 }
