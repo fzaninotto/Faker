@@ -262,10 +262,17 @@ Methods accepting a `$timezone` argument default to `date_default_timezone_get()
 ### `Faker\Provider\Image`
 
     // Image generation provided by LoremPixel (http://lorempixel.com/)
-    imageUrl($width = 640, $height = 480) // 'http://lorempixel.com/640/480/'
-    imageUrl($width, $height, 'cats')     // 'http://lorempixel.com/800/600/cats/'
-    imageUrl($width, $height, 'cats', true, 'Faker') // 'http://lorempixel.com/800/400/cats/Faker'
-    imageUrl($width, $height, 'cats', true, 'Faker', true) // 'http://lorempixel.com/grey/800/400/cats/Faker/' Monochrome image
+    imageUrl(new Faker\Provider\Image\LoremPixelProvider(), $width = 640, $height = 480) // 'http://lorempixel.com/640/480/'
+    imageUrl(new Faker\Provider\Image\LoremPixelProvider(), $width, $height, 'cats')     // 'http://lorempixel.com/800/600/cats/'
+    imageUrl(new Faker\Provider\Image\LoremPixelProvider(), $width, $height, 'cats', true, 'Faker') // 'http://lorempixel.com/800/400/cats/Faker'
+    imageUrl(new Faker\Provider\Image\LoremPixelProvider(), $width, $height, 'cats', true, 'Faker', true) // 'http://lorempixel.com/grey/800/400/cats/Faker/' Monochrome image
+    // Image generation provided by RandImg (http://www.rand-img.com/)
+    imageUrl(new Faker\Provider\Image\RandImgProvider(), $width = 640, $height = 480) // 'http://www.rand-img.com/640/480/'
+    imageUrl(new Faker\Provider\Image\RandImgProvider(), $width, $height, 'cats')     // 'http://www.rand-img.com/800/600/cats/'
+    // RandImg doesn't allow text over images yet so imageUrl method doesn't add the text at the end of the url
+    // imageUrl(new Faker\Provider\Image\RandImgProvider(), $width, $height, 'cats', true, 'Faker') // 'http://www.rand-img.com/800/400/cats/Faker'
+    // imageUrl(new Faker\Provider\Image\RandImgProvider(), $width, $height, 'cats', true, 'Faker', true) // 'http://www.rand-img.com/grey/800/400/cats' Monochrome image
+    
     image($dir = '/tmp', $width = 640, $height = 480) // '/tmp/13b73edae8443990be1aa8f1a483bc27.jpg'
     image($dir, $width, $height, 'cats')  // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat!
     image($dir, $width, $height, 'cats', false) // '13b73edae8443990be1aa8f1a483bc27.jpg' it's a filename without path

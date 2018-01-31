@@ -1,6 +1,8 @@
 <?php
 
 namespace Faker\Provider;
+use Prophecy\Exception\InvalidArgumentException;
+use Faker\Provider\Image\ImageProviderInterface;
 
 /**
  * Depends on image generation from http://lorempixel.com/
@@ -28,30 +30,13 @@ class Image extends Base
      *
      * @return string
      */
-    public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
+    public static function imageUrl($provider, $width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
     {
-        $baseUrl = "https://lorempixel.com/";
-        $url = "{$width}/{$height}/";
-
-        if ($gray) {
-            $url = "gray/" . $url;
+        if(!$provider instanceof ImageProviderInterface) {
+            throw new InvalidArgumentException(sprintf('The provider does not implements ImageProviderInterface interface'));
         }
 
-        if ($category) {
-            if (!in_array($category, static::$categories)) {
-                throw new \InvalidArgumentException(sprintf('Unknown image category "%s"', $category));
-            }
-            $url .= "{$category}/";
-            if ($word) {
-                $url .= "{$word}/";
-            }
-        }
-
-        if ($randomize) {
-            $url .= '?' . static::randomNumber(5, true);
-        }
-
-        return $baseUrl . $url;
+        return $provider->generateUrl($width, $height, $category, $randomize, $word, $gray);
     }
 
     /**

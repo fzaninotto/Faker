@@ -4,32 +4,34 @@ namespace Faker\Test\Provider;
 
 use Faker\Provider\Image;
 use PHPUnit\Framework\TestCase;
+use Faker\Provider\Image\LoremPixelProvider;
+use Faker\Provider\Image\RandImgProvider;
 
 class ImageTest extends TestCase
 {
-    public function testImageUrlUses640x680AsTheDefaultSize()
+    public function testImageUrlUses640x680AsTheDefaultSizeLoremPixel()
     {
-        $this->assertRegExp('#^https://lorempixel.com/640/480/#', Image::imageUrl());
+        $this->assertRegExp('#^https://lorempixel.com/640/480/#', Image::imageUrl(new LoremPixelProvider()));
     }
 
-    public function testImageUrlAcceptsCustomWidthAndHeight()
+    public function testImageUrlAcceptsCustomWidthAndHeightLoremPixel()
     {
-        $this->assertRegExp('#^https://lorempixel.com/800/400/#', Image::imageUrl(800, 400));
+        $this->assertRegExp('#^https://lorempixel.com/800/400/#', Image::imageUrl(new LoremPixelProvider(), 800, 400));
     }
 
-    public function testImageUrlAcceptsCustomCategory()
+    public function testImageUrlAcceptsCustomCategoryLoremPixel()
     {
-        $this->assertRegExp('#^https://lorempixel.com/800/400/nature/#', Image::imageUrl(800, 400, 'nature'));
+        $this->assertRegExp('#^https://lorempixel.com/800/400/nature/#', Image::imageUrl(new LoremPixelProvider(), 800, 400, 'nature'));
     }
 
-    public function testImageUrlAcceptsCustomText()
+    public function testImageUrlAcceptsCustomTextLoremPixel()
     {
-        $this->assertRegExp('#^https://lorempixel.com/800/400/nature/Faker#', Image::imageUrl(800, 400, 'nature', false, 'Faker'));
+        $this->assertRegExp('#^https://lorempixel.com/800/400/nature/Faker#', Image::imageUrl(new LoremPixelProvider(), 800, 400, 'nature', false, 'Faker'));
     }
 
-    public function testImageUrlAddsARandomGetParameterByDefault()
+    public function testImageUrlAddsARandomGetParameterByDefaultLoremPixel()
     {
-        $url = Image::imageUrl(800, 400);
+        $url = Image::imageUrl(new LoremPixelProvider(), 800, 400);
         $splitUrl = preg_split('/\?/', $url);
 
         $this->assertEquals(count($splitUrl), 2);
@@ -39,9 +41,46 @@ class ImageTest extends TestCase
     /**
      * @expectedException \InvalidArgumentException
      */
-    public function testUrlWithDimensionsAndBadCategory()
+    public function testUrlWithDimensionsAndBadCategoryLoremPixel()
     {
-        Image::imageUrl(800, 400, 'bullhonky');
+        Image::imageUrl(new LoremPixelProvider(), 800, 400, 'bullhonky');
+    }
+
+    public function testImageUrlUses640x680AsTheDefaultSizeRandImg()
+    {
+        $this->assertRegExp('#^http://www.rand-img.com/640/480/#', Image::imageUrl(new RandImgProvider()));
+    }
+
+    public function testImageUrlAcceptsCustomWidthAndHeightRandImg()
+    {
+        $this->assertRegExp('#^http://www.rand-img.com/800/400/#', Image::imageUrl(new RandImgProvider(), 800, 400));
+    }
+
+    public function testImageUrlAcceptsCustomCategoryRandImg()
+    {
+        $this->assertRegExp('#^http://www.rand-img.com/800/400/nature/#', Image::imageUrl(new RandImgProvider(), 800, 400, 'nature'));
+    }
+
+    public function testImageUrlAcceptsCustomTextRandImg()
+    {
+        $this->assertRegExp('#^http://www.rand-img.com/800/400/nature/#', Image::imageUrl(new RandImgProvider(), 800, 400, 'nature', false, 'Faker'));
+    }
+
+    public function testImageUrlAddsARandomGetParameterByDefaultRandImg()
+    {
+        $url = Image::imageUrl(new RandImgProvider(), 800, 400);
+        $splitUrl = preg_split('/\?rand\=/', $url);
+
+        $this->assertEquals(count($splitUrl), 2);
+        $this->assertRegexp('#\d{5}#', $splitUrl[1]);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testUrlWithDimensionsAndBadCategoryRandImg()
+    {
+        Image::imageUrl(new RandImgProvider(), 800, 400, 'bullhonky');
     }
 
     public function testDownloadWithDefaults()
