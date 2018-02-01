@@ -1,6 +1,7 @@
 <?php
 
 namespace Faker\Provider\Image;
+
 use Faker\Provider\Base;
 
 class RandImgProvider implements ImageProviderInterface
@@ -32,5 +33,4 @@ class RandImgProvider implements ImageProviderInterface
 
         return $this->baseUrl . $url;
     }
-
 }

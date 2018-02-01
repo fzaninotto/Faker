@@ -1,6 +1,7 @@
 <?php
 
 namespace Faker\Provider;
+
 use Prophecy\Exception\InvalidArgumentException;
 use Faker\Provider\Image\ImageProviderInterface;
 
@@ -32,7 +33,7 @@ class Image extends Base
      */
     public static function imageUrl($provider, $width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
     {
-        if(!$provider instanceof ImageProviderInterface) {
+        if (!$provider instanceof ImageProviderInterface) {
             throw new InvalidArgumentException(sprintf('The provider does not implements ImageProviderInterface interface'));
         }
 

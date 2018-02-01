@@ -1,6 +1,7 @@
 <?php
 
 namespace Faker\Provider\Image;
+
 use Faker\Provider\Base;
 
 class LoremPixelProvider implements ImageProviderInterface
@@ -35,5 +36,4 @@ class LoremPixelProvider implements ImageProviderInterface
 
         return $this->baseUrl . $url;
     }
-
 }
