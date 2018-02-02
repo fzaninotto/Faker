@@ -2,6 +2,8 @@
 
 namespace Faker\ORM\Mandango;
 
+use Faker\Generator;
+
 class ColumnTypeGuesser
 {
     protected $generator;
@@ -9,12 +11,13 @@ class ColumnTypeGuesser
     /**
      * @param \Faker\Generator $generator
      */
-    public function __construct(\Faker\Generator $generator)
+    public function __construct(Generator $generator)
     {
         $this->generator = $generator;
     }
 
     /**
+     * @param $field
      * @return \Closure|null
      */
     public function guessFormat($field)

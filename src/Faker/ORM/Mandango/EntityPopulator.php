@@ -2,6 +2,8 @@
 
 namespace Faker\ORM\Mandango;
 
+use Faker\Generator;
+use Faker\Guesser\Name;
 use Mandango\Mandango;
 use Faker\Provider\Base;
 
@@ -54,11 +56,11 @@ class EntityPopulator
      * @param Mandango $mandango
      * @return array
      */
-    public function guessColumnFormatters(\Faker\Generator $generator, Mandango $mandango)
+    public function guessColumnFormatters(Generator $generator, Mandango $mandango)
     {
         $formatters = array();
-        $nameGuesser = new \Faker\Guesser\Name($generator);
-        $columnTypeGuesser = new \Faker\ORM\Mandango\ColumnTypeGuesser($generator);
+        $nameGuesser = new Name($generator);
+        $columnTypeGuesser = new ColumnTypeGuesser($generator);
 
         $metadata = $mandango->getMetadata($this->class);
 
@@ -94,6 +96,8 @@ class EntityPopulator
     /**
      * Insert one new record using the Entity class.
      * @param Mandango $mandango
+     * @param $insertedEntities
+     * @return
      */
     public function execute(Mandango $mandango, $insertedEntities)
     {

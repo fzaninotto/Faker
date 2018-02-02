@@ -2,6 +2,7 @@
 
 namespace Faker\ORM\Propel;
 
+use Faker\Generator;
 use \PropelColumnTypes;
 use \ColumnMap;
 
@@ -12,7 +13,7 @@ class ColumnTypeGuesser
     /**
      * @param \Faker\Generator $generator
      */
-    public function __construct(\Faker\Generator $generator)
+    public function __construct(Generator $generator)
     {
         $this->generator = $generator;
     }

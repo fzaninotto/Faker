@@ -21,7 +21,7 @@ class Iban
         // Perform mod 97 and subtract from 98
         $checksum = 98 - self::mod97($checkString);
 
-        return str_pad($checksum, 2, '0', STR_PAD_LEFT);
+        return str_pad((string) $checksum, 2, '0', STR_PAD_LEFT);
     }
 
     /**

@@ -26,6 +26,7 @@ class EntityPopulator
 
     /**
      * @param string $name
+     * @param $value
      */
     public function __set($name, $value)
     {
@@ -43,6 +44,7 @@ class EntityPopulator
     }
 
     /**
+     * @param $populator
      * @return array
      */
     public function guessColumnFormatters($populator)
@@ -93,7 +95,6 @@ class EntityPopulator
                 $table = $assoc->target();
                 $foreignModel = $table->alias();
 
-                $foreignKeys = [];
                 if (!empty($insertedEntities[$foreignModel])) {
                     $foreignKeys = $insertedEntities[$foreignModel];
                 } else {
@@ -121,7 +122,10 @@ class EntityPopulator
     }
 
     /**
+     * @param $class
+     * @param $insertedEntities
      * @param array $options
+     * @return
      */
     public function execute($class, $insertedEntities, $options = [])
     {
