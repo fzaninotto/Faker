@@ -269,7 +269,7 @@ class DateTime extends Base
      */
     public static function year($max = 'now')
     {
-        return static::dateTime($max)->format('Y');
+        return (int) static::dateTime($max)->format('Y');
     }
 
     /**
