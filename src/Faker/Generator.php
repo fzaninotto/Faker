@@ -94,12 +94,12 @@ namespace Faker;
  * @property \DateTime $dateTimeThisYear
  * @property \DateTime $dateTimeThisMonth
  * @property string    $amPm
- * @property int       $dayOfMonth
- * @property int       $dayOfWeek
- * @property int       $month
+ * @property string    $dayOfMonth
+ * @property string    $dayOfWeek
+ * @property string    $month
  * @property string    $monthName
- * @property int       $year
- * @property int       $century
+ * @property string    $year
+ * @property string    $century
  * @property string    $timezone
  * @method string amPm($max = 'now')
  * @method string date($format = 'Y-m-d', $max = 'now')
@@ -109,7 +109,7 @@ namespace Faker;
  * @method string month($max = 'now')
  * @method string monthName($max = 'now')
  * @method string time($format = 'H:i:s', $max = 'now')
- * @method string unixTime($max = 'now')
+ * @method int unixTime($max = 'now')
  * @method string year($max = 'now')
  * @method \DateTime dateTime($max = 'now', $timezone = null)
  * @method \DateTime dateTimeAd($max = 'now', $timezone = null)
