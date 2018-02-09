@@ -1660,6 +1660,7 @@ echo $faker->VAT; //23456789
 * [guidocella/eloquent-populator](https://github.com/guidocella/eloquent-populator): Adapter for Laravel's Eloquent ORM.
 * [tamperdata/exiges](https://github.com/tamperdata/exiges): Faker provider for generating random temperatures
 * [jzonta/FakerRestaurant](https://github.com/jzonta/FakerRestaurant): Faker for Food and Beverage names generate
+* [aalaap/faker-youtube](https://github.com/aalaap/faker-youtube): Faker for YouTube URLs in various formats
 
 ## License
 
