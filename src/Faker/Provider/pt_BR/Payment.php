@@ -69,4 +69,78 @@ class Payment extends \Faker\Provider\Payment
     {
         return static::iban($countryCode, $prefix, $length);
     }
+
+
+    /**
+     * @see list of Brazilians banks (2018-02-15), source: https://pt.wikipedia.org/wiki/Lista_de_bancos_do_Brasil
+     */
+    protected static $banks = array(
+        'BADESUL Desenvolvimento S.A. – Agência de Fomento/RS',
+        'Banco Central do Brasil',
+        'Banco da Amazônia',
+        'Banco de Brasília',
+        'Banco de Desenvolvimento de Minas Gerais',
+        'Banco de Desenvolvimento do Espírito Santo',
+        'Banco de Desenvolvimento do Paraná',
+        'Banco do Brasil',
+        'Banco do Estado de Sergipe	Banese	Estadual',
+        'Banco do Estado do Espírito Santo	Banestes',
+        'Banco do Estado do Pará',
+        'Banco do Estado do Rio Grande do Sul',
+        'Banco do Nordeste do Brasil',
+        'Banco Nacional de Desenvolvimento Econômico e Social',
+        'Banco Regional de Desenvolvimento do Extremo Sul',
+        'Caixa Econômica Federal',
+        'Banco ABN Amro S.A.',
+        'Banco Alfa',
+        'Banco Banif',
+        'Banco BBM',
+        'Banco BMG',
+        'Banco Bonsucesso',
+        'Banco BTG Pactual',
+        'Banco Cacique',
+        'Banco Caixa Geral - Brasil',
+        'Banco Citibank',
+        'Banco Credibel',
+        'Banco Credit Suisse',
+        'Góis Monteiro & Co',
+        'Banco Fator',
+        'Banco Fibra',
+        'Agibank',
+        'Banco Guanabara',
+        'Banco Industrial do Brasil',
+        'Banco Industrial e Comercial',
+        'Banco Indusval',
+        'Banco Inter',
+        'Banco Itaú BBA',
+        'Banco ItaúBank',
+        'Banco Itaucred Financiamentos',
+        'Banco Mercantil do Brasil',
+        'Banco Modal	Modal',
+        'Banco Morada',
+        'Banco Pan',
+        'Banco Paulista',
+        'Banco Pine',
+        'Banco Renner',
+        'Banco Ribeirão Preto',
+        'Banco Safra',
+        'Banco Santander',
+        'Banco Sofisa',
+        'Banco Topázio',
+        'Banco Votorantim',
+        'Bradesco Bradesco',
+        'Itaú Unibanco',
+        'Banco Original',
+        'Banco Neon',
+        'Nu Pagamentos S.A',
+        'XP Investimentos Corretora de Câmbio Títulos e Valores Mobiliários S.A',
+    );
+
+    /**
+     * @example 'Banco Neon'
+     */
+    public static function bank()
+    {
+        return static::randomElement(static::$banks);
+    }
 }
