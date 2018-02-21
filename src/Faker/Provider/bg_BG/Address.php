@@ -6,12 +6,11 @@ class Address extends \Faker\Provider\Address
 {
     protected static $buildingNumber = array('##', 'номер #');
     protected static $cityPrefix = array('град', 'гр.');
-    protected static $citySuffix= array('град');
+    protected static $citySuffix = array('град');
+    protected static $streetPrefix = array('улица', 'ул.');
 
     protected static $postcode = "####";
-
     protected static $country = array( 'България' );
-
     protected static $cityFormats = array(
         '{{cityPrefix}} {{lastName}}{{citySuffix}}',
         '{{lastName}}{{citySuffix}}',
@@ -36,6 +35,14 @@ class Address extends \Faker\Provider\Address
     public static function cityPrefix()
     {
         return static::randomElement(static::$cityPrefix);
+    }
+
+    /**
+     * @example 'ул.'
+     */
+    public static function streetPrefix()
+    {
+        return static::randomElement(static::$streetPrefix);
     }
 
     /**
