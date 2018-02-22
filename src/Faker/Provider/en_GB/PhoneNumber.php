@@ -4,6 +4,10 @@ namespace Faker\Provider\en_GB;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
+    /**
+     * An array of en_GB phone number formats
+     * @var array
+     */
     protected static $formats = array(
         '+44(0)##########',
         '+44(0)#### ######',
@@ -47,7 +51,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      * @var array
      */
     protected static $mobileFormats = array(
-      // Local
       '07#########',
       '07### ######',
       '07### ### ###'
