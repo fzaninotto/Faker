@@ -5,7 +5,7 @@ namespace Faker\Provider\bg_BG;
 class Address extends \Faker\Provider\Address
 {
     protected static $buildingNumber = array('##', 'номер #');
-    protected static $cityPrefix = array('град', 'гр.');
+    protected static $cityPrefix = 'гр.';
     protected static $citySuffix = array('град');
     protected static $streetPrefix = array('улица', 'ул.');
 
@@ -27,14 +27,14 @@ class Address extends \Faker\Provider\Address
         "{{city}}\n{{streetAddress}}\n{{postcode}}",
     );
 
-    protected static $secondaryAddressFormats = array('ап. ##', 'Апартамент ##?', 'ап #');
+    protected static $secondaryAddressFormats = array('ап. ##', 'Апартамент ##?', 'ап #', 'ет. #, ап. ##');
 
     /**
      * @example 'гр.'
      */
     public static function cityPrefix()
     {
-        return static::randomElement(static::$cityPrefix);
+        return static::$cityPrefix;
     }
 
     /**
