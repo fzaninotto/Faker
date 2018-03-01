@@ -58,4 +58,24 @@ class PhoneNumberTest extends \PHPUnit_Framework_TestCase
             $i++;
         }
     }
+    
+    public function testServiceNumber()
+    {
+        do {
+            $service = $this->faker->serviceNumber();
+        } while (' ' == $service[2] || '08' != substr($service, 0, 2));
+        $this->assertRegExp('/^08((0|1|2)\d{1}|9[^46])\d{6}$/', $service);
+    }
+
+    public function testServiceNumberWithSeparator()
+    {
+        $i = 0;
+        while (10 > $i) {
+            do {
+                $service = $this->faker->serviceNumber();
+            } while ('+33 8' != substr($service, 0, 5));
+            $this->assertRegExp('/^\+33 8 ((0|1|2)\d{1}|9[^46])( \d{2}){3}$/', $service);
+            $i++;
+        }
+    }
 }
