@@ -4,11 +4,11 @@ namespace Faker\Provider\es_CL;
 
 class Address extends \Faker\Provider\es_ES\Address
 {
-    protected static $cityPrefix = array('San', 'Puerto', 'Villa', 'Gral.', 'Don');
+    protected static $cityPrefix = array('San', 'Puerto', 'Villa', 'Gral.', 'Don', 'Los');
     protected static $citySuffix = array('del Mar', 'del Norte', 'del Este', 'del Sur', 'del Oeste', 'del Mirador');
-    protected static $buildingNumber = array('#####', '####', '###', '##', '#');
+    protected static $buildingNumber = array('####', '###', '##');
     protected static $streetSuffix = array('Pasaje', 'Calle', 'Avenida');
-    protected static $postcode = array('####', '#####');
+    protected static $postcode = array('######');
     protected static $state = array(
                     'Arica',
                     'Camarones',
@@ -381,20 +381,20 @@ class Address extends \Faker\Provider\es_ES\Address
         '{{lastName}} {{citySuffix}}',
     );
     protected static $streetNameFormats = array(
-        '{{firstName}} {{streetSuffix}}',
-        '{{lastName}} {{streetSuffix}}'
+        '{{streetSuffix}} {{firstName}}',
+        '{{streetSuffix}} {{firstName}} {{lastName}}'
     );
     protected static $streetAddressFormats = array(
         '{{streetName}} {{buildingNumber}}',
         '{{streetName}} {{buildingNumber}} {{secondaryAddress}}',
     );
     protected static $addressFormats = array(
-        "{{streetAddress}}\n{{city}}, {{stateAbbr}} {{postcode}}",
+        "{{streetAddress}}. \n{{state}}",
     );
-    protected static $secondaryAddressFormats = array('Depto. ###', 'Hab. ###', 'Piso #', 'Piso ##', 'PB A', '# A', '# B', '# C', '# D', '# E', '# F', '## A', '## B', '## C', '## D', '## E', '## F', '# #', '## #');
+    protected static $secondaryAddressFormats = array('Depto. ###', 'Local ##', 'Local ###', 'Oficina ###');
 
     /**
-     * @example 'San'
+     * @example 'Puerto'
      */
     public static function cityPrefix()
     {
@@ -410,7 +410,7 @@ class Address extends \Faker\Provider\es_ES\Address
     }
 
     /**
-     * @example 'Buenos Aires'
+     * @example 'Santiago'
      */
     public static function state()
     {
@@ -418,7 +418,7 @@ class Address extends \Faker\Provider\es_ES\Address
     }
 
     /**
-     * @example 'AR-B'
+     * @example 'Metropolitana'
      */
     public static function stateAbbr()
     {
