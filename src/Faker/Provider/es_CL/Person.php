@@ -74,11 +74,11 @@ class Person extends \Faker\Provider\Person
         'Zambrano', 'Zamora', 'Zamudio', 'Zapata', 'Zaragoza', 'Zarate', 'Zavala', 'Zayas', 'Zelaya', 'Zepeda', 'Zúñiga'
     );
 
-    protected static $titleMale = array('Sr.', 'Dn.', 'Dr.', 'Ing.');
+    protected static $titleMale = array('Sr.', 'Don', 'Dr.', 'Ing.');
 
     protected static $titleFemale = array('Sra.', 'Srita.', 'Dr.', 'Ing.');
 
-    private static $suffix = array('Hijo', 'Segundo', 'Tercero');
+    private static $suffix = array('Hijo', 'Jr');
 
     /**
      * @example 'Hijo'
