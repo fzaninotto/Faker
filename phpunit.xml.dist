@@ -9,4 +9,10 @@
             <directory>./test/Faker/</directory>
         </testsuite>
     </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">src/Faker/</directory>
+        </whitelist>
+    </filter>
 </phpunit>
