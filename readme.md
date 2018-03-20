@@ -1080,6 +1080,9 @@ echo $faker->personRfc; // 'DEGM070303BXP'
 
 // Generates a Clave Única de Registro de Población (CURP) number
 echo $faker->curp; // 'DEDF061127HNEDDF28'
+
+// Generates persons full last name
+echo $faker->fullLastName; // 'Galindo Pantoja'
 ```
 ### `Faker\Provider\es_MX\Payment`
 
