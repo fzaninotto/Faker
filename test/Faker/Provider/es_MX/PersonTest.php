@@ -3,7 +3,6 @@
 namespace Faker\Test\Provider\es_MX;
 
 use Faker\Generator;
-use Faker\Provider\es_MX\Person;
 
 class PersonTest extends \PHPUnit_Framework_TestCase
 {
@@ -58,6 +57,20 @@ class PersonTest extends \PHPUnit_Framework_TestCase
         $curp = $this->faker->curp('Darío', 'Estrada', 'Lucía', new \DateTime('1981-04-27'), Person::GENDER_FEMALE, 'PL');
 
         $this->assertEquals('EALD810427MPLSCR', substr($curp, 0, 16));
+    }
+
+    public function testFullLastName()
+    {
+        $lastName = $this->faker->fullLastName();
+
+        $this->assertContains(' ', $lastName);
+    }
+
+    public function testRemoveAccents()
+    {
+        $name = Person::removeAccents('LUCÍA');
+
+        $this->assertEquals('LUCIA', $name);
     }
 
     /**

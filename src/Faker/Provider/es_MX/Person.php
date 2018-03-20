@@ -5,11 +5,11 @@ namespace Faker\Provider\es_MX;
 class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = array(
-        '{{firstNameMale}} {{lastNameFather}} {{lastNameMother}}',
+        '{{firstNameMale}} {{fullLastname}}',
     );
 
     protected static $femaleNameFormats = array(
-        '{{firstNameFemale}} {{lastNameFather}} {{lastNameMother}}',
+        '{{firstNameFemale}} {{fullLastname}}',
     );
 
     protected static $stateAbbr = array(
@@ -19,7 +19,8 @@ class Person extends \Faker\Provider\Person
     /**
      * @link https://es.wikipedia.org/wiki/Categoría:Nombres_masculinos
      */
-    protected static $firstNameMale = array('Aarón', 'Abdías', 'Abdón', 'Abel', 'Abelardo', 'Abraham', 'Absalón', 'Abundio', 'Acacio', 'Achiuta', 'Acisclo', 'Adalberto', 'Adalberón', 'Adán', 'Adem', 'Adolfo', 'Adrista', 'Adrián', 'Afrodisio', 'Agamenón', 'Agapito', 'Agastia', 'Agatoclio', 'Aghásura', 'Agni', 'Agustín', 'Aitor', 'Aladino', 'Alarico', 'Albano', 'Alberto', 'Albino', 'Alcibíades', 'Alcides', 'Aldo', 'Alec', 'Alejandro', 'Alejo', 'Alfonso', 'Alfredo', 'Alois', 'Álvaro', 'Amadeo', 'Amado', 'Amador', 'Amancio', 'Amara Simja', 'Amara-kosha', 'Ambrosio', 'Amenhotep', 'Amit', 'Amsha', 'Américo', 'Amílcar', 'Amós', 'Anacleto', 'Ananías', 'Anastasio', 'Anatole', 'Anatolio', 'Ander', 'Andhaka', 'Andrea', 'Andrei', 'Andrés', 'Andrónico', 'Ángel', 'Aníbal', 'Aniceto', 'Anselmo', 'Antenor', 'Antoni', 'Antonino', 'Antonio', 'Āpastamba', 'Apolinar', 'Apolo', 'Apolonio', 'Aquiles', 'Argimiro', 'Aristarco', 'Arístides', 'Aristóteles', 'Arjuna', 'Armand', 'Armando', 'Arnaldo', 'Arnulfo', 'Arquímedes', 'Arsenio', 'Aruná', 'Aryaman', 'Ascanio', 'Asdrúbal', 'Ashuatama', 'Aśoka', 'Ashuin', 'Atanasio', 'Augurio', 'Augusto', 'Aureliano', 'Aurelio', 'Avelino', 'Axel',
+    protected static $firstNameMale = array(
+        'Aarón', 'Abdías', 'Abdón', 'Abel', 'Abelardo', 'Abraham', 'Absalón', 'Abundio', 'Acacio', 'Achiuta', 'Acisclo', 'Adalberto', 'Adalberón', 'Adán', 'Adem', 'Adolfo', 'Adrista', 'Adrián', 'Afrodisio', 'Agamenón', 'Agapito', 'Agastia', 'Agatoclio', 'Aghásura', 'Agni', 'Agustín', 'Aitor', 'Aladino', 'Alarico', 'Albano', 'Alberto', 'Albino', 'Alcibíades', 'Alcides', 'Aldo', 'Alec', 'Alejandro', 'Alejo', 'Alfonso', 'Alfredo', 'Alois', 'Álvaro', 'Amadeo', 'Amado', 'Amador', 'Amancio', 'Amara Simja', 'Amara-kosha', 'Ambrosio', 'Amenhotep', 'Amit', 'Amsha', 'Américo', 'Amílcar', 'Amós', 'Anacleto', 'Ananías', 'Anastasio', 'Anatole', 'Anatolio', 'Ander', 'Andhaka', 'Andrea', 'Andrei', 'Andrés', 'Andrónico', 'Ángel', 'Aníbal', 'Aniceto', 'Anselmo', 'Antenor', 'Antoni', 'Antonino', 'Antonio', 'Āpastamba', 'Apolinar', 'Apolo', 'Apolonio', 'Aquiles', 'Argimiro', 'Aristarco', 'Arístides', 'Aristóteles', 'Arjuna', 'Armand', 'Armando', 'Arnaldo', 'Arnulfo', 'Arquímedes', 'Arsenio', 'Aruná', 'Aryaman', 'Ascanio', 'Asdrúbal', 'Ashuatama', 'Aśoka', 'Ashuin', 'Atanasio', 'Augurio', 'Augusto', 'Aureliano', 'Aurelio', 'Avelino', 'Axel',
         'Bala Krisna', 'Balam', 'Balarama', 'Balbino', 'Baldomero', 'Balduino', 'Baltasar', 'Banásura', 'Bartolomé', 'Basilio', 'Baudhāyana', 'Bautista', 'Beato', 'Belisario', 'Beltrán', 'Benedicto', 'Benigno', 'Benito', 'Benjamín', 'Bento', 'Berengario', 'Bernabé', 'Bernardino', 'Bernardo', 'Bernhard', 'Bernie', 'Berto', 'Betuel', 'Bhaga', 'Bhajan', 'Bharadvaya', 'Bharata', 'Bhavaviveka', 'Bhima', 'Bhishmá', 'Biagio', 'Bienvenido', 'Blas', 'Bobo', 'Bogdan', 'Bogumil', 'Bogusław', 'Boleslao', 'Boni', 'Bonifacio', 'Borja', 'Bosco', 'Boutros', 'Boyan', 'Braulio', 'Brfxxccxxmnpcccclllmmnprxvclmnckssqlbb11116', 'Brian', 'Brijadratha', 'Brihaspati', 'Bronisław', 'Bruno', 'Burgess',
         'Calixto', 'Camilo', 'Cancio', 'Canek', 'Canuto', 'Carlos', 'Carmelo', 'Casimiro', 'Casio', 'Casiodoro', 'Casto', 'Cayetano', 'Cayo', 'Cecilio', 'Ceferino', 'Celedonio', 'Celestino', 'Celso', 'Cháraka', 'Chiávana', 'Cipriano', 'Ciriaco', 'Ciriaco', 'Cirilo', 'Ciro', 'Claudio', 'Clemente', 'Columbano', 'Columbano', 'Conrado', 'Constancio', 'Constantino', 'Cornelio', 'Corono', 'Cosme', 'Crescencio', 'Crisanto', 'Crispín', 'Cristián', 'Cristóbal', 'Crisóstomo', 'Cuauhtémoc', 'Czesław', 'Cándido', 'César',
         'Dadhichi', 'Daksha', 'Dalmacio', 'Dalmacio', 'Damián', 'Daniel', 'Danilo', 'Darío', 'Dasharatha', 'David', 'Demetrio', 'Demi', 'Deodato', 'Deogracias', 'Desiderio', 'Devabhuti', 'Devala', 'Diego', 'Dieus', 'Dimas', 'Diodoro', 'Dionisio', 'Dobromir', 'Domingo', 'Donato', 'Doroteo', 'Dritarastra', 'Drona', 'Drupada', 'Durvasa', 'Duryodhana', 'Dámaso',
@@ -81,31 +82,42 @@ class Person extends \Faker\Provider\Person
     /**
      * @link http://surnames.behindthename.com/submit/names/usage/mexican
      */
-    protected static $lastNames = array('Abrego', 'Acero', 'Achio', 'Acuna', 'Aguayo', 'Agüero', 'Águila', 'Alarcón', 'Aldea', 'Alegre', 'Alejandro', 'Alires', 'Almonte', 'Alonso', 'Álvaro', 'Alza', 'Amaro', 'Ambrìz', 'Amore', 'Anguino', 'Apollo', 'Aponte', 'Aràbia', 'Aragon', 'Arands', 'Araquistain', 'Archuleta', 'Arellano', 'Arencibia', 'Arganda', 'Arguedas', 'Ariza', 'Arjona', 'Armenteros', 'Armijo', 'Arrisola', 'Arroyo', 'Arroz', 'Arviso', 'Ascencio', 'Atencio', 'Avamilano', 'Aveiro', 'Avelino', 'Avena', 'Avenida', 'Ávila', 'Azconovieta', 'Badilla', 'Badillo', 'Baez', 'Baeza', 'Baglietto', 'Balceiro', 'Baliao', 'Ballon', 'Banez', 'Barcelona', 'Bardomiano', 'Barrino', 'Barrios', 'Basora', 'Bea', 'Beas', 'Becerra', 'Bega', 'Belasco', 'Benibamonde', 'Bezos', 'Biurrarena', 'Blasco', 'Bolar', 'Bomba', 'Bragado', 'Bravo', 'Brell', 'Bretaña', 'Bustamante', 'Caba', 'Caballero', 'Cabaña', 'Cabañas', 'Cabunilas', 'Caceres', 'Caldera', 'Calderón', 'Calero', 'Calvete', 'Camacho', 'Camargo', 'Campuzano', 'Can', 'Canomanuel', 'Cansino', 'Capella', 'Capriel', 'Caravantes', 'Cárave', 'Cáraves', 'Cárdenas', 'Carrasco', 'Carrasquillo', 'Carrera', 'Casa', 'Casabuena', 'Casagrande', 'Castanati', 'Castañeda', 'Caulin', 'Cava', 'Ceballos', 'Cedena', 'Ceja', 'Celda', 'Cendejas', 'Cespedes', 'Chapin', 'Charvel', 'Chavos', 'Chica', 'Cintron', 'Comica', 'Contreras', 'Cordero', 'Córdoba', 'Córdova', 'Corona', 'Corral', 'Corrales', 'Correa', 'Cortés', 'Cortéz', 'Covarrubias', 'Covarubbias', 'Creus', 'Criado', 'Cuba', 'Cuenca', 'Cuesta', 'Cuneo', 'Cunillera', 'Davila', 'Dealava', 'Debain', 'Delassandis', 'De la torre', 'Delfino', 'De lima', 'Delringo', 'Del río', 'Del rio', 'Del rosario', 'Del yando', 'Descalzo', 'Diego', 'Diez', 'Diola', 'Dos santos', 'Enciñias', 'Enoc', 'Enríquez', 'España', 'Espejo', 'Espinosa de los monteros', 'Estes', 'Estol', 'Estrada', 'Evidente', 'Ferrando', 'Figueroa', 'Fontañez', 'Franch', 'Galarraga', 'Galarza', 'Galíndez', 'Galindo', 'Gall', 'Gamarra', 'Gamio', 'Garnica', 'Garzon', 'Gat', 'Gato', 'Gil de montes', 'Ginebra', 'Gordillo', 'Granado', 'Granados', 'Grande', 'Griego', 'Griminesa', 'Guevera', 'Guillermez', 'Guzmán', 'Hay', 'Henares', 'Hilario', 'Hurtado', 'Ibáñes', 'Iglesias', 'Iniesta', 'Innerarity', 'Jara', 'Jaramillo', 'Jareño', 'Jeremias', 'Junious', 'Kenobi', 'Kuilan', 'Labrador', 'Lacerda', 'Laguna', 'Larrazabal', 'Lazo', 'Leal', 'Ledo', 'León', 'Leonado', 'Leones', 'Leyva', 'Linde', 'Liz', 'Llamas', 'Lorén', 'Lorona', 'Lozano', 'Lucero', 'Lucía', 'Lugo', 'Luján', 'Luna', 'Macarro', 'Madera', 'Madrid', 'Madrigal', 'Madrigale', 'Madriz', 'Maestre', 'Magano', 'Maldonado', 'Manuel', 'Marchant', 'Marco', 'Marrero', 'Marroquin', 'Martelle', 'Marzo', 'Mathias', 'Matias', 'Matta', 'Matute', 'Mauleon', 'Mejia', 'Méla', 'Melillo', 'Mercado', 'Mesa', 'Mesías', 'Milán', 'Miranda', 'Mondragon', 'Montaña', 'Montano', 'Monteblanco', 'Montemayor', 'Montenegro', 'Montoya', 'Monzon', 'Morell', 'Moros', 'Moyano', 'Muñoz', 'Murcia', 'Naranjo', 'Navarrete', 'Navarro', 'Negro', 'Neico', 'Nessim', 'Niave', 'Nieto', 'Niño', 'Odilia', 'Orozco', 'Osuna', 'Pacana', 'Pacheco', 'Padilla', 'Palafox', 'Palencia', 'Pantoja', 'Pardo', 'Paz', 'Pedrosa', 'Pedroza');
+    protected static $lastNames = array(
+        'Abrego', 'Acero', 'Achio', 'Acuna', 'Aguayo', 'Agüero', 'Águila', 'Alarcón', 'Aldea', 'Alegre', 'Alejandro', 'Alires', 'Almonte', 'Alonso', 'Álvaro', 'Alza', 'Amaro', 'Ambrìz', 'Amore', 'Anguino', 'Apollo', 'Aponte', 'Aràbia', 'Aragon', 'Arands', 'Araquistain', 'Archuleta', 'Arellano', 'Arencibia', 'Arganda', 'Arguedas', 'Ariza', 'Arjona', 'Armenteros', 'Armijo', 'Arrisola', 'Arroyo', 'Arroz', 'Arviso', 'Ascencio', 'Atencio', 'Avamilano', 'Aveiro', 'Avelino', 'Avena', 'Avenida', 'Ávila',
+        'Azconovieta', 'Badilla', 'Badillo', 'Baez', 'Baeza', 'Baglietto', 'Balceiro', 'Baliao', 'Ballon', 'Banez', 'Barcelona', 'Bardomiano', 'Barrino', 'Barrios', 'Basora', 'Bea', 'Beas', 'Becerra', 'Bega', 'Belasco', 'Benibamonde', 'Bezos', 'Biurrarena', 'Blasco', 'Bolar', 'Bomba', 'Bragado', 'Bravo', 'Brell', 'Bretaña', 'Bustamante',
+        'Caba', 'Caballero', 'Cabaña', 'Cabañas', 'Cabunilas', 'Caceres', 'Caldera', 'Calderón', 'Calero', 'Calvete', 'Camacho', 'Camargo', 'Campuzano', 'Can', 'Canomanuel', 'Cansino', 'Capella', 'Capriel', 'Caravantes', 'Cárave', 'Cáraves', 'Cárdenas', 'Carrasco', 'Carrasquillo', 'Carrera', 'Casa', 'Casabuena', 'Casagrande', 'Castanati', 'Castañeda', 'Caulin', 'Cava', 'Ceballos', 'Cedena', 'Ceja', 'Celda', 'Cendejas', 'Cespedes', 'Chapin', 'Charvel', 'Chavos', 'Chica', 'Cintron', 'Comica', 'Contreras', 'Cordero', 'Córdoba', 'Córdova', 'Corona', 'Corral', 'Corrales', 'Correa', 'Cortés', 'Cortéz', 'Covarrubias', 'Covarubbias', 'Creus', 'Criado', 'Cuba', 'Cuenca', 'Cuesta', 'Cuneo', 'Cunillera',
+        'Davila', 'Dealava', 'Debain', 'Delassandis', 'De la torre', 'Delfino', 'De lima', 'Delringo', 'Del río', 'Del rio', 'Del rosario', 'Del yando', 'Descalzo', 'Diego', 'Diez', 'Diola', 'Dos santos',
+        'Enciñias', 'Enoc', 'Enríquez', 'España',
+        'Espejo', 'Espinosa de los monteros', 'Estes', 'Estol', 'Estrada', 'Evidente', 'Ferrando', 'Figueroa', 'Fontañez',
+        'Franch',
+        'Galarraga', 'Galarza', 'Galíndez', 'Galindo', 'Gall', 'Gamarra', 'Gamio', 'Garnica', 'Garzon', 'Gat', 'Gato', 'Gil de montes', 'Ginebra', 'Gordillo', 'Granado', 'Granados', 'Grande', 'Griego', 'Griminesa', 'Guevera', 'Guillermez', 'Guzmán',
+        'Hay', 'Henares', 'Hilario', 'Hurtado',
+        'Ibáñes', 'Iglesias', 'Iniesta', 'Innerarity',
+        'Jara', 'Jaramillo', 'Jareño', 'Jeremias', 'Junious',
+        'Kenobi', 'Kuilan',
+        'Labrador', 'Lacerda', 'Laguna', 'Larrazabal', 'Lazo', 'Leal', 'Ledo', 'León', 'Leonado', 'Leones', 'Leyva', 'Linde', 'Liz', 'Llamas', 'Lorén', 'Lorona', 'Lozano', 'Lucero', 'Lucía', 'Lugo', 'Luján', 'Luna',
+        'Macarro', 'Madera', 'Madrid', 'Madrigal', 'Madrigale', 'Madriz', 'Maestre', 'Magano', 'Maldonado', 'Manuel', 'Marchant', 'Marco', 'Marrero', 'Marroquin', 'Martelle', 'Marzo', 'Mathias', 'Matias', 'Matta', 'Matute', 'Mauleon', 'Mejia', 'Méla', 'Melillo', 'Mercado', 'Mesa', 'Mesías', 'Milán', 'Miranda', 'Mondragon', 'Montaña', 'Montano', 'Monteblanco', 'Montemayor', 'Montenegro', 'Montoya', 'Monzon', 'Morell', 'Moros', 'Moyano', 'Muñoz', 'Murcia',
+        'Naranjo', 'Navarrete', 'Navarro', 'Negro', 'Neico', 'Nessim', 'Niave', 'Nieto', 'Niño',
+        'Odilia', 'Orozco', 'Osuna',
+        'Pacana', 'Pacheco', 'Padilla', 'Palafox', 'Palencia', 'Pantoja', 'Pardo', 'Paz', 'Pedrosa', 'Pedroza'
+    );
 
 
     /**
      * @inheritdoc
+     *
+     * @example Galindo Pantoja
      */
-    public function lastName()
+    public function fullLastName()
     {
-        return static::randomElement(static::$lastName) . ' ' . static::randomElement(static::$lastName);
+        return static::lastName() . ' ' . static::lastName();
     }
 
     /**
      * @example Águila
      * @return string
      */
-    public function lastNameMother()
-    {
-        return static::randomElement(static::$lastNames);
-    }
-
-    /**
-     * @example De lima
-     * @return string
-     */
-    public function lastNameFather()
+    public function lastName()
     {
         return static::randomElement(static::$lastNames);
     }
@@ -130,34 +142,34 @@ class Person extends \Faker\Provider\Person
         $gender = in_array($gender, array(Person::GENDER_MALE, Person::GENDER_FEMALE)) ? $gender : static::randomElement(array(Person::GENDER_MALE, Person::GENDER_FEMALE));
 
         if ($gender === Person::GENDER_MALE) {
-            $firstName = self::removeAccents(self::removeCommonNames(mb_strtoupper($firstName ? $firstName : static::firstNameMale())));
+            $firstName = static::removeAccents(static::removeCommonNames(mb_strtoupper($firstName ? $firstName : static::firstNameMale())));
         } else {
-            $firstName = self::removeAccents(self::removeCommonNames(mb_strtoupper($firstName ? $firstName : static::firstNameFemale())));
+            $firstName = static::removeAccents(static::removeCommonNames(mb_strtoupper($firstName ? $firstName : static::firstNameFemale())));
         }
 
-        $lastNameFather = self::removeAccents(self::removePrefixes(mb_strtoupper($lastNameFather ? $lastNameFather : static::randomElement(static::$lastNames))));
-        $lastNameMother = self::removeAccents(self::removePrefixes(mb_strtoupper($lastNameMother ? $lastNameMother : static::randomElement(static::$lastNames))));
+        $lastNameFather = static::removeAccents(static::removePrefixes(mb_strtoupper($lastNameFather ? $lastNameFather : static::randomElement(static::$lastNames))));
+        $lastNameMother = static::removeAccents(static::removePrefixes(mb_strtoupper($lastNameMother ? $lastNameMother : static::randomElement(static::$lastNames))));
         $birthDate = $birthDate ? $birthDate : \Faker\Provider\DateTime::dateTimeBetween();
 
-        $curp = self::commonPart('curp', $firstName, $lastNameFather, $lastNameMother, $birthDate);
+        $curp = static::commonPartBetweenCurpAndRfc('curp', $firstName, $lastNameFather, $lastNameMother, $birthDate);
 
         if ($gender == Person::GENDER_MALE) {
             $curp .= 'H';
         } else {
             $curp .= 'M';
         }
-        $curp .= in_array($state, self::$states) ? $state : 'NE';
+        $curp .= in_array($state, static::$states) ? $state : 'NE';
 
-        $curp .= self::secondInternalConsonant($lastNameFather);
-        $curp .= self::secondInternalConsonant($lastNameMother);
-        $curp .= self::secondInternalConsonant($firstName);
+        $curp .= static::secondInternalConsonant($lastNameFather);
+        $curp .= static::secondInternalConsonant($lastNameMother);
+        $curp .= static::secondInternalConsonant($firstName);
 
         if ($birthDate->format('Y') <= 2000) {
             $curp .= static::bothify('#');
         } else {
             $curp .= strtoupper(static::bothify('?'));
         }
-        $curp .= self::getLastChar($curp);
+        $curp .= static::getLastChar($curp);
         return $curp;
     }
 
@@ -242,16 +254,16 @@ class Person extends \Faker\Provider\Person
         $gender = in_array($gender, array(Person::GENDER_MALE, Person::GENDER_FEMALE)) ? $gender : static::randomElement(array(Person::GENDER_MALE, Person::GENDER_FEMALE));
 
         if ($gender === Person::GENDER_MALE) {
-            $firstName = self::removeAccents(mb_strtoupper($firstName ? $firstName : static::firstNameMale()));
+            $firstName = static::removeAccents(mb_strtoupper($firstName ? $firstName : static::firstNameMale()));
         } else {
-            $firstName = self::removeAccents(mb_strtoupper($firstName ? $firstName : static::firstNameFemale()));
+            $firstName = static::removeAccents(mb_strtoupper($firstName ? $firstName : static::firstNameFemale()));
         }
 
-        $lastNameFather = self::removeAccents(mb_strtoupper($lastNameFather ? $lastNameFather : static::randomElement(static::$lastNames)));
-        $lastNameMother = self::removeAccents(mb_strtoupper($lastNameMother ? $lastNameMother : static::randomElement(static::$lastNames)));
+        $lastNameFather = static::removeAccents(mb_strtoupper($lastNameFather ? $lastNameFather : static::randomElement(static::$lastNames)));
+        $lastNameMother = static::removeAccents(mb_strtoupper($lastNameMother ? $lastNameMother : static::randomElement(static::$lastNames)));
         $birthDate = $birthDate ? $birthDate : \Faker\Provider\DateTime::dateTimeBetween();
 
-        $rfc = self::commonPart('rfc', $firstName, $lastNameFather, $lastNameMother, $birthDate);
+        $rfc = static::commonPartBetweenCurpAndRfc('rfc', $firstName, $lastNameFather, $lastNameMother, $birthDate);
         $rfc .= strtoupper(static::lexify('???'));
 
         return $rfc;
@@ -261,16 +273,16 @@ class Person extends \Faker\Provider\Person
      * HELPERS
      */
 
-    protected static function commonPart($type, $firstName = null, $lastNameFather = null, $lastNameMother = null, $birthDate = null)
+    protected static function commonPartBetweenCurpAndRfc($type, $firstName = null, $lastNameFather = null, $lastNameMother = null, $birthDate = null)
     {
         $common  = substr($lastNameFather, 0, 1);
-        $common .= self::firstInternalVowel($lastNameFather);
+        $common .= static::firstInternalVowel($lastNameFather);
         $common .= $lastNameMother ? substr($lastNameMother, 0, 1) : 'X';
         $common .= substr($firstName, 0, 1);
         if ($type == 'curp') {
-            $common = str_replace(array_keys(self::$badWordsCURP), array_values(self::$badWordsCURP), $common);
+            $common = str_replace(array_keys(static::$badWordsCURP), array_values(static::$badWordsCURP), $common);
         } else {
-            $common = str_replace(array_keys(self::$badWordsRFC), array_values(self::$badWordsRFC), $common);
+            $common = str_replace(array_keys(static::$badWordsRFC), array_values(static::$badWordsRFC), $common);
         }
         $common .=$birthDate->format('ymd');
         return $common;
@@ -294,21 +306,23 @@ class Person extends \Faker\Provider\Person
 
     protected static function removeCommonNames($name)
     {
-        foreach (self::$notAcceptedNames as $notAcceptedName) {
+        foreach (static::$notAcceptedNames as $notAcceptedName) {
             $name = preg_replace($notAcceptedName, '', $name);
         }
         return $name;
     }
+    
     protected static function removePrefixes($name)
     {
-        foreach (self::$prefixes as $prefix) {
+        foreach (static::$prefixes as $prefix) {
             $name = preg_replace($prefix, '', $name);
         }
         return $name;
     }
+
     protected static function removeAccents($name)
     {
-        return str_replace(array_keys(self::$accents), array_values(self::$accents), $name);
+        return str_replace(array_keys(static::$accents), array_values(static::$accents), $name);
     }
 
     protected static $notAcceptedNames = array(
@@ -329,6 +343,9 @@ class Person extends \Faker\Provider\Person
         '/^DEL /'
     );
 
+    /**
+     * @link https://github.com/hectorip/RFC-CURP-Mexico/blob/master/src/mxk.js
+     */
     protected static $badWordsCURP = array(
         'BACA' => 'BXCA',
         'LOCO' => 'LXCO',
@@ -412,6 +429,9 @@ class Person extends \Faker\Provider\Person
         'WUEY' => 'WXEY'
     );
 
+    /**
+     * @link https://github.com/hectorip/RFC-CURP-Mexico/blob/master/src/mxk.js
+     */
     protected static $badWordsRFC = array(
         'BUEI' => 'BUEX',
         'BUEY' => 'BUEX',
@@ -453,7 +473,9 @@ class Person extends \Faker\Provider\Person
         'RATA' => 'RATX',
         'RUIN' => 'RUIX',
     );
-
+    /**
+     * @link https://github.com/hectorip/RFC-CURP-Mexico/blob/master/src/mxk.js
+     */
     protected static $accents = array(
         'Á' => 'A',
         'É' => 'E',
