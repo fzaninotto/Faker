@@ -33,6 +33,6 @@ class PaymentTest extends \PHPUnit_Framework_TestCase
         }, str_split($number), $weights);
 
         $product = array_sum($weighted) % 10;
-        return $crc == (10-$product);
+        return $crc == (10 - $product);
     }
 }
