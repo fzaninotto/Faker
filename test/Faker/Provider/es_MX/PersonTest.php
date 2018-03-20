@@ -98,15 +98,8 @@ class PersonTest extends \PHPUnit_Framework_TestCase
             }
             //Unique key
             if (isset($matches[8]) && isset($matches[2])) {
-                if ((int)$matches[2]{0} == 0) { //On 2000
-                    if (!preg_match('/^[A-Z]/i', $matches[8])) {
-                        //If born in 2000 the unique key should be a letter.
-                        return false;
-                    }
-                } else {
-                    if (!preg_match('/^[0-9]/i', $matches[8])) {
-                        return false;
-                    }
+                if (!preg_match('/^[0-9A-Z]/i', $matches[8])) {
+                    return false;
                 }
             } else {
                 return false;
