@@ -348,6 +348,20 @@ class Base
         return $string;
     }
 
+    private static function getAlternationRegex()
+    {
+        //Matches "(". Does not match "\(".
+        $unescapedOpenBracket = '(?<!\\\\)\\(';
+
+        //Matches ")". Does not match "\)".
+        $unescapedCloseBracket = '(?<!\\\\)\\)';
+
+        //Begin our search with an unescaped open bracket.
+        //Then, find any character which is not an unescaped open bracket.
+        //Finish our search with an unescaped close bracket.
+        return '/' . $unescapedOpenBracket . '(?!.*' . $unescapedOpenBracket . ')' . '(.*?)' . $unescapedCloseBracket . '/';
+    }
+
     /**
      * Replaces all hash sign ('#') occurrences with a random number
      * Replaces all percentage sign ('%') occurrences with a not null number
@@ -474,9 +488,12 @@ class Base
             return str_repeat($matches[1], Base::randomElement(range($matches[2], $matches[3])));
         }, $regex);
         // (this|that) becomes 'this' or 'that'
-        $regex = preg_replace_callback('/\((.*?)\)/', function ($matches) {
-            return Base::randomElement(explode('|', str_replace(array('(', ')'), '', $matches[1])));
-        }, $regex);
+        $alternationRegex = static::getAlternationRegex();
+        while (preg_match($alternationRegex, $regex)) {
+            $regex = preg_replace_callback($alternationRegex, function ($matches) {
+                return Base::randomElement(explode('|', $matches[1]));
+            }, $regex);
+        }
         // All A-F inside of [] become ABCDEF
         $regex = preg_replace_callback('/\[([^\]]+)\]/', function ($matches) {
             return '[' . preg_replace_callback('/(\w|\d)\-(\w|\d)/', function ($range) {
