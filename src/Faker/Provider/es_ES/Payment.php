@@ -192,5 +192,4 @@ class Payment extends \Faker\Provider\Payment
 
         return $checksum;
     }
-
 }
