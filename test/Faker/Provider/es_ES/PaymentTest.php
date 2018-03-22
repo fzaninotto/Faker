@@ -63,6 +63,10 @@ class PaymentTest extends TestCase
         return false;
     }
 
+    /**
+     * Validation taken from https://github.com/ronanguilloux/IsoCodes
+     * @link https://github.com/ronanguilloux/IsoCodes/blob/master/src/IsoCodes/Nif.php
+     */
     public function getCifSum($cif)
     {
         $sum = $cif[2] + $cif[4] + $cif[6];
