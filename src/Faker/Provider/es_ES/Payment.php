@@ -155,7 +155,7 @@ class Payment extends \Faker\Provider\Payment
             return self::CHECKSUM_DIGIT_LETTER;
         }
 
-        return rand(0, 1) ? self::CHECKSUM_DIGIT_LETTER : self::CHECKSUM_DIGIT_NUMBER;
+        return static::randomElement(array(self::CHECKSUM_DIGIT_LETTER, self::CHECKSUM_DIGIT_NUMBER));
     }
 
     /**
