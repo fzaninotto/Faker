@@ -124,7 +124,7 @@ class InternetTest extends TestCase
         $this->assertCount(2, $parts);
         $pattern = '/^[A-Za-z0-9]+([._][A-Za-z0-9]+)*$/';
         $this->assertRegExp($pattern, $parts[0]);
-		$this->assertEquals($domainName, $parts[1]);
+        $this->assertEquals($domainName, $parts[1]);
     }
 
     public function testPasswordIsValid()
