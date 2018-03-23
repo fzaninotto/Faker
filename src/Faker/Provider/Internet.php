@@ -86,7 +86,7 @@ class Internet extends Base
         return static::randomElement($domains);
     }
 	
-	/**
+    /**
      * @example 'jdoe@yourdomain.com'
      */
     public function emailInDomain($domainName)

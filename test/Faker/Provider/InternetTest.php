@@ -116,8 +116,8 @@ class InternetTest extends TestCase
             $this->faker->addProvider(new $company($this->faker));
         }
     }
-	
-	public function testEmailInDomain()
+
+    public function testEmailInDomain()
     {
         $domainName = 'test.com';
         $parts = explode('@', $this->faker->emailInDomain($domainName));
