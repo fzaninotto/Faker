@@ -116,6 +116,16 @@ class InternetTest extends TestCase
             $this->faker->addProvider(new $company($this->faker));
         }
     }
+	
+	public function testEmailInDomain()
+    {
+        $domainName = 'test.com';
+        $parts = explode('@', $this->faker->emailInDomain($domainName));
+        $this->assertCount(2, $parts);
+        $pattern = '/^[A-Za-z0-9]+([._][A-Za-z0-9]+)*$/';
+        $this->assertRegExp($pattern, $parts[0]);
+		$this->assertEquals($domainName, $parts[1]);
+    }
 
     public function testPasswordIsValid()
     {

@@ -210,6 +210,7 @@ Methods accepting a `$timezone` argument default to `date_default_timezone_get()
     companyEmail            // 'russel.durward@mcdermott.org'
     freeEmailDomain         // 'yahoo.com'
     safeEmailDomain         // 'example.org'
+    emailInDomain($domainName = 'yourdomain.com') // 'tkshlerin@yourdomain.com'
     userName                // 'wade55'
     password                // 'k&|X+a45*2['
     domainName              // 'wolffdeckow.net'
