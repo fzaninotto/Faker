@@ -147,4 +147,5 @@ class Person extends \Faker\Provider\Person
         $checksum = Luhn::computeCheckDigit($datePart . $randomDigits);
 
         return $datePart . '-' . $randomDigits . $checksum;
-    }}
+    }
+}
