@@ -44,13 +44,26 @@ class Address extends \Faker\Provider\Address
     );
 
     private static $regions = array(
+        // Les treize régions métropolitaines, par ordre alphabétique de leurs noms et codes ISO 3166-2 :
+        'Auvergne-Rhône-Alpes', 'Bourgogne-Franche-Comté', 'Bretagne', 'Centre-Val de Loire', 'Corse',
+        'Grand Est', 'Hauts-de-France', 'Île-de-France', 'Normandie', 'Nouvelle-Aquitaine', 'Occitanie', 
+        'Pays de la Loire', 'Provence-Alpes-Côte d\'Azur', 
+
+        // Les cinq régions ultramarines, par ordre alphabétique des codes ISO 3166-2 :
+        'Guadeloupe', 'Guyane (française)', 'Martinique', 'La Réunion', 'Mayotte',
+
+        // Autres régions
+        'Nouvelle-Calédonie', 'Polynésie française', 'Saint-Barthélémy', 'Saint-Martin', 'Saint-Pierre-et-Miquelon',
+        'Wallis-et-Futuna'
+    );
+        /*
         'Alsace', 'Aquitaine', 'Auvergne', 'Bourgogne', 'Bretagne', 'Centre', 'Champagne-Ardenne',
         'Corse', 'Franche-Comté', 'Île-de-France', 'Languedoc-Roussillon', 'Limousin',
         'Lorraine', 'Midi-Pyrénées', 'Nord-Pas-de-Calais', 'Basse-Normandie', 'Haute-Normandie',
         'Pays-de-Loire', 'Picardie', 'Poitou-Charentes', "Provence-Alpes-Côte d'Azur", 'Rhone-Alpes',
         'Guadeloupe', 'Martinique', 'Guyane', 'Réunion', 'Saint-Pierre-et-Miquelon', 'Mayotte',
         'Saint-Barthélémy', 'Saint-Martin', 'Wallis-et-Futuna', 'Polynésie française', 'Nouvelle-Calédonie'
-    );
+        */
 
     private static $departments = array(
         array('01' => 'Ain'), array('02' => 'Aisne'), array('03' => 'Allier'), array('04' => 'Alpes-de-Haute-Provence'), array('05' => 'Hautes-Alpes'),
