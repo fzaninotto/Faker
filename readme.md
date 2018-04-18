@@ -755,9 +755,9 @@ Fugiat non in itaque sunt nobis totam. Sed nesciunt est deleniti cumque alias. R
 <?php
 
 echo $faker->idNumber;      // ID number
-echo $faker->nationalIdNumber // Citizen ID number
-echo $faker->foreignerIdNumber // Foreigner ID number
-echo $faker->companyIdNumber // Company ID number
+echo $faker->nationalIdNumber; // Citizen ID number
+echo $faker->foreignerIdNumber; // Foreigner ID number
+echo $faker->companyIdNumber; // Company ID number
 ```
 
 ### `Faker\Provider\ar_SA\Payment`
