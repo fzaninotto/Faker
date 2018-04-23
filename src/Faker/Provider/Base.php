@@ -50,16 +50,18 @@ class Base
     /**
      * Generates a random digit, which cannot be $except
      *
-     * @param int $except
+     * @param int|array $except
      * @return int
      */
     public static function randomDigitNot($except)
     {
-        $result = self::numberBetween(0, 8);
-        if ($result >= $except) {
-            $result++;
+        $result = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+        $pool = array_diff($result, (array) $except);
+        if (!$pool) {
+            throw new \InvalidArgumentException('The argument is inclusive of the digits 0 to 9. A digit cannot be returned');
         }
-        return $result;
+
+        return self::randomElement($pool);
     }
 
     /**

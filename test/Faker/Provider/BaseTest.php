@@ -35,7 +35,24 @@ class BaseTest extends TestCase
         }
     }
 
+    public function testRandomDigitNotReturnsValidDigitWhenCalledWithArray()
+    {
+        for ($i = 0; $i <= 9; $i++) {
+            $this->assertGreaterThanOrEqual(0, BaseProvider::randomDigitNot(array($i, $i + 1)));
+            $this->assertLessThan(10, BaseProvider::randomDigitNot(array($i, $i + 1)));
+            $this->assertNotSame(BaseProvider::randomDigitNot(array($i, $i + 1)), array($i, $i + 1));
+        }
+    }
+
     /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testRandomDigitNotThrowsExceptionWhenCalledWithInclusiveArray()
+    {
+        BaseProvider::randomDigitNot(array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9));
+    }
+
+   /**
      * @expectedException \InvalidArgumentException
      */
     public function testRandomNumberThrowsExceptionWhenCalledWithAMax()

@@ -79,7 +79,13 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     public static function areaCode()
     {
         $digits[] = self::numberBetween(2, 9);
-        $digits[] = self::randomDigit();
+        $digits[] = self::randomDigitNot(9);
+        if ($digits[0] === 3) {
+            $digits[1] = self::randomDigitNot(array(7, 9));
+        }
+        if ($digits[0] === 9) {
+            $digits[1] = self::randomDigitNot(array(6, 9));
+        }
         $digits[] = self::randomDigitNot($digits[1]);
 
         return join('', $digits);
