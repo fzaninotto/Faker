@@ -2,6 +2,7 @@
 
 namespace Faker\ORM\Doctrine;
 
+use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\Persistence\Mapping\ClassMetadata;
 
@@ -92,6 +93,7 @@ class EntityPopulator
      */
     public function guessColumnFormatters(\Faker\Generator $generator)
     {
+        $reader = new AnnotationReader();
         $formatters = array();
         $nameGuesser = new \Faker\Guesser\Name($generator);
         $columnTypeGuesser = new ColumnTypeGuesser($generator);
@@ -124,7 +126,6 @@ class EntityPopulator
                 foreach ($mappings as $mapping) {
                     if ($mapping['targetEntity'] == $relatedClass) {
                         if ($mapping['type'] == \Doctrine\ORM\Mapping\ClassMetadata::ONE_TO_ONE) {
-                            $unique = true;
                             $optional = isset($mapping['joinColumns'][0]['nullable']) ? $mapping['joinColumns'][0]['nullable'] : false;
                             break;
                         }
@@ -135,8 +136,7 @@ class EntityPopulator
                 foreach ($mappings as $mapping) {
                     if ($mapping['targetDocument'] == $relatedClass) {
                         if ($mapping['type'] == \Doctrine\ODM\MongoDB\Mapping\ClassMetadata::ONE && $mapping['association'] == \Doctrine\ODM\MongoDB\Mapping\ClassMetadata::REFERENCE_ONE) {
-                            $unique = true;
-                            $optional = isset($mapping['nullable']) ? $mapping['nullable'] : false;
+                            $optional = preg_match("/\*\s*@var\s+(?:[^|]+\|)*?null(\|[^|]+)*$/im", $this->class->reflFields[$fieldName]->getDocComment()) === 1;
                             break;
                         }
                     }
