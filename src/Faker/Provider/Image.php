@@ -3,7 +3,7 @@
 namespace Faker\Provider;
 
 /**
- * Depends on image generation from http://lorempixel.com/
+ * Depends on image generation from http://picsum.photos/
  */
 class Image extends Base
 {
@@ -17,7 +17,7 @@ class Image extends Base
      *
      * Set randomize to false to remove the random GET parameter at the end of the url.
      *
-     * @example 'http://lorempixel.com/640/480/?12345'
+     * @example 'http://picsum.photos/640/480/?12345'
      *
      * @param integer $width
      * @param integer $height
