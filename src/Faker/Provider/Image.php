@@ -78,22 +78,25 @@ class Image extends Base
         $url = static::imageUrl($width, $height, $category, $randomize, $word);
 
         // save file
+        $success = false;
         if (function_exists('curl_exec')) {
             // use cURL
             $fp = fopen($filepath, 'w');
             $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_FILE, $fp);
             $success = curl_exec($ch) && curl_getinfo($ch, CURLINFO_HTTP_CODE) === 200;
-            fclose($fp);
-            curl_close($ch);
 
-            if (!$success) {
-                unlink($filepath);
-
-                // could not contact the distant URL or HTTP error - fail silently.
-                return false;
+            if ($success) {
+                fclose($fp);
+            } elseif(file_exists($filepath)) {
+                @unlink($filepath); // although the file may exists, it may be "Temporary unvailable" because cURL failed for some reason
             }
-        } elseif (ini_get('allow_url_fopen')) {
+
+            curl_close($ch);
+        }
+
+        //If cURL fails for some reason, try to get the image via allow_url_fopen method
+        if (!$success && ini_get('allow_url_fopen')) {
             // use remote fopen() via copy()
             $success = copy($url, $filepath);
         } else {
