@@ -161,9 +161,9 @@ class Base
     /**
      * Returns randomly ordered subsequence of $count elements from a provided array
      *
-     * @param  array            $array           Array to take elements from. Defaults to a-f
-     * @param  integer          $count           Number of elements to take.
-     * @param  boolean          $allowDuplicates Allow elements to be picked several times. Defaults to false
+     * @param  array|\Traversable $array           Array to take elements from. Defaults to a-f
+     * @param  integer            $count           Number of elements to take.
+     * @param  boolean            $allowDuplicates Allow elements to be picked several times. Defaults to false
      * @throws \LengthException When requesting more elements than provided
      *
      * @return array New array with $count elements from $array
@@ -586,9 +586,9 @@ class Base
      * print_r($values); // [0, 4, 8, 4, 2, 6, 0, 8, 8, 6]
      * </code>
      *
-     * @param Closure $validator  A function returning true for valid values
-     * @param integer $maxRetries Maximum number of retries to find a unique value,
-     *                            After which an OverflowException is thrown.
+     * @param callable $validator  A function returning true for valid values
+     * @param integer  $maxRetries Maximum number of retries to find a unique value,
+     *                             After which an OverflowException is thrown.
      * @throws \OverflowException When no valid value can be found by iterating $maxRetries times
      *
      * @return ValidGenerator A proxy class returning only valid values

@@ -83,7 +83,7 @@ class Person extends \Faker\Provider\Person
      *
      * Unisex academic degree
      *
-     * @var string
+     * @var string[]
      */
     protected static $title = array('mgr','inż.', 'dr', 'doc.');
 
@@ -136,9 +136,9 @@ class Person extends \Faker\Provider\Person
     /**
      * PESEL - Universal Electronic System for Registration of the Population
      * @link http://en.wikipedia.org/wiki/PESEL
-     * @param  DateTime $birthdate
-     * @param  string   $sex       M for male or F for female
-     * @return string   11 digit number, like 44051401358
+     * @param  \DateTime $birthdate
+     * @param  string    $sex       M for male or F for female
+     * @return string    11 digit number, like 44051401358
      */
     public static function pesel($birthdate = null, $sex = null)
     {

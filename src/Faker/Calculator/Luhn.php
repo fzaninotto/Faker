@@ -34,14 +34,14 @@ class Luhn
     }
 
     /**
-     * @param $partialNumber
+     * @param string $partialNumber
      * @return string
      */
     public static function computeCheckDigit($partialNumber)
     {
         $checkDigit = self::checksum($partialNumber . '0');
         if ($checkDigit === 0) {
-            return 0;
+            return '0';
         }
 
         return (string) (10 - $checkDigit);

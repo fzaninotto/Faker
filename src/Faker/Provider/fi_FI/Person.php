@@ -133,7 +133,7 @@ class Person extends \Faker\Provider\Person
             if ($randomDigits === 0) {
                 $randomDigits .= self::numberBetween(2, 9);
             } else {
-                $randomDigits .= (string)static::numerify('#');
+                $randomDigits .= static::numerify('#');
             }
         }
         $randomDigits = str_pad($randomDigits, 3, '0', STR_PAD_LEFT);
