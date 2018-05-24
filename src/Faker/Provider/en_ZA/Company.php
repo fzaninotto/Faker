@@ -7,6 +7,12 @@ namespace Faker\Provider\en_ZA;
  */
 class Company extends \Faker\Provider\Company
 {
+    protected static $formats = array(
+        '{{lastName}} {{companySuffix}}',
+        '{{lastName}}-{{lastName}}',
+        '{{lastName}}, {{lastName}} and {{lastName}}',
+    );
+    
     /**
      * @link https://en.wikipedia.org/wiki/South_African_company_law
      */
