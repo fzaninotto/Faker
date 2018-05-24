@@ -237,6 +237,7 @@ class DateTimeTest extends TestCase
     public function testFixedSeedWithMaximumTimestamp()
     {
         $max = '2018-03-01 12:00:00';
+        $maxMonth = (new \DateTime('next month'))->format('Y-m-01 12:00:00');
 
         mt_srand(1);
         $unixTime = DateTimeProvider::unixTime($max);
@@ -248,7 +249,7 @@ class DateTimeTest extends TestCase
         $iso8601 = DateTimeProvider::iso8601($max);
         $dateTimeThisCentury = DateTimeProvider::dateTimeThisCentury($max);
         $dateTimeThisDecade = DateTimeProvider::dateTimeThisDecade($max);
-        $dateTimeThisMonth = DateTimeProvider::dateTimeThisMonth($max);
+        $dateTimeThisMonth = DateTimeProvider::dateTimeThisMonth($maxMonth);
         $amPm = DateTimeProvider::amPm($max);
         $dayOfMonth = DateTimeProvider::dayOfMonth($max);
         $dayOfWeek = DateTimeProvider::dayOfWeek($max);
@@ -269,7 +270,7 @@ class DateTimeTest extends TestCase
         $this->assertEquals($iso8601, DateTimeProvider::iso8601($max));
         $this->assertEquals($dateTimeThisCentury, DateTimeProvider::dateTimeThisCentury($max));
         $this->assertEquals($dateTimeThisDecade, DateTimeProvider::dateTimeThisDecade($max));
-        $this->assertEquals($dateTimeThisMonth, DateTimeProvider::dateTimeThisMonth($max));
+        $this->assertEquals($dateTimeThisMonth, DateTimeProvider::dateTimeThisMonth($maxMonth));
         $this->assertEquals($amPm, DateTimeProvider::amPm($max));
         $this->assertEquals($dayOfMonth, DateTimeProvider::dayOfMonth($max));
         $this->assertEquals($dayOfWeek, DateTimeProvider::dayOfWeek($max));
