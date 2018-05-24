@@ -7,9 +7,21 @@ namespace Faker\Provider\en_ZA;
  */
 class Company extends \Faker\Provider\Company
 {
+    /**
+     * @link https://en.wikipedia.org/wiki/South_African_company_law
+     */
+    protected static $companySuffix = array(
+        'Ltd',
+        '(Pty) Ltd',
+        'NPC',
+        'SOC Ltd',
+        'Inc',
+        'CC'
+    );
+    
     protected static $legalEntities = array(
         '01', '02', '06', '07', '08', '09', '10', '11', '12', '14', '15', '16', '17', '20', '21', '22', '23', '24', '25',
-        '26', '30', '31', '80',
+        '26', '30', '31', '80'
     );
 
     /**
