@@ -139,6 +139,18 @@ class Base
         $max = $int1 < $int2 ? $int2 : $int1;
         return mt_rand($min, $max);
     }
+    
+    /**
+     * Returns the passed value
+     *
+     * @param mixed $value
+     *
+     * @return mixed
+     */
+    public static function passthrough($value)
+    {
+        return $value;
+    }
 
     /**
      * Returns a random letter from a to z
