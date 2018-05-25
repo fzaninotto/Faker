@@ -1,11 +1,12 @@
 {
-    "name": "fzaninotto/faker",
+    "name": "IQreate/faker",
     "type": "library",
     "description": "Faker is a PHP library that generates fake data for you.",
     "keywords": ["faker", "fixtures", "data"],
     "license": "MIT",
     "authors": [
         {
+            "name": "Gabor Tjong A Hung"
             "name": "François Zaninotto"
         }
     ],
