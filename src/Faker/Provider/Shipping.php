@@ -17,5 +17,5 @@ class Shipping extends Base
         $formats = array('1Z################','############','T##########','#########');
         return static::numerify($this->generator->parse(static::randomElement($formats)));
     }
-    
+
 }
