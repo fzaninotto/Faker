@@ -10,8 +10,7 @@ class Person extends \Faker\Provider\Person
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}',
         '{{titleMale}} {{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}} {{suffix}}',
-        '{{titleMale}} {{firstNameMale}} {{lastName}} {{suffix}}',
+        '{{titleMale}} {{firstNameMale}} {{lastName}}',
     );
 
     protected static $femaleNameFormats = array(
@@ -20,8 +19,8 @@ class Person extends \Faker\Provider\Person
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{titleFemale}} {{firstNameFemale}} {{lastName}}',
-        '{{firstNameFemale}} {{lastName}} {{suffix}}',
-        '{{titleFemale}} {{firstNameFemale}} {{lastName}} {{suffix}}',
+        '{{firstNameFemale}} {{lastName}}',
+        '{{titleFemale}} {{firstNameFemale}} {{lastName}}',
     );
 
     protected static $firstNameMale = array(
@@ -120,7 +119,7 @@ class Person extends \Faker\Provider\Person
         'Tjong A Hung', 'Ho', 'Zhong', 'Pinas', 'Ali', 'Wolf', 'Schaap', 'Ijzer', 'Zeng', 'Wong', 'Woei', 'Lieuw', 'Brahim', 'Pocorni', 'Idoe', 'Cabenda', 'Overeem', 'Ghafoerkhan', 'Uiterloo', 'Ori', 'Plein', 'Ligeon', 'Hiwat', 'Gopal', 'Derby', 'Jessurun', 'Zweers', 'Rusland', 'Peneux', 'Neslo', 'Nederbiel', 'Leckie', 'Gajadhar', 'Gaddum', 'Fraenk', 'Bijlhout', 'Best', 'Bechan', 'Douglas', 'Punwasi', 'Nahar', 'Jaikaran', 'Druiventak', 'Hieralal', 'Cotino', 'Pigot', 'Fatehmahomed', 'Abrahams', 'Heerenveen', 'Glans', 'Bilkerdijk', 'Vigelandzoon', 'Rogers', 'Paidin', 'Lobato', 'Kroes', 'Coblijn', 'Caldeira', 'Souprayen', 'Kluivert', 'Ghafoer', 'Dragman', 'Wittenberg', 'Groenefelt', 'Bochove', 'Sapoen', 'Reumel', 'Neijhorst', 'Kuster', 'Asgarali', 'Nekrui'
     );
 
-    protected static $suffix = array('Jr.', 'Sr.', 'I', 'II', 'III', 'IV', 'V', 'MD', 'DDS', 'PhD', 'DVM');
+    protected static $suffix = array('Jr.', 'Sr.', 'MD', 'DDS', 'PhD', 'DVM');
 
     /**
      * @example 'PhD'
@@ -133,12 +132,8 @@ class Person extends \Faker\Provider\Person
     /**
      * @example '123-45-6789'
      */
-    public static function ssn()
+    public static function id()
     {
-        $area = mt_rand(0, 1) ? static::numberBetween(1, 665) : static::numberBetween(667, 899);
-        $group = static::numberBetween(1, 99);
-        $serial = static::numberBetween(1, 9999);
-
-        return sprintf("%03d-%02d-%04d", $area, $group, $serial);
+        return bothify('??######');
     }
 }
