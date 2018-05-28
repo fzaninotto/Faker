@@ -88,7 +88,7 @@ class Image extends Base
 
             if ($success) {
                 fclose($fp);
-            } elseif(file_exists($filepath)) {
+            } else if(file_exists($filepath)) {
                 @unlink($filepath); // although the file may exists, it may be "Temporarily unvailable" because cURL failed for some reason
             }
 
@@ -101,7 +101,7 @@ class Image extends Base
             $success = copy($url, $filepath);
         }
 
-        if(!$success){
+        if (!$success) {
             return new \RuntimeException('The image formatter downloads an image from a remote HTTP server. Therefore, it requires that PHP can request remote hosts, either via cURL or fopen()');
         }
 
