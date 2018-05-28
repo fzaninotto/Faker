@@ -99,7 +99,9 @@ class Image extends Base
         if (!$success && ini_get('allow_url_fopen')) {
             // use remote fopen() via copy()
             $success = copy($url, $filepath);
-        } else {
+        }
+
+        if(!$success){
             return new \RuntimeException('The image formatter downloads an image from a remote HTTP server. Therefore, it requires that PHP can request remote hosts, either via cURL or fopen()');
         }
 
