@@ -88,7 +88,7 @@ class Image extends Base
 
             if ($success) {
                 fclose($fp);
-            } else if(file_exists($filepath)) {
+            } elseif (file_exists($filepath)) {
                 @unlink($filepath); // although the file may exists, it may be "Temporarily unvailable" because cURL failed for some reason
             }
 
