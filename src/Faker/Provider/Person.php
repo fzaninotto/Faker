@@ -123,4 +123,14 @@ class Person extends Base
     {
         return static::randomElement(static::$titleFemale);
     }
+
+    /**
+     * @example 'female'
+     */
+    public function gender()
+    {
+      $genders = array(self::GENDER_FEMALE, self::GENDER_MALE);
+
+      return $genders[array_rand($genders, 1)];
+    }
 }
