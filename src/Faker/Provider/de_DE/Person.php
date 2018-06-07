@@ -187,19 +187,19 @@ class Person extends \Faker\Provider\Person
         return $this->generator->parse(static::randomElement(static::$titleFormat));
     }
 
-  /**
-   * @example 'Mr.'
-   */
-  public static function salutationMale()
-  {
-    return static::randomElement(static::$titleMale);
-  }
+    /**
+     * @example 'Mr.'
+     */
+    public static function salutationMale()
+    {
+        return static::randomElement(static::$titleMale);
+    }
 
-  /**
-   * @example 'Mrs.'
-   */
-  public static function salutationFemale()
-  {
-    return static::randomElement(static::$titleFemale);
-  }
+    /**
+     * @example 'Mrs.'
+     */
+    public static function salutationFemale()
+    {
+        return static::randomElement(static::$titleFemale);
+    }
 }
