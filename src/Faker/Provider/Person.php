@@ -129,8 +129,8 @@ class Person extends Base
      */
     public function gender()
     {
-      $genders = array(self::GENDER_FEMALE, self::GENDER_MALE);
+        $genders = array(self::GENDER_FEMALE, self::GENDER_MALE);
 
-      return $genders[array_rand($genders, 1)];
+        return $genders[array_rand($genders, 1)];
     }
 }

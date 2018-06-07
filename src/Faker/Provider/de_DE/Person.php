@@ -153,37 +153,53 @@ class Person extends \Faker\Provider\Person
         return static::randomElement(static::$suffix);
     }
 
-  /**
-   * @param string|null $gender 'male', 'female' or null for any
-   * @return string
-   * @example 'John Doe'
-   */
-  public function nameInformal($gender = null)
-  {
-      if ($gender === static::GENDER_MALE) {
-          $format = static::randomElement(static::$maleInformalNameFormats);
-      } elseif ($gender === static::GENDER_FEMALE) {
-          $format = static::randomElement(static::$femaleInformalNameFormats);
-      } else {
-          $format = static::randomElement(array_merge(static::$maleInformalNameFormats, static::$femaleInformalNameFormats));
-      }
+    /**
+     * @param string|null $gender 'male', 'female' or null for any
+     * @return string
+     * @example 'John Doe'
+     */
+    public function nameInformal($gender = null)
+    {
+        if ($gender === static::GENDER_MALE) {
+            $format = static::randomElement(static::$maleInformalNameFormats);
+        } elseif ($gender === static::GENDER_FEMALE) {
+            $format = static::randomElement(static::$femaleInformalNameFormats);
+        } else {
+            $format = static::randomElement(array_merge(static::$maleInformalNameFormats, static::$femaleInformalNameFormats));
+        }
 
-      return $this->generator->parse($format);
+        return $this->generator->parse($format);
+    }
+
+    /**
+     * @example 'Frau.'
+     * @param string|null $gender 'male', 'female' or null for any
+     * @return string
+     */
+    public function title($gender = null)
+    {
+        if ($gender === static::GENDER_MALE) {
+            return static::titleMale();
+        } elseif ($gender === static::GENDER_FEMALE) {
+            return static::titleFemale();
+        }
+
+        return $this->generator->parse(static::randomElement(static::$titleFormat));
+    }
+
+  /**
+   * @example 'Mr.'
+   */
+  public static function salutationMale()
+  {
+    return static::randomElement(static::$titleMale);
   }
 
   /**
-   * @example 'Frau.'
-   * @param string|null $gender 'male', 'female' or null for any
-   * @return string
+   * @example 'Mrs.'
    */
-  public function title($gender = null)
+  public static function salutationFemale()
   {
-    if ($gender === static::GENDER_MALE) {
-      return static::titleMale();
-    } elseif ($gender === static::GENDER_FEMALE) {
-      return static::titleFemale();
-    }
-
-    return $this->generator->parse(static::randomElement(static::$titleFormat));
+    return static::randomElement(static::$titleFemale);
   }
 }
