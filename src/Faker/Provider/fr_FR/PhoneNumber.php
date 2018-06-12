@@ -96,6 +96,20 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     }
 
     /**
+     *  Valid formats for 08:
+     *
+     *  0# ## ## ##
+     *  1# ## ## ##
+     *  2# ## ## ##
+     *  91 ## ## ##
+     *  92 ## ## ##
+     *  93 ## ## ##
+     *  97 ## ## ##
+     *  98 ## ## ##
+     *  99 ## ## ##
+     *
+     *  Formats 089(4|6)## ## ## are valid, but will be
+     *  attributed when other 089 resource ranges are exhausted.
      *
      * @see https://www.arcep.fr/index.php?id=8146#c9625
      * @see https://issuetracker.google.com/u/1/issues/73269839
@@ -115,7 +129,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
         return static::numerify($this->generator->parse($format));
     }
-
+    /**
+     * @example '0891951357'
+     */
     public function serviceNumber()
     {
         $format = static::randomElement(static::$serviceFormats);
