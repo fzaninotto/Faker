@@ -1661,6 +1661,7 @@ echo $faker->VAT; //23456789
 * [tamperdata/exiges](https://github.com/tamperdata/exiges): Faker provider for generating random temperatures
 * [jzonta/FakerRestaurant](https://github.com/jzonta/FakerRestaurant): Faker for Food and Beverage names generate
 * [aalaap/faker-youtube](https://github.com/aalaap/faker-youtube): Faker for YouTube URLs in various formats
+* [pelmered/fake-car](https://github.com/pelmered/fake-car): Faker for cars and car data
 
 ## License
 
