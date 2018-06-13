@@ -19,43 +19,39 @@ class PhoneNumberTest extends \PHPUnit_Framework_TestCase
         $this->faker = $faker;
     }
 
-    public function testMobileNumber06()
+    public function testMobileNumber()
     {
-        do {
-            $mobile = $this->faker->mobileNumber();
-        } while (' ' == $mobile[2] || '06' != substr($mobile, 0, 2));
-        $this->assertRegExp('/^06(?:\d{2}){4}$/', $mobile);
+        $mobileNumber = $this->faker->mobileNumber();
+        $this->assertRegExp('/^(\+33 |\+33 \(0\)|0)(6|7)(?:(\s{1})?\d{2}){4}$/', $mobileNumber);
     }
 
-    public function testMobileNumber06WithSeparator()
+    public function testMobileNumber07Format()
     {
-        $i = 0;
-        while (10 > $i) {
-            do {
-                $mobile = $this->faker->mobileNumber();
-            } while ('+33 6' != substr($mobile, 0, 5) && '06 ' != substr($mobile, 0, 3));
-            $this->assertRegExp('/^(?:(?:\+33 (?:\(0\))?)|0)6(?: \d{2}){4}$/', $mobile);
-            $i++;
-        }
+        $mobileNumberFormat = $this->faker->phoneNumber07();
+        $this->assertRegExp('/^([3-9]{1})\d(\d{2}){3}$/', $mobileNumberFormat);
     }
 
-    public function testMobileNumber07()
+    public function testMobileNumber07WithSeparatorFormat()
     {
-        do {
-            $mobile = $this->faker->mobileNumber();
-        } while (' ' == $mobile[2] || '07' != substr($mobile, 0, 2));
-        $this->assertRegExp('/^07(?:3|4|5|6|7|8|9)\d(?:\d{2}){3}$/', $mobile);
+        $mobileNumberFormat = $this->faker->phoneNumber07WithSeparator();
+        $this->assertRegExp('/^([3-9]{1})\d( \d{2}){3}$/', $mobileNumberFormat);
     }
 
-    public function testMobileNumber07WithSeparator()
+    public function testServiceNumber()
     {
-        $i = 0;
-        while (10 > $i) {
-            do {
-                $mobile = $this->faker->mobileNumber();
-            } while ('+33 7' != substr($mobile, 0, 5));
-            $this->assertRegExp('/^(?:(?:\+33 (?:\(0\))?)|0)7 (?:3|4|5|6|7|8|9)\d(?: \d{2}){3}$/', $mobile);
-            $i++;
-        }
+        $serviceNumber = $this->faker->serviceNumber();
+        $this->assertRegExp('/^(\+33 |\+33 \(0\)|0)8(?:(\s{1})?\d{2}){4}$/', $serviceNumber);
+    }
+    
+    public function testServiceNumberFormat()
+    {
+        $serviceNumberFormat = $this->faker->phoneNumber08();
+        $this->assertRegExp('/^((0|1|2)\d{1}|9[^46])\d{6}$/', $serviceNumberFormat);
+    }
+
+    public function testServiceNumberWithSeparatorFormat()
+    {
+        $serviceNumberFormat = $this->faker->phoneNumber08WithSeparator();
+        $this->assertRegExp('/^((0|1|2)\d{1}|9[^46])( \d{2}){3}$/', $serviceNumberFormat);
     }
 }
