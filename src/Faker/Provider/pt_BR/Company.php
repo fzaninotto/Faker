@@ -14,6 +14,11 @@ class Company extends \Faker\Provider\Company
         '{{lastName}} Comercial Ltda.'
     );
 
+    /**
+     * @link https://www.mundovestibular.com.br/articles/15937/1/Os-50-melhores-empregos-e-os-50-piores/Paacutegina1.html
+     *
+     * @var array
+     */
     protected static $jobTitleFormat = array(
         'Agente imobiliário', 'Agente penitenciário', 'Agricultor', 'Analista de pesquisa de mercado', 'Analistas de sistemas da computação',
         'Assistente Jurídico', 'Assistente social', 'Astrônomo', 'Ator', 'Atuário', 'Açougueiro', 'Bombeiro', 'Caixa', 'Caixa de banco',
