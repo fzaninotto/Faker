@@ -4,41 +4,50 @@ namespace Faker\Provider\ko_KR;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
+    //reference : https://ko.wikipedia.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%9D%98_%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8_%EC%B2%B4%EA%B3%84
+    
     protected static $formats = array(
-        '010-####-####',
+        //local area phone format
         '070-####-####',
         '02-####-####',
         '03#-####-####',
         '04#-####-####',
         '05#-####-####',
         '06#-####-####',
-        '1588-####',
-    );
-    
-    protected static $cellPhoneFormats = array(
+        
+        //cell phone format
         '010-####-####',
+        
+        //others: Intelligent Network(기간통신사업자)
+        '1588-####',
+        '1577-####',
+        '1899-####',
+        '1544-####',
+        '1644-####',
+        '1661-####',
+        '1566-####',
+        '1600-####',
+        '1670-####',
+        '1688-####',
+        '1666-####',
+        '1599-####',
+        '1877-####',
+        '1855-####',
+        '1800-####',
     );
     
-    public function cellPhoneNumber()
+    public function localAreaPhoneNumber()
     {
-        $format = self::randomElement(static::$cellPhoneFormats);
+        $format = self::randomElement(array_slice(static::$formats, 0, 6));
 
         return self::numerify($this->generator->parse($format));
     }
     
-    protected static $commonPhoneFormats = array(
-        // Standard formats
-        '070-####-####',
-        '02-####-####',
-        '03#-####-####',
-        '04#-####-####',
-        '05#-####-####',
-        '06#-####-####',
-    );
     
-    public function commonPhoneNumber()
+    
+    public function cellPhoneNumber()
     {
-        $format = self::randomElement(static::$commonPhoneFormats);
+        $format = self::randomElement(array_slice(static::$formats, 6, 1));
 
         return self::numerify($this->generator->parse($format));
     }
