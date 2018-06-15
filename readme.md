@@ -1137,6 +1137,18 @@ echo $faker->vat; // FR 12 123 456 789
 echo $faker->nir; // 1 88 07 35 127 571 - 19
 ```
 
+### `Faker\Provider\fr_FR\PhoneNumber`
+
+```php
+<?php
+
+// Generates phone numbers
+echo $faker->phoneNumber; // +33 (0)1 67 97 01 31
+echo $faker->mobileNumber; // +33 6 21 12 72 84
+echo $faker->serviceNumber // 08 98 04 84 46
+```
+
+
 ### `Faker\Provider\he_IL\Payment`
 
 ```php
@@ -1670,6 +1682,7 @@ echo $faker->VAT; //23456789
 * [tamperdata/exiges](https://github.com/tamperdata/exiges): Faker provider for generating random temperatures
 * [jzonta/FakerRestaurant](https://github.com/jzonta/FakerRestaurant): Faker for Food and Beverage names generate
 * [aalaap/faker-youtube](https://github.com/aalaap/faker-youtube): Faker for YouTube URLs in various formats
+* [pelmered/fake-car](https://github.com/pelmered/fake-car): Faker for cars and car data
 
 ## License
 
