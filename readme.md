@@ -256,21 +256,21 @@ Methods accepting a `$timezone` argument default to `date_default_timezone_get()
     fileExtension          // 'avi'
     mimeType               // 'video/x-msvideo'
     // Copy a random file from the source to the target directory and returns the fullpath or filename
-    file($sourceDir = '/tmp', $targetDir = '/tmp') // '/path/to/targetDir/13b73edae8443990be1aa8f1a483bc27.jpg'
-    file($sourceDir, $targetDir, false) // '13b73edae8443990be1aa8f1a483bc27.jpg'
+    file($sourceDir = '/tmp', $targetDir = '/tmp'); // '/path/to/targetDir/13b73edae8443990be1aa8f1a483bc27.jpg'
+    file($sourceDir, $targetDir, false); // '13b73edae8443990be1aa8f1a483bc27.jpg'
 
 ### `Faker\Provider\Image`
 
     // Image generation provided by LoremPixel (http://lorempixel.com/)
-    imageUrl($width = 640, $height = 480) // 'http://lorempixel.com/640/480/'
-    imageUrl($width, $height, 'cats')     // 'http://lorempixel.com/800/600/cats/'
-    imageUrl($width, $height, 'cats', true, 'Faker') // 'http://lorempixel.com/800/400/cats/Faker'
-    imageUrl($width, $height, 'cats', true, 'Faker', true) // 'http://lorempixel.com/grey/800/400/cats/Faker/' Monochrome image
-    image($dir = '/tmp', $width = 640, $height = 480) // '/tmp/13b73edae8443990be1aa8f1a483bc27.jpg'
-    image($dir, $width, $height, 'cats')  // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat!
-    image($dir, $width, $height, 'cats', false) // '13b73edae8443990be1aa8f1a483bc27.jpg' it's a filename without path
-    image($dir, $width, $height, 'cats', true, false) // it's a no randomize images (default: `true`)
-    image($dir, $width, $height, 'cats', true, true, 'Faker') // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat with 'Faker' text. Default, `null`.
+    imageUrl($width = 640, $height = 480); // 'http://lorempixel.com/640/480/'
+    imageUrl($width, $height, 'cats');     // 'http://lorempixel.com/800/600/cats/'
+    imageUrl($width, $height, 'cats', true, 'Faker'); // 'http://lorempixel.com/800/400/cats/Faker'
+    imageUrl($width, $height, 'cats', true, 'Faker', true); // 'http://lorempixel.com/grey/800/400/cats/Faker/' Monochrome image
+    image($dir = '/tmp', $width = 640, $height = 480); // '/tmp/13b73edae8443990be1aa8f1a483bc27.jpg'
+    image($dir, $width, $height, 'cats');  // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat!
+    image($dir, $width, $height, 'cats', false); // '13b73edae8443990be1aa8f1a483bc27.jpg' it's a filename without path
+    image($dir, $width, $height, 'cats', true, false); // it's a no randomize images (default: `true`)
+    image($dir, $width, $height, 'cats', true, true, 'Faker'); // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat with 'Faker' text. Default, `null`.
 
 ### `Faker\Provider\Uuid`
 
@@ -300,12 +300,12 @@ Methods accepting a `$timezone` argument default to `date_default_timezone_get()
 
     // get a random number between 10 and 20,
     // with more chances to be close to 20
-    biasedNumberBetween($min = 10, $max = 20, $function = 'sqrt')
+    biasedNumberBetween($min = 10, $max = 20, $function = 'sqrt');
 
 ### `Faker\Provider\HtmlLorem`
 
     //Generate HTML document which is no more than 2 levels deep, and no more than 3 elements wide at any level.
-    randomHtml(2,3)   // <html><head><title>Aut illo dolorem et accusantium eum.</title></head><body><form action="example.com" method="POST"><label for="username">sequi</label><input type="text" id="username"><label for="password">et</label><input type="password" id="password"></form><b>Id aut saepe non mollitia voluptas voluptas.</b><table><thead><tr><tr>Non consequatur.</tr><tr>Incidunt est.</tr><tr>Aut voluptatem.</tr><tr>Officia voluptas rerum quo.</tr><tr>Asperiores similique.</tr></tr></thead><tbody><tr><td>Sapiente dolorum dolorem sint laboriosam commodi qui.</td><td>Commodi nihil nesciunt eveniet quo repudiandae.</td><td>Voluptates explicabo numquam distinctio necessitatibus repellat.</td><td>Provident ut doloremque nam eum modi aspernatur.</td><td>Iusto inventore.</td></tr><tr><td>Animi nihil ratione id mollitia libero ipsa quia tempore.</td><td>Velit est officia et aut tenetur dolorem sed mollitia expedita.</td><td>Modi modi repudiandae pariatur voluptas rerum ea incidunt non molestiae eligendi eos deleniti.</td><td>Exercitationem voluptatibus dolor est iste quod molestiae.</td><td>Quia reiciendis.</td></tr><tr><td>Inventore impedit exercitationem voluptatibus rerum cupiditate.</td><td>Qui.</td><td>Aliquam.</td><td>Autem nihil aut et.</td><td>Dolor ut quia error.</td></tr><tr><td>Enim facilis iusto earum et minus rerum assumenda quis quia.</td><td>Reprehenderit ut sapiente occaecati voluptatum dolor voluptatem vitae qui velit.</td><td>Quod fugiat non.</td><td>Sunt nobis totam mollitia sed nesciunt est deleniti cumque.</td><td>Repudiandae quo.</td></tr><tr><td>Modi dicta libero quisquam doloremque qui autem.</td><td>Voluptatem aliquid saepe laudantium facere eos sunt dolor.</td><td>Est eos quis laboriosam officia expedita repellendus quia natus.</td><td>Et neque delectus quod fugit enim repudiandae qui.</td><td>Fugit soluta sit facilis facere repellat culpa magni voluptatem maiores tempora.</td></tr><tr><td>Enim dolores doloremque.</td><td>Assumenda voluptatem eum perferendis exercitationem.</td><td>Quasi in fugit deserunt ea perferendis sunt nemo consequatur dolorum soluta.</td><td>Maxime repellat qui numquam voluptatem est modi.</td><td>Alias rerum rerum hic hic eveniet.</td></tr><tr><td>Tempore voluptatem.</td><td>Eaque.</td><td>Et sit quas fugit iusto.</td><td>Nemo nihil rerum dignissimos et esse.</td><td>Repudiandae ipsum numquam.</td></tr><tr><td>Nemo sunt quia.</td><td>Sint tempore est neque ducimus harum sed.</td><td>Dicta placeat atque libero nihil.</td><td>Et qui aperiam temporibus facilis eum.</td><td>Ut dolores qui enim et maiores nesciunt.</td></tr><tr><td>Dolorum totam sint debitis saepe laborum.</td><td>Quidem corrupti ea.</td><td>Cum voluptas quod.</td><td>Possimus consequatur quasi dolorem ut et.</td><td>Et velit non hic labore repudiandae quis.</td></tr></tbody></table></body></html>
+    randomHtml(2,3);   // <html><head><title>Aut illo dolorem et accusantium eum.</title></head><body><form action="example.com" method="POST"><label for="username">sequi</label><input type="text" id="username"><label for="password">et</label><input type="password" id="password"></form><b>Id aut saepe non mollitia voluptas voluptas.</b><table><thead><tr><tr>Non consequatur.</tr><tr>Incidunt est.</tr><tr>Aut voluptatem.</tr><tr>Officia voluptas rerum quo.</tr><tr>Asperiores similique.</tr></tr></thead><tbody><tr><td>Sapiente dolorum dolorem sint laboriosam commodi qui.</td><td>Commodi nihil nesciunt eveniet quo repudiandae.</td><td>Voluptates explicabo numquam distinctio necessitatibus repellat.</td><td>Provident ut doloremque nam eum modi aspernatur.</td><td>Iusto inventore.</td></tr><tr><td>Animi nihil ratione id mollitia libero ipsa quia tempore.</td><td>Velit est officia et aut tenetur dolorem sed mollitia expedita.</td><td>Modi modi repudiandae pariatur voluptas rerum ea incidunt non molestiae eligendi eos deleniti.</td><td>Exercitationem voluptatibus dolor est iste quod molestiae.</td><td>Quia reiciendis.</td></tr><tr><td>Inventore impedit exercitationem voluptatibus rerum cupiditate.</td><td>Qui.</td><td>Aliquam.</td><td>Autem nihil aut et.</td><td>Dolor ut quia error.</td></tr><tr><td>Enim facilis iusto earum et minus rerum assumenda quis quia.</td><td>Reprehenderit ut sapiente occaecati voluptatum dolor voluptatem vitae qui velit.</td><td>Quod fugiat non.</td><td>Sunt nobis totam mollitia sed nesciunt est deleniti cumque.</td><td>Repudiandae quo.</td></tr><tr><td>Modi dicta libero quisquam doloremque qui autem.</td><td>Voluptatem aliquid saepe laudantium facere eos sunt dolor.</td><td>Est eos quis laboriosam officia expedita repellendus quia natus.</td><td>Et neque delectus quod fugit enim repudiandae qui.</td><td>Fugit soluta sit facilis facere repellat culpa magni voluptatem maiores tempora.</td></tr><tr><td>Enim dolores doloremque.</td><td>Assumenda voluptatem eum perferendis exercitationem.</td><td>Quasi in fugit deserunt ea perferendis sunt nemo consequatur dolorum soluta.</td><td>Maxime repellat qui numquam voluptatem est modi.</td><td>Alias rerum rerum hic hic eveniet.</td></tr><tr><td>Tempore voluptatem.</td><td>Eaque.</td><td>Et sit quas fugit iusto.</td><td>Nemo nihil rerum dignissimos et esse.</td><td>Repudiandae ipsum numquam.</td></tr><tr><td>Nemo sunt quia.</td><td>Sint tempore est neque ducimus harum sed.</td><td>Dicta placeat atque libero nihil.</td><td>Et qui aperiam temporibus facilis eum.</td><td>Ut dolores qui enim et maiores nesciunt.</td></tr><tr><td>Dolorum totam sint debitis saepe laborum.</td><td>Quidem corrupti ea.</td><td>Cum voluptas quod.</td><td>Possimus consequatur quasi dolorem ut et.</td><td>Et velit non hic labore repudiandae quis.</td></tr></tbody></table></body></html>
 
 ## Modifiers
 
@@ -562,29 +562,29 @@ $faker = Faker\Factory::create();
 <?xml version="1.0" encoding="UTF-8"?>
 <contacts>
 <?php for ($i=0; $i < 10; $i++): ?>
-  <contact firstName="<?php echo $faker->firstName ?>" lastName="<?php echo $faker->lastName ?>" email="<?php echo $faker->email ?>">
-    <phone number="<?php echo $faker->phoneNumber ?>"/>
+  <contact firstName="<?php echo $faker->firstName; ?>" lastName="<?php echo $faker->lastName; ?>" email="<?php echo $faker->email; ?>">
+    <phone number="<?php echo $faker->phoneNumber; ?>"/>
 <?php if ($faker->boolean(25)): ?>
-    <birth date="<?php echo $faker->dateTimeThisCentury->format('Y-m-d') ?>" place="<?php echo $faker->city ?>"/>
+    <birth date="<?php echo $faker->dateTimeThisCentury->format('Y-m-d'); ?>" place="<?php echo $faker->city; ?>"/>
 <?php endif; ?>
     <address>
-      <street><?php echo $faker->streetAddress ?></street>
-      <city><?php echo $faker->city ?></city>
-      <postcode><?php echo $faker->postcode ?></postcode>
+      <street><?php echo $faker->streetAddress; ?></street>
+      <city><?php echo $faker->city; ?></city>
+      <postcode><?php echo $faker->postcode; ?></postcode>
       <state><?php echo $faker->state ?></state>
     </address>
-    <company name="<?php echo $faker->company ?>" catchPhrase="<?php echo $faker->catchPhrase ?>">
+    <company name="<?php echo $faker->company; ?>" catchPhrase="<?php echo $faker->catchPhrase; ?>">
 <?php if ($faker->boolean(33)): ?>
-      <offer><?php echo $faker->bs ?></offer>
+      <offer><?php echo $faker->bs; ?></offer>
 <?php endif; ?>
 <?php if ($faker->boolean(33)): ?>
-      <director name="<?php echo $faker->name ?>" />
+      <director name="<?php echo $faker->name; ?>" />
 <?php endif; ?>
     </company>
 <?php if ($faker->boolean(15)): ?>
     <details>
 <![CDATA[
-<?php echo $faker->text(400) ?>
+<?php echo $faker->text(400); ?>
 ]]>
     </details>
 <?php endif; ?>
@@ -1142,7 +1142,7 @@ echo $faker->nir; // 1 88 07 35 127 571 - 19
 ```php
 <?php
 
-echo $faker->bankAccountNumber // "IL392237392219429527697"
+echo $faker->bankAccountNumber; // "IL392237392219429527697"
 ```
 
 ### `Faker\Provider\hr_HR\Payment`
@@ -1150,7 +1150,7 @@ echo $faker->bankAccountNumber // "IL392237392219429527697"
 ```php
 <?php
 
-echo $faker->bankAccountNumber // "HR3789114847226078672"
+echo $faker->bankAccountNumber; // "HR3789114847226078672"
 ```
 
 ### `Faker\Provider\hu_HU\Payment`
@@ -1198,16 +1198,16 @@ echo $faker->taxId(); // "DIXDPZ44E08F367A"
 <?php
 
 // Generates a 'kana' name
-echo $faker->kanaName($gender = null|'male'|'female') // "アオタ ミノル"
+echo $faker->kanaName($gender = null|'male'|'female'); // "アオタ ミノル"
 
 // Generates a 'kana' first name
-echo $faker->firstKanaName($gender = null|'male'|'female') // "ヒデキ"
+echo $faker->firstKanaName($gender = null|'male'|'female'); // "ヒデキ"
 
 // Generates a 'kana' first name on the male
-echo $faker->firstKanaNameMale // "ヒデキ"
+echo $faker->firstKanaNameMale; // "ヒデキ"
 
 // Generates a 'kana' first name on the female
-echo $faker->firstKanaNameFemale // "マアヤ"
+echo $faker->firstKanaNameFemale; // "マアヤ"
 
 // Generates a 'kana' last name
 echo $faker->lastKanaName; // "ナカジマ"
@@ -1272,7 +1272,7 @@ echo $faker->borough; // "강남구"
 ```php
 <?php
 
-echo $faker->bankAccountNumber // "LT300848876740317118"
+echo $faker->bankAccountNumber; // "LT300848876740317118"
 ```
 
 ### `Faker\Provider\lv_LV\Person`
@@ -1593,10 +1593,10 @@ echo $faker->bankAccountNumber; // "SE5018548608468284909192"
 <?php
 
 //Generates a valid Swedish personal identity number (in Swedish - Personnummer)
-echo $faker->personalIdentityNumber() // '950910-0799'
+echo $faker->personalIdentityNumber(); // '950910-0799'
 
 //Since the numbers are different for male and female persons, optionally you can specify gender.
-echo $faker->personalIdentityNumber('female') // '950910-0781'
+echo $faker->personalIdentityNumber('female'); // '950910-0781'
 ```
 
 
