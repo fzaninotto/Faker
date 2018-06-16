@@ -765,7 +765,7 @@ echo $faker->companyIdNumber; // Company ID number
 ```php
 <?php
 
-echo $faker->bankAccountNumber // "SA0218IBYZVZJSEC8536V4XC"
+echo $faker->bankAccountNumber; // "SA0218IBYZVZJSEC8536V4XC"
 ```
 
 ### `Faker\Provider\at_AT\Payment`
