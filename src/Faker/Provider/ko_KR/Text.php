@@ -4,6 +4,13 @@ namespace Faker\Provider\ko_KR;
 
 class Text extends \Faker\Provider\Text
 {
+    public function realText($maxNbChars = 200, $indexSize = 2)
+    {
+        $realText = parent::realText($maxNbChars, $indexSize);
+
+        return iconv('UTF-8', 'UTF-8//IGNORE', $realText);
+    }
+
     /**
      * From ko.wikisource.org
      *
