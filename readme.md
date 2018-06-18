@@ -1279,6 +1279,18 @@ echo $faker->metropolitanCity; // "서울특별시"
 echo $faker->borough; // "강남구"
 ```
 
+### `Faker\Provider\ko_KR\PhoneNumer`
+
+```php
+<?php
+
+// Generates a local area phone numer
+echo $faker->localAreaPhoneNumber; // "02-1234-4567"
+
+// Generates a cell phone number
+echo $faker->cellPhoneNumber; // "010-9876-5432"
+```
+
 ### `Faker\Provider\lt_LT\Payment`
 
 ```php
