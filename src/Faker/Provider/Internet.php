@@ -85,6 +85,15 @@ class Internet extends Base
 
         return static::randomElement($domains);
     }
+
+    /**
+     * @example 'jdoe@yourdomain.com'
+     */
+    public function emailInDomain($domainName)
+    {
+        return preg_replace('/\s/u', '', $this->userName() . '@' . $domainName);
+    }
+
     /**
      * @example 'jdoe'
      */
@@ -106,6 +115,7 @@ class Internet extends Base
 
         return $username;
     }
+
     /**
      * @example 'fY4èHdZv68'
      */
