@@ -55,10 +55,26 @@ class Base
      */
     public static function randomDigitNot($except)
     {
-        $result = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
-        $pool = array_diff($result, (array) $except);
+        $result = self::numberBetween(0, 8);
+        if ($result >= $except) {
+            $result++;
+        }
+
+        return $result;
+    }
+
+    /**
+     * Generates a random digit, which cannot be in $except
+     *
+     * @param array|int $except
+     * @return int
+     */
+    public static function randomDigitNotIn($except)
+    {
+        $digits = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+        $pool = array_diff($digits, (array) $except);
         if (!$pool) {
-            throw new \InvalidArgumentException('The argument is inclusive of the digits 0 to 9. A digit cannot be returned');
+            throw new \InvalidArgumentException('The argument is inclusive of the digits 0 to 9. A digit cannot be returned.');
         }
 
         return self::randomElement($pool);

@@ -35,21 +35,39 @@ class BaseTest extends TestCase
         }
     }
 
-    public function testRandomDigitNotReturnsValidDigitWhenCalledWithArray()
+    public function testRandomDigitNotInReturnsValidDigit()
     {
         for ($i = 0; $i <= 9; $i++) {
-            $this->assertGreaterThanOrEqual(0, BaseProvider::randomDigitNot(array($i, $i + 1)));
-            $this->assertLessThan(10, BaseProvider::randomDigitNot(array($i, $i + 1)));
-            $this->assertNotSame(BaseProvider::randomDigitNot(array($i, $i + 1)), array($i, $i + 1));
+            $this->assertGreaterThanOrEqual(0, BaseProvider::randomDigitNotIn($i));
+            $this->assertLessThan(10, BaseProvider::randomDigitNotIn($i));
+            $this->assertNotSame(BaseProvider::randomDigitNotIn($i), $i);
         }
+
+        $array = array();
+        $this->assertGreaterThanOrEqual(0, BaseProvider::randomDigitNotIn($array));
+        $this->assertLessThan(10, BaseProvider::randomDigitNotIn($array));
+
+        $array = array(1, 3, 5, 7, 9);
+        $this->assertNotEquals(1, BaseProvider::randomDigitNotIn($array));
+        $this->assertNotEquals(3, BaseProvider::randomDigitNotIn($array));
+        $this->assertNotEquals(5, BaseProvider::randomDigitNotIn($array));
+        $this->assertNotEquals(7, BaseProvider::randomDigitNotIn($array));
+        $this->assertNotEquals(9, BaseProvider::randomDigitNotIn($array));
+
+        $array = array(0, 2, 4, 6, 8);
+        $this->assertNotEquals(0, BaseProvider::randomDigitNotIn($array));
+        $this->assertNotEquals(2, BaseProvider::randomDigitNotIn($array));
+        $this->assertNotEquals(4, BaseProvider::randomDigitNotIn($array));
+        $this->assertNotEquals(6, BaseProvider::randomDigitNotIn($array));
+        $this->assertNotEquals(8, BaseProvider::randomDigitNotIn($array));
     }
 
     /**
      * @expectedException \InvalidArgumentException
      */
-    public function testRandomDigitNotThrowsExceptionWhenCalledWithInclusiveArray()
+    public function testRandomDigitNotInThrowsExceptionWhenCalledWithInclusiveArray()
     {
-        BaseProvider::randomDigitNot(array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9));
+        BaseProvider::randomDigitNotIn(array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9));
     }
 
    /**

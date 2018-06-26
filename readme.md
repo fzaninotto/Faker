@@ -104,6 +104,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 
     randomDigit             // 7
     randomDigitNotNull      // 5
+    randomDigitNotIn(array(0, 2, 4, 6, 8)) // 1, 3, 5, 7 or 9 
     randomNumber($nbDigits = NULL, $strict = false) // 79907610
     randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL) // 48.8932
     numberBetween($min = 1000, $max = 9000) // 8567
