@@ -132,6 +132,7 @@ namespace Faker;
  * @method boolean boolean($chanceOfGettingTrue = 50)
  *
  * @property int    $randomDigit
+ * @property int    $randomDigitNot
  * @property int    $randomDigitNotNull
  * @property string $randomLetter
  * @property string $randomAscii
