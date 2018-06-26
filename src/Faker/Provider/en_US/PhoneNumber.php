@@ -72,7 +72,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     /**
      * NPA-format area code
      *
-     * @see https://en.wikipedia.org/wiki/North_American_Numbering_Plan#Numbering_system
+     * @see https://www.nationalnanpa.com/area_codes/index.html
      *
      * @return string
      */
@@ -81,14 +81,14 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         $digits[] = self::numberBetween(2, 9);
         $digits[] = self::randomDigitNot(9);
         if ($digits[0] === 3) {
-            $digits[1] = self::randomDigitNot(array(7, 9));
+            $digits[1] = self::randomDigitNotIn(array(7, 9));
         }
         if ($digits[0] === 9) {
-            $digits[1] = self::randomDigitNot(array(6, 9));
+            $digits[1] = self::randomDigitNotIn(array(6, 9));
         }
         $digits[] = self::randomDigitNot($digits[1]);
 
-        return join('', $digits);
+        return implode('', $digits);
     }
 
     /**
