@@ -1,7 +1,9 @@
 <?php
 
 namespace Faker\Provider\fa_IR;
-
+/**
+* @link http://loremipsum.ir
+*/
 class Lorem extends \Faker\Provider\Lorem
 {
     protected static $wordList = array(
