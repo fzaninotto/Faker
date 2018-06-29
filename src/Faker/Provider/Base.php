@@ -497,7 +497,8 @@ class Base
         }, $regex);
         // All [ABC] become B (or A or C)
         $regex = preg_replace_callback('/\[([^\]]+)\]/', function ($matches) {
-            return Base::randomElement(str_split($matches[1]));
+            preg_match_all('/\\\.|./', $matches[1], $splitStrs);
+            return Base::randomElement($splitStrs[0]);
         }, $regex);
         // replace \d with number and \w with letter and . with ascii
         $regex = preg_replace_callback('/\\\w/', 'static::randomLetter', $regex);
