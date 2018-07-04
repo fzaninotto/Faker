@@ -51,6 +51,14 @@ class Color extends Base
     }
 
     /**
+     * @example '#fa3cc2'
+     */
+    public static function alphaHexColor()
+    {
+        return '#' . str_pad(dechex(mt_rand(1, 16777215)), 6, '0', STR_PAD_LEFT) . mt_rand(10, 99);
+    }
+
+    /**
      * @example '#ff0044'
      */
     public static function safeHexColor()
