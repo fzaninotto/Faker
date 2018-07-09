@@ -1285,7 +1285,7 @@ echo $faker->metropolitanCity; // "서울특별시"
 echo $faker->borough; // "강남구"
 ```
 
-### `Faker\Provider\ko_KR\PhoneNumer`
+### `Faker\Provider\ko_KR\PhoneNumber`
 
 ```php
 <?php
