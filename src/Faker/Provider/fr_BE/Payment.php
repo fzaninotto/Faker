@@ -32,7 +32,7 @@ class Payment extends \Faker\Provider\Payment
      */
     public static function vat($spacedNationalPrefix = true)
     {
-        $prefix = ($spacedNationalPrefix) ? "BE " : "BE";
+        $prefix = $spacedNationalPrefix ? "BE " : "BE";
 
         return sprintf("%s0%d", $prefix, self::randomNumber(9, true));
     }
