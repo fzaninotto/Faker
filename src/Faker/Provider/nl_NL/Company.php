@@ -4,13 +4,6 @@ namespace Faker\Provider\nl_NL;
 
 class Company extends \Faker\Provider\Company
 {
-    protected static $formats = array(
-        '{{lastName}} {{companySuffix}}',
-        '{{lastName}} {{lastName}} {{companySuffix}}',
-        '{{lastName}}',
-        '{{lastName}}',
-    );
-
     /**
      * Source - https://nl.wikipedia.org/wiki/Lijst_van_beroepen
      */
@@ -43,7 +36,51 @@ class Company extends \Faker\Provider\Company
         'Zaakwaarnemer', 'Zakenman', 'Zanger', 'Zeefdrukker', 'Zeeman', 'Zeepzieder', 'Zeilmaker', 'Zelfstandig ondernemer', 'Zetter', 'Ziekenhuisapotheker', 'Ziekenhuishygiënist', 'Ziekenverzorgende', 'Zilversmid', 'Zweminstructeur', 'Zoöloog',
     );
 
-    protected static $companySuffix = array('VOF', 'CV', 'LLP', 'BV', 'NV', 'IBC', 'CSL', 'EESV', 'SE', 'CV', 'Stichting', '& Zonen', '& Zn');
+    protected static $companySuffix = array('VOF', 'CV', 'LLP', 'BV', 'NV', 'IBC', 'CSL','EESV', 'SE', 'CV',
+    'Stichting', '& Zonen', '& Zn');
+
+    protected static $product = array('Keuken', 'Media', 'Meubel', 'Sanitair', 'Elektronica', 'Schoenen',
+    'Zorg', 'Muziek', 'Audio', 'Televisie', 'Pasta', 'Lunch', 'Boeken', 'Cadeau', 'Kunst', 'Tuin', 'Klus',
+    'Video', 'Sieraden', 'Kook', 'Woon', 'Pizza', 'Mode', 'Haar', 'Kleding', 'Antiek', 'Interieur', 'Gadget',
+    'Foto', 'Computer', 'Witgoed', 'Bruingoed', 'Broeken', 'Pakken', 'Maatpak', 'Fietsen', 'Speelgoed',
+    'Barbecue', 'Sport', 'Fitness', 'Brillen', 'Bakkers', 'Drank', 'Zuivel', 'Pret', 'Vis', 'Wijn', 'Salade',
+    'Terras', 'Borrel', 'Dieren', 'Aquaria', 'Verf', 'Behang', 'Tegel', 'Badkamer', 'Decoratie');
+
+    protected static $type = array('Markt', 'Kampioen', 'Expert', 'Concurrent', 'Shop', 'Expert', 'Magazijn',
+    'Dump', 'Store', 'Studio', 'Boulevard', 'Fabriek', 'Groep', 'Huis', 'Salon', 'Vakhuis', 'Winkel', 'Gigant',
+    'Reus', 'Plaza', 'Park', 'Tuin');
+
+    protected static $store = array('Boekhandel', 'Super', 'Tabakzaak', 'Schoenmaker', 'Kaashandel', 'Slagerij',
+    'Smederij', 'Bakkerij', 'Bierbrouwer', 'Kapperszaak', 'Groenteboer', 'Bioboer', 'Fietsenmaker', 'Opticien',
+    'Café', 'Garage');
+
+
+    /**
+     * @example 'Fietsenmaker Zijlemans'
+     */
+    public function company()
+    {
+        $lastName = $this->generator->lastName;
+
+        $determinator = static::numberBetween(0, 2);
+        switch($determinator) {
+            case 0:
+                $companyName = static::randomElement(static::$product) . ' ' . static::randomElement(static::$type);
+                break;
+            case 1:
+                $companyName = static::randomElement(static::$product) . strtolower(static::randomElement(static::$type));
+                break;
+            case 2:
+                $companyName = static::randomElement(static::$store) . ' ' . $lastName;
+                break;
+        }
+        
+        if (static::numberBetween(0, 1)) {
+            $companyName = $companyName . ' ' . static::randomElement(static::$companySuffix);
+        }
+
+        return $companyName;
+    }
 
     /**
      * Belasting Toegevoegde Waarde (BTW) = VAT
