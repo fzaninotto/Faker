@@ -1682,6 +1682,7 @@ echo $faker->VAT; //23456789
   * [BazingaFakerBundle](https://github.com/willdurand/BazingaFakerBundle): Put the awesome Faker library into the Symfony2 DIC and populate your database with fake data.
   * [AliceBundle](https://github.com/hautelook/AliceBundle), [AliceFixturesBundle](https://github.com/h4cc/AliceFixturesBundle): Bundles for using [Alice](https://packagist.org/packages/nelmio/alice) and Faker with data fixtures. Able to use Doctrine ORM as well as Doctrine MongoDB ODM.
 * [FakerServiceProvider](https://github.com/EmanueleMinotto/FakerServiceProvider): Faker Service Provider for Silex
+* [RandImgProvider](https://github.com/SiroDiaz/RandImgProvider): Generate and download beautiful random images and gifs using rand-img.com
 * [faker-cli](https://github.com/bit3/faker-cli): Command Line Tool for the Faker PHP library
 * [Factory Muffin](https://github.com/thephpleague/factory-muffin): enable the rapid creation of objects (PHP port of factory-girl)
 * [CompanyNameGenerator](https://github.com/fzaninotto/CompanyNameGenerator): Generate names for English tech companies with class
