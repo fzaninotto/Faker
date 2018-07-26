@@ -278,4 +278,9 @@ class Generator
     {
         return $this->format($method, $attributes);
     }
+
+    public function __destruct()
+    {
+        $this->seed();
+    }
 }
