@@ -5,9 +5,12 @@ namespace Faker\Provider\vi_VN;
 class Color extends \Faker\Provider\Color
 {
     protected static $safeColorNames = array(
-        'đen', 'xanh', 'ô liu',
-        'tím ', 'vôi', 'xanh', 'bạc',
+        'đen', 'xanh lá cây', 'xanh lam',
+        'lục', 'lục lam', 'đỏ',
+        'tím', 'nâu', 'tím ',
+        'vôi', 'xanh', 'bạc',
         'xám', 'vàng', 'trắng',
+        'hồng', 'da cam', 'tía'
     );
 
     protected static $allColorNames = array(
@@ -16,9 +19,9 @@ class Color extends \Faker\Provider\Color
         'Đen', 'Xanh lam', 'Nâu',
         'Da bò', 'Cam cháy', 'Hồng y',
         'Đỏ yên chi', 'Men ngọc', 'Anh đào',
-        'Xanh hoàng hôn', 'Xanh nõn chuối', 'Xanh cô ban',
+        'Xanh hoàng hôn', 'Chàm', 'Xanh nõn chuối', 'Xanh cô ban',
         'Đồng', 'San hô', 'Kem',
-        'Đỏ thắm', 'Xanh lơ', 'Lục bảo',
+        'Đỏ thắm', 'Xanh lơ', 'Cánh chả', 'Lục bảo',
         'Vàng kim loại', 'Xám', 'Xanh lá cây',
         'Vòi voi', 'Chàm', 'Ngọc thạch',
         'Kaki', 'Oải hương', 'Vàng chanh',
