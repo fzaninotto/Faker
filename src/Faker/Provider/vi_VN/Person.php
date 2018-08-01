@@ -157,9 +157,9 @@ class Person extends \Faker\Provider\Person
         'Yên',
     );
 
-    protected static $titleMale = array('Cụ', 'Ông', 'Bác', 'Chú', 'Anh', 'Em');
+    protected static $titleMale = array('Cụ', 'Cụ Ông', 'Ông', 'Bác', 'Chú', 'Anh', 'Em', 'Cậu', 'Cháu');
 
-    protected static $titleFemale = array('Cụ', 'Bà', 'Bác', 'Cô', 'Chị', 'Em');
+    protected static $titleFemale = array('Cụ', 'Cụ Bà', 'Bà', 'Bá', 'Cô', 'Chị', 'Em', 'Gì', 'Cháu', 'Thím');
 
     public function middleName($gender = null)
     {
