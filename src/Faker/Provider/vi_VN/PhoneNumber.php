@@ -5,24 +5,29 @@ namespace Faker\Provider\vi_VN;
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
     protected static $areaCodes = array(
-        76, 281, 64, 781, 240, 241,
-        75, 650, 56, 651, 62, 780,
-        26, 710, 511, 500, 510, 230,
-        61, 67, 59, 219, 351, 4,
-        39, 320, 31, 711, 218, 321,
-        8, 58, 77, 60, 231, 25,
-        20, 63, 72, 350, 38, 30,
-        68, 210, 57, 52, 510, 55,
-        33, 53, 79, 22, 66, 36,
-        280, 37, 54, 73, 74, 27,
-        70, 211, 29,
+        // Updated new area code on 17/06/2018
+        // http://vietnamnet.vn/vn/cong-nghe/vien-thong/danh-sach-ma-vung-dien-thoai-moi-cac-tinh-thanh-355763.html
+        296,254, 274, 271, 252, 256,
+        291, 209, 204, 222, 275, 206,
+        290, 292, 236, 262, 261, 215,
+        251, 277, 269, 226, 24, 239,
+        221, 220, 225, 293, 28, 258,
+        297, 260, 213, 272, 214, 263,
+        205, 228, 238, 229, 259, 257,
+        232, 235, 255, 203, 233, 299,
+        212, 237, 227, 208, 234, 273,
+        294, 207, 276, 270, 216,
+        
         // Mobile
-        96, 97, 98, 162, 163, 164, 165, 166, 167, 168, 169, // Viettel
+        86, 96, 97, 98, 162, 163, 164, 165, 166, 167, 168, 169, // Viettel
         91, 94, 123, 124, 125, 127, 129, // Vinaphone
-        90, 93, 120, 121, 122, 126, 128, // Mobifone
+        // Mobifone --> The network has ceased to exist (fewer users are also considered non-existent)
         92, 186, 188, // Vietnamobile
-        99, 199, // Gmobile
-        95, // Sfone
+        // Gmobile --> The network has ceased to exist (fewer users are also considered non-existent)
+        // Sfone --> The network has ceased to exist (fewer users are also considered non-existent)
+        
+        // !!! Important note: As of 15/09/2018, all 11 digits in Vietnam have returned 10 digits
+        // https://quantrimang.com/danh-sach-dau-so-cac-mang-di-dong-o-viet-nam-133203
     );
 
     protected static $formats = array(
