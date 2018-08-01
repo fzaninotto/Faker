@@ -10,5 +10,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '+7 (922) ###-####',
         '(35222) ##-####',
         '8-800-###-####',
+        '+79#########',
     );
 }
