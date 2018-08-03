@@ -8,7 +8,6 @@
 
 namespace Faker\Provider\uz_UZ;
 
-
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
     protected static $formats = array(
