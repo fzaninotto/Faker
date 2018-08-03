@@ -27,7 +27,7 @@ class PhoneNumberTest extends TestCase
     public function testPhoneFormat()
     {
         $generatedPhone = $this->faker->phoneNumber;
-        $pattern = "/\+998 \(9([0|1|3|5|4|7|8|9])\) ([\d]{7})/m";
+        $pattern = "/\+998 \(9([0|1|3-5|7-9])\) ([\d]{7})/m";
         $matches = array();
         $this->assertSame(preg_match($pattern, $generatedPhone, $matches),
                         1,
