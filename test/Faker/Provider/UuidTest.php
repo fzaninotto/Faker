@@ -12,6 +12,9 @@ class UuidTest extends TestCase
     {
         $uuid = BaseProvider::uuid();
         $this->assertTrue($this->isUuid($uuid));
+
+        $uuid = BaseProvider::uuid4();
+        $this->assertTrue($this->isUuid($uuid));
     }
 
     public function testUuidExpectedSeed()
