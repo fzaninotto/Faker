@@ -10,6 +10,8 @@ class Image extends Base {
     protected static $apis = array(
         'lorempixel'   => ImageContracts\LoremPixel::class,
         'loremflickr'  => ImageContracts\LoremFlickr::class,
+        'placekitten'     => ImageContracts\PlaceKitten::class,
+        'placeimg'     => ImageContracts\PlaceImg::class,
         'picsumphotos' => ImageContracts\PicsumPhotos::class,
         'placeholder'  => ImageContracts\Placeholder::class
     );
