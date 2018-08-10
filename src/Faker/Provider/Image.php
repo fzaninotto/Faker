@@ -5,7 +5,7 @@ namespace Faker\Provider;
 /**
  * Depends on image generation from http://lorempixel.com/
  */
-class Image extends Base 
+class Image extends Base
 {
 
     protected static $apis = array(

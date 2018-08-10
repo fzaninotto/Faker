@@ -2,7 +2,7 @@
 
 namespace Faker\Provider\ImageContracts;
 
-class PicsumPhotos extends ImageContract 
+class PicsumPhotos extends ImageContract
 {
 
     protected static function categories()

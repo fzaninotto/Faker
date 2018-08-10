@@ -2,7 +2,7 @@
 
 namespace Faker\Provider\ImageContracts;
 
-class LoremPixel extends ImageContract 
+class LoremPixel extends ImageContract
 {
 
     protected static function categories()

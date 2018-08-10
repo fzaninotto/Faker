@@ -2,7 +2,7 @@
 
 namespace Faker\Provider\ImageContracts;
 
-class PlaceKitten extends ImageContract 
+class PlaceKitten extends ImageContract
 {
 
     protected static function categories()

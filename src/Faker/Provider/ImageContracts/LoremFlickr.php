@@ -2,7 +2,7 @@
 
 namespace Faker\Provider\ImageContracts;
 
-class LoremFlickr extends ImageContract 
+class LoremFlickr extends ImageContract
 {
 
     protected static function categories()
