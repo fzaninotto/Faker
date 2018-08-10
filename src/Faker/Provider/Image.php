@@ -7,9 +7,14 @@ namespace Faker\Provider;
  */
 class Image extends Base
 {
-    protected static $categories = array(
-        'abstract', 'animals', 'business', 'cats', 'city', 'food', 'nightlife',
-        'fashion', 'people', 'nature', 'sports', 'technics', 'transport'
+
+    protected static $apis = array(
+        'lorempixel'   => ImageContracts\LoremPixel::class,
+        'loremflickr'  => ImageContracts\LoremFlickr::class,
+        'placekitten'     => ImageContracts\PlaceKitten::class,
+        'placeimg'     => ImageContracts\PlaceImg::class,
+        'picsumphotos' => ImageContracts\PicsumPhotos::class,
+        'placeholder'  => ImageContracts\Placeholder::class
     );
 
     /**
@@ -25,33 +30,19 @@ class Image extends Base
      * @param bool $randomize
      * @param string|null $word
      * @param bool $gray
+     * @param string $api
      *
      * @return string
      */
-    public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
+    public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false, $api = "lorempixel")
     {
-        $baseUrl = "https://lorempixel.com/";
-        $url = "{$width}/{$height}/";
-
-        if ($gray) {
-            $url = "gray/" . $url;
+        if (!in_array($api, array_keys(static::$apis))) {
+            throw new \InvalidArgumentException(sprintf('Unknown api "%s"', $api));
         }
 
-        if ($category) {
-            if (!in_array($category, static::$categories)) {
-                throw new \InvalidArgumentException(sprintf('Unknown image category "%s"', $category));
-            }
-            $url .= "{$category}/";
-            if ($word) {
-                $url .= "{$word}/";
-            }
-        }
+        $api = static::$apis[$api];
 
-        if ($randomize) {
-            $url .= '?' . static::randomNumber(5, true);
-        }
-
-        return $baseUrl . $url;
+        return $api::imageUrl($width, $height, $category, $randomize, $word, $gray);
     }
 
     /**
@@ -61,7 +52,7 @@ class Image extends Base
      *
      * @example '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
      */
-    public static function image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true, $randomize = true, $word = null)
+    public static function image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true, $randomize = true, $word = null, $api = "lorempixel")
     {
         $dir = is_null($dir) ? sys_get_temp_dir() : $dir; // GNU/Linux / OS X / Windows compatible
         // Validate directory path
@@ -72,10 +63,10 @@ class Image extends Base
         // Generate a random filename. Use the server address so that a file
         // generated at the same time on a different server won't have a collision.
         $name = md5(uniqid(empty($_SERVER['SERVER_ADDR']) ? '' : $_SERVER['SERVER_ADDR'], true));
-        $filename = $name .'.jpg';
+        $filename = $name . '.jpg';
         $filepath = $dir . DIRECTORY_SEPARATOR . $filename;
 
-        $url = static::imageUrl($width, $height, $category, $randomize, $word);
+        $url = static::imageUrl($width, $height, $category, $randomize, $word, null, $api);
 
         // save file
         if (function_exists('curl_exec')) {
@@ -83,12 +74,17 @@ class Image extends Base
             $fp = fopen($filepath, 'w');
             $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_FILE, $fp);
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
             $success = curl_exec($ch) && curl_getinfo($ch, CURLINFO_HTTP_CODE) === 200;
             fclose($fp);
             curl_close($ch);
 
             if (!$success) {
                 unlink($filepath);
+
+                if ($next_api = static::nextArrayKey(static::$apis, $api)) {
+                    return static::image($dir, $width, $height, $category, $fullPath, $randomize, $word, $next_api);
+                }
 
                 // could not contact the distant URL or HTTP error - fail silently.
                 return false;

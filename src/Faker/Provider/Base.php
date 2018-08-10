@@ -534,6 +534,29 @@ class Base
     }
 
     /**
+     * Get the next key in the array if it exists
+     *
+     * @param $array
+     * @param $current
+     * @return mixed
+     */
+    public static function nextArrayKey($array, $current)
+    {
+        if (is_array($array)) {
+            $array_keys = array_keys($array);
+            $next_key = array_search($current, $array_keys) + 1;
+
+            if (array_key_exists($next_key, $array_keys)) {
+                $next = $array_keys[$next_key];
+
+                if (array_key_exists($next, $array)) {
+                    return $next;
+                }
+            }
+        }
+    }
+
+    /**
      * Chainable method for making any formatter optional.
      *
      * @param float|integer $weight Set the probability of receiving a null value.
