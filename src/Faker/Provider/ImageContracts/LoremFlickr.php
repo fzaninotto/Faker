@@ -15,7 +15,7 @@ class LoremFlickr extends ImageContract
 
     protected static function baseUrl()
     {
-        return "http://loremflickr.com/";
+        return "https://loremflickr.com/";
     }
 
     public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)

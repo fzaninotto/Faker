@@ -14,7 +14,7 @@ class PlaceImg extends ImageContract
 
     protected static function baseUrl()
     {
-        return "http://placeimg.com/";
+        return "https://placeimg.com/";
     }
 
     public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)

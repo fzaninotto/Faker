@@ -12,7 +12,7 @@ class PlaceKitten extends ImageContract
 
     protected static function baseUrl()
     {
-        return "http://placekitten.com/";
+        return "https://placekitten.com/";
     }
 
     public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)

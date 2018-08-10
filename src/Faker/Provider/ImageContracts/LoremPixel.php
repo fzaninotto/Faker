@@ -15,7 +15,7 @@ class LoremPixel extends ImageContract
 
     protected static function baseUrl()
     {
-        return "http://lorempixel.com/";
+        return "https://lorempixel.com/";
     }
 
     public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)

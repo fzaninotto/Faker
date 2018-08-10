@@ -12,7 +12,7 @@ class PicsumPhotos extends ImageContract
 
     protected static function baseUrl()
     {
-        return "http://picsum.photos/";
+        return "https://picsum.photos/";
     }
 
     public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
