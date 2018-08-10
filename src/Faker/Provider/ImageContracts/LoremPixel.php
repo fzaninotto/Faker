@@ -2,9 +2,10 @@
 
 namespace Faker\Provider\ImageContracts;
 
-class LoremPixel extends ImageContract {
+class LoremPixel extends ImageContract 
+{
 
-    static function categories()
+    protected static function categories()
     {
         return array(
             'abstract', 'animals', 'business', 'cats', 'city', 'food', 'nightlife',
@@ -12,12 +13,12 @@ class LoremPixel extends ImageContract {
         );
     }
 
-    static function baseUrl()
+    protected static function baseUrl()
     {
         return "http://lorempixel.com/";
     }
 
-    static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
+    public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
     {
         $url = "{$width}/{$height}/";
 

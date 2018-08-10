@@ -2,19 +2,20 @@
 
 namespace Faker\Provider\ImageContracts;
 
-class PicsumPhotos extends ImageContract {
+class PicsumPhotos extends ImageContract 
+{
 
-    static function categories()
+    protected static function categories()
     {
         return array();
     }
 
-    static function baseUrl()
+    protected static function baseUrl()
     {
         return "http://picsum.photos/";
     }
 
-    static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
+    public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
     {
         $url = "{$width}/{$height}/";
 

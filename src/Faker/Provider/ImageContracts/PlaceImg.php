@@ -2,21 +2,22 @@
 
 namespace Faker\Provider\ImageContracts;
 
-class PlaceImg extends ImageContract {
+class PlaceImg extends ImageContract 
+{
 
-    static function categories()
+    protected static function categories()
     {
         return array(
             'animals', 'architecture', 'nature', 'people', 'tech'
         );
     }
 
-    static function baseUrl()
+    protected static function baseUrl()
     {
         return "http://placeimg.com/";
     }
 
-    static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
+    public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
     {
         $url = "{$width}/{$height}/";
 
