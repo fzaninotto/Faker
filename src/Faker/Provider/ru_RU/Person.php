@@ -154,4 +154,40 @@ class Person extends \Faker\Provider\Person
             static::GENDER_FEMALE,
         )));
     }
+
+    /**
+     * Return last name for specified gender
+     * 
+     * @param string|null $gender 'male', 'female' or null for any
+     * @return string
+     */
+    public function lastName($gender = null)
+    {
+        if ($gender === static::GENDER_MALE) {
+            return static::lastNameMale();
+        } elseif ($gender === static::GENDER_FEMALE) {
+            return static::lastNameFemale();
+        }
+
+        return $this->lastName(static::randomElement(array(
+            static::GENDER_MALE,
+            static::GENDER_FEMALE,
+        )));
+    }
+
+    /**
+     * @example 'Смирнов'
+     */
+    public static function lastNameMale()
+    {
+        return static::randomElement(static::$lastName);
+    }
+
+    /**
+     * @example 'Смирнова'
+     */
+    public static function lastNameFemale()
+    {
+        return static::randomElement(static::$lastName).'а';
+    }
 }
