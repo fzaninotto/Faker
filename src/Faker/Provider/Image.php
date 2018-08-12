@@ -3,52 +3,28 @@
 namespace Faker\Provider;
 
 /**
- * Depends on image generation from http://lorempixel.com/
+ * Depends on image generation from https://source.unsplash.com/
  */
 class Image extends Base
 {
-    protected static $categories = array(
-        'abstract', 'animals', 'business', 'cats', 'city', 'food', 'nightlife',
-        'fashion', 'people', 'nature', 'sports', 'technics', 'transport'
-    );
-
     /**
      * Generate the URL that will return a random image
-     *
-     * Set randomize to false to remove the random GET parameter at the end of the url.
-     *
-     * @example 'http://lorempixel.com/640/480/?12345'
+     **
+     * @example 'https://source.unsplash.com/800x400/?nature'
      *
      * @param integer $width
      * @param integer $height
-     * @param string|null $category
-     * @param bool $randomize
-     * @param string|null $word
-     * @param bool $gray
+     * @param string|null $keywords
      *
      * @return string
      */
-    public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
+    public static function imageUrl($width = 640, $height = 480, $keywords = null)
     {
-        $baseUrl = "https://lorempixel.com/";
-        $url = "{$width}/{$height}/";
+        $baseUrl = "https://source.unsplash.com/";
+        $url = "{$width}x{$height}/";
 
-        if ($gray) {
-            $url = "gray/" . $url;
-        }
-
-        if ($category) {
-            if (!in_array($category, static::$categories)) {
-                throw new \InvalidArgumentException(sprintf('Unknown image category "%s"', $category));
-            }
-            $url .= "{$category}/";
-            if ($word) {
-                $url .= "{$word}/";
-            }
-        }
-
-        if ($randomize) {
-            $url .= '?' . static::randomNumber(5, true);
+        if ($keywords) {
+            $url .= "?{$keywords}";
         }
 
         return $baseUrl . $url;
@@ -59,9 +35,9 @@ class Image extends Base
      *
      * Requires curl, or allow_url_fopen to be on in php.ini.
      *
-     * @example '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
+     * @example '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpeg'
      */
-    public static function image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true, $randomize = true, $word = null)
+    public static function image($dir = null, $width = 640, $height = 480, $keywords = null, $fullPath = true)
     {
         $dir = is_null($dir) ? sys_get_temp_dir() : $dir; // GNU/Linux / OS X / Windows compatible
         // Validate directory path
@@ -72,16 +48,17 @@ class Image extends Base
         // Generate a random filename. Use the server address so that a file
         // generated at the same time on a different server won't have a collision.
         $name = md5(uniqid(empty($_SERVER['SERVER_ADDR']) ? '' : $_SERVER['SERVER_ADDR'], true));
-        $filename = $name .'.jpg';
+        $filename = $name .'.jpeg';
         $filepath = $dir . DIRECTORY_SEPARATOR . $filename;
 
-        $url = static::imageUrl($width, $height, $category, $randomize, $word);
+        $url = static::imageUrl($width, $height, $keywords);
 
         // save file
         if (function_exists('curl_exec')) {
             // use cURL
             $fp = fopen($filepath, 'w');
             $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
             curl_setopt($ch, CURLOPT_FILE, $fp);
             $success = curl_exec($ch) && curl_getinfo($ch, CURLINFO_HTTP_CODE) === 200;
             fclose($fp);

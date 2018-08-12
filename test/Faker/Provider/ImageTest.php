@@ -9,44 +9,28 @@ class ImageTest extends TestCase
 {
     public function testImageUrlUses640x680AsTheDefaultSize()
     {
-        $this->assertRegExp('#^https://lorempixel.com/640/480/#', Image::imageUrl());
+        $this->assertEquals('https://source.unsplash.com/640x480/', Image::imageUrl());
     }
 
     public function testImageUrlAcceptsCustomWidthAndHeight()
     {
-        $this->assertRegExp('#^https://lorempixel.com/800/400/#', Image::imageUrl(800, 400));
+        $this->assertEquals('https://source.unsplash.com/800x400/', Image::imageUrl(800, 400));
     }
 
-    public function testImageUrlAcceptsCustomCategory()
+    public function testImageUrlAcceptsKeyword()
     {
-        $this->assertRegExp('#^https://lorempixel.com/800/400/nature/#', Image::imageUrl(800, 400, 'nature'));
+        $this->assertEquals('https://source.unsplash.com/800x400/?nature', Image::imageUrl(800, 400, 'nature'));
     }
 
-    public function testImageUrlAcceptsCustomText()
-    {
-        $this->assertRegExp('#^https://lorempixel.com/800/400/nature/Faker#', Image::imageUrl(800, 400, 'nature', false, 'Faker'));
-    }
 
-    public function testImageUrlAddsARandomGetParameterByDefault()
+    public function testImageUrlAcceptsMultipleKeywords()
     {
-        $url = Image::imageUrl(800, 400);
-        $splitUrl = preg_split('/\?/', $url);
-
-        $this->assertEquals(count($splitUrl), 2);
-        $this->assertRegexp('#\d{5}#', $splitUrl[1]);
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testUrlWithDimensionsAndBadCategory()
-    {
-        Image::imageUrl(800, 400, 'bullhonky');
+        $this->assertEquals('https://source.unsplash.com/800x400/?nature,water', Image::imageUrl(800, 400, 'nature,water'));
     }
 
     public function testDownloadWithDefaults()
     {
-        $url = "http://lorempixel.com/";
+        $url = "https://source.unsplash.com/";
         $curlPing = curl_init($url);
         curl_setopt($curlPing, CURLOPT_TIMEOUT, 5);
         curl_setopt($curlPing, CURLOPT_CONNECTTIMEOUT, 5);
@@ -56,10 +40,11 @@ class ImageTest extends TestCase
         curl_close($curlPing);
 
         if ($httpCode < 200 | $httpCode > 300) {
-            $this->markTestSkipped("LoremPixel is offline, skipping image download");
+            $this->markTestSkipped("Unsplash is offline, skipping image download");
         }
 
         $file = Image::image(sys_get_temp_dir());
+
         $this->assertFileExists($file);
         if (function_exists('getimagesize')) {
             list($width, $height, $type, $attr) = getimagesize($file);
