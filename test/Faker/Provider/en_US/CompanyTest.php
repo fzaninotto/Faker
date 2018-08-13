@@ -8,7 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 class CompanyTest extends TestCase
 {
-
     /**
      * @var Generator
      */
