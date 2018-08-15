@@ -109,19 +109,20 @@ class Base
         }
 
         if (null === $max) {
-            $max = static::randomNumber();
-            if ($min > $max) {
-                $max = $min;
-            }
+            do {
+                $max = static::randomNumber();
+            } while ($min >= $max);
         }
 
-        if ($min > $max) {
-            $tmp = $min;
-            $min = $max;
-            $max = $tmp;
-        }
+        $randNumber = $min + mt_rand() / mt_getrandmax() * ($max - $min);
 
-        return round($min + mt_rand() / mt_getrandmax() * ($max - $min), $nbMaxDecimals);
+        $result = round($randNumber, $nbMaxDecimals);
+
+        while ($result < $min) {
+            $randNumber *= 10;
+            $result = round($randNumber, $nbMaxDecimals);
+        }
+        return $result;
     }
 
     /**
