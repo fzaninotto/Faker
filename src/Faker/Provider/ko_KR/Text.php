@@ -4,6 +4,15 @@ namespace Faker\Provider\ko_KR;
 
 class Text extends \Faker\Provider\Text
 {
+    protected static $separator = '';
+    protected static $separatorLen = 0;
+    /**
+     * All punctuation in $baseText: 、 。 「 」 『 』 ！ ？ ー ， ： ；
+     */
+    protected static $notEndPunct = array(',', '、', '「', '『', 'ー', '，', '：', '；');
+    protected static $endPunct = array('.', '。', '」', '』', '！', '？');
+    protected static $notBeginPunct = array(',', '、', '。', '」', '』', '！', '？', 'ー', '，', '：', '；');
+
     /**
      * From ko.wikisource.org
      *
@@ -1720,4 +1729,83 @@ F역이라는 것은 삼림 속에 있는 조그마한 정거장으로 집이라
 만일 정임이가 죽었다는 기별이 오면 나는 한 번 더 시베리아에 가서 둘을 가지런히 묻고 `두 별 무덤'이라는 비를 세워 줄 생각이다. 그러나 나는 정임이가 조선으로 오기를 바란다.
 여러분은 최석과 정임에게 대한 이 기록을 믿고 그 두 사람에게 대한 오해를 풀라.
 EOT;
+    protected static $encoding = 'UTF-8';
+    protected static function explode($text)
+    {
+        $chars = array();
+        foreach (preg_split('//u', str_replace(PHP_EOL, '', $text)) as $char) {
+            if (! empty($char)) {
+                $chars[] = $char;
+            }
+        }
+        return $chars;
+    }
+    protected static function strlen($text)
+    {
+        return function_exists('mb_strlen')
+            ? mb_strlen($text, static::$encoding)
+            : count(static::explode($text));
+    }
+    protected static function validStart($word)
+    {
+        return ! in_array($word, static::$notBeginPunct);
+    }
+    protected static function appendEnd($text)
+    {
+        $mbAvailable = extension_loaded('mbstring');
+        // extract the last char of $text
+        if ($mbAvailable) {
+            // in order to support php 5.3, third param use 1 instead of null
+            // https://secure.php.net/manual/en/function.mb-substr.php#refsect1-function.mb-substr-changelog
+            $last = mb_substr($text, mb_strlen($text, static::$encoding) - 1, 1, static::$encoding);
+        } else {
+            $chars = static::utf8Encoding($text);
+            $last = $chars[count($chars) - 1];
+        }
+        // if the last char is a not-valid-end punctuation, remove it
+        if (in_array($last, static::$notEndPunct)) {
+            if ($mbAvailable) {
+                $text = mb_substr($text, 0, mb_strlen($text, static::$encoding) - 1, static::$encoding);
+            } else {
+                array_pop($chars);
+                $text = implode('', $chars);
+            }
+        }
+        // if the last char is not a valid punctuation, append a default one.
+        return in_array($last, static::$endPunct) ? $text : $text . '.';
+    }
+    /**
+     * Convert original string to utf-8 encoding.
+     *
+     * @param string $text
+     * @return array
+     */
+    protected static function utf8Encoding($text)
+    {
+        $encoding = array();
+        $chars = str_split($text);
+        $countChars = count($chars);
+        for ($i = 0; $i < $countChars; ++$i) {
+            $temp = $chars[$i];
+            $ord = ord($chars[$i]);
+            switch (true) {
+                case $ord > 251:
+                    $temp .= $chars[++$i];
+                    // no break
+                case $ord > 247:
+                    $temp .= $chars[++$i];
+                    // no break
+                case $ord > 239:
+                    $temp .= $chars[++$i];
+                    // no break
+                case $ord > 223:
+                    $temp .= $chars[++$i];
+                    // no break
+                case $ord > 191:
+                    $temp .= $chars[++$i];
+            }
+            $encoding[] = $temp;
+        }
+        return $encoding;
+    }
 }
