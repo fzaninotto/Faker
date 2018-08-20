@@ -9,5 +9,4 @@ class Color extends \Faker\Provider\Color
         'morado', 'turquesa', 'lima', 'azul', 'plata',
         'gris', 'amarillo', 'magenta', 'celeste', 'blanco'
     );
-
 }
