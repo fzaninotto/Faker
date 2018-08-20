@@ -26,7 +26,7 @@ class Person extends \Faker\Provider\Person
         'mr.', 'dr.', 'ir.', 'drs', 'bacc.', 'kand.', 'dr.h.c.', 'prof.', 'ds.', 'ing.', 'bc.'
     );
 
-    private static $suffix = array(
+    protected static $suffix = array(
         'BA', 'Bsc', 'LLB', 'LLM', 'MA', 'Msc', 'MPhil', 'D', 'PhD', 'AD', 'B', 'M'
     );
 
