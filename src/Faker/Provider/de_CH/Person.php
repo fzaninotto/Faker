@@ -97,7 +97,7 @@ class Person extends \Faker\Provider\de_DE\Person
      * @see \Faker\Provider\fr_CH\Person::avs13()
      * @return string
      */
-    public function ahv13()
+    public static function ahv13()
     {
         return \Faker\Provider\fr_CH\Person::avs13();
     }
@@ -110,7 +110,7 @@ class Person extends \Faker\Provider\de_DE\Person
      * @see \Faker\Provider\fr_CH\Person::avs13()
      * @return string
      */
-    public function avs13()
+    public static function avs13()
     {
         return \Faker\Provider\fr_CH\Person::avs13();
     }
