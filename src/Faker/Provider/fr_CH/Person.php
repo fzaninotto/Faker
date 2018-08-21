@@ -97,77 +97,19 @@ class Person extends \Faker\Provider\fr_FR\Person
      * @see https://www.zas.admin.ch/zas/fr/home/partenaires-et-institutions-/navs13.html
      * @return string
      */
-    public function navs13()
+    public static function avs13()
     {
-        $b = array(
+        $p = array(
             756,
-            self::generateRandomDigits(4),
-            self::generateRandomDigits(4),
-            self::generateRandomDigits(1),
+            \Faker\Provider\Base::randomDigitsString(4),
+            \Faker\Provider\Base::randomDigitsString(4),
+            \Faker\Provider\Base::randomDigitsString(1),
         );
 
-        $checksum = self::computeAvs13Checksum(implode("", $b));
+        $checksum = \Faker\Calculator\Ean::checksum(implode($p));
 
-        $avs = sprintf("%s.%s.%s.%s%s", $b[0], $b[1], $b[2], $b[3], $checksum);
+        $avs = sprintf("%s.%s.%s.%s%s", $p[0], $p[1], $p[2], $p[3], $checksum);
 
         return $avs;
-    }
-
-
-    /**
-     * Generates a string of {@see $length} random digits
-     *
-     * This function will generate a {@see $length} digits string. The length of
-     * the string must be greater than 0. If the provided length is lower or
-     * equal to 0, an \OutOfBoundsException is thrown.
-     *
-     * By default, if no {@see $length} parameter is given, the function will
-     * return a one-digit string.
-     *
-     * @since 0.1.0
-     * @param int $length Length of the string of digits to generate
-     * @return string A string of {@see $length} random digits
-     * @throws \OutOfBoundsException
-     */
-    protected static function generateRandomDigits($length = 1)
-    {
-        if ($length <= 0) {
-            throw new \OutOfBoundsException("Length must be greater than 0");
-        }
-
-        $digits = "";
-
-        for ($i = 0; $i < $length; $i++) {
-            $digits .= mt_rand(0, 9);
-        }
-
-        return $digits;
-    }
-
-    /**
-     * Computes the checksum of the first 12 digits of an AVS13 number.
-     *
-     * The checksum is computed exactly like the sum of an EAN13 number.
-     *
-     * @see https://fr.wikipedia.org/wiki/EAN_13
-     * @param string $digits
-     * @return int
-     */
-    protected static function computeAvs13Checksum($digits)
-    {
-        $even = true;
-        $esum = 0;
-        $osum = 0;
-
-        for ($i = strlen($digits)-1; $i >= 0; $i--) {
-            if ($even) {
-                $esum += $digits[$i];
-            } else {
-                $osum += $digits[$i];
-            }
-            $even=!$even;
-        }
-
-        return (10 - ((3 * $esum + $osum) % 10)) % 10;
     }
 }

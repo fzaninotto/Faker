@@ -63,6 +63,33 @@ class Base
     }
 
     /**
+     * Generates a string of random digits
+     *
+     * @param int $length Length of the string to generate
+     * @return string A string of {@see $length} random digits
+     *
+     * @throws \OutOfBoundsException
+     * @throws \InvalidArgumentException
+     */
+    public static function randomDigitsString($length = 1)
+    {
+        if (!is_numeric($length)) {
+            throw new \InvalidArgumentException('the length parameter must be numeric');
+        }
+
+        if ($length <= 0) {
+            throw new \OutOfBoundsException('the length must be greater than 0');
+        }
+
+        $digits = "";
+        for ($i = 0; $i < $length; $i++) {
+            $digits .= mt_rand(0, 9);
+        }
+
+        return $digits;
+    }
+
+    /**
      * Returns a random integer with 0 to $nbDigits digits.
      *
      * The maximum value returned is mt_getrandmax()
