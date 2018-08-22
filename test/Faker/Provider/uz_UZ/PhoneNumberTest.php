@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: abdujabbor
- * Date: 8/3/18
- * Time: 1:57 PM
- */
-
 namespace Faker\Test\Provider\uz_UZ;
 
 
