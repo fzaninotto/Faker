@@ -88,7 +88,7 @@ class Text extends \Faker\Provider\Text
 
         // filter out less maxNbChars sentences.
         $words = array_filter(static::$baseText, function ($word) use ($maxNbChars) {
-            $strlen = function_exists('mb_strlen') ? mb_strlen($text, 'UTF-8') : strlen($text);
+            $strlen = function_exists('mb_strlen') ? mb_strlen($word, 'UTF-8') : strlen($word);
             return $strlen < $maxNbChars;
         });
 
