@@ -6,7 +6,6 @@ class Text extends \Faker\Provider\Text
 {
     /**
      * 鲁迅名言警句
-     * @see https://baike.baidu.com/item/%E9%B2%81%E8%BF%85%E5%90%8D%E8%A8%80%E8%AD%A6%E5%8F%A5/5883259
      * @var array
      */
     protected static $baseText = array(
