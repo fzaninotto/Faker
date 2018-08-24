@@ -18,4 +18,14 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '3## ### ###',
         '+39 3## ### ###'
     );
+    protected static $mobileFormats = array('3#########');
+    
+     /**
+     * Return an it_IT mobile phone number
+     * @return string
+     */
+    public static function mobileNumber()
+    {
+        return static::numerify(static::randomElement(static::$mobileFormats));
+    }
 }
