@@ -1701,6 +1701,7 @@ echo $faker->VAT; //23456789
 * [jzonta/FakerRestaurant](https://github.com/jzonta/FakerRestaurant): Faker for Food and Beverage names generate
 * [aalaap/faker-youtube](https://github.com/aalaap/faker-youtube): Faker for YouTube URLs in various formats
 * [pelmered/fake-car](https://github.com/pelmered/fake-car): Faker for cars and car data
+* [bluemmb/Faker-PicsumPhotos](https://github.com/bluemmb/Faker-PicsumPhotos): Generate images using [picsum.photos](http://picsum.photos/)
 
 ## License
 
