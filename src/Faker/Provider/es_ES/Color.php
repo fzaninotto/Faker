@@ -5,8 +5,20 @@ namespace Faker\Provider\es_ES;
 class Color extends \Faker\Provider\Color
 {
     protected static $safeColorNames = array(
-        'negro', 'marrón', 'verde', 'azul marino', 'oliva',
-        'morado', 'turquesa', 'lima', 'azul', 'plata',
-        'gris', 'amarillo', 'magenta', 'celeste', 'blanco'
+        'amarillo',
+        'azul marino',
+        'azul',
+        'blanco',
+        'celeste',
+        'gris',
+        'lima',
+        'magenta',
+        'marrón',
+        'morado',
+        'negro',
+        'plata',
+        'turquesa',
+        'verde',
+        'verde oliva',
     );
 }
