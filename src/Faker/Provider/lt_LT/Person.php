@@ -291,7 +291,7 @@ class Person extends \Faker\Provider\Person
      * National Personal Identity number (asmens kodas)
      * @link https://en.wikipedia.org/wiki/National_identification_number#Lithuania
      * @link https://lt.wikipedia.org/wiki/Asmens_kodas
-     * @param string [male|female]
+     * @param string $gender [male|female]
      * @param \DateTime $birthdate
      * @param string $randomNumber three integers
      * @return string on format XXXXXXXXXXX

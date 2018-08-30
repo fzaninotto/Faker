@@ -143,7 +143,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * @param $dateOfBirth
+     * @param string|null $dateOfBirth Y-m-d, y-m or Y format
      * @return \DateTime
      */
     protected function getDateOfBirth($dateOfBirth)
@@ -187,8 +187,8 @@ class Person extends \Faker\Provider\Person
      * https://ro.wikipedia.org/wiki/Cod_numeric_personal#S
      *
      * @param \DateTime $dateOfBirth
-     * @param bool $isResident
      * @param string $gender
+     * @param bool|null $isResident
      * @return int
      */
     protected static function getGenderDigit(\DateTime $dateOfBirth, $gender, $isResident)

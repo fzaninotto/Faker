@@ -39,7 +39,7 @@ class Barcode extends Base
      * @param  string           $input ISBN without check-digit
      * @throws \LengthException When wrong input length passed
      *
-     * @return integer Check digit
+     * @return integer|string Check digit or 'X'
      */
     protected static function isbnChecksum($input)
     {

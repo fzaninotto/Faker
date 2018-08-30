@@ -218,6 +218,7 @@ class Internet extends Base
      */
     public static function macAddress()
     {
+        $mac = [];
         for ($i=0; $i<6; $i++) {
             $mac[] = sprintf('%02X', static::numberBetween(0, 0xff));
         }

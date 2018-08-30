@@ -127,7 +127,7 @@ class Address extends Base
 
     /**
      * @example array('77.147489', '86.211205')
-     * @return array | latitude, longitude
+     * @return array latitude, longitude
      */
     public static function localCoordinates()
     {

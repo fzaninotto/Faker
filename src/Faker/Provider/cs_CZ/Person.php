@@ -426,7 +426,7 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
-     * @return czech birth number
+     * @return string czech birth number
      * @param string|null $gender 'male', 'female' or null for any
      * @param int $minAge minimal age of "generated person" in years
      * @param int $maxAge maximal age of "generated person" in years
