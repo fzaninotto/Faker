@@ -31,11 +31,11 @@ class Person extends \Faker\Provider\en_US\Person
         while ($pos < $length - 1) {
             $odd = $reversedSIN[ $pos ] * 2;
             if ($odd > 9) {
-            $odd -= 9;
+                $odd -= 9;
             }
             $sum += $odd;
             if ($pos != ($length - 2)) {
-            $sum += $reversedSIN[ $pos +1 ];
+                $sum += $reversedSIN[ $pos +1 ];
             }
             $pos += 2;
         }
