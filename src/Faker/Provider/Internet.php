@@ -233,7 +233,7 @@ class Internet extends Base
         }
 
         $transId = 'Any-Latin; Latin-ASCII; NFD; [:Nonspacing Mark:] Remove; NFC;';
-        if (class_exists('Transliterator') && $transliterator = \Transliterator::create($transId)) {
+        if (class_exists('Transliterator', false) && $transliterator = \Transliterator::create($transId)) {
             $transString = $transliterator->transliterate($string);
         } else {
             $transString = static::toAscii($string);
