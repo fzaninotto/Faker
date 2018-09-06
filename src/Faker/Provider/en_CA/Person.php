@@ -19,23 +19,27 @@ class Person extends \Faker\Provider\en_US\Person
         $validPrefix = array(1,2,3,4,5,6,7,9);
         $sin = array_rand($validPrefix, 1);
         $length = 9;
-        while(strlen($sin) < ($length - 1)) {
-          $sin .= rand(0, 9);
+        
+        while (strlen($sin) < ($length - 1)) {
+            $sin .= rand(0, 9);
         }
+        
         $sum = 0;
         $pos = 0;
         $reversedSIN = strrev($sin);
-        while($pos < $length - 1) {
-          $odd = $reversedSIN[ $pos ] * 2;
-          if ($odd > 9){
+        
+        while ($pos < $length - 1) {
+            $odd = $reversedSIN[ $pos ] * 2;
+            if ($odd > 9) {
             $odd -= 9;
-          }
-          $sum += $odd;
-          if ($pos != ($length - 2)){
+            }
+            $sum += $odd;
+            if ($pos != ($length - 2)) {
             $sum += $reversedSIN[ $pos +1 ];
-          }
-          $pos += 2;
+            }
+            $pos += 2;
         }
+        
         $checkdigit = (( floor($sum/10) + 1) * 10 - $sum) % 10;
         $sin .= $checkdigit;
         $sin1 = substr($sin, 0, 3);
