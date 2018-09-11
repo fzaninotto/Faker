@@ -16,4 +16,16 @@ class Payment extends \Faker\Provider\Payment
     {
         return static::iban($countryCode, $prefix, $length);
     }
+	
+    protected static $banks = array(
+        'Nordea Bank AB','Resurs Bank','Ålandsbanken','Kaupthing Bank Sverige ','Sparbanken Eken','SBAB Bank','Skandiabanken','Länsförsäkringar Bank','Ikanobanken','ICA Banken','Santander Consumer Bank','Forex Bank','Collector Bank AB','Marginalen Bank','BlueStep Bank','Avanza','Swedbank','Svenska Handelsbanken','Skandinaviska Enskilda Banken'
+    );
+
+    /**
+     * @example 'Volksbank Stuttgart'
+     */
+    public static function bank()
+    {
+        return static::randomElement(static::$banks);
+    }	
 }

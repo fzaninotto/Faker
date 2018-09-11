@@ -73,6 +73,22 @@ class Person extends Base
         return $this->generator->parse(static::randomElement(static::$firstNameFormat));
     }
 
+    public function profilePicture($gender = null)
+    {
+        if ($gender === static::GENDER_MALE) {
+            $dir = "./Faker/Provider/pics/male";
+        } elseif ($gender === static::GENDER_FEMALE) {
+            $dir = "./Faker/Provider/pics/female";
+        }
+
+        $files = glob($dir . '/*.*');
+        $file = array_rand($files);
+	$data = file_get_contents($files[$file]);
+
+	$base64 = 'data:image/jpeg;base64,' . base64_encode($data);
+        return $base64;
+    }
+
     public static function firstNameMale()
     {
         return static::randomElement(static::$firstNameMale);

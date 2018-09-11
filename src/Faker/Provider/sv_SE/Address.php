@@ -7,15 +7,15 @@ class Address extends \Faker\Provider\Address
     protected static $buildingNumber = array('%###', '%##', '%#', '%#?', '%', '%?');
 
     protected static $streetPrefix = array(
-        'Stor', 'Små', 'Lill', 'Sjö', 'Kungs', 'Drottning', 'Hamn', 'Brunns', 'Linné', 'Vasa', 'Ring', 'Freds'
+        'Björk','Järnvägs','Ring','Skol','Skogs','Ny','Gran','Idrotts','Stor','Kyrk','Industri','Park','Strand','Skol','Trädgårds','Industri','Ängs','Kyrko','Park','Villa','Ek','Kvarn','Stations','Back','Furu','Gen','Fabriks','Åker','Bäck','Stor','Små','Lill','Sjö','Kungs','Drottning','Hamn','Brunns','Linné','Vasa','Ring','Freds'
     );
 
     protected static $streetSuffix = array(
-        'vägen', 'gatan', 'gränd', 'stigen', 'backen', 'liden'
+        'vägen', 'gatan', 'gränd', 'stigen', 'backen', 'liden', 'slingan', 'torget', 'allén', 'berget', 'platsen'
     );
 
     protected static $streetSuffixWord = array(
-        'Allé', 'Gata', 'Väg', 'Backe'
+        'Allé', 'Gata', 'Väg', 'Backe', 'Torg', 'Plats'
     );
 
     protected static $postcode = array('%####', '%## ##');
@@ -60,6 +60,10 @@ class Address extends \Faker\Provider\Address
     protected static $state = array();
 
     protected static $stateAbbr = array();
+
+    protected static $municipality = array('Ale kommun','Alingsås kommun','Alvesta kommun','Aneby kommun','Arboga kommun','Arjeplogs kommun','Arvidsjaurs kommun','Arvika kommun','Askersunds kommun','Avesta kommun','Bengtsfors kommun','Bergs kommun','Bjurholms kommun','Bjuvs kommun','Bodens kommun','Bollebygds kommun','Bollnäs kommun','Borgholms kommun','Borlänge kommun','Borås kommun','Botkyrka kommun','Boxholms kommun','Bromölla kommun','Bräcke kommun','Burlövs kommun','Båstads kommun','Dals-Eds kommun','Danderyds kommun','Degerfors kommun','Dorotea kommun','Eda kommun','Ekerö kommun','Eksjö kommun','Emmaboda kommun','Enköpings kommun','Eskilstuna kommun','Eslövs kommun','Essunga kommun','Fagersta kommun','Falkenbergs kommun','Falköpings kommun','Falu kommun','Filipstads kommun','Finspångs kommun','Flens kommun','Forshaga kommun','Färgelanda kommun','Gagnefs kommun','Gislaveds kommun','Gnesta kommun','Gnosjö kommun','Gotlands kommun','Grums kommun','Grästorps kommun','Gullspångs kommun','Gällivare kommun','Gävle kommun','Göteborgs kommun','Götene kommun','Habo kommun','Hagfors kommun','Hallsbergs kommun','Hallstahammars kommun','Halmstads kommun','Hammarö kommun','Haninge kommun','Haparanda kommun','Heby kommun','Hedemora kommun','Helsingborgs kommun','Herrljunga kommun','Hjo kommun','Hofors kommun','Huddinge kommun','Hudiksvalls kommun','Hultsfreds kommun','Hylte kommun','Håbo kommun','Hällefors kommun','Härjedalens kommun','Härnösands kommun','Härryda kommun','Hässleholms kommun','Höganäs kommun','Högsby kommun','Hörby kommun','Höörs kommun','Jokkmokks kommun','Järfälla kommun','Jönköpings kommun','Kalix kommun','Kalmar kommun','Karlsborgs kommun','Karlshamns kommun','Karlskoga kommun','Karlskrona kommun','Karlstads kommun','Katrineholms kommun','Kils kommun','Kinda kommun','Kiruna kommun','Klippans kommun','Knivsta kommun','Kramfors kommun','Kristianstads kommun','Kristinehamns kommun','Krokoms kommun','Kumla kommun','Kungsbacka kommun','Kungsörs kommun','Kungälvs kommun','Kävlinge kommun','Köpings kommun','Laholms kommun','Landskrona kommun','Laxå kommun','Lekebergs kommun','Leksands kommun','Lerums kommun','Lessebo kommun','Lidingö kommun','Lidköpings kommun','Lilla Edets kommun','Lindesbergs kommun','Linköpings kommun','Ljungby kommun','Ljusdals kommun','Ljusnarsbergs kommun','Lomma kommun','Ludvika kommun','Luleå kommun','Lunds kommun','Lycksele kommun','Lysekils kommun','Malmö kommun','Malung-Sälens kommun','Malå kommun','Mariestads kommun','Marks kommun','Markaryds kommun','Melleruds kommun','Mjölby kommun','Mora kommun','Motala kommun','Mullsjö kommun','Munkedals kommun','Munkfors kommun','Mölndals kommun','Mönsterås kommun','Mörbylånga kommun','Nacka kommun','Nora kommun','Norbergs kommun','Nordanstigs kommun','Nordmalings kommun','Norrköpings kommun','Norrtälje kommun','Norsjö kommun','Nybro kommun','Nykvarns kommun','Nyköpings kommun','Nynäshamns kommun','Nässjö kommun','Ockelbo kommun','Olofströms kommun','Orsa kommun','Orusts kommun','Osby kommun','Oskarshamns kommun','Ovanåkers kommun','Oxelösunds kommun','Pajala kommun','Partille kommun','Perstorps kommun','Piteå kommun','Ragunda kommun','Robertsfors kommun','Ronneby kommun','Rättviks kommun','Sala kommun','Salems kommun','Sandvikens kommun','Sigtuna kommun','Simrishamns kommun','Sjöbo kommun','Skara kommun','Skellefteå kommun','Skinnskattebergs kommun','Skurups kommun','Skövde kommun','Smedjebackens kommun','Sollefteå kommun','Sollentuna kommun','Solna kommun','Sorsele kommun','Sotenäs kommun','Staffanstorps kommun','Stenungsunds kommun','Stockholms kommun','Storfors kommun','Storumans kommun','Strängnäs kommun','Strömstads kommun','Strömsunds kommun','Sundbybergs kommun','Sundsvalls kommun','Sunne kommun','Surahammars kommun','Svalövs kommun','Svedala kommun','Svenljunga kommun','Säffle kommun','Säters kommun','Sävsjö kommun','Söderhamns kommun','Söderköpings kommun','Södertälje kommun','Sölvesborgs kommun','Tanums kommun','Tibro kommun','Tidaholms kommun','Tierps kommun','Timrå kommun','Tingsryds kommun','Tjörns kommun','Tomelilla kommun','Torsby kommun','Torsås kommun','Tranemo kommun','Tranås kommun','Trelleborgs kommun','Trollhättans kommun','Trosa kommun','Tyresö kommun','Täby kommun','Töreboda kommun','Uddevalla kommun','Ulricehamns kommun','Umeå kommun','Upplands Väsby kommun','Upplands-Bro kommun','Uppsala kommun','Uppvidinge kommun','Vadstena kommun','Vaggeryds kommun','Valdemarsviks kommun','Vallentuna kommun','Vansbro kommun','Vara kommun','Varbergs kommun','Vaxholms kommun','Vellinge kommun','Vetlanda kommun','Vilhelmina kommun','Vimmerby kommun','Vindelns kommun','Vingåkers kommun','Vårgårda kommun','Vänersborgs kommun','Vännäs kommun','Värmdö kommun','Värnamo kommun','Västerviks kommun','Västerås kommun','Växjö kommun','Ydre kommun','Ystads kommun','Åmåls kommun','Ånge kommun','Åre kommun','Årjängs kommun','Åsele kommun','Åstorps kommun','Åtvidabergs kommun','Älmhults kommun','Älvdalens kommun','Älvkarleby kommun','Älvsbyns kommun','Ängelholms kommun','Öckerö kommun','Ödeshögs kommun','Örebro kommun','Örkelljunga kommun','Örnsköldsviks kommun','Östersunds kommun','Österåkers kommun','Östhammars kommun','Östra Göinge kommun','Överkalix kommun','Övertorneå kommun');
+
+    protected static $county = array('Västra Götalands län','Kronobergs län','Jönköpings län','Västmanlands län','Norrbottens län','Värmlands län','Örebro län','Dalarnas län','Jämtlands län','Västerbottens län','Skåne län','Gävleborgs län','Kalmar län','Stockholms län','Östergötlands län','Uppsala län','Södermanlands län','Hallands län','Gotlands län','Västernorrlands län','Blekinge län');
 
     protected static $country = array(
         'Afghanistan', 'Albanien', 'Algeriet', 'Amerikanska Jungfruöarna', 'Amerikanska Samoa', 'Andorra', 'Angola', 'Anguilla', 'Antarktis', 'Antigua och Barbuda', 'Argentina', 'Armenien', 'Aruba', 'Australien', 'Azerbajdzjan',
@@ -127,6 +131,37 @@ class Address extends \Faker\Provider\Address
     {
         return static::randomElement(static::$cityNames);
     }
+	
+	public static function validPostalAddress() {
+    $handle = @fopen("./Faker/Provider/sv_SE/ValidPostalAddresses.csv", "r");
+    if ($handle) {
+        $random_line = null;
+        $line = null;
+        $count = 0;
+        while (($line = fgets($handle, 16045)) !== false) {
+            $count++;
+            if(rand() % $count == 0) {
+              $random_line = $line;
+            }
+        }
+        if (!feof($handle)) {
+            echo "Error: unexpected fgets() fail\n";
+            fclose($handle);
+            return null;
+        } else {
+            fclose($handle);
+        }
+		$data = explode(';',$random_line);
+        $result = array();
+		$result["Code"] = $data[0];
+		$result["City"] = $data[1];
+		$result["County"] = $data[2];
+		$result["Municipality"] = $data[3];
+		return $result;
+		
+		;
+    }
+}
 
     public static function streetSuffixWord()
     {

@@ -9,6 +9,7 @@ class Company extends Base
     );
 
     protected static $companySuffix = array('Ltd');
+    protected static $companyPrefix = array();
 
     protected static $jobTitleFormat = array(
         '{{word}}',
@@ -30,6 +31,14 @@ class Company extends Base
     public static function companySuffix()
     {
         return static::randomElement(static::$companySuffix);
+    }
+
+    /**
+     * @example 'Ltd'
+     */
+    public static function companyPrefix()
+    {
+        return static::randomElement(static::$companyPrefix);
     }
 
     /**
