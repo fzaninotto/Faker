@@ -1539,37 +1539,6 @@ echo $faker->personalIdentityNumber('female') // '950910-0781'
 echo $faker->bank; // '中国建设银行'
 ```
 
-### `Faker\Provider\zh_CN\Lorem`
-
-```php
-<?php
-
-// Generate a random single Chinese character
-echo $faker->char; // '的'
-
-// Generate an array of random characters
-echo $faker->chars; // array('的', '一', '是')
-
-// Generate a random word
-// A chinese word usually contains 1 - 4 single character.
-// Character numbers : Frequency
-//                 1 : 10%
-//                 2 : 60%
-//                 3 : 10%
-//                 4 : 20%
-echo $faker->word; // '的' // '的一' // '的一是' // '的一是在'
-// Generate a word that contians exact number of characters
-echo $faker->word(2); // '的一' // '是在'
-
-// Other functions
-echo $faker->sentence;
-echo $faker->sentences;
-echo $faker->paragraph;
-echo $faker->paragraphs;
-echo $faker->text
-echo $faker->text(100); // text contains no more than 100 Chinese characters (not 100 bytes)
-```
-
 ### `Faker\Provider\zh_CN\Text`
 
 ```php
