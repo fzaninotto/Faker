@@ -9,7 +9,7 @@ class TextTest extends TestCase
 {
     protected static function getEncoding()
     {
-        return static::readAttribute('Faker\Provider\zh_CN\Lorem', 'encoding');
+        return static::readAttribute('Faker\Provider\zh_CN\Text', 'encoding');
     }
 
     public static function getGenerator()
@@ -23,7 +23,7 @@ class TextTest extends TestCase
         $this->assertNotRegExp('/\\s/u', $faker->realText());
     }
 
-    public function testRealTextEndPunctuaction()
+    public function testRealTextEndPunctuation()
     {
         $notEndPunct = $this->readAttribute('Faker\Provider\zh_CN\Text', 'notEndPunct');
         $endPunct = $this->readAttribute('Faker\Provider\zh_CN\Text', 'endPunct');
@@ -33,7 +33,7 @@ class TextTest extends TestCase
         $this->assertFalse(in_array(mb_substr($faker->realText(), -1, 1, static::getEncoding()), $notEndPunct));
     }
 
-    public function testRealTextBeginPunctuaction()
+    public function testRealTextBeginPunctuation()
     {
         $notBeginPunct = $this->readAttribute('Faker\Provider\zh_CN\Text', 'notBeginPunct');
         $faker = static::getGenerator();
