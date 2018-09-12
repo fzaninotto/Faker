@@ -18,10 +18,11 @@ class Text extends \Faker\Provider\Text
      * Title: 从百草园到三味书屋 From Baicao Garden to Sanwei Study (From Hundred-Grass Garden to Three-Taste Study)
      * Author: 鲁迅 Lu Xun (周树人 Zhou Shuren)
      * Language: Simplified Chinese
+     * Written on: Sept 18, 1926
      *
      * Notice: Some punctuation has been removed. Some paragraph and quotations have be joined together.
      *
-     * @see https://zh.wikisource.org/zh-hans/%E4%B8%89%E5%9C%8B%E6%BC%94%E7%BE%A9/%E7%AC%AC001%E5%9B%9E
+     * @see https://zh.wikisource.org/zh-hans/%E4%BB%8E%E7%99%BE%E8%8D%89%E5%9B%AD%E5%88%B0%E4%B8%89%E5%91%B3%E4%B9%A6%E5%B1%8B
      * @var string
      */
     protected static $baseText = <<<'EOT'
