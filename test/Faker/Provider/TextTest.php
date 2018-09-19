@@ -46,6 +46,8 @@ class TextTest extends TestCase
     public function testTextMaxIndex()
     {
         $this->generator->realText(200, 11);
+
+        $this->fail('The index should be less than or equal to 5.');
     }
 
     /**
@@ -54,6 +56,8 @@ class TextTest extends TestCase
     public function testTextMinIndex()
     {
         $this->generator->realText(200, 0);
+
+        $this->fail('The index should be greater than or equal to 1.');
     }
 
     /**
@@ -62,5 +66,7 @@ class TextTest extends TestCase
     public function testTextMinLength()
     {
         $this->generator->realText(9);
+
+        $this->fail('The text should be at least 10 characters.');
     }
 }
