@@ -24,13 +24,20 @@ class TextTest extends TestCase
         $this->generator = $generator;
     }
 
-    public function testTextMaxLength()
+    /**
+     * @testWith [10]
+     *           [20]
+     *           [50]
+     *           [70]
+     *           [90]
+     *           [120]
+     *           [150]
+     *           [200]
+     *           [500]
+     */
+    public function testTextMaxLength(int $length)
     {
-        $lengths = array(10, 20, 50, 70, 90, 120, 150, 200, 500);
-
-        foreach ($lengths as $length) {
-            $this->assertLessThan($length, $this->generator->realText($length));
-        }
+        $this->assertLessThan($length, $this->generator->realText($length));
     }
 
     /**
