@@ -113,7 +113,7 @@ namespace Faker;
  * @method string year($max = 'now')
  * @method \DateTime dateTime($max = 'now', $timezone = null)
  * @method \DateTime dateTimeAd($max = 'now', $timezone = null)
- * @method \DateTime dateTimeBetween($startDate = '-30 years', $endDate = 'now')
+ * @method \DateTime dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null)
  * @method \DateTime dateTimeInInterval($date = '-30 years', $interval = '+5 days', $timezone = null)
  * @method \DateTime dateTimeThisCentury($max = 'now', $timezone = null)
  * @method \DateTime dateTimeThisDecade($max = 'now', $timezone = null)
