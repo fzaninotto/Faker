@@ -7,16 +7,29 @@ use PHPUnit\Framework\TestCase;
 
 class TextTest extends TestCase
 {
-    public function testTextMaxLength()
+    /**
+     * @var Generator
+     */
+    private $generator;
+
+    /**
+     * @before
+     */
+    public function buildGenerator()
     {
         $generator = new Generator();
         $generator->addProvider(new Text($generator));
         $generator->seed(0);
 
+        $this->generator = $generator;
+    }
+
+    public function testTextMaxLength()
+    {
         $lengths = array(10, 20, 50, 70, 90, 120, 150, 200, 500);
 
         foreach ($lengths as $length) {
-            $this->assertLessThan($length, $generator->realText($length));
+            $this->assertLessThan($length, $this->generator->realText($length));
         }
     }
 
@@ -25,10 +38,7 @@ class TextTest extends TestCase
      */
     public function testTextMaxIndex()
     {
-    $generator = new Generator();
-        $generator->addProvider(new Text($generator));
-        $generator->seed(0);
-    $generator->realText(200, 11);
+        $this->generator->realText(200, 11);
     }
 
     /**
@@ -36,10 +46,7 @@ class TextTest extends TestCase
      */
     public function testTextMinIndex()
     {
-    $generator = new Generator();
-        $generator->addProvider(new Text($generator));
-        $generator->seed(0);
-        $generator->realText(200, 0);
+        $this->generator->realText(200, 0);
     }
 
     /**
@@ -47,9 +54,6 @@ class TextTest extends TestCase
      */
     public function testTextMinLength()
     {
-    $generator = new Generator();
-        $generator->addProvider(new Text($generator));
-        $generator->seed(0);
-        $generator->realText(9);
+        $this->generator->realText(9);
     }
 }
