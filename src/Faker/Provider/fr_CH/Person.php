@@ -101,9 +101,9 @@ class Person extends \Faker\Provider\fr_FR\Person
     {
         $p = array(
             756,
-            \Faker\Provider\Base::randomDigitsString(4),
-            \Faker\Provider\Base::randomDigitsString(4),
-            \Faker\Provider\Base::randomDigitsString(1),
+            self::numerify('####'),
+            self::numerify('####'),
+            self::numerify('#'),
         );
 
         $checksum = \Faker\Calculator\Ean::checksum(implode($p));

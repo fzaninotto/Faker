@@ -35,32 +35,6 @@ class BaseTest extends TestCase
         }
     }
 
-    public function testRandomDigitsStringReturnsString()
-    {
-        $this->assertInternalType('string', BaseProvider::randomDigitsString());
-    }
-
-    public function testRandomDigitsStringReturnsOnlyDigits()
-    {
-        $this->assertRegExp('/^\d+$/', BaseProvider::randomDigitsString(5));
-    }
-
-    /**
-     * @expectedException \OutOfBoundsException
-     */
-    public function testRandomDigitsStringThrowsExceptionWhenCalledWithInvalidLength()
-    {
-        BaseProvider::randomDigitsString(0);
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testRandomDigitsStringThrowsExceptionWhenCalledWithNonNumericalLength()
-    {
-        BaseProvider::randomDigitsString('a');
-    }
-
     /**
      * @expectedException \InvalidArgumentException
      */
