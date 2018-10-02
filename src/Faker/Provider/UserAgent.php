@@ -27,12 +27,12 @@ class UserAgent extends Base
      */
     protected static $lang = array('en-US', 'sl-SI');
 
-    protected static $botNames = array( ['bingbot', 'http://www.bing.com/bingbot.htm'],
-        ['DotBot', 'http://www.opensiteexplorer.org/dotbot, help@moz.com'],
-        ['SemrushBot', 'http://www.semrush.com/bot.html'], ['AhrefsBot', 'http://ahrefs.com/robot/'],
-        ['Baiduspider', 'http://www.baidu.com/search/spider.html'],
-        ['UptimeRobot', 'http://www.uptimerobot.com/'], ['Googlebot', 'http://www.google.com/bot.html'],
-        ['YandexBot', 'http://yandex.com/bots']
+    protected static $botNames = array( array('bingbot', 'http://www.bing.com/bingbot.htm'),
+        array('DotBot', 'http://www.opensiteexplorer.org/dotbot, help@moz.com'),
+        array('SemrushBot', 'http://www.semrush.com/bot.html'), array('AhrefsBot', 'http://ahrefs.com/robot/'),
+        array('Baiduspider', 'http://www.baidu.com/search/spider.html'),
+        array('UptimeRobot', 'http://www.uptimerobot.com/'), array('Googlebot', 'http://www.google.com/bot.html'),
+        array('YandexBot', 'http://yandex.com/bots')
     );
 
     /**
