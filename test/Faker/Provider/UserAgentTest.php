@@ -36,4 +36,9 @@ class UserAgentTest extends TestCase
     {
         $this->stringContains('(KHTML, like Gecko) Chrome/', UserAgent::chrome());
     }
+
+    public function testRobotUserAgent()
+    {
+        $this->stringContains('Mozilla/5.0 (compatible;', UserAgent::robot());
+    }
 }
