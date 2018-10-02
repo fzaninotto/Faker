@@ -165,6 +165,7 @@ namespace Faker;
  * @property string $safari
  * @property string $opera
  * @property string $internetExplorer
+ * @property string $robot
  * @property string $windowsPlatformToken
  * @property string $macPlatformToken
  * @property string $linuxPlatformToken

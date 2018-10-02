@@ -27,6 +27,14 @@ class UserAgent extends Base
      */
     protected static $lang = array('en-US', 'sl-SI');
 
+    protected static $botNames = array( ['bingbot', 'http://www.bing.com/bingbot.htm'],
+        ['DotBot', 'http://www.opensiteexplorer.org/dotbot, help@moz.com'],
+        ['SemrushBot', 'http://www.semrush.com/bot.html'], ['AhrefsBot', 'http://ahrefs.com/robot/'],
+        ['Baiduspider', 'http://www.baidu.com/search/spider.html'],
+        ['UptimeRobot', 'http://www.uptimerobot.com/'], ['Googlebot', 'http://www.google.com/bot.html'],
+        ['YandexBot', 'http://yandex.com/bots']
+    );
+
     /**
      * Generate mac processor
      *
@@ -161,5 +169,15 @@ class UserAgent extends Base
     public static function linuxPlatformToken()
     {
         return 'X11; Linux ' . static::randomElement(static::$linuxProcessor);
+    }
+    /**
+     * Generate web crawler user agent
+     *
+     * @example 'Mozilla/5.0 (compatible; bingbot/2.0; http://www.bing.com/bingbot.htm)'
+     */
+    public static function robot()
+    {
+        $bot = static::randomElement(static::$botNames);
+        return 'Mozilla/5.0 (compatible; ' . $bot[0] . '/' . mt_rand(1, 5) . '.' . mt_rand(0, 3) . '; ' . $bot[1] . ')';
     }
 }

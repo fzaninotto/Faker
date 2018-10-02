@@ -230,6 +230,7 @@ Methods accepting a `$timezone` argument default to `date_default_timezone_get()
     safari                 // 'Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10_7_1 rv:3.0; en-US) AppleWebKit/534.11.3 (KHTML, like Gecko) Version/4.0 Safari/534.11.3'
     opera                  // 'Opera/8.25 (Windows NT 5.1; en-US) Presto/2.9.188 Version/10.00'
     internetExplorer       // 'Mozilla/5.0 (compatible; MSIE 7.0; Windows 98; Win 9x 4.90; Trident/3.0)'
+	robot                  // 'Mozilla/5.0 (compatible; bingbot/2.0; http://www.bing.com/bingbot.htm)'
 
 ### `Faker\Provider\Payment`
 
