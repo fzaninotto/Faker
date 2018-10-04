@@ -84,6 +84,6 @@ class TextProxy extends Text
 {
     public static function utf8_strlen_public($text)
     {
-        return static::utf8_strlen($text);
+        return static::utf8Strlen($text);
     }
 }

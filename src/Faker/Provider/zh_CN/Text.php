@@ -892,7 +892,7 @@ EOT;
         if (function_exists('mb_strlen')) {
             return mb_strlen($text, static::$encoding);
         } elseif (strtoupper(static::$encoding) === 'UTF-8') {
-            return self::utf8_strlen($text);
+            return self::utf8Strlen($text);
         } else {
             return parent::strlen($text);
         }
@@ -980,7 +980,7 @@ EOT;
      *
      * @return int
      */
-    protected static function utf8_strlen($text)
+    protected static function utf8Strlen($text)
     {
         $count = 0;
         for ($i = 0, $len = strlen($text); $i < $len; $i++) {
@@ -1018,7 +1018,7 @@ EOT;
      *
      * @return array
      */
-    protected static function utf8_chars($text)
+    protected static function utf8Chars($text)
     {
         $chars = array();
         for ($i = 0, $len = strlen($text); $i < $len; $i++) {
