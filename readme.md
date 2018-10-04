@@ -1539,16 +1539,6 @@ echo $faker->personalIdentityNumber('female') // '950910-0781'
 echo $faker->bank; // '中国建设银行'
 ```
 
-### `Faker\Provider\zh_CN\Text`
-
-```php
-<?php
-
-// Generate a random single Chinese character
-echo $faker->realText;
-echo $faker->realText(100); // real text contains no more than 100 Chinese characters (not 100 bytes)
-```
-
 ### `Faker\Provider\uk_UA\Payment`
 
 ```php
