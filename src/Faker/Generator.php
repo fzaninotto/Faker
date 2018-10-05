@@ -62,6 +62,7 @@ namespace Faker;
  * @method string|array paragraphs($nb = 3, $asText = false)
  * @property string $text
  * @method string text($maxNbChars = 200)
+ * @method string textMinLength($minNbChars)
  *
  * @method string realText($maxNbChars = 200, $indexSize = 2)
  *

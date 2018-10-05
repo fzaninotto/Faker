@@ -87,6 +87,36 @@ class LoremTest extends TestCase
         $expected = "This is a test paragraph. It has three sentences. Exactly three.\n\nThis is a test paragraph. It has three sentences. Exactly three.";
         $this->assertEquals($expected, $paragraphs);
     }
+
+    public function testTextMinLengthReturnsParagraphsWhenAskedSizeGreaterThanOrEqualTo100()
+    {
+        $text = TestableLorem::textMinLength(100);
+        $paragraph = 'This is a test paragraph. It has three sentences. Exactly three.';
+        $this->assertEquals($paragraph.' '.$paragraph, $text);
+    }
+
+    public function testTextMinLengthReturnsSentencesWhenAskedSizeLessThan100AndGreaterThanOrEqualTo25()
+    {
+        $text = TestableLorem::textMinLength(99);
+        $sentence = 'This is a test sentence.';
+        $expected = $sentence.' '.$sentence.' '.$sentence.' '.$sentence;
+        $this->assertEquals($expected, $text);
+    }
+
+    public function testTextMinLengthReturnsWordsWhenAskedSizeLessThan25()
+    {
+        $text = TestableLorem::textMinLength(24);
+        $this->assertEquals('Word word word word word.', $text);
+    }
+
+    public function testTextMinLengthReturnsStringsLongerOrEqualToThanAskedSize()
+    {
+        $sizes = range(1,101,25);
+        foreach($sizes AS $size){
+            $text = TestableLorem::textMinLength($size);
+            $this->assertGreaterThanOrEqual($size, strlen($text));
+        }
+    }
 }
 
 class TestableLorem extends Lorem

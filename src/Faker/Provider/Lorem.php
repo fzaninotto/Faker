@@ -196,6 +196,41 @@ class Lorem extends Base
         return implode($text, '');
     }
 
+    /**
+     * Generate a text string with a minimum length.
+     * Depending on the $minNbChars, returns a string made of words, sentences, or paragraphs.
+     *
+     * @example 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'
+     *
+     * @param  integer $minNbChars Minimum number of characters the text should contain (minimum 5)
+     *
+     * @return string
+     */
+    public static function textMinLength($minNbChars)
+    {
+        $type = ($minNbChars < 25) ? 'word' : (($minNbChars < 100) ? 'sentence' : 'paragraph');
+
+        $text = array();
+        $size = 0;
+
+        while ($size < $minNbChars) {
+            $word   = ($size ? ' ' : '') . static::$type();
+            $text[] = $word;
+
+            $size += strlen($word);
+        }
+
+        if ($type === 'word') {
+            // capitalize first letter
+            $text[0] = ucfirst($text[0]);
+
+            // end sentence with full stop
+            $text[count($text) - 1] .= '.';
+        }
+
+        return implode($text, '');
+    }
+
     protected static function randomizeNbElements($nbElements)
     {
         return (int) ($nbElements * mt_rand(60, 140) / 100) + 1;
