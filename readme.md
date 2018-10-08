@@ -925,7 +925,7 @@ echo $faker->name; // 'Oluwunmi Mayowa'
 <?php
 
 // Generates a cell (mobile) phone number
-echo $faker->cellNumber; // "021 123 4567"
+echo $faker->mobileNumber; // "021 123 4567"
 
 // Generates a toll free number
 echo $faker->tollFreeNumber; // "0800 123 456"
