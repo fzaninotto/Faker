@@ -198,6 +198,7 @@ class Miscellaneous extends Base
         'wal_ET', 'wo_SN', 'xh_ZA',
         'yo_NG', 'zh_CN', 'zh_HK',
         'zh_MO', 'zh_SG', 'zh_TW', 'zu_ZA',
+        'ps_AF'
     );
 
     /**
