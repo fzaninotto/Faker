@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\en_AU;
+namespace Faker\Test\Provider\en_AU;
 
 use Faker\Generator;
 use Faker\Provider\en_AU\Address;

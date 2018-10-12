@@ -1,8 +1,9 @@
 <?php
 
-namespace Faker\Provider\en_GB;
+namespace Faker\Test\Provider\en_GB;
 
 use Faker\Generator;
+use Faker\Provider\en_GB\Address;
 use PHPUnit\Framework\TestCase;
 
 class AddressTest extends TestCase
