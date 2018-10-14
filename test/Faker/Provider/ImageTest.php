@@ -46,7 +46,7 @@ class ImageTest extends TestCase
 
     public function testDownloadWithDefaults()
     {
-        $url = "http://lorempixel.com/";
+        $url = "https://via.placeholder.com/640x480";
         $curlPing = curl_init($url);
         curl_setopt($curlPing, CURLOPT_TIMEOUT, 5);
         curl_setopt($curlPing, CURLOPT_CONNECTTIMEOUT, 5);
@@ -56,7 +56,7 @@ class ImageTest extends TestCase
         curl_close($curlPing);
 
         if ($httpCode < 200 | $httpCode > 300) {
-            $this->markTestSkipped("LoremPixel is offline, skipping image download");
+            $this->markTestSkipped("Placeholder is offline, skipping image download");
         }
 
         $file = Image::image(sys_get_temp_dir());
