@@ -11,7 +11,7 @@ class Address extends \Faker\Provider\es_ES\Address
     protected static $streetSuffix = array('');
     protected static $postcode = array('BOLIVIA ####');
     protected static $state = array(
-        'Santa Cruz', 'Beni', 'Pando', 'La Paz', 'Chuquisaca', 'Oruro', 'Tarija', 'Potosi', 'Cochabamba'
+        'Santa Cruz', 'Beni', 'Pando', 'La Paz', 'Chuquisaca', 'Oruro', 'Tarija', 'Potosí', 'Cochabamba', 'El Alto'
     );
     protected static $stateAbbr = array(
         'BO-SC', 'BO-LP', 'BO-BN', 'BO-PA', 'BO-CH', 'BO-OR', 'BO-TJ', 'BO-PT', 'BO-CO',

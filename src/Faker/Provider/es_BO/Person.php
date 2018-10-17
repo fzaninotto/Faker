@@ -20,6 +20,11 @@ class Person extends \Faker\Provider\Person
         '{{titleFemale}} {{firstNameFemale}} {{lastName}}'
     );
 
+    /**
+     * {@link} http://correodelsur.com/ecos/20150927_100-nombres-mas-populares.html
+     * 
+     * Common bolivian male names
+     */
     protected static $firstNameMale = array(
         'Aarón', 'Adrián', 'Agustín', 'Alan', 'Alberto', 'Alejandro', 'Alex', 'Alexander', 'Alonso', 'Alvaro', 'Andrés', 'Ángel', 'Anthony', 'Antonio', 'Ariel', 'Axel',
         'Benjamín', 'Bismark', 'Brandon', 'Brian', 'Bruno', 'Bryan',
@@ -47,31 +52,41 @@ class Person extends \Faker\Provider\Person
         'Zenon'
     );
 
+    /**
+     * {@link} https://www.guiainfantil.com/articulos/nombres/nombres-para-ninos/los-nombres-mas-populares-en-bolivia-para-ninas/
+     * 
+     * Common bolivian female names
+     */
     protected static $firstNameFemale = array(
         'Abigail', 'Abril', 'Adriana', 'Agustina', 'Alejandra', 'Alessandra', 'Alexa', 'Allison', 'Alma', 'Amanda', 'Amelia', 'Ana', 'Andrea', 'Antonella', 'Antonia', 'Ariadna', 'Ariana', 'Ashley',
-        'Bianca', 'Brenda', 'Bruna',
-        'Caterine', 'Camila', 'Carla', 'Carolina', 'Catalina', 'Cecilia', 'Clara', 'Constanza',
+        'Bianca', 'Brenda', 'Briggitte', 'Bruna',
+        'Caterine', 'Camila', 'Carla', 'Carmen', 'Carolina', 'Catalina', 'Cecilia', 'Clara', 'Constanza',
         'Daniela', 'Dayana', 'Delfina', 'Diana',
-        'Elena', 'Elizabeth', 'Emilia', 'Emily', 'Emma', 'Evelyn',
+        'Elena', 'Elizabeth', 'Emilia', 'Emily', 'Emma', 'Estéfanie', 'Esther', 'Evelyn',
         'Fabiana', 'Felicia', 'Fernanda', 'Fiorella', 'Florencia', 'Fátima',
-        'Gabriela', 'Guadalupe',
+        'Gabriela', 'Guadalupe', 'Goretty',
         'Irene', 'Isabel', 'Isabella', 'Isidora', 'Ivanna',
         'Jazmín', 'Jenny', 'Jessica', 'Josefa', 'Josefina', 'Jhoselyn', 'Juana', 'Julia', 'Juliana', 'Julieta',
-        'Kamila', 'Karina', 'Karla', 'Katherine',
-        'Laura', 'Linda', 'Lola', 'Luana', 'Luciana', 'Lucía', 'Luna',
+        'Kamila', 'Karina', 'Karla', 'Katherine', 'Kimberly',
+        'Laura', 'Lidia', 'Linda', 'Lola', 'Luana', 'Luciana', 'Lucía', 'Luna',
         'Magdalena', 'Maite', 'Malena', 'Manuela', 'Mariana', 'Mariangel', 'Martina', 'María', 'Melina', 'Micaela', 'Michelle', 'Miranda', 'Montserrat', 'Mía',
-        'Nadia', 'Natalia', 'Nicole',
+        'Nadia', 'Natalia', 'Nathalia', 'Nicole',
         'Oliva', 'Olivia', 'Ornela',
-        'Paula', 'Paulina',
-        'Rafaela', 'Rebeca', 'Regina', 'Renata', 'Romina', 'Rosario',
-        'Salomé', 'Samantha', 'Sara', 'Silvana', 'Silvina', 'Sofía', 'Sophie', 'Sonia',
+        'Paula', 'Paulina', 'Patricia',
+        'Rafaela', 'Rebeca', 'Regina', 'Renata', 'Romina', 'Rosario', 'Rosmery', 'Roxana',
+        'Salomé', 'Samantha', 'Sara', 'Scarlett', 'Silvana', 'Silvina', 'Sofía', 'Sophie', 'Sonia',
         'Tatiana', 'Thais',
         'Valentina', 'Valeria', 'Valery', 'Victoria', 'Violeta',
         'Ximena',
-        'Yessica',
+        'Yessica', 'Yvanna',
         'Zoe'
     );
 
+    /**
+     * {@link} http://www.eluniversitario.com.bo/index.php/descargas/documentos-universitarios/notas/1211-199-apellidos-mas-comunes-en-bolivia
+     * 
+     * Common bolivian last names
+     */
     protected static $lastName = array(
         'Abeyta', 'Abrego', 'Abreu', 'Acevedo', 'Acosta', 'Acuña', 'Adame', 'Adorno', 'Agosto', 'Aguayo', 'Águilar', 'Aguilera', 'Aguirre', 'Alanis', 'Alaniz', 'Alarcón', 'Alba', 'Alcala', 'Alcántar', 'Alcaraz', 'Alejandro', 'Alemán', 'Aldunate', 'Alfaro', 'Alicea', 'Almanza', 'Almaraz', 'Almonte', 'Alonso', 'Alonzo', 'Altamirano', 'Alva', 'Alvarado', 'Álvarez', 'Amador', 'Amaya', 'Anaya', 'Anguiano', 'Angulo', 'Aparicio', 'Apodaca', 'Aponte', 'Aragón', 'Araña', 'Aranda', 'Arce', 'Archuleta', 'Arellano', 'Arenas', 'Arevalo', 'Arguello', 'Arias', 'Armas', 'Armendáriz', 'Armenta', 'Armijo', 'Arredondo', 'Arreola', 'Arriaga', 'Arroyo', 'Arteaga', 'Atencio', 'Ávalos', 'Ávila', 'Avilés', 'Ayala',
         'Baca', 'Badillo', 'Báez', 'Baeza', 'Bahena', 'Balcazar', 'Balderas', 'Ballesteros', 'Banda', 'Bañuelos', 'Barajas', 'Barela', 'Barragán', 'Barraza', 'Barrera', 'Barreto', 'Barrientos', 'Barrios', 'Batista', 'Becerra', 'Beltrán', 'Benavides', 'Benavídez', 'Benítez', 'Bermúdez', 'Bernal', 'Berríos', 'Bétancourt', 'Blanco', 'Bonilla', 'Borrego', 'Botello', 'Bravo', 'Briones', 'Briseño', 'Brito', 'Bueno', 'Burgos', 'Bustamante', 'Bustos',

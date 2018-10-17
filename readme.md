@@ -1014,6 +1014,15 @@ echo $faker->licenceCode; // B
 echo $faker->vat;           // "A35864370"
 ```
 
+### `Faker\Provider\es_BO\Person`
+
+```php
+<?php
+
+// Generates a Bolivian Cédula de Identidad (CI) number
+echo $faker->cedulaIdentidad; // '7719556'
+```
+
 ### `Faker\Provider\es_PE\Person`
 
 ```php
