@@ -26,7 +26,7 @@ class Person extends \Faker\Provider\Person
         'mr.', 'dr.', 'ir.', 'drs', 'bacc.', 'kand.', 'dr.h.c.', 'prof.', 'ds.', 'ing.', 'bc.'
     );
 
-    private static $suffix = array(
+    protected static $suffix = array(
         'BA', 'Bsc', 'LLB', 'LLM', 'MA', 'Msc', 'MPhil', 'D', 'PhD', 'AD', 'B', 'M'
     );
 
@@ -116,7 +116,7 @@ class Person extends \Faker\Provider\Person
         'Huijzing', 'Huisman', 'Huls', 'Hulshouts', 'Hulskes', 'Hulst', 'van Hulten', 'Huurdeman', 'van het Heerenveen',
         'Jaceps', 'Jacobi', 'Jacobs', 'Jacquot', 'de Jager', 'Jans', 'Jansdr', 'Janse', 'Jansen', 'Jansen', 'Jansse',
         'Janssen', 'Janssens', 'Jasper dr', 'Jdotte', 'Jeggij', 'Jekel', 'Jerusalem', 'Jochems',
-        'Jones', 'de Jong', 'Jonkman', 'Joosten', 'Jorlink', 'Jorrisen', 'van Jumiège', 'Jurrijens', 'Köster',
+        'Jones', 'de Jong', 'Jonkman', 'Joosten', 'Jorlink', 'Jorissen', 'van Jumiège', 'Jurrijens', 'Köster',
         'van der Kaay', 'de Kale', 'Kallen', 'Kalman', 'Kamp', 'Kamper', 'Karels', 'Kas', 'van Kasteelen', 'Kathagen',
         'Keijser', 'de Keijser', 'Keijzer', 'de Keijzer', 'Keltenie', 'van Kempen', 'Kerkhof', 'Ketel', 'Ketting',
         'der Kijnder', 'van der Kint', 'Kirpenstein', 'Kisman', 'van Klaarwater', 'van de Klashorst', 'Kleibrink',
@@ -313,5 +313,38 @@ class Person extends \Faker\Provider\Person
     public static function prefix()
     {
         return static::randomElement(static::$prefix);
+    }
+    
+    /**
+     * @link https://nl.wikipedia.org/wiki/Burgerservicenummer#11-proef
+     *
+     * @return string
+     */
+    public function idNumber()
+    {
+        $return = '';
+        $nr     = array();
+        $nr[]   = 0;
+        while (count($nr) < 8) {
+            $nr[] = static::randomDigit();
+        }
+        $nr[] = mt_rand(0, 6);
+        if ($nr[7] == 0 && $nr[8] == 0) {
+            $nr[7] = 0;
+        }
+
+        $bsn   = (9 * $nr[8]) + (8 * $nr[7]) + (7 * $nr[6]) + (6 * $nr[5]) + (5 * $nr[4]) + (4 * $nr[3]) + (3 * $nr[2]) + (2 * $nr[1]);
+        $nr[0] = floor($bsn - floor($bsn / 11) * 11);
+        if ($nr[0] > 9) {
+            if ($nr[1] > 0) {
+                $nr[0] = 8;
+                $nr[1]--;
+            } else {
+                $nr[0] = 1;
+                $nr[1]++;
+
+            }
+        }
+        return implode('', array_reverse($nr));
     }
 }

@@ -3,8 +3,9 @@
 namespace Faker\Test\Provider;
 
 use Faker\Provider\Image;
+use PHPUnit\Framework\TestCase;
 
-class ImageTest extends \PHPUnit_Framework_TestCase
+class ImageTest extends TestCase
 {
     public function testImageUrlUses640x680AsTheDefaultSize()
     {
@@ -45,7 +46,7 @@ class ImageTest extends \PHPUnit_Framework_TestCase
 
     public function testDownloadWithDefaults()
     {
-        $url = "http://www.lorempixel.com/";
+        $url = "http://lorempixel.com/";
         $curlPing = curl_init($url);
         curl_setopt($curlPing, CURLOPT_TIMEOUT, 5);
         curl_setopt($curlPing, CURLOPT_CONNECTTIMEOUT, 5);

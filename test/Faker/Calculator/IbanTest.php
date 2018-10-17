@@ -3,8 +3,9 @@
 namespace Faker\Test\Calculator;
 
 use Faker\Calculator\Iban;
+use PHPUnit\Framework\TestCase;
 
-class IbanTest extends \PHPUnit_Framework_TestCase
+class IbanTest extends TestCase
 {
 
     public function checksumProvider()

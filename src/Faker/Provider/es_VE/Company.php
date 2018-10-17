@@ -27,4 +27,14 @@ class Company extends \Faker\Provider\Company
     {
         return static::randomElement(static::$companyPrefix);
     }
+
+    /**
+     * Generate random Taxpayer Identification Number (RIF in Venezuela). Ex J-123456789-1
+     * @param string $separator
+     * @return string
+     */
+    public function taxpayerIdentificationNumber($separator = '')
+    {
+        return static::randomElement(array('J', 'G', 'V', 'E', 'P', 'C')) . $separator . static::numerify('########') . $separator . static::numerify('#');
+    }
 }
