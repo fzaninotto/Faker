@@ -14,8 +14,8 @@ class Person extends \Faker\Provider\Person
      * That list of MALE last names could be safely extended to FEMALE list just by adding 'a' letter at the end
      */
     protected static $femaleNameFormats = array(
-        '{{firstNameFemale}} {{middleNameFemale}} {{lastName}}а',
-        '{{lastName}}а {{firstNameFemale}} {{middleNameFemale}}',
+        '{{firstNameFemale}} {{middleNameFemale}} {{lastNameFemale}}',
+        '{{lastNameFemale}} {{firstNameFemale}} {{middleNameFemale}}',
     );
 
     /**
@@ -105,10 +105,6 @@ class Person extends \Faker\Provider\Person
         'Меркушев', 'Лыткин', 'Туров',
     );
 
-    protected static $lastNameFemale = array(
-        '{{lastName}}а'
-    );
-
     /**
      * Return male middle name
      *
@@ -118,7 +114,7 @@ class Person extends \Faker\Provider\Person
      *
      * @return string Middle name
      */
-    public function middleNameMale()
+    public static function middleNameMale()
     {
         return static::randomElement(static::$middleNameMale);
     }
@@ -132,7 +128,7 @@ class Person extends \Faker\Provider\Person
      *
      * @return string Middle name
      */
-    public function middleNameFemale()
+    public static function middleNameFemale()
     {
         return static::randomElement(static::$middleNameFemale);
     }
@@ -162,14 +158,14 @@ class Person extends \Faker\Provider\Person
     /**
      * @param string|null $gender 'male', 'female' or null for any
      * @return string
-span class="pl-s1">      * @example 'Alexander'
+     * @example 'Иванов'
      */
     public function lastName($gender = null)
     {
         if ($gender === static::GENDER_MALE) {
             return static::lastNameMale();
         } elseif ($gender === static::GENDER_FEMALE) {
-            return $this->generator->parse(static::lastNameFemale());
+            return static::lastNameFemale();
         }
 
         return $this->lastName(static::randomElement(array(
@@ -185,6 +181,6 @@ span class="pl-s1">      * @example 'Alexander'
 
     public static function lastNameFemale()
     {
-        return static::randomElement(static::$lastNameFemale);
+        return static::randomElement(static::$lastName) . 'a';
     }
 }
