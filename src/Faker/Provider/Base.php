@@ -110,7 +110,7 @@ class Base
      */
     public static function randomEvenDigitNotNull()
     {
-        return self::even(mt_rand(2,8));
+        return self::even(mt_rand(2, 8));
     }
 
     /**
