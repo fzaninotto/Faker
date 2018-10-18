@@ -82,35 +82,4 @@ class PersonTest extends TestCase
     {
         $this->assertEquals('Фёдоровна', Person::middleNameFemale());
     }
-
-//    public function testLastNameMale()
-//    {
-//        $this->assertEquals('Воронцов', $this->faker->lastName('male'));
-//    }
-//
-//    public function testLastNameFemale()
-//    {
-//        $this->assertEquals('Крюкова', $this->faker->lastName('female'));
-//    }
-//
-//    public function testLastNameMale2()
-//    {
-//        $this->assertEquals('Воронцов', $this->faker->lastName('male'));
-//    }
-//
-//    public function testLastNameFemaleInnerFunction()
-//    {
-//        $this->assertEquals('Крюкова', $this->faker->lastName('female'));
-//    }
-//
-//    public function testMiddleNameMale()
-//    {
-//        $this->assertEquals('Фёдорович', $this->faker->middleName('male'));
-//    }
-//
-//    public function testMiddleNameFemale()
-//    {
-//        $this->assertEquals('Фёдоровна', $this->faker->middleName('female'));
-//    }
-
 }
