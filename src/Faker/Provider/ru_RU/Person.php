@@ -105,6 +105,10 @@ class Person extends \Faker\Provider\Person
         'Меркушев', 'Лыткин', 'Туров',
     );
 
+    protected static $lastNameFemale = array(
+        '{{lastName}}а'
+    );
+
     /**
      * Return male middle name
      *
@@ -153,5 +157,34 @@ class Person extends \Faker\Provider\Person
             static::GENDER_MALE,
             static::GENDER_FEMALE,
         )));
+    }
+
+    /**
+     * @param string|null $gender 'male', 'female' or null for any
+     * @return string
+     * @example 'John'
+     */
+    public function lastName($gender = null)
+    {
+        if ($gender === static::GENDER_MALE) {
+            return static::lastNameMale();
+        } elseif ($gender === static::GENDER_FEMALE) {
+            return $this->generator->parse(static::lastNameFemale());
+        }
+
+        return $this->lastName(static::randomElement(array(
+            static::GENDER_MALE,
+            static::GENDER_FEMALE,
+        )));
+    }
+
+    public static function lastNameMale()
+    {
+        return static::randomElement(static::$lastName);
+    }
+
+    public static function lastNameFemale()
+    {
+        return static::randomElement(static::$lastNameFemale);
     }
 }
