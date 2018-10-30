@@ -2,6 +2,8 @@
 
 namespace Faker\Provider\nl_BE;
 
+use Faker\Provider\DateTime;
+
 class Person extends \Faker\Provider\Person
 {
     protected static $firstNameMale = array(
@@ -69,4 +71,36 @@ class Person extends \Faker\Provider\Person
         'Vermeersch', 'Vermeiren', 'Vermeulen', 'Verschueren', 'Verstraete', 'Verstraeten',
         'Vervoort', 'Wauters', 'Willems', 'Wouters', 'Wuyts', 'Yildirim', 'Yilmaz'
     );
+
+    /**
+     *  Belgian Rijksregister numbers are used to identify each citizen,
+     *  it consists of three parts, the person's day of birth, in the
+     *  format 'ymd', followed by a number between 1 and 997, odd for
+     *  males, even for females. The last part is used to check if it's
+     *  a valid number.
+     *
+     *  @link https://nl.wikipedia.org/wiki/Rijksregisternummer
+     *
+     *  @param string|null $gender 'male', 'female' or null for any
+     *  @return string
+     */
+    public static function rrn($gender = null)
+    {
+        $middle = self::numberBetween(1, 997);
+        if ($gender === static::GENDER_MALE) {
+            $middle = $middle %2 === 1 ? $middle : $middle+1;
+        } elseif ($gender === static::GENDER_FEMALE) {
+            $middle = $middle %2 === 0 ? $middle : $middle+1;
+        }
+        $middle = sprintf('%03d', $middle);
+        
+        $date = DateTime::dateTimeThisCentury();
+        $dob = sprintf('%06d', $date->format('ymd'));
+        $help = $date->format('Y') >= 2000 ? 2 : null;
+
+        $check = intval($help.$dob.$middle);
+        $rest = sprintf('%02d', 97 - ($check % 97));
+        
+        return $dob.$middle.$rest;
+    }
 }

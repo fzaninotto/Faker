@@ -4,8 +4,9 @@ namespace Faker\Test\Provider\es_ES;
 
 use Faker\Generator;
 use Faker\Provider\es_ES\Person;
+use PHPUnit\Framework\TestCase;
 
-class PersonTest extends \PHPUnit_Framework_TestCase
+class PersonTest extends TestCase
 {
     public function setUp()
     {
@@ -34,5 +35,12 @@ class PersonTest extends \PHPUnit_Framework_TestCase
         list(, $number, $letter) = $matches;
 
         return strtoupper($letter) === $map[((int) $number) % 23];
+    }
+
+    public function testLicenceCode()
+    {
+        $validLicenceCodes = array('AM', 'A1', 'A2', 'A','B', 'B+E', 'C1', 'C1+E', 'C', 'C+E', 'D1', 'D1+E', 'D', 'D+E');
+
+        $this->assertContains($this->faker->licenceCode, $validLicenceCodes);
     }
 }

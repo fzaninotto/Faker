@@ -3,8 +3,9 @@
 namespace Faker\Test\Provider;
 
 use Faker\Provider\Color;
+use PHPUnit\Framework\TestCase;
 
-class ColorTest extends \PHPUnit_Framework_TestCase
+class ColorTest extends TestCase
 {
 
     public function testHexColor()
@@ -19,7 +20,7 @@ class ColorTest extends \PHPUnit_Framework_TestCase
 
     public function testRgbColorAsArray()
     {
-        $this->assertEquals(3, count(Color::rgbColorAsArray()));
+        $this->assertCount(3, Color::rgbColorAsArray());
     }
 
     public function testRgbColor()

@@ -26,7 +26,7 @@ class Person extends \Faker\Provider\Person
         'mr.', 'dr.', 'ir.', 'drs', 'bacc.', 'kand.', 'dr.h.c.', 'prof.', 'ds.', 'ing.', 'bc.'
     );
 
-    private static $suffix = array(
+    protected static $suffix = array(
         'BA', 'Bsc', 'LLB', 'LLM', 'MA', 'Msc', 'MPhil', 'D', 'PhD', 'AD', 'B', 'M'
     );
 
@@ -116,7 +116,7 @@ class Person extends \Faker\Provider\Person
         'Huijzing', 'Huisman', 'Huls', 'Hulshouts', 'Hulskes', 'Hulst', 'van Hulten', 'Huurdeman', 'van het Heerenveen',
         'Jaceps', 'Jacobi', 'Jacobs', 'Jacquot', 'de Jager', 'Jans', 'Jansdr', 'Janse', 'Jansen', 'Jansen', 'Jansse',
         'Janssen', 'Janssens', 'Jasper dr', 'Jdotte', 'Jeggij', 'Jekel', 'Jerusalem', 'Jochems',
-        'Jones', 'de Jong', 'Jonkman', 'Joosten', 'Jorlink', 'Jorrisen', 'van Jumiège', 'Jurrijens', 'Köster',
+        'Jones', 'de Jong', 'Jonkman', 'Joosten', 'Jorlink', 'Jorissen', 'van Jumiège', 'Jurrijens', 'Köster',
         'van der Kaay', 'de Kale', 'Kallen', 'Kalman', 'Kamp', 'Kamper', 'Karels', 'Kas', 'van Kasteelen', 'Kathagen',
         'Keijser', 'de Keijser', 'Keijzer', 'de Keijzer', 'Keltenie', 'van Kempen', 'Kerkhof', 'Ketel', 'Ketting',
         'der Kijnder', 'van der Kint', 'Kirpenstein', 'Kisman', 'van Klaarwater', 'van de Klashorst', 'Kleibrink',

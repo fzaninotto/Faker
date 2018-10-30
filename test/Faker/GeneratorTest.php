@@ -3,8 +3,9 @@
 namespace Faker\Test;
 
 use Faker\Generator;
+use PHPUnit\Framework\TestCase;
 
-class GeneratorTest extends \PHPUnit_Framework_TestCase
+class GeneratorTest extends TestCase
 {
     public function testAddProviderGivesPriorityToNewlyAddedProvider()
     {
@@ -19,7 +20,7 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
         $generator = new Generator;
         $provider = new FooProvider();
         $generator->addProvider($provider);
-        $this->assertTrue(is_callable($generator->getFormatter('fooFormatter')));
+        $this->assertInternalType('callable', $generator->getFormatter('fooFormatter'));
     }
 
     public function testGetFormatterReturnsCorrectFormatter()

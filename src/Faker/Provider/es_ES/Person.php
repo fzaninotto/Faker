@@ -63,6 +63,8 @@ class Person extends \Faker\Provider\Person
 
     private static $suffix = array('Hijo', 'Segundo', 'Tercero');
 
+    protected static $licenceCodes = array('AM', 'A1', 'A2', 'A','B', 'B+E', 'C1', 'C1+E', 'C', 'C+E', 'D1', 'D1+E', 'D', 'D+E');
+
     /**
      * @example 'Hijo'
      */
@@ -84,5 +86,15 @@ class Person extends \Faker\Provider\Person
         $letter = self::$crcMap[$number%23];
 
         return $number . $letter;
+    }
+
+    /**
+     * @see https://sede.dgt.gob.es/es/tramites-y-multas/permiso-de-conduccion/obtencion-permiso-licencia-conduccion/clases-permiso-conduccion-edad.shtml
+     *
+     * @return string
+     */
+    public function licenceCode()
+    {
+        return static::randomElement(static::$licenceCodes);
     }
 }

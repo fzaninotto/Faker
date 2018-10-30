@@ -5,8 +5,9 @@ namespace Faker\Test\Provider\cs_CZ;
 use Faker\Generator;
 use Faker\Provider\cs_CZ\Person;
 use Faker\Provider\Miscellaneous;
+use PHPUnit\Framework\TestCase;
 
-class PersonTest extends \PHPUnit_Framework_TestCase
+class PersonTest extends TestCase
 {
     public function testBirthNumber()
     {
@@ -14,7 +15,7 @@ class PersonTest extends \PHPUnit_Framework_TestCase
         $faker->addProvider(new Person($faker));
         $faker->addProvider(new Miscellaneous($faker));
 
-        for ($i = 0; $i < 1000; $i++) { 
+        for ($i = 0; $i < 1000; $i++) {
             $birthNumber = $faker->birthNumber();
             $birthNumber = str_replace('/', '', $birthNumber);
 

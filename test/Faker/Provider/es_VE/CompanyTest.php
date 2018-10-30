@@ -7,11 +7,11 @@
 
 namespace Faker\Test\Provider\es_VE;
 
-
 use Faker\Generator;
 use Faker\Provider\es_VE\Company;
+use PHPUnit\Framework\TestCase;
 
-class CompanyTest extends \PHPUnit_Framework_TestCase
+class CompanyTest extends TestCase
 {
     /**
      * @var Generator

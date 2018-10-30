@@ -12,7 +12,7 @@ class Payment extends Base
     protected static $cardVendors = array(
         'Visa', 'Visa', 'Visa', 'Visa', 'Visa',
         'MasterCard', 'MasterCard', 'MasterCard', 'MasterCard', 'MasterCard',
-        'American Express', 'Discover Card'
+        'American Express', 'Discover Card', 'Visa Retired'
     );
 
     /**
@@ -22,24 +22,26 @@ class Payment extends Base
      */
     protected static $cardParams = array(
         'Visa' => array(
-            "4539########",
             "4539###########",
-            "4556########",
             "4556###########",
-            "4916########",
             "4916###########",
-            "4532########",
             "4532###########",
-            "4929########",
             "4929###########",
-            "40240071####",
             "40240071#######",
-            "4485########",
             "4485###########",
-            "4716########",
             "4716###########",
-            "4###########",
             "4##############"
+        ),
+        'Visa Retired' => array(
+            "4539########",
+            "4556########",
+            "4916########",
+            "4532########",
+            "4929########",
+            "40240071####",
+            "4485########",
+            "4716########",
+            "4###########",
         ),
         'MasterCard' => array(
             "2221###########",
@@ -222,7 +224,7 @@ class Payment extends Base
      * @param  integer $length      total length without country code and 2 check digits
      * @return string
      */
-    public static function iban($countryCode, $prefix = '', $length = null)
+    public static function iban($countryCode = null, $prefix = '', $length = null)
     {
         $countryCode = is_null($countryCode) ? self::randomKey(self::$ibanFormats) : strtoupper($countryCode);
 

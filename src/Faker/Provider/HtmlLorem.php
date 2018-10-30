@@ -83,7 +83,7 @@ class HtmlLorem extends Base
                 $this->addRandomAttribute($sibling);
                 $this->addRandomSubTree($sibling, mt_rand(0, $maxDepth), $maxWidth);
             }
-        };
+        }
         return $root;
     }
 

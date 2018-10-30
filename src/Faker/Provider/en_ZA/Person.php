@@ -159,7 +159,7 @@ class Person extends \Faker\Provider\Person
         }
         $sequenceDigits = str_pad(self::randomNumber(3), 3, 0, STR_PAD_BOTH);
         $citizenDigit = ($citizen === true) ? '0' : '1';
-        $raceDigit = self::randomNumber(1);
+        $raceDigit = self::numberBetween(8, 9);
 
         $partialIdNumber = $birthDateString . $genderDigit . $sequenceDigits . $citizenDigit . $raceDigit;
 
