@@ -186,7 +186,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
 
     public function testFixedSeedWithMaximumTimestamp()
     {
-        $max = '2018-03-01 12:00:00';
+        $max = date('Y-m-d H:i:s');
 
         mt_srand(1);
         $unixTime = DateTimeProvider::unixTime($max);
