@@ -33,6 +33,7 @@ namespace Faker;
  * @property string $isbn10
  *
  * @property string $phoneNumber
+ * @property string $e164PhoneNumber
  *
  * @property string $company
  * @property string $companySuffix
