@@ -1702,6 +1702,7 @@ echo $faker->VAT; //23456789
 * [aalaap/faker-youtube](https://github.com/aalaap/faker-youtube): Faker for YouTube URLs in various formats
 * [pelmered/fake-car](https://github.com/pelmered/fake-car): Faker for cars and car data
 * [bluemmb/Faker-PicsumPhotos](https://github.com/bluemmb/Faker-PicsumPhotos): Generate images using [picsum.photos](http://picsum.photos/)
+* [er1z/fakemock](https://github.com/er1z/fakemock): Generate mocks using class-configuration and detection via Faker's guesser and Symfony asserts
 
 ## License
 
