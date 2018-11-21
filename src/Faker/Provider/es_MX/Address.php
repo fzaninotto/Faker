@@ -32,7 +32,9 @@ class Address extends \Faker\Provider\es_ES\Address
         'Yucatán',
         'Zacatecas',
     );
-
+    protected static $stateAbbr = array(
+        'AS', 'BC', 'BS', 'CC', 'CS', 'CH', 'CL', 'CM', 'DF', 'DG', 'GT', 'GR', 'HG', 'JC', 'MC', 'MN', 'MS', 'NT', 'NL', 'OC', 'PL', 'QO', 'QR', 'SP', 'SL', 'SR', 'TC', 'TS', 'TL', 'VZ', 'YN', 'ZS'
+    );
     protected static $cityFormats = array(
         '{{cityPrefix}} {{lastName}} {{citySuffix}}',
         '{{cityPrefix}} {{lastName}}',
