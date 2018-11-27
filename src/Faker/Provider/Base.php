@@ -486,7 +486,7 @@ class Base
             return str_repeat($matches[1], Base::randomElement(range($matches[2], $matches[3])));
         }, $regex);
         // (this|that) becomes 'this' or 'that'
-        $regex = preg_replace_callback('/\((.*?)\)/', function ($matches) {
+        $regex = preg_replace_callback('/[^\\\\]\((.*?[^\\\\])\)/', function ($matches) {
             return Base::randomElement(explode('|', str_replace(array('(', ')'), '', $matches[1])));
         }, $regex);
         // All A-F inside of [] become ABCDEF
@@ -497,7 +497,7 @@ class Base
         }, $regex);
         // All [ABC] become B (or A or C)
         $regex = preg_replace_callback('/\[([^\]]+)\]/', function ($matches) {
-            return Base::randomElement(str_split($matches[1]));
+            return Base::randomElement(preg_split('/(?<!\\\\)/', $matches[1], null, PREG_SPLIT_NO_EMPTY));
         }, $regex);
         // replace \d with number and \w with letter and . with ascii
         $regex = preg_replace_callback('/\\\w/', 'static::randomLetter', $regex);
