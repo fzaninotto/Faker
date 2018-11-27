@@ -2,6 +2,8 @@
 
 namespace Faker\Provider\ru_RU;
 
+use Faker\Calculator\Snils;
+
 class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = array(
@@ -174,5 +176,23 @@ class Person extends \Faker\Provider\Person
         $area_code = str_pad($area_code, 2, '0', STR_PAD_LEFT);
         $inn_base =  $area_code . static::numerify('########');
         return $inn_base . \Faker\Calculator\Inn::checksum($inn_base);
+    }
+
+    /**
+     * Return SNILS (Individual insurance account number).
+     *
+     * @access public
+     *
+     * @return string SNILS
+     */
+    public static function snils()
+    {
+        // Numerify can generate tree or more the same digits in row
+        do {
+            $snils = static::numerify('#########');
+            $snils .= Snils::checksum($snils);
+        } while (!Snils::isValid($snils));
+
+        return $snils;
     }
 }
