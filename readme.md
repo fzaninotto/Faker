@@ -1608,6 +1608,18 @@ echo $faker->inn; //  7813540735
 echo $faker->kpp; // 781301001
 ```
 
+### `Faker\Provider\ru_RU\Person`
+
+```php
+<?php
+
+//Generates a Russian Tax Payment Number for Person
+echo $faker->personalInn; //  385113988439
+
+//Generates a Russian Individual Insurance Account Number (SNILS) for Person
+echo $faker->snils; // 7345522392
+```
+
 ### `Faker\Provider\sv_SE\Payment`
 
 ```php
