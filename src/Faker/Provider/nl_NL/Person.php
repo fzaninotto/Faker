@@ -256,7 +256,7 @@ class Person extends \Faker\Provider\Person
         'Collin', 'Luke', 'Merijn', 'Vigo', 'Beau', 'Bilal', 'Jorn', 'Vincent', 'Matthias', 'Ayden', 'Maxim', 'Yassin',
         'Dion', 'Jake', 'Kyano', 'Kick', 'Mustafa', 'Michael', 'Youssef', 'Elias', 'Naud', 'Senna', 'Brian', 'Jari',
         'Mehmet', 'Micha', 'Stefan', 'Arie', 'Duuk', 'Zakaria', 'Ayoub', 'Faas', 'Olaf', 'Tristan', 'Mads', 'Berend',
-        'Mart', 'Sten', 'Ivan', 'Philip', 'Giel', 'Lex', 'Rik', 'Tyler'
+        'Mart', 'Sten', 'Ivan', 'Philip', 'Giel', 'Lex', 'Rik', 'Tyler', 'Henk'
     );
 
     /**
