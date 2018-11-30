@@ -72,7 +72,7 @@ class Image extends Base
         // Generate a random filename. Use the server address so that a file
         // generated at the same time on a different server won't have a collision.
         $name = md5(uniqid(empty($_SERVER['SERVER_ADDR']) ? '' : $_SERVER['SERVER_ADDR'], true));
-        $filename = $name .'.jpg';
+        $filename = $name . '.jpg';
         $filepath = $dir . DIRECTORY_SEPARATOR . $filename;
 
         $url = static::imageUrl($width, $height, $category, $randomize, $word);
@@ -100,6 +100,36 @@ class Image extends Base
             return new \RuntimeException('The image formatter downloads an image from a remote HTTP server. Therefore, it requires that PHP can request remote hosts, either via cURL or fopen()');
         }
 
+        return $fullPath ? $filepath : $filename;
+    }
+
+    /**
+     * Generate an image with a random solid color, save it to disk, and return its location
+     *
+     * @example '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
+     */
+    public static function imageLocal($dir = null, $width = 640, $height = 480, $fullPath = true)
+    {
+        $dir = is_null($dir) ? sys_get_temp_dir() : $dir; // GNU/Linux / OS X / Windows compatible
+        // Validate directory path
+        if (!is_dir($dir) || !is_writable($dir)) {
+            throw new \InvalidArgumentException(sprintf('Cannot write to directory "%s"', $dir));
+        }
+
+        // Generate a random filename. Use the server address so that a file
+        // generated at the same time on a different server won't have a collision.
+        $name = md5(uniqid(empty($_SERVER['SERVER_ADDR']) ? '' : $_SERVER['SERVER_ADDR'], true));
+        $filename = $name . '.jpg';
+        $filepath = $dir . DIRECTORY_SEPARATOR . $filename;
+
+        $image = imagecreatetruecolor($width, $height);
+        $fill = imagecolorallocate($image, mt_rand(0, 255), mt_rand(0, 255), mt_rand(0, 255));
+        imagefill($image, 0, 0, $fill);
+ 
+        if (!imagejpeg($image, $filepath)) {
+            return new \RuntimeException('The generated image could not be saved.');
+        }
+    
         return $fullPath ? $filepath : $filename;
     }
 }
