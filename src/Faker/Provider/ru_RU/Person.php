@@ -154,4 +154,20 @@ class Person extends \Faker\Provider\Person
             static::GENDER_FEMALE,
         )));
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function lastNameMale()
+    {
+        return parent::lastName();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function lastNameFemale()
+    {
+        return parent::lastName() . 'а';
+    }
 }
