@@ -84,15 +84,16 @@ class Image extends Base
             $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_FILE, $fp);
             $success = curl_exec($ch) && curl_getinfo($ch, CURLINFO_HTTP_CODE) === 200;
-            if ($success) {
-                fclose($fp);
-            } elseif(file_exists($filepath)) {
-                @unlink($filepath); // although the file may exists, it may be "Temporary unvailable" because cURL failed for some reason
+            
+            if(!$success || file_exists($filepath)) {
+                @unlink($filepath); // although the file may exists, it may be "Temporary unvailable" because cURL failed for some reason.
             }
+            
+            fclose($fp);
             curl_close($ch);
         }
         
-        //If cURL fails for some reason, try to get the image via allow_url_fopen method
+        // When cURL fails for some reason, try to get the image via allow_url_fopen method.
         if (!$success && ini_get('allow_url_fopen')) {
             // use remote fopen() via copy()
             $success = copy($url, $filepath);
