@@ -1706,4 +1706,4 @@ echo $faker->VAT; //23456789
 
 ## License
 
-Faker is released under the MIT Licence. See the bundled LICENSE file for details.
+Faker is released under the MIT License. See the bundled LICENSE file for details.
