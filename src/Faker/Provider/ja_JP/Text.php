@@ -598,7 +598,7 @@ EOT;
     protected static function explode($text)
     {
         $chars = array();
-        foreach (preg_split('//u', preg_replace('/\s+/', '', $text)) as $char) {
+        foreach (preg_split('//u', preg_replace('/\s+/u', '', $text)) as $char) {
             if ($char !== '') {
                 $chars[] = $char;
             }
