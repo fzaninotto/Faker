@@ -1703,6 +1703,7 @@ echo $faker->VAT; //23456789
 * [pelmered/fake-car](https://github.com/pelmered/fake-car): Faker for cars and car data
 * [bluemmb/Faker-PicsumPhotos](https://github.com/bluemmb/Faker-PicsumPhotos): Generate images using [picsum.photos](http://picsum.photos/)
 * [er1z/fakemock](https://github.com/er1z/fakemock): Generate mocks using class-configuration and detection via Faker's guesser and Symfony asserts
+* [edyan/neuralyzer](https://github.com/edyan/neuralyzer): Neuralyzer is a library and a command line tool to anonymize databases (by updating existing data or populating a table with fake data). Coming with a database structure detection tool !
 
 ## License
 
