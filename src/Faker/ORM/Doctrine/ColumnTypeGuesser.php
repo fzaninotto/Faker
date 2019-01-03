@@ -67,6 +67,12 @@ class ColumnTypeGuesser
                 return function () use ($generator) {
                     return $generator->datetime;
                 };
+            case 'datetime_immutable':
+            case 'date_immutable':
+            case 'time_immutable':
+                return function () use ($generator) {
+                    return \DateTimeImmutable::createFromMutable($generator->datetime);
+                };
             default:
                 // no smart way to guess what the user expects here
                 return null;
