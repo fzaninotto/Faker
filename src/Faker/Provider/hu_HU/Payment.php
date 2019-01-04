@@ -18,11 +18,11 @@ class Payment extends \Faker\Provider\Payment
      *
      * @return string VAT Number
      */
-    public static function vat($nationalVersion = false)
+    public static function vat($nationalVersion = true)
     {
         return $nationalVersion
-            ? sprintf("HU%d", self::randomNumber(8, true))
-            : sprintf("%d-2-%d", self::randomNumber(8, true), self::randomNumber(2, true));
+            ? sprintf("%d-2-%d", self::randomNumber(8, true), self::randomNumber(2, true))
+            : sprintf("HU%d", self::randomNumber(8, true));
     }
 
     /**
