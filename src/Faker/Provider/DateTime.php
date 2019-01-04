@@ -141,7 +141,22 @@ class DateTime extends Base
             $timezone
         );
     }
-
+    
+    /**
+     * Get a DateTime object based on a given DatePeriod.
+     *
+     * @param \DatePeriod $period A PHP DatePeriod object 
+     * @example dateTimeInPeriod(new \DatePeriod(new \DateTime('2018-01-01'), new \DateInterval('P1D'), new \DateTime('2019-01-01'))
+     * @return \DateTime
+     * @see http://php.net/manual/en/class.dateperiod.php
+     */
+    public static function dateTimeInPeriod(\DatePeriod $period)
+    {
+        return static::randomElement(
+            iterator_to_array($period)
+        );
+    }
+    
     /**
      * Get a DateTime object based on a random date between one given date and
      * an interval
