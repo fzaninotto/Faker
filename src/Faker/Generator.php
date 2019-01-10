@@ -155,6 +155,7 @@ namespace Faker;
  * @method Generator optional($weight = 0.5, $default = null)
  * @method Generator unique($reset = false, $maxRetries = 10000)
  * @method Generator valid($validator = null, $maxRetries = 10000)
+ * @method mixed passthrough($value)
  *
  * @method integer biasedNumberBetween($min = 0, $max = 100, $function = 'sqrt')
  *
