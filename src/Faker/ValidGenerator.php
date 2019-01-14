@@ -62,4 +62,14 @@ class ValidGenerator
 
         return $res;
     }
+
+    /**
+     * @param string $attribute
+     *
+     * @return boolean
+     */
+    public function __isset($attribute)
+    {
+        return isset($this->generator->$attribute);
+    }
 }
