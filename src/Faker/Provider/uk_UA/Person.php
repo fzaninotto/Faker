@@ -96,4 +96,26 @@ class Person extends \Faker\Provider\Person
             static::GENDER_FEMALE,
         )));
     }
+
+    /**
+     * Individual Identification Number
+     * @link https://en.wikipedia.org/wiki/National_identification_number#Ukraine
+     * @param  DateTime $birthdate
+     * @param  string   $sex       M for male or F for female
+     * @return string   10 digit number, like 34713401358
+     */
+    public static function individualIdentificationNumber($birthdate = null, $sex = null)
+    {
+        if ($birthdate === null) {
+            $birthdate = \Faker\Provider\DateTime::dateTimeThisCentury();
+        }
+
+        // real life examples shows that the birth date itself is also included in counting the days from 1900-01-01
+        $iid = $birthdate->diff(new \DateTime('1900-01-01'))->days + 1;
+        $iid = $iid . static::numerify('###');
+        $iid = $iid . ($sex == 'M' ? static::numberBetween(0, 5) * 2 + 1 : static::numberBetween(0, 5) * 2);
+        $iid = $iid . static::randomDigit();
+
+        return $iid;
+    }
 }
