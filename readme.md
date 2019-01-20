@@ -1657,6 +1657,15 @@ echo $faker->bank; // '中国建设银行'
 echo $faker->bank; // "Ощадбанк"
 ```
 
+### `Faker\Provider\uk_UA\Person`
+
+```php
+<?php
+
+// Generates a random individual identification number
+echo $faker->individualIdentificationNumber; // "3657149761"
+```
+
 ### `Faker\Provider\zh_TW\Person`
 
 ```php
