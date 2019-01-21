@@ -113,7 +113,7 @@ class Person extends \Faker\Provider\Person
         // real life examples shows that the birth date itself is also included in counting the days from 1900-01-01
         $iid = $birthdate->diff(new \DateTime('1900-01-01'))->days + 1;
         $iid = $iid . static::numerify('###');
-        $iid = $iid . ($sex == 'M' ? static::numberBetween(0, 5) * 2 + 1 : static::numberBetween(0, 5) * 2);
+        $iid = $iid . ($sex == static::GENDER_MALE ? static::numberBetween(0, 5) * 2 + 1 : static::numberBetween(0, 5) * 2);
         $iid = $iid . static::randomDigit();
 
         return $iid;
