@@ -147,7 +147,7 @@ class Base
      * @param  array  $numbers  An array of numbers defaulting to 0
      * @return array
      */
-    public static function numbersThatEquatesTo($value, $numbers = [])
+    public static function numbersThatEquatesTo($value, $numbers = array())
     {
         if (array_sum($numbers) < $value) {
             $sum = $value - array_sum($numbers);
