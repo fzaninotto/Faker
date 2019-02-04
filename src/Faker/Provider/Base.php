@@ -145,15 +145,22 @@ class Base
      * 
      * @param  integer $value   The number that should be equated to.
      * @param  array  $numbers  An array of numbers defaulting to 0
+     * @param  integer $min The minimum number to return
+     * @param  integer $max The maximum number to return
      * @return array
      */
-    public static function numbersThatEquatesTo($value, $numbers = array())
+    public static function numbersThatEquatesTo($value, $numbers = array(), $min = 1, $max = 0)
     {
         if (array_sum($numbers) < $value) {
-            $sum = $value - array_sum($numbers);
-            array_push($numbers, self::numberBetween(1, $sum));
+            if ($max === 0) {
+                $sum = $value - array_sum($numbers);
+            } else {
+                $sum = $max;
+            }
 
-            return self::numbersThatEquatesTo($value, $numbers);
+            array_push($numbers, self::numberBetween($min, $sum));
+
+            return self::numbersThatEquatesTo($value, $numbers, $min, $max);
         } else {
             return $numbers;
         }
