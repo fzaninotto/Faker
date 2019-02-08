@@ -100,8 +100,8 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         return static::randomElement(static::$zeroToEight);
     }
 
-    public function oneToNine()
+    public function oneToEight()
     {
-        return static::randomElement(static::$oneToNine);
+        return static::randomElement(static::$oneToEight);
     }
 }
