@@ -1109,6 +1109,9 @@ $faker->department; // array('18' => 'Cher');
 // Generates a random region
 echo $faker->region; // "Saint-Pierre-et-Miquelon"
 
+//Generates a randon new administrative region
+echo $faker->newRegion; // "Occitanie"
+
 // Generates a random appartement,stair
 echo $faker->secondaryAddress; // "Bat. 961"
 ```
