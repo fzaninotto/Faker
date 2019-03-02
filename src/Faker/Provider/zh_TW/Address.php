@@ -404,12 +404,12 @@ class Address extends \Faker\Provider\Address
 
     public static function cityPrefix()
     {
-        return '';
+        return static::randomElement(array_keys(static::$city));
     }
 
     public static function citySuffix()
     {
-        return '';
+        return static::randomElement(call_user_func_array('array_merge', array_values(static::$city)));
     }
 
     public static function secondaryAddress()
