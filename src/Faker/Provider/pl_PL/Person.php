@@ -90,6 +90,7 @@ class Person extends \Faker\Provider\Person
     /**
      * @param string|null $gender 'male', 'female' or null for any
      * @example 'Adamczyk'
+     * @return string
      */
     public function lastName($gender = null)
     {
@@ -112,9 +113,13 @@ class Person extends \Faker\Provider\Person
         return static::randomElement(static::$lastNameFemale);
     }
 
+    public static function titleUniversal(){
+        static::randomElement(static::$title);
+    }
+
     public function title($gender = null)
     {
-        return static::randomElement(static::$title);
+        return static::titleUniversal();
     }
 
     /**
@@ -122,7 +127,7 @@ class Person extends \Faker\Provider\Person
      */
     public static function titleMale()
     {
-        return static::title();
+        return static::titleUniversal();
     }
 
     /**
@@ -130,7 +135,7 @@ class Person extends \Faker\Provider\Person
      */
     public static function titleFemale()
     {
-        return static::title();
+        return static::titleUniversal();
     }
 
     /**
