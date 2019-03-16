@@ -134,4 +134,83 @@ class Person extends \Faker\Provider\Person
 
     protected static $titleMale = array('آقای', 'استاد', 'دکتر', 'مهندس');
     protected static $titleFemale = array('خانم', 'استاد', 'دکتر', 'مهندس');
+
+    /**
+     * this method returns a valid Iranian nationalCode
+     * @return string
+     * @example '8075859741'
+     */
+    public static function nationalCode()
+    {
+        $area = self::createAreaCode();
+        $core = self::createCoreCode();
+        $control = self::createControlCode($area, $core);
+
+        return sprintf("%03d%06d%01d", $area, $core, $control);
+    }
+
+    /**
+     * @return int|string
+     * this method generates a 3-digit valid area code to be used in nationalCode
+     */
+    private static function createAreaCode()
+    {
+        $area = 0;
+
+        while (self::sum($area) == 0) {
+            $area = mt_rand(0, 9) . mt_rand(0, 9) . mt_rand(0, 9);
+        }
+
+        return $area;
+    }
+
+    /**
+     * @param $num
+     * @return int
+     * this helper method sums up the digits in a number
+     */
+    private static function sum($num)
+    {
+        $sum = 0;
+
+        for ($i = 0; $i < strlen($num); $i++) {
+            $sum += $num[$i];
+        }
+
+        return $sum;
+    }
+
+    /**
+     * @return string
+     * this method randomly generates a 6-digit core code for nationalCode
+     */
+    private static function createCoreCode()
+    {
+        return mt_rand(1, 9) . mt_rand(1, 9) . mt_rand(1, 9) . mt_rand(1, 9) . mt_rand(1, 9) . mt_rand(1, 9);
+    }
+
+    /**
+     * @param $area
+     * @param $core
+     * @return int
+     * this method uses the Iranian nationalCode validation algorithm to generate a valid 10-digit code
+     */
+    private static function createControlCode($area, $core)
+    {
+        $subNationalCodeString = $area . $core;
+
+        $sum = 0;
+        $count = 0;
+
+        for ($i = 10; $i > 1; $i--) {
+            $sum += $subNationalCodeString[$count] * ($i);
+            $count++;
+        }
+
+        if (($sum % 11) < 2) {
+            return $sum % 11;
+        }
+        return 11 - ($sum % 11);
+    }
+
 }
