@@ -2,7 +2,7 @@
 
 namespace Faker\Provider\en_CA;
 
-class PhoneNumber extends \Faker\Provider\PhoneNumber
+class PhoneNumber extends \Faker\Provider\en_CA\PhoneNumber
 {
     protected static $formats = array(
         '%##-###-####',
