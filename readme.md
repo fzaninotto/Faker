@@ -79,7 +79,7 @@ Even if this example shows a property access, each call to `$faker->name` yields
 
 ```php
 <?php
-for ($i=0; $i < 10; $i++) {
+for ($i = 0; $i < 10; $i++) {
   echo $faker->name, "\n";
 }
   // Adaline Reichel
@@ -314,7 +314,7 @@ Faker provides three special providers, `unique()`, `optional()`, and `valid()`,
 ```php
 // unique() forces providers to return unique values
 $values = array();
-for ($i=0; $i < 10; $i++) {
+for ($i = 0; $i < 10; $i++) {
   // get a random digit, but always a new one, to avoid duplicates
   $values []= $faker->unique()->randomDigit;
 }
@@ -323,7 +323,7 @@ print_r($values); // [4, 1, 8, 5, 0, 2, 6, 9, 7, 3]
 // providers with a limited range will throw an exception when no new unique value can be generated
 $values = array();
 try {
-  for ($i=0; $i < 10; $i++) {
+  for ($i = 0; $i < 10; $i++) {
     $values []= $faker->unique()->randomDigitNotNull;
   }
 } catch (\OverflowException $e) {
@@ -336,7 +336,7 @@ $faker->unique($reset = true)->randomDigitNotNull; // will not throw OverflowExc
 
 // optional() sometimes bypasses the provider to return a default value instead (which defaults to NULL)
 $values = array();
-for ($i=0; $i < 10; $i++) {
+for ($i = 0; $i < 10; $i++) {
   // get a random digit, but also null sometimes
   $values []= $faker->optional()->randomDigit;
 }
@@ -357,7 +357,7 @@ $values = array();
 $evenValidator = function($digit) {
 	return $digit % 2 === 0;
 };
-for ($i=0; $i < 10; $i++) {
+for ($i = 0; $i < 10; $i++) {
 	$values []= $faker->valid($evenValidator)->randomDigit;
 }
 print_r($values); // [0, 4, 8, 4, 2, 6, 0, 8, 8, 6]
@@ -384,7 +384,7 @@ $faker->optional()->passthrough(mt_rand(5, 15));
 ```php
 <?php
 $faker = Faker\Factory::create('fr_FR'); // create a French faker
-for ($i=0; $i < 10; $i++) {
+for ($i = 0; $i < 10; $i++) {
   echo $faker->name, "\n";
 }
   // Luce du Coulon
@@ -567,7 +567,7 @@ $faker = Faker\Factory::create();
 ?>
 <?xml version="1.0" encoding="UTF-8"?>
 <contacts>
-<?php for ($i=0; $i < 10; $i++): ?>
+<?php for ($i = 0; $i < 10; $i++): ?>
   <contact firstName="<?php echo $faker->firstName ?>" lastName="<?php echo $faker->lastName ?>" email="<?php echo $faker->email ?>">
     <phone number="<?php echo $faker->phoneNumber ?>"/>
 <?php if ($faker->boolean(25)): ?>
