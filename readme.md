@@ -412,7 +412,7 @@ Here is an example showing how to populate 5 `Author` and 10 `Book` objects:
 ```php
 <?php
 $generator = \Faker\Factory::create();
-$populator = new Faker\ORM\Propel\Populator($generator);
+$populator = new \Faker\ORM\Propel\Populator($generator);
 $populator->addEntity('Author', 5);
 $populator->addEntity('Book', 10);
 $insertedPKs = $populator->execute();
