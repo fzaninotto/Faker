@@ -2,18 +2,10 @@
 
 namespace Faker\Provider\zh_CN;
 
-class Text extends \Faker\Provider\Text
+use Faker\Provider\zh_TW\Text as BaseText;
+
+class Text extends BaseText
 {
-    protected static $separator = '';
-    protected static $separatorLen = 0;
-
-    /**
-     * All punctuation in $baseText: 、 。 「 」 『 』 ！ ？ ー ， ： ；
-     */
-    protected static $notEndPunct = array('、', '「', '『', 'ー', '，', '：', '；');
-    protected static $endPunct = array('。', '」', '』', '！', '？');
-    protected static $notBeginPunct = array('、', '。', '」', '』', '！', '？', 'ー', '，', '：', '；');
-
     /**
      * Title: 吶喊 Call to Arms (1922)
      * Author: 魯迅 Lu Xun
@@ -148,102 +140,4 @@ S会馆里有三间屋，相传是往昔曾在院子里的槐树上缢死过一�
 我想到希望，忽然害怕起来了。闰土要香炉和烛台的时候，我还暗地里笑他，以为他总是崇拜偶像，什么时候都不忘却。现在我所谓希望，不也是我自己手制的偶像么？只是他的愿望切近，我的愿望茫远罢了。
 我在朦胧中，眼前展开一片海边碧绿的沙地来，上面深蓝的天空中挂著一轮金黄的圆月。我想：希望本是无所谓有，无所谓无的。这正如地上的路；其实地上本没有路，走的人多了，也便成了路。
 EOT;
-
-    protected static $encoding = 'UTF-8';
-
-    protected static function explode($text)
-    {
-        $chars = array();
-
-        foreach (preg_split('//u', str_replace(PHP_EOL, '', $text)) as $char) {
-            if (! empty($char)) {
-                $chars[] = $char;
-            }
-        }
-
-        return $chars;
-    }
-
-    protected static function strlen($text)
-    {
-        return function_exists('mb_strlen')
-            ? mb_strlen($text, static::$encoding)
-            : count(static::explode($text));
-    }
-
-    protected static function validStart($word)
-    {
-        return ! in_array($word, static::$notBeginPunct);
-    }
-
-    protected static function appendEnd($text)
-    {
-        $mbAvailable = extension_loaded('mbstring');
-
-        // extract the last char of $text
-        if ($mbAvailable) {
-            // in order to support php 5.3, third param use 1 instead of null
-            // https://secure.php.net/manual/en/function.mb-substr.php#refsect1-function.mb-substr-changelog
-            $last = mb_substr($text, mb_strlen($text, static::$encoding) - 1, 1, static::$encoding);
-        } else {
-            $chars = static::utf8Encoding($text);
-            $last = $chars[count($chars) - 1];
-        }
-
-        // if the last char is a not-valid-end punctuation, remove it
-        if (in_array($last, static::$notEndPunct)) {
-            if ($mbAvailable) {
-                $text = mb_substr($text, 0, mb_strlen($text, static::$encoding) - 1, static::$encoding);
-            } else {
-                array_pop($chars);
-                $text = implode('', $chars);
-            }
-        }
-
-        // if the last char is not a valid punctuation, append a default one.
-        return in_array($last, static::$endPunct) ? $text : $text . '。';
-    }
-
-    /**
-     * Convert original string to utf-8 encoding.
-     *
-     * @param string $text
-     * @return array
-     */
-    protected static function utf8Encoding($text)
-    {
-        $encoding = array();
-
-        $chars = str_split($text);
-
-        $countChars = count($chars);
-
-        for ($i = 0; $i < $countChars; ++$i) {
-            $temp = $chars[$i];
-
-            $ord = ord($chars[$i]);
-
-            switch (true) {
-                case $ord > 251:
-                    $temp .= $chars[++$i];
-                    // no break
-                case $ord > 247:
-                    $temp .= $chars[++$i];
-                    // no break
-                case $ord > 239:
-                    $temp .= $chars[++$i];
-                    // no break
-                case $ord > 223:
-                    $temp .= $chars[++$i];
-                    // no break
-                case $ord > 191:
-                    $temp .= $chars[++$i];
-                    // no break
-            }
-
-            $encoding[] = $temp;
-        }
-
-        return $encoding;
-    }
 }
