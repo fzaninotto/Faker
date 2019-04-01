@@ -387,9 +387,7 @@ class Address extends \Faker\Provider\Address
 
     public function city()
     {
-        $county = static::randomElement(array_keys(static::$city));
-        $city = static::randomElement(static::$city[$county]);
-        return $county.$city;
+        return static::randomElement(array_keys(static::$city));
     }
 
     public function state()
@@ -402,14 +400,13 @@ class Address extends \Faker\Provider\Address
         return '臺';
     }
 
-    public static function cityPrefix()
+    public function district($city = null)
     {
-        return static::randomElement(array_keys(static::$city));
-    }
+        if (empty($city) || ! in_array($city, array_keys(static::$city))) {
+            return static::randomElement(call_user_func_array('array_merge', array_values(static::$city)));
+        }
 
-    public static function citySuffix()
-    {
-        return static::randomElement(call_user_func_array('array_merge', array_values(static::$city)));
+        return static::randomElement(static::$city[$city]);
     }
 
     public static function secondaryAddress()

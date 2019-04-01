@@ -2,34 +2,61 @@
 
 namespace Faker\Test\Provider\zh_TW;
 
+use Faker\Generator;
+use Faker\Provider\zh_TW\Address;
 use PHPUnit\Framework\TestCase;
 
 class AddressTest extends TestCase
 {
-
-    private $addressClass;
+    /**
+     * @var Generator
+     */
+    private $faker;
 
     public function setUp()
     {
-        $this->addressClass = new \ReflectionClass('Faker\Provider\zh_TW\Address');
+        $faker = new Generator();
+        $faker->addProvider(new Address($faker));
+        $this->faker = $faker;
     }
 
-    protected function getMethod($name)
+    public function testCity()
     {
-        $method = $this->addressClass->getMethod($name);
+        $city = $this->faker->city;
 
-        $method->setAccessible(true);
-
-        return $method;
+        $this->assertNotEmpty($city);
+        $this->assertInternalType('string', $city);
     }
 
-    public function testCityPrefix()
+    public function testDistrict()
     {
-        $this->assertNotEmpty( $this->getMethod('cityPrefix')->invoke(null));
+        $district = $this->faker->district;
+
+        $this->assertNotEmpty($district);
+        $this->assertInternalType('string', $district);
     }
 
-    public function testCitySuffix()
+    public function testDistrictWithCityNameReturnsSpecificDistrict()
     {
-        $this->assertNotEmpty( $this->getMethod('citySuffix')->invoke(null));
+        $district = $this->faker->district('臺北市');
+
+        $this->assertNotEmpty($district);
+        $this->assertInternalType('string', $district);
+    }
+
+    public function testDistrictWithCityNameIsEmptyReturnsRandomDistrict()
+    {
+        $district = $this->faker->district('');
+
+        $this->assertNotEmpty($district);
+        $this->assertInternalType('string', $district);
+    }
+
+    public function testDistrictWithCityNameDoesNotExistIndexReturnsRandomDistrict()
+    {
+        $district = $this->faker->district('海拉魯');
+
+        $this->assertNotEmpty($district);
+        $this->assertInternalType('string', $district);
     }
 }
