@@ -134,4 +134,68 @@ class Person extends \Faker\Provider\Person
 
     protected static $titleMale = array('آقای', 'استاد', 'دکتر', 'مهندس');
     protected static $titleFemale = array('خانم', 'استاد', 'دکتر', 'مهندس');
+
+    /**
+     * This method returns a valid Iranian nationalCode
+     * @example '8075859741'
+     * @link https://fa.wikipedia.org/wiki/%DA%A9%D8%A7%D8%B1%D8%AA_%D8%B4%D9%86%D8%A7%D8%B3%D8%A7%DB%8C%DB%8C_%D9%85%D9%84%DB%8C#%D8%AD%D8%B3%D8%A7%D8%A8_%DA%A9%D8%B1%D8%AF%D9%86_%DA%A9%D8%AF_%DA%A9%D9%86%D8%AA%D8%B1%D9%84
+     * @return string
+     */
+    public static function nationalCode()
+    {
+        $area = self::createAreaCode();
+        $core = self::createCoreCode();
+        $control = self::createControlCode($area, $core);
+
+        return sprintf("%03d%06d%01d", $area, $core, $control);
+    }
+
+    /**
+     * This method generates a 3-digit valid area code to be used in nationalCode
+     * @return int|string
+     */
+    private static function createAreaCode()
+    {
+        $area = "000";
+
+        while ($area == "000") {
+            $area = static::numerify("###");
+        }
+
+        return $area;
+    }
+
+    /**
+     * This method randomly generates a 6-digit core code for nationalCode
+     * @return string
+     */
+    private static function createCoreCode()
+    {
+        return static::numerify("######");
+    }
+
+    /**
+     * This method uses the Iranian nationalCode validation algorithm to generate a valid 10-digit code
+     * @param $area
+     * @param $core
+     * @link https://fa.wikipedia.org/wiki/%DA%A9%D8%A7%D8%B1%D8%AA_%D8%B4%D9%86%D8%A7%D8%B3%D8%A7%DB%8C%DB%8C_%D9%85%D9%84%DB%8C#%D8%AD%D8%B3%D8%A7%D8%A8_%DA%A9%D8%B1%D8%AF%D9%86_%DA%A9%D8%AF_%DA%A9%D9%86%D8%AA%D8%B1%D9%84
+     * @return int
+     */
+    private static function createControlCode($area, $core)
+    {
+        $subNationalCodeString = $area . $core;
+
+        $sum = 0;
+        $count = 0;
+
+        for ($i = 10; $i > 1; $i--) {
+            $sum += $subNationalCodeString[$count] * ($i);
+            $count++;
+        }
+
+        if (($sum % 11) < 2) {
+            return $sum % 11;
+        }
+        return 11 - ($sum % 11);
+    }
 }

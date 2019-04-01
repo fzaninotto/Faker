@@ -1023,6 +1023,15 @@ echo $faker->vat;           // "A35864370"
 echo $faker->dni; // '83367512'
 ```
 
+### `Faker\Provider\fa_IR\Person`
+
+```php
+<?php
+
+// Generates a valid nationalCode
+echo $faker->nationalCode; // "0078475759"
+```
+
 ### `Faker\Provider\fa_IR\Address`
 
 ```php
