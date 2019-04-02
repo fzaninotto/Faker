@@ -21,7 +21,7 @@ class Address extends \Faker\Provider\Address
     protected static $secondaryAddressSuffix = array('室', '房');
 
     protected static $addressFormats = array(
-        '{{postcode}} {{city}}{{streetAddress}}',
+        '{{postcode}} {{city}}{{district}}{{streetAddress}}',
     );
 
     protected static $streetSuffix = array(
@@ -402,9 +402,7 @@ class Address extends \Faker\Provider\Address
 
     public function district($city = null)
     {
-        if (empty($city) || ! in_array($city, array_keys(static::$city))) {
-            return static::randomElement(call_user_func_array('array_merge', array_values(static::$city)));
-        }
+        $city = isset(static::$city[$city]) ? $city : static::city();
 
         return static::randomElement(static::$city[$city]);
     }
