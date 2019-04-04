@@ -7,18 +7,13 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     /**
     * @var array Norwegian land line phone number formats
     */
-    protected static $formats =
-        array(
-        '+472#######',
-        '+473#######',
-        '+475#######',
-        '+476#######',
-        '+477#######',
-        '+47 2# ## ## ##',
-        '+47 3# ## ## ##',
-        '+47 5# ## ## ##',
-        '+47 6# ## ## ##',
-        '+47 7# ## ## ##',
+    protected static $formats = array(
+        '+47#########',
+        '+47 ## ## ## ##',
+        '## ## ## ##',
+        '## ## ## ##',
+        '########',
+        '########'
     );
 
     /**
