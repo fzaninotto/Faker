@@ -22,7 +22,7 @@ class PhoneNumberTest extends TestCase
 
     public function testPhoneNumberReturnsPhoneNumber()
     {
-        $this->assertRegExp('/^(\+47 ?)?(2|3|5|6|7) ?\d{1} ?\d{2} ?\d{2} ?\d{2}$/', $this->faker->phoneNumber());
+        $this->assertRegExp('/^(\+47 ?)?\d{2} ?\d{2} ?\d{2} ?\d{2}$/', $this->faker->phoneNumber());
     }
 
     public function testMobileNumberReturnsMobileNumber()
