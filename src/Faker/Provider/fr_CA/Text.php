@@ -104,7 +104,7 @@ class Text extends \Faker\Provider\Text
      * @see http://www.gutenberg.org/cache/epub/16210/pg16210.txt
      * @var string
      */
-protected static $baseText = <<<'EOT'
+    protected static $baseText = <<<'EOT'
 LA CHASSE-GALERIE
 
 I
