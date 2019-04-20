@@ -58,9 +58,12 @@ Use `Faker\Factory::create()` to create and initialize a faker generator, which 
 // require the Faker autoloader
 require_once '/path/to/Faker/src/autoload.php';
 // alternatively, use another PSR-4 compliant autoloader
-
+//if you use the symfony framework you can comment it
+//require_once '/path/to/Faker/src/autoload.php';
 // use the factory to create a Faker\Generator instance
 $faker = Faker\Factory::create();
+//if you use the symfony framework you have to call global namespace
+$faker = \Faker\Factory::create();
 
 // generate data by accessing properties
 echo $faker->name;
