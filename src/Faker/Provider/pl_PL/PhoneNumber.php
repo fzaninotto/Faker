@@ -21,6 +21,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '0048 {{mobileNetworkIdentifier}}# ### ###',
         '0048{{mobileNetworkIdentifier}}# ### ###',
         '{{mobileNetworkIdentifier}}# ### ###',
+        '{{mobileNetworkIdentifier}}#######',
     );
 
     /**
