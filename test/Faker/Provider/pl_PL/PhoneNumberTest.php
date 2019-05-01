@@ -29,6 +29,6 @@ class PhoneNumberTest extends TestCase
     public function testMobilePhoneNumber()
     {
         $mobileNumber = $this->faker->mobilePhoneNumber();
-        $this->assertRegExp('/^(\+48\s\d{2}\s\d{3}\s\d{2}\s\d{2})|(\+48\s\d{5}\s\)| (\+48\d{9})|(\(\+48\)\s\d{3}\s\d{3}\s\d{3})| (\(\+48\)\d{3}\s\d{3}\s\d{3})|((0048)\s\d{3}\s\d{3}\s\d{3})| (\(0048\)\d{9})|(\d{9})|(\d{3}\s\d{3}\s\d{3}))/', $mobileNumber);
+        $this->assertRegExp('/^(\+48\s\d{2}\s\d{3}\s\d{2}\s\d{2})|(\+48\s\d{5}\s\)| (\+48\d{9})|(\(\+48\)\s\d{3}\s\d{3}\s\d{3})| (\(\+48\)\d{3}\s\d{3}\s\d{3})|((0048)\s\d{3}\s\d{3}\s\d{3})| (\(0048\)\d{9})|(\d{9})|(\d{3}\s\d{3}\s\d{3})|(\d{9}))/', $mobileNumber);
     }
 }
