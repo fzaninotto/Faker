@@ -53,7 +53,7 @@ class Address extends \Faker\Provider\Address
         '{{hamletPrefix}} #',
     );
     protected static $hamletPrefix = array(
-        'Thôn', 'Ấp',
+        'Thôn', 'Ấp', 'Xóm', 'Làng'
     );
     protected static $wardNameFormats = array(
         '{{hamletPrefix}} {{middleName}} {{firstName}}',
@@ -67,7 +67,7 @@ class Address extends \Faker\Provider\Address
         '{{wardPrefix}} #',
     );
     protected static $wardPrefix = array(
-        'Phường', 'Xã',
+        'Phường', 'Xã', 'Thị Trấn'
     );
     protected static $districtNameFormats = array(
         '{{districtPrefix}} {{middleName}} {{firstName}}',
@@ -81,7 +81,7 @@ class Address extends \Faker\Provider\Address
         '{{districtPrefix}} #',
     );
     protected static $districtPrefix = array(
-        'Quận', 'Huyện',
+        'Quận', 'Huyện', 'Thị Xã', 'Thành Phố'
     );
     protected static $addressFormats = array(
         "{{streetAddress}}, {{wardName}}, {{districtName}}\n{{city}}",
