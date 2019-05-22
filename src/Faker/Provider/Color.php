@@ -121,4 +121,12 @@ class Color extends Base
     {
         return static::randomElement(static::$safeColorNames);
     }
+
+    /**
+     * @example 'NavajoWhite'
+     */
+    public static function x11ColorName()
+    {
+        return static::randomElement(static::$allColorNames);
+    }
 }
