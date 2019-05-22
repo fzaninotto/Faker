@@ -113,4 +113,12 @@ class Color extends Base
     {
         return static::randomElement(static::$allColorNames);
     }
+
+    /**
+     * @example 'olive'
+     */
+    public static function htmlColorName()
+    {
+        return static::randomElement(static::$safeColorNames);
+    }
 }
