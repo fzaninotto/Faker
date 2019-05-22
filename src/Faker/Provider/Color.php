@@ -10,7 +10,7 @@ class Color extends Base
     protected static $safeColorNames = array(
         'black', 'maroon', 'green', 'navy', 'olive',
         'purple', 'teal', 'lime', 'blue', 'silver',
-        'gray', 'yellow', 'fuchsia', 'aqua', 'white'
+        'gray', 'yellow', 'fuchsia', 'aqua', 'white', 'red'
     );
 
     protected static $allColorNames = array(
