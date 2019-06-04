@@ -19,7 +19,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     
     public static function areaCode($withoutZero = false)
     {
-        if(!$withoutZero) {
+        if (!$withoutZero) {
             $digits[] = 0;
         }
         
