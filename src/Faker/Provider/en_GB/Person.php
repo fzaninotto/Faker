@@ -67,27 +67,30 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
-     * @link http://surname.sofeminine.co.uk/w/surnames/most-common-surnames-in-great-britain.html
+     * @link https://surnames.behindthename.com/top/lists/england-wales/1991
      */
     protected static $lastName = array(
-        'Adams', 'Allen', 'Anderson',
-        'Bailey', 'Baker', 'Bell', 'Bennett', 'Brown', 'Butler',
-        'Campbell', 'Carter', 'Chapman', 'Clark', 'Clarke', 'Collins', 'Cook', 'Cooper', 'Cox',
-        'Davies', 'Davis',
-        'Edwards', 'Ellis', 'Evans',
-        'Fox',
-        'Graham', 'Gray', 'Green', 'Griffiths',
-        'Hall', 'Harris', 'Harrison', 'Hill', 'Holmes', 'Hughes', 'Hunt', 'Hunter',
-        'Jackson', 'James', 'Johnson', 'Jones',
-        'Kelly', 'Kennedy', 'Khan', 'King', 'Knight',
-        'Lee', 'Lewis', 'Lloyd',
-        'Marshall', 'Martin', 'Mason', 'Matthews', 'Miller', 'Mitchell', 'Moore', 'Morgan', 'Morris', 'Murphy', 'Murray',
-        'Owen',
-        'Palmer', 'Parker', 'Patel', 'Phillips', 'Powell', 'Price',
-        'Reid', 'Reynolds', 'Richards', 'Richardson', 'Roberts', 'Robertson', 'Robinson', 'Rogers', 'Rose', 'Ross', 'Russell',
-        'Saunders', 'Scott', 'Shaw', 'Simpson', 'Smith', 'Stevens', 'Stewart',
-        'Taylor', 'Thomas', 'Thompson', 'Turner',
-        'Walker', 'Walsh', 'Ward', 'Watson', 'White', 'Wilkinson', 'Williams', 'Wilson', 'Wood', 'Wright',
-        'Young',
+        'Abbott', 'Adams', 'Ahmed', 'Akhtar', 'Alexander', 'Ali', 'Allan', 'Allen', 'Anderson', 'Andrews', 'Archer', 'Armstrong', 'Arnold', 'Ashton', 'Atkins', 'Atkinson', 'Austin',
+        'Bailey', 'Baker', 'Baldwin', 'Ball', 'Banks', 'Barber', 'Barker', 'Barlow', 'Barnes', 'Barnett', 'Barrett', 'Barry', 'Bartlett', 'Barton', 'Bates', 'Baxter', 'Begum', 'Bell', 'Bennett', 'Benson', 'Bentley', 'Berry', 'Bevan', 'Bibi', 'Birch', 'Bird', 'Bishop', 'Black', 'Blackburn', 'Blake', 'Bolton', 'Bond', 'Booth', 'Bowen', 'Boyle', 'Bradley', 'Bradshaw', 'Brady', 'Bray', 'Brennan', 'Briggs', 'Brookes', 'Brooks', 'Brown', 'Browne', 'Bruce', 'Bryan', 'Bryant', 'Buckley', 'Bull', 'Burgess', 'Burke', 'Burns', 'Burrows', 'Burton', 'Butcher', 'Butler', 'Byrne',
+        'Cameron', 'Campbell', 'Carey', 'Carpenter', 'Carr', 'Carroll', 'Carter', 'Cartwright', 'Chadwick', 'Chamberlain', 'Chambers', 'Chan', 'Chandler', 'Chapman', 'Charlton', 'Clark', 'Clarke', 'Clayton', 'Clements', 'Coates', 'Cole', 'Coleman', 'Coles', 'Collier', 'Collins', 'Connolly', 'Connor', 'Conway', 'Cook', 'Cooke', 'Cooper', 'Cox', 'Craig', 'Crawford', 'Cross', 'Cunningham', 'Curtis',
+        'Dale', 'Daly', 'Daniels', 'Davey', 'Davidson', 'Davies', 'Davis', 'Davison', 'Dawson', 'Day', 'Dean', 'Dennis', 'Dickinson', 'Dixon', 'Dobson', 'Dodd', 'Doherty', 'Donnelly', 'Douglas', 'Doyle', 'Duffy', 'Duncan', 'Dunn', 'Dyer',
+        'Edwards', 'Elliott', 'Ellis', 'Evans', 'Farmer', 'Farrell', 'Faulkner', 'Ferguson', 'Field', 'Finch', 'Fisher', 'Fitzgerald', 'Fleming', 'Fletcher', 'Flynn', 'Ford', 'Forster', 'Foster', 'Fowler', 'Fox', 'Francis', 'Franklin', 'Fraser', 'Freeman', 'French', 'Frost', 'Fry', 'Fuller',
+        'Gallagher', 'Gardiner', 'Gardner', 'Garner', 'George', 'Gibbons', 'Gibbs', 'Gibson', 'Gilbert', 'Giles', 'Gill', 'Glover', 'Goddard', 'Godfrey', 'Goodwin', 'Gordon', 'Gough', 'Gould', 'Graham', 'Grant', 'Gray', 'Green', 'Greenwood', 'Gregory', 'Griffin', 'Griffiths',
+        'Hale', 'Hall', 'Hamilton', 'Hammond', 'Hancock', 'Hanson', 'Harding', 'Hardy', 'Hargreaves', 'Harper', 'Harris', 'Harrison', 'Hart', 'Hartley', 'Harvey', 'Hawkins', 'Hayes', 'Haynes', 'Hayward', 'Heath', 'Henderson', 'Henry', 'Herbert', 'Hewitt', 'Hicks', 'Higgins', 'Hill', 'Hilton', 'Hobbs', 'Hodgson', 'Holden', 'Holland', 'Holloway', 'Holmes', 'Holt', 'Hooper', 'Hope', 'Hopkins', 'Horton', 'Houghton', 'Howard', 'Howarth', 'Howe', 'Howell', 'Howells', 'Hudson', 'Hughes', 'Humphreys', 'Humphries', 'Hunt', 'Hunter', 'Hurst', 'Hussain', 'Hutchinson', 'Hyde',
+        'Ingram', 'Iqbal',
+        'Jackson', 'James', 'Jarvis', 'Jenkins', 'Jennings', 'John', 'Johnson', 'Johnston', 'Jones', 'Jordan', 'Joyce',
+        'Kaur', 'Kay', 'Kelly', 'Kemp', 'Kennedy', 'Kent', 'Kerr', 'Khan', 'King', 'Kirby', 'Kirk', 'Knight', 'Knowles',
+        'Lamb', 'Lambert', 'Lane', 'Law', 'Lawrence', 'Lawson', 'Leach', 'Lee', 'Lees', 'Leonard', 'Lewis', 'Little', 'Lloyd', 'Long', 'Lord', 'Lowe', 'Lucas', 'Lynch', 'Lyons',
+        'Macdonald', 'Mahmood', 'Mann', 'Manning', 'Marsden', 'Marsh', 'Marshall', 'Martin', 'Mason', 'Matthews', 'May', 'Mccarthy', 'Mcdonald', 'Mckenzie', 'Mclean', 'Mellor', 'Metcalfe', 'Miah', 'Middleton', 'Miles', 'Miller', 'Mills', 'Mistry', 'Mitchell', 'Moore', 'Moran', 'Morgan', 'Morley', 'Morris', 'Morrison', 'Morton', 'Moss', 'Murphy', 'Murray', 'Myers',
+        'Nash', 'Naylor', 'Nelson', 'Newman', 'Newton', 'Nicholls', 'Nicholson', 'Nixon', 'Noble', 'Nolan', 'Norman', 'Norris', 'North', 'Norton',
+        'Obrien', 'Oconnor', 'Odonnell', 'Oliver', 'Oneill', 'Osborne', 'Osullivan', 'Owen', 'Owens',
+        'Page', 'Palmer', 'Parker', 'Parkes', 'Parkin', 'Parkinson', 'Parry', 'Parsons', 'Patel', 'Patterson', 'Payne', 'Peacock', 'Pearce', 'Pearson', 'Perkins', 'Perry', 'Peters', 'Phillips', 'Pickering', 'Pollard', 'Poole', 'Pope', 'Porter', 'Potter', 'Potts', 'Powell', 'Power', 'Pratt', 'Preston', 'Price', 'Pritchard', 'Pugh',
+        'Quinn',
+        'Rahman', 'Randall', 'Read', 'Reed', 'Rees', 'Reeves', 'Reid', 'Reynolds', 'Rhodes', 'Rice', 'Richards', 'Richardson', 'Riley', 'Roberts', 'Robertson', 'Robinson', 'Robson', 'Rogers', 'Rose', 'Ross', 'Rowe', 'Rowley', 'Russell', 'Ryan',
+        'Sanders', 'Sanderson', 'Saunders', 'Savage', 'Schofield', 'Scott', 'Shah', 'Sharp', 'Sharpe', 'Shaw', 'Shepherd', 'Sheppard', 'Short', 'Simmons', 'Simpson', 'Sims', 'Sinclair', 'Singh', 'Skinner', 'Slater', 'Smart', 'Smith', 'Spencer', 'Stanley', 'Steele', 'Stephens', 'Stephenson', 'Stevens', 'Stevenson', 'Stewart', 'Stokes', 'Stone', 'Storey', 'Sullivan', 'Summers', 'Sutton', 'Swift', 'Sykes',
+        'Talbot', 'Taylor', 'Thomas', 'Thompson', 'Thomson', 'Thornton', 'Thorpe', 'Todd', 'Tomlinson', 'Townsend', 'Tucker', 'Turnbull', 'Turner', 'Tyler',
+        'Vaughan', 'Vincent',
+        'Wade', 'Walker', 'Wall', 'Wallace', 'Wallis', 'Walsh', 'Walters', 'Walton', 'Ward', 'Warner', 'Warren', 'Waters', 'Watkins', 'Watson', 'Watts', 'Webb', 'Webster', 'Welch', 'Wells', 'West', 'Weston', 'Wheeler', 'White', 'Whitehead', 'Whitehouse', 'Whittaker', 'Wilkins', 'Wilkinson', 'Williams', 'Williamson', 'Willis', 'Wilson', 'Winter', 'Wong', 'Wood', 'Woods', 'Woodward', 'Wright', 'Wyatt',
+        'Yates', 'Young'
     );
 }
