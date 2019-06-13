@@ -29,6 +29,13 @@ class ImageTest extends TestCase
         $this->assertRegExp("#^https://{$this->host}/800/400/nature,Faker#", Image::imageUrl(800, 400, 'nature', false, 'Faker'));
     }
 
+    public function testImageUrlAcceptsGrayscale()
+    {
+        $this->assertRegExp("#^https://{$this->host}/800/400/grayscale,nature/#", Image::imageUrl(
+            800, 400, 'nature', true, null, true
+        ));
+    }
+
     public function testImageUrlAddsARandomGetParameterByDefault()
     {
         $url = Image::imageUrl(800, 400);
