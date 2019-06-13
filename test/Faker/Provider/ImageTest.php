@@ -36,6 +36,13 @@ class ImageTest extends TestCase
         ));
     }
 
+    public function testImageUrlRequestsAllKeywordsMatch()
+    {
+        $this->assertRegExp("#^https://{$this->host}/800/400/nature/all$#", Image::imageUrl(
+            800, 400, 'nature', false
+        ));
+    }
+
     public function testImageUrlAddsARandomGetParameterByDefault()
     {
         $url = Image::imageUrl(800, 400);
