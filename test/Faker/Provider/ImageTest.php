@@ -62,7 +62,7 @@ class ImageTest extends TestCase
 
     public function testDownloadWithDefaults()
     {
-        $url = "http://{$this->host}/";
+        $url = "https://{$this->host}/";
         $curlPing = curl_init($url);
         curl_setopt($curlPing, CURLOPT_TIMEOUT, 5);
         curl_setopt($curlPing, CURLOPT_CONNECTTIMEOUT, 5);
