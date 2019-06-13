@@ -47,7 +47,9 @@ class Image extends Base
             $terms[] = $word;
         }
 
-        $url .= implode(',', $terms) . '/all';
+        if ($terms) {
+            $url .= implode(',', $terms) . '/all';
+        }
 
         if ($randomize) {
             $url .= '?' . static::randomNumber(5, true);
