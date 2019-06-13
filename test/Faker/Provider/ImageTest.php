@@ -7,24 +7,26 @@ use PHPUnit\Framework\TestCase;
 
 class ImageTest extends TestCase
 {
+    protected $host = 'loremflickr.com';
+
     public function testImageUrlUses640x680AsTheDefaultSize()
     {
-        $this->assertRegExp('#^https://lorempixel.com/640/480/#', Image::imageUrl());
+        $this->assertRegExp("#^https://{$this->host}/640/480/#", Image::imageUrl());
     }
 
     public function testImageUrlAcceptsCustomWidthAndHeight()
     {
-        $this->assertRegExp('#^https://lorempixel.com/800/400/#', Image::imageUrl(800, 400));
+        $this->assertRegExp("#^https://{$this->host}/800/400/#", Image::imageUrl(800, 400));
     }
 
     public function testImageUrlAcceptsCustomCategory()
     {
-        $this->assertRegExp('#^https://lorempixel.com/800/400/nature/#', Image::imageUrl(800, 400, 'nature'));
+        $this->assertRegExp("#^https://{$this->host}/800/400/nature/#", Image::imageUrl(800, 400, 'nature'));
     }
 
     public function testImageUrlAcceptsCustomText()
     {
-        $this->assertRegExp('#^https://lorempixel.com/800/400/nature/Faker#', Image::imageUrl(800, 400, 'nature', false, 'Faker'));
+        $this->assertRegExp("#^https://{$this->host}/800/400/nature,Faker#", Image::imageUrl(800, 400, 'nature', false, 'Faker'));
     }
 
     public function testImageUrlAddsARandomGetParameterByDefault()
@@ -46,7 +48,7 @@ class ImageTest extends TestCase
 
     public function testDownloadWithDefaults()
     {
-        $url = "http://lorempixel.com/";
+        $url = "http://{$this->host}/";
         $curlPing = curl_init($url);
         curl_setopt($curlPing, CURLOPT_TIMEOUT, 5);
         curl_setopt($curlPing, CURLOPT_CONNECTTIMEOUT, 5);
@@ -56,7 +58,7 @@ class ImageTest extends TestCase
         curl_close($curlPing);
 
         if ($httpCode < 200 | $httpCode > 300) {
-            $this->markTestSkipped("LoremPixel is offline, skipping image download");
+            $this->markTestSkipped("LoremFlickr is offline, skipping image download");
         }
 
         $file = Image::image(sys_get_temp_dir());
