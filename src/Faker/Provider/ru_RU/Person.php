@@ -2,6 +2,8 @@
 
 namespace Faker\Provider\ru_RU;
 
+use Faker\Calculator\Snils;
+
 class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = array(
@@ -153,5 +155,44 @@ class Person extends \Faker\Provider\Person
             static::GENDER_MALE,
             static::GENDER_FEMALE,
         )));
+    }
+
+    /**
+     * Return personal INN (tax_code).
+     *
+     * @access public
+     * @param string|null $area_code Area code of Federal Tax Service Department
+     *      may issue this tax_code. If the argument is skipped a random code will be used.
+     * @return string inn
+     */
+    public static function personalInn($area_code = "")
+    {
+        if ($area_code === "" || intval($area_code) == 0) {
+            //Simple generation code for areas in Russian without check for valid
+            $area_code = static::numberBetween(1, 91);
+        } else {
+            $area_code = intval($area_code);
+        }
+        $area_code = str_pad($area_code, 2, '0', STR_PAD_LEFT);
+        $inn_base =  $area_code . static::numerify('########');
+        return $inn_base . \Faker\Calculator\Inn::checksum($inn_base);
+    }
+
+    /**
+     * Return SNILS (Individual insurance account number).
+     *
+     * @access public
+     *
+     * @return string SNILS
+     */
+    public static function snils()
+    {
+        // Numerify can generate tree or more the same digits in row
+        do {
+            $snils = static::numerify('#########');
+            $snils .= Snils::checksum($snils);
+        } while (!Snils::isValid($snils));
+
+        return $snils;
     }
 }
