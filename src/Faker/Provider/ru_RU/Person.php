@@ -14,8 +14,8 @@ class Person extends \Faker\Provider\Person
      * That list of MALE last names could be safely extended to FEMALE list just by adding 'a' letter at the end
      */
     protected static $femaleNameFormats = array(
-        '{{firstNameFemale}} {{middleNameFemale}} {{lastName}}а',
-        '{{lastName}}а {{firstNameFemale}} {{middleNameFemale}}',
+        '{{firstNameFemale}} {{middleNameFemale}} {{lastNameFemale}}',
+        '{{lastNameFemale}} {{firstNameFemale}} {{middleNameFemale}}',
     );
 
     /**
@@ -114,7 +114,7 @@ class Person extends \Faker\Provider\Person
      *
      * @return string Middle name
      */
-    public function middleNameMale()
+    public static function middleNameMale()
     {
         return static::randomElement(static::$middleNameMale);
     }
@@ -128,7 +128,7 @@ class Person extends \Faker\Provider\Person
      *
      * @return string Middle name
      */
-    public function middleNameFemale()
+    public static function middleNameFemale()
     {
         return static::randomElement(static::$middleNameFemale);
     }
@@ -153,5 +153,34 @@ class Person extends \Faker\Provider\Person
             static::GENDER_MALE,
             static::GENDER_FEMALE,
         )));
+    }
+
+    /**
+     * @param string|null $gender 'male', 'female' or null for any
+     * @return string
+     * @example 'Иванов'
+     */
+    public function lastName($gender = null)
+    {
+        if ($gender === static::GENDER_MALE) {
+            return static::lastNameMale();
+        } elseif ($gender === static::GENDER_FEMALE) {
+            return static::lastNameFemale();
+        }
+
+        return $this->lastName(static::randomElement(array(
+            static::GENDER_MALE,
+            static::GENDER_FEMALE,
+        )));
+    }
+
+    public static function lastNameMale()
+    {
+        return static::randomElement(static::$lastName);
+    }
+
+    public static function lastNameFemale()
+    {
+        return static::randomElement(static::$lastName) . 'a';
     }
 }
