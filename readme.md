@@ -1713,6 +1713,7 @@ echo $faker->VAT; //23456789
 * [bluemmb/Faker-PicsumPhotos](https://github.com/bluemmb/Faker-PicsumPhotos): Generate images using [picsum.photos](http://picsum.photos/)
 * [er1z/fakemock](https://github.com/er1z/fakemock): Generate mocks using class-configuration and detection via Faker's guesser and Symfony asserts
 * [xvladxtremal/Faker-LoremFlickr](https://github.com/xvladxtremal/Faker-LoremFlickr): Generate images using [loremflickr.com](http://loremflickr.com/)
+* [Metrakit/faker-eddy-malou](https://github.com/Metrakit/faker-eddy-malou): Generete French Eddy Malou sentences & paragraphs
 
 ## License
 
