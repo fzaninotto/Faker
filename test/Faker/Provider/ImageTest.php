@@ -7,39 +7,39 @@ use PHPUnit\Framework\TestCase;
 
 class ImageTest extends TestCase
 {
-    protected $host = 'loremflickr.com';
+    protected $host = 'source.unsplash.com';
 
     public function testImageUrlUses640x680AsTheDefaultSize()
     {
-        $this->assertRegExp("#^https://{$this->host}/640/480/#", Image::imageUrl());
+        $this->assertRegExp("#^https://{$this->host}/640x480/#", Image::imageUrl());
     }
 
     public function testImageUrlAcceptsCustomWidthAndHeight()
     {
-        $this->assertRegExp("#^https://{$this->host}/800/400/#", Image::imageUrl(800, 400));
+        $this->assertRegExp("#^https://{$this->host}/800x400/#", Image::imageUrl(800, 400));
     }
 
     public function testImageUrlAcceptsCustomCategory()
     {
-        $this->assertRegExp("#^https://{$this->host}/800/400/nature/#", Image::imageUrl(800, 400, 'nature'));
+        $this->assertRegExp("#^https://{$this->host}/800x400/\?nature#", Image::imageUrl(800, 400, 'nature'));
     }
 
     public function testImageUrlAcceptsCustomText()
     {
-        $this->assertRegExp("#^https://{$this->host}/800/400/nature,Faker#", Image::imageUrl(800, 400, 'nature', false, 'Faker'));
+        $this->assertRegExp("#^https://{$this->host}/800x400/\?nature,Faker#", Image::imageUrl(800, 400, 'nature', false, 'Faker'));
     }
 
     public function testImageUrlAcceptsGrayscale()
     {
-        $this->assertRegExp("#^https://{$this->host}/800/400/grayscale,nature/#", Image::imageUrl(
+        $this->assertRegExp("#^https://{$this->host}/800x400/\?grayscale,nature#", Image::imageUrl(
             800, 400, 'nature', true, null, true
         ));
     }
 
-    public function testImageUrlRequestsAllKeywordsMatch()
+    public function testImageUrlRequestsRandomCategoryIfNoneSpecified()
     {
-        $this->assertRegExp("#^https://{$this->host}/800/400/nature/all$#", Image::imageUrl(
-            800, 400, 'nature', false
+        $this->assertRegExp("#^https://{$this->host}/800x400/\?\w+\&\d+$#", Image::imageUrl(
+            800, 400, null, true
         ));
     }
 
@@ -52,18 +52,11 @@ class ImageTest extends TestCase
         $this->assertRegexp('#\d{5}#', $splitUrl[1]);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testUrlWithDimensionsAndBadCategory()
-    {
-        Image::imageUrl(800, 400, 'bullhonky');
-    }
-
     public function testDownloadWithDefaults()
     {
         $url = "https://{$this->host}/";
         $curlPing = curl_init($url);
+        curl_setopt($curlPing, CURLOPT_HEADER, true);
         curl_setopt($curlPing, CURLOPT_TIMEOUT, 5);
         curl_setopt($curlPing, CURLOPT_CONNECTTIMEOUT, 5);
         curl_setopt($curlPing, CURLOPT_RETURNTRANSFER, true);
@@ -72,7 +65,7 @@ class ImageTest extends TestCase
         curl_close($curlPing);
 
         if ($httpCode < 200 | $httpCode > 300) {
-            $this->markTestSkipped("LoremFlickr is offline, skipping image download");
+            $this->markTestSkipped("Unsplash is offline, skipping image download");
         }
 
         $file = Image::image(sys_get_temp_dir());
