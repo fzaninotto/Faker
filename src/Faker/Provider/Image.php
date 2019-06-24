@@ -30,29 +30,24 @@ class Image extends Base
      */
     public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
     {
-        $baseUrl = 'https://loremflickr.com/';
-        $url = "{$width}/{$height}/";
+        $baseUrl = 'https://source.unsplash.com/';
+        $url = "{$width}x{$height}/?";
         $terms = array();
 
         if ($gray) {
             $terms[] = 'grayscale';
         }
-        if ($category) {
-            if (!in_array($category, static::$categories)) {
-                throw new \InvalidArgumentException(sprintf('Unknown image category "%s"', $category));
-            }
-            $terms[] = $category;
-        }
+        $terms[] = $category ?: static::$categories[mt_rand(0, count(static::$categories) - 1)];
         if ($word) {
             $terms[] = $word;
         }
 
         if ($terms) {
-            $url .= implode(',', $terms) . '/all';
+            $url .= implode(',', $terms);
         }
 
         if ($randomize) {
-            $url .= '?' . static::randomNumber(5, true);
+            $url .= (!empty($terms) ? '&' : '') . static::randomNumber(5, true);
         }
 
         return $baseUrl . $url;
