@@ -130,4 +130,33 @@ class Person extends \Faker\Provider\Person
 
         return $formatted? vsprintf('%d%d.%d%d%d.%d%d%d-%s', str_split($n)) : $n;
     }
+
+    /**
+     * A random CNH number, following Denatran rules
+     * @link https://sso.acesso.gov.br/login?client_id=portalservicos.denatran.serpro.gov.br
+     * @return string
+     */
+    public function cnh()
+    {
+        $value =  $this->generator->numerify('#########');
+        $dsc = 0;
+
+        for ($i = 0, $j = 9, $v = 0; $i < 9; ++$i, --$j) {
+            $v += (int)$value[$i] * $j;
+        }
+
+        if (($vl1 = $v % 11) >= 10) {
+            $vl1 = 0;
+            $dsc = 2;
+        }
+
+        for ($i = 0, $j = 1, $v = 0; $i < 9; ++$i, ++$j) {
+            $v += (int)$value[$i] * $j;
+        }
+
+        $vl2 = ($x = ($v % 11)) >= 10 ? 0 : $x - $dsc;
+        $cnh = '' . $value . $vl1 . $vl2;
+
+        return $cnh;
+    }
 }
