@@ -73,6 +73,14 @@ class Company extends \Faker\Provider\Company
     }
 
     /**
+     * @example '111111111'
+     */
+    public static function grafm()
+    {
+        return static::numerify(static::randomElement(static::$grafm));
+    }
+
+    /**
      * Return The profession of a company
      *
      * @example 'Δημοσιογράφος'
