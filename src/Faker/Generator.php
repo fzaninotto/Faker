@@ -193,17 +193,26 @@ namespace Faker;
  */
 class Generator
 {
-    protected $providers = array();
-    protected $formatters = array();
+    protected static $providers = array();
+    protected static $formatters = array();
+
+    public function __construct()
+    {
+        foreach (self::$providers as &$provider) {
+            unset($provider);
+        }
+
+        self::$providers = self::$formatters = array();
+    }
 
     public function addProvider($provider)
     {
-        array_unshift($this->providers, $provider);
+        array_unshift(self::$providers, $provider);
     }
 
     public function getProviders()
     {
-        return $this->providers;
+        return self::$providers;
     }
 
     public function seed($seed = null)
@@ -231,16 +240,16 @@ class Generator
      */
     public function getFormatter($formatter)
     {
-        if (isset($this->formatters[$formatter])) {
-            return $this->formatters[$formatter];
+        if (isset(self::$formatters[$formatter])) {
+            return self::$formatters[$formatter];
         }
-        foreach ($this->providers as $provider) {
-            if (method_exists($provider, $formatter)) {
-                $this->formatters[$formatter] = array($provider, $formatter);
 
-                return $this->formatters[$formatter];
+        foreach (self::$providers as $provider) {
+            if (method_exists($provider, $formatter)) {
+                return self::$formatters[$formatter] = array($provider, $formatter);
             }
         }
+
         throw new \InvalidArgumentException(sprintf('Unknown formatter "%s"', $formatter));
     }
 
