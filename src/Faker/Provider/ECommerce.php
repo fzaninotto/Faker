@@ -45,6 +45,7 @@ class ECommerce extends Base
 
     /**
      * @example 'Macbook Pro'
+     * @return  string
      */
     public static function productName()
     {
