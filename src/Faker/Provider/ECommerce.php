@@ -16,7 +16,7 @@ class ECommerce extends Base
     protected static $categories = array('Electronics', 'Books');
 
     /**
-     * @return string
+     * @return  string
      * @example 'Apple - MacBook | Canon - EOS 5D'
      */
     public function product()
@@ -26,7 +26,7 @@ class ECommerce extends Base
     }
 
     /**
-     * @return string
+     * @return  string
      * @example Apple
      */
     public static function brand()
@@ -35,7 +35,7 @@ class ECommerce extends Base
     }
 
     /**
-     * @return string
+     * @return  string
      * @example Monitor
      */
     public static function category()
