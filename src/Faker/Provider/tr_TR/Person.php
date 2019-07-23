@@ -29,10 +29,15 @@ class Person extends \Faker\Provider\Person
      * @var array Turkish first names.
      */
     protected static $firstNameMale = array(
-        'Ahmet', 'Ali', 'Alp', 'Armağan', 'Atakan', 'Aşkın', 'Baran', 'Bartu', 'Berk', 'Berkay', 'Berke', 'Bora', 'Burak', 'Canberk',
-        'Cem', 'Cihan', 'Deniz', 'Efe', 'Ege', 'Ege', 'Emir', 'Emirhan', 'Emre', 'Ferid', 'Göktürk', 'Görkem', 'Güney',
-        'Kağan', 'Kerem', 'Koray', 'Kutay', 'Mert', 'Onur', 'Ogün', 'Polat', 'Rüzgar', 'Sarp', 'Serhan', 'Toprak', 'Tuna',
-        'Türker', 'Utku', 'Yağız', 'Yiğit', 'Çınar', 'Derin', 'Meriç', 'Barlas', 'Dağhan', 'Doruk', 'Çağan'
+        'Acun', 'Ahmet', 'Akdemir', 'Akın', 'Aksel', 'Ali', 'Alp', 'Alper', 'Altay', 'Anıl', 'Armağan', 'Armağan',
+        'Arslan', 'Ata', 'Atahan', 'Atakan', 'Aşkın', 'Aybars', 'Ayberk', 'Ayhan', 'Baran', 'Bartu', 'Berk', 'Berkay',
+        'Berke', 'Bora', 'Burak', 'Canberk','Cem', 'Cihan', 'Cihangir', 'Cüneyt', 'Çağan', 'Çağrı', 'Çınar', 'Deniz', 'Devrim',
+        'Dinç', 'Dikmen', 'Doğu', 'Dilaver', 'Doğan', 'Ediz', 'Efe', 'Ege', 'Emir', 'Emirhan', 'Emre', 'Engin', 'Erdem', 'Erdinç',
+        'Ergin', 'Erol','Ersin', 'Ertan', 'Evren', 'Evrim', 'Fatih', 'Feridun', 'Ferid', 'Fettah', 'Furkan', 'Göktürk', 'Görkem', 'Günay',
+        'Güney','Gürbüz', 'Hakan', 'Halil', 'Hasan', 'Ilgaz', 'İlker', 'İnal', 'Kağan', 'Kaya', 'Kayra', 'Kerem', 'Kıraç', 'Koray', 'Kutay',
+        'Levent', 'Mert', 'Mahmut', 'Mert', 'Metin', 'Mustafa', 'Mutlu', 'Mümtaz', 'Necati', 'Necdet', 'Nevzat','Neşet', 'Nizam',
+        'Ogün', 'Oğuz', 'Oğuzhan', 'Onur', 'Osman', 'Ozan', 'Önal', 'Özer', 'Özgün', 'Polat', 'Recep', 'Rıza', 'Rüzgar', 'Sarp',
+        'Seçkin' 'Serhan', 'Toprak', 'Tuna','Türker', 'Utku', 'Yağız', 'Yiğit', 'Çınar', 'Derin', 'Meriç', 'Barlas', 'Dağhan', 'Doruk', 'Çağan'
     );
 
     /**
@@ -41,7 +46,18 @@ class Person extends \Faker\Provider\Person
      * @var array Turkish first names.
      */
     protected static $firstNameFemale = array(
-        'Ada', 'Esma', 'Emel', 'Ebru', 'Şahnur', 'Ümran', 'Sinem', 'İrem', 'Rüya', 'Ece', 'Burcu'
+      'Açelya', 'Ahsen', 'Ahu', 'Akasya', 'Aleyna', 'Alara', 'Amine', 'Arzu', 'Asena', 'Asya', 'Aslı', 'Ayşe',
+      'Ada', 'Bade', 'Başak', 'Begüm', 'Belgin', 'Banu', 'Beren', 'Berfu', 'Beril', 'Berrak', 'Beyza', 'Bilge', 'Birgül',
+      'Bilge', 'Buket', 'Burcu', 'Burçak', 'Burçin', 'Buse', 'Buse', 'Büge', 'Canan', 'Candan', 'Cansel', 'Cansın', 'Cansu', 'Cemre',
+      'Ceyda', 'Ceylan', 'Çağla', 'Çiğdem', 'Çisil', 'Damla', 'Defne', 'Demet', 'Deren', 'Derin', 'Derya', 'Dicle', 'Didem',
+      'Dilan', 'Dilara', 'Dilan', 'Dilek', 'Dilşah', 'Dolunay', 'Duru', 'Duygu', 'Ece', 'Ela', 'Erva', 'Ezgi',
+      'Esma', 'Emel', 'Ebru', 'Fatma', 'Feray', 'Ferhunde', 'Feride', 'Feyza', 'Figen', 'Firdevs', 'Fulya', 'Gaye', 'Gönül', 'Gülbin',
+      'Gülnur', 'Hacer', 'Hatice', 'Hale', 'Hande', 'Hayal', 'Hayat', 'Hazal', 'Helin', 'Hicran', 'Hilal', 'Itır', 'İclal', 'İlayda' ,
+      'İrem', 'Jale', 'Kader', 'Kardelen', 'Kübra', 'Lerzan', 'Leman', 'Leyla', 'Mehtap', 'Melis', 'Merve', 'Meryem', 'Miray',
+      'Müjde', 'Münevver', 'Nazlı', 'Nehir', 'Necla', 'Neslihan', 'Nihal', 'Nisa', 'Nisan', 'Özge', 'Özlem', 'Rana', 'Reyhan',
+      'Rümeysa', 'Rüya', 'Saadet', 'Sare', 'Seda', 'Selma', 'Sena', 'Sibel', 'Sinem', 'Suna', 'Sümeyye', 'Şahika', 'Şahnur', 'Şebnem', 'Şermin', 'Şevval',
+      'Şule', 'Talia', 'Tuba', 'Ümran', 'Vildan', 'Vuslat', 'Yeşim', 'Zehra', 'Züleyha', 'Zümrüt'
+
     );
 
     /**
@@ -55,8 +71,8 @@ class Person extends \Faker\Provider\Person
         'Alpuğan', 'Alyanak', 'Arıcan', 'Arslanoğlu', 'Atakol', 'Atan', 'Avan', 'Ayaydın', 'Aybar',
         'Aydan', 'Aykaç', 'Ayverdi', 'Ağaoğlu', 'Aşıkoğlu', 'Babacan', 'Babaoğlu', 'Bademci',
         'Bakırcıoğlu', 'Balaban', 'Balcı', 'Barbarosoğlu', 'Baturalp', 'Baykam', 'Başoğlu', 'Berberoğlu',
-        'Beşerler', 'Beşok', 'Biçer', 'Bolatlı', 'Dalkıran', 'Dağdaş', 'Dağlaroğlu', 'Demirbaş', 'Demirel',
-        'Denkel', 'Dizdar', 'Doğan', 'Durak', 'Durmaz', 'Duygulu', 'Düşenkalkar', 'Egeli', 'Ekici', 'Ekşioğlu',
+        'Beşerler', 'Beşok', 'Biçer', 'Bolatlı', 'Dalkıran', 'Dağdaş', 'Dağlaroğlu', 'Demirbaş', 'Demirel','Çiçek',
+        'Denkel','Dinler', 'Dizdar', 'Doğan', 'Durak', 'Durmaz', 'Duygulu', 'Düşenkalkar', 'Egeli', 'Ekici', 'Ekşioğlu',
         'Eliçin', 'Elmastaşoğlu', 'Elçiboğa', 'Erbay', 'Erberk', 'Erbulak', 'Erdoğan', 'Erez', 'Erginsoy',
         'Erkekli', 'Eronat', 'Ertepınar', 'Ertürk', 'Erçetin', 'Evliyaoğlu', 'Fahri', 'Gönültaş', 'Gümüşpala',
         'Günday', 'Gürmen', 'Ilıcalı', 'Kahveci', 'Kaplangı', 'Karabulut', 'Karaböcek', 'Karadaş', 'Karaduman',
@@ -69,7 +85,7 @@ class Person extends \Faker\Provider\Person
         'Tahincioğlu', 'Tanrıkulu', 'Tazegül', 'Taşlı', 'Taşçı', 'Tekand', 'Tekelioğlu', 'Tokatlıoğlu', 'Tokgöz',
         'Topaloğlu', 'Topçuoğlu', 'Toraman', 'Tunaboylu', 'Tunçeri', 'Tuğlu', 'Tuğluk', 'Türkdoğan', 'Türkyılmaz',
         'Tütüncü', 'Tüzün', 'Uca', 'Uluhan', 'Velioğlu', 'Yalçın', 'Yazıcı', 'Yetkiner', 'Yeşilkaya', 'Yıldırım',
-        'Yıldızoğlu', 'Yılmazer', 'Yorulmaz', 'Çamdalı', 'Çapanoğlu', 'Çatalbaş', 'Çağıran', 'Çetin', 'Çetiner',
+        'Yıldızoğlu','Yılmaz', 'Yılmazer', 'Yorulmaz', 'Çamdalı', 'Çapanoğlu', 'Çatalbaş', 'Çağıran', 'Çetin', 'Çetiner',
         'Çevik', 'Çörekçi', 'Önür', 'Örge', 'Öymen', 'Özberk', 'Özbey', 'Özbir', 'Özdenak', 'Özdoğan', 'Özgörkey',
         'Özkara', 'Özkök', 'Öztonga', 'Öztuna'
     );
