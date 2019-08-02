@@ -192,5 +192,4 @@ class Address extends \Faker\Provider\fr_FR\Address
 
         return static::toUpper($string);
     }
-
 }

@@ -48,6 +48,16 @@ class Base
     }
 
     /**
+     * Returns a random number between 2 and 9
+     *
+     * @return integer
+     */
+    public static function randomDigit2to9()
+    {
+        return mt_rand(2, 9);
+    }
+
+    /**
      * Generates a random digit, which cannot be $except
      *
      * @param int $except
@@ -363,6 +373,7 @@ class Base
     /**
      * Replaces all hash sign ('#') occurrences with a random number
      * Replaces all percentage sign ('%') occurrences with a not null number
+     * Replaces all "N" occurrences with a digit between 2 and 9
      *
      * @param  string $string String that needs to bet parsed
      * @return string
@@ -392,6 +403,7 @@ class Base
                 $string[$toReplace[$i]] = $numbers[$i];
             }
         }
+        $string = self::replaceWildcard($string, 'N', 'static::randomDigit2to9');
         $string = self::replaceWildcard($string, '%', 'static::randomDigitNotNull');
 
         return $string;

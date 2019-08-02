@@ -91,5 +91,4 @@ class Address extends \Faker\Provider\en_US\Address
 
         return static::toUpper($string);
     }
-
 }
