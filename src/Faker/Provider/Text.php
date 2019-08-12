@@ -53,7 +53,7 @@ abstract class Text extends Base
             $currentWords = static::explode($next);
             $currentWords[] = $word;
             array_shift($currentWords);
-            $next = static::implode($currentWords);
+            $next = static::implode('', $currentWords);
 
             // ensure text starts with an uppercase letter
             if ($resultLength == 0 && !static::validStart($word)) {
@@ -69,7 +69,7 @@ abstract class Text extends Base
         array_pop($result);
 
         // build result
-        $result = static::implode($result);
+        $result = static::implode('', $result);
 
         return static::appendEnd($result);
     }
@@ -85,7 +85,7 @@ abstract class Text extends Base
             }
 
             for ($i = 0, $count = count($parts); $i < $count; $i++) {
-                $stringIndex = static::implode($index);
+                $stringIndex = static::implode('', $index);
                 if (!isset($words[$stringIndex])) {
                     $words[$stringIndex] = array();
                 }

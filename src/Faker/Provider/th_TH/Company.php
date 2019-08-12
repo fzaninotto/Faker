@@ -27,6 +27,6 @@ class Company extends \Faker\Provider\Company
             $result[] = static::randomElement($slogan);
         }
 
-        return implode($result);
+        return implode('', $result);
     }
 }
