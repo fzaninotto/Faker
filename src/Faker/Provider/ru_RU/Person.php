@@ -174,22 +174,13 @@ class Person extends \Faker\Provider\Person
     public function lastName($gender = null)
     {
         if ($gender === static::GENDER_FEMALE) {
-            return $this->lastNameFemale();
+            $lastNameFormat = static::$lastNameFemaleFormat;
+        }else{
+            $lastNameFormat = static::$lastNameFormat;
         }
-        $lastNameRandomElement = static::randomElement(static::$lastNameFormat);
+        $lastNameRandomElement = static::randomElement($lastNameFormat);
 
         return $this->generator->parse($lastNameRandomElement);
     }
-
-  
-    /**
-     * Return last name for female
-     *
-     * @access public
-     * @return string last name
-     */
-    public static function lastNameFemale()
-    {
-        return static::randomElement(static::$lastNameFemaleFormat);
-    }
+    
 }
