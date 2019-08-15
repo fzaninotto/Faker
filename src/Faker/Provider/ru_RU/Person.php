@@ -18,6 +18,14 @@ class Person extends \Faker\Provider\Person
         '{{lastName}}а {{firstNameFemale}} {{middleNameFemale}}',
     );
 
+    protected static $lastNameFormat = array(
+        '{{lastName}}',
+    );
+
+    protected static $lastNameFemaleFormat = array(
+        '{{lastName}}a',
+    );
+
     /**
      * {@link} http://ru.wikipedia.org/wiki/%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%BE%D0%B5_%D0%BB%D0%B8%D1%87%D0%BD%D0%BE%D0%B5_%D0%B8%D0%BC%D1%8F
      * {@link} http://masterrussian.com/aa031701a.shtml
@@ -153,5 +161,35 @@ class Person extends \Faker\Provider\Person
             static::GENDER_MALE,
             static::GENDER_FEMALE,
         )));
+    }
+
+    /**
+     * Return last name for the specified gender.
+     *
+     * @access public
+     * @param string|null $gender A gender of the last name should be generated
+     *     for. If the argument is skipped a random gender will be used.
+     * @return string Middle name
+     */
+    public function lastName($gender = null)
+    {
+        if ($gender === static::GENDER_FEMALE) {
+            return $this->lastNameFemale();
+        }
+        $lastNameRandomElement = static::randomElement(static::$lastNameFormat);
+
+        return $this->generator->parse($lastNameRandomElement);
+    }
+
+  
+    /**
+     * Return last name for female
+     *
+     * @access public
+     * @return string last name
+     */
+    public static function lastNameFemale()
+    {
+        return static::randomElement(static::$lastNameFemaleFormat);
     }
 }
