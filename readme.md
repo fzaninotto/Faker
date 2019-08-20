@@ -384,7 +384,7 @@ $faker->optional($weight * 100)->randomDigit; // This will yield randomDigit 0% 
 // --------------------------------------------------------
 // Get 4.5% chance
 $faker->optional($weight = 4.5)->randomDigit; // This will always yield default/null value, fractional support is between 0 and 0.99~
-$faker->optional($chance * 0.045)->randomDigit; // This will yield default/null
+$faker->optional($chance * 0.045)->randomDigit; // This will yield default/null 95.5% of time or the provider's value 4.5% of the time
 
 // optional() accepts a default argument to specify the default value to return.
 // Defaults to NULL.
