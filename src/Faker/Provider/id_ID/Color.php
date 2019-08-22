@@ -13,7 +13,8 @@ class Color extends \Faker\Provider\Color
 {
     protected static $safeColorNames = array(
         'abu-abu', 'biru', 'biru dongker', 'biru laut', 'coklat', 'emas', 'hijau', 'hitam', 'kuning',
-        'magenta', 'mawar', 'merah', 'merah marun', 'merah jambu', 'nila', 'jingga', 'perak', 'putih', 'ungu', 'emas', 'cokelat',
+        'magenta', 'mawar', 'merah', 'merah marun', 'merah jambu', 'nila', 'jingga', 'perak', 'putih', 'ungu',
+        'cokelat',
     );
 
     protected static $allColorNames = array(
