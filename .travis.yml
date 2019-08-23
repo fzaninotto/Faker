@@ -21,6 +21,9 @@ cache:
   directories:
     - $HOME/.composer/cache
 
+before_install:
+  - phpenv config-rm xdebug.ini || true
+
 before_script:
     - travis_retry composer install --no-interaction --prefer-dist
 
