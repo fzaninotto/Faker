@@ -1,8 +1,5 @@
 .PHONY: fix sniff test
 
-vendor/autoload.php:
-	composer install --no-interaction --prefer-dist
-
 fix: vendor/autoload.php
 	vendor/bin/phpcbf --standard=PSR2 src
 
@@ -11,3 +8,6 @@ sniff: vendor/autoload.php
 
 test: vendor/autoload.php
 	vendor/bin/phpunit --verbose
+
+vendor/autoload.php:
+	composer install --no-interaction --prefer-dist
