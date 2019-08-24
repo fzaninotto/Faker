@@ -13,8 +13,6 @@ php:
     - 7.3
     - nightly
 
-sudo: false
-
 cache:
   directories:
     - $HOME/.composer/cache
