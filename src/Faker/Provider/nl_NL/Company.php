@@ -26,7 +26,6 @@ class Company extends \Faker\Provider\Company
     public static function vat()
     {
         return sprintf("%s%d%s%d", 'NL', self::randomNumber(9, true), 'B', self::randomNumber(2, true));
-
     }
 
     /**
