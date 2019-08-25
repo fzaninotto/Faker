@@ -144,9 +144,9 @@ class Payment extends \Faker\Provider\Payment
 
     /**
      * Return a Malaysian Bank
-     * 
+     *
      * @example 'Maybank'
-     * 
+     *
      * @return @string
      */
     public function bank()
@@ -158,9 +158,9 @@ class Payment extends \Faker\Provider\Payment
 
     /**
      * Return a Malaysian Bank account number
-     * 
+     *
      * @example '1234567890123456'
-     * 
+     *
      * @return @string
      */
     public function bankAccountNumber()
@@ -172,9 +172,9 @@ class Payment extends \Faker\Provider\Payment
 
     /**
      * Return a Malaysian Local Bank
-     * 
+     *
      * @example 'Public Bank'
-     * 
+     *
      * @return @string
      */
     public static function localBank()
@@ -184,9 +184,9 @@ class Payment extends \Faker\Provider\Payment
 
     /**
      * Return a Malaysian Foreign Bank
-     * 
+     *
      * @example 'Citibank Berhad'
-     * 
+     *
      * @return @string
      */
     public static function foreignBank()
@@ -196,9 +196,9 @@ class Payment extends \Faker\Provider\Payment
 
     /**
      * Return a Malaysian Government Bank
-     * 
+     *
      * @example 'Bank Simpanan Nasional'
-     * 
+     *
      * @return @string
      */
     public static function governmentBank()
@@ -208,9 +208,9 @@ class Payment extends \Faker\Provider\Payment
 
     /**
      * Return a Malaysian insurance company
-     * 
+     *
      * @example 'AIA Malaysia'
-     * 
+     *
      * @return @string
      */
     public static function insurance()
@@ -220,9 +220,9 @@ class Payment extends \Faker\Provider\Payment
 
     /**
      * Return a Malaysian Bank SWIFT Code
-     * 
+     *
      * @example 'MBBEMYKLXXX'
-     * 
+     *
      * @return @string
      */
     public static function swiftCode()
@@ -232,9 +232,9 @@ class Payment extends \Faker\Provider\Payment
 
     /**
      * Return the Malaysian currency symbol
-     * 
+     *
      * @example 'RM'
-     * 
+     *
      * @return @string
      */
     public static function currencySymbol()

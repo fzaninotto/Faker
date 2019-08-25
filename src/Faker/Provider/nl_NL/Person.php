@@ -342,7 +342,6 @@ class Person extends \Faker\Provider\Person
             } else {
                 $nr[0] = 1;
                 $nr[1]++;
-
             }
         }
         return implode('', array_reverse($nr));

@@ -14,7 +14,7 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8.35 || ^5.7",
-        "squizlabs/php_codesniffer": "^1.5",
+        "squizlabs/php_codesniffer": "^2.9.2",
         "ext-intl": "*"
     },
     "autoload": {
