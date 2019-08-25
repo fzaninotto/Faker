@@ -13,6 +13,10 @@ php:
     - 7.3
     - nightly
 
+matrix:
+    allow_failures:
+        - nightly
+
 cache:
   directories:
     - $HOME/.composer/cache
