@@ -172,6 +172,5 @@ class Person extends \Faker\Provider\Person
         }
         
         return $lastName;
-            static::randomElement(static::$lastName) . 'a' : static::randomElement(static::$lastName);
     }
 }
