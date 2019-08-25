@@ -165,7 +165,13 @@ class Person extends \Faker\Provider\Person
      */
     public function lastName($gender = null)
     {
-        return ($gender === static::GENDER_FEMALE) ?
+        $lastName = static::randomElement(static::$lastName);
+        
+        if (static::GENDER_FEMALE === $gender) {
+            return $lastName . 'a';
+        }
+        
+        return $lastName;
             static::randomElement(static::$lastName) . 'a' : static::randomElement(static::$lastName);
     }
 }
