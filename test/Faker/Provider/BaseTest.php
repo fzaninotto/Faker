@@ -2,6 +2,7 @@
 
 namespace Faker\Test\Provider;
 
+use Faker\Provider\Base;
 use Faker\Provider\Base as BaseProvider;
 use PHPUnit\Framework\TestCase;
 use Traversable;
@@ -564,6 +565,31 @@ class BaseTest extends TestCase
         $allowDuplicates = BaseProvider::randomElements(array('foo', 'bar'), 3, true);
         $this->assertCount(3, $allowDuplicates);
         $this->assertContainsOnly('string', $allowDuplicates);
+    }
+
+    /**
+     * @dataProvider testRegexifyDataProvider
+     *
+     * @param $expectedRegex
+     * @param $input
+     */
+    public function testRegexify($expectedRegex, $input)
+    {
+        $this->assertRegExp($expectedRegex, BaseProvider::regexify($input));
+    }
+
+    public function testRegexifyDataProvider()
+    {
+        return array(
+            'regex parenthesis should be removed' => array(
+                'expected' => '/this|that/',
+                'input' => '(this|that)'
+            ),
+            'excaped parenthesis should stay' => array(
+                'expected' => '/\(this|that\)/',
+                'input' => '\(this|that\)'
+            )
+        );
     }
 }
 

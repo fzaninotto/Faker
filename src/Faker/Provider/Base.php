@@ -486,8 +486,16 @@ class Base
             return str_repeat($matches[1], Base::randomElement(range($matches[2], $matches[3])));
         }, $regex);
         // (this|that) becomes 'this' or 'that'
-        $regex = preg_replace_callback('/\((.*?)\)/', function ($matches) {
-            return Base::randomElement(explode('|', str_replace(array('(', ')'), '', $matches[1])));
+        // \(this|that\) become '\(this\)' or '\(that\)'
+        $regex = preg_replace_callback('/(?<open>\\\?\()(?<content>.*?)(?<close>\\\?\))/', function ($matches) {
+            $content = $matches['content'];
+
+            // Escaped open/close parentheses need to stay
+            if (strpos($matches['open'], '\\') === 0 && strpos($matches['close'], '\\') === 0) {
+                $content = $matches[0];
+            }
+
+            return Base::randomElement(explode('|', $content));
         }, $regex);
         // All A-F inside of [] become ABCDEF
         $regex = preg_replace_callback('/\[([^\]]+)\]/', function ($matches) {

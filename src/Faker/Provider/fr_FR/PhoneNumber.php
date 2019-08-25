@@ -116,7 +116,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      */
     public function phoneNumber08WithSeparator()
     {
-        $regex = '([012]{1}\d{1}|(9[1-357-9])( \d{2}){3}';
+        $regex = '([012]{1}\d{1}|9[1-357-9])( \d{2}){3}';
         return $this->regexify($regex);
     }
 
