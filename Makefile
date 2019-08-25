@@ -1,4 +1,6 @@
-.PHONY: fix sniff test
+.PHONY: build fix sniff test
+
+build: fix test
 
 fix: vendor/autoload.php
 	vendor/bin/phpcbf --standard=PSR2 src
