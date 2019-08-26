@@ -570,8 +570,8 @@ class BaseTest extends TestCase
     /**
      * @dataProvider testRegexifyDataProvider
      *
-     * @param $expectedRegex
-     * @param $input
+     * @param string $expectedRegex
+     * @param string $input
      */
     public function testRegexify($expectedRegex, $input)
     {
