@@ -50,6 +50,6 @@ class PersonTest extends TestCase
         $faker->addProvider(new Person($faker));
         $faker->seed(1);
 
-        $this->assertEquals('ナカジマ', $faker->lastKanaName);
+        $this->assertEquals('ナカムラ', $faker->lastKanaName);
     }
 }

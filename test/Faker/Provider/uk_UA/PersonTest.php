@@ -23,7 +23,7 @@ class PersonTest extends TestCase
         $faker->addProvider(new Person($faker));
         $faker->seed(1);
 
-        $this->assertEquals('Людмила', $faker->firstNameFemale());
+        $this->assertEquals('Маргарита', $faker->firstNameFemale());
     }
 
     public function testMiddleNameMaleReturns()
