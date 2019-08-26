@@ -265,7 +265,7 @@ Methods accepting a `$timezone` argument default to `date_default_timezone_get()
     imageUrl($width = 640, $height = 480) // 'http://lorempixel.com/640/480/'
     imageUrl($width, $height, 'cats')     // 'http://lorempixel.com/800/600/cats/'
     imageUrl($width, $height, 'cats', true, 'Faker') // 'http://lorempixel.com/800/400/cats/Faker'
-    imageUrl($width, $height, 'cats', true, 'Faker', true) // 'http://lorempixel.com/grey/800/400/cats/Faker/' Monochrome image
+    imageUrl($width, $height, 'cats', true, 'Faker', true) // 'http://lorempixel.com/gray/800/400/cats/Faker/' Monochrome image
     image($dir = '/tmp', $width = 640, $height = 480) // '/tmp/13b73edae8443990be1aa8f1a483bc27.jpg'
     image($dir, $width, $height, 'cats')  // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat!
     image($dir, $width, $height, 'cats', false) // '13b73edae8443990be1aa8f1a483bc27.jpg' it's a filename without path
@@ -1713,7 +1713,8 @@ echo $faker->VAT; //23456789
 * [bluemmb/Faker-PicsumPhotos](https://github.com/bluemmb/Faker-PicsumPhotos): Generate images using [picsum.photos](http://picsum.photos/)
 * [er1z/fakemock](https://github.com/er1z/fakemock): Generate mocks using class-configuration and detection via Faker's guesser and Symfony asserts
 * [xvladxtremal/Faker-LoremFlickr](https://github.com/xvladxtremal/Faker-LoremFlickr): Generate images using [loremflickr.com](http://loremflickr.com/)
-* [Metrakit/faker-eddy-malou](https://github.com/Metrakit/faker-eddy-malou): Generete French Eddy Malou sentences & paragraphs
+* [Metrakit/faker-eddy-malou](https://github.com/Metrakit/faker-eddy-malou): Generate French Eddy Malou sentences & paragraphs
+* [drupol/belgian-national-number-faker](https://github.com/drupol/belgian-national-number-faker): Generate fake Belgian national numbers
 
 ## License
 
