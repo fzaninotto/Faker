@@ -588,6 +588,54 @@ class BaseTest extends TestCase
             'excaped parenthesis should stay' => array(
                 'expected' => '/\(this|that\)/',
                 'input' => '\(this|that\)'
+            ),
+            'anchors should be removed' => array(
+                'expected' => '//',
+                'input' => '/^$/'
+            ),
+            'curly bracket single quantifies should be converted into two digits' => array(
+                'expected' => '/\{2,2\}/',
+                'input' => '/{2}/'
+            ),
+            'single letter quantifier questionmark should be converted' => array(
+                'expected' => '/\{0,1\}/',
+                'input' => '/?/'
+            ),
+            'single letter quantifier asertisk should be converted' => array(
+                'expected' => '/\{0,\d\}/',
+                'input' => '/*/'
+            ),
+            'single letter quantifier plus should be converted' => array(
+                'expected' => '/\{1,\d\}/',
+                'input' => '/+/'
+            ),
+            'quantified character set should be repeated' => array(
+                'expected' => '/1|11|2|22/',
+                'input' => '/[12]{1,2}/'
+            ),
+            'quantified single character or sequence should be repeated' => array(
+                'expected' => '/\d|\d\d/',
+                'input' => '/\d{1,2}/'
+            ),
+            'character sequence should be written out and reduced to a single random character' => array(
+                'expected' => '/A|B|C|D|E|F/',
+                'input' => '/[A-F]/'
+            ),
+            'replace meta sequence with digit' => array(
+                'expected' => '/\d/',
+                'input' => '/\d/'
+            ),
+            'replace meta sequence with letter' => array(
+                'expected' => '/\w/',
+                'input' => '/\w/'
+            ),
+            'replace meta sequence with ascii' => array(
+                'expected' => '/[[:alnum:]]/',
+                'input' => '/./'
+            ),
+            'superfluous backslashes should be removed' => array(
+                'expected' => '//',
+                'input' => '/\\\\\\\\\/'
             )
         );
     }
