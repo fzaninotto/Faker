@@ -113,4 +113,26 @@ class Color extends Base
     {
         return static::randomElement(static::$allColorNames);
     }
+
+    /**
+     * @example '340,50,20'
+     */
+    public static function hslColor()
+    {
+        return sprintf(
+            '%s,%s,%s',
+            static::numberBetween(0, 360),
+            static::numberBetween(0, 100),
+            static::numberBetween(0, 100)
+        );
+    }
+
+    public static function hslColorAsArray()
+    {
+        return array(
+            static::numberBetween(0, 360),
+            static::numberBetween(0, 100),
+            static::numberBetween(0, 100)
+        );
+    }
 }
