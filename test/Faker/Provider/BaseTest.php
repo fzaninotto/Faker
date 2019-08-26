@@ -578,6 +578,9 @@ class BaseTest extends TestCase
         $this->assertRegExp($expectedRegex, BaseProvider::regexify($input));
     }
 
+    /**
+     * @return array
+     */
     public function testRegexifyDataProvider()
     {
         return array(
