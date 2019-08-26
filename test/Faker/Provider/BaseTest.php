@@ -633,7 +633,7 @@ class BaseTest extends TestCase
                 'input' => '/\w/'
             ),
             'replace meta sequence with ascii' => array(
-                'expected' => '/[[:alnum:]]/',
+                'expected' => '/[0-9]|[a-z]|[~!"#$%&\'()*+,-.\/:;<=>?@\[\]\\\\^_`]/i',
                 'input' => '/./'
             ),
             'superfluous backslashes should be removed' => array(
