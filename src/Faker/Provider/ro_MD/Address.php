@@ -73,8 +73,6 @@ class Address extends \Faker\Provider\Address
 
     protected static $streetAddressFormats = array(
         '{{streetName}} {{buildingNumber}}',
-        '{{streetName}} {{buildingNumber}}',
-        '{{streetName}} {{buildingNumber}}',
         '{{streetName}} nr. {{buildingNumber}}, bl. {{block}}, ap. {{apartmentNumber}}',
         '{{streetName}} nr. {{buildingNumber}}, bl. {{block}}, et. {{floor}}, ap. {{apartmentNumber}}',
         '{{streetName}} nr. {{buildingNumber}}, bl. {{block}}, sc. {{blockSegment}}, et. {{floor}}, ap. {{apartmentNumber}}',

@@ -6,15 +6,11 @@ class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{middleNameMale}} {{lastName}}',
         '{{firstNameMale}} {{middleNameMale}} {{lastName}}',
         '{{firstNameMale}} {{firstNameMale}} {{lastName}}',
     );
 
     protected static $femaleNameFormats = array(
-        '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{firstNameMale}} {{lastName}}',
     );
@@ -35,7 +31,7 @@ class Person extends \Faker\Provider\Person
         'Jatin', 'Jagat', 'Jagdish', 'Jaswant', 'Jawahar', 'Jamshed', 'Javed', 'Jobin', 'Jack', 'John',
         'Kartik', 'Koushtubh', 'Kirti', 'Kushal', 'Kailash', 'Kalyan', 'Krishna', 'Kamlesh', 'Kalpit', 'Kabeer', 'Karim',
         'Lalit', 'Lakshmi', 'Labeen',
-        'Mohan', 'Mukund', 'Mohan', 'Mohit', 'Manish', 'Moti', 'Mowgli', 'Mohanlal', 'Mitesh', 'Manoj', 'Monin', 'Mahmood', 'Malik', 'Mehul', 'Mustafa', 'Manpreet', 'Mukul', 'Munaf', 'Marlo',
+        'Mohan', 'Mukund', 'Mohit', 'Manish', 'Moti', 'Mowgli', 'Mohanlal', 'Mitesh', 'Manoj', 'Monin', 'Mahmood', 'Malik', 'Mehul', 'Mustafa', 'Manpreet', 'Mukul', 'Munaf', 'Marlo',
         'Nitin', 'Nayan', 'Naresh', 'Neerendra', 'Nirmal', 'Narayan', 'Nakul', 'Naval', 'Natwar', 'Naseer', 'Nazir', 'Nawab, ',
         'Parveen', 'Pravin', 'Pranab', 'Prabhat', 'Pradeep', 'Prasoon', 'Preet', 'Pranay', 'Parvez', 'Pirzada', 'Peter',
         'Omar', 'Obaid', 'Owais',
@@ -63,8 +59,8 @@ class Person extends \Faker\Provider\Person
         'Jagruti', 'Jasmin', 'Jayshree', 'Jiya', 'Juhi', 'Jyoti', 'Julie',
         'Kalpana', 'Kalyani', 'Kamini', 'Kasturi', 'Kiran', 'Komal', 'Kusum', 'Krishna', 'Kanika', 'Kasturba', 'Kunti', 'Kajal', 'Kajol', 'Kirti', 'Kim',
         'Lata', 'Lalita', 'Leela', 'Leelawati', 'Lakshmi', 'Laveena',
-        'Madhu', 'Madhavi', 'Maya', 'Mayawati', 'Megha', 'Mona', 'Mridula', 'Mukti', 'Meghana', 'Manjari', 'Mukti', 'Mini', 'Munni', 'Monica',
-        'Nagma', 'Naina', 'Nalini', 'Namita', 'Nancy', 'Nandini', 'Namita', 'Narmada', 'Neela', 'Neha', 'Nidhi', 'Nikita', 'Nilam', 'Nilima', 'Nishi', 'Nishita', 'Nupoor', 'Nutan', 'Nitika', 'Niyati', 'Nupur', 'Navami', 'Nishtha',
+        'Madhu', 'Madhavi', 'Maya', 'Mayawati', 'Megha', 'Mona', 'Mridula', 'Mukti', 'Meghana', 'Manjari', 'Mini', 'Munni', 'Monica',
+        'Nagma', 'Naina', 'Nalini', 'Namita', 'Nancy', 'Nandini', 'Narmada', 'Neela', 'Neha', 'Nidhi', 'Nikita', 'Nilam', 'Nilima', 'Nishi', 'Nishita', 'Nupoor', 'Nutan', 'Nitika', 'Niyati', 'Nupur', 'Navami', 'Nishtha',
         'Padama', 'Padmini', 'Payal', 'Poonam', 'Prabha', 'Priyanka', 'Pushpa', 'Pooja', 'Prerna', 'Pamela', 'Pinky', 'Parminder', 'Preshita',
         'Radha', 'Radhika', 'Ragini', 'Rakhi', 'Richa', 'Riddhi', 'Ritika', 'Riya', 'Rohini', 'Roma', 'Ruchi', 'Rachel', 'Rita', 'Rosey', 'Rimi', 'Runjhun',
         'Sabina', 'Sameera', 'Sameedha', 'Sapna', 'Sara', 'Seema', 'Shanti', 'Sheetal', 'Shobha', 'Savita', 'Smriti', 'Sneha', 'Sona', 'Sunita', 'Supriya', 'Sushmita', 'Swati', 'Sweta', 'Shweta', 'Sukriti',

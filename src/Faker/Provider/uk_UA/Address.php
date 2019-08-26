@@ -285,8 +285,7 @@ class Address extends \Faker\Provider\Address
         'Б. Грінченка',
         'Інститутська',
         'Пирогова',
-        'М. Коцюбинського',
-        'Володимирська'
+        'М. Коцюбинського'
     );
 
     protected static $addressFormats = array(

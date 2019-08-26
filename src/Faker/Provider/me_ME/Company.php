@@ -13,9 +13,9 @@ class Company extends \Faker\Provider\Company
      */
     protected static $names = array(
         '13 Jul - Plantaže ', '19 Decembar Podgorica',
-        'Agrokombinat 13 Jul', 'Agrokombinat 13 Jul', 'Atlas Banka', 'Autoremont Osmanagić',
+        'Agrokombinat 13 Jul', 'Atlas Banka', 'Autoremont Osmanagić',
         'Božur-Velexport', 'Businessmontenegro Podgorica',
-        'Cemex Montenegro', 'Centralna Depozitarna Agencija ', 'Centrokoža-Produkt ', 'CG Broker', 'CMC AD Podgorica', 'Crnagoradrvo', 'Crnagoraput', 'Crnogorska Komercijalna Banka ', 'Crnogorski Telekom', 'Doclea Express Podgorica', 'Društvo Za Upravljanje Investicionim Fondom Atlas Mont', 'Drvoimpex', 'Drvoimpex', 'Drvoimpex', 'Drvoimpex-Bams', 'Drvoimpex-Fincom', 'Drvoimpex-Gm Podgorica', 'Drvoimpex-Mobile', 'Duklja - Zora', 'Duklja Podgorica', 'Duklja-Pekara', 'Duvanski Kombinat, Podgorica',
+        'Cemex Montenegro', 'Centralna Depozitarna Agencija ', 'Centrokoža-Produkt ', 'CG Broker', 'CMC AD Podgorica', 'Crnagoradrvo', 'Crnagoraput', 'Crnogorska Komercijalna Banka ', 'Crnogorski Telekom', 'Doclea Express Podgorica', 'Društvo Za Upravljanje Investicionim Fondom Atlas Mont', 'Drvoimpex', 'Drvoimpex-Bams', 'Drvoimpex-Fincom', 'Drvoimpex-Gm Podgorica', 'Drvoimpex-Mobile', 'Duklja - Zora', 'Duklja Podgorica', 'Duklja-Pekara', 'Duvanski Kombinat, Podgorica',
         'Elastik-Plastika Ad Podgorica', 'Erste Bank Ad Podgorica', 'Euromarket Banka Nlb Grupa ', 'Exal', 'Export-Import Servisimport Si',
         'Fond Zajedničkog Ulaganja Moneta', 'Goricapromet Podgorica', 'Gornji Ibar A.D.', 'Gp Radnik Beton', 'Građevinar Podgorica', 'Gross Market Podgorica',
         'H.T.P.Velika Plaža A.D', 'Higijena Podgorica', 'Hipotekarna Banka', 'Hotel Ravnjak',

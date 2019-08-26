@@ -9,9 +9,6 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
      */
     protected static $jpjNumberPlateFormats = array(
         '{{peninsularPrefix}}{{validAlphabet}}{{validAlphabet}} {{numberSequence}}',
-        '{{peninsularPrefix}}{{validAlphabet}}{{validAlphabet}} {{numberSequence}}',
-        '{{peninsularPrefix}}{{validAlphabet}}{{validAlphabet}} {{numberSequence}}',
-        '{{peninsularPrefix}}{{validAlphabet}}{{validAlphabet}} {{numberSequence}}',
         'W{{validAlphabet}}{{validAlphabet}} {{numberSequence}} {{validAlphabet}}',
         'KV {{numberSequence}} {{validAlphabet}}',
         '{{sarawakPrefix}} {{numberSequence}} {{validAlphabet}}',
@@ -26,8 +23,8 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
      * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format
      */
     protected static $peninsularPrefix = array(
-        'A','A','B','C','D','F','J','J','K','M','N','P','P','R','T','V',
-        'W','W','W','W','W','W',
+        'A','B','C','D','F','J','K','M','N','P','R','T','V',
+        'W',
     );
 
     /**

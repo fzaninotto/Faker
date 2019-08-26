@@ -8,7 +8,7 @@ class Internet extends \Faker\Provider\Internet
         'gmail.com', 'yahoo.com', 'hotmail.com', '126.com', '163.com', 'qq.com', 'sohu.com', 'sina.com'
     );
     protected static $tld = array(
-        'com', 'com', 'com', 'com', 'com', 'com', 'biz', 'info', 'net', 'org', 'cn',
+        'com', 'biz', 'info', 'net', 'org', 'cn',
         'com.cn', 'edu.cn', 'net.cn', 'biz.cn', 'gov.cn', 'org.cn'
     );
 

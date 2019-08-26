@@ -12,7 +12,7 @@ class Internet extends \Faker\Provider\Internet
     );
 
     protected static $safeEmailTld = array(
-        'org', 'com', 'net', 'jp', 'jp', 'jp',
+        'org', 'com', 'net', 'jp',
     );
 
     protected static $freeEmailDomain = array(
@@ -20,7 +20,7 @@ class Internet extends \Faker\Provider\Internet
     );
 
     protected static $tld = array(
-        'com', 'com', 'com', 'biz', 'info', 'net', 'org', 'jp', 'jp', 'jp',
+        'com', 'biz', 'info', 'net', 'org', 'jp',
     );
 
     /**

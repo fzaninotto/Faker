@@ -52,7 +52,7 @@ class Company extends \Faker\Provider\Company
     /**
      * @var array Company suffixes.
      */
-    protected static $companySuffix = array('s.r.o.', 's.r.o.', 's.r.o.', 's.r.o.', 'a.s.', 'o.p.s.', 'o.s.');
+    protected static $companySuffix = array('s.r.o.', 'a.s.', 'o.p.s.', 'o.s.');
 
     /**
      * Returns a random catch phrase noun.

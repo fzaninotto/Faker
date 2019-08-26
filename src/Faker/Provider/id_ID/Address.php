@@ -150,8 +150,7 @@ class Address extends \Faker\Provider\Address
         // http://id.wikipedia.org/wiki/United_States_Virgin_Islands
         'Kepulauan Virgin Amerika Serikat',
 
-        'Kepulauan Virgin Inggris', 'Kiribati', 'Kolombia', 'Komoro', 'Kongo', 'Korea',
-        'Korea', 'Kosta Rika', 'Kroasia',
+        'Kepulauan Virgin Inggris', 'Kiribati', 'Kolombia', 'Komoro', 'Kongo', 'Korea', 'Kosta Rika', 'Kroasia',
 
         // http://id.wikipedia.org/wiki/Cuba
         'Kuba',

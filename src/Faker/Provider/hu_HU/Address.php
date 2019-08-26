@@ -6,9 +6,6 @@ class Address extends \Faker\Provider\Address
 {
     protected static $cityFormats = array(
         '{{capital}}',
-        '{{capital}}',
-        '{{capital}}',
-        '{{bigCity}}',
         '{{bigCity}}',
         '{{smallerCity}}',
     );
@@ -65,7 +62,7 @@ class Address extends \Faker\Provider\Address
         return static::randomElement(static::$smallerCities);
     }
 
-    protected static $buildingNumber = array('###', '##', '##', '#');
+    protected static $buildingNumber = array('###', '##', '#');
 
     /**
      * Coordinates inside the border of Hungary

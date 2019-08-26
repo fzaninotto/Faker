@@ -5,10 +5,10 @@ namespace Faker\Provider\fi_FI;
 class Address extends \Faker\Provider\Address
 {
     protected static $cityPrefix = array('Pohjois', 'Etelä', 'Itä', 'Länsi', 'Uusi', 'Uus');
-    protected static $citySuffix = array('kylä', 'niemi', 'järvi', 'joki', 'lampi', 'mäki', 'vesi', 'niemi', 'harju', 'lahti', 'harju', 'salmi', 'koski', 'pudas', 'saari');
-    protected static $buildingNumber = array('####', '###', '##', '#', '#');
+    protected static $citySuffix = array('kylä', 'niemi', 'järvi', 'joki', 'lampi', 'mäki', 'vesi', 'harju', 'lahti', 'salmi', 'koski', 'pudas', 'saari');
+    protected static $buildingNumber = array('####', '###', '##', '#');
     protected static $streetSuffix = array(
-        'tie', 'kuja', 'polku', 'kierros', 'kulma', 'katu', 'kaarre', 'kaari', 'rinne', 'kaarto', 'haka', 'silta', 'rinne', 'töyry'
+        'tie', 'kuja', 'polku', 'kierros', 'kulma', 'katu', 'kaarre', 'kaari', 'rinne', 'kaarto', 'haka', 'silta', 'töyry'
     );
     protected static $postcode = array('#####');
     protected static $state = array(

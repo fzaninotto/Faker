@@ -14,5 +14,5 @@ class Internet extends \Faker\Provider\Internet
     );
 
     protected static $freeEmailDomain = array('gmail.com', 'yahoo.com', 'hotmail.com');
-    protected static $tld = array('com', 'com', 'net', 'org', 'lt', 'lt', 'lt', 'lt', 'lt');
+    protected static $tld = array('com', 'net', 'org', 'lt');
 }

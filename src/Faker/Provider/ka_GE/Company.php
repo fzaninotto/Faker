@@ -5,7 +5,7 @@ namespace Faker\Provider\ka_GE;
 class Company extends \Faker\Provider\Company
 {
     protected static $companyPrefixes = array(
-        'შპს', 'შპს', 'შპს', 'სს', 'სს', 'სს', 'კს', 'სს კორპორაცია', 'იმ', 'სპს', 'კოოპერატივი'
+        'შპს', 'სს', 'კს', 'სს კორპორაცია', 'იმ', 'სპს', 'კოოპერატივი'
     );
 
     protected static $companyNameSuffixes = array(
@@ -22,7 +22,6 @@ class Company extends \Faker\Provider\Company
     protected static $companyNameFormats = array(
         '{{companyPrefix}} {{companyNameElement}}{{companyNameSuffix}}',
         '{{companyPrefix}} {{companyNameElement}}{{companyNameElement}}{{companyNameSuffix}}',
-        '{{companyPrefix}} {{companyNameElement}}{{companyNameElement}}{{companyNameElement}}{{companyNameSuffix}}',
         '{{companyPrefix}} {{companyNameElement}}{{companyNameElement}}{{companyNameElement}}{{companyNameSuffix}}',
     );
 

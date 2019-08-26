@@ -24,7 +24,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '0918#######',
         '0919#######',
         '0901#######',
-        '0901#######',
         '0902#######',
         '0903#######',
         '0930#######',
@@ -36,8 +35,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '0939#######',
         '0920#######',
         '0921#######',
-        '0937#######',
-        '0937#######',
     );
     public static function mobileNumber()
     {

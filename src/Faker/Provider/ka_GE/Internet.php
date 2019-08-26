@@ -9,7 +9,7 @@ class Internet extends \Faker\Provider\Internet
     );
 
     protected static $tld = array(
-        'ge', 'ge', 'ge', 'ge', 'ge', 'com.ge', 'edu.ge', 'net.ge', 'org.ge',
+        'ge', 'com.ge', 'edu.ge', 'net.ge', 'org.ge',
         'pvt.ge', 'gov.ge', 'mil.ge', 'com', 'biz', 'info', 'net', 'org'
     );
 }

@@ -15,19 +15,13 @@ class Person extends \Faker\Provider\Person
 
     protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastNameMale}}',
-        '{{firstNameMale}} {{lastNameMale}}',
-        '{{firstNameMale}} {{lastNameMale}}',
         '{{title}} {{firstNameMale}} {{lastNameMale}}',
-        '{{firstNameMale}} {{lastNameMale}}',
         '{{title}} {{title}} {{firstNameMale}} {{lastNameMale}}',
     );
 
     protected static $femaleNameFormats = array(
         '{{firstNameFemale}} {{lastNameFemale}}',
-        '{{firstNameFemale}} {{lastNameFemale}}',
-        '{{firstNameFemale}} {{lastNameFemale}}',
         '{{title}} {{firstNameFemale}} {{lastNameFemale}}',
-        '{{firstNameFemale}} {{lastNameFemale}}',
         '{{title}} {{title}} {{firstNameFemale}} {{lastNameFemale}}',
     );
 
@@ -45,7 +39,7 @@ class Person extends \Faker\Provider\Person
 
     protected static $firstNameFemale = array(
         'Ada', 'Adrianna', 'Agata', 'Agnieszka', 'Aleksandra', 'Alicja', 'Amelia', 'Anastazja', 'Angelika', 'Aniela', 'Anita',
-        'Anna', 'Anna', 'Antonina', 'Apolonia', 'Aurelia', 'Barbara', 'Bianka', 'Blanka', 'Dagmara', 'Daria', 'Dominika', 'Dorota',
+        'Anna', 'Antonina', 'Apolonia', 'Aurelia', 'Barbara', 'Bianka', 'Blanka', 'Dagmara', 'Daria', 'Dominika', 'Dorota',
         'Eliza', 'Elżbieta', 'Emilia', 'Ewa', 'Ewelina', 'Gabriela', 'Hanna', 'Helena', 'Ida', 'Iga', 'Inga', 'Izabela',
         'Jagoda', 'Janina', 'Joanna', 'Julia', 'Julianna', 'Julita', 'Justyna', 'Kaja', 'Kalina', 'Kamila', 'Karina', 'Karolina',
         'Katarzyna', 'Kinga', 'Klara', 'Klaudia', 'Kornelia', 'Krystyna', 'Laura', 'Lena', 'Lidia', 'Liliana', 'Liwia', 'Łucja',

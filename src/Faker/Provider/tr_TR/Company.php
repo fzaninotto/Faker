@@ -9,8 +9,6 @@ class Company extends \Faker\Provider\Company
         '{{lastName}}oğlu {{companySuffix}}',
         '{{lastName}} {{lastName}} {{companySuffix}}',
         '{{lastName}} {{companyField}} {{companySuffix}}',
-        '{{lastName}} {{companyField}} {{companySuffix}}',
-        '{{lastName}} {{companyField}} {{companySuffix}}',
         '{{lastName}} {{lastName}} {{companyField}} {{companySuffix}}',
     );
 

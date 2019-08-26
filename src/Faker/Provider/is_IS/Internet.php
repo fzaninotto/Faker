@@ -18,6 +18,6 @@ class Internet extends \Faker\Provider\Internet
      * @var array Some TLD.
      */
     protected static $tld = array(
-        'com', 'com', 'com', 'net', 'is', 'is', 'is',
+        'com', 'net', 'is',
     );
 }

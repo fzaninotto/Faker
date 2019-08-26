@@ -32,7 +32,7 @@ class Address extends \Faker\Provider\Address
      * @var array Danish building numbers.
      */
     protected static $buildingNumber = array(
-        '%##', '%#', '%#', '%', '%', '%', '%?', '% ?',
+        '%##', '%#', '%', '%?', '% ?',
     );
 
     /**

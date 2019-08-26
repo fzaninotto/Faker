@@ -21,14 +21,14 @@ class Address extends \Faker\Provider\Address
      * Most of the time 'No.' is not needed, and 'Lot' is less used.
      */
     protected static $buildingPrefix = array(
-        '','','','','','',
-        'No. ','No. ','No. ',
+        '',
+        'No. ',
         'Lot ',
     );
 
     protected static $buildingNumber = array(
-        '%','%','%',
-        '%#','%#','%#','%#',
+        '%',
+        '%#',
         '%##',
         '%-%',
         '?-##-##',
@@ -55,11 +55,6 @@ class Address extends \Faker\Provider\Address
 
     protected static $townshipFormats = array(
         '{{townshipPrefix}} {{townshipSuffix}}',
-        '{{townshipPrefix}} {{townshipSuffix}}',
-        '{{townshipPrefix}} {{townshipSuffix}}',
-        '{{townshipPrefix}} {{townshipSuffix}}',
-        '{{townshipPrefix}} {{townshipSuffix}}',
-        '{{townshipPrefix}} {{townshipSuffix}}',
         '{{townshipPrefixAbbr}}%',
         '{{townshipPrefixAbbr}}%#',
         '{{townshipPrefixAbbr}}%#?',
@@ -71,8 +66,8 @@ class Address extends \Faker\Provider\Address
      * @link https://en.wikipedia.org/wiki/List_of_roads_in_Kuala_Lumpur#Standard_translations
      */
     protected static $streetPrefix = array(
-        'Jln','Jln',
-        'Jalan','Jalan','Jalan',
+        'Jln',
+        'Jalan',
         'Lorong'
     );
 
@@ -131,15 +126,15 @@ class Address extends \Faker\Provider\Address
      */
     protected static $townshipPrefix = array(
         'Alam','Apartment','Ara',
-        'Bandar','Bandar','Bandar','Bandar','Bandar','Bandar',
+        'Bandar',
         'Bandar Bukit','Bandar Seri','Bandar Sri','Bandar Baru','Batu','Bukit',
         'Desa','Damansara',
-        'Kampung','Kampung Baru','Kampung Baru','Kondominium','Kota',
+        'Kampung','Kampung Baru','Kondominium','Kota',
         'Laman','Lembah',
         'Medan',
         'Pandan','Pangsapuri','Petaling','Puncak',
         'Seri','Sri',
-        'Taman','Taman','Taman','Taman','Taman','Taman',
+        'Taman',
         'Taman Desa',
     );
     protected static $townshipSuffix = array(

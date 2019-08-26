@@ -5,7 +5,7 @@ namespace Faker\Provider;
 class Internet extends Base
 {
     protected static $freeEmailDomain = array('gmail.com', 'yahoo.com', 'hotmail.com');
-    protected static $tld = array('com', 'com', 'com', 'com', 'com', 'com', 'biz', 'info', 'net', 'org');
+    protected static $tld = array('com', 'biz', 'info', 'net', 'org');
 
     protected static $userNameFormats = array(
         '{{lastName}}.{{firstName}}',
@@ -21,10 +21,8 @@ class Internet extends Base
         'http://www.{{domainName}}/',
         'http://{{domainName}}/',
         'http://www.{{domainName}}/{{slug}}',
-        'http://www.{{domainName}}/{{slug}}',
         'https://www.{{domainName}}/{{slug}}',
         'http://www.{{domainName}}/{{slug}}.html',
-        'http://{{domainName}}/{{slug}}',
         'http://{{domainName}}/{{slug}}',
         'http://{{domainName}}/{{slug}}.html',
         'https://{{domainName}}/{{slug}}.html',

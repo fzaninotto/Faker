@@ -8,10 +8,9 @@ class Company extends \Faker\Provider\Company
         '{{lastName}} {{companySuffix}}',
         '{{lastName}} {{lastName}} {{companySuffix}}',
         '{{lastName}}',
-        '{{lastName}}',
     );
 
-    protected static $companySuffix = array('VOF', 'CV', 'LLP', 'BV', 'NV', 'IBC', 'CSL', 'EESV', 'SE', 'CV', 'Stichting', '& Zonen', '& Zn');
+    protected static $companySuffix = array('VOF', 'CV', 'LLP', 'BV', 'NV', 'IBC', 'CSL', 'EESV', 'SE', 'Stichting', '& Zonen', '& Zn');
 
     /**
      * Belasting Toegevoegde Waarde (BTW) = VAT

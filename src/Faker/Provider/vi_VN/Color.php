@@ -6,7 +6,7 @@ class Color extends \Faker\Provider\Color
 {
     protected static $safeColorNames = array(
         'đen', 'xanh', 'ô liu',
-        'tím ', 'vôi', 'xanh', 'bạc',
+        'tím ', 'vôi', 'bạc',
         'xám', 'vàng', 'trắng',
     );
 

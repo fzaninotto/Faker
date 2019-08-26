@@ -98,25 +98,8 @@ class Address extends \Faker\Provider\Address
 
     protected static $villageNameFormats = array(
         '{{syllable}} {{syllable}} {{villageSuffix}}',
-        '{{syllable}} {{syllable}} {{villageSuffix}}',
-        '{{syllable}} {{syllable}} {{villageSuffix}}',
-        '{{syllable}} {{syllable}} {{villageSuffix}}',
-        '{{syllable}} {{syllable}} {{villageSuffix}}',
-        '{{syllable}} {{syllable}} {{villageSuffix}}',
-        '{{syllable}} {{syllable}} {{villageSuffix}}',
-        '{{syllable}} {{syllable}} {{syllable}} {{villageSuffix}}',
-        '{{syllable}} {{syllable}} {{syllable}} {{villageSuffix}}',
-        '{{syllable}} {{syllable}} {{syllable}} {{villageSuffix}}',
-        '{{syllable}} {{syllable}} {{syllable}} {{villageSuffix}}',
-        '{{syllable}} {{syllable}} {{syllable}} {{villageSuffix}}',
-        '{{syllable}} {{syllable}} {{syllable}} {{villageSuffix}}',
-        '{{syllable}} {{syllable}} {{syllable}} {{villageSuffix}}',
         '{{syllable}} {{syllable}} {{syllable}} {{villageSuffix}}',
         '{{syllable}} {{syllable}}',
-        '{{syllable}} {{syllable}}',
-        '{{syllable}} {{syllable}}',
-        '{{syllable}} {{syllable}} {{syllable}}',
-        '{{syllable}} {{syllable}} {{syllable}}',
         '{{syllable}} {{syllable}} {{syllable}}',
         '{{town}}',
         '{{town}} {{villageSuffix}}',
@@ -124,10 +107,6 @@ class Address extends \Faker\Provider\Address
 
     protected static $estateNameFormats = array(
         '{{syllable}} {{syllable}} {{estateSuffix}}',
-        '{{syllable}} {{syllable}} {{estateSuffix}}',
-        '{{syllable}} {{syllable}} {{estateSuffix}}',
-        '{{syllable}} {{syllable}} {{syllable}} {{estateSuffix}}',
-        '{{syllable}} {{syllable}} {{syllable}} {{estateSuffix}}',
         '{{syllable}} {{syllable}} {{syllable}} {{estateSuffix}}',
         '{{town}} {{estateSuffix}}',
     );
@@ -140,10 +119,6 @@ class Address extends \Faker\Provider\Address
     protected static $streetNameFormats = array(
         '{{syllable}} {{streetSuffix}}',
         '{{syllable}} {{syllable}} {{streetSuffix}}',
-        '{{syllable}} {{syllable}} {{streetSuffix}}',
-        '{{syllable}} {{syllable}} {{streetSuffix}}',
-        '{{syllable}} {{syllable}} {{syllable}} {{streetSuffix}}',
-        '{{syllable}} {{syllable}} {{syllable}} {{streetSuffix}}',
         '{{syllable}} {{syllable}} {{syllable}} {{streetSuffix}}',
         '{{syllable}} {{syllable}} {{direction}} {{streetSuffix}}',
         '{{syllable}} {{syllable}} {{syllable}} {{direction}} {{streetSuffix}}',
@@ -159,7 +134,7 @@ class Address extends \Faker\Provider\Address
     );
 
     protected static $streetSuffix = array(
-        'Road', 'Road', 'Road', 'Street', 'Street', 'Street', 'Lane',
+        'Road', 'Street', 'Lane',
         'Circuit', 'Avenue', 'Path', 'Square',
     );
 
@@ -169,24 +144,6 @@ class Address extends \Faker\Provider\Address
 
     protected static $towns = array(
         '{{syllable}} {{syllable}}',
-        '{{syllable}} {{syllable}}',
-        '{{syllable}} {{syllable}}',
-        '{{syllable}} {{syllable}}',
-        '{{syllable}} {{syllable}}',
-        '{{syllable}} {{syllable}}',
-        '{{syllable}} {{syllable}}',
-        '{{syllable}} {{syllable}}',
-        '{{syllable}} {{syllable}}',
-        '{{syllable}} {{syllable}}',
-        '{{syllable}} {{syllable}} {{syllable}}',
-        '{{syllable}} {{syllable}} {{syllable}}',
-        '{{syllable}} {{syllable}} {{syllable}}',
-        '{{syllable}} {{syllable}} {{syllable}}',
-        '{{syllable}} {{syllable}} {{syllable}}',
-        '{{syllable}} {{syllable}} {{syllable}}',
-        '{{syllable}} {{syllable}} {{syllable}}',
-        '{{syllable}} {{syllable}} {{syllable}}',
-        '{{syllable}} {{syllable}} {{syllable}}',
         '{{syllable}} {{syllable}} {{syllable}}',
         'Aberdeen',
         'Stanley',

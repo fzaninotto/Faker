@@ -11,16 +11,10 @@ class Person extends \Faker\Provider\Person
 
     protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastNameMale}}',
-        '{{firstNameMale}} {{lastNameMale}}',
-        '{{firstNameMale}} {{lastNameMale}}',
-        '{{firstNameMale}} {{lastNameMale}}',
         '{{titleMale}} {{firstNameMale}} {{lastNameMale}}',
     );
 
     protected static $femaleNameFormats = array(
-        '{{firstNameFemale}} {{lastNameFemale}}',
-        '{{firstNameFemale}} {{lastNameFemale}}',
-        '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{titleFemale}} {{firstNameFemale}} {{lastNameFemale}}',
     );
@@ -52,7 +46,7 @@ class Person extends \Faker\Provider\Person
             'Natálie', 'Nela', 'Nikola', 'Olga', 'Pavla', 'Pavlína', 'Petra',
             'Radka', 'Renata', 'Renáta', 'Romana', 'Růžena', 'Simona', 'Soňa',
             'Stanislava', 'Šárka', 'Štěpánka', 'Tereza', 'Vendula', 'Věra',
-            'Veronika', 'Vladimíra', 'Vlasta', 'Zdenka', 'Zdeňka', 'Zdeňka',
+            'Veronika', 'Vladimíra', 'Vlasta', 'Zdenka', 'Zdeňka',
             'Zuzana'
     );
 
@@ -147,7 +141,7 @@ class Person extends \Faker\Provider\Person
             'Műller', 'Musil', 'Mužík', 'Myška', 'Nagy', 'Najman', 'Navrátil',
             'Nečas', 'Nedbal', 'Nedoma', 'Nedvěd', 'Nejedlý', 'Němec',
             'Němeček', 'Nesvadba', 'Nešpor', 'Neubauer', 'Neuman', 'Neumann',
-            'Nguyen', 'Nguyen', 'Nosek', 'Nováček', 'Novák', 'Novosad', 'Novotný',
+            'Nguyen', 'Nosek', 'Nováček', 'Novák', 'Novosad', 'Novotný',
             'Nový', 'Odehnal', 'Oláh', 'Oliva', 'Ondráček', 'Ondra', 'Orság',
             'Otáhal', 'Paleček', 'Pánek', 'Papež', 'Pařízek', 'Pašek',
             'Pátek', 'Patočka', 'Paul', 'Pavelek', 'Pavelka', 'Pavel', 'Pavlas',
@@ -273,12 +267,12 @@ class Person extends \Faker\Provider\Person
             'Chudobová', 'Chvátalová', 'Chvojková', 'Chytilová', 'Jahodová',
             'Jakešová', 'Jaklová', 'Jakoubková', 'Jakubcová', 'Janáčková',
             'Janáková', 'Janatová', 'Jančová', 'Jančíková', 'Jandová',
-            'Janečková', 'Janečková', 'Janíčková', 'Janíková', 'Janková',
+            'Janečková', 'Janíčková', 'Janíková', 'Janková',
             'Janotová', 'Janoušková', 'Janovská', 'Jansová', 'Jánská',
             'Jarešová', 'Jarošová', 'Jašková', 'Javůrková', 'Jedličková',
             'Jechová', 'Jelenová', 'Jelínková', 'Jeníčková', 'Jeřábková',
             'Ježková', 'Ježová', 'Jílková', 'Jindrová', 'Jírová',
-            'Jiráková', 'Jiránková', 'Jirásková', 'Jirková', 'Jirková',
+            'Jiráková', 'Jiránková', 'Jirásková', 'Jirková',
             'Jiroušková', 'Jirsová', 'Jiříková', 'Johnová', 'Jonášová',
             'Junková', 'Jurčíková', 'Jurečková', 'Juřicová', 'Juříková',
             'Kabátová', 'Kačírková', 'Kadeřábková', 'Kadlcová', 'Kafková',
@@ -324,8 +318,7 @@ class Person extends \Faker\Provider\Person
             'Matyášová', 'Matysová', 'Maxová', 'Mayerová', 'Mazánková',
             'Medková', 'Melicharová', 'Menclová', 'Menšíková', 'Mertová',
             'Mičková', 'Michalcová', 'Michálková', 'Michalíková',
-            'Michalová', 'Michnová', 'Miková', 'Míková', 'Mikešová',
-            'Miková', 'Mikulová', 'Mikulášková', 'Minaříková', 'Minářová',
+            'Michalová', 'Michnová', 'Miková', 'Míková', 'Mikešová', 'Mikulová', 'Mikulášková', 'Minaříková', 'Minářová',
             'Mirgová', 'Mládková', 'Mlčochová', 'Mlejnková', 'Mojžíšová',
             'Mokrá', 'Molnárová', 'Moravcová', 'Morávková', 'Motlová',
             'Motyčková', 'Moučková', 'Moudrá', 'Mráčková', 'Mrázková',
@@ -338,12 +331,12 @@ class Person extends \Faker\Provider\Person
             'Nová', 'Odehnalová', 'Oláhová', 'Olivová', 'Ondráčková',
             'Ondrová', 'Orságová', 'Otáhalová', 'Palečková', 'Pánková',
             'Papežová', 'Pařízková', 'Pašková', 'Pátková', 'Patočková',
-            'Paulová', 'Pavelková', 'Pavelková', 'Pavelová', 'Pavlasová',
+            'Paulová', 'Pavelková', 'Pavelová', 'Pavlasová',
             'Pavlicová', 'Pavlíčková', 'Pavlíková', 'Pavlová', 'Pazderová',
-            'Pecková', 'Pecháčková', 'Pechová', 'Pechová', 'Pekárková',
+            'Pecková', 'Pecháčková', 'Pechová', 'Pekárková',
             'Pekařová', 'Pelcová', 'Pelikánová', 'Pernicová', 'Peroutková',
-            'Peřinová', 'Pešková', 'Pešková', 'Peštová', 'Peterková',
-            'Petráková', 'Petrášová', 'Petrová', 'Petrová', 'Petříčková',
+            'Peřinová', 'Pešková', 'Peštová', 'Peterková',
+            'Petráková', 'Petrášová', 'Petrová', 'Petříčková',
             'Petříková', 'Phamová', 'Píchová', 'Pilařová', 'Pilátová',
             'Píšová', 'Pivoňková', 'Plačková', 'Plachá', 'Plšková',
             'Pluhařová', 'Podzimková', 'Pohlová', 'Pokorná', 'Poláčková',

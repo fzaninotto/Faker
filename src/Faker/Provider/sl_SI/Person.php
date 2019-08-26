@@ -7,16 +7,10 @@ class Person extends \Faker\Provider\Person
 
     protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}}',
         '{{title}} {{firstNameMale}} {{lastName}}',
     );
 
     protected static $femaleNameFormats = array(
-        '{{firstNameFemale}} {{lastName}}',
-        '{{firstNameFemale}} {{lastName}}',
-        '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{title}} {{firstNameFemale}} {{lastName}}',
     );

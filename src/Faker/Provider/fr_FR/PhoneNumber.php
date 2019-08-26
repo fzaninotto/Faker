@@ -8,7 +8,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     // 01 is the most common prefix
     protected static $formats = array(
         '+33 (0)1 ## ## ## ##',
-        '+33 (0)1 ## ## ## ##',
         '+33 (0)2 ## ## ## ##',
         '+33 (0)3 ## ## ## ##',
         '+33 (0)4 ## ## ## ##',
@@ -17,7 +16,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '+33 (0)7 {{phoneNumber07WithSeparator}}',
         '+33 (0)8 {{phoneNumber08WithSeparator}}',
         '+33 (0)9 ## ## ## ##',
-        '+33 1 ## ## ## ##',
         '+33 1 ## ## ## ##',
         '+33 2 ## ## ## ##',
         '+33 3 ## ## ## ##',
@@ -28,7 +26,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '+33 8 {{phoneNumber08WithSeparator}}',
         '+33 9 ## ## ## ##',
         '01########',
-        '01########',
         '02########',
         '03########',
         '04########',
@@ -37,7 +34,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '07{{phoneNumber07}}',
         '08{{phoneNumber08}}',
         '09########',
-        '01 ## ## ## ##',
         '01 ## ## ## ##',
         '02 ## ## ## ##',
         '03 ## ## ## ##',

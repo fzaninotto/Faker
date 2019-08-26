@@ -8,12 +8,6 @@ class Person extends \Faker\Provider\Person
 {
     protected static $formats = array(
         '{{firstName}} {{lastName}}',
-        '{{firstName}} {{lastName}}',
-        '{{firstName}} {{lastName}}',
-        '{{firstName}} {{lastName}}',
-        '{{firstName}} {{lastName}}',
-        '{{firstName}} {{firstName}} {{lastName}}',
-        '{{firstName}} {{firstName}} {{lastName}}',
         '{{firstName}} {{firstName}} {{lastName}}',
         '{{firstName}} {{lastName}} {{lastName}}',
         '{{firstName}} {{lastName}}-{{lastName}}',

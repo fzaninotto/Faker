@@ -6,9 +6,6 @@ class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}-{{lastName}}',
         '{{titleMale}} {{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}} {{suffix}}',
@@ -16,9 +13,6 @@ class Person extends \Faker\Provider\Person
     );
 
     protected static $femaleNameFormats = array(
-        '{{firstNameFemale}} {{lastName}}',
-        '{{firstNameFemale}} {{lastName}}',
-        '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}-{{lastName}}',
         '{{titleFemale}} {{firstNameFemale}} {{lastName}}',
@@ -40,7 +34,7 @@ class Person extends \Faker\Provider\Person
         'Gabriel', 'Gebhard', 'Georg', 'Georgios', 'Gerald', 'Gerd', 'Gerhard', 'Gernot', 'Gero', 'Gerold', 'Gert', 'Gilbert', 'Giovanni', 'Gisbert', 'Giuseppe', 'Gottfried', 'Gotthard', 'Gottlieb', 'Gregor', 'Guenter', 'Guido', 'Guiseppe', 'Gunnar', 'Gunter', 'Gunther', 'Gustav', 'Götz', 'Günter', 'Günther',
         'Hagen', 'Halil', 'Hannes', 'Hanni', 'Hanno', 'Hanns', 'Hans', 'Hans Dieter', 'Hans Georg', 'Hans Jürgen', 'Hans Peter', 'Hans-Christian', 'Hans-Dieter', 'Hans-Georg', 'Hans-Gerd', 'Hans-Günter', 'Hans-Günther', 'Hans-Heinrich', 'Hans-Hermann', 'Hans-J.', 'Hans-Joachim', 'Hans-Jochen', 'Hans-Josef', 'Hans-Jörg', 'Hans-Jürgen', 'Hans-Martin', 'Hans-Otto', 'Hans-Peter', 'Hans-Ulrich', 'Hans-Walter', 'Hans-Werner', 'Hans-Wilhelm', 'Hansjörg', 'Hanspeter', 'Harald', 'Hardy', 'Harri', 'Harro', 'Harry', 'Hartmut', 'Hartwig', 'Hasan', 'Heiko', 'Heiner', 'Heino', 'Heinrich', 'Heinz', 'Heinz-Dieter', 'Heinz-Georg', 'Heinz-Günter', 'Heinz-Joachim', 'Heinz-Josef', 'Heinz-Jürgen', 'Heinz-Peter', 'Heinz-Werner', 'Helfried', 'Helge', 'Hellmut', 'Hellmuth', 'Helmar', 'Helmut', 'Helmuth', 'Hendrik', 'Henning', 'Henrik', 'Henry', 'Henryk', 'Herbert', 'Heribert', 'Hermann', 'Hermann-Josef', 'Herwig', 'Hilmar', 'Hinrich', 'Holger', 'Horst', 'Horst-Dieter', 'Hubert', 'Hubertus', 'Hugo', 'Hüseyin',
         'Ibrahim', 'Ignaz', 'Igor', 'Ingo', 'Ingolf', 'Ismail', 'Ivan', 'Ivo',
-        'Jakob', 'Jan', 'Janusz', 'Jens', 'Jens-Uwe', 'Joachim', 'Jochen', 'Johann', 'Johannes', 'John', 'Jonas', 'Jonas', 'Jose', 'Josef', 'Joseph', 'Josip', 'Jost', 'Juergen', 'Julian', 'Julius', 'Juri', 'Jörg', 'Jörn', 'Jürgen',
+        'Jakob', 'Jan', 'Janusz', 'Jens', 'Jens-Uwe', 'Joachim', 'Jochen', 'Johann', 'Johannes', 'John', 'Jonas', 'Jose', 'Josef', 'Joseph', 'Josip', 'Jost', 'Juergen', 'Julian', 'Julius', 'Juri', 'Jörg', 'Jörn', 'Jürgen',
         'Kai-Uwe', 'Karl', 'Karl Heinz', 'Karl-Ernst', 'Karl-Friedrich', 'Karl-Heinrich', 'Karl-Heinz', 'Karl-Josef', 'Karl-Ludwig', 'Karl-Otto', 'Karl-Wilhelm', 'Karlheinz', 'Karsten', 'Kaspar', 'Kevin', 'Klaus', 'Klaus Dieter', 'Klaus Peter', 'Klaus-Dieter', 'Klaus-Jürgen', 'Klaus-Peter', 'Klemens', 'Knut', 'Konrad', 'Konstantin', 'Konstantinos', 'Kuno', 'Kurt',
         'Lars', 'Leo', 'Leonhard', 'Leonid', 'Leopold', 'Lorenz', 'Lothar', 'Ludger', 'Ludwig', 'Luigi', 'Lukas', 'Lutz',
         'Magnus', 'Maik', 'Malte', 'Manfred', 'Manuel', 'Marc', 'Marcel', 'Marco', 'Marcus', 'Marek', 'Marian', 'Mario', 'Marius', 'Mark', 'Marko', 'Markus', 'Martin', 'Mathias', 'Matthias', 'Max', 'Maximilian', 'Mehmet', 'Meinhard', 'Meinolf', 'Metin', 'Michael', 'Michel', 'Mike', 'Milan', 'Mirco', 'Mirko', 'Miroslav', 'Miroslaw', 'Mohamed', 'Moritz', 'Murat', 'Mustafa',

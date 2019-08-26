@@ -11,16 +11,10 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         // International format
         '+1-{{areaCode}}-{{exchangeCode}}-####',
         '+1 ({{areaCode}}) {{exchangeCode}}-####',
-        '+1-{{areaCode}}-{{exchangeCode}}-####',
         '+1.{{areaCode}}.{{exchangeCode}}.####',
         '+1{{areaCode}}{{exchangeCode}}####',
 
         // Standard formats
-        '{{areaCode}}-{{exchangeCode}}-####',
-        '({{areaCode}}) {{exchangeCode}}-####',
-        '1-{{areaCode}}-{{exchangeCode}}-####',
-        '{{areaCode}}.{{exchangeCode}}.####',
-
         '{{areaCode}}-{{exchangeCode}}-####',
         '({{areaCode}}) {{exchangeCode}}-####',
         '1-{{areaCode}}-{{exchangeCode}}-####',

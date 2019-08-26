@@ -10,8 +10,8 @@ class Payment extends Base
     public static $expirationDateFormat = "m/y";
 
     protected static $cardVendors = array(
-        'Visa', 'Visa', 'Visa', 'Visa', 'Visa',
-        'MasterCard', 'MasterCard', 'MasterCard', 'MasterCard', 'MasterCard',
+        'Visa',
+        'MasterCard',
         'American Express', 'Discover Card', 'Visa Retired'
     );
 

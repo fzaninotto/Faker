@@ -46,7 +46,7 @@ class Person extends \Faker\Provider\Person
         'Xuân',
         'Yên',
         'Án', 'Ân',
-        'Đan', 'Điền', 'Điệp', 'Đoàn', 'Đình', 'Đôn', 'Đăng', 'Đại', 'Đạo', 'Đạt', 'Định', 'Đồng', 'Độ', 'Đức', 'Đức',
+        'Đan', 'Điền', 'Điệp', 'Đoàn', 'Đình', 'Đôn', 'Đăng', 'Đại', 'Đạo', 'Đạt', 'Định', 'Đồng', 'Độ', 'Đức',
         'Ẩn',
     );
 
@@ -69,7 +69,7 @@ class Person extends \Faker\Provider\Person
         'Song', 'Sĩ', 'Sơn', 'Sỹ',
         'Tài', 'Tạ',
         'Ân',
-        'Đan', 'Đinh', 'Đoàn', 'Đình', 'Đông', 'Đăng', 'Đại', 'Đạt', 'Đắc', 'Định', 'Đồng', 'Đức', 'Đăng', 'Đức',
+        'Đan', 'Đinh', 'Đoàn', 'Đình', 'Đông', 'Đăng', 'Đại', 'Đạt', 'Đắc', 'Định', 'Đồng', 'Đức',
     );
 
     /**
@@ -91,14 +91,14 @@ class Person extends \Faker\Provider\Person
         'Phong', 'Phúc', 'Phương', 'Phước', 'Phượng', 'Phụng',
         'Quyên', 'Quân', 'Quế', 'Quỳnh',
         'Sa', 'San', 'Sinh', 'Sương',
-        'Thanh', 'Thảo', 'Thi', 'Thiên', 'Thiện', 'Thoa', 'Thoại', 'Thu', 'Thuần', 'Thuận', 'Thy', 'Thêu', 'Thùy', 'Thúy', 'Thơ', 'Thư', 'Thương', 'Thường', 'Thảo', 'Thắm', 'Thục', 'Thủy', 'Tiên', 'Trang', 'Trinh', 'Trung', 'Trà', 'Trâm', 'Trân', 'Trúc', 'Trầm', 'Tuyến', 'Tuyết', 'Tuyền', 'Tuệ', 'Ty', 'Tâm', 'Tú',
+        'Thanh', 'Thảo', 'Thi', 'Thiên', 'Thiện', 'Thoa', 'Thoại', 'Thu', 'Thuần', 'Thuận', 'Thy', 'Thêu', 'Thùy', 'Thúy', 'Thơ', 'Thư', 'Thương', 'Thường', 'Thắm', 'Thục', 'Thủy', 'Tiên', 'Trang', 'Trinh', 'Trung', 'Trà', 'Trâm', 'Trân', 'Trúc', 'Trầm', 'Tuyến', 'Tuyết', 'Tuyền', 'Tuệ', 'Ty', 'Tâm', 'Tú',
         'Uyên', 'Uyển',
         'Vi', 'Việt',
         'Vy', 'Vân', 'Vũ', 'Vọng', 'Vỹ',
         'Xuyến', 'Xuân',
         'Yên', 'Yến',
         'Ái', 'Ánh', 'Ân',
-        'Đan', 'Điệp', 'Đoan', 'Đài', 'Đàn', 'Đào', 'Đình', 'Đường', 'Đan',
+        'Đan', 'Điệp', 'Đoan', 'Đài', 'Đàn', 'Đào', 'Đình', 'Đường',
         'Ý',
     );
 
@@ -126,7 +126,7 @@ class Person extends \Faker\Provider\Person
         'Xuyến', 'Xuân',
         'Yên', 'Yến',
         'Ái', 'Ánh',
-        'Đan', 'Đinh', 'Đoan', 'Đài', 'Đông', 'Đồng', 'Đan', 'Đoan',
+        'Đan', 'Đinh', 'Đoan', 'Đài', 'Đông', 'Đồng',
         'Ý',
     );
 

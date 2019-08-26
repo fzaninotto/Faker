@@ -6,16 +6,12 @@ class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}}',
         '{{title}} {{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}} {{suffix}}',
         '{{title}} {{firstNameMale}} {{lastName}} {{suffix}}',
     );
 
     protected static $femaleNameFormats = array(
-        '{{firstNameFemale}} {{lastName}}',
-        '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{title}} {{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}} {{suffix}}',
@@ -89,7 +85,7 @@ class Person extends \Faker\Provider\Person
         'Dennenberg', 'die Bont', 'Diesbergen', 'van Dijk', 'Dijkman', 'van Dillen', 'Dircken', 'Dirksen', 'Dirven',
         'Doesburg', 'van Dokkum', 'van Dommelen', 'van Dongen', 'van Dooren', 'Doorhof', 'Doornhem', 'Dorsman',
         'Doyle', 'Draaisma', 'van Drenthe', 'Dries', 'Drysdale', 'Dubois', 'van Duivenvoorde', 'Duivenvoorden',
-        'van Duvenvoirde', 'van Duyvenvoorde', 'die Bont', 'die Pelser', 'die Witte', 'van Eck', 'Eckhardt', 'Eelman',
+        'van Duvenvoirde', 'van Duyvenvoorde', 'die Pelser', 'die Witte', 'van Eck', 'Eckhardt', 'Eelman',
         'Eerden', 'van de Eerenbeemt', 'van den Eerenbeemt', 'van Egisheim', 'Ehlert', 'Eijkelboom', 'van den Eijssel',
         'Elberts', 'Elbertse', 'Ellis', 'Elsemulder', 'Elsenaar', 'van de Elzas', 'van Embden', 'van Emmelen', 'Emmen',
         'van Engeland', 'van Engelen', 'Engels', 'van Enschot', 'Erhout', 'Ernst', 'van \'t Erve', 'van Es', 'van Este',
@@ -114,7 +110,7 @@ class Person extends \Faker\Provider\Person
         'Hondeveld', 'Honing', 'de Hoog', 'Hoogers', 'de Hoogh', 'Hoppenbrouwer', 'Horrocks', 'van der Horst',
         'van Hostaden', 'Houdijk', "van 't Houteveen", 'Huberts', 'Huel', 'Huijben', 'Huijbrechts', 'Huijs',
         'Huijzing', 'Huisman', 'Huls', 'Hulshouts', 'Hulskes', 'Hulst', 'van Hulten', 'Huurdeman', 'van het Heerenveen',
-        'Jaceps', 'Jacobi', 'Jacobs', 'Jacquot', 'de Jager', 'Jans', 'Jansdr', 'Janse', 'Jansen', 'Jansen', 'Jansse',
+        'Jaceps', 'Jacobi', 'Jacobs', 'Jacquot', 'de Jager', 'Jans', 'Jansdr', 'Janse', 'Jansen', 'Jansse',
         'Janssen', 'Janssens', 'Jasper dr', 'Jdotte', 'Jeggij', 'Jekel', 'Jerusalem', 'Jochems',
         'Jones', 'de Jong', 'Jonkman', 'Joosten', 'Jorlink', 'Jorissen', 'van Jumiège', 'Jurrijens', 'Köster',
         'van der Kaay', 'de Kale', 'Kallen', 'Kalman', 'Kamp', 'Kamper', 'Karels', 'Kas', 'van Kasteelen', 'Kathagen',
@@ -193,7 +189,7 @@ class Person extends \Faker\Provider\Person
         'Kurt', 'Pham', 'Autar', 'Polat', 'Korkmaz', 'Le', 'Çetin', 'Koçak', 'Said', 'Ünal', 'Bulut', 'Ramautar',
         'Simsek', 'Ismail', 'Ramcharan', 'Mahabier', 'Kalloe', 'Zhang', 'Özkan', 'Sahin', 'Farah', 'Mohammad', 'Yüksel',
         'Demirci', 'Kanhai', 'Çakir', 'Karaca', 'Can', 'Keskin', 'dos Santos', 'Uzun', 'Winklaar', 'Sardjoe', 'Lopes',
-        'Erdoğan', 'Loukili', 'Tekin', 'Ramlal', 'Yavuz', 'Sambo', 'Coşkun', 'Yalçin', 'Biharie', 'Köse', 'Dogan',
+        'Erdoğan', 'Loukili', 'Tekin', 'Ramlal', 'Yavuz', 'Sambo', 'Coşkun', 'Yalçin', 'Biharie', 'Köse',
         'Aktaş', 'Avci', 'Uysal', 'Badal', 'Bozkurt', 'Ramos', 'Moussaoui', 'Akin', 'Özer', 'Malik', 'Sital',
         'El Idrissi', 'Aziz', 'Demirel', 'Henriquez', 'Janga', 'Hooi', 'Geerman', 'Güler', 'Aksoy', 'Soekhoe', 'Turan',
         'Güneş', 'Narain', 'Ahmadi', 'Esajas', 'Zhou', 'Tahiri', 'Çiçek', 'Mohan', 'Cicilia', 'Mangal'

@@ -30,7 +30,7 @@ class Internet extends \Faker\Provider\Internet
      */
     protected static $firstNameAscii = array(
         'areum', 'arin', 'banhee', 'bom', 'bomi', 'bomin', 'boram', 'byungcheol', 'byungho', 'chaehyun', 'chaewon',
-        'changyoung', 'daesoo', 'daesun', 'dayoung', 'dohyunn', 'dongha', 'donghyun', 'donghyun', 'dongyoon', 'doyoon',
+        'changyoung', 'daesoo', 'daesun', 'dayoung', 'dohyunn', 'dongha', 'donghyun', 'dongyoon', 'doyoon',
         'doyoun', 'eunae', 'eunhee', 'eunhye', 'eunhyoung', 'eunji', 'eunjin', 'eunju', 'eunjung', 'eunkyoung', 'eunmi',
         'eunsang', 'eunseo', 'eunsung', 'eunteck', 'eunyoung', 'gangeun', 'ganghee', 'garam', 'geongeun', 'gunho',
         'gunwoo', 'haeun', 'hana', 'hanna', 'hayun', 'heekyoung', 'heewon', 'hojin', 'homin', 'hongsun', 'hyejin',
@@ -40,7 +40,7 @@ class Internet extends \Faker\Provider\Internet
         'jihee', 'jihoo', 'jihoon', 'jihye', 'jihyeon', 'jimin', 'jina', 'jinhee', 'jinho', 'jinsoo', 'jinwoo', 'jisuk',
         'jisun', 'jiwon', 'jiwoo', 'jiye', 'jiyeon', 'jiyoung', 'jonghun', 'jongju', 'jongsoo', 'jughyung', 'juhee',
         'jumi', 'jumyoung', 'jun', 'junbum', 'jungeun', 'jungho', 'junghun', 'junghwa', 'jungmin', 'jungnam', 'jungran',
-        'jungshik', 'jungsoo', 'jungsoo', 'jungwoong', 'junho', 'junhyuk', 'junhyung', 'junseo', 'junyoung', 'juwon',
+        'jungshik', 'jungsoo', 'jungwoong', 'junho', 'junhyuk', 'junhyung', 'junseo', 'junyoung', 'juwon',
         'juyeon', 'kisoo', 'kiyun', 'kubum', 'kwangsoo', 'kyungchoon', 'kyunghwan', 'kyungjoo', 'kyungseok', 'kyungsoo',
         'kyusan', 'mijung', 'mikyoung', 'mina', 'mincheol', 'minhee', 'minhwan', 'minhyoung', 'minjae', 'minji',
         'minjun', 'minseo', 'minseok', 'minsoo', 'minsung', 'mira', 'miran', 'miyoung', 'moonchang', 'moonyong',
@@ -49,10 +49,10 @@ class Internet extends \Faker\Provider\Internet
         'sangwoo', 'sangwook', 'seoho', 'seohyeon', 'seojun', 'seoyeon', 'seoyoung', 'seoyun', 'seulki', 'seungho',
         'seunghyun', 'seungmin', 'sewon', 'sieun', 'sinae', 'siwoo', 'sojung', 'somin', 'soyoun', 'soyoung', 'subin',
         'sujin', 'sujung', 'sumin', 'sungeun', 'sunggon', 'sungho', 'sunghun', 'sunghyun', 'sungjin', 'sungmi',
-        'sungmin', 'sungmin', 'sungryung', 'sungsoo', 'sunhang', 'sunho', 'sunjung', 'sunwoo', 'sunyoung', 'sunyup',
-        'suran', 'suwon', 'suwon', 'suyoun', 'taehee', 'taeho', 'taehyun', 'wonhee', 'wonjin', 'wonjun', 'woojin',
+        'sungmin', 'sungryung', 'sungsoo', 'sunhang', 'sunho', 'sunjung', 'sunwoo', 'sunyoung', 'sunyup',
+        'suran', 'suwon', 'suyoun', 'taehee', 'taeho', 'taehyun', 'wonhee', 'wonjin', 'wonjun', 'woojin',
         'yeji', 'yejin', 'yejun', 'yeojin', 'yeon', 'yewon', 'youngcheol', 'younggil', 'youngha', 'youngho', 'younghun',
-        'younghwa', 'youngil', 'youngjin', 'youngjin', 'youngshik', 'youngsoo', 'youngtae', 'youngwhan', 'youngwhan',
+        'younghwa', 'youngil', 'youngjin', 'youngshik', 'youngsoo', 'youngtae', 'youngwhan',
         'younhee', 'younsun', 'yujin', 'yujung', 'yunkyoung', 'yunmi', 'yunseo', 'yunyoung', 'yuri'
     );
 

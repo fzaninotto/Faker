@@ -8,7 +8,6 @@ class Company extends \Faker\Provider\Company
         '{{lastName}} {{companySuffix}}',
         '{{lastName}} {{lastName}} {{companySuffix}}',
         '{{lastName}}',
-        '{{lastName}}',
     );
 
     protected static $companySuffix = array('AG', 'GmbH');

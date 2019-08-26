@@ -6,7 +6,7 @@ class Address extends \Faker\Provider\fr_FR\Address
 {
     protected static $buildingNumber = array('###', '##', '#', '#a', '#b', '#c');
 
-    protected static $streetPrefix = array('Rue', 'Rue', 'Chemin', 'Avenue', 'Boulevard', 'Place', 'Impasse');
+    protected static $streetPrefix = array('Rue', 'Chemin', 'Avenue', 'Boulevard', 'Place', 'Impasse');
 
     protected static $postcode = array('####');
 

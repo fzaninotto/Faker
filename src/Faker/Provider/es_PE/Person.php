@@ -7,7 +7,6 @@ class Person extends \Faker\Provider\Person
     protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastName}} {{lastName}}',
         '{{firstNameMale}} {{firstNameMale}} {{lastName}} {{lastName}}',
-        '{{firstNameMale}} {{firstNameMale}} {{lastName}} {{lastName}}',
         '{{titleMale}} {{firstNameMale}} {{lastName}}',
         '{{titleMale}} {{firstNameMale}} {{lastName}} {{lastName}}',
         '{{firstNameMale}} {{lastName}} {{suffix}}',
@@ -16,7 +15,6 @@ class Person extends \Faker\Provider\Person
 
     protected static $femaleNameFormats = array(
         '{{firstNameFemale}} {{lastName}} {{lastName}}',
-        '{{firstNameFemale}} {{firstNameFemale}} {{lastName}} {{lastName}}',
         '{{firstNameFemale}} {{firstNameFemale}} {{lastName}} {{lastName}}',
         '{{titleFemale}} {{firstNameFemale}} {{lastName}}',
         '{{titleFemale}} {{firstNameFemale}} {{lastName}} {{lastName}}',

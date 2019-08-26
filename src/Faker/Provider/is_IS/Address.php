@@ -24,7 +24,7 @@ class Address extends \Faker\Provider\Address
         'Gvæjana', 'Haítí', 'Heard og McDonalds-eyjar', 'Holland', 'Hollensku Antillur', 'Hondúras', 'Hong Kong',
         'Hvíta-Rússland', 'Indland', 'Indónesía', 'Írak', 'Íran', 'Írland', 'Ísland', 'Ísrael', 'Ítalía', 'Jamaíka',
         'Japan', 'Jemen', 'Jólaey', 'Jómfrúaeyjar', 'Jórdanía', 'Kambódía', 'Kamerún', 'Kanada', 'Kasakstan', 'Katar',
-        'Kenía', 'Kirgisistan', 'Kína', 'Kíribatí', 'Kongó', 'Austur-Kongó', 'Vestur-Kongó', 'Kostaríka', 'Kókoseyjar',
+        'Kenía', 'Kirgisistan', 'Kína', 'Kíribatí', 'Kongó', 'Vestur-Kongó', 'Kostaríka', 'Kókoseyjar',
         'Kólumbía', 'Kómoreyjar', 'Kórea', 'Norður-Kórea;', 'Suður-Kórea', 'Króatía', 'Kúba', 'Kúveit', 'Kýpur',
         'Laos', 'Lesótó', 'Lettland', 'Liechtenstein', 'Litháen', 'Líbanon', 'Líbería', 'Líbía', 'Lúxemborg',
         'Madagaskar', 'Makaó', 'Makedónía', 'Malasía', 'Malaví', 'Maldíveyjar', 'Malí', 'Malta', 'Marokkó',
@@ -38,11 +38,11 @@ class Address extends \Faker\Provider\Address
         'Sankti Lúsía', 'Sankti Pierre og Miquelon', 'Sankti Vinsent og Grenadíneyjar', 'Saó Tóme og Prinsípe',
         'Sádi-Arabía', 'Senegal', 'Serbía', 'Seychelles-eyjar', 'Simbabve', 'Singapúr', 'Síerra Leóne', 'Skotland',
         'Slóvakía', 'Slóvenía', 'Smáeyjar Bandaríkjanna', 'Sómalía', 'Spánn', 'Srí Lanka', 'Suður-Afríka',
-        'Suður-Georgía og Suður-Sandvíkureyjar', 'Suður-Kórea', 'Suðurskautslandið', 'Súdan', 'Súrínam', 'Jan Mayen',
+        'Suður-Georgía og Suður-Sandvíkureyjar', 'Suðurskautslandið', 'Súdan', 'Súrínam', 'Jan Mayen',
         'Svartfjallaland', 'Svasíland', 'Sviss', 'Svíþjóð', 'Sýrland', 'Tadsjikistan', 'Taíland', 'Taívan', 'Tansanía',
         'Tékkland', 'Tonga', 'Tógó', 'Tókelá', 'Trínidad og Tóbagó', 'Tsjad', 'Tsjetsjenía', 'Turks- og Caicos-eyjar',
         'Túnis', 'Túrkmenistan', 'Túvalú', 'Tyrkland', 'Ungverjaland', 'Úganda', 'Úkraína', 'Úrúgvæ', 'Úsbekistan',
-        'Vanúatú', 'Venesúela', 'Vestur-Kongó', 'Vestur-Sahara', 'Víetnam', 'Wales', 'Wallis- og Fútúnaeyjar', 'Þýskaland'
+        'Vanúatú', 'Venesúela', 'Vestur-Sahara', 'Víetnam', 'Wales', 'Wallis- og Fútúnaeyjar', 'Þýskaland'
     );
 
     /**
@@ -50,7 +50,7 @@ class Address extends \Faker\Provider\Address
      */
     protected static $cityNames = array(
         'Reykjavík', 'Seltjarnarnes', 'Vogar', 'Kópavogur', 'Garðabær', 'Hafnarfjörður', 'Reykjanesbær', 'Grindavík',
-        'Sandgerði', 'Garður', 'Reykjanesbær', 'Mosfellsbær', 'Akranes', 'Borgarnes', 'Reykholt', 'Stykkishólmur',
+        'Sandgerði', 'Garður', 'Mosfellsbær', 'Akranes', 'Borgarnes', 'Reykholt', 'Stykkishólmur',
         'Flatey', 'Grundarfjörður', 'Ólafsvík', 'Snæfellsbær', 'Hellissandur', 'Búðardalur', 'Reykhólahreppur',
         'Ísafjörður', 'Hnífsdalur', 'Bolungarvík', 'Súðavík', 'Flateyri', 'Suðureyri', 'Patreksfjörður',
         'Tálknafjörður', 'Bíldudalur', 'Þingeyri', 'Staður', 'Hólmavík', 'Drangsnes', 'Árneshreppur', 'Hvammstangi',
@@ -79,7 +79,7 @@ class Address extends \Faker\Provider\Address
      */
     protected static $streetPrefix = array(
         'Aðal', 'Austur', 'Bakka', 'Braga', 'Báru', 'Brunn', 'Fiski', 'Leifs',
-        'Týs', 'Birki', 'Suður', 'Norður', 'Vestur', 'Austur', 'Sanda', 'Skógar',
+        'Týs', 'Birki', 'Suður', 'Norður', 'Vestur', 'Sanda', 'Skógar',
         'Stór', 'Sunnu', 'Tungu', 'Tangar', 'Úlfarfells', 'Vagn', 'Vind', 'Ysti',
         'Þing', 'Hamra', 'Hóla', 'Kríu', 'Iðu', 'Spóa', 'Starra', 'Uglu', 'Vals'
     );
@@ -102,7 +102,7 @@ class Address extends \Faker\Provider\Address
      * @var array Icelandic building numbers.
      */
     protected static $buildingNumber = array(
-        '%##', '%#', '%#', '%', '%', '%', '%?', '% ?',
+        '%##', '%#', '%', '%?', '% ?',
     );
 
     /**
@@ -116,7 +116,6 @@ class Address extends \Faker\Provider\Address
      * @var array Icelandic street's name formats.
      */
     protected static $streetNameFormats = array(
-        '{{streetPrefix}}{{streetSuffix}}',
         '{{streetPrefix}}{{streetSuffix}}',
         '{{firstNameMale}}{{streetSuffix}}',
         '{{firstNameFemale}}{{streetSuffix}}'

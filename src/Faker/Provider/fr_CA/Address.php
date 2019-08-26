@@ -33,11 +33,11 @@ class Address extends \Faker\Provider\fr_FR\Address
         '-de-Bellevue',
         // Chaudière-Appalaches
         '-de-Buckland', '-des-Pins', '-du-Rosaire', '-d\'Issoudun', '-de-Jésus', '-d\'Irlande', '-de-l\'Isle-aux-Grues',
-        '-de-Tilly', '-de-Lellis', '-de-Bellechasse', '-de-Lessard', '-de-L\'Islet', '-de-Lotbinière', '-de-Beauce',
+        '-de-Tilly', '-de-Lellis', '-de-Bellechasse', '-de-L\'Islet', '-de-Lotbinière', '-de-Beauce',
         '-de-Forsyth', '-de-Panet', '-de-la-Rivière-du-Sud', '-de-Dorset', '-de-Shenley', '-de-Leeds', '-de-Wolfestown',
         '-de-Joly', '-de-Brébeuf', '-de-Coleraine', '-des-Érables', '-Bretenières', '-de-Lauzon', '-de-Standon',
-        '-de-Gonzague', '-de-Beaurivage', '-de-Dorchester', '-de-Cranbourne', '-de-Broughton', '-de-la-Rivière-du-Sud',
-        '-des-Aulnaies', '-les-Mines', '-de-Lotbinière', '-de-Patton', '-sur-Rivière-du-Sud', '-de-Beauregard', '-de-Watford'
+        '-de-Gonzague', '-de-Beaurivage', '-de-Dorchester', '-de-Cranbourne', '-de-Broughton',
+        '-des-Aulnaies', '-les-Mines', '-de-Patton', '-sur-Rivière-du-Sud', '-de-Beauregard', '-de-Watford'
     );
 
     /**

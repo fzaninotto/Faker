@@ -6,14 +6,10 @@ class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}}',
         '{{titleMale}} {{firstNameMale}} {{lastName}}',
     );
 
     protected static $femaleNameFormats = array(
-        '{{firstNameFemale}} {{lastName}}',
-        '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{titleFemale}} {{firstNameFemale}} {{lastName}}',
     );
@@ -27,7 +23,7 @@ class Person extends \Faker\Provider\Person
         'Mikko', 'Neo', 'Nico', 'Niklas', 'Niko', 'Oliver', 'Oskari', 'Ossi', 'Otto', 'Paavo', 'Pasi', 'Patrik',
         'Paulus', 'Peetu', 'Pekka', 'Pertti', 'Petri', 'Petteri', 'Pyry', 'Rami', 'Rasmus', 'Riku', 'Risto', 'Roope',
         'Saku', 'Sami', 'Samu', 'Samuel', 'Samuli', 'Santeri', 'Taneli', 'Tatu', 'Teemu', 'Teppo', 'Tero', 'Timo',
-        'Tomi', 'Tommi', 'Topi', 'Touko', 'Tuomas', 'Tuomo', 'Tuukka', 'Tuukka', 'Valtteri', 'Veli', 'Viljo', 'Ville',
+        'Tomi', 'Tommi', 'Topi', 'Touko', 'Tuomas', 'Tuomo', 'Tuukka', 'Valtteri', 'Veli', 'Viljo', 'Ville',
         'Aake', 'Aapeli', 'Aapo', 'Aappo', 'Aarni', 'Aaro', 'Aatto', 'Aatu', 'Akseli', 'Aku', 'Antton', 'Artturi',
         'Aune', 'Beeda', 'Briitta', 'Eeli', 'Eelis', 'Eemeli', 'Ekku', 'Eljas', 'Erkko', 'Iiro', 'Ilmari', 'Isto',
         'Jirko', 'Joonatan', 'Jore', 'Junnu', 'Jusu', 'Kaste', 'Kauto', 'Luukas', 'Nuutti', 'Onni', 'Osmo', 'Pekko',
@@ -37,7 +33,7 @@ class Person extends \Faker\Provider\Person
 
     protected static $firstNameFemale = array(
         'Aada', 'Ada', 'Aina', 'Aino', 'Aki', 'Aliisa', 'Amalia', 'Amanda', 'Amelia', 'Amira', 'Anissa', 'Anita', 'Anna',
-        'Anne', 'Anni', 'Anniina', 'Annu', 'Anu', 'Asta', 'Atte', 'Atte', 'Aura', 'Aurora', 'Bella', 'Cara',
+        'Anne', 'Anni', 'Anniina', 'Annu', 'Anu', 'Asta', 'Atte', 'Aura', 'Aurora', 'Bella', 'Cara',
         'Celina', 'Christa', 'Christel', 'Clara', 'Cornelia', 'Dani', 'Eija', 'Elea', 'Elina', 'Elisa', 'Elise', 'Ella',
         'Ellen', 'Elma', 'Emilia', 'Emma', 'Emmi', 'Enna', 'Erja', 'Esa', 'Essi', 'Eva', 'Eveliina', 'Fanni',
         'Fiona', 'Hanna', 'Heidi', 'Heli', 'Helinä', 'Henna', 'Hilda', 'Hilja', 'Hilla', 'Hilma', 'Iida', 'Iina',

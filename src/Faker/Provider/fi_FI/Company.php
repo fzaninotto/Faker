@@ -24,7 +24,7 @@ class Company extends \Faker\Provider\Company
 
     protected static $bsWords = array(
         array(
-            'implementoi', 'käyttää', 'integroi', 'optimoi', 'kehittää', 'muuntaa', 'omaksuu', 'mahdollistaa', 'orkestoi', 'uudelleenkeksii', 'kerää', 'kokoaa', 'kasvattaa', 'parantaa', 'helpottaa', 'toimittaa', 'antaa', 'täyttää', 'vapauttaa', 'ajaa', 'jatkaa', 'mullistaa', 'iteroi', 'generoi', 'hyödyntää', 'brandaa', 'muokkaa', 'kasvattaa', 'kytkee', 'innovoi', 'viljelee', 'visualisoi'
+            'implementoi', 'käyttää', 'integroi', 'optimoi', 'kehittää', 'muuntaa', 'omaksuu', 'mahdollistaa', 'orkestoi', 'uudelleenkeksii', 'kerää', 'kokoaa', 'kasvattaa', 'parantaa', 'helpottaa', 'toimittaa', 'antaa', 'täyttää', 'vapauttaa', 'ajaa', 'jatkaa', 'mullistaa', 'iteroi', 'generoi', 'hyödyntää', 'brandaa', 'muokkaa', 'kytkee', 'innovoi', 'viljelee', 'visualisoi'
         ),
         array(
             'maailmanluokan', '24/7', 'maailmanlaajuisia', 'interaktiivisia', 'seksikkäitä', 'rikkaita', 'visionäärisiä', 'parhaita', 'viraaleja', 'dynaamisia', 'strategisia', 'vallankumouksellisia', '24/365', 'e-bisnes', 'virtuaalisia', 'intuitiivisia', 'ennakoivia', 'kitkattomia', 'jaettuja', 'reaaliaikaisia', 'huippuluokan', 'tehokkaita', 'suorituskykyisiä', 'pystyviä', 'laajennettavissa olevia', 'venyviä', 'yhteisvaikutteisia', 'seuraavan sukupolven', 'plug-and-play', 'yhteistyökykyisiä', 'kustomoituja', 'langattomia', 'selkeitä', 'avoimen lähdekoodin'

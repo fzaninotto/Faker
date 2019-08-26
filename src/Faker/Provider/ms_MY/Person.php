@@ -31,10 +31,6 @@ class Person extends \Faker\Provider\Person
         '{{muhammadName}}{{haji}}{{titleMaleMalay}}{{firstNameMaleMalay}} bin {{titleMaleMalay}}{{lastNameMalay}}',
         //Chinese
         '{{lastNameChinese}} {{firstNameMaleChinese}}',
-        '{{lastNameChinese}} {{firstNameMaleChinese}}',
-        '{{lastNameChinese}} {{firstNameMaleChinese}}',
-        '{{lastNameChinese}} {{firstNameMaleChinese}}',
-        '{{lastNameChinese}} {{firstNameMaleChinese}}',
         '{{firstNameMaleChristian}} {{lastNameChinese}} {{firstNameMaleChinese}}',
         //Indian
         '{{initialIndian}} {{firstNameMaleIndian}}',
@@ -59,10 +55,6 @@ class Person extends \Faker\Provider\Person
         '{{nurName}}{{hajjah}}{{firstNameFemaleMalay}} binti {{titleMaleMalay}}{{firstNameMaleMalay}}',
         '{{nurName}}{{hajjah}}{{firstNameFemaleMalay}} binti {{titleMaleMalay}}{{lastNameMalay}}',
         //Chinese
-        '{{lastNameChinese}} {{firstNameFemaleChinese}}',
-        '{{lastNameChinese}} {{firstNameFemaleChinese}}',
-        '{{lastNameChinese}} {{firstNameFemaleChinese}}',
-        '{{lastNameChinese}} {{firstNameFemaleChinese}}',
         '{{lastNameChinese}} {{firstNameFemaleChinese}}',
         '{{firstNameFemaleChristian}} {{lastNameChinese}} {{firstNameFemaleChinese}}',
         //Indian
@@ -107,7 +99,7 @@ class Person extends \Faker\Provider\Person
         'Zabayudin','Zabidi','Zahari','Zahid','Zahiruddin','Zahrul','Zaid','Zaidi','Zainal','Zaini','Zainodin','Zainordin','Zainuddin','Zainul','Zairy','Zaiyon','Zakaria','Zaki','Zakii','Zakri','Zakwan','Zambri','Zamre','Zamri','Zamrul','Zan','Zaqiyuddin','Zar\'ai','Zarif','Zariq','Zarith','Zarul','Zaukepli','Zawawi','Zharaubi','Zikri','Zikril','Zikry','Zizi','Zol','Zolkifle','Zubair','Zubir','Zufayri','Zufrie','Zuheeryrizal','Zuhri','Zuki','Zul','Zulfadhli','Zulfadli','Zulfahmi','Zulfaqar','Zulfaqqar','Zulfikar','Zulhaikal','Zulhakim','Zulhakimi','Zulhelmi','Zulhilmi','Zulkapli','Zulkarnain','Zulkefli','Zulkfli','Zulkifli','Zulkipli','Zulman','Zuri'
     );
     protected static $firstNameFemaleMalay = array(
-        '\'Abidah','\'Alyaa','\'Aqilah','\'Atiqah','\'Afiqah','\'Alia','\'Aqilah','A\'ishah','A\'in','A\'zizah','Abdah','Abiatul','Adani','Adawiyah','Adha','Adharina','Adhwa','Adibah','Adilah','Adilla','Adina','Adini','Adira','Adlina','Adlyna','Adriana','Adzlyana','Afifa','Afifah','Afina','Afiqah','Afiza','Afrina','Afzan','Ahda','Aida','Aidatul','Aidila','Aifa','Aiman','Aimi','Aimuni','Ain','Aina','Ainaa','Ainaanasuha','Aini','Ainin','Ainn','Ainnaziha','Ainul','Ainun','Ainur','Airin','Aishah','Aisya','Aisyah','Aiza','Akmal','Aleeya','Aleeza','Aleya','Aleza','Alia','Aliaa','Aliah','Aliffa','Aliffatus','Alina','Alis','Alisya','Aliya','Alkubra','Alleisya','Ally','Alya','Alyaa','Amalia','Amalien','Amalin','Amalina','Amani','Amanina','Amiera','Aminy','Amira','Amirah','Amisha','Amrina','Amylia','Amyra','An-nur','Anas','Andani','Andi','Anesha','Ani','Aninafishah','Anis','Anisah','Anisha','Anissa','Aniza','Anna','Anne','Antaza','Aqeem','Aqeera','Aqila','Aqilah','Arfahrina','Ariana','Ariena','Ariessa','Arifah','Arina','Ariqah','Arissa','Arisya','Armira','Arwina','Aryani','Ashika','Ashriyana','Asiah','Asma\'rauha','Asmaa\'','Asmaleana','Asniati','Asnie','Asniza','Aswana','Asy','Asyiqin','Asykin','Athirah','Atifa','Atifah','Atifahajar','Atikah','Atiqa','Atiqah','Atirah','Atyqah','Auni','Awatif','Awatiff','Ayesha','Ayu','Ayuni','Ayunie','Az','Azashahira','Aziah','Aziemah','Azika','Azira','Azizah','Azliah','Azliatul','Azlin','Azlina','Azmina','Azni','Azrah','Azrina','Azua','Azuin','Azwa','Azwani','Azyan','Azyyati',
+        '\'Abidah','\'Alyaa','\'Aqilah','\'Atiqah','\'Afiqah','\'Alia','A\'ishah','A\'in','A\'zizah','Abdah','Abiatul','Adani','Adawiyah','Adha','Adharina','Adhwa','Adibah','Adilah','Adilla','Adina','Adini','Adira','Adlina','Adlyna','Adriana','Adzlyana','Afifa','Afifah','Afina','Afiqah','Afiza','Afrina','Afzan','Ahda','Aida','Aidatul','Aidila','Aifa','Aiman','Aimi','Aimuni','Ain','Aina','Ainaa','Ainaanasuha','Aini','Ainin','Ainn','Ainnaziha','Ainul','Ainun','Ainur','Airin','Aishah','Aisya','Aisyah','Aiza','Akmal','Aleeya','Aleeza','Aleya','Aleza','Alia','Aliaa','Aliah','Aliffa','Aliffatus','Alina','Alis','Alisya','Aliya','Alkubra','Alleisya','Ally','Alya','Alyaa','Amalia','Amalien','Amalin','Amalina','Amani','Amanina','Amiera','Aminy','Amira','Amirah','Amisha','Amrina','Amylia','Amyra','An-nur','Anas','Andani','Andi','Anesha','Ani','Aninafishah','Anis','Anisah','Anisha','Anissa','Aniza','Anna','Anne','Antaza','Aqeem','Aqeera','Aqila','Aqilah','Arfahrina','Ariana','Ariena','Ariessa','Arifah','Arina','Ariqah','Arissa','Arisya','Armira','Arwina','Aryani','Ashika','Ashriyana','Asiah','Asma\'rauha','Asmaa\'','Asmaleana','Asniati','Asnie','Asniza','Aswana','Asy','Asyiqin','Asykin','Athirah','Atifa','Atifah','Atifahajar','Atikah','Atiqa','Atiqah','Atirah','Atyqah','Auni','Awatif','Awatiff','Ayesha','Ayu','Ayuni','Ayunie','Az','Azashahira','Aziah','Aziemah','Azika','Azira','Azizah','Azliah','Azliatul','Azlin','Azlina','Azmina','Azni','Azrah','Azrina','Azua','Azuin','Azwa','Azwani','Azyan','Azyyati',
         'Badrina','Bahirah','Balqis','Basyirah','Batrisya','Batrisyia','Bilqis','Bismillah',
         'Camelia','Cempaka',
         'Dalila','Dalili','Damia','Dania','Danish','Darlina','Darwisyah','Deni','Dhani','\'Dhiya','Diana','Dianah','Dini','Diyana','Diyanah','Dylaila',
@@ -124,7 +116,7 @@ class Person extends \Faker\Provider\Person
         'Pesona','Puteri','Putri',
         'Qairina','Qamarina','Qasrina','Qhistina','Qistina','Quintasya','Qurratu','Qurratuaini','Qurratul',
         'Rabi\'atul','Rabiatul','Rafidah','Rahiemah','Rahmah','Raihah','Raihana','Raihanah','Raja','Rashmi','Rasyaratul','Rasyiqah','Rasyiqqah','Raudatul','Ridiatul','Rieni','Rifhan','Rihhadatul','Ros','Rosalinda','Rosyadah','Rusyda','Rusydina',
-        'Sa\'adah','Saadiah','Sabrina','Safi','Safiah','Safiyah','Sahira','Saidatul','Sakinah','Sakirah','Salwa','Sameera','Sarah','Sarwati','Sasya','Serene','Sha','Shabariah','Shafiah','Shafiera','Shafikah','Shafinaz','Shafiqa','Shafiqah','Shah','Shahida','Shahidah','Shahiera','Shahila','Shahira','Shahirah','Shahrazy','Shahrina','Shakilah','Shakinah','Shalina','Shameera','Shamila','Shamimie','Shamira','Shar\'fiera','Sharifah','Sharizah','Shauqina','Shayira','Shazana','Shazieda','Shazlien','Shazwana','Shazwani','Shonia','Shuhada','Siti','Siti','Siti','Siti','Siti','Siti','Sitti','Sofea','Sofeah','Soffia','Sofia','Sofiya','Sofiyah','Sofya','Solehah','Sopie','Suaidah','Suhada','Suhadah','Suhaida','Suhaila','Suhailah','Suhaina','Suhana','Suhani','Sulaiha','Sumayyah','Suraya','Suziyanis','Syaffea','Syafika','Syafikah','Syafina','Syafiqa','Syafiqah','Syafirah','Syafiyah','Syafiyana','Syahada','Syahadatullah','Syahera','Syaherah','Syahidah','Syahidatul','Syahiera','Syahira','Syahirah','Syahmimi','Syahmina','Syahzani','Syaidatul','Syairah','Syakila','Syakira','Syakirah','Syamien','Syamilah','Syamimi','Syamina','Syamirah','Syara','Syarafana','Syarafina','Syarah','Syarina','Syasyabila','Syauqina','Syaza','Syazana','Syazliya','Syazmin','Syazryana','Syazwana','Syazwani','Syazwanie','Syazwina','Syifa\'','Syuhada','Syuhada`','Syuhaida','Syuhaidah',
+        'Sa\'adah','Saadiah','Sabrina','Safi','Safiah','Safiyah','Sahira','Saidatul','Sakinah','Sakirah','Salwa','Sameera','Sarah','Sarwati','Sasya','Serene','Sha','Shabariah','Shafiah','Shafiera','Shafikah','Shafinaz','Shafiqa','Shafiqah','Shah','Shahida','Shahidah','Shahiera','Shahila','Shahira','Shahirah','Shahrazy','Shahrina','Shakilah','Shakinah','Shalina','Shameera','Shamila','Shamimie','Shamira','Shar\'fiera','Sharifah','Sharizah','Shauqina','Shayira','Shazana','Shazieda','Shazlien','Shazwana','Shazwani','Shonia','Shuhada','Siti','Sitti','Sofea','Sofeah','Soffia','Sofia','Sofiya','Sofiyah','Sofya','Solehah','Sopie','Suaidah','Suhada','Suhadah','Suhaida','Suhaila','Suhailah','Suhaina','Suhana','Suhani','Sulaiha','Sumayyah','Suraya','Suziyanis','Syaffea','Syafika','Syafikah','Syafina','Syafiqa','Syafiqah','Syafirah','Syafiyah','Syafiyana','Syahada','Syahadatullah','Syahera','Syaherah','Syahidah','Syahidatul','Syahiera','Syahira','Syahirah','Syahmimi','Syahmina','Syahzani','Syaidatul','Syairah','Syakila','Syakira','Syakirah','Syamien','Syamilah','Syamimi','Syamina','Syamirah','Syara','Syarafana','Syarafina','Syarah','Syarina','Syasyabila','Syauqina','Syaza','Syazana','Syazliya','Syazmin','Syazryana','Syazwana','Syazwani','Syazwanie','Syazwina','Syifa\'','Syuhada','Syuhada`','Syuhaida','Syuhaidah',
         'Taqiah','Tasnim','Tengku','Tihany',
         'Umairah','Umi','Umira','Ummi',
         'Wadiha','Wafa','Waheeda','Wahida','Wahidah','Wan','Wardatul','Wardina','Wardinah','Wazira','Weni',
@@ -147,7 +139,7 @@ class Person extends \Faker\Provider\Person
         'Maarof','Mahadi','Mahat','Mahathir','Mahmudin','Mahmusin','Mahyuddin','Mahyus','Majid','Malek','Malik','Maliki','Mamhuri','Man','Manaf','Manan','Manap','Mansor','Margono','Martunus','Maruzi','Marzuki','Maserun','Maskor','Maslan','Maswari','Maszuni','Mazalan','Mazlan','Midali','Mikhail','Mirza','Miskan','Miskoulan','Mislan','Misnan','Mizan','Mohhidin','Mohsin','Mokhtar','Moktar','Molkan','Mon','Montahar','Mossanif','Mu','Muaddib','Muain','Muhaimi','Muhaimin','Muhdi','Muiz','Mujamek','Mukmin','Mukromin','Muneer','Muqriz','Murad','Murshed','Murshidi','Musa','Muslim','Musliman','Mustafa','Mustapha','Mustaqim','Musyrif','Mutaali','Mutalib','Muti\'i','Muzamil','Muzammil',
         'Na\'im','Nabil','Nadzri','Nafiz','Naim','Najhi','Najib','Najmi','Najmuddin','Naqiyuddin','Nasaruddin','Nashriq','Nasiman','Nasir','Nasrodin','Nasrullah','Naufal','Nawawi','Nazairi','Nazar','Nazarudin','Nazeri','Nazhan','Nazirin','Nazmi','Nazree','Nazri','Nazrin','Nazry','Ngadenan','Ngadun','Niszan','Nizam','Noh','Noor','Noordin','Noorhakim','Noorismadi','Noorizman','Nor','Noradhzmi','Noraffendi','Noraslan','Norazam','Norazim','Norazman','Norazmi','Nordin','Norhisam','Norhisham','Norizal','Norizan','Norlisam','Normansah','Norrizam','Norsilan','Norzamri','Nurfairuz','Nurhaliza','Nurnaim',
         'Omar','Osman','Othman',
-        'Pa\'aing','Pauzi','Pisol','Putra','Putra',
+        'Pa\'aing','Pauzi','Pisol','Putra',
         'Qayum','Qayyum','Qayyuum','Qusyairi',
         'Ra\'ais','Radzi','Raffioddin','Raffiq','Rafi','Rafizal','Rahamad','Rahim','Rahman','Rahmat','Rais','Raizal','Raman','Ramdan','Ramdzan','Ramlan','Ramlee','Ramli','Ramly','Rani','Ranjit','Raqi','Rashid','Rashidi','Rashidin','Rasid','Rassid','Rasyid','Razak','Razali','Raze','Razi','Razin','Razlan','Razman','Redha','Redzuan','Rembli','Remi','Ridduan','Ridhwan','Ridzuan','Ridzwan','Rifin','Rifqi','Rifqie','Rithwan','Rizal','Rizuan','Rizwan','Robani','Rohaizan','Rohem','Rohman','Ros','Rosdan','Roshman','Roslan','Roslee','Rosli','Rosly','Rosmawi','Rosnan','Rossaimi','Rostam','Rostan','Roszainal','Rozi','Rubi','Rusdi','Ruslan','Rusli','Rustam','Rusyaidi',
         'Sa\'ari','Saad','Sabaruddin','Sabarudin','Sabki','Sabri','Sabrie','Safee','Saffuan','Safie','Safingi','Safrifarizal','Safrizal','Safwan','Sahidi','Sahril','Sahroni','Saifuddin','Saifudin','Saifulzakher','Saifuzin','Saihun','Saizol','Sakdon','Sakri','Salam','Saleh','Salehudin','Salim','Salleh','Salman','Sam','Samad','Samae','Samah','Saman','Samsani','Samsuddin','Samsul','Samsuri','Sandha','Sani','Sanorhizam','Sapuan','Sarim','Satar','Saudi','Sazali','Sedek','Selamat','Senon','Sha\'ril','Shabana','Shafei','Shafie','Shafiq','Shah','Shaharuddin','Shaharudin','Shahiman','Shahrazy','Shahrizan','Shaidi','Shaifuddin','Shaihuddin','Sham','Shameer','Shamizan','Shamsuddin','Shamsudin','Shamsul','Shapiein','Sharasan','Sharif','Sharifudin','Shariman','Sharin','Sharollizam','Sharum','Shazani','Shazman','Shmsul','Shobi','Shueib','Shukor','Shukri','Sidek','Sinuzulan','Soberi','Sobirin','Sofi','Solehin','Solekhan','Sonan','Suami','Subhi','Subzan','Sudirman','Sueib','Sufi','Sufian','Suhaimi','Suhiman','Sukarsek','Sulaiman','Sulong','Suraji','Surya','Sutrisno','Suz\'ian','Suzaimi','Syafiq','Syafrin','Syahir','Syahmi','Syahril','Syahrin','Syakir','Syamil','Syauqi','Syazwan','Syukran','Syukri','Syuraih',
@@ -163,23 +155,23 @@ class Person extends \Faker\Provider\Person
      *
      * @link https://en.wikipedia.org/wiki/Muhammad_(name)
      */
-    protected static $muhammadName = array('', '', '', '', 'Mohamad ','Mohamed ','Mohammad ','Mohammed ','Muhamad ','Muhamed ','Muhammad ','Muhammed ','Muhammet ','Mohd ');
+    protected static $muhammadName = array('', 'Mohamad ','Mohamed ','Mohammad ','Mohammed ','Muhamad ','Muhamed ','Muhammad ','Muhammed ','Muhammet ','Mohd ');
     /**
      *
      * @link https://en.wikipedia.org/wiki/Noor_(name)
      */
-    protected static $nurName = array('', '', '', '', 'Noor ', 'Nor ', 'Nur ', 'Nur ', 'Nur ', 'Nurul ','Nuur ');
+    protected static $nurName = array('', 'Noor ', 'Nor ', 'Nur ', 'Nurul ','Nuur ');
 
     /**
      * @link https://en.wikipedia.org/wiki/Malaysian_names#Haji_or_Hajjah
      */
-    protected static $haji = array('', '', '', '', 'Haji ', 'Hj ');
-    protected static $hajjah = array('', '', '', '', 'Hajjah ', 'Hjh ');
+    protected static $haji = array('', 'Haji ', 'Hj ');
+    protected static $hajjah = array('', 'Hajjah ', 'Hjh ');
 
     /**
      * @link https://en.wikipedia.org/wiki/Malay_styles_and_titles
      */
-    protected static $titleMaleMalay = array('', '', '', '', '', '', 'Syed ','Wan ','Nik ','Che ');
+    protected static $titleMaleMalay = array('', 'Syed ','Wan ','Nik ','Che ');
 
     /**
      * Chinese family name or surname
@@ -232,7 +224,7 @@ class Person extends \Faker\Provider\Person
         'Chea','Cheah','Cheam','Chean','Cheang','Chee','Cheen','Chek','Chen','Cheng','Cheok','Cheong','Cher','Chet','Chew',
         'Chi','Chia','Chih','Chik','Chin','Ching','Chio','Chit','Chiu',
         'Cho','Choi','Chok','Chon','Chong','Choo','Chooi','Choon','Choong','Chor','Chou','Chow','Choy',
-        'Chu','Chua','Chuah','Chuan','Chua','Chui','Chuk','Chum','Chun','Chung','Chuo','Chye',
+        'Chu','Chua','Chuah','Chuan','Chui','Chuk','Chum','Chun','Chung','Chuo','Chye',
         'Da','Dai','Dan','Dang','Dao','Dau','Dee','Deng','Di','Dim','Din','Ding','Diong','Do','Dong','Doo','Dou','Du','Dui','Duo',
         'Ee','Eh','En','Enn','Er','Ern','Eu','Ew',
         'Fa','Fah','Fai','Fam','Fan','Fang','Fat','Fatt','Fay','Faye','Fee','Fei','Fen','Feng','Fern','Fey','Fok','Fon','Fong','Foo','Foon','Foong','Fu','Fui','Fuk','Fun','Fung',
@@ -289,7 +281,7 @@ class Person extends \Faker\Provider\Person
         'Cheah','Chee','Cheen','Chek','Chen','Cheong','Cher','Chet','Chew',
         'Chia','Chih','Chik','Chin','Ching','Chit','Chiu',
         'Cho','Choi','Chok','Chon','Chong','Choo','Chooi','Choon','Choong','Chor','Chou','Chow','Choy',
-        'Chua','Chuah','Chuan','Chua','Chui','Chuk','Chum','Chun','Chung','Chuo','Chye',
+        'Chua','Chuah','Chuan','Chui','Chuk','Chum','Chun','Chung','Chuo','Chye',
         'Dan','Dao','Dau','Dee','Deng','Di','Dim','Din','Diong','Dong','Dou','Du','Dui','Duo',
         'Eu','Ew',
         'Fai','Fam','Fat','Fatt','Fee','Feng','Fok','Fon','Fong','Foo','Foon','Foong','Fu','Fui','Fuk',
@@ -528,7 +520,7 @@ class Person extends \Faker\Provider\Person
         'Nadarajah','Nagapan','Nagappan','Nagaraj','Nagarajan','Nahappan','Naidu','Nair','Namasivayam','Narayan','Navaratnam','Navarednam','Nayar','Nijhar',
         'Pakiam','Palaniappan','Palanisamy','Panchanathan','Pandithan','Parthiban','Pathmanaban','Patto','Pereira','Perera','Periasamy','Perumal','Pillai','Pillay','Ponnusamy','Prakash','Puaneswaran','Purushothaman','Puspanathan','Puthucheary',
         'Raj Kaur','Rajakumar','Rajan','Rajannaidu','Rajendra','Rajendran','Rajhans','Raju','Ramachandra','Ramadas','Ramadass','Ramanathan','Ramani','Ramasamy','Raj','Rao','Rasiah','Ratnam','Ravindran','Rayer','Retinam','Rishyakaran','Robbat',
-        'Sachithanandan','Sakadivan','Sakwati','Samarasan','Sambanthan','Sandrakasi','Sangalimuthu','Saniru','Sankar','Saravanan','Sathasivam','Sathianathan','Saunthararajah','Seenivasagam','Sekhar','Sellan','Selvanayagam','Selvarajoo','Selvaratnam','Shanmuganathan','Shanmugaratnam','Shekhar','Shivraj','Shree','Sidhu','Sinnandavar','Sinnathamby','Sinnathuray','Sivanesan','Singh','Sivalingam','Sivanesan','Shankar','Sodhy','Somasundram','Sooryapparad','Soti','Sreenevasan','Subramaniam','Sundram','Suppiah','Surendran',
+        'Sachithanandan','Sakadivan','Sakwati','Samarasan','Sambanthan','Sandrakasi','Sangalimuthu','Saniru','Sankar','Saravanan','Sathasivam','Sathianathan','Saunthararajah','Seenivasagam','Sekhar','Sellan','Selvanayagam','Selvarajoo','Selvaratnam','Shanmuganathan','Shanmugaratnam','Shekhar','Shivraj','Shree','Sidhu','Sinnandavar','Sinnathamby','Sinnathuray','Sivanesan','Singh','Sivalingam','Shankar','Sodhy','Somasundram','Sooryapparad','Soti','Sreenevasan','Subramaniam','Sundram','Suppiah','Surendran',
         'Thajudeen','Thalalla','Thambu','Thanabalasingam','Thanenthiran','Theseira','Thevandran','Thiru','Thirunavukarasu','Thivy','Thuraisingham','Tikaram',
         'Vadaketh','Vadiveloo','Vanajah','Varman','Vasudevan','Veeran','Veerasamy','Veerasenan','Veerathan','Veetil','Velappan','Vello','Vengatarakoo','Vethamuthu','Viswalingam',
         'Xavier',

@@ -7,17 +7,10 @@ class Address extends \Faker\Provider\Address
     protected static $streetAddressFormats = array(
         '{{streetName}}',
         '{{streetName}} {{buildingNumber}}',
-        '{{streetName}} {{buildingNumber}}',
-        '{{streetName}} {{buildingNumber}}',
-        '{{streetName}} {{buildingNumber}}',
     );
 
     protected static $addressFormats = array(
         "{{streetAddress}}\n{{region}}\n{{postcode}} {{city}}",
-        "{{streetAddress}}\n{{postcode}} {{city}}",
-        "{{streetAddress}}\n{{postcode}} {{city}}",
-        "{{streetAddress}}\n{{postcode}} {{city}}",
-        "{{streetAddress}}\n{{postcode}} {{city}}",
         "{{streetAddress}}\n{{postcode}} {{city}}",
         "{{streetAddress}}\n{{postcode}} {{city}}\nČeská republika",
     );

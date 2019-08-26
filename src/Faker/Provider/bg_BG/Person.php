@@ -11,14 +11,10 @@ class Person extends \Faker\Provider\Person
 
     protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastNameMale}}',
-        '{{firstNameMale}} {{lastNameMale}}',
-        '{{firstNameMale}} {{lastNameMale}}',
         '{{titleMale}} {{firstNameMale}} {{lastNameMale}}',
     );
 
     protected static $femaleNameFormats = array(
-        '{{firstNameFemale}} {{lastNameFemale}}',
-        '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{titleFemale}} {{firstNameFemale}} {{lastNameFemale}}'
     );
@@ -66,7 +62,7 @@ class Person extends \Faker\Provider\Person
 
     protected static $lastNameMale = array(
         'Чанталиев', 'Симеонов', 'Данданов', 'Кърков', 'Братухчев', 'Цветков', 'Иванов', 'Яназов', 'Тодоров', 'Колчев', 'Порязов', 'Келешев', 'Бърборков', 'Дришльов',
-        'Макаронски', 'Количков', 'Принов', 'Бодуров', 'Китов', 'Гьоков', 'Кукуряшков', 'Симеонов', 'Балахуров', 'Милачков', 'Европов Кирилов',
+        'Макаронски', 'Количков', 'Принов', 'Бодуров', 'Китов', 'Гьоков', 'Кукуряшков', 'Балахуров', 'Милачков', 'Европов Кирилов',
         'Площаков', 'Мангъров', 'Хвърчилков', 'Дзезов', 'Ждраков', 'Месаров', 'Тухчиев', 'Топков', 'Яков', 'Иликьов', 'Бурханларски', 'Вражалски', 'Тутурилов', 'Бранков',
         'Зенгинов', 'Чокълтов', 'Фенеров', 'Кучев', 'Възвъзов', 'Кьоров', 'Джогов', 'Пъков', 'Рангелов', 'Чутурков', 'Самсонов', 'Ментешев',
         'Андонов', 'Бумов', 'Мочев', 'Дачев', 'Муев', 'Младенов', 'Тошев', 'Бедринов', 'Тумангелов', 'Негрилов', 'Канчин', 'Миленков', 'Патков',

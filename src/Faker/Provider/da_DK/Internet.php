@@ -11,7 +11,7 @@ class Internet extends \Faker\Provider\Internet
      * @var array Some safe email TLD.
      */
     protected static $safeEmailTld = array(
-        'org', 'com', 'net', 'dk', 'dk', 'dk',
+        'org', 'com', 'net', 'dk',
     );
 
     /**
@@ -25,6 +25,6 @@ class Internet extends \Faker\Provider\Internet
      * @var array Some TLD.
      */
     protected static $tld = array(
-        'com', 'com', 'com', 'biz', 'info', 'net', 'org', 'dk', 'dk', 'dk',
+        'com', 'biz', 'info', 'net', 'org', 'dk',
     );
 }

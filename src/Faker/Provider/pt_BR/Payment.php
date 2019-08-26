@@ -5,8 +5,8 @@ namespace Faker\Provider\pt_BR;
 class Payment extends \Faker\Provider\Payment
 {
     protected static $cardVendors = array(
-        'Visa', 'Visa', 'Visa', 'Visa', 'Visa',
-        'MasterCard', 'MasterCard', 'MasterCard', 'MasterCard', 'MasterCard',
+        'Visa',
+        'MasterCard',
         'American Express', 'Discover Card', 'Diners', 'Elo', 'Hipercard'
     );
 

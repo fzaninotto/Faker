@@ -29,7 +29,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
         '08-## ## ##',
         '0%#-### ###',
-        '0%#######',
         '+46 (0)%######',
         '+46(0)%######',
         '+46%######',

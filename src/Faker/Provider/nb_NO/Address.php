@@ -21,7 +21,7 @@ class Address extends \Faker\Provider\Address
         "sgate", "svei", "s Gate", "s Vei", "gata", "veien"
     );
 
-    protected static $postcode = array("####", "####", "####", "0###");
+    protected static $postcode = array("####", "0###");
 
     /**
     * @var array Norwegian city names
@@ -55,12 +55,11 @@ class Address extends \Faker\Provider\Address
         "Askim", "Eidsberg", "Skiptvet", "Rakkestad", "Råde", "Rygge", "Våler", "Hobøl", "Vestby", "Ski", "Ås", "Frogn",
         "Nesodden", "Oppegård", "Bærum", "Asker", "Aurskog-Høland", "Sørum", "Fet", "Rælingen", "Enebakk", "Lørenskog",
         "Skedsmo", "Nittedal", "Gjerdrum", "Ullensaker", "Nes", "Eidsvoll", "Nannestad", "Hurdal", "Oslo",
-        "Kongsvinger", "Hamar", "Ringsaker", "Løten", "Stange", "Nord-Odal", "Sør-Odal", "Eidskog", "Grue", "Åsnes",
-        "Våler", "Elverum", "Trysil", "Åmot", "Stor-Elvdal", "Rendalen", "Engerdal", "Tolga", "Tynset", "Alvdal",
+        "Kongsvinger", "Hamar", "Ringsaker", "Løten", "Stange", "Nord-Odal", "Sør-Odal", "Eidskog", "Grue", "Åsnes", "Elverum", "Trysil", "Åmot", "Stor-Elvdal", "Rendalen", "Engerdal", "Tolga", "Tynset", "Alvdal",
         "Folldal", "Os", "Lillehammer", "Gjøvik", "Dovre", "Lesja", "Skjåk", "Lom", "Vågå", "Nord-Fron", "Sel",
         "Sør-Fron", "Ringebu", "Øyer", "Gausdal", "Østre Toten", "Vestre Toten", "Jevnaker", "Lunner", "Gran",
         "Søndre Land", "Nordre Land", "Sør-Aurdal", "Etnedal", "Nord-Aurdal", "Vestre Slidre", "Øystre Slidre", "Vang",
-        "Drammen", "Kongsberg", "Ringerike", "Hole", "Flå", "Nes", "Gol", "Hemsedal", "Ål", "Hol", "Sigdal",
+        "Drammen", "Kongsberg", "Ringerike", "Hole", "Flå", "Gol", "Hemsedal", "Ål", "Hol", "Sigdal",
         "Krødsherad", "Modum", "Øvre Eiker", "Nedre Eiker", "Lier", "Røyken", "Hurum", "Flesberg", "Rollag",
         "Nore og Uvdal", "Horten", "Holmestrand", "Tønsberg", "Sandefjord", "Larvik", "Svelvik", "Sande", "Hof", "Re",
         "Andebu", "Stokke", "Nøtterøy", "Tjøme", "Lardal", "Porsgrunn", "Skien", "Notodden", "Siljan", "Bamble",
@@ -72,12 +71,12 @@ class Address extends \Faker\Provider\Address
         "Sokndal", "Lund", "Bjerkreim", "Hå", "Klepp", "Time", "Gjesdal", "Sola", "Randaberg", "Forsand", "Strand",
         "Hjelmeland", "Suldal", "Sauda", "Finnøy", "Rennesøy", "Kvitsøy", "Bokn", "Tysvær", "Karmøy", "Utsira",
         "Vindafjord", "Bergen", "Etne", "Sveio", "Bømlo", "Stord", "Fitjar", "Tysnes", "Kvinnherad", "Jondal", "Odda",
-        "Ullensvang", "Eidfjord", "Ulvik", "Granvin", "Voss", "Kvam", "Fusa", "Samnanger", "Os", "Austevoll", "Sund",
+        "Ullensvang", "Eidfjord", "Ulvik", "Granvin", "Voss", "Kvam", "Fusa", "Samnanger", "Austevoll", "Sund",
         "Fjell", "Askøy", "Vaksdal", "Modalen", "Osterøy", "Meland", "Øygarden", "Radøy", "Lindås", "Austrheim",
         "Fedje", "Masfjorden", "Flora", "Gulen", "Solund", "Hyllestad", "Høyanger", "Vik", "Balestrand", "Leikanger",
         "Sogndal", "Aurland", "Lærdal", "Årdal", "Luster", "Askvoll", "Fjaler", "Gaular", "Jølster", "Førde",
         "Naustdal", "Bremanger", "Vågsøy", "Selje", "Eid", "Hornindal", "Gloppen", "Stryn", "Molde", "Ålesund",
-        "Kristiansund", "Vanylven", "Sande", "Herøy", "Ulstein", "Hareid", "Volda", "Ørsta", "Ørskog", "Norddal",
+        "Kristiansund", "Vanylven", "Herøy", "Ulstein", "Hareid", "Volda", "Ørsta", "Ørskog", "Norddal",
         "Stranda", "Stordal", "Sykkylven", "Skodje", "Sula", "Giske", "Haram", "Vestnes", "Rauma", "Nesset", "Midsund",
         "Sandøy", "Aukra", "Fræna", "Eide", "Averøy", "Gjemnes", "Tingvoll", "Sunndal", "Surnadal", "Rindal", "Halsa",
         "Smøla", "Aure", "Trondheim", "Hemne", "Snillfjord", "Hitra", "Frøya", "Ørland", "Agdenes", "Rissa", "Bjugn",
@@ -85,10 +84,10 @@ class Address extends \Faker\Provider\Address
         "Melhus", "Skaun", "Klæbu", "Malvik", "Selbu", "Tydal", "Steinkjer", "Namsos", "Meråker", "Stjørdal", "Frosta",
         "Leksvik", "Levanger", "Verdal", "Verran", "Namdalseid", "Inderøy", "Snåsa", "Lierne", "Røyrvik", "Namsskogan",
         "Grong", "Høylandet", "Overhalla", "Fosnes", "Flatanger", "Vikna", "Nærøy", "Leka", "Bodø", "Narvik", "Bindal",
-        "Sømna", "Brønnøy", "Vega", "Vevelstad", "Herøy", "Alstahaug", "Leirfjord", "Vefsn", "Grane", "Hattfjelldal",
+        "Sømna", "Brønnøy", "Vega", "Vevelstad", "Alstahaug", "Leirfjord", "Vefsn", "Grane", "Hattfjelldal",
         "Dønna", "Nesna", "Hemnes", "Rana", "Lurøy", "Træna", "Rødøy", "Meløy", "Gildeskål", "Beiarn", "Saltdal",
         "Fauske", "Sørfold", "Steigen", "Hamarøy", "Tysfjord", "Lødingen", "Tjeldsund", "Evenes", "Ballangen", "Røst",
-        "Værøy", "Flakstad", "Vestvågøy", "Vågan", "Hadsel", "Bø", "Øksnes", "Sortland", "Andøy", "Moskenes",
+        "Værøy", "Flakstad", "Vestvågøy", "Vågan", "Hadsel", "Øksnes", "Sortland", "Andøy", "Moskenes",
         "Harstad[10]", "Tromsø", "Kvæfjord", "Skånland", "Ibestad", "Gratangen", "Lavangen", "Bardu", "Salangen",
         "Målselv", "Sørreisa", "Dyrøy", "Tranøy", "Torsken", "Berg", "Lenvik", "Balsfjord", "Karlsøy", "Lyngen",
         "Storfjord", "Kåfjord", "Skjervøy", "Nordreisa", "Kvænangen", "Vardø", "Vadsø", "Hammerfest", "Kautokeino",
@@ -139,12 +138,7 @@ class Address extends \Faker\Provider\Address
     */
     protected static $streetNameFormats = array(
         '{{lastName}}{{streetSuffix}}',
-        '{{lastName}}{{streetSuffix}}',
         '{{firstName}}{{streetSuffix}}',
-        '{{firstName}}{{streetSuffix}}',
-        '{{streetPrefix}}{{streetSuffix}}',
-        '{{streetPrefix}}{{streetSuffix}}',
-        '{{streetPrefix}}{{streetSuffix}}',
         '{{streetPrefix}}{{streetSuffix}}',
         '{{lastName}} {{streetSuffixWord}}'
     );
