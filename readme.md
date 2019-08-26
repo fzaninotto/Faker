@@ -1689,7 +1689,7 @@ echo $faker->VAT; //23456789
 
 * Symfony2 bundles:
   * [`willdurand/faker-bundle`](https://github.com/willdurand/BazingaFakerBundle): Put the awesome Faker library into the Symfony2 DIC and populate your database with fake data.
-  * [`hautelook/alice-bundle`](https://github.com/hautelook/AliceBundle), [AliceFixturesBundle](https://github.com/h4cc/AliceFixturesBundle): Bundles for using [Alice](https://packagist.org/packages/nelmio/alice) and Faker with data fixtures. Able to use Doctrine ORM as well as Doctrine MongoDB ODM.
+  * [`hautelook/alice-bundle`](https://github.com/hautelook/AliceBundle), [AliceFixturesBundle](https://github.com/h4cc/AliceFixturesBundle): Bundles for using [`nelmio/alice`](https://packagist.org/packages/nelmio/alice) and Faker with data fixtures. Able to use Doctrine ORM as well as Doctrine MongoDB ODM.
 * [`emanueleminotto/faker-service-provider`](https://github.com/EmanueleMinotto/FakerServiceProvider): Faker Service Provider for Silex
 * [`bit3/faker-cli`](https://github.com/bit3/faker-cli): Command Line Tool for the Faker PHP library
 * [`league/factory-muffin`](https://github.com/thephpleague/factory-muffin): enable the rapid creation of objects (PHP port of factory-girl)
@@ -1701,7 +1701,7 @@ echo $faker->VAT; //23456789
 * [`denheck/faker-context`](https://github.com/denheck/faker-context): Behat context using Faker to generate testdata
 * [`swekaj/cron-expression-generator`](https://github.com/swekaj/CronExpressionGenerator): Faker provider for generating random, valid cron expressions.
 * [`pragmafabrik/pomm-faker`](https://github.com/pragmafabrik/Pomm2Faker): Faker client for Pomm database framework (PostgreSQL)
-* [`composer require nelmio/alice`](https://packagist.org/packages/nelmio/alice): Fixtures/object generator with a yaml DSL that can use Faker as data generator.
+* [`nelmio/alice`](https://packagist.org/packages/nelmio/alice): Fixtures/object generator with a yaml DSL that can use Faker as data generator.
 * [`ravage84/cakephp-fake-seeder`](https://github.com/ravage84/cakephp-fake-seeder) A CakePHP 2.x shell to seed your database with fake and/or fixed data.
 * [`bheller/images-generator`](https://github.com/bruceheller/images-generator): An image generator provider using GD for placeholder type pictures
 * [`pattern-lab/plugin-faker`](https://github.com/pattern-lab/plugin-php-faker): Pattern Lab is a Styleguide, Component Library, and Prototyping tool. This creates unique content each time Pattern Lab is generated.
