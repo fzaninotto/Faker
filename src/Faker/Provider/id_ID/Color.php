@@ -4,37 +4,39 @@ namespace Faker\Provider\id_ID;
 
 class Color extends \Faker\Provider\Color
 {
-    
+    /**
+     * @link https://id.wikipedia.org/wiki/Warna
+     * @link https://id.wikipedia.org/wiki/Kategori:Warna
+     * @link https://id.wikipedia.org/wiki/Warna_tersier
+     **/
+
+    protected static $safeColorNames = array('abu-abu', 'biru', 'biru dongker', 'biru laut', 'cokelat', 
+        'emas', 'hijau', 'hitam', 'jingga', 'krem', 'kuning', 'magenta', 'mawar', 'merah', 'merah jambu', 
+        'merah marun', 'nila', 'perak', 'putih', 'sepia', 'teal','toska', 'ungu', 'violet', 'zaitun'
+    );
+
     /**
      * @link https://id.wikipedia.org/wiki/Daftar_warna
      **/
-    protected static $safeColorNames = array(
-        'abu-abu', 'biru', 'biru dongker', 'biru laut', 'coklat', 'emas', 'hijau', 'hitam', 'kuning',
-        'magenta', 'mawar', 'merah', 'merah marun', 'merah jambu', 'nila', 'jingga', 'perak', 'putih', 'ungu',
-        'cokelat',
-    );
-    
-    /**
-     * @link http://listeningsection.blogspot.com/2017/08/100-nama-warna-dalam-bahasa-inggris.html
-     * @link https://www.yec.co.id/inggris/nama-nama-warna-dalam-bahasa-inggris/
-     **/
-    protected static $allColorNames = array(
-        'Merah Indian', 'Koral Terang', 'Salmon', 'Salmon Gelap', 'Salmon Terang', 'Krimson', 'Merah',
-        'Merah Bata', 'Merah Tua', 'Merah Muda', 'Merah Muda Panas', 'Koral',
-        'Merah Oranye', 'Jingga Tua', 'Jingga', 'Emas', 'Kuning', 'Kuning Terang', 'Khaki', 'Dark Khaki',
-        'Kuning Lemon', 'Plum', 'Magenta', 'Ungu',  'Hijau Kekuningan', 'Hijau Lemon',
-        'Hijah Gelap', 'Biru', 'Hitam', 'Abu-Abu Tua', 'Abu-Abu Muda', 'Putih', 'Cokelat', 'Perak',
-        'Kuning Sawo', 'Ungu Lembayung', 'Kuning Aprikot', 'Biru Laut', 'Cokelat Kemerahan',
-        'Biru Langit', 'Abu-Abu Kecoklatan', 'Hijau Pudar', 'Jingga Muda', 'Arang', 'Hijau Muda Kekuningan',
-        'Cokelat Tua', 'Tembaga', 'Merah Kekunung-Kuningan', 'Krem', 'Merah Tua Terang', 'Biru Terang',
-        'Gelap', 'Ungu Terong', 'Hijau Zamrud', 'Hijau Hutan', 'Merah Muda Terang', 'Coklat Keemasan',
-        'Nila', 'Putih Gading', 'Hijau Lumut', 'Hitam Pekat', 'Kuning Pucat',
-        'Ungu Muda', 'Kuning Muda', 'Putih Terang', 'Hijau Cerah', 'Merah Muda Keunguan Pudar', 'Hijau Tua',
-        'Merah Keungu Unguan', 'Ungu Lembayung Muda', 'Kuning Kehijauan Pucat', 'Hijau Neon',
-        'Kuning Kecoklatan Tua', 'Paster', 'Peach', 'Biru Pucat', 'Sawo Matang', 'Jingga Labu',
-        'Pelangi', 'Mawar', 'Delima', 'Cokelat Kekuningan', 'Kuning Jingga', 'Biru Nilam',
-        'Merah Muda Kekuningan', 'Merah Tomat', 'Biru Keabu-abuan', 'Biru Baja',
-        'Biru Dongker', 'Hijau Kebiruan', 'Biru Kehijauan', 'Biru Laut Tua', 'Ungu Kebiruan', 'Coklat Gandum',
-        'Hijau Abu-Abu', 'Ungu Kecoklatan'
+    protected static $allColorNames = array('Abu-Abu','Abu-Abu Tua','Abu-Abu Muda','Abu-Abu Kecoklatan',
+        'Almond','Biru','Biru Baja','Biru Dongker','Biru Keabu-abuan','Biru Kehijauan','Biru Keunguan',
+        'Biru Laut','Biru Laut Gelap','Biru Laut Terang','Biru Langit','Biru Langit Muda','Biru Langit Tua',
+        'Biru Malam','Biru Muda','Biru Nilam','Biru Pucat','Biru Terang','Biru Tua','Chiffon','Cokelat',
+        'Cokelat Gandum','Cokelat Keemasan','Cokelat Kekuningan','Cokelat Kemerahan','Cokelat Tua','Delima',
+        'Emas','Hijau Abu-Abu', 'Hijau Botol', 'Hijau Cerah','Hijah Gelap','Hijau Hutan','Hijau Kebiruan',
+        'Hijau Kekuningan','Hijau Laut','Hijau Laut Gelap','Hijau Laut Terang','Hijau Lemon','Hijau Lumut',
+        'Hijau Muda','Hijau Muda Kekuningan','Hijau Neon','Hijau Pucat','Hijau Rumput','Hijau Tua',
+        'Hijau Zamrud','Hitam','Hitam Arang','Hitam Pekat','Jingga','Jingga Labu','Jingga Muda','Jingga Tua',
+        'Khaki','Khaki Tua','Koral','Koral Terang','Krem','Krimson','Kuning','Kuning Aprikot','Kuning Gelap',
+        'Kuning Jingga','Kuning Kehijauan','Kuning Kehijauan Pucat','Kuning Kecoklatan Tua','Kuning Lemon',
+        'Kuning Muda','Kuning Neon','Kuning Pucat','Kuning Terang','Kuning Sawo','Lavender','Lemon',
+        'Lemon Chiffon','Magenta','Magenta Gelap','Mawar','Merah','Merah Bata', 'Merah Indian',
+        'Merah Kekuning-Kuningan', 'Merah Keungu-Unguan','Merah Muda','Merah Muda Dakam','Merah Muda Kekuningan',
+        'Merah Muda Keunguan','Merah Muda Keunguan Pudar','Merah Muda Panas','Merah Muda Terang','Merah Oranye',
+        'Merah Tomat','Merah Tua','Merah Tua Terang','Moka','Nila','Oranye','Oranye Pepaya','Pastel','Peach',
+        'Pelangi','Perak','Plum','Putih','Putih Gading','Putih Gandum','Putih Salju','Putih Terang',
+        'Rambut Jagung','Salmon','Salmon Gelap','Salmon Terang','Sawo','Sawo Matang','Tembaga', 'Tomat', 
+        'Ungu','Ungu Gelap','Ungu Kebiruan','Ungu Kecoklatan','Ungu Lembayung','Ungu Lembayung Muda',
+        'Ungu Muda','Ungu Terong','Zaitun','Zaitun Hijau Gelap',
     );
 }
