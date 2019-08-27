@@ -4,12 +4,20 @@ namespace Faker\Provider\id_ID;
 
 class Color extends \Faker\Provider\Color
 {
+    
+    /**
+     * @link https://id.wikipedia.org/wiki/Daftar_warna
+     **/
     protected static $safeColorNames = array(
         'abu-abu', 'biru', 'biru dongker', 'biru laut', 'coklat', 'emas', 'hijau', 'hitam', 'kuning',
         'magenta', 'mawar', 'merah', 'merah marun', 'merah jambu', 'nila', 'jingga', 'perak', 'putih', 'ungu',
         'cokelat',
     );
-
+    
+    /**
+     * @link http://listeningsection.blogspot.com/2017/08/100-nama-warna-dalam-bahasa-inggris.html
+     * @link https://www.yec.co.id/inggris/nama-nama-warna-dalam-bahasa-inggris/
+     **/
     protected static $allColorNames = array(
         'Merah Indian', 'Koral Terang', 'Salmon', 'Salmon Gelap', 'Salmon Terang', 'Krimson', 'Merah',
         'Merah Bata', 'Merah Tua', 'Merah Muda', 'Merah Muda Panas', 'Koral',
