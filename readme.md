@@ -342,58 +342,16 @@ for ($i = 0; $i < 10; $i++) {
 }
 print_r($values); // [1, 4, null, 9, 5, null, null, 4, 6, null]
 
-// optional() accepts a weight argument to specify the probability of receiving the default value.
-// --------------------------------------------------------
-// 2 value sets are possible
-// --------------------------------------------------------
-// First set is between 0 and 1 (Fractional representation)
-// --------------------------------------------------------
-// 0 will always return the default value
-// Anything else BELOW 1 will be converted to a percentage
-// 
-// --------------------------------------------------------
-// Second set is between 1 and 100 (Percentage representation)
-// --------------------------------------------------------
-// Value MUST be an integer
-// 0 will always return the default value
-// 1 will return the provider's value 1% of the time
-// 100 will return the provider's value 100% of the time
-// --------------------------------------------------------
-// Default weight is 0.5 (50% chance).
-
-// First set examples
-$faker->optional($weight = 0.05)->randomDigit; // 95% chance of NULL, 5% chance of provider
-$faker->optional($weight = 0.1)->randomDigit; // 90% chance of NULL, 10% chance of provider
-$faker->optional($weight = 0.9)->randomDigit; // 10% chance of NULL, 90% chance of provider
-
-// Second set examples
+// optional() accepts a weight argument (Between 0 and 100) to specify the probability of receiving the default value.
 $faker->optional($weight = 1)->randomDigit; // 1% chance of NULL, 99% chance of provider
 $faker->optional($weight = 10)->randomDigit; // 90% chance of NULL, 10% chance of provider
 $faker->optional($weight = 100)->randomDigit; // 0% chance of NULL, 100% chance of provider
 
-// PITFALLS
-// --------------------------------------------------------
-// Get a half a percent (0.5%) chance
-$faker->optional($weight = 0.5)->randomDigit; // This is not 0.5%, this is 50% because it falls within first set
-$faker->optional($weight = 0.005)->randomDigit; // This is a 99.5% chance of NULL or 0.5% chance of provider
-// --------------------------------------------------------
-// Get 100% chance using a true/false or 0/1 approach
-$weight = $faker->randomElement([0, 1]);
-$faker->optional($weight)->randomDigit; // This will yield randomDigit 0% or 1% of chances, not 0% or 100%
-$faker->optional($weight * 100)->randomDigit; // This will yield randomDigit 0% or 100% of chances
-// --------------------------------------------------------
-// Get 4.5% chance
-$faker->optional($weight = 4.5)->randomDigit; // This will always yield default/null value, fractional support is between 0 and 0.99~
-$faker->optional($chance * 0.045)->randomDigit; // This will yield default/null 95.5% of time or the provider's value 4.5% of the time
+// Deprecated: You can use a fractional between 0 and 0.99~ to express the weight, this feature will be removed in v2.0.0
+// Note that the weight must be a number between 0 and 100 and must be integral (No fractions)
 
 // optional() accepts a default argument to specify the default value to return.
 // Defaults to NULL.
-
-// First set examples
-$faker->optional($weight = 0.5, $default = false)->randomDigit; // 50% chance of FALSE
-$faker->optional($weight = 0.9, $default = 'abc')->word; // 10% chance of 'abc'
-
-// Second set examples
 $faker->optional($weight = 50, $default = false)->randomDigit; // 50% chance of FALSE
 $faker->optional($weight = 90, $default = 'abc')->word; // 10% chance of 'abc'
 
