@@ -452,6 +452,8 @@ print_r($insertedPKs);
 // )
 ```
 
+**Note:** Due to the fact that `Faker` returns all the primary keys inserted, the memory consumption will go up drastically when you do batch inserts due to the big list of data.
+
 In the previous example, the `Book` and `Author` models share a relationship. Since `Author` entities are populated first, Faker is smart enough to relate the populated `Book` entities to one of the populated `Author` entities.
 
 Lastly, if you want to execute an arbitrary function on an entity before insertion, use the fourth argument of the `addEntity()` method:
