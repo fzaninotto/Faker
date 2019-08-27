@@ -1438,6 +1438,7 @@ echo $faker->rrn('female'); // "50032089858" - Belgian Rijksregisternummer for a
 ```php
 <?php
 
+echo $faker->jobTitle; // "Houtbewerker"
 echo $faker->vat; // "NL123456789B01" - Dutch Value Added Tax number
 echo $faker->btw; // "NL123456789B01" - Dutch Value Added Tax number (alias)
 ```
