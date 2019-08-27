@@ -343,13 +343,10 @@ for ($i = 0; $i < 10; $i++) {
 print_r($values); // [1, 4, null, 9, 5, null, null, 4, 6, null]
 
 // optional() accepts a weight argument (between 0 and 100) to specify the probability of receiving the default value.
-// Default weight is 50%
+// Default weight is 50%, the weight must be a number between 0 and 100 and must be integral (No fractions)
 $faker->optional($weight = 1)->randomDigit; // 99% chance of NULL, 1% chance of provider
 $faker->optional($weight = 10)->randomDigit; // 90% chance of NULL, 10% chance of provider
 $faker->optional($weight = 100)->randomDigit; // 0% chance of NULL, 100% chance of provider
-
-// Deprecated: You can use a fractional between 0 and 0.99~ to express the weight, this feature will be removed in v2.0.0
-// Note that the weight must be a number between 0 and 100 and must be integral (No fractions)
 
 // optional() accepts a default argument to specify the default value to return.
 // Defaults to NULL.
