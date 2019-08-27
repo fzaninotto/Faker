@@ -51,14 +51,29 @@ composer require fzaninotto/faker
 
 ## Basic Usage
 
+### Autoloading
+
+Faker supports both `PSR-0` as `PSR-4` autoloaders. 
+```php
+<?php
+# When installed via composer
+require_once 'vendor/autoload.php';
+```
+
+You can also load `Fakers` shipped `PSR-0` autoloader
+```php
+<?php
+# Load Fakers own autoloader
+require_once '/path/to/Faker/src/autoload.php';
+```
+
+*alternatively, you can use any another PSR-4 compliant autoloader*
+
+### Create fake data
 Use `Faker\Factory::create()` to create and initialize a faker generator, which can generate data by accessing properties named after the type of data you want.
 
 ```php
 <?php
-// require the Faker autoloader
-require_once '/path/to/Faker/src/autoload.php';
-// alternatively, use another PSR-4 compliant autoloader
-
 // use the factory to create a Faker\Generator instance
 $faker = Faker\Factory::create();
 
