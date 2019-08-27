@@ -63,7 +63,7 @@ class Company extends \Faker\Provider\Company
         $lastName = $this->generator->lastName;
 
         $determinator = static::numberBetween(0, 2);
-        switch($determinator) {
+        switch ($determinator) {
             case 0:
                 $companyName = static::randomElement(static::$product) . ' ' . static::randomElement(static::$type);
                 break;
