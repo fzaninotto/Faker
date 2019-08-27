@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Cacing
- * Date: 22/08/2019
- * Time: 14:39
- */
 
 namespace Faker\Provider\id_ID;
-
 
 class Color extends \Faker\Provider\Color
 {
