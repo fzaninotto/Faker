@@ -27,6 +27,6 @@ class PersonTest extends TestCase
 
     public function testLastNameMale()
     {
-        $this->assertNotEquals("a", substr($this->faker->lastName(), -1));
+        $this->assertNotEquals("a", substr($this->faker->lastName('male'), -1));
     }
 }
