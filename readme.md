@@ -250,6 +250,8 @@ Methods accepting a `$timezone` argument default to `date_default_timezone_get()
     rgbCssColor            // 'rgb(0,255,122)'
     safeColorName          // 'fuchsia'
     colorName              // 'Gainsbor'
+    hslColor               // '340,50,20'
+    hslColorAsArray        // array(340,50,20)
 
 ### `Faker\Provider\File`
 
