@@ -83,7 +83,7 @@ class Company extends \Faker\Provider\Company
         }
 
         if (0 !== static::numberBetween(0, 1)) {
-            $companyName = $companyName . ' ' . static::randomElement(static::$companySuffix);
+            return $companyName . ' ' . static::randomElement(static::$companySuffix);
         }
 
         return $companyName;
