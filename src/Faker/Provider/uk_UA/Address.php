@@ -11,6 +11,10 @@ class Address extends \Faker\Provider\Address
     );
     protected static $buildingNumber = array('##');
     protected static $postcode = array('#####');
+
+    /**
+     * @see https://uk.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BA%D1%80%D0%B0%D1%97%D0%BD_%D1%81%D0%B2%D1%96%D1%82%D1%83
+     */
     protected static $country = array(
         'Афганістан',
         'Албанія',
@@ -22,7 +26,7 @@ class Address extends \Faker\Provider\Address
         'Австралія',
         'Австрія',
         'Азербайджан',
-        'Багамські острови',
+        'Багамські Острови',
         'Бахрейн',
         'Бангладеш',
         'Барбадос',
@@ -42,24 +46,24 @@ class Address extends \Faker\Provider\Address
         'Камерун',
         'Канада',
         'Кабо-Верде',
-        'Центрально-Африканська Республіка',
+        'Центральноафриканська Республіка',
         'Чад',
         'Чилі',
         'Китай',
         'Колумбія',
-        'Коморські острови',
-        'Конго',
-        'Конго, Демократична Республіка',
+        'Коморські Острови',
+        'Республіка Конго',
+        'ДР Конго',
         'Коста-Ріка',
         'Хорватія',
         'Куба',
         'Кіпр',
-        'Чеська республіка',
+        'Чеська Республіка',
         'Данія',
         'Джибуті',
         'Домініка',
         'Домініканська Республіка',
-        'східний Тимор',
+        'Східний Тимор',
         'Еквадор',
         'Єгипет',
         'Сальвадор',
@@ -102,7 +106,7 @@ class Address extends \Faker\Provider\Address
         'Південна Корея',
         'Косово',
         'Кувейт',
-        'Киргизія',
+        'Киргизстан',
         'Лаос',
         'Латвія',
         'Ліван',
@@ -112,14 +116,14 @@ class Address extends \Faker\Provider\Address
         'Ліхтенштейн',
         'Литва',
         'Люксембург',
-        'Македонії',
+        'Північна Македонія',
         'Мадагаскар',
         'Малаві',
         'Малайзія',
         'Мальдіви',
         'Малі',
         'Мальта',
-        'Маршаллові острови',
+        'Маршаллові Острови',
         'Мавританія',
         'Маврикій',
         'Мексика',
@@ -152,7 +156,7 @@ class Address extends \Faker\Provider\Address
         'Португалія',
         'Катар',
         'Румунія',
-        'Російська Федерація',
+        'Росія',
         'Руанда',
         'Сент-Кітс і Невіс',
         'Сент-Люсія',
@@ -161,7 +165,7 @@ class Address extends \Faker\Provider\Address
         'Саудівська Аравія',
         'Сенегал',
         'Сербія',
-        'Сейшельські острови',
+        'Сейшельські Острови',
         'Сьєрра-Леоне',
         'Сінгапур',
         'Словаччина',
@@ -192,7 +196,7 @@ class Address extends \Faker\Provider\Address
         'Україна',
         'Об\'єднані Арабські Емірати',
         'Великобританія',
-        'Сполучені Штати',
+        'США',
         'Уругвай',
         'Узбекистан',
         'Вануату',
@@ -204,6 +208,9 @@ class Address extends \Faker\Provider\Address
         'Зімбабве',
     );
 
+    /**
+     * @see The administrative structure of Ukraine https://static.rada.gov.ua/zakon/new/NEWSAIT/ADM/zmist.html
+     */
     protected static $region = array(
         'Вінницька',
         'Волинська',
@@ -231,6 +238,9 @@ class Address extends \Faker\Provider\Address
         'Чернігівська'
     );
 
+    /**
+     * @see The administrative structure of Ukraine https://static.rada.gov.ua/zakon/new/NEWSAIT/ADM/zmist.html
+     */
     protected static $city = array(
         'Вінниця',
         'Луцьк',
@@ -268,7 +278,6 @@ class Address extends \Faker\Provider\Address
         'Урицького',
         'П. Орлика',
         'Хрещатик',
-        'Артема',
         'Копиленка',
         'Різницька',
         'Лук’янівська',
