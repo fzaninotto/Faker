@@ -7,14 +7,15 @@ use Faker\Provider\Company;
 use Faker\Provider\Internet;
 use Faker\Provider\Lorem;
 use Faker\Provider\Person;
+use PHPUnit\Framework\TestCase;
 
-class InternetTest extends \PHPUnit_Framework_TestCase
+class InternetTest extends TestCase
 {
     /**
      * @var Generator
      */
     private $faker;
-    
+
     public function setUp()
     {
         $faker = new Generator();
@@ -53,7 +54,7 @@ class InternetTest extends \PHPUnit_Framework_TestCase
         $emailAddress = $this->faker->email();
         $this->assertRegExp($pattern, $emailAddress);
     }
-    
+
     /**
      * @dataProvider localeDataProvider
      */
@@ -146,7 +147,7 @@ class InternetTest extends \PHPUnit_Framework_TestCase
 
     public function testIpv4NotLocalNetwork()
     {
-        $this->assertNotRegExp('/\A1\./', $this->faker->ipv4());
+        $this->assertNotRegExp('/\A0\./', $this->faker->ipv4());
     }
 
     public function testIpv4NotBroadcast()

@@ -76,7 +76,7 @@ class Address extends \Faker\Provider\fr_FR\Address
     protected static $secondaryAddressFormats = array('Apt. ###', 'Suite ###', 'Bureau ###');
 
     protected static $state = array(
-        'Alberta', 'Colombie-Brittanique', 'Manitoba', 'Nouveau-Brunswick', 'Terre-Neuve-et-Labrador', 'Nouvelle-Écosse', 'Ontario', 'Île-du-Prince-Édouard', 'Québec', 'Saskatchewan'
+        'Alberta', 'Colombie-Britannique', 'Manitoba', 'Nouveau-Brunswick', 'Terre-Neuve-et-Labrador', 'Nouvelle-Écosse', 'Ontario', 'Île-du-Prince-Édouard', 'Québec', 'Saskatchewan'
     );
 
     protected static $stateAbbr = array(

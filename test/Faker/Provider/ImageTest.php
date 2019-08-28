@@ -3,27 +3,56 @@
 namespace Faker\Test\Provider;
 
 use Faker\Provider\Image;
+use PHPUnit\Framework\TestCase;
 
-class ImageTest extends \PHPUnit_Framework_TestCase
+class ImageTest extends TestCase
 {
     public function testImageUrlUses640x680AsTheDefaultSize()
     {
-        $this->assertRegExp('#^http://lorempixel.com/640/480/#', Image::imageUrl());
+        $this->assertRegExp('#^https://lorempixel.com/640/480/#', Image::imageUrl());
     }
 
     public function testImageUrlAcceptsCustomWidthAndHeight()
     {
-        $this->assertRegExp('#^http://lorempixel.com/800/400/#', Image::imageUrl(800, 400));
+        $this->assertRegExp('#^https://lorempixel.com/800/400/#', Image::imageUrl(800, 400));
     }
 
     public function testImageUrlAcceptsCustomCategory()
     {
-        $this->assertRegExp('#^http://lorempixel.com/800/400/nature/#', Image::imageUrl(800, 400, 'nature'));
+        $this->assertRegExp('#^https://lorempixel.com/800/400/nature/#', Image::imageUrl(800, 400, 'nature'));
     }
 
     public function testImageUrlAcceptsCustomText()
     {
-        $this->assertRegExp('#^http://lorempixel.com/800/400/nature/Faker#', Image::imageUrl(800, 400, 'nature', false, 'Faker'));
+        $this->assertRegExp('#^https://lorempixel.com/800/400/nature/Faker#', Image::imageUrl(800, 400, 'nature', false, 'Faker'));
+    }
+
+    public function testImageUrlReturnsLinkToRegularImageWhenGrayIsFalse()
+    {
+        $imageUrl = Image::imageUrl(
+            800,
+            400,
+            'nature',
+            false,
+            'Faker',
+            false
+        );
+
+        $this->assertSame('https://lorempixel.com/800/400/nature/Faker/', $imageUrl);
+    }
+
+    public function testImageUrlReturnsLinkToRegularImageWhenGrayIsTrue()
+    {
+        $imageUrl = Image::imageUrl(
+            800,
+            400,
+            'nature',
+            false,
+            'Faker',
+            true
+        );
+
+        $this->assertSame('https://lorempixel.com/gray/800/400/nature/Faker/', $imageUrl);
     }
 
     public function testImageUrlAddsARandomGetParameterByDefault()
@@ -45,7 +74,7 @@ class ImageTest extends \PHPUnit_Framework_TestCase
 
     public function testDownloadWithDefaults()
     {
-        $url = "http://www.lorempixel.com/";
+        $url = "http://lorempixel.com/";
         $curlPing = curl_init($url);
         curl_setopt($curlPing, CURLOPT_TIMEOUT, 5);
         curl_setopt($curlPing, CURLOPT_CONNECTTIMEOUT, 5);

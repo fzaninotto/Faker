@@ -4,8 +4,9 @@ namespace Faker\Test\Provider\ru_RU;
 
 use Faker\Generator;
 use Faker\Provider\ru_RU\Company;
+use PHPUnit\Framework\TestCase;
 
-class CompanyTest extends \PHPUnit_Framework_TestCase
+class CompanyTest extends TestCase
 {
     /**
      * @var Generator
@@ -32,5 +33,14 @@ class CompanyTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("01001", substr($this->faker->kpp, -5, 5));
         $inn = $this->faker->inn;
         $this->assertEquals(substr($inn, 0, 4), substr($this->faker->kpp($inn), 0, 4));
+    }
+
+    public function testCatchPhrase()
+    {
+        $phrase = $this->faker->catchPhrase;
+        $this->assertNotNull($phrase);
+        $this->assertGreaterThanOrEqual(3,
+            count(explode(' ', $this->faker->catchPhrase)),
+            "'$phrase' - should be contain 3 word");
     }
 }

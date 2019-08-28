@@ -21,7 +21,7 @@ abstract class Text extends Base
      * @example 'Alice, swallowing down her flamingo, and began by taking the little golden key'
      * @param integer $maxNbChars Maximum number of characters the text should contain (minimum: 10)
      * @param integer $indexSize  Determines how many words are considered for the generation of the next word.
-     *                             The minimum is 1, and it produces the higher level of randomness, although the
+     *                             The minimum is 1, and it produces a higher level of randomness, although the
      *                             generated text usually doesn't make sense. Higher index sizes (up to 5)
      *                             produce more correct text, at the price of less randomness.
      * @return string
@@ -128,7 +128,7 @@ abstract class Text extends Base
     protected static function validStart($word)
     {
         $isValid = true;
-        if (self::$textStartsWithUppercase) {
+        if (static::$textStartsWithUppercase) {
             $isValid = preg_match('/^\p{Lu}/u', $word);
         }
         return $isValid;
@@ -136,6 +136,6 @@ abstract class Text extends Base
 
     protected static function appendEnd($text)
     {
-        return rtrim($text, ',— ').'.';
+        return preg_replace("/([ ,-:;\x{2013}\x{2014}]+$)/us", '', $text).'.';
     }
 }

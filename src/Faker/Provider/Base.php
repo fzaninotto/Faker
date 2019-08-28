@@ -139,6 +139,18 @@ class Base
         $max = $int1 < $int2 ? $int2 : $int1;
         return mt_rand($min, $max);
     }
+    
+    /**
+     * Returns the passed value
+     *
+     * @param mixed $value
+     *
+     * @return mixed
+     */
+    public static function passthrough($value)
+    {
+        return $value;
+    }
 
     /**
      * Returns a random letter from a to z
@@ -161,16 +173,26 @@ class Base
     /**
      * Returns randomly ordered subsequence of $count elements from a provided array
      *
-     * @param  array            $array           Array to take elements from. Defaults to a-f
+     * @param  array            $array           Array to take elements from. Defaults to a-c
      * @param  integer          $count           Number of elements to take.
      * @param  boolean          $allowDuplicates Allow elements to be picked several times. Defaults to false
      * @throws \LengthException When requesting more elements than provided
      *
      * @return array New array with $count elements from $array
      */
-    public static function randomElements(array $array = array('a', 'b', 'c'), $count = 1, $allowDuplicates = false)
+    public static function randomElements($array = array('a', 'b', 'c'), $count = 1, $allowDuplicates = false)
     {
-        $allKeys = array_keys($array);
+        $traversables = array();
+
+        if ($array instanceof \Traversable) {
+            foreach ($array as $element) {
+                $traversables[] = $element;
+            }
+        }
+
+        $arr = count($traversables) ? $traversables : $array;
+
+        $allKeys = array_keys($arr);
         $numKeys = count($allKeys);
 
         if (!$allowDuplicates && $numKeys < $count) {
@@ -191,7 +213,7 @@ class Base
                 $keys[$num] = true;
             }
 
-            $elements[] = $array[$allKeys[$num]];
+            $elements[] = $arr[$allKeys[$num]];
             $numElements++;
         }
 
@@ -206,7 +228,7 @@ class Base
      */
     public static function randomElement($array = array('a', 'b', 'c'))
     {
-        if (!$array) {
+        if (!$array || ($array instanceof \Traversable && !count($array))) {
             return null;
         }
         $elements = static::randomElements($array, 1);
@@ -470,7 +492,7 @@ class Base
         // All A-F inside of [] become ABCDEF
         $regex = preg_replace_callback('/\[([^\]]+)\]/', function ($matches) {
             return '[' . preg_replace_callback('/(\w|\d)\-(\w|\d)/', function ($range) {
-                return implode(range($range[1], $range[2]), '');
+                return implode('', range($range[1], $range[2]));
             }, $matches[1]) . ']';
         }, $regex);
         // All [ABC] become B (or A or C)
@@ -568,10 +590,10 @@ class Base
      * <code>
      * $values = array();
      * $evenValidator = function ($digit) {
-     * 	 return $digit % 2 === 0;
+     *   return $digit % 2 === 0;
      * };
      * for ($i=0; $i < 10; $i++) {
-     * 	 $values []= $faker->valid($evenValidator)->randomDigit;
+     *   $values []= $faker->valid($evenValidator)->randomDigit;
      * }
      * print_r($values); // [0, 4, 8, 4, 2, 6, 0, 8, 8, 6]
      * </code>

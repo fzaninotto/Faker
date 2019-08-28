@@ -2,7 +2,9 @@
 
 namespace Faker\Test\Provider\zh_TW;
 
-class TextTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class TextTest extends TestCase
 {
     private $textClass;
 
@@ -19,7 +21,6 @@ class TextTest extends \PHPUnit_Framework_TestCase
         return $method;
     }
 
-    /** @test */
     function testItShouldExplodeTheStringToArray()
     {
         $this->assertSame(
@@ -33,7 +34,6 @@ class TextTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    /** @test */
     function testItShouldReturnTheStringLength()
     {
         $this->assertContains(
@@ -42,7 +42,6 @@ class TextTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    /** @test */
     function testItShouldReturnTheCharacterIsValidStartOrNot()
     {
         $this->assertTrue($this->getMethod('validStart')->invokeArgs(null, array('中')));
@@ -56,7 +55,6 @@ class TextTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($this->getMethod('validStart')->invokeArgs(null, array('！')));
     }
 
-    /** @test */
     function testItShouldAppendEndPunctToTheEndOfString()
     {
         $this->assertSame(

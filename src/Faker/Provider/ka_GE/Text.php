@@ -4,6 +4,9 @@ namespace Faker\Provider\ka_GE;
 
 class Text extends \Faker\Provider\Text
 {
+    
+    protected static $textStartsWithUppercase = false;
+    
     /**
      * License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
      *

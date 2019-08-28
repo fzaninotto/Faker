@@ -112,7 +112,7 @@ class Company extends \Faker\Provider\Company
      */
     public function siret($formatted = true)
     {
-        $siret = $this->siren(false);
+        $siret = self::siren(false);
         $nicFormat = static::randomElement(static::$siretNicFormats);
         $siret .= $this->numerify($nicFormat);
         $siret .= Luhn::computeCheckDigit($siret);
@@ -129,9 +129,9 @@ class Company extends \Faker\Provider\Company
      * @see http://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27identification_du_r%C3%A9pertoire_des_entreprises
      * @return string
      */
-    public function siren($formatted = true)
+    public static function siren($formatted = true)
     {
-        $siren = $this->numerify('%#######');
+        $siren = self::numerify('%#######');
         $siren .= Luhn::computeCheckDigit($siren);
         if ($formatted) {
             $siren = substr($siren, 0, 3) . ' ' . substr($siren, 3, 3) . ' ' . substr($siren, 6, 3);

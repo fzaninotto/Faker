@@ -4,8 +4,9 @@ namespace Faker\Test\Provider\pt_BR;
 
 use Faker\Generator;
 use Faker\Provider\pt_BR\Company;
+use PHPUnit\Framework\TestCase;
 
-class CompanyTest extends \PHPUnit_Framework_TestCase
+class CompanyTest extends TestCase
 {
 
     public function setUp()

@@ -3,8 +3,9 @@
 namespace Faker\Test\Provider;
 
 use Faker\Provider\Miscellaneous;
+use PHPUnit\Framework\TestCase;
 
-class MiscellaneousTest extends \PHPUnit_Framework_TestCase
+class MiscellaneousTest extends TestCase
 {
     public function testBoolean()
     {
@@ -53,6 +54,6 @@ class MiscellaneousTest extends \PHPUnit_Framework_TestCase
 
     public function testEmoji()
     {
-        $this->assertRegExp('/^[\x{1F600}-\x{1F636}]$/u', Miscellaneous::emoji());
+        $this->assertRegExp('/^[\x{1F600}-\x{1F637}]$/u', Miscellaneous::emoji());
     }
 }

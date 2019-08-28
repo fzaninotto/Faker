@@ -3,8 +3,9 @@
 namespace Faker\Test\Provider;
 
 use Faker\Provider\Color;
+use PHPUnit\Framework\TestCase;
 
-class ColorTest extends \PHPUnit_Framework_TestCase
+class ColorTest extends TestCase
 {
 
     public function testHexColor()
@@ -19,7 +20,7 @@ class ColorTest extends \PHPUnit_Framework_TestCase
 
     public function testRgbColorAsArray()
     {
-        $this->assertEquals(3, count(Color::rgbColorAsArray()));
+        $this->assertCount(3, Color::rgbColorAsArray());
     }
 
     public function testRgbColor()
@@ -49,5 +50,17 @@ class ColorTest extends \PHPUnit_Framework_TestCase
     public function testColorName()
     {
         $this->assertRegExp('/^[\w]+$/', Color::colorName());
+    }
+
+    public function testHslColor()
+    {
+        $regexp360 = '(?:36[0]|3[0-5][0-9]|[12][0-9][0-9]|[1-9]?[0-9])';
+        $regexp100 = '(?:100|[1-9]?[0-9])';
+        $this->assertRegExp('/^' . $regexp360 . ',' . $regexp100 . ',' . $regexp100 . '$/', Color::hslColor());
+    }
+
+    public function testHslColorArray()
+    {
+        $this->assertCount(3, Color::hslColorAsArray());
     }
 }

@@ -175,7 +175,7 @@ class Internet extends Base
         }
         $words = $this->generator->words($nbWords);
 
-        return join($words, '-');
+        return join('-', $words);
     }
 
     /**
