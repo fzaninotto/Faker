@@ -409,6 +409,9 @@ Faker provides adapters for Object-Relational and Object-Document Mappers (curre
 
 To populate entities, create a new populator class (using a generator instance as parameter), then list the class and number of all the entities that must be generated. To launch the actual data population, call the `execute()` method.
 
+Note that some of the `populators` could require additional parameters. As example the `doctrine` populator has an option to specify
+its batchSize on how often it will flush the UnitOfWork to the database.
+
 Here is an example showing how to populate 5 `Author` and 10 `Book` objects:
 
 ```php
