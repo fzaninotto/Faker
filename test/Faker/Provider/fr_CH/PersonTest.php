@@ -18,10 +18,10 @@ class PersonTest extends TestCase
         $this->faker = $faker;
     }
 
-	public function testAvsNumber()
+    public function testAvsNumber()
     {
-		$avs = $this->faker->avs13;
+        $avs = $this->faker->avs13;
         $this->assertRegExp('/^756\.([0-9]{4})\.([0-9]{4})\.([0-9]{2})$/', $avs);
-		$this->assertTrue(Ean::isValid(str_replace('.', '', $avs)));
-	}
+        $this->assertTrue(Ean::isValid(str_replace('.', '', $avs)));
+    }
 }
