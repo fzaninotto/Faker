@@ -42,13 +42,12 @@ class Image extends Base
                 throw new \InvalidArgumentException(sprintf('Unknown image category "%s"', $category));
             }
             $url .= "{$category}/";
+            if (!$randomize) {
+                $url .= static::randomFloat(0, 1, 10).'/';
+            }
             if ($word) {
                 $url .= "{$word}/";
             }
-        }
-
-        if ($randomize) {
-            $url .= '?' . static::randomNumber(5, true);
         }
 
         return $baseUrl . $url;
