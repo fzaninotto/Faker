@@ -18,7 +18,7 @@ class PersonTest extends TestCase
         $this->faker = $faker;
     }
 
-    public function testAvsNumber()
+    public function testAvs13Number()
     {
         $avs = $this->faker->avs13;
         $this->assertRegExp('/^756\.([0-9]{4})\.([0-9]{4})\.([0-9]{2})$/', $avs);
