@@ -100,63 +100,63 @@ class DateTimeTest extends TestCase
         $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
-    public function testDateTimeThisCentury()
+    public function testDateTimePastCentury()
     {
-        $date = DateTimeProvider::dateTimeThisCentury();
+        $date = DateTimeProvider::dateTimePastCentury();
         $this->assertInstanceOf('\DateTime', $date);
         $this->assertGreaterThanOrEqual(new \DateTime('-100 year'), $date);
         $this->assertLessThanOrEqual(new \DateTime(), $date);
         $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
-    public function testDateTimeThisDecade()
+    public function testDateTimePastDecade()
     {
-        $date = DateTimeProvider::dateTimeThisDecade();
+        $date = DateTimeProvider::dateTimePastDecade();
         $this->assertInstanceOf('\DateTime', $date);
         $this->assertGreaterThanOrEqual(new \DateTime('-10 year'), $date);
         $this->assertLessThanOrEqual(new \DateTime(), $date);
         $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
-    public function testDateTimeThisYear()
+    public function testDateTimePastYear()
     {
-        $date = DateTimeProvider::dateTimeThisYear();
+        $date = DateTimeProvider::dateTimePastYear();
         $this->assertInstanceOf('\DateTime', $date);
         $this->assertGreaterThanOrEqual(new \DateTime('-1 year'), $date);
         $this->assertLessThanOrEqual(new \DateTime(), $date);
         $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
-    public function testDateTimeThisMonth()
+    public function testDateTimePastMonth()
     {
-        $date = DateTimeProvider::dateTimeThisMonth();
+        $date = DateTimeProvider::dateTimePastMonth();
         $this->assertInstanceOf('\DateTime', $date);
         $this->assertGreaterThanOrEqual(new \DateTime('-1 month'), $date);
         $this->assertLessThanOrEqual(new \DateTime(), $date);
         $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
-    public function testDateTimeThisCenturyWithTimezone()
+    public function testDateTimePastCenturyWithTimezone()
     {
-        $date = DateTimeProvider::dateTimeThisCentury('now', 'America/New_York');
+        $date = DateTimeProvider::dateTimePastCentury('now', 'America/New_York');
         $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
     }
 
-    public function testDateTimeThisDecadeWithTimezone()
+    public function testDateTimePastDecadeWithTimezone()
     {
-        $date = DateTimeProvider::dateTimeThisDecade('now', 'America/New_York');
+        $date = DateTimeProvider::dateTimePastDecade('now', 'America/New_York');
         $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
     }
 
-    public function testDateTimeThisYearWithTimezone()
+    public function testDateTimePastYearWithTimezone()
     {
-        $date = DateTimeProvider::dateTimeThisYear('now', 'America/New_York');
+        $date = DateTimeProvider::dateTimePastYear('now', 'America/New_York');
         $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
     }
 
-    public function testDateTimeThisMonthWithTimezone()
+    public function testDateTimePastMonthWithTimezone()
     {
-        $date = DateTimeProvider::dateTimeThisMonth('now', 'America/New_York');
+        $date = DateTimeProvider::dateTimePastMonth('now', 'America/New_York');
         $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
     }
 

@@ -177,10 +177,13 @@ class DateTime extends Base
      * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
      * @example DateTime('1964-04-04 11:02:02')
      * @return \DateTime
+     *
+     * @deprecated use dateTimePastCentury - The naming of this method is misleading since "this century" does not
+     *             point to the past century but rather to a random between 100 years ago and $now.
      */
     public static function dateTimeThisCentury($max = 'now', $timezone = null)
     {
-        return static::dateTimeBetween('-100 year', $max, $timezone);
+        return static::dateTImePastCentury($max, $timezone);
     }
 
     /**
@@ -188,10 +191,13 @@ class DateTime extends Base
      * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
      * @example DateTime('2010-03-10 05:18:58')
      * @return \DateTime
+     *
+     * @deprecated use dateTimePastDecade - The naming of this method is misleading since "this decade" does not
+     *             point to the past decade but rather to a random between 10 years ago and $now.
      */
     public static function dateTimeThisDecade($max = 'now', $timezone = null)
     {
-        return static::dateTimeBetween('-10 year', $max, $timezone);
+        return static::dateTimePastDecade($max, $timezone);
     }
 
     /**
@@ -199,10 +205,13 @@ class DateTime extends Base
      * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
      * @example DateTime('2011-09-19 09:24:37')
      * @return \DateTime
+     *
+     * @deprecated use dateTimePastYear - The naming of this method is misleading since "this year" does not point
+     *             on current calendar year but rather to a random between 1 year ago and $now.
      */
     public static function dateTimeThisYear($max = 'now', $timezone = null)
     {
-        return static::dateTimeBetween('-1 year', $max, $timezone);
+        return static::dateTimePastYear($max, $timezone);
     }
 
     /**
@@ -210,8 +219,63 @@ class DateTime extends Base
      * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
      * @example DateTime('2011-10-05 12:51:46')
      * @return \DateTime
+     *
+     * @deprecated use dateTimePastMonth - The naming of this method is misleading since "this month" does not point
+     *             on current calendar month but rather to a random between 1 month ago and $now.
      */
     public static function dateTimeThisMonth($max = 'now', $timezone = null)
+    {
+        return static::dateTimePastMonth($max, $timezone);
+    }
+
+    /**
+     * Generate a random datetime from up to a hundred years ago
+     *
+     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
+     * @example DateTime('1964-04-04 11:02:02')
+     * @return \DateTime
+     */
+    public static function dateTImePastCentury($max = 'now', $timezone = null)
+    {
+        return static::dateTimeBetween('-100 year', $max, $timezone);
+    }
+
+    /**
+     * Generate a random datetime from up to ten years ago
+     *
+     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
+     * @example DateTime('2010-03-10 05:18:58')
+     * @return \DateTime
+     */
+    public static function dateTimePastDecade($max = 'now', $timezone = null)
+    {
+        return static::dateTimeBetween('-10 year', $max, $timezone);
+    }
+
+    /**
+     * Generate a random datetime from up to one year ago
+     *
+     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
+     * @example DateTime('2011-09-19 09:24:37')
+     * @return \DateTime
+     */
+    public static function dateTimePastYear($max = 'now', $timezone = null)
+    {
+        return static::dateTimeBetween('-1 year', $max, $timezone);
+    }
+
+    /**
+     * Generate a random datetime from up to one month ago
+     *
+     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
+     * @example DateTime('2011-10-05 12:51:46')
+     * @return \DateTime
+     */
+    public static function dateTimePastMonth($max = 'now', $timezone = null)
     {
         return static::dateTimeBetween('-1 month', $max, $timezone);
     }
