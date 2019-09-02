@@ -187,10 +187,18 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     time($format = 'H:i:s', $max = 'now') // '20:49:42'
     dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null) // DateTime('2003-03-15 02:00:49', 'Africa/Lagos')
     dateTimeInInterval($startDate = '-30 years', $interval = '+ 5 days', $timezone = null) // DateTime('2003-03-15 02:00:49', 'Antartica/Vostok')
-    dateTimeThisCentury($max = 'now', $timezone = null)     // DateTime('1915-05-30 19:28:21', 'UTC')
-    dateTimeThisDecade($max = 'now', $timezone = null)      // DateTime('2007-05-29 22:30:48', 'Europe/Paris')
-    dateTimeThisYear($max = 'now', $timezone = null)        // DateTime('2011-02-27 20:52:14', 'Africa/Lagos')
-    dateTimeThisMonth($max = 'now', $timezone = null)       // DateTime('2011-10-23 13:46:23', 'Antarctica/Vostok')
+    dateTimePastCentury($max = 'now', $timezone = null)     // DateTime('1915-05-30 19:28:21', 'UTC')
+    dateTimePastDecade($max = 'now', $timezone = null)      // DateTime('2007-05-29 22:30:48', 'Europe/Paris')
+    dateTimePastYear($max = 'now', $timezone = null)        // DateTime('2011-02-27 20:52:14', 'Africa/Lagos')
+    dateTimePastMonth($max = 'now', $timezone = null)       // DateTime('2011-10-23 13:46:23', 'Antarctica/Vostok')
+    dateTimeCurrentCentury($max = 'now', $timezone = null)  // DateTime('2000-02-21 12:14:23', 'UTC')
+    dateTimeCurrentDecade($max = 'now', $timezone = null)   // DateTime('2010-03-02 12:14:23', 'Europe/Paris')
+    dateTimeCurrentYear($max = 'now', $timezone = null)     // DateTime('2019-05-30 12:14:23', 'Africa/Lagos')
+    dateTimeCurrentMonth($max = 'now', $timezone = null)    // DateTime('2019-09-01 12:14:23', 'Antarctica/Vostok')
+    dateTimeLastCentury($max = 'now', $timezone = null)     // DateTime('1900-02-21 12:14:23', 'UTC')
+    dateTimeLastDecade($max = 'now', $timezone = null)      // DateTime('2000-03-02 12:14:23', 'Europe/Paris')
+    dateTimeLastYear($max = 'now', $timezone = null)        // DateTime('2018-05-30 12:14:23', 'Africa/Lagos')
+    dateTimeLastMonth($max = 'now', $timezone = null)       // DateTime('2019-08-01 12:14:23', 'Antarctica/Vostok')
     amPm($max = 'now')                    // 'pm'
     dayOfMonth($max = 'now')              // '04'
     dayOfWeek($max = 'now')               // 'Friday'
@@ -199,8 +207,26 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     year($max = 'now')                    // '1993'
     century                               // 'VI'
     timezone                              // 'Europe/Paris'
-
+    
 Methods accepting a `$timezone` argument default to `date_default_timezone_get()`. You can pass a custom timezone string to each method, or define a custom timezone for all time methods at once using `$faker::setDefaultTimezone($timezone)`.
+    
+#### Naming of relative dateTime methods
+In current state we have `dateTimeThisXXX` which is a misleading name. One would assume that this methods
+will return a calendar accurate datetime but rather it will return a random datetime in the "past" month (`$now - 1 month`).
+
+Assuming the current date is `2019-09-02`. Here is a full list of methods and what you can expect from them:
+- `dateTimePastCentury` datetime between `1919-09-02` and `2019-09-02`
+- `dateTimePastDecade` datetime between `2009-09-02` and `2019-09-02`
+- `dateTimePastYear` datetime between `2018-09-02` and `2019-09-02`
+- `dateTimePastMonth` datetime between `2019-08-02` and `2019-09-02`
+- `dateTimeLastCentury` datetime between `1900-01-01` and `1999-12-31`
+- `dateTimeLastDecade` datetime between `2000-01-01` and `2009-12-31`
+- `dateTimeLastYear` datetime between `2018-01-01` and `2018-12-31`
+- `dateTimeLastMonth` datetime between `2019-08-01` and `2018-08-31`
+- `dateTimeCurrentCentury` datetime between `2000-01-01` and `2019-12-31` (with `$now` as maximum)
+- `dateTimeCurrentDecade` datetime between `2010-01-01` and `2019-12-31` (with `$now` as maximum)
+- `dateTimeCurrentYear` datetime between `2019-01-01` and `2019-12-31` (with `$now` as maximum)
+- `dateTimeCurrentMonth` datetime between `2019-09-01` and `2019-09-30` (with `$now` as maximum)
 
 ### `Faker\Provider\Internet`
 
@@ -571,7 +597,7 @@ $faker = Faker\Factory::create();
   <contact firstName="<?php echo $faker->firstName ?>" lastName="<?php echo $faker->lastName ?>" email="<?php echo $faker->email ?>">
     <phone number="<?php echo $faker->phoneNumber ?>"/>
 <?php if ($faker->boolean(25)): ?>
-    <birth date="<?php echo $faker->dateTimeThisCentury->format('Y-m-d') ?>" place="<?php echo $faker->city ?>"/>
+    <birth date="<?php echo $faker->dateTimePastCentury->format('Y-m-d') ?>" place="<?php echo $faker->city ?>"/>
 <?php endif; ?>
     <address>
       <street><?php echo $faker->streetAddress ?></street>
