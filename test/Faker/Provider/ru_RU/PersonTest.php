@@ -29,4 +29,9 @@ class PersonTest extends TestCase
     {
         $this->assertNotEquals("a", substr($this->faker->lastName('male'), -1));
     }
+
+    public function testLastNameRandom()
+    {
+        $this->assertNotNull($this->faker->lastName());
+    }
 }
