@@ -183,7 +183,7 @@ class DateTime extends Base
      */
     public static function dateTimeThisCentury($max = 'now', $timezone = null)
     {
-        return static::dateTImePastCentury($max, $timezone);
+        return static::dateTimePastCentury($max, $timezone);
     }
 
     /**
