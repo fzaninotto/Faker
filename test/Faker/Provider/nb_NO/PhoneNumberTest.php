@@ -23,15 +23,17 @@ class PhoneNumberTest extends TestCase
             $number = $this->faker->mobileNumber;
 
             // Check that number starts with 4 or 9 when country code is included
-            if ($number[0] === '+') {
+            if (strlen($number) === 11) {
+                $testChar = substr($number, 3, 1);
                 $this->assertEquals(11, strlen($number));
-                $this->assertContains($number[3], [4, 9]);
+                $this->assertContains($testChar, array(4, 9));
                 $this->assertRegExp('/^\+47[49]{1}[0-9]{7}$/', $number);
             }
 
             // Check numbers start with 4 or 9 when no country code is included
             if (strlen($number) === 10 || strlen($number) === 8) {
-                $this->assertContains($number[0], [4, 9]);
+                $testChar = substr($number, 0, 1);
+                $this->assertContains($testChar, array(4, 9));
             }
 
             if (strlen($number) === 10) {
