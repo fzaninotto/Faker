@@ -1493,6 +1493,17 @@ echo $faker->btw; // "NL123456789B01" - Dutch Value Added Tax number (alias)
 echo $faker->idNumber; // "111222333" - Dutch Personal identification number (BSN)
 ```
 
+### `Faker\Provider\nb_NO\MobileNumber`
+
+```php
+<?php
+
+// Generates a random Norwegian mobile phone number
+echo $faker->mobileNumber; // "+4799988777"
+echo $faker->mobileNumber; // "999 88 777"
+echo $faker->mobileNumber; // "99988777"
+```
+
 ### `Faker\Provider\nb_NO\Payment`
 
 ```php
