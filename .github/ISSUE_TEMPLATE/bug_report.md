@@ -1,38 +1,35 @@
 ---
-name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
+name: Bug
+about: Something does not work as expected
+----
 
----
+### Summary
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+<!-- provide a summary here -->
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+### Versions
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+<!-- Please provide the versions of PHP as well as `fzaninotto/faker` on which the issue has been observed -->
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+|                     | Version |
+|:--------------------|:--------|
+| PHP                 | x.y.z   |
+| `fzaninotto/faker`  | x.y.z   |
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+### Self-enclosed code snippet for reproduction
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+```php
+<!-- please replace this with a self-enclosed usage example -->
+```
 
-**Additional context**
-Add any other context about the problem here.
+### Expected output
+
+```txt
+<!-- please replace this with the expected output of your self-enclosed example --> 
+```
+
+### Actual output
+
+```txt
+<!-- please replace this with the actual output of your self-enclosed example --> 
+```
