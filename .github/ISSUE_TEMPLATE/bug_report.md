@@ -1,6 +1,9 @@
 ---
 name: Bug
 about: Something does not work as expected
+title: ''
+labels: ''
+assignees: ''
 ----
 
 ### Summary
