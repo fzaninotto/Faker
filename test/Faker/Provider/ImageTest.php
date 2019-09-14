@@ -27,6 +27,34 @@ class ImageTest extends TestCase
         $this->assertRegExp('#^https://lorempixel.com/800/400/nature/Faker#', Image::imageUrl(800, 400, 'nature', false, 'Faker'));
     }
 
+    public function testImageUrlReturnsLinkToRegularImageWhenGrayIsFalse()
+    {
+        $imageUrl = Image::imageUrl(
+            800,
+            400,
+            'nature',
+            false,
+            'Faker',
+            false
+        );
+
+        $this->assertSame('https://lorempixel.com/800/400/nature/Faker/', $imageUrl);
+    }
+
+    public function testImageUrlReturnsLinkToRegularImageWhenGrayIsTrue()
+    {
+        $imageUrl = Image::imageUrl(
+            800,
+            400,
+            'nature',
+            false,
+            'Faker',
+            true
+        );
+
+        $this->assertSame('https://lorempixel.com/gray/800/400/nature/Faker/', $imageUrl);
+    }
+
     public function testImageUrlAddsARandomGetParameterByDefault()
     {
         $url = Image::imageUrl(800, 400);

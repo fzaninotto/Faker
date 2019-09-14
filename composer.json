@@ -13,9 +13,9 @@
         "php": "^5.3.3 || ^7.0"
     },
     "require-dev": {
+        "ext-intl": "*",
         "phpunit/phpunit": "^4.8.35 || ^5.7",
-        "squizlabs/php_codesniffer": "^1.5",
-        "ext-intl": "*"
+        "squizlabs/php_codesniffer": "^2.9.2"
     },
     "autoload": {
         "psr-4": {
@@ -29,7 +29,10 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.8-dev"
+            "dev-master": "1.9-dev"
         }
+    },
+    "config": {
+        "sort-packages": true
     }
 }

@@ -42,7 +42,11 @@ class ColumnTypeGuesser
                     return $generator->uuid();
                 };
             case 'string':
-                $columnData = $schema->column($column);
+                if (method_exists($schema, 'getColumn')) {
+                    $columnData = $schema->getColumn($column);
+                } else {
+                    $columnData = $schema->column($column);
+                }
                 $length = $columnData['length'];
                 return function () use ($generator, $length) {
                     return $generator->text($length);

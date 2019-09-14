@@ -21,9 +21,6 @@ class AddressTest extends TestCase
       $this->faker = $faker;
   }
 
-  /**
-   * @test
-   */
   public function testCityName()
   {
     $city = $this->faker->cityName();
@@ -31,9 +28,6 @@ class AddressTest extends TestCase
     $this->assertInternalType('string', $city);
   }
 
-  /**
-   * @test
-   */
   public function testDistrict()
   {
     $district = $this->faker->district();
@@ -41,9 +35,6 @@ class AddressTest extends TestCase
     $this->assertInternalType('string', $district);
   }
 
-  /**
-   * @test
-   */
   public function testRegion()
   {
     $region = $this->faker->region();

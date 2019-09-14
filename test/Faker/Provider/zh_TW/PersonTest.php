@@ -40,6 +40,6 @@ class PersonTest extends TestCase
         }
 
         // Validate
-        $this->assertEquals(0, ($total % 10));
+        $this->assertEquals(0, $total % 10);
     }
 }

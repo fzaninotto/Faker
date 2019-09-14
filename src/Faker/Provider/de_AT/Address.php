@@ -13,7 +13,18 @@ class Address extends \Faker\Provider\Address
         'gasse', 'platz', 'ring', 'straße', 'weg',
     );
 
-    protected static $postcode = array('####');
+    // As per https://en.wikipedia.org/wiki/List_of_postal_codes_in_Austria (@todo implement more strict postal code values according to wikipedia)
+    protected static $postcode = array(
+        '1###',
+        '2###',
+        '3###',
+        '4###',
+        '5###',
+        '6###',
+        '7###',
+        '8###',
+        '9###',
+    );
 
     protected static $cityNames = array(
         'Allentsteig', 'Altheim', 'Althofen', 'Amstetten', 'Ansfelden', 'Attnang-Puchheim',
