@@ -40,31 +40,28 @@ class TextTest extends TestCase
         $this->assertLessThan($length, $this->generator->realText($length));
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testTextMaxIndex()
     {
+        $this->setExpectedException(\InvalidArgumentException::class);
+
         $this->generator->realText(200, 11);
 
         $this->fail('The index should be less than or equal to 5.');
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testTextMinIndex()
     {
+        $this->setExpectedException(\InvalidArgumentException::class);
+
         $this->generator->realText(200, 0);
 
         $this->fail('The index should be greater than or equal to 1.');
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testTextMinLength()
     {
+        $this->setExpectedException(\InvalidArgumentException::class);
+
         $this->generator->realText(9);
 
         $this->fail('The text should be at least 10 characters.');
