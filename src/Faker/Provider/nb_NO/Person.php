@@ -300,7 +300,7 @@ class Person extends \Faker\Provider\Person
         */
         $randomDigits = (string)static::numerify('##');
 
-        switch($gender) {
+        switch ($gender) {
             case static::GENDER_MALE:
                 $genderDigit = static::randomElement(array(1,3,5,7,9));
                 break;

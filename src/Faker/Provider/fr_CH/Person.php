@@ -87,4 +87,29 @@ class Person extends \Faker\Provider\fr_FR\Person
         'Waeber', 'Weber', 'Wenger', 'Widmer', 'Wyss',
         'Zbinden', 'Zimmermann',
     );
+
+    /**
+     * Generates a valid random AVS13 (swiss social security) number
+     *
+     * This function will generate a valid random AVS13 number and return it
+     * as a formatted string.
+     *
+     * @see https://www.zas.admin.ch/zas/fr/home/partenaires-et-institutions-/navs13.html
+     * @return string
+     */
+    public static function avs13()
+    {
+        $p = array(
+            756,
+            self::numerify('####'),
+            self::numerify('####'),
+            self::numerify('#'),
+        );
+
+        $checksum = \Faker\Calculator\Ean::checksum(implode($p));
+
+        $avs = sprintf("%s.%s.%s.%s%s", $p[0], $p[1], $p[2], $p[3], $checksum);
+
+        return $avs;
+    }
 }
