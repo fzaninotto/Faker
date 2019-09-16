@@ -10,7 +10,7 @@ class Uuid extends Base
      */
     public static function uuid()
     {
-        // fix for compatibility with 32bit architecture; seed range restricted to 62bit
+        // fix for compatibility with 32bit architecture; seed range restricted to 32bit
         $seed = mt_rand(0, 2147483647) . '#' . mt_rand(0, 2147483647);
 
         // Hash the seed and convert to a byte array
