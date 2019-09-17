@@ -61,7 +61,7 @@ class Image extends Base
      *
      * @example '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
      */
-        public static function image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true, $randomize = true, $word = null)
+    public static function image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true, $randomize = true, $word = null, $gray = false)
     {
         $dir = is_null($dir) ? sys_get_temp_dir() : $dir; // GNU/Linux / OS X / Windows compatible
             
@@ -75,7 +75,7 @@ class Image extends Base
         $name = md5(uniqid(empty($_SERVER['SERVER_ADDR']) ? '' : $_SERVER['SERVER_ADDR'], true));
         $filename = $name .'.jpg';
         $filepath = $dir . DIRECTORY_SEPARATOR . $filename;
-        $url = static::imageUrl($width, $height, $category, $randomize, $word);
+        $url = static::imageUrl($width, $height, $category, $randomize, $word, $gray);
 
         // save file
         $success = false;

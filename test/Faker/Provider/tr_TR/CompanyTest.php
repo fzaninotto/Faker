@@ -4,8 +4,9 @@ namespace Faker\Test\Provider\tr_TR;
 
 use Faker\Provider\tr_TR\Company;
 use Faker\Generator;
+use PHPUnit\Framework\TestCase;
 
-class CompanyTest extends \PHPUnit_Framework_TestCase
+class CompanyTest extends TestCase
 {
 
     /**
