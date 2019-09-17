@@ -36,7 +36,7 @@ class Internet extends \Faker\Provider\Internet
     );
 
     /*
-     * @link https://www.behindthename.com/submit/names/usage/pashto
+     * @link https://en.wikipedia.org/wiki/Category:Pashtun_names
      */
     protected static $firstNameAscii = array(
         'Aashna','Abdal','Afrasiab', 'Aghala','Amiergol', 'Apana','Apriday','Ara','Asghar','Ashrafm','Atal','Balbala','Barsala',

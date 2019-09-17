@@ -47,7 +47,6 @@ class ImageTest extends TestCase
     public function testDownloadWithDefaults()
     {
         $url = "http://lorempixel.com/";
-        
         $curlPing = curl_init($url);
         curl_setopt($curlPing, CURLOPT_TIMEOUT, 5);
         curl_setopt($curlPing, CURLOPT_CONNECTTIMEOUT, 5);
