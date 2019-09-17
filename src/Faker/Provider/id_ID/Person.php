@@ -332,7 +332,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Generates birth place code for NIK
-     * 
+     *
      * @link https://id.wikipedia.org/wiki/Nomor_Induk_Kependudukan
      * @link http://informasipedia.com/wilayah-indonesia/daftar-kabupaten-kota-di-indonesia/
      */
