@@ -11,18 +11,15 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     protected static $zeroToEight = array(0, 1, 2, 3, 4, 5, 6, 7, 8);
 
-    protected static $oneToNine = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
+    protected static $oneToEight = array(1, 2, 3, 4, 5, 6, 7, 8);
 
     protected static $mobileNumberFormats = array(
         '{{internationalCodePrefix}}9{{zeroToEight}}## ####',
         '{{internationalCodePrefix}} 9{{zeroToEight}}## ####',
         '9{{zeroToEight}}## ####',
-        '{{internationalCodePrefix}}8{{oneToNine}}## ####',
-        '{{internationalCodePrefix}} 8{{oneToNine}}## ####',
-        '8{{oneToNine}}## ####',
-        '{{internationalCodePrefix}}7{{oneToNine}}## ####',
-        '{{internationalCodePrefix}} 7{{oneToNine}}## ####',
-        '7{{oneToNine}}## ####',
+        '{{internationalCodePrefix}}8{{oneToEight}}## ####',
+        '{{internationalCodePrefix}} 8{{oneToEight}}## ####',
+        '8{{oneToEight}}## ####',
     );
 
     protected static $fixedLineNumberFormats = array(
@@ -103,8 +100,8 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         return static::randomElement(static::$zeroToEight);
     }
 
-    public function oneToNine()
+    public function oneToEight()
     {
-        return static::randomElement(static::$oneToNine);
+        return static::randomElement(static::$oneToEight);
     }
 }
