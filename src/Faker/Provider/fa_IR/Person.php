@@ -132,7 +132,7 @@ class Person extends \Faker\Provider\Person
         'یاحقی', 'یثربی', 'یلدا',
     );
 
-    protected static $titleMale = array('آقای', 'استاد', 'دکتر', 'مهندس');
+    protected static $titleMale = array('آقای', 'استاد', 'دکتر', 'مهندس', 'حاج' , 'آیت الله');
     protected static $titleFemale = array('خانم', 'استاد', 'دکتر', 'مهندس');
 
     /**
