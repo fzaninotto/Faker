@@ -2,7 +2,6 @@
 
 namespace Faker\Provider\dv_MV;
 
-
 class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = array(

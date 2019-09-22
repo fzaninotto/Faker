@@ -2,7 +2,6 @@
 
 namespace Faker\Provider\dv_MV;
 
-
 class Text extends \Faker\Provider\Text
 {
     protected static function validStart($word)
