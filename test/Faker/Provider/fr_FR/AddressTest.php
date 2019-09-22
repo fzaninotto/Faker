@@ -21,9 +21,6 @@ class AddressTest extends TestCase
       $this->faker = $faker;
   }
 
-  /**
-   * @test
-   */
   public function testSecondaryAddress()
   {
     $secondaryAdress = $this->faker->secondaryAddress();

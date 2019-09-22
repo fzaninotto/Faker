@@ -2,6 +2,8 @@
 
 namespace Faker\Provider\it_IT;
 
+use Faker\Calculator\Luhn;
+
 class Company extends \Faker\Provider\Company
 {
     protected static $formats = array(
@@ -46,7 +48,7 @@ class Company extends \Faker\Provider\Company
             $result[] = static::randomElement($word);
         }
 
-        return join($result, ' ');
+        return join(' ', $result);
     }
 
     /**
@@ -59,7 +61,7 @@ class Company extends \Faker\Provider\Company
             $result[] = static::randomElement($word);
         }
 
-        return join($result, ' ');
+        return join(' ', $result);
     }
 
     /**
@@ -69,6 +71,8 @@ class Company extends \Faker\Provider\Company
      */
     public static function vatId()
     {
-        return static::numerify('IT###########');
+        $code = sprintf('%s%03d', static::numerify('#######'), static::numberBetween(1, 121));
+
+        return sprintf('IT%s%d', $code, Luhn::computeCheckDigit($code));
     }
 }

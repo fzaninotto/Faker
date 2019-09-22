@@ -67,7 +67,7 @@ class Address extends \Faker\Provider\Address
 
     /**
      * 'Jalan' & 'Jln' are more frequently used than 'Lorong'
-     * 
+     *
      * @link https://en.wikipedia.org/wiki/List_of_roads_in_Kuala_Lumpur#Standard_translations
      */
     protected static $streetPrefix = array(
@@ -117,7 +117,7 @@ class Address extends \Faker\Provider\Address
 
     /**
      * 'Bandar' and 'Taman' are the most common township prefix
-     * 
+     *
      * @link https://en.wikipedia.org/wiki/Template:Greater_Kuala_Lumpur > Townships
      * @link https://en.wikipedia.org/wiki/Template:Johor > Townships
      * @link https://en.wikipedia.org/wiki/Template:Kedah > Townships
@@ -497,9 +497,9 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Return a building prefix
-     * 
+     *
      * @example 'No.'
-     * 
+     *
      * @return @string
      */
     public static function buildingPrefix()
@@ -509,9 +509,9 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Return a building number
-     * 
+     *
      * @example '123'
-     * 
+     *
      * @return @string
      */
     public static function buildingNumber()
@@ -521,7 +521,7 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Return a street prefix
-     * 
+     *
      * @example 'Jalan'
      */
     public function streetPrefix()
@@ -533,9 +533,9 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Return a complete streename
-     * 
+     *
      * @example 'Jalan Utama 7'
-     * 
+     *
      * @return @string
      */
     public function streetName()
@@ -547,9 +547,9 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Return a randown township
-     * 
+     *
      * @example Taman Bahagia
-     * 
+     *
      * @return @string
      */
     public function township()
@@ -561,9 +561,9 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Return a township prefix abbreviation
-     * 
+     *
      * @example 'USJ'
-     * 
+     *
      * @return @string
      */
     public function townshipPrefixAbbr()
@@ -573,9 +573,9 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Return a township prefix
-     * 
+     *
      * @example 'Taman'
-     * 
+     *
      * @return @string
      */
     public function townshipPrefix()
@@ -585,7 +585,7 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Return a township suffix
-     * 
+     *
      * @example 'Bahagia'
      */
     public function townshipSuffix()
@@ -595,12 +595,12 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Return a postcode based on state
-     * 
+     *
      * @example '55100'
      * @link https://en.wikipedia.org/wiki/Postal_codes_in_Malaysia#States
-     * 
+     *
      * @param null|string $state 'state' or null
-     * 
+     *
      * @return @string
      */
     public static function postcode($state = null)
@@ -665,9 +665,9 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Return the complete town address with matching postcode and state
-     * 
+     *
      * @example 55100 Bukit Bintang, Kuala Lumpur
-     * 
+     *
      * @return @string
      */
     public function townState()
@@ -682,9 +682,9 @@ class Address extends \Faker\Provider\Address
     
     /**
      * Return a random city (town)
-     * 
+     *
      * @example 'Ampang'
-     * 
+     *
      * @return @string
     */
     public function city()
@@ -695,9 +695,9 @@ class Address extends \Faker\Provider\Address
     
     /**
      * Return a random state
-     * 
+     *
      * @example 'Johor'
-     * 
+     *
      * @return @string
     */
     public function state()
