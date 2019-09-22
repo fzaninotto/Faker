@@ -13,7 +13,7 @@ class Company extends \Faker\Provider\Company
 
     /**
      * There are more Private Limited Companies(Sdn Bhd) than Public Listed Companies(Berhad)
-     * 
+     *
      * @link http://www.risscorporateservices.com/types-of-business-entities.html
      */
     protected static $companySuffix = array(
@@ -85,7 +85,7 @@ class Company extends \Faker\Provider\Company
 
     /**
      * Return a random company name
-     * 
+     *
      * @example 'AirAsia'
      */
     public static function companyName()
@@ -95,7 +95,7 @@ class Company extends \Faker\Provider\Company
 
     /**
      * Return a random industry
-     * 
+     *
      * @example 'Automobil'
      */
     public static function industry()
