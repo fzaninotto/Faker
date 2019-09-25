@@ -194,6 +194,8 @@ namespace Faker;
  *
  * @method string randomHtml($maxDepth = 4, $maxWidth = 4)
  *
+ * @method string gravatarUrl(string $mode = null, string $email = null, int $size = 80)
+ * @method string gravatar(string $dir = null, string $mode = null, string $email = null, int $size = 80)
  */
 class Generator
 {
