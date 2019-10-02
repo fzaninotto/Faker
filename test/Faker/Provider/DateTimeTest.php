@@ -236,7 +236,7 @@ class DateTimeTest extends TestCase
 
     public function testFixedSeedWithMaximumTimestamp()
     {
-        $max = date('Y-m-d H:i:s');
+        $max = date(DATE_W3C);
 
         mt_srand(1);
         $unixTime = DateTimeProvider::unixTime($max);
