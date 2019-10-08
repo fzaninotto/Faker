@@ -7,7 +7,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     /**
      * @link https://fa.wikipedia.org/wiki/%D8%B4%D9%85%D8%A7%D8%B1%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C_%D8%AA%D9%84%D9%81%D9%86_%D8%AF%D8%B1_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86#.D8.AA.D9.84.D9.81.D9.86.E2.80.8C.D9.87.D8.A7.DB.8C_.D9.87.D9.85.D8.B1.D8.A7.D9.87
      */
-    protected static $formats = array( // land line formts seprated by province 
+    protected static $formats = array( // land line formts seprated by province
         "011########", //Mazandaran
         "013########", //Gilan
         "017########", //Golestan
@@ -65,8 +65,8 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '0939#######',
         '0920#######',
         '0921#######',
-        '0937#######', 
-        '0990#######', // MCI 
+        '0937#######',
+        '0990#######', // MCI
     );
     public static function mobileNumber()
     {
