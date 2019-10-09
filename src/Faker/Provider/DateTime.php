@@ -236,7 +236,7 @@ class DateTime extends Base
      * @example DateTime('1964-04-04 11:02:02')
      * @return \DateTime
      */
-    public static function dateTImePastCentury($max = 'now', $timezone = null)
+    public static function dateTimePastCentury($max = 'now', $timezone = null)
     {
         return static::dateTimeBetween('-100 year', $max, $timezone);
     }
