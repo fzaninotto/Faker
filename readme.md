@@ -191,14 +191,6 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     dateTimePastDecade($max = 'now', $timezone = null)      // DateTime('2007-05-29 22:30:48', 'Europe/Paris')
     dateTimePastYear($max = 'now', $timezone = null)        // DateTime('2011-02-27 20:52:14', 'Africa/Lagos')
     dateTimePastMonth($max = 'now', $timezone = null)       // DateTime('2011-10-23 13:46:23', 'Antarctica/Vostok')
-    dateTimeCurrentCentury($max = 'now', $timezone = null)  // DateTime('2000-02-21 12:14:23', 'UTC')
-    dateTimeCurrentDecade($max = 'now', $timezone = null)   // DateTime('2010-03-02 12:14:23', 'Europe/Paris')
-    dateTimeCurrentYear($max = 'now', $timezone = null)     // DateTime('2019-05-30 12:14:23', 'Africa/Lagos')
-    dateTimeCurrentMonth($max = 'now', $timezone = null)    // DateTime('2019-09-01 12:14:23', 'Antarctica/Vostok')
-    dateTimeLastCentury($max = 'now', $timezone = null)     // DateTime('1900-02-21 12:14:23', 'UTC')
-    dateTimeLastDecade($max = 'now', $timezone = null)      // DateTime('2000-03-02 12:14:23', 'Europe/Paris')
-    dateTimeLastYear($max = 'now', $timezone = null)        // DateTime('2018-05-30 12:14:23', 'Africa/Lagos')
-    dateTimeLastMonth($max = 'now', $timezone = null)       // DateTime('2019-08-01 12:14:23', 'Antarctica/Vostok')
     amPm($max = 'now')                    // 'pm'
     dayOfMonth($max = 'now')              // '04'
     dayOfWeek($max = 'now')               // 'Friday'
