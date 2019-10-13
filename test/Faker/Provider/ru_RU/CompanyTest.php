@@ -34,4 +34,13 @@ class CompanyTest extends TestCase
         $inn = $this->faker->inn;
         $this->assertEquals(substr($inn, 0, 4), substr($this->faker->kpp($inn), 0, 4));
     }
+
+    public function testCatchPhrase()
+    {
+        $phrase = $this->faker->catchPhrase;
+        $this->assertNotNull($phrase);
+        $this->assertGreaterThanOrEqual(3,
+            count(explode(' ', $this->faker->catchPhrase)),
+            "'$phrase' - should be contain 3 word");
+    }
 }

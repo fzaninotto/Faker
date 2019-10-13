@@ -19,4 +19,23 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '9#######',
         '4#######',
     );
+
+    /**
+     * @var array Norweign mobile number formats
+     */
+    protected static $mobileFormats = array(
+        '+474#######',
+        '+479#######',
+        '9## ## ###',
+        '4## ## ###',
+        '9#######',
+        '4#######',
+    );
+
+    public function mobileNumber()
+    {
+        $format = static::randomElement(static::$mobileFormats);
+
+        return self::numerify($this->generator->parse($format));
+    }
 }
