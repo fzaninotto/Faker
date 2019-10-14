@@ -16,8 +16,5 @@ class MobileCarrier extends Base
     public function carrier()
     {
         return static::randomElement(static::$networks);
-
     }//end carrier()
-
-
 }//end class

@@ -26,16 +26,16 @@ class MobileCarrierTest extends TestCase
                                    'Smile',
                                   );
         $this->faker            = \Faker\Factory::create($this->locale);
-
     }//end setUp()
 
 
     public function testNigerianMobileCarrier()
     {
         $mobileCarrier = $this->faker->carrier();
-        $this->assertContains($mobileCarrier, $this->nigerianCarriers, "Invalid mobile carrier returned for ".$this->locale);
-
+        $this->assertContains(
+            $mobileCarrier,
+            $this->nigerianCarriers,
+            "Invalid mobile carrier returned for ".$this->locale
+        );
     }//end testNigerianMobileCarrier()
-
-
 }//end class

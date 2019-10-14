@@ -17,7 +17,6 @@ class MobileCarrierTest extends TestCase
         $faker = new Generator();
         $faker->addProvider(new MobileCarrier($faker));
         $this->faker = $faker;
-
     }//end setUp()
 
 
@@ -25,8 +24,5 @@ class MobileCarrierTest extends TestCase
     {
         $mobileCarrier = $this->faker->carrier();
         $this->assertNotEmpty($mobileCarrier, "Empty result returned by formatter: ".PHP_EOL);
-
     }//end testMobileCarrier()
-
-
 }//end class

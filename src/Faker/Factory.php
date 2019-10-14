@@ -6,33 +6,14 @@ class Factory
 {
     const DEFAULT_LOCALE = 'en_US';
 
-    protected static $defaultProviders = array(
-                                          'Address',
-                                          'Barcode',
-                                          'Biased',
-                                          'Color',
-                                          'Company',
-                                          'DateTime',
-                                          'File',
-                                          'HtmlLorem',
-                                          'Image',
-                                          'Internet',
-                                          'Lorem',
-                                          'Miscellaneous',
-                                          'Payment',
-                                          'Person',
-                                          'PhoneNumber',
-                                          'Text',
-                                          'UserAgent',
-                                          'Uuid',
-                                          'MobileCarrier',
-                                         );
-
+    protected static $defaultProviders = array('Address', 'Barcode', 'Biased', 'Color', 'Company', 'DateTime', 'File',
+    'HtmlLorem', 'Image', 'Internet', 'Lorem', 'Miscellaneous', 'Payment', 'Person', 'PhoneNumber', 'Text',
+    'UserAgent', 'Uuid', 'MobileCarrier');
 
     /**
      * Create a new generator
      *
-     * @param  string $locale
+     * @param string $locale
      * @return Generator
      */
     public static function create($locale = self::DEFAULT_LOCALE)
@@ -44,9 +25,7 @@ class Factory
         }
 
         return $generator;
-
-    }//end create()
-
+    }
 
     /**
      * @param string $provider
@@ -58,21 +37,16 @@ class Factory
         if ($providerClass = self::findProviderClassname($provider, $locale)) {
             return $providerClass;
         }
-
         // fallback to default locale
         if ($providerClass = self::findProviderClassname($provider, static::DEFAULT_LOCALE)) {
             return $providerClass;
         }
-
         // fallback to no locale
         if ($providerClass = self::findProviderClassname($provider)) {
             return $providerClass;
         }
-
         throw new \InvalidArgumentException(sprintf('Unable to find provider "%s" with locale "%s"', $provider, $locale));
-
-    }//end getProviderClassname()
-
+    }
 
     /**
      * @param string $provider
@@ -81,12 +55,9 @@ class Factory
      */
     protected static function findProviderClassname($provider, $locale = '')
     {
-        $providerClass = 'Faker\\'.($locale ? sprintf('Provider\%s\%s', $locale, $provider) : sprintf('Provider\%s', $provider));
+        $providerClass = 'Faker\\' . ($locale ? sprintf('Provider\%s\%s', $locale, $provider) : sprintf('Provider\%s', $provider));
         if (class_exists($providerClass, true)) {
             return $providerClass;
         }
-
-    }//end findProviderClassname()
-
-
-}//end class
+    }
+}
