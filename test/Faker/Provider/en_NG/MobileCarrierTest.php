@@ -17,9 +17,8 @@ class MobileCarrierTest extends TestCase {
 	private $nigerianCarriers;
 	private $locale = 'en_NG';
 
-	public function setUp()
-	{
-		$this->nigerianCarriers = [
+	public function setUp() {
+		$this->nigerianCarriers = array(
 			'Airtel',
 			'9mobile',
 			'Globacom',
@@ -29,12 +28,12 @@ class MobileCarrierTest extends TestCase {
 			'Visafone',
 			'ZoomMobile',
 			'Smile'
-		];
-		$this->faker = \Faker\Factory::create($this->locale);
+		);
+		$this->faker            = \Faker\Factory::create( $this->locale );
 	}
-	public function testNigerianMobileCarrier()
-	{
+
+	public function testNigerianMobileCarrier() {
 		$mobileCarrier = $this->faker->carrier();
-		$this->assertContains($mobileCarrier, $this->nigerianCarriers, "Invalid mobile carrer returned for ".$this->locale);
+		$this->assertContains( $mobileCarrier, $this->nigerianCarriers, "Invalid mobile carrier returned for " . $this->locale );
 	}
 }

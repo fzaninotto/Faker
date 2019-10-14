@@ -20,9 +20,8 @@ class MobileCarrier extends Base {
 		'U.S. Cellular'
 	);
 
-	public function carrier()
-	{
-		return static::randomElement(static::$networks);
+	public function carrier() {
+		return static::randomElement( static::$networks );
 	}
 
 }
