@@ -12,6 +12,10 @@ class Person extends \Faker\Provider\Person
         '{{lastName}}{{firstNameFemale}}',
     );
 
+    protected static $titleMale = array('先生', '医生', '老师', '教授', '律师', '经理');
+
+    protected static $titleFemale = array('女士', '小姐', '夫人', '太太', '医生', '老师', '教授', '律师', '经理');
+
     /**
      * According to http://baike.baidu.com/view/6109935.htm,
      * these are the top 300 lastnames from the 6th Chinese national census of population,

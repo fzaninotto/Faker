@@ -115,6 +115,33 @@ class Color extends Base
     }
 
     /**
+     * @example '340,50,20'
+     * @return string
+     */
+    public static function hslColor()
+    {
+        return sprintf(
+            '%s,%s,%s',
+            static::numberBetween(0, 360),
+            static::numberBetween(0, 100),
+            static::numberBetween(0, 100)
+        );
+    }
+
+    /**
+     * @example array(340, 50, 20)
+     * @return array
+     */
+    public static function hslColorAsArray()
+    {
+        return array(
+            static::numberBetween(0, 360),
+            static::numberBetween(0, 100),
+            static::numberBetween(0, 100)
+        );
+    }
+
+    /**
      * @example 'olive'
      */
     public static function htmlColorName()

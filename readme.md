@@ -51,14 +51,29 @@ composer require fzaninotto/faker
 
 ## Basic Usage
 
+### Autoloading
+
+Faker supports both `PSR-0` as `PSR-4` autoloaders. 
+```php
+<?php
+# When installed via composer
+require_once 'vendor/autoload.php';
+```
+
+You can also load `Fakers` shipped `PSR-0` autoloader
+```php
+<?php
+# Load Fakers own autoloader
+require_once '/path/to/Faker/src/autoload.php';
+```
+
+*alternatively, you can use any another PSR-4 compliant autoloader*
+
+### Create fake data
 Use `Faker\Factory::create()` to create and initialize a faker generator, which can generate data by accessing properties named after the type of data you want.
 
 ```php
 <?php
-// require the Faker autoloader
-require_once '/path/to/Faker/src/autoload.php';
-// alternatively, use another PSR-4 compliant autoloader
-
 // use the factory to create a Faker\Generator instance
 $faker = Faker\Factory::create();
 
@@ -103,6 +118,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 ### `Faker\Provider\Base`
 
     randomDigit             // 7
+    randomDigitNot(5)       // 0, 1, 2, 3, 4, 6, 7, 8, or 9
     randomDigitNotNull      // 5
     randomNumber($nbDigits = NULL, $strict = false) // 79907610
     randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL) // 48.8932
@@ -250,6 +266,8 @@ Methods accepting a `$timezone` argument default to `date_default_timezone_get()
     rgbCssColor            // 'rgb(0,255,122)'
     safeColorName          // 'fuchsia'
     colorName              // 'Gainsbor'
+    hslColor               // '340,50,20'
+    hslColorAsArray        // array(340,50,20)
 
 ### `Faker\Provider\File`
 
@@ -265,7 +283,7 @@ Methods accepting a `$timezone` argument default to `date_default_timezone_get()
     imageUrl($width = 640, $height = 480) // 'http://lorempixel.com/640/480/'
     imageUrl($width, $height, 'cats')     // 'http://lorempixel.com/800/600/cats/'
     imageUrl($width, $height, 'cats', true, 'Faker') // 'http://lorempixel.com/800/400/cats/Faker'
-    imageUrl($width, $height, 'cats', true, 'Faker', true) // 'http://lorempixel.com/grey/800/400/cats/Faker/' Monochrome image
+    imageUrl($width, $height, 'cats', true, 'Faker', true) // 'http://lorempixel.com/gray/800/400/cats/Faker/' Monochrome image
     image($dir = '/tmp', $width = 640, $height = 480) // '/tmp/13b73edae8443990be1aa8f1a483bc27.jpg'
     image($dir, $width, $height, 'cats')  // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat!
     image($dir, $width, $height, 'cats', false) // '13b73edae8443990be1aa8f1a483bc27.jpg' it's a filename without path
@@ -407,6 +425,9 @@ Faker provides adapters for Object-Relational and Object-Document Mappers (curre
 
 To populate entities, create a new populator class (using a generator instance as parameter), then list the class and number of all the entities that must be generated. To launch the actual data population, call the `execute()` method.
 
+Note that some of the `populators` could require additional parameters. As example the `doctrine` populator has an option to specify
+its batchSize on how often it will flush the UnitOfWork to the database.
+
 Here is an example showing how to populate 5 `Author` and 10 `Book` objects:
 
 ```php
@@ -449,6 +470,8 @@ print_r($insertedPKs);
 //   'Book'   => (456, 457, 458, 459, 470, 471, 472, 473, 474, 475)
 // )
 ```
+
+**Note:** Due to the fact that `Faker` returns all the primary keys inserted, the memory consumption will go up drastically when you do batch inserts due to the big list of data.
 
 In the previous example, the `Book` and `Author` models share a relationship. Since `Author` entities are populated first, Faker is smart enough to relate the populated `Book` entities to one of the populated `Author` entities.
 
@@ -859,6 +882,15 @@ echo $faker->cvr; // "32458723"
 echo $faker->p; // "5398237590"
 ```
 
+### `Faker\Provider\de_CH\Person`
+```php
+<?php
+
+// Generates a random AVS13/AHV13 social security number
+echo $faker->avs13; // "756.1234.5678.97" OR
+echo $faker->ahv13; // "756.1234.5678.97"
+```
+
 ### `Faker\Provider\de_DE\Payment`
 
 ```php
@@ -1014,6 +1046,18 @@ echo $faker->licenceCode; // B
 echo $faker->vat;           // "A35864370"
 ```
 
+### `Faker\Provider\es_ES\PhoneNumber`
+
+```php
+<?php
+
+// Generates a special rate toll free phone number
+echo $faker->tollFreeNumber; // 900 123 456
+
+// Generates a mobile phone number
+echo $faker->mobileNumber; // +34 612 12 24
+```
+
 ### `Faker\Provider\es_PE\Person`
 
 ```php
@@ -1099,6 +1143,14 @@ echo $faker->nationalId; // 'V11223344'
 
 // Generates a R.I.F. number, you can pass one argument to add separators
 echo $faker->taxpayerIdentificationNumber; // 'J1234567891'
+```
+
+### `Faker\Provider\fr_CH\Person`
+```php
+<?php
+
+// Generates a random AVS13/AHV13 social security number
+echo $faker->avs13; // "756.1234.5678.97"
 ```
 
 ### `Faker\Provider\fr_FR\Address`
@@ -1199,6 +1251,14 @@ echo $faker->bankAccountNumber; // "HU09904437680048220079300783"
 // first argument is gender, either Person::GENDER_MALE or Person::GENDER_FEMALE, if none specified random gender is used
 // second argument is birth date (DateTime object), if none specified, random birth date is used
 echo $faker->nik(); // "8522246001570940"
+```
+
+### `Faker\Provider\it_CH\Person`
+```php
+<?php
+
+// Generates a random AVS13/AHV13 social security number
+echo $faker->avs13; // "756.1234.5678.97"
 ```
 
 ### `Faker\Provider\it_IT\Company`
@@ -1421,6 +1481,7 @@ echo $faker->rrn('female'); // "50032089858" - Belgian Rijksregisternummer for a
 ```php
 <?php
 
+echo $faker->jobTitle; // "Houtbewerker"
 echo $faker->vat; // "NL123456789B01" - Dutch Value Added Tax number
 echo $faker->btw; // "NL123456789B01" - Dutch Value Added Tax number (alias)
 ```
@@ -1431,6 +1492,17 @@ echo $faker->btw; // "NL123456789B01" - Dutch Value Added Tax number (alias)
 <?php
 
 echo $faker->idNumber; // "111222333" - Dutch Personal identification number (BSN)
+```
+
+### `Faker\Provider\nb_NO\MobileNumber`
+
+```php
+<?php
+
+// Generates a random Norwegian mobile phone number
+echo $faker->mobileNumber; // "+4799988777"
+echo $faker->mobileNumber; // "999 88 777"
+echo $faker->mobileNumber; // "99988777"
 ```
 
 ### `Faker\Provider\nb_NO\Payment`
@@ -1687,33 +1759,36 @@ echo $faker->VAT; //23456789
 
 ## Third-Party Libraries Extending/Based On Faker
 
-* Symfony2 bundles:
-  * [BazingaFakerBundle](https://github.com/willdurand/BazingaFakerBundle): Put the awesome Faker library into the Symfony2 DIC and populate your database with fake data.
-  * [AliceBundle](https://github.com/hautelook/AliceBundle), [AliceFixturesBundle](https://github.com/h4cc/AliceFixturesBundle): Bundles for using [Alice](https://packagist.org/packages/nelmio/alice) and Faker with data fixtures. Able to use Doctrine ORM as well as Doctrine MongoDB ODM.
-* [FakerServiceProvider](https://github.com/EmanueleMinotto/FakerServiceProvider): Faker Service Provider for Silex
-* [faker-cli](https://github.com/bit3/faker-cli): Command Line Tool for the Faker PHP library
-* [Factory Muffin](https://github.com/thephpleague/factory-muffin): enable the rapid creation of objects (PHP port of factory-girl)
-* [CompanyNameGenerator](https://github.com/fzaninotto/CompanyNameGenerator): Generate names for English tech companies with class
-* [PlaceholdItProvider](https://github.com/EmanueleMinotto/PlaceholdItProvider): Generate images using placehold.it
-* [datalea](https://github.com/spyrit/datalea) A highly customizable random test data generator web app
-* [newage-ipsum](https://github.com/frequenc1/newage-ipsum): A new aged ipsum provider for the faker library inspired by http://sebpearce.com/bullshit/
-* [xml-faker](https://github.com/prewk/xml-faker): Create fake XML with Faker
-* [faker-context](https://github.com/denheck/faker-context): Behat context using Faker to generate testdata
-* [CronExpressionGenerator](https://github.com/swekaj/CronExpressionGenerator): Faker provider for generating random, valid cron expressions.
-* [pragmafabrik/Pomm2Faker](https://github.com/pragmafabrik/Pomm2Faker): Faker client for Pomm database framework (PostgreSQL)
-* [nelmio/alice](https://packagist.org/packages/nelmio/alice): Fixtures/object generator with a yaml DSL that can use Faker as data generator.
-* [CakePHP 2.x Fake Seeder Plugin](https://github.com/ravage84/cakephp-fake-seeder) A CakePHP 2.x shell to seed your database with fake and/or fixed data.
-* [images-generator](https://github.com/bruceheller/images-generator): An image generator provider using GD for placeholder type pictures
-* [pattern-lab/plugin-php-faker](https://github.com/pattern-lab/plugin-php-faker): Pattern Lab is a Styleguide, Component Library, and Prototyping tool. This creates unique content each time Pattern Lab is generated.
-* [guidocella/eloquent-populator](https://github.com/guidocella/eloquent-populator): Adapter for Laravel's Eloquent ORM.
-* [tamperdata/exiges](https://github.com/tamperdata/exiges): Faker provider for generating random temperatures
-* [jzonta/FakerRestaurant](https://github.com/jzonta/FakerRestaurant): Faker for Food and Beverage names generate
-* [aalaap/faker-youtube](https://github.com/aalaap/faker-youtube): Faker for YouTube URLs in various formats
-* [pelmered/fake-car](https://github.com/pelmered/fake-car): Faker for cars and car data
-* [bluemmb/Faker-PicsumPhotos](https://github.com/bluemmb/Faker-PicsumPhotos): Generate images using [picsum.photos](http://picsum.photos/)
-* [er1z/fakemock](https://github.com/er1z/fakemock): Generate mocks using class-configuration and detection via Faker's guesser and Symfony asserts
-* [xvladxtremal/Faker-LoremFlickr](https://github.com/xvladxtremal/Faker-LoremFlickr): Generate images using [loremflickr.com](http://loremflickr.com/)
+* Symfony bundles:
+  * [`willdurand/faker-bundle`](https://github.com/willdurand/BazingaFakerBundle): Put the awesome Faker library into the Symfony2 DIC and populate your database with fake data.
+  * [`hautelook/alice-bundle`](https://github.com/hautelook/AliceBundle), [`h4cc/alice-fixtures-bundle`](https://github.com/h4cc/AliceFixturesBundle): Bundles for using [`nelmio/alice`](https://packagist.org/packages/nelmio/alice) and Faker with data fixtures. Able to use Doctrine ORM as well as Doctrine MongoDB ODM.
+* [`emanueleminotto/faker-service-provider`](https://github.com/EmanueleMinotto/FakerServiceProvider): Faker Service Provider for Silex
+* [`bit3/faker-cli`](https://github.com/bit3/faker-cli): Command Line Tool for the Faker PHP library
+* [`league/factory-muffin`](https://github.com/thephpleague/factory-muffin): enable the rapid creation of objects (PHP port of factory-girl)
+* [`fzaninotto/company-name-generator`](https://github.com/fzaninotto/CompanyNameGenerator): Generate names for English tech companies with class
+* [`emanueleminotto/faker-placehold-it-provider`](https://github.com/EmanueleMinotto/PlaceholdItProvider): Generate images using placehold.it
+* [`spyrit/datalea`](https://github.com/spyrit/datalea) A highly customizable random test data generator web app
+* [`frequenc1/newage-ipsum`](https://github.com/frequenc1/newage-ipsum): A new aged ipsum provider for the faker library inspired by http://sebpearce.com/bullshit/
+* [`prewk/xml-faker`](https://github.com/prewk/xml-faker): Create fake XML with Faker
+* [`denheck/faker-context`](https://github.com/denheck/faker-context): Behat context using Faker to generate testdata
+* [`swekaj/cron-expression-generator`](https://github.com/swekaj/CronExpressionGenerator): Faker provider for generating random, valid cron expressions.
+* [`pragmafabrik/pomm-faker`](https://github.com/pragmafabrik/Pomm2Faker): Faker client for Pomm database framework (PostgreSQL)
+* [`nelmio/alice`](https://github.com/nelmio/alice): Fixtures/object generator with a yaml DSL that can use Faker as data generator.
+* [`ravage84/cakephp-fake-seeder`](https://github.com/ravage84/cakephp-fake-seeder) A CakePHP 2.x shell to seed your database with fake and/or fixed data.
+* [`bheller/images-generator`](https://github.com/bruceheller/images-generator): An image generator provider using GD for placeholder type pictures
+* [`pattern-lab/plugin-faker`](https://github.com/pattern-lab/plugin-php-faker): Pattern Lab is a Styleguide, Component Library, and Prototyping tool. This creates unique content each time Pattern Lab is generated.
+* [`guidocella/eloquent-populator`](https://github.com/guidocella/eloquent-populator): Adapter for Laravel's Eloquent ORM.
+* [`tamperdata/exiges`](https://github.com/tamperdata/exiges): Faker provider for generating random temperatures
+* [`jzonta/faker-restaurant`](https://github.com/jzonta/FakerRestaurant): Faker for Food and Beverage names generate
+* [`aalaap/faker-youtube`](https://github.com/aalaap/faker-youtube): Faker for YouTube URLs in various formats
+* [`pelmered/fake-car`](https://github.com/pelmered/fake-car): Faker for cars and car data
+* [`bluemmb/faker-picsum-photos-provider`](https://github.com/bluemmb/Faker-PicsumPhotos): Generate images using [picsum.photos](http://picsum.photos/)
+* [`er1z/fakemock`](https://github.com/er1z/fakemock): Generate mocks using class-configuration and detection via Faker's guesser and Symfony asserts
+* [`xvladqt/faker-lorem-flickr`](https://github.com/xvladxtremal/Faker-LoremFlickr): Generate images using [loremflickr.com](http://loremflickr.com/)
+* [`metrakit/faker-eddy-malou`](https://github.com/Metrakit/faker-eddy-malou): Generate French Eddy Malou sentences & paragraphs
+* [`drupol/belgian-national-number-faker`](https://github.com/drupol/belgian-national-number-faker): Generate fake Belgian national numbers
+* [`elgentos/masquerade`](https://github.com/elgentos/masquerade): Configuration-based, platform-agnostic, locale-compatible data faker tool (out-of-the-box support for Magento 2)
 
 ## License
 
-Faker is released under the MIT Licence. See the bundled LICENSE file for details.
+Faker is released under the MIT License. See the bundled LICENSE file for details.

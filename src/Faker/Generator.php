@@ -21,8 +21,10 @@ namespace Faker;
  * @property string $city
  * @property string $streetName
  * @property string $streetAddress
+ * @property string $secondaryAddress
  * @property string $postcode
  * @property string $address
+ * @property string $state
  * @property string $country
  * @property float  $latitude
  * @property float  $longitude
@@ -53,6 +55,7 @@ namespace Faker;
  * @property string $word
  * @property string|array $words
  * @method string|array words($nb = 3, $asText = false)
+ * @method string word()
  * @property string $sentence
  * @method string sentence($nbWords = 6, $variableNbWords = true)
  * @property string|array $sentences
@@ -133,6 +136,7 @@ namespace Faker;
  * @method boolean boolean($chanceOfGettingTrue = 50)
  *
  * @property int    $randomDigit
+ * @property int    $randomDigitNot
  * @property int    $randomDigitNotNull
  * @property string $randomLetter
  * @property string $randomAscii
