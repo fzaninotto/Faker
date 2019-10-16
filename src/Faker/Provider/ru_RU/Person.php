@@ -158,6 +158,23 @@ class Person extends \Faker\Provider\Person
     /**
      * {@inheritdoc}
      */
+    public function lastName($gender = null)
+    {
+        if ($gender === static::GENDER_MALE) {
+            return $this->lastNameMale();
+        } elseif ($gender === static::GENDER_FEMALE) {
+            return $this->lastNameFemale();
+        }
+
+        return $this->{__FUNCTION__}(static::randomElement(array(
+            static::GENDER_MALE,
+            static::GENDER_FEMALE,
+        )));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function lastNameMale()
     {
         return parent::lastName();
