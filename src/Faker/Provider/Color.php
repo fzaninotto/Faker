@@ -140,4 +140,20 @@ class Color extends Base
             static::numberBetween(0, 100)
         );
     }
+
+    /**
+     * @example 'olive'
+     */
+    public static function htmlColorName()
+    {
+        return static::randomElement(static::$safeColorNames);
+    }
+
+    /**
+     * @example 'NavajoWhite'
+     */
+    public static function x11ColorName()
+    {
+        return static::randomElement(static::$allColorNames);
+    }
 }
