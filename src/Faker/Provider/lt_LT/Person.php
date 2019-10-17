@@ -13,6 +13,11 @@ class Person extends \Faker\Provider\Person
         '{{firstNameFemale}} {{lastNameFemale}}',
     );
 
+    protected static $lastNameFormat = array(
+        '{{firstNameMale}}',
+        '{{firstNameFemale}}',
+    );
+
     protected static $titleMale = array('p.', 'ponas');
 
     protected static $titleFemale = array('p.', 'ponia', 'panelė');
@@ -246,6 +251,22 @@ class Person extends \Faker\Provider\Person
         'Žukauskienė', 'Urbonienė', 'Kavaliauskienė', 'Navickienė', 'Kazlauskaitė', 'Jankauskaitė', 'Stankevičiūtė',
         'Petrauskaitė', 'Vasiliauskaitė', 'Butkutė', 'Pociūtė', 'Lukoševičiūtė', 'Balčiūnaitė', 'Kavaliauskaitė'
     );
+
+    /**
+     * @param string|null $gender 'male', 'female' or null for any
+     * @example 'Doe'
+     * @return string
+     */
+    public function lastName($gender = null)
+    {
+        if ($gender === static::GENDER_MALE) {
+            return static::lastNameMale();
+        } elseif ($gender === static::GENDER_FEMALE) {
+            return static::lastNameFemale();
+        }
+
+        return $this->generator->parse(static::randomElement(static::$lastNameFormat));
+    }
 
     /**
      * Return male last name
