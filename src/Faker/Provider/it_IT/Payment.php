@@ -22,33 +22,12 @@ class Payment extends \Faker\Provider\Payment
      * @see https://en.wikipedia.org/wiki/List_of_banks_in_Italy
      */
     protected static $banks = array(
-        'UniCredit',
-        'Intesa Sanpaolo',
-        'Bank of Italy',
-        'Cassa Depositi e Prestiti',
-        'BancoPosta',
-        'Istituto per il Credito Sportivo',
-        'Banco BPM',
-        'Banca Monte dei Paschi di Siena',
-        'UBI Banca',
-        'Banca Nazionale del Lavoro',
-        'BPER Banca',
-        'Mediobanca',
-        'Crédit Agricole Italia',
-        'Banca Mediolanum',
-        'Banca Popolare di Sondrio',
-        'Credito Emiliano',
-        'ICCREA Banca',
-        'Credito Valtellinese',
-        'Banca Carige',
+        'Banca Carige', 'Banca di Credito Cooperativo di Roma', 'Banca Mediolanum', 'Banca Monte dei Paschi di Siena', 'Banca Nazionale del Lavoro', 'Banca Popolare di Bari', 'Banca Popolare di Sondrio', 'Banca Sella Group', 'Banco BPM', 'Banco di Desio e della Brianza', 'BancoPosta', 'Bank of Italy', 'BPER Banca',
+        'Cassa Depositi e Prestiti', 'Cassa di Risparmio di Asti', 'Crediop', 'Crédit Agricole Italia', 'Credito Emiliano', 'Credito Valtellinese',
         'Deutsche Bank (Italy)',
-        'Crediop',
-        'Banca Popolare di Bari',
-        'Banco di Desio e della Brianza',
-        'Unipol Banca',
-        'Banca Sella Group',
-        'Banca di Credito Cooperativo di Roma',
-        'Cassa di Risparmio di Asti',
+        'ICCREA Banca', 'Intesa Sanpaolo', 'Istituto per il Credito Sportivo',
+        'Mediobanca',
+        'UBI Banca', 'UniCredit', 'Unipol Banca',
     );
     /**
      * @example 'Unicredit SpA'
