@@ -75,7 +75,7 @@ class Base
         if (!$pool) {
             throw new \InvalidArgumentException('The argument is inclusive of the digits 0 to 9. A digit cannot be returned.');
         }
-        $key = array_rand($pool);
+        $key = self::randomElement($pool);
 
         return $pool[$key];
     }
