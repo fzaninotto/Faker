@@ -38,28 +38,29 @@ class BaseTest extends TestCase
     public function testRandomDigitNotInReturnsValidDigit()
     {
         for ($i = 0; $i <= 9; $i++) {
-            $this->assertGreaterThanOrEqual(0, BaseProvider::randomDigitNotIn($i));
-            $this->assertLessThan(10, BaseProvider::randomDigitNotIn($i));
-            $this->assertNotSame(BaseProvider::randomDigitNotIn($i), $i);
+            $digit = BaseProvider::randomDigitNotIn($i);
+            $this->assertGreaterThanOrEqual(0, $digit);
+            $this->assertLessThan(10, $digit);
+            $this->assertNotSame($digit, $i);
         }
 
         $array = array();
         $this->assertGreaterThanOrEqual(0, BaseProvider::randomDigitNotIn($array));
         $this->assertLessThan(10, BaseProvider::randomDigitNotIn($array));
 
-        $array = array(1, 3, 5, 7, 9);
-        $this->assertNotEquals(1, BaseProvider::randomDigitNotIn($array));
-        $this->assertNotEquals(3, BaseProvider::randomDigitNotIn($array));
-        $this->assertNotEquals(5, BaseProvider::randomDigitNotIn($array));
-        $this->assertNotEquals(7, BaseProvider::randomDigitNotIn($array));
-        $this->assertNotEquals(9, BaseProvider::randomDigitNotIn($array));
+        $digit = BaseProvider::randomDigitNotIn(array(1, 3, 5, 7, 9));
+        $this->assertNotEquals(1, $digit);
+        $this->assertNotEquals(3, $digit);
+        $this->assertNotEquals(5, $digit);
+        $this->assertNotEquals(7, $digit);
+        $this->assertNotEquals(9, $digit);
 
-        $array = array(0, 2, 4, 6, 8);
-        $this->assertNotEquals(0, BaseProvider::randomDigitNotIn($array));
-        $this->assertNotEquals(2, BaseProvider::randomDigitNotIn($array));
-        $this->assertNotEquals(4, BaseProvider::randomDigitNotIn($array));
-        $this->assertNotEquals(6, BaseProvider::randomDigitNotIn($array));
-        $this->assertNotEquals(8, BaseProvider::randomDigitNotIn($array));
+        $digit = BaseProvider::randomDigitNotIn(array(0, 2, 4, 6, 8));
+        $this->assertNotEquals(0, $digit);
+        $this->assertNotEquals(2, $digit);
+        $this->assertNotEquals(4, $digit);
+        $this->assertNotEquals(6, $digit);
+        $this->assertNotEquals(8, $digit);
     }
 
     /**
