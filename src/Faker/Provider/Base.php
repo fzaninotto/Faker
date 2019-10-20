@@ -179,7 +179,6 @@ class Base
         }
 
         return $random_arrray[array_rand($random_arrray)];
-        
     }
     
     /**
