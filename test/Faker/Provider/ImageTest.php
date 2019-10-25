@@ -90,7 +90,28 @@ class ImageTest extends TestCase
         $file = Image::image(sys_get_temp_dir());
         $this->assertFileExists($file);
         if (function_exists('getimagesize')) {
-            list($width, $height, $type, $attr) = getimagesize($file);
+            $errorNumber = null;
+            $errorMessage = null;
+
+            set_error_handler(function ($errno, $errstr) use (&$errorNumber, &$errorMessage) {
+                $errorNumber = $errno;
+                $errorMessage = $errstr;
+            });
+
+            $imageSize = getimagesize($file);
+
+            restore_error_handler();
+
+            if (null !== $errorMessage) {
+                $this->markTestSkipped(sprintf(
+                    'Failed interpreting image file downloaded from LoremPixel using getimagesize() with error number "%d" and message "%s".',
+                    $errorNumber,
+                    $errorMessage
+                ));
+            }
+
+            list($width, $height, $type, $attr) = $imageSize;
+
             $this->assertEquals(640, $width);
             $this->assertEquals(480, $height);
             $this->assertEquals(constant('IMAGETYPE_JPEG'), $type);
