@@ -12,7 +12,7 @@ sniff: vendor/autoload.php ## Detects code style issues with phpcs
 	vendor/bin/phpcs --standard=PSR2 src -n
 
 test: vendor/autoload.php ## Runs tests with phpunit
-	vendor/bin/phpunit --verbose
+	vendor/bin/phpunit
 
 vendor/autoload.php:
 	composer install --no-interaction --prefer-dist
