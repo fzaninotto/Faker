@@ -1,30 +1,83 @@
 language: php
 
-dist: precise
-
-php:
-    - 5.3
-    - 5.4
-    - 5.5
-    - 5.6
-    - 7.0
-    - 7.1
-    - 7.2
-    - 7.3
-    - nightly
-
-matrix:
-    allow_failures:
-        - nightly
-
 cache:
   directories:
     - $HOME/.composer/cache
 
-before_install:
-  - phpenv config-rm xdebug.ini || true
+stages:
+  - style
+  - test
 
-before_script:
-    - travis_retry composer install --no-interaction --prefer-dist
+jobs:
+  allow_failures:
+    - php: nightly
 
-script: make sniff test
+  include:
+    - stage: Style
+
+      php: 7.3
+
+      before_install:
+        - phpenv config-rm xdebug.ini || true
+
+      install:
+        - composer install
+
+      script:
+        - vendor/bin/phpcs --standard=PSR2 src -n
+
+    - &TEST_ON_PRECISE
+
+      stage: Test
+
+      php: 5.3
+
+      dist: precise
+
+      before_install:
+        - phpenv config-rm xdebug.ini || true
+
+      install:
+        - composer install
+
+      script:
+        - vendor/bin/phpunit
+
+    - <<: *TEST_ON_PRECISE
+
+      php: 5.5
+
+    - <<: *TEST_ON_PRECISE
+
+      php: 5.6
+
+    - &TEST
+
+      stage: Test
+
+      php: 7.0
+
+      before_install:
+        - phpenv config-rm xdebug.ini || true
+
+      install:
+        - composer install
+
+      script:
+        - vendor/bin/phpunit
+
+    - <<: *TEST
+
+      php: 7.1
+
+    - <<: *TEST
+
+      php: 7.2
+
+    - <<: *TEST
+
+      php: 7.3
+
+    - <<: *TEST
+
+      php: nightly
