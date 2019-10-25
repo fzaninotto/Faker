@@ -1,7 +1,4 @@
 <?php
-/**
- * @author Mark van der Velden <mark@dynom.nl>
- */
 
 namespace Faker\Test\Provider;
 
