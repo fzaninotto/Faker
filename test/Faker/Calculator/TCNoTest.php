@@ -5,7 +5,7 @@ namespace Faker\Test\Calculator;
 use Faker\Calculator\TCNo;
 use PHPUnit\Framework\TestCase;
 
-class TCNoTest extends TestCase
+final class TCNoTest extends TestCase
 {
     public function checksumProvider()
     {

@@ -8,7 +8,7 @@ use Faker\Provider\fi_FI\Internet;
 use Faker\Provider\fi_FI\Company;
 use PHPUnit\Framework\TestCase;
 
-class InternetTest extends TestCase
+final class InternetTest extends TestCase
 {
 
     /**

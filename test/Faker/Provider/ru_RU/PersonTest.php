@@ -6,7 +6,7 @@ use Faker\Generator;
 use Faker\Provider\ru_RU\Person;
 use PHPUnit\Framework\TestCase;
 
-class PersonTest extends TestCase
+final class PersonTest extends TestCase
 {
     /**
      * @var Generator

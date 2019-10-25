@@ -11,7 +11,7 @@ use Faker\Generator;
 use Faker\Provider\es_VE\Person;
 use PHPUnit\Framework\TestCase;
 
-class PersonTest extends TestCase
+final class PersonTest extends TestCase
 {
 
     /**

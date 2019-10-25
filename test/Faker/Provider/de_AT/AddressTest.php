@@ -7,7 +7,7 @@ use Faker\Generator;
 use Faker\Provider\de_AT\Address;
 use PHPUnit\Framework\TestCase;
 
-class AddressTest extends TestCase
+final class AddressTest extends TestCase
 {
     /**
      * @var Generator

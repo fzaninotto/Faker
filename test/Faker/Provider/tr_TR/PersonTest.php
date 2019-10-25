@@ -7,7 +7,7 @@ use Faker\Provider\tr_TR\Person;
 use Faker\Generator;
 use PHPUnit\Framework\TestCase;
 
-class PersonTest extends TestCase
+final class PersonTest extends TestCase
 {
 
     /**

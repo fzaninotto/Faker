@@ -7,7 +7,7 @@ use Faker\Generator;
 use Faker\Provider\sv_SE\Person;
 use PHPUnit\Framework\TestCase;
 
-class PersonTest extends TestCase
+final class PersonTest extends TestCase
 {
     /** @var Generator */
     protected $faker;

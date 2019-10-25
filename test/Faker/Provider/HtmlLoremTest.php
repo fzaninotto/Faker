@@ -6,7 +6,7 @@ use Faker\Generator;
 use Faker\Provider\HtmlLorem;
 use PHPUnit\Framework\TestCase;
 
-class HtmlLoremTest extends TestCase
+final class HtmlLoremTest extends TestCase
 {
 
     public function testProvider()

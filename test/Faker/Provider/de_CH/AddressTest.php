@@ -7,7 +7,7 @@ use Faker\Provider\de_CH\Address;
 use Faker\Provider\de_CH\Person;
 use PHPUnit\Framework\TestCase;
 
-class AddressTest extends TestCase
+final class AddressTest extends TestCase
 {
 
     /**

@@ -9,7 +9,7 @@ use Faker\Provider\Lorem;
 use Faker\Provider\Person;
 use PHPUnit\Framework\TestCase;
 
-class InternetTest extends TestCase
+final class InternetTest extends TestCase
 {
     /**
      * @var Generator

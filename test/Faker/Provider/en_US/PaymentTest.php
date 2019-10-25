@@ -6,7 +6,7 @@ namespace Faker\Provider\en_US;
 use Faker\Generator;
 use PHPUnit\Framework\TestCase;
 
-class PaymentTest extends TestCase
+final class PaymentTest extends TestCase
 {
     /**
      * @var Generator

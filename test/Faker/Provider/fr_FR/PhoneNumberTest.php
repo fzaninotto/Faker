@@ -6,7 +6,7 @@ use Faker\Generator;
 use Faker\Provider\fr_FR\PhoneNumber;
 use PHPUnit\Framework\TestCase;
 
-class PhoneNumberTest extends TestCase
+final class PhoneNumberTest extends TestCase
 {
     /**
      * @var Generator

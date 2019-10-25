@@ -5,7 +5,7 @@ namespace Faker\Test\Provider;
 use Faker\Provider\Image;
 use PHPUnit\Framework\TestCase;
 
-class ImageTest extends TestCase
+final class ImageTest extends TestCase
 {
     public function testImageUrlUses640x680AsTheDefaultSize()
     {
