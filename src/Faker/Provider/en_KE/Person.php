@@ -16,7 +16,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Typical Kenyan male firstnames
-     * @link 
+     * @link https://github.com/uzziellite/Faker/blob/master/src/Faker/Provider/en_KE/Person.php
      */
     protected static $firstNameMale = array(
         'Trevor','Martin','Abubakar','Ibrahim','Alex','Allan','Amos','Nicholas','Andrew','Bakadi',
@@ -30,7 +30,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * First names for Kenyan Females
-     * @link 
+     * @link https://github.com/uzziellite/Faker/blob/master/src/Faker/Provider/en_KE/Person.php
      */
     protected static $firstNameFemale = array(
         'Mercy','Mary','Brenda','Angel','Frida','Rose','Anastacia','Margret','Tracey','Stacy','Agnes',
@@ -43,7 +43,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Kenyan Female Last Names
-     * @link 
+     * @link https://github.com/uzziellite/Faker/blob/master/src/Faker/Provider/en_KE/Person.php
      */
     protected static $lastNameFemale = array(
        'Auma','Atieno','Mukhoya','Eshkumo','Nangila','Kananu','Ndinda','Muli','Mwende',
@@ -56,7 +56,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Kenyan Male Last Names
-     * @link 
+     * @link https://github.com/uzziellite/Faker/blob/master/src/Faker/Provider/en_KE/Person.php
      */
     protected static $lastNameMale = array(
 
@@ -84,7 +84,7 @@ class Person extends \Faker\Provider\Person
      */
     public function lastNameMale()
     {
-    	return static::randomElement(static::$lastNameMale);
+        return static::randomElement(static::$lastNameMale);
     }
 
     /**
@@ -93,7 +93,7 @@ class Person extends \Faker\Provider\Person
      */
     public function lastNameFemale()
     {
-    	return static::randomElement(static::$lastNameFemale);
+        return static::randomElement(static::$lastNameFemale);
     }
 
     /**
@@ -102,7 +102,7 @@ class Person extends \Faker\Provider\Person
      */
     public function idNumber()
     {
-    	return static::numerify($this->generator->parse(static::randomElement(static::$idNumber)));
+        return static::numerify($this->generator->parse(static::randomElement(static::$idNumber)));
     }
 
     /**
@@ -111,6 +111,6 @@ class Person extends \Faker\Provider\Person
      */
     public function kraPin()
     {
-    	return strtoupper(static::bothify($this->generator->parse(static::randomElement(static::$kraPin))));
+        return strtoupper(static::bothify($this->generator->parse(static::randomElement(static::$kraPin))));
     }
 }
