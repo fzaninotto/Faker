@@ -9,8 +9,12 @@ class Address extends \Faker\Provider\Address
         '{{cityName}}',
     );
 
+    protected static $addressFormats = array(
+        'P.O. BOX {{postcode}} {{county}}',
+    );
+
     /**
-     * Kenyan cities
+     * Kenya has got only three cities
      */
     protected static $city = array('Nairobi','Mombasa','Kisumu');
 

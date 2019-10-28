@@ -15,7 +15,8 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
-     * Typical Kenyan male firstnames.
+     * Typical Kenyan male firstnames
+     * @link 
      */
     protected static $firstNameMale = array(
         'Trevor','Martin','Abubakar','Ibrahim','Alex','Allan','Amos','Nicholas','Andrew','Bakadi',
@@ -29,6 +30,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * First names for Kenyan Females
+     * @link 
      */
     protected static $firstNameFemale = array(
         'Mercy','Mary','Brenda','Angel','Frida','Rose','Anastacia','Margret','Tracey','Stacy','Agnes',
@@ -41,6 +43,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Kenyan Female Last Names
+     * @link 
      */
     protected static $lastNameFemale = array(
        'Auma','Atieno','Mukhoya','Eshkumo','Nangila','Kananu','Ndinda','Muli','Mwende',
@@ -53,6 +56,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Kenyan Male Last Names
+     * @link 
      */
     protected static $lastNameMale = array(
 
@@ -61,14 +65,24 @@ class Person extends \Faker\Provider\Person
         'Njuguna','Kipkoech','Njoroge','Matagari','Indiatsi','Shionzo','Shipalapala','Leshitin','Kipkut',
         'Lang\'at', 'Simel','Mwamburi','Mwadime','Poisa','Mwaisho','Mwasungia','Washala','Mwachofi',
         'Onyancha','Musedi','Omondi','Ochola','Gogo','Osundwa','Mutua','Mwiti','Khabelwa','Mutethia',
-        'Agengo','Murage','Owino','Jatelo','Jalang\'o','Otoyo','Kiplimo','Kinuthia','Kariuki','Kaula',
+        'Agengo','Murage','Owino','Jatelo','Jalang\'o','Otoyo','Kiplimo','Kinuthia','Kariuki','Kaula','Ochieng\'',
     );
+
+    /**
+     * ID Numbers of kenyans issued from 1970 - Present
+     */
+    protected static $idNumber = array('8######','########');
+
+    /**
+     * Tax Payer PIN Number (KRA PIN) Format
+     */
+    protected static $kraPin = array('?#########?');
 
     /**
      * Generate Kenyan Male Last Name
      * @example Osundwa
      */
-    public static function lastNameMale()
+    public function lastNameMale()
     {
     	return static::randomElement(static::$lastNameMale);
     }
@@ -77,8 +91,26 @@ class Person extends \Faker\Provider\Person
      * Generate Kenyan Female Last Name
      * @example Karea
      */
-    public static function lastNameFemale()
+    public function lastNameFemale()
     {
     	return static::randomElement(static::$lastNameFemale);
+    }
+
+    /**
+     * Generate a valid Kenyan ID Number
+     * @example 01011101
+     */
+    public function idNumber()
+    {
+    	return static::numerify($this->generator->parse(static::randomElement(static::$idNumber)));
+    }
+
+    /**
+     * Generate a valid Kenyan KRA PIN
+     * @example Z001002321W
+     */
+    public function kraPin()
+    {
+    	return strtoupper(static::bothify($this->generator->parse(static::randomElement(static::$kraPin))));
     }
 }

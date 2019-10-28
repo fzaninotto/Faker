@@ -15,14 +15,15 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     protected static $safaricom = array(
 
-        '070#######','071#######','072#######','079#######'
+        '070#######','071#######','072#######','0740######',
+        '0741######','0742######','0748######','079#######',
     );
 
     protected static $telkom = array('077#######');
 
     protected static $airtel = array('0731######','0786######','0787######','0788######','0789######');
 
-    protected static $equitel = array('076#######');
+    protected static $equitel = array('0763######');
 
     protected static $faiba = array('0747######');
 
