@@ -257,7 +257,6 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @link http://www.horoskopai.lt/gaires/populiariausios-pavardes-lietuvoje/
-     * @link https://www.zodynas.lt/pavardes
      */
     protected static $lastNameFemale = array(
         'Balčiūnaitė', 'Butkutė', 'Jankauskaitė', 'Jankauskienė', 'Kavaliauskaitė', 'Kavaliauskienė',
@@ -323,11 +322,11 @@ class Person extends \Faker\Provider\Person
             $birthdate = \Faker\Provider\DateTime::dateTimeThisCentury();
         }
 
-        $genderNumber = ($gender == 'male') ? (int)1 : (int)0;
-        $firstNumber = (int)floor($birthdate->format('Y') / 100) * 2 - 34 - $genderNumber;
+        $genderNumber = ($gender == 'male') ? 1 : 0;
+        $firstNumber = (int) floor($birthdate->format('Y') / 100) * 2 - 34 - $genderNumber;
 
         $datePart = $birthdate->format('ymd');
-        $randomDigits = (string)(!$randomNumber || strlen($randomNumber < 3)) ? static::numerify('###') : substr($randomNumber, 0, 3);
+        $randomDigits = (string) ( ! $randomNumber || strlen($randomNumber) < 3) ?  static::numerify('###') : substr($randomNumber, 0, 3);
         $partOfPerosnalCode = $firstNumber . $datePart . $randomDigits;
 
         $sum = self::calculateSum($partOfPerosnalCode, 1);
@@ -340,7 +339,7 @@ class Person extends \Faker\Provider\Person
         }
 
         $sum = self::calculateSum($partOfPerosnalCode, 2);
-        $liekana = (int)$sum % 11;
+        $liekana = $sum % 11;
 
         $lastNumber = ($liekana !== 10) ? $liekana : 0;
 
