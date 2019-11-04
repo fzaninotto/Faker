@@ -70,9 +70,9 @@ class Address extends \Faker\Provider\Address
      */
     protected static $city = array('Vilnius', 'Kaunas', 'Klaipėda', 'Šiauliai', 'Panevėžys',
         'Alytus', 'Marijampolė', 'Mažeikiai', 'Jonava', 'Utena', 'Kėdainiai', 'Telšiai', 'Visaginas', 'Tauragė',
-        'Ukmergė'
+        'Ukmergė',
     );
-t
+
     protected static $street = array(
         'Algirdo', 'Alyvų', 'Ateities', 'Atgimimo', 'Aušros', 'Ažuolyno', 'Ažuolų',
         'Ąžuolyno', 'Ąžuolų',
