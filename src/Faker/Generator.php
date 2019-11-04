@@ -193,6 +193,8 @@ namespace Faker;
  * @property string $colorName
  *
  * @method string randomHtml($maxDepth = 4, $maxWidth = 4)
+ * @method UkSortCode()
+ * @method UkBankAccountNumber($prefix = '')
  *
  */
 class Generator
