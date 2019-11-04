@@ -21,10 +21,9 @@ class Payment extends \Faker\Provider\Payment
      * @param string $prefix
      * @return string
      */
-    public static function UkBankAccountNumber($prefix = '')
+    public static function ukBankAccountNumber($prefix = '')
     {
-        if(preg_match('^\d+$^', $prefix) !== 1)
-        {
+        if (preg_match('^\d+$^', $prefix) !== 1) {
             $prefix = '';
         }
         $ukBankAccountNumber =
@@ -41,7 +40,7 @@ class Payment extends \Faker\Provider\Payment
      * @param string $ef
      * @return string
      */
-    public static function UkSortCode($ab = '', $cd = '', $ef = '')
+    public static function ukSortCode($ab = '', $cd = '', $ef = '')
     {
         $ukSortCode =
             (preg_match('^\d+$^', $ab) === 1 ? $ab : static::numerify('##')).'-'.
