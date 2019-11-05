@@ -53,7 +53,7 @@ composer require fzaninotto/faker
 
 ### Autoloading
 
-Faker supports both `PSR-0` as `PSR-4` autoloaders. 
+Faker supports both `PSR-0` as `PSR-4` autoloaders.
 ```php
 <?php
 # When installed via composer
@@ -1789,6 +1789,7 @@ echo $faker->VAT; //23456789
 * [`drupol/belgian-national-number-faker`](https://github.com/drupol/belgian-national-number-faker): Generate fake Belgian national numbers
 * [`elgentos/masquerade`](https://github.com/elgentos/masquerade): Configuration-based, platform-agnostic, locale-compatible data faker tool (out-of-the-box support for Magento 2)
 * [`ottaviano/faker-gravatar`](https://github.com/ottaviano/faker-gravatar): Generate avatars using [Gravatar](https://en.gravatar.com/site/implement/images/)
+* [`finwe/phpstan-faker`](https://github.com/finwe/phpstan-faker): PHPStan extension for Faker methods
 
 ## License
 
