@@ -1,7 +1,7 @@
 # CHANGELOG
 
 
-##2019-11-10, v1.9.0
+## 2019-11-10, v1.9.0
 
 This will the last minor release in the `1.x` cycle.  
 
@@ -447,7 +447,7 @@ This will the last minor release in the `1.x` cycle.
 - Updated `optional` and `boolean` apis to be more consistent [\#513](https://github.com/fzaninotto/Faker/pull/513) ([EmanueleMinotto](https://github.com/EmanueleMinotto))
 - Added Greek (el\_GR) `Address` provider [\#504](https://github.com/fzaninotto/Faker/pull/504) ([drakakisgeo](https://github.com/drakakisgeo))
 
-##2015-05-29, v1.5.0
+## 2015-05-29, v1.5.0
 
 * Added ability to print custom text on the images fetched by the Image provider [\#583](https://github.com/fzaninotto/Faker/pull/583) ([fzaninotto](https://github.com/fzaninotto))
 * Fixed typos in Peruvian (es\_PE) Person provider [\#581](https://github.com/fzaninotto/Faker/pull/581) [\#580](https://github.com/fzaninotto/Faker/pull/580) ([ysramirez](https://github.com/ysramirez))
@@ -557,7 +557,7 @@ This will the last minor release in the `1.x` cycle.
 * Added English for New Zealand (en\_NZ) locale [\#283](https://github.com/fzaninotto/Faker/pull/283) ([JasonMortonNZ](https://github.com/JasonMortonNZ))
 * Added mention of external Provider for cron expressions to readme[\#498](https://github.com/fzaninotto/Faker/pull/498) ([swekaj](https://github.com/swekaj))
 
-##2014-06-04, v1.4.0
+## 2014-06-04, v1.4.0
 
 * Fixed typo in Slovak person names (cinan)
 * Added tests for uk_UA providers (serge-kuharev)
