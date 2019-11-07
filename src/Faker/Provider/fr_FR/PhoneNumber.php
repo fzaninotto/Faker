@@ -78,7 +78,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     public function e164PhoneNumber()
     {
-        $formats = array_filter(self::$formats, function($phoneNumber) {
+        $formats = \array_filter(self::$formats, function ($phoneNumber) {
             $phoneNumber = \str_replace(' ', '', $phoneNumber);
             return substr($phoneNumber, 0, 3) == '+33';
         });
