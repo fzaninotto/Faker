@@ -15,9 +15,9 @@ class Base
     protected $generator;
 
     /**
-     * @var \Faker\UniqueGenerator
+     * @var \Faker\UniqueGenerator[]
      */
-    protected $unique;
+    protected $unique = [];
 
     /**
      * @param \Faker\Generator $generator
@@ -573,13 +573,13 @@ class Base
      *
      * @return UniqueGenerator A proxy class returning only non-existing values
      */
-    public function unique($reset = false, $maxRetries = 10000)
+    public function unique($bag = null, $reset = false, $maxRetries = 10000)
     {
         if ($reset || !$this->unique) {
-            $this->unique = new UniqueGenerator($this->generator, $maxRetries);
+            $this->unique[$bag] = new UniqueGenerator($this->generator, $maxRetries);
         }
 
-        return $this->unique;
+        return $this->unique[$bag];
     }
 
     /**
