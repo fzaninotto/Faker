@@ -566,6 +566,7 @@ class Base
      * $faker->unique()->randomElement(array(1, 2, 3));
      * </code>
      *
+     * @param string  $bag        Defines separate lists of existsing values
      * @param boolean $reset      If set to true, resets the list of existing values
      * @param integer $maxRetries Maximum number of retries to find a unique value,
      *                                       After which an OverflowException is thrown.
