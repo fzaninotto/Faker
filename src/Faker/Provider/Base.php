@@ -17,7 +17,7 @@ class Base
     /**
      * @var \Faker\UniqueGenerator[]
      */
-    protected $unique = [];
+    protected $unique = array();
 
     /**
      * @param \Faker\Generator $generator
