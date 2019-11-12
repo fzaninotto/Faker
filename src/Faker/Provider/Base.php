@@ -576,6 +576,10 @@ class Base
      */
     public function unique($bag = null, $reset = false, $maxRetries = 10000)
     {
+        if (!is_string($bag)) {
+            return $this->unique('default', $bag, is_int($reset) ? $reset : 10000);
+        }
+
         if ($reset || !$this->unique) {
             $this->unique[$bag] = new UniqueGenerator($this->generator, $maxRetries);
         }
