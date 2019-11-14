@@ -33,7 +33,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.9"
+            "dev-master": "1.9-dev"
         }
     },
     "config": {
