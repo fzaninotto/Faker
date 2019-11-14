@@ -12,11 +12,107 @@ on:
 name: "Continuous Integration"
 
 jobs:
-  hello:
-    name: "Hello"
+  coding-standards:
+    name: "Coding Standards"
 
     runs-on: ubuntu-latest
 
     steps:
-      - name: "Hello"
-        run: echo "Hello, François and Pim!"
+      - name: "Checkout"
+        uses: actions/checkout@v1.2.0
+
+      - name: "Install PHP with extensions"
+        uses: shivammathur/setup-php@1.5.5
+        with:
+          coverage: none
+          extension-csv: "intl"
+          php-version: 7.2
+
+      - name: "Cache dependencies installed with composer"
+        uses: actions/cache@v1.0.3
+        with:
+          path: ~/.composer/cache
+          key: php7.2-composer-${{ hashFiles('**/composer.json') }}
+          restore-keys: |
+            php7.2-composer-
+
+      - name: "Install dependencies with composer"
+        run: $(which composer) install --no-interaction --no-progress --no-suggest
+
+      - name: "Run squizlabs/php_codesniffer"
+        run: vendor/bin/phpcs --standard=PSR2 src -n
+
+  tests:
+    name: "Tests"
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-version:
+          - 7.2
+          - 7.3
+          - 7.4
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v1.2.0
+
+      - name: "Install PHP with extensions"
+        uses: shivammathur/setup-php@1.5.5
+        with:
+          coverage: none
+          extension-csv: "intl"
+          php-version: ${{ matrix.php-version }}
+
+      - name: "Cache dependencies installed with composer"
+        uses: actions/cache@v1.0.3
+        with:
+          path: ~/.composer/cache
+          key: php${{ matrix.php-version }}-composer-${{ hashFiles('**/composer.json') }}
+          restore-keys: |
+            php${{ matrix.php-version }}-composer-
+
+      - name: "Install dependencies with composer"
+        run: $(which composer) install --no-interaction --no-progress --no-suggest
+
+      - name: "Run tests with phpunit/phpunit"
+        run: vendor/bin/phpunit
+
+  code-coverage:
+    name: "Code Coverage"
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v1.2.0
+
+      - name: "Install PHP with extensions"
+        uses: shivammathur/setup-php@1.5.5
+        with:
+          coverage: xdebug
+          extension-csv: "intl"
+          php-version: 7.4
+
+      - name: "Cache dependencies installed with composer"
+        uses: actions/cache@v1.0.3
+        with:
+          path: ~/.composer/cache
+          key: php7.4-composer-locked-${{ hashFiles('**/composer.json') }}
+          restore-keys: |
+            php7.4-composer-locked-
+
+      - name: "Install locked dependencies with composer"
+        run: $(which composer) install --no-interaction --no-progress --no-suggest
+
+      - name: "Create build directory"
+        run: mkdir -p .build/logs
+
+      - name: "Collect code coverage with Xdebug and phpunit/phpunit"
+        run: vendor/bin/phpunit --coverage-clover=.build/logs/clover.xml
+
+      - name: "Send code coverage report to Codecov.io"
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        run: bash <(curl -s https://codecov.io/bash)
