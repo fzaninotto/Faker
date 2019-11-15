@@ -74,6 +74,8 @@ class ImageTest extends TestCase
 
     public function testDownloadWithDefaults()
     {
+        $this->markTestSkipped('Skipped due to unstable service prior 1.9.0 release');
+
         $url = "http://lorempixel.com/";
         $curlPing = curl_init($url);
         curl_setopt($curlPing, CURLOPT_TIMEOUT, 5);
