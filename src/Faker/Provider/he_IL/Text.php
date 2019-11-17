@@ -2,7 +2,7 @@
 
 namespace Faker\Provider\he_IL;
 
-class Text
+class Text extends \Faker\Provider\Text
 {
     protected static function validStart($word)
     {
