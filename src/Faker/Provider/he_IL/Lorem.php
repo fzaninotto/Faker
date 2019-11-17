@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Faker\Provider\he_IL;
-
 
 class Lorem extends \Faker\Provider\Lorem
 {
