@@ -100,14 +100,14 @@ class Person extends \Faker\Provider\Person
     {
         //Birth Date
         $months = array(1=>'A',2=>'B',3=>'C',4=>'D',5=>'E',6=>'H',7=>'L',8=>'M',9=>'P',10=>'R',11=>'S',12=>'T');
-        if(is_null($birthdate)){
+        if( is_null($birthdate)) {
             $birthdate = \Faker\Provider\DateTime::dateTimeThisCentury();
         }
         $birthdate = explode('_', date_format($birthdate, 'y_m_d'));
         $yy = $birthdate[0];
         $mm = $months[intval($birthdate[1])];
 
-        if($gender == 'f' || $gender == 'F' || $gender == 'Female'){
+        if ($gender == 'f' || $gender == 'F' || $gender == 'Female') {
             $dd = intval($birthdate[2])+40;
             $dd = $dd < 10 ? '0'.$dd : $dd;
         } else {
@@ -115,14 +115,14 @@ class Person extends \Faker\Provider\Person
         }
 
         //Names
-        if(is_null($lastName)){
-            $lastName = self::$lastName[mt_rand(0,sizeof(self::$lastName)-1)];
+        if (is_null($lastName)) {
+            $lastName = self::$lastName[mt_rand(0, sizeof(self::$lastName)-1)];
         }
-        if(is_null($firstName)){
-            if(mt_rand() / mt_getrandmax() > 0.5){
-                $firstName = self::$firstNameFemale[rand(0,sizeof(self::$firstNameFemale)-1)];
+        if (is_null($firstName)) {
+            if (mt_rand() / mt_getrandmax() > 0.5) {
+                $firstName = self::$firstNameFemale[rand(0, sizeof(self::$firstNameFemale)-1)];
             } else {
-                $firstName = self::$firstNameMale[rand(0,sizeof(self::$firstNameMale)-1)];
+                $firstName = self::$firstNameMale[rand(0, sizeof(self::$firstNameMale)-1)];
             }
         }
 
@@ -131,36 +131,36 @@ class Person extends \Faker\Provider\Person
         //Last Name
         $lastName = preg_replace('/ /','',$lastName);
         $lName = '';
-        if(strlen($lastName) < 3){
+        if (strlen($lastName) < 3) {
             $lName = $lastName;
-            while(strlen($lName) < 3){
+            while (strlen($lName) < 3) {
                 $lName = $lName.'x';
             }
         } else {
-            $consonants = preg_replace('#[aeiou]#i','',$lastName);
-            $vowels = preg_replace('#['.$consonants.']#i','',$lastName);
-            $lName = (strlen($consonants) <= 3) ? substr($consonants.$vowels,0,3):substr($consonants,0,3);
+            $consonants = preg_replace('#[aeiou]#i', '', $lastName);
+            $vowels = preg_replace('#['.$consonants.']#i', '', $lastName);
+            $lName = (strlen($consonants) <= 3) ? substr($consonants.$vowels, 0, 3):substr($consonants, 0, 3);
         }
 
         //First Name
-        $firstName = preg_replace('/ /','',$firstName);
+        $firstName = preg_replace('/ /', '', $firstName);
         $fName = '';
-        if(strlen($firstName) < 3){
+        if (strlen($firstName) < 3) {
             $fName = $firstName;
-            while(strlen($fName) < 3){
+            while (strlen($fName) < 3) {
                 $fName = $fName.'x';
             }
         } else {
-            $consonants = preg_replace('#[aeiou]#i','',$firstName);
-            $vowels = preg_replace('#['.$consonants.']#i','',$firstName);
-            $fName = (strlen($consonants) <= 3) ? substr($consonants.$vowels,0,3):$consonants[0].$consonants[2].$consonants[3];
+            $consonants = preg_replace('#[aeiou]#i', '', $firstName);
+            $vowels = preg_replace('#['.$consonants.']#i', '', $firstName);
+            $fName = (strlen($consonants) <= 3) ? substr($consonants.$vowels, 0, 3):$consonants[0].$consonants[2].$consonants[3];
         }
 
         // Belfiore Code (Fake)
-        if(is_null($belfiore)){
+        if (is_null($belfiore)) {
             $letters = 'abcdefghilm';
-            $randLetter = $letters[rand(0,strlen($letters)-1)];
-            $randInt = mt_rand(1,$randLetter == 'm' ? 427 : 999);
+            $randLetter = $letters[rand(0, strlen($letters)-1)];
+            $randInt = mt_rand(1, $randLetter == 'm' ? 427 : 999);
 
             $randInt = $randInt > 99 ? $randInt : ($randInt > 9 ? '0'.$randInt : '00'.$randInt);
             $belfiore = $randLetter.$randInt;
@@ -176,7 +176,7 @@ class Person extends \Faker\Provider\Person
         $code = strtoupper($lName.$fName.$yy.$mm.$dd.$belfiore);
 
         $result = 0;
-        for($i = 0; $i < strlen($code); ++$i){
+        for ($i = 0; $i < strlen($code); ++$i) {
             $result += $i % 2 == 0 ? intval($c_odds[$code[$i]]) : intval($c_evens[$code[$i]]);
         }
         $checksum = $reminder[$result % 26];
