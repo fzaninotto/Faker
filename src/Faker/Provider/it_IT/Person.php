@@ -100,7 +100,7 @@ class Person extends \Faker\Provider\Person
     {
         //Birth Date
         $months = array(1=>'A',2=>'B',3=>'C',4=>'D',5=>'E',6=>'H',7=>'L',8=>'M',9=>'P',10=>'R',11=>'S',12=>'T');
-        if( is_null($birthdate)) {
+        if (is_null($birthdate)) {
             $birthdate = \Faker\Provider\DateTime::dateTimeThisCentury();
         }
         $birthdate = explode('_', date_format($birthdate, 'y_m_d'));
@@ -129,7 +129,7 @@ class Person extends \Faker\Provider\Person
         $vowels = array("a", "e", "i", "o", "u", "A", "E", "I", "O", "U", " ");
 
         //Last Name
-        $lastName = preg_replace('/ /','',$lastName);
+        $lastName = preg_replace('/ /', '', $lastName);
         $lName = '';
         if (strlen($lastName) < 3) {
             $lName = $lastName;
