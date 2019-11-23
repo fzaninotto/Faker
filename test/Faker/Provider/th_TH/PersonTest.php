@@ -53,7 +53,7 @@ class PersonTest extends TestCase
         }
     }
 
-    private function hasValidChecksum(string $nationalId)
+    private function hasValidChecksum($nationalId)
     {
         $digits = str_split($nationalId);
         $lastDigit = array_pop($digits);
