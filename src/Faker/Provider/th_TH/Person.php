@@ -87,7 +87,7 @@ class Person extends \Faker\Provider\Person
 
         $total = 0;
 
-        for($i = 0; $i < 12; $i++){
+        for ($i = 0; $i < 12; $i++) {
             $total += $natid[$i] * (13 - $i);
         }
 
