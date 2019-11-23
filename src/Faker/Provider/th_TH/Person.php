@@ -76,10 +76,23 @@ class Person extends \Faker\Provider\Person
      */
     public static function ssn()
     {
-        $area = mt_rand(0, 1) ? static::numberBetween(1, 665) : static::numberBetween(667, 899);
-        $group = static::numberBetween(1, 99);
-        $serial = static::numberBetween(1, 9999);
+        $personType = static::numberBetween(1, 8);
+        $homeAddressCode = static::numberBetween(0, 9999);
+        $personGroup = static::numberBetween(0, 99999);
+        $personId = static::numberBetween(0, 99);
 
-        return sprintf("%03d-%02d-%04d", $area, $group, $serial);
+        $noSumSsn = sprintf("%01d%04d%05d%02d", $personType, $homeAddressCode, $personGroup, $personId);
+
+        $natid = str_split($noSumSsn);
+
+        $total = 0;
+
+        for($i = 0; $i < 12; $i++){
+            $total += $natid[$i] * (13 - $i);
+        }
+
+        $checksum = substr(11 - ($total % 11), -1);
+
+        return sprintf("%01d-%04d-%05d-%02d-%01d", $personType, $homeAddressCode, $personGroup, $personId, $checksum);
     }
 }
