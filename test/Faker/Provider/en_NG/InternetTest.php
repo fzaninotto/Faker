@@ -7,7 +7,7 @@ use Faker\Provider\en_NG\Person;
 use Faker\Provider\en_NG\Internet;
 use PHPUnit\Framework\TestCase;
 
-class InternetTest extends TestCase
+final class InternetTest extends TestCase
 {
 
     /**

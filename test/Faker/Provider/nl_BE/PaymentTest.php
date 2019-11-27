@@ -6,7 +6,7 @@ use Faker\Generator;
 use Faker\Provider\nl_BE\Payment;
 use PHPUnit\Framework\TestCase;
 
-class PaymentTest extends TestCase
+final class PaymentTest extends TestCase
 {
     /**
      * @var Generator

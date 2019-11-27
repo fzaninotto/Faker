@@ -7,7 +7,7 @@ use Faker\Provider\DateTime;
 use Faker\Provider\id_ID\Person;
 use PHPUnit\Framework\TestCase;
 
-class PersonTest extends TestCase
+final class PersonTest extends TestCase
 {
     /**
      * @see Person::$birthPlaceCode

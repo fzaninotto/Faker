@@ -10,7 +10,7 @@ use Datetime;
 /**
  * @group Person
  */
-class PersonTest extends TestCase
+final class PersonTest extends TestCase
 {
     /**
      * @var Generator

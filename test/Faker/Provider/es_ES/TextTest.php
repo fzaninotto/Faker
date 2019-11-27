@@ -6,7 +6,7 @@ use Faker\Generator;
 use Faker\Provider\es_ES\Text;
 use PHPUnit\Framework\TestCase;
 
-class TextTest extends TestCase
+final class TextTest extends TestCase
 {
     /**
      * @var Generator

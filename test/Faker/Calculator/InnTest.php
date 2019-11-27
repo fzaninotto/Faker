@@ -5,7 +5,7 @@ namespace Faker\Test\Calculator;
 use Faker\Calculator\Inn;
 use PHPUnit\Framework\TestCase;
 
-class InnTest extends TestCase
+final class InnTest extends TestCase
 {
 
     public function checksumProvider()

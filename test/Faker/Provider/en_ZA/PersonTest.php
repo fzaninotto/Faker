@@ -7,7 +7,7 @@ use Faker\Provider\en_ZA\Person;
 use Faker\Provider\DateTime;
 use PHPUnit\Framework\TestCase;
 
-class PersonTest extends TestCase
+final class PersonTest extends TestCase
 {
     private $faker;
 

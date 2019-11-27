@@ -6,7 +6,7 @@ use Faker\Generator;
 use Faker\Provider\uk_UA\Address;
 use PHPUnit\Framework\TestCase;
 
-class AddressTest extends TestCase
+final class AddressTest extends TestCase
 {
 
     /**

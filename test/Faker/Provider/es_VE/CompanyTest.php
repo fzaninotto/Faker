@@ -11,7 +11,7 @@ use Faker\Generator;
 use Faker\Provider\es_VE\Company;
 use PHPUnit\Framework\TestCase;
 
-class CompanyTest extends TestCase
+final class CompanyTest extends TestCase
 {
     /**
      * @var Generator
