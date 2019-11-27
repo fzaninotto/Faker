@@ -5,6 +5,7 @@
     xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
     bootstrap="vendor/autoload.php"
     colors="true"
+    columns="max"
     verbose="true"
 >
     <testsuites>
