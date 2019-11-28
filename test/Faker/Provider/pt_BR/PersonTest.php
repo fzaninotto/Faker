@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 final class PersonTest extends TestCase
 {
 
-    public function setUp()
+    protected function setUp()
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));

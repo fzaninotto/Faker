@@ -17,7 +17,7 @@ final class PersonTest extends TestCase
      */
     protected $faker;
 
-    public function setUp()
+    protected function setUp()
     {
         $faker = new Generator();
         $faker->addProvider(new DateTime($faker));
@@ -26,7 +26,7 @@ final class PersonTest extends TestCase
         $this->faker = $faker;
     }
 
-    public function tearDown()
+    protected function tearDown()
     {
         $this->faker->setDefaultTimezone();
     }

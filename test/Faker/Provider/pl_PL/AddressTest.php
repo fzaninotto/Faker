@@ -12,7 +12,7 @@ final class AddressTest extends TestCase
      */
     private $faker;
 
-    public function setUp()
+    protected function setUp()
     {
         $faker = new Generator();
         $faker->addProvider(new Address($faker));

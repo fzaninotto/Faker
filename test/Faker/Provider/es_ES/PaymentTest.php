@@ -13,7 +13,7 @@ final class PaymentTest extends TestCase
      */
     private $faker;
 
-    public function setUp()
+    protected function setUp()
     {
         $faker = new Generator();
         $faker->addProvider(new Payment($faker));

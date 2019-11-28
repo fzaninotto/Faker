@@ -8,7 +8,7 @@ final class TextTest extends TestCase
 {
     private $textClass;
 
-    public function setUp()
+    protected function setUp()
     {
         $this->textClass = new \ReflectionClass('Faker\Provider\zh_TW\Text');
     }
