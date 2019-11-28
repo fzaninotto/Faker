@@ -1,0 +1,22 @@
+# https://help.github.com/en/categories/automating-your-workflow-with-github-actions
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+      - next
+    tags:
+      - "**"
+
+name: "Continuous Integration"
+
+jobs:
+  hello:
+    name: "Hello"
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Hello"
+        run: echo "Hello, François and Pim!"
