@@ -19,17 +19,17 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v1.2.0
+        uses: actions/checkout@v1
 
       - name: "Install PHP with extensions"
-        uses: shivammathur/setup-php@1.5.5
+        uses: shivammathur/setup-php@1
         with:
           coverage: none
           extension-csv: "intl"
           php-version: 7.2
 
       - name: "Cache dependencies installed with composer"
-        uses: actions/cache@v1.0.3
+        uses: actions/cache@v1
         with:
           path: ~/.composer/cache
           key: php7.2-composer-${{ hashFiles('**/composer.json') }}
@@ -56,17 +56,17 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v1.2.0
+        uses: actions/checkout@v1
 
       - name: "Install PHP with extensions"
-        uses: shivammathur/setup-php@1.5.5
+        uses: shivammathur/setup-php@1
         with:
           coverage: none
           extension-csv: "intl"
           php-version: ${{ matrix.php-version }}
 
       - name: "Cache dependencies installed with composer"
-        uses: actions/cache@v1.0.3
+        uses: actions/cache@v1
         with:
           path: ~/.composer/cache
           key: php${{ matrix.php-version }}-composer-${{ hashFiles('**/composer.json') }}
@@ -86,17 +86,17 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v1.2.0
+        uses: actions/checkout@v1
 
       - name: "Install PHP with extensions"
-        uses: shivammathur/setup-php@1.5.5
+        uses: shivammathur/setup-php@1
         with:
           coverage: xdebug
           extension-csv: "intl"
           php-version: 7.4
 
       - name: "Cache dependencies installed with composer"
-        uses: actions/cache@v1.0.3
+        uses: actions/cache@v1
         with:
           path: ~/.composer/cache
           key: php7.4-composer-locked-${{ hashFiles('**/composer.json') }}
