@@ -17,6 +17,11 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        php-version:
+          - 7.2
+
     steps:
       - name: "Checkout"
         uses: actions/checkout@v1
@@ -26,15 +31,15 @@ jobs:
         with:
           coverage: none
           extension-csv: "intl"
-          php-version: 7.2
+          php-version: ${{ matrix.php-version }}
 
       - name: "Cache dependencies installed with composer"
         uses: actions/cache@v1
         with:
           path: ~/.composer/cache
-          key: php7.2-composer-${{ hashFiles('**/composer.json') }}
+          key: php${{ matrix.php-version }}-composer-${{ hashFiles('**/composer.json') }}
           restore-keys: |
-            php7.2-composer-
+            php${{ matrix.php-version }}-composer-
 
       - name: "Install dependencies with composer"
         run: $(which composer) install --no-interaction --no-progress --no-suggest
@@ -84,6 +89,11 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        php-version:
+          - 7.4
+
     steps:
       - name: "Checkout"
         uses: actions/checkout@v1
@@ -93,15 +103,15 @@ jobs:
         with:
           coverage: xdebug
           extension-csv: "intl"
-          php-version: 7.4
+          php-version: ${{ matrix.php-version }}
 
       - name: "Cache dependencies installed with composer"
         uses: actions/cache@v1
         with:
           path: ~/.composer/cache
-          key: php7.4-composer-locked-${{ hashFiles('**/composer.json') }}
+          key: php${{ matrix.php-version }}-composer-locked-${{ hashFiles('**/composer.json') }}
           restore-keys: |
-            php7.4-composer-locked-
+            php${{ matrix.php-version }}-composer-locked-
 
       - name: "Install locked dependencies with composer"
         run: $(which composer) install --no-interaction --no-progress --no-suggest
