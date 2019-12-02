@@ -25,7 +25,7 @@ class Uuid extends Base
         $csLo = $byte[9];
         $csHi = $byte[8] & 0x3f | (1 << 7);
 
-        // correct byte order for big edian architecture
+        // correct byte order for big endian architecture
         if (pack('L', 0x6162797A) == pack('N', 0x6162797A)) {
             $tLo = (($tLo & 0x000000ff) << 24) | (($tLo & 0x0000ff00) << 8)
                 | (($tLo & 0x00ff0000) >> 8) | (($tLo & 0xff000000) >> 24);
