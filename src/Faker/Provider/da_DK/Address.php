@@ -18,7 +18,7 @@ class Address extends \Faker\Provider\Address
      * @var array Danish street suffixes.
      */
     protected static $streetSuffix = array(
-        'vej', 'gade', 'skov', 'shaven',
+        'vej', 'gade', 'skov', 'haven',
     );
 
     /**
@@ -46,7 +46,7 @@ class Address extends \Faker\Provider\Address
      * @var array Danish building sides.
      */
     protected static $buildingSide = array(
-        'tv.', 'th.',
+        'tv.', 'mf.', 'th.',
     );
 
     /**
