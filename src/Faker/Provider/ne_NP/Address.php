@@ -13,7 +13,10 @@ class Address extends \Faker\Provider\Address
         'bagh', 'bazaar', 'besi', 'chowk', 'gaun', 'kot', 'mandir', 'marg', 'nagar', 'sahar', 'sthan', 'tar'
     );
 
-    protected static $postcode = array('#####');
+    /**
+     * @var array $postcode valid postal code are between 1x to 5x
+     */
+    protected static $postcode = array('1####', '2####', '3####', '4####', '5####');
 
     /**
      * @link http://en.wikipedia.org/wiki/List_of_districts_of_Nepal
