@@ -4,11 +4,6 @@ namespace Faker\Provider\ne_NP;
 
 class Address extends \Faker\Provider\Address
 {
-    /**
-     * @var array $wardNumber valid wards are between 1 to 3x
-     */
-    protected static $wardNumber = array('#', '1#', '2#', '3#');
-
     protected static $streetSuffix = array(
         'bagh', 'bazaar', 'besi', 'chowk', 'gaun', 'kot', 'mandir', 'marg', 'nagar', 'sahar', 'sthan', 'tar'
     );
@@ -123,7 +118,7 @@ class Address extends \Faker\Provider\Address
      */
     public static function wardNumber()
     {
-        return static::numerify(static::randomElement(static::$wardNumber));
+        return static::randomElement(range(1, 36));
     }
 
     /**
