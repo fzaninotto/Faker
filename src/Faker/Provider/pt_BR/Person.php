@@ -158,7 +158,7 @@ class Person extends \Faker\Provider\Person
      */
     public function rgEmitter($OnlyAbbreviation = false)
     {
-       return $OnlyAbbreviation ? $this->rgEmitterAbbr() : trim(explode(" -", static::randomElement(static::$brRgEmitter))[1]);
+        return $OnlyAbbreviation ? $this->rgEmitterAbbr() : trim(explode(" -", static::randomElement(static::$brRgEmitter))[1]);
     }
 
     /**
