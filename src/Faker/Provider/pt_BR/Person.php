@@ -104,7 +104,7 @@ class Person extends \Faker\Provider\Person
         "MAE - Ministério da Aeronáutica",
         "MEX - Ministério do Exército",
         "MMA - Ministério da Marinha",
-        "OAB - Ordem dos Advogados do Brasil",
+        "OAB - Ordem dos Advogados do Brasil"
     );
 
     protected static $titleMale = array('Sr.', 'Dr.',);
@@ -156,10 +156,9 @@ class Person extends \Faker\Provider\Person
      * @param bool $OnlyAbbreviation If true, return only Abbreviation name
      * @return string
      */
-    public function rgEmitter($OnlyAbbreviation = false){
-        if ($OnlyAbbreviation)
-            return $this->rgEmitterAbbr();
-        return trim(explode(" -", static::randomElement(static::$brRgEmitter))[1]);
+    public function rgEmitter($OnlyAbbreviation = false)
+    {
+       return $OnlyAbbreviation ? $this->rgEmitterAbbr() : trim(explode(" -", static::randomElement(static::$brRgEmitter))[1]);
     }
 
     /**
@@ -167,7 +166,8 @@ class Person extends \Faker\Provider\Person
      * @link https://www.significados.com.br/orgao-emissor/
      * @return string A Abreviation of random Dispatching Body
      */
-    public function rgEmitterAbbr(){
+    public function rgEmitterAbbr()
+    {
         return explode(" -", static::randomElement(static::$brRgEmitter))[0];   
     }
 }
