@@ -168,6 +168,6 @@ class Person extends \Faker\Provider\Person
      */
     public function rgEmitterAbbr()
     {
-        return explode(" -", static::randomElement(static::$brRgEmitter))[0];   
+        return explode(" -", static::randomElement(static::$brRgEmitter))[0];
     }
 }
