@@ -63,7 +63,7 @@ class HtmlLorem extends Base
         $html->appendChild($body);
 
         $document->appendChild($html);
-        return $document->saveHTML();
+        return trim($document->saveHTML());
     }
 
     private function addRandomSubTree(\DOMElement $root, $maxDepth, $maxWidth)
