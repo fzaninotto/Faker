@@ -417,7 +417,9 @@ for ($i = 0; $i < 10; $i++) {
   // Geneviève Marchal
 ```
 
-You can check available Faker locales in the source code, [under the `Provider` directory](https://github.com/fzaninotto/Faker/tree/master/src/Faker/Provider). The localization of Faker is an ongoing process, for which we need your help. Don't hesitate to create localized providers to your own locale and submit a PR!
+You can check available Faker locales in the source code, [under the `Provider` directory](https://github.com/fzaninotto/Faker/tree/master/src/Faker/Provider). ~~The localization of Faker is an ongoing process, for which we need your help. Don't hesitate to create localized providers to your own locale and submit a PR!~~
+Faker 1.9 is now enhancement-freeze (see #1851).
+Plase join us in #1807 to discuss about Faker 2.0!!
 
 ## Populating Entities Using an ORM or an ODM
 
