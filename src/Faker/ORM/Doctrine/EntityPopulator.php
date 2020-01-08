@@ -233,7 +233,7 @@ class EntityPopulator
      */
     private function generateId($obj, $column, ObjectManager $manager)
     {
-        /* @var $repository \Doctrine\Common\Persistence\ObjectRepository */
+        /* @var $repository \Doctrine\Persistence\ObjectRepository */
         $repository = $manager->getRepository(get_class($obj));
         $result = $repository->createQueryBuilder('e')
                 ->select(sprintf('e.%s', $column))
