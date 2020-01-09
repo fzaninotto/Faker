@@ -301,14 +301,18 @@ class Generator
     protected function isPluralized($method, $attributes)
     {
         if (isset($this->singularized[$method])) {
-            return true;
+            return (bool) $this->singularized[$method];
         }
 
         if (!isset($attributes[0]) || !is_int($attributes[0])) {
             return false;
         }
 
-        return $this->maybeSingular($method);
+        if (false === $flag = $this->maybeSingular($method)) {
+            $this->singularized[$method] = false;
+        }
+
+        return $flag;
     }
 
     protected function maybeSingular($method)
