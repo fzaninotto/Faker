@@ -106,6 +106,43 @@ final class GeneratorTest extends TestCase
         $this->assertEquals('bazfoo', $generator->fooFormatterWithArguments('foo'));
     }
 
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testPluralizedMagicCalls()
+    {
+        $generator = new Generator;
+        $provider = new FooProvider();
+        $generator->addProvider($provider);
+
+        $tests = $generator->tests(3, 'arg');
+        $fishes = $generator->fishes(2, 'L');
+        $cat = $generator->cat(1);
+        $cats = $generator->cats(2, 2);
+        $nums = $generator->nums();
+
+        $this->assertInternalType('array', $tests);
+        $this->assertCount(3, $tests);
+        $this->assertSame(array('test arg', 'test arg', 'test arg'), $tests);
+
+        $this->assertCount(2, $fishes);
+        $this->assertSame(array('fish (L)', 'fish (L)'), $fishes);
+
+        $this->assertInternalType('string', $cat);
+        $this->assertSame('cat 1', $cat);
+
+        $this->assertCount(2, $cats);
+        $this->assertSame(array('cat 2', 'cat 2'), $cats);
+
+        $this->assertInternalType('string', $nums);
+        $this->assertSame('foo::nums', $nums);
+
+        $this->assertCount(1, $generator->fishes(-1, 'S'));
+        $this->assertCount(1, $generator->fishes(0, 'M'));
+
+        $generator->logs(4);
+    }
+
     public function testSeed()
     {
         $generator = new Generator;
@@ -136,6 +173,26 @@ final class FooProvider
     public function fooFormatterWithArguments($value = '')
     {
         return 'baz' . $value;
+    }
+
+    public function nums()
+    {
+        return 'foo::nums';
+    }
+
+    public function test($arg = null)
+    {
+        return "test $arg";
+    }
+
+    public function fish($size = 'M')
+    {
+        return "fish ($size)";
+    }
+
+    public function cat($n)
+    {
+        return "cat $n";
     }
 }
 
