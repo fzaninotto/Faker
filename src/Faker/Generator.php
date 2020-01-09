@@ -199,6 +199,7 @@ class Generator
 {
     protected $providers = array();
     protected $formatters = array();
+    protected $singularized = array();
 
     public function addProvider($provider)
     {
@@ -282,7 +283,62 @@ class Generator
      */
     public function __call($method, $attributes)
     {
-        return $this->format($method, $attributes);
+        if (!$this->isPluralized($method, $attributes)) {
+            return $this->format($method, $attributes);
+        }
+
+        $result    = array();
+        $times     = max(array_shift($attributes), 1);
+        $formatter = $this->getFormatter($this->singularized[$method]);
+
+        while ($times--) {
+             $result[] = call_user_func_array($formatter, $attributes);
+        }
+
+        return $result;
+    }
+
+    protected function isPluralized($method, $attributes)
+    {
+        if (isset($this->singularized[$method])) {
+            return true;
+        }
+
+        if (!isset($attributes[0]) || !is_int($attributes[0])) {
+            return false;
+        }
+
+        return $this->maybeSingular($method);
+    }
+
+    protected function maybeSingular($method)
+    {
+        $singulars = array();
+        foreach (array('s', 'es', 'ies') as $i => $suffix) {
+            if (substr($method, -1 - $i) === $suffix) {
+                $singulars[] = substr($method, 0, -1 - $i) . ($suffix === 'ies' ? 'y' : '');
+            }
+        }
+
+        if (empty($singulars)) {
+            return false;
+        }
+
+        foreach ($this->providers as $provider) {
+            if (method_exists($provider, $method)) {
+                break;
+            }
+
+            foreach ($singulars as $singular) {
+                if (method_exists($provider, $singular)) {
+                    $this->singularized[$method] = $singular;
+
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     public function __destruct()
