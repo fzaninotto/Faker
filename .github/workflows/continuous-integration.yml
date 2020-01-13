@@ -30,7 +30,7 @@ jobs:
         uses: shivammathur/setup-php@v1
         with:
           coverage: none
-          extension-csv: "intl"
+          extensions: "intl"
           php-version: ${{ matrix.php-version }}
 
       - name: "Cache dependencies installed with composer"
@@ -67,7 +67,7 @@ jobs:
         uses: shivammathur/setup-php@v1
         with:
           coverage: none
-          extension-csv: "intl"
+          extensions: "intl"
           php-version: ${{ matrix.php-version }}
 
       - name: "Cache dependencies installed with composer"
@@ -102,7 +102,7 @@ jobs:
         uses: shivammathur/setup-php@v1
         with:
           coverage: xdebug
-          extension-csv: "intl"
+          extensions: "intl"
           php-version: ${{ matrix.php-version }}
 
       - name: "Cache dependencies installed with composer"
