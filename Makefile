@@ -15,4 +15,4 @@ test: vendor/autoload.php ## Runs tests with phpunit
 	vendor/bin/phpunit --verbose
 
 vendor/autoload.php:
-	composer install --no-interaction --prefer-dist
+	composer install --no-interaction
