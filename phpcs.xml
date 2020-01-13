@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<ruleset name="fzaninotto/faker">
+    <description>Coding standard for fzaninotto/faker</description>
+
+    <file>src/</file>
+
+    <rule ref="PSR2" />
+
+    <arg value="n" />
+</ruleset>
