@@ -42,7 +42,7 @@ jobs:
             php${{ matrix.php-version }}-composer-
 
       - name: "Install dependencies with composer"
-        run: $(which composer) install --no-interaction --no-progress --no-suggest
+        run: composer install --no-interaction --no-progress --no-suggest
 
       - name: "Run squizlabs/php_codesniffer"
         run: vendor/bin/phpcs --standard=PSR2 src -n
@@ -79,7 +79,7 @@ jobs:
             php${{ matrix.php-version }}-composer-
 
       - name: "Install dependencies with composer"
-        run: $(which composer) install --no-interaction --no-progress --no-suggest
+        run: composer install --no-interaction --no-progress --no-suggest
 
       - name: "Run tests with phpunit/phpunit"
         run: vendor/bin/phpunit
@@ -114,7 +114,7 @@ jobs:
             php${{ matrix.php-version }}-composer-locked-
 
       - name: "Install locked dependencies with composer"
-        run: $(which composer) install --no-interaction --no-progress --no-suggest
+        run: composer install --no-interaction --no-progress --no-suggest
 
       - name: "Create build directory"
         run: mkdir -p .build/logs
