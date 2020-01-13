@@ -14,12 +14,12 @@ class UserAgentTest extends TestCase
 
     public function testFirefoxUserAgent()
     {
-        $this->stringContains(' Firefox/', UserAgent::firefox());
+        $this->assertStringContainsString(' Firefox/', UserAgent::firefox());
     }
 
     public function testSafariUserAgent()
     {
-        $this->stringContains('Safari/', UserAgent::safari());
+        $this->assertStringContainsString('Safari/', UserAgent::safari());
     }
 
     public function testInternetExplorerUserAgent()
@@ -34,6 +34,6 @@ class UserAgentTest extends TestCase
 
     public function testChromeUserAgent()
     {
-        $this->stringContains('(KHTML, like Gecko) Chrome/', UserAgent::chrome());
+        $this->assertStringContainsString('(KHTML, like Gecko) Chrome/', UserAgent::chrome());
     }
 }

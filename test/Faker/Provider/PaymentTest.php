@@ -164,7 +164,11 @@ class PaymentTest extends TestCase
         $countryCode = array_pop($parts);
 
         if (!isset($this->ibanFormats[$countryCode])) {
-            // No IBAN format available
+            $this->markTestSkipped(sprintf(
+                'An IBAN format has not been configured for country with country code "%s".',
+                $countryCode
+            ));
+            
             return;
         }
 
