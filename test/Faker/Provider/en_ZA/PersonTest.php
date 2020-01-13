@@ -11,7 +11,7 @@ class PersonTest extends TestCase
 {
     private $faker;
 
-    public function setUp()
+    public function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
@@ -25,7 +25,7 @@ class PersonTest extends TestCase
 
         $this->assertEquals(13, strlen($idNumber));
         $this->assertRegExp('#^\d{13}$#', $idNumber);
-        $this->assertInternalType('string', $idNumber);
+        $this->assertIsString($idNumber);
     }
 
     public function testIdNumberForMales()

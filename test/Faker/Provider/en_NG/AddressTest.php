@@ -14,22 +14,20 @@ class AddressTest extends TestCase
      */
     private $faker;
 
-    public function setUp()
+    public function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Address($faker));
         $this->faker = $faker;
     }
 
-    /**
-     *
-     */
+    
     public function testPostcodeIsNotEmptyAndIsValid()
     {
         $postcode = $this->faker->postcode();
 
         $this->assertNotEmpty($postcode);
-        $this->assertInternalType('string', $postcode);
+        $this->assertIsString($postcode);
     }
 
     /**
@@ -40,7 +38,7 @@ class AddressTest extends TestCase
         $county = $this->faker->county;
 
         $this->assertNotEmpty($county);
-        $this->assertInternalType('string', $county);
+        $this->assertIsString($county);
     }
 
     /**
@@ -51,7 +49,7 @@ class AddressTest extends TestCase
         $region = $this->faker->region;
 
         $this->assertNotEmpty($region);
-        $this->assertInternalType('string', $region);
+        $this->assertIsString($region);
     }
 
 }

@@ -5,9 +5,9 @@ namespace Faker\Test\Provider\es_ES;
 use Faker\Generator;
 use Faker\Provider\es_ES\PhoneNumber;
 
-class PhoneNumberTest extends \PHPUnit_Framework_TestCase
+class PhoneNumberTest extends \PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new PhoneNumber($faker));

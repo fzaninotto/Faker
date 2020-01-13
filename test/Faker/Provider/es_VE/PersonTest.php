@@ -19,7 +19,7 @@ class PersonTest extends TestCase
      */
     private $faker;
 
-    public function setUp()
+    public function setUp(): void
     {
         $faker = new Generator();
         $faker->seed(1);

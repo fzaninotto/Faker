@@ -17,7 +17,7 @@ class PersonTest extends TestCase
      */
     protected $faker;
 
-    public function setUp()
+    public function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new DateTime($faker));
@@ -26,7 +26,7 @@ class PersonTest extends TestCase
         $this->faker = $faker;
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->faker->setDefaultTimezone();
     }
@@ -93,9 +93,7 @@ class PersonTest extends TestCase
             array(Person::GENDER_FEMALE, '1981-06-16','B2', false, '981061642'),
         );
     }
-    /**
-     *
-     */
+    
     public function test_allRandom_returnsValidCnp()
     {
         $cnp = $this->faker->cnp;
@@ -105,9 +103,7 @@ class PersonTest extends TestCase
         );
     }
 
-    /**
-     *
-     */
+    
     public function test_validGender_returnsValidCnp()
     {
         $cnp = $this->faker->cnp(Person::GENDER_MALE);
@@ -130,7 +126,7 @@ class PersonTest extends TestCase
      */
     public function test_invalidGender_throwsException($value)
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException('InvalidArgumentException');
         $this->faker->cnp($value);
     }
 
@@ -155,7 +151,7 @@ class PersonTest extends TestCase
      */
     public function test_invalidYear_throwsException($value)
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException('InvalidArgumentException');
         $this->faker->cnp(null, $value);
     }
 
@@ -178,13 +174,11 @@ class PersonTest extends TestCase
      */
     public function test_invalidCountyCode_throwsException($value)
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException('InvalidArgumentException');
         $this->faker->cnp(null, null, $value);
     }
 
-    /**
-     *
-     */
+    
     public function test_nonResident_returnsValidCnp()
     {
         $cnp = $this->faker->cnp(null, null, null, false);

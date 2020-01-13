@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class CompanyTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Company($faker));

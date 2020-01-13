@@ -11,7 +11,7 @@ class CompanyTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->faker = new Generator();
 

@@ -7,13 +7,13 @@ use PHPUnit\Framework\TestCase;
 
 class DateTimeTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         $this->defaultTz = 'UTC';
         DateTimeProvider::setDefaultTimezone($this->defaultTz);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         DateTimeProvider::setDefaultTimezone();
     }
@@ -71,7 +71,7 @@ class DateTimeTest extends TestCase
     public function testUnixTime()
     {
         $timestamp = DateTimeProvider::unixTime();
-        $this->assertInternalType('int', $timestamp);
+        $this->assertIsInt($timestamp);
         $this->assertGreaterThanOrEqual(0, $timestamp);
         $this->assertLessThanOrEqual(time(), $timestamp);
     }
