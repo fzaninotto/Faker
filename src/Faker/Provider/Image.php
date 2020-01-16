@@ -3,49 +3,28 @@
 namespace Faker\Provider;
 
 /**
- * Depends on image generation from http://lorempixel.com/
+ * Depends on image generation from https://placeholder.com/
  */
 class Image extends Base
 {
-    protected static $categories = array(
-        'abstract', 'animals', 'business', 'cats', 'city', 'food', 'nightlife',
-        'fashion', 'people', 'nature', 'sports', 'technics', 'transport'
-    );
 
     /**
      * Generate the URL that will return a random image
      *
      * Set randomize to false to remove the random GET parameter at the end of the url.
      *
-     * @example 'http://lorempixel.com/640/480/?12345'
+     * @example 'https://via.placeholder.com/640x480/?12345'
      *
      * @param integer $width
      * @param integer $height
-     * @param string|null $category
      * @param bool $randomize
-     * @param string|null $word
-     * @param bool $gray
      *
      * @return string
      */
-    public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
+    public static function imageUrl($width = 640, $height = 480, $randomize = true)
     {
-        $baseUrl = "https://lorempixel.com/";
-        $url = "{$width}/{$height}/";
-
-        if ($gray) {
-            $url = "gray/" . $url;
-        }
-
-        if ($category) {
-            if (!in_array($category, static::$categories)) {
-                throw new \InvalidArgumentException(sprintf('Unknown image category "%s"', $category));
-            }
-            $url .= "{$category}/";
-            if ($word) {
-                $url .= "{$word}/";
-            }
-        }
+        $baseUrl = "https://via.placeholder.com/";
+        $url = "{$width}x{$height}/";
 
         if ($randomize) {
             $url .= '?' . static::randomNumber(5, true);
@@ -61,7 +40,7 @@ class Image extends Base
      *
      * @example '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
      */
-    public static function image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true, $randomize = true, $word = null, $gray = false)
+    public static function image($dir = null, $width = 640, $height = 480, $fullPath = true, $randomize = true)
     {
         $dir = is_null($dir) ? sys_get_temp_dir() : $dir; // GNU/Linux / OS X / Windows compatible
         // Validate directory path
@@ -75,7 +54,7 @@ class Image extends Base
         $filename = $name .'.jpg';
         $filepath = $dir . DIRECTORY_SEPARATOR . $filename;
 
-        $url = static::imageUrl($width, $height, $category, $randomize, $word, $gray);
+        $url = static::imageUrl($width, $height, $randomize);
 
         // save file
         if (function_exists('curl_exec')) {
