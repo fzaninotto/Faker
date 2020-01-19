@@ -22,12 +22,12 @@ final class PersonTest extends TestCase
 
     public function testLastNameFemale()
     {
-        $this->assertEquals("а", substr($this->faker->lastName('female'), -2, 2));
+        $this->assertEquals("а", substr($this->faker->lastName('female'), -1));
     }
 
     public function testLastNameMale()
     {
-        $this->assertNotEquals("а", substr($this->faker->lastName('male'), -2, 2));
+        $this->assertNotEquals("а", substr($this->faker->lastName('male'), -1));
     }
 
     public function testLastNameRandom()
