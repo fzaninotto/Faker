@@ -126,4 +126,36 @@ class Person extends \Faker\Provider\Person
     {
         return static::randomElement(static::$suffix);
     }
+
+    /**
+     * Tax Identification Number (TIN)
+     *
+     * @example '76334701345'
+     *
+     * @see https://ec.europa.eu/taxation_customs/tin/pdf/de/TIN_-_country_sheet_DE_de.pdf
+     *
+     * @return string TIN Number
+     */
+    public function tin()
+    {
+        $tin = $this->randomDigitNot(0).$this->randomNumber(9);
+
+        $product = 0;
+        for($i = 0; $i < strlen($tin); $i++) {
+            $sum = ($tin[$i] + $product) % 10;
+
+            if ($sum == 0) {
+                $sum = 10;
+            }
+
+            $product = ($sum * 2) % 11;
+        }
+
+        $checkDigit = 11 - $product;
+        if ($checkDigit == 10) {
+            $checkDigit = 0;
+        }
+
+        return $tin . $checkDigit;
+    }
 }
