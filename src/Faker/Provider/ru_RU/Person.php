@@ -105,7 +105,7 @@ class Person extends \Faker\Provider\Person
         'Меркушев', 'Лыткин', 'Туров',
     );
 
-    protected static $lastNameSuffix = array('a', '');
+    protected static $lastNameSuffix = array('а', '');
 
     /**
      * Return male middle name
