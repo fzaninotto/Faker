@@ -31,6 +31,9 @@
             "Faker\\Test\\": "test/Faker/"
         }
     },
+    "scripts": {
+      "test": "phpunit"
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "1.9-dev"
