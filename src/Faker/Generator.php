@@ -199,6 +199,8 @@ class Generator
 {
     protected $providers = array();
     protected $formatters = array();
+    private $durable = false;
+    private $seedNo;
 
     public function addProvider($provider)
     {
@@ -210,8 +212,11 @@ class Generator
         return $this->providers;
     }
 
-    public function seed($seed = null)
+    public function seed($seed = null, $durable = false)
     {
+        $this->durable = $durable;
+        $this->seedNo = $seed;
+
         if ($seed === null) {
             mt_srand();
         } else {
@@ -271,6 +276,10 @@ class Generator
      */
     public function __get($attribute)
     {
+        if ($this->durable) {
+            $this->seed($this->seedNo, true);         
+        }
+
         return $this->format($attribute);
     }
 
@@ -282,6 +291,10 @@ class Generator
      */
     public function __call($method, $attributes)
     {
+        if ($this->durable) {
+            $this->seed($this->seedNo, true);         
+        }
+        
         return $this->format($method, $attributes);
     }
 
