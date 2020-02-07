@@ -277,7 +277,7 @@ class Generator
     public function __get($attribute)
     {
         if ($this->durable) {
-            $this->seed($this->seedNo, true);         
+            $this->seed($this->seedNo + 1, true);         
         }
 
         return $this->format($attribute);
@@ -292,7 +292,7 @@ class Generator
     public function __call($method, $attributes)
     {
         if ($this->durable) {
-            $this->seed($this->seedNo, true);         
+            $this->seed($this->seedNo + 1, true);         
         }
         
         return $this->format($method, $attributes);
