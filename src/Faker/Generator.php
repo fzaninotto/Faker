@@ -193,7 +193,7 @@ namespace Faker;
  * @property string $colorName
  *
  * @method string randomHtml($maxDepth = 4, $maxWidth = 4)
- * 
+ *
  * @property string $computerComponents
  * @property string $ram
  *
