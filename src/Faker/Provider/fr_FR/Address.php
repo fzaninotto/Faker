@@ -44,18 +44,11 @@ class Address extends \Faker\Provider\Address
     );
 
     private static $regions = array(
-        'Alsace', 'Aquitaine', 'Auvergne', 'Bourgogne', 'Bretagne', 'Centre', 'Champagne-Ardenne',
-        'Corse', 'Franche-Comté', 'Île-de-France', 'Languedoc-Roussillon', 'Limousin',
-        'Lorraine', 'Midi-Pyrénées', 'Nord-Pas-de-Calais', 'Basse-Normandie', 'Haute-Normandie',
-        'Pays-de-Loire', 'Picardie', 'Poitou-Charentes', "Provence-Alpes-Côte d'Azur", 'Rhone-Alpes',
-        'Guadeloupe', 'Martinique', 'Guyane', 'Réunion', 'Saint-Pierre-et-Miquelon', 'Mayotte',
-        'Saint-Barthélémy', 'Saint-Martin', 'Wallis-et-Futuna', 'Polynésie française', 'Nouvelle-Calédonie'
-    );
-
-    private static $newRegions = array(
         'Auvergne-Rhône-Alpes', 'Bourgogne-Franche-Comté', 'Bretagne', 'Centre-Val de Loire', 'Corse',
         'Grand Est', 'Hauts-de-France', 'Île-de-France', 'Normandie', 'Nouvelle-Aquitaine', 'Occitanie',
-        'Pays de la Loire',"Provence-Alpes-Côte d'Azur"
+        'Pays de la Loire',"Provence-Alpes-Côte d'Azur", 'Guadeloupe', 'Martinique', 'Guyane', 'Réunion', 
+        'Saint-Pierre-et-Miquelon', 'Mayotte', 'Saint-Barthélémy', 'Saint-Martin', 'Wallis-et-Futuna', 
+        'Polynésie française', 'Nouvelle-Calédonie'
     );
 
     private static $departments = array(
@@ -109,20 +102,6 @@ class Address extends \Faker\Provider\Address
     public static function region()
     {
         return static::randomElement(static::$regions);
-    }
-
-    /**
-     * Randomly returns a french new administrative region.
-     *
-     * @example 'Occitanie'
-     *
-     * {@link} https://fr.wikipedia.org/wiki/R%C3%A9gion_fran%C3%A7aise#Liste_et_codification_ISO_3166-2_des_r%C3%A9gions_actuelles
-     *
-     * @return string
-     */
-    public static function newRegion()
-    {
-        return static::randomElement(static::$newRegions);
     }
 
     /**
