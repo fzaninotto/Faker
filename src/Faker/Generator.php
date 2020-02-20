@@ -214,9 +214,11 @@ class Generator
     {
         if ($seed === null) {
             mt_srand();
-        } else {
-            mt_srand($seed, MT_RAND_PHP);
+
+            return;
         }
+
+        mt_srand($seed, MT_RAND_PHP);
     }
 
     public function format($formatter, $arguments = array())
