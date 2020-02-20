@@ -210,15 +210,15 @@ class Generator
         return $this->providers;
     }
 
-    public function seed($seed = null)
+    public function seed(int $seed = null): void
     {
         if ($seed === null) {
             mt_srand();
         } else {
             if (PHP_VERSION_ID < 70100) {
-                mt_srand((int) $seed);
+                mt_srand($seed);
             } else {
-                mt_srand((int) $seed, MT_RAND_PHP);
+                mt_srand($seed, MT_RAND_PHP);
             }
         }
     }
