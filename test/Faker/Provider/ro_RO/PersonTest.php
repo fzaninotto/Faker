@@ -5,6 +5,7 @@ namespace Faker\Test\Provider\ro_RO;
 use Faker\Generator;
 use Faker\Provider\DateTime;
 use Faker\Provider\ro_RO\Person;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 final class PersonTest extends TestCase
@@ -130,7 +131,7 @@ final class PersonTest extends TestCase
      */
     public function test_invalidGender_throwsException($value)
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException(InvalidArgumentException::class);
         $this->faker->cnp($value);
     }
 
@@ -155,7 +156,7 @@ final class PersonTest extends TestCase
      */
     public function test_invalidYear_throwsException($value)
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException(InvalidArgumentException::class);
         $this->faker->cnp(null, $value);
     }
 
@@ -178,7 +179,7 @@ final class PersonTest extends TestCase
      */
     public function test_invalidCountyCode_throwsException($value)
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException(InvalidArgumentException::class);
         $this->faker->cnp(null, null, $value);
     }
 
