@@ -46,8 +46,8 @@ class Address extends \Faker\Provider\Address
     private static $regions = array(
         'Auvergne-Rhône-Alpes', 'Bourgogne-Franche-Comté', 'Bretagne', 'Centre-Val de Loire', 'Corse',
         'Grand Est', 'Hauts-de-France', 'Île-de-France', 'Normandie', 'Nouvelle-Aquitaine', 'Occitanie',
-        'Pays de la Loire',"Provence-Alpes-Côte d'Azur", 'Guadeloupe', 'Martinique', 'Guyane', 'Réunion', 
-        'Saint-Pierre-et-Miquelon', 'Mayotte', 'Saint-Barthélémy', 'Saint-Martin', 'Wallis-et-Futuna', 
+        'Pays de la Loire', "Provence-Alpes-Côte d'Azur", 'Guadeloupe', 'Martinique', 'Guyane', 'Réunion',
+        'Saint-Pierre-et-Miquelon', 'Mayotte', 'Saint-Barthélémy', 'Saint-Martin', 'Wallis-et-Futuna',
         'Polynésie française', 'Nouvelle-Calédonie'
     );
 
