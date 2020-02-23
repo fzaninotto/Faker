@@ -125,17 +125,6 @@ final class PersonTest extends TestCase
     }
 
     /**
-     * @param string $value
-     *
-     * @dataProvider invalidGenderProvider
-     */
-    public function test_invalidGender_throwsException($value)
-    {
-        $this->expectException(InvalidArgumentException::class);
-        $this->faker->cnp($value);
-    }
-
-    /**
      * @param string $value year of birth
      *
      * @dataProvider validYearProvider
