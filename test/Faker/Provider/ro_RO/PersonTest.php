@@ -139,17 +139,6 @@ final class PersonTest extends TestCase
     }
 
     /**
-     * @param string $value year of birth
-     *
-     * @dataProvider invalidYearProvider
-     */
-    public function test_invalidYear_throwsException($value)
-    {
-        $this->expectException(InvalidArgumentException::class);
-        $this->faker->cnp(null, $value);
-    }
-
-    /**
      * @param $value
      * @dataProvider validCountyCodeProvider
      */
@@ -160,16 +149,6 @@ final class PersonTest extends TestCase
             $this->isValidCnp($cnp),
             sprintf("Invalid CNP '%' generated for valid year '%s'", $cnp, $value)
         );
-    }
-
-    /**
-     * @param $value
-     * @dataProvider invalidCountyCodeProvider
-     */
-    public function test_invalidCountyCode_throwsException($value)
-    {
-        $this->expectException(InvalidArgumentException::class);
-        $this->faker->cnp(null, null, $value);
     }
 
     /**
