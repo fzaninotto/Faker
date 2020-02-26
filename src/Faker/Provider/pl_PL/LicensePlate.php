@@ -472,13 +472,23 @@ class LicensePlate extends Base
      * Generates random license plate.
      * Generation method based on the description from https://pl.wikipedia.org/wiki/Tablice_rejestracyjne_w_Polsce#Tablice_standardowe
      *
-     * @param  array|NULL $voivodeships
+     * @param  array|null $voivodeships
+     * @param  array|null $counties
      *
-     * @return void
+     * @return string
      */
-    public function licensePlate($voivodeships = null)
+    public function licensePlate($voivodeships = null, $counties = null)
     {
-        if (is_array($voivodeships) && count($voivodeships)) {
+        if (is_array($voivodeships)) {
+            $availableVoivodeships = array_keys(static::$voivodeships);
+            $voivodeships = array_filter($voivodeships, function ($value) use ($availableVoivodeships) {
+                return in_array($value, $availableVoivodeships);
+            });
+        } else {
+            $voivodeships = [];
+        }
+
+        if (count($voivodeships)) {
             $voivodeship = static::randomElement($voivodeships);
 
             $voivodeshipCode = static::$voivodeships[$voivodeship];
@@ -486,7 +496,20 @@ class LicensePlate extends Base
             $voivodeshipCode = static::randomElement(static::$voivodeships);
         }
 
-        $countyCodes = static::randomElement(static::$counties[$voivodeshipCode]);
+        if (is_array($counties)) {
+            $availableCounties = array_keys(static::$counties[$voivodeshipCode]);
+            $counties = array_filter($counties, function ($value) use ($availableCounties) {
+                return in_array($value, $availableCounties);
+            });
+        } else {
+            $counties = [];
+        }
+
+        if (count($counties)) {
+            $countyCodes = static::$counties[$voivodeshipCode][static::randomElement($counties)];
+        } else {
+            $countyCodes = static::randomElement(static::$counties[$voivodeshipCode]);
+        }
 
         $countyCode = static::randomElement($countyCodes);
 
