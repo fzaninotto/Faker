@@ -38,7 +38,7 @@ final class LicensePlateTest extends TestCase
     public function testPodkarpackieLicensePlate()
     {
         for ($i = 0; $i < 5; $i++) {
-            $licensePlate = $this->faker->licensePlate(['podkarpackie']);
+            $licensePlate = $this->faker->licensePlate(array('podkarpackie'));
             $this->assertNotEmpty($licensePlate);
             $this->assertInternalType('string', $licensePlate);
             $this->assertRegExp('/^(?:R[A-Z] [A-Z\d]{5}|R[A-Z]{2} [A-Z\d]{4,5})$/', $licensePlate);
@@ -51,7 +51,7 @@ final class LicensePlateTest extends TestCase
     public function testLodzkieOrArmyLicensePlate()
     {
         for ($i = 0; $i < 5; $i++) {
-            $licensePlate = $this->faker->licensePlate(['łódzkie', 'army']);
+            $licensePlate = $this->faker->licensePlate(array('łódzkie', 'army'));
             $this->assertNotEmpty($licensePlate);
             $this->assertInternalType('string', $licensePlate);
             $this->assertRegExp('/^(?:[EU][A-Z] [A-Z\d]{5}|[EU][A-Z]{2} [A-Z\d]{4,5})$/', $licensePlate);
@@ -64,7 +64,7 @@ final class LicensePlateTest extends TestCase
     public function testNoCorrectVoivodeshipLicensePlate()
     {
         for ($i = 0; $i < 5; $i++) {
-            $licensePlate = $this->faker->licensePlate(['fake voivodeship', 'fake voivodeship2']);
+            $licensePlate = $this->faker->licensePlate(array('fake voivodeship', 'fake voivodeship2'));
             $this->assertNotEmpty($licensePlate);
             $this->assertInternalType('string', $licensePlate);
             $this->assertRegExp('/^(?:[A-Z]{2} [A-Z\d]{5}|[A-Z]{3} [A-Z\d]{4,5})$/', $licensePlate);
@@ -72,12 +72,25 @@ final class LicensePlateTest extends TestCase
     }
 
     /**
-     * Test that license plate belongs to łodzkie voivodeship or to army
+     * Test that correct license plate is generated when no voivodeship is given
      */
     public function testNoVoivodeshipLicensePlate()
     {
         for ($i = 0; $i < 5; $i++) {
-            $licensePlate = $this->faker->licensePlate([]);
+            $licensePlate = $this->faker->licensePlate(array());
+            $this->assertNotEmpty($licensePlate);
+            $this->assertInternalType('string', $licensePlate);
+            $this->assertRegExp('/^(?:[A-Z]{2} [A-Z\d]{5}|[A-Z]{3} [A-Z\d]{4,5})$/', $licensePlate);
+        }
+    }
+
+    /**
+     * Test that correct license plate is generated when no voivodeship is given
+     */
+    public function testNoVoivodeshipNoCountyLicensePlate()
+    {
+        for ($i = 0; $i < 5; $i++) {
+            $licensePlate = $this->faker->licensePlate(array(), array());
             $this->assertNotEmpty($licensePlate);
             $this->assertInternalType('string', $licensePlate);
             $this->assertRegExp('/^(?:[A-Z]{2} [A-Z\d]{5}|[A-Z]{3} [A-Z\d]{4,5})$/', $licensePlate);
@@ -91,8 +104,8 @@ final class LicensePlateTest extends TestCase
     {
         for ($i = 0; $i < 5; $i++) {
             $licensePlate = $this->faker->licensePlate(
-                ['mazowieckie', 'services'],
-                ['Straż Graniczna', 'warszawski zachodni', 'radomski']
+                array('mazowieckie', 'services'),
+                array('Straż Graniczna', 'warszawski zachodni', 'radomski')
             );
             $this->assertNotEmpty($licensePlate);
             $this->assertInternalType('string', $licensePlate);
@@ -107,8 +120,8 @@ final class LicensePlateTest extends TestCase
     {
         for ($i = 0; $i < 5; $i++) {
             $licensePlate = $this->faker->licensePlate(
-                ['mazowieckie', 'services'],
-                ['fake county']
+                array('mazowieckie', 'services'),
+                array('fake county')
             );
             $this->assertNotEmpty($licensePlate);
             $this->assertInternalType('string', $licensePlate);
@@ -123,8 +136,8 @@ final class LicensePlateTest extends TestCase
     {
         for ($i = 0; $i < 5; $i++) {
             $licensePlate = $this->faker->licensePlate(
-                ['fake voivodeship'],
-                ['Straż Graniczna', 'warszawski zachodni', 'radomski']
+                array('fake voivodeship'),
+                array('Straż Graniczna', 'warszawski zachodni', 'radomski')
             );
             $this->assertNotEmpty($licensePlate);
             $this->assertInternalType('string', $licensePlate);
@@ -140,7 +153,7 @@ final class LicensePlateTest extends TestCase
         for ($i = 0; $i < 5; $i++) {
             $licensePlate = $this->faker->licensePlate(
                 null,
-                ['Straż Graniczna', 'warszawski zachodni', 'radomski']
+                array('Straż Graniczna', 'warszawski zachodni', 'radomski')
             );
             $this->assertNotEmpty($licensePlate);
             $this->assertInternalType('string', $licensePlate);
@@ -155,8 +168,8 @@ final class LicensePlateTest extends TestCase
     {
         for ($i = 0; $i < 5; $i++) {
             $licensePlate = $this->faker->licensePlate(
-                [null],
-                ['Straż Graniczna', 'warszawski zachodni', 'radomski']
+                array(null),
+                array('Straż Graniczna', 'warszawski zachodni', 'radomski')
             );
             $this->assertNotEmpty($licensePlate);
             $this->assertInternalType('string', $licensePlate);
