@@ -904,7 +904,14 @@ echo $faker->bankAccountNumber; // "DE41849025553661169313"
 echo $faker->bank; // "Volksbank Stuttgart"
 
 ```
+### `Faker\Provider\en_AU\ABN`
 
+```php
+<?php
+
+echo $faker->abn; // "17 482 904 524"
+
+```
 ### `Faker\Provider\en_HK\Address`
 
 ```php
