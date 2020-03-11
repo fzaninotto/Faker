@@ -12,7 +12,7 @@ class PersonTest extends TestCase
     /** @var Generator */
     protected $faker;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new DateTime($faker));
