@@ -11,6 +11,13 @@
     "authors": [
         {
             "name": "François Zaninotto"
+        },
+        {
+            "name": "Andreas Möller",
+            "email": "am@localheinz.com"
+        },
+        {
+            "name": "Pim Jansen"
         }
     ],
     "require": {

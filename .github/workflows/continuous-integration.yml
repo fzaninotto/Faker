@@ -37,6 +37,9 @@ jobs:
         id: "determine-composer-cache-directory"
         run: "echo \"::set-output name=directory::$(composer config cache-dir)\""
 
+      - name: "Validate composer.json and composer.lock"
+        run: "composer validate --strict"
+
       - name: "Cache dependencies installed with composer"
         uses: "actions/cache@v1"
         with:
@@ -44,7 +47,7 @@ jobs:
           key: "php-${{ matrix.php-version }}-composer-${{ hashFiles('**/composer.json') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-"
 
-      - name: "Install dependencies with composer"
+      - name: "Install locked dependencies from composer.lock"
         run: "composer install --no-interaction --no-progress --no-suggest"
 
       - name: "Run squizlabs/php_codesniffer"
@@ -84,7 +87,7 @@ jobs:
           key: "php-${{ matrix.php-version }}-composer-${{ hashFiles('**/composer.json') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-"
 
-      - name: "Install dependencies with composer"
+      - name: "Install locked dependencies from composer.lock"
         run: "composer install --no-interaction --no-progress --no-suggest"
 
       - name: "Run tests with phpunit/phpunit"
@@ -122,7 +125,7 @@ jobs:
           key: "php-${{ matrix.php-version }}-composer-${{ hashFiles('**/composer.json') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-"
 
-      - name: "Install dependencies with composer"
+      - name: "Install locked dependencies from composer.lock"
         run: "composer install --no-interaction --no-progress --no-suggest"
 
       - name: "Create build directory"
