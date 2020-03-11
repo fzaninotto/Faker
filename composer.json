@@ -19,7 +19,8 @@
     "require-dev": {
         "ext-intl": "*",
         "phpunit/phpunit": "^8.5.2",
-        "squizlabs/php_codesniffer": "^3.5.4"
+        "squizlabs/php_codesniffer": "^3.5.4",
+        "vimeo/psalm": "^3.9.5"
     },
     "autoload": {
         "psr-4": {
