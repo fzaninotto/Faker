@@ -13,7 +13,7 @@ class PersonTest extends TestCase
      */
     private $faker;
 
-    public function setUp()
+    public function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
@@ -25,6 +25,6 @@ class PersonTest extends TestCase
         $name = $this->faker->name;
 
         $this->assertNotEmpty($name);
-        $this->assertInternalType('string', $name);
+        $this->assertIsString($name);
     }
 }

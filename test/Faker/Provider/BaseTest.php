@@ -10,7 +10,7 @@ class BaseTest extends TestCase
 {
     public function testRandomDigitReturnsInteger()
     {
-        $this->assertInternalType('integer', BaseProvider::randomDigit());
+        $this->assertIsInt(BaseProvider::randomDigit());
     }
 
     public function testRandomDigitReturnsDigit()
@@ -35,26 +35,26 @@ class BaseTest extends TestCase
         }
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
+    
     public function testRandomNumberThrowsExceptionWhenCalledWithAMax()
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         BaseProvider::randomNumber(5, 200);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
+    
     public function testRandomNumberThrowsExceptionWhenCalledWithATooHighNumberOfDigits()
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         BaseProvider::randomNumber(10);
     }
 
     public function testRandomNumberReturnsInteger()
     {
-        $this->assertInternalType('integer', BaseProvider::randomNumber());
-        $this->assertInternalType('integer', BaseProvider::randomNumber(5, false));
+        $this->assertIsInt(BaseProvider::randomNumber());
+        $this->assertIsInt(BaseProvider::randomNumber(5, false));
     }
 
     public function testRandomNumberReturnsDigit()
@@ -92,7 +92,7 @@ class BaseTest extends TestCase
 
         $parts = explode('.', $result);
 
-        $this->assertInternalType('float', $result);
+        $this->assertIsFloat($result);
         $this->assertGreaterThanOrEqual($min, $result);
         $this->assertLessThanOrEqual($max, $result);
         $this->assertLessThanOrEqual($nbMaxDecimals, strlen($parts[1]));
@@ -100,7 +100,7 @@ class BaseTest extends TestCase
 
     public function testRandomLetterReturnsString()
     {
-        $this->assertInternalType('string', BaseProvider::randomLetter());
+        $this->assertIsString(BaseProvider::randomLetter());
     }
 
     public function testRandomLetterReturnsSingleLetter()
@@ -116,7 +116,7 @@ class BaseTest extends TestCase
 
     public function testRandomAsciiReturnsString()
     {
-        $this->assertInternalType('string', BaseProvider::randomAscii());
+        $this->assertIsString(BaseProvider::randomAscii());
     }
 
     public function testRandomAsciiReturnsSingleCharacter()
@@ -160,19 +160,19 @@ class BaseTest extends TestCase
 
     public function testShuffleReturnsStringWhenPassedAStringArgument()
     {
-        $this->assertInternalType('string', BaseProvider::shuffle('foo'));
+        $this->assertIsString(BaseProvider::shuffle('foo'));
     }
 
     public function testShuffleReturnsArrayWhenPassedAnArrayArgument()
     {
-        $this->assertInternalType('array', BaseProvider::shuffle(array(1, 2, 3)));
+        $this->assertIsArray(BaseProvider::shuffle(array(1, 2, 3)));
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
+    
     public function testShuffleThrowsExceptionWhenPassedAnInvalidArgument()
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         BaseProvider::shuffle(false);
     }
 
@@ -227,11 +227,11 @@ class BaseTest extends TestCase
     {
         $string = 'acegi';
         $shuffleString = BaseProvider::shuffleString($string);
-        $this->assertContains('a', $shuffleString);
-        $this->assertContains('c', $shuffleString);
-        $this->assertContains('e', $shuffleString);
-        $this->assertContains('g', $shuffleString);
-        $this->assertContains('i', $shuffleString);
+        $this->assertStringContainsString('a', $shuffleString);
+        $this->assertStringContainsString('c', $shuffleString);
+        $this->assertStringContainsString('e', $shuffleString);
+        $this->assertStringContainsString('g', $shuffleString);
+        $this->assertStringContainsString('i', $shuffleString);
     }
 
     public function testShuffleStringReturnsADifferentStringThanTheOriginal()
@@ -456,11 +456,11 @@ class BaseTest extends TestCase
         $this->assertEquals(array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), $values);
     }
 
-    /**
-     * @expectedException OverflowException
-     */
+    
     public function testUniqueThrowsExceptionWhenNoUniqueValueCanBeGenerated()
     {
+        $this->expectException(\OverflowException::class);
+
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         for ($i=0; $i < 11; $i++) {
@@ -514,11 +514,11 @@ class BaseTest extends TestCase
         $this->assertEquals(array(0, 2, 4, 6, 8), $uniqueValues);
     }
 
-    /**
-     * @expectedException OverflowException
-     */
+    
     public function testValidThrowsExceptionWhenNoValidValueCanBeGenerated()
     {
+        $this->expectException(\OverflowException::class);
+
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         $evenValidator = function($digit) {
@@ -529,22 +529,22 @@ class BaseTest extends TestCase
         }
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     */
+    
     public function testValidThrowsExceptionWhenParameterIsNotCollable()
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         $faker->valid(12)->randomElement(array(1, 3, 5, 7, 9));
     }
 
-    /**
-     * @expectedException LengthException
-     * @expectedExceptionMessage Cannot get 2 elements, only 1 in array
-     */
+    
     public function testRandomElementsThrowsWhenRequestingTooManyKeys()
     {
+        $this->expectException(\LengthException::class);
+        $this->expectExceptionMessage('Cannot get 2 elements, only 1 in array');
+
         BaseProvider::randomElements(array('foo'), 2);
     }
 
@@ -553,7 +553,7 @@ class BaseTest extends TestCase
         $this->assertCount(1, BaseProvider::randomElements(), 'Should work without any input');
 
         $empty = BaseProvider::randomElements(array(), 0);
-        $this->assertInternalType('array', $empty);
+        $this->assertIsArray($empty);
         $this->assertCount(0, $empty);
 
         $shuffled = BaseProvider::randomElements(array('foo', 'bar', 'baz'), 3);

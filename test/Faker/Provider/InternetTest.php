@@ -16,7 +16,7 @@ class InternetTest extends TestCase
      */
     private $faker;
 
-    public function setUp()
+    public function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Lorem($faker));

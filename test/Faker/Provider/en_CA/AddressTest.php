@@ -14,7 +14,7 @@ class AddressTest extends TestCase
    */
   private $faker;
 
-  public function setUp()
+  public function setUp(): void
   {
     $faker = new Generator();
     $faker->addProvider(new Address($faker));
@@ -28,7 +28,7 @@ class AddressTest extends TestCase
   {
     $province = $this->faker->province();
     $this->assertNotEmpty($province);
-    $this->assertInternalType('string', $province);
+    $this->assertIsString($province);
     $this->assertRegExp('/[A-Z][a-z]+/', $province);
   }
 
@@ -39,7 +39,7 @@ class AddressTest extends TestCase
   {
     $provinceAbbr = $this->faker->provinceAbbr();
     $this->assertNotEmpty($provinceAbbr);
-    $this->assertInternalType('string', $provinceAbbr);
+    $this->assertIsString($provinceAbbr);
     $this->assertRegExp('/^[A-Z]{2}$/', $provinceAbbr);
   }
 
@@ -50,7 +50,7 @@ class AddressTest extends TestCase
   {
     $postcodeLetter = $this->faker->randomPostcodeLetter();
     $this->assertNotEmpty($postcodeLetter);
-    $this->assertInternalType('string', $postcodeLetter);
+    $this->assertIsString($postcodeLetter);
     $this->assertRegExp('/^[A-Z]{1}$/', $postcodeLetter);
   }
 
@@ -61,7 +61,7 @@ class AddressTest extends TestCase
   {
     $postcode = $this->faker->postcode();
     $this->assertNotEmpty($postcode);
-    $this->assertInternalType('string', $postcode);
+    $this->assertIsString($postcode);
     $this->assertRegExp('/^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/', $postcode);
   }
 }

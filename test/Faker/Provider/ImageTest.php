@@ -64,11 +64,11 @@ class ImageTest extends TestCase
         $this->assertRegexp('#\d{5}#', $splitUrl[1]);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
+    
     public function testUrlWithDimensionsAndBadCategory()
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         Image::imageUrl(800, 400, 'bullhonky');
     }
 

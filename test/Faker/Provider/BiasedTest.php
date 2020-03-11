@@ -12,7 +12,7 @@ class BiasedTest extends TestCase
     protected $generator;
     protected $results = array();
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->generator = new Generator();
         $this->generator->addProvider(new Biased($this->generator));
