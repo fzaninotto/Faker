@@ -101,7 +101,7 @@ jobs:
       - name: "Install PHP with extensions"
         uses: shivammathur/setup-php@v1
         with:
-          coverage: xdebug
+          coverage: pcov
           extensions: "intl"
           php-version: ${{ matrix.php-version }}
 
@@ -119,7 +119,7 @@ jobs:
       - name: "Create build directory"
         run: mkdir -p .build/logs
 
-      - name: "Collect code coverage with Xdebug and phpunit/phpunit"
+      - name: "Collect code coverage with pcov and phpunit/phpunit"
         run: vendor/bin/phpunit --coverage-clover=.build/logs/clover.xml
 
       - name: "Send code coverage report to Codecov.io"
