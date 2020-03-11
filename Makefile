@@ -6,10 +6,10 @@ help:
 build: fix test ## Runs fix and test targets
 
 fix: vendor/autoload.php ## Fixes code style issues with phpcbf
-	vendor/bin/phpcbf --standard=PSR2 src
+	vendor/bin/phpcbf
 
 sniff: vendor/autoload.php ## Detects code style issues with phpcs
-	vendor/bin/phpcs --standard=PSR2 src -n
+	vendor/bin/phpcs
 
 test: vendor/autoload.php ## Runs tests with phpunit
 	vendor/bin/phpunit --verbose

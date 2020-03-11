@@ -45,7 +45,7 @@ jobs:
         run: composer install --no-interaction --no-progress --no-suggest
 
       - name: "Run squizlabs/php_codesniffer"
-        run: vendor/bin/phpcs --standard=PSR2 src -n
+        run: vendor/bin/phpcs
 
   tests:
     name: "Tests"
