@@ -1,9 +1,14 @@
 # CHANGELOG
 
+## TDB, v2.0.0
+
+### Removed
+
+- Removed legacy autoloader [\#1911](https://github.com/fzaninotto/Faker/pull/1911) ([pimjansen](https://github.com/pimjansen))
 
 ## 2019-11-10, v1.9.0
 
-This will the last minor release in the `1.x` cycle.  
+This will the last minor release in the `1.x` cycle.
 
 - Add all Iran's provinces land lines numbers [\#1806](https://github.com/fzaninotto/Faker/pull/1806) ([kingofnull](https://github.com/kingofnull))
 - replace latin "B" to cyrillic "B" for uk\_UA locale [\#1800](https://github.com/fzaninotto/Faker/pull/1800) ([FI-LIFE](https://github.com/FI-LIFE))
