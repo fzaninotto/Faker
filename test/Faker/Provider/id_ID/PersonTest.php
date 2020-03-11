@@ -47,7 +47,7 @@ class PersonTest extends TestCase
         '9171', '9201', '9202', '9203', '9204', '9205', '9206', '9207', '9208', '9209', '9210', '9211', '9212', '9271',
     );
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));

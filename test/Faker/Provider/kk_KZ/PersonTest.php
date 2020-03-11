@@ -12,7 +12,7 @@ class PersonTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->faker = new Generator();
 

@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class AddressTest extends TestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $faker = Factory::create('en_SG');
         $faker->addProvider(new Address($faker));
