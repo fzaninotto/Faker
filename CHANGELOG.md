@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Removed
 
 - Removed legacy autoloader [\#1911](https://github.com/fzaninotto/Faker/pull/1911) ([pimjansen](https://github.com/pimjansen))
+- Removed ORM and ODM integrations [\#1957](https://github.com/fzaninotto/Faker/pull/1957) ([pimjansen](https://github.com/pimjansen))
 
 ## 2019-11-10, v1.9.0
 
