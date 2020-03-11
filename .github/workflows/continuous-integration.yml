@@ -4,8 +4,8 @@ on:
   pull_request:
   push:
     branches:
-      - master
-      - next
+      - "master"
+      - "next"
     tags:
       - "**"
 
@@ -15,114 +15,123 @@ jobs:
   coding-standards:
     name: "Coding Standards"
 
-    runs-on: ubuntu-latest
+    runs-on: "ubuntu-latest"
 
     strategy:
       matrix:
         php-version:
-          - 7.2
+          - "7.2"
 
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v1
+        uses: "actions/checkout@v1"
 
       - name: "Install PHP with extensions"
-        uses: shivammathur/setup-php@v1
+        uses: "shivammathur/setup-php@v2"
         with:
-          coverage: none
+          coverage: "none"
           extensions: "intl"
-          php-version: ${{ matrix.php-version }}
+          php-version: "${{ matrix.php-version }}"
+
+      - name: "Determine composer cache directory"
+        id: "determine-composer-cache-directory"
+        run: "echo \"::set-output name=directory::$(composer config cache-dir)\""
 
       - name: "Cache dependencies installed with composer"
-        uses: actions/cache@v1
+        uses: "actions/cache@v1"
         with:
-          path: ~/.composer/cache
-          key: php${{ matrix.php-version }}-composer-${{ hashFiles('**/composer.json') }}
-          restore-keys: |
-            php${{ matrix.php-version }}-composer-
+          path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
+          key: "php-${{ matrix.php-version }}-composer-${{ hashFiles('**/composer.json') }}"
+          restore-keys: "php-${{ matrix.php-version }}-composer-"
 
       - name: "Install dependencies with composer"
-        run: composer install --no-interaction --no-progress --no-suggest
+        run: "composer install --no-interaction --no-progress --no-suggest"
 
       - name: "Run squizlabs/php_codesniffer"
-        run: vendor/bin/phpcs
+        run: "vendor/bin/phpcs"
 
   tests:
     name: "Tests"
 
-    runs-on: ubuntu-latest
+    runs-on: "ubuntu-latest"
 
     strategy:
       matrix:
         php-version:
-          - 7.2
-          - 7.3
-          - 7.4
+          - "7.2"
+          - "7.3"
+          - "7.4"
 
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v1
+        uses: "actions/checkout@v1"
 
       - name: "Install PHP with extensions"
-        uses: shivammathur/setup-php@v1
+        uses: "shivammathur/setup-php@v2"
         with:
-          coverage: none
+          coverage: "none"
           extensions: "intl"
-          php-version: ${{ matrix.php-version }}
+          php-version: "${{ matrix.php-version }}"
+
+      - name: "Determine composer cache directory"
+        id: "determine-composer-cache-directory"
+        run: "echo \"::set-output name=directory::$(composer config cache-dir)\""
 
       - name: "Cache dependencies installed with composer"
-        uses: actions/cache@v1
+        uses: "actions/cache@v1"
         with:
-          path: ~/.composer/cache
-          key: php${{ matrix.php-version }}-composer-${{ hashFiles('**/composer.json') }}
-          restore-keys: |
-            php${{ matrix.php-version }}-composer-
+          path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
+          key: "php-${{ matrix.php-version }}-composer-${{ hashFiles('**/composer.json') }}"
+          restore-keys: "php-${{ matrix.php-version }}-composer-"
 
       - name: "Install dependencies with composer"
-        run: composer install --no-interaction --no-progress --no-suggest
+        run: "composer install --no-interaction --no-progress --no-suggest"
 
       - name: "Run tests with phpunit/phpunit"
-        run: vendor/bin/phpunit
+        run: "vendor/bin/phpunit"
 
   code-coverage:
     name: "Code Coverage"
 
-    runs-on: ubuntu-latest
+    runs-on: "ubuntu-latest"
 
     strategy:
       matrix:
         php-version:
-          - 7.4
+          - "7.4"
 
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v1
+        uses: "actions/checkout@v1"
 
       - name: "Install PHP with extensions"
-        uses: shivammathur/setup-php@v1
+        uses: "shivammathur/setup-php@v2"
         with:
-          coverage: pcov
+          coverage: "pcov"
           extensions: "intl"
-          php-version: ${{ matrix.php-version }}
+          php-version: "${{ matrix.php-version }}"
+
+      - name: "Determine composer cache directory"
+        id: "determine-composer-cache-directory"
+        run: "echo \"::set-output name=directory::$(composer config cache-dir)\""
 
       - name: "Cache dependencies installed with composer"
-        uses: actions/cache@v1
+        uses: "actions/cache@v1"
         with:
-          path: ~/.composer/cache
-          key: php${{ matrix.php-version }}-composer-locked-${{ hashFiles('**/composer.json') }}
-          restore-keys: |
-            php${{ matrix.php-version }}-composer-locked-
+          path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
+          key: "php-${{ matrix.php-version }}-composer-${{ hashFiles('**/composer.json') }}"
+          restore-keys: "php-${{ matrix.php-version }}-composer-"
 
-      - name: "Install locked dependencies with composer"
-        run: composer install --no-interaction --no-progress --no-suggest
+      - name: "Install dependencies with composer"
+        run: "composer install --no-interaction --no-progress --no-suggest"
 
       - name: "Create build directory"
-        run: mkdir -p .build/logs
+        run: "mkdir -p .build/logs"
 
       - name: "Collect code coverage with pcov and phpunit/phpunit"
-        run: vendor/bin/phpunit --coverage-clover=.build/logs/clover.xml
+        run: "vendor/bin/phpunit --coverage-clover=.build/logs/clover.xml"
 
       - name: "Send code coverage report to Codecov.io"
         env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-        run: bash <(curl -s https://codecov.io/bash)
+          CODECOV_TOKEN: "${{ secrets.CODECOV_TOKEN }}"
+        run: "bash <(curl -s https://codecov.io/bash)"
