@@ -105,7 +105,7 @@ class Person extends \Faker\Provider\Person
     /**
      * @inheritdoc
      *
-     * @example Galindo Pantoja
+     * @example Castro Rodríguez
      */
     public function fullLastName()
     {
@@ -113,7 +113,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * @example Águila
+     * @example Fernández
      * @return string
      */
     public function lastName()
@@ -292,7 +292,7 @@ class Person extends \Faker\Provider\Person
         if (preg_match('/([AEIOU])/', substr($word, 1), $matches)) {
             return $matches[1];
         }
-        return 'X';
+        return 'X'; // If first internal vowel is not found, then it should be X
     }
 
     protected static function secondInternalConsonant($word)
@@ -300,7 +300,7 @@ class Person extends \Faker\Provider\Person
         if (preg_match('/.[AEIOU]*([BCDFGHJKLMNPQRSTUVWXYZ]{1})/', $word, $matches)) {
             return $matches[1];
         }
-        return 'X';
+        return 'X'; // If second internal consonant is not found, then it should be X
     }
 
     protected static function removeCommonNames($name)
@@ -472,6 +472,7 @@ class Person extends \Faker\Provider\Person
         'RATA' => 'RATX',
         'RUIN' => 'RUIX',
     );
+
     /**
      * @link https://github.com/hectorip/RFC-CURP-Mexico/blob/master/src/mxk.js
      */
