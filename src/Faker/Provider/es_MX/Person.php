@@ -283,7 +283,7 @@ class Person extends \Faker\Provider\Person
         } else {
             $common = str_replace(array_keys(static::$badWordsRFC), array_values(static::$badWordsRFC), $common);
         }
-        $common .=$birthDate->format('ymd');
+        $common .= $birthDate->format('ymd');
         return $common;
     }
 
