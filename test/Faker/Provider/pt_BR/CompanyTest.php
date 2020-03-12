@@ -23,4 +23,12 @@ final class CompanyTest extends TestCase
         $cnpj = $this->faker->cnpj(true);
         $this->assertRegExp('/\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}/', $cnpj);
     }
+
+    public function testIEFormatIsValid()
+    {
+        $ie = $this->faker->ie(false);
+        $this->assertRegExp('/\d{12}/', $ie);
+        $ie = $this->faker->ie(true);
+        $this->assertRegExp('/\d{3}\.\d{3}\.\d{3}\.\d{3}/', $ie);
+    }
 }
