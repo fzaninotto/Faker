@@ -1,0 +1,24 @@
+# https://editorconfig.org/
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+tab_width = 4
+trim_trailing_whitespace = true
+
+[*.patch]
+trim_trailing_whitespace = false
+
+[*.yml]
+indent_size = 2
+
+[COMMIT_EDITMSG]
+max_line_length = 80
+
+[Makefile]
+indent_style = tab

@@ -11,6 +11,13 @@
     "authors": [
         {
             "name": "François Zaninotto"
+        },
+        {
+            "name": "Andreas Möller",
+            "email": "am@localheinz.com"
+        },
+        {
+            "name": "Pim Jansen"
         }
     ],
     "require": {
@@ -33,7 +40,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.9"
+            "dev-master": "1.9-dev"
         }
     },
     "config": {
