@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dbe377e960ca9549fd8e1070fba3ea54",
+    "content-hash": "5063a40c91cd5c4ffb39af718a3d13fe",
     "packages": [],
     "packages-dev": [
         {
@@ -570,8 +570,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "Simple template engine.",
@@ -1369,8 +1369,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
@@ -1585,5 +1585,6 @@
     },
     "platform-dev": {
         "ext-intl": "*"
-    }
+    },
+    "plugin-api-version": "1.1.0"
 }
