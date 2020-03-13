@@ -50,12 +50,12 @@ class PersonTest extends TestCase
     public function testPersonalIdentityNumberGeneratesOddValuesForMales()
     {
         $pin = $this->faker->personalIdentityNumber(null, 'male');
-        $this->assertEquals(1, $pin{9} % 2);
+        $this->assertEquals(1, $pin[9] % 2);
     }
 
     public function testPersonalIdentityNumberGeneratesEvenValuesForFemales()
     {
         $pin = $this->faker->personalIdentityNumber(null, 'female');
-        $this->assertEquals(0, $pin{9} % 2);
+        $this->assertEquals(0, $pin[9] % 2);
     }
 }
