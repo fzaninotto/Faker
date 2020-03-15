@@ -13,7 +13,8 @@ class TextTest extends TestCase
         $this->textClass = new \ReflectionClass('Faker\Provider\zh_TW\Text');
     }
 
-    protected function getMethod($name) {
+    protected function getMethod($name)
+    {
         $method = $this->textClass->getMethod($name);
 
         $method->setAccessible(true);
@@ -21,7 +22,7 @@ class TextTest extends TestCase
         return $method;
     }
 
-    function testItShouldExplodeTheStringToArray()
+    public function testItShouldExplodeTheStringToArray()
     {
         $this->assertSame(
             array('中', '文', '測', '試', '真', '有', '趣'),
@@ -34,7 +35,7 @@ class TextTest extends TestCase
         );
     }
 
-    function testItShouldReturnTheStringLength()
+    public function testItShouldReturnTheStringLength()
     {
         $this->assertContains(
             $this->getMethod('strlen')->invokeArgs(null, array('中文測試真有趣')),
@@ -42,7 +43,7 @@ class TextTest extends TestCase
         );
     }
 
-    function testItShouldReturnTheCharacterIsValidStartOrNot()
+    public function testItShouldReturnTheCharacterIsValidStartOrNot()
     {
         $this->assertTrue($this->getMethod('validStart')->invokeArgs(null, array('中')));
 
@@ -55,7 +56,7 @@ class TextTest extends TestCase
         $this->assertFalse($this->getMethod('validStart')->invokeArgs(null, array('！')));
     }
 
-    function testItShouldAppendEndPunctToTheEndOfString()
+    public function testItShouldAppendEndPunctToTheEndOfString()
     {
         $this->assertSame(
             '中文測試真有趣。',

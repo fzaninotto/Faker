@@ -3,11 +3,12 @@
 namespace Faker\Test\Provider;
 
 use Faker\Provider\Lorem;
+use Faker\Test\Fixture;
 use PHPUnit\Framework\TestCase;
 
 class LoremTest extends TestCase
 {
-    
+
     public function testTextThrowsExceptionWhenAskedTextSizeLessThan5()
     {
         $this->expectException(\InvalidArgumentException::class);
@@ -17,17 +18,17 @@ class LoremTest extends TestCase
 
     public function testTextReturnsWordsWhenAskedSizeLessThan25()
     {
-        $this->assertEquals('Word word word word.', TestableLorem::text(24));
+        $this->assertEquals('Word word word word.', Fixture\Provider\Lorem\TestableLorem::text(24));
     }
 
     public function testTextReturnsSentencesWhenAskedSizeLessThan100()
     {
-        $this->assertEquals('This is a test sentence. This is a test sentence. This is a test sentence.', TestableLorem::text(99));
+        $this->assertEquals('This is a test sentence. This is a test sentence. This is a test sentence.', Fixture\Provider\Lorem\TestableLorem::text(99));
     }
 
     public function testTextReturnsParagraphsWhenAskedSizeGreaterOrEqualThanThan100()
     {
-        $this->assertEquals('This is a test paragraph. It has three sentences. Exactly three.', TestableLorem::text(100));
+        $this->assertEquals('This is a test paragraph. It has three sentences. Exactly three.', Fixture\Provider\Lorem\TestableLorem::text(100));
     }
 
     public function testSentenceWithZeroNbWordsReturnsEmptyString()
@@ -68,42 +69,23 @@ class LoremTest extends TestCase
 
     public function testWordssAsText()
     {
-        $words = TestableLorem::words(2, true);
+        $words = Fixture\Provider\Lorem\TestableLorem::words(2, true);
 
         $this->assertEquals('word word', $words);
     }
 
     public function testSentencesAsText()
     {
-        $sentences = TestableLorem::sentences(2, true);
+        $sentences = Fixture\Provider\Lorem\TestableLorem::sentences(2, true);
 
         $this->assertEquals('This is a test sentence. This is a test sentence.', $sentences);
     }
 
     public function testParagraphsAsText()
     {
-        $paragraphs = TestableLorem::paragraphs(2, true);
+        $paragraphs = Fixture\Provider\Lorem\TestableLorem::paragraphs(2, true);
 
         $expected = "This is a test paragraph. It has three sentences. Exactly three.\n\nThis is a test paragraph. It has three sentences. Exactly three.";
         $this->assertEquals($expected, $paragraphs);
-    }
-}
-
-class TestableLorem extends Lorem
-{
-
-    public static function word()
-    {
-        return 'word';
-    }
-
-    public static function sentence($nbWords = 5, $variableNbWords = true)
-    {
-        return 'This is a test sentence.';
-    }
-
-    public static function paragraph($nbSentences = 3, $variableNbSentences = true)
-    {
-        return 'This is a test paragraph. It has three sentences. Exactly three.';
     }
 }

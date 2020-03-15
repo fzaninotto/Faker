@@ -3,6 +3,7 @@
     <description>Coding standard for fzaninotto/faker</description>
 
     <file>src/</file>
+    <file>test/</file>
 
     <rule ref="PSR12" />
 

@@ -30,7 +30,5 @@ class PhoneNumberTest extends TestCase
             1,
             'Phone number format ' . $phoneNumber . ' is wrong!'
         );
-
     }
-
 }

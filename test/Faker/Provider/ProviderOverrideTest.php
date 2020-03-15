@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @author Mark van der Velden <mark@dynom.nl>
  */
@@ -173,13 +174,13 @@ class ProviderOverrideTest extends TestCase
     {
         static $locales = array();
 
-        if ( ! empty($locales)) {
+        if (! empty($locales)) {
             return $locales;
         }
 
         // Finding all PHP files in the xx_XX directories
-        $providerDir = __DIR__ .'/../../../src/Faker/Provider';
-        foreach (glob($providerDir .'/*_*/*.php') as $file) {
+        $providerDir = __DIR__ . '/../../../src/Faker/Provider';
+        foreach (glob($providerDir . '/*_*/*.php') as $file) {
             $localisation = basename(dirname($file));
 
             if (isset($locales[ $localisation ])) {

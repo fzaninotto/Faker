@@ -51,5 +51,4 @@ class AddressTest extends TestCase
         $this->assertNotEmpty($region);
         $this->assertIsString($region);
     }
-
 }

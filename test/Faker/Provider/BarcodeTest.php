@@ -4,6 +4,7 @@ namespace Faker\Test\Provider;
 
 use Faker\Generator;
 use Faker\Provider\Barcode;
+use Faker\Test\Fixture;
 use PHPUnit\Framework\TestCase;
 
 class BarcodeTest extends TestCase
@@ -24,7 +25,7 @@ class BarcodeTest extends TestCase
         $this->assertRegExp('/^\d{8}$/i', $code);
         $codeWithoutChecksum = substr($code, 0, -1);
         $checksum = substr($code, -1);
-        $this->assertEquals(TestableBarcode::eanChecksum($codeWithoutChecksum), $checksum);
+        $this->assertEquals(Fixture\Provider\Barcode\TestableBarcode::eanChecksum($codeWithoutChecksum), $checksum);
     }
 
     public function testEan13()
@@ -33,14 +34,6 @@ class BarcodeTest extends TestCase
         $this->assertRegExp('/^\d{13}$/i', $code);
         $codeWithoutChecksum = substr($code, 0, -1);
         $checksum = substr($code, -1);
-        $this->assertEquals(TestableBarcode::eanChecksum($codeWithoutChecksum), $checksum);
-    }
-}
-
-class TestableBarcode extends Barcode
-{
-    public static function eanChecksum($input)
-    {
-        return parent::eanChecksum($input);
+        $this->assertEquals(Fixture\Provider\Barcode\TestableBarcode::eanChecksum($codeWithoutChecksum), $checksum);
     }
 }

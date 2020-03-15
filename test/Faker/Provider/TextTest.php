@@ -1,4 +1,5 @@
 <?php
+
 namespace Faker\Test\Provider;
 
 use Faker\Provider\en_US\Text;

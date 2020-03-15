@@ -13,7 +13,8 @@ class TextTest extends TestCase
         $this->textClass = new \ReflectionClass('Faker\Provider\el_GR\Text');
     }
 
-    protected function getMethod($name) {
+    protected function getMethod($name)
+    {
         $method = $this->textClass->getMethod($name);
 
         $method->setAccessible(true);
@@ -21,7 +22,7 @@ class TextTest extends TestCase
         return $method;
     }
 
-    function testItShouldAppendEndPunctToTheEndOfString()
+    public function testItShouldAppendEndPunctToTheEndOfString()
     {
         $this->assertSame(
             '최석(崔晳)으로부터 최후의 편지가.',

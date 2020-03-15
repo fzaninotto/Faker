@@ -26,13 +26,13 @@ class AddressTest extends TestCase
     /**
      * @test
      */
-    public function canton ()
+    public function canton()
     {
         $canton = $this->faker->canton();
         $this->assertIsArray($canton);
         $this->assertCount(1, $canton);
 
-        foreach ($canton as $cantonShort => $cantonName){
+        foreach ($canton as $cantonShort => $cantonName) {
             $this->assertIsString($cantonShort);
             $this->assertEquals(2, strlen($cantonShort));
             $this->assertIsString($cantonName);
@@ -43,7 +43,7 @@ class AddressTest extends TestCase
     /**
      * @test
      */
-    public function cantonName ()
+    public function cantonName()
     {
         $cantonName = $this->faker->cantonName();
         $this->assertIsString($cantonName);
@@ -53,7 +53,7 @@ class AddressTest extends TestCase
     /**
      * @test
      */
-    public function cantonShort ()
+    public function cantonShort()
     {
         $cantonShort = $this->faker->cantonShort();
         $this->assertIsString($cantonShort);
@@ -63,7 +63,8 @@ class AddressTest extends TestCase
     /**
      * @test
      */
-    public function address (){
+    public function address()
+    {
         $address = $this->faker->address();
         $this->assertIsString($address);
     }

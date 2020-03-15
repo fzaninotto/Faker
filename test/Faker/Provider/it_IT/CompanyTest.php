@@ -20,5 +20,4 @@ class CompanyTest extends TestCase
         $vatId = $this->faker->vatId();
         $this->assertRegExp('/^IT[0-9]{11}$/', $vatId);
     }
-
 }

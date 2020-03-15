@@ -1,4 +1,5 @@
 <?php
+
 namespace Faker\Test\Provider;
 
 use Faker\Provider\Biased;
@@ -22,7 +23,7 @@ class BiasedTest extends TestCase
 
     public function performFake($function)
     {
-        for($i = 0; $i < self::NUMBERS; $i++) {
+        for ($i = 0; $i < self::NUMBERS; $i++) {
             $this->results[$this->generator->biasedNumberBetween(1, self::MAX, $function)]++;
         }
     }

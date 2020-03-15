@@ -4,6 +4,7 @@ namespace Faker\Test\Provider;
 
 use Faker\Provider\Base as BaseProvider;
 use PHPUnit\Framework\TestCase;
+use Faker\Test\Fixture;
 use Traversable;
 
 class BaseTest extends TestCase
@@ -35,7 +36,7 @@ class BaseTest extends TestCase
         }
     }
 
-    
+
     public function testRandomNumberThrowsExceptionWhenCalledWithAMax()
     {
         $this->expectException(\InvalidArgumentException::class);
@@ -43,7 +44,7 @@ class BaseTest extends TestCase
         BaseProvider::randomNumber(5, 200);
     }
 
-    
+
     public function testRandomNumberThrowsExceptionWhenCalledWithATooHighNumberOfDigits()
     {
         $this->expectException(\InvalidArgumentException::class);
@@ -137,7 +138,7 @@ class BaseTest extends TestCase
 
     public function testRandomElementReturnsNullWhenCollectionEmpty()
     {
-        $this->assertNull(BaseProvider::randomElement(new Collection(array())));
+        $this->assertNull(BaseProvider::randomElement(new Fixture\Provider\Base\Collection(array())));
     }
 
     public function testRandomElementReturnsElementFromArray()
@@ -154,7 +155,7 @@ class BaseTest extends TestCase
 
     public function testRandomElementReturnsElementFromCollection()
     {
-        $collection = new Collection(array('one', 'two', 'three'));
+        $collection = new Fixture\Provider\Base\Collection(array('one', 'two', 'three'));
         $this->assertContains(BaseProvider::randomElement($collection), $collection);
     }
 
@@ -168,7 +169,7 @@ class BaseTest extends TestCase
         $this->assertIsArray(BaseProvider::shuffle(array(1, 2, 3)));
     }
 
-    
+
     public function testShuffleThrowsExceptionWhenPassedAnInvalidArgument()
     {
         $this->expectException(\InvalidArgumentException::class);
@@ -297,7 +298,7 @@ class BaseTest extends TestCase
     public function testBothifyUtf()
     {
         $utf = 'œ∑´®†¥¨ˆøπ“‘和製╯°□°╯︵ ┻━┻🐵 🙈 ﺚﻣ ﻦﻔﺳ ﺲﻘﻄﺗ ﻮﺑﺎﻠﺘﺣﺪﻳﺩ،, ﺝﺰﻳﺮﺘﻳ ﺏﺎﺴﺘﺧﺩﺎﻣ ﺄﻧ ﺪﻧﻭ. ﺇﺫ ﻪﻧﺍ؟ ﺎﻠﺴﺗﺍﺭ ﻮﺘ';
-        $this->assertRegExp('/'.$utf.'foo\dB[a-z]a([a-z]|\d)r/u', BaseProvider::bothify($utf.'foo#B?a*r'));
+        $this->assertRegExp('/' . $utf . 'foo\dB[a-z]a([a-z]|\d)r/u', BaseProvider::bothify($utf . 'foo#B?a*r'));
     }
 
     public function testAsciifyReturnsSameStringWhenItContainsNoStarSign()
@@ -393,14 +394,14 @@ class BaseTest extends TestCase
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         $values = array();
-        for ($i=0; $i < 10; $i++) {
-            $values[]= $faker->optional()->randomDigit;
+        for ($i = 0; $i < 10; $i++) {
+            $values[] = $faker->optional()->randomDigit;
         }
         $this->assertContains(null, $values);
 
         $values = array();
-        for ($i=0; $i < 10; $i++) {
-            $values[]= $faker->optional(50)->randomDigit;
+        for ($i = 0; $i < 10; $i++) {
+            $values[] = $faker->optional(50)->randomDigit;
         }
         $this->assertContains(null, $values);
     }
@@ -449,21 +450,21 @@ class BaseTest extends TestCase
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         $values = array();
-        for ($i=0; $i < 10; $i++) {
-            $values[]= $faker->unique()->randomDigit;
+        for ($i = 0; $i < 10; $i++) {
+            $values[] = $faker->unique()->randomDigit;
         }
         sort($values);
         $this->assertEquals(array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), $values);
     }
 
-    
+
     public function testUniqueThrowsExceptionWhenNoUniqueValueCanBeGenerated()
     {
         $this->expectException(\OverflowException::class);
 
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
-        for ($i=0; $i < 11; $i++) {
+        for ($i = 0; $i < 11; $i++) {
             $faker->unique()->randomDigit;
         }
     }
@@ -473,12 +474,12 @@ class BaseTest extends TestCase
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         $values = array();
-        for ($i=0; $i < 10; $i++) {
-            $values[]= $faker->unique()->randomDigit;
+        for ($i = 0; $i < 10; $i++) {
+            $values[] = $faker->unique()->randomDigit;
         }
-        $values[]= $faker->unique(true)->randomDigit;
-        for ($i=0; $i < 9; $i++) {
-            $values[]= $faker->unique()->randomDigit;
+        $values[] = $faker->unique(true)->randomDigit;
+        for ($i = 0; $i < 9; $i++) {
+            $values[] = $faker->unique()->randomDigit;
         }
         sort($values);
         $this->assertEquals(array(0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9), $values);
@@ -503,10 +504,10 @@ class BaseTest extends TestCase
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         $values = array();
-        $evenValidator = function($digit) {
+        $evenValidator = function ($digit) {
             return $digit % 2 === 0;
         };
-        for ($i=0; $i < 50; $i++) {
+        for ($i = 0; $i < 50; $i++) {
             $values[$faker->valid($evenValidator)->randomDigit] = true;
         }
         $uniqueValues = array_keys($values);
@@ -514,22 +515,22 @@ class BaseTest extends TestCase
         $this->assertEquals(array(0, 2, 4, 6, 8), $uniqueValues);
     }
 
-    
+
     public function testValidThrowsExceptionWhenNoValidValueCanBeGenerated()
     {
         $this->expectException(\OverflowException::class);
 
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
-        $evenValidator = function($digit) {
+        $evenValidator = function ($digit) {
             return $digit % 2 === 0;
         };
-        for ($i=0; $i < 11; $i++) {
+        for ($i = 0; $i < 11; $i++) {
             $faker->valid($evenValidator)->randomElement(array(1, 3, 5, 7, 9));
         }
     }
 
-    
+
     public function testValidThrowsExceptionWhenParameterIsNotCollable()
     {
         $this->expectException(\InvalidArgumentException::class);
@@ -539,7 +540,7 @@ class BaseTest extends TestCase
         $faker->valid(12)->randomElement(array(1, 3, 5, 7, 9));
     }
 
-    
+
     public function testRandomElementsThrowsWhenRequestingTooManyKeys()
     {
         $this->expectException(\LengthException::class);
@@ -565,8 +566,4 @@ class BaseTest extends TestCase
         $this->assertCount(3, $allowDuplicates);
         $this->assertContainsOnly('string', $allowDuplicates);
     }
-}
-
-class Collection extends \ArrayObject
-{
 }
