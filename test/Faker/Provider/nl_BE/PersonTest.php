@@ -33,7 +33,7 @@ class PersonTest extends TestCase
         $ctrlNumber = substr($rrn, 9, 2);
         $calcCtrl = 97 - (substr($rrn, 0, 9) % 97);
         $altcalcCtrl = 97 - ((2 . substr($rrn, 0, 9)) % 97);
-        $this->assertContains($ctrlNumber, array($calcCtrl, $altcalcCtrl));
+        $this->assertContains($ctrlNumber, [$calcCtrl, $altcalcCtrl]);
 
         $middle = substr($rrn, 6, 3);
         $this->assertGreaterThan(1, $middle);

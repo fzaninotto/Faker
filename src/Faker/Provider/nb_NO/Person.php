@@ -4,7 +4,7 @@ namespace Faker\Provider\nb_NO;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $formats = array(
+    protected static $formats = [
         '{{firstName}} {{lastName}}',
         '{{firstName}} {{lastName}}',
         '{{firstName}} {{lastName}}',
@@ -16,13 +16,13 @@ class Person extends \Faker\Provider\Person
         '{{firstName}} {{lastName}} {{lastName}}',
         '{{firstName}} {{lastName}}-{{lastName}}',
         '{{firstName}} {{firstName}} {{lastName}}-{{lastName}}',
-    );
+    ];
 
     /**
     * @var array Norwegian female first names
     * @link http://spraakbanken.gu.se/statistik/lbfnamnalf.phtml
     */
-    protected static $firstNameFemale = array(
+    protected static $firstNameFemale = [
         "Abida", "Abigail", "Abir", "Ada", "Adel", "Adelaine", "Adele", "Adelen", "Adelin", "Adelina", "Adeline",
         "Adiba", "Adila", "Adile", "Adina", "Adine", "Adisa", "Admira", "Adna", "Adriana", "Aferdita", "Afshan",
         "Agata", "Agate", "Agathe", "Agda", "Agne", "Agnes", "Agnete", "Agnethe", "Agnieszka", "Agny", "Ahlam", "Aicha",
@@ -121,13 +121,13 @@ class Person extends \Faker\Provider\Person
         "Wilma", "Winnie", "Xuan", "Yasmin", "Ylva", "Yngvild", "Yvonne", "Zahida", "Zahra", "Zainab", "Zara",
         "Zuzanna", "Øydis", "Øyvor", "Ågot", "Aasa", "Aase", "Åse", "Åshild", "Aashild", "Åslaug", "Åsne", "Åsta",
         "Aasta"
-    );
+    ];
 
     /**
     * @var array Norwegian male first names
     * @link http://www.mammanett.no/navn/leksikon/alle?field_name_sex_value=m&title=
     */
-    protected static $firstNameMale = array(
+    protected static $firstNameMale = [
         "Abbas", "Abdallah", "Abdelaziz", "Abdelkader", "Abdi", "Abdiasis", "Abdifatah", "Abdikadir", "Abdinasir",
         "Abdirahim", "Abdirahman", "Abdirashid", "Abdirizak", "Abdul", "Abdulahi", "Abdulkadir", "Abdullah",
         "Abdullahi", "Abdulqadir", "Abdurahman", "Abed", "Abel", "Abid", "Abraham", "Absalon", "Abu", "Abubakar",
@@ -251,13 +251,13 @@ class Person extends \Faker\Provider\Person
         "Øistein", "Øivind", "Ørjan", "Ørjar", "Ørn", "Ørnulf", "Ørnulv", "Ørvar", "Østen", "Øyolv", "Øystein",
         "Øyvind", "Ådne", "Aage", "Åge", "Aake", "Åke", "Åmund", "Åne", "Ånen", "Ånon", "Ånund", "Aaron", "Åskjell",
         "Åsleif", "Åsleik", "Åsleiv", "Åsmund", "Aasmund", "Åsulv", "Åsvald", "Åvar"
-    );
+    ];
 
     /**
     * @var array Norwegian common last names (200 first from the link)
     * @link http://www.ssb.no/befolkning/statistikker/navn/aar/2015-01-27?fane=tabell&sort=nummer&tabell=216066
     */
-    protected static $lastName = array(
+    protected static $lastName = [
         "Aas", "Aase", "Aasen", "Abrahamsen", "Ahmed", "Ali", "Amundsen", "Andersen", "Andersson", "Andreassen",
         "Andresen", "Antonsen", "Arnesen", "Aune", "Bakke", "Bakken", "Berg", "Berge", "Berger", "Berntsen",
         "Birkeland", "Bjerke", "Bjørnstad", "Borge", "Borgen", "Breivik", "Brekke", "Bråten", "Bråthen", "Bye", "Bø",
@@ -278,7 +278,7 @@ class Person extends \Faker\Provider\Person
         "Strand", "Strøm", "Sunde", "Sveen", "Svendsen", "Syversen", "Sæther", "Sætre", "Sørensen", "Sørlie", "Tangen",
         "Teigen", "Thomassen", "Thoresen", "Thorsen", "Tollefsen", "Torgersen", "Torp", "Tran", "Tveit", "Vik", "Viken",
         "Wang", "Wiik", "Wilhelmsen", "Wold", "Ødegaard", "Ødegård", "Øien"
-    );
+    ];
 
     /**
     * National Personal Identity number (personnummer)
@@ -302,10 +302,10 @@ class Person extends \Faker\Provider\Person
 
         switch ($gender) {
             case static::GENDER_MALE:
-                $genderDigit = static::randomElement(array(1,3,5,7,9));
+                $genderDigit = static::randomElement([1,3,5,7,9]);
                 break;
             case static::GENDER_FEMALE:
-                $genderDigit = static::randomElement(array(0,2,4,6,8));
+                $genderDigit = static::randomElement([0,2,4,6,8]);
                 break;
             default:
                 $genderDigit = (string)static::numerify('#');

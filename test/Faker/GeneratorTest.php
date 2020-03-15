@@ -29,7 +29,7 @@ class GeneratorTest extends TestCase
         $generator = new Generator();
         $provider = new Fixture\Generator\FooProvider();
         $generator->addProvider($provider);
-        $expected = array($provider, 'fooFormatter');
+        $expected = [$provider, 'fooFormatter'];
         $this->assertEquals($expected, $generator->getFormatter('fooFormatter'));
     }
 
@@ -66,7 +66,7 @@ class GeneratorTest extends TestCase
         $generator = new Generator();
         $provider = new Fixture\Generator\FooProvider();
         $generator->addProvider($provider);
-        $this->assertEquals('bazfoo', $generator->format('fooFormatterWithArguments', array('foo')));
+        $this->assertEquals('bazfoo', $generator->format('fooFormatterWithArguments', ['foo']));
     }
 
     public function testParseReturnsSameStringWhenItContainsNoCurlyBraces()

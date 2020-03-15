@@ -4,7 +4,7 @@ namespace Faker\Provider\es_ES;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
-    protected static $formats = array(
+    protected static $formats = [
         '+34 9## ## ####',
         '+34 9## ######',
         '+34 9########',
@@ -15,9 +15,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '9########',
         '9##-##-####',
         '9##-######',
-    );
+    ];
 
-    protected static $mobileFormats = array(
+    protected static $mobileFormats = [
         '+34 6## ## ####',
         '+34 6## ######',
         '+34 6########',
@@ -28,12 +28,12 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '6########',
         '6##-##-####',
         '6##-######',
-    );
+    ];
 
-    protected static $tollFreeFormats = array(
+    protected static $tollFreeFormats = [
         '900 ### ###',
         '800 ### ###',
-    );
+    ];
 
     public static function mobileNumber()
     {

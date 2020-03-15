@@ -4,27 +4,27 @@ namespace Faker\Provider\sv_SE;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $buildingNumber = array('%###', '%##', '%#', '%#?', '%', '%?');
+    protected static $buildingNumber = ['%###', '%##', '%#', '%#?', '%', '%?'];
 
-    protected static $streetPrefix = array(
+    protected static $streetPrefix = [
         'Stor', 'Små', 'Lill', 'Sjö', 'Kungs', 'Drottning', 'Hamn', 'Brunns', 'Linné', 'Vasa', 'Ring', 'Freds'
-    );
+    ];
 
-    protected static $streetSuffix = array(
+    protected static $streetSuffix = [
         'vägen', 'gatan', 'gränd', 'stigen', 'backen', 'liden'
-    );
+    ];
 
-    protected static $streetSuffixWord = array(
+    protected static $streetSuffixWord = [
         'Allé', 'Gata', 'Väg', 'Backe'
-    );
+    ];
 
-    protected static $postcode = array('%####', '%## ##');
+    protected static $postcode = ['%####', '%## ##'];
 
     /**
      * @var array Swedish city names
      * @link http://sv.wikipedia.org/wiki/Lista_%C3%B6ver_Sveriges_t%C3%A4torter
      */
-    protected static $cityNames = array(
+    protected static $cityNames = [
         'Abbekås', 'Abborrberget', 'Agunnaryd', 'Alberga', 'Alby', 'Alfta', 'Algutsrum', 'Alingsås', 'Allerum', 'Almunge', 'Alsike', 'Alstad', 'Alster', 'Alsterbro', 'Alstermo', 'Alunda', 'Alvesta', 'Alvhem', 'Alvik', 'Alvik', 'Ambjörby', 'Ambjörnarp', 'Ammenäs', 'Andalen', 'Anderslöv', 'Anderstorp', 'Aneby', 'Angelstad', 'Angered', 'Ankarsrum', 'Ankarsvik', 'Anneberg', 'Anneberg', 'Annelund', 'Annelöv', 'Antnäs', 'Aplared', 'Arboga', 'Arbrå', 'Ardala', 'Arentorp', 'Arild', 'Arjeplog', 'Arkelstorp', 'Arnäsvall', 'Arnö', 'Arontorp', 'Arvidsjaur', 'Arvika', 'Aröd och Timmervik', 'Askeby', 'Askersby', 'Askersund', 'Asmundtorp', 'Asperö', 'Aspås', 'Avan', 'Avesta', 'Axvall',
         'Backa', 'Backaryd', 'Backberg', 'Backe', 'Baggetorp', 'Ballingslöv', 'Balsby', 'Bammarboda', 'Bankekind', 'Bankeryd', 'Bara', 'Barkarö', 'Barsebäck', 'Barsebäckshamn', 'Bastuträsk', 'Beddingestrand', 'Benareby', 'Bengtsfors', 'Bengtsheden', 'Bensbyn', 'Berg', 'Berg', 'Berg', 'Berga', 'Bergagård', 'Bergby', 'Bergeforsen', 'Berghem', 'Bergkvara', 'Bergnäset', 'Bergsbyn', 'Bergshammar', 'Bergshamra', 'Bergsjö', 'Bergströmshusen', 'Bergsviken', 'Bergvik', 'Bestorp', 'Bettna', 'Bie', 'Billdal', 'Billeberga', 'Billesholm', 'Billinge', 'Billingsfors', 'Billsta', 'Bjurholm', 'Bjursås', 'Bjuv', 'Bjärnum', 'Bjärred', 'Bjärsjölagård', 'Bjästa', 'Björbo', 'Björboholm', 'Björke', 'Björketorp', 'Björklinge', 'Björkvik', 'Björkviken', 'Björkö', 'Björköby', 'Björlanda', 'Björna', 'Björneborg', 'Björnlunda', 'Björnänge', 'Björnö', 'Björnömalmen och Klacknäset', 'Björsäter', 'Blackstalund', 'Bleket', 'Blentarp', 'Blidsberg', 'Blikstorp', 'Blombacka', 'Blomstermåla', 'Blåsmark', 'Blötberget', 'Bockara', 'Boda', 'Bodafors', 'Boden', 'Boholmarna', 'Boliden', 'Bollebygd', 'Bollnäs', 'Bollstabruk', 'Bonäs', 'Boo', 'Bor', 'Borensberg', 'Borggård', 'Borgholm', 'Borgstena', 'Borlänge', 'Borrby', 'Borås', 'Bosnäs', 'Botsmark', 'Bottnaryd', 'Bovallstrand', 'Boxholm', 'Brantevik', 'Brastad', 'Brattås', 'Braås', 'Bredared', 'Bredaryd', 'Bredbyn', 'Bredsand', 'Bredviken', 'Brevik', 'Brevikshalvön', 'Bro', 'Broaryd', 'Broby', 'Brokind', 'Bromölla', 'Brottby', 'Brunflo', 'Brunn', 'Brunna', 'Brunnsberg', 'Bruzaholm', 'Brålanda', 'Bräcke', 'Bräkne-Hoby', 'Brändön', 'Brännland', 'Brännö', 'Brösarp', 'Bua', 'Buerås', 'Bullmark', 'Bunkeflostrand', 'Bureå', 'Burgsvik', 'Burlövs egnahem', 'Burseryd', 'Burträsk', 'Buskhyttan', 'Butbro', 'Bygdeå', 'Bygdsiljum', 'Byske', 'Bålsta', 'Bårslöv', 'Båstad', 'Båtskärsnäs', 'Bäckaskog', 'Bäckebo', 'Bäckefors', 'Bäckhammar', 'Bälgviken', 'Bälinge', 'Bälinge', 'Bärby', 'Bäsna', 'Böle', 'Bönan',
         'Charlottenberg',
@@ -51,17 +51,17 @@ class Address extends \Faker\Provider\Address
         'Åby', 'Åby', 'Åbyggeby', 'Åbytorp', 'Åhus', 'Åkarp', 'Åkers styckebruk', 'Åkersberga', 'Ålberga', 'Åled', 'Ålem', 'Åmmeberg', 'Åmot', 'Åmotfors', 'Åmsele', 'Åmynnet', 'Åmål', 'Ånge', 'Ånäset', 'Åre', 'Årjäng', 'Årstad', 'Årsunda', 'Åryd', 'Åryd', 'Ås', 'Ås', 'Åsa', 'Åsarne', 'Åsarp', 'Åsbro', 'Åsby', 'Åseda', 'Åsele', 'Åselstad', 'Åsen', 'Åsenhöga', 'Åsensbruk', 'Åshammar', 'Åsljunga', 'Åstol', 'Åstorp', 'Återvall', 'Åtorp', 'Åtvidaberg',
         'Älandsbro', 'Älgarås', 'Älghult', 'Älmhult', 'Älmsta', 'Älta', 'Älvdalen', 'Älvkarleby', 'Älvnäs', 'Älvsbyn', 'Älvsered', 'Älvängen', 'Äng', 'Änge', 'Ängelholm', 'Ängsholmen', 'Ängsvik', 'Äppelbo', 'Ärla', 'Äsköping', 'Äspered', 'Äsperöd', 'Ätran',
         'Öbonäs', 'Öckerö', 'Ödeborg', 'Ödeshög', 'Ödsmål', 'Ödåkra', 'Öggestorp', 'Öjersjö', 'Ölmanäs', 'Ölmbrotorp', 'Ölme', 'Ölmstad', 'Ölsta', 'Önneköp', 'Önnestad', 'Örbyhus', 'Örebro', 'Öregrund', 'Örkelljunga', 'Örnsköldsvik', 'Örserum', 'Örsjö', 'Örslösa', 'Örsundsbro', 'Örtagården', 'Örtofta', 'Örviken', 'Ösmo', 'Östadkulle', 'Östansjö', 'Östavall', 'Österbybruk', 'Österbymo', 'Österforse', 'Österfärnebo', 'Österhagen och Bergliden', 'Österslöv', 'Österstad', 'Östersund', 'Östervåla', 'Östhammar', 'Östhamra', 'Östmark', 'Östnor', 'Östorp och Ådran', 'Östra Bispgården', 'Östra Frölunda', 'Östra Grevie', 'Östra Husby', 'Östra Kallfors', 'Östra Karup', 'Östra Ljungby', 'Östra Ryd', 'Östra Sönnarslöv', 'Östra Tommarp', 'Östra Ånneröd', 'Östraby', 'Överboda', 'Överhörnäs', 'Överkalix', 'Överlida', 'Övertorneå', 'Överum', 'Övre Soppero', 'Övre Svartlå', 'Öxabäck', 'Öxeryd'
-    );
+    ];
 
-    protected static $cityFormats = array(
+    protected static $cityFormats = [
         '{{cityName}}'
-    );
+    ];
 
-    protected static $state = array();
+    protected static $state = [];
 
-    protected static $stateAbbr = array();
+    protected static $stateAbbr = [];
 
-    protected static $country = array(
+    protected static $country = [
         'Afghanistan', 'Albanien', 'Algeriet', 'Amerikanska Jungfruöarna', 'Amerikanska Samoa', 'Andorra', 'Angola', 'Anguilla', 'Antarktis', 'Antigua och Barbuda', 'Argentina', 'Armenien', 'Aruba', 'Australien', 'Azerbajdzjan',
         'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belgien', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnien och Hercegovina', 'Botswana', 'Bouvetön', 'Brasilien', 'Brittiska Indiska oceanöarna', 'Brittiska Jungfruöarna', 'Brunei', 'Bulgarien', 'Burkina Faso', 'Burundi',
         'Caymanöarna', 'Centralafrikanska republiken', 'Chile', 'Colombia', 'Cooköarna', 'Costa Rica', 'Cypern',
@@ -87,12 +87,12 @@ class Address extends \Faker\Provider\Address
         'Zambia', 'Zimbabwe',
         'Åland',
         'Österrike', 'Östtimor'
-    );
+    ];
 
     /**
      * @var array Swedish street name formats
      */
-    protected static $streetNameFormats = array(
+    protected static $streetNameFormats = [
         '{{lastName}}{{streetSuffix}}',
         '{{lastName}}{{streetSuffix}}',
         '{{firstName}}{{streetSuffix}}',
@@ -102,21 +102,21 @@ class Address extends \Faker\Provider\Address
         '{{streetPrefix}}{{streetSuffix}}',
         '{{streetPrefix}}{{streetSuffix}}',
         '{{lastName}} {{streetSuffixWord}}'
-    );
+    ];
 
     /**
      * @var array Swedish street address formats
      */
-    protected static $streetAddressFormats = array(
+    protected static $streetAddressFormats = [
         '{{streetName}} {{buildingNumber}}'
-    );
+    ];
 
     /**
      * @var array Swedish address formats
      */
-    protected static $addressFormats = array(
+    protected static $addressFormats = [
         "{{streetAddress}}\n{{postcode}} {{city}}"
-    );
+    ];
 
     /**
      * Randomly return a real city name

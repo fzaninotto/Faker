@@ -4,30 +4,30 @@ namespace Faker\Provider\fr_BE;
 
 class Address extends \Faker\Provider\fr_FR\Address
 {
-    protected static $postcode = array('####');
+    protected static $postcode = ['####'];
 
-    protected static $streetAddressFormats = array(
+    protected static $streetAddressFormats = [
         '{{streetName}} {{buildingNumber}}'
-    );
+    ];
 
-    protected static $streetNameFormats = array('{{streetSuffix}} {{lastName}}');
+    protected static $streetNameFormats = ['{{streetSuffix}} {{lastName}}'];
 
-    protected static $cityFormats = array('{{cityName}}');
+    protected static $cityFormats = ['{{cityName}}'];
 
-    protected static $addressFormats = array(
+    protected static $addressFormats = [
         "{{streetAddress}}\n {{postcode}} {{city}}",
-    );
+    ];
 
-    protected static $streetSuffix = array(
+    protected static $streetSuffix = [
         'rue', 'avenue', 'boulevard', 'chemin', 'chaussée', 'impasse', 'place'
-    );
+    ];
 
     /**
      * Source: http://fr.wikipedia.org/wiki/Ville_de_Belgique
      *
      * @var array
      */
-    protected static $cityNames = array(
+    protected static $cityNames = [
         'Aarschot','Alost','Andenne','Antoing','Anvers','Arlon','Ath','Audenarde','Bastogne','Beaumont','Beauraing','Beringen','Bilzen','Binche',
         'Blankenberge','Bouillon','Braine-le-Comte','Bree','Bruges','Bruxelles','Charleroi','Châtelet','Chièvres','Chimay','Chiny','Ciney','Comines-Warneton','Courtrai',
         'Couvin','Damme','Deinze','Diest','Dilsen-Stokkem','Dinant','Dixmude','Durbuy','Eeklo','Enghien','Eupen','Fleurus','Florenville','Fontaine-l\'Évêque','Fosses-la-Ville',
@@ -39,16 +39,16 @@ class Address extends \Faker\Provider\fr_FR\Address
         'Saint-Ghislain','Saint-Hubert','Saint-Nicolas','Saint-Trond','Saint-Vith','Seraing','Soignies','Stavelot','Termonde','Thuin',
         'Tielt','Tirlemont','Tongres','Torhout','Tournai','Turnhout','Verviers','Vilvorde','Virton','Visé','Walcourt','Waregem','Waremme','Wavre','Wervik',
         'Ypres','Zottegem'
-    );
+    ];
 
-    protected static $region = array(
+    protected static $region = [
         'Wallonie', 'Flandre', 'Bruxelles-Capitale'
-    );
+    ];
 
-    protected static $province = array(
+    protected static $province = [
         'Anvers', 'Limbourg', 'Flandre orientale', 'Brabant flamand', 'Flandre occidentale',
         'Hainaut', 'Liège', 'Luxembourg', 'Namur', 'Brabant wallon'
-    );
+    ];
 
     /**
      * Randomly returns a belgian province.

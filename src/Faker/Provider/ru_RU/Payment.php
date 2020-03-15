@@ -10,7 +10,7 @@ class Payment extends \Faker\Provider\Payment
      * sed -r 's/&mdash;//' | sed -r 's/[\<\>]//g' | sed -r "s/(^|$)/'/g" | sed -r 's/$/,/' | sed -r 's/\&(laquo|raquo);/"/g' | \
      * sed -r 's/\s+/ /g'"
      */
-    protected static $banks = array(
+    protected static $banks = [
         'Новый Промышленный Банк',
         'Новый Символ',
         'Нокссбанк',
@@ -799,7 +799,7 @@ class Payment extends \Faker\Provider\Payment
         'Новый Век',
         'Новый Кредитный Союз',
         'Новый Московский Банк',
-    );
+    ];
 
     /**
      * @example 'Новый Московский Банк'

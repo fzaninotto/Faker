@@ -4,29 +4,29 @@ namespace Faker\Provider\vi_VN;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $maleNameFormats = array(
+    protected static $maleNameFormats = [
         '{{lastName}} {{firstNameMale}}',
         '{{titleMale}}. {{lastName}} {{firstNameMale}}',
         '{{lastName}} {{middleNameMale}} {{firstNameMale}}',
         '{{titleMale}}. {{lastName}} {{middleNameMale}} {{firstNameMale}}',
-    );
+    ];
 
-    protected static $femaleNameFormats = array(
+    protected static $femaleNameFormats = [
         '{{lastName}} {{firstNameFemale}}',
         '{{titleFemale}}. {{lastName}} {{firstNameFemale}}',
         '{{lastName}} {{middleNameFemale}} {{firstNameFemale}}',
         '{{titleFemale}}. {{lastName}} {{middleNameFemale}} {{firstNameFemale}}',
-    );
+    ];
 
-    protected static $middleNameFormat = array(
+    protected static $middleNameFormat = [
       '{{firstNameMale}}',
       '{{firstNameFemale}}',
-    );
+    ];
 
     /**
      * @link http://www.dattenhay.vn/1001-ten-cho-be-trai.htm
      */
-    protected static $firstNameMale = array(
+    protected static $firstNameMale = [
         'An', 'Anh',
         'Bào', 'Bình', 'Bạch', 'Bảo', 'Bắc', 'Bằng', 'Bổng', 'Bửu',
         'Ca', 'Canh', 'Chiến', 'Chiểu', 'Châu', 'Chính', 'Chương', 'Chưởng', 'Chấn', 'Công', 'Cơ', 'Cương', 'Cường', 'Cảnh', 'Cần', 'Cẩn',
@@ -48,12 +48,12 @@ class Person extends \Faker\Provider\Person
         'Án', 'Ân',
         'Đan', 'Điền', 'Điệp', 'Đoàn', 'Đình', 'Đôn', 'Đăng', 'Đại', 'Đạo', 'Đạt', 'Định', 'Đồng', 'Độ', 'Đức', 'Đức',
         'Ẩn',
-    );
+    ];
 
     /**
      * @link http://www.dattenhay.vn/1001-ten-cho-be-trai.htm
      */
-    protected static $middleNameMale = array(
+    protected static $middleNameMale = [
         'An', 'Anh',
         'Bá', 'Bách', 'Bình', 'Bích', 'Bảo', 'Bằng', 'Bửu', 'Bữu',
         'Cao', 'Chiêu', 'Chiến', 'Chung', 'Chuẩn', 'Chánh', 'Chí', 'Chính', 'Chấn', 'Chế', 'Cát', 'Công', 'Cương', 'Cường', 'Cảnh',
@@ -70,12 +70,12 @@ class Person extends \Faker\Provider\Person
         'Tài', 'Tạ',
         'Ân',
         'Đan', 'Đinh', 'Đoàn', 'Đình', 'Đông', 'Đăng', 'Đại', 'Đạt', 'Đắc', 'Định', 'Đồng', 'Đức', 'Đăng', 'Đức',
-    );
+    ];
 
     /**
      * @link http://www.dattenhay.vn/1001-ten-cho-be-gai.htm
      */
-    protected static $firstNameFemale = array(
+    protected static $firstNameFemale = [
         'An', 'Anh',
         'Bình', 'Bích', 'Băng', 'Bạch', 'Bảo',
         'Ca', 'Chi', 'Chinh', 'Chiêu', 'Chung', 'Châu', 'Cát', 'Cúc', 'Cương', 'Cầm',
@@ -100,12 +100,12 @@ class Person extends \Faker\Provider\Person
         'Ái', 'Ánh', 'Ân',
         'Đan', 'Điệp', 'Đoan', 'Đài', 'Đàn', 'Đào', 'Đình', 'Đường', 'Đan',
         'Ý',
-    );
+    ];
 
     /**
      * @link http://www.dattenhay.vn/1001-ten-cho-be-gai.htm
      */
-    protected static $middleNameFemale = array(
+    protected static $middleNameFemale = [
         'An', 'Anh',
         'Ban', 'Bích', 'Băng', 'Bạch', 'Bảo', 'Bội',
         'Cam', 'Chi', 'Chiêu', 'Cát', 'Cẩm',
@@ -128,12 +128,12 @@ class Person extends \Faker\Provider\Person
         'Ái', 'Ánh',
         'Đan', 'Đinh', 'Đoan', 'Đài', 'Đông', 'Đồng', 'Đan', 'Đoan',
         'Ý',
-    );
+    ];
 
     /**
      * @link http://vi.wikipedia.org/wiki/H%E1%BB%8D_ng%C6%B0%E1%BB%9Di_Vi%E1%BB%87t_Nam
      */
-    protected static $lastName = array(
+    protected static $lastName = [
         'An', 'Ánh',
         'Ân', 'Âu', 'Ấu',
         'Biện', 'Bàng', 'Bành', 'Bá', 'Bì', 'Bình', 'Bùi', 'Bạc', 'Bạch', 'Bảo', 'Bế', 'Bồ', 'Bửu',
@@ -155,11 +155,11 @@ class Person extends \Faker\Provider\Person
         'Ung', 'Uông',
         'Vi', 'Viên', 'Võ', 'Văn', 'Vũ', 'Vương', 'Vừ', 'Xa',
         'Yên',
-    );
+    ];
 
-    protected static $titleMale = array('Cụ', 'Ông', 'Bác', 'Chú', 'Anh', 'Em');
+    protected static $titleMale = ['Cụ', 'Ông', 'Bác', 'Chú', 'Anh', 'Em'];
 
-    protected static $titleFemale = array('Cụ', 'Bà', 'Bác', 'Cô', 'Chị', 'Em');
+    protected static $titleFemale = ['Cụ', 'Bà', 'Bác', 'Cô', 'Chị', 'Em'];
 
     public function middleName($gender = null)
     {

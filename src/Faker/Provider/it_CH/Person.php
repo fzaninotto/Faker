@@ -7,7 +7,7 @@ class Person extends \Faker\Provider\it_IT\Person
     /**
      * @link http://www.bfs.admin.ch/bfs/portal/de/index/themen/01/02/blank/dos/prenoms/02.html
      */
-    protected static $firstNameMale = array(
+    protected static $firstNameMale = [
         'Aaron', 'Adriano', 'Alain', 'Alan', 'Alberto', 'Aldo', 'Alessandro', 'Alessio', 'Alex', 'Alexander', 'Alfredo', 'Andrea', 'Andreas', 'André', 'Angelo', 'Antonino', 'Antonio', 'Aris', 'Armando', 'Arturo', 'Athos', 'Attilio', 'Augusto', 'Aurelio',
         'Boris', 'Bruno',
         'Carlo', 'Carlos', 'Carmelo', 'Carmine', 'Cesare', 'Christian', 'Claudio', 'Corrado', 'Cristian', 'Cristiano',
@@ -29,12 +29,12 @@ class Person extends \Faker\Provider\it_IT\Person
         'Thomas', 'Tiziano', 'Tommaso',
         'Valentino', 'Valerio', 'Vincenzo', 'Vito', 'Vittorio',
         'Walter', 'Werner',
-    );
+    ];
 
     /**
      * @link http://www.bfs.admin.ch/bfs/portal/de/index/themen/01/02/blank/dos/prenoms/02.html
      */
-    protected static $firstNameFemale = array(
+    protected static $firstNameFemale = [
         'Ada', 'Adele', 'Adriana', 'Agnese', 'Alessandra', 'Alessia', 'Alexandra', 'Alice', 'Aline', 'Ana', 'Andrea', 'Angela', 'Angelina', 'Anita', 'Anna', 'Annamaria', 'Antonella', 'Antonia', 'Antonietta', 'Arianna', 'Asia', 'Aurora',
         'Barbara', 'Beatrice', 'Bianca', 'Brigitte', 'Bruna',
         'Camilla', 'Carla', 'Carmela', 'Carmen', 'Carolina', 'Caterina', 'Cecilia', 'Chantal', 'Chiara', 'Christine', 'Cinzia', 'Clara', 'Claudia', 'Cristina',
@@ -56,12 +56,12 @@ class Person extends \Faker\Provider\it_IT\Person
         'Ursula',
         'Valentina', 'Valeria', 'Vanessa', 'Vera', 'Verena', 'Veronica', 'Virginia', 'Vittoria', 'Viviana',
         'Yvonne',
-    );
+    ];
 
     /**
      * @link http://blog.tagesanzeiger.ch/datenblog/index.php/6859
      */
-    protected static $lastName = array(
+    protected static $lastName = [
         'Agustoni', 'Alberti', 'Albertini', 'Albisetti', 'Ambrosini', 'Antonini',
         'Balestra', 'Balmelli', 'Bassetti', 'Bassi', 'Baumann', 'Beffa', 'Belotti', 'Beretta', 'Bernasconi', 'Berta', 'Besomi', 'Bettosini', 'Bianchi', 'Bianda', 'Bizzozero', 'Bonetti', 'Botta', 'Bottinelli', 'Brunner', 'Butti',
         'Caccia', 'Campana', 'Camponovo', 'Candolfi', 'Canepa', 'Canonica', 'Capoferri', 'Carrara', 'Casanova', 'Cassina', 'Castelli', 'Cattaneo', 'Cavadini', 'Cavalli', 'Ceppi', 'Cereghetti', 'Cerutti', 'Chiesa', 'Colombo', 'Conti', 'Corti', 'Costa', 'Crivelli', 'Croci',
@@ -84,7 +84,7 @@ class Person extends \Faker\Provider\it_IT\Person
         'Valsangiacomo', 'Vassalli', 'Villa', 'Vitali',
         'Weber', 'Widmer',
         'Zanetti', 'Zanini', 'Zimmermann',
-    );
+    ];
 
     /**
      * Generates a valid random AVS13 (swiss social security) number

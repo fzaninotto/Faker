@@ -4,9 +4,9 @@ namespace Faker\Provider\en_NG;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $postcode = array('#####', '## ###');
+    protected static $postcode = ['#####', '## ###'];
 
-    private static $county = array(
+    private static $county = [
         'Abuja', 'Abia', 'Adamawa', 'Akwa Ibom', 'Anambra',
         'Bauchi', 'Bayelsa', 'Benue', 'Borno',
         'Cross River',
@@ -23,9 +23,9 @@ class Address extends \Faker\Provider\Address
         'Taraba',
         'Yobe',
         'Zamfara'
-    );
+    ];
 
-    protected static $country = array(
+    protected static $country = [
         'Afghanistan', 'Albania', 'Algeria', 'American Samoa', 'Andorra', 'Angola', 'Anguilla', 'Antarctica (the territory South of 60 deg S)', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan',
         'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Bouvet Island (Bouvetoya)', 'Brazil', 'British Indian Ocean Territory (Chagos Archipelago)', 'British Virgin Islands', 'Brunei Darussalam', 'Bulgaria', 'Burkina Faso', 'Burundi',
         'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Cayman Islands', 'Central African Republic', 'Chad', 'Chile', 'China', 'Christmas Island', 'Cocos (Keeling) Islands', 'Colombia', 'Comoros', 'Congo', 'Congo', 'Cook Islands', 'Costa Rica', 'Cote d\'Ivoire', 'Croatia', 'Cuba', 'Cyprus', 'Czech Republic',
@@ -51,9 +51,9 @@ class Address extends \Faker\Provider\Address
         'Wallis and Futuna', 'Western Sahara',
         'Yemen',
         'Zambia', 'Zimbabwe'
-    );
+    ];
 
-    private static $regions = array(
+    private static $regions = [
         'Abakaliki', 'Abeokuta', 'Akure', 'Asaba', 'Awka',
         'Bauchi',
         'Calabar', 'City',
@@ -70,7 +70,7 @@ class Address extends \Faker\Provider\Address
         'Sokoto',
         'Umuahia', 'Uyo',
         'Yenagoa', 'Yola'
-    );
+    ];
 
     /**
      * Randomly returns a Nigerian state or county.

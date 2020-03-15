@@ -4,20 +4,20 @@ namespace Faker\Provider\es_ES;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $cityPrefix = array('San', 'Vall', "L'", 'Villa', 'El', 'Los', 'La', 'Las', 'O', 'A', 'Os', 'As');
-    protected static $citySuffix = array('del Vallès', 'del Penedès', 'del Bages', 'de Ulla', 'de Lemos', 'del Mirador', 'de Arriba', 'de la Sierra', 'del Barco', 'de San Pedro', 'del Pozo', 'del Puerto', 'de las Torres', 'Alta', 'Baja', 'Medio');
-    protected static $buildingNumber = array('###', '##', '#');
-    protected static $streetPrefix = array(
+    protected static $cityPrefix = ['San', 'Vall', "L'", 'Villa', 'El', 'Los', 'La', 'Las', 'O', 'A', 'Os', 'As'];
+    protected static $citySuffix = ['del Vallès', 'del Penedès', 'del Bages', 'de Ulla', 'de Lemos', 'del Mirador', 'de Arriba', 'de la Sierra', 'del Barco', 'de San Pedro', 'del Pozo', 'del Puerto', 'de las Torres', 'Alta', 'Baja', 'Medio'];
+    protected static $buildingNumber = ['###', '##', '#'];
+    protected static $streetPrefix = [
         'Calle', 'Avenida', 'Plaza', 'Paseo', 'Ronda', 'Travesía', 'Camino', 'Carrer', 'Avinguda', 'Plaça', 'Passeig', 'Travessera', 'Rúa', 'Praza', 'Ruela', 'Camiño'
-    );
-    protected static $postcode = array('#####');
-    protected static $community = array(
+    ];
+    protected static $postcode = ['#####'];
+    protected static $community = [
         'Andalucía', 'Aragón', 'Principado de Asturias', 'Illes Balears', 'Canarias', 'Cantabria', 'Castilla y León', 'Castilla - La Mancha', 'Cataluña', 'Comunitat Valenciana', 'Extremadura', 'Galicia', 'Comunidad de Madrid', 'Región de Murcia', 'Comunidad Foral de Navarra', 'País Vasco', 'La Rioja', 'Ceuta', 'Melilla'
-    );
-    protected static $state = array(
+    ];
+    protected static $state = [
         'A Coruña', 'Álava', 'Albacete', 'Alicante', 'Almería', 'Asturias', 'Ávila', 'Badajoz', 'Barcelona', 'Burgos', 'Cáceres', 'Cádiz', 'Cantabria', 'Castellón', 'Ceuta', 'Ciudad Real', 'Cuenca', 'Córdoba', 'Girona', 'Granada', 'Guadalajara', 'Guipuzkoa', 'Huelva', 'Huesca', 'Illes Balears', 'Jaén', 'La Rioja', 'Las Palmas', 'León', 'Lleida', 'Lugo', 'Málaga', 'Madrid', 'Melilla', 'Murcia', 'Navarra', 'Ourense', 'Palencia', 'Pontevedra', 'Salamanca', 'Segovia', 'Sevilla', 'Soria', 'Santa Cruz de Tenerife', 'Tarragona', 'Teruel', 'Toledo', 'Valencia', 'Valladolid', 'Vizcaya', 'Zamora', 'Zaragoza'
-    );
-    protected static $country = array(
+    ];
+    protected static $country = [
         'Afganistán','Albania','Alemania','Andorra','Angola','Antigua y Barbuda','Arabia Saudí','Argelia','Argentina','Armenia','Australia','Austria','Azerbaiyán',
         'Bahamas','Bangladés','Barbados','Baréin','Belice','Benín','Bielorrusia','Birmania','Bolivia','Bosnia-Herzegovina','Botsuana','Brasil','Brunéi Darusalam','Bulgaria','Burkina Faso','Burundi','Bután','Bélgica',
         'Cabo Verde','Camboya','Camerún','Canadá','Catar','Chad','Chile','China','Chipre','Ciudad del Vaticano','Colombia','Comoras','Congo','Corea del Norte','Corea del Sur','Costa Rica','Costa de Marfil','Croacia','Cuba',
@@ -41,23 +41,23 @@ class Address extends \Faker\Provider\Address
         'Vanuatu','Venezuela','Vietnam',
         'Yemen','Yibuti',
         'Zambia','Zimbabue'
-    );
-    protected static $cityFormats = array(
+    ];
+    protected static $cityFormats = [
         '{{cityPrefix}} {{lastName}} {{citySuffix}}',
         '{{cityPrefix}} {{lastName}}',
         '{{lastName}} {{citySuffix}}',
-    );
-    protected static $streetNameFormats = array(
+    ];
+    protected static $streetNameFormats = [
         '{{streetPrefix}} {{firstName}}',
         '{{streetPrefix}} {{lastName}}'
-    );
-    protected static $streetAddressFormats = array(
+    ];
+    protected static $streetAddressFormats = [
         '{{streetName}}, {{buildingNumber}}, {{secondaryAddress}}',
-    );
-    protected static $addressFormats = array(
+    ];
+    protected static $addressFormats = [
         "{{streetAddress}}, {{postcode}}, {{city}}"
-    );
-    protected static $secondaryAddressFormats = array('Bajos', 'Ático #º', 'Entre suelo #º', 'Bajo #º', '#º', '#º A', '#º B', '#º C', '#º D', '#º E', '#º F', '##º A', '##º B', '##º C', '##º D', '##º E', '##º F', '#º #º', '##º #º');
+    ];
+    protected static $secondaryAddressFormats = ['Bajos', 'Ático #º', 'Entre suelo #º', 'Bajo #º', '#º', '#º A', '#º B', '#º C', '#º D', '#º E', '#º F', '##º A', '##º B', '##º C', '##º D', '##º E', '##º F', '#º #º', '##º #º'];
 
     /**
      * @example 'Avenida'

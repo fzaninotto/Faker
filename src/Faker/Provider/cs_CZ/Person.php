@@ -4,28 +4,28 @@ namespace Faker\Provider\cs_CZ;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $lastNameFormat = array(
+    protected static $lastNameFormat = [
         '{{lastNameMale}}',
         '{{lastNameFemale}}',
-    );
+    ];
 
-    protected static $maleNameFormats = array(
+    protected static $maleNameFormats = [
         '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
         '{{titleMale}} {{firstNameMale}} {{lastNameMale}}',
-    );
+    ];
 
-    protected static $femaleNameFormats = array(
+    protected static $femaleNameFormats = [
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
         '{{titleFemale}} {{firstNameFemale}} {{lastNameFemale}}',
-    );
+    ];
 
-    protected static $firstNameMale = array(
+    protected static $firstNameMale = [
             'Adam', 'Aleš', 'Alois', 'Antonín', 'Bohumil', 'Bohuslav', 'Dagmar',
             'Dalibor', 'Daniel', 'David', 'Dominik', 'Dušan', 'Eduard', 'Emil',
             'Filip', 'František', 'Ilona', 'Ivan', 'Ivo', 'Jakub', 'Jan', 'Ján',
@@ -38,9 +38,9 @@ class Person extends \Faker\Provider\Person
             'Rudolf', 'Stanislav', 'Šimon', 'Štefan', 'Štěpán', 'Tomáš',
             'Václav', 'Vasyl', 'Viktor', 'Vít', 'Vítězslav', 'Vladimír',
             'Vladislav', 'Vlastimil', 'Vojtěch', 'Zbyněk', 'Zdeněk'
-    );
+    ];
 
-    protected static $firstNameFemale = array(
+    protected static $firstNameFemale = [
             'Adéla', 'Alena', 'Alžběta', 'Andrea', 'Aneta', 'Anežka', 'Anna',
             'Barbora', 'Blanka', 'Božena', 'Dana', 'Daniela', 'Denisa', 'Dominika',
             'Eliška', 'Emilie', 'Eva', 'Františka', 'Gabriela', 'Hana', 'Helena',
@@ -54,9 +54,9 @@ class Person extends \Faker\Provider\Person
             'Stanislava', 'Šárka', 'Štěpánka', 'Tereza', 'Vendula', 'Věra',
             'Veronika', 'Vladimíra', 'Vlasta', 'Zdenka', 'Zdeňka', 'Zdeňka',
             'Zuzana'
-    );
+    ];
 
-    protected static $lastNameMale = array(
+    protected static $lastNameMale = [
             'Adam', 'Adamec', 'Adámek', 'Albrecht', 'Ambrož', 'Anděl', 'Andrle',
             'Antoš', 'Bajer', 'Baláž', 'Balcar', 'Balog', 'Baloun', 'Barák',
             'Baran', 'Bareš', 'Bárta', 'Barták', 'Bartoň', 'Bartoš',
@@ -212,9 +212,9 @@ class Person extends \Faker\Provider\Person
             'Zeman', 'Zezula', 'Zíka', 'Zikmund', 'Zima', 'Zlámal', 'Zoubek',
             'Zouhar', 'Zvěřina', 'Žáček', 'Žák', 'Žďárský', 'Žemlička',
             'Žídek', 'Žižka', 'Žůrek'
-    );
+    ];
 
-    protected static $lastNameFemale = array(
+    protected static $lastNameFemale = [
             'Adamová', 'Adamcová', 'Adámková', 'Albrechtová', 'Ambrožová',
             'Andělová', 'Andrlová', 'Antošová', 'Bajerová', 'Balážová',
             'Balcarová', 'Balogová', 'Balounová', 'Baráková', 'Baranová',
@@ -419,11 +419,11 @@ class Person extends \Faker\Provider\Person
             'Zíková', 'Zikmundová', 'Zimová', 'Zlámalová', 'Zoubková',
             'Zouharová', 'Zvěřinová', 'Žáčková', 'Žáková', 'Žďárská',
             'Žemličková', 'Žídková', 'Žižková', 'Žůrková'
-    );
+    ];
 
-    protected static $title = array(
+    protected static $title = [
         'Bc.', 'Ing.', 'MUDr.', 'MVDr.', 'Mgr.', 'JUDr.', 'PhDr.', 'RNDr.', 'doc.', 'Dr.'
-    );
+    ];
 
     /**
      * @return string czech birth number

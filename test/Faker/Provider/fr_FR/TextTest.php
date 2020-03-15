@@ -26,32 +26,32 @@ class TextTest extends TestCase
     {
         $this->assertSame(
             'Que faisaient-elles maintenant? À.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('Que faisaient-elles maintenant? À '))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['Que faisaient-elles maintenant? À '])
         );
 
         $this->assertSame(
             'Que faisaient-elles maintenant? À.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('Que faisaient-elles maintenant? À—   '))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['Que faisaient-elles maintenant? À—   '])
         );
 
         $this->assertSame(
             'Que faisaient-elles maintenant? À.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('Que faisaient-elles maintenant? À,'))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['Que faisaient-elles maintenant? À,'])
         );
 
         $this->assertSame(
             'Que faisaient-elles maintenant? À!.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('Que faisaient-elles maintenant? À! '))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['Que faisaient-elles maintenant? À! '])
         );
 
         $this->assertSame(
             'Que faisaient-elles maintenant? À.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('Que faisaient-elles maintenant? À: '))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['Que faisaient-elles maintenant? À: '])
         );
 
         $this->assertSame(
             'Que faisaient-elles maintenant? À.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('Que faisaient-elles maintenant? À; '))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['Que faisaient-elles maintenant? À; '])
         );
     }
 }
