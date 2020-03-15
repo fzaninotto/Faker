@@ -7,5 +7,5 @@
 
     <rule ref="PSR12" />
 
-    <arg value="n" />
+    <arg value="np" />
 </ruleset>
