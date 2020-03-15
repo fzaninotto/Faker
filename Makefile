@@ -9,7 +9,8 @@ fix: vendor/autoload.php ## Fixes code style issues with phpcbf
 	vendor/bin/phpcbf
 
 sniff: vendor/autoload.php ## Detects code style issues with phpcs
-	vendor/bin/phpcs
+	mkdir -p .build/php-codesniffer
+	vendor/bin/phpcs --cache=.build/php-codesniffer/cache.json
 
 static-code-analysis: vendor ## Runs a static code analysis with vimeo/psalm
 	vendor/bin/psalm --config=psalm.xml --show-info=false --stats
