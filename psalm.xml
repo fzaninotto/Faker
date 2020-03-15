@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<psalm
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+    cacheDirectory=".build/psalm"
+    errorBaseline="psalm-baseline.xml"
+    errorLevel="8"
+    resolveFromConfigFile="true"
+    totallyTyped="false"
+>
+    <plugins>
+        <pluginClass class="Psalm\PhpUnitPlugin\Plugin" />
+    </plugins>
+
+    <projectFiles>
+        <directory name="src/" />
+        <directory name="test/" />
+        <ignoreFiles>
+            <directory name="vendor/" />
+        </ignoreFiles>
+    </projectFiles>
+</psalm>

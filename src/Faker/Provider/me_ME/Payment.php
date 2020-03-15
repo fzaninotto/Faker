@@ -12,7 +12,7 @@ class Payment extends \Faker\Provider\Payment
      * @param  integer $length      total length without country code and 2 check digits
      * @return string
      */
-    public static function bankAccountNumber($prefix = '', $countryCode = 'ME', $length = '18')
+    public static function bankAccountNumber($prefix = '', $countryCode = 'ME', $length = 18)
     {
         return static::iban($countryCode, $prefix, $length);
     }

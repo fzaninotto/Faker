@@ -10,7 +10,7 @@ class AddressTest extends TestCase
 {
 
   /**
-   * @var Faker\Generator
+   * @var Generator
    */
   private $faker;
 

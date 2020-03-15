@@ -2,6 +2,7 @@
 
 [![Continuous Integration](https://github.com/fzaninotto/Faker/workflows/Continuous%20Integration/badge.svg?branch=next)](https://github.com/fzaninotto/Faker/actions)
 [![codecov](https://codecov.io/gh/fzaninotto/Faker/branch/next/graph/badge.svg)](https://codecov.io/gh/fzaninotto/Faker)
+[![Type Coverage](https://shepherd.dev/github/fzaninotto/faker/coverage.svg)](https://shepherd.dev/github/fzaninotto/faker)
 
 Faker is a PHP library that generates fake data for you. Whether you need to bootstrap your database, create good-looking XML documents, fill-in your persistence to stress test it, or anonymize data taken from a production service, Faker is for you.
 

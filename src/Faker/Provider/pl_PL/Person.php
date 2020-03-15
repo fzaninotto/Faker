@@ -136,7 +136,7 @@ class Person extends \Faker\Provider\Person
     /**
      * PESEL - Universal Electronic System for Registration of the Population
      * @link http://en.wikipedia.org/wiki/PESEL
-     * @param  DateTime $birthdate
+     * @param  \DateTime $birthdate
      * @param  string   $sex       M for male or F for female
      * @return string   11 digit number, like 44051401358
      */
