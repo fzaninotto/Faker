@@ -12,6 +12,7 @@
     <rule ref="PSR12" />
 
     <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
+    <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses"/>
 
     <arg value="np" />
 </ruleset>
