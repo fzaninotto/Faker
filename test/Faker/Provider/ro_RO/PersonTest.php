@@ -93,8 +93,8 @@ class PersonTest extends TestCase
             array(Person::GENDER_FEMALE, '1981-06-16','B2', false, '981061642'),
         );
     }
-    
-    public function test_allRandom_returnsValidCnp()
+
+    public function testAllRandomReturnsValidCnp()
     {
         $cnp = $this->faker->cnp;
         $this->assertTrue(
@@ -103,8 +103,8 @@ class PersonTest extends TestCase
         );
     }
 
-    
-    public function test_validGender_returnsValidCnp()
+
+    public function testValidGenderReturnsValidCnp()
     {
         $cnp = $this->faker->cnp(Person::GENDER_MALE);
         $this->assertTrue(
@@ -124,7 +124,7 @@ class PersonTest extends TestCase
      *
      * @dataProvider invalidGenderProvider
      */
-    public function test_invalidGender_throwsException($value)
+    public function testInvalidGenderThrowsException($value)
     {
         $this->expectException('InvalidArgumentException');
         $this->faker->cnp($value);
@@ -135,7 +135,7 @@ class PersonTest extends TestCase
      *
      * @dataProvider validYearProvider
      */
-    public function test_validYear_returnsValidCnp($value)
+    public function testValidYearReturnsValidCnp($value)
     {
         $cnp = $this->faker->cnp(null, $value);
         $this->assertTrue(
@@ -149,7 +149,7 @@ class PersonTest extends TestCase
      *
      * @dataProvider invalidYearProvider
      */
-    public function test_invalidYear_throwsException($value)
+    public function testInvalidYearThrowsException($value)
     {
         $this->expectException('InvalidArgumentException');
         $this->faker->cnp(null, $value);
@@ -159,7 +159,7 @@ class PersonTest extends TestCase
      * @param $value
      * @dataProvider validCountyCodeProvider
      */
-    public function test_validCountyCode_returnsValidCnp($value)
+    public function testValidCountyCodeReturnsValidCnp($value)
     {
         $cnp = $this->faker->cnp(null, null, $value);
         $this->assertTrue(
@@ -172,14 +172,14 @@ class PersonTest extends TestCase
      * @param $value
      * @dataProvider invalidCountyCodeProvider
      */
-    public function test_invalidCountyCode_throwsException($value)
+    public function testInvalidCountyCodeThrowsException($value)
     {
         $this->expectException('InvalidArgumentException');
         $this->faker->cnp(null, null, $value);
     }
 
-    
-    public function test_nonResident_returnsValidCnp()
+
+    public function testNonResidentReturnsValidCnp()
     {
         $cnp = $this->faker->cnp(null, null, null, false);
         $this->assertTrue(
@@ -203,7 +203,7 @@ class PersonTest extends TestCase
      *
      * @dataProvider validInputDataProvider
      */
-    public function test_validInputData_returnsValidCnp($gender, $dateOfBirth, $county, $isResident, $expectedCnpStart)
+    public function testValidInputDataReturnsValidCnp($gender, $dateOfBirth, $county, $isResident, $expectedCnpStart)
     {
         $cnp = $this->faker->cnp($gender, $dateOfBirth, $county, $isResident);
         $this->assertStringStartsWith(

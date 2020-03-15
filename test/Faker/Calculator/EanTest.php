@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class EanTest extends TestCase
 {
-    public function Ean8checksumProvider()
+    public function ean8checksumProvider()
     {
         return array(
             array('1234567', '0'),
@@ -27,7 +27,7 @@ class EanTest extends TestCase
     }
 
     /**
-     * @dataProvider Ean8checksumProvider
+     * @dataProvider ean8checksumProvider
      */
     public function testChecksumEan8($partial, $checksum)
     {
@@ -42,7 +42,7 @@ class EanTest extends TestCase
         $this->assertTrue(Ean::isValid($ean8) === $valid);
     }
 
-    public function Ean13checksumProvider()
+    public function ean13checksumProvider()
     {
         return array(
             array('123456789123', '1'),
@@ -64,7 +64,7 @@ class EanTest extends TestCase
     }
 
     /**
-     * @dataProvider Ean13checksumProvider
+     * @dataProvider ean13checksumProvider
      */
     public function testChecksumEan13($partial, $checksum)
     {

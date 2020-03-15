@@ -22,7 +22,7 @@ class TextTest extends TestCase
         return $method;
     }
 
-    function testItShouldAppendEndPunctToTheEndOfString()
+    public function testItShouldAppendEndPunctToTheEndOfString()
     {
         $this->assertSame(
             '최석(崔晳)으로부터 최후의 편지가.',

@@ -22,7 +22,7 @@ class TextTest extends TestCase
         return $method;
     }
 
-    function testItShouldAppendEndPunctToTheEndOfString()
+    public function testItShouldAppendEndPunctToTheEndOfString()
     {
         $this->assertSame(
             'Και δεν άκουσες το κλοπακλόπ, κλοπακλόπ, κλοπακλόπ.',
