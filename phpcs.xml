@@ -7,5 +7,7 @@
 
     <rule ref="PSR12" />
 
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
+
     <arg value="np" />
 </ruleset>
