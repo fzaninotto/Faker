@@ -50,8 +50,18 @@ jobs:
       - name: "Install locked dependencies from composer.lock"
         run: "composer install --no-interaction --no-progress --no-suggest"
 
+      - name: "Create cache directory for squizlabs/php_codesniffer"
+        run: "mkdir -p .build/php-codesniffer"
+
+      - name: "Cache cache directory for squizlabs/php_codesniffer"
+        uses: "actions/cache@v1"
+        with:
+          path: ".build/php-codesniffer/"
+          key: "php-${{ matrix.php-version }}-php-codesniffer-${{ hashFiles('**/composer.json') }}"
+          restore-keys: "php-${{ matrix.php-version }}-php-codesniffer-"
+
       - name: "Run squizlabs/php_codesniffer"
-        run: "vendor/bin/phpcs"
+        run: "vendor/bin/phpcs --cache=.build/php-codesniffer/cache.json"
 
   static-code-analysis:
     name: "Static Code Analysis"
