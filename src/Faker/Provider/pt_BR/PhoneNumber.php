@@ -88,11 +88,11 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     protected static function anyPhoneNumber($type, $formatted = true)
     {
         $area   = static::areaCode();
-        $number = ($type == 'cellphone')?
+        $number = ($type == 'cellphone') ?
             static::cellphone($formatted) :
             static::landline($formatted);
 
-        return $formatted? "($area) $number" : $area.$number;
+        return $formatted ? "($area) $number" : $area . $number;
     }
 
     /**

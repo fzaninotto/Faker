@@ -136,6 +136,6 @@ abstract class Text extends Base
 
     protected static function appendEnd($text)
     {
-        return preg_replace("/([ ,-:;\x{2013}\x{2014}]+$)/us", '', $text).'.';
+        return preg_replace("/([ ,-:;\x{2013}\x{2014}]+$)/us", '', $text) . '.';
     }
 }

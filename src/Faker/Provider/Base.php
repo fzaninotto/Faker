@@ -305,9 +305,9 @@ class Base
                 $j = mt_rand(0, $i);
             }
             if ($j == $i) {
-                $shuffledArray[]= $value;
+                $shuffledArray[] = $value;
             } else {
-                $shuffledArray[]= $shuffledArray[$j];
+                $shuffledArray[] = $shuffledArray[$j];
                 $shuffledArray[$j] = $value;
             }
             $i++;
@@ -339,7 +339,7 @@ class Base
             $array = array();
             $strlen = mb_strlen($string, $encoding);
             for ($i = 0; $i < $strlen; $i++) {
-                $array []= mb_substr($string, $i, 1, $encoding);
+                $array [] = mb_substr($string, $i, 1, $encoding);
             }
         } else {
             $array = str_split($string, 1);

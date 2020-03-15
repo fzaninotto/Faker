@@ -2,7 +2,7 @@
 
 namespace Faker\Provider\ms_MY;
 
-use \Faker\Generator;
+use Faker\Generator;
 
 class Address extends \Faker\Provider\Address
 {

@@ -19,11 +19,11 @@ function check_digit($numbers)
 
     for ($i = 1; $i <= $length; $i++) {
         if (!$second_algorithm) {
-            $multiplier = $i+1;
+            $multiplier = $i + 1;
         } else {
-            $multiplier = ($i >= 9)? $i-7 : $i+1;
+            $multiplier = ($i >= 9) ? $i - 7 : $i + 1;
         }
-        $verifier += $numbers[$length-$i] * $multiplier;
+        $verifier += $numbers[$length - $i] * $multiplier;
     }
 
     $verifier = 11 - ($verifier % 11);

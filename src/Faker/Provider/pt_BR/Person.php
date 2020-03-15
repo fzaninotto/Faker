@@ -114,7 +114,7 @@ class Person extends \Faker\Provider\Person
         $n .= check_digit($n);
         $n .= check_digit($n);
 
-        return $formatted? vsprintf('%d%d%d.%d%d%d.%d%d%d-%d%d', str_split($n)) : $n;
+        return $formatted ? vsprintf('%d%d%d.%d%d%d.%d%d%d-%d%d', str_split($n)) : $n;
     }
 
     /**
@@ -128,6 +128,6 @@ class Person extends \Faker\Provider\Person
         $n = $this->generator->numerify('########');
         $n .= check_digit($n);
 
-        return $formatted? vsprintf('%d%d.%d%d%d.%d%d%d-%s', str_split($n)) : $n;
+        return $formatted ? vsprintf('%d%d.%d%d%d.%d%d%d-%s', str_split($n)) : $n;
     }
 }

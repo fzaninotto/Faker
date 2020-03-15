@@ -102,7 +102,7 @@ class Person extends \Faker\Provider\Person
         }
         $datePart = $birthdate->format('dmy');
 
-        switch ((int)($birthdate->format('Y')/100)) {
+        switch ((int)($birthdate->format('Y') / 100)) {
             case 18:
                 $centurySign = '+';
                 break;

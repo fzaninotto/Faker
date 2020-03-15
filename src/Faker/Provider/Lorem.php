@@ -64,8 +64,8 @@ class Lorem extends Base
     public static function words($nb = 3, $asText = false)
     {
         $words = array();
-        for ($i=0; $i < $nb; $i++) {
-            $words []= static::word();
+        for ($i = 0; $i < $nb; $i++) {
+            $words [] = static::word();
         }
 
         return $asText ? implode(' ', $words) : $words;
@@ -106,8 +106,8 @@ class Lorem extends Base
     public static function sentences($nb = 3, $asText = false)
     {
         $sentences = array();
-        for ($i=0; $i < $nb; $i++) {
-            $sentences []= static::sentence();
+        for ($i = 0; $i < $nb; $i++) {
+            $sentences [] = static::sentence();
         }
 
         return $asText ? implode(' ', $sentences) : $sentences;
@@ -145,8 +145,8 @@ class Lorem extends Base
     public static function paragraphs($nb = 3, $asText = false)
     {
         $paragraphs = array();
-        for ($i=0; $i < $nb; $i++) {
-            $paragraphs []= static::paragraph();
+        for ($i = 0; $i < $nb; $i++) {
+            $paragraphs [] = static::paragraph();
         }
 
         return $asText ? implode("\n\n", $paragraphs) : $paragraphs;

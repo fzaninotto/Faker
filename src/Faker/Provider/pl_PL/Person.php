@@ -151,7 +151,7 @@ class Person extends \Faker\Provider\Person
 
         $fullYear = (int) $birthdate->format('Y');
         $year = (int) $birthdate->format('y');
-        $month = $birthdate->format('m') + (((int) ($fullYear/100) - 14) % 5) * 20;
+        $month = $birthdate->format('m') + (((int) ($fullYear / 100) - 14) % 5) * 20;
         $day = $birthdate->format('d');
 
         $result = array((int) ($year / 10), $year % 10, (int) ($month / 10), $month % 10, (int) ($day / 10), $day % 10);
@@ -191,11 +191,11 @@ class Person extends \Faker\Provider\Person
             $checksum += $weights[$i] * (ord($low[$i]) - 55);
         }
         for ($i = 0, $size = count($high); $i < $size; $i++) {
-            $checksum += $weights[$i+3] * $high[$i];
+            $checksum += $weights[$i + 3] * $high[$i];
         }
         $checksum %= 10;
 
-        return implode('', $low).$checksum.implode('', $high);
+        return implode('', $low) . $checksum . implode('', $high);
     }
 
     /**
