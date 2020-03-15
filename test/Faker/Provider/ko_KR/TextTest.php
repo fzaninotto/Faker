@@ -13,7 +13,8 @@ class TextTest extends TestCase
         $this->textClass = new \ReflectionClass('Faker\Provider\el_GR\Text');
     }
 
-    protected function getMethod($name) {
+    protected function getMethod($name)
+    {
         $method = $this->textClass->getMethod($name);
 
         $method->setAccessible(true);

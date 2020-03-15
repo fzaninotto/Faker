@@ -9,7 +9,7 @@ class DefaultGeneratorTest extends TestCase
 {
     public function testGeneratorReturnsNullByDefault()
     {
-        $generator = new DefaultGenerator;
+        $generator = new DefaultGenerator();
         $this->assertNull($generator->value);
     }
 

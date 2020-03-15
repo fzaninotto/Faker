@@ -27,4 +27,3 @@ class PersonTest extends TestCase
         $this->assertNotEmpty($firstNameFemale);
     }
 }
-?>

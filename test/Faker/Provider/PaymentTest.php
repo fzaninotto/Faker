@@ -40,7 +40,7 @@ class PaymentTest extends TestCase
     public function loadLocalProviders($locale)
     {
         $providerPath = realpath(__DIR__ . '/../../../src/Faker/Provider');
-        if (file_exists($providerPath.'/'.$locale.'/Payment.php')) {
+        if (file_exists($providerPath . '/' . $locale . '/Payment.php')) {
             $payment = "\\Faker\\Provider\\$locale\\Payment";
             $this->faker->addProvider(new $payment($this->faker));
         }

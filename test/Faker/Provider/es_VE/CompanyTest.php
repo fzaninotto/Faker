@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by Domingo Oropeza <dioh_@hotmail.com> for Faker
  * Date: 01/09/2017
@@ -38,6 +39,4 @@ class CompanyTest extends TestCase
         $rif = $this->faker->taxpayerIdentificationNumber('-');
         $this->assertRegExp($pattern, $rif);
     }
-
-
 }

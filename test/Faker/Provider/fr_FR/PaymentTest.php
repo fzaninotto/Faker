@@ -29,7 +29,7 @@ class PaymentTest extends TestCase
 
         $key = (int) substr($siren, 2, 2);
         if ($key === 0) {
-            $this->assertEqual($key, (12 + 3 * ($siren % 97)) % 97);            
+            $this->assertEqual($key, (12 + 3 * ($siren % 97)) % 97);
         }
     }
 
@@ -43,7 +43,7 @@ class PaymentTest extends TestCase
 
         $key = (int) substr($siren, 2, 2);
         if ($key === 0) {
-            $this->assertEqual($key, (12 + 3 * ($siren % 97)) % 97);            
+            $this->assertEqual($key, (12 + 3 * ($siren % 97)) % 97);
         }
     }
 }

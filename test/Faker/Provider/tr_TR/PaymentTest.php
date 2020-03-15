@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Faker\Provider\tr_TR;
 
 use Faker\Generator;

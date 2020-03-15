@@ -297,7 +297,7 @@ class BaseTest extends TestCase
     public function testBothifyUtf()
     {
         $utf = 'œ∑´®†¥¨ˆøπ“‘和製╯°□°╯︵ ┻━┻🐵 🙈 ﺚﻣ ﻦﻔﺳ ﺲﻘﻄﺗ ﻮﺑﺎﻠﺘﺣﺪﻳﺩ،, ﺝﺰﻳﺮﺘﻳ ﺏﺎﺴﺘﺧﺩﺎﻣ ﺄﻧ ﺪﻧﻭ. ﺇﺫ ﻪﻧﺍ؟ ﺎﻠﺴﺗﺍﺭ ﻮﺘ';
-        $this->assertRegExp('/'.$utf.'foo\dB[a-z]a([a-z]|\d)r/u', BaseProvider::bothify($utf.'foo#B?a*r'));
+        $this->assertRegExp('/' . $utf . 'foo\dB[a-z]a([a-z]|\d)r/u', BaseProvider::bothify($utf . 'foo#B?a*r'));
     }
 
     public function testAsciifyReturnsSameStringWhenItContainsNoStarSign()
@@ -393,14 +393,14 @@ class BaseTest extends TestCase
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         $values = array();
-        for ($i=0; $i < 10; $i++) {
-            $values[]= $faker->optional()->randomDigit;
+        for ($i = 0; $i < 10; $i++) {
+            $values[] = $faker->optional()->randomDigit;
         }
         $this->assertContains(null, $values);
 
         $values = array();
-        for ($i=0; $i < 10; $i++) {
-            $values[]= $faker->optional(50)->randomDigit;
+        for ($i = 0; $i < 10; $i++) {
+            $values[] = $faker->optional(50)->randomDigit;
         }
         $this->assertContains(null, $values);
     }
@@ -449,8 +449,8 @@ class BaseTest extends TestCase
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         $values = array();
-        for ($i=0; $i < 10; $i++) {
-            $values[]= $faker->unique()->randomDigit;
+        for ($i = 0; $i < 10; $i++) {
+            $values[] = $faker->unique()->randomDigit;
         }
         sort($values);
         $this->assertEquals(array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), $values);
@@ -463,7 +463,7 @@ class BaseTest extends TestCase
 
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
-        for ($i=0; $i < 11; $i++) {
+        for ($i = 0; $i < 11; $i++) {
             $faker->unique()->randomDigit;
         }
     }
@@ -473,12 +473,12 @@ class BaseTest extends TestCase
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         $values = array();
-        for ($i=0; $i < 10; $i++) {
-            $values[]= $faker->unique()->randomDigit;
+        for ($i = 0; $i < 10; $i++) {
+            $values[] = $faker->unique()->randomDigit;
         }
-        $values[]= $faker->unique(true)->randomDigit;
-        for ($i=0; $i < 9; $i++) {
-            $values[]= $faker->unique()->randomDigit;
+        $values[] = $faker->unique(true)->randomDigit;
+        for ($i = 0; $i < 9; $i++) {
+            $values[] = $faker->unique()->randomDigit;
         }
         sort($values);
         $this->assertEquals(array(0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9), $values);
@@ -503,10 +503,10 @@ class BaseTest extends TestCase
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         $values = array();
-        $evenValidator = function($digit) {
+        $evenValidator = function ($digit) {
             return $digit % 2 === 0;
         };
-        for ($i=0; $i < 50; $i++) {
+        for ($i = 0; $i < 50; $i++) {
             $values[$faker->valid($evenValidator)->randomDigit] = true;
         }
         $uniqueValues = array_keys($values);
@@ -521,10 +521,10 @@ class BaseTest extends TestCase
 
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
-        $evenValidator = function($digit) {
+        $evenValidator = function ($digit) {
             return $digit % 2 === 0;
         };
-        for ($i=0; $i < 11; $i++) {
+        for ($i = 0; $i < 11; $i++) {
             $faker->valid($evenValidator)->randomElement(array(1, 3, 5, 7, 9));
         }
     }
