@@ -2,8 +2,8 @@
 
 namespace Faker\Test\Provider\en_US;
 
-use Faker\Provider\en_US\Company;
 use Faker\Generator;
+use Faker\Provider\en_US\Company;
 use PHPUnit\Framework\TestCase;
 
 class CompanyTest extends TestCase

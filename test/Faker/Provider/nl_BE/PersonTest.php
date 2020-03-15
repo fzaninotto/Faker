@@ -2,10 +2,10 @@
 
 namespace Faker\Test\Provider\nl_BE;
 
+use Datetime;
 use Faker\Generator;
 use Faker\Provider\nl_BE\Person;
 use PHPUnit\Framework\TestCase;
-use Datetime;
 
 /**
  * @group Person
