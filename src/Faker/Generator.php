@@ -200,17 +200,17 @@ class Generator
     protected $providers = array();
     protected $formatters = array();
 
-    public function addProvider($provider)
+    public function addProvider($provider): void
     {
         array_unshift($this->providers, $provider);
     }
 
-    public function getProviders()
+    public function getProviders(): array
     {
         return $this->providers;
     }
 
-    public function seed($seed = null)
+    public function seed(int $seed = null): void
     {
         if ($seed === null) {
             mt_srand();
@@ -223,7 +223,7 @@ class Generator
         }
     }
 
-    public function format($formatter, $arguments = array())
+    public function format(string $formatter, array $arguments = array())
     {
         return call_user_func_array($this->getFormatter($formatter), $arguments);
     }
@@ -231,9 +231,9 @@ class Generator
     /**
      * @param string $formatter
      *
-     * @return Callable
+     * @return callable
      */
-    public function getFormatter($formatter)
+    public function getFormatter(string $formatter): callable
     {
         if (isset($this->formatters[$formatter])) {
             return $this->formatters[$formatter];
@@ -254,12 +254,12 @@ class Generator
      * @param  string $string String that needs to bet parsed
      * @return string
      */
-    public function parse($string)
+    public function parse(string $string): string
     {
         return preg_replace_callback('/\{\{\s?(\w+)\s?\}\}/u', array($this, 'callFormatWithMatches'), $string);
     }
 
-    protected function callFormatWithMatches($matches)
+    protected function callFormatWithMatches(array $matches)
     {
         return $this->format($matches[1]);
     }
@@ -269,7 +269,7 @@ class Generator
      *
      * @return mixed
      */
-    public function __get($attribute)
+    public function __get(string $attribute)
     {
         return $this->format($attribute);
     }
@@ -280,7 +280,7 @@ class Generator
      *
      * @return mixed
      */
-    public function __call($method, $attributes)
+    public function __call(string $method, array $attributes)
     {
         return $this->format($method, $attributes);
     }
