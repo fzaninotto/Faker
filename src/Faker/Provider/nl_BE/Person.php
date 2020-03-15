@@ -88,9 +88,9 @@ class Person extends \Faker\Provider\Person
     {
         $middle = self::numberBetween(1, 997);
         if ($gender === static::GENDER_MALE) {
-            $middle = $middle %2 === 1 ? $middle : $middle+1;
+            $middle = $middle % 2 === 1 ? $middle : $middle + 1;
         } elseif ($gender === static::GENDER_FEMALE) {
-            $middle = $middle %2 === 0 ? $middle : $middle+1;
+            $middle = $middle % 2 === 0 ? $middle : $middle + 1;
         }
         $middle = sprintf('%03d', $middle);
         
@@ -98,9 +98,9 @@ class Person extends \Faker\Provider\Person
         $dob = sprintf('%06d', $date->format('ymd'));
         $help = $date->format('Y') >= 2000 ? 2 : null;
 
-        $check = intval($help.$dob.$middle);
+        $check = intval($help . $dob . $middle);
         $rest = sprintf('%02d', 97 - ($check % 97));
         
-        return $dob.$middle.$rest;
+        return $dob . $middle . $rest;
     }
 }

@@ -1,4 +1,6 @@
-<?php namespace Faker\Provider\el_GR;
+<?php
+
+namespace Faker\Provider\el_GR;
 
 class Company extends \Faker\Provider\Company
 {

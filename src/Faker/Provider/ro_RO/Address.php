@@ -1,4 +1,5 @@
 <?php
+
 namespace Faker\Provider\ro_RO;
 
 class Address extends \Faker\Provider\Address

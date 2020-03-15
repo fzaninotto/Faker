@@ -1,4 +1,5 @@
 <?php
+
 namespace Faker\Provider;
 
 class File extends Base

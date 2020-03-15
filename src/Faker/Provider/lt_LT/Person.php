@@ -362,8 +362,8 @@ class Person extends \Faker\Provider\Person
         }
 
         $sum = 0;
-        for ($i=1; $i <= 10; $i++) {
-            $sum += $numbers[$i-1] * $multipliers[$i-1];
+        for ($i = 1; $i <= 10; $i++) {
+            $sum += $numbers[$i - 1] * $multipliers[$i - 1];
         }
 
         return (int) $sum;

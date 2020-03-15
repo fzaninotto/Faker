@@ -2,7 +2,7 @@
 
 namespace Faker\Provider\kk_KZ;
 
-use \Faker\Provider\DateTime;
+use Faker\Provider\DateTime;
 
 class Person extends \Faker\Provider\Person
 {

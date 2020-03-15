@@ -1,4 +1,5 @@
 <?php
+
 namespace Faker\Provider\ms_MY;
 
 use Faker\Provider\DateTime;

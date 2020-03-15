@@ -1,4 +1,5 @@
 <?php
+
 namespace Faker\Provider\ro_RO;
 
 class Person extends \Faker\Provider\Person
@@ -139,7 +140,7 @@ class Person extends \Faker\Provider\Person
 
         $checksum = $this->getChecksumDigit($cnp);
 
-        return $cnp.$checksum;
+        return $cnp . $checksum;
     }
 
     /**
