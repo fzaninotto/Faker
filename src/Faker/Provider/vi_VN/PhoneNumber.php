@@ -4,7 +4,7 @@ namespace Faker\Provider\vi_VN;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
-    protected static $areaCodes = array(
+    protected static $areaCodes = [
         76, 281, 64, 781, 240, 241,
         75, 650, 56, 651, 62, 780,
         26, 710, 511, 500, 510, 230,
@@ -23,10 +23,10 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         92, 186, 188, // Vietnamobile
         99, 199, // Gmobile
         95, // Sfone
-    );
+    ];
 
-    protected static $formats = array(
-        '7' => array(
+    protected static $formats = [
+        '7' => [
             '0[a] ### ####',
             '(0[a]) ### ####',
             '0[a]-###-####',
@@ -34,8 +34,8 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
             '84-[a]-###-####',
             '(84)([a])###-####',
             '+84-[a]-###-####',
-        ),
-        '8' => array(
+        ],
+        '8' => [
             '0[a] #### ####',
             '(0[a]) #### ####',
             '0[a]-####-####',
@@ -43,8 +43,8 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
             '84-[a]-####-####',
             '(84)([a])####-####',
             '+84-[a]-####-####',
-        ),
-    );
+        ],
+    ];
 
     public function phoneNumber()
     {

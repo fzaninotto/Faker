@@ -5,27 +5,27 @@ namespace Faker\Provider\lt_LT;
 class Person extends \Faker\Provider\Person
 {
 
-    protected static $maleNameFormats = array(
+    protected static $maleNameFormats = [
         '{{firstNameMale}} {{lastNameMale}}',
-    );
+    ];
 
-    protected static $femaleNameFormats = array(
+    protected static $femaleNameFormats = [
         '{{firstNameFemale}} {{lastNameFemale}}',
-    );
+    ];
 
-    protected static $lastNameFormat = array(
+    protected static $lastNameFormat = [
         '{{firstNameMale}}',
         '{{firstNameFemale}}',
-    );
+    ];
 
-    protected static $titleMale = array('p.', 'ponas');
+    protected static $titleMale = ['p.', 'ponas'];
 
-    protected static $titleFemale = array('p.', 'ponia', 'panelė');
+    protected static $titleFemale = ['p.', 'ponia', 'panelė'];
 
     /**
      * @link https://lt.wikipedia.org/wiki/S%C4%85ra%C5%A1as:Lietuvoje_paplit%C4%99_vardai
      **/
-    protected static $firstNameMale = array(
+    protected static $firstNameMale = [
         "Abramas", "Abraomas", "Achilas", "Adalbertas", "Adamas", "Adas", "Adolfas", "Adolis", "Adomas",
         "Adrijus", "Agatas", "Agnius", "Aidas", "Ainius", "Aistis", "Aivaras", "Akimas", "Akvilinas", "Albertas", "Albrechtas",
         "Albinas", "Aldonas", "Aleksandras", "Aleksas", "Alenas", "Alfas", "Alfonsas", "Alfredas", "Algimantas", "Algirdas",
@@ -111,12 +111,12 @@ class Person extends \Faker\Provider\Person
         "Voldemaras", "Vsevolodas", "Zacharijus", "Zakarijus", "Zbignevas", "Zdislavas", "Zenius", "Zenonas", "Zigfridas",
         "Zygfridas", "Zigmantas", "Zigmas", "Zygmuntas", "Zinovijus", "Žanas", "Žeimantas", "Žilvinas", "Žibartas", "Žybartas",
         "Žydrius", "Žydrūnas", "Žygaudas", "Žygimantas", "Žygintas", "Žygis", "Žymantas", "Žvaigždžius"
-    );
+    ];
 
     /**
      * @link https://lt.wikipedia.org/wiki/S%C4%85ra%C5%A1as:Lietuvoje_paplit%C4%99_vardai
      */
-    protected static $firstNameFemale = array(
+    protected static $firstNameFemale = [
         "Ada", "Adelė", "Adelija", "Adelina", "Adolfa", "Adolfina",
             "Adriana", "Adrija", "Adrijana", "Agata", "Agnė", "Agnetė", "Agnieška", "Agnietė", "Agnija",
             "Agota", "Agripina", "Aida", "Aidė", "Aimana", "Aimantė", "Aina", "Ainė", "Airė", "Airida", "Aistė",
@@ -233,24 +233,24 @@ class Person extends \Faker\Provider\Person
             "Zigfrida", "Zigmantė", "Zylė", "Zina", "Zinaida", "Zita", "Zofija", "Zoja", "Zosė", "Zuzana",
             "Žana", "Žaneta", "Žara", "Žeimantė", "Žemyna", "Žibuoklė", "Žibutė", "Žiedė", "Živilė", "Žydrė",
             "Žydronė", "Žydrūnė", "Žygimantė", "Žyginta", "Žilvinė", "Žymantė", "Žoržeta"
-    );
+    ];
 
     /**
      * @link http://www.horoskopai.lt/gaires/populiariausios-pavardes-lietuvoje/
      */
-    protected static $lastNameMale = array(
+    protected static $lastNameMale = [
         'Kazlaukas', 'Jankauskas', 'Petrauskas', 'Stankevičius', 'Vasiliauskas', 'Žukauskas', 'Butkus',
         'Kateiva', 'Paulauskas', 'Urbonas', 'Kavaliauskas', 'Baranauskas', 'Pocius', 'Sakalauskas',
-    );
+    ];
 
     /**
      * @link http://www.horoskopai.lt/gaires/populiariausios-pavardes-lietuvoje/
      */
-    protected static $lastNameFemale = array(
+    protected static $lastNameFemale = [
         'Kazlauskienė', 'Jankauskienė', 'Petrauskienė', 'Stankevičienė', 'Vasiliauskienė', 'Paulauskienė',
         'Žukauskienė', 'Urbonienė', 'Kavaliauskienė', 'Navickienė', 'Kazlauskaitė', 'Jankauskaitė', 'Stankevičiūtė',
         'Petrauskaitė', 'Vasiliauskaitė', 'Butkutė', 'Pociūtė', 'Lukoševičiūtė', 'Balčiūnaitė', 'Kavaliauskaitė'
-    );
+    ];
 
     /**
      * @param string|null $gender 'male', 'female' or null for any
@@ -356,9 +356,9 @@ class Person extends \Faker\Provider\Person
     private static function calculateSum($numbers, $time = 1)
     {
         if ($time == 1) {
-            $multipliers = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 1 );
+            $multipliers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1 ];
         } else {
-            $multipliers = array(3, 4, 5, 6, 7, 8, 9, 1, 2, 3 );
+            $multipliers = [3, 4, 5, 6, 7, 8, 9, 1, 2, 3 ];
         }
 
         $sum = 0;

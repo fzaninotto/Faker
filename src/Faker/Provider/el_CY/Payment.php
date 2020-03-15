@@ -24,7 +24,7 @@ class Payment extends \Faker\Provider\Payment
      * @var array Cyprus banks
      * @link http://www.acb.com.cy/cgibin/hweb?-A=206&-V=membership
      */
-    protected static $banks = array(
+    protected static $banks = [
         'Τράπεζα Κύπρου',
         'Ελληνική Τράπεζα',
         'Alpha Bank Cyprus',
@@ -37,7 +37,7 @@ class Payment extends \Faker\Provider\Payment
         'Eurobank Cyprus',
         'Συνεργατική Κεντρική Τράπεζα',
         'Ancoria Bank',
-    );
+    ];
 
     /**
      * @example 'Τράπεζα Κύπρου'

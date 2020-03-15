@@ -4,31 +4,31 @@ namespace Faker\Provider\ko_KR;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $postcode = array('#####');
-    protected static $buildingNumber = array('####', '###');
-    protected static $metropolitanCity = array(
+    protected static $postcode = ['#####'];
+    protected static $buildingNumber = ['####', '###'];
+    protected static $metropolitanCity = [
         '서울특별시', '부산광역시', '대구광역시', '인천광역시', '광주광역시', '대전광역시', '울산광역시',
-    );
-    protected static $province = array(
+    ];
+    protected static $province = [
         '경기도', '강원도', '충청북도', '충청남도', '전라북도', '전라남도', '경상북도', '경상남도', '제주특별자치도',
-    );
-    protected static $city = array(
+    ];
+    protected static $city = [
         '파주시', '수원시', '수원시 권선구', '수원시 팔달구', '수원시 영통구', '성남시', '성남시 수정구', '성남시 중원구', '화성시',
         '성남시 분당구', '안양시', '안양시 만안구', '안양시 동안구', '부천시', '부천시 원미구', '부천시 소사구', '부천시 오정구', '광명시',
         '평택시', '이천시', '동두천시', '안산시', '안산시 상록구', '안산시 단원구', '안성시', '고양시', '고양시 덕양구', '고양시 일산동구',
         '고양시 일산서구', '과천시', '구리시', '남양주시', '오산시', '시흥시', '군포시', '의왕시', '하남시', '김포시', '용인시', '용인시 처인구',
         '용인시 기흥구', '용인시 수지구', '연천군', '가평군', '양평군', '광주시', '포천시', '양주시', '수원시 장안구', '의정부시', '여주시',
-    );
-    protected static $borough = array(
+    ];
+    protected static $borough = [
         '종로구', '중구', '용산구', '성동구', '광진구', '동대문구', '중랑구', '성북구', '강북구', '도봉구', '노원구', '은평구', '서대문구',
         '마포구', '양천구', '강서구', '구로구', '금천구', '영등포구', '동작구', '관악구', '서초구', '강남구', '송파구', '강동구',
         '동구', '서구', '남구', '북구', '중구',
-    );
-    protected static $streetName = array(
+    ];
+    protected static $streetName = [
         '압구정로', '도산대로', '학동로', '봉은사로', '테헤란로', '역삼로', '논현로', '언주로', '강남대로', '양재천로', '삼성로', '영동대로',
         '개포로', '선릉로', '반포대로', '서초중앙로', '서초대로', '잠실로', '석촌호수로', '백제고분로', '가락로', '오금로',
-    );
-    protected static $country = array(
+    ];
+    protected static $country = [
         '가나', '가봉', '가이아나', '감비아', '과테말라', '그레나다', '그리스', '기니', '기니비사우', '나고르노카라바흐 공화국', '나미비아',
         '나우루', '나이지리아', '남수단', '남아프리카 공화국', '남오세티야', '네덜란드', '네팔', '노르웨이', '뉴질랜드', '니제르', '니카라과',
         '대한민국', '덴마크', '도미니카', '도미니카 공화국', '독일', '동티모르', '라오스', '라이베리아', '라트비아', '러시아', '레바논', '레소토',
@@ -48,11 +48,11 @@ class Address extends \Faker\Provider\Address
         '콩고 민주 공화국', '쿠바', '쿠웨이트', '크로아티아', '키르기스스탄', '키리바시', '키프로스', '타이', '타지키스탄', '탄자니아', '터키',
         '토고', '통가', '투르크메니스탄', '투발루', '튀니지', '트란스니스트리아', '트리니다드 토바고', '파나마', '파라과이', '파키스탄',
         '파푸아 뉴기니', '팔라우', '팔레스타인국', '페루', '포르투갈', '폴란드', '프랑스', '피지', '핀란드', '필리핀', '헝가리',
-    );
-    protected static $addressFormats = array(
+    ];
+    protected static $addressFormats = [
         '{{metropolitanCity}} {{borough}} {{streetName}} {{buildingNumber}}',
         '{{province}} {{city}} {{streetName}} {{buildingNumber}}',
-    );
+    ];
 
     /**
      * @example '서울특별시'

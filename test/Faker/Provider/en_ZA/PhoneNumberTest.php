@@ -44,7 +44,7 @@ class PhoneNumberTest extends TestCase
             }
 
             $areaCode = $digits[0] . $digits[1] . $digits[2] . $digits[3];
-            $this->assertContains($areaCode, array('0800', '0860', '0861', '0862'));
+            $this->assertContains($areaCode, ['0800', '0860', '0861', '0862']);
         }
     }
 

@@ -26,32 +26,32 @@ class TextTest extends TestCase
     {
         $this->assertSame(
             'На другой день Чичиков отправился на обед и вечер.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('На другой день Чичиков отправился на обед и вечер '))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер '])
         );
 
         $this->assertSame(
             'На другой день Чичиков отправился на обед и вечер.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('На другой день Чичиков отправился на обед и вечер—'))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер—'])
         );
 
         $this->assertSame(
             'На другой день Чичиков отправился на обед и вечер.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('На другой день Чичиков отправился на обед и вечер,'))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер,'])
         );
 
         $this->assertSame(
             'На другой день Чичиков отправился на обед и вечер!.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('На другой день Чичиков отправился на обед и вечер! '))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер! '])
         );
 
         $this->assertSame(
             'На другой день Чичиков отправился на обед и вечер.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('На другой день Чичиков отправился на обед и вечер; '))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер; '])
         );
 
         $this->assertSame(
             'На другой день Чичиков отправился на обед и вечер.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('На другой день Чичиков отправился на обед и вечер: '))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер: '])
         );
     }
 }

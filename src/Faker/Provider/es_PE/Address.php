@@ -4,32 +4,32 @@ namespace Faker\Provider\es_PE;
 
 class Address extends \Faker\Provider\es_ES\Address
 {
-    protected static $cityPrefix = array('San', 'Puerto', 'Gral.', 'Don');
-    protected static $citySuffix = array('Alta', 'Baja', 'Norte', 'Este', ' Sur', ' Oeste');
-    protected static $buildingNumber = array('#####', '####', '###', '##', '#');
-    protected static $streetPrefix = array('Jr.', 'Av.', 'Cl.', 'Urb.' );
-    protected static $streetSuffix = array('');
-    protected static $postcode = array('LIMA ##');
-    protected static $state = array(
+    protected static $cityPrefix = ['San', 'Puerto', 'Gral.', 'Don'];
+    protected static $citySuffix = ['Alta', 'Baja', 'Norte', 'Este', ' Sur', ' Oeste'];
+    protected static $buildingNumber = ['#####', '####', '###', '##', '#'];
+    protected static $streetPrefix = ['Jr.', 'Av.', 'Cl.', 'Urb.' ];
+    protected static $streetSuffix = [''];
+    protected static $postcode = ['LIMA ##'];
+    protected static $state = [
         'Lima', 'Callao', 'Arequipa', 'Cuzco', 'Piura', 'Iquitos', 'Huaraz', 'Tacna', 'Ayacucho', 'Pucallpa', 'Trujillo', 'Chimbote', 'Ica', 'Moquegua', 'Puno', 'Tarapoto', 'Cajamarca', 'Lambayeque', 'Huanuco', 'Jauja', 'Tumbes', 'Madre de Dios'
-    );
-    protected static $cityFormats = array(
+    ];
+    protected static $cityFormats = [
         '{{cityPrefix}} {{firstName}} {{lastName}}',
         '{{cityPrefix}} {{firstName}}',
         '{{firstName}} {{citySuffix}}',
         '{{lastName}} {{citySuffix}}',
-    );
-    protected static $streetNameFormats = array(
+    ];
+    protected static $streetNameFormats = [
         '{{streetPrefix}} {{firstName}} {{lastName}}',
-    );
-    protected static $streetAddressFormats = array(
+    ];
+    protected static $streetAddressFormats = [
         '{{streetName}} # {{buildingNumber}} ',
         '{{streetName}} # {{buildingNumber}} {{secondaryAddress}}',
-    );
-    protected static $addressFormats = array(
+    ];
+    protected static $addressFormats = [
         "{{streetAddress}}\n{{city}}, {{state}}",
-    );
-    protected static $secondaryAddressFormats = array('Dpto. ###', 'Hab. ###', 'Piso #', 'Piso ##');
+    ];
+    protected static $secondaryAddressFormats = ['Dpto. ###', 'Hab. ###', 'Piso #', 'Piso ##'];
 
     /**
      * @example ''

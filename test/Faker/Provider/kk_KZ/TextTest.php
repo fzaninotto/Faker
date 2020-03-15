@@ -26,32 +26,32 @@ class TextTest extends TestCase
     {
         $this->assertSame(
             'Арыстан баб кесенесі - көне Отырар.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('Арыстан баб кесенесі - көне Отырар '))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['Арыстан баб кесенесі - көне Отырар '])
         );
 
         $this->assertSame(
             'Арыстан баб кесенесі - көне Отырар.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('Арыстан баб кесенесі - көне Отырар— '))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['Арыстан баб кесенесі - көне Отырар— '])
         );
 
         $this->assertSame(
             'Арыстан баб кесенесі - көне Отырар.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('Арыстан баб кесенесі - көне Отырар,  '))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['Арыстан баб кесенесі - көне Отырар,  '])
         );
 
         $this->assertSame(
             'Арыстан баб кесенесі - көне Отырар!.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('Арыстан баб кесенесі - көне Отырар! '))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['Арыстан баб кесенесі - көне Отырар! '])
         );
 
         $this->assertSame(
             'Арыстан баб кесенесі - көне Отырар.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('Арыстан баб кесенесі - көне Отырар: '))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['Арыстан баб кесенесі - көне Отырар: '])
         );
 
         $this->assertSame(
             'Арыстан баб кесенесі - көне Отырар.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('Арыстан баб кесенесі - көне Отырар; '))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['Арыстан баб кесенесі - көне Отырар; '])
         );
     }
 }

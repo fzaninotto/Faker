@@ -13,7 +13,7 @@ class Person extends \Faker\Provider\Person
      * @link https://news.err.ee/114745/most-popular-baby-names-of-2014
      * @link https://www.stat.ee/public/apps/nimed/TOP
      */
-    protected static $firstNameMale = array(
+    protected static $firstNameMale = [
         "Andrei", "Aleksei", "Andres", "Alexander", "Aivar", "Aleksander", "Artur", "Andrus", "Ants", "Artjom", "Anatoli", "Anton", "Arvo", "Aare", "Ain", "Aleksandr",
         "Dmitri", "Daniil", "Daniel",
         "Eduard", "Erik", "Enn",
@@ -33,13 +33,13 @@ class Person extends \Faker\Provider\Person
         "Toomas", "Tarmo", "Tõnu", "Tiit", "Tanel", "Taavi", "Toivo", "Tõnis",
         "Urmas", "Ülo",
         "Vladimir", "Viktor", "Valeri", "Vello", "Vadim", "Vitali", "Vladislav", "Vjatšeslav", "Victor",
-    );
+    ];
 
     /**
      * @link https://news.err.ee/114745/most-popular-baby-names-of-2014
      * @link https://www.stat.ee/public/apps/nimed/TOP
      */
-    protected static $firstNameFemale = array(
+    protected static $firstNameFemale = [
         "Aino", "Aleksandra", "Alisa", "Anastasia", "Anna", "Anne", "Anneli", "Anu", "Arina", "Annika", "Anastassia", "Alla", "Aili", "Alina", "Aime", "Antonina",
         "Darja", "Diana",
         "Elena", "Eliise", "Elisabeth", "Emma", "Ene", "Eve", "Eha", "Evi",
@@ -59,13 +59,13 @@ class Person extends \Faker\Provider\Person
         "Ülle", "Urve",
         "Valentina", "Viktoria", "Veera", "Veronika", "Vaike",
         "Zinaida",
-    );
+    ];
 
     /**
      * @link https://en.wikipedia.org/wiki/Category:Estonian-language_surnames
      * @link https://www.stat.ee/public/apps/nimed/pere/TOP
      */
-    protected static $lastName = array(
+    protected static $lastName = [
         "Aleksejev", "Andrejev", "Allik", "Aas", "Aleksandrov", "Aare", "Aarma", "Aas", "Aasmäe", "Aav", "Aavik", "Allik", "Alver", "Andrejeva", "Aleksejeva", "Aleksandrova", "Allik", "Aas",
         "Bogdanova", "Bogdanov",
         "Eenpalu", "Eskola",
@@ -85,5 +85,5 @@ class Person extends \Faker\Provider\Person
         "Tamme", "Tomson", "Tamm", "Teder", "Toom", "Tomson", "Tamme", "Talts", "Tamm", "Tamme", "Tarvas", "Teder", "Toom", "Toome", "Toots", "Tamm", "Teder", "Toom",
         "Uibo", "Uibo",
         "Vassiljev", "Vaher", "Volkov", "Valk", "Vaher", "Vahtra", "Vaino", "Vainola", "Välbe", "Valdma", "Väljas", "Valk", "Vassiljev", "Vassiljeva", "Vesik", "Veski", "Viiding", "Vitsut", "Võigemast", "Volkov", "Volkova", "Võsu", "Vassiljeva", "Vaher", "Volkova",
-    );
+    ];
 }

@@ -4,7 +4,7 @@ namespace Faker\Provider\nl_BE;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $postcodes = array(
+    protected static $postcodes = [
         '2970', '3700', '7510', '9420', '8511', '3800', '9300', '9880', '3200', '8700', '8211', '2630', '4557',
         '4280', '3930', '5590', '5362', '4219', '6280', '9991', '8660', '1790', '9051', '5544', '4317', '5310',
         '6250', '5070', '3570', '5550', '4432', '1652', '8690', '4540', '6680', '6953', '4770', '6997', '7750',
@@ -17,23 +17,23 @@ class Address extends \Faker\Provider\Address
         '6464', '6460', '5555', '7730', '5377', '7380', '1470', '5190', '9860', '2490', '6951', '6500', '4671',
         '5570', '7534', '5370', '6940', '7971', '4983', '4690', '9968', '7830', '6600', '3870', '4651', '7130',
         '7331', '7870', '7604', '1401', '9520', '8531', '9150', '4052', '6980', '1320', '6594', '7532', '3960',
-    );
+    ];
 
-    protected static $streetAddressFormats = array(
+    protected static $streetAddressFormats = [
         '{{streetName}} {{buildingNumber}}'
-    );
+    ];
 
-    protected static $streetNameFormats = array('{{lastName}}{{streetSuffix}}');
+    protected static $streetNameFormats = ['{{lastName}}{{streetSuffix}}'];
 
-    protected static $cityFormats = array('{{cityName}}');
+    protected static $cityFormats = ['{{cityName}}'];
 
-    protected static $addressFormats = array(
+    protected static $addressFormats = [
         "{{streetAddress}}\n {{postcode}} {{city}}",
-    );
+    ];
 
-    protected static $streetSuffix = array(
+    protected static $streetSuffix = [
         'baan', 'boulevard', 'dreef', 'hof', 'laan', 'pad', 'ring', 'singel', 'steeg', 'straat', 'weg',
-    );
+    ];
 
     /**
      * Export of BAG (http://bag.vrom.nl/)
@@ -41,7 +41,7 @@ class Address extends \Faker\Provider\Address
      *
      * @var array
      */
-    protected static $cityNames = array(
+    protected static $cityNames = [
         'Aalst', 'Aarlen', 'Aarschot', 'Aat', 'Andenne', 'Antoing', 'Antwerpen', 'Bastenaken', 'Beringen',
         'Beaumont', 'Beauraing', 'Bergen', 'Bilzen', 'Binche', 'Blankenberge', 'Borgloon', 'Borgworm', 'Bouillon',
         'Bree', 'Brugge', 'Brussel', 'Charleroi', 'Châtelet', 'Chièvres', 'Chimay', 'Chiny', 'Ciney', 'Couvin',
@@ -58,14 +58,14 @@ class Address extends \Faker\Provider\Address
         'Sint-Niklaas', 'Sint-Truiden', 'Spa', 'Stavelot', 'Thuin', 'Tielt', 'Tienen', 'Tongeren', 'Torhout',
         'Turnhout', 'Verviers', 'Veurne', 'Vilvoorde', 'Virton', 'Walcourt', 'Waregem', 'Waver', 'Wervik', 'Wezet',
         'Zinnik', 'Zottegem', 'Zoutleeuw'
-    );
+    ];
 
-    protected static $state = array(
+    protected static $state = [
         'Antwerpen', 'Limburg', 'Oost-Vlaanderen', 'Vlaams-Brabant', 'West-Vlaanderen',
         'Henegouwen', 'Luik', 'Luxemburg', 'Namen', 'Waals-Brabant'
-    );
+    ];
 
-    protected static $country = array(
+    protected static $country = [
         'Afghanistan', 'Albanië', 'Algerije', 'Amerikaans-Samoa', 'Andorra', 'Angola', 'Amerikaanse Virgineilanden',
         'Anguilla', 'Antartica', 'Antigua en Barbuda', 'Argentinië', 'Armenië', 'Aruba', 'Australië', 'Azerbeidzjan',
         'Bahamas', 'Bahrein', 'Bangladesh', 'Barbados', 'België', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia',
@@ -99,7 +99,7 @@ class Address extends \Faker\Provider\Address
         'Uruguay', 'Vanuatu', 'Venezuela', 'Verenigde Arabische Emiraten', 'Verenigd Koninkrijk',
         'Verenigde Staten van Amerika', 'Vaticaanstad', 'Vietnam', 'Wallis en Futuna', 'Westerlijke Shara',
         'Wit-Rusland', 'Zambia', 'Zuid-Afrika', 'Zuid-Georgia en de Zuidelijke Sandwicheilanden', 'Zimbabwe'
-    );
+    ];
 
     public static function postcode()
     {

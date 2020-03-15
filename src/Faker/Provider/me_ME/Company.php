@@ -4,14 +4,14 @@ namespace Faker\Provider\me_ME;
 
 class Company extends \Faker\Provider\Company
 {
-    protected static $formats = array(
+    protected static $formats = [
         '{{companyName}} {{companyType}}'
-    );
+    ];
 
     /**
      * Source: extracted from http://www.crps.me/index.php/predraga
      */
-    protected static $names = array(
+    protected static $names = [
         '13 Jul - Plantaže ', '19 Decembar Podgorica',
         'Agrokombinat 13 Jul', 'Agrokombinat 13 Jul', 'Atlas Banka', 'Autoremont Osmanagić',
         'Božur-Velexport', 'Businessmontenegro Podgorica',
@@ -31,11 +31,11 @@ class Company extends \Faker\Provider\Company
         'Unifarm ', 'Utip Crna Gora',
         'Vatrostalna Podgorica', 'Velepromet Podgorica', 'Veletrgovina-Kolašin', 'Velimport Podgorica', 'Volumentrade Podgorica',
         'Željeznica Crne Gore', 'Zetatrans'
-    );
+    ];
 
-    protected static $types = array(
+    protected static $types = [
         'A.D.', 'A.D PODGORICA'
-    );
+    ];
 
     public static function companyType()
     {

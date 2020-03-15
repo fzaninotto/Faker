@@ -4,21 +4,21 @@ namespace Faker\Provider\de_CH;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $buildingNumber = array('###', '##', '#', '##[abc]', '#[abc]');
+    protected static $buildingNumber = ['###', '##', '#', '##[abc]', '#[abc]'];
 
-    protected static $streetSuffixLong = array(
+    protected static $streetSuffixLong = [
         'Gasse', 'Platz', 'Ring', 'Strasse', 'Weg', 'Allee'
-    );
-    protected static $streetSuffixShort = array(
+    ];
+    protected static $streetSuffixShort = [
         'gasse', 'platz', 'ring', 'strasse', 'str.', 'weg', 'allee'
-    );
+    ];
 
-    protected static $postcode = array('####');
+    protected static $postcode = ['####'];
 
     /**
      * @link https://de.wikipedia.org/wiki/Liste_der_St%C3%A4dte_in_der_Schweiz
      */
-    protected static $cityNames = array(
+    protected static $cityNames = [
         'Aarau', 'Aarberg', 'Aarburg', 'Adliswil', 'Aesch', 'Affoltern am Albis', 'Agno', 'Aigle', 'Allschwil', 'Altdorf', 'Altstätten', 'Amriswil', 'Appenzell', 'Arbon', 'Arth', 'Ascona', 'Aubonne', 'Avenches',
         'Baar', 'Bad Zurzach', 'Baden', 'Basel', 'Bassersdorf', 'Bellinzona', 'Belp', 'Bern', 'Beromünster', 'Biasca', 'Biel/Bienne', 'Binningen', 'Birsfelden', 'Bischofszell', 'Boudry', 'Bourg-Saint-Pierre', 'Bremgarten', 'Brig-Glis', 'Brig', 'Brugg', 'Buchs', 'Bulle', 'Burgdorf', 'Bülach',
         'Carouge', 'Cham', 'Chur', 'Châtel-Saint-Denis', 'Chêne-Bougeries', 'Conthey', 'Coppet', 'Cossonay', 'Croglio', 'Cudrefin', 'Cully',
@@ -41,41 +41,41 @@ class Address extends \Faker\Provider\Address
         'Waldenburg', 'Walenstadt', 'Wallisellen', 'Wangen an der Aare', 'Weinfelden', 'Werdenberg', 'Wettingen', 'Wetzikon', 'Wiedlisbach', 'Willisau', 'Wil', 'Winterthur', 'Wohlen', 'Worb', 'Wädenswil',
         'Yverdon-les-Bains',
         'Zofingen', 'Zollikon', 'Zug', 'Zürich'
-    );
+    ];
 
     /**
      * @link https://de.wikipedia.org/wiki/Kanton_(Schweiz)
      */
-    protected static $canton = array(
-        array('AG' => 'Aargau'),
-        array('AI' => 'Appenzell Innerrhoden'),
-        array('AR' => 'Appenzell Ausserrhoden'),
-        array('BE' => 'Bern'),
-        array('BL' => 'Basel-Landschaft'),
-        array('BS' => 'Basel-Stadt'),
-        array('FR' => 'Freiburg'),
-        array('GE' => 'Genf'),
-        array('GL' => 'Glarus'),
-        array('GR' => 'Graubünden'),
-        array('JU' => 'Jura',),
-        array('LU' => 'Luzern'),
-        array('NE' => 'Neuenburg'),
-        array('NW' => 'Nidwalden'),
-        array('OW' => 'Obwalden'),
-        array('SG' => 'St. Gallen'),
-        array('SH' => 'Schaffhausen'),
-        array('SO' => 'Solothurn'),
-        array('SZ' => 'Schwyz'),
-        array('TG' => 'Thurgau'),
-        array('TI' => 'Tessin'),
-        array('UR' => 'Uri'),
-        array('VD' => 'Waadt'),
-        array('VS' => 'Wallis'),
-        array('ZG' => 'Zug'),
-        array('ZH' => 'Zürich')
-    );
+    protected static $canton = [
+        ['AG' => 'Aargau'],
+        ['AI' => 'Appenzell Innerrhoden'],
+        ['AR' => 'Appenzell Ausserrhoden'],
+        ['BE' => 'Bern'],
+        ['BL' => 'Basel-Landschaft'],
+        ['BS' => 'Basel-Stadt'],
+        ['FR' => 'Freiburg'],
+        ['GE' => 'Genf'],
+        ['GL' => 'Glarus'],
+        ['GR' => 'Graubünden'],
+        ['JU' => 'Jura',],
+        ['LU' => 'Luzern'],
+        ['NE' => 'Neuenburg'],
+        ['NW' => 'Nidwalden'],
+        ['OW' => 'Obwalden'],
+        ['SG' => 'St. Gallen'],
+        ['SH' => 'Schaffhausen'],
+        ['SO' => 'Solothurn'],
+        ['SZ' => 'Schwyz'],
+        ['TG' => 'Thurgau'],
+        ['TI' => 'Tessin'],
+        ['UR' => 'Uri'],
+        ['VD' => 'Waadt'],
+        ['VS' => 'Wallis'],
+        ['ZG' => 'Zug'],
+        ['ZH' => 'Zürich']
+    ];
 
-    protected static $country = array(
+    protected static $country = [
         'Afghanistan', 'Alandinseln', 'Albanien', 'Algerien', 'Amerikanisch-Ozeanien', 'Amerikanisch-Samoa', 'Amerikanische Jungferninseln', 'Andorra', 'Angola', 'Anguilla', 'Antarktis', 'Antigua und Barbuda', 'Argentinien', 'Armenien', 'Aruba', 'Aserbaidschan', 'Australien', 'Ägypten', 'Äquatorialguinea', 'Äthiopien', 'Äusseres Ozeanien',
         'Bahamas', 'Bahrain', 'Bangladesch', 'Barbados', 'Belarus', 'Belgien', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivien', 'Bosnien und Herzegowina', 'Botsuana', 'Bouvetinsel', 'Brasilien', 'Britische Jungferninseln', 'Britisches Territorium im Indischen Ozean', 'Brunei Darussalam', 'Bulgarien', 'Burkina Faso', 'Burundi',
         'Chile', 'China', 'Cookinseln', 'Costa Rica', 'Côte d’Ivoire',
@@ -99,24 +99,24 @@ class Address extends \Faker\Provider\Address
         'Vanuatu', 'Vatikanstadt', 'Venezuela', 'Vereinigte Arabische Emirate', 'Vereinigte Staaten', 'Vereinigtes Königreich', 'Vietnam',
         'Wallis und Futuna', 'Weihnachtsinsel', 'Westsahara',
         'Zentralafrikanische Republik', 'Zypern',
-    );
+    ];
 
-    protected static $cityFormats = array(
+    protected static $cityFormats = [
         '{{cityName}}',
-    );
+    ];
 
-    protected static $streetNameFormats = array(
+    protected static $streetNameFormats = [
         '{{lastName}}{{streetSuffixShort}}',
         '{{cityName}}{{streetSuffixShort}}',
         '{{firstName}}-{{lastName}}-{{streetSuffixLong}}'
-    );
+    ];
 
-    protected static $streetAddressFormats = array(
+    protected static $streetAddressFormats = [
         '{{streetName}} {{buildingNumber}}',
-    );
-    protected static $addressFormats = array(
+    ];
+    protected static $addressFormats = [
         "{{streetAddress}}\n{{postcode}} {{city}}",
-    );
+    ];
 
     /**
      * Returns a random city name.

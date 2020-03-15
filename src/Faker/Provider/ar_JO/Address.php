@@ -4,14 +4,14 @@ namespace Faker\Provider\ar_JO;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $streetPrefix = array('شارع');
+    protected static $streetPrefix = ['شارع'];
 
-    protected static $cityPrefix = array('شمال', 'شرق', 'غرب', 'جنوب', 'وسط', );
+    protected static $cityPrefix = ['شمال', 'شرق', 'غرب', 'جنوب', 'وسط', ];
 
     /**
      * @link http://ar.wikipedia.org/wiki/%D9%85%D9%84%D8%AD%D9%82:%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D9%85%D8%AF%D9%86_%D8%A7%D9%84%D8%A3%D8%B1%D8%AF%D9%86
      */
-    protected static $cityName = array(
+    protected static $cityName = [
         'اربد', 'أبو نصير', 'الجبيهه', 'الحصن', 'الرصيفة', 'الرمثا', 'الزرقاء', 'السلط', 'الشهيد عزمي', 'الصريح', 'الضليل', 'الطفيلة', 'العقبة',     'القويسمة', 'الكرك', 'المشارع', 'المفرق', 'الهاشمية', 'ام قصير', 'ايدون',
         'بيت راس',
         'تلاع العلي',
@@ -25,16 +25,16 @@ class Address extends \Faker\Provider\Address
         'مادبا', 'مخيم البقعه', 'مخيم حطين', 'مرج الحمام', 'معان',
         'ناعور',
         'وادي السير',
-    );
+    ];
 
-    protected static $buildingNumber = array('#####', '####', '##');
+    protected static $buildingNumber = ['#####', '####', '##'];
 
-    protected static $postcode = array('#####', '#####-####');
+    protected static $postcode = ['#####', '#####-####'];
 
     /**
      * @link http://ar.wikipedia.org/wiki/%D9%85%D9%84%D8%AD%D9%82:%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%A7%D9%84%D9%88%D9%84%D8%A7%D9%8A%D8%A7%D8%AA_%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A%D8%A9_%D8%AD%D8%B3%D8%A8_%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%AD%D8%A9
      */
-    protected static $state = array(
+    protected static $state = [
         'آيوا', 'أركنساس', 'أريزونا', 'ألاباما', 'ألاسكا', 'أوريغون', 'أوكلاهوما', 'أوهايو', 'أيداهو', 'إلينوي', 'إنديانا', 'الاباما', 'الجزر العذراء الأمريكية',
         'بنس    يلفانيا', 'بورتو ريكو',
         'تكساس', 'تينيسي',
@@ -49,16 +49,16 @@ class Address extends \Faker\Provider\Address
         'نبراسكا', 'نيفادا', 'نيو جيرسي', 'نيو ميكسيكو', 'نيوهامشير', 'نيويورك',
         'هاواي',
         'واشنطن', 'وايومنغ', 'ويسكنسن', 'يوتا',
-    );
+    ];
 
-    protected static $stateAbbr = array(
+    protected static $stateAbbr = [
        'AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA', 'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD', 'ME', 'MI', 'MN', 'MO', 'MS', 'MT', 'NC', 'ND', 'NE', 'NH', 'NJ', 'NM', 'NV', 'NY', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VA', 'VT', 'WA', 'WI', 'WV', 'WY'
-    );
+    ];
 
     /**
      * @link http://www.nationsonline.org/oneworld/countrynames_arabic.htm
      */
-    protected static $country = array(
+    protected static $country = [
         'الكاريبي', 'أمريكا الوسطى', 'أنتيجوا وبربودا', 'أنجولا', 'أنجويلا', 'أندورا', 'اندونيسيا', 'أورجواي', 'أوروبا', 'أوزبكستان', 'أوغندا', 'أوقيانوسيا', 'أوقيانوسيا النائية', 'أوكرانيا', 'ايران', 'أيرلندا', 'أيسلندا', 'ايطاليا',
         'بابوا غينيا الجديدة', 'باراجواي', 'باكستان', 'بالاو', 'بتسوانا', 'بتكايرن', 'بربادوس', 'برمودا', 'بروناي', 'بلجيكا', 'بلغاريا', 'بليز', 'بنجلاديش', 'بنما', 'بنين', 'بوتان', 'بورتوريكو', 'بوركينا فاسو', 'بوروندي', 'بولندا', 'بوليفيا', 'بولينيزيا', 'بولينيزيا الفرنسية', 'بيرو',
         'تانزانيا', 'تايلند', 'تايوان', 'تركمانستان', 'تركيا', 'ترينيداد وتوباغو', 'تشاد', 'توجو', 'توفالو', 'توكيلو', 'تونجا', 'تونس', 'تيمور الشرقية',
@@ -80,27 +80,27 @@ class Address extends \Faker\Provider\Address
         'ناميبيا', 'نورو', 'نيبال', 'نيجيريا', 'نيكاراجوا', 'نيوزيلاندا', 'نيوي',
         'هايتي', 'هندوراس', 'هولندا', 'هونج كونج الصينية',
         'وسط آسيا', 'وسط افريقيا',
-    );
+    ];
 
-    protected static $cityFormats = array(
+    protected static $cityFormats = [
         '{{cityPrefix}} {{cityName}}',
         '{{cityName}}',
-    );
+    ];
 
-    protected static $streetNameFormats = array(
+    protected static $streetNameFormats = [
         '{{streetPrefix}} {{firstName}} {{lastName}}',
-    );
+    ];
 
-    protected static $streetAddressFormats = array(
+    protected static $streetAddressFormats = [
         '{{buildingNumber}} {{streetName}}',
         '{{buildingNumber}} {{streetName}} {{secondaryAddress}}',
-    );
+    ];
 
-    protected static $addressFormats = array(
+    protected static $addressFormats = [
         "{{streetAddress}}\n{{city}}",
-    );
+    ];
 
-    protected static $secondaryAddressFormats = array('شقة رقم. ##', 'بناية رقم ##');
+    protected static $secondaryAddressFormats = ['شقة رقم. ##', 'بناية رقم ##'];
 
     /**
      * @example 'شرق'

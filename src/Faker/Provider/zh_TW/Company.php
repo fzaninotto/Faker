@@ -4,26 +4,26 @@ namespace Faker\Provider\zh_TW;
 
 class Company extends \Faker\Provider\Company
 {
-    protected static $companyEnSuffix = array(
+    protected static $companyEnSuffix = [
         'Inc', 'and Sons', 'LLC', 'Group', 'PLC', 'Ltd'
-    );
+    ];
 
-    protected static $companyEnFormats = array(
+    protected static $companyEnFormats = [
         '{{lastNameEn}} {{companyEnSuffix}}',
         '{{lastNameEn}}-{{lastNameEn}}',
         '{{lastNameEn}}, {{lastNameEn}} and {{lastNameEn}}'
-    );
+    ];
 
-    protected static $formats = array(
+    protected static $formats = [
         '{{companyPrefix}}{{companyModifier}}',
         '{{companyPrefix}}{{companySuffix}}',
         '{{companyPrefix}}{{companyModifier}}{{CompanySuffix}}',
-    );
+    ];
 
     /**
      * @link http://zh.wikipedia.org/zh-tw/Category:%E5%8F%B0%E7%81%A3%E5%85%AC%E5%8F%B8%E5%88%97%E8%A1%A8
      */
-    protected static $companyPrefix = array(
+    protected static $companyPrefix = [
         '乾坤', '亞神', '光譜', '典選', '凱基', '前衛花園',
         '創見', '友訊', '台達', '合勤', '喜瑪拉雅', '喬山',
         '多利安', '大國', '大宇', '太陽', '太陽動力', '宏碁',
@@ -37,19 +37,19 @@ class Company extends \Faker\Provider\Company
         '華碩', '華義', '角頭', '訊連', '豐華', '豪客', '豪記',
         '貴族', '趨勢', '遊戲橘子', '野火樂集', '金革',
         '銀魚', '阿爾發', '風和日麗', '風潮', '風雲',
-    );
-    protected static $companyModifier = array(
+    ];
+    protected static $companyModifier = [
         '科技', '電腦', '國際', '電子', '娛樂', '音樂', '唱片',
         '證券', '集團', '企業', '機械', '工業', '文化', '汽車',
         '百貨', '酒店', '數位',
-    );
-    protected static $companySuffix = array(
+    ];
+    protected static $companySuffix = [
         '公司', '有限公司', '股份有限公司'
-    );
+    ];
     /**
      * @link https://zh-tw.facebook.com/notes/%E7%8E%A9%E5%BB%A3%E5%91%8Aplaying-with-advertising/%E5%9B%9E%E9%A1%A7%E8%87%BA%E7%81%A3%E6%AD%B7%E5%B1%86%E5%BB%A3%E5%91%8A%E9%87%91%E5%8F%A5%E7%8D%8E/294008963985215
      */
-    protected static $catchPhrase = array(
+    protected static $catchPhrase = [
         'Everything\'s ok',
         'Just call me be happy',
         'Keep Walking',
@@ -191,30 +191,30 @@ class Company extends \Faker\Provider\Company
         '青菜底呷啦',
         '靜得讓您耳根清靜',
         '馬上就會好',
-    );
+    ];
 
-    protected static $bsWords = array(
-        array(
+    protected static $bsWords = [
+        [
             '實現', '實作', '整合', '最佳化',
             '革命', '轉變', '提昇', '啟用', '指揮',
             '利用', '重現', '結合', '架構', '加強',
             '集中', '變形', '強化', '推廣', '延伸',
             '生產', '進化', '改善', '提高', '開發',
             '創造', '專注',
-        ), array(
+        ], [
             '加值', '縱向', '堅固', '全球', '在地', '領先',
             '虛擬', '動態', '完全', '成熟', '穩定', '穩健',
             '即時', '全年無休', '高效', '快速', '互動',
             '世界級', '下一代', '新一代', '無線', '無限',
             '豐富', '開源', '前端', '分散式', '無縫', '跨平臺',
-        ),
-        array(
+        ],
+        [
             '典範', '市場', '合作', '架構', '基礎平臺', '頻道',
             '焦點', '方案', '解決方案', '社群', '科技', '技術',
             '內容', '入口', '供應鍊', '介面', '系統', '頻寬',
             '模型', '網路', '使用經驗', '評量', '方法',
-        )
-    );
+        ]
+    ];
 
     public static function companyEnSuffix()
     {

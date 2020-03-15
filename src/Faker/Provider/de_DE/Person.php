@@ -4,7 +4,7 @@ namespace Faker\Provider\de_DE;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $maleNameFormats = array(
+    protected static $maleNameFormats = [
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}',
@@ -13,9 +13,9 @@ class Person extends \Faker\Provider\Person
         '{{titleMale}} {{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}} {{suffix}}',
         '{{titleMale}} {{firstNameMale}} {{lastName}} {{suffix}}',
-    );
+    ];
 
-    protected static $femaleNameFormats = array(
+    protected static $femaleNameFormats = [
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
@@ -24,13 +24,13 @@ class Person extends \Faker\Provider\Person
         '{{titleFemale}} {{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}} {{suffix}}',
         '{{titleFemale}} {{firstNameFemale}} {{lastName}} {{suffix}}',
-    );
+    ];
 
     /**
          * Top 500 Names from a phone directory (6. January 2005)
          * {@link} From http://de.wiktionary.org/wiki/Verzeichnis:Deutsch/Liste_der_h%C3%A4ufigsten_m%C3%A4nnlichen_Vornamen_Deutschlands
          **/
-    protected static $firstNameMale = array(
+    protected static $firstNameMale = [
         'Achim', 'Adalbert', 'Adam', 'Adolf', 'Adrian', 'Ahmed', 'Ahmet', 'Albert', 'Albin', 'Albrecht', 'Alex', 'Alexander', 'Alfons', 'Alfred', 'Ali', 'Alois', 'Aloys', 'Alwin', 'Anatoli', 'Andre', 'Andreas', 'Andree', 'Andrej', 'Andrzej', 'André', 'Andy', 'Angelo', 'Ansgar', 'Anton', 'Antonio', 'Antonius', 'Armin', 'Arnd', 'Arndt', 'Arne', 'Arno', 'Arnold', 'Arnulf', 'Arthur', 'Artur', 'August', 'Axel',
         'Bastian', 'Benedikt', 'Benjamin', 'Benno', 'Bernard', 'Bernd', 'Berndt', 'Bernhard', 'Bert', 'Berthold', 'Bertram', 'Björn', 'Bodo', 'Bogdan', 'Boris', 'Bruno', 'Burghard', 'Burkhard',
         'Carl', 'Carlo', 'Carlos', 'Carsten', 'Christian', 'Christof', 'Christoph', 'Christopher', 'Christos', 'Claudio', 'Claus', 'Claus-Dieter', 'Claus-Peter', 'Clemens', 'Cornelius',
@@ -55,10 +55,10 @@ class Person extends \Faker\Provider\Person
         'Waldemar', 'Walter', 'Walther', 'Wenzel', 'Werner', 'Wieland', 'Wilfried', 'Wilhelm', 'Willi', 'William', 'Willibald', 'Willy', 'Winfried', 'Wladimir', 'Wolf', 'Wolf-Dieter', 'Wolfgang', 'Wolfram', 'Wulf',
         'Xaver',
         'Yusuf',
-    );
+    ];
 
     // From http://de.wiktionary.org/wiki/Verzeichnis:Deutsch/Liste_der_h%C3%A4ufigsten_weiblichen_Vornamen_Deutschlands
-    protected static $firstNameFemale = array(
+    protected static $firstNameFemale = [
         'Adele', 'Adelheid', 'Agathe', 'Agnes', 'Alexandra', 'Alice', 'Alma', 'Almut', 'Aloisia', 'Alwine', 'Amalie', 'Ana', 'Anastasia', 'Andrea', 'Anett', 'Anette', 'Angela', 'Angelika', 'Anika', 'Anita', 'Anja', 'Anke', 'Anna', 'Anna-Maria', 'Anne', 'Annegret', 'Annelie', 'Annelies', 'Anneliese', 'Annelore', 'Annemarie', 'Annerose', 'Annett', 'Annette', 'Anni', 'Annika', 'Anny', 'Antje', 'Antonia', 'Antonie', 'Ariane', 'Astrid', 'Auguste', 'Ayse',
         'Babette', 'Barbara', 'Beate', 'Beatrice', 'Beatrix', 'Bernadette', 'Berta', 'Bettina', 'Betty', 'Bianca', 'Bianka', 'Birgit', 'Birgitt', 'Birgitta', 'Birte', 'Brigitta', 'Brigitte', 'Britta', 'Brunhild', 'Brunhilde', 'Bärbel',
         'Carina', 'Carla', 'Carmen', 'Carola', 'Carolin', 'Caroline', 'Cathrin', 'Catrin', 'Centa', 'Charlotte', 'Christa', 'Christel', 'Christiane', 'Christin', 'Christina', 'Christine', 'Christl', 'Cindy', 'Claudia', 'Conny', 'Constanze', 'Cordula', 'Corina', 'Corinna', 'Cornelia', 'Cäcilia', 'Cäcilie',
@@ -83,13 +83,13 @@ class Person extends \Faker\Provider\Person
         'Walburga', 'Wally', 'Waltraud', 'Waltraut', 'Wanda', 'Wendelin', 'Wera', 'Wiebke', 'Wilhelmine', 'Wilma', 'Wiltrud',
         'Yvonne',
         'Änne',
-    );
+    ];
 
     /**
          * Top 500 Names from a phone directory (6. January 2005)
          * {@link} https://de.wiktionary.org/wiki/Verzeichnis:Deutsch/Liste_der_h%C3%A4ufigsten_Nachnamen_Deutschlands
          **/
-    protected static $lastName = array(
+    protected static $lastName = [
         'Ackermann', 'Adam', 'Adler', 'Ahrens', 'Albers', 'Albert', 'Albrecht', 'Altmann', 'Anders', 'Appel', 'Arndt', 'Arnold', 'Auer',
         'Bach', 'Bachmann', 'Bader', 'Baier', 'Bartels', 'Barth', 'Barthel', 'Bartsch', 'Bauer', 'Baum', 'Baumann', 'Baumgartner', 'Baur', 'Bayer', 'Beck', 'Becker', 'Beckmann', 'Beer', 'Behrendt', 'Behrens', 'Beier', 'Bender', 'Benz', 'Berg', 'Berger', 'Bergmann', 'Berndt', 'Bernhardt', 'Bertram', 'Betz', 'Beyer', 'Binder', 'Bischoff', 'Bittner', 'Blank', 'Block', 'Blum', 'Bock', 'Bode', 'Born', 'Brand', 'Brandl', 'Brandt', 'Braun', 'Brenner', 'Breuer', 'Brinkmann', 'Brunner', 'Bruns', 'Brückner', 'Buchholz', 'Buck', 'Burger', 'Burkhardt', 'Busch', 'Busse', 'Bär', 'Böhm', 'Böhme', 'Böttcher', 'Bühler', 'Büttner',
         'Christ', 'Conrad',
@@ -112,12 +112,12 @@ class Person extends \Faker\Provider\Person
         'Vetter', 'Vogel', 'Vogt', 'Voigt', 'Vollmer', 'Voss', 'Voß', 'Völker',
         'Wagner', 'Wahl', 'Walter', 'Walther', 'Weber', 'Wegener', 'Wegner', 'Weidner', 'Weigel', 'Weis', 'Weise', 'Weiss', 'Weiß', 'Wendt', 'Wenzel', 'Werner', 'Westphal', 'Wetzel', 'Wiedemann', 'Wiegand', 'Wieland', 'Wiese', 'Wiesner', 'Wild', 'Wilhelm', 'Wilke', 'Will', 'Wimmer', 'Winkler', 'Winter', 'Wirth', 'Witt', 'Witte', 'Wittmann', 'Wolf', 'Wolff', 'Wolter', 'Wulf', 'Wunderlich',
         'Zander', 'Zeller', 'Ziegler', 'Zimmer', 'Zimmermann',
-    );
+    ];
 
-    protected static $titleMale = array('Herr', 'Herr Dr.', 'Herr Prof.', 'Herr Prof. Dr.');
-    protected static $titleFemale = array('Frau', 'Frau Dr.', 'Frau Prof.', 'Frau Prof. Dr.');
+    protected static $titleMale = ['Herr', 'Herr Dr.', 'Herr Prof.', 'Herr Prof. Dr.'];
+    protected static $titleFemale = ['Frau', 'Frau Dr.', 'Frau Prof.', 'Frau Prof. Dr.'];
 
-    protected static $suffix = array('B.Sc.', 'B.A.', 'B.Eng.', 'MBA.');
+    protected static $suffix = ['B.Sc.', 'B.A.', 'B.Eng.', 'MBA.'];
 
     /**
      * @example 'PhD'

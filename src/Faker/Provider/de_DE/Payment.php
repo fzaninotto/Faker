@@ -26,7 +26,7 @@ class Payment extends \Faker\Provider\Payment
      * The 20 largest public savings banks by branch count
      * @see https://de.wikipedia.org/wiki/Liste_der_Sparkassen_in_Deutschland
      */
-    protected static $banks = array(
+    protected static $banks = [
         'Bank 1 Saar', 'Bayerische Landesbank', 'BBBank', 'Berliner Sparkasse', 'Berliner Volksbank', 'Braunschweigische Landessparkasse',
         'Commerzbank',
         'DekaBank Deutsche Girozentrale', 'Deutsche Apotheker- und Ärztebank', 'Deutsche Bank', 'Deutsche Kreditbank', 'Deutsche Pfandbriefbank', 'Dortmunder Volksbank', 'DZ Bank',
@@ -44,7 +44,7 @@ class Payment extends \Faker\Provider\Payment
         'Unicredit Bank',
         'Vereinigte Volksbank', 'Volksbank, Hildesheim-Lehrte-Pattensen', 'Volksbank Alzey-Worms', 'Volksbank Braunschweig Wolfsburg', 'Volksbank Darmstadt - Südhessen', 'Volksbank Hohenlohe', 'Volksbank Kraichgau Wiesloch-Sinsheim', 'Volksbank Lüneburger Heide', 'Volksbank Mittelhessen', 'Volksbank Paderborn-Höxter-Detmold', 'Volksbank Raiffeisenbank Rosenheim-Chiemsee', 'Volksbank Stuttgart', 'VR Bank Main-Kinzig-Büdingen',
         'WGZ Bank',
-    );
+    ];
 
     /**
      * @example 'Volksbank Stuttgart'

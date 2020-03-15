@@ -4,31 +4,31 @@ namespace Faker\Provider\uk_UA;
 
 class Company extends \Faker\Provider\Company
 {
-    protected static $formats = array(
+    protected static $formats = [
         '{{companyName}}',                                      // Вектор
         '{{companyPrefix}} "{{companyName}}"',                  // ТОВ "Інфоком"
         '{{companyName}}-{{companySuffix}}',                    // Сервіс-Плюс
         '{{companyPrefix}} "{{companyName}}-{{companySuffix}}"',// ПАТ "Альфа-Стиль"
-    );
+    ];
 
-    protected static $urlFormats = array(
+    protected static $urlFormats = [
         '{{companyName}}',
         '{{companyName}}-{{companySuffix}}',
-    );
+    ];
 
-    protected static $companyPrefix = array('ТОВ', 'ПП', 'ПАТ','ПрАТ');
-    protected static $companySuffix = array('Сервіс','Плюс', 'Груп', 'Стиль', 'Дизайн');
+    protected static $companyPrefix = ['ТОВ', 'ПП', 'ПАТ','ПрАТ'];
+    protected static $companySuffix = ['Сервіс','Плюс', 'Груп', 'Стиль', 'Дизайн'];
 
-    protected static $companyName = array(
+    protected static $companyName = [
         'Вектор', 'Едельвейс', 'Смарт', 'Альфа', 'Система', 'Універсал',
         'Інфоком', 'Макс', 'Планета', 'Вектор', 'Приват', 'Еко', 'Мега',
         'Мегамакс', 'Мульти', 'Майнер'
-    );
+    ];
 
     /**
      * @see list of Ukraine job title (2017-08-09), source: https://uk.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BF%D1%80%D0%BE%D1%84%D0%B5%D1%81%D1%96%D0%B9
      */
-    protected static $jobTitleFormat = array(
+    protected static $jobTitleFormat = [
         'Агроном', 'Адвокат', 'Актор', 'Акушер', 'Антрополог', 'Аптекар', 'Архітектор', 'Археолог', 'Астронавт', 'Астрофізик', 'Автослюсар', 'Агент',
         'Бариста', 'Бармен', 'Бібліограф', 'Біолог', 'Бізнесмен', 'Ботанік', 'Будівельник', 'Будник', 'Бухгалтер', 'Бібліотекар',
         'Вантажник', 'Ведучий', 'Ветеринар', 'Випробувач', 'Водій', 'Вчитель', 'Візажист',
@@ -53,7 +53,7 @@ class Company extends \Faker\Provider\Company
         'Хірург', 'Хімік', 'Художник', 'Хореограф', 'Хормейстер',
         'Шериф', 'Швачка', 'Штукатур',
         'Ювелір','Юрист'
-    );
+    ];
 
     public function companyUrl()
     {

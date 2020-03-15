@@ -34,7 +34,7 @@ class PersonTest extends TestCase
 
         $genderDigit = substr($idNumber, 6, 1);
 
-        $this->assertContains($genderDigit, array('5', '6', '7', '8', '9'));
+        $this->assertContains($genderDigit, ['5', '6', '7', '8', '9']);
     }
 
     public function testIdNumberForFemales()
@@ -43,26 +43,26 @@ class PersonTest extends TestCase
 
         $genderDigit = substr($idNumber, 6, 1);
 
-        $this->assertContains($genderDigit, array('0', '1', '2', '3', '4'));
+        $this->assertContains($genderDigit, ['0', '1', '2', '3', '4']);
     }
 
     public function testLicenceCode()
     {
-        $validLicenceCodes = array('A', 'A1', 'B', 'C', 'C1', 'C2', 'EB', 'EC', 'EC1', 'I', 'L', 'L1');
+        $validLicenceCodes = ['A', 'A1', 'B', 'C', 'C1', 'C2', 'EB', 'EC', 'EC1', 'I', 'L', 'L1'];
 
         $this->assertContains($this->faker->licenceCode, $validLicenceCodes);
     }
 
     public function testMaleTitles()
     {
-        $validMaleTitles = array('Mr.', 'Dr.', 'Prof.', 'Rev.', 'Hon.');
+        $validMaleTitles = ['Mr.', 'Dr.', 'Prof.', 'Rev.', 'Hon.'];
 
         $this->assertContains(Person::titleMale(), $validMaleTitles);
     }
 
     public function testFemaleTitles()
     {
-        $validateFemaleTitles = array('Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.', 'Rev.', 'Hon.');
+        $validateFemaleTitles = ['Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.', 'Rev.', 'Hon.'];
 
         $this->assertContains(Person::titleFemale(), $validateFemaleTitles);
     }
