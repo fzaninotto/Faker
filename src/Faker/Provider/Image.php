@@ -3,7 +3,7 @@
 namespace Faker\Provider;
 
 /**
- * Depends on image generation from http://lorempixel.com/
+ * Depends on image generation from https://picsum.photos/
  */
 class Image extends Base
 {
@@ -17,7 +17,7 @@ class Image extends Base
      *
      * Set randomize to false to remove the random GET parameter at the end of the url.
      *
-     * @example 'http://lorempixel.com/640/480/?12345'
+     * @example 'https://picsum.photos/640/480/?12345'
      *
      * @param integer $width
      * @param integer $height
@@ -30,25 +30,25 @@ class Image extends Base
      */
     public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
     {
-        $baseUrl = "https://lorempixel.com/";
-        $url = "{$width}/{$height}/";
+        $baseUrl = "https://picsum.photos/";
+        $url = "{$width}/{$height}.webp/";
 
         if ($gray) {
-            $url = "gray/" . $url;
+            $url .=  "?grayscale";
         }
 
         if ($category) {
             if (!in_array($category, static::$categories)) {
                 throw new \InvalidArgumentException(sprintf('Unknown image category "%s"', $category));
             }
-            $url .= "{$category}/";
+            $url .= "?{$category}/";
             if ($word) {
-                $url .= "{$word}/";
+                $url .= "?{$word}/;
             }
         }
 
         if ($randomize) {
-            $url .= '?' . static::randomNumber(5, true);
+            $url .= '?random=' . static::randomNumber(5, true);
         }
 
         return $baseUrl . $url;
