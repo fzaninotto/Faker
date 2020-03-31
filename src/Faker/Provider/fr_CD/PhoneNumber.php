@@ -23,7 +23,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     public static function mobileNumber()
     {
         $prefix = static::randomElement(static::$prefixs);
-        $code = static::randomElement(array('+243, 0', '00243'));
+        $code = static::randomElement(array('+243', '0', '00243'));
         $format = static::numerify(static::randomElement(array('#######', ' ## ### ##', ' ### ## ##', '## ## ###')));
         return $code.$prefix.$format;
     }
