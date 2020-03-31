@@ -25,6 +25,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         $prefix = static::randomElement(static::$prefixs);
         $code = static::randomElement(array('+243, 0', '00243'));
         $format = static::numerify(static::randomElement(array('#######', ' ## ### ##', ' ### ## ##', '## ## ###')));
-        return $prefix.$code.$format;
+        return $code.$prefix.$format;
     }
 }
