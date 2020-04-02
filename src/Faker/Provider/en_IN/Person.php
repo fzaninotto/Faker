@@ -36,7 +36,7 @@ class Person extends \Faker\Provider\Person
         'Kartik', 'Koushtubh', 'Kirti', 'Kushal', 'Kailash', 'Kalyan', 'Krishna', 'Kamlesh', 'Kalpit', 'Kabeer', 'Karim',
         'Lalit', 'Lakshmi', 'Labeen',
         'Mohan', 'Mukund', 'Mohan', 'Mohit', 'Manish', 'Moti', 'Mowgli', 'Mohanlal', 'Mitesh', 'Manoj', 'Monin', 'Mahmood', 'Malik', 'Mehul', 'Mustafa', 'Manpreet', 'Mukul', 'Munaf', 'Marlo',
-        'Nitin', 'Nayan', 'Naresh', 'Neerendra', 'Nirmal', 'Narayan', 'Nakul', 'Naval', 'Natwar', 'Naseer', 'Nazir', 'Nawab, ',
+        'Nitin', 'Nayan', 'Naresh', 'Neerendra', 'Nirmal', 'Narayan', 'Nakul', 'Naval', 'Natwar', 'Naseer', 'Nazir', 'Nawab',
         'Parveen', 'Pravin', 'Pranab', 'Prabhat', 'Pradeep', 'Prasoon', 'Preet', 'Pranay', 'Parvez', 'Pirzada', 'Peter',
         'Omar', 'Obaid', 'Owais',
         'Qabeel', 'Qabool', 'Qadim',

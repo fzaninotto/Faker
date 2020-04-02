@@ -6,7 +6,7 @@ use Faker\Generator;
 use Faker\Provider\ja_JP\Internet;
 use PHPUnit\Framework\TestCase;
 
-class InternetTest extends TestCase
+final class InternetTest extends TestCase
 {
     public function testUserName()
     {

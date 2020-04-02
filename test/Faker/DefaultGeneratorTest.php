@@ -5,7 +5,7 @@ namespace Faker\Test;
 use Faker\DefaultGenerator;
 use PHPUnit\Framework\TestCase;
 
-class DefaultGeneratorTest extends TestCase
+final class DefaultGeneratorTest extends TestCase
 {
     public function testGeneratorReturnsNullByDefault()
     {

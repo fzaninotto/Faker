@@ -4,11 +4,11 @@ namespace Faker\Test\Provider\ru_RU;
 
 use PHPUnit\Framework\TestCase;
 
-class TextTest extends TestCase
+final class TextTest extends TestCase
 {
     private $textClass;
 
-    public function setUp()
+    protected function setUp()
     {
         $this->textClass = new \ReflectionClass('Faker\Provider\ru_RU\Text');
     }

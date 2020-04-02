@@ -7,14 +7,14 @@ use Faker\Provider\Company;
 use Faker\Provider\Lorem;
 use PHPUnit\Framework\TestCase;
 
-class CompanyTest extends TestCase
+final class CompanyTest extends TestCase
 {
     /**
      * @var Generator
      */
     private $faker;
 
-    public function setUp()
+    protected function setUp()
     {
         $faker = new Generator();
         $faker->addProvider(new Company($faker));

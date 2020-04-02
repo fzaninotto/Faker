@@ -5,7 +5,7 @@ If you've written a new formatter, adapted Faker to a new locale, or fixed a bug
 
 Before proposing a pull request, check the following:
 
-* Your code should follow the [PSR-2 coding standard](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md). Run `make sniff` to check that the coding standards are followed, and use [php-cs-fixer](https://github.com/fabpot/PHP-CS-Fixer) to fix inconsistencies.
+* Your code should follow the [PSR-2 coding standard](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md). Run `make sniff` to check that the coding standards are followed, and run `make fix` to fix inconsistencies.
 * Unit tests should still pass after your patch. Run the tests on your dev server (with `make test`) or check the continuous integration status for your pull request.
 * As much as possible, add unit tests for your code
 * Never use `rand()` in your providers. Faker uses the Mersenne Twister Randomizer, so use `mt_rand()` or any of the base generators (`randomNumber`, `randomElement`, etc.) instead.

@@ -4,8 +4,9 @@ namespace Faker\Test\Provider\en_US;
 
 use Faker\Provider\en_US\Company;
 use Faker\Generator;
+use PHPUnit\Framework\TestCase;
 
-class CompanyTest extends \PHPUnit_Framework_TestCase
+final class CompanyTest extends TestCase
 {
 
     /**
@@ -13,7 +14,7 @@ class CompanyTest extends \PHPUnit_Framework_TestCase
      */
     private $faker;
 
-    public function setUp()
+    protected function setUp()
     {
         $faker = new Generator();
         $faker->addProvider(new Company($faker));

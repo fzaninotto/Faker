@@ -6,7 +6,7 @@ use Faker\Generator;
 use Faker\Provider\mn_MN\Person;
 use PHPUnit\Framework\TestCase;
 
-class PersonTest extends TestCase
+final class PersonTest extends TestCase
 {
     public function testName()
     {

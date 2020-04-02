@@ -6,7 +6,7 @@ use Faker\Generator;
 use Faker\Provider\en_IN\Address;
 use PHPUnit\Framework\TestCase;
 
-class AddressTest extends TestCase
+final class AddressTest extends TestCase
 {
 
   /**
@@ -14,7 +14,7 @@ class AddressTest extends TestCase
    */
   private $faker;
 
-  public function setUp()
+  protected function setUp()
   {
     $faker = new Generator();
     $faker->addProvider(new Address($faker));

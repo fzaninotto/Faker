@@ -6,9 +6,9 @@ use Faker\Generator;
 use Faker\Provider\es_ES\Person;
 use PHPUnit\Framework\TestCase;
 
-class PersonTest extends TestCase
+final class PersonTest extends TestCase
 {
-    public function setUp()
+    protected function setUp()
     {
         $faker = new Generator();
         $faker->seed(1);

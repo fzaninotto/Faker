@@ -5,13 +5,13 @@ use Faker\Generator;
 use Faker\Provider\kk_KZ\Company;
 use PHPUnit\Framework\TestCase;
 
-class CompanyTest extends TestCase
+final class CompanyTest extends TestCase
 {
 
     /**
      * {@inheritdoc}
      */
-    public function setUp()
+    protected function setUp()
     {
         $this->faker = new Generator();
 

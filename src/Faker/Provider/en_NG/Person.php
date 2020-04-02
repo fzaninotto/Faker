@@ -1,7 +1,5 @@
 <?php
 
-// data source
-
 namespace Faker\Provider\en_NG;
 
 class Person extends \Faker\Provider\Person
@@ -74,7 +72,7 @@ class Person extends \Faker\Provider\Person
         'Funmilayo',
         'Gbadamosi', 'Gbogboade', 'Grace',
         'Habeeb', 'Hanifat', 'Isaac',
-        'Ismail', 'Isokun', 'Isreal', 'Iyalla',
+        'Ismail', 'Isokun', 'Israel', 'Iyalla',
         'Jamiu', 'Jimoh', 'Joshua', 'Justina',
         'Katherine', 'Kayode', 'Kayode', 'Kimberly',
         'Ladega', 'Latifat', 'Lawal', 'Leonard',

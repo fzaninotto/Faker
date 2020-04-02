@@ -4,15 +4,16 @@ namespace Faker\Test\Provider\fr_FR;
 
 use Faker\Generator;
 use Faker\Provider\fr_FR\PhoneNumber;
+use PHPUnit\Framework\TestCase;
 
-class PhoneNumberTest extends \PHPUnit_Framework_TestCase
+final class PhoneNumberTest extends TestCase
 {
     /**
      * @var Generator
      */
     private $faker;
 
-    public function setUp()
+    protected function setUp()
     {
         $faker = new Generator();
         $faker->addProvider(new PhoneNumber($faker));
@@ -42,7 +43,7 @@ class PhoneNumberTest extends \PHPUnit_Framework_TestCase
         $serviceNumber = $this->faker->serviceNumber();
         $this->assertRegExp('/^(\+33 |\+33 \(0\)|0)8(?:(\s{1})?\d{2}){4}$/', $serviceNumber);
     }
-    
+
     public function testServiceNumberFormat()
     {
         $serviceNumberFormat = $this->faker->phoneNumber08();

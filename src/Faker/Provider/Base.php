@@ -492,7 +492,7 @@ class Base
         // All A-F inside of [] become ABCDEF
         $regex = preg_replace_callback('/\[([^\]]+)\]/', function ($matches) {
             return '[' . preg_replace_callback('/(\w|\d)\-(\w|\d)/', function ($range) {
-                return implode(range($range[1], $range[2]), '');
+                return implode('', range($range[1], $range[2]));
             }, $matches[1]) . ']';
         }, $regex);
         // All [ABC] become B (or A or C)
@@ -590,10 +590,10 @@ class Base
      * <code>
      * $values = array();
      * $evenValidator = function ($digit) {
-     * 	 return $digit % 2 === 0;
+     *   return $digit % 2 === 0;
      * };
      * for ($i=0; $i < 10; $i++) {
-     * 	 $values []= $faker->valid($evenValidator)->randomDigit;
+     *   $values []= $faker->valid($evenValidator)->randomDigit;
      * }
      * print_r($values); // [0, 4, 8, 4, 2, 6, 0, 8, 8, 6]
      * </code>

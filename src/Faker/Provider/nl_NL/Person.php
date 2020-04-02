@@ -288,7 +288,7 @@ class Person extends \Faker\Provider\Person
      */
     public static function titleMale()
     {
-        return static::title();
+        return static::randomElement(static::$title);
     }
 
     /**
@@ -296,7 +296,7 @@ class Person extends \Faker\Provider\Person
      */
     public static function titleFemale()
     {
-        return static::title();
+        return static::randomElement(static::$title);
     }
 
     /**
@@ -342,7 +342,6 @@ class Person extends \Faker\Provider\Person
             } else {
                 $nr[0] = 1;
                 $nr[1]++;
-
             }
         }
         return implode('', array_reverse($nr));
