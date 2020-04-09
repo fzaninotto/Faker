@@ -13,5 +13,6 @@
 
     <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
 
+    <arg name="colors" />
     <arg value="np" />
 </ruleset>
