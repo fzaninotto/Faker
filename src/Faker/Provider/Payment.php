@@ -80,7 +80,7 @@ class Payment extends Base
         'BH' => array(array('a', 4),    array('c', 14)),
         'BR' => array(array('n', 8),    array('n', 5),  array('n', 10), array('a', 1),  array('c', 1)),
         'CH' => array(array('n', 5),    array('c', 12)),
-        'CR' => array(array('n', 3),    array('n', 14)),
+        'CR' => array(array('n', 4),    array('n', 14)),
         'CY' => array(array('n', 3),    array('n', 5),  array('c', 16)),
         'CZ' => array(array('n', 4),    array('n', 6),  array('n', 10)),
         'DE' => array(array('n', 8),    array('n', 10)),
