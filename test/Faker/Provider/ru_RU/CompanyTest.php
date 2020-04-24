@@ -27,6 +27,14 @@ class CompanyTest extends TestCase
         $this->assertEquals("02", substr($this->faker->inn(2), 0, 2));
     }
 
+    /**
+     * @dataProvider innMaskProvider
+     */
+    public function testINNMask($strlen, $mask)
+    {
+        $this->assertEquals($strlen, strlen($this->faker->inn("", $mask)));
+    }
+
     public function testKPP()
     {
         $this->assertRegExp('/^[0-9]{9}$/', $this->faker->kpp);
@@ -44,5 +52,12 @@ class CompanyTest extends TestCase
             count(explode(' ', $this->faker->catchPhrase)),
             "'$phrase' - should be contain 3 word"
         );
+    }
+
+    public function innMaskProvider() {
+        return [
+            [10, '#######'],
+            [12, '#########'],
+        ];
     }
 }
