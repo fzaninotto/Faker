@@ -96,7 +96,7 @@ class Company extends \Faker\Provider\Company
         return static::randomElement(static::$companyNameSuffixes);
     }
 
-    public static function inn($area_code = "")
+    public static function inn($area_code = "", $mask = '#######')
     {
         if ($area_code === "" || intval($area_code) == 0) {
             //Simple generation code for areas in Russian without check for valid
@@ -105,7 +105,7 @@ class Company extends \Faker\Provider\Company
             $area_code = intval($area_code);
         }
         $area_code = str_pad($area_code, 2, '0', STR_PAD_LEFT);
-        $inn_base =  $area_code . static::numerify('#######');
+        $inn_base =  $area_code . static::numerify($mask);
         return $inn_base . \Faker\Calculator\Inn::checksum($inn_base);
     }
 
