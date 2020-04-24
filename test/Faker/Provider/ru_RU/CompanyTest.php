@@ -54,7 +54,8 @@ class CompanyTest extends TestCase
         );
     }
 
-    public function innMaskProvider() {
+    public function innMaskProvider()
+    {
         return [
             [10, '#######'],
             [12, '#########'],

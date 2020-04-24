@@ -15,7 +15,7 @@ class Inn
     public static function checksum($inn)
     {
         $multipliers = [1 => 2, 2 => 4, 3 => 10, 4 => 3, 5 => 5, 6 => 9, 7 => 4, 8 => 6, 9 => 8];
-        if(strlen($inn)  === 12) {
+        if (strlen($inn) === 12) {
             $multipliers = [1 => 7, 2 => 2, 3 => 4, 4 => 10, 5 => 3, 6 => 5, 7 => 9, 8 => 4, 9 => 6, 10 => 8, 11 => 0];
         }
         $sum = 0;
