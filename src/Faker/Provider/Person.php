@@ -2,6 +2,8 @@
 
 namespace Faker\Provider;
 
+use Faker\Calculator\Inn;
+
 class Person extends Base
 {
     const GENDER_MALE = 'male';
@@ -122,5 +124,10 @@ class Person extends Base
     public static function titleFemale()
     {
         return static::randomElement(static::$titleFemale);
+    }
+
+    public static function inn($area_code = "")
+    {
+        return Inn::generate($area_code, Inn::TYPE_PERSON);
     }
 }
