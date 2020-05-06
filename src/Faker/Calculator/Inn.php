@@ -22,9 +22,9 @@ class Inn
     public static function checksum($inn, $type = 'company')
     {
         switch ($type) {
-            case 'company':
+            case static::TYPE_COMPANY:
                 return static::checkDigit($inn, [2, 4, 10, 3, 5, 9, 4, 6, 8]);
-            case 'person':
+            case static::TYPE_PERSON:
                 $n11 = static::checkDigit($inn, [7, 2, 4, 10, 3, 5, 9, 4, 6, 8]);
                 $n12 = static::checkDigit($inn . $n11, [3, 7, 2, 4, 10, 3, 5, 9, 4, 6, 8]);
                 return $n11 . $n12;
@@ -38,7 +38,7 @@ class Inn
      * Generates INN
      *
      * @param $area_code
-     * @param string $mask
+     * @param string $type
      * @return string
      */
     public static function generate($area_code, $type = 'company')
