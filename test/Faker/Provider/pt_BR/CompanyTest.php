@@ -8,6 +8,10 @@ use PHPUnit\Framework\TestCase;
 
 class CompanyTest extends TestCase
 {
+    /**
+     * @var Generator
+     */
+    private $faker;
 
     protected function setUp(): void
     {
