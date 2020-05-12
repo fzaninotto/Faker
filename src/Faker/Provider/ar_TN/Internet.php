@@ -11,7 +11,7 @@ class Internet extends \Faker\Provider\Internet
         '?{{lastNameAscii}}',
     );
     protected static $safeEmailTld = array(
-        'com', 'jo', 'me', 'net', 'org',
+        'gov.tn', 'com', 'com.tn', 'tn', 'net', 'org',
     );
 
     protected static $tld = array(
