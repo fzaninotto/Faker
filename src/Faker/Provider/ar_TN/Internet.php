@@ -15,14 +15,14 @@ class Internet extends \Faker\Provider\Internet
     );
 
     protected static $tld = array(
-        'biz', 'com', 'info', 'sa', 'net', 'org',
+        'com.tn', 'com', 'gov.tn', 'tn', 'net', 'org',
     );
 
     protected static $lastNameAscii = array(
-        'abbad', 'abbadi', 'abbas', 'abulebbeh', 'flefel', 'hadi', 'hamad', 'hasan', 'jabri', 'kanaan', 'karam', 'maanee', 'melhem', 'nimry', 'obaisi', 'qasem', 'qawasmee', 'rabee', 'rashwani', 'shami', 'zaloum',
+        'ziadi', 'donia', 'louhichi', 'whichi', 'ben mabrouk', 'ben chaaben', 'dridi', 'hammadi', 'ben med', 'kanaan', 'karam', 'maanee', 'ben salem', 'jomaa', 'tounsi', 'baghouli', 'boughanmi', 'daghfous', 'chaieb', 'shami', 'zaloum',
     );
     protected static $firstNameAscii = array(
-        'abd', 'abdullah', 'ahmad', 'akram', 'amr', 'bashar', 'bilal', 'fadi', 'ibrahim', 'khaled', 'layth', 'mohammad', 'mutaz', 'omar', 'osama', 'rami', 'saleem', 'samer', 'sami', 'yazan',
+        'khalil', 'ala', 'hedi', 'amine', 'amr', 'bashar', 'bilal', 'fadi', 'ibrahim', 'khaled', 'layth', 'mohammad', 'abdo', 'ilyes', 'helmi', 'anouer', 'wael', 'mido', 'med', 'karismatik',
     );
 
     public static function lastNameAscii()
@@ -36,7 +36,7 @@ class Internet extends \Faker\Provider\Internet
     }
 
     /**
-     * @example 'ahmad.abbadi'
+     * @example 'amine.lch'
      */
     public function userName()
     {
@@ -46,7 +46,7 @@ class Internet extends \Faker\Provider\Internet
     }
 
     /**
-     * @example 'wewebit.jo'
+     * @example 'karismatik.tn'
      */
     public function domainName()
     {
