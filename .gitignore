@@ -1,8 +1,4 @@
 .build/
 vendor
 composer.lock
-
 /.idea/
-=======
-.idea/*
-
