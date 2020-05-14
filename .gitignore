@@ -1,3 +1,11 @@
 .build/
 vendor
 composer.lock
+
+# IDE-specific files or folders
+
+# IntelliJ
+.idea/
+
+# VSCode
+.vscode/
