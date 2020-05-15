@@ -22,7 +22,7 @@ class Internet extends \Faker\Provider\Internet
         'ziadi', 'donia', 'louhichi', 'faker', 'benmabrouk', 'benchaaben', 'dridi', 'hammadi', 'benmed', 'kanaan', 'karam', 'belhadj', 'bensalem', 'jomaa', 'tounsi', 'baghouli', 'boughanmi', 'daghfous', 'chaieb', 'jlali', 'trabelsi','ayari','chaaben','gharby','rkik','samaaly','hichri','ghodben','jaziri','benmami'
     );
     protected static $firstNameAscii = array(
-        'khalil', 'ala', 'hedi', 'amine', 'amr', 'bashar', 'bilal', 'fadi', 'ibrahim', 'khaled', 'layth', 'mohammad', 'abdo', 'ilyes', 'helmi', 'anouer', 'wael', 'mido', 'med', 'salah','salih','hani','iyadh','najem','skander','nermine','eya','ghada','rim','shayma','nouha','nawress','yossri','hedi','modhaffar','ala','med','mohammed','chakib','badis','sadok','sam'
+        'khalil', 'ala', 'hedi', 'amine', 'amr', 'bashar', 'bilal', 'fadi', 'ibrahim', 'khaled', 'layth', 'mohammad', 'abdo', 'ilyes', 'helmi', 'anouer', 'wael', 'mido', 'med', 'salah','salih','hani','iyadh','najem','skander','nermine','eya','ghada','rim','shayma','nouha','nawress','yossri','hedi','modhaffar','ala','mohammed','chakib','badis','sadok','sam'
     );
 
     public static function lastNameAscii()
