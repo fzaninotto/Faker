@@ -19,10 +19,10 @@ class Internet extends \Faker\Provider\Internet
     );
 
     protected static $lastNameAscii = array(
-        'ziadi', 'donia', 'louhichi', 'whichi', 'ben mabrouk', 'ben chaaben', 'dridi', 'hammadi', 'ben med', 'kanaan', 'karam', 'maanee', 'ben salem', 'jomaa', 'tounsi', 'baghouli', 'boughanmi', 'daghfous', 'chaieb', 'shami', 'zaloum',
+        'ziadi', 'donia', 'louhichi', 'whichi', 'benmabrouk', 'benchaaben', 'dridi', 'hammadi', 'ben med', 'kanaan', 'karam', 'maanee', 'bensalem', 'jomaa', 'tounsi', 'baghouli', 'boughanmi', 'daghfous', 'chaieb', 'shami', 'zaloum',
     );
     protected static $firstNameAscii = array(
-        'khalil', 'ala', 'hedi', 'amine', 'amr', 'bashar', 'bilal', 'fadi', 'ibrahim', 'khaled', 'layth', 'mohammad', 'abdo', 'ilyes', 'helmi', 'anouer', 'wael', 'mido', 'med', 'karismatik',
+        'khalil', 'ala', 'hedi', 'amine', 'amr', 'bashar', 'bilal', 'fadi', 'ibrahim', 'khaled', 'layth', 'mohammad', 'abdo', 'ilyes', 'helmi', 'anouer', 'wael', 'mido', 'med', 'salah','salih','hani','iyadh','najem','skander','nermine','eya','ghada','rim','shayma','nouha','nawress','yossri','hedi','modhaffar','ala','med','mohammed','chakib','badis','sadok','sam'
     );
 
     public static function lastNameAscii()
