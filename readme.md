@@ -205,6 +205,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     iso8601($max = 'now')                 // '1978-12-09T10:10:29+0000'
     date($format = 'Y-m-d', $max = 'now') // '1979-06-09'
     time($format = 'H:i:s', $max = 'now') // '20:49:42'
+    dateBetween($startDate = '-30 years', $endDate = 'now', $format = 'Y-m-d') // '1979-06-09'
     dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null) // DateTime('2003-03-15 02:00:49', 'Africa/Lagos')
     dateTimeInInterval($startDate = '-30 years', $interval = '+ 5 days', $timezone = null) // DateTime('2003-03-15 02:00:49', 'Antartica/Vostok')
     dateTimeThisCentury($max = 'now', $timezone = null)     // DateTime('1915-05-30 19:28:21', 'UTC')

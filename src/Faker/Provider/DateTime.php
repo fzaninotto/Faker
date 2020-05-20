@@ -114,6 +114,21 @@ class DateTime extends Base
     }
 
     /**
+     * Get a DateTime string based on a random date between two given dates.
+     * Accepts date strings that can be recognized by strtotime().
+     *
+     * @param string $startDate
+     * @param string $endDate
+     * @param string $format
+     * @example '1999-02-02'
+     * @return string
+     */
+    public static function dateBetween($startDate = '-30 years', $endDate = 'now', $format = 'Y-m-d')
+    {
+        return static::dateTimeBetween($startDate, $endDate)->format($format);
+    }
+
+    /**
      * Get a DateTime object based on a random date between two given dates.
      * Accepts date strings that can be recognized by strtotime().
      *

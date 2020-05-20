@@ -7,6 +7,11 @@ use PHPUnit\Framework\TestCase;
 
 final class DateTimeTest extends TestCase
 {
+    /**
+     * @var string
+     */
+    private $defaultTz;
+
     protected function setUp()
     {
         $this->defaultTz = 'UTC';
@@ -202,6 +207,28 @@ final class DateTimeTest extends TestCase
             array('-1 year', null),
             array('-1 day', '-1 hour'),
             array('-1 day', 'now'),
+        );
+    }
+
+    /**
+     * @dataProvider providerDateBetween
+     */
+    public function testDateBetween($start, $end, $format, $regexp)
+    {
+        $date = DateTimeProvider::dateBetween($start, $end, $format);
+        static::assertRegExp($regexp, $date);
+        static::assertGreaterThanOrEqual(new \DateTime($start), new \DateTime($date));
+        static::assertLessThanOrEqual(new \DateTime($end), new \DateTime($date));
+    }
+
+    public function providerDateBetween()
+    {
+        return array(
+            array('-1 year', false, 'Y-m-d', '/^\d{4}-\d{2}-\d{2}$/'),
+            array('-1 year', null, 'Y-m-d', '/^\d{4}-\d{2}-\d{2}$/'),
+            array('-1 day', '-1 hour', 'Y-m-d', '/^\d{4}-\d{2}-\d{2}$/'),
+            array('-1 day', 'now', 'Y-m-d', '/^\d{4}-\d{2}-\d{2}$/'),
+            array('-1 day', 'now', 'H:i:s', '/^\d{2}:\d{2}:\d{2}$/'),
         );
     }
 
