@@ -37,40 +37,40 @@ class Person extends \Faker\Provider\Person
     );
 
     protected static $firstNameMale = array(
-        'Aaron', 'Adriano', 'Alan', 'Alexandre', 'Alonso', 'Anderson', 'Andres', 'Antônio', 'Benjamin', 'Bruno', 'Camilo', 'Carlos', 'Christian',
-        'Christopher', 'Cristóvão', 'Daniel', 'Dante', 'David', 'Diego', 'Eduardo', 'Elias', 'Emanuel', 'Emiliano', 'Emílio', 'Estêvão',
+        'Aaron', 'Adriano', 'Alan', 'Alexandre', 'Alonso', 'Anderson', 'Andres', 'Antônio', 'Benedito', 'Benjamin', 'Bruno', 'Camilo', 'Carlos', 'Christian',
+        'Christopher', 'Cláudio', 'Cristóvão', 'Daniel', 'Danilo', 'Dante', 'David', 'Diego', 'Eduardo', 'Edson', 'Elias', 'Emanuel', 'Emiliano', 'Enzo', 'Emílio', 'Estêvão',
         'Evandro', 'Everton', 'Felipe', 'Fernando', 'Francisco', 'Franco', 'Fábio', 'Gabriel', 'Gian', 'Guilherme', 'Gustavo', 'Henrique',
-        'Hernani', 'Horácio', 'Hugo', 'Ian', 'Inácio', 'Isaac', 'Ivan', 'Jerônimo', 'Joaquin', 'Jorge', 'Josué', 'José',
-        'João', 'Kevin', 'Leandro', 'Leonardo', 'Lucas', 'Luciano', 'Luis', 'Manuel', 'Mateus', 'Matias', 'Miguel', 'Mário',
-        'Máximo', 'Noel', 'Pablo', 'Paulo', 'Pedro', 'Rafael', 'Ricardo', 'Rodrigo', 'Samuel', 'Santiago', 'Simon', 'Sérgio',
+        'Hernani', 'Horácio', 'Hugo', 'Ian', 'Inácio', 'Isaac', 'Ivan', 'Jerônimo', 'Joaquin', 'João', 'Jorge', 'Josué', 'José',
+        'João', 'Kevin', 'Leandro', 'Leonardo', 'Luan', 'Lucas', 'Luciano', 'Luis', 'Manuel', 'Mateus', 'Matias', 'Miguel', 'Márcio', 'Mário', 'Maurício',
+        'Máximo', 'Nero', 'Noel', 'Pablo', 'Paulo', 'Pedro', 'Rafael', 'Renato', 'Ricardo', 'Roberto', 'Rodrigo', 'Rogério', 'Ronaldo', 'Samuel', 'Santiago', 'Simon', 'Sérgio',
         'Thales', 'Thiago', 'Tomás', 'Valentin', 'Vicente', 'Agostinho', 'Demian', 'Giovane', 'Jácomo', 'Martinho', 'Maximiano', 'Natal', 'Sebastião',
         'Simão', 'Teobaldo', 'Ziraldo'
     );
 
     protected static $firstNameFemale = array(
-        'Abril', 'Adriana', 'Agustina', 'Alessandra', 'Alexa', 'Allison', 'Alma', 'Amanda', 'Amélia', 'Ana', 'Andrea', 'Antonieta', 'Ariadna',
-        'Ariana', 'Ashley', 'Beatriz', 'Bianca', 'Camila', 'Carla', 'Carolina', 'Catarina', 'Clara', 'Daniela', 'Elizabeth', 'Emília',
-        'Fabiana', 'Fátima', 'Gabriela', 'Giovana', 'Helena', 'Irene', 'Isabel', 'Isabella', 'Isadora', 'Ivana', 'Jasmin', 'Joana',
-        'Josefina', 'Juliana', 'Julieta', 'Júlia', 'Ketlin', 'Laura', 'Luana', 'Luara', 'Luciana', 'Luna', 'Luzia', 'Madalena',
-        'Maitê', 'Malena', 'Manuela', 'Mariana', 'Mel', 'Melissa', 'Mia', 'Micaela', 'Michele', 'Miranda', 'Natália', 'Nicole',
-        'Noelí', 'Norma', 'Nádia', 'Olívia', 'Ornela', 'Paula', 'Paulina', 'Pâmela', 'Rafaela', 'Rebeca', 'Regina', 'Renata',
-        'Sabrina', 'Salomé', 'Samanta', 'Sara', 'Silvana', 'Sofia', 'Sophie', 'Suzana', 'Taís', 'Tábata', 'Valentina', 'Valéria',
-        'Violeta', 'Vitória', 'Abgail', 'Constância', 'Hortência', 'Tessália', 'Thalissa'
+        'Abril', 'Adriana', 'Agustina', 'Alessandra', 'Alexa', 'Allison', 'Alma', 'Amanda', 'Amélia', 'Ana', 'Andrea', 'Antonieta', 'Aparecida',
+        'Ariana', 'Ariana', 'Beatriz', 'Bianca', 'Camila', 'Carla', 'Carolina', 'Catarina', 'Clara', 'Daniela', 'Daniele', 'Dirce', 'Elizabeth', 'Emília',
+        'Fabiana', 'Fátima', 'Gabriela', 'Gisela', 'Gisele', 'Giovana', 'Helena', 'Irene', 'Isabel', 'Isabella', 'Isadora', 'Ivana', 'Jasmin', 'Jéssica', 'Joana',
+        'Josefina', 'Juliana', 'Juliane', 'Julieta', 'Júlia', 'Ketlin', 'Laura', 'Luana', 'Luara', 'Luciana', 'Luna', 'Luzia', 'Madalena',
+        'Maitê', 'Malena', 'Manuela', 'Marcia', 'Maria', 'Mariana', 'Marília', 'Marta', 'Mel', 'Melissa', 'Mia', 'Micaela', 'Michele', 'Miranda', 'Natália', 'Nicole',
+        'Noelí', 'Norma', 'Nádia', 'Olívia', 'Olga', 'Ornela', 'Paula', 'Paulina', 'Pâmela', 'Rafaela', 'Rebeca', 'Regina', 'Renata',
+        'Sabrina', 'Salomé', 'Samanta', 'Sara', 'Silvana', 'Sofia', 'Sônia', 'Sophie', 'Suzana', 'Taís', 'Tábata', 'Valentina', 'Valéria',
+        'Vanessa', 'Violeta', 'Vitória', 'Abgail', 'Constância', 'Hortência', 'Tatiane', 'Tessália', 'Thalissa'
     );
 
     protected static $lastName = array(
-        'Abreu', 'Azevedo', 'Aguiar', 'Aragão', 'Assunção', 'Aranda', 'Ávila',
-        'Balestero', 'Barreto', 'Barros', 'Batista', 'Bezerra', 'Beltrão',
+        'Abreu', 'Aguiar', 'Amaral', 'Alves', 'Alcantara', 'Assunção', 'Aragão', 'Aranda', 'de Arruda', 'Ávila', 'Azevedo',
+        'Balestero', 'Barreto', 'Barros', 'Batista', 'Bezerra', 'Benez', 'Beltrão',
         'Benites', 'Bittencourt', 'Branco', 'Bonilha', 'Brito', 'Burgos',
-        'Caldeira', 'Camacho', 'Campos', 'Carmona', 'Carrara', 'Casanova',
+        'Caldeira', 'Camacho', 'Campos', 'Carmona', 'Carrara', 'Carvalho', 'Casanova',
         'Chaves', 'Cervantes', 'Colaço', 'Cordeiro', 'Corona', 'Correia',
-        'Cortês', 'Cruz', 'D\'ávila', 'Delatorre', 'Delgado', 'Delvalle',
+        'Cortês', 'Cruz', 'D\'ávila', 'Delatorre', 'Delgado', 'Delvalle', 'Deverso',
         'Dias', 'Domingues', 'Dominato', 'Duarte', 'Escobar', 'Espinoza',
         'Esteves', 'Estrada', 'Faria', 'Faro', 'Feliciano', 'Ferminiano',
         'Fernandes', 'Ferraz', 'Ferreira', 'Fidalgo', 'Furtado',
-        'Ferreira', 'Flores', 'Fonseca', 'Franco', 'Fontes', 'Galindo',
+        'Ferreira', 'Flores', 'Fonseca', 'Franco', 'de Freitas', 'Fontes', 'Galindo',
         'Galhardo', 'Galvão', 'Garcia', 'Gil', 'Godói', 'Gomes', 'Gonçalves',
-        'Grego', 'Guerra', 'Gusmão', 'Jimenes', 'Leal', 'Leon', 'Lira',
+        'Grego', 'Guerra', 'Gusmão', 'Jimenes', 'Leal', 'Leon', 'Lira', 'Lourenço',
         'Lovato', 'Lozano', 'Lutero', 'Madeira', 'Maldonado', 'Marés', 'Marin',
         'Marinho', 'Marques', 'Martines', 'Mascarenhas', 'Matias', 'Matos',
         'Maia', 'Medina', 'Meireles', 'Mendes', 'Mendonça', 'Molina',
@@ -78,11 +78,11 @@ class Person extends \Faker\Provider\Person
         'Queirós',  'Pacheco', 'Padilha', 'Padrão', 'Paes', 'Paz', 'Pedrosa',
         'Pena', 'Pereira', 'Perez', 'Prado', 'Pontes', 'Quintana', 'Queirós',
         'Ramires', 'Ramos', 'Rangel', 'Rezende', 'Reis', 'Rico', 'Rios',
-        'Rivera', 'Rocha', 'Rodrigues', 'Romero', 'Roque', 'Rosa', 'Salas',
+        'Rivera', 'Rocha', 'Rodrigues', 'Romero', 'Roque', 'Rosa', 'Saito', 'Salas',
         'Salazar', 'Sales', 'Salgado', 'Sanches', 'Sandoval', 'Santacruz',
-        'Santana', 'Santiago', 'Saraiva', 'Sepúlveda', 'Serna', 'Serra',
-        'Serrano', 'Soares', 'Solano', 'Soto', 'Tamoio', 'Teles', 'Toledo',
-        'Torres', 'Uchoa', 'Urias', 'Valdez', 'Valência', 'Valentin', 'Vale',
+        'Santana', 'Santiago', 'Santos', 'Saraiva', 'Sepúlveda', 'Serna', 'Serra',
+        'Serrano', 'Soares', 'Solano', 'Soto', 'Souza', 'Tamoio', 'Teles', 'Toledo',
+        'Torres', 'Uchoa', 'Urias', 'Valdez', 'Valência', 'Valente', 'Valentin', 'Vale',
         'Vasques', 'Vega', 'Velasques', 'Verdugo', 'Verdara', 'Vieira', 'Vila',
         'Zamana', 'Zambrano', 'Zaragoça', 'da Cruz', 'da Rosa', 'da Silva',
         'das Dores', 'das Neves', 'de Aguiar', 'de Oliveira', 'de Souza'
