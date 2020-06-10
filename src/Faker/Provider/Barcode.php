@@ -65,6 +65,22 @@ class Barcode extends Base
     }
 
     /**
+     * Utility function for computing UPC checksums
+     *
+     * @param string $input
+     *
+     * @return integer
+     */
+    protected static function upcChecksum($input)
+    {
+        $split = str_split($input);
+        $mod = (($split[0]+$split[2]+$split[4]+$split[6]+$split[8]+$split[10]) * 3
+                + $split[1]+$split[3]+$split[5]+$split[7]+$split[9]) % 10;
+
+        return $mod == 0 ? 0 : 10 - $mod;
+    }
+
+    /**
      * Get a random EAN13 barcode.
      * @return string
      * @example '4006381333931'
@@ -110,5 +126,19 @@ class Barcode extends Base
         $code = '97' . static::numberBetween(8, 9) . static::numerify(str_repeat('#', 9));
 
         return $code . static::eanChecksum($code);
+    }
+
+    /**
+     * Get a random UPC-A barcode.
+     * @link http://en.wikipedia.org/wiki/Universal_Product_Code
+     *
+     * @return string
+     * @example '725272730706'
+     */
+    public function upc()
+    {
+        $code = static::numerify(str_repeat('#', 11));
+
+        return $code . static::upcChecksum($code);
     }
 }

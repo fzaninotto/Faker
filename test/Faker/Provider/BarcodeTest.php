@@ -35,6 +35,15 @@ final class BarcodeTest extends TestCase
         $checksum = substr($code, -1);
         $this->assertEquals(TestableBarcode::eanChecksum($codeWithoutChecksum), $checksum);
     }
+
+    public function testUpc()
+    {
+        $code = $this->faker->upc();
+        $this->assertRegExp('/^\d{12}$/i', $code);
+        $codeWithoutChecksum = substr($code, 0, -1);
+        $checksum = substr($code, -1);
+        $this->assertEquals(TestableBarcode::upcChecksum($codeWithoutChecksum), $checksum);
+    }
 }
 
 final class TestableBarcode extends Barcode
@@ -42,5 +51,10 @@ final class TestableBarcode extends Barcode
     public static function eanChecksum($input)
     {
         return parent::eanChecksum($input);
+    }
+
+    public static function upcChecksum($input)
+    {
+        return parent::upcChecksum($input);
     }
 }
