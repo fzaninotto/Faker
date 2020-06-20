@@ -124,6 +124,32 @@ final class GeneratorTest extends TestCase
         $generator->seed('10');
         $this->assertTrue(true, 'seeding with a non int value doesn\'t throw an exception');
     }
+
+    public function testRestoreSeedPreventSeedBreak()
+    {
+        $generator1 = new Generator;
+        $generator1->seed(0);
+
+        $generated1 = array();
+        for ($i=0; $i<5; $i++) {
+            $generated1[] = mt_rand(1, 10);
+        }
+        $generator1->restoreSeed();
+        $this->assertEquals(array(5, 6, 8, 2, 7), $generated1);
+
+        $generator2 = new Generator;
+        $generator2->seed(0);
+
+        $generated2 = array();
+        for ($i=0; $i<5; $i++) {
+            if ($i == 2) {
+                $generator1->__destruct();
+            }
+            $generated2[] = mt_rand(1, 10);
+        }
+        $generator2->restoreSeed();
+        $this->assertEquals(array(5, 6, 8, 2, 7), $generated2);
+    }
 }
 
 final class FooProvider
