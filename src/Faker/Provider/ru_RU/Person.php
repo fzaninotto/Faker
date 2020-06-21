@@ -11,7 +11,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * This provider uses wikipedia's 250 top russian last names
-     * That list of MALE last names could be safely extended to FEMALE list just by adding 'a' letter at the end
+     * That list of MALE last names could be safely extended to FEMALE list just by adding 'а' letter at the end
      */
     protected static $femaleNameFormats = [
         '{{firstNameFemale}} {{middleNameFemale}} {{lastName}}а',
@@ -105,7 +105,7 @@ class Person extends \Faker\Provider\Person
         'Меркушев', 'Лыткин', 'Туров',
     ];
 
-    protected static $lastNameSuffix = ['a', ''];
+    protected static $lastNameSuffix = ['а', ''];
 
     /**
      * Return male middle name
@@ -169,7 +169,7 @@ class Person extends \Faker\Provider\Person
         $lastName = static::randomElement(static::$lastName);
 
         if (static::GENDER_FEMALE === $gender) {
-            return $lastName . 'a';
+            return $lastName . 'а';
         } elseif (static::GENDER_MALE === $gender) {
             return $lastName;
         }
