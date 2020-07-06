@@ -22,16 +22,21 @@ final class PersonTest extends TestCase
 
     public function testLastNameFemale()
     {
-        $this->assertEquals("a", substr($this->faker->lastName('female'), -1));
+        $this->assertEquals("а", $this->substrUnicode($this->faker->lastName('female'), -1));
     }
 
     public function testLastNameMale()
     {
-        $this->assertNotEquals("a", substr($this->faker->lastName('male'), -1));
+        $this->assertNotEquals("а", $this->substrUnicode($this->faker->lastName('male'), -1));
     }
 
     public function testLastNameRandom()
     {
         $this->assertNotNull($this->faker->lastName());
+    }
+
+    private function substrUnicode($str, $s)
+    {
+        return implode('', array_slice(preg_split('//u', $str, -1, PREG_SPLIT_NO_EMPTY), $s));
     }
 }
