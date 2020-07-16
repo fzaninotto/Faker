@@ -300,14 +300,15 @@ Methods accepting a `$timezone` argument default to `date_default_timezone_get()
 
     boolean // false
     boolean($chanceOfGettingTrue = 50) // true
-    md5           // 'de99a620c50f2990e87144735cd357e7'
-    sha1          // 'f08e7f04ca1a413807ebc47551a40a20a0b4de5c'
-    sha256        // '0061e4c60dac5c1d82db0135a42e00c89ae3a333e7c26485321f24348c7e98a5'
-    locale        // en_UK
-    countryCode   // UK
-    languageCode  // en
-    currencyCode  // EUR
-    emoji         // 😁
+    md5                 // 'de99a620c50f2990e87144735cd357e7'
+    sha1                // 'f08e7f04ca1a413807ebc47551a40a20a0b4de5c'
+    sha256              // '0061e4c60dac5c1d82db0135a42e00c89ae3a333e7c26485321f24348c7e98a5'
+    locale              // en_GB
+    countryCode         // GB
+    countryISOAlpha3    // GBR
+    languageCode        // en
+    currencyCode        // EUR
+    emoji               // 😁
 
 ### `Faker\Provider\Biased`
 
