@@ -2,8 +2,26 @@
 
 namespace Faker\Provider\uz_UZ;
 
+/**
+ * Class Text
+ * Description: CONGRATULATIONS BY PRESIDENT ISLAM KARIMOV AT THE CEREMONY
+ * DEDICATED TO THE 20TH ANNIVERSARY OF INDEPENDENCE OF THE REPUBLIC OF UZBEKISTAN
+ *
+ * @category  Classes
+ * @package   Faker\Provider\uz_UZ
+ * @author    Erkin Pardayev <erkin.pardayev@gmail.com>
+ * @copyright 2020 Erkin Pardayev
+ * @license   GNU https://ru.wikipedia.org/wiki/GNU_General_Public_License
+ * @link      https://pardayev.uz
+ */
+
 class Text extends \Faker\Provider\Text
 {
+    /**
+     * @param int $maxNbChars
+     * @param int $indexSize
+     * @return false|string
+     */
     public function realText($maxNbChars = 200, $indexSize = 2)
     {
         $realText = parent::realText($maxNbChars, $indexSize);
