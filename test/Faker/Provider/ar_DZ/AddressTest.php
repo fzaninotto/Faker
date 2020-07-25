@@ -47,15 +47,14 @@ final class AddressTest extends TestCase
     {
         $postcode = $this->faker->postcode();
         $this->assertNotEmpty($postcode);
-        $this->assertInternalType('integer', $postcode);
-        $this->assertRegExp('/^[1-4]?[0-9]000$/', (string) $postcode);
+        $this->assertInternalType('string', $postcode);
+        $this->assertRegExp('/^[1-4]?[0-9]000$/', $postcode);
     }
 
-    public function testAddressName()
+    public function testAddress()
     {
         $address = $this->faker->address();
         $this->assertInternalType('string', $address);
-        var_dump($address);
     }
 
     public function testSecondaryAddress()
