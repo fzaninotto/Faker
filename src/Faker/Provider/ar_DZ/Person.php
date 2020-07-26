@@ -22,7 +22,7 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
-     * @link http://muslim-names.us/
+     *
      */
     protected static $firstNameMale = array(
         'محمد', 'يوسف', 'أبوبكر', 'بوعمامة', 'سعيد', 'ادريس', 'ارسلان', 'سليمان',
@@ -52,7 +52,7 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
-     * @link http://muslim-names.us/
+     *
      */
     protected static $firstNameFemale = array(
         'خديجة', 'سعيدة', 'آلاء', 'آية', 'أبرار', 'أحلام', 'أروى', 'أريج', 'أسماء', 'أسيل', 'أصاله', 'أفنان', 'ألاء', 'أماني', 'أمل', 'أمال', 'أميرة', 'أنوار',
