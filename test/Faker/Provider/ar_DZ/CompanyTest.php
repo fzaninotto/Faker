@@ -31,6 +31,7 @@ final class CompanyTest extends TestCase
     public function testJobTitle()
     {
         $job = $this->faker->jobTitle;
+        $this->assertNotNull($job);
         $this->assertInternalType('string', $job);
         $this->assertRegExp('/^\p{Arabic}+/u', $job);
     }
