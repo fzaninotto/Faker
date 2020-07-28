@@ -8,7 +8,7 @@ use Faker\Provider\ar_DZ\Person;
 use Faker\Provider\DateTime;
 use PHPUnit\Framework\TestCase;
 
-final class InternetTest extends TestCase
+final class PaymentTest extends TestCase
 {
     /**
      * @var Generator
