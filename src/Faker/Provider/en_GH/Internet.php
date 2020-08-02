@@ -4,5 +4,5 @@ namespace Faker\Provider\en_GH;
 
 class Internet extends \Faker\Provider\Internet
 {
-    protected static $tld = array('com.ng', 'com', 'ng', 'net', 'edu.ng', 'org', 'gov.ng', 'org.ng', 'biz', 'co');
+    protected static $tld = array('com.gh', 'com', 'net', 'edu.gh', 'org', 'gov.gh', 'org.gh', 'biz', 'co');
 }
