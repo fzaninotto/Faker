@@ -105,7 +105,7 @@ class Person extends \Faker\Provider\Person
         'Меркушев', 'Лыткин', 'Туров',
     );
 
-    protected static $lastNameSuffix = array('a', '');
+    protected static $lastNameSuffix = array('а', '');
 
     /**
      * Return male middle name
@@ -169,7 +169,7 @@ class Person extends \Faker\Provider\Person
         $lastName = static::randomElement(static::$lastName);
 
         if (static::GENDER_FEMALE === $gender) {
-            return $lastName . 'a';
+            return $lastName . 'а';
         } elseif (static::GENDER_MALE === $gender) {
             return $lastName;
         }
