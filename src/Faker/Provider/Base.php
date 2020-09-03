@@ -15,7 +15,7 @@ class Base
     protected $generator;
 
     /**
-     * @var \Faker\UniqueGenerator
+     * @var null|\Faker\UniqueGenerator
      */
     protected $unique;
 
