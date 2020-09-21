@@ -43,5 +43,4 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     {
         return '+86' . $this->phoneNumber();
     }
-
 }
