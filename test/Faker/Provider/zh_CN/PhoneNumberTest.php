@@ -30,12 +30,12 @@ final class PhoneNumberTest extends TestCase
             $digits = array_values(array_filter(str_split($number), 'ctype_digit'));
             // Prefix 1
             if (count($digits) === 11) {
-                self::assertEquals('1', $digits[0]);
+                $this->assertEquals('1', $digits[0]);
             }
             // 11 digits
-            self::assertCount(11, $digits);
+            $this->assertCount(11, $digits);
             // Test format
-            self::assertRegExp('/^1[345789]\d{9}$/', $number);
+            $this->assertRegExp('/^1[345789]\d{9}$/', $number);
         }
     }
 
@@ -46,31 +46,32 @@ final class PhoneNumberTest extends TestCase
             $digits = array_values(array_filter(str_split($number), 'ctype_digit'));
 
             // Prefix '4'
-            self::assertEquals('4', $digits[0]);
-            self::assertContains($digits[3], array(0, 1, 6, 7, 8, 9));
+            $this->assertEquals('4', $digits[0]);
+            $this->assertContains($digits[3], array(0, 1, 6, 7, 8, 9));
 
             // 10 digits
-            self::assertCount(10, $digits);
+            $this->assertCount(10, $digits);
 
             // Test format
-            self::assertRegExp('/^400-[016789]\d{2}-\d{4}$/', $number);
+            $this->assertRegExp('/^400-[016789]\d{2}-\d{4}$/', $number);
         }
     }
 
-    public function testE164PhoneNumber(){
+    public function testE164PhoneNumber()
+    {
         for ($i = 0; $i < 100; $i++) {
             $e164PhoneNumber = $this->faker->e164PhoneNumber;
-            self::assertEquals('+86',substr($e164PhoneNumber,0,3));
-            $pureNumber = substr($e164PhoneNumber,3);
+            $this->assertEquals('+86', substr($e164PhoneNumber, 0, 3));
+            $pureNumber = substr($e164PhoneNumber, 3);
             $digits = array_values(array_filter(str_split($pureNumber), 'ctype_digit'));
             // Prefix 1
             if (count($digits) === 11) {
-                self::assertEquals('1', $digits[0]);
+                $this->assertEquals('1', $digits[0]);
             }
             // 11 digits
-            self::assertCount(11, $digits);
+            $this->assertCount(11, $digits);
             // Test format
-            self::assertRegExp('/^(\+?0?86\-?)1[345789]\d{9}$/', $e164PhoneNumber);
+            $this->assertRegExp('/^(\+?0?86\-?)1[345789]\d{9}$/', $e164PhoneNumber);
         }
     }
 }

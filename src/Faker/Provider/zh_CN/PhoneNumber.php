@@ -31,7 +31,8 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         return $operator . static::numerify(substr($format, strlen($operator)));
     }
 
-    public function tollFreePhoneNumber(){
+    public function tollFreePhoneNumber()
+    {
         $operator = static::randomElement(static::$tollFreePhoneOperators);
         $format = static::randomElement(static::$tollFreeFormats);
 
@@ -40,7 +41,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     public function e164PhoneNumber()
     {
-        return '+86'.$this->phoneNumber();
+        return '+86' . $this->phoneNumber();
     }
 
 }
