@@ -12,7 +12,7 @@ class Payment extends Base
     protected static $cardVendors = array(
         'Visa', 'Visa', 'Visa', 'Visa', 'Visa',
         'MasterCard', 'MasterCard', 'MasterCard', 'MasterCard', 'MasterCard',
-        'American Express', 'Discover Card', 'Visa Retired'
+        'American Express', 'Discover Card', 'Visa Retired', 'JCB'
     );
 
     /**
@@ -63,6 +63,10 @@ class Payment extends Base
         'Discover Card' => array(
             "6011###########"
         ),
+        'JCB' => array(
+            "3528###########",
+            "3589###########",
+        )
     );
 
     /**
