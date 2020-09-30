@@ -204,13 +204,15 @@ class Internet extends Base
      */
     public static function localIpv4()
     {
-        if (static::numberBetween(0, 1) === 0) {
-            // 10.x.x.x range
-            return long2ip(static::numberBetween(ip2long("10.0.0.0"), ip2long("10.255.255.255")));
-        }
+        $ipBlocks = array(
+            array("10.0.0.0", "10.255.255.255"),
+            array("172.16.0.0", "172.31.255.255"),
+            array("192.168.0.0", "192.168.255.255"),
+        );
 
-        // 192.168.x.x range
-        return long2ip(static::numberBetween(ip2long("192.168.0.0"), ip2long("192.168.255.255")));
+        $ipBlock = static::randomElement($ipBlocks);
+
+        return long2ip(static::numberBetween(ip2long($ipBlock[0]), ip2long($ipBlock[1])));
     }
 
     /**
