@@ -86,4 +86,8 @@ class Person extends \Faker\Provider\Person
         "Uibo", "Uibo",
         "Vassiljev", "Vaher", "Volkov", "Valk", "Vaher", "Vahtra", "Vaino", "Vainola", "Välbe", "Valdma", "Väljas", "Valk", "Vassiljev", "Vassiljeva", "Vesik", "Veski", "Viiding", "Vitsut", "Võigemast", "Volkov", "Volkova", "Võsu", "Vassiljeva", "Vaher", "Volkova",
     );
+
+    protected static $titleMale = array('Hr.', 'Dr.', 'Prof.');
+
+    protected static $titleFemale = array('Pr.', 'Prl.', 'Dr.', 'Prof.');
 }
