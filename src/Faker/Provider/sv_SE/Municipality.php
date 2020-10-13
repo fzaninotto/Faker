@@ -2,7 +2,7 @@
 
 namespace Faker\Provider\sv_SE;
 
-class Company extends \Faker\Provider\Municipality
+class Municipality extends \Faker\Provider\Municipality
 {
 
     /**
