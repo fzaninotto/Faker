@@ -13,7 +13,9 @@ namespace Faker\Provider\pt_BR;
  */
 function check_digit($numbers)
 {
-    $length = strlen($numbers);
+    $value = (string) $numbers;
+
+    $length = strlen($value);
     $second_algorithm = $length >= 12;
     $verifier = 0;
 
@@ -23,7 +25,7 @@ function check_digit($numbers)
         } else {
             $multiplier = ($i >= 9) ? $i - 7 : $i + 1;
         }
-        $verifier += $numbers[$length - $i] * $multiplier;
+        $verifier += $value[$length - $i] * $multiplier;
     }
 
     $verifier = 11 - ($verifier % 11);
