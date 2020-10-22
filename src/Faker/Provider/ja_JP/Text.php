@@ -622,7 +622,7 @@ EOT;
         if (function_exists('mb_substr')) {
             $last = mb_substr($text, 0, mb_strlen($text) - 1, 'UTF-8');
         } else {
-            $chars = static::split($text);
+            $chars = str_split($text);
             $last = end($chars);
         }
         // if the last char is a not-valid-end punctuation, remove it
