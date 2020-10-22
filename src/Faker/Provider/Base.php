@@ -173,9 +173,9 @@ class Base
     /**
      * Returns randomly ordered subsequence of $count elements from a provided array
      *
-     * @param  array            $array           Array to take elements from. Defaults to a-c
-     * @param  integer          $count           Number of elements to take.
-     * @param  boolean          $allowDuplicates Allow elements to be picked several times. Defaults to false
+     * @param  array|\Traversable $array           Array to take elements from. Defaults to a-c
+     * @param  integer            $count           Number of elements to take.
+     * @param  boolean            $allowDuplicates Allow elements to be picked several times. Defaults to false
      * @throws \LengthException When requesting more elements than provided
      *
      * @return array New array with $count elements from $array
@@ -190,6 +190,7 @@ class Base
             }
         }
 
+        /** @var array $arr */
         $arr = count($traversables) ? $traversables : $array;
 
         $allKeys = array_keys($arr);
@@ -223,7 +224,7 @@ class Base
     /**
      * Returns a random element from a passed array
      *
-     * @param  array $array
+     * @param  array|\Traversable $array
      * @return mixed
      */
     public static function randomElement($array = ['a', 'b', 'c'])

@@ -56,7 +56,7 @@ class Company extends \Faker\Provider\Company
     /**
      * Register of the National Economy, local entity number
      * @link http://pl.wikipedia.org/wiki/REGON
-     * @return 14 digit number
+     * @return string 14 digit number
      */
     public static function regonLocal()
     {

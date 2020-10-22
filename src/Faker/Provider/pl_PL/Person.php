@@ -83,7 +83,7 @@ class Person extends \Faker\Provider\Person
      *
      * Unisex academic degree
      *
-     * @var string
+     * @var array<string>
      */
     protected static $title = ['mgr','inż.', 'dr', 'doc.'];
 
