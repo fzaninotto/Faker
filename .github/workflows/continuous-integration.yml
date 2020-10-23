@@ -99,7 +99,7 @@ jobs:
         run: "composer install --no-interaction --no-progress --no-suggest"
 
       - name: "Run vimeo/psalm"
-        run: "vendor/bin/psalm --config=psalm.xml --shepherd --show-info=false --stats"
+        run: ".phive/psalm --config=psalm.xml --shepherd --show-info=false --stats"
 
   tests:
     name: "Tests"
