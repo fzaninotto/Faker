@@ -2,7 +2,6 @@
 
 namespace Faker\Provider\ms_MY;
 
-use Faker\Generator;
 use Faker\Provider\DateTime;
 
 class Person extends \Faker\Provider\Person
