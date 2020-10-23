@@ -231,7 +231,7 @@ class PersonTest extends TestCase
 
             $checksum = 0;
             foreach (range(0, 11) as $digit) {
-                $checksum += (int)substr($cnp, $digit, 1) * (int)substr($checkNumber, $digit, 1);
+                $checksum += (int)substr($cnp, $digit, 1) * (int)substr((string)$checkNumber, $digit, 1);
             }
             $checksum %= 11;
             $checksum = $checksum == 10 ? 1 : $checksum;
