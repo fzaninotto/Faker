@@ -26,14 +26,14 @@ class PhoneNumberTest extends TestCase
             if (strlen($number) === 11) {
                 $testChar = substr($number, 3, 1);
                 $this->assertEquals(11, strlen($number));
-                $this->assertContains($testChar, [4, 9]);
+                $this->assertContains($testChar, ['4', '9']);
                 $this->assertMatchesRegularExpression('/^\+47[49]{1}[0-9]{7}$/', $number);
             }
 
             // Check numbers start with 4 or 9 when no country code is included
             if (strlen($number) === 10 || strlen($number) === 8) {
                 $testChar = substr($number, 0, 1);
-                $this->assertContains($testChar, [4, 9]);
+                $this->assertContains($testChar, ['4', '9']);
             }
 
             if (strlen($number) === 10) {

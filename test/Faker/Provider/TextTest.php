@@ -38,7 +38,7 @@ class TextTest extends TestCase
      */
     public function testTextMaxLength($length)
     {
-        $this->assertLessThan($length, $this->generator->realText($length));
+        $this->assertLessThan($length, strlen($this->generator->realText($length)));
     }
 
     public function testTextMaxIndex()
