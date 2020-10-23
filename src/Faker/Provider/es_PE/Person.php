@@ -87,8 +87,8 @@ class Person extends \Faker\Provider\Person
     {
         return static::randomElement(static::$suffix);
     }
-    
-    
+
+
     /**
      * Generate a Documento Nacional de Identidad (DNI) number
      *

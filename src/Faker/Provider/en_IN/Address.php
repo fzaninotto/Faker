@@ -28,7 +28,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     protected static $state = [
-        
+
         // States
         'Andhra Pradesh', 'Arunachal Pradesh', 'Assam',
         'Bihar',
@@ -47,7 +47,7 @@ class Address extends \Faker\Provider\Address
         'Tamil Nadu', 'Telangana', 'Tripura',
         'Uttar Pradesh', 'Uttarakhand',
         'West Bengal',
-        
+
         // Union Territories
         'Andaman and Nicobar Islands',
         'Chandigarh',
@@ -120,7 +120,7 @@ class Address extends \Faker\Provider\Address
         '{{firstName}} {{societySuffix}}'
     ];
     protected static $streetAddressFormats = [
-        
+
         '{{buildingNumber}}, {{locality}},',
         '{{buildingNumber}}, {{societyName}}, {{locality}}',
     ];

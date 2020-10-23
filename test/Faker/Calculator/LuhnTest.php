@@ -61,7 +61,7 @@ class LuhnTest extends TestCase
         $this->assertEquals($isValid, Luhn::isValid($number));
     }
 
-    
+
     public function testGenerateLuhnNumberWithInvalidPrefix()
     {
         $this->expectException(\InvalidArgumentException::class);
