@@ -41,10 +41,10 @@ class ProviderOverrideTest extends TestCase
     {
         $faker = Faker\Factory::create($locale);
 
-        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->city);
-        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->postcode);
-        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->address);
-        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->country);
+        $this->assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->city);
+        $this->assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->postcode);
+        $this->assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->address);
+        $this->assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->country);
     }
 
 
@@ -56,7 +56,7 @@ class ProviderOverrideTest extends TestCase
     {
         $faker = Faker\Factory::create($locale);
 
-        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->company);
+        $this->assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->company);
     }
 
 
@@ -68,8 +68,8 @@ class ProviderOverrideTest extends TestCase
     {
         $faker = Faker\Factory::create($locale);
 
-        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->century);
-        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->timezone);
+        $this->assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->century);
+        $this->assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->timezone);
     }
 
 
@@ -85,12 +85,12 @@ class ProviderOverrideTest extends TestCase
 
         $faker = Faker\Factory::create($locale);
 
-        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->userName);
+        $this->assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->userName);
 
-        $this->assertRegExp(static::TEST_EMAIL_REGEX, $faker->email);
-        $this->assertRegExp(static::TEST_EMAIL_REGEX, $faker->safeEmail);
-        $this->assertRegExp(static::TEST_EMAIL_REGEX, $faker->freeEmail);
-        $this->assertRegExp(static::TEST_EMAIL_REGEX, $faker->companyEmail);
+        $this->assertMatchesRegularExpression(static::TEST_EMAIL_REGEX, $faker->email);
+        $this->assertMatchesRegularExpression(static::TEST_EMAIL_REGEX, $faker->safeEmail);
+        $this->assertMatchesRegularExpression(static::TEST_EMAIL_REGEX, $faker->freeEmail);
+        $this->assertMatchesRegularExpression(static::TEST_EMAIL_REGEX, $faker->companyEmail);
     }
 
 
@@ -102,10 +102,10 @@ class ProviderOverrideTest extends TestCase
     {
         $faker = Faker\Factory::create($locale);
 
-        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->name);
-        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->title);
-        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->firstName);
-        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->lastName);
+        $this->assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->name);
+        $this->assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->title);
+        $this->assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->firstName);
+        $this->assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->lastName);
     }
 
 
@@ -117,7 +117,7 @@ class ProviderOverrideTest extends TestCase
     {
         $faker = Faker\Factory::create($locale);
 
-        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->phoneNumber);
+        $this->assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->phoneNumber);
     }
 
 
@@ -129,7 +129,7 @@ class ProviderOverrideTest extends TestCase
     {
         $faker = Faker\Factory::create($locale);
 
-        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->userAgent);
+        $this->assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->userAgent);
     }
 
 
@@ -143,7 +143,7 @@ class ProviderOverrideTest extends TestCase
     {
         $faker = Faker\Factory::create($locale);
 
-        $this->assertRegExp(static::TEST_STRING_REGEX, $faker->uuid);
+        $this->assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->uuid);
     }
 
 

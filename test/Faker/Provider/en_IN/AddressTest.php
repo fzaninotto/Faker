@@ -26,7 +26,7 @@ class AddressTest extends TestCase
         $city = $this->faker->city();
         $this->assertNotEmpty($city);
         $this->assertIsString($city);
-        $this->assertRegExp('/[A-Z][a-z]+/', $city);
+        $this->assertMatchesRegularExpression('/[A-Z][a-z]+/', $city);
     }
 
     public function testCountry()
@@ -34,7 +34,7 @@ class AddressTest extends TestCase
         $country = $this->faker->country();
         $this->assertNotEmpty($country);
         $this->assertIsString($country);
-        $this->assertRegExp('/[A-Z][a-z]+/', $country);
+        $this->assertMatchesRegularExpression('/[A-Z][a-z]+/', $country);
     }
 
     public function testLocalityName()
@@ -42,7 +42,7 @@ class AddressTest extends TestCase
         $localityName = $this->faker->localityName();
         $this->assertNotEmpty($localityName);
         $this->assertIsString($localityName);
-        $this->assertRegExp('/[A-Z][a-z]+/', $localityName);
+        $this->assertMatchesRegularExpression('/[A-Z][a-z]+/', $localityName);
     }
 
     public function testAreaSuffix()
@@ -50,6 +50,6 @@ class AddressTest extends TestCase
         $areaSuffix = $this->faker->areaSuffix();
         $this->assertNotEmpty($areaSuffix);
         $this->assertIsString($areaSuffix);
-        $this->assertRegExp('/[A-Z][a-z]+/', $areaSuffix);
+        $this->assertMatchesRegularExpression('/[A-Z][a-z]+/', $areaSuffix);
     }
 }

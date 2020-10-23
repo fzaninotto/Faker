@@ -26,6 +26,6 @@ class CompanyTest extends TestCase
     {
         $jobTitle = $this->faker->jobTitle();
         $pattern = '/^[A-Za-z]+$/';
-        $this->assertRegExp($pattern, $jobTitle);
+        $this->assertMatchesRegularExpression($pattern, $jobTitle);
     }
 }

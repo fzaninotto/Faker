@@ -23,11 +23,11 @@ class AddressTest extends TestCase
 
     public function testStreetNumber()
     {
-        $this->assertRegExp('/^\d{2,3}$/', $this->faker->streetNumber());
+        $this->assertMatchesRegularExpression('/^\d{2,3}$/', $this->faker->streetNumber());
     }
 
     public function testBlockNumber()
     {
-        $this->assertRegExp('/^Blk\s*\d{2,3}[A-H]*$/i', $this->faker->blockNumber());
+        $this->assertMatchesRegularExpression('/^Blk\s*\d{2,3}[A-H]*$/i', $this->faker->blockNumber());
     }
 }

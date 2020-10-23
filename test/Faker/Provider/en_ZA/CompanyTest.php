@@ -22,6 +22,6 @@ class CompanyTest extends TestCase
         $companyRegNo = $this->faker->companyNumber();
 
         $this->assertEquals(14, strlen($companyRegNo));
-        $this->assertRegExp('#^\d{4}/\d{6}/\d{2}$#', $companyRegNo);
+        $this->assertMatchesRegularExpression('#^\d{4}/\d{6}/\d{2}$#', $companyRegNo);
     }
 }

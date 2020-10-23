@@ -24,7 +24,7 @@ class PersonTest extends TestCase
         $idNumber = $this->faker->idNumber();
 
         $this->assertEquals(13, strlen($idNumber));
-        $this->assertRegExp('#^\d{13}$#', $idNumber);
+        $this->assertMatchesRegularExpression('#^\d{13}$#', $idNumber);
         $this->assertIsString($idNumber);
     }
 

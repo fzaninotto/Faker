@@ -22,7 +22,7 @@ class BarcodeTest extends TestCase
     public function testEan8()
     {
         $code = $this->faker->ean8();
-        $this->assertRegExp('/^\d{8}$/i', $code);
+        $this->assertMatchesRegularExpression('/^\d{8}$/i', $code);
         $codeWithoutChecksum = substr($code, 0, -1);
         $checksum = substr($code, -1);
         $this->assertEquals(Fixture\Provider\Barcode\TestableBarcode::eanChecksum($codeWithoutChecksum), $checksum);
@@ -31,7 +31,7 @@ class BarcodeTest extends TestCase
     public function testEan13()
     {
         $code = $this->faker->ean13();
-        $this->assertRegExp('/^\d{13}$/i', $code);
+        $this->assertMatchesRegularExpression('/^\d{13}$/i', $code);
         $codeWithoutChecksum = substr($code, 0, -1);
         $checksum = substr($code, -1);
         $this->assertEquals(Fixture\Provider\Barcode\TestableBarcode::eanChecksum($codeWithoutChecksum), $checksum);

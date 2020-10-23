@@ -29,7 +29,7 @@ class AddressTest extends TestCase
         $province = $this->faker->province();
         $this->assertNotEmpty($province);
         $this->assertIsString($province);
-        $this->assertRegExp('/[A-Z][a-z]+/', $province);
+        $this->assertMatchesRegularExpression('/[A-Z][a-z]+/', $province);
     }
 
   /**
@@ -40,7 +40,7 @@ class AddressTest extends TestCase
         $provinceAbbr = $this->faker->provinceAbbr();
         $this->assertNotEmpty($provinceAbbr);
         $this->assertIsString($provinceAbbr);
-        $this->assertRegExp('/^[A-Z]{2}$/', $provinceAbbr);
+        $this->assertMatchesRegularExpression('/^[A-Z]{2}$/', $provinceAbbr);
     }
 
   /**
@@ -51,7 +51,7 @@ class AddressTest extends TestCase
         $postcodeLetter = $this->faker->randomPostcodeLetter();
         $this->assertNotEmpty($postcodeLetter);
         $this->assertIsString($postcodeLetter);
-        $this->assertRegExp('/^[A-Z]{1}$/', $postcodeLetter);
+        $this->assertMatchesRegularExpression('/^[A-Z]{1}$/', $postcodeLetter);
     }
 
   /**
@@ -62,6 +62,6 @@ class AddressTest extends TestCase
         $postcode = $this->faker->postcode();
         $this->assertNotEmpty($postcode);
         $this->assertIsString($postcode);
-        $this->assertRegExp('/^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/', $postcode);
+        $this->assertMatchesRegularExpression('/^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/', $postcode);
     }
 }

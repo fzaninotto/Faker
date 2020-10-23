@@ -27,7 +27,7 @@ class PersonTest extends TestCase
             $nationalCode = $this->faker->nationalCode;
 
             // nationalCode should be in the format ##########
-            $this->assertRegExp('/^[0-9]{10}$/', $nationalCode);
+            $this->assertMatchesRegularExpression('/^[0-9]{10}$/', $nationalCode);
 
             $areaCode = substr($nationalCode, 0, 3);
             $controlCode = substr($nationalCode, 9, 1);

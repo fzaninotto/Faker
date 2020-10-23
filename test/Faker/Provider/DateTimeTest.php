@@ -168,7 +168,7 @@ class DateTimeTest extends TestCase
     public function testIso8601()
     {
         $date = DateTimeProvider::iso8601();
-        $this->assertRegExp('/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-Z](\d{4})?$/', $date);
+        $this->assertMatchesRegularExpression('/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-Z](\d{4})?$/', $date);
         $this->assertGreaterThanOrEqual(new \DateTime('@0'), new \DateTime($date));
         $this->assertLessThanOrEqual(new \DateTime(), new \DateTime($date));
     }
@@ -176,7 +176,7 @@ class DateTimeTest extends TestCase
     public function testDate()
     {
         $date = DateTimeProvider::date();
-        $this->assertRegExp('/^\d{4}-\d{2}-\d{2}$/', $date);
+        $this->assertMatchesRegularExpression('/^\d{4}-\d{2}-\d{2}$/', $date);
         $this->assertGreaterThanOrEqual(new \DateTime('@0'), new \DateTime($date));
         $this->assertLessThanOrEqual(new \DateTime(), new \DateTime($date));
     }
@@ -184,7 +184,7 @@ class DateTimeTest extends TestCase
     public function testTime()
     {
         $date = DateTimeProvider::time();
-        $this->assertRegExp('/^\d{2}:\d{2}:\d{2}$/', $date);
+        $this->assertMatchesRegularExpression('/^\d{2}:\d{2}:\d{2}$/', $date);
     }
 
     /**

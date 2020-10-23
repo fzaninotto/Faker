@@ -34,9 +34,9 @@ class CompanyTest extends TestCase
     {
         $pattern = '/^[VJGECP]-?\d{8}-?\d$/';
         $rif = $this->faker->taxpayerIdentificationNumber;
-        $this->assertRegExp($pattern, $rif);
+        $this->assertMatchesRegularExpression($pattern, $rif);
 
         $rif = $this->faker->taxpayerIdentificationNumber('-');
-        $this->assertRegExp($pattern, $rif);
+        $this->assertMatchesRegularExpression($pattern, $rif);
     }
 }

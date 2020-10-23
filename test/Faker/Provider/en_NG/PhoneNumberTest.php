@@ -27,6 +27,6 @@ class PhoneNumberTest extends TestCase
 
         $this->assertNotEmpty($phoneNumber);
         $this->assertIsString($phoneNumber);
-        $this->assertRegExp('/^(0|(\+234))\s?[789][01]\d\s?(\d{3}\s?\d{4})/', $phoneNumber);
+        $this->assertMatchesRegularExpression('/^(0|(\+234))\s?[789][01]\d\s?(\d{3}\s?\d{4})/', $phoneNumber);
     }
 }

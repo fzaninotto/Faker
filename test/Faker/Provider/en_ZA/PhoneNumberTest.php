@@ -60,7 +60,7 @@ class PhoneNumberTest extends TestCase
                 $this->assertGreaterThanOrEqual(10, count($digits));
             }
 
-            $this->assertRegExp('/^(\+27|27)?(\()?0?([6][0-4]|[7][1-9]|[8][1-9])(\))?( |-|\.|_)?(\d{3})( |-|\.|_)?(\d{4})/', $number);
+            $this->assertMatchesRegularExpression('/^(\+27|27)?(\()?0?([6][0-4]|[7][1-9]|[8][1-9])(\))?( |-|\.|_)?(\d{3})( |-|\.|_)?(\d{4})/', $number);
         }
     }
 }

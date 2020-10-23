@@ -24,6 +24,6 @@ class PersonTest extends TestCase
     public function testDNI()
     {
         $dni = $this->faker->dni;
-        $this->assertRegExp('/\A[0-9]{8}\Z/', $dni);
+        $this->assertMatchesRegularExpression('/\A[0-9]{8}\Z/', $dni);
     }
 }

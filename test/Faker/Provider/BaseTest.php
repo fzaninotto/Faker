@@ -255,12 +255,12 @@ class BaseTest extends TestCase
 
     public function testNumerifyReturnsStringWithHashSignsReplacedByDigits()
     {
-        $this->assertRegExp('/foo\dBa\dr/', BaseProvider::numerify('foo#Ba#r'));
+        $this->assertMatchesRegularExpression('/foo\dBa\dr/', BaseProvider::numerify('foo#Ba#r'));
     }
 
     public function testNumerifyReturnsStringWithPercentageSignsReplacedByDigits()
     {
-        $this->assertRegExp('/foo\dBa\dr/', BaseProvider::numerify('foo%Ba%r'));
+        $this->assertMatchesRegularExpression('/foo\dBa\dr/', BaseProvider::numerify('foo%Ba%r'));
     }
 
     public function testNumerifyReturnsStringWithPercentageSignsReplacedByNotNullDigits()
@@ -281,23 +281,23 @@ class BaseTest extends TestCase
 
     public function testLexifyReturnsStringWithQuestionMarksReplacedByLetters()
     {
-        $this->assertRegExp('/foo[a-z]Ba[a-z]r/', BaseProvider::lexify('foo?Ba?r'));
+        $this->assertMatchesRegularExpression('/foo[a-z]Ba[a-z]r/', BaseProvider::lexify('foo?Ba?r'));
     }
 
     public function testBothifyCombinesNumerifyAndLexify()
     {
-        $this->assertRegExp('/foo[a-z]Ba\dr/', BaseProvider::bothify('foo?Ba#r'));
+        $this->assertMatchesRegularExpression('/foo[a-z]Ba\dr/', BaseProvider::bothify('foo?Ba#r'));
     }
 
     public function testBothifyAsterisk()
     {
-        $this->assertRegExp('/foo([a-z]|\d)Ba([a-z]|\d)r/', BaseProvider::bothify('foo*Ba*r'));
+        $this->assertMatchesRegularExpression('/foo([a-z]|\d)Ba([a-z]|\d)r/', BaseProvider::bothify('foo*Ba*r'));
     }
 
     public function testBothifyUtf()
     {
         $utf = 'œ∑´®†¥¨ˆøπ“‘和製╯°□°╯︵ ┻━┻🐵 🙈 ﺚﻣ ﻦﻔﺳ ﺲﻘﻄﺗ ﻮﺑﺎﻠﺘﺣﺪﻳﺩ،, ﺝﺰﻳﺮﺘﻳ ﺏﺎﺴﺘﺧﺩﺎﻣ ﺄﻧ ﺪﻧﻭ. ﺇﺫ ﻪﻧﺍ؟ ﺎﻠﺴﺗﺍﺭ ﻮﺘ';
-        $this->assertRegExp('/' . $utf . 'foo\dB[a-z]a([a-z]|\d)r/u', BaseProvider::bothify($utf . 'foo#B?a*r'));
+        $this->assertMatchesRegularExpression('/' . $utf . 'foo\dB[a-z]a([a-z]|\d)r/u', BaseProvider::bothify($utf . 'foo#B?a*r'));
     }
 
     public function testAsciifyReturnsSameStringWhenItContainsNoStarSign()
@@ -307,7 +307,7 @@ class BaseTest extends TestCase
 
     public function testAsciifyReturnsStringWithStarSignsReplacedByAsciiChars()
     {
-        $this->assertRegExp('/foo.Ba.r/', BaseProvider::asciify('foo*Ba*r'));
+        $this->assertMatchesRegularExpression('/foo.Ba.r/', BaseProvider::asciify('foo*Ba*r'));
     }
 
     public function regexifyBasicDataProvider()
@@ -353,7 +353,7 @@ class BaseTest extends TestCase
      */
     public function testRegexifySupportedRegexSyntax($pattern, $message)
     {
-        $this->assertRegExp('/' . $pattern . '/', BaseProvider::regexify($pattern), 'Regexify supports ' . $message);
+        $this->assertMatchesRegularExpression('/' . $pattern . '/', BaseProvider::regexify($pattern), 'Regexify supports ' . $message);
     }
 
     public function testOptionalReturnsProviderValueWhenCalledWithWeight1()

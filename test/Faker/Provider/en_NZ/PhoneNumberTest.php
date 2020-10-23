@@ -30,6 +30,6 @@ class PhoneNumberTest extends TestCase
     public function phoneNumberFormat()
     {
         $number = $this->faker->phoneNumber;
-        $this->assertRegExp('/(^\([0]\d{1}\))(\d{7}$)|(^\([0][2]\d{1}\))(\d{6,8}$)|([0][8][0][0])([\s])(\d{5,8}$)/', $number);
+        $this->assertMatchesRegularExpression('/(^\([0]\d{1}\))(\d{7}$)|(^\([0][2]\d{1}\))(\d{6,8}$)|([0][8][0][0])([\s])(\d{5,8}$)/', $number);
     }
 }

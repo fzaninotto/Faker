@@ -23,6 +23,6 @@ class PersonTest extends TestCase
     public function testIfTaxIdCanReturnData()
     {
         $taxId = $this->faker->taxId();
-        $this->assertRegExp('/^[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$/', $taxId);
+        $this->assertMatchesRegularExpression('/^[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$/', $taxId);
     }
 }

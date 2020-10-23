@@ -22,14 +22,14 @@ class CompanyTest extends TestCase
     public function testSiretReturnsAValidSiret()
     {
         $siret = $this->faker->siret(false);
-        $this->assertRegExp("/^\d{14}$/", $siret);
+        $this->assertMatchesRegularExpression("/^\d{14}$/", $siret);
         $this->assertTrue(Luhn::isValid($siret));
     }
 
     public function testSiretReturnsAWellFormattedSiret()
     {
         $siret = $this->faker->siret();
-        $this->assertRegExp("/^\d{3}\s\d{3}\s\d{3}\s\d{5}$/", $siret);
+        $this->assertMatchesRegularExpression("/^\d{3}\s\d{3}\s\d{3}\s\d{5}$/", $siret);
         $siret = str_replace(' ', '', $siret);
         $this->assertTrue(Luhn::isValid($siret));
     }
@@ -37,14 +37,14 @@ class CompanyTest extends TestCase
     public function testSirenReturnsAValidSiren()
     {
         $siren = $this->faker->siren(false);
-        $this->assertRegExp("/^\d{9}$/", $siren);
+        $this->assertMatchesRegularExpression("/^\d{9}$/", $siren);
         $this->assertTrue(Luhn::isValid($siren));
     }
 
     public function testSirenReturnsAWellFormattedSiren()
     {
         $siren = $this->faker->siren();
-        $this->assertRegExp("/^\d{3}\s\d{3}\s\d{3}$/", $siren);
+        $this->assertMatchesRegularExpression("/^\d{3}\s\d{3}\s\d{3}$/", $siren);
         $siren = str_replace(' ', '', $siren);
         $this->assertTrue(Luhn::isValid($siren));
     }

@@ -25,7 +25,7 @@ class PaymentTest extends TestCase
     {
         $vat = $this->faker->vat();
         $unspacedVat = $this->faker->vat(false);
-        $this->assertRegExp('/^(AT U\d{8})$/', $vat);
-        $this->assertRegExp('/^(ATU\d{8})$/', $unspacedVat);
+        $this->assertMatchesRegularExpression('/^(AT U\d{8})$/', $vat);
+        $this->assertMatchesRegularExpression('/^(ATU\d{8})$/', $unspacedVat);
     }
 }
