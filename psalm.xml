@@ -9,10 +9,6 @@
     resolveFromConfigFile="true"
     totallyTyped="false"
 >
-    <plugins>
-        <pluginClass class="Psalm\PhpUnitPlugin\Plugin" />
-    </plugins>
-
     <projectFiles>
         <directory name="src/" />
         <directory name="test/" />
