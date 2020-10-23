@@ -122,7 +122,7 @@ final class DateTimeTest extends TestCase
     {
         $date = DateTimeProvider::dateTimeThisYear();
         $this->assertInstanceOf('\DateTime', $date);
-        $this->assertGreaterThanOrEqual(new \DateTime('-1 year'), $date);
+        $this->assertGreaterThanOrEqual(new \DateTime('first day of january this year'), $date);
         $this->assertLessThanOrEqual(new \DateTime(), $date);
         $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
