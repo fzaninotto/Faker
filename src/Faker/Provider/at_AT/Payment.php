@@ -28,7 +28,7 @@ class Payment extends \Faker\Provider\Payment
 
         return sprintf("%s%d", $prefix, self::randomNumber(8, true));
     }
-    
+
     /**
      * International Bank Account Number (IBAN)
      * @link http://en.wikipedia.org/wiki/International_Bank_Account_Number

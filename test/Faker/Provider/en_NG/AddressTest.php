@@ -21,7 +21,7 @@ class AddressTest extends TestCase
         $this->faker = $faker;
     }
 
-    
+
     public function testPostcodeIsNotEmptyAndIsValid()
     {
         $postcode = $this->faker->postcode();

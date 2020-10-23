@@ -168,7 +168,7 @@ class PaymentTest extends TestCase
                 'An IBAN format has not been configured for country with country code "%s".',
                 $countryCode
             ));
-            
+
             return;
         }
 

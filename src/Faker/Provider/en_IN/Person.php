@@ -110,7 +110,7 @@ class Person extends \Faker\Provider\Person
     protected static $middleNameMale = [
         'Dev','Chandra','Kumar','Lal','Prasad','Raj','Singh','Rao','Ram','Pratap','Bhai',
     ];
-    
+
     /**
      * Return male middle name
      *

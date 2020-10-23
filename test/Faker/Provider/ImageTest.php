@@ -64,7 +64,7 @@ class ImageTest extends TestCase
         $this->assertRegexp('#\d{5}#', $splitUrl[1]);
     }
 
-    
+
     public function testUrlWithDimensionsAndBadCategory()
     {
         $this->expectException(\InvalidArgumentException::class);

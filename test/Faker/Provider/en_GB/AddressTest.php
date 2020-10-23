@@ -20,7 +20,7 @@ class AddressTest extends TestCase
         $this->faker = $faker;
     }
 
-    
+
     public function testPostcode()
     {
 

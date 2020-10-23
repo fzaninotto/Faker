@@ -314,7 +314,7 @@ class Person extends \Faker\Provider\Person
     {
         return static::randomElement(static::$prefix);
     }
-    
+
     /**
      * @link https://nl.wikipedia.org/wiki/Burgerservicenummer#11-proef
      *
