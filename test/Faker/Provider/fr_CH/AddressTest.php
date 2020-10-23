@@ -63,7 +63,8 @@ final class AddressTest extends TestCase
     /**
      * @test
      */
-    public function address (){
+    public function address ()
+    {
         $address = $this->faker->address();
         $this->assertInternalType('string', $address);
     }
