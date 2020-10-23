@@ -19,7 +19,7 @@ class Name
     /**
      * @param string $name
      * @param int|null $size Length of field, if known
-     * @return callable
+     * @return callable|null
      */
     public function guessFormat($name, $size = null)
     {
