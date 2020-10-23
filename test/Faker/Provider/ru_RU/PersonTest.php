@@ -13,6 +13,11 @@ final class PersonTest extends TestCase
      */
     private $faker;
 
+    /**
+     * @var string
+     */
+    private $suffix = 'а';
+
     protected function setUp()
     {
         $faker = new Generator();
@@ -22,12 +27,12 @@ final class PersonTest extends TestCase
 
     public function testLastNameFemale()
     {
-        $this->assertEquals("a", substr($this->faker->lastName('female'), -1));
+        $this->assertEquals($this->suffix, substr($this->faker->lastName('female'), -strlen($this->suffix)));
     }
 
     public function testLastNameMale()
     {
-        $this->assertNotEquals("a", substr($this->faker->lastName('male'), -1));
+        $this->assertNotEquals($this->suffix, substr($this->faker->lastName('male'), -strlen($this->suffix)));
     }
 
     public function testLastNameRandom()
