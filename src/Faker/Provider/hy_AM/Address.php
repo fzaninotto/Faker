@@ -4,7 +4,7 @@ namespace Faker\Provider\hy_AM;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $cityPrefix = ['քաղաք','գյուղ'];
+    protected static $cityPrefix = ['քաղաք', 'գյուղ'];
 
     protected static $regionSuffix = ['մարզ'];
     protected static $streetPrefix = ['փողոց'];

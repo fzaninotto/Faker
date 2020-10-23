@@ -163,12 +163,12 @@ class Person extends \Faker\Provider\Person
      *
      * @link https://en.wikipedia.org/wiki/Muhammad_(name)
      */
-    protected static $muhammadName = ['', '', '', '', 'Mohamad ','Mohamed ','Mohammad ','Mohammed ','Muhamad ','Muhamed ','Muhammad ','Muhammed ','Muhammet ','Mohd '];
+    protected static $muhammadName = ['', '', '', '', 'Mohamad ', 'Mohamed ', 'Mohammad ', 'Mohammed ', 'Muhamad ', 'Muhamed ', 'Muhammad ', 'Muhammed ', 'Muhammet ', 'Mohd '];
     /**
      *
      * @link https://en.wikipedia.org/wiki/Noor_(name)
      */
-    protected static $nurName = ['', '', '', '', 'Noor ', 'Nor ', 'Nur ', 'Nur ', 'Nur ', 'Nurul ','Nuur '];
+    protected static $nurName = ['', '', '', '', 'Noor ', 'Nor ', 'Nur ', 'Nur ', 'Nur ', 'Nurul ', 'Nuur '];
 
     /**
      * @link https://en.wikipedia.org/wiki/Malaysian_names#Haji_or_Hajjah
@@ -179,7 +179,7 @@ class Person extends \Faker\Provider\Person
     /**
      * @link https://en.wikipedia.org/wiki/Malay_styles_and_titles
      */
-    protected static $titleMaleMalay = ['', '', '', '', '', '', 'Syed ','Wan ','Nik ','Che '];
+    protected static $titleMaleMalay = ['', '', '', '', '', '', 'Syed ', 'Wan ', 'Nik ', 'Che '];
 
     /**
      * Chinese family name or surname
@@ -537,8 +537,8 @@ class Person extends \Faker\Provider\Person
     /**
      * @link https://en.wikipedia.org/wiki/Malay_styles_and_titles
      */
-    protected static $titleMale = ['En.','Dr.','Prof.','Datuk','Dato\'','Datuk Seri','Dato\' Sri','Tan Sri','Tun'];
-    protected static $titleFemale = ['Pn.','Cik','Dr.','Prof.','Datin','Datin Paduka','Datin Paduka Seri','Puan Sri','Toh Puan'];
+    protected static $titleMale = ['En.', 'Dr.', 'Prof.', 'Datuk', 'Dato\'', 'Datuk Seri', 'Dato\' Sri', 'Tan Sri', 'Tun'];
+    protected static $titleFemale = ['Pn.', 'Cik', 'Dr.', 'Prof.', 'Datin', 'Datin Paduka', 'Datin Paduka Seri', 'Puan Sri', 'Toh Puan'];
 
     /**
      * Return a Malay male first name

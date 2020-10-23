@@ -46,7 +46,7 @@ class Address extends \Faker\Provider\Address
         '%##9-###', '%##9',
         ];
 
-    protected static $buildingNumber = ['nº %', 'nº %%','nº %%%', '%', '%#', '%##'];
+    protected static $buildingNumber = ['nº %', 'nº %%', 'nº %%%', '%', '%#', '%##'];
 
     protected static $secondaryAddressFormats = [
         'Bloco %', 'Bl. %',

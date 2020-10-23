@@ -119,15 +119,15 @@ class Person extends \Faker\Provider\Person
         $randomDigits = self::numberBetween(0, 89);
         if ($gender && $gender == static::GENDER_MALE) {
             if ($randomDigits === 0) {
-                $randomDigits .= static::randomElement([3,5,7,9]);
+                $randomDigits .= static::randomElement([3, 5, 7, 9]);
             } else {
-                $randomDigits .= static::randomElement([1,3,5,7,9]);
+                $randomDigits .= static::randomElement([1, 3, 5, 7, 9]);
             }
         } elseif ($gender && $gender == static::GENDER_FEMALE) {
             if ($randomDigits === 0) {
-                $randomDigits .= static::randomElement([2,4,6,8]);
+                $randomDigits .= static::randomElement([2, 4, 6, 8]);
             } else {
-                $randomDigits .= static::randomElement([0,2,4,6,8]);
+                $randomDigits .= static::randomElement([0, 2, 4, 6, 8]);
             }
         } else {
             if ($randomDigits === 0) {

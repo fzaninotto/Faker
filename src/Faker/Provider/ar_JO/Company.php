@@ -22,7 +22,7 @@ class Company extends \Faker\Provider\Company
             ],
     ];
 
-    protected static $companyPrefix = ['شركة','مؤسسة','مجموعة','مكتب','أكاديمية','معرض'];
+    protected static $companyPrefix = ['شركة', 'مؤسسة', 'مجموعة', 'مكتب', 'أكاديمية', 'معرض'];
 
     protected static $companySuffix = ['وأولاده', 'للمساهمة المحدودة', ' ذ.م.م', 'مساهمة عامة', 'وشركائه'];
 

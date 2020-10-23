@@ -98,7 +98,7 @@ class Person extends \Faker\Provider\Person
 
     protected static $titleMale = ['Պարոն'];
 
-    protected static $titleFemale = ['տիկին','օրիորդ'];
+    protected static $titleFemale = ['տիկին', 'օրիորդ'];
 
     private static $suffix = ['',];
 
