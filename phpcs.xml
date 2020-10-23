@@ -13,6 +13,11 @@
 
     <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
     <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
+        <properties>
+            <property name="searchAnnotations" value="true"/>
+        </properties>
+    </rule>
 
     <arg name="colors" />
     <arg value="np" />
