@@ -42,7 +42,7 @@ class PersonTest extends TestCase
         }
         $n = str_split($tin);
         // cd - Control Digit
-        $cd = ($n[0] * 9 + $n[1] * 8 + $n[2] * 7 + $n[3] * 6 + $n[4] * 5 + $n[5] * 4 + $n[6] * 3 + $n[7] * 2) % 11;
+        $cd = ((int) $n[0] * 9 + (int) $n[1] * 8 + (int) $n[2] * 7 + (int) $n[3] * 6 + (int) $n[4] * 5 + (int) $n[5] * 4 + (int) $n[6] * 3 + (int) $n[7] * 2) % 11;
         if ($cd === 0 || $cd === 1) {
             $cd = 0;
         } else {
