@@ -387,7 +387,7 @@ print_r($values); // [0, 4, 8, 4, 2, 6, 0, 8, 8, 6]
 // just like unique(), valid() throws an overflow exception when it can't generate a valid value
 $values = array();
 try {
-  $faker->valid($evenValidator)->randomElement(1, 3, 5, 7, 9);
+  $faker->valid($evenValidator)->randomElement([1, 3, 5, 7, 9]);
 } catch (\OverflowException $e) {
   echo "Can't pick an even number in that set!";
 }
