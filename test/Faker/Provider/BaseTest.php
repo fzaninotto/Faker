@@ -5,7 +5,6 @@ namespace Faker\Test\Provider;
 use Faker\Provider\Base as BaseProvider;
 use Faker\Test\Fixture;
 use PHPUnit\Framework\TestCase;
-use Traversable;
 
 class BaseTest extends TestCase
 {
