@@ -98,6 +98,9 @@ jobs:
       - name: "Install dependencies with composer"
         run: "composer install --no-interaction --no-progress --no-suggest"
 
+      - name: "Install phpunit/phpunit with symfony/phpunit-bridge"
+        run: "vendor/bin/simple-phpunit --version"
+
       - name: "Run vimeo/psalm"
         run: ".phive/psalm --config=psalm.xml --shepherd --show-info=false --stats"
 
@@ -112,6 +115,7 @@ jobs:
           - "7.2"
           - "7.3"
           - "7.4"
+          - "8.0"
 
     steps:
       - name: "Checkout"
@@ -139,7 +143,7 @@ jobs:
         run: "composer install --no-interaction --no-progress --no-suggest"
 
       - name: "Run tests with phpunit/phpunit"
-        run: "vendor/bin/phpunit"
+        run: "vendor/bin/simple-phpunit"
 
   code-coverage:
     name: "Code Coverage"
@@ -180,7 +184,7 @@ jobs:
         run: "mkdir -p .build/logs"
 
       - name: "Collect code coverage with pcov and phpunit/phpunit"
-        run: "vendor/bin/phpunit --coverage-clover=.build/logs/clover.xml"
+        run: "vendor/bin/simple-phpunit --coverage-clover=.build/logs/clover.xml"
 
       - name: "Send code coverage report to Codecov.io"
         env:

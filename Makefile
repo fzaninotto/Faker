@@ -13,13 +13,15 @@ sniff: vendor/autoload.php ## Detects code style issues with phpcs
 	vendor/bin/phpcs --cache=.build/php-codesniffer/cache.json
 
 static-code-analysis: vendor ## Runs a static code analysis with vimeo/psalm
-	.phive/bin/psalm --config=psalm.xml --show-info=false --stats
+	vendor/bin/simple-phpunit --version
+	.phive/psalm --config=psalm.xml --show-info=false --stats
 
 static-code-analysis-baseline: vendor ## Generates a baseline for static code analysis with vimeo/psalm
-	.phive/bin/psalm --config=psalm.xml --set-baseline=psalm-baseline.xml
+	vendor/bin/simple-phpunit --version
+	.phive/psalm --config=psalm.xml --set-baseline=psalm-baseline.xml
 
 test: vendor/autoload.php ## Runs tests with phpunit
-	vendor/bin/phpunit --verbose
+	vendor/bin/simple-phpunit --verbose
 
 vendor/autoload.php:
 	composer install --no-interaction
