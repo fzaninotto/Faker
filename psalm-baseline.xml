@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="3.9.5@0cfe565d0afbcd31eadcc281b9017b5692911661">
+<files psalm-version="3.18.2@19aa905f7c3c7350569999a93c40ae91ae4e1626">
   <file src="src/Faker/Provider/Base.php">
-    <InvalidArgument occurrences="2">
-      <code>$array</code>
+    <InvalidArgument occurrences="1">
       <code>$array</code>
     </InvalidArgument>
   </file>
   <file src="src/Faker/Provider/cs_CZ/Person.php">
     <NonStaticSelfCall occurrences="2">
-      <code>static::birthNumber(static::GENDER_MALE)</code>
       <code>static::birthNumber(static::GENDER_FEMALE)</code>
+      <code>static::birthNumber(static::GENDER_MALE)</code>
     </NonStaticSelfCall>
   </file>
   <file src="src/Faker/Provider/is_IS/Person.php">
