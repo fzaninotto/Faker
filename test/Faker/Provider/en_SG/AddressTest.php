@@ -3,11 +3,17 @@
 namespace Faker\Test\Provider\en_SG;
 
 use Faker\Factory;
+use Faker\Generator;
 use Faker\Provider\en_SG\Address;
 use PHPUnit\Framework\TestCase;
 
 class AddressTest extends TestCase
 {
+    /**
+     * @var Generator
+     */
+    private $faker;
+
     protected function setUp(): void
     {
         $faker = Factory::create('en_SG');

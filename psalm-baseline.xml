@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <files psalm-version="3.9.5@0cfe565d0afbcd31eadcc281b9017b5692911661">
+  <file src="src/Faker/Provider/Base.php">
+    <InvalidArgument occurrences="2">
+      <code>$array</code>
+      <code>$array</code>
+    </InvalidArgument>
+  </file>
   <file src="src/Faker/Provider/cs_CZ/Person.php">
     <NonStaticSelfCall occurrences="2">
       <code>static::birthNumber(static::GENDER_MALE)</code>
       <code>static::birthNumber(static::GENDER_FEMALE)</code>
     </NonStaticSelfCall>
+  </file>
+  <file src="src/Faker/Provider/is_IS/Person.php">
+    <InvalidArrayOffset occurrences="1">
+      <code>$ref[$i]</code>
+    </InvalidArrayOffset>
   </file>
   <file src="src/Faker/Provider/pl_PL/Person.php">
     <NonStaticSelfCall occurrences="2">

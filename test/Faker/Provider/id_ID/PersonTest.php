@@ -10,6 +10,11 @@ use PHPUnit\Framework\TestCase;
 class PersonTest extends TestCase
 {
     /**
+     * @var Generator
+     */
+    private $faker;
+
+    /**
      * @see Person::$birthPlaceCode
      */
     protected static $birthPlaceCode = [

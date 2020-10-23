@@ -97,14 +97,6 @@ class Address extends \Faker\Provider\Address
     protected static $secondaryAddressFormats = ['شقة رقم. ##', 'عمارة رقم ##'];
 
     /**
-     * @example 'شرق'
-     */
-    public static function cityPrefix()
-    {
-        return static::randomElement(static::$cityPrefix);
-    }
-
-    /**
      * @example 'الرياض'
      */
     public static function cityName()

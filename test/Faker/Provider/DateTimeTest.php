@@ -7,6 +7,11 @@ use PHPUnit\Framework\TestCase;
 
 class DateTimeTest extends TestCase
 {
+    /**
+     * @var string
+     */
+    private $defaultTz;
+
     protected function setUp(): void
     {
         $this->defaultTz = 'UTC';

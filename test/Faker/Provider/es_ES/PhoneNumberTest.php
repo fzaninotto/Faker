@@ -7,6 +7,11 @@ use Faker\Provider\es_ES\PhoneNumber;
 
 class PhoneNumberTest extends \PHPUnit\Framework\TestCase
 {
+    /**
+     * @var Generator
+     */
+    private $faker;
+
     protected function setUp(): void
     {
         $faker = new Generator();

@@ -10,6 +10,11 @@ class CompanyTest extends TestCase
 {
 
     /**
+     * @var Generator
+     */
+    private $faker;
+
+    /**
      * {@inheritdoc}
      */
     protected function setUp(): void
