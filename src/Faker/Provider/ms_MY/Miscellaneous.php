@@ -86,7 +86,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
      *
      * @example 'WKN 2368'
      *
-     * @return @string
+     * @return string
      */
     public function jpjNumberPlate()
     {
@@ -100,7 +100,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
      *
      * @example 'W'
      *
-     * @return @string
+     * @return string
      */
     public static function peninsularPrefix()
     {
@@ -112,7 +112,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
      *
      * @example 'QA'
      *
-     * @return @string
+     * @return string
      */
     public static function sarawakPrefix()
     {
@@ -124,7 +124,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
      *
      * @example 'SA'
      *
-     * @return @string
+     * @return string
      */
     public static function sabahPrefix()
     {
@@ -136,7 +136,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
      *
      * @example 'G1M'
      *
-     * @return @string
+     * @return string
      */
     public static function specialPrefix()
     {
@@ -148,7 +148,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
      *
      * @example 'A'
      *
-     * @return @string
+     * @return string
      */
     public static function validAlphabet()
     {
@@ -160,7 +160,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
      *
      * @example '1234'
      *
-     * @return @integer
+     * @return int
      */
     public static function numberSequence()
     {

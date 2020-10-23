@@ -30,7 +30,7 @@ class PersonTest extends TestCase
      *
      * @link http://pt.wikipedia.org/wiki/N%C3%BAmero_de_identifica%C3%A7%C3%A3o_fiscal
      *
-     * @param mixed $tin
+     * @param string $tin
      *
      * @return boolean
      */
