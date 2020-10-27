@@ -3,7 +3,7 @@
 namespace Faker\Test\Calculator;
 
 use Faker\Calculator\TCNo;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class TCNoTest extends TestCase
 {

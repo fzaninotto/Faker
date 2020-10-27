@@ -5,7 +5,7 @@ namespace Faker\Test\Provider\ng_NG;
 use Faker\Generator;
 use Faker\Provider\en_NG\Person;
 use Faker\Provider\en_NG\Internet;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class InternetTest extends TestCase
 {
@@ -15,7 +15,7 @@ final class InternetTest extends TestCase
      */
     private $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
@@ -28,6 +28,6 @@ final class InternetTest extends TestCase
         $email = $this->faker->email();
         $this->assertNotFalse(filter_var($email, FILTER_VALIDATE_EMAIL));
         $this->assertNotEmpty($email);
-        $this->assertInternalType('string', $email);
+        $this->assertIsString($email);
     }
 }

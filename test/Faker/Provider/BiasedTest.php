@@ -3,7 +3,7 @@ namespace Faker\Test\Provider;
 
 use Faker\Provider\Biased;
 use Faker\Generator;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class BiasedTest extends TestCase
 {
@@ -12,7 +12,7 @@ final class BiasedTest extends TestCase
     protected $generator;
     protected $results = array();
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->generator = new Generator();
         $this->generator->addProvider(new Biased($this->generator));

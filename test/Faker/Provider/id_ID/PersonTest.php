@@ -5,7 +5,7 @@ namespace Faker\Test\Provider\id_ID;
 use Faker\Generator;
 use Faker\Provider\DateTime;
 use Faker\Provider\id_ID\Person;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
@@ -47,7 +47,7 @@ final class PersonTest extends TestCase
         '9171', '9201', '9202', '9203', '9204', '9205', '9206', '9207', '9208', '9209', '9210', '9211', '9212', '9271',
     );
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));

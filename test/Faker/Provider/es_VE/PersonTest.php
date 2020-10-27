@@ -4,7 +4,7 @@ namespace Faker\Test\Provider\es_VE;
 
 use Faker\Generator;
 use Faker\Provider\es_VE\Person;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
@@ -14,7 +14,7 @@ final class PersonTest extends TestCase
      */
     private $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->seed(1);
@@ -30,9 +30,9 @@ final class PersonTest extends TestCase
         $pattern = '/(?:^V-?\d{5,9}$)|(?:^E-?\d{8,9}$)/';
 
         $cedula = $this->faker->nationalId;
-        $this->assertRegExp($pattern, $cedula);
+        $this->assertMatchesRegularExpression($pattern, $cedula);
 
         $cedula = $this->faker->nationalId('-');
-        $this->assertRegExp($pattern, $cedula);
+        $this->assertMatchesRegularExpression($pattern, $cedula);
     }
 }

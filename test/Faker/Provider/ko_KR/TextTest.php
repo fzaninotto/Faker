@@ -2,13 +2,13 @@
 
 namespace Faker\Test\Provider\ko_KR;
 
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class TextTest extends TestCase
 {
     private $textClass;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->textClass = new \ReflectionClass('Faker\Provider\el_GR\Text');
     }

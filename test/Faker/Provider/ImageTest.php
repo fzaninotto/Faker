@@ -3,28 +3,28 @@
 namespace Faker\Test\Provider;
 
 use Faker\Provider\Image;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class ImageTest extends TestCase
 {
     public function testImageUrlUses640x680AsTheDefaultSize()
     {
-        $this->assertRegExp('#^https://lorempixel.com/640/480/#', Image::imageUrl());
+        $this->assertMatchesRegularExpression('#^https://lorempixel.com/640/480/#', Image::imageUrl());
     }
 
     public function testImageUrlAcceptsCustomWidthAndHeight()
     {
-        $this->assertRegExp('#^https://lorempixel.com/800/400/#', Image::imageUrl(800, 400));
+        $this->assertMatchesRegularExpression('#^https://lorempixel.com/800/400/#', Image::imageUrl(800, 400));
     }
 
     public function testImageUrlAcceptsCustomCategory()
     {
-        $this->assertRegExp('#^https://lorempixel.com/800/400/nature/#', Image::imageUrl(800, 400, 'nature'));
+        $this->assertMatchesRegularExpression('#^https://lorempixel.com/800/400/nature/#', Image::imageUrl(800, 400, 'nature'));
     }
 
     public function testImageUrlAcceptsCustomText()
     {
-        $this->assertRegExp('#^https://lorempixel.com/800/400/nature/Faker#', Image::imageUrl(800, 400, 'nature', false, 'Faker'));
+        $this->assertMatchesRegularExpression('#^https://lorempixel.com/800/400/nature/Faker#', Image::imageUrl(800, 400, 'nature', false, 'Faker'));
     }
 
     public function testImageUrlReturnsLinkToRegularImageWhenGrayIsFalse()
@@ -61,14 +61,12 @@ final class ImageTest extends TestCase
         $splitUrl = preg_split('/\?/', $url);
 
         $this->assertEquals(count($splitUrl), 2);
-        $this->assertRegexp('#\d{5}#', $splitUrl[1]);
+        $this->assertMatchesRegularExpression('#\d{5}#', $splitUrl[1]);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testUrlWithDimensionsAndBadCategory()
     {
+        $this->expectException(\InvalidArgumentException::class);
         Image::imageUrl(800, 400, 'bullhonky');
     }
 

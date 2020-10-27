@@ -3,7 +3,7 @@ namespace Faker\Test\Provider\kk_KZ;
 
 use Faker\Generator;
 use Faker\Provider\kk_KZ\Company;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class CompanyTest extends TestCase
 {
@@ -11,7 +11,7 @@ final class CompanyTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->faker = new Generator();
 
@@ -24,7 +24,7 @@ final class CompanyTest extends TestCase
         $businessIdentificationNumber = $this->faker->businessIdentificationNumber($registrationDate);
         $registrationDateAsString     = $registrationDate->format('ym');
 
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             "/^(" . $registrationDateAsString . ")([4-6]{1})([0-3]{1})(\\d{6})$/",
             $businessIdentificationNumber
         );
