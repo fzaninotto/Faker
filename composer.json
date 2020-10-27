@@ -1,5 +1,5 @@
 {
-    "name": "fzaninotto/faker",
+    "name": "fakerphp/faker",
     "type": "library",
     "description": "Faker is a PHP library that generates fake data for you.",
     "keywords": [
@@ -31,10 +31,13 @@
             "Faker\\Test\\": "test/Faker/"
         }
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.9-dev"
-        }
+    "conflict": {
+        "fzaninotto/faker": "!=1.9.1",
+        "ergebnis/faker": "!=1.9.1"
+    },
+    "replace": {
+        "fzaninotto/faker": "1.9.1",
+        "ergebnis/faker": "1.9.1"
     },
     "config": {
         "sort-packages": true
