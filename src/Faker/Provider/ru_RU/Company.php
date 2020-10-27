@@ -2,6 +2,8 @@
 
 namespace Faker\Provider\ru_RU;
 
+use Faker\Calculator\Inn;
+
 class Company extends \Faker\Provider\Company
 {
     protected static $companyNameFormats = [
@@ -98,15 +100,7 @@ class Company extends \Faker\Provider\Company
 
     public static function inn($area_code = "")
     {
-        if ($area_code === "" || intval($area_code) == 0) {
-            //Simple generation code for areas in Russian without check for valid
-            $area_code = static::numberBetween(1, 91);
-        } else {
-            $area_code = intval($area_code);
-        }
-        $area_code = str_pad($area_code, 2, '0', STR_PAD_LEFT);
-        $inn_base =  $area_code . static::numerify('#######');
-        return $inn_base . \Faker\Calculator\Inn::checksum($inn_base);
+        return Inn::generate($area_code, Inn::TYPE_COMPANY);
     }
 
     public static function kpp($inn = "")
