@@ -4,7 +4,6 @@ namespace Faker\Provider\zh_CN;
 
 class Address extends \Faker\Provider\Address
 {
-
     protected static $cites = array(
         '北京', '上海', '天津', '重庆',
         '哈尔滨', '长春', '沈阳', '呼和浩特',
@@ -126,17 +125,17 @@ class Address extends \Faker\Provider\Address
 
     public static function area()
     {
-         return static::randomElement(static::$areas);
+        return static::randomElement(static::$areas);
     }
 
     public static function country()
     {
-         return static::randomElement(static::$country);
+        return static::randomElement(static::$country);
     }
 
     public function address()
     {
-         return $this->city() . static::area();
+        return $this->city() . static::area();
     }
 
     public static function postcode()

@@ -10,7 +10,7 @@ namespace Faker\Calculator;
 class Ean
 {
     /** @var string EAN validation pattern */
-    const PATTERN = '/^(?:\d{8}|\d{13})$/';
+    public const PATTERN = '/^(?:\d{8}|\d{13})$/';
 
     /**
      * Computes the checksum of an EAN number.

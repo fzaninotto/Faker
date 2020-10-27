@@ -312,7 +312,7 @@ class Person extends \Faker\Provider\Person
         }
 
 
-        $digits = $datePart.$randomDigits.$genderDigit;
+        $digits = $datePart . $randomDigits . $genderDigit;
 
         /**
         * @todo Calculate modulo 11 of $digits
@@ -321,6 +321,6 @@ class Person extends \Faker\Provider\Person
         $checksum = (string)static::numerify('##');
 
 
-        return $digits.$checksum;
+        return $digits . $checksum;
     }
 }

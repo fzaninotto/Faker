@@ -4,7 +4,6 @@ namespace Faker\Provider\sk_SK;
 
 class Address extends \Faker\Provider\Address
 {
-
     protected static $cityName = array(
         'Ábelová', 'Abovce', 'Abrahám', 'Abrahámovce', 'Abrahámovce', 'Abramová', 'Abranovce', 'Adamovské Kochanovce', 'Adidovce', 'Alekšince',
         'Andovce', 'Andrejová', 'Ardanovce', 'Ardovo', 'Arnutovce', 'Báb', 'Babie', 'Babín', 'Babiná', 'Babindol', 'Babinec', 'Bacúch', 'Bacúrov',

@@ -21,7 +21,7 @@ function check_digit($numbers)
         if (!$second_algorithm) {
             $multiplier = $i+1;
         } else {
-            $multiplier = ($i >= 9)? $i-7 : $i+1;
+            $multiplier = ($i >= 9) ? $i-7 : $i+1;
         }
         $verifier += $numbers[$length-$i] * $multiplier;
     }

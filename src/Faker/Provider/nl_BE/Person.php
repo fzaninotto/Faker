@@ -93,14 +93,14 @@ class Person extends \Faker\Provider\Person
             $middle = $middle %2 === 0 ? $middle : $middle+1;
         }
         $middle = sprintf('%03d', $middle);
-        
+
         $date = DateTime::dateTimeThisCentury();
         $dob = sprintf('%06d', $date->format('ymd'));
         $help = $date->format('Y') >= 2000 ? 2 : null;
 
-        $check = intval($help.$dob.$middle);
+        $check = intval($help . $dob . $middle);
         $rest = sprintf('%02d', 97 - ($check % 97));
-        
-        return $dob.$middle.$rest;
+
+        return $dob . $middle . $rest;
     }
 }

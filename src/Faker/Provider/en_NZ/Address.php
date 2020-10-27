@@ -4,7 +4,6 @@ namespace Faker\Provider\en_NZ;
 
 class Address extends \Faker\Provider\en_US\Address
 {
-
     /**
      * An array of en_NZ (New Zealand) building number formats
      * @var array

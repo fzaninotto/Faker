@@ -4,8 +4,8 @@ namespace Faker\Provider;
 
 class Person extends Base
 {
-    const GENDER_MALE = 'male';
-    const GENDER_FEMALE = 'female';
+    public const GENDER_MALE = 'male';
+    public const GENDER_FEMALE = 'female';
 
     protected static $titleFormat = array(
       '{{titleMale}}',

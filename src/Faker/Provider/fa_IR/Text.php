@@ -57,7 +57,7 @@ class Text extends \Faker\Provider\Text
         // build result
         $result = implode(' ', $result);
 
-        return $result.'.';
+        return $result . '.';
     }
 
     /**

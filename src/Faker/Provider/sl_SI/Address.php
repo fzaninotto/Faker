@@ -4,7 +4,6 @@ namespace Faker\Provider\sl_SI;
 
 class Address extends \Faker\Provider\Address
 {
-
     /**
      * @link http://www.rtvslo.si/strani/abecedni-seznam-obcin/3103
      **/

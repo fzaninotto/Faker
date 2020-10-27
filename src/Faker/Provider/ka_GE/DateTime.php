@@ -4,7 +4,6 @@ namespace Faker\Provider\ka_GE;
 
 class DateTime extends \Faker\Provider\DateTime
 {
-
     public static function dayOfWeek($max = 'now')
     {
         $map = array(

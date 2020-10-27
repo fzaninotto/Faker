@@ -1,4 +1,5 @@
 <?php
+
 namespace Faker\Provider\ro_RO;
 
 class Person extends \Faker\Provider\Person
@@ -139,7 +140,7 @@ class Person extends \Faker\Provider\Person
 
         $checksum = $this->getChecksumDigit($cnp);
 
-        return $cnp.$checksum;
+        return $cnp . $checksum;
     }
 
     /**
@@ -159,9 +160,11 @@ class Person extends \Faker\Provider\Person
             case 1:
                 $dateOfBirthParts[] = $baseDate->format('m');
             //don't break, we need the day also
+            // no break
             case 2:
                 $dateOfBirthParts[] = $baseDate->format('d');
             //don't break, next line will
+            // no break
             case 3:
                 break;
             default:

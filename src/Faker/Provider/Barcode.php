@@ -61,7 +61,7 @@ class Barcode extends Base
         $result = (11 - array_sum($digits) % 11) % 11;
 
         // 10 is replaced by X
-        return ($result < 10)?$result:'X';
+        return ($result < 10) ? $result : 'X';
     }
 
     /**

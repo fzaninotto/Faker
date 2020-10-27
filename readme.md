@@ -2,14 +2,13 @@
 
 [![Monthly Downloads](https://poser.pugx.org/fakerphp/faker/d/monthly.png)](https://packagist.org/packages/fakerphp/faker)
 [![Continuous Integration](https://github.com/FakerPHP/Faker/workflows/Continuous%20Integration/badge.svg?branch=1.10)](https://github.com/FakerPHP/Faker/actions)
-[![codecov](https://codecov.io/gh/FakerPHP/Faker/branch/1.10/graph/badge.svg)](https://codecov.io/gh/FakerPHP/Faker)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/eceb78a9-38d4-4ad5-8b6b-b52f323e3549/mini.png)](https://insight.sensiolabs.com/projects/eceb78a9-38d4-4ad5-8b6b-b52f323e3549)
+[![StyleCI](https://github.styleci.io/repos/307658860/shield?branch=1.10&style=plastic)](https://github.styleci.io/repos/307658860?branch=1.10)
 
 Faker is a PHP library that generates fake data for you. Whether you need to bootstrap your database, create good-looking XML documents, fill-in your persistence to stress test it, or anonymize data taken from a production service, Faker is for you.
 
 Faker is heavily inspired by Perl's [Data::Faker](http://search.cpan.org/~jasonk/Data-Faker-0.07/), and by ruby's [Faker](https://rubygems.org/gems/faker).
 
-Faker requires PHP >= 5.3.3.
+Faker requires PHP >= 7.1.
 
 
 # Table of Contents

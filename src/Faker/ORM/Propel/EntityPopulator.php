@@ -2,8 +2,8 @@
 
 namespace Faker\ORM\Propel;
 
-use \Faker\Provider\Base;
-use \ColumnMap;
+use Faker\Provider\Base;
+use ColumnMap;
 
 /**
  * Service class for populating a table through a Propel ActiveRecord class.
