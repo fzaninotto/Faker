@@ -31,8 +31,7 @@
         }
     },
     "conflict": {
-        "fzaninotto/faker": "*",
-        "ergebnis/faker": "*"
+        "fzaninotto/faker": "*"
     },
     "config": {
         "sort-packages": true
