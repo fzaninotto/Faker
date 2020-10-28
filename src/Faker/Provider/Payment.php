@@ -174,7 +174,7 @@ class Payment extends Base
             $p2 = substr($number, 4, 4);
             $p3 = substr($number, 8, 4);
             $p4 = substr($number, 12);
-            $number = $p1.$separator.$p2.$separator.$p3.$separator.$p4;
+            $number = $p1 . $separator . $p2 . $separator . $p3 . $separator . $p4;
         }
 
         return $number;
@@ -280,9 +280,9 @@ class Payment extends Base
             }
         }
 
-        $checksum = Iban::checksum($countryCode.'00'.$result);
+        $checksum = Iban::checksum($countryCode . '00' . $result);
 
-        return $countryCode.$checksum.$result;
+        return $countryCode . $checksum . $result;
     }
 
     /**
