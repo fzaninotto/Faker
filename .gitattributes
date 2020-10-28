@@ -6,3 +6,4 @@
 /.styleci.yml       export-ignore
 /Makefile           export-ignore
 /phpunit.xml.dist   export-ignore
+/roave-bc-check.yaml export-ignore
