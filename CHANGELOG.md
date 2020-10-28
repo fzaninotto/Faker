@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2020-10-28, v1.10.1
+
+- Updates the Danish addresses in dk_DK
+- Removed offense company names in nl_NL
+- Clarify changelog with original fork
+- Standin replacement for LoremPixel to Placeholder.com (#11)
+
 ## 2020-10-27, v1.10.0
 
 - Support PHP 7.1-8.0
