@@ -3,7 +3,7 @@
 namespace Faker\Test\Provider;
 
 use Faker\Provider\UserAgent;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class UserAgentTest extends TestCase
 {
@@ -14,12 +14,12 @@ final class UserAgentTest extends TestCase
 
     public function testFirefoxUserAgent()
     {
-        $this->stringContains(' Firefox/', UserAgent::firefox());
+        $this->assertStringContainsString(' Firefox/', UserAgent::firefox());
     }
 
     public function testSafariUserAgent()
     {
-        $this->stringContains('Safari/', UserAgent::safari());
+        $this->assertStringContainsString('Safari/', UserAgent::safari());
     }
 
     public function testInternetExplorerUserAgent()
@@ -34,6 +34,6 @@ final class UserAgentTest extends TestCase
 
     public function testChromeUserAgent()
     {
-        $this->stringContains('(KHTML, like Gecko) Chrome/', UserAgent::chrome());
+        $this->assertStringContainsString('(KHTML, like Gecko) Chrome/', UserAgent::chrome());
     }
 }

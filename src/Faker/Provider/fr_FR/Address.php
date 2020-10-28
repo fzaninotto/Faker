@@ -85,9 +85,9 @@ class Address extends \Faker\Provider\Address
         return static::numerify(static::randomElement(static::$secondaryAddressFormats));
     }
 
-     /**
-     * @example 'rue'
-     */
+    /**
+    * @example 'rue'
+    */
     public static function streetPrefix()
     {
         return static::randomElement(static::$streetPrefix);

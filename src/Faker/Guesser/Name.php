@@ -2,7 +2,7 @@
 
 namespace Faker\Guesser;
 
-use \Faker\Provider\Base;
+use Faker\Provider\Base;
 
 class Name
 {

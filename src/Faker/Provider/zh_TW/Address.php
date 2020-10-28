@@ -389,7 +389,7 @@ class Address extends \Faker\Provider\Address
     {
         $county = static::randomElement(array_keys(static::$city));
         $city = static::randomElement(static::$city[$county]);
-        return $county.$city;
+        return $county . $city;
     }
 
     public function state()
@@ -414,6 +414,6 @@ class Address extends \Faker\Provider\Address
 
     public static function secondaryAddress()
     {
-        return (static::randomNumber(2)+1).static::randomElement(static::$secondaryAddressSuffix);
+        return (static::randomNumber(2)+1) . static::randomElement(static::$secondaryAddressSuffix);
     }
 }

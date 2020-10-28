@@ -2,7 +2,7 @@
 
 namespace Faker\Provider\ms_MY;
 
-use \Faker\Generator;
+use Faker\Generator;
 
 class Address extends \Faker\Provider\Address
 {
@@ -397,7 +397,7 @@ class Address extends \Faker\Provider\Address
             'Wakaf Tapai',
         )
     );
-    
+
     /**
      * @link https://en.wikipedia.org/wiki/States_and_federal_territories_of_Malaysia
      */
@@ -679,7 +679,7 @@ class Address extends \Faker\Provider\Address
 
         return $postcode . ' ' . $town . ', ' . $state;
     }
-    
+
     /**
      * Return a random city (town)
      *
@@ -692,7 +692,7 @@ class Address extends \Faker\Provider\Address
         $state = static::randomElement(array_keys(static::$towns));
         return static::randomElement(static::$towns[$state]);
     }
-    
+
     /**
      * Return a random state
      *

@@ -28,6 +28,6 @@ class Company extends \Faker\Provider\Company
         $n .= check_digit($n);
         $n .= check_digit($n);
 
-        return $formatted? vsprintf('%d%d.%d%d%d.%d%d%d/%d%d%d%d-%d%d', str_split($n)) : $n;
+        return $formatted ? vsprintf('%d%d.%d%d%d.%d%d%d/%d%d%d%d-%d%d', str_split($n)) : $n;
     }
 }

@@ -3,15 +3,13 @@
 namespace Faker\Test\Provider;
 
 use Faker\Provider\Lorem;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class LoremTest extends TestCase
 {
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testTextThrowsExceptionWhenAskedTextSizeLessThan5()
     {
+        $this->expectException(\InvalidArgumentException::class);
         Lorem::text(4);
     }
 

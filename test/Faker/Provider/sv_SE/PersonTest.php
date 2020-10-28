@@ -5,14 +5,14 @@ namespace Faker\Test\Provider\sv_SE;
 use Faker\Calculator\Luhn;
 use Faker\Generator;
 use Faker\Provider\sv_SE\Person;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
     /** @var Generator */
     protected $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));

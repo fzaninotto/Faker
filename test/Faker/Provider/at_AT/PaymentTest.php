@@ -4,7 +4,7 @@ namespace Faker\Test\Provider\at_AT;
 
 use Faker\Generator;
 use Faker\Provider\at_AT\Payment;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class PaymentTest extends TestCase
 {
@@ -14,7 +14,7 @@ final class PaymentTest extends TestCase
      */
     private $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Payment($faker));
@@ -25,7 +25,7 @@ final class PaymentTest extends TestCase
     {
         $vat = $this->faker->vat();
         $unspacedVat = $this->faker->vat(false);
-        $this->assertRegExp('/^(AT U\d{8})$/', $vat);
-        $this->assertRegExp('/^(ATU\d{8})$/', $unspacedVat);
+        $this->assertMatchesRegularExpression('/^(AT U\d{8})$/', $vat);
+        $this->assertMatchesRegularExpression('/^(ATU\d{8})$/', $unspacedVat);
     }
 }

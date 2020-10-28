@@ -4,7 +4,7 @@ namespace Faker\Test\Provider\es_ES;
 
 use Faker\Generator;
 use Faker\Provider\es_ES\Payment;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class PaymentTest extends TestCase
 {
@@ -13,7 +13,7 @@ final class PaymentTest extends TestCase
      */
     private $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Payment($faker));

@@ -108,7 +108,7 @@ class Address extends \Faker\Provider\Address
     protected static $streetAddressFormats = array(
         '{{buildingNumber}} {{streetName}}',
     );
-    
+
     protected static $addressFormats = array(
         "{{streetAddress}}\n{{city}}, {{postcode}}",
     );
@@ -121,9 +121,9 @@ class Address extends \Faker\Provider\Address
         return static::randomElement(static::$cityPrefix);
     }
 
-     /**
-     * @example 'ถนน'
-     */
+    /**
+    * @example 'ถนน'
+    */
     public static function streetPrefix()
     {
         return static::randomElement(static::$streetPrefix);

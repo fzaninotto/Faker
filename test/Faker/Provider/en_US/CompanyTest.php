@@ -4,7 +4,7 @@ namespace Faker\Test\Provider\en_US;
 
 use Faker\Provider\en_US\Company;
 use Faker\Generator;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class CompanyTest extends TestCase
 {
@@ -14,7 +14,7 @@ final class CompanyTest extends TestCase
      */
     private $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Company($faker));
@@ -29,6 +29,6 @@ final class CompanyTest extends TestCase
         $number = $this->faker->ein;
 
         // should be in the format ##-#######, with a valid prefix
-        $this->assertRegExp('/^(0[1-6]||1[0-6]|2[0-7]|[35]\d|[468][0-8]|7[1-7]|9[0-58-9])-\d{7}$/', $number);
+        $this->assertMatchesRegularExpression('/^(0[1-6]||1[0-6]|2[0-7]|[35]\d|[468][0-8]|7[1-7]|9[0-58-9])-\d{7}$/', $number);
     }
 }

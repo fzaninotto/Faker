@@ -4,13 +4,13 @@ namespace Faker\Test\Provider\fr_FR;
 
 use Faker\Generator;
 use Faker\Provider\fr_FR\Person;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
     private $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
@@ -26,12 +26,12 @@ final class PersonTest extends TestCase
 	public function testNIRReturnsTheRightPattern()
     {
 		$nir = $this->faker->nir;
-		$this->assertRegExp("/^[12]\d{5}[0-9A-B]\d{8}$/", $nir);
+		$this->assertMatchesRegularExpression("/^[12]\d{5}[0-9A-B]\d{8}$/", $nir);
 	}
 
 	public function testNIRFormattedReturnsTheRightPattern()
     {
 		$nir = $this->faker->nir(null, true);
-		$this->assertRegExp("/^[12]\s\d{2}\s\d{2}\s\d{1}[0-9A-B]\s\d{3}\s\d{3}\s\d{2}$/", $nir);
+		$this->assertMatchesRegularExpression("/^[12]\s\d{2}\s\d{2}\s\d{1}[0-9A-B]\s\d{3}\s\d{3}\s\d{2}$/", $nir);
 	}
 }

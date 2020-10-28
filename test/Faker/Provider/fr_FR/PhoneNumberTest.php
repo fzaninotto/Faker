@@ -4,7 +4,7 @@ namespace Faker\Test\Provider\fr_FR;
 
 use Faker\Generator;
 use Faker\Provider\fr_FR\PhoneNumber;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class PhoneNumberTest extends TestCase
 {
@@ -13,7 +13,7 @@ final class PhoneNumberTest extends TestCase
      */
     private $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new PhoneNumber($faker));
@@ -23,36 +23,36 @@ final class PhoneNumberTest extends TestCase
     public function testMobileNumber()
     {
         $mobileNumber = $this->faker->mobileNumber();
-        $this->assertRegExp('/^(\+33 |\+33 \(0\)|0)(6|7)(?:(\s{1})?\d{2}){4}$/', $mobileNumber);
+        $this->assertMatchesRegularExpression('/^(\+33 |\+33 \(0\)|0)(6|7)(?:(\s{1})?\d{2}){4}$/', $mobileNumber);
     }
 
     public function testMobileNumber07Format()
     {
         $mobileNumberFormat = $this->faker->phoneNumber07();
-        $this->assertRegExp('/^([3-9]{1})\d(\d{2}){3}$/', $mobileNumberFormat);
+        $this->assertMatchesRegularExpression('/^([3-9]{1})\d(\d{2}){3}$/', $mobileNumberFormat);
     }
 
     public function testMobileNumber07WithSeparatorFormat()
     {
         $mobileNumberFormat = $this->faker->phoneNumber07WithSeparator();
-        $this->assertRegExp('/^([3-9]{1})\d( \d{2}){3}$/', $mobileNumberFormat);
+        $this->assertMatchesRegularExpression('/^([3-9]{1})\d( \d{2}){3}$/', $mobileNumberFormat);
     }
 
     public function testServiceNumber()
     {
         $serviceNumber = $this->faker->serviceNumber();
-        $this->assertRegExp('/^(\+33 |\+33 \(0\)|0)8(?:(\s{1})?\d{2}){4}$/', $serviceNumber);
+        $this->assertMatchesRegularExpression('/^(\+33 |\+33 \(0\)|0)8(?:(\s{1})?\d{2}){4}$/', $serviceNumber);
     }
 
     public function testServiceNumberFormat()
     {
         $serviceNumberFormat = $this->faker->phoneNumber08();
-        $this->assertRegExp('/^((0|1|2)\d{1}|9[^46])\d{6}$/', $serviceNumberFormat);
+        $this->assertMatchesRegularExpression('/^((0|1|2)\d{1}|9[^46])\d{6}$/', $serviceNumberFormat);
     }
 
     public function testServiceNumberWithSeparatorFormat()
     {
         $serviceNumberFormat = $this->faker->phoneNumber08WithSeparator();
-        $this->assertRegExp('/^((0|1|2)\d{1}|9[^46])( \d{2}){3}$/', $serviceNumberFormat);
+        $this->assertMatchesRegularExpression('/^((0|1|2)\d{1}|9[^46])( \d{2}){3}$/', $serviceNumberFormat);
     }
 }

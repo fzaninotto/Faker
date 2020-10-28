@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Faker\ORM\Spot;
 
 use Spot\Locator;

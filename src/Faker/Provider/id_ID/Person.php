@@ -231,10 +231,10 @@ class Person extends \Faker\Provider\Person
         '9171', '9201', '9202', '9203', '9204', '9205', '9206', '9207', '9208', '9209', '9210', '9211', '9212', '9271',
     );
 
-     /**
-     * For academic title
-     * @link http://id.wikipedia.org/wiki/Gelar_akademik
-     */
+    /**
+    * For academic title
+    * @link http://id.wikipedia.org/wiki/Gelar_akademik
+    */
     private static $suffix = array('S.Ked', 'S.Gz', 'S.Pt', 'S.IP', 'S.E.I',
         'S.E.', 'S.Kom', 'S.H.', 'S.T.', 'S.Pd', 'S.Psi', 'S.I.Kom',
         'S.Sos', 'S.Farm', 'M.M.', 'M.Kom.', 'M.TI.', 'M.Pd', 'M.Farm', 'M.Ak', );

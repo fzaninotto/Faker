@@ -4,7 +4,6 @@ namespace Faker\Provider\ka_GE;
 
 class Payment extends \Faker\Provider\Payment
 {
-
     /**
      * @see list of Georgian banks (2015-12-26), source: https://www.nbg.gov.ge/index.php?m=403
      */

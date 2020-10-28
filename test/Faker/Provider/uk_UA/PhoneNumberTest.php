@@ -4,7 +4,7 @@ namespace Faker\Test\Provider\uk_UA;
 
 use Faker\Generator;
 use Faker\Provider\uk_UA\PhoneNumber;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class PhoneNumberTest extends TestCase
 {
@@ -14,7 +14,7 @@ final class PhoneNumberTest extends TestCase
      */
     private $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new PhoneNumber($faker));

@@ -40,7 +40,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         "086########", //Markazi
         "087########", //Kurdistan
     );
-    
+
     protected static $mobileNumberPrefixes = array(
         '0910#######',//mci
         '0911#######',

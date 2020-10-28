@@ -5,7 +5,7 @@ namespace Faker\Test\Provider\cs_CZ;
 use Faker\Generator;
 use Faker\Provider\cs_CZ\Person;
 use Faker\Provider\Miscellaneous;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {

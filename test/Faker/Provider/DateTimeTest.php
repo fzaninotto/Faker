@@ -3,17 +3,17 @@
 namespace Faker\Test\Provider;
 
 use Faker\Provider\DateTime as DateTimeProvider;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class DateTimeTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->defaultTz = 'UTC';
         DateTimeProvider::setDefaultTimezone($this->defaultTz);
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         DateTimeProvider::setDefaultTimezone();
     }
@@ -71,7 +71,7 @@ final class DateTimeTest extends TestCase
     public function testUnixTime()
     {
         $timestamp = DateTimeProvider::unixTime();
-        $this->assertInternalType('int', $timestamp);
+        $this->assertIsInt($timestamp);
         $this->assertGreaterThanOrEqual(0, $timestamp);
         $this->assertLessThanOrEqual(time(), $timestamp);
     }
@@ -122,7 +122,7 @@ final class DateTimeTest extends TestCase
     {
         $date = DateTimeProvider::dateTimeThisYear();
         $this->assertInstanceOf('\DateTime', $date);
-        $this->assertGreaterThanOrEqual(new \DateTime('-1 year'), $date);
+        $this->assertGreaterThanOrEqual(new \DateTime('first day of january this year'), $date);
         $this->assertLessThanOrEqual(new \DateTime(), $date);
         $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
@@ -163,7 +163,7 @@ final class DateTimeTest extends TestCase
     public function testIso8601()
     {
         $date = DateTimeProvider::iso8601();
-        $this->assertRegExp('/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-Z](\d{4})?$/', $date);
+        $this->assertMatchesRegularExpression('/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-Z](\d{4})?$/', $date);
         $this->assertGreaterThanOrEqual(new \DateTime('@0'), new \DateTime($date));
         $this->assertLessThanOrEqual(new \DateTime(), new \DateTime($date));
     }
@@ -171,7 +171,7 @@ final class DateTimeTest extends TestCase
     public function testDate()
     {
         $date = DateTimeProvider::date();
-        $this->assertRegExp('/^\d{4}-\d{2}-\d{2}$/', $date);
+        $this->assertMatchesRegularExpression('/^\d{4}-\d{2}-\d{2}$/', $date);
         $this->assertGreaterThanOrEqual(new \DateTime('@0'), new \DateTime($date));
         $this->assertLessThanOrEqual(new \DateTime(), new \DateTime($date));
     }
@@ -179,7 +179,7 @@ final class DateTimeTest extends TestCase
     public function testTime()
     {
         $date = DateTimeProvider::time();
-        $this->assertRegExp('/^\d{2}:\d{2}:\d{2}$/', $date);
+        $this->assertMatchesRegularExpression('/^\d{2}:\d{2}:\d{2}$/', $date);
     }
 
     /**
@@ -209,7 +209,7 @@ final class DateTimeTest extends TestCase
      *
      * @dataProvider providerDateTimeInInterval
      */
-    public function testDateTimeInInterval($start, $interval = "+5 days", $isInFuture)
+    public function testDateTimeInInterval($start, $interval, $isInFuture)
     {
         $date = DateTimeProvider::dateTimeInInterval($start, $interval);
         $this->assertInstanceOf('\DateTime', $date);

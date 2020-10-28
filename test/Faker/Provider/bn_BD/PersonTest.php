@@ -4,11 +4,11 @@ namespace Faker\Test\Provider\bn_BD;
 
 use Faker\Generator;
 use Faker\Provider\bn_BD\Person;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));

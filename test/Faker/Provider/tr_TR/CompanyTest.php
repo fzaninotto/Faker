@@ -4,7 +4,7 @@ namespace Faker\Test\Provider\tr_TR;
 
 use Faker\Provider\tr_TR\Company;
 use Faker\Generator;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class CompanyTest extends TestCase
 {
@@ -14,7 +14,7 @@ final class CompanyTest extends TestCase
      */
     private $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Company($faker));
