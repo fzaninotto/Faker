@@ -4,7 +4,8 @@ on:
   pull_request:
   push:
     branches:
-      - main
+      - "main"
+      - "[0-9].*"
 
 name: "Continuous Integration"
 
