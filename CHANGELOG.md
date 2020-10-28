@@ -5,7 +5,7 @@
 - Support PHP 7.1-8.0
 - Fix typo in de_DE Company Provider
 - Fix dateTimeThisYear method
-- Fix typo in de_DE jobTitleFormat 
+- Fix typo in de_DE jobTitleFormat
 - Fix IBAN generation for CR
 - Fix typos in greek first names
 - Fix US job title typo
@@ -15,4 +15,4 @@
 
 ## 2020-10-27, v1.9.1
 
-- Initial version
+- Initial version. Same as `fzaninotto/Faker:v1.9.1`.
