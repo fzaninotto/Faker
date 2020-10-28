@@ -1,7 +1,10 @@
 
 on:
   pull_request: ~
-  push: ~
+  push:
+    branches:
+      - "main"
+      - "[0-9].*"
 
 name: Static analysis
 
