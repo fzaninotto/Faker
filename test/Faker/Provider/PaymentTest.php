@@ -27,11 +27,11 @@ final class PaymentTest extends TestCase
 
     public function localeDataProvider()
     {
-        $providerPath = realpath(__DIR__ . '/../../../src/Faker/Provider');
-        $localePaths = array_filter(glob($providerPath . '/*', GLOB_ONLYDIR));
+        $providerPath = realpath(__DIR__.'/../../../src/Faker/Provider');
+        $localePaths = array_filter(glob($providerPath.'/*', GLOB_ONLYDIR));
         foreach ($localePaths as $path) {
             $parts = explode('/', $path);
-            $locales[] = array($parts[count($parts) - 1]);
+            $locales[] = [$parts[count($parts) - 1]];
         }
 
         return $locales;
@@ -39,7 +39,7 @@ final class PaymentTest extends TestCase
 
     public function loadLocalProviders($locale)
     {
-        $providerPath = realpath(__DIR__ . '/../../../src/Faker/Provider');
+        $providerPath = realpath(__DIR__.'/../../../src/Faker/Provider');
         if (file_exists($providerPath.'/'.$locale.'/Payment.php')) {
             $payment = "\\Faker\\Provider\\$locale\\Payment";
             $this->faker->addProvider(new $payment($this->faker));
@@ -48,18 +48,18 @@ final class PaymentTest extends TestCase
 
     public function testCreditCardTypeReturnsValidVendorName()
     {
-        $this->assertContains($this->faker->creditCardType, array('Visa', 'Visa Retired', 'MasterCard', 'American Express', 'Discover Card', 'JCB'));
+        $this->assertContains($this->faker->creditCardType, ['Visa', 'Visa Retired', 'MasterCard', 'American Express', 'Discover Card', 'JCB']);
     }
 
     public function creditCardNumberProvider()
     {
-        return array(
-            array('Discover Card', '/^6011\d{12}$/'),
-            array('Visa', '/^4\d{15}$/'),
-            array('Visa Retired', '/^4\d{12}$/'),
-            array('MasterCard', '/^(5[1-5]|2[2-7])\d{14}$/'),
-            array('JCB', '/^35(28|89)\d{12,15}$/')
-        );
+        return [
+            ['Discover Card', '/^6011\d{12}$/'],
+            ['Visa', '/^4\d{15}$/'],
+            ['Visa Retired', '/^4\d{12}$/'],
+            ['MasterCard', '/^(5[1-5]|2[2-7])\d{14}$/'],
+            ['JCB', '/^35(28|89)\d{12,15}$/'],
+        ];
     }
 
     /**
@@ -88,10 +88,10 @@ final class PaymentTest extends TestCase
     {
         $cardDetails = $this->faker->creditCardDetails;
         $this->assertEquals(count($cardDetails), 4);
-        $this->assertEquals(array('type', 'number', 'name', 'expirationDate'), array_keys($cardDetails));
+        $this->assertEquals(['type', 'number', 'name', 'expirationDate'], array_keys($cardDetails));
     }
 
-    protected $ibanFormats = array(
+    protected $ibanFormats = [
         'AD' => '/^AD\d{2}\d{4}\d{4}[A-Z0-9]{12}$/',
         'AE' => '/^AE\d{2}\d{3}\d{16}$/',
         'AL' => '/^AL\d{2}\d{8}[A-Z0-9]{16}$/',
@@ -154,7 +154,7 @@ final class PaymentTest extends TestCase
         'TN' => '/^TN\d{2}\d{2}\d{3}\d{13}\d{2}$/',
         'TR' => '/^TR\d{2}\d{5}\d{1}[A-Z0-9]{16}$/',
         'VG' => '/^VG\d{2}[A-Z]{4}\d{16}$/',
-    );
+    ];
 
     /**
      * @dataProvider localeDataProvider
@@ -176,6 +176,7 @@ final class PaymentTest extends TestCase
         } catch (\InvalidArgumentException $e) {
             // Not implemented, nothing to test
             $this->markTestSkipped("bankAccountNumber not implemented for $locale");
+
             return;
         }
 
@@ -188,12 +189,14 @@ final class PaymentTest extends TestCase
 
     public function ibanFormatProvider()
     {
-        $return = array();
+        $return = [];
         foreach ($this->ibanFormats as $countryCode => $regex) {
-            $return[] = array($countryCode, $regex);
+            $return[] = [$countryCode, $regex];
         }
+
         return $return;
     }
+
     /**
      * @dataProvider ibanFormatProvider
      */
