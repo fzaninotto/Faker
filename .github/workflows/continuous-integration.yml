@@ -4,36 +4,49 @@ on:
   pull_request:
   push:
 
-name: "Continuous Integration"
+name: Continuous Integration
 
 jobs:
   tests:
-    name: "Tests"
-
-    runs-on: "ubuntu-latest"
+    name: CI on ${{ matrix.operating-system }} with PHP ${{ matrix.php-version }}
 
     strategy:
       matrix:
-        php-version:
-          - "7.1"
-          - "7.2"
-          - "7.3"
-          - "7.4"
-          - "8.0"
+        operating-system: ['ubuntu-latest']
+        php-version: ['7.1', '7.2', '7.3', '7.4', '8.0']
+        include:
+          - { operating-system: 'windows-latest', php-version: '7.1' }
+
+    runs-on: ${{ matrix.operating-system }}
 
     steps:
-      - name: "Checkout"
-        uses: "actions/checkout@v2"
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: "Install PHP with extensions"
-        uses: "shivammathur/setup-php@v2"
+      - name: Install PHP with extensions
+        uses: shivammathur/setup-php@v2
         with:
-          coverage: "none"
-          extensions: "intl"
-          php-version: "${{ matrix.php-version }}"
+          extensions: intl
+          php-version: ${{ matrix.php-version }}
 
-      - name: "Install dependencies with composer"
-        run: "composer update --no-interaction --no-progress"
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
 
-      - name: "Run tests with phpunit/phpunit"
-        run: "vendor/bin/phpunit"
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: composer-${{ runner.os }}-${{ matrix.php-version }}-${{ hashFiles('composer.*') }}
+          restore-keys: |
+            composer-${{ runner.os }}-${{ matrix.php-version }}-
+            composer-${{ runner.os }}-
+            composer-
+
+      - name: Install dependencies with Composer
+        run: |
+          composer update --no-interaction --no-progress
+
+      - name: Run tests with PHPUnit
+        run: |
+          vendor/bin/phpunit
