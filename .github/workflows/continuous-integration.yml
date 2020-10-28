@@ -12,10 +12,17 @@ jobs:
 
     strategy:
       matrix:
-        operating-system: ['ubuntu-latest']
-        php-version: ['7.1', '7.2', '7.3', '7.4', '8.0']
+        operating-system:
+          - 'ubuntu-latest'
+        php-version: 
+          - '7.1'
+          - '7.2'
+          - '7.3'
+          - '7.4'
+          - '8.0'
         include:
-          - { operating-system: 'windows-latest', php-version: '7.1' }
+          - operating-system: 'windows-latest'
+            php-version: '7.1'
 
     runs-on: ${{ matrix.operating-system }}
 
