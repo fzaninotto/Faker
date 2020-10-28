@@ -887,7 +887,6 @@ EOT;
                     // no break
                 case $ord > 191:
                     $temp .= $chars[++$i];
-                    // no break
             }
 
             $encoding[] = $temp;

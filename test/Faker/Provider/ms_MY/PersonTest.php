@@ -4,7 +4,7 @@ namespace Faker\Test\Provider\ms_MY;
 
 use Faker\Generator;
 use Faker\Provider\ms_MY\Person;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
@@ -13,7 +13,7 @@ final class PersonTest extends TestCase
      */
     private $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
@@ -29,22 +29,22 @@ final class PersonTest extends TestCase
 
         $yy = substr($myKadNumber, 0, 2);
         //match any year from 00-99
-        $this->assertRegExp("/^[0-9]{2}$/", $yy);
+        $this->assertMatchesRegularExpression("/^[0-9]{2}$/", $yy);
 
         $mm = substr($myKadNumber, 2, 2);
         //match any month from 01-12
-        $this->assertRegExp("/^0[1-9]|1[0-2]$/", $mm);
+        $this->assertMatchesRegularExpression("/^0[1-9]|1[0-2]$/", $mm);
 
         $dd = substr($myKadNumber, 4, 2);
         //match any date from 01-31
-        $this->assertRegExp("/^0[1-9]|1[0-9]|2[0-9]|3[0-1]$/", $dd);
+        $this->assertMatchesRegularExpression("/^0[1-9]|1[0-9]|2[0-9]|3[0-1]$/", $dd);
 
         $pb = substr($myKadNumber, 6, 2);
         //match any valid place of birth code from 01-59 except 17-20
-        $this->assertRegExp("/^(0[1-9]|1[0-6])|(2[1-9]|3[0-9]|4[0-9]|5[0-9])$/", $pb);
+        $this->assertMatchesRegularExpression("/^(0[1-9]|1[0-6])|(2[1-9]|3[0-9]|4[0-9]|5[0-9])$/", $pb);
 
         $nnnn = substr($myKadNumber, 8, 4);
         //match any number from 0000-9999
-        $this->assertRegExp("/^[0-9]{4}$/", $nnnn);
+        $this->assertMatchesRegularExpression("/^[0-9]{4}$/", $nnnn);
     }
 }

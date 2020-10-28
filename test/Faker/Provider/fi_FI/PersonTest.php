@@ -5,14 +5,14 @@ namespace Faker\Test\Provider\fi_FI;
 use Faker\Generator;
 use Faker\Provider\DateTime;
 use Faker\Provider\fi_FI\Person;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
     /** @var Generator */
     protected $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new DateTime($faker));
@@ -50,7 +50,7 @@ final class PersonTest extends TestCase
             for ($i = 0; $i < 10; $i++) {
                 $birthdate = $this->faker->dateTimeBetween('1800-01-01 00:00:00', '1899-12-31 23:59:59');
                 $pin = $this->faker->personalIdentityNumber($birthdate, NULL, true);
-                $this->assertRegExp('/^[0-9]{6}\+[0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
+                $this->assertMatchesRegularExpression('/^[0-9]{6}\+[0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
             }
         } else { // timestamp limit for 32-bit computer
             $min="1902";
@@ -59,12 +59,12 @@ final class PersonTest extends TestCase
         for ($i = 0; $i < 10; $i++) {
             $birthdate = $this->faker->dateTimeBetween("$min-01-01 00:00:00", '1999-12-31 23:59:59');
             $pin = $this->faker->personalIdentityNumber($birthdate);
-            $this->assertRegExp('/^[0-9]{6}-[0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
+            $this->assertMatchesRegularExpression('/^[0-9]{6}-[0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
         }
         for ($i = 0; $i < 10; $i++) {
             $birthdate = $this->faker->dateTimeBetween('2000-01-01 00:00:00', "$max-12-31 23:59:59");
             $pin = $this->faker->personalIdentityNumber($birthdate);
-            $this->assertRegExp('/^[0-9]{6}A[0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
+            $this->assertMatchesRegularExpression('/^[0-9]{6}A[0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
         }
     }
 

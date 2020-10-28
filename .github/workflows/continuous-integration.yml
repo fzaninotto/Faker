@@ -4,141 +4,59 @@ on:
   pull_request:
   push:
     branches:
-      - "master"
-    tags:
-      - "**"
+      - "main"
+      - "[0-9].*"
 
-name: "Continuous Integration"
+name: Continuous Integration
 
 jobs:
-  coding-standards:
-    name: "Coding Standards"
-
-    runs-on: "ubuntu-latest"
-
-    strategy:
-      matrix:
-        php-version:
-          - "5.3"
-
-    steps:
-      - name: "Checkout"
-        uses: "actions/checkout@v2"
-
-      - name: "Install PHP with extensions"
-        uses: "shivammathur/setup-php@v2"
-        with:
-          coverage: "none"
-          extensions: "intl"
-          php-version: "${{ matrix.php-version }}"
-
-      - name: "Determine composer cache directory"
-        id: "determine-composer-cache-directory"
-        run: "echo \"::set-output name=directory::$(composer config cache-dir)\""
-
-      - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v1"
-        with:
-          path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
-          key: "php-${{ matrix.php-version }}-composer-${{ hashFiles('**/composer.json') }}"
-          restore-keys: "php-${{ matrix.php-version }}-composer-"
-
-      - name: "Install dependencies with composer"
-        run: "composer install --no-interaction --no-progress --no-suggest"
-
-      - name: "Run squizlabs/php_codesniffer"
-        run: "vendor/bin/phpcs --standard=PSR2 src -n"
-
   tests:
-    name: "Tests"
-
-    runs-on: "ubuntu-latest"
+    name: CI on ${{ matrix.operating-system }} with PHP ${{ matrix.php-version }}
 
     strategy:
       matrix:
-        php-version:
-          - "5.3"
-          - "5.4"
-          - "5.5"
-          - "5.6"
-          - "7.0"
-          - "7.1"
-          - "7.2"
-          - "7.3"
-          - "7.4"
+        operating-system:
+          - 'ubuntu-latest'
+        php-version: 
+          - '7.1'
+          - '7.2'
+          - '7.3'
+          - '7.4'
+          - '8.0'
+        include:
+          - operating-system: 'windows-latest'
+            php-version: '7.1'
+
+    runs-on: ${{ matrix.operating-system }}
 
     steps:
-      - name: "Checkout"
-        uses: "actions/checkout@v2"
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: "Install PHP with extensions"
-        uses: "shivammathur/setup-php@v2"
+      - name: Install PHP with extensions
+        uses: shivammathur/setup-php@v2
         with:
-          coverage: "none"
-          extensions: "intl"
-          ini-values: "memory_limit=-1"
-          php-version: "${{ matrix.php-version }}"
+          extensions: intl
+          php-version: ${{ matrix.php-version }}
 
-      - name: "Determine composer cache directory"
-        id: "determine-composer-cache-directory"
-        run: "echo \"::set-output name=directory::$(composer config cache-dir)\""
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
 
-      - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v1"
+      - name: Cache dependencies
+        uses: actions/cache@v2
         with:
-          path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
-          key: "php-${{ matrix.php-version }}-composer-${{ hashFiles('**/composer.json') }}"
-          restore-keys: "php-${{ matrix.php-version }}-composer-"
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: composer-${{ runner.os }}-${{ matrix.php-version }}-${{ hashFiles('composer.*') }}
+          restore-keys: |
+            composer-${{ runner.os }}-${{ matrix.php-version }}-
+            composer-${{ runner.os }}-
+            composer-
 
-      - name: "Install dependencies with composer"
-        run: "composer install --no-interaction --no-progress --no-suggest"
+      - name: Install dependencies with Composer
+        run: |
+          composer update --no-interaction --no-progress
 
-      - name: "Run tests with phpunit/phpunit"
-        run: "vendor/bin/phpunit"
-
-  code-coverage:
-    name: "Code Coverage"
-
-    runs-on: "ubuntu-latest"
-
-    strategy:
-      matrix:
-        php-version:
-          - "7.4"
-
-    steps:
-      - name: "Checkout"
-        uses: "actions/checkout@v2"
-
-      - name: "Install PHP with extensions"
-        uses: "shivammathur/setup-php@v2"
-        with:
-          coverage: "xdebug"
-          extensions: "intl"
-          ini-values: "memory_limit=-1"
-          php-version: "${{ matrix.php-version }}"
-
-      - name: "Determine composer cache directory"
-        id: "determine-composer-cache-directory"
-        run: "echo \"::set-output name=directory::$(composer config cache-dir)\""
-
-      - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v1"
-        with:
-          path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
-          key: "php-${{ matrix.php-version }}-composer-${{ hashFiles('**/composer.json') }}"
-          restore-keys: "php-${{ matrix.php-version }}-composer-"
-
-      - name: "Install dependencies with composer"
-        run: "composer install --no-interaction --no-progress --no-suggest"
-
-      - name: "Create build directory"
-        run: "mkdir -p .build/logs"
-
-      - name: "Collect code coverage with Xdebug and phpunit/phpunit"
-        run: "vendor/bin/phpunit --coverage-clover=.build/logs/clover.xml"
-
-      - name: "Send code coverage report to Codecov.io"
-        env:
-          CODECOV_TOKEN: "${{ secrets.CODECOV_TOKEN }}"
-        run: "bash <(curl -s https://codecov.io/bash)"
+      - name: Run tests with PHPUnit
+        run: |
+          vendor/bin/phpunit

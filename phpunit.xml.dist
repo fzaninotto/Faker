@@ -7,16 +7,16 @@
     colors="true"
     columns="max"
     verbose="true"
+    cacheResultFile=".build/.phpunit.result.cache"
 >
     <testsuites>
         <testsuite name="Faker Test Suite">
-            <directory>./test/Faker/</directory>
+            <directory suffix="Test.php">./test/Faker</directory>
         </testsuite>
     </testsuites>
-
-    <filter>
-        <whitelist addUncoveredFilesFromWhitelist="true" processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">src/</directory>
-        </whitelist>
-    </filter>
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">./src/Faker</directory>
+        </include>
+    </coverage>
 </phpunit>

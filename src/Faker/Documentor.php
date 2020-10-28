@@ -36,20 +36,20 @@ class Documentor
                 }
                 $parameters = array();
                 foreach ($reflmethod->getParameters() as $reflparameter) {
-                    $parameter = '$'. $reflparameter->getName();
+                    $parameter = '$' . $reflparameter->getName();
                     if ($reflparameter->isDefaultValueAvailable()) {
                         $parameter .= ' = ' . var_export($reflparameter->getDefaultValue(), true);
                     }
                     $parameters []= $parameter;
                 }
-                $parameters = $parameters ? '('. join(', ', $parameters) . ')' : '';
+                $parameters = $parameters ? '(' . join(', ', $parameters) . ')' : '';
                 try {
                     $example = $this->generator->format($methodName);
                 } catch (\InvalidArgumentException $e) {
                     $example = '';
                 }
                 if (is_array($example)) {
-                    $example = "array('". join("', '", $example) . "')";
+                    $example = "array('" . join("', '", $example) . "')";
                 } elseif ($example instanceof \DateTime) {
                     $example = "DateTime('" . $example->format('Y-m-d H:i:s') . "')";
                 } elseif ($example instanceof Generator || $example instanceof UniqueGenerator) { // modifier

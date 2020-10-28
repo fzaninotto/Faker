@@ -4,7 +4,7 @@ namespace Faker\Test\Provider\en_US;
 
 use Faker\Provider\en_US\Person;
 use Faker\Generator;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
@@ -14,7 +14,7 @@ final class PersonTest extends TestCase
      */
     private $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
@@ -27,7 +27,7 @@ final class PersonTest extends TestCase
             $number = $this->faker->ssn;
 
             // should be in the format ###-##-####
-            $this->assertRegExp('/^[0-9]{3}-[0-9]{2}-[0-9]{4}$/', $number);
+            $this->assertMatchesRegularExpression('/^[0-9]{3}-[0-9]{2}-[0-9]{4}$/', $number);
 
             $parts = explode("-", $number);
 

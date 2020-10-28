@@ -4,7 +4,7 @@ namespace Faker\Test\Provider\ja_JP;
 
 use Faker\Generator;
 use Faker\Provider\ja_JP\Internet;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class InternetTest extends TestCase
 {

@@ -3,8 +3,7 @@
 namespace Faker\Provider\en_AU;
 
 use Faker\Generator;
-use Faker\Provider\en_AU\Address;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class AddressTest extends TestCase
 {
@@ -14,7 +13,7 @@ final class AddressTest extends TestCase
    */
   private $faker;
 
-  protected function setUp()
+  protected function setUp(): void
   {
     $faker = new Generator();
     $faker->addProvider(new Address($faker));
@@ -25,24 +24,24 @@ final class AddressTest extends TestCase
   {
     $cityPrefix = $this->faker->cityPrefix();
     $this->assertNotEmpty($cityPrefix);
-    $this->assertInternalType('string', $cityPrefix);
-    $this->assertRegExp('/[A-Z][a-z]+/', $cityPrefix);
+    $this->assertIsString($cityPrefix);
+    $this->assertMatchesRegularExpression('/[A-Z][a-z]+/', $cityPrefix);
   }
 
   public function testStreetSuffix()
   {
     $streetSuffix = $this->faker->streetSuffix();
     $this->assertNotEmpty($streetSuffix);
-    $this->assertInternalType('string', $streetSuffix);
-    $this->assertRegExp('/[A-Z][a-z]+/', $streetSuffix);
+    $this->assertIsString($streetSuffix);
+    $this->assertMatchesRegularExpression('/[A-Z][a-z]+/', $streetSuffix);
   }
 
   public function testState()
   {
     $state = $this->faker->state();
     $this->assertNotEmpty($state);
-    $this->assertInternalType('string', $state);
-    $this->assertRegExp('/[A-Z][a-z]+/', $state);
+    $this->assertIsString($state);
+    $this->assertMatchesRegularExpression('/[A-Z][a-z]+/', $state);
   }
 }
 

@@ -14,7 +14,7 @@ class Address extends \Faker\Provider\Address
 
     protected static $buildingNumber = array('##');
     protected static $postcode = array('######');
-    
+
     /**
      * @link https://ru.wikipedia.org/wiki/Общероссийский_классификатор_стран_мира#Список_стран_согласно_Классификатору
      */

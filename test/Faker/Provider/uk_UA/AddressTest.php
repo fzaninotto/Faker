@@ -4,7 +4,7 @@ namespace Faker\Test\Provider\uk_UA;
 
 use Faker\Generator;
 use Faker\Provider\uk_UA\Address;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class AddressTest extends TestCase
 {
@@ -14,7 +14,7 @@ final class AddressTest extends TestCase
      */
     private $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Address($faker));
@@ -26,7 +26,7 @@ final class AddressTest extends TestCase
         $main = '[0-9]{5}';
         $pattern = "/^($main)|($main-[0-9]{3})+$/";
         $postcode = $this->faker->postcode;
-        $this->assertRegExp($pattern, $postcode, 'Post code ' . $postcode . ' is wrong!');
+        $this->assertMatchesRegularExpression($pattern, $postcode, 'Post code ' . $postcode . ' is wrong!');
     }
 
     public function testEmptySuffixes()

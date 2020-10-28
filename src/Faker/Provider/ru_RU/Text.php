@@ -10,7 +10,7 @@ class Text extends \Faker\Provider\Text
 
         return iconv('UTF-8', 'UTF-8//IGNORE', $realText);
     }
-    
+
     /**
      * From ru.wikisource.org
      *

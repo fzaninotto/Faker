@@ -4,7 +4,7 @@ namespace Faker\Test\Provider\ru_RU;
 
 use Faker\Generator;
 use Faker\Provider\ru_RU\Company;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class CompanyTest extends TestCase
 {
@@ -13,7 +13,7 @@ final class CompanyTest extends TestCase
      */
     private $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Company($faker));
@@ -22,14 +22,14 @@ final class CompanyTest extends TestCase
 
     public function testINN()
     {
-        $this->assertRegExp('/^[0-9]{10}$/', $this->faker->inn);
+        $this->assertMatchesRegularExpression('/^[0-9]{10}$/', $this->faker->inn);
         $this->assertEquals("77", substr($this->faker->inn("77"), 0, 2));
         $this->assertEquals("02", substr($this->faker->inn(2), 0, 2));
     }
 
     public function testKPP()
     {
-        $this->assertRegExp('/^[0-9]{9}$/', $this->faker->kpp);
+        $this->assertMatchesRegularExpression('/^[0-9]{9}$/', $this->faker->kpp);
         $this->assertEquals("01001", substr($this->faker->kpp, -5, 5));
         $inn = $this->faker->inn;
         $this->assertEquals(substr($inn, 0, 4), substr($this->faker->kpp($inn), 0, 4));

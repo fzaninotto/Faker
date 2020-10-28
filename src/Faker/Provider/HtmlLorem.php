@@ -7,29 +7,28 @@ use Faker\UniqueGenerator;
 
 class HtmlLorem extends Base
 {
-
-    const HTML_TAG = "html";
-    const HEAD_TAG = "head";
-    const BODY_TAG = "body";
-    const DIV_TAG = "div";
-    const P_TAG = "p";
-    const A_TAG = "a";
-    const SPAN_TAG = "span";
-    const TABLE_TAG = "table";
-    const THEAD_TAG = "thead";
-    const TBODY_TAG = "tbody";
-    const TR_TAG = "tr";
-    const TD_TAG = "td";
-    const TH_TAG = "th";
-    const UL_TAG = "ul";
-    const LI_TAG = "li";
-    const H_TAG = "h";
-    const B_TAG = "b";
-    const I_TAG = "i";
-    const TITLE_TAG = "title";
-    const FORM_TAG = "form";
-    const INPUT_TAG = "input";
-    const LABEL_TAG = "label";
+    public const HTML_TAG = "html";
+    public const HEAD_TAG = "head";
+    public const BODY_TAG = "body";
+    public const DIV_TAG = "div";
+    public const P_TAG = "p";
+    public const A_TAG = "a";
+    public const SPAN_TAG = "span";
+    public const TABLE_TAG = "table";
+    public const THEAD_TAG = "thead";
+    public const TBODY_TAG = "tbody";
+    public const TR_TAG = "tr";
+    public const TD_TAG = "td";
+    public const TH_TAG = "th";
+    public const UL_TAG = "ul";
+    public const LI_TAG = "li";
+    public const H_TAG = "h";
+    public const B_TAG = "b";
+    public const I_TAG = "i";
+    public const TITLE_TAG = "title";
+    public const FORM_TAG = "form";
+    public const INPUT_TAG = "input";
+    public const LABEL_TAG = "label";
 
     private $idGenerator;
 
@@ -136,7 +135,6 @@ class HtmlLorem extends Base
 
     private function addRandomP(\DOMElement $element, $maxLength = 10)
     {
-
         $node = $element->ownerDocument->createElement(static::P_TAG);
         $node->textContent = $this->generator->sentence(mt_rand(1, $maxLength));
         $element->appendChild($node);
@@ -200,7 +198,6 @@ class HtmlLorem extends Base
 
     private function addLoginForm(\DOMElement $element)
     {
-
         $textInput = $element->ownerDocument->createElement(static::INPUT_TAG);
         $textInput->setAttribute("type", "text");
         $textInput->setAttribute("id", "username");

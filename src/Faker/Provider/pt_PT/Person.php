@@ -60,7 +60,7 @@ class Person extends \Faker\Provider\Person
         $firstEightDigits = static::numerify(static::randomElement(static::$firstEightDigitsFormat));
         $lastDigit = static::dvCalcMod11($firstEightDigits);
 
-        return $firstEightDigits.$lastDigit;
+        return $firstEightDigits . $lastDigit;
     }
 
     /**

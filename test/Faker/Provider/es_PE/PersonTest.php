@@ -4,7 +4,7 @@ namespace Faker\Test\Provider\es_PE;
 
 use Faker\Generator;
 use Faker\Provider\es_PE\Person;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
@@ -13,7 +13,7 @@ final class PersonTest extends TestCase
      */
     private $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->seed(1);
@@ -24,6 +24,6 @@ final class PersonTest extends TestCase
     public function testDNI()
     {
         $dni = $this->faker->dni;
-        $this->assertRegExp('/\A[0-9]{8}\Z/', $dni);
+        $this->assertMatchesRegularExpression('/\A[0-9]{8}\Z/', $dni);
     }
 }

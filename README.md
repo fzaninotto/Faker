@@ -1,15 +1,14 @@
 # Faker
 
-[![Monthly Downloads](https://poser.pugx.org/fzaninotto/faker/d/monthly.png)](https://packagist.org/packages/fzaninotto/faker)
-[![Continuous Integration](https://github.com/fzaninotto/Faker/workflows/Continuous%20Integration/badge.svg?branch=master)](https://github.com/fzaninotto/Faker/actions)
-[![codecov](https://codecov.io/gh/fzaninotto/Faker/branch/master/graph/badge.svg)](https://codecov.io/gh/fzaninotto/Faker)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/eceb78a9-38d4-4ad5-8b6b-b52f323e3549/mini.png)](https://insight.sensiolabs.com/projects/eceb78a9-38d4-4ad5-8b6b-b52f323e3549)
+[![Monthly Downloads](https://poser.pugx.org/fakerphp/faker/d/monthly.png)](https://packagist.org/packages/fakerphp/faker)
+[![Continuous Integration](https://github.com/FakerPHP/Faker/workflows/Continuous%20Integration/badge.svg?branch=main)](https://github.com/FakerPHP/Faker/actions)
+[![StyleCI](https://github.styleci.io/repos/307658860/shield?branch=main&style=plastic)](https://github.styleci.io/repos/307658860?branch=main)
 
 Faker is a PHP library that generates fake data for you. Whether you need to bootstrap your database, create good-looking XML documents, fill-in your persistence to stress test it, or anonymize data taken from a production service, Faker is for you.
 
 Faker is heavily inspired by Perl's [Data::Faker](http://search.cpan.org/~jasonk/Data-Faker-0.07/), and by ruby's [Faker](https://rubygems.org/gems/faker).
 
-Faker requires PHP >= 5.3.3.
+Faker requires PHP >= 7.1.
 
 
 # Table of Contents
@@ -50,7 +49,7 @@ Faker requires PHP >= 5.3.3.
 ## Installation
 
 ```sh
-composer require fzaninotto/faker
+composer require fakerphp/faker
 ```
 
 ## Basic Usage
@@ -283,16 +282,17 @@ Methods accepting a `$timezone` argument default to `date_default_timezone_get()
 
 ### `Faker\Provider\Image`
 
-    // Image generation provided by LoremPixel (http://lorempixel.com/)
-    imageUrl($width = 640, $height = 480) // 'http://lorempixel.com/640/480/'
-    imageUrl($width, $height, 'cats')     // 'http://lorempixel.com/800/600/cats/'
-    imageUrl($width, $height, 'cats', true, 'Faker') // 'http://lorempixel.com/800/400/cats/Faker'
-    imageUrl($width, $height, 'cats', true, 'Faker', true) // 'http://lorempixel.com/gray/800/400/cats/Faker/' Monochrome image
+    // Image generation provided by Placeholder (https://placeholder.com/)
+    imageUrl($width = 640, $height = 480) // 'https://via.placeholder.com/640x480.png/000044?text=inventore'
+    imageUrl($width, $height, 'cats')     // 'https://via.placeholder.com/640x480.png/0022ff?text=cats+quia'
+    imageUrl($width, $height, 'cats', true, 'Faker') // 'https://via.placeholder.com/640x480.png/00ddcc?text=cats+Faker+labore'
+    imageUrl($width, $height, 'cats', true, 'Faker', true) // 'https://via.placeholder.com/640x480.png/CCCCCC?text=cats+Faker+sit' Monochrome image
     image($dir = '/tmp', $width = 640, $height = 480) // '/tmp/13b73edae8443990be1aa8f1a483bc27.jpg'
     image($dir, $width, $height, 'cats')  // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat!
     image($dir, $width, $height, 'cats', false) // '13b73edae8443990be1aa8f1a483bc27.jpg' it's a filename without path
     image($dir, $width, $height, 'cats', true, false) // it's a no randomize images (default: `true`)
     image($dir, $width, $height, 'cats', true, true, 'Faker') // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat with 'Faker' text. Default, `null`.
+
 
 ### `Faker\Provider\Uuid`
 
@@ -387,7 +387,7 @@ print_r($values); // [0, 4, 8, 4, 2, 6, 0, 8, 8, 6]
 // just like unique(), valid() throws an overflow exception when it can't generate a valid value
 $values = array();
 try {
-  $faker->valid($evenValidator)->randomElement(1, 3, 5, 7, 9);
+  $faker->valid($evenValidator)->randomElement([1, 3, 5, 7, 9]);
 } catch (\OverflowException $e) {
   echo "Can't pick an even number in that set!";
 }
@@ -421,7 +421,7 @@ for ($i = 0; $i < 10; $i++) {
   // Geneviève Marchal
 ```
 
-You can check available Faker locales in the source code, [under the `Provider` directory](https://github.com/fzaninotto/Faker/tree/master/src/Faker/Provider). The localization of Faker is an ongoing process, for which we need your help. Don't hesitate to create localized providers to your own locale and submit a PR!
+You can check available Faker locales in the source code, [under the `Provider` directory](https://github.com/FakerPHP/Faker/tree/1.10/src/Faker/Provider). The localization of Faker is an ongoing process, for which we need your help. Don't hesitate to create localized providers to your own locale and submit a PR!
 
 ## Populating Entities Using an ORM or an ODM
 

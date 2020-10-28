@@ -1,4 +1,5 @@
 <?php
+
 namespace Faker\Provider\ms_MY;
 
 use Faker\Provider\DateTime;
@@ -157,7 +158,7 @@ class Person extends \Faker\Provider\Person
         'Ya\'accob','Yaacob','Yaakob','Yaacup','Yacob','Yahaya','Yahya','Yajid','Yamani','Yanis','Yaqin','Yasin','Yazid','Yunus','Yusaini','Yusihasbi','Yusni','Yusof','Yusoff','Yusri','Yusrin','Yusseri','Yussof','Yusuf','Yuszelan','Yuzli',
         'Zafran','Zahani','Zahar','Zahareman','Zahari','Zahin','Zaid','Zaidi','Zailan','Zailani','Zaimi','Zaiminuddin','Zain','Zainal','Zaini','Zainorazman','Zainordin','Zainuddin','Zainudin','Zainul-\'alam','Zainun','Zainuri','Zairi','Zairulaizam','Zakaria','Zaki','Zakir','Zakuan','Zakwan','Zam','Zamanhuri','Zamani','Zamhari','Zamran','Zamre','Zamree','Zamri','Zamzuri','Zani','Zar\'ai','Zawawi','Zawi','Zazlan','Zehnei','Zhafran','Zihni','Zikry','Zin','Zizi','Zol','Zolkafeli','Zolkifli','Zuanuar','Zubair','Zubir','Zufayri','Zuhaili','Zuki','Zukri','Zulamin','Zulfadhli','Zulfikar','Zulfikri','Zulhazril','Zulhelmi','Zulkafli','Zulkanine','Zulkarnaen','Zulkefle','Zulkefli','Zulkernain','Zulkhairie','Zulkifli','Zulqurnainin','Zumali','Zuraidi','Zuri','Zuwairi',
     );
-    
+
     /**
      * Note: The empty elements are for names without the title, chances increase by number of empty elements.
      *

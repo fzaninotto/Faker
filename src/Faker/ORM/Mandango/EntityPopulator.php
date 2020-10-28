@@ -110,7 +110,7 @@ class EntityPopulator
                 }
 
                 if (isset($metadata['referencesMany'][$column])) {
-                    $adder = 'add'.ucfirst($column);
+                    $adder = 'add' . ucfirst($column);
                     $obj->$adder($value);
                 }
             }

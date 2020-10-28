@@ -139,7 +139,7 @@ class Base
         $max = $int1 < $int2 ? $int2 : $int1;
         return mt_rand($min, $max);
     }
-    
+
     /**
      * Returns the passed value
      *

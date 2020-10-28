@@ -4,7 +4,7 @@ namespace Faker\Test\Provider\en_PH;
 
 use Faker\Generator;
 use Faker\Provider\en_PH\Address;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class AddressTest extends TestCase
 {
@@ -14,7 +14,7 @@ final class AddressTest extends TestCase
      */
     private $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
       $faker = new Generator();
       $faker->addProvider(new Address($faker));
@@ -25,26 +25,26 @@ final class AddressTest extends TestCase
     {
       $province = $this->faker->province();
       $this->assertNotEmpty($province);
-      $this->assertInternalType('string', $province);
+      $this->assertIsString($province);
     }
 
     public function testCity()
     {
       $city = $this->faker->city();
       $this->assertNotEmpty($city);
-      $this->assertInternalType('string', $city);
+      $this->assertIsString($city);
     }
 
     public function testMunicipality()
     {
       $municipality = $this->faker->municipality();
       $this->assertNotEmpty($municipality);
-      $this->assertInternalType('string', $municipality);
+      $this->assertIsString($municipality);
     }
 
     public function testBarangay()
     {
       $barangay = $this->faker->barangay();
-      $this->assertInternalType('string', $barangay);
+      $this->assertIsString($barangay);
     }
 }

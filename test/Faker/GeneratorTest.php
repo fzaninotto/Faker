@@ -3,7 +3,6 @@
 namespace Faker\Test;
 
 use Faker\Generator;
-use PHPUnit\Framework\TestCase;
 
 final class GeneratorTest extends TestCase
 {
@@ -20,7 +19,7 @@ final class GeneratorTest extends TestCase
         $generator = new Generator;
         $provider = new FooProvider();
         $generator->addProvider($provider);
-        $this->assertInternalType('callable', $generator->getFormatter('fooFormatter'));
+        $this->assertIsCallable($generator->getFormatter('fooFormatter'));
     }
 
     public function testGetFormatterReturnsCorrectFormatter()
@@ -32,20 +31,16 @@ final class GeneratorTest extends TestCase
         $this->assertEquals($expected, $generator->getFormatter('fooFormatter'));
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     */
     public function testGetFormatterThrowsExceptionOnIncorrectProvider()
     {
+        $this->expectException(\InvalidArgumentException::class);
         $generator = new Generator;
         $generator->getFormatter('fooFormatter');
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     */
     public function testGetFormatterThrowsExceptionOnIncorrectFormatter()
     {
+        $this->expectException(\InvalidArgumentException::class);
         $generator = new Generator;
         $provider = new FooProvider();
         $generator->addProvider($provider);

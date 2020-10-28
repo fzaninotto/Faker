@@ -16,7 +16,7 @@ class EntityPopulator
     /**
      * When fetching existing data - fetch only few first rows.
      */
-    const RELATED_FETCH_COUNT = 10;
+    public const RELATED_FETCH_COUNT = 10;
 
     /**
      * @var Mapper

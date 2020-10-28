@@ -1,0 +1,5 @@
+preset: psr12
+
+finder:
+  path:
+    - src
