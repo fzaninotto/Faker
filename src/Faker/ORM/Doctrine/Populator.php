@@ -98,9 +98,11 @@ class Populator
                 );
                 if (count($insertedEntities) % $this->batchSize === 0) {
                     $entityManager->flush();
+                    $entityManager->clear($class);
                 }
             }
             $entityManager->flush();
+            $entityManager->clear($class);
         }
 
         return $insertedEntities;
