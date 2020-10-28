@@ -282,16 +282,17 @@ Methods accepting a `$timezone` argument default to `date_default_timezone_get()
 
 ### `Faker\Provider\Image`
 
-    // Image generation provided by LoremPixel (http://lorempixel.com/)
-    imageUrl($width = 640, $height = 480) // 'http://lorempixel.com/640/480/'
-    imageUrl($width, $height, 'cats')     // 'http://lorempixel.com/800/600/cats/'
-    imageUrl($width, $height, 'cats', true, 'Faker') // 'http://lorempixel.com/800/400/cats/Faker'
-    imageUrl($width, $height, 'cats', true, 'Faker', true) // 'http://lorempixel.com/gray/800/400/cats/Faker/' Monochrome image
+    // Image generation provided by Placeholder (https://placeholder.com/)
+    imageUrl($width = 640, $height = 480) // 'https://via.placeholder.com/640x480.png/000044?text=inventore'
+    imageUrl($width, $height, 'cats')     // 'https://via.placeholder.com/640x480.png/0022ff?text=cats+quia'
+    imageUrl($width, $height, 'cats', true, 'Faker') // 'https://via.placeholder.com/640x480.png/00ddcc?text=cats+Faker+labore'
+    imageUrl($width, $height, 'cats', true, 'Faker', true) // 'https://via.placeholder.com/640x480.png/CCCCCC?text=cats+Faker+sit' Monochrome image
     image($dir = '/tmp', $width = 640, $height = 480) // '/tmp/13b73edae8443990be1aa8f1a483bc27.jpg'
     image($dir, $width, $height, 'cats')  // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat!
     image($dir, $width, $height, 'cats', false) // '13b73edae8443990be1aa8f1a483bc27.jpg' it's a filename without path
     image($dir, $width, $height, 'cats', true, false) // it's a no randomize images (default: `true`)
     image($dir, $width, $height, 'cats', true, true, 'Faker') // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat with 'Faker' text. Default, `null`.
+
 
 ### `Faker\Provider\Uuid`
 
