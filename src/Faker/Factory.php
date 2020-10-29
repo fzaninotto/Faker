@@ -49,7 +49,7 @@ class Factory
     /**
      * @param string $provider
      * @param string $locale
-     * @return string
+     * @return string|null
      */
     protected static function findProviderClassname($provider, $locale = '')
     {
@@ -57,5 +57,7 @@ class Factory
         if (class_exists($providerClass, true)) {
             return $providerClass;
         }
+
+        return null;
     }
 }

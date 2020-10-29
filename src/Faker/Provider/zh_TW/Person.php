@@ -194,8 +194,6 @@ class Person extends \Faker\Provider\Person
             $checkSumDigit = 0;
         }
 
-        $id = $birthPlace . $genderCode . $randomNumberCode . $checkSumDigit;
-
-        return $id;
+        return $birthPlace . $genderCode . $randomNumberCode . $checkSumDigit;
     }
 }

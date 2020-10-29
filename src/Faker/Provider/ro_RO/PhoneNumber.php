@@ -52,15 +52,11 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     public static function tollFreePhoneNumber()
     {
-        $number = static::numerify(static::randomElement(static::$specialFormats['toll-free']));
-
-        return $number;
+        return static::numerify(static::randomElement(static::$specialFormats['toll-free']));
     }
 
     public static function premiumRatePhoneNumber()
     {
-        $number = static::numerify(static::randomElement(static::$specialFormats['premium-rate']));
-
-        return $number;
+        return static::numerify(static::randomElement(static::$specialFormats['premium-rate']));
     }
 }

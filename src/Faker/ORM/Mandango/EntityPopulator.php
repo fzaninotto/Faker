@@ -85,6 +85,8 @@ class EntityPopulator
                 if (isset($insertedEntities[$referenceClass])) {
                     return Base::randomElement($insertedEntities[$referenceClass]);
                 }
+
+                return null;
             };
         }
 

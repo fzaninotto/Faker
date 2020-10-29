@@ -189,6 +189,8 @@ class Person extends \Faker\Provider\Person
         } elseif ($year >= 1800) {
             return self::CENTURY_19TH;
         }
+
+        return null;
     }
 
     /**

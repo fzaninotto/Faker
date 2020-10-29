@@ -248,9 +248,7 @@ class Base
             return null;
         }
         $keys = array_keys($array);
-        $key = $keys[mt_rand(0, count($keys) - 1)];
-
-        return $key;
+        return $keys[mt_rand(0, count($keys) - 1)];
     }
 
     /**
