@@ -1554,6 +1554,24 @@ echo $faker->bank; // "Narodowy Bank Polski"
 echo $faker->bankAccountNumber; // "PL14968907563953822118075816"
 ```
 
+### `Faker\Provider\pl_PL\LicensePlate`
+
+```php
+<?php
+
+// Generates a random Polish vehicle registration number
+echo $faker->licensePlate; // "SO 4429E"
+// Generates a random Polish vehicle registration number for a specific voivodeships
+echo $faker->licensePlate(['zachodnio-pomorskie', 'świętokrzyskie']); // "ZGY 35807"
+// It's also possible to generate a license plate of army or services like Police or Central Anticorruption Bureau
+echo $faker->licensePlate(['army', 'services']); // "UG 822PC"
+// If you want, you can generate a license plate for a specific county as well
+echo $faker->licensePlate(
+    ['mazowieckie', 'services'],
+    ['Straż Graniczna', 'warszawski zachodni', 'radomski']
+);  // "WZ 6084C"
+```
+
 ### `Faker\Provider\pt_PT\Person`
 
 ```php
