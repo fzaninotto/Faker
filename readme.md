@@ -897,6 +897,16 @@ echo $faker->tollFreeNumber; // "0800 123 456"
 echo $faker->areaCode; // "03"
 ```
 
+### `Faker\Provider\en_PH\Payment`
+
+```php
+<?php
+
+// Generates a random bank name
+echo $faker->bank;        // "Land Bank of the Philippines"
+echo $faker->thriftBank;  // "BPI Family Savings Bank"
+```
+
 ### `Faker\Provider\en_US\Company`
 
 ```php
