@@ -45,7 +45,7 @@ jobs:
                 exit 1;
             fi
 
-            if [ ${CURRENT_ARR[1]} -gt ${NEW_ARR[1]} ]; then
+            if [ ${CURRENT_ARR[0]} -eq ${NEW_ARR[0]} ] && [ ${CURRENT_ARR[1]} -gt ${NEW_ARR[1]} ]; then
                 echo "The current value for minor version is larger"
                 exit 1;
             fi
