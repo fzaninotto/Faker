@@ -43,13 +43,13 @@ jobs:
             composer-
 
       - name: Download dependencies
-        run: composer update --no-interaction --prefer-dist --optimize-autoloader
+        run: |
+          composer update --no-interaction --no-progress --optimize-autoloader
+          composer bin phpstan update --no-interaction --no-progress --optimize-autoloader
 
-      - name: PHPStan
-        uses: docker://oskarstark/phpstan-ga:0.12.49
-        with:
-          entrypoint: /composer/vendor/bin/phpstan
-          args: analyze --no-progress
+      - name: Run PHPStan
+        run: |
+          vendor/bin/phpstan analyze --no-progress
 
   psalm:
     name: Psalm
@@ -84,10 +84,11 @@ jobs:
             composer-${{ runner.os }}-
             composer-
 
-      - name: Install dependencies with composer
+      - name: Download dependencies
         run: |
-          composer require --dev psalm/phar:3.18.2 --no-update
-          composer update --no-interaction --no-progress --no-suggest
+          composer update --no-interaction --no-progress --optimize-autoloader
+          composer bin psalm update --no-interaction --no-progress --optimize-autoloader
 
-      - name: Run vimeo/psalm
-        run: ./vendor/bin/psalm.phar --config=psalm.xml --shepherd --show-info=false --stats
+      - name: Run Psalm
+        run: |
+          vendor/bin/psalm.phar --no-progress --output-format=github

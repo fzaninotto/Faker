@@ -21,16 +21,6 @@ parameters:
 			path: src/Faker/Calculator/Luhn.php
 
 		-
-			message: "#^Method Faker\\\\Factory\\:\\:findProviderClassname\\(\\) should return string but return statement is missing\\.$#"
-			count: 1
-			path: src/Faker/Factory.php
-
-		-
-			message: "#^Method Faker\\\\Guesser\\\\Name\\:\\:guessFormat\\(\\) should return callable but return statement is missing\\.$#"
-			count: 1
-			path: src/Faker/Guesser/Name.php
-
-		-
 			message: "#^Unreachable statement \\- code above always terminates\\.$#"
 			count: 1
 			path: src/Faker/Guesser/Name.php
@@ -113,16 +103,6 @@ parameters:
 		-
 			message: "#^Access to property \\$fieldMappings on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
 			count: 2
-			path: src/Faker/ORM/Doctrine/EntityPopulator.php
-
-		-
-			message: "#^If condition is always true\\.$#"
-			count: 1
-			path: src/Faker/ORM/Doctrine/EntityPopulator.php
-
-		-
-			message: "#^Unreachable statement \\- code above always terminates\\.$#"
-			count: 1
 			path: src/Faker/ORM/Doctrine/EntityPopulator.php
 
 		-
@@ -263,16 +243,6 @@ parameters:
 		-
 			message: "#^Call to method getMetadata\\(\\) on an unknown class Mandango\\\\Mandango\\.$#"
 			count: 2
-			path: src/Faker/ORM/Mandango/EntityPopulator.php
-
-		-
-			message: "#^If condition is always true\\.$#"
-			count: 1
-			path: src/Faker/ORM/Mandango/EntityPopulator.php
-
-		-
-			message: "#^Unreachable statement \\- code above always terminates\\.$#"
-			count: 1
 			path: src/Faker/ORM/Mandango/EntityPopulator.php
 
 		-
@@ -439,16 +409,6 @@ parameters:
 			message: "#^Access to constant PHP_ARRAY on an unknown class PropelColumnTypes\\.$#"
 			count: 1
 			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
-
-		-
-			message: "#^If condition is always true\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel/EntityPopulator.php
-
-		-
-			message: "#^Unreachable statement \\- code above always terminates\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel/EntityPopulator.php
 
 		-
 			message: "#^Parameter \\$columnMap of method Faker\\\\ORM\\\\Propel\\\\EntityPopulator\\:\\:isColumnBehavior\\(\\) has invalid typehint type ColumnMap\\.$#"
@@ -646,16 +606,6 @@ parameters:
 			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
 
 		-
-			message: "#^If condition is always true\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel2/EntityPopulator.php
-
-		-
-			message: "#^Unreachable statement \\- code above always terminates\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel2/EntityPopulator.php
-
-		-
 			message: "#^Parameter \\$columnMap of method Faker\\\\ORM\\\\Propel2\\\\EntityPopulator\\:\\:isColumnBehavior\\(\\) has invalid typehint type Propel\\\\Runtime\\\\Map\\\\ColumnMap\\.$#"
 			count: 2
 			path: src/Faker/ORM/Propel2/EntityPopulator.php
@@ -737,16 +687,6 @@ parameters:
 
 		-
 			message: "#^Call to method fields\\(\\) on an unknown class Spot\\\\Mapper\\.$#"
-			count: 1
-			path: src/Faker/ORM/Spot/EntityPopulator.php
-
-		-
-			message: "#^If condition is always true\\.$#"
-			count: 1
-			path: src/Faker/ORM/Spot/EntityPopulator.php
-
-		-
-			message: "#^Unreachable statement \\- code above always terminates\\.$#"
 			count: 1
 			path: src/Faker/ORM/Spot/EntityPopulator.php
 
@@ -1026,16 +966,6 @@ parameters:
 			path: src/Faker/Provider/ja_JP/Text.php
 
 		-
-			message: "#^Method Faker\\\\Provider\\\\kk_KZ\\\\Person\\:\\:getCenturyByYear\\(\\) never returns null so it can be removed from the return typehint\\.$#"
-			count: 1
-			path: src/Faker/Provider/kk_KZ/Person.php
-
-		-
-			message: "#^Method Faker\\\\Provider\\\\kk_KZ\\\\Person\\:\\:getCenturyByYear\\(\\) should return int\\|null but return statement is missing\\.$#"
-			count: 1
-			path: src/Faker/Provider/kk_KZ/Person.php
-
-		-
 			message: "#^PHPDoc tag @param has invalid value \\(string \\[male\\|female\\]\\)\\: Unexpected token \"\\[\", expected variable at offset 221$#"
 			count: 1
 			path: src/Faker/Provider/lt_LT/Person.php
@@ -1174,16 +1104,6 @@ parameters:
 			message: "#^Method Faker\\\\Provider\\\\pl_PL\\\\Company\\:\\:regonLocal\\(\\) should return 14 but returns string\\.$#"
 			count: 1
 			path: src/Faker/Provider/pl_PL/Company.php
-
-		-
-			message: "#^Static property Faker\\\\Provider\\\\pl_PL\\\\Person\\:\\:\\$title \\(string\\) does not accept default value of type array\\<int, string\\>\\.$#"
-			count: 1
-			path: src/Faker/Provider/pl_PL/Person.php
-
-		-
-			message: "#^Parameter \\#1 \\$array of static method Faker\\\\Provider\\\\Base\\:\\:randomElement\\(\\) expects array, string given\\.$#"
-			count: 1
-			path: src/Faker/Provider/pl_PL/Person.php
 
 		-
 			message: "#^Static call to instance method Faker\\\\Provider\\\\pl_PL\\\\Person\\:\\:title\\(\\)\\.$#"

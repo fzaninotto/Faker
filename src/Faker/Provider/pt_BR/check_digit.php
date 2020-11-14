@@ -13,6 +13,7 @@ namespace Faker\Provider\pt_BR;
  */
 function check_digit($numbers)
 {
+    $numbers = (string) $numbers;
     $length = strlen($numbers);
     $second_algorithm = $length >= 12;
     $verifier = 0;

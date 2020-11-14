@@ -53,9 +53,9 @@ jobs:
             composer-${{ runner.os }}-
             composer-
 
-      - name: Install dependencies with Composer
+      - name: Download dependencies
         run: |
-          composer update --no-interaction --no-progress
+          composer update --no-interaction --no-progress --optimize-autoloader
 
       - name: Run tests with PHPUnit
         run: |
