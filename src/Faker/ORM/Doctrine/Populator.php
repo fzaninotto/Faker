@@ -21,13 +21,13 @@ class Populator
     protected $manager;
 
     /** @var array  */
-    protected $entities = array();
+    protected $entities = [];
 
     /** @var array  */
-    protected $quantities = array();
+    protected $quantities = [];
 
     /** @var array  */
-    protected $generateId = array();
+    protected $generateId = [];
 
     /**
      * Populator constructor.
@@ -48,7 +48,7 @@ class Populator
      * @param mixed $entity A Doctrine classname, or a \Faker\ORM\Doctrine\EntityPopulator instance
      * @param int   $number The number of entities to populate
      */
-    public function addEntity($entity, $number, $customColumnFormatters = array(), $customModifiers = array(), $generateId = false)
+    public function addEntity($entity, $number, $customColumnFormatters = [], $customModifiers = [], $generateId = false)
     {
         if (!$entity instanceof \Faker\ORM\Doctrine\EntityPopulator) {
             if (null === $this->manager) {
@@ -87,7 +87,7 @@ class Populator
             throw new \InvalidArgumentException("No entity manager passed to Doctrine Populator.");
         }
 
-        $insertedEntities = array();
+        $insertedEntities = [];
         foreach ($this->quantities as $class => $number) {
             $generateId = $this->generateId[$class];
             for ($i=0; $i < $number; $i++) {

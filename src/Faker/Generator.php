@@ -199,8 +199,8 @@ namespace Faker;
  */
 class Generator
 {
-    protected $providers = array();
-    protected $formatters = array();
+    protected $providers = [];
+    protected $formatters = [];
 
     public function addProvider($provider)
     {
@@ -225,7 +225,7 @@ class Generator
         }
     }
 
-    public function format($formatter, $arguments = array())
+    public function format($formatter, $arguments = [])
     {
         return call_user_func_array($this->getFormatter($formatter), $arguments);
     }
@@ -242,7 +242,7 @@ class Generator
         }
         foreach ($this->providers as $provider) {
             if (method_exists($provider, $formatter)) {
-                $this->formatters[$formatter] = array($provider, $formatter);
+                $this->formatters[$formatter] = [$provider, $formatter];
 
                 return $this->formatters[$formatter];
             }
@@ -258,7 +258,7 @@ class Generator
      */
     public function parse($string)
     {
-        return preg_replace_callback('/\{\{\s?(\w+)\s?\}\}/u', array($this, 'callFormatWithMatches'), $string);
+        return preg_replace_callback('/\{\{\s?(\w+)\s?\}\}/u', [$this, 'callFormatWithMatches'], $string);
     }
 
     protected function callFormatWithMatches($matches)

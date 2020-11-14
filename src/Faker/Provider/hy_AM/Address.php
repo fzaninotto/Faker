@@ -4,14 +4,14 @@ namespace Faker\Provider\hy_AM;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $cityPrefix = array('քաղաք','գյուղ');
+    protected static $cityPrefix = ['քաղաք','գյուղ'];
 
-    protected static $regionSuffix = array('մարզ');
-    protected static $streetPrefix = array('փողոց');
+    protected static $regionSuffix = ['մարզ'];
+    protected static $streetPrefix = ['փողոց'];
 
-    protected static $buildingNumber = array('##');
-    protected static $postcode = array('00##');
-    protected static $country = array(
+    protected static $buildingNumber = ['##'];
+    protected static $postcode = ['00##'];
+    protected static $country = [
         'Մոնակո','Սինգապուր','Վատիկան','Մալդիվներ',
         'Մալթա','Բահրեյն','Բանգլադեշ','Բարբադոս',
         'Չինաստանի Հանրապետություն','Սան Մարինո',
@@ -50,15 +50,15 @@ class Address extends \Faker\Provider\Address
         'Ղազախստան','Լիբիա','Գայանա','Կանադա','Բոտսվանա',
         'Մավրիտանիա','Իսլանդիա','Սուրինամ','Ավստրալիա',
         'Նամիբիա','Մոնղոլիա',
-    );
+    ];
 
-    protected static $region = array(
+    protected static $region = [
         'Արագածոտնի', 'Արարատի', 'Արմավիրի',
         'Գեղարքունիքի', 'Լոռու', 'Կոտայքի', 'Շիրակի',
         'Սյունիքի', 'Վայոց Ձորի', 'Տավուշի',
-    );
+    ];
 
-    protected static $city = array(
+    protected static $city = [
         'Աբովյան', 'Ագարակ', 'Ալավերդի', 'Ախթալա', 'Այրում', 'Աշտարակ', 'Ապարան',
         'Արարատ', 'Արթիկ', 'Արմավիր', 'Արտաշատ', 'Բերդ', 'Բյուրեղավան', 'Գավառ',
         'Գյումրի', 'Գորիս', 'Դաստակերտ', 'Դիլիջան', 'Եղեգնաձոր', 'Եղվարդ', 'Երևան',
@@ -67,16 +67,16 @@ class Address extends \Faker\Provider\Address
         'Նոյեմբերյան', 'Շամլուղ', 'Չարենցավան', 'Ջերմուկ', 'Սիսիան', 'Սպիտակ',
         'Ստեփանավան', 'Սևան', 'Վայք', 'Վանաձոր', 'Վարդենիս', 'Վեդի', 'Տաշիր',
         'Քաջարան',
-    );
+    ];
 
-    protected static $street = array(
+    protected static $street = [
         'Պուշկին','Տերյան','Աբովյան','Ագաթանգեղոս','Անդրանիկ','Օտյան','Լուկաշին',
         'Տիչինա','Շինարարներ','Լենինգրադյան','Կիևյան',
-    );
+    ];
 
-    protected static $addressFormats = array(
+    protected static $addressFormats = [
         "{{region}} {{regionSuffix}}, {{cityPrefix}} {{city}}, {{street}} {{buildingNumber}} {{streetPrefix}}, {{postcode}}",
-    );
+    ];
 
     public static function buildingNumber()
     {

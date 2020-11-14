@@ -19,12 +19,12 @@ class Documentor
      */
     public function getFormatters()
     {
-        $formatters = array();
+        $formatters = [];
         $providers = array_reverse($this->generator->getProviders());
         $providers[]= new Provider\Base($this->generator);
         foreach ($providers as $provider) {
             $providerClass = get_class($provider);
-            $formatters[$providerClass] = array();
+            $formatters[$providerClass] = [];
             $refl = new \ReflectionObject($provider);
             foreach ($refl->getMethods(\ReflectionMethod::IS_PUBLIC) as $reflmethod) {
                 if ($reflmethod->getDeclaringClass()->getName() == 'Faker\Provider\Base' && $providerClass != 'Faker\Provider\Base') {
@@ -34,7 +34,7 @@ class Documentor
                 if ($reflmethod->isConstructor()) {
                     continue;
                 }
-                $parameters = array();
+                $parameters = [];
                 foreach ($reflmethod->getParameters() as $reflparameter) {
                     $parameter = '$' . $reflparameter->getName();
                     if ($reflparameter->isDefaultValueAvailable()) {

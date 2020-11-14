@@ -4,40 +4,40 @@ namespace Faker\Provider\en_US;
 
 class Company extends \Faker\Provider\Company
 {
-    protected static $formats = array(
+    protected static $formats = [
         '{{lastName}} {{companySuffix}}',
         '{{lastName}}-{{lastName}}',
         '{{lastName}}, {{lastName}} and {{lastName}}',
-    );
+    ];
 
-    protected static $catchPhraseWords = array(
-        array(
+    protected static $catchPhraseWords = [
+        [
             'Adaptive', 'Advanced', 'Ameliorated', 'Assimilated', 'Automated', 'Balanced', 'Business-focused', 'Centralized', 'Cloned', 'Compatible', 'Configurable', 'Cross-group', 'Cross-platform', 'Customer-focused', 'Customizable', 'Decentralized', 'De-engineered', 'Devolved', 'Digitized', 'Distributed', 'Diverse', 'Down-sized', 'Enhanced', 'Enterprise-wide', 'Ergonomic', 'Exclusive', 'Expanded', 'Extended', 'Facetoface', 'Focused', 'Front-line', 'Fully-configurable', 'Function-based', 'Fundamental', 'Future-proofed', 'Grass-roots', 'Horizontal', 'Implemented', 'Innovative', 'Integrated', 'Intuitive', 'Inverse', 'Managed', 'Mandatory', 'Monitored', 'Multi-channelled', 'Multi-lateral', 'Multi-layered', 'Multi-tiered', 'Networked', 'Object-based', 'Open-architected', 'Open-source', 'Operative', 'Optimized', 'Optional', 'Organic', 'Organized', 'Persevering', 'Persistent', 'Phased', 'Polarised', 'Pre-emptive', 'Proactive', 'Profit-focused', 'Profound', 'Programmable', 'Progressive', 'Public-key', 'Quality-focused', 'Reactive', 'Realigned', 'Re-contextualized', 'Re-engineered', 'Reduced', 'Reverse-engineered', 'Right-sized', 'Robust', 'Seamless', 'Secured', 'Self-enabling', 'Sharable', 'Stand-alone', 'Streamlined', 'Switchable', 'Synchronised', 'Synergistic', 'Synergized', 'Team-oriented', 'Total', 'Triple-buffered', 'Universal', 'Up-sized', 'Upgradable', 'User-centric', 'User-friendly', 'Versatile', 'Virtual', 'Visionary', 'Vision-oriented',
-        ),
-        array(
+        ],
+        [
             '24hour', '24/7', '3rdgeneration', '4thgeneration', '5thgeneration', '6thgeneration', 'actuating', 'analyzing', 'assymetric', 'asynchronous', 'attitude-oriented', 'background', 'bandwidth-monitored', 'bi-directional', 'bifurcated', 'bottom-line', 'clear-thinking', 'client-driven', 'client-server', 'coherent', 'cohesive', 'composite', 'context-sensitive', 'contextually-based', 'content-based', 'dedicated', 'demand-driven', 'didactic', 'directional', 'discrete', 'disintermediate', 'dynamic', 'eco-centric', 'empowering', 'encompassing', 'even-keeled', 'executive', 'explicit', 'exuding', 'fault-tolerant', 'foreground', 'fresh-thinking', 'full-range', 'global', 'grid-enabled', 'heuristic', 'high-level', 'holistic', 'homogeneous', 'human-resource', 'hybrid', 'impactful', 'incremental', 'intangible', 'interactive', 'intermediate', 'leadingedge', 'local', 'logistical', 'maximized', 'methodical', 'mission-critical', 'mobile', 'modular', 'motivating', 'multimedia', 'multi-state', 'multi-tasking', 'national', 'needs-based', 'neutral', 'nextgeneration', 'non-volatile', 'object-oriented', 'optimal', 'optimizing', 'radical', 'real-time', 'reciprocal', 'regional', 'responsive', 'scalable', 'secondary', 'solution-oriented', 'stable', 'static', 'systematic', 'systemic', 'system-worthy', 'tangible', 'tertiary', 'transitional', 'uniform', 'upward-trending', 'user-facing', 'value-added', 'web-enabled', 'well-modulated', 'zeroadministration', 'zerodefect', 'zerotolerance',
-        ),
-        array(
+        ],
+        [
             'ability', 'access', 'adapter', 'algorithm', 'alliance', 'analyzer', 'application', 'approach', 'architecture', 'archive', 'artificialintelligence', 'array', 'attitude', 'benchmark', 'blockchain', 'budgetarymanagement', 'capability', 'capacity', 'challenge', 'circuit', 'collaboration', 'complexity', 'concept', 'conglomeration', 'contingency', 'core', 'customerloyalty', 'database', 'data-warehouse', 'definition', 'emulation', 'encoding', 'encryption', 'extranet', 'firmware', 'flexibility', 'focusgroup', 'forecast', 'frame', 'framework', 'function', 'functionalities', 'GraphicInterface', 'groupware', 'GraphicalUserInterface', 'hardware', 'help-desk', 'hierarchy', 'hub', 'implementation', 'info-mediaries', 'infrastructure', 'initiative', 'installation', 'instructionset', 'interface', 'internetsolution', 'intranet', 'knowledgeuser', 'knowledgebase', 'localareanetwork', 'leverage', 'matrices', 'matrix', 'methodology', 'middleware', 'migration', 'model', 'moderator', 'monitoring', 'moratorium', 'neural-net', 'openarchitecture', 'opensystem', 'orchestration', 'paradigm', 'parallelism', 'policy', 'portal', 'pricingstructure', 'processimprovement', 'product', 'productivity', 'project', 'projection', 'protocol', 'securedline', 'service-desk', 'software', 'solution', 'standardization', 'strategy', 'structure', 'success', 'superstructure', 'support', 'synergy', 'systemengine', 'task-force', 'throughput', 'time-frame', 'toolset', 'utilisation', 'website', 'workforce',
-        ),
-    );
+        ],
+    ];
 
-    protected static $bsWords = array(
-        array(
+    protected static $bsWords = [
+        [
             'implement', 'utilize', 'integrate', 'streamline', 'optimize', 'evolve', 'transform', 'embrace', 'enable', 'orchestrate', 'leverage', 'reinvent', 'aggregate', 'architect', 'enhance', 'incentivize', 'morph', 'empower', 'envisioneer', 'monetize', 'harness', 'facilitate', 'seize', 'disintermediate', 'synergize', 'strategize', 'deploy', 'brand', 'grow', 'target', 'syndicate', 'synthesize', 'deliver', 'mesh', 'incubate', 'engage', 'maximize', 'benchmark', 'expedite', 'reintermediate', 'whiteboard', 'visualize', 'repurpose', 'innovate', 'scale', 'unleash', 'drive', 'extend', 'engineer', 'revolutionize', 'generate', 'exploit', 'transition', 'e-enable', 'iterate', 'cultivate', 'matrix', 'productize', 'redefine', 'recontextualize',
-        ),
-        array(
+        ],
+        [
             'clicks-and-mortar', 'value-added', 'vertical', 'proactive', 'robust', 'revolutionary', 'scalable', 'leading-edge', 'innovative', 'intuitive', 'strategic', 'e-business', 'mission-critical', 'sticky', 'one-to-one', '24/7', 'end-to-end', 'global', 'B2B', 'B2C', 'granular', 'frictionless', 'virtual', 'viral', 'dynamic', '24/365', 'best-of-breed', 'killer', 'magnetic', 'bleeding-edge', 'web-enabled', 'interactive', 'dot-com', 'sexy', 'back-end', 'real-time', 'efficient', 'front-end', 'distributed', 'seamless', 'extensible', 'turn-key', 'world-class', 'open-source', 'cross-platform', 'cross-media', 'synergistic', 'bricks-and-clicks', 'out-of-the-box', 'enterprise', 'integrated', 'impactful', 'wireless', 'transparent', 'next-generation', 'cutting-edge', 'user-centric', 'visionary', 'customized', 'ubiquitous', 'plug-and-play', 'collaborative', 'compelling', 'holistic', 'rich',
-        ),
-        array(
+        ],
+        [
             'synergies', 'web-readiness', 'paradigms', 'markets', 'partnerships', 'infrastructures', 'platforms', 'initiatives', 'channels', 'eyeballs', 'communities', 'ROI', 'solutions', 'e-tailers', 'e-services', 'action-items', 'portals', 'niches', 'technologies', 'content', 'vortals', 'supply-chains', 'convergence', 'relationships', 'architectures', 'interfaces', 'e-markets', 'e-commerce', 'systems', 'bandwidth', 'infomediaries', 'models', 'mindshare', 'deliverables', 'users', 'schemas', 'networks', 'applications', 'metrics', 'e-business', 'functionalities', 'experiences', 'webservices', 'methodologies',
-        ),
-    );
+        ],
+    ];
 
     /**
      * Source - http://www.careerplanner.com/ListOfJobs.cfm
      */
-    protected static $jobTitleFormat = array(
+    protected static $jobTitleFormat = [
         'Able Seamen', 'Account Manager', 'Accountant', 'Actor', 'Actuary', 'Adjustment Clerk', 'Admin', 'Administrative Law Judge', 'Administrative Services Manager', 'Administrative Support Supervisors', 'Advertising Manager OR Promotions Manager', 'Advertising Sales Agent', 'Aerospace Engineer', 'Agricultural Crop Farm Manager', 'Agricultural Crop Worker', 'Agricultural Engineer', 'Agricultural Equipment Operator', 'Agricultural Inspector', 'Agricultural Manager', 'Agricultural Product Grader Sorter', 'Agricultural Sales Representative', 'Agricultural Science Technician', 'Agricultural Sciences Teacher', 'Agricultural Technician', 'Agricultural Worker', 'Air Crew Member', 'Air Crew Officer', 'Air Traffic Controller', 'Aircraft Assembler', 'Aircraft Body Repairer', 'Aircraft Cargo Handling Supervisor', 'Aircraft Engine Specialist', 'Aircraft Launch and Recovery Officer', 'Aircraft Launch Specialist', 'Aircraft Mechanics OR Aircraft Service Technician', 'Aircraft Rigging Assembler', 'Aircraft Structure Assemblers', 'Airfield Operations Specialist', 'Airframe Mechanic', 'Airline Pilot OR Copilot OR Flight Engineer', 'Algorithm Developer', 'Alteration Tailor', 'Ambulance Driver', 'Amusement Attendant', 'Anesthesiologist', 'Animal Breeder', 'Animal Care Workers', 'Animal Control Worker', 'Animal Husbandry Worker', 'Animal Scientist', 'Animal Trainer', 'Annealing Machine Operator', 'Announcer', 'Answering Service', 'Anthropologist', 'Anthropologist OR Archeologist', 'Anthropology Teacher', 'Appliance Repairer', 'Arbitrator', 'Archeologist', 'Architect', 'Architectural Drafter', 'Architectural Drafter OR Civil Drafter', 'Architecture Teacher', 'Archivist', 'Armored Assault Vehicle Crew Member', 'Armored Assault Vehicle Officer', 'Art Director', 'Art Teacher', 'Artillery Officer', 'Artillery Crew Member', 'Artist', 'Assembler', 'Assessor', 'Astronomer', 'Athletes and Sports Competitor', 'Athletic Trainer', 'Atmospheric and Space Scientist', 'Audio and Video Equipment Technician', 'Audiologist', 'Audio-Visual Collections Specialist', 'Auditor', 'Auditor', 'Automatic Teller Machine Servicer', 'Automotive Body Repairer', 'Automotive Glass Installers', 'Automotive Master Mechanic', 'Automotive Mechanic', 'Automotive Specialty Technician', 'Automotive Technician', 'Auxiliary Equipment Operator', 'Aviation Inspector', 'Avionics Technician',
         'Bailiff', 'Baker', 'Barber', 'Bartender', 'Bartender Helper', 'Battery Repairer', 'Bellhop', 'Bench Jeweler', 'Benefits Specialist', 'Bicycle Repairer', 'Bill and Account Collector', 'Bindery Machine Operator', 'Bindery Worker', 'Biochemist', 'Biochemist or Biophysicist', 'Biological Science Teacher', 'Biological Scientist', 'Biological Technician', 'Biologist', 'Biomedical Engineer', 'Biophysicist', 'Board Of Directors', 'Boat Builder and Shipwright', 'Boiler Operator', 'Boilermaker', 'Bookbinder', 'Bookkeeper', 'Brake Machine Setter', 'Brattice Builder', 'Brazer', 'Brazing Machine Operator', 'Brickmason', 'Bridge Tender OR Lock Tender', 'Broadcast News Analyst', 'Broadcast Technician', 'Brokerage Clerk', 'Budget Analyst', 'Buffing and Polishing Operator', 'Building Cleaning Worker', 'Building Inspector', 'Bulldozer Operator', 'Bus Driver', 'Business Development Manager', 'Business Manager', 'Business Operations Specialist', 'Business Teacher', 'Butcher', 'Buyer',
         'Cabinetmaker', 'Cafeteria Cook', 'Calibration Technician OR Instrumentation Technician', 'Camera Operator', 'Camera Repairer', 'Captain', 'Caption Writer', 'Cardiovascular Technologist', 'Career Counselor', 'Carpenter', 'Carpenter Assembler and Repairer', 'Carpet Installer', 'Cartographer', 'Cartoonist', 'Carver', 'Cashier', 'Casting Machine Operator', 'Casting Machine Set-Up Operator', 'ccc', 'Ceiling Tile Installer', 'Cement Mason and Concrete Finisher', 'Central Office', 'Central Office and PBX Installers', 'Central Office Operator', 'CEO', 'CFO', 'Chef', 'Chemical Engineer', 'Chemical Equipment Controller', 'Chemical Equipment Operator', 'Chemical Equipment Tender', 'Chemical Plant Operator', 'Chemical Technician', 'Chemist', 'Chemistry Teacher', 'Child Care', 'Child Care Worker', 'Chiropractor', 'Choreographer', 'City', 'City Planning Aide', 'Civil Drafter', 'Civil Engineer', 'Civil Engineering Technician', 'Claims Adjuster', 'Claims Examiner', 'Claims Taker', 'Cleaners of Vehicles', 'Clergy', 'Clerk', 'Clinical Laboratory Technician', 'Clinical Psychologist', 'Clinical School Psychologist', 'Coaches and Scout', 'Coating Machine Operator', 'Coil Winders', 'Command Control Center Officer', 'Command Control Center Specialist', 'Commercial and Industrial Designer', 'Commercial Diver', 'Commercial Pilot', 'Communication Equipment Repairer', 'Communication Equipment Worker', 'Communications Equipment Operator', 'Communications Teacher', 'Community Service Manager', 'Compacting Machine Operator', 'Compensation and Benefits Manager', 'Compliance Officers', 'Composer', 'Computer', 'Computer Hardware Engineer', 'Computer Operator', 'Computer Programmer', 'Computer Repairer', 'Computer Science Teacher', 'Computer Scientist', 'Computer Security Specialist', 'Computer Software Engineer', 'Computer Specialist', 'Computer Support Specialist', 'Computer Systems Analyst', 'Computer-Controlled Machine Tool Operator', 'Concierge', 'Conservation Scientist', 'Construction', 'Construction Carpenter', 'Construction Driller', 'Construction Equipment Operator', 'Construction Laborer', 'Construction Manager', 'Continuous Mining Machine Operator', 'Control Valve Installer', 'Conveyor Operator', 'Cook', 'Cooling and Freezing Equipment Operator', 'Copy Machine Operator', 'Copy Writer', 'Coremaking Machine Operator', 'Coroner', 'Corporate Trainer', 'Correctional Officer', 'Correspondence Clerk', 'Cost Estimator', 'Costume Attendant', 'Counseling Psychologist', 'Counselor', 'Council', 'Courier', 'Court Clerk', 'Court Reporter', 'Craft Artist', 'Crane and Tower Operator', 'Creative Writer', 'Credit Checkers Clerk', 'Credit Analyst', 'Credit Authorizer', 'Credit Checker', 'Criminal Investigator', 'Crossing Guard', 'Crushing Grinding Machine Operator', 'CSI', 'CTO', 'Cultural Studies Teacher', 'Curator', 'Custom Tailor', 'Customer Service Representative', 'Cutting Machine Operator', 'Cutting Machine Operator',
@@ -61,25 +61,25 @@ class Company extends \Faker\Provider\Company
         'Valve Repairer OR Regulator Repairer', 'Vending Machine Servicer', 'Veterinarian', 'Veterinary Assistant OR Laboratory Animal Caretaker', 'Veterinary Technician', 'Vice President Of Human Resources', 'Vice President Of Marketing', 'Video Editor', 'Visual Designer', 'Vocational Education Teacher',
         'Waiter', 'Waitress', 'Warehouse', 'Washing Equipment Operator', 'Waste Treatment Plant Operator', 'Watch Repairer', 'Weapons Specialists', 'Web Developer', 'Webmaster', 'Welder', 'Welder', 'Welder and Cutter', 'Welder-Fitter', 'Welding Machine Tender', 'Welding Machine Operator', 'Welding Machine Setter', 'Welfare Eligibility Clerk', 'Well and Core Drill Operator', 'Wellhead Pumper', 'Wholesale Buyer', 'Wind Instrument Repairer', 'Woodworker', 'Woodworking Machine Operator', 'Woodworking Machine Setter', 'Word Processors and Typist', 'Writer OR Author',
         'Zoologists OR Wildlife Biologist',
-    );
+    ];
 
-    protected static $companySuffix = array('Inc', 'and Sons', 'LLC', 'Group', 'PLC', 'Ltd');
+    protected static $companySuffix = ['Inc', 'and Sons', 'LLC', 'Group', 'PLC', 'Ltd'];
 
     /**
      * @link https://www.irs.gov/businesses/small-businesses-self-employed/how-eins-are-assigned-and-valid-ein-prefixes
      */
-    protected static $einPrefixes = array(
+    protected static $einPrefixes = [
         01, 02, 03, 04, 05, 06, 10, 11, 12, 13, 14, 15, 16, 20, 21, 22, 23, 24, 25, 26, 27, 30, 31, 32, 33, 34, 35, 36,
         37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65,
         66, 67, 68, 71, 72, 73, 74, 75, 76, 77, 80, 81, 82, 83, 84, 85, 86, 87, 88, 90, 91, 92, 93, 94, 95, 98, 99
-    );
+    ];
 
     /**
      * @example 'Robust full-range hub'
      */
     public function catchPhrase()
     {
-        $result = array();
+        $result = [];
         foreach (static::$catchPhraseWords as &$word) {
             $result[] = static::randomElement($word);
         }
@@ -92,7 +92,7 @@ class Company extends \Faker\Provider\Company
      */
     public function bs()
     {
-        $result = array();
+        $result = [];
         foreach (static::$bsWords as &$word) {
             $result[] = static::randomElement($word);
         }

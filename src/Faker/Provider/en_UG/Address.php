@@ -4,14 +4,14 @@ namespace Faker\Provider\en_UG;
 
 class Address extends \Faker\Provider\en_US\Address
 {
-    protected static $cityFormats = array(
+    protected static $cityFormats = [
         '{{cityName}}'
-    );
+    ];
 
     /**
      * @link http://en.wikipedia.org/wiki/List_of_cities_and_towns_in_Uganda
      */
-    protected static $cityName = array(
+    protected static $cityName = [
         'Alebtong','Abim','Adjumani','Amolatar','Amuria','Amuru','Apac','Arua',
         'Bombo','Budaka','Bugembe','Bugiri','Bukedea','Bulisa','Buikwe','Bundibugyo',
         'Busembatya','Bushenyi','Busia','Busolwe','Butaleja','Buwenge',
@@ -38,12 +38,12 @@ class Address extends \Faker\Provider\en_US\Address
         'Tororo',
         'Wakiso','Wobulenzi',
         'Yumbe'
-    );
+    ];
 
     /**
      * @link http://en.wikipedia.org/wiki/Category:Districts_of_Uganda
      */
-    protected static $district = array(
+    protected static $district = [
         'Abim','Adjumani','Agago','Alebtong','Amolatar','Amudat','Amuria','Amuru','Apac','Arua',
         'Budaka','Bududa','Bugiri','Buhweju','Buikwe','Bukedea','Bukomansimbi','Bukwo','Bulambuli',
         'Buliisa','Bundibugyo','Bushenyi','Busia','Butaleja','Butambala','Buvuma','Buyende',
@@ -69,11 +69,11 @@ class Address extends \Faker\Provider\en_US\Address
         'Wakiso',
         'Yumbe',
         'Zombo'
-    );
+    ];
 
-    protected static $postcode = array( '#', "##", "###", "####", "#####" );
+    protected static $postcode = [ '#', "##", "###", "####", "#####" ];
 
-    protected static $region = array( 'Central', 'East', 'North', 'West' );
+    protected static $region = [ 'Central', 'East', 'North', 'West' ];
 
     /**
      * @example 'Fort Portal'

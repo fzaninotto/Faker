@@ -4,18 +4,18 @@ namespace Faker\Provider\tr_TR;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $buildingNumber = array('###', '##', '#');
+    protected static $buildingNumber = ['###', '##', '#'];
 
-    protected static $streetSuffix = array(
+    protected static $streetSuffix = [
         'Sokak', 'Caddesi', 'Kavşağı', 'Durağı', 'İş Hanı', 'Mevkii'
-    );
+    ];
 
-    protected static $postcode = array('#####');
+    protected static $postcode = ['#####'];
 
     /**
-    * @var array Cities of Turkey, for future updates please use @link https://tr.wikipedia.org/wiki/T%C3%BCrkiye'nin_illeri
-    */
-    protected static $cityNames = array(
+     * @var array Cities of Turkey, for future updates please use @link https://tr.wikipedia.org/wiki/T%C3%BCrkiye'nin_illeri
+     */
+    protected static $cityNames = [
         'Adana','Adıyaman','Afyonkarahisar','Ağrı','Aksaray','Amasya','Ankara','Antalya','Ardahan','Artvin','Aydın',
         'Balıkesir','Bartın','Batman','Bayburt','Bilecik','Bingöl','Bitlis','Bolu','Burdur','Bursa',
         'Çanakkale','Çankırı','Çorum',
@@ -36,13 +36,13 @@ class Address extends \Faker\Provider\Address
         'Van',
         'Yalova','Yozgat',
         'Zonguldak'
-    );
+    ];
 
     /**
-    * @var array Countries in Turkish
-    * @link https://tr.wikipedia.org/wiki/%C3%9Clkeler_listesi
-    */
-    protected static $country = array(
+     * @var array Countries in Turkish
+     * @link https://tr.wikipedia.org/wiki/%C3%9Clkeler_listesi
+     */
+    protected static $country = [
         'Almanya','Amerika Birleşik Devletleri','Arjantin','Arnavutluk','Avustralya','Avusturya','Azerbaycan',
         'Bahreyn','Belçika','Beyaz Rusya','Birleşik Arap Emirlikleri','Bosna-hersek','Brezilya','Bulgaristan',
         'Çek Cumhuriyeti','Cezayir','Çin Halk Cumhuriyeti',
@@ -67,24 +67,24 @@ class Address extends \Faker\Provider\Address
         'Venezuela','Vietnam',
         'Yemen','Yeni Zelanda','Yeşil Burun','Yunanistan',
         'Zambiya','Zimbabve'
-    );
+    ];
 
-    protected static $cityFormats = array(
+    protected static $cityFormats = [
         '{{cityName}}',
-    );
+    ];
 
-    protected static $streetNameFormats = array(
+    protected static $streetNameFormats = [
         '{{lastName}} {{streetSuffix}}',
         '{{firstName}} {{streetSuffix}}',
         '{{firstName}} {{streetSuffix}}'
-    );
+    ];
 
-    protected static $streetAddressFormats = array(
+    protected static $streetAddressFormats = [
         '{{streetName}} {{buildingNumber}}',
-    );
-    protected static $addressFormats = array(
+    ];
+    protected static $addressFormats = [
         "{{streetAddress}}\n{{postcode}} {{city}}",
-    );
+    ];
 
     public function cityName()
     {

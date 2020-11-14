@@ -4,17 +4,17 @@ namespace Faker\Provider\zh_CN;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $maleNameFormats = array(
+    protected static $maleNameFormats = [
         '{{lastName}}{{firstNameMale}}',
-    );
+    ];
 
-    protected static $femaleNameFormats = array(
+    protected static $femaleNameFormats = [
         '{{lastName}}{{firstNameFemale}}',
-    );
+    ];
 
-    protected static $titleMale = array('先生', '医生', '老师', '教授', '律师', '经理');
+    protected static $titleMale = ['先生', '医生', '老师', '教授', '律师', '经理'];
 
-    protected static $titleFemale = array('女士', '小姐', '夫人', '太太', '医生', '老师', '教授', '律师', '经理');
+    protected static $titleFemale = ['女士', '小姐', '夫人', '太太', '医生', '老师', '教授', '律师', '经理'];
 
     /**
      * According to http://baike.baidu.com/view/6109935.htm,
@@ -22,7 +22,7 @@ class Person extends \Faker\Provider\Person
      * containing 299 single-character surname and 1 double-character surname '欧阳',
      * so you can get random names including double-character surname but not too many.
      */
-    protected static $lastName = array(
+    protected static $lastName = [
         '李','王','张','刘','陈','杨','赵','黄','周','吴',
         '徐','孙','胡','朱','高','林','何','郭','马','罗',
         '梁','宋','郑','谢','韩','唐','冯','于','董','萧',
@@ -53,9 +53,9 @@ class Person extends \Faker\Provider\Person
         '竺','冼','原','官','衣','楚','佟','栗','匡','宗',
         '应','台','巫','鞠','僧','桑','荆','谌','银','扬',
         '明','沙','薄','伏','岑','习','胥','保','和','蔺',
-    );
+    ];
 
-    protected static $firstNameMale = array(
+    protected static $firstNameMale = [
         '伟','强','磊','洋','勇','军','杰','涛','超','明',
         '刚','平','辉','鹏','华','飞','鑫','波','斌','宇',
         '浩','凯','健','俊','帆','帅','旭','宁','龙','林',
@@ -66,9 +66,9 @@ class Person extends \Faker\Provider\Person
         '松','伦','超','钟','瑜','振国','洪','毅','昱然','哲',
         '翔','翼','祥','国庆','哲彦','正诚','正豪','正平','正业','志诚',
         '志新','志勇','志明','志强','志文','致远','智明','智勇','智敏','智渊',
-    );
+    ];
 
-    protected static $firstNameFemale = array(
+    protected static $firstNameFemale = [
         '芳','娜','敏','静','敏静','秀英','丽','洋','艳','娟',
         '文娟','君','文君','珺','霞','明霞','秀兰','燕','芬','桂芬',
         '玲','桂英','丹','萍','华','红','玉兰','桂兰','英','梅',
@@ -79,5 +79,5 @@ class Person extends \Faker\Provider\Person
         '丽丽','玉','秀芳','欣','淑英','桂芳','丽华','丹丹','桂香','淑华',
         '秀华','桂芝','小红','金凤','文','利','楠','红霞','瑜','桂花',
         '璐','凤兰','腊梅','瑶','嘉','怡','冰冰','玉梅','慧','婕',
-    );
+    ];
 }

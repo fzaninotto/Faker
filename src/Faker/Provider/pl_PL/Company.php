@@ -4,7 +4,7 @@ namespace Faker\Provider\pl_PL;
 
 class Company extends \Faker\Provider\Company
 {
-    protected static $formats = array(
+    protected static $formats = [
         '{{lastName}}',
         '{{lastName}}',
         '{{lastName}} {{companySuffix}}',
@@ -13,11 +13,11 @@ class Company extends \Faker\Provider\Company
         '{{lastName}} {{companySuffix}}',
         '{{companyPrefix}} {{lastName}}',
         '{{lastName}}-{{lastName}}',
-    );
+    ];
 
-    protected static $companySuffix = array('S.A.', 'i syn', 'sp. z o.o.', 'sp. j.', 'sp. p.', 'sp. k.', 'S.K.A', 's. c.', 'P.P.O.F');
+    protected static $companySuffix = ['S.A.', 'i syn', 'sp. z o.o.', 'sp. j.', 'sp. p.', 'sp. k.', 'S.K.A', 's. c.', 'P.P.O.F'];
 
-    protected static $companyPrefix = array('Grupa', 'Fundacja', 'Stowarzyszenie', 'Spółdzielnia');
+    protected static $companyPrefix = ['Grupa', 'Fundacja', 'Stowarzyszenie', 'Spółdzielnia'];
 
     /**
      * @example 'Grupa'
@@ -34,9 +34,9 @@ class Company extends \Faker\Provider\Company
      */
     public static function regon()
     {
-        $weights = array(8, 9, 2, 3, 4, 5, 6, 7);
+        $weights = [8, 9, 2, 3, 4, 5, 6, 7];
         $regionNumber = static::numberBetween(0, 49) * 2 + 1;
-        $result = array((int) ($regionNumber / 10), $regionNumber % 10);
+        $result = [(int) ($regionNumber / 10), $regionNumber % 10];
         for ($i = 2, $size = count($weights); $i < $size; $i++) {
             $result[$i] = static::randomDigit();
         }
@@ -60,7 +60,7 @@ class Company extends \Faker\Provider\Company
      */
     public static function regonLocal()
     {
-        $weights = array(2, 4, 8, 5, 0, 9, 7, 3, 6, 1, 2, 4, 8);
+        $weights = [2, 4, 8, 5, 0, 9, 7, 3, 6, 1, 2, 4, 8];
         $result = str_split(static::regon());
         for ($i = count($result), $size = count($weights); $i < $size; $i++) {
             $result[$i] = static::randomDigit();

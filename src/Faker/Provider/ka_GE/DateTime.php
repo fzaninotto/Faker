@@ -6,7 +6,7 @@ class DateTime extends \Faker\Provider\DateTime
 {
     public static function dayOfWeek($max = 'now')
     {
-        $map = array(
+        $map = [
             'Sunday' => 'კვირა',
             'Monday' => 'ორშაბათი',
             'Tuesday' => 'სამშაბათი',
@@ -14,14 +14,14 @@ class DateTime extends \Faker\Provider\DateTime
             'Thursday' => 'ხუთშაბათი',
             'Friday' => 'პარასკევი',
             'Saturday' => 'შაბათი',
-        );
+        ];
         $week = static::dateTime($max)->format('l');
         return isset($map[$week]) ? $map[$week] : $week;
     }
 
     public static function monthName($max = 'now')
     {
-        $map = array(
+        $map = [
             'January' => 'იანვარი',
             'February' => 'თებერვალი',
             'March' => 'მარტი',
@@ -34,7 +34,7 @@ class DateTime extends \Faker\Provider\DateTime
             'October' => 'ოქტომბერი',
             'November' => 'ნოემბერი',
             'December' => 'დეკემბერი',
-        );
+        ];
         $month = static::dateTime($max)->format('F');
         return isset($map[$month]) ? $map[$month] : $month;
     }

@@ -5,105 +5,105 @@ namespace Faker\Provider\fr_CA;
 class Text extends \Faker\Provider\Text
 {
     /**
-      * The Project Gutenberg EBook of La chasse galerie, by Honoré Beaugrand
-      *
-      * This eBook is for the use of anyone anywhere at no cost and with
-      * almost no restrictions whatsoever.  You may copy it, give it away or
-      * re-use it under the terms of the Project Gutenberg License included
-      * with this eBook or online at www.gutenberg.net
-      *
-      *
-      * Title: La chasse galerie
-      *        Légendes Canadiennes
-      *
-      * Author: Honoré Beaugrand
-      *
-      * Release Date: July 5, 2005 [EBook #16210]
-      *
-      * Language: French
-      *
-      *
-      * *** START OF THIS PROJECT GUTENBERG EBOOK LA CHASSE GALERIE ***
-      *
-      *
-      *
-      *
-      * This text was adapted from that found at the Bibliothèque virtuelle.
-      * http://www.fsj.ualberta.ca/biblio/default.htm
-      *
-      * Thank you to Donald Ipperciel and the Faculté Saint-Jean
-      * (University of Alberta) for making it available.
-      *
-      *
-      *
-      *
-      *
-      * DU MÊME AUTEUR
-      *
-      * JEANNE LA FILEUSE--Épisode de l'Émigration Franco-Canadienne aux
-      * États-Unis--Première édition 1878--Duexième édition--Montréal, 1888.
-      *
-      * LE VIEUX MONTRÉAL, 1611-1803--Album historique, chronologique et
-      * topographique de la ville de Montréal depuis se fondation--13 planches
-      * en couleurs--Dessins de P. L. Morin--Montréal, 1884.
-      *
-      * MELANGES--Trois Conférences--Montréal, 1888.
-      *
-      * LETTRES DE VOYAGE--France--Italie--Sicile--Malte--Tunisie--Algérie--
-      * Espagne--Montréal, 1889.
-      *
-      * SIX MOIS DANS LES MONTAGNES ROCHEUSES--Colorado--Utah--Nouveau
-      * Mexique--Édition illustrée--Montréal, 1890.
-      *
-      *
-      * LA
-      * CHASSE
-      * GALERIE
-      * Légendes
-      * Canadiennes
-      *
-      * par
-      * H. Beaugrand
-      *
-      * MONTREAL
-      * 1900
-      *
-      *
-      *
-      *
-      * TABLE DES MATIÈRES
-      *
-      * La Chasse-Galerie
-      * Le Loup-Garou
-      * La Bête à Grand'queue
-      * Macloune
-      * Le Père Louison
-      *
-      *
-      *
-      * La légende qui suit a déjà été publiée dans la _Patrie_, il y a
-      * quelque dix ans, et en anglais dans le _Century Magazine_ de New
-      * York, du mois d'août 1892, avec illustrations par Henri Julien.
-      * On voit que cela ne date pas d'hier. Le récit lui-même est basé
-      * sur une croyance populaire qui remonte à lépoque des coureurs
-      * des bois et des voyageurs du Nord-Ouest. Les "gens de chantier"
-      * ont continué la tradition, et c'est surtout dans les paroisses
-      * riveraines du Saint-Laurent que l'on connaît les légendes de
-      * la chasse-galerie. J'ai rencontré plus d'un vieux voyageur qui
-      * affirmait avoir vu voguer dans l'air des canots d'écorce remplis
-      * de "possédés" s'en allant voir leurs blondes, sous l'égide de
-      * Belzébuth. Si j'ai été forcé de me servir d'expressions plus ou
-      * moins académiques, on voudra bien se rappeler que je mets en scène
-      * des hommes au langage aussi rude que leur difficile métier.
-      *
-      * H.B.
-      *
-      *
-      *
-      *
-      * @see http://www.gutenberg.org/cache/epub/16210/pg16210.txt
-      * @var string
-      */
+     * The Project Gutenberg EBook of La chasse galerie, by Honoré Beaugrand
+     *
+     * This eBook is for the use of anyone anywhere at no cost and with
+     * almost no restrictions whatsoever.  You may copy it, give it away or
+     * re-use it under the terms of the Project Gutenberg License included
+     * with this eBook or online at www.gutenberg.net
+     *
+     *
+     * Title: La chasse galerie
+     *        Légendes Canadiennes
+     *
+     * Author: Honoré Beaugrand
+     *
+     * Release Date: July 5, 2005 [EBook #16210]
+     *
+     * Language: French
+     *
+     *
+     * *** START OF THIS PROJECT GUTENBERG EBOOK LA CHASSE GALERIE ***
+     *
+     *
+     *
+     *
+     * This text was adapted from that found at the Bibliothèque virtuelle.
+     * http://www.fsj.ualberta.ca/biblio/default.htm
+     *
+     * Thank you to Donald Ipperciel and the Faculté Saint-Jean
+     * (University of Alberta) for making it available.
+     *
+     *
+     *
+     *
+     *
+     * DU MÊME AUTEUR
+     *
+     * JEANNE LA FILEUSE--Épisode de l'Émigration Franco-Canadienne aux
+     * États-Unis--Première édition 1878--Duexième édition--Montréal, 1888.
+     *
+     * LE VIEUX MONTRÉAL, 1611-1803--Album historique, chronologique et
+     * topographique de la ville de Montréal depuis se fondation--13 planches
+     * en couleurs--Dessins de P. L. Morin--Montréal, 1884.
+     *
+     * MELANGES--Trois Conférences--Montréal, 1888.
+     *
+     * LETTRES DE VOYAGE--France--Italie--Sicile--Malte--Tunisie--Algérie--
+     * Espagne--Montréal, 1889.
+     *
+     * SIX MOIS DANS LES MONTAGNES ROCHEUSES--Colorado--Utah--Nouveau
+     * Mexique--Édition illustrée--Montréal, 1890.
+     *
+     *
+     * LA
+     * CHASSE
+     * GALERIE
+     * Légendes
+     * Canadiennes
+     *
+     * par
+     * H. Beaugrand
+     *
+     * MONTREAL
+     * 1900
+     *
+     *
+     *
+     *
+     * TABLE DES MATIÈRES
+     *
+     * La Chasse-Galerie
+     * Le Loup-Garou
+     * La Bête à Grand'queue
+     * Macloune
+     * Le Père Louison
+     *
+     *
+     *
+     * La légende qui suit a déjà été publiée dans la _Patrie_, il y a
+     * quelque dix ans, et en anglais dans le _Century Magazine_ de New
+     * York, du mois d'août 1892, avec illustrations par Henri Julien.
+     * On voit que cela ne date pas d'hier. Le récit lui-même est basé
+     * sur une croyance populaire qui remonte à lépoque des coureurs
+     * des bois et des voyageurs du Nord-Ouest. Les "gens de chantier"
+     * ont continué la tradition, et c'est surtout dans les paroisses
+     * riveraines du Saint-Laurent que l'on connaît les légendes de
+     * la chasse-galerie. J'ai rencontré plus d'un vieux voyageur qui
+     * affirmait avoir vu voguer dans l'air des canots d'écorce remplis
+     * de "possédés" s'en allant voir leurs blondes, sous l'égide de
+     * Belzébuth. Si j'ai été forcé de me servir d'expressions plus ou
+     * moins académiques, on voudra bien se rappeler que je mets en scène
+     * des hommes au langage aussi rude que leur difficile métier.
+     *
+     * H.B.
+     *
+     *
+     *
+     *
+     * @see http://www.gutenberg.org/cache/epub/16210/pg16210.txt
+     * @var string
+     */
     protected static $baseText = <<<'EOT'
 LA CHASSE-GALERIE
 

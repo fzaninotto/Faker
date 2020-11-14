@@ -7,7 +7,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
     /**
      * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia
      */
-    protected static $jpjNumberPlateFormats = array(
+    protected static $jpjNumberPlateFormats = [
         '{{peninsularPrefix}}{{validAlphabet}}{{validAlphabet}} {{numberSequence}}',
         '{{peninsularPrefix}}{{validAlphabet}}{{validAlphabet}} {{numberSequence}}',
         '{{peninsularPrefix}}{{validAlphabet}}{{validAlphabet}} {{numberSequence}}',
@@ -17,7 +17,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
         '{{sarawakPrefix}} {{numberSequence}} {{validAlphabet}}',
         '{{sabahPrefix}} {{numberSequence}} {{validAlphabet}}',
         '{{specialPrefix}} {{numberSequence}}',
-    );
+    ];
 
     /**
      * Some alphabet has higher frequency that coincides with the current number
@@ -25,30 +25,30 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
      *
      * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format
      */
-    protected static $peninsularPrefix = array(
+    protected static $peninsularPrefix = [
         'A','A','B','C','D','F','J','J','K','M','N','P','P','R','T','V',
         'W','W','W','W','W','W',
-    );
+    ];
 
     /**
      * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format_2
      */
-    protected static $sarawakPrefix = array(
+    protected static $sarawakPrefix = [
         'QA','QK','QB','QC','QL','QM','QP','QR','QS','QT'
-    );
+    ];
 
     /**
      * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format_3
      */
-    protected static $sabahPrefix = array(
+    protected static $sabahPrefix = [
         'SA','SAA','SAB','SAC','SB','SD','SG',
         'SK','SL','SS','SSA','ST','STA','SU'
-    );
+    ];
 
     /**
      * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Commemorative_plates
      */
-    protected static $specialPrefix = array(
+    protected static $specialPrefix = [
         '1M4U',
         'A1M',
         'BAMbee',
@@ -67,19 +67,19 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
         'WAJA',
         'XIIINAM','XOIC','XXVIASEAN','XXXIDB',
         'Y'
-    );
+    ];
 
     /**
      * Chances of having an empty alphabet will be 1/24
      *
      * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format
      */
-    protected static $validAlphabets = array(
+    protected static $validAlphabets = [
         'A','B','C','D','E','F',
         'G','H','J','K','L','M',
         'N','P','Q','R','S','T',
         'U','V','W','X','Y',''
-    );
+    ];
 
     /**
      * Return a valid Malaysia JPJ(Road Transport Department) vehicle licence plate number

@@ -4,21 +4,21 @@ namespace Faker\Provider\ru_RU;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $cityPrefix = array('город');
+    protected static $cityPrefix = ['город'];
 
-    protected static $regionSuffix = array('область');
-    protected static $streetPrefix = array(
+    protected static $regionSuffix = ['область'];
+    protected static $streetPrefix = [
         'пер.', 'ул.', 'пр.', 'шоссе', 'пл.', 'бульвар',
         'въезд', 'спуск', 'проезд', 'наб.',
-    );
+    ];
 
-    protected static $buildingNumber = array('##');
-    protected static $postcode = array('######');
+    protected static $buildingNumber = ['##'];
+    protected static $postcode = ['######'];
 
     /**
      * @link https://ru.wikipedia.org/wiki/Общероссийский_классификатор_стран_мира#Список_стран_согласно_Классификатору
      */
-    protected static $country = array(
+    protected static $country = [
         'Абхазия', 'Австралия', 'Австрия', 'Азербайджан', 'Албания', 'Алжир', 'Американское Самоа', 'Ангилья', 'Ангола', 'Андорра', 'Антарктида', 'Антигуа и Барбуда', 'Аргентина', 'Армения', 'Аруба', 'Афганистан',
         'Багамы', 'Бангладеш', 'Барбадос', 'Бахрейн', 'Беларусь', 'Белиз', 'Бельгия', 'Бенин', 'Бермуды', 'Болгария', 'Боливия', 'Бонэйр, Синт-Эстатиус и Саба', 'Босния и Герцеговина', 'Ботсвана', 'Бразилия', 'Британская Территория в Индийском Океане', 'Британские Виргинские Острова', 'Бруней', 'Буркина-Фасо', 'Бурунди', 'Бутан',
         'Вануату', 'Ватикан', 'Венгрия', 'Венесуэла', 'Великобритания', 'Виргинские Острова Соединённых Штатов', 'Вьетнам',
@@ -46,9 +46,9 @@ class Address extends \Faker\Provider\Address
         'Эквадор', 'Экваториальная Гвинея', 'Эландские Острова', 'Эль-Сальвадор', 'Эритрея', 'Эстония', 'Эфиопия',
         'Южная Африка', 'Южная Джорджия и Южные Сандвичевы Острова', 'Южная Осетия', 'Южный Судан',
         'Ямайка', 'Япония',
-    );
+    ];
 
-    protected static $region = array(
+    protected static $region = [
         'Амурская', 'Архангельская', 'Астраханская', 'Белгородская', 'Брянская',
         'Владимирская', 'Волгоградская', 'Вологодская', 'Воронежская', 'Ивановская',
         'Иркутская', 'Калининградская', 'Калужская', 'Кемеровская', 'Кировская',
@@ -59,9 +59,9 @@ class Address extends \Faker\Provider\Address
         'Сахалинская', 'Свердловская', 'Смоленская', 'Тамбовская', 'Тверская',
         'Томская', 'Тульская', 'Тюменская', 'Ульяновская', 'Челябинская',
         'Читинская', 'Ярославская',
-    );
+    ];
 
-    protected static $city = array(
+    protected static $city = [
         'Балашиха', 'Видное', 'Волоколамск', 'Воскресенск', 'Дмитров',
         'Домодедово', 'Дорохово', 'Егорьевск', 'Зарайск', 'Истра',
         'Кашира', 'Клин', 'Коломна', 'Красногорск', 'Лотошино',
@@ -70,20 +70,20 @@ class Address extends \Faker\Provider\Address
         'Павловский Посад', 'Подольск', 'Пушкино', 'Раменское', 'Сергиев Посад',
         'Серебряные Пруды', 'Серпухов', 'Солнечногорск', 'Ступино', 'Талдом',
         'Чехов', 'Шатура', 'Шаховская', 'Щёлково',
-    );
+    ];
 
-    protected static $street = array(
+    protected static $street = [
         'Косиора', 'Ладыгина', 'Ленина', 'Ломоносова', 'Домодедовская', 'Гоголя', '1905 года', 'Чехова', 'Сталина',
         'Космонавтов', 'Гагарина', 'Славы', 'Бухарестская', 'Будапештсткая', 'Балканская'
-    );
+    ];
 
-    protected static $addressFormats = array(
+    protected static $addressFormats = [
         "{{postcode}}, {{region}} {{regionSuffix}}, {{cityPrefix}} {{city}}, {{streetPrefix}} {{street}}, {{buildingNumber}}",
-    );
+    ];
 
-    protected static $streetAddressFormats = array(
+    protected static $streetAddressFormats = [
         "{{streetPrefix}} {{street}}, {{buildingNumber}}"
-    );
+    ];
 
     public static function buildingNumber()
     {

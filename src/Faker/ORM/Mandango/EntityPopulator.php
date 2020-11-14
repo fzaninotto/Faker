@@ -2,8 +2,8 @@
 
 namespace Faker\ORM\Mandango;
 
-use Mandango\Mandango;
 use Faker\Provider\Base;
+use Mandango\Mandango;
 
 /**
  * Service class for populating a table through a Mandango ActiveRecord class.
@@ -11,7 +11,7 @@ use Faker\Provider\Base;
 class EntityPopulator
 {
     protected $class;
-    protected $columnFormatters = array();
+    protected $columnFormatters = [];
 
     /**
      * Class constructor.
@@ -56,7 +56,7 @@ class EntityPopulator
      */
     public function guessColumnFormatters(\Faker\Generator $generator, Mandango $mandango)
     {
-        $formatters = array();
+        $formatters = [];
         $nameGuesser = new \Faker\Guesser\Name($generator);
         $columnTypeGuesser = new \Faker\ORM\Mandango\ColumnTypeGuesser($generator);
 

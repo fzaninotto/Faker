@@ -4,7 +4,7 @@ namespace Faker\Provider\id_ID;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
-    protected static $formats = array(
+    protected static $formats = [
         // regional numbers
         '02# #### ###',
         '02## #### ###',
@@ -51,5 +51,5 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '(+62) 7## #### ####',
         '(+62) 8## #### ####',
         '(+62) 9## #### ####',
-    );
+    ];
 }

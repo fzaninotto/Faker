@@ -4,20 +4,20 @@ namespace Faker\Provider\en_PH;
 
 class Address extends \Faker\Provider\en_US\Address
 {
-    protected static $streetNameFormats = array(
+    protected static $streetNameFormats = [
         '{{lastName}} {{streetSuffix}}'
-    );
+    ];
 
     //http://en.wikipedia.org/wiki/Postal_addresses_in_the_Philippines
-    protected static $addressFormats = array(
+    protected static $addressFormats = [
         '{{streetAddress}}, {{barangay}}, {{city}} {{postcode}} {{province}}', '{{streetAddress}}, {{municipality}} {{postcode}} {{province}}'
-    );
+    ];
 
-    protected static $buildingNumber = array('##A', '##', '##A/##', '##/##');
-    protected static $postcode = array('####');
+    protected static $buildingNumber = ['##A', '##', '##A/##', '##/##'];
+    protected static $postcode = ['####'];
 
     //http://en.wikipedia.org/wiki/Provinces_of_the_Philippines
-    protected static $province = array(
+    protected static $province = [
         'Abra', 'Agusan del Norte', 'Agusan del Sur', 'Aklan', 'Albay',
         'Antique', 'Apayao', 'Aurora', 'Basilan', 'Bataan', 'Batanes',
         'Batangas', 'Benguet', 'Biliran', 'Bohol', 'Bukidnon', 'Bulacan',
@@ -38,10 +38,10 @@ class Address extends \Faker\Provider\en_US\Address
         'Surigao del Norte', 'Surigao del Sur', 'Tarlac',
         'Tawi-Tawi', 'Zambales', 'Zamboanga del Norte',
         'Zamboanga del Sur', 'Zamboanga Sibugay', 'Metro Manila'
-    );
+    ];
 
     //http://en.wikipedia.org/wiki/List_of_cities_in_the_Philippines
-    protected static $city = array(
+    protected static $city = [
         'Caloocan', 'Las Piñas', 'Makati', 'Malabon', 'Mandaluyong',
         'Manila', 'Marikina', 'Muntinlupa', 'Navotas', 'Parañaque', 'Pasay',
         'Pasig', 'Quezon City', 'San Juan', 'Taguig', 'Valenzuela',
@@ -68,10 +68,10 @@ class Address extends \Faker\Provider\en_US\Address
         'Sorsogon City', 'General Santos', 'Koronadal', 'Maasin', 'Tacurong',
         'Surigao City', 'Bislig', 'Tandag', 'Tarlac City','Olongapo',
         'Dapitan', 'Dipolog', 'Pagadian', 'Zamboanga City'
-    );
+    ];
 
     //http://en.wikipedia.org/wiki/List_of_Philippine_cities_and_municipalities_by_population
-    protected static $municipality = array(
+    protected static $municipality = [
         'Bangued', 'Boliney', 'Bucay', 'Bucloc', 'Daguioman', 'Danglas',
         'Dolores', 'La Paz', 'Lacub', 'Lagangilang', 'Lagayan', 'Langiden',
         'Licuan-Baay', 'Luba', 'Malibcong', 'Manabo', 'Peñarrubia',
@@ -389,11 +389,11 @@ class Address extends \Faker\Provider\en_US\Address
         'Buug', 'Diplahan', 'Imelda', 'Ipil', 'Kabasalan', 'Mabuhay',
         'Malangas', 'Naga', 'Olutanga', 'Payao', 'Roseller Lim', 'Siay',
         'Talusan', 'Titay', 'Tungawan'
-    );
+    ];
 
-    protected static $barangay = array(
+    protected static $barangay = [
         'Poblacion'
-    );
+    ];
 
     public function province()
     {

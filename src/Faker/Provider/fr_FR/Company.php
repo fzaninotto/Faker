@@ -9,51 +9,51 @@ class Company extends \Faker\Provider\Company
     /**
      * @var array French company name formats.
      */
-    protected static $formats = array(
+    protected static $formats = [
         '{{lastName}} {{companySuffix}}',
         '{{lastName}} {{lastName}} {{companySuffix}}',
         '{{lastName}}',
         '{{lastName}}',
-    );
+    ];
 
     /**
      * @var array French catch phrase formats.
      */
-    protected static $catchPhraseFormats = array(
+    protected static $catchPhraseFormats = [
         '{{catchPhraseNoun}} {{catchPhraseVerb}} {{catchPhraseAttribute}}',
-    );
+    ];
 
     /**
      * @var array French nouns (used by the catch phrase format).
      */
-    protected static $noun = array(
+    protected static $noun = [
         'la sécurité', 'le plaisir', 'le confort', 'la simplicité', "l'assurance", "l'art", 'le pouvoir', 'le droit',
         'la possibilité', "l'avantage", 'la liberté'
-    );
+    ];
 
     /**
      * @var array French verbs (used by the catch phrase format).
      */
-    protected static $verb = array(
+    protected static $verb = [
         'de rouler', "d'avancer", "d'évoluer", 'de changer', "d'innover", 'de louer', "d'atteindre vos buts",
         'de concrétiser vos projets'
-    );
+    ];
 
     /**
      * @var array End of sentences (used by the catch phrase format).
      */
-    protected static $attribute = array(
+    protected static $attribute = [
         'de manière efficace', 'plus rapidement', 'plus facilement', 'plus simplement', 'en toute tranquilité',
         'avant-tout', 'autrement', 'naturellement', 'à la pointe', 'sans soucis', "à l'état pur",
         'à sa source', 'de manière sûre', 'en toute sécurité'
-    );
+    ];
 
     /**
      * @var array Company suffixes.
      */
-    protected static $companySuffix = array('SA', 'S.A.', 'SARL', 'S.A.R.L.', 'SAS', 'S.A.S.', 'et Fils');
+    protected static $companySuffix = ['SA', 'S.A.', 'SARL', 'S.A.R.L.', 'SAS', 'S.A.S.', 'et Fils'];
 
-    protected static $siretNicFormats = array('####', '0###', '00#%');
+    protected static $siretNicFormats = ['####', '0###', '00#%'];
 
     /**
      * Returns a random catch phrase noun.
@@ -143,7 +143,7 @@ class Company extends \Faker\Provider\Company
     /**
      * @var array An array containing string which should not appear twice in a catch phrase.
      */
-    protected static $wordsWhichShouldNotAppearTwice = array('sécurité', 'simpl');
+    protected static $wordsWhichShouldNotAppearTwice = ['sécurité', 'simpl'];
 
     /**
      * Validates a french catch phrase.
@@ -171,7 +171,7 @@ class Company extends \Faker\Provider\Company
      * @link http://www.pole-emploi.fr/candidat/le-code-rome-et-les-fiches-metiers-@/article.jspz?id=60702
      * @note Randomly took 300 from this list
      */
-    protected static $jobTitleFormat = array(
+    protected static $jobTitleFormat = [
         'Agent d\'accueil',
         'Agent d\'enquêtes',
         'Agent d\'entreposage',
@@ -472,5 +472,5 @@ class Company extends \Faker\Provider\Company
         'Verrier à main levée',
         'Vidéo-jockey',
         'Vitrier',
-    );
+    ];
 }

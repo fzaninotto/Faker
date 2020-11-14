@@ -4,9 +4,9 @@ namespace Faker\Provider\en_HK;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $country = array('Hong Kong');
+    protected static $country = ['Hong Kong'];
 
-    protected static $syllables = array(
+    protected static $syllables = [
         'A', 'Ai', 'Ak', 'Am', 'An', 'Ang', 'Ap', 'At', 'Au',
         'Cha', 'Chai', 'Chak', 'Cham', 'Chan', 'Chang', 'Chap', 'Chat', 'Chau',
         'Che', 'Chek', 'Cheng', 'Cheuk', 'Cheung',
@@ -84,19 +84,19 @@ class Address extends \Faker\Provider\Address
         'Yik', 'Yim', 'Yin', 'Ying', 'Yip', 'Yit', 'Yiu',
         'Yo',
         'Yue', 'Yuen', 'Yuet', 'Yui', 'Yuk', 'Yun', 'Yung',
-    );
+    ];
 
-    protected static $streetAddressFormats = array(
+    protected static $streetAddressFormats = [
         '{{buildingNumber}} {{streetName}}',
         '{{buildingNumber}} {{village}}',
         'Block {{buildingNumber}}, {{estate}}',
-    );
+    ];
 
-    protected static $addressFormats = array(
+    protected static $addressFormats = [
         "{{streetAddress}}\n{{town}}\n{{city}}",
-    );
+    ];
 
-    protected static $villageNameFormats = array(
+    protected static $villageNameFormats = [
         '{{syllable}} {{syllable}} {{villageSuffix}}',
         '{{syllable}} {{syllable}} {{villageSuffix}}',
         '{{syllable}} {{syllable}} {{villageSuffix}}',
@@ -120,9 +120,9 @@ class Address extends \Faker\Provider\Address
         '{{syllable}} {{syllable}} {{syllable}}',
         '{{town}}',
         '{{town}} {{villageSuffix}}',
-    );
+    ];
 
-    protected static $estateNameFormats = array(
+    protected static $estateNameFormats = [
         '{{syllable}} {{syllable}} {{estateSuffix}}',
         '{{syllable}} {{syllable}} {{estateSuffix}}',
         '{{syllable}} {{syllable}} {{estateSuffix}}',
@@ -130,14 +130,14 @@ class Address extends \Faker\Provider\Address
         '{{syllable}} {{syllable}} {{syllable}} {{estateSuffix}}',
         '{{syllable}} {{syllable}} {{syllable}} {{estateSuffix}}',
         '{{town}} {{estateSuffix}}',
-    );
+    ];
 
 
-    protected static $villageSuffixes = array('Village', 'Tsuen', 'San Tsuen', 'New Village', 'Wai');
+    protected static $villageSuffixes = ['Village', 'Tsuen', 'San Tsuen', 'New Village', 'Wai'];
 
-    protected static $estateSuffixes = array('Estate', 'Court');
+    protected static $estateSuffixes = ['Estate', 'Court'];
 
-    protected static $streetNameFormats = array(
+    protected static $streetNameFormats = [
         '{{syllable}} {{streetSuffix}}',
         '{{syllable}} {{syllable}} {{streetSuffix}}',
         '{{syllable}} {{syllable}} {{streetSuffix}}',
@@ -151,23 +151,23 @@ class Address extends \Faker\Provider\Address
         '{{syllable}} {{syllable}} {{syllable}} {{streetSuffix}} {{direction}}',
         '{{englishStreetName}} {{streetSuffix}}',
         '{{englishStreetName}} {{streetSuffix}} {{direction}}',
-    );
+    ];
 
-    protected static $englishStreetNames = array(
+    protected static $englishStreetNames = [
         "King's", "Queen's", "Nathan", "Robinson", "Kingston", "Irving", "Bonham", "Salisbury",
         "Tonkin", "Nanking", "Peking", "Canton", "Amoy", "Shanghai"
-    );
+    ];
 
-    protected static $streetSuffix = array(
+    protected static $streetSuffix = [
         'Road', 'Road', 'Road', 'Street', 'Street', 'Street', 'Lane',
         'Circuit', 'Avenue', 'Path', 'Square',
-    );
+    ];
 
-    protected static $directions = array('North', 'East', 'South', 'West');
+    protected static $directions = ['North', 'East', 'South', 'West'];
 
-    protected static $cities = array('Hong Kong', 'Kowloon', 'New Territories');
+    protected static $cities = ['Hong Kong', 'Kowloon', 'New Territories'];
 
-    protected static $towns = array(
+    protected static $towns = [
         '{{syllable}} {{syllable}}',
         '{{syllable}} {{syllable}}',
         '{{syllable}} {{syllable}}',
@@ -191,7 +191,7 @@ class Address extends \Faker\Provider\Address
         'Aberdeen',
         'Stanley',
         'Victoria',
-    );
+    ];
 
     public function city()
     {

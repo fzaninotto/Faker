@@ -4,7 +4,7 @@ namespace Faker\Provider\sk_SK;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $cityName = array(
+    protected static $cityName = [
         'Ábelová', 'Abovce', 'Abrahám', 'Abrahámovce', 'Abrahámovce', 'Abramová', 'Abranovce', 'Adamovské Kochanovce', 'Adidovce', 'Alekšince',
         'Andovce', 'Andrejová', 'Ardanovce', 'Ardovo', 'Arnutovce', 'Báb', 'Babie', 'Babín', 'Babiná', 'Babindol', 'Babinec', 'Bacúch', 'Bacúrov',
         'Báč', 'Bačka', 'Bačkov', 'Bačkovík', 'Bádice', 'Badín', 'Baďan', 'Báhoň', 'Bajany', 'Bajč', 'Bajerov', 'Bajerovce', 'Bajka', 'Bajtava',
@@ -292,15 +292,15 @@ class Address extends \Faker\Provider\Address
         'Žarnov', 'Žarnovica', 'Žaškov', 'Žbince', 'Ždaňa', 'Ždiar', 'Žehňa', 'Žehra', 'Železná Breznica', 'Železník', 'Želiezovce',
         'Želmanovce', 'Želovce', 'Žemberovce', 'Žemliare', 'Žiar', 'Žiar', 'Žiar nad Hronom', 'Žibritov', 'Žihárec', 'Žikava', 'Žilina',
         'Žíp', 'Žipov', 'Žirany', 'Žitavany', 'Žitavce', 'Žitná-Radiša', 'Žlkovce', 'Župčany', 'Župkov'
-    );
+    ];
 
-    protected static $buildingNumber = array('#####', '####', '###');
-    protected static $streetSuffix = array(
+    protected static $buildingNumber = ['#####', '####', '###'];
+    protected static $streetSuffix = [
         'Alley','Avenue','Branch','Bridge','Brook','Brooks','Burg','Burgs','Bypass','Camp','Canyon','Cape','Causeway','Center','Centers','Circle','Circles','Cliff','Cliffs','Club','Common','Corner','Corners','Course','Court','Courts','Cove','Coves','Creek','Crescent','Crest','Crossing','Crossroad','Curve','Dale','Dam','Divide','Drive','Drive','Drives','Estate','Estates','Expressway','Extension','Extensions','Fall','Falls','Ferry','Field','Fields','Flat','Flats','Ford','Fords','Forest','Forge','Forges','Fork','Forks','Fort','Freeway','Garden','Gardens','Gateway','Glen','Glens','Green','Greens','Grove','Groves','Harbor','Harbors','Haven','Heights','Highway','Hill','Hills','Hollow','Inlet','Inlet','Island','Island','Islands','Islands','Isle','Isle','Junction','Junctions','Key','Keys','Knoll','Knolls','Lake','Lakes','Land','Landing','Lane','Light','Lights','Loaf','Lock','Locks','Locks','Lodge','Lodge','Loop','Mall','Manor','Manors','Meadow','Meadows','Mews','Mill','Mills','Mission','Mission','Motorway','Mount','Mountain','Mountain','Mountains','Mountains','Neck','Orchard','Oval','Overpass','Park','Parks','Parkway','Parkways','Pass','Passage','Path','Pike','Pine','Pines','Place','Plain','Plains','Plains','Plaza','Plaza','Point','Points','Port','Port','Ports','Ports','Prairie','Prairie','Radial','Ramp','Ranch','Rapid','Rapids','Rest','Ridge','Ridges','River','Road','Road','Roads','Roads','Route','Row','Rue','Run','Shoal','Shoals','Shore','Shores','Skyway','Spring','Springs','Springs','Spur','Spurs','Square','Square','Squares','Squares','Station','Station','Stravenue','Stravenue','Stream','Stream','Street','Street','Streets','Summit','Summit','Terrace','Throughway','Trace','Track','Trafficway','Trail','Trail','Tunnel','Tunnel','Turnpike','Turnpike','Underpass','Union','Unions','Valley','Valleys','Via','Viaduct','View','Views','Village','Village','Villages','Ville','Vista','Vista','Walk','Walks','Wall','Way','Ways','Well','Wells'
-    );
-    protected static $postcode = array('### ##');
+    ];
+    protected static $postcode = ['### ##'];
 
-    protected static $country = array(
+    protected static $country = [
         'Afganistan', 'Albánsko', 'Alžírsko', 'Andorra', 'Angola', 'Antigua a Barbuda', 'Argentína', 'Arménsko', 'Austrália', 'Azerbajdžan',
         'Bahamy', 'Bahrajn', 'Bangladéš', 'Barbados', 'Belgicko', 'Belize', 'Benin', 'Bhután', 'Bielorusko', 'Bolívia', 'Bosna a Hercegovina',
         'Botswana', 'Brazília', 'Brunej', 'Bulharsko', 'Burkina', 'Burundi', 'Cyprus', 'Čad', 'Česko', 'Čierna Hora', 'Čile', 'Čína', 'Dánsko',
@@ -320,21 +320,21 @@ class Address extends \Faker\Provider\Address
         'Španielsko', 'Švajčiarsko', 'Švédsko', 'Tadžikistan', 'Taliansko', 'Tanzánia', 'Thajsko', 'Togo', 'Tonga', 'Trinidad a Tobago',
         'Tunisko', 'Turecko', 'Turkménsko', 'Tuvalu', 'Uganda', 'Ukrajina', 'Uruguaj', 'Uzbekistan', 'Vanuatu', 'Vatikán', 'Venezuela', 'Vietnam',
         'Východný Timor', 'Zambia', 'Zimbabwe', 'Zvrchovaný vojenský špitálsky rád sv. Jána Jeruzalemského z Ródu a Malty'
-    );
-    protected static $cityFormats = array(
+    ];
+    protected static $cityFormats = [
         '{{cityName}}'
-    );
-    protected static $streetNameFormats = array(
+    ];
+    protected static $streetNameFormats = [
         '{{firstName}} {{streetSuffix}}',
         '{{lastName}} {{streetSuffix}}'
-    );
-    protected static $streetAddressFormats = array(
+    ];
+    protected static $streetAddressFormats = [
         '{{streetName}} {{buildingNumber}}'
-    );
+    ];
 
-    protected static $addressFormats = array(
+    protected static $addressFormats = [
         '{{streetAddress}}\n {{postcode}}\n {{city}}',
-    );
+    ];
 
     public static function cityName()
     {

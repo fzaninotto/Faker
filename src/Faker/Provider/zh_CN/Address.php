@@ -4,7 +4,7 @@ namespace Faker\Provider\zh_CN;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $cites = array(
+    protected static $cites = [
         '北京', '上海', '天津', '重庆',
         '哈尔滨', '长春', '沈阳', '呼和浩特',
         '石家庄', '乌鲁木齐', '兰州', '西宁',
@@ -14,9 +14,9 @@ class Address extends \Faker\Provider\Address
         '南宁', '拉萨', '杭州', '南昌',
         '广州', '福州', '海口',
         '香港', '澳门'
-    );
+    ];
 
-    protected static $states = array(
+    protected static $states = [
         '北京市', '天津市', '河北省', '山西省',
         '内蒙古自治区', '辽宁省', '吉林省',
         '黑龙江省', '上海市', '江苏省',
@@ -27,9 +27,9 @@ class Address extends \Faker\Provider\Address
         '西藏自治区', '陕西省', '甘肃省', '青海省',
         '宁夏回族自治区', '新疆维吾尔自治区',
         '香港特别行政区', '澳门特别行政区', '台湾省'
-    );
+    ];
 
-    protected static $stateAbbr = array(
+    protected static $stateAbbr = [
         '京', '皖', '渝', '闽',
         '甘', '粤', '桂', '黔',
         '琼', '冀', '豫', '黑',
@@ -39,9 +39,9 @@ class Address extends \Faker\Provider\Address
         '沪', '川', '津', '藏',
         '新', '滇', '浙', '港',
         '澳', '台'
-    );
+    ];
 
-    protected static $areas = array(
+    protected static $areas = [
         '西夏区', '永川区', '秀英区', '高港区',
         '清城区', '兴山区', '锡山区', '清河区',
         '龙潭区', '华龙区', '海陵区', '滨城区',
@@ -56,9 +56,9 @@ class Address extends \Faker\Provider\Address
         '六枝特区', '涪城区', '清浦区', '南溪区',
         '淄川区', '高明区', '金水区', '中原区',
         '高新开发区', '经济开发新区', '新区'
-    );
+    ];
 
-    protected static $country = array(
+    protected static $country = [
         '阿富汗', '阿拉斯加', '阿尔巴尼亚', '阿尔及利亚',
         '安道尔', '安哥拉', '安圭拉岛英', '安提瓜和巴布达',
         '阿根廷', '亚美尼亚', '阿鲁巴岛', '阿森松', '澳大利亚',
@@ -106,7 +106,7 @@ class Address extends \Faker\Provider\Address
         '委内瑞拉', '越南', '维尔京群岛', '维尔京群岛和圣罗克伊',
         '威克岛', '瓦里斯和富士那群岛', '西撒哈拉', '也门', '南斯拉夫',
         '扎伊尔', '赞比亚', '桑给巴尔', '津巴布韦', '中华人民共和国', '中国'
-    );
+    ];
 
     public function city()
     {

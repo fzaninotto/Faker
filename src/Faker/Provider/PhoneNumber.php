@@ -6,7 +6,7 @@ use Faker\Calculator\Luhn;
 
 class PhoneNumber extends Base
 {
-    protected static $formats = array('###-###-###');
+    protected static $formats = ['###-###-###'];
 
     /**
      * @example '555-123-546'
@@ -22,7 +22,7 @@ class PhoneNumber extends Base
      */
     public function e164PhoneNumber()
     {
-        $formats = array('+%############');
+        $formats = ['+%############'];
         return static::numerify($this->generator->parse(static::randomElement($formats)));
     }
 

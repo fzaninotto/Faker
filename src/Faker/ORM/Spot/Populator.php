@@ -11,8 +11,8 @@ class Populator
 {
     protected $generator;
     protected $locator;
-    protected $entities = array();
-    protected $quantities = array();
+    protected $entities = [];
+    protected $quantities = [];
 
     /**
      * Populator constructor.
@@ -37,8 +37,8 @@ class Populator
     public function addEntity(
         $entityName,
         $number,
-        $customColumnFormatters = array(),
-        $customModifiers = array(),
+        $customColumnFormatters = [],
+        $customModifiers = [],
         $useExistingData = false
     ) {
         $mapper = $this->locator->mapper($entityName);
@@ -73,7 +73,7 @@ class Populator
             throw new \InvalidArgumentException("No entity manager passed to Spot Populator.");
         }
 
-        $insertedEntities = array();
+        $insertedEntities = [];
         foreach ($this->quantities as $entityName => $number) {
             for ($i = 0; $i < $number; $i++) {
                 $insertedEntities[$entityName][] = $this->entities[$entityName]->execute(

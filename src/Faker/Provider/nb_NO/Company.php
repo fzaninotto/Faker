@@ -4,7 +4,7 @@ namespace Faker\Provider\nb_NO;
 
 class Company extends \Faker\Provider\Company
 {
-    protected static $formats = array(
+    protected static $formats = [
         '{{lastName}} {{companySuffix}}',
         '{{lastName}} {{companySuffix}}',
         '{{lastName}} {{companySuffix}}',
@@ -13,19 +13,19 @@ class Company extends \Faker\Provider\Company
         '{{lastName}} & {{lastName}}',
         '{{lastName}} og {{lastName}}',
         '{{lastName}} og {{lastName}} {{companySuffix}}'
-    );
+    ];
 
     /**
      * Common suffixes
      * @link https://www.brreg.no/bedrift/organisasjonsformer/
      */
-    protected static $companySuffix = array('ANS', 'AS', 'ASA', 'BA', 'DA', 'ENK', 'GFS', 'KTRF', 'NUF', 'PK', 'SA', 'SPA', 'STI', 'VIFE');
+    protected static $companySuffix = ['ANS', 'AS', 'ASA', 'BA', 'DA', 'ENK', 'GFS', 'KTRF', 'NUF', 'PK', 'SA', 'SPA', 'STI', 'VIFE'];
 
     /**
      * 1500 random job titles from Statistisk Sentralbyrå
      * @link http://www.ssb.no/a/yrke/yrke.csv
      */
-    protected static $jobTitleFormat = array(
+    protected static $jobTitleFormat = [
         'Administrasjonsdirektør', 'Administrasjonskonsulent', 'Administrasjonssekretær', 'Administrasjonssjef', 'Administrerende Overlege', 'Admiral', 'Advokatassistent', 'Aerobicinstruktør', 'Afis-Fullmektig', 'Agrotekniker', 'Ais-Fullmektig', 'Akrobat', 'Aktivitør', 'Akupunktør', 'Alarmoperatør', 'Allmenningbestyrer', 'Allmennpraktiserende Lege', 'Amanuensis', 'Ambassaderåd', 'Ambassadesekretær', 'Ambulansemedhjelper', 'Ambulansesjef', 'Ambulerende Vaktmester', 'Ammoniakkoker', 'Anestesilege', 'Animatør', 'Anleggsdykker', 'Anleggsgartnermester', 'Anleggsmaskinkjører', 'Anleggsmaskinmekaniker', 'Anleggsoperatør', 'Annenflyger', 'Annonseakkvisitør', 'Annonsebehandler', 'Annonsekonsulent', 'Annonseselger', 'Annonsesjef', 'Anretningshjelp', 'Apotekmedarbeider', 'Arbeidsmedisiner', 'Arbeidssjef', 'Arbeidsstudieingeniør', 'Arbeidsterapeut', 'Arbeidstilrettelegger', 'Arbeidstilsynskontrollør', 'Arbeidstilsynsrådgiver', 'Arkivassistent', 'Arkivmedarbeider', 'Arrestforvarer', 'Asfaltarbeider', 'Asfaltverkarbeider', 'Asfaltør', 'Assistentfotograf', 'Assisterende Administrerende Direktør', 'Assisterende Banksjef', 'Assisterende Bestyrer', 'Assisterende Borer', 'Assisterende Byfogd', 'Assisterende Fylkeshelsesjef', 'Assisterende Fylkeslege', 'Assisterende Fylkesmann', 'Assisterende Helsedirektør', 'Assisterende Kjøkkensjef', 'Assisterende Kommunegartner', 'Assisterende Sjefflygeleder', 'Assisterende Sjefspsykolog', 'Assisterende Sykepleiesjef', 'Assisterende Vaktmester', 'Astrofysiker', 'Astronom', 'Atomfysiker', 'Attache', 'Autoklavoperatør', 'Autoklavpasser', 'Automasjonsingeniør', 'Automatiker', 'Automatiseringsmontør', 'Avdelingsarkitekt', 'Avdelingsbanksjef', 'Avdelingsbetjent', 'Avdelingsdirektør', 'Avdelingsergoterapeut', 'Avdelingsingeniør', 'Avdelingsleder/fysioterapeut', 'Avdelingspsykolog', 'Avdelingssekretær', 'Avdelingssjef', 'Avdelingssjef Akvakultur Mv.', 'Avdelingssjef Restaurant', 'Avdelingssykepleier', 'Avlaster', 'Avlskonsulent', 'Avløser',
         'Babysvømmeinstruktør', 'Badeassistent', 'Badebetjent', 'Bakermester', 'Bakteriolog', 'Banearbeider', 'Bankassistent', 'Bankkonsulent', 'Banksjef', 'Barkeeper', 'Barmedarbeider', 'Barne- Og Ungdomssekretær', 'Barnehageassistent', 'Barnehjemsbestyrer', 'Barnepasser', 'Barnevernskonsulent', 'Bartender', 'Basketballtrener', 'Bedriftskonsulent', 'Bedriftspsykolog', 'Bedriftsrevisor', 'Bedriftsøkonom', 'Befrakter', 'Begravelsesbyråassistent', 'Begravelsesbyråmedarbeider', 'Begravelsesbyråsjåfør', 'Beleggskjærer', 'Bemanningskonsulent', 'Benkesnekker', 'Beregner', 'Bergmester', 'Bergverksarbeider', 'Beskjærer', 'Bestyrer Helsetjenester', 'Betjent', 'Betongindustriarbeider', 'Betongvarearbeider', 'Bibliotekleder', 'Biblioteksjef', 'Bilagskontrollør', 'Bilelektriker', 'Bilgummiarbeider', 'Bilinspektør', 'Bilklargjører', 'Billedkonsulent', 'Billedtekniker', 'Billettekspeditør', 'Billettkonsulent', 'Billettkontrollør', 'Billettselger', 'Billettør', 'Bilmegler', 'Bilmekaniker', 'Bilmottaker', 'Bilpleier', 'Bilrenser', 'Bilsakkyndig', 'Biltilsyninspektør', 'Biopat', 'Blandemaskinoperatør', 'Blander', 'Blogger', 'Blomsterdekoratør', 'Blåseinstrumentmaker', 'Bokbinder', 'Bokbinderassistent', 'Bokbussassistent', 'Bokbussfører', 'Bokhandlermedarbeider', 'Bokhandlermedhjelper', 'Bokholderassistent', 'Bokollektivmedarbeider', 'Boligleder', 'Boligsjef', 'Bomringvakt', 'Bomvakt', 'Bookingansvarlig', 'Bookingmedarbeider', 'Bookingsekretær', 'Borearbeider', 'Boredekksarbeider', 'Boreingeniør', 'Boreoperasjonsleder', 'Borer', 'Boresjef', 'Borevæskeingeniør', 'Botaniker', 'Boveileder', 'Bowlingvert', 'Branninspektør', 'Brannisolatør', 'Brannkonstabel', 'Brannmester', 'Brannvakt', 'Brannvarslerinstallatør', 'Brenner', 'Brolegger', 'Bromaler', 'Brooperatør', 'Brukskunstner', 'Brygger', 'Bryggeriformann', 'Bryggerimester', 'Brønnborer', 'Budsjåfør', 'Bukker', 'Bulldoserkjører', 'Bunadmedarbeider', 'Bunnlærstanser', 'Buntmaker', 'Business Controller', 'Bussfører', 'Butikkinnehaver', 'Butikkinspektør', 'Butikkmedarbeider', 'Butikkonsulent', 'Butikksjef', 'Butikkslakter', 'Byarkitekt', 'Bydelsdirektør', 'Byfogd', 'Byggekranfører', 'Byggesaksbehandler', 'Byggesjef', 'Byggtapetserer', 'Byggtapetsermester', 'Bygningsarbeider', 'Bygningskontrollør', 'Byplanlegger', 'Byplansjef', 'Byrettsdommer', 'Byråd', 'Byssegutt', 'Byssepike', 'Båndsager', 'Båtfører', 'Båtmekaniker', 'Bærplukker', 'Børsdirektør', 'Børsemakermester', 'Børstemaker', 'Bøter',
         'Cabin Chief', 'Cafemedarbeider', 'Campingplassmedarbeider', 'Cash Management Controller', 'Cellulosearbeider', 'Charge D\'affaires', 'Cirkustekniker', 'Cnc-Operatør', 'Coach', 'Controller', 'Croupier', 'Cruiseassistent',
@@ -51,5 +51,5 @@ class Company extends \Faker\Provider\Company
         'Yrkesfaglærer', 'Yrkesopplæringsleder', 'Yster',
         'Økonom', 'Økonomiarbeider',
         'Øre-Nese-Hals-Spesialist',
-    );
+    ];
 }

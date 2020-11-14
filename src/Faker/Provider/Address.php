@@ -4,24 +4,24 @@ namespace Faker\Provider;
 
 class Address extends Base
 {
-    protected static $citySuffix = array('Ville');
-    protected static $streetSuffix = array('Street');
-    protected static $cityFormats = array(
+    protected static $citySuffix = ['Ville'];
+    protected static $streetSuffix = ['Street'];
+    protected static $cityFormats = [
         '{{firstName}}{{citySuffix}}',
-    );
-    protected static $streetNameFormats = array(
+    ];
+    protected static $streetNameFormats = [
         '{{lastName}} {{streetSuffix}}'
-    );
-    protected static $streetAddressFormats = array(
+    ];
+    protected static $streetAddressFormats = [
         '{{buildingNumber}} {{streetName}}'
-    );
-    protected static $addressFormats = array(
+    ];
+    protected static $addressFormats = [
         '{{streetAddress}} {{postcode}} {{city}}',
-    );
+    ];
 
-    protected static $buildingNumber = array('%#');
-    protected static $postcode = array('#####');
-    protected static $country = array();
+    protected static $buildingNumber = ['%#'];
+    protected static $postcode = ['#####'];
+    protected static $country = [];
 
     /**
      * @example 'town'
@@ -131,9 +131,9 @@ class Address extends Base
      */
     public static function localCoordinates()
     {
-        return array(
+        return [
             'latitude' => static::latitude(),
             'longitude' => static::longitude()
-        );
+        ];
     }
 }

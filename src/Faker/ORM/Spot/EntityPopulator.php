@@ -31,11 +31,11 @@ class EntityPopulator
     /**
      * @var array
      */
-    protected $columnFormatters = array();
+    protected $columnFormatters = [];
     /**
      * @var array
      */
-    protected $modifiers = array();
+    protected $modifiers = [];
 
     /**
      * @var bool
@@ -118,7 +118,7 @@ class EntityPopulator
      */
     public function guessColumnFormatters(Generator $generator)
     {
-        $formatters = array();
+        $formatters = [];
         $nameGuesser = new Name($generator);
         $columnTypeGuesser = new ColumnTypeGuesser($generator);
         $fields = $this->mapper->fields();

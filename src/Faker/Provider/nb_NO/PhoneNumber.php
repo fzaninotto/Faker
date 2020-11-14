@@ -5,9 +5,9 @@ namespace Faker\Provider\nb_NO;
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
     /**
-    * @var array Norwegian phone number formats
-    */
-    protected static $formats = array(
+     * @var array Norwegian phone number formats
+     */
+    protected static $formats = [
         '+47#########',
         '+47 ## ## ## ##',
         '## ## ## ##',
@@ -18,19 +18,19 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '4## ## ###',
         '9#######',
         '4#######',
-    );
+    ];
 
     /**
      * @var array Norweign mobile number formats
      */
-    protected static $mobileFormats = array(
+    protected static $mobileFormats = [
         '+474#######',
         '+479#######',
         '9## ## ###',
         '4## ## ###',
         '9#######',
         '4#######',
-    );
+    ];
 
     public function mobileNumber()
     {

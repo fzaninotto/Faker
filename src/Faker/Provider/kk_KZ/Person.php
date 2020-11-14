@@ -24,53 +24,53 @@ class Person extends \Faker\Provider\Person
     /**
      * @var array
      */
-    public static $firstSequenceBitWeights = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
+    public static $firstSequenceBitWeights = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
     /**
      * @var array
      */
-    public static $secondSequenceBitWeights = array(3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 2);
+    public static $secondSequenceBitWeights = [3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 2];
 
     /**
      * @var array
      */
-    public static $genderCenturyMap = array(
-        self::GENDER_MALE   => array(
+    public static $genderCenturyMap = [
+        self::GENDER_MALE   => [
             self::CENTURY_19TH => self::MALE_CENTURY_19TH,
             self::CENTURY_20TH => self::MALE_CENTURY_20TH,
             self::CENTURY_21ST => self::MALE_CENTURY_21ST,
-        ),
-        self::GENDER_FEMALE => array(
+        ],
+        self::GENDER_FEMALE => [
             self::CENTURY_19TH => self::FEMALE_CENTURY_19TH,
             self::CENTURY_20TH => self::FEMALE_CENTURY_20TH,
             self::CENTURY_21ST => self::FEMALE_CENTURY_21ST,
-        ),
-    );
+        ],
+    ];
 
     /**
      * @see https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D0%BA%D0%B0%D1%8F_%D1%84%D0%B0%D0%BC%D0%B8%D0%BB%D0%B8%D1%8F
      *
      * @var array
      */
-    protected static $maleNameFormats = array(
+    protected static $maleNameFormats = [
         '{{lastName}}ұлы {{firstNameMale}}',
-    );
+    ];
 
     /**
      * @see https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D0%BA%D0%B0%D1%8F_%D1%84%D0%B0%D0%BC%D0%B8%D0%BB%D0%B8%D1%8F
      *
      * @var array
      */
-    protected static $femaleNameFormats = array(
+    protected static $femaleNameFormats = [
         '{{lastName}}қызы {{firstNameFemale}}',
-    );
+    ];
 
     /**
      * @see http://koshpendi.kz/index.php/nomad/imena/
      *
      * @var array
      */
-    protected static $firstNameMale = array(
+    protected static $firstNameMale = [
         'Аылғазы',
         'Әбдіқадыр',
         'Бабағожа',
@@ -99,14 +99,14 @@ class Person extends \Faker\Provider\Person
         'Шаттық',
         'Ыстамбақы',
         'Ібни',
-    );
+    ];
 
     /**
      * @see http://koshpendi.kz/index.php/nomad/imena/
      *
      * @var array
      */
-    protected static $firstNameFemale = array(
+    protected static $firstNameFemale = [
         'Асылтас',
         'Әужа',
         'Бүлдіршін',
@@ -136,7 +136,7 @@ class Person extends \Faker\Provider\Person
         'Шырынгүл',
         'Ырысты',
         'Іңкәр',
-    );
+    ];
 
     /**
      * @see http://koshpendi.kz/index.php/nomad/imena/
@@ -144,7 +144,7 @@ class Person extends \Faker\Provider\Person
      *
      * @var array
      */
-    protected static $lastName = array(
+    protected static $lastName = [
         'Адырбай',
         'Әжібай',
         'Байбөрі',
@@ -173,7 +173,7 @@ class Person extends \Faker\Provider\Person
         'Шілдебай',
         'Ыстамбақы',
         'Ісмет',
-    );
+    ];
 
     /**
      * @param  integer $year

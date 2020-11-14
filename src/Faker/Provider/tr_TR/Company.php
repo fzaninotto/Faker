@@ -4,7 +4,7 @@ namespace Faker\Provider\tr_TR;
 
 class Company extends \Faker\Provider\Company
 {
-    protected static $formats = array(
+    protected static $formats = [
         '{{lastName}} {{companySuffix}}',
         '{{lastName}}oğlu {{companySuffix}}',
         '{{lastName}} {{lastName}} {{companySuffix}}',
@@ -12,11 +12,11 @@ class Company extends \Faker\Provider\Company
         '{{lastName}} {{companyField}} {{companySuffix}}',
         '{{lastName}} {{companyField}} {{companySuffix}}',
         '{{lastName}} {{lastName}} {{companyField}} {{companySuffix}}',
-    );
+    ];
 
-    protected static $companySuffix = array('A.Ş.', 'Ltd. Şti.');
+    protected static $companySuffix = ['A.Ş.', 'Ltd. Şti.'];
 
-    protected static $companyField = array(
+    protected static $companyField = [
         'Akaryakıt', 'Beyaz Eşya', 'Bilgi İşlem', 'Bilgisayar', 'Bilişim Hizmetleri',
         'Biracılık ve Malt Sanayii', 'Cam Sanayii', 'Çimento', 'Demir ve Çelik',
         'Dış Ticaret', 'Eczacılık', 'Elektrik İletim', 'Elektrik Üretim', 'Elektronik',
@@ -27,13 +27,13 @@ class Company extends \Faker\Provider\Company
         'Sağlık Hizmetleri', 'Servis ve Ticaret', 'Süt Ürünleri', 'Tarım Sanayi',
         'Tavukçuluk', 'Tekstil', 'Telekomunikasyon', 'Tersane ve Ulaşım Sanayi',
         'Ticaret', 'Ticaret ve Sanayi', 'Ticaret ve Taahhüt', 'Turizm', 'Yatırım'
-    );
+    ];
 
     /**
-    * @link https://tr.wikipedia.org/wiki/Meslekler_listesi
-    * @note Randomly took 300 from this list
-    */
-    protected static $jobTitleFormat = array(
+     * @link https://tr.wikipedia.org/wiki/Meslekler_listesi
+     * @note Randomly took 300 from this list
+     */
+    protected static $jobTitleFormat = [
         'Acil tıp teknisyeni', 'Agronomist', 'Aile hekimi', 'Aktar', 'Aktör', 'Aktüer',
         'Akustikçi', 'Albay', 'Ambarcı', 'Ambulans şoförü', 'Amiral', 'Analist',
         'Antika satıcısı', 'Araba tamircisi', 'Arabacı', 'Araştırmacı', 'Armatör', 'Artist',
@@ -85,7 +85,7 @@ class Company extends \Faker\Provider\Company
         'Veteriner sağlık teknikeri', 'Veznedar', 'Vinç operatörü', 'Vitrinci', 'Yarbay',
         'Yardımcı pilot', 'Yargıç', 'Yazar', 'Yazı işleri müdürü', 'Yazılım mühendisi',
         'Yer gösterici', 'Yol bekçisi', 'Yorgancı', 'Yoğurtçu', 'Yıkıcı', 'Zabıta', 'Zoolog'
-    );
+    ];
 
     /**
      * Returns a random company field.

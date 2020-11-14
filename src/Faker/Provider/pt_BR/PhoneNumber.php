@@ -4,13 +4,13 @@ namespace Faker\Provider\pt_BR;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
-    protected static $landlineFormats = array('2###-####', '3###-####', '4###-####');
+    protected static $landlineFormats = ['2###-####', '3###-####', '4###-####'];
 
     /**
-    * Since december 2016 all mobile phone numbers in brazil begin with 9 and landlines 2, 3 or 4.
-    * @link http://www.anatel.gov.br/Portal/exibirPortalPaginaEspecial.do?org.apache.struts.taglib.html.TOKEN=9594e1d11fbc996d52bda44e608bb744&codItemCanal=1794&pastaSelecionada=2984
-    */
-    protected static $cellphoneFormats = array('9####-####');
+     * Since december 2016 all mobile phone numbers in brazil begin with 9 and landlines 2, 3 or 4.
+     * @link http://www.anatel.gov.br/Portal/exibirPortalPaginaEspecial.do?org.apache.struts.taglib.html.TOKEN=9594e1d11fbc996d52bda44e608bb744&codItemCanal=1794&pastaSelecionada=2984
+     */
+    protected static $cellphoneFormats = ['9####-####'];
 
     /**
      * Generates a 2-digit area code not composed by zeroes.
@@ -19,14 +19,14 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      */
     public static function areaCode()
     {
-        $areaCodes = array(
+        $areaCodes = [
             '11', '12', '13', '14', '15', '16', '17', '18', '19', '21', '22', '24',
             '27', '28', '31', '32', '33', '34', '35', '37', '38', '41', '42', '43',
             '44', '45', '46', '47', '48', '49', '51', '53', '54', '55', '61', '62',
             '63', '64', '65', '66', '67', '68', '69', '71', '73', '74', '75', '77',
             '79', '81', '82', '83', '84', '85', '86', '87', '88', '89', '91', '92',
             '93', '94', '95', '96', '97', '98', '99'
-        );
+        ];
 
         return self::randomElement($areaCodes);
     }
@@ -41,7 +41,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         $number = static::numerify(static::randomElement(static::$cellphoneFormats));
 
         if (!$formatted) {
-            $number = strtr($number, array('-' => ''));
+            $number = strtr($number, ['-' => '']);
         }
 
         return $number;
@@ -57,7 +57,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         $number = static::numerify(static::randomElement(static::$landlineFormats));
 
         if (!$formatted) {
-            $number = strtr($number, array('-' => ''));
+            $number = strtr($number, ['-' => '']);
         }
 
         return $number;
@@ -70,11 +70,11 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      */
     public static function phone($formatted = true)
     {
-        $options = static::randomElement(array(
-            array('cellphone', false),
-            array('cellphone', true),
-            array('landline', null),
-        ));
+        $options = static::randomElement([
+            ['cellphone', false],
+            ['cellphone', true],
+            ['landline', null],
+        ]);
 
         return call_user_func("static::{$options[0]}", $formatted, $options[1]);
     }
@@ -121,7 +121,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      */
     public function phoneNumber()
     {
-        $method = static::randomElement(array('cellphoneNumber', 'landlineNumber'));
+        $method = static::randomElement(['cellphoneNumber', 'landlineNumber']);
         return call_user_func("static::$method", true);
     }
 
@@ -131,7 +131,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      */
     public static function phoneNumberCleared()
     {
-        $method = static::randomElement(array('cellphoneNumber', 'landlineNumber'));
+        $method = static::randomElement(['cellphoneNumber', 'landlineNumber']);
         return call_user_func("static::$method", false);
     }
 }

@@ -4,9 +4,9 @@ namespace Faker\Provider\nl_NL;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $buildingNumber = array('%', '%#', '%##', '%###', '%-?', '%#-?', '%?', '%#?', '%-#', '%#-##');
+    protected static $buildingNumber = ['%', '%#', '%##', '%###', '%-?', '%#-?', '%?', '%#?', '%-#', '%#-##'];
 
-    protected static $postcodes = array(
+    protected static $postcodes = [
         '1013PT', '1015GZ', '1053GS', '1058EG', '1060PM', '1068NE', '1072NL', '1073SK', '1074JA', '1078NH', '1111LW',
         '1121JC', '1141RP', '1141VM', '1161TC', '1183CH', '1187RK', '1188LP', '1271KZ', '1312SG', '1323CW', '1325EZ',
         '1333EJ', '1334DP', '1339VJ', '1351AC', '1352AC', '1354LM', '1356AC', '1391RX', '1406MZ', '1411JM', '1435GS',
@@ -42,29 +42,29 @@ class Address extends \Faker\Provider\Address
         '8802VB', '8861KZ', '8862AC', '8933EK', '9057LC', '9061AS', '9073LK', '9164LC', '9201TM', '9203PZ', '9269SV',
         '9269SZ', '9289ZH', '9354VD', '9401MA', '9406BM', '9431GV', '9501AM', '9502CX', '9642EA', '9651AR', '9675LR',
         '9712LJ', '9742GT', '9745EH', '9751TA', '9751TS', '9752BK', '9752GE', '9801TA', '9901EH', '9991EG', '9999XK',
-    );
+    ];
 
-    protected static $streetNameFormats = array('{{lastName}}{{streetSuffix}}');
+    protected static $streetNameFormats = ['{{lastName}}{{streetSuffix}}'];
 
-    protected static $streetAddressFormats = array('{{streetName}} {{buildingNumber}}');
+    protected static $streetAddressFormats = ['{{streetName}} {{buildingNumber}}'];
 
-    protected static $cityFormats = array('{{cityName}}');
+    protected static $cityFormats = ['{{cityName}}'];
 
-    protected static $addressFormats = array(
+    protected static $addressFormats = [
         "{{streetAddress}}\n{{postcode}} {{city}}",
-    );
+    ];
 
-    protected static $streetSuffix = array(
+    protected static $streetSuffix = [
         'baan', 'boulevard', 'dreef', 'hof', 'laan', 'pad', 'ring', 'singel', 'steeg', 'straat', 'weg',
-    );
+    ];
 
     /**
-    * Export of BAG (http://bag.vrom.nl/)
-    * last updated 2012/11/09
-    *
-    * @var array
-    */
-    protected static $cityNames = array(
+     * Export of BAG (http://bag.vrom.nl/)
+     * last updated 2012/11/09
+     *
+     * @var array
+     */
+    protected static $cityNames = [
         "'s Gravenmoer", "'s-Graveland", "'s-Gravendeel", "'s-Gravenhage", "'s-Gravenpolder", "'s-Gravenzande", "'s-Heer Abtskerke", "'s-Heer Arendskerke", "'s-Heer Hendrikskinderen", "'s-Heerenberg", "'s-Heerenbroek", "'s-Heerenhoek", "'s-Hertogenbosch", "'t Goy", "'t Haantje", "'t Harde", "'t Loo Oldebroek", "'t Veld", "'t Waar", "'t Zand", "'t Zandt", '2e Valthermond',
         'Aadorp', 'Aagtekerke', 'Aalden', 'Aalsmeer', 'Aalsmeerderbrug', 'Aalst', 'Aalsum', 'Aalten', 'Aardenburg', 'Aarlanderveen', 'Aarle-Rixtel', 'Aartswoud', 'Abbega', 'Abbekerk', 'Abbenbroek', 'Abbenes', 'Abcoude', 'Achlum', 'Achterveld', 'Achterveld', 'Achthuizen', 'Achtmaal', 'Acquoy', 'Adorp', 'Aduard', 'Aerdenhout', 'Aerdt', 'Afferden L', 'Afferden', 'Agelo', 'Akersloot', 'Akkrum', 'Akmarijp', 'Albergen', 'Alblasserdam', 'Alde Leie', 'Aldeboarn', 'Aldtsjerk', 'Alem', 'Alkmaar', 'Allingawier', 'Almelo', 'Almen', 'Almere', 'Almkerk', 'Alphen aan den Rijn', 'Alphen', 'Alphen', 'Alteveer gem Hoogeveen', 'Alteveer', 'Alteveer', 'Alteveer', 'Altforst', 'Ambt Delden', 'Ameide', 'Amen', 'America', 'Amerongen', 'Amersfoort', 'Ammerstol', 'Ammerzoden', 'Amstelhoek', 'Amstelveen', 'Amstenrade', 'Amsterdam Zuidoost', 'Amsterdam', 'Andel', 'Andelst', 'Anderen', 'Andijk', 'Ane', 'Anerveen', 'Anevelde', 'Angeren', 'Angerlo', 'Anjum', 'Ankeveen', 'Anloo', 'Anna Paulowna', 'Annen', 'Annerveenschekanaal', 'Ansen', 'Ansen', 'Apeldoorn', 'Apeldoorn', 'Appelscha', 'Appeltern', 'Appingedam', 'Arcen', 'Arkel', 'Arnemuiden', 'Arnhem', 'Arum', 'Asch', 'Asperen', 'Assen', 'Assendelft', 'Asten', 'Augsbuurt', 'Augustinusga', 'Austerlitz', 'Avenhorn', 'Axel', 'Azewijn',
         'Baaiduinen', 'Baaium', 'Baak', 'Baambrugge', 'Baard', 'Baarland', 'Baarle-Nassau', 'Baarlo', 'Baarlo', 'Baarn', 'Baars', 'Babberich', 'Babyloniënbroek', 'Bad Nieuweschans', 'Badhoevedorp', 'Baexem', 'Baflo', 'Bakel', 'Bakhuizen', 'Bakkeveen', 'Balgoij', 'Balinge', 'Balk', 'Balkbrug', 'Balloo', 'Balloërveld', 'Ballum', 'Baneheide', 'Banholt', 'Bant', 'Bantega', 'Barchem', 'Barendrecht', 'Barger-Compascuum', 'Barneveld', 'Barsingerhorn', 'Basse', 'Batenburg', 'Bathmen', 'Bavel AC', 'Bavel', 'Bears', 'Bedum', 'Beegden', 'Beek en Donk', 'Beek', 'Beek', 'Beek', 'Beekbergen', 'Beemte Broekland', 'Beers NB', 'Beerta', 'Beerze', 'Beerzerveld', 'Beesd', 'Beesel', 'Beets', 'Beetsterzwaag', 'Beilen', 'Beinsdorp', 'Belfeld', 'Bellingwolde', 'Belt-Schutsloot', 'Beltrum', 'Bemelen', 'Bemmel', 'Beneden-Leeuwen', 'Bennebroek', 'Bennekom', 'Benneveld', 'Benningbroek', 'Benschop', 'Bentelo', 'Benthuizen', 'Bentveld', 'Berg en Dal', 'Berg en Dal', 'Berg en Terblijt', 'Bergambacht', 'Bergeijk', 'Bergen (NH)', 'Bergen L', 'Bergen aan Zee', 'Bergen op Zoom', 'Bergentheim', 'Bergharen', 'Berghem', 'Bergschenhoek', 'Beringe', 'Berkel en Rodenrijs', 'Berkel-Enschot', 'Berkenwoude', 'Berkhout', 'Berlicum', 'Berltsum', 'Bern', 'Best', 'Beugen', 'Beuningen Gld', 'Beuningen', 'Beusichem', 'Beutenaken', 'Beverwijk', 'Biddinghuizen', 'Bierum', 'Biervliet', 'Biervliet', 'Biest-Houtakker', 'Biezenmortel', 'Biggekerke', 'Bilthoven', 'Bingelrade', 'Bitgum', 'Bitgummole', 'Bladel', 'Blankenham', 'Blaricum', 'Blauwestad', 'Blauwhuis', 'Bleiswijk', 'Blesdijke', 'Bleskensgraaf ca', 'Blessum', 'Blije', 'Blijham', 'Blitterswijck', 'Bloemendaal', 'Blokker', 'Blokzijl', 'Boazum', 'Bocholtz', 'Bodegraven', 'Boekel', 'Boelenslaan', 'Boer', 'Boerakker', 'Boerakker', 'Boesingheliede', 'Boijl', 'Boksum', 'Bolsward', 'Bontebok', 'Boornbergum', 'Boornzwaag', 'Borculo', 'Borger', 'Borgercompagnie', 'Borgercompagnie', 'Borgsweer', 'Born', 'Borne', 'Bornerbroek', 'Bornwird', 'Borssele', 'Bosch en Duin', 'Boschoord', 'Boskoop', 'Bosschenhoofd', 'Botlek Rotterdam', 'Bourtange', 'Boven-Leeuwen', 'Bovenkarspel', 'Bovensmilde', 'Boxmeer', 'Boxtel', 'Braamt', 'Brakel', 'Brandwijk', 'Brantgum', 'Breda', 'Bredevoort', 'Breedenbroek', 'Breezand', 'Breezanddijk', 'Breskens', 'Breukelen', 'Breukeleveen', 'Brielle', 'Briltil', 'Britsum', 'Britswert', 'Broek in Waterland', 'Broek op Langedijk', 'Broek', 'Broekhuizen', 'Broekhuizen', 'Broekhuizenvorst', 'Broekland', 'Bronkhorst', 'Bronneger', 'Bronnegerveen', 'Brouwershaven', 'Bruchem', 'Brucht', 'Bruchterveld', 'Bruinehaar', 'Bruinisse', 'Brummen', 'Brunssum', 'Bruntinge', 'Buchten', 'Budel', 'Budel-Dorplein', 'Budel-Schoot', 'Buggenum', 'Buinen', 'Buinerveen', 'Buitenkaag', 'Buitenpost', 'Bunde', 'Bunne', 'Bunnik', 'Bunschoten-Spakenburg', 'Burdaard', 'Buren', 'Buren', 'Burgerbrug', 'Burgerveen', 'Burgh-Haamstede', 'Burgum', 'Burgwerd', 'Burum', 'Bussum', 'Buurmalsen', 'Buurmalsen',
@@ -89,13 +89,13 @@ class Address extends \Faker\Provider\Address
         'Waaksens', 'Waal', 'Waalre', 'Waalwijk', 'Waarde', 'Waardenburg', 'Waarder', 'Waardhuizen', 'Waarland', 'Waaxens', 'Wachtum', 'Waddinxveen', 'Wadenoijen', 'Wagenberg', 'Wagenborgen', 'Wageningen', 'Walem', 'Walsoorden', 'Wamel', 'Wanneperveen', 'Wanroij', 'Wanssum', 'Wapenveld', 'Wapse', 'Wapserveen', 'Warder', 'Warffum', 'Warfhuizen', 'Warfstermolen', 'Warmenhuizen', 'Warmond', 'Warns', 'Warnsveld', 'Warstiens', 'Warten', 'Waskemeer', 'Waspik', 'Wassenaar', 'Wateren', 'Watergang', 'Waterhuizen', 'Wateringen', 'Waterlandkerkje', 'Waverveen', 'Wedde', 'Weerselo', 'Weert', 'Weesp', 'Wehe-den Hoorn', 'Wehl', 'Weidum', 'Weiteveen', 'Wekerom', 'Well L', 'Well', 'Wellerlooi', 'Welsum', 'Wemeldinge', 'Wenum Wiesel', 'Wenum Wiesel', 'Wergea', 'Werkendam', 'Werkhoven', 'Wernhout', 'Wervershoof', 'Wesepe', 'Wessem', 'West-Graftdijk', 'West-Terschelling', 'Westbeemster', 'Westbroek', 'Westdorp', 'Westdorpe', 'Westendorp', 'Westerbeek', 'Westerbork', 'Westerbroek', 'Westeremden', 'Westergeest', 'Westerhaar-Vriezenveensewijk', 'Westerhoven', 'Westerland', 'Westerlee', 'Westernieland', 'Westervelde', 'Westervoort', 'Westerwijtwerd', 'Westhem', 'Westhoek', 'Westkapelle', 'Westknollendam', 'Westmaas', 'Westwoud', 'Westzaan', 'Wetering', 'Weteringbrug', 'Wetsens', 'Wetsinge', 'Weurt', 'Wezep', 'Wezup', 'Wezuperbrug', 'Wichmond', 'Wier', 'Wierden', 'Wieringerwaard', 'Wieringerwerf', 'Wierum', 'Wijchen', 'Wijckel', 'Wijdenes', 'Wijdewormer', 'Wijhe', 'Wijk aan Zee', 'Wijk bij Duurstede', 'Wijk en Aalburg', 'Wijlre', 'Wijnaldum', 'Wijnandsrade', 'Wijnbergen', 'Wijngaarden', 'Wijnjewoude', 'Wijster', 'Wilbertoord', 'Wildervank', 'Wilhelminadorp', 'Wilhelminaoord', 'Willemsoord', 'Willemstad', 'Wilnis', 'Wilp', 'Wilsum', 'Winde', 'Windraak', 'Winkel', 'Winneweer', 'Winschoten', 'Winssen', 'Winsum', 'Winsum', 'Wintelre', 'Winterswijk Brinkheurne', 'Winterswijk Corle', 'Winterswijk Henxel', 'Winterswijk Huppel', 'Winterswijk Kotten', 'Winterswijk Meddo', 'Winterswijk Miste', 'Winterswijk Ratum', 'Winterswijk Woold', 'Winterswijk', 'Wirdum Gn', 'Wirdum', 'Wissenkerke', 'Witharen', 'Witmarsum', 'Witte Paarden', 'Wittelte', 'Wittem', 'Witteveen', 'Wiuwert', 'Wjelsryp', 'Woensdrecht', 'Woerden', 'Woerdense Verlaat', 'Wognum', 'Woldendorp', 'Wolfheze', 'Wolphaartsdijk', 'Wolsum', 'Woltersum', 'Wolvega', 'Wommels', 'Wons', 'Workum', 'Wormer', 'Wormerveer', 'Woubrugge', 'Woudbloem', 'Woudenberg', 'Woudrichem', 'Woudsend', 'Wouw', 'Wouwse Plantage', 'Wyns', 'Wytgaard', 'Wâlterswâld', 'Wânswert',
         'Yde', 'Yerseke', 'Ypecolsga', 'Ysbrechtum', 'Ysselsteyn',
         'Zaamslag', 'Zaandam', 'Zaandijk', 'Zalk', 'Zaltbommel', 'Zandberg', 'Zandeweer', 'Zandhuizen', 'Zandpol', 'Zandvoort', 'Zeddam', 'Zeegse', 'Zeeland', 'Zeerijp', 'Zeewolde', 'Zegge', 'Zegveld', 'Zeijen', 'Zeijerveen', 'Zeijerveld', 'Zeist', 'Zelhem', 'Zenderen', 'Zennewijnen', 'Zennewijnen', 'Zetten', 'Zevenaar', 'Zevenbergen', 'Zevenbergschen Hoek', 'Zevenbergschen Hoek', 'Zevenhoven', 'Zevenhuizen', 'Zevenhuizen', 'Zierikzee', 'Zieuwent', 'Zijderveld', 'Zijdewind', 'Zijldijk', 'Zoelen', 'Zoelmond', 'Zoetermeer', 'Zoeterwoude', 'Zonnemaire', 'Zorgvlied', 'Zoutelande', 'Zoutkamp', 'Zuid-Beijerland', 'Zuid-Scharwoude', 'Zuidbroek', 'Zuiddorpe', 'Zuidermeer', 'Zuiderwoude', 'Zuidhorn', 'Zuidlaarderveen', 'Zuidland', 'Zuidlaren', 'Zuidoostbeemster', 'Zuidschermer', 'Zuidveen', 'Zuidveld', 'Zuidvelde', 'Zuidwolde', 'Zuidwolde', 'Zuidzande', 'Zuilichem', 'Zuna', 'Zundert', 'Zurich', 'Zutphen', 'Zuurdijk', 'Zwaag', 'Zwaagdijk-Oost', 'Zwaagdijk-West', 'Zwaanshoek', 'Zwagerbosch', 'Zwammerdam', 'Zwanenburg', 'Zwartebroek', 'Zwartemeer', 'Zwartewaal', 'Zwartsluis', 'Zweeloo', 'Zweins', 'Zwiggelte', 'Zwijndrecht', 'Zwinderen', 'Zwolle', 'de Hoef', 'de Lutte', 'de Wijk', 'de Woude',
-    );
+    ];
 
-    protected static $state = array(
+    protected static $state = [
         'Drenthe', 'Gelderland', 'Groningen', 'Flevoland', 'Friesland', 'Noord-Brabant', 'Noord-Holland', 'Overijssel', 'Limburg', 'Utrecht', 'Zeeland', 'Zuid-Holland'
-    );
+    ];
 
-    protected static $country = array(
+    protected static $country = [
         'Afghanistan', 'Albanië', 'Algerije', 'Amerikaans-Samoa', 'Andorra', 'Angola', 'Amerikaanse Virgineilanden', 'Anguilla', 'Antartica', 'Antigua en Barbuda', 'Argentinië', 'Armenië', 'Aruba', 'Australië', 'Azerbeidzjan',
         'Bahamas', 'Bahrein', 'Bangladesh', 'Barbados', 'België', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnië-Herzegovina', 'Botswana', 'Bouvet Eiland (Bouvetøya)', 'Brazilië', 'Britse Maagdeneilanden', 'Brunei Darussalam', 'Bulgarije', 'Burkina Faso', 'Burundi',
         'Cambodja', 'Canada', 'Centraal-Afrikaanse Republiek', 'Chili', 'China', 'Christmaseiland', 'Cocoseilanden', 'Colombia', 'Comoren', 'Congo', 'Cookeilanden', 'Costa Rica', 'Cuba', 'Cyprus',
@@ -120,11 +120,11 @@ class Address extends \Faker\Provider\Address
         'Vanuatu', 'Venezuela', 'Verenigde Arabische Emiraten', 'Verenigd Koninkrijk', 'Verenigde Staten van Amerika', 'Vaticaanstad', 'Vietnam',
         'Wallis en Futuna', 'Westerlijke Shara', 'Wit-Rusland',
         'Zambia', 'Zuid-Afrika', 'Zuid-Georgia en de Zuidelijke Sandwicheilanden', 'Zimbabwe'
-    );
+    ];
 
     /**
-    * @see parent
-    */
+     * @see parent
+     */
     public static function buildingNumber()
     {
         return static::bothify(static::randomElement(static::$buildingNumber));
@@ -139,8 +139,8 @@ class Address extends \Faker\Provider\Address
     }
 
     /**
-    * @see parent
-    */
+     * @see parent
+     */
     public function cityName()
     {
         return static::randomElement(static::$cityNames);

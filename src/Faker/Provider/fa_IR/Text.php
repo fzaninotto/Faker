@@ -28,7 +28,7 @@ class Text extends \Faker\Provider\Text
         }
 
         $words = $this->getConsecutiveWords($indexSize);
-        $result = array();
+        $result = [];
         $resultLength = 0;
         // take a random starting point
         $next = static::randomKey($words);

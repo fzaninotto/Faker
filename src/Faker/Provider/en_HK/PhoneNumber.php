@@ -4,10 +4,10 @@ namespace Faker\Provider\en_HK;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
-    protected static $formats = array('2#######', '3#######', '5#######', '6#######', '9#######');
-    protected static $mobileFormats = array('5#######', '6#######', '9#######');
-    protected static $landlineFormats = array('2#######', '3#######');
-    protected static $faxFormats = array('7#######');
+    protected static $formats = ['2#######', '3#######', '5#######', '6#######', '9#######'];
+    protected static $mobileFormats = ['5#######', '6#######', '9#######'];
+    protected static $landlineFormats = ['2#######', '3#######'];
+    protected static $faxFormats = ['7#######'];
 
     /**
      * Return an en_HK mobile phone number

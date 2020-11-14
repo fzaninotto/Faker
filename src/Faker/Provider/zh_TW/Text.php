@@ -10,9 +10,9 @@ class Text extends \Faker\Provider\Text
     /**
      * All punctuation in $baseText: 、 。 「 」 『 』 ！ ？ ー ， ： ；
      */
-    protected static $notEndPunct = array('、', '「', '『', 'ー', '，', '：', '；');
-    protected static $endPunct = array('。', '」', '』', '！', '？');
-    protected static $notBeginPunct = array('、', '。', '」', '』', '！', '？', 'ー', '，', '：', '；');
+    protected static $notEndPunct = ['、', '「', '『', 'ー', '，', '：', '；'];
+    protected static $endPunct = ['。', '」', '』', '！', '？'];
+    protected static $notBeginPunct = ['、', '。', '」', '』', '！', '？', 'ー', '，', '：', '；'];
 
     /**
      * Title: 吶喊 Call to Arms (1922)
@@ -802,7 +802,7 @@ EOT;
 
     protected static function explode($text)
     {
-        $chars = array();
+        $chars = [];
 
         foreach (preg_split('//u', str_replace(PHP_EOL, '', $text)) as $char) {
             if (! empty($char)) {
@@ -861,7 +861,7 @@ EOT;
      */
     protected static function utf8Encoding($text)
     {
-        $encoding = array();
+        $encoding = [];
 
         $chars = str_split($text);
 

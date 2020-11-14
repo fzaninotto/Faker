@@ -10,9 +10,9 @@ class Text extends \Faker\Provider\Text
     /**
      * All punctuation in $baseText: 、 。 「 」 『 』 ！ ？ ー ， ： ；
      */
-    protected static $notEndPunct = array('、', '「', '『', 'ー', '，', '：', '；');
-    protected static $endPunct = array('。', '」', '』', '！', '？');
-    protected static $notBeginPunct = array('、', '。', '」', '』', '！', '？', 'ー', '，', '：', '；');
+    protected static $notEndPunct = ['、', '「', '『', 'ー', '，', '：', '；'];
+    protected static $endPunct = ['。', '」', '』', '！', '？'];
+    protected static $notBeginPunct = ['、', '。', '」', '』', '！', '？', 'ー', '，', '：', '；'];
 
     /**
      * Title: 銀河鉄道の夜 Night On The Milky Way Train
@@ -597,7 +597,7 @@ EOT;
 
     protected static function explode($text)
     {
-        $chars = array();
+        $chars = [];
         foreach (preg_split('//u', preg_replace('/\s+/u', '', $text)) as $char) {
             if ($char !== '') {
                 $chars[] = $char;

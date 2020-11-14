@@ -4,7 +4,7 @@ namespace Faker\Provider\es_PE;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
-    protected static $formats = array(
+    protected static $formats = [
         '+51 9## ### ###',
         '+51 9########',
         '9## ### ###',
@@ -13,5 +13,5 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '+51 1######',
         '1## ####',
         '1######',
-    );
+    ];
 }

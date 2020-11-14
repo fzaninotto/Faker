@@ -4,22 +4,22 @@ namespace Faker\Provider\fi_FI;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $maleNameFormats = array(
+    protected static $maleNameFormats = [
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}',
         '{{titleMale}} {{firstNameMale}} {{lastName}}',
-    );
+    ];
 
-    protected static $femaleNameFormats = array(
+    protected static $femaleNameFormats = [
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{titleFemale}} {{firstNameFemale}} {{lastName}}',
-    );
+    ];
 
-    protected static $firstNameMale = array(
-         'Aleksi', 'Anssi', 'Antero', 'Antti', 'Ari', 'Arttu', 'Daniel', 'Eero', 'Eetu', 'Elias', 'Elmo', 'Emil', 'Erkki',
+    protected static $firstNameMale = [
+        'Aleksi', 'Anssi', 'Antero', 'Antti', 'Ari', 'Arttu', 'Daniel', 'Eero', 'Eetu', 'Elias', 'Elmo', 'Emil', 'Erkki',
         'Hampus', 'Hannu', 'Harri', 'Heikki', 'Helmi', 'Henri', 'Hermanni', 'Ilja', 'Jaakko', 'Jake', 'Jani', 'Janne',
         'Jari', 'Jarno', 'Jere', 'Jeremy', 'Jesper', 'Jesse', 'Jimi', 'Joakim', 'Joel', 'Joona', 'Joonas', 'Juha',
         'Juho', 'Jukka', 'Julius', 'Jussi', 'Justus', 'Juuso', 'Kalle', 'Kasperi', 'Konsta', 'Kristian', 'Lassi', 'Leevi',
@@ -33,9 +33,9 @@ class Person extends \Faker\Provider\Person
         'Jirko', 'Joonatan', 'Jore', 'Junnu', 'Jusu', 'Kaste', 'Kauto', 'Luukas', 'Nuutti', 'Onni', 'Osmo', 'Pekko',
         'Sampo', 'Santtu', 'Sauli', 'Simo', 'Sisu', 'Teijo', 'Unto', 'Urho', 'Veeti', 'Veikko', 'Vilho', 'Werneri', 'Wiljami',
 
-    );
+    ];
 
-    protected static $firstNameFemale = array(
+    protected static $firstNameFemale = [
         'Aada', 'Ada', 'Aina', 'Aino', 'Aki', 'Aliisa', 'Amalia', 'Amanda', 'Amelia', 'Amira', 'Anissa', 'Anita', 'Anna',
         'Anne', 'Anni', 'Anniina', 'Annu', 'Anu', 'Asta', 'Atte', 'Atte', 'Aura', 'Aurora', 'Bella', 'Cara',
         'Celina', 'Christa', 'Christel', 'Clara', 'Cornelia', 'Dani', 'Eija', 'Elea', 'Elina', 'Elisa', 'Elise', 'Ella',
@@ -54,9 +54,9 @@ class Person extends \Faker\Provider\Person
         'Hertta', 'Hilppa', 'Iia', 'Iita', 'Jadessa', 'Jemina', 'Jenika', 'Jermia', 'Jooa', 'Juttamari', 'Kaisla',
         'Kaisu', 'Loviisa', 'Malla', 'Martta', 'Matleena', 'Miina', 'Mimmu', 'Minea', 'Minttu', 'Mirva', 'Nelli', 'Ninni',
         'Oliivia', 'Peppi', 'Pihla', 'Pirkko', 'Riia', 'Roosa', 'Taika', 'Venla', 'Viivi', 'Vilja',
-    );
+    ];
 
-    protected static $lastName = array(
+    protected static $lastName = [
         'Aakula', 'Aalto', 'Aaltonen', 'Aarnio', 'Aaronen', 'Aavikkola', 'Ahmala', 'Aho', 'Ahokas', 'Ahola', 'Ahomaa', 'Ahonen', 'Ahoniemi', 'Ahopelto', 'Ahovaara', 'Ahtila', 'Ahtiluoto', 'Ahtio', 'Ahtisaari', 'Ahto', 'Ahtola', 'Ahtonen', 'Ahtorinne', 'Aija', 'Aijala', 'Ainola', 'Aitio', 'Aitolahti', 'Aitomaa', 'Aittasalmi', 'Akkala', 'Akkanen', 'Alahuhta', 'Alajoki', 'Alajärvi', 'Alanen', 'Alatalo', 'Alasalmi', 'Alapuro', 'Alhola', 'Alijoki', 'Ankkala', 'Ankkuri', 'Annala', 'Annunen', 'Anttila', 'Anttinen', 'Anttonen', 'Ara', 'Arhila', 'Arhinmäki', 'Arhosuo', 'Arinen', 'Arjamaa', 'Arjanen', 'Arkkila', 'Armio', 'Arnio', 'Aronen', 'Arosuo', 'Arponen', 'Arvola', 'Asikainen', 'Astala', 'Attila', 'Aunela', 'Aura', 'Auramies', 'Auranen', 'Autio', 'Auvinen', 'Auvola', 'Avonius', 'Avotie',
         'Bräysy',
         'Davidsainen', 'Dufva',
@@ -80,19 +80,19 @@ class Person extends \Faker\Provider\Person
         'Ylijälä', 'Yliannala', 'Ylijoki', 'Ylikangas', 'Ylioja', 'Ylitalo', 'Ylppö', 'Yläjoki', 'Yrjänen', 'Yrjänä', 'Yrjölä', 'Yrttiaho', 'Yömaa',
         'Äijälä', 'Ämmälä', 'Änäkkälä', 'Äyräs', 'Äärynen',
         'Översti', 'Öysti', 'Öörni'
-    );
+    ];
 
-    protected static $titleMale = array('Hra.', 'Tri.');
+    protected static $titleMale = ['Hra.', 'Tri.'];
 
-    protected static $titleFemale = array('Rva.', 'Nti.', 'Tri.');
+    protected static $titleFemale = ['Rva.', 'Nti.', 'Tri.'];
 
     /**
-    * National Personal Identity Number (Henkilötunnus)
-    * @link http://www.finlex.fi/fi/laki/ajantasa/2010/20100128
-    * @param \DateTime $birthdate
-    * @param string $gender Person::GENDER_MALE || Person::GENDER_FEMALE
-    * @return string on format DDMMYYCZZZQ, where DDMMYY is the date of birth, C the century sign, ZZZ the individual number and Q the control character (checksum)
-    */
+     * National Personal Identity Number (Henkilötunnus)
+     * @link http://www.finlex.fi/fi/laki/ajantasa/2010/20100128
+     * @param \DateTime $birthdate
+     * @param string $gender Person::GENDER_MALE || Person::GENDER_FEMALE
+     * @return string on format DDMMYYCZZZQ, where DDMMYY is the date of birth, C the century sign, ZZZ the individual number and Q the control character (checksum)
+     */
     public function personalIdentityNumber(\DateTime $birthdate = null, $gender = null)
     {
         $checksumCharacters = '0123456789ABCDEFHJKLMNPRSTUVWXY';
@@ -102,7 +102,7 @@ class Person extends \Faker\Provider\Person
         }
         $datePart = $birthdate->format('dmy');
 
-        switch ((int)($birthdate->format('Y')/100)) {
+        switch ((int) ($birthdate->format('Y') / 100)) {
             case 18:
                 $centurySign = '+';
                 break;
@@ -119,26 +119,26 @@ class Person extends \Faker\Provider\Person
         $randomDigits = self::numberBetween(0, 89);
         if ($gender && $gender == static::GENDER_MALE) {
             if ($randomDigits === 0) {
-                $randomDigits .= static::randomElement(array(3,5,7,9));
+                $randomDigits .= static::randomElement([3,5,7,9]);
             } else {
-                $randomDigits .= static::randomElement(array(1,3,5,7,9));
+                $randomDigits .= static::randomElement([1,3,5,7,9]);
             }
         } elseif ($gender && $gender == static::GENDER_FEMALE) {
             if ($randomDigits === 0) {
-                $randomDigits .= static::randomElement(array(2,4,6,8));
+                $randomDigits .= static::randomElement([2,4,6,8]);
             } else {
-                $randomDigits .= static::randomElement(array(0,2,4,6,8));
+                $randomDigits .= static::randomElement([0,2,4,6,8]);
             }
         } else {
             if ($randomDigits === 0) {
                 $randomDigits .= self::numberBetween(2, 9);
             } else {
-                $randomDigits .= (string)static::numerify('#');
+                $randomDigits .= (string) static::numerify('#');
             }
         }
         $randomDigits = str_pad($randomDigits, 3, '0', STR_PAD_LEFT);
 
-        $checksum = $checksumCharacters[(int)($datePart . $randomDigits) % strlen($checksumCharacters)];
+        $checksum = $checksumCharacters[(int) ($datePart . $randomDigits) % strlen($checksumCharacters)];
 
         return $datePart . $centurySign . $randomDigits . $checksum;
     }

@@ -7,7 +7,7 @@ class Person extends \Faker\Provider\de_DE\Person
     /**
      * @link http://www.bfs.admin.ch/bfs/portal/de/index/themen/01/02/blank/dos/prenoms/02.html
      */
-    protected static $firstNameMale = array(
+    protected static $firstNameMale = [
         'Adolf', 'Adrian', 'Alain', 'Albert', 'Alessandro', 'Alex', 'Alexander', 'Alfred', 'Ali', 'Alois', 'Andrea', 'Andreas', 'Andrin', 'André', 'Angelo', 'Anton', 'Antonio', 'Armin', 'Arnold', 'Arthur',
         'Beat', 'Benjamin', 'Bernhard', 'Bruno',
         'Carlo', 'Carlos', 'Christian', 'Christoph', 'Claudio', 'Cyrill', 'Cédric',
@@ -30,12 +30,12 @@ class Person extends \Faker\Provider\de_DE\Person
         'Ulrich', 'Urs',
         'Walter', 'Werner', 'Wilhelm', 'Willi', 'Willy', 'Wolfgang',
         'Yannick', 'Yves',
-    );
+    ];
 
     /**
      * @link http://www.bfs.admin.ch/bfs/portal/de/index/themen/01/02/blank/dos/prenoms/02.html
      */
-    protected static $firstNameFemale = array(
+    protected static $firstNameFemale = [
         'Adelheid', 'Agnes', 'Alessia', 'Alexandra', 'Alice', 'Alina', 'Aline', 'Ana', 'Andrea', 'Angela', 'Angelika', 'Anita', 'Anja', 'Anna', 'Annemarie', 'Antonia', 'Astrid',
         'Barbara', 'Beatrice', 'Beatrix', 'Bernadette', 'Bertha', 'Bettina', 'Brigitta', 'Brigitte',
         'Carla', 'Carmen', 'Caroline', 'Chantal', 'Charlotte', 'Chiara', 'Christa', 'Christina', 'Christine', 'Claudia', 'Corina', 'Corinne', 'Cornelia', 'Céline',
@@ -57,12 +57,12 @@ class Person extends \Faker\Provider\de_DE\Person
         'Ursula',
         'Valentina', 'Vanessa', 'Vera', 'Verena', 'Veronika',
         'Yvonne',
-    );
+    ];
 
     /**
      * @link http://blog.tagesanzeiger.ch/datenblog/index.php/6859
      */
-    protected static $lastName = array(
+    protected static $lastName = [
         'Achermann', 'Ackermann', 'Aeschlimann', 'Ammann', 'Arnold',
         'Bachmann', 'Baumann', 'Baumgartner', 'Beck', 'Benz', 'Berger', 'Betschart', 'Bieri', 'Bischof', 'Blaser', 'Blum', 'Bolliger', 'Bosshard', 'Brunner', 'Bucher', 'Burri', 'Bärtschi', 'Bösch', 'Bühler', 'Bühlmann', 'Bürgi', 'Bürki',
         'Christen',
@@ -85,7 +85,7 @@ class Person extends \Faker\Provider\de_DE\Person
         'Vogel', 'Vogt',
         'Wagner', 'Walker', 'Walser', 'Weber', 'Wehrli', 'Weibel', 'Weiss', 'Wenger', 'Wicki', 'Widmer', 'Willi', 'Wirth', 'Wirz', 'Wittwer', 'Wolf', 'Wyss', 'Wüthrich',
         'Zaugg', 'Zbinden', 'Zehnder', 'Ziegler', 'Zimmermann', 'Zwahlen', 'Zürcher',
-    );
+    ];
 
     /**
      * Generates a valid random AVS13 (swiss social security) number

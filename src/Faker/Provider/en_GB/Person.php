@@ -4,18 +4,18 @@ namespace Faker\Provider\en_GB;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $maleNameFormats = array(
+    protected static $maleNameFormats = [
         '{{firstNameMale}} {{lastName}}',
-    );
+    ];
 
-    protected static $femaleNameFormats = array(
+    protected static $femaleNameFormats = [
         '{{firstNameFemale}} {{lastName}}',
-    );
+    ];
 
     /**
      * @link http://www.ons.gov.uk/ons/rel/vsob1/baby-names--england-and-wales/2013/index.html
      */
-    protected static $firstNameMale = array(
+    protected static $firstNameMale = [
         'Aaron', 'Adam', 'Adrian', 'Aiden', 'Alan', 'Alex', 'Alexander', 'Alfie', 'Andrew', 'Andy', 'Anthony', 'Archie', 'Arthur',
         'Barry', 'Ben', 'Benjamin', 'Bradley', 'Brandon', 'Bruce',
         'Callum', 'Cameron', 'Charles', 'Charlie', 'Chris', 'Christian', 'Christopher', 'Colin', 'Connor', 'Craig',
@@ -38,9 +38,9 @@ class Person extends \Faker\Provider\Person
         'Theo', 'Thomas', 'Tim', 'Toby', 'Tom', 'Tony', 'Tyler',
         'Wayne', 'Will', 'William',
         'Zachary', 'Zach'
-    );
+    ];
 
-    protected static $firstNameFemale = array(
+    protected static $firstNameFemale = [
         'Abbie', 'Abigail', 'Adele', 'Alexa', 'Alexandra', 'Alice', 'Alison', 'Amanda', 'Amber', 'Amelia', 'Amy', 'Anna', 'Ashley', 'Ava',
         'Beth', 'Bethany', 'Becky',
         'Caitlin', 'Candice', 'Carlie', 'Carmen', 'Carole', 'Caroline', 'Carrie', 'Charlotte', 'Chelsea', 'Chloe', 'Claire', 'Courtney',
@@ -64,12 +64,12 @@ class Person extends \Faker\Provider\Person
         'Wendy',
         'Yasmine', 'Yvette', 'Yvonne',
         'Zoe',
-    );
+    ];
 
     /**
      * @link http://surname.sofeminine.co.uk/w/surnames/most-common-surnames-in-great-britain.html
      */
-    protected static $lastName = array(
+    protected static $lastName = [
         'Adams', 'Allen', 'Anderson',
         'Bailey', 'Baker', 'Bell', 'Bennett', 'Brown', 'Butler',
         'Campbell', 'Carter', 'Chapman', 'Clark', 'Clarke', 'Collins', 'Cook', 'Cooper', 'Cox',
@@ -89,5 +89,5 @@ class Person extends \Faker\Provider\Person
         'Taylor', 'Thomas', 'Thompson', 'Turner',
         'Walker', 'Walsh', 'Ward', 'Watson', 'White', 'Wilkinson', 'Williams', 'Wilson', 'Wood', 'Wright',
         'Young',
-    );
+    ];
 }

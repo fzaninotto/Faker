@@ -4,7 +4,7 @@ namespace Faker\Provider\es_ES;
 
 class Color extends \Faker\Provider\Color
 {
-    protected static $safeColorNames = array(
+    protected static $safeColorNames = [
         'amarillo',
         'azul marino',
         'azul',
@@ -20,5 +20,5 @@ class Color extends \Faker\Provider\Color
         'turquesa',
         'verde',
         'verde oliva',
-    );
+    ];
 }

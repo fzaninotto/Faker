@@ -2,8 +2,8 @@
 
 namespace Faker\Provider;
 
-use Faker\Generator;
 use Faker\DefaultGenerator;
+use Faker\Generator;
 use Faker\UniqueGenerator;
 use Faker\ValidGenerator;
 
@@ -180,9 +180,9 @@ class Base
      *
      * @return array New array with $count elements from $array
      */
-    public static function randomElements($array = array('a', 'b', 'c'), $count = 1, $allowDuplicates = false)
+    public static function randomElements($array = ['a', 'b', 'c'], $count = 1, $allowDuplicates = false)
     {
-        $traversables = array();
+        $traversables = [];
 
         if ($array instanceof \Traversable) {
             foreach ($array as $element) {
@@ -200,7 +200,7 @@ class Base
         }
 
         $highKey = $numKeys - 1;
-        $keys = $elements = array();
+        $keys = $elements = [];
         $numElements = 0;
 
         while ($numElements < $count) {
@@ -226,7 +226,7 @@ class Base
      * @param  array $array
      * @return mixed
      */
-    public static function randomElement($array = array('a', 'b', 'c'))
+    public static function randomElement($array = ['a', 'b', 'c'])
     {
         if (!$array || ($array instanceof \Traversable && !count($array))) {
             return null;
@@ -242,7 +242,7 @@ class Base
      * @param  array $array
      * @return int|string|null
      */
-    public static function randomKey($array = array())
+    public static function randomKey($array = [])
     {
         if (!$array) {
             return null;
@@ -291,9 +291,9 @@ class Base
      * @param array $array The set to shuffle
      * @return array The shuffled set
      */
-    public static function shuffleArray($array = array())
+    public static function shuffleArray($array = [])
     {
-        $shuffledArray = array();
+        $shuffledArray = [];
         $i = 0;
         reset($array);
         foreach ($array as $key => $value) {
@@ -334,7 +334,7 @@ class Base
     {
         if (function_exists('mb_strlen')) {
             // UTF8-safe str_split()
-            $array = array();
+            $array = [];
             $strlen = mb_strlen($string, $encoding);
             for ($i = 0; $i < $strlen; $i++) {
                 $array []= mb_substr($string, $i, 1, $encoding);
@@ -369,7 +369,7 @@ class Base
     {
         // instead of using randomDigit() several times, which is slow,
         // count the number of hashes and generate once a large number
-        $toReplace = array();
+        $toReplace = [];
         if (($pos = strpos($string, '#')) !== false) {
             for ($i = $pos, $last = strrpos($string, '#', $pos) + 1; $i < $last; $i++) {
                 if ($string[$i] === '#') {
@@ -485,7 +485,7 @@ class Base
         }, $regex);
         // (this|that) becomes 'this' or 'that'
         $regex = preg_replace_callback('/\((.*?)\)/', function ($matches) {
-            return Base::randomElement(explode('|', str_replace(array('(', ')'), '', $matches[1])));
+            return Base::randomElement(explode('|', str_replace(['(', ')'], '', $matches[1])));
         }, $regex);
         // All A-F inside of [] become ABCDEF
         $regex = preg_replace_callback('/\[([^\]]+)\]/', function ($matches) {

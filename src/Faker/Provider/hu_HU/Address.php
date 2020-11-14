@@ -4,26 +4,26 @@ namespace Faker\Provider\hu_HU;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $cityFormats = array(
+    protected static $cityFormats = [
         '{{capital}}',
         '{{capital}}',
         '{{capital}}',
         '{{bigCity}}',
         '{{bigCity}}',
         '{{smallerCity}}',
-    );
-    protected static $streetNameFormats = array(
+    ];
+    protected static $streetNameFormats = [
         '{{firstName}} {{streetSuffix}}',
         '{{lastName}} {{streetSuffix}}',
-    );
-    protected static $streetAddressFormats = array(
+    ];
+    protected static $streetAddressFormats = [
         '{{streetName}} {{buildingNumber}}.',
         '{{streetName}} {{buildingNumber}}. {{secondaryAddress}}',
-    );
-    protected static $addressFormats = array(
+    ];
+    protected static $addressFormats = [
         "{{postcode}} {{city}}, {{streetAddress}}",
-    );
-    protected static $secondaryAddressFormats = array('##. emelet', '##. ajtó');
+    ];
+    protected static $secondaryAddressFormats = ['##. emelet', '##. ajtó'];
 
     /**
      * @example '10. emelet'
@@ -65,7 +65,7 @@ class Address extends \Faker\Provider\Address
         return static::randomElement(static::$smallerCities);
     }
 
-    protected static $buildingNumber = array('###', '##', '##', '#');
+    protected static $buildingNumber = ['###', '##', '##', '#'];
 
     /**
      * Coordinates inside the border of Hungary
@@ -75,22 +75,22 @@ class Address extends \Faker\Provider\Address
      */
     public static function localCoordinates()
     {
-        return array(
+        return [
             'latitude' => static::latitude(46.262740, 47.564721),
             'longitude' => static::longitude(17.077949, 20.604560)
-        );
+        ];
     }
 
     /* ----------- DATA -------------------- */
 
-    protected static $streetSuffix = array(
+    protected static $streetSuffix = [
         'árok', 'átjáró', 'dűlősor', 'dűlőút', 'erdősor', 'fasor', 'forduló', 'gát', 'határsor', 'határút', 'híd', 'játszótér', 'kert', 'körönd', 'körtér', 'körút', 'köz', 'lakótelep', 'lejáró', 'lejtő', 'lépcső', 'liget', 'mélyút', 'orom', 'országút', 'ösvény', 'park', 'part', 'pincesor', 'rakpart', 'sétány', 'sétaút', 'sor', 'sugárút', 'tér', 'tere', 'turistaút', 'udvar', 'út', 'útja', 'utca', 'üdülőpart'
-    );
-    protected static $postcode = array('####');
-    protected static $state = array(
+    ];
+    protected static $postcode = ['####'];
+    protected static $state = [
         'Budapest', 'Bács-Kiskun', 'Baranya', 'Békés', 'Borsod-Abaúj-Zemplén', 'Csongrád', 'Fejér', 'Győr-Moson-Sopron', 'Hajdú-Bihar', 'Heves', 'Jász-Nagykun-Szolnok', 'Komárom-Esztergom', 'Nógrád', 'Pest', 'Somogy', 'Szabolcs-Szatmár-Bereg', 'Tolna', 'Vas', 'Veszprém', 'Zala'
-    );
-    protected static $country = array(
+    ];
+    protected static $country = [
         'Afganisztán', 'Albánia', 'Algéria', 'Amerikai Egyesült Államok', 'Andorra', 'Angola', 'Antigua és Barbuda', 'Argentína', 'Ausztria', 'Ausztrália', 'Azerbajdzsán',
         'Bahama-szigetek', 'Bahrein', 'Banglades', 'Barbados', 'Belgium', 'Belize', 'Benin', 'Bhután', 'Bolívia', 'Bosznia-Hercegovina', 'Botswana', 'Brazília', 'Brunei', 'Bulgária', 'Burkina Faso', 'Burma', 'Burundi',
         'Chile', 'Ciprus', 'Costa Rica', 'Csehország', 'Csád',
@@ -112,18 +112,18 @@ class Address extends \Faker\Provider\Address
         'Tadzsikisztán', 'Tanzánia', 'Thaiföld', 'Togo', 'Tonga', 'Trinidad és Tobago', 'Tunézia', 'Tuvalu', 'Törökország', 'Türkmenisztán',
         'Uganda', 'Ukrajna', 'Uruguay',
         'Vanuatu', 'Venezuela', 'Vietnám',
-         'Zambia', 'Zimbabwe', 'Zöld-foki-szigetek',
-         'Észak-Korea', 'Észtország', 'Írország', 'Örményország', 'Új-Zéland', 'Üzbegisztán'
-    );
+        'Zambia', 'Zimbabwe', 'Zöld-foki-szigetek',
+        'Észak-Korea', 'Észtország', 'Írország', 'Örményország', 'Új-Zéland', 'Üzbegisztán'
+    ];
 
     /**
      * Source: https://hu.wikipedia.org/wiki/Magyarorsz%C3%A1g_v%C3%A1rosainak_list%C3%A1ja
      */
-    protected static $capitals = array('Budapest');
-    protected static $bigCities = array(
+    protected static $capitals = ['Budapest'];
+    protected static $bigCities = [
         'Békéscsaba', 'Debrecen', 'Dunaújváros', 'Eger', 'Érd', 'Győr', 'Hódmezővásárhely', 'Kaposvár', 'Kecskemét', 'Miskolc', 'Nagykanizsa', 'Nyíregyháza', 'Pécs', 'Salgótarján', 'Sopron', 'Szeged', 'Székesfehérvár', 'Szekszárd', 'Szolnok', 'Szombathely', 'Tatabánya', 'Veszprém', 'Zalaegerszeg'
-    );
-    protected static $smallerCities = array(
+    ];
+    protected static $smallerCities = [
         'Ajka', 'Aszód', 'Bácsalmás',
         'Baja', 'Baktalórántháza', 'Balassagyarmat', 'Balatonalmádi', 'Balatonfüred', 'Balmazújváros', 'Barcs', 'Bátonyterenye', 'Békés', 'Bélapátfalva', 'Berettyóújfalu', 'Bicske', 'Bóly', 'Bonyhád', 'Budakeszi',
         'Cegléd', 'Celldömölk', 'Cigánd', 'Csenger', 'Csongrád', 'Csorna', 'Csurgó',
@@ -145,5 +145,5 @@ class Address extends \Faker\Provider\Address
         'Tab', 'Tamási', 'Tapolca', 'Tata', 'Tét', 'Tiszafüred', 'Tiszakécske', 'Tiszaújváros', 'Tiszavasvári', 'Tokaj', 'Tolna', 'Törökszentmiklós',
         'Vác', 'Várpalota', 'Vásárosnamény', 'Vasvár', 'Vecsés',
         'Záhony', 'Zalaszentgrót', 'Zirc'
-    );
+    ];
 }

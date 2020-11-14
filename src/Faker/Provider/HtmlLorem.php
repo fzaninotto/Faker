@@ -128,7 +128,7 @@ class HtmlLorem extends Base
                 $node->setAttribute("class", $this->generator->word);
                 break;
             case 2:
-                $node->setAttribute("id", (string)$this->idGenerator->randomNumber(5));
+                $node->setAttribute("id", (string) $this->idGenerator->randomNumber(5));
                 break;
         }
     }
@@ -165,7 +165,7 @@ class HtmlLorem extends Base
 
     private function addRandomH(\DOMElement $element, $maxLength = 10)
     {
-        $h = static::H_TAG . (string)mt_rand(1, 3);
+        $h = static::H_TAG . (string) mt_rand(1, 3);
         $text = $element->ownerDocument->createTextNode($this->generator->sentence(mt_rand(1, $maxLength)));
         $node = $element->ownerDocument->createElement($h);
         $node->appendChild($text);

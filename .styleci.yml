@@ -1,5 +1,19 @@
 preset: psr12
 
+enabled:
+  - alpha_ordered_imports
+  - array_indentation
+  - binary_operator_spaces
+  - cast_spaces
+  - magic_constant_casing
+  - magic_method_casing
+  - no_empty_statement
+  - no_unused_imports
+  - no_unused_lambda_imports
+  - phpdoc_indent
+  - short_array_syntax
+  - standardize_not_equals
+
 finder:
   path:
     - src
