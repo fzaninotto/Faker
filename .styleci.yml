@@ -1,18 +1,34 @@
 preset: psr12
 
+risky: true
+
 enabled:
   - alpha_ordered_imports
   - array_indentation
   - binary_operator_spaces
   - cast_spaces
+  - combine_nested_dirname
+  - implode_call
   - magic_constant_casing
   - magic_method_casing
+  - no_alias_functions
   - no_empty_statement
+  - no_unneeded_curly_braces
+  - no_unneeded_final_method
+  - no_unset_cast
   - no_unused_imports
   - no_unused_lambda_imports
+  - non_printable_character
+  - normalize_index_brace
   - phpdoc_indent
+  - pow_to_exponentiation
+  - random_api_migration
   - short_array_syntax
   - standardize_not_equals
+  - ternary_to_null_coalescing
+
+disabled:
+  - no_trailing_whitespace_in_string
 
 finder:
   path:

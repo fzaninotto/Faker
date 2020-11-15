@@ -18,7 +18,7 @@ class Color extends \Faker\Provider\Color
         'Donkerkaki', 'Donkermagenta', 'Donkerolijfgroen', 'Donkeroranje',
         'Donkerrood', 'Donkerzalm', 'Donkerzeegroen', 'Donkerleigrijs',
         'Donkerleigrijs', 'Donkerturkoois', 'Donkerviolet', 'Dieproze',
-        'Diep hemelsblauw', 'Vuurvaste baksteen', 'Fluweelwit', 'Bosgroen',
+        'Diep hemelsblauw', 'Vuurvaste baksteen', 'Fluweelwit', 'Bosgroen',
         'Fuchsia', 'Goud', 'Grijs', 'Donkergroen', 'Groengeel', 'Grijs',
         'Acaciaroze', 'Indisch rood', 'Indigo', 'Ivoor', 'Kaki', 'Lavendel',
         'Grasgroen', 'Lichtblauw', 'Lichtkoraal', 'Lichtcyaan', 'Lichtgrijs',

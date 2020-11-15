@@ -347,7 +347,7 @@ class Address extends \Faker\Provider\Address
      */
     public function cityAndRegion()
     {
-        $regionAndCityNumber = rand(0, count(static::$region) - 1);
+        $regionAndCityNumber = mt_rand(0, count(static::$region) - 1);
         $region = static::$region[$regionAndCityNumber];
         $city = static::$city[$regionAndCityNumber];
         $format = "$region {{regionSuffix}}, {{cityPrefix}} $city";

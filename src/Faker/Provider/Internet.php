@@ -175,7 +175,7 @@ class Internet extends Base
         }
         $words = $this->generator->words($nbWords);
 
-        return join('-', $words);
+        return implode('-', $words);
     }
 
     /**
@@ -196,7 +196,7 @@ class Internet extends Base
             $res []= dechex(mt_rand(0, "65535"));
         }
 
-        return join(':', $res);
+        return implode(':', $res);
     }
 
     /**

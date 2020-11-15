@@ -16,7 +16,7 @@ class DateTime extends \Faker\Provider\DateTime
             'Saturday' => 'შაბათი',
         ];
         $week = static::dateTime($max)->format('l');
-        return isset($map[$week]) ? $map[$week] : $week;
+        return $map[$week] ?? $week;
     }
 
     public static function monthName($max = 'now')
@@ -36,6 +36,6 @@ class DateTime extends \Faker\Provider\DateTime
             'December' => 'დეკემბერი',
         ];
         $month = static::dateTime($max)->format('F');
-        return isset($map[$month]) ? $map[$month] : $month;
+        return $map[$month] ?? $month;
     }
 }

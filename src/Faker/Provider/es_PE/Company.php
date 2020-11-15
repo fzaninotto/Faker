@@ -48,7 +48,7 @@ class Company extends \Faker\Provider\Company
             $result[] = static::randomElement($word);
         }
 
-        return join(' ', $result);
+        return implode(' ', $result);
     }
 
     /**
@@ -61,6 +61,6 @@ class Company extends \Faker\Provider\Company
             $result[] = static::randomElement($word);
         }
 
-        return join(' ', $result);
+        return implode(' ', $result);
     }
 }

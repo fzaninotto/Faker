@@ -48,8 +48,8 @@ class Address extends \Faker\Provider\Address
      */
     protected static $canton = [
         ['AG' => 'Aargau'],
-        ['AI' => 'Appenzell Innerrhoden'],
-        ['AR' => 'Appenzell Ausserrhoden'],
+        ['AI' => 'Appenzell Innerrhoden'],
+        ['AR' => 'Appenzell Ausserrhoden'],
         ['BE' => 'Bern'],
         ['BL' => 'Basel-Landschaft'],
         ['BS' => 'Basel-Stadt'],
@@ -62,7 +62,7 @@ class Address extends \Faker\Provider\Address
         ['NE' => 'Neuenburg'],
         ['NW' => 'Nidwalden'],
         ['OW' => 'Obwalden'],
-        ['SG' => 'St. Gallen'],
+        ['SG' => 'St. Gallen'],
         ['SH' => 'Schaffhausen'],
         ['SO' => 'Solothurn'],
         ['SZ' => 'Schwyz'],

@@ -81,12 +81,12 @@ class Base
         if (null === $nbDigits) {
             $nbDigits = static::randomDigitNotNull();
         }
-        $max = pow(10, $nbDigits) - 1;
+        $max = 10 ** $nbDigits - 1;
         if ($max > mt_getrandmax()) {
             throw new \InvalidArgumentException('randomNumber() can only generate numbers up to mt_getrandmax()');
         }
         if ($strict) {
-            return mt_rand(pow(10, $nbDigits - 1), $max);
+            return mt_rand(10 ** ($nbDigits - 1), $max);
         }
 
         return mt_rand(0, $max);
