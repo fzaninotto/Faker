@@ -64,7 +64,7 @@ class Iban
      * Checks whether an IBAN has a valid checksum
      *
      * @param string $iban
-     * @return boolean
+     * @return bool
      */
     public static function isValid($iban)
     {

@@ -43,7 +43,7 @@ class TCNo
      * Checks whether a TCNo has a valid checksum
      *
      * @param string $tcNo
-     * @return boolean
+     * @return bool
      */
     public static function isValid($tcNo)
     {

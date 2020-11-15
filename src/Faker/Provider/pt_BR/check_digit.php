@@ -8,8 +8,8 @@ namespace Faker\Provider\pt_BR;
  * @link http://pt.wikipedia.org/wiki/CNPJ#Algoritmo_de_Valida.C3.A7.C3.A3o
  * @link http://en.wikipedia.org/wiki/Cadastro_de_Pessoas_F%C3%ADsicas#Validation
  *
- * @param string|integer $numbers Numbers on which generate the check digit
- * @return integer
+ * @param string|int $numbers Numbers on which generate the check digit
+ * @return int
  */
 function check_digit($numbers)
 {

@@ -186,7 +186,6 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     *
      * https://ro.wikipedia.org/wiki/Cod_numeric_personal#S
      *
      * @param \DateTime $dateOfBirth

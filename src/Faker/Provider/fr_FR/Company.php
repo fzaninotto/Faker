@@ -150,7 +150,7 @@ class Company extends \Faker\Provider\Company
      *
      * @param string $catchPhrase The catch phrase to validate.
      *
-     * @return boolean (true if valid, false otherwise)
+     * @return bool (true if valid, false otherwise)
      */
     protected static function isCatchPhraseValid($catchPhrase)
     {

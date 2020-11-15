@@ -57,7 +57,7 @@ parameters:
 
 		-
 			message: "#^Access to property \\$fieldMappings on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
-			count: 4
+			count: 2
 			path: src/Faker/ORM/Doctrine/ColumnTypeGuesser.php
 
 		-
@@ -92,7 +92,7 @@ parameters:
 
 		-
 			message: "#^Access to property \\$fieldMappings on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
-			count: 2
+			count: 1
 			path: src/Faker/ORM/Doctrine/EntityPopulator.php
 
 		-
@@ -889,11 +889,6 @@ parameters:
 			message: "#^Return typehint of method Faker\\\\Provider\\\\me_ME\\\\Address\\:\\:localCoordinates\\(\\) has invalid type Faker\\\\Provider\\\\latitude\\.$#"
 			count: 1
 			path: src/Faker/Provider/me_ME/Address.php
-
-		-
-			message: "#^Default value of the parameter \\#3 \\$length \\(string\\) of method Faker\\\\Provider\\\\me_ME\\\\Payment\\:\\:bankAccountNumber\\(\\) is incompatible with type int\\.$#"
-			count: 1
-			path: src/Faker/Provider/me_ME/Payment.php
 
 		-
 			message: "#^Variable \\$companyName might not be defined\\.$#"

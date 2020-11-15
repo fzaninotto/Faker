@@ -26,7 +26,7 @@ class Inn
      * Checks whether an INN has a valid checksum
      *
      * @param string $inn
-     * @return boolean
+     * @return bool
      */
     public static function isValid($inn)
     {

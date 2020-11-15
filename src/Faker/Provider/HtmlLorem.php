@@ -40,8 +40,8 @@ class HtmlLorem extends Base
     }
 
     /**
-     * @param integer $maxDepth
-     * @param integer $maxWidth
+     * @param int $maxDepth
+     * @param int $maxWidth
      *
      * @return string
      */

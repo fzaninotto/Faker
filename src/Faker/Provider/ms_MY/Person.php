@@ -165,7 +165,6 @@ class Person extends \Faker\Provider\Person
      */
     protected static $muhammadName = ['', '', '', '', 'Mohamad ','Mohamed ','Mohammad ','Mohammed ','Muhamad ','Muhamed ','Muhammad ','Muhammed ','Muhammet ','Mohd '];
     /**
-     *
      * @link https://en.wikipedia.org/wiki/Noor_(name)
      */
     protected static $nurName = ['', '', '', '', 'Noor ', 'Nor ', 'Nur ', 'Nur ', 'Nur ', 'Nurul ','Nuur '];
@@ -186,7 +185,6 @@ class Person extends \Faker\Provider\Person
      *
      * @link https://en.wikipedia.org/wiki/List_of_common_Chinese_surnames
      * @link https://en.wikipedia.org/wiki/Hundred_Family_Surnames
-     *
      */
     protected static $lastNameChinese = [
         'An','Ang','Au','Au-Yong','Aun','Aw',

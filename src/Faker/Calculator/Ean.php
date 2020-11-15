@@ -4,8 +4,6 @@ namespace Faker\Calculator;
 
 /**
  * Utility class for validating EAN-8 and EAN-13 numbers
- *
- * @package Faker\Calculator
  */
 class Ean
 {
@@ -42,7 +40,7 @@ class Ean
      * the checksum is correct.
      *
      * @param string $ean An EAN number
-     * @return boolean
+     * @return bool
      */
     public static function isValid($ean)
     {

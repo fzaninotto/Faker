@@ -99,7 +99,6 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     *
      * @link http://nomesportugueses.blogspot.pt/2012/01/lista-dos-cem-nomes-mais-usados-em.html
      */
 

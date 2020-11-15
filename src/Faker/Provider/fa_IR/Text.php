@@ -8,8 +8,8 @@ class Text extends \Faker\Provider\Text
      * generates text string in arabic
      *
      * @example 'از تاریخ‌الشعرا را بکوبند روی نبش دیوار کوچه‌شان. تابلوی مدرسه.'
-     * @param  integer                   $maxNbChars
-     * @param  integer                   $indexSize
+     * @param  int                   $maxNbChars
+     * @param  int                   $indexSize
      * @return string
      * @throws \InvalidArgumentException
      */

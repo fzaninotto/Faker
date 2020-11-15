@@ -26,8 +26,8 @@ class Image extends Base
      *
      * @example 'http://via.placeholder.com/640x480.png/CCCCCC?text=well+hi+there'
      *
-     * @param integer $width
-     * @param integer $height
+     * @param int $width
+     * @param int $height
      * @param string|null $category
      * @param bool $randomize
      * @param string|null $word

@@ -15,7 +15,7 @@ class ValidGenerator
     /**
      * @param Generator $generator
      * @param callable|null $validator
-     * @param integer $maxRetries
+     * @param int $maxRetries
      */
     public function __construct(Generator $generator, $validator = null, $maxRetries = 10000)
     {

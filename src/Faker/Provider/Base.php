@@ -30,7 +30,7 @@ class Base
     /**
      * Returns a random number between 0 and 9
      *
-     * @return integer
+     * @return int
      */
     public static function randomDigit()
     {
@@ -40,7 +40,7 @@ class Base
     /**
      * Returns a random number between 1 and 9
      *
-     * @return integer
+     * @return int
      */
     public static function randomDigitNotNull()
     {
@@ -67,11 +67,11 @@ class Base
      *
      * The maximum value returned is mt_getrandmax()
      *
-     * @param integer $nbDigits Defaults to a random number between 1 and 9
-     * @param boolean $strict   Whether the returned number should have exactly $nbDigits
+     * @param int $nbDigits Defaults to a random number between 1 and 9
+     * @param bool $strict   Whether the returned number should have exactly $nbDigits
      * @example 79907610
      *
-     * @return integer
+     * @return int
      */
     public static function randomNumber($nbDigits = null, $strict = false)
     {
@@ -127,11 +127,11 @@ class Base
     /**
      * Returns a random number between $int1 and $int2 (any order)
      *
-     * @param integer $int1 default to 0
-     * @param integer $int2 defaults to 32 bit max integer, ie 2147483647
+     * @param int $int1 default to 0
+     * @param int $int2 defaults to 32 bit max integer, ie 2147483647
      * @example 79907610
      *
-     * @return integer
+     * @return int
      */
     public static function numberBetween($int1 = 0, $int2 = 2147483647)
     {
@@ -174,8 +174,8 @@ class Base
      * Returns randomly ordered subsequence of $count elements from a provided array
      *
      * @param  array            $array           Array to take elements from. Defaults to a-c
-     * @param  integer          $count           Number of elements to take.
-     * @param  boolean          $allowDuplicates Allow elements to be picked several times. Defaults to false
+     * @param  int          $count           Number of elements to take.
+     * @param  bool          $allowDuplicates Allow elements to be picked several times. Defaults to false
      * @throws \LengthException When requesting more elements than provided
      *
      * @return array New array with $count elements from $array
@@ -534,7 +534,7 @@ class Base
     /**
      * Chainable method for making any formatter optional.
      *
-     * @param float|integer $weight Set the probability of receiving a null value.
+     * @param float|int $weight Set the probability of receiving a null value.
      *                              "0" will always return null, "1" will always return the generator.
      *                              If $weight is an integer value, then the same system works
      *                              between 0 (always get false) and 100 (always get true).
@@ -564,8 +564,8 @@ class Base
      * $faker->unique()->randomElement(array(1, 2, 3));
      * </code>
      *
-     * @param boolean $reset      If set to true, resets the list of existing values
-     * @param integer $maxRetries Maximum number of retries to find a unique value,
+     * @param bool $reset      If set to true, resets the list of existing values
+     * @param int $maxRetries Maximum number of retries to find a unique value,
      *                                       After which an OverflowException is thrown.
      * @throws \OverflowException When no unique value can be found by iterating $maxRetries times
      *
@@ -597,7 +597,7 @@ class Base
      * </code>
      *
      * @param Closure $validator  A function returning true for valid values
-     * @param integer $maxRetries Maximum number of retries to find a unique value,
+     * @param int $maxRetries Maximum number of retries to find a unique value,
      *                            After which an OverflowException is thrown.
      * @throws \OverflowException When no valid value can be found by iterating $maxRetries times
      *

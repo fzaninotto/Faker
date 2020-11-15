@@ -152,14 +152,6 @@
       <code>Locator</code>
     </UndefinedDocblockClass>
   </file>
-  <file src="src/Faker/Provider/Barcode.php">
-    <InvalidReturnStatement occurrences="1">
-      <code>($result &lt; 10) ? $result : 'X'</code>
-    </InvalidReturnStatement>
-    <InvalidReturnType occurrences="1">
-      <code>integer</code>
-    </InvalidReturnType>
-  </file>
   <file src="src/Faker/Provider/Base.php">
     <UndefinedDocblockClass occurrences="1">
       <code>Closure</code>
@@ -217,11 +209,6 @@
     <UndefinedMethod occurrences="1">
       <code>static::split($text)</code>
     </UndefinedMethod>
-  </file>
-  <file src="src/Faker/Provider/me_ME/Payment.php">
-    <InvalidParamDefault occurrences="1">
-      <code>integer</code>
-    </InvalidParamDefault>
   </file>
   <file src="src/Faker/Provider/pl_PL/Company.php">
     <InvalidReturnStatement occurrences="1">

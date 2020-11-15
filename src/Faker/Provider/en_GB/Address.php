@@ -133,7 +133,6 @@ class Address extends \Faker\Provider\Address
     }
 
     /**
-     *
      * @example 'N6 5AA'
      */
     public static function postcode()

@@ -134,8 +134,8 @@ namespace Faker;
  * @property string $countryISOAlpha3
  * @property string $languageCode
  * @property string $currencyCode
- * @property boolean $boolean
- * @method boolean boolean($chanceOfGettingTrue = 50)
+ * @property bool $boolean
+ * @method bool boolean($chanceOfGettingTrue = 50)
  *
  * @property int    $randomDigit
  * @property int    $randomDigitNot
@@ -163,7 +163,7 @@ namespace Faker;
  * @method Generator valid($validator = null, $maxRetries = 10000)
  * @method mixed passthrough($passthrough)
  *
- * @method integer biasedNumberBetween($min = 0, $max = 100, $function = 'sqrt')
+ * @method int biasedNumberBetween($min = 0, $max = 100, $function = 'sqrt')
  *
  * @property string $macProcessor
  * @property string $linuxProcessor
@@ -195,7 +195,6 @@ namespace Faker;
  * @property string $colorName
  *
  * @method string randomHtml($maxDepth = 4, $maxWidth = 4)
- *
  */
 class Generator
 {
@@ -233,7 +232,7 @@ class Generator
     /**
      * @param string $formatter
      *
-     * @return Callable
+     * @return callable
      */
     public function getFormatter($formatter)
     {

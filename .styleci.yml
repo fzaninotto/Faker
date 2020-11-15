@@ -21,6 +21,16 @@ enabled:
   - non_printable_character
   - normalize_index_brace
   - phpdoc_indent
+  - phpdoc_inline_tag_normalizer
+  - phpdoc_no_package
+  - phpdoc_return_self_reference
+  - phpdoc_scalar
+  - phpdoc_single_line_var_spacing
+  - phpdoc_singular_inheritdoc
+  - phpdoc_trim
+  - phpdoc_type_to_var
+  - phpdoc_types
+  - phpdoc_var_without_name
   - pow_to_exponentiation
   - random_api_migration
   - short_array_syntax
