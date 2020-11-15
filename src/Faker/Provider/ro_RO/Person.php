@@ -144,7 +144,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * @param $dateOfBirth
+     * @param null|string $dateOfBirth
      * @return \DateTime
      */
     protected function getDateOfBirth($dateOfBirth)

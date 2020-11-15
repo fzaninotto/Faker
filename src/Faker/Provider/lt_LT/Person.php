@@ -311,7 +311,7 @@ class Person extends \Faker\Provider\Person
      * National Personal Identity number (asmens kodas)
      * @link https://en.wikipedia.org/wiki/National_identification_number#Lithuania
      * @link https://lt.wikipedia.org/wiki/Asmens_kodas
-     * @param string [male|female]
+     * @param string $gender [male|female]
      * @param \DateTime $birthdate
      * @param string $randomNumber three integers
      * @return string on format XXXXXXXXXXX
@@ -362,7 +362,7 @@ class Person extends \Faker\Provider\Person
 
         $sum = 0;
         for ($i=1; $i <= 10; $i++) {
-            $sum += $numbers[$i - 1] * $multipliers[$i - 1];
+            $sum += ((int) $numbers[$i - 1]) * $multipliers[$i - 1];
         }
 
         return (int) $sum;

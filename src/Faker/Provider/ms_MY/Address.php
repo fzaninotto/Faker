@@ -498,7 +498,7 @@ class Address extends \Faker\Provider\Address
      *
      * @example 'No.'
      *
-     * @return @string
+     * @return string
      */
     public static function buildingPrefix()
     {
@@ -510,7 +510,7 @@ class Address extends \Faker\Provider\Address
      *
      * @example '123'
      *
-     * @return @string
+     * @return string
      */
     public static function buildingNumber()
     {
@@ -534,7 +534,7 @@ class Address extends \Faker\Provider\Address
      *
      * @example 'Jalan Utama 7'
      *
-     * @return @string
+     * @return string
      */
     public function streetName()
     {
@@ -548,7 +548,7 @@ class Address extends \Faker\Provider\Address
      *
      * @example Taman Bahagia
      *
-     * @return @string
+     * @return string
      */
     public function township()
     {
@@ -562,7 +562,7 @@ class Address extends \Faker\Provider\Address
      *
      * @example 'USJ'
      *
-     * @return @string
+     * @return string
      */
     public function townshipPrefixAbbr()
     {
@@ -574,7 +574,7 @@ class Address extends \Faker\Provider\Address
      *
      * @example 'Taman'
      *
-     * @return @string
+     * @return string
      */
     public function townshipPrefix()
     {
@@ -599,7 +599,7 @@ class Address extends \Faker\Provider\Address
      *
      * @param null|string $state 'state' or null
      *
-     * @return @string
+     * @return string
      */
     public static function postcode($state = null)
     {
@@ -666,7 +666,7 @@ class Address extends \Faker\Provider\Address
      *
      * @example 55100 Bukit Bintang, Kuala Lumpur
      *
-     * @return @string
+     * @return string
      */
     public function townState()
     {
@@ -683,7 +683,7 @@ class Address extends \Faker\Provider\Address
      *
      * @example 'Ampang'
      *
-     * @return @string
+     * @return string
      */
     public function city()
     {
@@ -696,7 +696,7 @@ class Address extends \Faker\Provider\Address
      *
      * @example 'Johor'
      *
-     * @return @string
+     * @return string
      */
     public function state()
     {

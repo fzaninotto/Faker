@@ -27,7 +27,7 @@ class Barcode extends Base
         $sequence = (strlen($input) + 1) === 8 ? [3, 1] : [1, 3];
         $sums = 0;
         foreach (str_split($input) as $n => $digit) {
-            $sums += $digit * $sequence[$n % 2];
+            $sums += ((int) $digit) * $sequence[$n % 2];
         }
         return (10 - $sums % 10) % 10;
     }

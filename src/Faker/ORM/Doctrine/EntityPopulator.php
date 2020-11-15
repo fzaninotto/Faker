@@ -41,9 +41,6 @@ class EntityPopulator
         return $this->class->getName();
     }
 
-    /**
-     * @param $columnFormatters
-     */
     public function setColumnFormatters($columnFormatters)
     {
         $this->columnFormatters = $columnFormatters;

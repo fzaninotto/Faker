@@ -147,7 +147,7 @@ class Payment extends \Faker\Provider\Payment
      *
      * @example 'Maybank'
      *
-     * @return @string
+     * @return string
      */
     public function bank()
     {
@@ -161,7 +161,7 @@ class Payment extends \Faker\Provider\Payment
      *
      * @example '1234567890123456'
      *
-     * @return @string
+     * @return string
      */
     public function bankAccountNumber()
     {
@@ -175,7 +175,7 @@ class Payment extends \Faker\Provider\Payment
      *
      * @example 'Public Bank'
      *
-     * @return @string
+     * @return string
      */
     public static function localBank()
     {
@@ -187,7 +187,7 @@ class Payment extends \Faker\Provider\Payment
      *
      * @example 'Citibank Berhad'
      *
-     * @return @string
+     * @return string
      */
     public static function foreignBank()
     {
@@ -199,7 +199,7 @@ class Payment extends \Faker\Provider\Payment
      *
      * @example 'Bank Simpanan Nasional'
      *
-     * @return @string
+     * @return string
      */
     public static function governmentBank()
     {
@@ -211,7 +211,7 @@ class Payment extends \Faker\Provider\Payment
      *
      * @example 'AIA Malaysia'
      *
-     * @return @string
+     * @return string
      */
     public static function insurance()
     {
@@ -223,7 +223,7 @@ class Payment extends \Faker\Provider\Payment
      *
      * @example 'MBBEMYKLXXX'
      *
-     * @return @string
+     * @return string
      */
     public static function swiftCode()
     {
@@ -235,7 +235,7 @@ class Payment extends \Faker\Provider\Payment
      *
      * @example 'RM'
      *
-     * @return @string
+     * @return string
      */
     public static function currencySymbol()
     {
