@@ -3,7 +3,6 @@
 namespace Faker\Provider\et_EE;
 
 /**
- * Class Person
  * @package Faker\Provider\et_EE
  * @author David Gegelija <code@imdavid.xyz>
  */

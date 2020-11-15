@@ -43,8 +43,6 @@ class EntityPopulator
     protected $useExistingData = false;
 
     /**
-     * Class constructor.
-     *
      * @param Mapper $mapper
      * @param Locator $locator
      * @param bool $useExistingData

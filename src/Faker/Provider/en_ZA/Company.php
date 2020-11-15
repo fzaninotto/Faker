@@ -2,9 +2,6 @@
 
 namespace Faker\Provider\en_ZA;
 
-/**
- * Class Company.
- */
 class Company extends \Faker\Provider\Company
 {
     protected static $legalEntities = [

@@ -24,8 +24,6 @@ class EntityPopulator
     protected $modifiers = [];
 
     /**
-     * Class constructor.
-     *
      * @param ClassMetadata $class
      */
     public function __construct(ClassMetadata $class)

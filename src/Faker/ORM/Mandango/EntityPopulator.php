@@ -14,8 +14,6 @@ class EntityPopulator
     protected $columnFormatters = [];
 
     /**
-     * Class constructor.
-     *
      * @param string $class A Mandango ActiveRecord classname
      */
     public function __construct($class)

@@ -15,8 +15,6 @@ class EntityPopulator
     protected $modifiers = [];
 
     /**
-     * Class constructor.
-     *
      * @param string $class A Propel ActiveRecord classname
      */
     public function __construct($class)
