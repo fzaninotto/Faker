@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2020-11-15, v1.11.0
+
+- Added Provider for Swedish Municipalities
+- Updates to person names in pt_BR
+- Many code style changes
+
 ## 2020-10-28, v1.10.1
 
 - Updates the Danish addresses in dk_DK
