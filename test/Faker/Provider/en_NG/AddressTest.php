@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\ng_NG;
+namespace Faker\Provider\en_NG;
 
 use Faker\Generator;
 use Faker\Provider\en_NG\Address;

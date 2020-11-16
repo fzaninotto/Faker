@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Test\Provider\ng_NG;
+namespace Faker\Test\Provider\en_NG;
 
 use Faker\Generator;
 use Faker\Provider\en_NG\PhoneNumber;
