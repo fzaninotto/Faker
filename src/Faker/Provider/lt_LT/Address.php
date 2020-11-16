@@ -77,6 +77,72 @@ class Address extends \Faker\Provider\Address
         "{{street}} {{streetSuffix}} {{buildingNumber}}, {{city}} {{postcode}}",
     ];
 
+    /**
+     * @link https://en.wikipedia.org/wiki/Municipalities_of_Lithuania
+     */
+    private static $municipality = [
+        'Akmenės rajono savivaldybė',
+        'Alytaus miesto savivaldybė',
+        'Alytaus rajono savivaldybė',
+        'Anykščių rajono savivaldybė',
+        'Birštono savivaldybė',
+        'Biržų rajono savivaldybė',
+        'Druskininkų savivaldybė',
+        'Elektrėnų savivaldybė',
+        'Ignalinos rajono savivaldybė',
+        'Jonavos rajono savivaldybė',
+        'Joniškio rajono savivaldybė',
+        'Jurbarko rajono savivaldybė',
+        'Kaišiadorių rajono savivaldybė',
+        'Kalvarijos savivaldybė',
+        'Kauno miesto savivaldybė',
+        'Kauno rajono savivaldybė',
+        'Kazlų Rūdos savivaldybė',
+        'Kėdainių rajono savivaldybė',
+        'Kelmės rajono savivaldybė',
+        'Klaipėdos miesto savivaldybė',
+        'Klaipėdos rajono savivaldybė',
+        'Kretingos rajono savivaldybė',
+        'Kupiškio rajono savivaldybė',
+        'Lazdijų rajono savivaldybė',
+        'Marijampolės savivaldybė',
+        'Mažeikių rajono savivaldybė',
+        'Molėtų rajono savivaldybė',
+        'Neringos savivaldybė',
+        'Pagėgių savivaldybė',
+        'Pakruojo rajono savivaldybė',
+        'Palangos miesto savivaldybė',
+        'Panevėžio miesto savivaldybė',
+        'Panevėžio rajono savivaldybė',
+        'Pasvalio rajono savivaldybė',
+        'Plungės rajono savivaldybė',
+        'Prienų rajono savivaldybė',
+        'Radviliškio rajono savivaldybė',
+        'Raseinių rajono savivaldybė',
+        'Rietavo savivaldybė',
+        'Rokiškio rajono savivaldybė',
+        'Skuodo rajono savivaldybė',
+        'Šakių rajono savivaldybė',
+        'Šalčininkų rajono savivaldybė',
+        'Šiaulių miesto savivaldybė',
+        'Šiaulių rajono savivaldybė',
+        'Šilalės rajono savivaldybė',
+        'Šilutės rajono savivaldybė',
+        'Širvintų rajono savivaldybė',
+        'Švenčionių rajono savivaldybė',
+        'Tauragės rajono savivaldybė',
+        'Telšių rajono savivaldybė',
+        'Trakų rajono savivaldybė',
+        'Ukmergės rajono savivaldybė',
+        'Utenos rajono savivaldybė',
+        'Varėnos rajono savivaldybė',
+        'Vilkaviškio rajono savivaldybė',
+        'Vilniaus miesto savivaldybė',
+        'Vilniaus rajono savivaldybė',
+        'Visagino savivaldybė',
+        'Zarasų rajono savivaldybė',
+    ];
+
     public static function buildingNumber()
     {
         return static::numerify(static::randomElement(static::$buildingNumber));
@@ -127,5 +193,15 @@ class Address extends \Faker\Provider\Address
     public static function street()
     {
         return static::randomElement(static::$street);
+    }
+
+    /**
+     * Lithuania municipality
+     * @link https://en.wikipedia.org/wiki/Municipality
+     * @return string
+     */
+    public function municipality()
+    {
+        return static::randomElement(static::$municipality);
     }
 }
