@@ -23,6 +23,7 @@ final class EanTest extends TestCase
             ['2354698521469', true],
             ['3001092650834', false],
             ['3921092190838', false],
+            ['39210921908381', false],
         ];
     }
 
