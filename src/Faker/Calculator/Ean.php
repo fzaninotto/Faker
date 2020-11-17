@@ -20,19 +20,14 @@ class Ean
      */
     public static function checksum($digits)
     {
-        $length = strlen($digits);
+        $sequence = (strlen($digits) + 1) === 8 ? [3, 1] : [1, 3];
+        $sums = 0;
 
-        $even = 0;
-        for ($i = $length - 1; $i >= 0; $i -= 2) {
-            $even += $digits[$i];
+        foreach (str_split($digits) as $n => $digit) {
+            $sums += ((int) $digit) * $sequence[$n % 2];
         }
 
-        $odd = 0;
-        for ($i = $length - 2; $i >= 0; $i -= 2) {
-            $odd += $digits[$i];
-        }
-
-        return (10 - ((3 * $even + $odd) % 10)) % 10;
+        return (10 - $sums % 10) % 10;
     }
 
     /**
@@ -48,6 +43,6 @@ class Ean
             return false;
         }
 
-        return self::checksum(substr($ean, 0, -1)) === intval(substr($ean, -1));
+        return self::checksum(substr($ean, 0, -1)) === (int) substr($ean, -1);
     }
 }

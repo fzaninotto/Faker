@@ -14,12 +14,14 @@ class Inn
      */
     public static function checksum($inn)
     {
-        $multipliers = [1 => 2, 2 => 4, 3 => 10, 4 => 3, 5 => 5, 6 => 9, 7 => 4, 8 => 6, 9 => 8];
+        $multipliers = [2, 4, 10, 3, 5, 9, 4, 6, 8];
         $sum = 0;
-        for ($i = 1; $i <= 9; $i++) {
-            $sum += intval(substr($inn, $i - 1, 1)) * $multipliers[$i];
+
+        for ($i = 0; $i < 9; $i++) {
+            $sum += (int) $inn[$i] * $multipliers[$i];
         }
-        return strval(($sum % 11) % 10);
+
+        return (string) (($sum % 11) % 10);
     }
 
     /**
@@ -30,6 +32,6 @@ class Inn
      */
     public static function isValid($inn)
     {
-        return self::checksum(substr($inn, 0, -1)) === substr($inn, -1, 1);
+        return strlen($inn) === 10 && self::checksum($inn) === $inn[9];
     }
 }
