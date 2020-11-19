@@ -7,7 +7,7 @@ use Faker\Test\TestCase;
 
 final class InnTest extends TestCase
 {
-    public function checksumProvider(): array
+    public function checksumProvider()
     {
         return [
             ['143525744', '4'],
@@ -21,12 +21,12 @@ final class InnTest extends TestCase
     /**
      * @dataProvider checksumProvider
      */
-    public function testChecksum(string $inn, string $checksum): void
+    public function testChecksum($inn, $checksum)
     {
         self::assertSame($checksum, Inn::checksum($inn), $inn);
     }
 
-    public function validatorProvider(): array
+    public function validatorProvider()
     {
         return [
             ['5902179757', true],
@@ -42,7 +42,7 @@ final class InnTest extends TestCase
     /**
      * @dataProvider validatorProvider
      */
-    public function testIsValid(string $inn, bool $isValid): void
+    public function testIsValid($inn, $isValid)
     {
         self::assertSame($isValid, Inn::isValid($inn), $inn);
     }

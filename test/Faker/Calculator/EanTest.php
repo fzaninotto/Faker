@@ -7,7 +7,7 @@ use Faker\Test\TestCase;
 
 final class EanTest extends TestCase
 {
-    public function Ean8checksumProvider(): array
+    public function Ean8checksumProvider()
     {
         return [
             ['1234567', 0],
@@ -16,7 +16,7 @@ final class EanTest extends TestCase
         ];
     }
 
-    public function ean8ValidationProvider(): array
+    public function ean8ValidationProvider()
     {
         return [
             ['1234567891231', true],
@@ -30,7 +30,7 @@ final class EanTest extends TestCase
     /**
      * @dataProvider Ean8checksumProvider
      */
-    public function testChecksumEan8(string $partial, int $checksum): void
+    public function testChecksumEan8($partial, $checksum)
     {
         self::assertSame($checksum, Ean::checksum($partial));
     }
@@ -38,12 +38,12 @@ final class EanTest extends TestCase
     /**
      * @dataProvider ean8ValidationProvider
      */
-    public function testEan8Validation(string $ean8, bool $valid): void
+    public function testEan8Validation($ean8, $valid)
     {
         self::assertSame($valid, Ean::isValid($ean8));
     }
 
-    public function Ean13checksumProvider(): array
+    public function Ean13checksumProvider()
     {
         return [
             ['123456789123', 1],
@@ -54,7 +54,7 @@ final class EanTest extends TestCase
         ];
     }
 
-    public function ean13ValidationProvider(): array
+    public function ean13ValidationProvider()
     {
         return [
             ['1234567891231', true],
@@ -67,7 +67,7 @@ final class EanTest extends TestCase
     /**
      * @dataProvider Ean13checksumProvider
      */
-    public function testChecksumEan13(string $partial, int $checksum): void
+    public function testChecksumEan13($partial, $checksum)
     {
         self::assertSame($checksum, Ean::checksum($partial));
     }
@@ -75,7 +75,7 @@ final class EanTest extends TestCase
     /**
      * @dataProvider ean13ValidationProvider
      */
-    public function testEan13Validation(string $ean13, bool $valid): void
+    public function testEan13Validation($ean13, $valid)
     {
         self::assertSame($valid, Ean::isValid($ean13));
     }

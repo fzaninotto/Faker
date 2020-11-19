@@ -20,14 +20,14 @@ final class BarcodeTest extends TestCase
         $this->faker = $faker;
     }
 
-    public function testEan8(): void
+    public function testEan8()
     {
         $code = $this->faker->ean8();
         self::assertMatchesRegularExpression('/^\d{8}$/i', $code);
         $this->assertTrue(Ean::isValid($code));
     }
 
-    public function testEan13(): void
+    public function testEan13()
     {
         $code = $this->faker->ean13();
         self::assertMatchesRegularExpression('/^\d{13}$/i', $code);
