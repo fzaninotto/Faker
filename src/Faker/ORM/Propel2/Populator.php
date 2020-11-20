@@ -12,8 +12,8 @@ use Propel\Runtime\ServiceContainer\ServiceContainerInterface;
 class Populator
 {
     protected $generator;
-    protected $entities = array();
-    protected $quantities = array();
+    protected $entities = [];
+    protected $quantities = [];
 
     /**
      * @param \Faker\Generator $generator
@@ -29,7 +29,7 @@ class Populator
      * @param mixed $entity A Propel ActiveRecord classname, or a \Faker\ORM\Propel2\EntityPopulator instance
      * @param int   $number The number of entities to populate
      */
-    public function addEntity($entity, $number, $customColumnFormatters = array(), $customModifiers = array())
+    public function addEntity($entity, $number, $customColumnFormatters = [], $customModifiers = [])
     {
         if (!$entity instanceof \Faker\ORM\Propel2\EntityPopulator) {
             $entity = new \Faker\ORM\Propel2\EntityPopulator($entity);
@@ -61,7 +61,7 @@ class Populator
         }
         $isInstancePoolingEnabled = Propel::isInstancePoolingEnabled();
         Propel::disableInstancePooling();
-        $insertedEntities = array();
+        $insertedEntities = [];
         $con->beginTransaction();
         foreach ($this->quantities as $class => $number) {
             for ($i=0; $i < $number; $i++) {

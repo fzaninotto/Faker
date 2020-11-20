@@ -1,0 +1,5 @@
+parameters:
+    ignoreErrors:
+        - '#\[BC\] CHANGED: Property Faker\\Provider\\[a-z_A-Z]+\\[a-zA-Z]+::\$[a-zA-Z]+ changed default value from#'
+        - '#\[BC\] CHANGED: Type documentation for property Faker\\Provider\\pl_PL\\Person::\$title changed from string to string\[\]#'
+        - '#\[BC\] CHANGED: Default parameter value for for parameter \$length of Faker\\Provider\\me_ME\\Payment::bankAccountNumber\(\) changed from ''18'' to 18#'

@@ -20,14 +20,14 @@ class Barcode extends Base
      *
      * @param string $input
      *
-     * @return integer
+     * @return int
      */
     protected static function eanChecksum($input)
     {
-        $sequence = (strlen($input) + 1) === 8 ? array(3, 1) : array(1, 3);
+        $sequence = (strlen($input) + 1) === 8 ? [3, 1] : [1, 3];
         $sums = 0;
         foreach (str_split($input) as $n => $digit) {
-            $sums += $digit * $sequence[$n % 2];
+            $sums += ((int) $digit) * $sequence[$n % 2];
         }
         return (10 - $sums % 10) % 10;
     }
@@ -39,7 +39,7 @@ class Barcode extends Base
      * @param  string           $input ISBN without check-digit
      * @throws \LengthException When wrong input length passed
      *
-     * @return integer Check digit
+     * @return string
      */
     protected static function isbnChecksum($input)
     {
@@ -61,7 +61,7 @@ class Barcode extends Base
         $result = (11 - array_sum($digits) % 11) % 11;
 
         // 10 is replaced by X
-        return ($result < 10)?$result:'X';
+        return ($result < 10) ? (string) $result : 'X';
     }
 
     /**

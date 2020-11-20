@@ -1,10 +1,10 @@
 <?php
 
-namespace Faker\Test\Provider\ng_NG;
+namespace Faker\Test\Provider\en_NG;
 
 use Faker\Generator;
 use Faker\Provider\en_NG\PhoneNumber;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class PhoneNumberTest extends TestCase
 {
@@ -14,7 +14,7 @@ final class PhoneNumberTest extends TestCase
      */
     private $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new PhoneNumber($faker));
@@ -26,7 +26,7 @@ final class PhoneNumberTest extends TestCase
         $phoneNumber = $this->faker->phoneNumber();
 
         $this->assertNotEmpty($phoneNumber);
-        $this->assertInternalType('string', $phoneNumber);
-        $this->assertRegExp('/^(0|(\+234))\s?[789][01]\d\s?(\d{3}\s?\d{4})/', $phoneNumber);
+        $this->assertIsString($phoneNumber);
+        $this->assertMatchesRegularExpression('/^(0|(\+234))\s?[789][01]\d\s?(\d{3}\s?\d{4})/', $phoneNumber);
     }
 }

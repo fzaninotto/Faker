@@ -4,33 +4,33 @@ namespace Faker\Provider\pt_BR;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $cityPrefix = array('São', 'Porto', 'Vila', 'Santa');
-    protected static $citySuffix = array('do Norte', 'do Leste', 'do Sul', 'd\'Oeste');
-    protected static $streetPrefix = array(
+    protected static $cityPrefix = ['São', 'Porto', 'Vila', 'Santa'];
+    protected static $citySuffix = ['do Norte', 'do Leste', 'do Sul', 'd\'Oeste'];
+    protected static $streetPrefix = [
         'Av.', 'Avenida', 'R.', 'Rua', 'Travessa', 'Largo'
-    );
-    protected static $buildingNumber = array('#####', '####', '###', '##', '#');
-    protected static $postcode = array('#####-###');
-    protected static $state = array(
+    ];
+    protected static $buildingNumber = ['#####', '####', '###', '##', '#'];
+    protected static $postcode = ['#####-###'];
+    protected static $state = [
         'Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará',
         'Distrito Federal', 'Espírito Santo', 'Goiás', 'Maranhão',
         'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba',
         'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro',
         'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima',
         'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins'
-    );
-    protected static $stateAbbr = array(
+    ];
+    protected static $stateAbbr = [
         'AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS',
         'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC',
         'SP', 'SE', 'TO'
-    );
-    protected static $region = array(
+    ];
+    protected static $region = [
         'Centro-Oeste', 'Nordeste', 'Norte', 'Sudeste', 'Sul'
-    );
-    protected static $regionAbbr = array(
+    ];
+    protected static $regionAbbr = [
         'CO', 'N', 'NE', 'SE', 'S'
-    );
-    protected static $country = array(
+    ];
+    protected static $country = [
         'Afeganistão', 'África do Sul', 'Albânia', 'Alemanha', 'Andorra',
         'Angola', 'Antigua e Barbuda', 'Arabia Saudita', 'Argélia',
         'Argentina', 'Armênia', 'Austrália', 'Áustria', 'Azerbaijão',
@@ -71,30 +71,30 @@ class Address extends \Faker\Provider\Address
         'Tuvalu', 'Tunísia', 'Ucrânia', 'Uganda', 'Uruguai', 'Uzbequistão',
         'Vaticano', 'Vanuatu', 'Venezuela', 'Vietnã', 'Yemen', 'Zâmbia',
         'Zimbábue'
-    );
-    protected static $cityFormats = array(
+    ];
+    protected static $cityFormats = [
         '{{cityPrefix}} {{firstName}} {{citySuffix}}',
         '{{cityPrefix}} {{firstName}}',
         '{{firstName}} {{citySuffix}}',
         '{{lastName}} {{citySuffix}}',
-    );
-    protected static $streetNameFormats = array(
+    ];
+    protected static $streetNameFormats = [
         '{{streetPrefix}} {{firstName}}',
         '{{streetPrefix}} {{lastName}}',
         '{{streetPrefix}} {{firstName}} {{lastName}}'
-    );
-    protected static $streetAddressFormats = array(
+    ];
+    protected static $streetAddressFormats = [
         '{{streetName}}, {{buildingNumber}}',
         '{{streetName}}, {{buildingNumber}}. {{secondaryAddress}}',
-    );
-    protected static $addressFormats = array(
+    ];
+    protected static $addressFormats = [
         "{{postcode}}, {{streetAddress}}\n{{city}} - {{stateAbbr}}",
-    );
-    protected static $secondaryAddressFormats = array(
+    ];
+    protected static $secondaryAddressFormats = [
         'Bloco A', 'Bloco B', 'Bloco C', 'Bc. # Ap. ##', 'Bc. ## Ap. ##',
         '#º Andar', '##º Andar', '###º Andar', 'Apto #', 'Apto ##', 'Apto ###',
         'Apto ####', 'F', 'Fundos', 'Anexo'
-    );
+    ];
 
     /**
      * @example 'Avenida'
@@ -135,7 +135,7 @@ class Address extends \Faker\Provider\Address
     {
         return static::randomElement(static::$stateAbbr);
     }
-    
+
     /**
      * @example 'Nordeste'
      */
@@ -143,7 +143,7 @@ class Address extends \Faker\Provider\Address
     {
         return static::randomElement(static::$region);
     }
-    
+
     /**
      * @example 'NE'
      */

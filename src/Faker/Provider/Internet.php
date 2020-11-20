@@ -4,20 +4,20 @@ namespace Faker\Provider;
 
 class Internet extends Base
 {
-    protected static $freeEmailDomain = array('gmail.com', 'yahoo.com', 'hotmail.com');
-    protected static $tld = array('com', 'com', 'com', 'com', 'com', 'com', 'biz', 'info', 'net', 'org');
+    protected static $freeEmailDomain = ['gmail.com', 'yahoo.com', 'hotmail.com'];
+    protected static $tld = ['com', 'com', 'com', 'com', 'com', 'com', 'biz', 'info', 'net', 'org'];
 
-    protected static $userNameFormats = array(
+    protected static $userNameFormats = [
         '{{lastName}}.{{firstName}}',
         '{{firstName}}.{{lastName}}',
         '{{firstName}}##',
         '?{{lastName}}',
-    );
-    protected static $emailFormats = array(
+    ];
+    protected static $emailFormats = [
         '{{userName}}@{{domainName}}',
         '{{userName}}@{{freeEmailDomain}}',
-    );
-    protected static $urlFormats = array(
+    ];
+    protected static $urlFormats = [
         'http://www.{{domainName}}/',
         'http://{{domainName}}/',
         'http://www.{{domainName}}/{{slug}}',
@@ -28,7 +28,7 @@ class Internet extends Base
         'http://{{domainName}}/{{slug}}',
         'http://{{domainName}}/{{slug}}.html',
         'https://{{domainName}}/{{slug}}.html',
-    );
+    ];
 
     /**
      * @example 'jdoe@acme.biz'
@@ -77,11 +77,11 @@ class Internet extends Base
      */
     final public static function safeEmailDomain()
     {
-        $domains = array(
+        $domains = [
             'example.com',
             'example.org',
             'example.net'
-        );
+        ];
 
         return static::randomElement($domains);
     }
@@ -175,7 +175,7 @@ class Internet extends Base
         }
         $words = $this->generator->words($nbWords);
 
-        return join('-', $words);
+        return implode('-', $words);
     }
 
     /**
@@ -191,12 +191,12 @@ class Internet extends Base
      */
     public function ipv6()
     {
-        $res = array();
+        $res = [];
         for ($i=0; $i < 8; $i++) {
             $res []= dechex(mt_rand(0, "65535"));
         }
 
-        return join(':', $res);
+        return implode(':', $res);
     }
 
     /**
@@ -218,12 +218,13 @@ class Internet extends Base
      */
     public static function macAddress()
     {
-        for ($i=0; $i<6; $i++) {
+        $mac = [];
+
+        for ($i=0; $i < 6; $i++) {
             $mac[] = sprintf('%02X', static::numberBetween(0, 0xff));
         }
-        $mac = implode(':', $mac);
 
-        return $mac;
+        return implode(':', $mac);
     }
 
     protected static function transliterate($string)
@@ -247,7 +248,7 @@ class Internet extends Base
         static $arrayFrom, $arrayTo;
 
         if (empty($arrayFrom)) {
-            $transliterationTable = array(
+            $transliterationTable = [
                 'Ĳ'=>'I', 'Ö'=>'O', 'Œ'=>'O', 'Ü'=>'U', 'ä'=>'a', 'æ'=>'a',
                 'ĳ'=>'i', 'ö'=>'o', 'œ'=>'o', 'ü'=>'u', 'ß'=>'s', 'ſ'=>'s',
                 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A', 'Å'=>'A',
@@ -352,7 +353,7 @@ class Internet extends Base
                 'յ'=>'y', 'ն'=>'n', 'շ'=>'sh', 'ո'=>'o', 'չ'=>'ch', 'պ'=>'p',
                 'ջ'=>'j', 'ռ'=>'r', 'ս'=>'s', 'վ'=>'v', 'տ'=>'t', 'ր'=>'r',
                 'ց'=>'ts', 'փ'=>'p', 'ք'=>'q', 'և'=>'ev', 'օ'=>'o', 'ֆ'=>'f',
-            );
+            ];
             $arrayFrom = array_keys($transliterationTable);
             $arrayTo = array_values($transliterationTable);
         }

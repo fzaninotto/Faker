@@ -10,11 +10,11 @@ class UniqueGenerator
 {
     protected $generator;
     protected $maxRetries;
-    protected $uniques = array();
+    protected $uniques = [];
 
     /**
      * @param Generator $generator
-     * @param integer $maxRetries
+     * @param int $maxRetries
      */
     public function __construct(Generator $generator, $maxRetries = 10000)
     {
@@ -29,7 +29,7 @@ class UniqueGenerator
      */
     public function __get($attribute)
     {
-        return $this->__call($attribute, array());
+        return $this->__call($attribute, []);
     }
 
     /**
@@ -41,11 +41,11 @@ class UniqueGenerator
     public function __call($name, $arguments)
     {
         if (!isset($this->uniques[$name])) {
-            $this->uniques[$name] = array();
+            $this->uniques[$name] = [];
         }
         $i = 0;
         do {
-            $res = call_user_func_array(array($this->generator, $name), $arguments);
+            $res = call_user_func_array([$this->generator, $name], $arguments);
             $i++;
             if ($i > $this->maxRetries) {
                 throw new \OverflowException(sprintf('Maximum retries of %d reached without finding a unique value', $this->maxRetries));

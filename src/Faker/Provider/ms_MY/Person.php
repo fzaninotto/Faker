@@ -1,12 +1,12 @@
 <?php
+
 namespace Faker\Provider\ms_MY;
 
 use Faker\Provider\DateTime;
-use Faker\Generator;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $firstNameFormat = array(
+    protected static $firstNameFormat = [
         '{{firstNameMaleMalay}}',
         '{{firstNameFemaleMalay}}',
         '{{firstNameMaleChinese}}',
@@ -15,12 +15,12 @@ class Person extends \Faker\Provider\Person
         '{{firstNameFemaleIndian}}',
         '{{firstNameMaleChristian}}',
         '{{firstNameFemaleChristian}}',
-    );
+    ];
 
     /**
      * @link https://en.wikipedia.org/wiki/Malaysian_names
      */
-    protected static $maleNameFormats = array(
+    protected static $maleNameFormats = [
         //Malay
         '{{muhammadName}}{{haji}}{{titleMaleMalay}}{{firstNameMaleMalay}} {{lastNameMalay}} bin {{titleMaleMalay}}{{firstNameMaleMalay}} {{lastNameMalay}}',
         '{{muhammadName}}{{haji}}{{titleMaleMalay}}{{firstNameMaleMalay}} {{lastNameMalay}} bin {{titleMaleMalay}}{{firstNameMaleMalay}}',
@@ -44,12 +44,12 @@ class Person extends \Faker\Provider\Person
         '{{firstNameMaleIndian}} {{lastNameIndian}} a/l {{lastNameIndian}}',
         '{{firstNameMaleIndian}} {{lastNameIndian}} a/l {{firstNameMaleIndian}} {{lastNameIndian}}',
         '{{firstNameMaleIndian}} {{lastNameIndian}}',
-    );
+    ];
 
     /**
      * @link https://en.wikipedia.org/wiki/Malaysian_names
      */
-    protected static $femaleNameFormats = array(
+    protected static $femaleNameFormats = [
         //Malay
         '{{nurName}}{{hajjah}}{{firstNameFemaleMalay}} {{lastNameMalay}} binti {{titleMaleMalay}}{{firstNameMaleMalay}} {{lastNameMalay}}',
         '{{nurName}}{{hajjah}}{{firstNameFemaleMalay}} {{lastNameMalay}} binti {{titleMaleMalay}}{{firstNameMaleMalay}}',
@@ -73,14 +73,14 @@ class Person extends \Faker\Provider\Person
         '{{firstNameFemaleIndian}} {{lastNameIndian}} a/l {{firstNameMaleIndian}}',
         '{{firstNameFemaleIndian}} {{lastNameIndian}} a/l {{firstNameMaleIndian}} {{lastNameIndian}}',
         '{{firstNameFemaleIndian}} {{lastNameIndian}}',
-    );
+    ];
 
     /**
      * @link https://en.wikipedia.org/wiki/List_of_Malay_people
      * @link https://samttar.edu.my/senarai-nama-pelajar-2016/
      * @link http://smkspkl.edu.my/senarai-nama-pelajar
      */
-    protected static $firstNameMaleMalay = array(
+    protected static $firstNameMaleMalay = [
         'A','A.r','A\'fif','A\'zizul','Ab','Abadi','Abas','Abd','Abd.','Abd.rahim','Abdel','Abdul','Abdull','Abdullah','Abdulloh','Abu','Adam','Adi','Adib','Adil','Adnan','Ady','Adzmin','Afandy','Afif','Afiq','Afza','Agus','Ahmad','Ahmat','Ahmed','Ahwali','Ahyer','Aidid','Aidil','Aiman','Aimman','Ainol','Ainuddin','Ainul','Aizad','Aizam','Aizat','Aizuddin','Ajis','Ajmal','Ajwad','Akhmal','Akid','Akif','Akmal','Al','Al-afnan','Al-muazrar','Alfian','Ali','Alias','Alif','Aliff','Alilah','Alin','Allif','Amaanullah','Amami','Aman','Amar','Ameershah','Amier','Amierul','Amil','Amin','Aminuddin','Amir','Amiruddin','Amirul','Ammar','Amran','Amri','Amru','Amrullah','Amsyar','Anas','Andri','Aniq','Anuar','Anuwar','Anwar','Aqeel','Aqif','Aqil','Arash','Arbani','Arefin','Arief','Arif','Arifen','Ariff','Ariffin','Arifin','Armi','Ashraf','Ashraff','Ashrof','Ashrul','Aslam','Asmawi','Asmin','Asmuri','Asraf','Asri','Asrialif','Asror','Asrul','Asymawi','Asyraaf','Asyraf','Atan','Athari','Awaludin','Awira','Azam','Azely','Azfar','Azhan','Azhar','Azhari','Azib','Azim','Aziz','Azizan','Azizul','Azizulhasni','Azlan','Azlee','Azli','Azman','Azmi','Azmie','Azmin','Aznan','Aznizam','Azraai','Azri','Azrie','Azrien','Azril','Azrin','Azrul','Azry','Azuan',
         'Badri','Badrullesham','Baharin','Baharuddin','Bahrul','Bakri','Basaruddin','Basiran','Basirin','Basri','Basyir','Bazli','Borhan','Buang','Budi','Bukhari','Bukharudin','Bustaman','Buyung',
         'Chailan',
@@ -105,8 +105,8 @@ class Person extends \Faker\Provider\Person
         'W','Wafi','Wafiq','Wan','Wazir','Wazzirul','Wi',
         'Yani','Yaqzan','Yazid','Yunos','Yusaini','Yusfaisal','Yushafiq','Yusni','Yusof','Yusoff','Yusri','Yussof','Yusuf',
         'Zabayudin','Zabidi','Zahari','Zahid','Zahiruddin','Zahrul','Zaid','Zaidi','Zainal','Zaini','Zainodin','Zainordin','Zainuddin','Zainul','Zairy','Zaiyon','Zakaria','Zaki','Zakii','Zakri','Zakwan','Zambri','Zamre','Zamri','Zamrul','Zan','Zaqiyuddin','Zar\'ai','Zarif','Zariq','Zarith','Zarul','Zaukepli','Zawawi','Zharaubi','Zikri','Zikril','Zikry','Zizi','Zol','Zolkifle','Zubair','Zubir','Zufayri','Zufrie','Zuheeryrizal','Zuhri','Zuki','Zul','Zulfadhli','Zulfadli','Zulfahmi','Zulfaqar','Zulfaqqar','Zulfikar','Zulhaikal','Zulhakim','Zulhakimi','Zulhelmi','Zulhilmi','Zulkapli','Zulkarnain','Zulkefli','Zulkfli','Zulkifli','Zulkipli','Zulman','Zuri'
-    );
-    protected static $firstNameFemaleMalay = array(
+    ];
+    protected static $firstNameFemaleMalay = [
         '\'Abidah','\'Alyaa','\'Aqilah','\'Atiqah','\'Afiqah','\'Alia','\'Aqilah','A\'ishah','A\'in','A\'zizah','Abdah','Abiatul','Adani','Adawiyah','Adha','Adharina','Adhwa','Adibah','Adilah','Adilla','Adina','Adini','Adira','Adlina','Adlyna','Adriana','Adzlyana','Afifa','Afifah','Afina','Afiqah','Afiza','Afrina','Afzan','Ahda','Aida','Aidatul','Aidila','Aifa','Aiman','Aimi','Aimuni','Ain','Aina','Ainaa','Ainaanasuha','Aini','Ainin','Ainn','Ainnaziha','Ainul','Ainun','Ainur','Airin','Aishah','Aisya','Aisyah','Aiza','Akmal','Aleeya','Aleeza','Aleya','Aleza','Alia','Aliaa','Aliah','Aliffa','Aliffatus','Alina','Alis','Alisya','Aliya','Alkubra','Alleisya','Ally','Alya','Alyaa','Amalia','Amalien','Amalin','Amalina','Amani','Amanina','Amiera','Aminy','Amira','Amirah','Amisha','Amrina','Amylia','Amyra','An-nur','Anas','Andani','Andi','Anesha','Ani','Aninafishah','Anis','Anisah','Anisha','Anissa','Aniza','Anna','Anne','Antaza','Aqeem','Aqeera','Aqila','Aqilah','Arfahrina','Ariana','Ariena','Ariessa','Arifah','Arina','Ariqah','Arissa','Arisya','Armira','Arwina','Aryani','Ashika','Ashriyana','Asiah','Asma\'rauha','Asmaa\'','Asmaleana','Asniati','Asnie','Asniza','Aswana','Asy','Asyiqin','Asykin','Athirah','Atifa','Atifah','Atifahajar','Atikah','Atiqa','Atiqah','Atirah','Atyqah','Auni','Awatif','Awatiff','Ayesha','Ayu','Ayuni','Ayunie','Az','Azashahira','Aziah','Aziemah','Azika','Azira','Azizah','Azliah','Azliatul','Azlin','Azlina','Azmina','Azni','Azrah','Azrina','Azua','Azuin','Azwa','Azwani','Azyan','Azyyati',
         'Badrina','Bahirah','Balqis','Basyirah','Batrisya','Batrisyia','Bilqis','Bismillah',
         'Camelia','Cempaka',
@@ -130,8 +130,8 @@ class Person extends \Faker\Provider\Person
         'Wadiha','Wafa','Waheeda','Wahida','Wahidah','Wan','Wardatul','Wardina','Wardinah','Wazira','Weni',
         'Yasmeen','Yasmin','Yetri','Yunalis','Yusra','Yusrinaa','Yusyilaaida',
         'Zaffan','Zafirah','Zaharah','Zahirah','Zahrah','Zahrak','Zaidalina','Zaidatulkhoiriyah','Zainab','Zainatul','Zakdatul','Zatalini','Zati','Zayani','Zeqafazri','Zilhaiza','Zubaidah','Zulaika','Zulaikha'
-    );
-    protected static $lastNameMalay = array(
+    ];
+    protected static $lastNameMalay = [
         '\'Aizat','A\'liyyuddin','Abas','Abdillah','Abdullah','Abidin','Adam','Adha','Adham','Adi','Adieka','Adip','Adli','Adnan','Adrus','Afandi','Afiq','Afizi','Afnan','Afsyal','Ahmad','Ahwali','Aidi','Aidil','Aiman','Aizad','Aizam','Aizat','Ajllin','Ajmal','Akashah','Akasyah','Akbar','Akhmal','Akid','Akif','Akmal','Al-amin','Al-hakim','Albukhary','Ali','Alias','Alif','Alimi','Aliuddin','Amaluddin','Amin','Aminnudin','Aminrullah','Aminuddin','Amiran','Amiruddin','Amirul','Amirullah','Ammar','Ammer','Amni','Amran','Amri','Amry','Amsyar','Amzah','Anam','Anaqi','Andalis','Anuar','Anwar','Apizan','Aqashah','Aqil','Arfan','Arfandi','Arias','Arief','Arif','Ariff','Ariffin','Arifin','Arifuddin','Arman','Arshad','Arziman','As','Asa','Ashraf','Ashraff','Asmadi','Asmar','Asmawi','Asri','Asyraf','Asyran','Asyrani','Aszahari','Awal','Awalluddin','Awaluddin','Awaludin','Awira','Ayyadi','Azahar','Azahari','Azam','Azhan','Azhar','Azhari','Azim','Aziz','Azizan','Azizi','Azizy','Azlan','Azlansyhah','Azli','Azlim','Azman','Azmee','Azmi','Azmin','Aznai','Azni','Azraai','Azrai','Azri','Azril','Azrin','Azriq','Azrul','Azuan',
         'Badrulhisham','Baha','Bahaman','Bahari','Baharin','Baharruddin','Baharuddin','Baharudin','Bahri','Bahrin','Bahrodin','Bakar','Bakri','Bakry','Bakti','Basaruddin','Bashah','Basri','Basyir','Batisah','Bella','Berman','Borhan','Buhari','Bukhari',
         'Chai',
@@ -156,39 +156,37 @@ class Person extends \Faker\Provider\Person
         'Wafi','Wahab','Wahbillah','Wahid','Wahidan','Wahidin','Wardi','Wasil','Wazif','Wildani',
         'Ya\'accob','Yaacob','Yaakob','Yaacup','Yacob','Yahaya','Yahya','Yajid','Yamani','Yanis','Yaqin','Yasin','Yazid','Yunus','Yusaini','Yusihasbi','Yusni','Yusof','Yusoff','Yusri','Yusrin','Yusseri','Yussof','Yusuf','Yuszelan','Yuzli',
         'Zafran','Zahani','Zahar','Zahareman','Zahari','Zahin','Zaid','Zaidi','Zailan','Zailani','Zaimi','Zaiminuddin','Zain','Zainal','Zaini','Zainorazman','Zainordin','Zainuddin','Zainudin','Zainul-\'alam','Zainun','Zainuri','Zairi','Zairulaizam','Zakaria','Zaki','Zakir','Zakuan','Zakwan','Zam','Zamanhuri','Zamani','Zamhari','Zamran','Zamre','Zamree','Zamri','Zamzuri','Zani','Zar\'ai','Zawawi','Zawi','Zazlan','Zehnei','Zhafran','Zihni','Zikry','Zin','Zizi','Zol','Zolkafeli','Zolkifli','Zuanuar','Zubair','Zubir','Zufayri','Zuhaili','Zuki','Zukri','Zulamin','Zulfadhli','Zulfikar','Zulfikri','Zulhazril','Zulhelmi','Zulkafli','Zulkanine','Zulkarnaen','Zulkefle','Zulkefli','Zulkernain','Zulkhairie','Zulkifli','Zulqurnainin','Zumali','Zuraidi','Zuri','Zuwairi',
-    );
-    
+    ];
+
     /**
      * Note: The empty elements are for names without the title, chances increase by number of empty elements.
      *
      * @link https://en.wikipedia.org/wiki/Muhammad_(name)
      */
-    protected static $muhammadName = array('', '', '', '', 'Mohamad ','Mohamed ','Mohammad ','Mohammed ','Muhamad ','Muhamed ','Muhammad ','Muhammed ','Muhammet ','Mohd ');
+    protected static $muhammadName = ['', '', '', '', 'Mohamad ','Mohamed ','Mohammad ','Mohammed ','Muhamad ','Muhamed ','Muhammad ','Muhammed ','Muhammet ','Mohd '];
     /**
-     *
      * @link https://en.wikipedia.org/wiki/Noor_(name)
      */
-    protected static $nurName = array('', '', '', '', 'Noor ', 'Nor ', 'Nur ', 'Nur ', 'Nur ', 'Nurul ','Nuur ');
+    protected static $nurName = ['', '', '', '', 'Noor ', 'Nor ', 'Nur ', 'Nur ', 'Nur ', 'Nurul ','Nuur '];
 
     /**
      * @link https://en.wikipedia.org/wiki/Malaysian_names#Haji_or_Hajjah
      */
-    protected static $haji = array('', '', '', '', 'Haji ', 'Hj ');
-    protected static $hajjah = array('', '', '', '', 'Hajjah ', 'Hjh ');
+    protected static $haji = ['', '', '', '', 'Haji ', 'Hj '];
+    protected static $hajjah = ['', '', '', '', 'Hajjah ', 'Hjh '];
 
     /**
      * @link https://en.wikipedia.org/wiki/Malay_styles_and_titles
      */
-    protected static $titleMaleMalay = array('', '', '', '', '', '', 'Syed ','Wan ','Nik ','Che ');
+    protected static $titleMaleMalay = ['', '', '', '', '', '', 'Syed ','Wan ','Nik ','Che '];
 
     /**
      * Chinese family name or surname
      *
      * @link https://en.wikipedia.org/wiki/List_of_common_Chinese_surnames
      * @link https://en.wikipedia.org/wiki/Hundred_Family_Surnames
-     *
      */
-    protected static $lastNameChinese = array(
+    protected static $lastNameChinese = [
         'An','Ang','Au','Au-Yong','Aun','Aw',
         'Bai','Ban','Bok','Bong',
         'Ch\'ng','Cha','Chai','Cham','Chan','Chang','Cheah','Cheam','Chee','Chen','Cheng','Cheok','Cheong','Chew','Chia','Chiam','Chiang',
@@ -214,7 +212,7 @@ class Person extends \Faker\Provider\Person
         'Xia','Xiong','Xu',
         'Yam','Yao','Yiaw','Ying','Yip','Yang','Yap','Yau','Yee','Yen','Yeo','Yeoh','Yeong','Yeow','Yep','Yew','Yong','Yow','You','Yu','Yuan','Yuen',
         'Zhong','Zhang','Zheng','Zhu','Zu'
-    );
+    ];
 
     /**
      * Chinese second character
@@ -224,7 +222,7 @@ class Person extends \Faker\Provider\Person
      * @link https://en.wikipedia.org/wiki/Category:Malaysian_people_of_Cantonese_descent
      * @link https://en.wikipedia.org/wiki/Category:Malaysian_politicians_of_Chinese_descent
      */
-    protected static $firstNameChinese = array(
+    protected static $firstNameChinese = [
         'Ah','Ai','Aik','An','Ann','Ang','Au','Aun','Aw',
         'Bae','Bai','Bak','Ban','Bang','Bao','Bau','Bee','Beh','Bei','Ben','Beng','Bi','Bik','Bin','Bing','Bo','Bok','Bong','Boo','Boon','Bow','Bu','Bui','Buk','Bun','Bung',
         'Cai','Car','Caw','Cee','Ceh','Cek','Cen','Cer',
@@ -272,7 +270,7 @@ class Person extends \Faker\Provider\Person
         'Za','Zai','Zang','Zao','Zau','Zea','Zeah','Zed','Zee','Zen','Zeng','Zeo','Zet',
         'Zha','Zhai','Zhan','Zhang','Zhao','Zhau','Zhee','Zhen','Zheng','Zhet','Zhi','Zhong','Zhu','Zhung',
         'Zi','Zia','Ziah','Ziak','Zian','Ziang','Ziao','Ziau','Zit','Zo','Zoe','Zou','Zu','Zui','Zuk','Zung',
-    );
+    ];
 
     /**
      * Chinese male third character
@@ -282,7 +280,7 @@ class Person extends \Faker\Provider\Person
      * @link https://en.wikipedia.org/wiki/Category:Malaysian_people_of_Cantonese_descent
      * @link https://en.wikipedia.org/wiki/Category:Malaysian_politicians_of_Chinese_descent
      */
-    protected static $firstNameMaleChinese = array(
+    protected static $firstNameMaleChinese = [
         'Aik','Ang','Au','Aun',
         'Bak','Ban','Bang','Bao','Bau','Ben','Beng','Bing','Bok','Bong','Boo','Boon','Bow','Buk','Bun','Bung',
         'Chai','Chak','Chan','Chang','Chao','Chap','Chat','Chau','Chaw',
@@ -328,7 +326,7 @@ class Person extends \Faker\Provider\Person
         'Za','Zai','Zang','Zao','Zau','Zea','Zeah','Zed','Zee','Zen','Zeng','Zeo','Zet',
         'Zha','Zhai','Zhan','Zhang','Zhao','Zhau','Zhee','Zheng','Zhet','Zhong','Zhu','Zhung',
         'Ziak','Zian','Ziang','Ziao','Ziau','Zit','Zuk','Zung',
-    );
+    ];
 
     /**
      * Chinese female third character
@@ -338,7 +336,7 @@ class Person extends \Faker\Provider\Person
      * @link https://en.wikipedia.org/wiki/Category:Malaysian_people_of_Cantonese_descent
      * @link https://en.wikipedia.org/wiki/Category:Malaysian_politicians_of_Chinese_descent
      */
-    protected static $firstNameFemaleChinese = array(
+    protected static $firstNameFemaleChinese = [
         'Ai','An','Ann','Aw',
         'Bae','Bai','Bee','Beh','Bei','Bi','Bik','Bin','Bui',
         'Cai','Cee','Cen','Cham','Cheam','Chean','Cheang','Cheng','Cheok','Chi','Ching','Chio','Chu',
@@ -371,7 +369,7 @@ class Person extends \Faker\Provider\Person
         'Xi','Xia','Xiah','Xian','Xiao','Xiau','Xie','Xin','Xing','Xiu','Xu','Xun',
         'Yam','Yan','Yee','Yen','Yep','Yeu','Yew','Yi','Yin','Ying','Yong','Yuan','Yue','Yuen','Yun','Yung','Yup',
         'Zhen','Zhi','Zi','Zia','Ziah','Zo','Zoe','Zou','Zu','Zui',
-    );
+    ];
 
     /**
      * @link https://en.wikipedia.org/wiki/List_of_Malaysians_of_Chinese_descent
@@ -385,7 +383,7 @@ class Person extends \Faker\Provider\Person
      * @link https://en.wikipedia.org/wiki/Category:Malaysian_people_of_Peranakan_descent
      * @link https://en.wikipedia.org/wiki/Category:Malaysian_politicians_of_Chinese_descent
      */
-    protected static $firstNameMaleChristian = array(
+    protected static $firstNameMaleChristian = [
         'Aaron','Addy','Adrian','Alex','Amos','Anthony',
         'Bernard','Billy',
         'Chris','Christopher','Colin',
@@ -405,8 +403,8 @@ class Person extends \Faker\Provider\Person
         'Terry','Tony',
         'Victor','Vince','Vincent',
         'Welson','William','Willie',
-    );
-    protected static $firstNameFemaleChristian = array(
+    ];
+    protected static $firstNameFemaleChristian = [
         'Alice','Alyssa','Amber','Amy','Andrea','Angelica','Angie','Apple','Aslina',
         'Bernice','Betty','Boey','Bonnie',
         'Caemen','Carey','Carmen','Carrie','Cindy',
@@ -428,7 +426,7 @@ class Person extends \Faker\Provider\Person
         'Teresa','Tiffany','Tracy','Tricia',
         'Vera','Violet','Vivian','Vivien',
         'Yvonne',
-    );
+    ];
 
     /**
      * @link https://en.wikipedia.org/wiki/List_of_Malaysians_of_Indian_descent
@@ -436,7 +434,7 @@ class Person extends \Faker\Provider\Person
      * @link https://en.wikipedia.org/wiki/List_of_Malaysian_sportspeople_of_Indian_descent
      * @link https://en.wikipedia.org/wiki/Tamil_Malaysians#Notable_people
      */
-    protected static $initialIndian = array(
+    protected static $initialIndian = [
         'B. ','B. C. ',
         'C. ',
         'D. ','D. R. ','D. S. ',
@@ -450,7 +448,7 @@ class Person extends \Faker\Provider\Person
         'S. ','S. A. ',
         'T. ',
         'V. ','V. T. ',
-    );
+    ];
 
     /**
      * @link https://en.wikipedia.org/wiki/List_of_Malaysians_of_Indian_descent
@@ -459,7 +457,7 @@ class Person extends \Faker\Provider\Person
      * @link https://en.wikipedia.org/wiki/List_of_Malaysian_sportspeople_of_Indian_descent
      * @link https://en.wikipedia.org/wiki/Tamil_Malaysians#Notable_people
      */
-    protected static $firstNameMaleIndian = array(
+    protected static $firstNameMaleIndian = [
         'Anbil','Ananda','Arasu','Arul','Arulraj','Arumugam','Ash',
         'Babu','Balachandra','Balasubramaniam','Balden','Baljit','Baltej','Bishan',
         'Canagasabai','Cecil','Chakra','Chanturu',
@@ -480,7 +478,7 @@ class Person extends \Faker\Provider\Person
         'Varatharaju','Veenod','Veerappan','Veerappen','Veloo','Vasudevan','Vellu','Viatilingam','Vijandren','Vinod','Vishnu','Vivasvan',
         'Waythamoorthy','Weeratunge',
         'Yosri','Yugendran',
-    );
+    ];
 
     /**
      * @link https://en.wikipedia.org/wiki/List_of_Malaysians_of_Indian_descent
@@ -488,7 +486,7 @@ class Person extends \Faker\Provider\Person
      * @link https://en.wikipedia.org/wiki/List_of_Malaysian_sportspeople_of_Indian_descent
      * @link https://en.wikipedia.org/wiki/Tamil_Malaysians#Notable_people
      */
-    protected static $firstNameFemaleIndian = array(
+    protected static $firstNameFemaleIndian = [
         'Ambiga','Anaika','Anand','Anita','Asha','Athi',
         'Gheetha',
         'Haanii',
@@ -503,7 +501,7 @@ class Person extends \Faker\Provider\Person
         'Umasundari','Uthaya',
         'Vijaya',
         'Zabrina',
-    );
+    ];
 
     /**
      * @link https://en.wikipedia.org/wiki/List_of_Malaysians_of_Indian_descent
@@ -511,7 +509,7 @@ class Person extends \Faker\Provider\Person
      * @link https://en.wikipedia.org/wiki/List_of_Malaysian_sportspeople_of_Indian_descent
      * @link https://en.wikipedia.org/wiki/Tamil_Malaysians#Notable_people
      */
-    protected static $lastNameIndian = array(
+    protected static $lastNameIndian = [
         'Alagaratnam','Ambumamee','Ammasee','Ampalavanar','Ananthan','Arivanathan','Arujunan','Arumugam','Asirvatham','Autherapady',
         'Balakrishnan','Balan','Bamadhaj','Bastianpillai','Bhullar','Bhupalan',
         'Chandran','Cumaraswamy','Chelvan','Chengara',
@@ -532,13 +530,13 @@ class Person extends \Faker\Provider\Person
         'Thajudeen','Thalalla','Thambu','Thanabalasingam','Thanenthiran','Theseira','Thevandran','Thiru','Thirunavukarasu','Thivy','Thuraisingham','Tikaram',
         'Vadaketh','Vadiveloo','Vanajah','Varman','Vasudevan','Veeran','Veerasamy','Veerasenan','Veerathan','Veetil','Velappan','Vello','Vengatarakoo','Vethamuthu','Viswalingam',
         'Xavier',
-    );
+    ];
 
     /**
      * @link https://en.wikipedia.org/wiki/Malay_styles_and_titles
      */
-    protected static $titleMale = array('En.','Dr.','Prof.','Datuk','Dato\'','Datuk Seri','Dato\' Sri','Tan Sri','Tun');
-    protected static $titleFemale = array('Pn.','Cik','Dr.','Prof.','Datin','Datin Paduka','Datin Paduka Seri','Puan Sri','Toh Puan');
+    protected static $titleMale = ['En.','Dr.','Prof.','Datuk','Dato\'','Datuk Seri','Dato\' Sri','Tan Sri','Tun'];
+    protected static $titleFemale = ['Pn.','Cik','Dr.','Prof.','Datin','Datin Paduka','Datin Paduka Seri','Puan Sri','Toh Puan'];
 
     /**
      * Return a Malay male first name
@@ -753,11 +751,11 @@ class Person extends \Faker\Provider\Person
      */
     public function lastName()
     {
-        $formats = array(
+        $formats = [
             '{{lastNameMalay}}',
             '{{lastNameChinese}}',
             '{{lastNameIndian}}',
-        );
+        ];
 
         return $this->generator->parse(static::randomElement($formats));
     }
@@ -786,7 +784,7 @@ class Person extends \Faker\Provider\Person
         $dd = DateTime::dayOfMonth();
 
         // place of birth (1-59 except 17-20)
-        while (in_array($pb = mt_rand(1, 59), array(17, 18, 19, 20))) {
+        while (in_array($pb = mt_rand(1, 59), [17, 18, 19, 20])) {
         }
 
         // random number

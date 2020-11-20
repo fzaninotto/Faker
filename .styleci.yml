@@ -1,0 +1,45 @@
+preset: psr12
+
+risky: true
+
+enabled:
+  - alpha_ordered_imports
+  - array_indentation
+  - binary_operator_spaces
+  - cast_spaces
+  - combine_nested_dirname
+  - implode_call
+  - magic_constant_casing
+  - magic_method_casing
+  - no_alias_functions
+  - no_empty_statement
+  - no_unneeded_curly_braces
+  - no_unneeded_final_method
+  - no_unset_cast
+  - no_unused_imports
+  - no_unused_lambda_imports
+  - non_printable_character
+  - normalize_index_brace
+  - phpdoc_indent
+  - phpdoc_inline_tag_normalizer
+  - phpdoc_no_package
+  - phpdoc_return_self_reference
+  - phpdoc_scalar
+  - phpdoc_single_line_var_spacing
+  - phpdoc_singular_inheritdoc
+  - phpdoc_trim
+  - phpdoc_type_to_var
+  - phpdoc_types
+  - phpdoc_var_without_name
+  - pow_to_exponentiation
+  - random_api_migration
+  - short_array_syntax
+  - standardize_not_equals
+  - ternary_to_null_coalescing
+
+disabled:
+  - no_trailing_whitespace_in_string
+
+finder:
+  path:
+    - src

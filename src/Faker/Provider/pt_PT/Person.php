@@ -4,7 +4,7 @@ namespace Faker\Provider\pt_PT;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $maleNameFormats = array(
+    protected static $maleNameFormats = [
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}} {{lastName}}',
         '{{firstNameMale}} {{lastName}} de {{lastName}}',
@@ -13,9 +13,9 @@ class Person extends \Faker\Provider\Person
         '{{firstNameMale}} {{firstNameMale}} {{lastName}} {{lastName}}',
         '{{firstNameMale}} {{firstNameMale}} {{lastName}} de {{lastName}}',
         '{{firstNameMale}} {{firstNameMale}} {{lastName}} {{lastName}} {{lastName}}',
-    );
+    ];
 
-    protected static $femaleNameFormats = array(
+    protected static $femaleNameFormats = [
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}} de {{lastName}}',
@@ -24,29 +24,29 @@ class Person extends \Faker\Provider\Person
         '{{firstNameFemale}} {{firstNameFemale}} {{lastName}} {{lastName}}',
         '{{firstNameFemale}} {{firstNameFemale}} {{lastName}} de {{lastName}}',
         '{{firstNameFemale}} {{firstNameFemale}} {{lastName}} {{lastName}} {{lastName}}',
-    );
+    ];
 
     /** @link http://goo.gl/v6bScG document with all pt abreviations **/
-    protected static $titleMale = array('Sr.', 'Dr.', 'Exmo.', 'Eng.', 'Eng.º', 'Ex.', 'Exº');
-    protected static $titleFemale = array('Sra.', 'Dra.', 'Exma', 'Eng.ª', 'Exª');
+    protected static $titleMale = ['Sr.', 'Dr.', 'Exmo.', 'Eng.', 'Eng.º', 'Ex.', 'Exº'];
+    protected static $titleFemale = ['Sra.', 'Dra.', 'Exma', 'Eng.ª', 'Exª'];
 
-    protected static $firstEightDigitsFormat = array(
-      '1#######',
-      '2#######',
-      '3#######',
-      '45######',
-      '5#######',
-      '6#######',
-      '70######',
-      '71######',
-      '72######',
-      '77######',
-      '79######',
-      '8#######' ,
-      '90######',
-      '98######',
-      '99######'
-    );
+    protected static $firstEightDigitsFormat = [
+        '1#######',
+        '2#######',
+        '3#######',
+        '45######',
+        '5#######',
+        '6#######',
+        '70######',
+        '71######',
+        '72######',
+        '77######',
+        '79######',
+        '8#######' ,
+        '90######',
+        '98######',
+        '99######'
+    ];
 
     /**
      * Taxpayer Identification Number (NIF in Portugal)
@@ -60,7 +60,7 @@ class Person extends \Faker\Provider\Person
         $firstEightDigits = static::numerify(static::randomElement(static::$firstEightDigitsFormat));
         $lastDigit = static::dvCalcMod11($firstEightDigits);
 
-        return $firstEightDigits.$lastDigit;
+        return $firstEightDigits . $lastDigit;
     }
 
     /**
@@ -99,11 +99,10 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     *
      * @link http://nomesportugueses.blogspot.pt/2012/01/lista-dos-cem-nomes-mais-usados-em.html
      */
 
-    protected static $firstNameMale = array(
+    protected static $firstNameMale = [
         'Rodrigo', 'João', 'Martim', 'Afonso', 'Tomás', 'Gonçalo', 'Francisco', 'Tiago',
         'Diogo', 'Guilherme', 'Pedro', 'Miguel', 'Rafael', 'Gabriel', 'Santiago', 'Dinis',
         'David', 'Duarte', 'José', 'Simão', 'Daniel', 'Lucas', 'Gustavo', 'André', 'Denis',
@@ -116,9 +115,9 @@ class Person extends \Faker\Provider\Person
         'Joel', 'Fernando', 'Sebastião', 'Tomé', 'César', 'Cláudio', 'Nelson', 'Lisandro', 'Jaime',
         'Gil', 'Mauro', 'Sandro', 'Hélder', 'Matheus', 'William', 'Gaspar', 'Márcio',
         'Martinho', 'Emanuel', 'Marcos', 'Telmo', 'Davi', 'Wilson'
-    );
+    ];
 
-    protected static $firstNameFemale = array(
+    protected static $firstNameFemale = [
         'Maria', 'Leonor', 'Matilde', 'Mariana', 'Ana', 'Beatriz', 'Inês', 'Lara', 'Carolina', 'Margarida',
         'Joana', 'Sofia', 'Diana', 'Francisca', 'Laura', 'Sara', 'Madalena', 'Rita', 'Mafalda', 'Catarina',
         'Luana', 'Marta', 'Íris', 'Alice', 'Bianca', 'Constança', 'Gabriela', 'Eva', 'Clara', 'Bruna', 'Daniela',
@@ -129,9 +128,9 @@ class Person extends \Faker\Provider\Person
         'Débora', 'Fabiana', 'Renata', 'Kyara', 'Kelly', 'Irina', 'Mélanie', 'Nádia', 'Cristiana', 'Liliana',
         'Patrícia', 'Vera', 'Doriana', 'Ângela', 'Mia', 'Erica', 'Mónica', 'Isabela', 'Salomé', 'Cátia',
         'Verónica', 'Violeta', 'Lorena', 'Érika', 'Vanessa', 'Iris', 'Anna', 'Viviane', 'Rebeca', 'Neuza',
-    );
+    ];
 
-    protected static $lastName = array(
+    protected static $lastName = [
         'Abreu',  'Almeida',  'Alves', 'Amaral', 'Amorim', 'Andrade', 'Anjos', 'Antunes', 'Araújo', 'Assunção',
         'Azevedo', 'Baptista', 'Barbosa', 'Barros', 'Batista', 'Borges', 'Branco', 'Brito', 'Campos', 'Cardoso',
         'Carneiro', 'Carvalho', 'Castro', 'Coelho', 'Correia', 'Costa', 'Cruz', 'Cunha', 'Domingues', 'Esteves',
@@ -142,5 +141,5 @@ class Person extends \Faker\Provider\Person
         'Nunes', 'Oliveira', 'Pacheco', 'Paiva', 'Pereira', 'Pinheiro', 'Pinho', 'Pinto', 'Pires', 'Ramos',
         'Reis', 'Ribeiro', 'Rocha', 'Rodrigues', 'Santos', 'Silva', 'Simões', 'Soares', 'Sousa',
         'Sá', 'Tavares', 'Teixeira', 'Torres', 'Valente', 'Vaz', 'Vicente', 'Vieira',
-    );
+    ];
 }

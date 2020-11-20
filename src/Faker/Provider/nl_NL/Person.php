@@ -4,33 +4,33 @@ namespace Faker\Provider\nl_NL;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $maleNameFormats = array(
+    protected static $maleNameFormats = [
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}',
         '{{title}} {{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}} {{suffix}}',
         '{{title}} {{firstNameMale}} {{lastName}} {{suffix}}',
-    );
+    ];
 
-    protected static $femaleNameFormats = array(
+    protected static $femaleNameFormats = [
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{title}} {{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}} {{suffix}}',
         '{{title}} {{firstNameFemale}} {{lastName}} {{suffix}}',
-    );
+    ];
 
-    protected static $title = array(
+    protected static $title = [
         'mr.', 'dr.', 'ir.', 'drs', 'bacc.', 'kand.', 'dr.h.c.', 'prof.', 'ds.', 'ing.', 'bc.'
-    );
+    ];
 
-    protected static $suffix = array(
+    protected static $suffix = [
         'BA', 'Bsc', 'LLB', 'LLM', 'MA', 'Msc', 'MPhil', 'D', 'PhD', 'AD', 'B', 'M'
-    );
+    ];
 
-    protected static $prefix = array("'s", "'t", 'a', 'aan', "aan 't", 'aan de', 'aan den', 'aan der', 'aan het',
+    protected static $prefix = ["'s", "'t", 'a', 'aan', "aan 't", 'aan de', 'aan den', 'aan der', 'aan het',
         "aan t", 'af', 'al', 'am', 'am de', 'auf', 'auf dem', 'auf den', 'auf der', 'auf ter', 'aus', "aus 'm",
         'aus dem', 'aus den', 'aus der', 'aus m', 'ben', 'bij', "bij 't", 'bij de', 'bij den', 'bij het', 'bij t',
         'bin', 'boven d', "boven d'", 'd', "d'", 'da', 'dal', 'dal’', 'dalla', 'das', 'de', 'de die', 'de die le',
@@ -44,9 +44,9 @@ class Person extends \Faker\Provider\Person
         "van 't", 'van De', 'van de', 'van de l', "van de l'", 'van den', 'van der', 'van gen', 'van het', 'van la',
         'van t', 'van ter', 'van van de', 'ver', 'vom', 'von', "von 't", 'von dem', 'von den', 'von der', 'von t', 'voor',
         "voor 't", 'voor de', 'voor den', "voor in 't", 'voor in t', 'vor', 'vor der', 'zu', 'zum', 'zur'
-    );
+    ];
 
-    protected static $commonDutchLastNames = array(
+    protected static $commonDutchLastNames = [
         'de Jong', 'Jansen', 'de Vries', 'van de Berg', 'van den Berg', 'van der Berg', 'van Dijk', 'Bakker', 'Janssen',
         'Visser', 'Smit', 'Meijer', 'Meyer', 'de Boer', 'Mulder', 'de Groot', 'Bos', 'Vos', 'Peters', 'Hendriks',
         'van Leeuwen', 'Dekker', 'Brouwer', 'de Wit', 'Dijkstra', 'Smits', 'de Graaf', 'van der Meer', 'van der Linden',
@@ -61,9 +61,9 @@ class Person extends \Faker\Provider\Person
         'Hermans', 'Evers', 'van den Bosch', 'van der Meulen', 'Hofman', 'Bosman', 'Wolters', 'Sanders',
         'van der Horst', 'Mol', 'Kuijpers', 'Molenaar', 'van de Pol', 'van den Pol', 'van der Pol', 'de Leeuw',
         'Verbeek'
-    );
+    ];
 
-    protected static $dutchLastNames = array(
+    protected static $dutchLastNames = [
         'Aalts', 'Aarden', 'Aarts', 'Adelaar', 'Adriaansen', 'Adriaensdr', 'Adriaense', 'Adryaens', 'Aeije',
         'Aelftrud van Wessex', 'Aertsz', 'van Alenburg', 'van Allemanië', 'Alpaidis', 'Amalrada', 'van Amstel',
         'Ansems', 'Appelman', 'Arens', 'Arent', 'Ariens', 'Ariens Ansems', 'van Arkel', 'Arnold', 'van Arnsberg',
@@ -185,9 +185,9 @@ class Person extends \Faker\Provider\Person
         'Wolfswinkel', 'Wolters', 'Wolzak', 'Wooning', 'Woudenberg', 'Wouters', 'Wouters van Eijndhoven', 'Woutersz',
         'Wright', 'Wunderink', 'Wutke', 'Zaal', 'Zeemans', 'Zeldenrust', 'Zevenboom', 'van der Zijl', 'Zijlemans',
         'Zijlmans', 'Zuidweg', 'Zuijdveld', 'van Zwaben', 'Zwart', 'Zwijsen'
-    );
+    ];
 
-    protected static $commonForeignLastNames = array(
+    protected static $commonForeignLastNames = [
         'Yilmaz', 'Nguyen', 'Ali', 'Mohamed', 'Yildiz', 'Yildirim', 'Öztürk', 'Demir', 'Hassan', 'Şahin', 'Aydin',
         'Özdemir', 'Çelik', 'Kiliç', 'Arslan', 'Dogan', 'Tran', 'Abdi', 'Aslan', 'Hussein', 'Koç', 'Özcan', 'Hussain',
         'Kurt', 'Pham', 'Autar', 'Polat', 'Korkmaz', 'Le', 'Çetin', 'Koçak', 'Said', 'Ünal', 'Bulut', 'Ramautar',
@@ -197,9 +197,9 @@ class Person extends \Faker\Provider\Person
         'Aktaş', 'Avci', 'Uysal', 'Badal', 'Bozkurt', 'Ramos', 'Moussaoui', 'Akin', 'Özer', 'Malik', 'Sital',
         'El Idrissi', 'Aziz', 'Demirel', 'Henriquez', 'Janga', 'Hooi', 'Geerman', 'Güler', 'Aksoy', 'Soekhoe', 'Turan',
         'Güneş', 'Narain', 'Ahmadi', 'Esajas', 'Zhou', 'Tahiri', 'Çiçek', 'Mohan', 'Cicilia', 'Mangal'
-    );
+    ];
 
-    protected static $longLastNames = array(
+    protected static $longLastNames = [
         'Albinus genaamd Weiss von Weissenlöw', "van Bol'es Rijnbende", 'Doris Bin Sijlvanus',
         'Douglas tot Springwoodpark', 'Dubbeldemuts van der Sluys', 'Duhme auf der Heide sive Heydahrens',
         'Elsjan of Wipper', "de la Fontaine und d'Harnoncourt Unverzagt", 'Franse Storm', 'von Frijtag Drabbe Künzel',
@@ -209,9 +209,9 @@ class Person extends \Faker\Provider\Person
         'de Pruyssenaere de la Woestijne', 'Rahajoe genaamd en geschreven ten Kate', 'de la Rive Box',
         'Spiegelmaker Spanjaard', 'Spring in ‘t Veld', 'Vos Specht', 'Vroeg in de Wei', 'Zowran von Ranzow',
         'Zuérius Boxhorn van Miggrode', 'Zum Vörde Sive Vörding'
-    );
+    ];
 
-    protected static $firstNameFemale = array(
+    protected static $firstNameFemale = [
         'Emma', 'Sophie', 'Julia', 'Anna', 'Lisa', 'Isa', 'Eva', 'Saar', 'Lotte', 'Tess', 'Lynn', 'Fleur', 'Sara',
         'Lieke', 'Noa', 'Fenna', 'Sarah', 'Mila', 'Sanne', 'Roos', 'Elin', 'Zoë', 'Evi', 'Maud', 'Jasmijn', 'Femke',
         'Nina', 'Anne', 'Noor', 'Amy', 'Sofie', 'Olivia', 'Feline', 'Liv', 'Esmee', 'Nora', 'Iris', 'Lina', 'Luna',
@@ -233,9 +233,9 @@ class Person extends \Faker\Provider\Person
         'Angelina', 'Catharina', 'Lindsey', 'Loes', 'Yinthe', 'Sienna', 'Adriana', 'Esila', 'Jente', 'Lizz', 'Lucy',
         'Nadine', 'Selina', 'Fatima', 'Maaike', 'Aaliyah', 'Amina', 'Inaya', 'Selena', 'Frederique', 'Pippa', 'Puk',
         'Sylvie', 'Annemijn', 'Helena', 'Jayda', 'Nadia', 'Amelia', 'Jinthe', 'Jolijn', 'Maja', 'Tirza'
-    );
+    ];
 
-    protected static $firstNameMale = array(
+    protected static $firstNameMale = [
         'Daan', 'Bram', 'Sem', 'Lucas', 'Milan', 'Levi', 'Luuk', 'Thijs', 'Jayden', 'Tim', 'Finn', 'Stijn', 'Thomas',
         'Lars', 'Ruben', 'Jesse', 'Noah', 'Julian', 'Max', 'Liam', 'Mees', 'Sam', 'Sven', 'Gijs', 'Luca', 'Teun',
         'Tijn', 'Siem', 'Mats', 'Jens', 'Benjamin', 'Adam', 'Ryan', 'Jan', 'Floris', 'David', 'Olivier', 'Cas', 'Tygo',
@@ -257,7 +257,7 @@ class Person extends \Faker\Provider\Person
         'Dion', 'Jake', 'Kyano', 'Kick', 'Mustafa', 'Michael', 'Youssef', 'Elias', 'Naud', 'Senna', 'Brian', 'Jari',
         'Mehmet', 'Micha', 'Stefan', 'Arie', 'Duuk', 'Zakaria', 'Ayoub', 'Faas', 'Olaf', 'Tristan', 'Mads', 'Berend',
         'Mart', 'Sten', 'Ivan', 'Philip', 'Giel', 'Lex', 'Rik', 'Tyler'
-    );
+    ];
 
     /**
      * @example 'Doe'
@@ -314,7 +314,7 @@ class Person extends \Faker\Provider\Person
     {
         return static::randomElement(static::$prefix);
     }
-    
+
     /**
      * @link https://nl.wikipedia.org/wiki/Burgerservicenummer#11-proef
      *
@@ -323,7 +323,7 @@ class Person extends \Faker\Provider\Person
     public function idNumber()
     {
         $return = '';
-        $nr     = array();
+        $nr     = [];
         $nr[]   = 0;
         while (count($nr) < 8) {
             $nr[] = static::randomDigit();

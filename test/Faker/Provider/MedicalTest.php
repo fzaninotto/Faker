@@ -1,0 +1,35 @@
+<?php
+
+namespace Faker\Test\Provider;
+
+use Faker\Provider\Medical;
+use Faker\Generator;
+use Faker\Test\TestCase;
+
+final class MedicalTest extends TestCase
+{
+    /**
+     * @var Generator
+     */
+    private $faker;
+
+    protected function setUp(): void
+    {
+        $this->faker = new Generator();
+        $this->faker->addProvider(new Medical($this->faker));
+    }
+    public function testBloodType(): void
+    {
+        self::assertContains($this->faker->bloodType, ['A', 'AB', 'B', 'O']);
+    }
+
+    public function testBloodRh(): void
+    {
+        self::assertContains($this->faker->bloodRh, ['+', '-']);
+    }
+
+    public function testBloodGroup(): void
+    {
+        self::assertContains($this->faker->bloodGroup, ['A+', 'A-', 'AB+', 'AB-', 'B+', 'B-', 'O+', 'O-']);
+    }
+}

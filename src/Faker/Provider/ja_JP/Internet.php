@@ -4,29 +4,29 @@ namespace Faker\Provider\ja_JP;
 
 class Internet extends \Faker\Provider\Internet
 {
-    protected static $userNameFormats = array(
+    protected static $userNameFormats = [
         '{{lastNameAscii}}.{{firstNameAscii}}',
         '{{firstNameAscii}}.{{lastNameAscii}}',
         '{{firstNameAscii}}##',
         '?{{lastNameAscii}}',
-    );
+    ];
 
-    protected static $safeEmailTld = array(
+    protected static $safeEmailTld = [
         'org', 'com', 'net', 'jp', 'jp', 'jp',
-    );
+    ];
 
-    protected static $freeEmailDomain = array(
+    protected static $freeEmailDomain = [
         'gmail.com', 'yahoo.co.jp', 'hotmail.co.jp', 'mail.goo.ne.jp'
-    );
+    ];
 
-    protected static $tld = array(
+    protected static $tld = [
         'com', 'com', 'com', 'biz', 'info', 'net', 'org', 'jp', 'jp', 'jp',
-    );
+    ];
 
     /**
      * {@link} http://dic.nicovideo.jp/a/%E6%97%A5%E6%9C%AC%E3%81%AE%E8%8B%97%E5%AD%97%28%E5%90%8D%E5%AD%97%29%E3%81%AE%E4%B8%80%E8%A6%A7
      */
-    protected static $lastNameAscii = array(
+    protected static $lastNameAscii = [
         'aota', 'aoyama', 'ishida', 'idaka', 'ito', 'uno', 'ekoda', 'ogaki',
         'kato', 'kanou', 'kijima', 'kimura', 'kiriyama', 'kudo', 'koizumi', 'kobayashi', 'kondo',
         'saito', 'sakamoto', 'sasaki', 'sato', 'sasada', 'suzuki', 'sugiyama',
@@ -36,13 +36,13 @@ class Internet extends \Faker\Provider\Internet
         'matsumoto', 'miyake', 'miyazawa', 'murayama',
         'yamagishi', 'yamaguchi', 'yamada', 'yamamoto', 'yoshida', 'yoshimoto',
         'wakamatsu', 'watanabe',
-    );
+    ];
 
     /**
      * {@link} http://dic.nicovideo.jp/a/%E6%97%A5%E6%9C%AC%E4%BA%BA%E3%81%AE%E5%90%8D%E5%89%8D%E4%B8%80%E8%A6%A7
      * {@link} http://www.meijiyasuda.co.jp/enjoy/ranking/
      */
-    protected static $firstNameAscii = array(
+    protected static $firstNameAscii = [
         'akira', 'atsushi', 'osamu',
         'akemi', 'asuka',
         'kazuya', 'kyosuke', 'kenichi',
@@ -61,7 +61,7 @@ class Internet extends \Faker\Provider\Internet
         'yui', 'yumiko', 'yoko',
         'ryosuke', 'ryohei', 'rei',
         'rika',
-    );
+    ];
 
     public static function lastNameAscii()
     {

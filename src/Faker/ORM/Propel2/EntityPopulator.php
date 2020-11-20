@@ -2,8 +2,8 @@
 
 namespace Faker\ORM\Propel2;
 
-use \Faker\Provider\Base;
-use \Propel\Runtime\Map\ColumnMap;
+use Faker\Provider\Base;
+use Propel\Runtime\Map\ColumnMap;
 
 /**
  * Service class for populating a table through a Propel ActiveRecord class.
@@ -11,12 +11,10 @@ use \Propel\Runtime\Map\ColumnMap;
 class EntityPopulator
 {
     protected $class;
-    protected $columnFormatters = array();
-    protected $modifiers = array();
+    protected $columnFormatters = [];
+    protected $modifiers = [];
 
     /**
-     * Class constructor.
-     *
      * @param string $class A Propel ActiveRecord classname
      */
     public function __construct($class)
@@ -56,7 +54,7 @@ class EntityPopulator
      */
     public function guessColumnFormatters(\Faker\Generator $generator)
     {
-        $formatters = array();
+        $formatters = [];
         $class = $this->class;
         $peerClass = $class::TABLE_MAP;
         $tableMap = $peerClass::getTableMap();
@@ -101,13 +99,13 @@ class EntityPopulator
             $columnName = Base::toLower($columnMap->getName());
             switch ($name) {
                 case 'nested_set':
-                    $columnNames = array($params['left_column'], $params['right_column'], $params['level_column']);
+                    $columnNames = [$params['left_column'], $params['right_column'], $params['level_column']];
                     if (in_array($columnName, $columnNames)) {
                         return true;
                     }
                     break;
                 case 'timestampable':
-                    $columnNames = array($params['create_column'], $params['update_column']);
+                    $columnNames = [$params['create_column'], $params['update_column']];
                     if (in_array($columnName, $columnNames)) {
                         return true;
                     }
@@ -142,7 +140,7 @@ class EntityPopulator
      */
     public function guessModifiers(\Faker\Generator $generator)
     {
-        $modifiers = array();
+        $modifiers = [];
         $class = $this->class;
         $peerClass = $class::TABLE_MAP;
         $tableMap = $peerClass::getTableMap();

@@ -9,13 +9,13 @@ use Faker\Provider\Base as BaseProvider;
 use Faker\Provider\DateTime as DateTimeProvider;
 use Faker\Provider\Payment as PaymentProvider;
 use Faker\Provider\Person as PersonProvider;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class PaymentTest extends TestCase
 {
     private $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new BaseProvider($faker));
@@ -67,13 +67,13 @@ final class PaymentTest extends TestCase
     public function testCreditCardNumberReturnsValidCreditCardNumber($type, $regexp)
     {
         $cardNumber = $this->faker->creditCardNumber($type);
-        $this->assertRegExp($regexp, $cardNumber);
+        $this->assertMatchesRegularExpression($regexp, $cardNumber);
         $this->assertTrue(Luhn::isValid($cardNumber));
     }
 
     public function testCreditCardNumberCanFormatOutput()
     {
-        $this->assertRegExp('/^6011-\d{4}-\d{4}-\d{4}$/', $this->faker->creditCardNumber('Discover Card', true));
+        $this->assertMatchesRegularExpression('/^6011-\d{4}-\d{4}-\d{4}$/', $this->faker->creditCardNumber('Discover Card', true));
     }
 
     public function testCreditCardExpirationDateReturnsValidDateByDefault()
@@ -102,7 +102,7 @@ final class PaymentTest extends TestCase
         'BH' => '/^BH\d{2}[A-Z]{4}[A-Z0-9]{14}$/',
         'BR' => '/^BR\d{2}\d{8}\d{5}\d{10}[A-Z]{1}[A-Z0-9]{1}$/',
         'CH' => '/^CH\d{2}\d{5}[A-Z0-9]{12}$/',
-        'CR' => '/^CR\d{2}\d{3}\d{14}$/',
+        'CR' => '/^CR\d{2}\d{4}\d{14}$/',
         'CY' => '/^CY\d{2}\d{3}\d{5}[A-Z0-9]{16}$/',
         'CZ' => '/^CZ\d{2}\d{4}\d{6}\d{10}$/',
         'DE' => '/^DE\d{2}\d{8}\d{10}$/',
@@ -165,6 +165,7 @@ final class PaymentTest extends TestCase
 
         if (!isset($this->ibanFormats[$countryCode])) {
             // No IBAN format available
+            $this->markTestSkipped("bankAccountNumber not implemented for country $countryCode");
             return;
         }
 
@@ -179,7 +180,7 @@ final class PaymentTest extends TestCase
         }
 
         // Test format
-        $this->assertRegExp($this->ibanFormats[$countryCode], $iban);
+        $this->assertMatchesRegularExpression($this->ibanFormats[$countryCode], $iban);
 
         // Test checksum
         $this->assertTrue(Iban::isValid($iban), "Checksum for $iban is invalid");
@@ -201,7 +202,7 @@ final class PaymentTest extends TestCase
         $iban = $this->faker->iban($countryCode);
 
         // Test format
-        $this->assertRegExp($regex, $iban);
+        $this->assertMatchesRegularExpression($regex, $iban);
 
         // Test checksum
         $this->assertTrue(Iban::isValid($iban), "Checksum for $iban is invalid");

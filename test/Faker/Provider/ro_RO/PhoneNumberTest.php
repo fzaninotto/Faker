@@ -4,11 +4,11 @@ namespace Faker\Test\Provider\ro_RO;
 
 use Faker\Generator;
 use Faker\Provider\ro_RO\PhoneNumber;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class PhoneNumberTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new PhoneNumber($faker));
@@ -17,16 +17,16 @@ final class PhoneNumberTest extends TestCase
 
     public function testPhoneNumberReturnsNormalPhoneNumber()
     {
-        $this->assertRegExp('/^0(?:[23][13-7]|7\d)\d{7}$/', $this->faker->phoneNumber());
+        $this->assertMatchesRegularExpression('/^0(?:[23][13-7]|7\d)\d{7}$/', $this->faker->phoneNumber());
     }
 
     public function testTollFreePhoneNumberReturnsTollFreePhoneNumber()
     {
-        $this->assertRegExp('/^08(?:0[01267]|70)\d{6}$/', $this->faker->tollFreePhoneNumber());
+        $this->assertMatchesRegularExpression('/^08(?:0[01267]|70)\d{6}$/', $this->faker->tollFreePhoneNumber());
     }
 
     public function testPremiumRatePhoneNumberReturnsPremiumRatePhoneNumber()
     {
-        $this->assertRegExp('/^090[036]\d{6}$/', $this->faker->premiumRatePhoneNumber());
+        $this->assertMatchesRegularExpression('/^090[036]\d{6}$/', $this->faker->premiumRatePhoneNumber());
     }
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace Faker\Test\Provider\ng_NG;
+namespace Faker\Test\Provider\en_NG;
 
 use Faker\Generator;
 use Faker\Provider\en_NG\Person;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
@@ -13,7 +13,7 @@ final class PersonTest extends TestCase
      */
     private $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
@@ -25,6 +25,6 @@ final class PersonTest extends TestCase
         $name = $this->faker->name;
 
         $this->assertNotEmpty($name);
-        $this->assertInternalType('string', $name);
+        $this->assertIsString($name);
     }
 }

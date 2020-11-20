@@ -4,8 +4,8 @@ namespace Faker\Provider\ro_RO;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
-    protected static $normalFormats = array(
-        'landline' => array(
+    protected static $normalFormats = [
+        'landline' => [
             '021#######', // Bucharest
             '023#######',
             '024#######',
@@ -18,27 +18,27 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
             '035#######',
             '036#######',
             '037#######', // non-geographic
-        ),
-        'mobile' => array(
+        ],
+        'mobile' => [
             '07########',
-        )
-    );
+        ]
+    ];
 
-    protected static $specialFormats = array(
-        'toll-free' => array(
+    protected static $specialFormats = [
+        'toll-free' => [
             '0800######',
             '0801######', // shared-cost numbers
             '0802######', // personal numbering
             '0806######', // virtual cards
             '0807######', // pre-paid cards
             '0870######', // internet dial-up
-        ),
-        'premium-rate' => array(
+        ],
+        'premium-rate' => [
             '0900######',
             '0903######', // financial information
             '0906######', // adult entertainment
-        )
-    );
+        ]
+    ];
 
     /**
      * @link http://en.wikipedia.org/wiki/Telephone_numbers_in_Romania#Last_years
@@ -52,15 +52,11 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     public static function tollFreePhoneNumber()
     {
-        $number = static::numerify(static::randomElement(static::$specialFormats['toll-free']));
-
-        return $number;
+        return static::numerify(static::randomElement(static::$specialFormats['toll-free']));
     }
 
     public static function premiumRatePhoneNumber()
     {
-        $number = static::numerify(static::randomElement(static::$specialFormats['premium-rate']));
-
-        return $number;
+        return static::numerify(static::randomElement(static::$specialFormats['premium-rate']));
     }
 }

@@ -3,28 +3,40 @@
 namespace Faker\Test\Provider;
 
 use Faker\Provider\Image;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class ImageTest extends TestCase
 {
     public function testImageUrlUses640x680AsTheDefaultSize()
     {
-        $this->assertRegExp('#^https://lorempixel.com/640/480/#', Image::imageUrl());
+        $this->assertMatchesRegularExpression(
+            '#^https://via.placeholder.com/640x480.png/#', 
+            Image::imageUrl()
+        );
     }
 
     public function testImageUrlAcceptsCustomWidthAndHeight()
     {
-        $this->assertRegExp('#^https://lorempixel.com/800/400/#', Image::imageUrl(800, 400));
+        $this->assertMatchesRegularExpression(
+            '#^https://via.placeholder.com/800x400.png/#', 
+            Image::imageUrl(800, 400)
+        );
     }
 
     public function testImageUrlAcceptsCustomCategory()
     {
-        $this->assertRegExp('#^https://lorempixel.com/800/400/nature/#', Image::imageUrl(800, 400, 'nature'));
+        $this->assertMatchesRegularExpression(
+            '#^https://via.placeholder.com/800x400.png/[\w]{6}\?text=nature\+.*#', 
+            Image::imageUrl(800, 400, 'nature')
+        );
     }
 
     public function testImageUrlAcceptsCustomText()
     {
-        $this->assertRegExp('#^https://lorempixel.com/800/400/nature/Faker#', Image::imageUrl(800, 400, 'nature', false, 'Faker'));
+        $this->assertMatchesRegularExpression(
+            '#^https://via.placeholder.com/800x400.png/[\w]{6}\?text=nature\+Faker#', 
+            Image::imageUrl(800, 400, 'nature', false, 'Faker')
+        );
     }
 
     public function testImageUrlReturnsLinkToRegularImageWhenGrayIsFalse()
@@ -38,7 +50,10 @@ final class ImageTest extends TestCase
             false
         );
 
-        $this->assertSame('https://lorempixel.com/800/400/nature/Faker/', $imageUrl);
+        $this->assertMatchesRegularExpression(
+            '#^https://via.placeholder.com/800x400.png/[\w]{6}\?text=nature\+Faker#', 
+            $imageUrl
+        );
     }
 
     public function testImageUrlReturnsLinkToRegularImageWhenGrayIsTrue()
@@ -52,41 +67,34 @@ final class ImageTest extends TestCase
             true
         );
 
-        $this->assertSame('https://lorempixel.com/gray/800/400/nature/Faker/', $imageUrl);
+        $this->assertMatchesRegularExpression(
+            '#^https://via.placeholder.com/800x400.png/CCCCCC\?text=nature\+Faker#', 
+            $imageUrl
+        );
     }
 
     public function testImageUrlAddsARandomGetParameterByDefault()
     {
         $url = Image::imageUrl(800, 400);
-        $splitUrl = preg_split('/\?/', $url);
+        $splitUrl = preg_split('/\?text=/', $url);
 
         $this->assertEquals(count($splitUrl), 2);
-        $this->assertRegexp('#\d{5}#', $splitUrl[1]);
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testUrlWithDimensionsAndBadCategory()
-    {
-        Image::imageUrl(800, 400, 'bullhonky');
+        $this->assertMatchesRegularExpression('#\w*#', $splitUrl[1]);
     }
 
     public function testDownloadWithDefaults()
     {
-        $this->markTestSkipped('Skipped due to unstable service prior 1.9.0 release');
-
-        $url = "http://lorempixel.com/";
-        $curlPing = curl_init($url);
+        $curlPing = curl_init(Image::BASE_URL);
         curl_setopt($curlPing, CURLOPT_TIMEOUT, 5);
         curl_setopt($curlPing, CURLOPT_CONNECTTIMEOUT, 5);
         curl_setopt($curlPing, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curlPing, CURLOPT_FOLLOWLOCATION, true);
         $data = curl_exec($curlPing);
         $httpCode = curl_getinfo($curlPing, CURLINFO_HTTP_CODE);
         curl_close($curlPing);
 
         if ($httpCode < 200 | $httpCode > 300) {
-            $this->markTestSkipped("LoremPixel is offline, skipping image download");
+            $this->markTestSkipped("Placeholder.com is offline, skipping image download");
         }
 
         $file = Image::image(sys_get_temp_dir());
@@ -95,9 +103,9 @@ final class ImageTest extends TestCase
             list($width, $height, $type, $attr) = getimagesize($file);
             $this->assertEquals(640, $width);
             $this->assertEquals(480, $height);
-            $this->assertEquals(constant('IMAGETYPE_JPEG'), $type);
+            $this->assertEquals(constant('IMAGETYPE_PNG'), $type);
         } else {
-            $this->assertEquals('jpg', pathinfo($file, PATHINFO_EXTENSION));
+            $this->assertEquals('png', pathinfo($file, PATHINFO_EXTENSION));
         }
         if (file_exists($file)) {
             unlink($file);

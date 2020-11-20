@@ -5,7 +5,7 @@ namespace Faker\Test\Provider\tr_TR;
 use Faker\Calculator\TCNo;
 use Faker\Provider\tr_TR\Person;
 use Faker\Generator;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
@@ -15,7 +15,7 @@ final class PersonTest extends TestCase
      */
     private $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));

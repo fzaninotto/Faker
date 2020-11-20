@@ -7,13 +7,13 @@ namespace Faker\Provider;
  */
 class Color extends Base
 {
-    protected static $safeColorNames = array(
+    protected static $safeColorNames = [
         'black', 'maroon', 'green', 'navy', 'olive',
         'purple', 'teal', 'lime', 'blue', 'silver',
         'gray', 'yellow', 'fuchsia', 'aqua', 'white'
-    );
+    ];
 
-    protected static $allColorNames = array(
+    protected static $allColorNames = [
         'AliceBlue', 'AntiqueWhite', 'Aqua', 'Aquamarine',
         'Azure', 'Beige', 'Bisque', 'Black', 'BlanchedAlmond',
         'Blue', 'BlueViolet', 'Brown', 'BurlyWood', 'CadetBlue',
@@ -40,7 +40,7 @@ class Color extends Base
         'SandyBrown', 'SeaGreen', 'SeaShell', 'Sienna', 'Silver', 'SkyBlue', 'SlateBlue',
         'SlateGray', 'Snow', 'SpringGreen', 'SteelBlue', 'Tan', 'Teal', 'Thistle', 'Tomato',
         'Turquoise', 'Violet', 'Wheat', 'White', 'WhiteSmoke', 'Yellow', 'YellowGreen'
-    );
+    ];
 
     /**
      * @example '#fa3cc2'
@@ -67,11 +67,11 @@ class Color extends Base
     {
         $color = static::hexColor();
 
-        return array(
+        return [
             hexdec(substr($color, 1, 2)),
             hexdec(substr($color, 3, 2)),
             hexdec(substr($color, 5, 2))
-        );
+        ];
     }
 
     /**
@@ -134,10 +134,10 @@ class Color extends Base
      */
     public static function hslColorAsArray()
     {
-        return array(
+        return [
             static::numberBetween(0, 360),
             static::numberBetween(0, 100),
             static::numberBetween(0, 100)
-        );
+        ];
     }
 }

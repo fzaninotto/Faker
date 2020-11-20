@@ -1,5 +1,5 @@
 {
-    "name": "fzaninotto/faker",
+    "name": "fakerphp/faker",
     "type": "library",
     "description": "Faker is a PHP library that generates fake data for you.",
     "keywords": [
@@ -14,12 +14,12 @@
         }
     ],
     "require": {
-        "php": "^5.3.3 || ^7.0"
+        "php": "^7.1 || ^8.0"
     },
     "require-dev": {
         "ext-intl": "*",
-        "phpunit/phpunit": "^4.8.35 || ^5.7",
-        "squizlabs/php_codesniffer": "^2.9.2"
+        "bamarni/composer-bin-plugin": "^1.4.1",
+        "phpunit/phpunit": "^7.5.20 || ^8.5.8 || ^9.4.2"
     },
     "autoload": {
         "psr-4": {
@@ -31,10 +31,8 @@
             "Faker\\Test\\": "test/Faker/"
         }
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.9-dev"
-        }
+    "conflict": {
+        "fzaninotto/faker": "*"
     },
     "config": {
         "sort-packages": true

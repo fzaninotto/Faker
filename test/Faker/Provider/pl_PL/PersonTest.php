@@ -1,10 +1,11 @@
 <?php
 
-namespace Faker\Provider\pl_PL;
+namespace Faker\Test\Provider\pl_PL;
 
 use DateTime;
 use Faker\Generator;
-use PHPUnit\Framework\TestCase;
+use Faker\Provider\pl_PL\Person;
+use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
@@ -13,7 +14,7 @@ final class PersonTest extends TestCase
      */
     private $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));

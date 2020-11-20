@@ -1,25 +1,26 @@
 <?php
+
 namespace Faker\Provider\ro_RO;
 
 class Person extends \Faker\Provider\Person
 {
     // http://en.wikipedia.org/wiki/Romanian_name, prefixes are for more formal purposes
-    protected static $maleNameFormats = array(
+    protected static $maleNameFormats = [
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}',
         '{{titleMale}} {{firstNameMale}} {{lastName}}',
-    );
+    ];
 
-    protected static $femaleNameFormats = array(
+    protected static $femaleNameFormats = [
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{titleFemale}} {{firstNameFemale}} {{lastName}}'
-    );
+    ];
 
     //http://ro.wikipedia.org/wiki/List%C4%83_de_prenume_rom%C3%A2ne%C8%99ti#Feminine
-    protected static $firstNameFemale = array(
+    protected static $firstNameFemale = [
         'Ada', 'Adela', 'Adelaida', 'Adelina', 'Adina', 'Adriana', 'Agata', 'Aglaia', 'Agripina', 'Aida', 'Alberta', 'Albertina', 'Alexandra', 'Alexandrina', 'Alida', 'Alina', 'Alice', 'Alis', 'Alma',
         'Amalia', 'Amelia', 'Amanda', 'Ana', 'Anabela', 'Anaida', 'Anamaria', 'Anastasia', 'Anca', 'Ancuța', 'Anda', 'Andra', 'Andrada', 'Andreea', 'Anemona', 'Aneta', 'Angela', 'Anghelina', 'Anica',
         'Anișoara', 'Antoaneta', 'Antonia', 'Antonela', 'Anuța', 'Ariadna', 'Ariana', 'Arina', 'Aristița', 'Artemisa', 'Astrid', 'Atena', 'Augustina', 'Aura', 'Aurelia', 'Aureliana', 'Aurica', 'Aurora',
@@ -41,10 +42,10 @@ class Person extends \Faker\Provider\Person
         'Simina', 'Simona', 'Smaranda', 'Sofia', 'Sonia', 'Sorana', 'Sorina', 'Speranța', 'Stana', 'Stanca', 'Stela', 'Steliana', 'Steluța', 'Suzana', 'Svetlana', 'Ștefana', 'Ștefania', 'Tamara', 'Tania',
         'Tatiana', 'Teea', 'Teodora', 'Teodosia', 'Teona', 'Tiberia', 'Timea', 'Tinca', 'Tincuța', 'Tudora', 'Tudorița', 'Tudosia', 'Valentina', 'Valeria', 'Vanesa', 'Varvara', 'Vasilica', 'Venera', 'Vera',
         'Veronica', 'Veta', 'Vicenția', 'Victoria', 'Violeta', 'Viorela', 'Viorica', 'Virginia', 'Viviana', 'Voichița', 'Xenia', 'Zaharia', 'Zamfira', 'Zaraza', 'Zenobia', 'Zenovia', 'Zina', 'Zoe'
-    );
+    ];
 
     //http://ro.wikipedia.org/wiki/List%C4%83_de_prenume_rom%C3%A2ne%C8%99ti#Feminine
-    protected static $firstNameMale = array(
+    protected static $firstNameMale = [
         'Achim', 'Adam', 'Adelin', 'Adonis', 'Adrian', 'Adi', 'Agnos', 'Albert', 'Alex', 'Alexandru', 'Alexe', 'Aleodor', 'Alin', 'Alistar', 'Amedeu', 'Amza', 'Anatolie', 'Andrei', 'Angel', 'Anghel', 'Antim',
         'Anton', 'Antonie', 'Antoniu', 'Arian', 'Aristide', 'Arsenie', 'Augustin', 'Aurel', 'Aurelian', 'Aurică', 'Avram', 'Axinte', 'Barbu', 'Bartolomeu', 'Basarab', 'Bănel', 'Bebe', 'Beniamin', 'Benone',
         'Bernard', 'Bogdan', 'Brăduț', 'Bucur', 'Caius', 'Camil', 'Cantemir', 'Carol', 'Casian', 'Cazimir', 'Călin', 'Cătălin', 'Cedrin', 'Cezar', 'Ciprian', 'Claudiu', 'Codin', 'Codrin', 'Codruț', 'Cornel',
@@ -60,10 +61,10 @@ class Person extends \Faker\Provider\Person
         'Pompiliu', 'Radu', 'Rafael', 'Rareș', 'Raul', 'Răducu', 'Răzvan', 'Relu', 'Remus', 'Robert', 'Romeo', 'Romulus', 'Sabin', 'Sandu', 'Sava', 'Sebastian', 'Sergiu', 'Sever', 'Severin', 'Silvian',
         'Silviu', 'Simi', 'Simion', 'Sinică', 'Sorin', 'Stan', 'Stancu', 'Stelian', 'Sandu', 'Șerban', 'Ștefan', 'Teodor', 'Teofil', 'Teohari', 'Theodor', 'Tiberiu', 'Timotei', 'Titus', 'Todor', 'Toma',
         'Traian', 'Tudor', 'Valentin', 'Valeriu', 'Valter', 'Vasile', 'Vasilică', 'Veniamin', 'Vicențiu', 'Victor', 'Vincențiu', 'Viorel', 'Visarion', 'Vlad', 'Vladimir', 'Vlaicu', 'Voicu', 'Zamfir', 'Zeno'
-    );
+    ];
 
     //courtesy of Florin LIPAN, at nume.ottomotor.ro
-    protected static $lastName = array(
+    protected static $lastName = [
         'Achim', 'Adam', 'Albu', 'Aldea', 'Alexa', 'Alexandrescu', 'Alexandru', 'Alexe', 'Andrei', 'Anghel', 'Antal', 'Anton', 'Apostol', 'Ardelean', 'Ardeleanu', 'Avram',
         'Baciu', 'Badea', 'Balan', 'Balint', 'Banica', 'Banu', 'Barbu', 'Barbulescu', 'Bejan', 'Biro', 'Blaga', 'Boboc', 'Bodea', 'Bogdan', 'Bota', 'Botezatu', 'Bratu', 'Bucur', 'Buda', 'Bunea', 'Burlacu',
         'Calin', 'Catana', 'Cazacu', 'Chiriac', 'Chirila', 'Chirita', 'Chis', 'Chivu', 'Ciobanu', 'Ciocan', 'Cojocaru', 'Coman', 'Constantin', 'Constantinescu', 'Cornea', 'Cosma', 'Costache',
@@ -83,12 +84,12 @@ class Person extends \Faker\Provider\Person
         'Stanciu', 'Stancu', 'Stanescu', 'Stefan', 'Stefanescu', 'Stoian', 'Stoica', 'Stroe', 'Suciu', 'Szabo', 'Szasz', 'Szekely', 'Tamas', 'Tanase', 'Tataru', 'Teodorescu', 'Toader',
         'Toma', 'Tomescu', 'Toth', 'Trandafir', 'Trif', 'Trifan', 'Tudor', 'Tudorache', 'Tudose', 'Turcu', 'Ungureanu', 'Ursu', 'Vaduva', 'Varga', 'Vasile', 'Vasilescu', 'Vasiliu', 'Veres',
         'Vintila', 'Visan', 'Vlad', 'Voicu', 'Voinea', 'Zaharia', 'Zamfir'
-    );
+    ];
 
-    protected static $titleMale = array('dl.', 'ing.', 'dr.');
-    protected static $titleFemale = array('d-na.', 'd-șoara', 'ing.', 'dr.');
+    protected static $titleMale = ['dl.', 'ing.', 'dr.'];
+    protected static $titleFemale = ['d-na.', 'd-șoara', 'ing.', 'dr.'];
 
-    protected static $cnpCountyCodes = array(
+    protected static $cnpCountyCodes = [
         'AB' => '01', 'AR' => '02', 'AG' => '03', 'B'  => '40', 'BC' => '04', 'BH' => '05',
         'BN' => '06', 'BT' => '07', 'BV' => '08', 'BR' => '09', 'BZ' => '10', 'CS' => '11',
         'CL' => '51', 'CJ' => '12', 'CT' => '13', 'CV' => '14', 'DB' => '15', 'DJ' => '16',
@@ -98,7 +99,7 @@ class Person extends \Faker\Provider\Person
         'TR' => '34', 'TM' => '35', 'TL' => '36', 'VS' => '37', 'VL' => '38', 'VN' => '39',
 
         'B1' => '41', 'B2' => '42', 'B3' => '43', 'B4' => '44', 'B5' => '45', 'B6' => '46'
-    );
+    ];
 
     /**
      * Personal Numerical Code (CNP)
@@ -114,7 +115,7 @@ class Person extends \Faker\Provider\Person
      */
     public function cnp($gender = null, $dateOfBirth = null, $county = null, $isResident = true)
     {
-        $genders = array(Person::GENDER_MALE, Person::GENDER_FEMALE);
+        $genders = [Person::GENDER_MALE, Person::GENDER_FEMALE];
         if (empty($gender)) {
             $gender = static::randomElement($genders);
         } elseif (!in_array($gender, $genders)) {
@@ -131,7 +132,7 @@ class Person extends \Faker\Provider\Person
             $countyCode = static::$cnpCountyCodes[$county];
         }
 
-        $cnp = (string)$this->getGenderDigit($date, $gender, $isResident)
+        $cnp = (string) $this->getGenderDigit($date, $gender, $isResident)
             . $date->format('ymd')
             . $countyCode
             . static::numerify('##%')
@@ -139,17 +140,17 @@ class Person extends \Faker\Provider\Person
 
         $checksum = $this->getChecksumDigit($cnp);
 
-        return $cnp.$checksum;
+        return $cnp . $checksum;
     }
 
     /**
-     * @param $dateOfBirth
+     * @param null|string $dateOfBirth
      * @return \DateTime
      */
     protected function getDateOfBirth($dateOfBirth)
     {
         if (empty($dateOfBirth)) {
-            $dateOfBirthParts = array(static::numberBetween(1800, 2099));
+            $dateOfBirthParts = [static::numberBetween(1800, 2099)];
         } else {
             $dateOfBirthParts = explode('-', $dateOfBirth);
         }
@@ -159,9 +160,11 @@ class Person extends \Faker\Provider\Person
             case 1:
                 $dateOfBirthParts[] = $baseDate->format('m');
             //don't break, we need the day also
+            // no break
             case 2:
                 $dateOfBirthParts[] = $baseDate->format('d');
             //don't break, next line will
+            // no break
             case 3:
                 break;
             default:
@@ -183,7 +186,6 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     *
      * https://ro.wikipedia.org/wiki/Cod_numeric_personal#S
      *
      * @param \DateTime $dateOfBirth
@@ -229,7 +231,7 @@ class Person extends \Faker\Provider\Person
 
         $checksum = 0;
         foreach (range(0, 11) as $digit) {
-            $checksum += (int)substr($value, $digit, 1) * (int)substr($checkNumber, $digit, 1);
+            $checksum += (int) substr($value, $digit, 1) * (int) substr($checkNumber, $digit, 1);
         }
         $checksum = $checksum % 11;
 

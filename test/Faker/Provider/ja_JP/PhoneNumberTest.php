@@ -4,7 +4,7 @@ namespace Faker\Test\Provider\ja_JP;
 
 use Faker\Generator;
 use Faker\Provider\ja_JP\PhoneNumber;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class PhoneNumberTest extends TestCase
 {
@@ -16,7 +16,7 @@ final class PhoneNumberTest extends TestCase
         for ($i = 0; $i < 10; $i++) {
             $phoneNumber = $faker->phoneNumber;
             $this->assertNotEmpty($phoneNumber);
-            $this->assertRegExp('/^0\d{1,4}-\d{1,4}-\d{3,4}$/', $phoneNumber);
+            $this->assertMatchesRegularExpression('/^0\d{1,4}-\d{1,4}-\d{3,4}$/', $phoneNumber);
         }
     }
 }

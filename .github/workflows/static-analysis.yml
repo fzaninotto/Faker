@@ -1,0 +1,94 @@
+
+on:
+  pull_request: ~
+  push:
+    branches:
+      - "main"
+      - "[0-9].*"
+
+name: Static analysis
+
+jobs:
+  phpstan:
+    name: PHPStan
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-version: [7.4]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          coverage: none
+          extensions: intl
+          php-version: ${{ matrix.php-version }}
+
+      - name: Determine composer cache directory
+        id: composer-cache
+        run: echo "::set-output name=directory::$(composer config cache-dir)"
+
+      - name: Cache dependencies installed with composer
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache.outputs.directory }}
+          key: composer-${{ runner.os }}-${{ matrix.php-version }}-${{ hashFiles('composer.*') }}
+          restore-keys: |
+            composer-${{ runner.os }}-${{ matrix.php-version }}-
+            composer-${{ runner.os }}-
+            composer-
+
+      - name: Download dependencies
+        run: |
+          composer update --no-interaction --no-progress --optimize-autoloader
+          composer bin phpstan update --no-interaction --no-progress --optimize-autoloader
+
+      - name: Run PHPStan
+        run: |
+          vendor/bin/phpstan analyze --no-progress
+
+  psalm:
+    name: Psalm
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-version: [7.4]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install PHP with extensions
+        uses: shivammathur/setup-php@v2
+        with:
+          coverage: none
+          extensions: intl
+          php-version: ${{ matrix.php-version }}
+
+      - name: Determine composer cache directory
+        id: composer-cache
+        run: echo "::set-output name=directory::$(composer config cache-dir)"
+
+      - name: Cache dependencies installed with composer
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache.outputs.directory }}
+          key: composer-${{ runner.os }}-${{ matrix.php-version }}-${{ hashFiles('composer.*') }}
+          restore-keys: |
+            composer-${{ runner.os }}-${{ matrix.php-version }}-
+            composer-${{ runner.os }}-
+            composer-
+
+      - name: Download dependencies
+        run: |
+          composer update --no-interaction --no-progress --optimize-autoloader
+          composer bin psalm update --no-interaction --no-progress --optimize-autoloader
+
+      - name: Run Psalm
+        run: |
+          vendor/bin/psalm.phar --no-progress --output-format=github

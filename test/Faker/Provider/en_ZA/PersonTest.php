@@ -5,13 +5,13 @@ namespace Faker\Test\Provider\en_ZA;
 use Faker\Generator;
 use Faker\Provider\en_ZA\Person;
 use Faker\Provider\DateTime;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
     private $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
@@ -24,8 +24,8 @@ final class PersonTest extends TestCase
         $idNumber = $this->faker->idNumber();
 
         $this->assertEquals(13, strlen($idNumber));
-        $this->assertRegExp('#^\d{13}$#', $idNumber);
-        $this->assertInternalType('string', $idNumber);
+        $this->assertMatchesRegularExpression('#^\d{13}$#', $idNumber);
+        $this->assertIsString($idNumber);
     }
 
     public function testIdNumberForMales()

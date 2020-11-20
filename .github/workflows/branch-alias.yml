@@ -1,0 +1,75 @@
+name: Update branch alias
+
+on:
+  push:
+    tags: ['*']
+
+jobs:
+  branch-alias:
+    name: Update branch alias
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+          coverage: none
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: main
+
+      - name: Find branch alias
+        id: find_alias
+        run: |
+          TAG=$(echo $GITHUB_REF | cut -d'/' -f 3)
+          echo "Last tag was $TAG"
+          ARR=(${TAG//./ })
+          ARR[1]=$((${ARR[1]}+1))
+          echo ::set-output name=alias::${ARR[0]}.${ARR[1]}
+
+      - name: Update branch alias
+        run: |
+          CURRENT_ALIAS=$(composer config extra.branch-alias.dev-main | cut -d'-' -f 1)
+
+          # If there is a current value on the branch alias
+          if [ ! -z $CURRENT_ALIAS ]; then
+            NEW_ALIAS=${{ steps.find_alias.outputs.alias }}
+            CURRENT_ARR=(${CURRENT_ALIAS//./ })
+            NEW_ARR=(${NEW_ALIAS//./ })
+
+            if [ ${CURRENT_ARR[0]} -gt ${NEW_ARR[0]} ]; then
+                echo "The current value for major version is larger"
+                exit 1;
+            fi
+
+            if [ ${CURRENT_ARR[0]} -eq ${NEW_ARR[0]} ] && [ ${CURRENT_ARR[1]} -gt ${NEW_ARR[1]} ]; then
+                echo "The current value for minor version is larger"
+                exit 1;
+            fi
+          fi
+
+          composer config extra.branch-alias.dev-main ${{ steps.find_alias.outputs.alias }}-dev
+
+      - name: Commit & push the new files
+        run: |
+          echo "::group::git status"
+          git status
+          echo "::endgroup::"
+
+          git add -N .
+          if [[ $(git diff --numstat | wc -l) -eq 0 ]]; then
+            echo "No changes found. Exiting."
+            exit 0;
+          fi
+
+          git config --local user.email "noreply@github.com"
+          git config --local user.name "GitHub"
+
+          echo "::group::git push"
+          git add .
+          git commit -m "Update branch alias"
+          git push
+          echo "::endgroup::"

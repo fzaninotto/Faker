@@ -1,9 +1,10 @@
 <?php
 
-namespace Faker\Provider\pl_PL;
+namespace Faker\Test\Provider\pl_PL;
 
 use Faker\Generator;
-use PHPUnit\Framework\TestCase;
+use Faker\Provider\pl_PL\Address;
+use Faker\Test\TestCase;
 
 final class AddressTest extends TestCase
 {
@@ -12,7 +13,7 @@ final class AddressTest extends TestCase
      */
     private $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Address($faker));
@@ -26,7 +27,7 @@ final class AddressTest extends TestCase
     {
         $state = $this->faker->state();
         $this->assertNotEmpty($state);
-        $this->assertInternalType('string', $state);
-        $this->assertRegExp('/[a-z]+/', $state);
+        $this->assertIsString($state);
+        $this->assertMatchesRegularExpression('/[a-z]+/', $state);
     }
 }

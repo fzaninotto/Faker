@@ -4,16 +4,16 @@ namespace Faker\Provider\ms_MY;
 
 class Payment extends \Faker\Provider\Payment
 {
-    protected static $bankFormats = array(
+    protected static $bankFormats = [
         '{{localBank}}',
         '{{foreignBank}}',
         '{{governmentBank}}'
-    );
+    ];
 
     /**
      * @link http://www.muamalat.com.my/consumer-banking/internet-banking/popup-ibg.html
      */
-    protected static $bankAccountNumberFormats = array(
+    protected static $bankAccountNumberFormats = [
         '##########',
         '###########',
         '############',
@@ -21,12 +21,12 @@ class Payment extends \Faker\Provider\Payment
         '##############',
         '###############',
         '################',
-    );
+    ];
 
     /**
      * @link https://en.wikipedia.org/wiki/List_of_banks_in_Malaysia
      */
-    protected static $localBanks = array(
+    protected static $localBanks = [
         'Affin Bank',
         'Alliance Bank',
         'AmBank',
@@ -35,12 +35,12 @@ class Payment extends \Faker\Provider\Payment
         'Maybank',
         'Public Bank',
         'RHB Bank'
-    );
+    ];
 
     /**
      * @link https://en.wikipedia.org/wiki/List_of_banks_in_Malaysia#List_of_foreign_banks_(commercial)
      */
-    protected static $foreignBanks = array(
+    protected static $foreignBanks = [
         'Bangkok Bank Berhad',
         'Bank of America Malaysia Berhad',
         'Bank of China (Malaysia) Berhad',
@@ -60,12 +60,12 @@ class Payment extends \Faker\Provider\Payment
         'Sumitomo Mitsui Banking Corporation Malaysia Berhad',
         'The Bank of Nova Scotia Berhad',
         'United Overseas Bank (Malaysia) Bhd.'
-    );
+    ];
 
     /**
      * @link https://en.wikipedia.org/wiki/List_of_banks_in_Malaysia#Development_Financial_Institutions_(Government-owned_banks)_(full_list)
      */
-    protected static $governmentBanks = array(
+    protected static $governmentBanks = [
         'Agro Bank Malaysia',
         'Bank Pembangunan Malaysia Berhad (BPMB) (The development bank of Malaysia)',
         'Bank Rakyat',
@@ -78,12 +78,12 @@ class Payment extends \Faker\Provider\Payment
         'Sabah Development Bank Berhad (SDB)',
         'Sabah Credit Corporation (SCC)',
         'Tabung Haji',
-    );
+    ];
 
     /**
      * @link https://en.wikipedia.org/wiki/List_of_banks_in_Malaysia#Investment-Link_Funds_(Insurance_Companies_-_Takaful_included)
      */
-    protected static $insuranceCompanies = array(
+    protected static $insuranceCompanies = [
         'AIA Malaysia',
         'AIG Malaysia',
         'Allianz Malaysia',
@@ -99,12 +99,12 @@ class Payment extends \Faker\Provider\Payment
         'Tokio Marine Life Malaysia Insurance',
         'UNI.ASIA General Insurance',
         'Zurich Insurance Malaysia',
-    );
+    ];
 
     /**
      * @link http://www.bankswiftcode.org/malaysia/
      */
-    protected static $swiftCodes = array(
+    protected static $swiftCodes = [
         'ABNAMY2AXXX','ABNAMYKLPNG','ABNAMYKLXXX','AFBQMYKLXXX','AIBBMYKLXXX',
         'AISLMYKLXXX','AMMBMYKLXXX','ARBKMYKLXXX',
         'BIMBMYKLXXX','BISLMYKAXXX','BKCHMYKLXXX','BKKBMYKLXXX','BMMBMYKLXXX',
@@ -133,21 +133,21 @@ class Payment extends \Faker\Provider\Payment
         'RHBAMYKLXXX','RHBBMYKAXXX','RHBBMYKLXXX','RJHIMYKLXXX',
         'SCBLMYKXLAB','SCBLMYKXXXX','SMBCMYKAXXX',
         'UIIBMYKLXXX','UOVBMYKLCND','UOVBMYKLXXX',
-    );
+    ];
 
     /**
      * @link https://en.wikipedia.org/wiki/Malaysian_ringgit
      */
-    protected static $currencySymbol = array(
+    protected static $currencySymbol = [
         'RM'
-    );
+    ];
 
     /**
      * Return a Malaysian Bank
      *
      * @example 'Maybank'
      *
-     * @return @string
+     * @return string
      */
     public function bank()
     {
@@ -161,7 +161,7 @@ class Payment extends \Faker\Provider\Payment
      *
      * @example '1234567890123456'
      *
-     * @return @string
+     * @return string
      */
     public function bankAccountNumber()
     {
@@ -175,7 +175,7 @@ class Payment extends \Faker\Provider\Payment
      *
      * @example 'Public Bank'
      *
-     * @return @string
+     * @return string
      */
     public static function localBank()
     {
@@ -187,7 +187,7 @@ class Payment extends \Faker\Provider\Payment
      *
      * @example 'Citibank Berhad'
      *
-     * @return @string
+     * @return string
      */
     public static function foreignBank()
     {
@@ -199,7 +199,7 @@ class Payment extends \Faker\Provider\Payment
      *
      * @example 'Bank Simpanan Nasional'
      *
-     * @return @string
+     * @return string
      */
     public static function governmentBank()
     {
@@ -211,7 +211,7 @@ class Payment extends \Faker\Provider\Payment
      *
      * @example 'AIA Malaysia'
      *
-     * @return @string
+     * @return string
      */
     public static function insurance()
     {
@@ -223,7 +223,7 @@ class Payment extends \Faker\Provider\Payment
      *
      * @example 'MBBEMYKLXXX'
      *
-     * @return @string
+     * @return string
      */
     public static function swiftCode()
     {
@@ -235,7 +235,7 @@ class Payment extends \Faker\Provider\Payment
      *
      * @example 'RM'
      *
-     * @return @string
+     * @return string
      */
     public static function currencySymbol()
     {

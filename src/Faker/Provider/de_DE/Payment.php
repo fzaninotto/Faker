@@ -9,7 +9,7 @@ class Payment extends \Faker\Provider\Payment
      * @link http://en.wikipedia.org/wiki/International_Bank_Account_Number
      * @param  string  $prefix      for generating bank account number of a specific bank
      * @param  string  $countryCode ISO 3166-1 alpha-2 country code
-     * @param  integer $length      total length without country code and 2 check digits
+     * @param  int $length      total length without country code and 2 check digits
      * @return string
      */
     public static function bankAccountNumber($prefix = '', $countryCode = 'DE', $length = null)
@@ -26,7 +26,7 @@ class Payment extends \Faker\Provider\Payment
      * The 20 largest public savings banks by branch count
      * @see https://de.wikipedia.org/wiki/Liste_der_Sparkassen_in_Deutschland
      */
-    protected static $banks = array(
+    protected static $banks = [
         'Bank 1 Saar', 'Bayerische Landesbank', 'BBBank', 'Berliner Sparkasse', 'Berliner Volksbank', 'Braunschweigische Landessparkasse',
         'Commerzbank',
         'DekaBank Deutsche Girozentrale', 'Deutsche Apotheker- und Ärztebank', 'Deutsche Bank', 'Deutsche Kreditbank', 'Deutsche Pfandbriefbank', 'Dortmunder Volksbank', 'DZ Bank',
@@ -44,7 +44,7 @@ class Payment extends \Faker\Provider\Payment
         'Unicredit Bank',
         'Vereinigte Volksbank', 'Volksbank, Hildesheim-Lehrte-Pattensen', 'Volksbank Alzey-Worms', 'Volksbank Braunschweig Wolfsburg', 'Volksbank Darmstadt - Südhessen', 'Volksbank Hohenlohe', 'Volksbank Kraichgau Wiesloch-Sinsheim', 'Volksbank Lüneburger Heide', 'Volksbank Mittelhessen', 'Volksbank Paderborn-Höxter-Detmold', 'Volksbank Raiffeisenbank Rosenheim-Chiemsee', 'Volksbank Stuttgart', 'VR Bank Main-Kinzig-Büdingen',
         'WGZ Bank',
-    );
+    ];
 
     /**
      * @example 'Volksbank Stuttgart'

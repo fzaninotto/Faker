@@ -11,7 +11,7 @@ class DateTime extends \Faker\Provider\DateTime
 
     public static function dayOfWeek($max = 'now')
     {
-        $map = array(
+        $map = [
             'Sunday' => '星期日',
             'Monday' => '星期一',
             'Tuesday' => '星期二',
@@ -19,14 +19,14 @@ class DateTime extends \Faker\Provider\DateTime
             'Thursday' => '星期四',
             'Friday' => '星期五',
             'Saturday' => '星期六',
-        );
+        ];
         $week = static::dateTime($max)->format('l');
-        return isset($map[$week]) ? $map[$week] : $week;
+        return $map[$week] ?? $week;
     }
 
     public static function monthName($max = 'now')
     {
-        $map = array(
+        $map = [
             'January' => '一月',
             'February' => '二月',
             'March' => '三月',
@@ -39,8 +39,8 @@ class DateTime extends \Faker\Provider\DateTime
             'October' => '十月',
             'November' => '十一月',
             'December' => '十二月',
-        );
+        ];
         $month = static::dateTime($max)->format('F');
-        return isset($map[$month]) ? $map[$month] : $month;
+        return $map[$month] ?? $month;
     }
 }

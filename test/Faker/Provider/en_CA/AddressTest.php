@@ -4,7 +4,7 @@ namespace Faker\Provider\en_CA;
 
 use Faker\Generator;
 use Faker\Provider\en_CA\Address;
-use PHPUnit\Framework\TestCase;
+use Faker\Test\TestCase;
 
 final class AddressTest extends TestCase
 {
@@ -14,7 +14,7 @@ final class AddressTest extends TestCase
    */
   private $faker;
 
-  protected function setUp()
+  protected function setUp(): void
   {
     $faker = new Generator();
     $faker->addProvider(new Address($faker));
@@ -28,8 +28,8 @@ final class AddressTest extends TestCase
   {
     $province = $this->faker->province();
     $this->assertNotEmpty($province);
-    $this->assertInternalType('string', $province);
-    $this->assertRegExp('/[A-Z][a-z]+/', $province);
+    $this->assertIsString($province);
+    $this->assertMatchesRegularExpression('/[A-Z][a-z]+/', $province);
   }
 
   /**
@@ -39,8 +39,8 @@ final class AddressTest extends TestCase
   {
     $provinceAbbr = $this->faker->provinceAbbr();
     $this->assertNotEmpty($provinceAbbr);
-    $this->assertInternalType('string', $provinceAbbr);
-    $this->assertRegExp('/^[A-Z]{2}$/', $provinceAbbr);
+    $this->assertIsString($provinceAbbr);
+    $this->assertMatchesRegularExpression('/^[A-Z]{2}$/', $provinceAbbr);
   }
 
   /**
@@ -50,8 +50,8 @@ final class AddressTest extends TestCase
   {
     $postcodeLetter = $this->faker->randomPostcodeLetter();
     $this->assertNotEmpty($postcodeLetter);
-    $this->assertInternalType('string', $postcodeLetter);
-    $this->assertRegExp('/^[A-Z]{1}$/', $postcodeLetter);
+    $this->assertIsString($postcodeLetter);
+    $this->assertMatchesRegularExpression('/^[A-Z]{1}$/', $postcodeLetter);
   }
 
   /**
@@ -61,8 +61,8 @@ final class AddressTest extends TestCase
   {
     $postcode = $this->faker->postcode();
     $this->assertNotEmpty($postcode);
-    $this->assertInternalType('string', $postcode);
-    $this->assertRegExp('/^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/', $postcode);
+    $this->assertIsString($postcode);
+    $this->assertMatchesRegularExpression('/^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/', $postcode);
   }
 }
 

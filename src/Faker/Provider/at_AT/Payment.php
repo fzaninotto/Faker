@@ -2,11 +2,6 @@
 
 namespace Faker\Provider\at_AT;
 
-/**
- * Class Payment
- *
- * @package Faker\Provider\at_AT
- */
 class Payment extends \Faker\Provider\Payment
 {
     /**
@@ -28,13 +23,13 @@ class Payment extends \Faker\Provider\Payment
 
         return sprintf("%s%d", $prefix, self::randomNumber(8, true));
     }
-    
+
     /**
      * International Bank Account Number (IBAN)
      * @link http://en.wikipedia.org/wiki/International_Bank_Account_Number
      * @param  string  $prefix      for generating bank account number of a specific bank
      * @param  string  $countryCode ISO 3166-1 alpha-2 country code
-     * @param  integer $length      total length without country code and 2 check digits
+     * @param  int $length      total length without country code and 2 check digits
      * @return string
      */
     public static function bankAccountNumber($prefix = '', $countryCode = 'AT', $length = null)
