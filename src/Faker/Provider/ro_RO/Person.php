@@ -154,7 +154,7 @@ class Person extends \Faker\Provider\Person
         } else {
             $dateOfBirthParts = explode('-', $dateOfBirth);
         }
-        $baseDate = \Faker\Provider\DateTime::dateTimeBetween("first day of {$dateOfBirthParts[0]}", "last day of {$dateOfBirthParts[0]}");
+        $baseDate = \Faker\Provider\DateTime::dateTimeBetween("first day of January {$dateOfBirthParts[0]}", "last day of December {$dateOfBirthParts[0]}");
 
         switch (count($dateOfBirthParts)) {
             case 1:
@@ -172,7 +172,7 @@ class Person extends \Faker\Provider\Person
         }
 
         if ($dateOfBirthParts[0] < 1800 || $dateOfBirthParts[0] > 2099) {
-            throw new \InvalidArgumentException("Invalid date of birth - year must be between 1900 and 2099, '{$dateOfBirthParts[0]}' received");
+            throw new \InvalidArgumentException("Invalid date of birth - year must be between 1800 and 2099, '{$dateOfBirthParts[0]}' received");
         }
 
         $dateOfBirthFinal = implode('-', $dateOfBirthParts);
