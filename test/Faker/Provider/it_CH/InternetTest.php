@@ -25,10 +25,7 @@ final class InternetTest extends TestCase
         $this->faker = $faker;
     }
 
-    /**
-     * @test
-     */
-    public function emailIsValid()
+    public function testEmailIsValid()
     {
         $email = $this->faker->email();
         $this->assertNotFalse(filter_var($email, FILTER_VALIDATE_EMAIL));
