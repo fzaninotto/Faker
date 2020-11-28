@@ -26,7 +26,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * 60 most popular names in 1985, 1995, 2005 and 2015
-     * {@link} http://www.statistik.at/wcm/idc/idcplg?IdcService=GET_PDF_FILE&RevisionSelectionMethod=LatestReleased&dDocName=021130
+     * {@link} https://www.statistik.at/wcm/idc/idcplg?IdcService=GET_NATIVE_FILE&RevisionSelectionMethod=LatestReleased&dDocName=115199
      **/
     protected static $firstNameMale = [
         'Adrian', 'Alexander', 'Andreas', 'Anton',
@@ -53,7 +53,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * 60 most popular names in 1985, 1995, 2005 and 2015
-     * {@link} http://www.statistik.at/wcm/idc/idcplg?IdcService=GET_PDF_FILE&RevisionSelectionMethod=LatestReleased&dDocName=021130
+     * {@link} https://www.statistik.at/wcm/idc/idcplg?IdcService=GET_NATIVE_FILE&RevisionSelectionMethod=LatestReleased&dDocName=115199
      **/
     protected static $firstNameFemale = [
         'Alexandra', 'Alexandrea', 'Algelika', 'Alina', 'Amelie', 'Andrea', 'Angelina', 'Anita', 'Anja', 'Anna', 'Anna-Lena', 'Annika', 'Astrid',
@@ -79,7 +79,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Top 500 Names from a phone directory (February 2004)
-     * {@link} https://de.wiktionary.org/wiki/Verzeichnis:Deutsch/Liste_der_h%C3%A4ufigsten_Nachnamen_Deutschlands
+     * {@link} https://de.wiktionary.org/w/index.php?title=Verzeichnis:Deutsch/Namen/die_h%C3%A4ufigsten_Nachnamen_%C3%96sterreichs
      **/
     protected static $lastName = [
         'Abraham', 'Achleitner', 'Adam', 'Aichinger', 'Aigner', 'Albrecht', 'Altmann', 'Amann', 'Amon', 'Angerer', 'Arnold', 'Artner', 'Aschauer', 'Auer', 'Augustin', 'Auinger',
