@@ -26,27 +26,31 @@ class Address extends \Faker\Provider\Address
         '9###',
     ];
 
+    /**
+     * @var array
+     * @see https://de.wikipedia.org/wiki/Liste_der_St%C3%A4dte_in_%C3%96sterreich
+     */
     protected static $cityNames = [
         'Allentsteig', 'Altheim', 'Althofen', 'Amstetten', 'Ansfelden', 'Attnang-Puchheim',
-        'Bad Aussee', 'Bad Hall', 'Bad Ischl', 'Bad Leonfelden', 'Bad Radkersburg', 'Bad Sankt Leonhard im Lavanttal', 'Bad Vöslau', 'Baden', 'Bärnbach', 'Berndorf', 'Bischofshofen', 'Bleiburg', 'Bludenz', 'Braunau am Inn', 'Bregenz', 'Bruck an der Leitha', 'Bruck an der Mur',
-        'Deutsch-Wagram', 'Deutschlandsberg', 'Dornbirn', 'Drosendorf-Zissersdorf 1', 'Dürnstein',
+        'Bad Aussee', 'Bad Hall', 'Bad Ischl', 'Bad Leonfelden', 'Bad Radkersburg', 'Bad St. Leonhard im Lavanttal', 'Bad Vöslau', 'Baden', 'Bärnbach', 'Berndorf', 'Bischofshofen', 'Bleiburg', 'Bludenz', 'Braunau am Inn', 'Bregenz', 'Bruck an der Leitha', 'Bruck an der Mur',
+        'Deutsch-Wagram', 'Deutschlandsberg', 'Dornbirn', 'Drosendorf-Zissersdorf', 'Dürnstein',
         'Ebenfurth', 'Ebreichsdorf', 'Eferding', 'Eggenburg', 'Eisenerz', 'Eisenstadt', 'Enns',
-        'Fehring', 'Feldbach', 'Feldkirch', 'Feldkirchen', 'Ferlach', 'Fischamend', 'Frauenkirchen', 'Freistadt', 'Friedberg', 'Friesach', 'Frohnleiten', 'Fürstenfeld',
-        'Gallneukirchen', 'Gänserndorf', 'Geras', 'Gerasdorf bei Wien', 'Gföhl', 'Gleisdorf', 'Gloggnitz', 'Gmünd', 'Gmünd in Kärnten', 'Gmunden', 'Graz', 'Grein', 'Grieskirchen', 'Groß-Enzersdorf', 'Groß-Gerungs', 'Groß-Siegharts', 'Güssing',
+        'Fehring', 'Feldbach', 'Feldkirch', 'Feldkirchen in Kärnten', 'Ferlach', 'Fischamend', 'Frauenkirchen', 'Freistadt', 'Friedberg', 'Friesach', 'Frohnleiten', 'Fürstenfeld',
+        'Gallneukirchen', 'Gänserndorf', 'Geras', 'Gerasdorf bei Wien', 'Gföhl', 'Gleisdorf', 'Gloggnitz', 'Gmünd', 'Gmünd in Kärnten', 'Gmunden', 'Graz', 'Grein', 'Grieskirchen', 'Groß-Enzersdorf', 'Groß Gerungs', 'Groß-Siegharts', 'Güssing',
         'Haag', 'Hainburg an der Donau', 'Hainfeld', 'Hall in Tirol', 'Hallein', 'Hardegg', 'Hartberg', 'Heidenreichstein', 'Hermagor-Pressegger See', 'Herzogenburg', 'Hohenems', 'Hollabrunn', 'Horn',
         'Imst', 'Innsbruck',
         'Jennersdorf', 'Judenburg',
-        'Kapfenberg', 'Kindberg', 'Kirchdorf an der Krems', 'Kirchschlag in der Buckligen Welt', 'Kitzbühel', 'Klagenfurt', 'Klosterneuburg', 'Knittelfeld', 'Köflach', 'Korneuburg', 'Krems an der Donau', 'Kufstein',
+        'Kapfenberg', 'Kindberg', 'Kirchdorf an der Krems', 'Kirchschlag in der Buckligen Welt', 'Kitzbühel', 'Klagenfurt am Wörthersee', 'Klosterneuburg', 'Knittelfeld', 'Köflach', 'Korneuburg', 'Krems an der Donau', 'Kufstein',
         'Laa an der Thaya', 'Laakirchen', 'Landeck', 'Langenlois', 'Leibnitz', 'Leoben', 'Leonding', 'Lienz', 'Liezen', 'Lilienfeld', 'Linz', 'Litschau',
-        'Maissau', 'Mank', 'Mannersdorf am Leithagebirge', 'Marchegg', 'Marchtrenk', 'Mariazell', 'Mattersburg', 'Mattighofen', 'Mautern an der Donau', 'Melk', 'Mistelbach an der Zaya', 'Mödling', 'Murau', 'Mureck', 'Mürzzuschlag',
+        'Maissau', 'Mank', 'Mannersdorf am Leithagebirge', 'Marchegg', 'Marchtrenk', 'Mariazell', 'Mattersburg', 'Mattighofen', 'Mautern an der Donau', 'Melk', 'Mittersill', 'Mistelbach', 'Mödling', 'Murau', 'Mureck', 'Mürzzuschlag',
         'Neufeld an der Leitha', 'Neulengbach', 'Neumarkt am Wallersee', 'Neunkirchen', 'Neusiedl am See',
-        'Oberndorf bei Salzburg', 'Oberpullendorf', 'Oberwart', 'Oberwälz',
-        'Perg', 'Peuerbach', 'Pinkafeld', 'Pöchlarn', 'Poysdorf', 'Pregarten', 'Pulkau', 'Purbach am Neusiedler See', 'Purkersdorf',
-        'Raabs an der Thaya', 'Radenthein', 'Radstadt', 'Rattenberg', 'Retz', 'Ried im Innkreis', 'Rohrbach in Oberösterreich', 'Rottenmann', 'Rust',
-        'Saalfelden am Steinernen Meer', 'Salzburg', 'Sankt Andrä im Lavanttal', 'Sankt Johann im Pongau', 'Sankt Pölten', 'Sankt Valentin', 'Sankt Veit an der Glan', 'Schärding', 'Scheibbs', 'Schladming', 'Schrattenthal', 'Schrems', 'Schwanenstadt', 'Schwaz', 'Schwechat', 'Seekirchen am Wallersee', 'Spittal an der Drau', 'Stadtschlaining', 'Steyr', 'Steyregg', 'Stockerau', 'Straßburg',
+        'Oberndorf bei Salzburg', 'Oberpullendorf', 'Oberwart', 'Oberwölz',
+        'Perg', 'Peuerbach', 'Pinkafeld', 'Pöchlarn', 'Poysdorf', 'Pregarten', 'Pressbaum', 'Pulkau', 'Purbach am Neusiedler See', 'Purkersdorf',
+        'Raabs an der Thaya', 'Radenthein', 'Radstadt', 'Rattenberg', 'Retz', 'Ried im Innkreis', 'Rohrbach-Berg', 'Rottenmann', 'Rust',
+        'Saalfelden am Steinernen Meer', 'Salzburg', 'Sankt Andrä', 'St. Johann im Pongau', 'St. Pölten', 'St. Valentin', 'Sankt Veit an der Glan', 'Schärding', 'Scheibbs', 'Schladming', 'Schrattenthal', 'Schrems', 'Schwanenstadt', 'Schwaz', 'Schwechat', 'Seekirchen am Wallersee', 'Spielberg', 'Spittal an der Drau', 'Stadtschlaining', 'Steyr', 'Steyregg', 'Stockerau', 'Straßburg',
         'Ternitz', 'Traiskirchen', 'Traismauer', 'Traun', 'Trieben', 'Trofaiach', 'Tulln an der Donau',
         'Villach', 'Vils', 'Vöcklabruck', 'Voitsberg', 'Völkermarkt',
-        'Waidhofen an der Thaya', 'Waidhofen an der Ybbs', 'Weitra', 'Weiz', 'Wels', 'Wien', 'Wiener Neustadt', 'Wieselburg', 'Wilhelmsburg', 'Wolfsberg', 'Wolkersdorf', 'Wörgl',
+        'Waidhofen an der Thaya', 'Waidhofen an der Ybbs', 'Weitra', 'Weiz', 'Wels', 'Wien', 'Wiener Neustadt', 'Wieselburg', 'Wilhelmsburg', 'Wolfsberg', 'Wolkersdorf im Weinviertel', 'Wörgl',
         'Ybbs an der Donau',
         'Zell am See', 'Zeltweg', 'Zistersdorf', 'Zwettl',
     ];
