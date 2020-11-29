@@ -73,7 +73,7 @@ class Address extends \Faker\Provider\Address
      * @link http://kodepos.nomor.net/_kodepos.php?_i=provinsi-kodepos
      */
     protected static $state = [
-        'Aceh', 'Sumatera Utara', 'Sumatera Barat', 'Jambi', 'Bangka Belitung', 'Riau',
+        'Aceh', 'Sumatera Utara', 'Sumatera Barat', 'Jambi', 'Kepulauan Bangka Belitung', 'Riau',
         'Kepulauan Riau', 'Bengkulu', 'Sumatera Selatan', 'Lampung', 'Banten',
         'DKI Jakarta', 'Jawa Barat', 'Jawa Tengah', 'Jawa Timur', 'Nusa Tenggara Timur',
         'DI Yogyakarta', 'Bali', 'Nusa Tenggara Barat', 'Kalimantan Barat',
@@ -85,15 +85,16 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Abbreviated State Names.
-     * Currently this is all just a guesswork, but should be highly accurate
+     *
+     * @link https://en.wikipedia.org/wiki/Provinces_of_Indonesia#Table_of_provinces
      * @var array
      */
     protected static $stateAbbr = [
-        'Aceh', 'SumUt', 'SumBar', 'Jambi', 'BaBel', 'Riau', 'KepR', 'Bengkulu', 'SumSel',
-        'Lampung', 'Banten', 'DKI', 'JaBar', 'JaTeng', 'JaTim', 'NTT', 'DIY',
-        'Bali', 'NTB', 'KalBar', 'KalTeng', 'KalSel', 'KalTim', 'KalUt', 'SulSel',
-        'SulUt', 'Gorontalo', 'SulTeng', 'SulBar', 'SulTra', 'Maluku', 'MalUt',
-        'PapBar', 'Papua'
+        'Aceh', 'Sumut', 'Sumbar', 'Jambi', 'Babel', 'Riau', 'Kepri', 'Bengkulu', 'Sumsel',
+        'Lampung', 'Banten', 'DKI', 'Jabar', 'Jateng', 'Jatim', 'NTT', 'DIY',
+        'Bali', 'NTB', 'Kalbar', 'Kalteng', 'Kalsel', 'Kaltim', 'Kaltara', 'Sulsel',
+        'Sulut', 'Gorontalo', 'Sulteng', 'Sulbar', 'Sultra', 'Maluku', 'Malut',
+        'Pabar', 'Papua'
     ];
 
     /**
@@ -104,9 +105,9 @@ class Address extends \Faker\Provider\Address
         'Amerika Serikat', 'Andorra', 'Angola', 'Anguilla',
 
         // http://id.wikipedia.org/wiki/Antartika
-        'Antarktika',
+        'Antartika',
 
-        'Antigua and Barbuda',
+        'Antigua dan Barbuda',
 
         // http://id.wikipedia.org/wiki/Antillen_Belanda
         'Antillen Belanda',
@@ -119,7 +120,7 @@ class Address extends \Faker\Provider\Address
         'Bosnia dan Herzegovina',
 
         'Botswana', 'Brasil', 'Brunei Darussalam', 'Bulgaria', 'Burkina Faso',
-        'Burundi', 'Chili', 'Cina', 'Cocos (Keeling)', 'Denmark', 'Djibouti',
+        'Burundi', 'Chili', 'Cina', 'Kepulauan Cocos (Keeling)', 'Denmark', 'Djibouti',
 
         // http://id.wikipedia.org/wiki/Dominica
         'Dominika',
@@ -151,12 +152,12 @@ class Address extends \Faker\Provider\Address
         'Kepulauan Virgin Amerika Serikat',
 
         'Kepulauan Virgin Inggris', 'Kiribati', 'Kolombia', 'Komoro', 'Kongo', 'Korea',
-        'Korea', 'Kosta Rika', 'Kroasia',
+        'Korea Utara', 'Kosta Rika', 'Kroasia',
 
         // http://id.wikipedia.org/wiki/Cuba
         'Kuba',
 
-        'Kuwait', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libyan Arab Jamahiriya',
+        'Kuwait', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya',
         'Liechtenstein', 'Lithuania', 'Luxembourg', 'Madagaskar', 'Makau', 'Makedonia',
         'Maladewa', 'Malawi', 'Malaysia', 'Mali', 'Malta', 'Maroko',
 
