@@ -14,6 +14,16 @@ final class GeneratorTest extends TestCase
         $this->assertEquals('barfoo', $generator->format('fooFormatter'));
     }
 
+    public function testGetProvidersReturnsCorrectProviders()
+    {
+        $generator = new Generator;
+        $generator->addProvider(new FooProvider());
+        $generator->addProvider(new BarProvider());
+        $this->assertInstanceOf(FooProvider::class, $generator->getProviders()[1]);
+        $this->assertInstanceOf(BarProvider::class, $generator->getProviders()[0]);
+        $this->assertCount(2, $generator->getProviders());
+    }
+
     public function testGetFormatterReturnsCallable()
     {
         $generator = new Generator;
