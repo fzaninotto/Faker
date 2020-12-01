@@ -29,6 +29,6 @@ final class PersonTest extends TestCase
         $this->assertFalse(in_array($result[0], ['D', 'F', 'I', 'Q', 'U', 'V']));
         $this->assertFalse(in_array($result[1], ['D', 'F', 'I', 'Q', 'U', 'V']));
         $this->assertFalse(in_array($result, ['BG', 'GB', 'NK', 'KN', 'TN', 'NT', 'ZZ']));
-        $this->assertFalse($result[0] === 'O');
+        $this->assertFalse($result[1] === 'O');
     }
 }

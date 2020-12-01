@@ -97,18 +97,16 @@ class Person extends \Faker\Provider\Person
      */
     public function nino(): string
     {
+        $prefixAllowList = ['A', 'B', 'C', 'E', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'W', 'X', 'Y', 'Z'];
+        $prefixBanList = ['BG', 'GB', 'KN', 'NK', 'NT', 'TN', 'ZZ'];
+
         do {
-            $prefixLetters = strtoupper(static::lexify('??'));
-        } while (
-            in_array($prefixLetters[0], ['D', 'F', 'I', 'Q', 'U', 'V'])
-            || in_array($prefixLetters[1], ['D', 'F', 'I', 'Q', 'U', 'V'])
-            || in_array($prefixLetters, ['BG', 'GB', 'NK', 'KN', 'TN', 'NT', 'ZZ'])
-            || $prefixLetters[1] == 'O');
+            $prefix = implode('', self::randomElements($prefixAllowList, 2, true));
+        } while (in_array($prefix, $prefixBanList) || $prefix[1] == 'O');
 
         $digits = static::numerify('######');
+        $suffix = static::randomElement(['A', 'B', 'C', 'D']);
 
-        $suffixLetter = static::randomElement(['A', 'B', 'C', 'D']);
-
-        return sprintf('%s%s%s', $prefixLetters, $digits, $suffixLetter);
+        return sprintf('%s%s%s', $prefix, $digits, $suffix);
     }
 }
