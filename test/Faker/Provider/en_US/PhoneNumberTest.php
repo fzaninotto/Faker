@@ -25,8 +25,7 @@ final class PhoneNumberTest extends TestCase
     {
         for ($i = 0; $i < 100; $i++) {
             $number = $this->faker->phoneNumber;
-            $baseNumber = preg_replace('/ *x.*$/', '', $number); // Remove possible extension
-            $digits = array_values(array_filter(str_split($baseNumber), 'ctype_digit'));
+            $digits = array_values(array_filter(str_split($number), 'ctype_digit'));
 
             // Prefix '1' allowed
             if (count($digits) === 11) {
@@ -46,7 +45,7 @@ final class PhoneNumberTest extends TestCase
             }
 
             // Test format
-            $this->assertMatchesRegularExpression('/^(\+?1)?([ -.]*\d{3}[ -.]*| *\(\d{3}\) *)\d{3}[-.]?\d{4}$/', $baseNumber);
+            $this->assertMatchesRegularExpression('/^(\+?1)?([ -.]*\d{3}[ -.]*| *\(\d{3}\) *)\d{3}[-.]?\d{4}$/', $number);
         }
     }
 
@@ -80,6 +79,34 @@ final class PhoneNumberTest extends TestCase
 
             // Test format
             $this->assertMatchesRegularExpression('/^(\+?1)?([ -.]*\d{3}[ -.]*| *\(\d{3}\) *)\d{3}[-.]?\d{4}$/', $number);
+        }
+    }
+
+    public function testPhoneNumberWithExtension()
+    {
+        $number = $this->faker->phoneNumberWithExtension;
+
+        // Test format
+        $this->assertMatchesRegularExpression('/^(\+?1)?([ -.]*\d{3}[ -.]*| *\(\d{3}\) *)(\d{3}[-.]?\d{4})(\sx\d{3,5})$/', $number);
+
+        $baseNumber = preg_replace('/ *x.*$/', '', $number); // Remove possible extension
+        $digits = array_values(array_filter(str_split($baseNumber), 'ctype_digit'));
+
+        // Prefix '1' allowed
+        if (count($digits) === 11) {
+            $this->assertEquals('1', $digits[0]);
+            $digits = array_slice($digits, 1);
+        }
+
+        // 10 digits
+        $this->assertCount(10, $digits);
+
+        // Last two digits of area code cannot be identical
+        $this->assertNotEquals($digits[1], $digits[2]);
+
+        // Last two digits of exchange code cannot be 1
+        if ($digits[4] === 1) {
+            $this->assertNotEquals($digits[4], $digits[5]);
         }
     }
 }
