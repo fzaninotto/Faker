@@ -90,4 +90,25 @@ class Person extends \Faker\Provider\Person
         'Walker', 'Walsh', 'Ward', 'Watson', 'White', 'Wilkinson', 'Williams', 'Wilson', 'Wood', 'Wright',
         'Young',
     ];
+
+    /**
+     * Generates a random National Insurance number.
+     * @link https://www.gov.uk/hmrc-internal-manuals/national-insurance-manual/nim39110
+     */
+    public function nino(): string
+    {
+        do {
+            $prefixLetters = strtoupper(static::lexify('??'));
+        } while (
+            in_array($prefixLetters[0], ['D', 'F', 'I', 'Q', 'U', 'V'])
+            || in_array($prefixLetters[1], ['D', 'F', 'I', 'Q', 'U', 'V'])
+            || in_array($prefixLetters, ['BG', 'GB', 'NK', 'KN', 'TN', 'NT', 'ZZ'])
+            || $prefixLetters[1] == 'O');
+
+        $digits = static::numerify('######');
+
+        $suffixLetter = static::randomElement(['A', 'B', 'C', 'D']);
+
+        return sprintf('%s%s%s', $prefixLetters, $digits, $suffixLetter);
+    }
 }
