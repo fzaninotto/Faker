@@ -8,21 +8,29 @@ use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
-    public function testName()
+    /**
+     * @var Generator
+     */
+    private $faker;
+
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
-        $faker->seed(1);
+        $this->faker = $faker;
+    }
 
-        $this->assertMatchesRegularExpression('/^[А-Я]{1}\.[\w\W]+$/u', $faker->name);
+    public function testName()
+    {
+        $this->faker->seed(1);
+
+        $this->assertMatchesRegularExpression('/^[А-Я]{1}\.[\w\W]+$/u', $this->faker->name);
     }
 
     public function testIdNumber()
     {
-        $faker = new Generator();
-        $faker->addProvider(new Person($faker));
-        $faker->seed(2);
+        $this->faker->seed(2);
 
-        $this->assertMatchesRegularExpression('/^[А-Я]{2}\d{8}$/u', $faker->idNumber);
+        $this->assertMatchesRegularExpression('/^[А-Я]{2}\d{8}$/u', $this->faker->idNumber);
     }
 }

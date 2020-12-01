@@ -8,7 +8,6 @@ use Faker\Test\TestCase;
 
 final class CompanyTest extends TestCase
 {
-
     /**
      * @var Generator
      */

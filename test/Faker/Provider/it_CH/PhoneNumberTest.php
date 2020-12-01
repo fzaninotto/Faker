@@ -8,9 +8,8 @@ use Faker\Test\TestCase;
 
 final class PhoneNumberTest extends TestCase
 {
-
     /**
-     * @var Faker\Generator
+     * @var Generator
      */
     private $faker;
 

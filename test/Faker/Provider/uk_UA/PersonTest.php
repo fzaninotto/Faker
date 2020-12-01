@@ -8,49 +8,43 @@ use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
-    public function testFirstNameMaleReturns()
+    /**
+     * @var Generator
+     */
+    private $faker;
+
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
         $faker->seed(1);
 
-        $this->assertEquals('Максим', $faker->firstNameMale());
+        $this->faker = $faker;
+    }
+
+    public function testFirstNameMaleReturns()
+    {
+        $this->assertEquals('Максим', $this->faker->firstNameMale());
     }
 
     public function testFirstNameFemaleReturns()
     {
-        $faker = new Generator();
-        $faker->addProvider(new Person($faker));
-        $faker->seed(1);
-
-        $this->assertEquals('Людмила', $faker->firstNameFemale());
+        $this->assertEquals('Людмила', $this->faker->firstNameFemale());
     }
 
     public function testMiddleNameMaleReturns()
     {
-        $faker = new Generator();
-        $faker->addProvider(new Person($faker));
-        $faker->seed(1);
-
-        $this->assertEquals('Миколайович', $faker->middleNameMale());
+        $this->assertEquals('Миколайович', $this->faker->middleNameMale());
     }
 
     public function testMiddleNameFemaleReturns()
     {
-        $faker = new Generator();
-        $faker->addProvider(new Person($faker));
-        $faker->seed(1);
-
-        $this->assertEquals('Миколаївна', $faker->middleNameFemale());
+        $this->assertEquals('Миколаївна', $this->faker->middleNameFemale());
     }
 
     public function testLastNameReturns()
     {
-        $faker = new Generator();
-        $faker->addProvider(new Person($faker));
-        $faker->seed(1);
-
-        $this->assertEquals('Броваренко', $faker->lastName());
+        $this->assertEquals('Броваренко', $this->faker->lastName());
     }
 
 

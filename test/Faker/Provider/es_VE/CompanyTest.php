@@ -33,6 +33,4 @@ final class CompanyTest extends TestCase
         $rif = $this->faker->taxpayerIdentificationNumber('-');
         $this->assertMatchesRegularExpression($pattern, $rif);
     }
-
-
 }

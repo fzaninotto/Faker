@@ -1,9 +1,9 @@
 <?php
 
-
-namespace Faker\Provider\tr_TR;
+namespace Faker\Test\Provider\tr_TR;
 
 use Faker\Generator;
+use Faker\Provider\tr_TR\Payment;
 use Faker\Test\TestCase;
 
 final class PaymentTest extends TestCase

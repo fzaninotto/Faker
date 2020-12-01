@@ -8,7 +8,6 @@ use Faker\Test\TestCase;
 
 final class PhoneNumberTest extends TestCase
 {
-
     /**
      * @var Generator
      */
@@ -30,7 +29,5 @@ final class PhoneNumberTest extends TestCase
             1,
             'Phone number format ' . $phoneNumber . ' is wrong!'
         );
-
     }
-
 }

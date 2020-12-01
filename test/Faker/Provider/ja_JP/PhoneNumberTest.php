@@ -8,13 +8,22 @@ use Faker\Test\TestCase;
 
 final class PhoneNumberTest extends TestCase
 {
-    public function testPhoneNumber()
+    /**
+     * @var Generator
+     */
+    private $faker;
+
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new PhoneNumber($faker));
+        $this->faker = $faker;
+    }
 
+    public function testPhoneNumber()
+    {
         for ($i = 0; $i < 10; $i++) {
-            $phoneNumber = $faker->phoneNumber;
+            $phoneNumber = $this->faker->phoneNumber;
             $this->assertNotEmpty($phoneNumber);
             $this->assertMatchesRegularExpression('/^0\d{1,4}-\d{1,4}-\d{3,4}$/', $phoneNumber);
         }

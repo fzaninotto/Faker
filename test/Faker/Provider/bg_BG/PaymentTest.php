@@ -8,7 +8,6 @@ use Faker\Test\TestCase;
 
 final class PaymentTest extends TestCase
 {
-
     /**
      * @var Generator
      */

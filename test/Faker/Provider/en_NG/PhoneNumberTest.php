@@ -8,7 +8,6 @@ use Faker\Test\TestCase;
 
 final class PhoneNumberTest extends TestCase
 {
-
     /**
      * @var Generator
      */

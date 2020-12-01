@@ -8,23 +8,22 @@ use Faker\Test\TestCase;
 
 final class AddressTest extends TestCase
 {
+    /**
+     * @var Generator
+     */
+    private $faker;
 
-/**
- * @var Faker\Generator
- */
-  private $faker;
+    protected function setUp(): void
+    {
+        $faker = new Generator();
+        $faker->addProvider(new Address($faker));
+        $this->faker = $faker;
+    }
 
-  protected function setUp(): void
-  {
-      $faker = new Generator();
-      $faker->addProvider(new Address($faker));
-      $this->faker = $faker;
-  }
-
-  public function testSecondaryAddress()
-  {
-    $secondaryAdress = $this->faker->secondaryAddress();
-    $this->assertNotEmpty($secondaryAdress);
-    $this->assertIsString($secondaryAdress);
-  }
+    public function testSecondaryAddress()
+    {
+        $secondaryAdress = $this->faker->secondaryAddress();
+        $this->assertNotEmpty($secondaryAdress);
+        $this->assertIsString($secondaryAdress);
+    }
 }

@@ -1,13 +1,13 @@
 <?php
 
-namespace Faker\Provider\en_GB;
+namespace Faker\Test\Provider\en_GB;
 
 use Faker\Generator;
+use Faker\Provider\en_GB\Address;
 use Faker\Test\TestCase;
 
 final class AddressTest extends TestCase
 {
-
     /**
      * @var Generator
      */
@@ -20,17 +20,11 @@ final class AddressTest extends TestCase
         $this->faker = $faker;
     }
 
-    /**
-     *
-     */
     public function testPostcode()
     {
-
         $postcode = $this->faker->postcode();
         $this->assertNotEmpty($postcode);
         $this->assertIsString($postcode);
         $this->assertMatchesRegularExpression('@^(GIR ?0AA|[A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]([0-9ABEHMNPRV-Y])?)|[0-9][A-HJKPS-UW]) ?[0-9][ABD-HJLNP-UW-Z]{2})$@i', $postcode);
-
     }
-
 }

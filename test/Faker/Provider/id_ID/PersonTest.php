@@ -10,6 +10,11 @@ use Faker\Test\TestCase;
 final class PersonTest extends TestCase
 {
     /**
+     * @var Generator
+     */
+    private $faker;
+
+    /**
      * @see Person::$birthPlaceCode
      */
     protected static $birthPlaceCode = array(

@@ -9,6 +9,9 @@ use Faker\Test\TestCase;
 
 final class PaymentTest extends TestCase
 {
+    /**
+     * @var Generator
+     */
     private $faker;
 
     protected function setUp(): void
@@ -29,7 +32,7 @@ final class PaymentTest extends TestCase
 
         $key = (int) substr($siren, 2, 2);
         if ($key === 0) {
-            $this->assertEqual($key, (12 + 3 * ($siren % 97)) % 97);            
+            $this->assertEqual($key, (12 + 3 * ($siren % 97)) % 97);
         }
     }
 
@@ -43,7 +46,7 @@ final class PaymentTest extends TestCase
 
         $key = (int) substr($siren, 2, 2);
         if ($key === 0) {
-            $this->assertEqual($key, (12 + 3 * ($siren % 97)) % 97);            
+            $this->assertEqual($key, (12 + 3 * ($siren % 97)) % 97);
         }
     }
 }

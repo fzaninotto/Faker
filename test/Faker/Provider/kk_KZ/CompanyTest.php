@@ -7,14 +7,14 @@ use Faker\Test\TestCase;
 
 final class CompanyTest extends TestCase
 {
-
     /**
-     * {@inheritdoc}
+     * @var Generator
      */
+    private $faker;
+
     protected function setUp(): void
     {
         $this->faker = new Generator();
-
         $this->faker->addProvider(new Company($this->faker));
     }
 

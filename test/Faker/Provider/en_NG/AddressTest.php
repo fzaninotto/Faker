@@ -1,6 +1,6 @@
 <?php
 
-namespace Faker\Provider\en_NG;
+namespace Faker\Test\Provider\en_NG;
 
 use Faker\Generator;
 use Faker\Provider\en_NG\Address;
@@ -8,7 +8,6 @@ use Faker\Test\TestCase;
 
 final class AddressTest extends TestCase
 {
-
     /**
      * @var Generator
      */
@@ -21,9 +20,6 @@ final class AddressTest extends TestCase
         $this->faker = $faker;
     }
 
-    /**
-     *
-     */
     public function testPostcodeIsNotEmptyAndIsValid()
     {
         $postcode = $this->faker->postcode();
@@ -53,5 +49,4 @@ final class AddressTest extends TestCase
         $this->assertNotEmpty($region);
         $this->assertIsString($region);
     }
-
 }

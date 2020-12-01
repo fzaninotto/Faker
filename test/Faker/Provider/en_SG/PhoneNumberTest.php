@@ -3,11 +3,15 @@
 namespace Faker\Test\Provider\en_SG;
 
 use Faker\Factory;
+use Faker\Generator;
 use Faker\Provider\en_SG\PhoneNumber;
 use Faker\Test\TestCase;
 
 final class PhoneNumberTest extends TestCase
 {
+    /**
+     * @var Generator
+     */
     private $faker;
 
     protected function setUp(): void

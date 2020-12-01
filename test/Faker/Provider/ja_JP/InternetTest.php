@@ -8,21 +8,26 @@ use Faker\Test\TestCase;
 
 final class InternetTest extends TestCase
 {
-    public function testUserName()
+    /**
+     * @var Generator
+     */
+    private $faker;
+
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Internet($faker));
         $faker->seed(1);
+        $this->faker = $faker;
+    }
 
-        $this->assertEquals('akira72', $faker->userName);
+    public function testUserName()
+    {
+        $this->assertEquals('akira72', $this->faker->userName);
     }
 
     public function testDomainName()
     {
-        $faker = new Generator();
-        $faker->addProvider(new Internet($faker));
-        $faker->seed(1);
-
-        $this->assertEquals('nakajima.com', $faker->domainName);
+        $this->assertEquals('nakajima.com', $this->faker->domainName);
     }
 }

@@ -8,8 +8,10 @@ use Faker\Test\TestCase;
 
 final class AddressTest extends TestCase
 {
-    /** @var Generator */
-    protected $faker;
+    /**
+     * @var Generator
+     */
+    private $faker;
 
     protected function setUp(): void
     {

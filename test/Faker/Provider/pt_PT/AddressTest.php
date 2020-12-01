@@ -9,7 +9,6 @@ use Faker\Test\TestCase;
 
 final class AddressTest extends TestCase
 {
-
     /**
      * @var Generator
      */

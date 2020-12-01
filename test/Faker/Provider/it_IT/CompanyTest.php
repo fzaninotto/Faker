@@ -8,6 +8,11 @@ use Faker\Test\TestCase;
 
 final class CompanyTest extends TestCase
 {
+    /**
+     * @var Generator
+     */
+    private $faker;
+
     protected function setUp(): void
     {
         $faker = new Generator();

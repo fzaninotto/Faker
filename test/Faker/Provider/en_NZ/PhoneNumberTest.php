@@ -8,9 +8,8 @@ use Faker\Test\TestCase;
 
 final class PhoneNumberTest extends TestCase
 {
-
     /**
-     * @var Faker\Generator
+     * @var Generator
      */
     private $faker;
 
@@ -33,4 +32,3 @@ final class PhoneNumberTest extends TestCase
       $this->assertMatchesRegularExpression('/(^\([0]\d{1}\))(\d{7}$)|(^\([0][2]\d{1}\))(\d{6,8}$)|([0][8][0][0])([\s])(\d{5,8}$)/', $number);
     }
 }
-?>

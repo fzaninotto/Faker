@@ -10,7 +10,6 @@ use Faker\Test\TestCase;
 
 final class InternetTest extends TestCase
 {
-
     /**
      * @var Generator
      */

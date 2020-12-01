@@ -9,8 +9,10 @@ use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
-    /** @var Generator */
-    protected $faker;
+    /**
+     * @var Generator
+     */
+    private $faker;
 
     protected function setUp(): void
     {

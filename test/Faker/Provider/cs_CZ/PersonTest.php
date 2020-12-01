@@ -9,14 +9,23 @@ use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
-    public function testBirthNumber()
+    /**
+     * @var Generator
+     */
+    private $faker;
+
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
         $faker->addProvider(new Miscellaneous($faker));
+        $this->faker = $faker;
+    }
 
+    public function testBirthNumber()
+    {
         for ($i = 0; $i < 1000; $i++) {
-            $birthNumber = $faker->birthNumber();
+            $birthNumber = $this->faker->birthNumber();
             $birthNumber = str_replace('/', '', $birthNumber);
 
             // check date

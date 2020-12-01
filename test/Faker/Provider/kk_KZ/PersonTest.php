@@ -8,14 +8,14 @@ use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
-
     /**
-     * {@inheritdoc}
+     * @var Generator
      */
+    private $faker;
+
     protected function setUp(): void
     {
         $this->faker = new Generator();
-
         $this->faker->addProvider(new Person($this->faker));
     }
 
