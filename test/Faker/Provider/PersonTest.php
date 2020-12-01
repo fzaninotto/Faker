@@ -2,8 +2,8 @@
 
 namespace Faker\Test\Provider;
 
-use Faker\Provider\Person;
 use Faker\Generator;
+use Faker\Provider\Person;
 use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
@@ -20,22 +20,22 @@ final class PersonTest extends TestCase
 
     public function firstNameProvider()
     {
-        return array(
-            array(null, array('John', 'Jane')),
-            array('foobar', array('John', 'Jane')),
-            array('male', array('John')),
-            array('female', array('Jane')),
-        );
+        return [
+            [null, ['John', 'Jane']],
+            ['foobar', ['John', 'Jane']],
+            ['male', ['John']],
+            ['female', ['Jane']],
+        ];
     }
 
     public function testFirstNameMale()
     {
-        $this->assertContains(Person::firstNameMale(), array('John'));
+        $this->assertContains(Person::firstNameMale(), ['John']);
     }
 
     public function testFirstNameFemale()
     {
-        $this->assertContains(Person::firstNameFemale(), array('Jane'));
+        $this->assertContains(Person::firstNameFemale(), ['Jane']);
     }
 
     /**
@@ -50,22 +50,22 @@ final class PersonTest extends TestCase
 
     public function titleProvider()
     {
-        return array(
-            array(null, array('Mr.', 'Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.')),
-            array('foobar', array('Mr.', 'Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.')),
-            array('male', array('Mr.', 'Dr.', 'Prof.')),
-            array('female', array('Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.')),
-        );
+        return [
+            [null, ['Mr.', 'Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.']],
+            ['foobar', ['Mr.', 'Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.']],
+            ['male', ['Mr.', 'Dr.', 'Prof.']],
+            ['female', ['Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.']],
+        ];
     }
 
     public function testTitleMale()
     {
-        $this->assertContains(Person::titleMale(), array('Mr.', 'Dr.', 'Prof.'));
+        $this->assertContains(Person::titleMale(), ['Mr.', 'Dr.', 'Prof.']);
     }
 
     public function testTitleFemale()
     {
-        $this->assertContains(Person::titleFemale(), array('Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.'));
+        $this->assertContains(Person::titleFemale(), ['Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.']);
     }
 
     public function testLastNameReturnsDoe()
@@ -79,9 +79,9 @@ final class PersonTest extends TestCase
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
-        $this->assertContains($faker->name(), array('John Doe', 'Jane Doe'));
-        $this->assertContains($faker->name('foobar'), array('John Doe', 'Jane Doe'));
-        $this->assertContains($faker->name('male'), array('John Doe'));
-        $this->assertContains($faker->name('female'), array('Jane Doe'));
+        $this->assertContains($faker->name(), ['John Doe', 'Jane Doe']);
+        $this->assertContains($faker->name('foobar'), ['John Doe', 'Jane Doe']);
+        $this->assertContains($faker->name('male'), ['John Doe']);
+        $this->assertContains($faker->name('female'), ['Jane Doe']);
     }
 }

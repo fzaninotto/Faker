@@ -13,7 +13,8 @@ final class TextTest extends TestCase
         $this->textClass = new \ReflectionClass('Faker\Provider\ru_RU\Text');
     }
 
-    protected function getMethod($name) {
+    protected function getMethod($name)
+    {
         $method = $this->textClass->getMethod($name);
 
         $method->setAccessible(true);
@@ -21,36 +22,36 @@ final class TextTest extends TestCase
         return $method;
     }
 
-    function testItShouldAppendEndPunctToTheEndOfString()
+    public function testItShouldAppendEndPunctToTheEndOfString()
     {
         $this->assertSame(
             'На другой день Чичиков отправился на обед и вечер.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('На другой день Чичиков отправился на обед и вечер '))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер '])
         );
 
         $this->assertSame(
             'На другой день Чичиков отправился на обед и вечер.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('На другой день Чичиков отправился на обед и вечер—'))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер—'])
         );
 
         $this->assertSame(
             'На другой день Чичиков отправился на обед и вечер.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('На другой день Чичиков отправился на обед и вечер,'))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер,'])
         );
 
         $this->assertSame(
             'На другой день Чичиков отправился на обед и вечер!.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('На другой день Чичиков отправился на обед и вечер! '))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер! '])
         );
 
         $this->assertSame(
             'На другой день Чичиков отправился на обед и вечер.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('На другой день Чичиков отправился на обед и вечер; '))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер; '])
         );
 
         $this->assertSame(
             'На другой день Чичиков отправился на обед и вечер.',
-            $this->getMethod('appendEnd')->invokeArgs(null, array('На другой день Чичиков отправился на обед и вечер: '))
+            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер: '])
         );
     }
 }

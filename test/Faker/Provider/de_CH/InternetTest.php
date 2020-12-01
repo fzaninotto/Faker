@@ -3,9 +3,9 @@
 namespace Faker\Test\Provider\de_CH;
 
 use Faker\Generator;
-use Faker\Provider\de_CH\Person;
-use Faker\Provider\de_CH\Internet;
 use Faker\Provider\de_CH\Company;
+use Faker\Provider\de_CH\Internet;
+use Faker\Provider\de_CH\Person;
 use Faker\Test\TestCase;
 
 final class InternetTest extends TestCase

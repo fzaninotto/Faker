@@ -73,7 +73,7 @@ final class PersonTest extends TestCase
         $checksum = in_array($prefix, ['T', 'G'], true) ? 4 : 0;
 
         foreach ($weights as $key => $weight) {
-            $checksum += (int) $id[$key+1] * $weight;
+            $checksum += (int) $id[$key + 1] * $weight;
         }
 
         $checksumArr = in_array($prefix, ['F', 'G'])

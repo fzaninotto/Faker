@@ -46,6 +46,4 @@ final class PersonTest extends TestCase
     {
         $this->assertEquals('Броваренко', $this->faker->lastName());
     }
-
-
 }

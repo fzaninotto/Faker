@@ -25,5 +25,4 @@ final class CompanyTest extends TestCase
         $vatId = $this->faker->vatId();
         $this->assertMatchesRegularExpression('/^IT[0-9]{11}$/', $vatId);
     }
-
 }

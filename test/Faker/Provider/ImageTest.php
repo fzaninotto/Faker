@@ -10,7 +10,7 @@ final class ImageTest extends TestCase
     public function testImageUrlUses640x680AsTheDefaultSize()
     {
         $this->assertMatchesRegularExpression(
-            '#^https://via.placeholder.com/640x480.png/#', 
+            '#^https://via.placeholder.com/640x480.png/#',
             Image::imageUrl()
         );
     }
@@ -18,7 +18,7 @@ final class ImageTest extends TestCase
     public function testImageUrlAcceptsCustomWidthAndHeight()
     {
         $this->assertMatchesRegularExpression(
-            '#^https://via.placeholder.com/800x400.png/#', 
+            '#^https://via.placeholder.com/800x400.png/#',
             Image::imageUrl(800, 400)
         );
     }
@@ -26,7 +26,7 @@ final class ImageTest extends TestCase
     public function testImageUrlAcceptsCustomCategory()
     {
         $this->assertMatchesRegularExpression(
-            '#^https://via.placeholder.com/800x400.png/[\w]{6}\?text=nature\+.*#', 
+            '#^https://via.placeholder.com/800x400.png/[\w]{6}\?text=nature\+.*#',
             Image::imageUrl(800, 400, 'nature')
         );
     }
@@ -34,7 +34,7 @@ final class ImageTest extends TestCase
     public function testImageUrlAcceptsCustomText()
     {
         $this->assertMatchesRegularExpression(
-            '#^https://via.placeholder.com/800x400.png/[\w]{6}\?text=nature\+Faker#', 
+            '#^https://via.placeholder.com/800x400.png/[\w]{6}\?text=nature\+Faker#',
             Image::imageUrl(800, 400, 'nature', false, 'Faker')
         );
     }
@@ -51,7 +51,7 @@ final class ImageTest extends TestCase
         );
 
         $this->assertMatchesRegularExpression(
-            '#^https://via.placeholder.com/800x400.png/[\w]{6}\?text=nature\+Faker#', 
+            '#^https://via.placeholder.com/800x400.png/[\w]{6}\?text=nature\+Faker#',
             $imageUrl
         );
     }
@@ -68,7 +68,7 @@ final class ImageTest extends TestCase
         );
 
         $this->assertMatchesRegularExpression(
-            '#^https://via.placeholder.com/800x400.png/CCCCCC\?text=nature\+Faker#', 
+            '#^https://via.placeholder.com/800x400.png/CCCCCC\?text=nature\+Faker#',
             $imageUrl
         );
     }

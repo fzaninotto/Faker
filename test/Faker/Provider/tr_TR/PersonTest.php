@@ -3,8 +3,8 @@
 namespace Faker\Test\Provider\tr_TR;
 
 use Faker\Calculator\TCNo;
-use Faker\Provider\tr_TR\Person;
 use Faker\Generator;
+use Faker\Provider\tr_TR\Person;
 use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase

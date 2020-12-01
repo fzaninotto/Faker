@@ -90,7 +90,7 @@ final class PersonTest extends TestCase
     public function testPeselCheckSum()
     {
         $pesel   = $this->faker->pesel();
-        $weights = array(1, 3, 7, 9, 1, 3, 7, 9, 1, 3, 1);
+        $weights = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3, 1];
         $sum     = 0;
 
         foreach ($weights as $key => $weight) {

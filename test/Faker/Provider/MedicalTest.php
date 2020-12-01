@@ -2,8 +2,8 @@
 
 namespace Faker\Test\Provider;
 
-use Faker\Provider\Medical;
 use Faker\Generator;
+use Faker\Provider\Medical;
 use Faker\Test\TestCase;
 
 final class MedicalTest extends TestCase

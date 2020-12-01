@@ -1,4 +1,5 @@
 <?php
+
 namespace Faker\Test\Provider\kk_KZ;
 
 use Faker\Generator;

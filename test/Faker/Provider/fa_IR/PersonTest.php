@@ -2,8 +2,8 @@
 
 namespace Faker\Test\Provider\fa_IR;
 
-use Faker\Provider\fa_IR\Person;
 use Faker\Generator;
+use Faker\Provider\fa_IR\Person;
 use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
@@ -44,9 +44,9 @@ final class PersonTest extends TestCase
             }
 
             if (($sum % 11) < 2) {
-                $this->assertEquals($sum % 11, (int)$controlCode);
+                $this->assertEquals($sum % 11, (int) $controlCode);
             } else {
-                $this->assertEquals(11 - ($sum % 11), (int)$controlCode);
+                $this->assertEquals(11 - ($sum % 11), (int) $controlCode);
             }
         }
     }

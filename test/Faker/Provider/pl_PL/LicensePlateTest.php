@@ -14,7 +14,7 @@ final class LicensePlateTest extends TestCase
 
     protected function setUp(): void
     {
-        $faker = new Generator;
+        $faker = new Generator();
         $faker->addProvider(new LicensePlate($faker));
         $this->faker = $faker;
     }

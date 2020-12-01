@@ -2,14 +2,13 @@
 
 namespace Faker\Test\Provider;
 
-use Faker\Generator;
 use Faker\Calculator\Luhn;
+use Faker\Generator;
 use Faker\Provider\PhoneNumber;
 use Faker\Test\TestCase;
 
 final class PhoneNumberTest extends TestCase
 {
-
     /**
      * @var Generator
      */

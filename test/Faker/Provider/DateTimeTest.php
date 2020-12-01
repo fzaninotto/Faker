@@ -183,7 +183,6 @@ final class DateTimeTest extends TestCase
     }
 
     /**
-     *
      * @dataProvider providerDateTimeBetween
      */
     public function testDateTimeBetween($start, $end)
@@ -197,16 +196,15 @@ final class DateTimeTest extends TestCase
 
     public function providerDateTimeBetween()
     {
-        return array(
-            array('-1 year', false),
-            array('-1 year', null),
-            array('-1 day', '-1 hour'),
-            array('-1 day', 'now'),
-        );
+        return [
+            ['-1 year', false],
+            ['-1 year', null],
+            ['-1 day', '-1 hour'],
+            ['-1 day', 'now'],
+        ];
     }
 
     /**
-     *
      * @dataProvider providerDateTimeInInterval
      */
     public function testDateTimeInInterval($start, $interval, $isInFuture)
@@ -227,11 +225,11 @@ final class DateTimeTest extends TestCase
 
     public function providerDateTimeInInterval()
     {
-        return array(
-            array('-1 year', '+5 days', true),
-            array('-1 day', '-1 hour', false),
-            array('-1 day', '+1 hour', true),
-        );
+        return [
+            ['-1 year', '+5 days', true],
+            ['-1 day', '-1 hour', false],
+            ['-1 day', '+1 hour', true],
+        ];
     }
 
     public function testFixedSeedWithMaximumTimestamp()

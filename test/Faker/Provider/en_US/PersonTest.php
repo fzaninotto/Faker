@@ -2,8 +2,8 @@
 
 namespace Faker\Test\Provider\en_US;
 
-use Faker\Provider\en_US\Person;
 use Faker\Generator;
+use Faker\Provider\en_US\Person;
 use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase

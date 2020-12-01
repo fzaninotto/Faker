@@ -7,12 +7,6 @@ use Faker\Test\TestCase;
 
 /**
  * Class ProviderOverrideTest
- *
- * @package Faker\Test\Provider
- *
- * This class tests a large portion of all locale specific providers. It does not test the entire stack, because each
- * locale specific provider (can) has specific implementations. The goal of this test is to test the common denominator
- * and to try to catch possible invalid multi-byte sequences.
  */
 final class ProviderOverrideTest extends TestCase
 {
@@ -22,12 +16,12 @@ final class ProviderOverrideTest extends TestCase
      * Regular expressions are sensitive for malformed strings (e.g.: strings with incorrect encodings) so by using
      * PCRE for the tests, even though they seem fairly pointless, we test for incorrect encodings also.
      */
-    const TEST_STRING_REGEX = '/.+/u';
+    public const TEST_STRING_REGEX = '/.+/u';
 
     /**
      * Slightly more specific for e-mail, the point isn't to properly validate e-mails.
      */
-    const TEST_EMAIL_REGEX = '/^(.+)@(.+)$/ui';
+    public const TEST_EMAIL_REGEX = '/^(.+)@(.+)$/ui';
 
     /**
      * @dataProvider localeDataProvider
@@ -149,12 +143,12 @@ final class ProviderOverrideTest extends TestCase
     public function localeDataProvider()
     {
         $locales = $this->getAllLocales();
-        $data = array();
+        $data = [];
 
         foreach ($locales as $locale) {
-            $data[] = array(
+            $data[] = [
                 $locale
-            );
+            ];
         }
 
         return $data;
@@ -168,15 +162,15 @@ final class ProviderOverrideTest extends TestCase
      */
     private function getAllLocales()
     {
-        static $locales = array();
+        static $locales = [];
 
-        if ( ! empty($locales)) {
+        if (! empty($locales)) {
             return $locales;
         }
 
         // Finding all PHP files in the xx_XX directories
-        $providerDir = __DIR__ .'/../../../src/Faker/Provider';
-        foreach (glob($providerDir .'/*_*/*.php') as $file) {
+        $providerDir = __DIR__ . '/../../../src/Faker/Provider';
+        foreach (glob($providerDir . '/*_*/*.php') as $file) {
             $localisation = basename(dirname($file));
 
             if (isset($locales[ $localisation ])) {

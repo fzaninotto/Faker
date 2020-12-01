@@ -28,7 +28,7 @@ final class PhoneNumberTest extends TestCase
             $digits = array_values(array_filter(str_split($number), 'ctype_digit'));
 
             // 10 digits
-            if($digits[0] = 2 && $digits[1] == 7) {
+            if ($digits[0] = 2 && $digits[1] == 7) {
                 $this->assertLessThanOrEqual(11, count($digits));
             } else {
                 $this->assertGreaterThanOrEqual(10, count($digits));
@@ -47,7 +47,7 @@ final class PhoneNumberTest extends TestCase
             }
 
             $areaCode = $digits[0] . $digits[1] . $digits[2] . $digits[3];
-            $this->assertContains($areaCode, array('0800', '0860', '0861', '0862'));
+            $this->assertContains($areaCode, ['0800', '0860', '0861', '0862']);
         }
     }
 
@@ -57,7 +57,7 @@ final class PhoneNumberTest extends TestCase
             $number = $this->faker->mobileNumber;
             $digits = array_values(array_filter(str_split($number), 'ctype_digit'));
 
-            if($digits[0] = 2 && $digits[1] == 7) {
+            if ($digits[0] = 2 && $digits[1] == 7) {
                 $this->assertLessThanOrEqual(11, count($digits));
             } else {
                 $this->assertGreaterThanOrEqual(10, count($digits));

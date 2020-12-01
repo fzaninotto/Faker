@@ -8,7 +8,6 @@ use Faker\Test\TestCase;
 
 final class HtmlLoremTest extends TestCase
 {
-
     public function testProvider()
     {
         $faker = new Generator();
@@ -27,5 +26,4 @@ final class HtmlLoremTest extends TestCase
         $error = $dom->loadHTML($node);
         $this->assertTrue($error);
     }
-
 }

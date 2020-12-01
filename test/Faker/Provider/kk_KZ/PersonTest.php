@@ -1,4 +1,5 @@
 <?php
+
 namespace Faker\Test\Provider\kk_KZ;
 
 use Faker\Generator;
@@ -25,6 +26,6 @@ final class PersonTest extends TestCase
         $individualIdentificationNumber = $this->faker->individualIdentificationNumber($birthDate);
         $controlDigit                   = Person::checkSum($individualIdentificationNumber);
 
-        $this->assertSame($controlDigit, (int)substr($individualIdentificationNumber, 11, 1));
+        $this->assertSame($controlDigit, (int) substr($individualIdentificationNumber, 11, 1));
     }
 }

@@ -20,6 +20,17 @@ enabled:
   - no_unused_lambda_imports
   - non_printable_character
   - normalize_index_brace
+  - php_unit_construct
+  - php_unit_dedicate_assert
+  - php_unit_dedicate_assert_internal_type
+  - php_unit_expectation
+  - php_unit_fqcn_annotation
+  - php_unit_mock
+  - php_unit_mock_short_will_return
+  - php_unit_namespaced
+  - php_unit_no_expectation_annotation
+  - php_unit_ordered_covers
+  - php_unit_set_up_tear_down_visibility
   - phpdoc_indent
   - phpdoc_inline_tag_normalizer
   - phpdoc_no_package
@@ -39,7 +50,3 @@ enabled:
 
 disabled:
   - no_trailing_whitespace_in_string
-
-finder:
-  path:
-    - src

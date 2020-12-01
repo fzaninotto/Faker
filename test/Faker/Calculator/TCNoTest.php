@@ -9,13 +9,13 @@ final class TCNoTest extends TestCase
 {
     public function checksumProvider()
     {
-        return array(
-            array('553006348', '82'),
-            array('350630743', '78'),
-            array('550600932', '88'),
-            array('487932947', '70'),
-            array('168113862', '40')
-        );
+        return [
+            ['553006348', '82'],
+            ['350630743', '78'],
+            ['550600932', '88'],
+            ['487932947', '70'],
+            ['168113862', '40']
+        ];
     }
 
     /**
@@ -30,16 +30,16 @@ final class TCNoTest extends TestCase
 
     public function validatorProvider()
     {
-        return array(
-            array('22978160678', true),
-            array('26480045324', true),
-            array('47278360658', true),
-            array('34285002510', true),
-            array('19874561012', true),
+        return [
+            ['22978160678', true],
+            ['26480045324', true],
+            ['47278360658', true],
+            ['34285002510', true],
+            ['19874561012', true],
 
-            array('11111111111', false),
-            array('11234567899', false),
-        );
+            ['11111111111', false],
+            ['11234567899', false],
+        ];
     }
 
     /**

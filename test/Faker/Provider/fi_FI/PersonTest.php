@@ -24,13 +24,13 @@ final class PersonTest extends TestCase
 
     public function provideSeedAndExpectedReturn()
     {
-        return array(
-            array(1, '1800-01-01', '010100+5207'),
-            array(2, '1930-08-08', '080830-508R'),
-            array(3, '1999-12-31', '311299-409D'),
-            array(4, '2000-01-01', '010100A039P'),
-            array(5, '2015-06-17', '170615A690X')
-        );
+        return [
+            [1, '1800-01-01', '010100+5207'],
+            [2, '1930-08-08', '080830-508R'],
+            [3, '1999-12-31', '311299-409D'],
+            [4, '2000-01-01', '010100A039P'],
+            [5, '2015-06-17', '170615A690X']
+        ];
     }
 
     /**
@@ -51,7 +51,7 @@ final class PersonTest extends TestCase
             $max="2099";
             for ($i = 0; $i < 10; $i++) {
                 $birthdate = $this->faker->dateTimeBetween('1800-01-01 00:00:00', '1899-12-31 23:59:59');
-                $pin = $this->faker->personalIdentityNumber($birthdate, NULL, true);
+                $pin = $this->faker->personalIdentityNumber($birthdate, null, true);
                 $this->assertMatchesRegularExpression('/^[0-9]{6}\+[0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
             }
         } else { // timestamp limit for 32-bit computer

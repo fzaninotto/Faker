@@ -2,8 +2,8 @@
 
 namespace Faker\Test\Provider\tr_TR;
 
-use Faker\Provider\tr_TR\Company;
 use Faker\Generator;
+use Faker\Provider\tr_TR\Company;
 use Faker\Test\TestCase;
 
 final class CompanyTest extends TestCase

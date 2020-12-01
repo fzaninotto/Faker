@@ -62,7 +62,7 @@ final class PersonTest extends TestCase
         $weights = [3, 7, 9, 0, 5, 8, 4, 2, 1, 6];
         $checkSum = 0;
         foreach ($weights as $i => $weight) {
-            $checkSum += (int)$ssn[$i] * $weight;
+            $checkSum += (int) $ssn[$i] * $weight;
         }
 
         $this->assertEquals($ssn[3], $checkSum % 11);

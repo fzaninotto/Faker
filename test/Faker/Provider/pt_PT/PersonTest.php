@@ -27,12 +27,11 @@ final class PersonTest extends TestCase
     }
 
     /**
-     *
      * @link http://pt.wikipedia.org/wiki/N%C3%BAmero_de_identifica%C3%A7%C3%A3o_fiscal
      *
      * @param type $tin
      *
-     * @return boolean
+     * @return bool
      */
     public static function isValidTin($tin)
     {

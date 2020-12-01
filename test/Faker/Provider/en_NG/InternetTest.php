@@ -3,8 +3,8 @@
 namespace Faker\Test\Provider\en_NG;
 
 use Faker\Generator;
-use Faker\Provider\en_NG\Person;
 use Faker\Provider\en_NG\Internet;
+use Faker\Provider\en_NG\Person;
 use Faker\Test\TestCase;
 
 final class InternetTest extends TestCase
