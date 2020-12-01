@@ -126,7 +126,7 @@ class Person extends \Faker\Provider\Person
      * @param  \DateTime|null  $birthdate
      * @return string
      */
-    public static function ssn(\DateTime $birthdate = null): string
+    public static function ssn(\DateTime $birthdate = null)
     {
         $birthdate = $birthdate ?? DateTime::dateTimeThisCentury();
 
