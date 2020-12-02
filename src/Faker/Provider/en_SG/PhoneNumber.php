@@ -54,17 +54,17 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     public function tollFreeInternationalNumber()
     {
-        return static::randomElement(static::$tollFreeInternationalNumber);
+        return static::numerify(static::randomElement(static::$tollFreeInternationalNumber));
     }
 
     public function tollFreeLineNumber()
     {
-        return static::randomElement(static::$tollFreeLineNumber);
+        return static::numerify(static::randomElement(static::$tollFreeLineNumber));
     }
 
     public function premiumPhoneNumber()
     {
-        return static::randomElement(static::$premiumPhoneNumber);
+        return static::numerify(static::randomElement(static::$premiumPhoneNumber));
     }
 
     public function mobileNumber()
@@ -85,14 +85,12 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     {
         $format = static::randomElement(static::$voipNumber);
 
-        return $this->generator->parse($format);
+        return static::numerify($this->generator->parse($format));
     }
 
     public function internationalCodePrefix()
     {
-        $format = static::randomElement(static::$internationalCodePrefix);
-
-        return $this->generator->parse($format);
+        return static::randomElement(static::$internationalCodePrefix);
     }
 
     public function zeroToEight()

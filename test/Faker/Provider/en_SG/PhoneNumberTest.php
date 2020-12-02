@@ -47,4 +47,29 @@ final class PhoneNumberTest extends TestCase
         }
         $this->assertMatchesRegularExpression('/^(\+65|65)?\s*8\s*[1-8]\d{2}\s*\d{4}$/', $mobileNumber);
     }
+
+    public function testTollFreeInternationalNumber()
+    {
+        self::assertMatchesRegularExpression('/^800\s*\d{3}\s*\d{4}$/', $this->faker->tollFreeInternationalNumber);
+    }
+
+    public function testTollFreeLineNumber()
+    {
+        self::assertMatchesRegularExpression('/^1800\s*\d{3}\s*\d{4}$/', $this->faker->tollFreeLineNumber);
+    }
+
+    public function testPremiumPhoneNumber()
+    {
+        self::assertMatchesRegularExpression('/^1900\s*\d{3}\s*\d{4}$/', $this->faker->premiumPhoneNumber);
+    }
+
+    public function testFixedLineNumber()
+    {
+        self::assertMatchesRegularExpression('/^(\+65|65)?\s*6\d{3}\s*\d{4}$/', $this->faker->fixedLineNumber);
+    }
+
+    public function testVoipNumber()
+    {
+        self::assertMatchesRegularExpression('/^(\+65|65)?\s*3\d{3}\s*\d{4}$/', $this->faker->voipNumber);
+    }
 }
