@@ -3,7 +3,7 @@
 <!-- Explain your goals for this PR -->
 
 - [ ] A new feature
-- [ ] Fixes issue #
+- [ ] Fixed an issue (resolve #ID)
 
 ### Author's checklist
 
