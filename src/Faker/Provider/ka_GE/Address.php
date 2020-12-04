@@ -12,7 +12,7 @@ class Address extends \Faker\Provider\Address
         'აღმართი', 'ხეივანი'
     ];
 
-    protected static $buildingNumber = ['##'];
+    protected static $buildingNumber = ['%#'];
     protected static $postcode = ['####'];
     protected static $country = [
         'ავსტრალია', 'ავსტრია', 'ავღანეთი', 'აზერბაიჯანი', 'ალანდის კუნძულები', 'ალბანეთი',

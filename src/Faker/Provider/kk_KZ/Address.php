@@ -11,7 +11,7 @@ class Address extends \Faker\Provider\Address
         'көшесі', 'даңғылы',
     ];
 
-    protected static $buildingNumber = ['###'];
+    protected static $buildingNumber = ['%##'];
     protected static $postcode = ['0#####'];
     // TODO list all country names in the world
     protected static $country = [

@@ -13,7 +13,7 @@ class Address extends \Faker\Provider\en_US\Address
         '{{streetAddress}}, {{barangay}}, {{city}} {{postcode}} {{province}}', '{{streetAddress}}, {{municipality}} {{postcode}} {{province}}'
     ];
 
-    protected static $buildingNumber = ['##A', '##', '##A/##', '##/##'];
+    protected static $buildingNumber = ['##A', '%#', '##A/##', '%#/%#'];
     protected static $postcode = ['####'];
 
     //http://en.wikipedia.org/wiki/Provinces_of_the_Philippines

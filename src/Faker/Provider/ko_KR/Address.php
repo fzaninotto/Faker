@@ -5,7 +5,7 @@ namespace Faker\Provider\ko_KR;
 class Address extends \Faker\Provider\Address
 {
     protected static $postcode = ['#####'];
-    protected static $buildingNumber = ['####', '###'];
+    protected static $buildingNumber = ['%###', '%##'];
     protected static $metropolitanCity = [
         '서울특별시', '부산광역시', '대구광역시', '인천광역시', '광주광역시', '대전광역시', '울산광역시',
     ];

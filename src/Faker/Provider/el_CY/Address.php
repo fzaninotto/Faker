@@ -21,7 +21,7 @@ class Address extends \Faker\Provider\Address
     protected static $streetAddressFormats = [
         '{{streetName}}, {{buildingNumber}}',
     ];
-    protected static $buildingNumber = ['##', '#'];
+    protected static $buildingNumber = ['%#', '%'];
     protected static $postcode = ['####'];
     protected static $country = [
         'Ανγκόλα', 'Αζερμπαϊτζάν', 'Αίγυπτος', 'Αιθιοπία', 'Αϊτή', 'Αλβανία', 'Αλγερία', 'Αργεντινή', 'Αρμενία', 'Αυστραλία', 'Αυστρία', 'Αφγανιστάν',

@@ -4,7 +4,7 @@ namespace Faker\Provider\ro_MD;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $buildingNumber = ['###', '##', '#', '#/#', '#A', '#B'];
+    protected static $buildingNumber = ['%##', '%#', '%', '%/#', '#A', '#B'];
     protected static $apartmentNumber = ['#', '##'];
     protected static $floor = ['#', '##'];
     protected static $block = ['#', '##', 'A', 'B', 'C', 'D'];

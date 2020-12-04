@@ -9,7 +9,7 @@ class Address extends \Faker\Provider\Address
     protected static $regionSuffix = ['մարզ'];
     protected static $streetPrefix = ['փողոց'];
 
-    protected static $buildingNumber = ['##'];
+    protected static $buildingNumber = ['%#'];
     protected static $postcode = ['00##'];
     protected static $country = [
         'Մոնակո','Սինգապուր','Վատիկան','Մալդիվներ',

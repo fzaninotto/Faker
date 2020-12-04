@@ -8,7 +8,7 @@ class Address extends \Faker\Provider\en_US\Address
      * An array of en_NZ (New Zealand) building number formats
      * @var array
      */
-    protected static $buildingNumber = ['#', '##', '###'];
+    protected static $buildingNumber = ['%', '%#', '%##'];
 
     /**
      * An array of en_NZ (New Zealand) street suffixes

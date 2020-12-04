@@ -27,7 +27,7 @@ class Address extends \Faker\Provider\Address
         'وادي السير',
     ];
 
-    protected static $buildingNumber = ['#####', '####', '##'];
+    protected static $buildingNumber = ['%####', '%###', '%#'];
 
     protected static $postcode = ['#####', '#####-####'];
 

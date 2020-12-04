@@ -11,7 +11,7 @@ class Address extends \Faker\Provider\Address
         'iela', 'bulvāris', 'skvērs', 'gāte',
     ];
 
-    protected static $buildingNumber = ['##'];
+    protected static $buildingNumber = ['%#'];
     protected static $postcode = ['LV ####'];
 
     /**

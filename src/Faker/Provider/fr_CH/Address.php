@@ -4,7 +4,7 @@ namespace Faker\Provider\fr_CH;
 
 class Address extends \Faker\Provider\fr_FR\Address
 {
-    protected static $buildingNumber = ['###', '##', '#', '#a', '#b', '#c'];
+    protected static $buildingNumber = ['%##', '%#', '%', '#a', '#b', '#c'];
 
     protected static $streetPrefix = ['Rue', 'Rue', 'Chemin', 'Avenue', 'Boulevard', 'Place', 'Impasse'];
 

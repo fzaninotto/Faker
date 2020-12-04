@@ -48,7 +48,7 @@ class Address extends \Faker\Provider\fr_FR\Address
         '{{cityPrefix}}{{firstName}}',
     ];
 
-    protected static $buildingNumber = ['#####', '####', '###', '##', '#'];
+    protected static $buildingNumber = ['%####', '%###', '%##', '%#', '%'];
 
     protected static $streetSuffix = [
         'Autoroute', 'Avenue', 'Boulevard', 'Chemin', 'Route', 'Rue', 'Pont'

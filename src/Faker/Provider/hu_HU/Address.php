@@ -65,7 +65,7 @@ class Address extends \Faker\Provider\Address
         return static::randomElement(static::$smallerCities);
     }
 
-    protected static $buildingNumber = ['###', '##', '##', '#'];
+    protected static $buildingNumber = ['%##', '%#', '%#', '%'];
 
     /**
      * Coordinates inside the border of Hungary

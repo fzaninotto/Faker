@@ -46,7 +46,7 @@ class Address extends \Faker\Provider\Address
         'سكاكا', 'القريات', 'دومة الجندل', 'طبرجل'
     ];
 
-    protected static $buildingNumber = ['#####', '####', '##'];
+    protected static $buildingNumber = ['%####', '%###', '%#'];
 
     protected static $postcode = ['#####', '#####-####'];
 

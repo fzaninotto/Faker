@@ -9,7 +9,7 @@ class Address extends \Faker\Provider\Address
     protected static $streetPrefix = [
         'вул.', 'пров.', 'пл.', 'просп.'
     ];
-    protected static $buildingNumber = ['##'];
+    protected static $buildingNumber = ['%#'];
     protected static $postcode = ['#####'];
     protected static $country = [
         'Афганістан',

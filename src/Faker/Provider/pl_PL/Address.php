@@ -11,7 +11,7 @@ class Address extends \Faker\Provider\Address
         '{{streetAddress}}, {{postcode}} {{city}}',
     ];
 
-    protected static $buildingNumber = ['##A', '##', '##A/##', '##/##'];
+    protected static $buildingNumber = ['##A', '%#', '##A/%#', '%#/%#'];
     protected static $postcode = ['##-###'];
     /**
      * @var array full list of Polish voivodeship

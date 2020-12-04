@@ -12,7 +12,7 @@ class Address extends \Faker\Provider\Address
         'въезд', 'спуск', 'проезд', 'наб.',
     ];
 
-    protected static $buildingNumber = ['##'];
+    protected static $buildingNumber = ['%#'];
     protected static $postcode = ['######'];
 
     /**

@@ -9,7 +9,7 @@ class Address extends \Faker\Provider\Address
     protected static $streetPrefix = [
         'Av.', 'Avenida', 'R.', 'Rua', 'Travessa', 'Largo'
     ];
-    protected static $buildingNumber = ['#####', '####', '###', '##', '#'];
+    protected static $buildingNumber = ['%####', '%###', '%##', '%#', '%'];
     protected static $postcode = ['#####-###'];
     protected static $state = [
         'Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará',

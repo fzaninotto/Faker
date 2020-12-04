@@ -6,7 +6,7 @@ class Address extends \Faker\Provider\es_ES\Address
 {
     protected static $cityPrefix = ['San', 'Puerto', 'Villa', 'Gral.', 'Don'];
     protected static $citySuffix = ['del Mar', 'del Norte', 'del Este', 'del Sur', 'del Oeste', 'del Mirador'];
-    protected static $buildingNumber = ['#####', '####', '###', '##', '#'];
+    protected static $buildingNumber = ['%####', '%###', '%##', '%#', '%'];
     protected static $streetSuffix = [''];
     protected static $postcode = ['####', '#####'];
     protected static $state = [

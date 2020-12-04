@@ -4,7 +4,7 @@ namespace Faker\Provider\tr_TR;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $buildingNumber = ['###', '##', '#'];
+    protected static $buildingNumber = ['%##', '%#', '%'];
 
     protected static $streetSuffix = [
         'Sokak', 'Caddesi', 'Kavşağı', 'Durağı', 'İş Hanı', 'Mevkii'

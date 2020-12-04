@@ -11,7 +11,7 @@ class Address extends \Faker\Provider\Address
         'g.', 'gatvė', 'prospektas', 'alėja',
     ];
 
-    protected static $buildingNumber = ['##'];
+    protected static $buildingNumber = ['%#'];
 
     protected static $postcode = ['LT-#####'];
 

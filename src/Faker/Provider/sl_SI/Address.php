@@ -34,7 +34,7 @@ class Address extends \Faker\Provider\Address
         'Železniki', 'Žetale', 'Žiri', 'Žirovnica', 'Žužemberk'
     ];
 
-    protected static $buildingNumber = ['1##', '##', '##', '##', '##', '#'];
+    protected static $buildingNumber = ['%##', '%#', '%#', '%#', '%#', '%'];
 
     protected static $postcode = ['###0'];
 

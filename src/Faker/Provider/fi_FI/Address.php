@@ -6,7 +6,7 @@ class Address extends \Faker\Provider\Address
 {
     protected static $cityPrefix = ['Pohjois', 'Etelä', 'Itä', 'Länsi', 'Uusi', 'Uus'];
     protected static $citySuffix = ['kylä', 'niemi', 'järvi', 'joki', 'lampi', 'mäki', 'vesi', 'niemi', 'harju', 'lahti', 'harju', 'salmi', 'koski', 'pudas', 'saari'];
-    protected static $buildingNumber = ['####', '###', '##', '#', '#'];
+    protected static $buildingNumber = ['%###', '%##', '%#', '%'];
     protected static $streetSuffix = [
         'tie', 'kuja', 'polku', 'kierros', 'kulma', 'katu', 'kaarre', 'kaari', 'rinne', 'kaarto', 'haka', 'silta', 'rinne', 'töyry'
     ];
