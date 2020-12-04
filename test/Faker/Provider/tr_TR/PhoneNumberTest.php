@@ -2,24 +2,11 @@
 
 namespace Faker\Test\Provider\tr_TR;
 
-use Faker\Generator;
 use Faker\Provider\tr_TR\PhoneNumber;
 use Faker\Test\TestCase;
 
 final class PhoneNumberTest extends TestCase
 {
-    /**
-     * @var Generator
-     */
-    private $faker;
-
-    protected function setUp(): void
-    {
-        $faker = new Generator();
-        $faker->addProvider(new PhoneNumber($faker));
-        $this->faker = $faker;
-    }
-
     public function testPhoneNumber()
     {
         for ($i = 0; $i < 100; $i++) {
@@ -27,7 +14,12 @@ final class PhoneNumberTest extends TestCase
             $baseNumber = preg_replace('/ *x.*$/', '', $number); // Remove possible extension
             $digits = array_values(array_filter(str_split($baseNumber), 'ctype_digit'));
 
-            $this->assertGreaterThan(10, count($digits));
+            self::assertGreaterThan(10, count($digits));
         }
+    }
+
+    protected function getProviders(): iterable
+    {
+        yield new PhoneNumber($this->faker);
     }
 }

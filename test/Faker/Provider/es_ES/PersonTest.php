@@ -2,29 +2,14 @@
 
 namespace Faker\Test\Provider\es_ES;
 
-use Faker\Generator;
 use Faker\Provider\es_ES\Person;
 use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
-    /**
-     * @var Generator
-     */
-    private $faker;
-
-    protected function setUp(): void
-    {
-        $faker = new Generator();
-        $faker->seed(1);
-        $faker->addProvider(new Person($faker));
-        $this->faker = $faker;
-    }
-
     public function testDNI()
     {
-        $dni = $this->faker->dni;
-        $this->assertTrue($this->isValidDNI($dni));
+        self::assertTrue($this->isValidDNI($this->faker->dni));
     }
 
     // validation taken from http://kiwwito.com/php-function-for-spanish-dni-nie-validation/
@@ -37,7 +22,7 @@ final class PersonTest extends TestCase
 
         $map = 'TRWAGMYFPDXBNJZSQVHLCKE';
 
-        list(, $number, $letter) = $matches;
+        [, $number, $letter] = $matches;
 
         return strtoupper($letter) === $map[((int) $number) % 23];
     }
@@ -46,6 +31,11 @@ final class PersonTest extends TestCase
     {
         $validLicenceCodes = ['AM', 'A1', 'A2', 'A','B', 'B+E', 'C1', 'C1+E', 'C', 'C+E', 'D1', 'D1+E', 'D', 'D+E'];
 
-        $this->assertContains($this->faker->licenceCode, $validLicenceCodes);
+        self::assertContains($this->faker->licenceCode, $validLicenceCodes);
+    }
+
+    protected function getProviders(): iterable
+    {
+        yield new Person($this->faker);
     }
 }

@@ -2,35 +2,22 @@
 
 namespace Faker\Provider\en_US;
 
-use Faker\Generator;
 use Faker\Test\TestCase;
 
 final class PaymentTest extends TestCase
 {
-    /**
-     * @var Generator
-     */
-    private $faker;
-
-    protected function setUp(): void
-    {
-        $faker = new Generator();
-        $faker->addProvider(new Payment($faker));
-        $this->faker = $faker;
-    }
-
     public function testBankAccountNumber()
     {
         $accNo = $this->faker->bankAccountNumber;
-        $this->assertTrue(ctype_digit($accNo));
-        $this->assertLessThanOrEqual(17, strlen($accNo));
+        self::assertTrue(ctype_digit($accNo));
+        self::assertLessThanOrEqual(17, strlen($accNo));
     }
 
     public function testBankRoutingNumber()
     {
         $routingNo = $this->faker->bankRoutingNumber;
-        $this->assertMatchesRegularExpression('/^\d{9}$/', $routingNo);
-        $this->assertEquals(Payment::calculateRoutingNumberChecksum($routingNo), $routingNo[8]);
+        self::assertMatchesRegularExpression('/^\d{9}$/', $routingNo);
+        self::assertEquals(Payment::calculateRoutingNumberChecksum($routingNo), $routingNo[8]);
     }
 
     public function routingNumberProvider()
@@ -79,6 +66,11 @@ final class PaymentTest extends TestCase
      */
     public function testCalculateRoutingNumberChecksum($routingNo)
     {
-        $this->assertEquals($routingNo[8], Payment::calculateRoutingNumberChecksum($routingNo), $routingNo);
+        self::assertEquals($routingNo[8], Payment::calculateRoutingNumberChecksum($routingNo), $routingNo);
+    }
+
+    protected function getProviders(): iterable
+    {
+        yield new Payment($this->faker);
     }
 }

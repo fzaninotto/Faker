@@ -2,33 +2,19 @@
 
 namespace Faker\Test\Provider\en_ZA;
 
-use Faker\Generator;
 use Faker\Provider\DateTime;
 use Faker\Provider\en_ZA\Person;
 use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
-    /**
-     * @var Generator
-     */
-    private $faker;
-
-    protected function setUp(): void
-    {
-        $faker = new Generator();
-        $faker->addProvider(new Person($faker));
-        $faker->addProvider(new DateTime($faker));
-        $this->faker = $faker;
-    }
-
     public function testIdNumberWithDefaults()
     {
         $idNumber = $this->faker->idNumber();
 
-        $this->assertEquals(13, strlen($idNumber));
-        $this->assertMatchesRegularExpression('#^\d{13}$#', $idNumber);
-        $this->assertIsString($idNumber);
+        self::assertEquals(13, strlen($idNumber));
+        self::assertMatchesRegularExpression('#^\d{13}$#', $idNumber);
+        self::assertIsString($idNumber);
     }
 
     public function testIdNumberForMales()
@@ -37,7 +23,7 @@ final class PersonTest extends TestCase
 
         $genderDigit = substr($idNumber, 6, 1);
 
-        $this->assertContains($genderDigit, ['5', '6', '7', '8', '9']);
+        self::assertContains($genderDigit, ['5', '6', '7', '8', '9']);
     }
 
     public function testIdNumberForFemales()
@@ -46,27 +32,33 @@ final class PersonTest extends TestCase
 
         $genderDigit = substr($idNumber, 6, 1);
 
-        $this->assertContains($genderDigit, ['0', '1', '2', '3', '4']);
+        self::assertContains($genderDigit, ['0', '1', '2', '3', '4']);
     }
 
     public function testLicenceCode()
     {
         $validLicenceCodes = ['A', 'A1', 'B', 'C', 'C1', 'C2', 'EB', 'EC', 'EC1', 'I', 'L', 'L1'];
 
-        $this->assertContains($this->faker->licenceCode, $validLicenceCodes);
+        self::assertContains($this->faker->licenceCode, $validLicenceCodes);
     }
 
     public function testMaleTitles()
     {
         $validMaleTitles = ['Mr.', 'Dr.', 'Prof.', 'Rev.', 'Hon.'];
 
-        $this->assertContains(Person::titleMale(), $validMaleTitles);
+        self::assertContains(Person::titleMale(), $validMaleTitles);
     }
 
     public function testFemaleTitles()
     {
         $validateFemaleTitles = ['Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.', 'Rev.', 'Hon.'];
 
-        $this->assertContains(Person::titleFemale(), $validateFemaleTitles);
+        self::assertContains(Person::titleFemale(), $validateFemaleTitles);
+    }
+
+    protected function getProviders(): iterable
+    {
+        yield new Person($this->faker);
+        yield new DateTime($this->faker);
     }
 }

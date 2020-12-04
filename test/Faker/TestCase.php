@@ -2,12 +2,28 @@
 
 namespace Faker\Test;
 
+use Faker\Generator;
 use PHPUnit\Framework\Constraint\LogicalNot;
 use PHPUnit\Framework\Constraint\RegularExpression;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
+    /**
+     * @var Generator
+     */
+    protected $faker;
+
+    protected function setUp(): void
+    {
+        $this->faker = new Generator();
+        $this->faker->seed(1);
+
+        foreach ($this->getProviders() as $provider) {
+            $this->faker->addProvider($provider);
+        }
+    }
+
     /**
      * Asserts that a string matches a given regular expression.
      *
@@ -34,5 +50,10 @@ abstract class TestCase extends BaseTestCase
             ),
             $message
         );
+    }
+
+    protected function getProviders(): iterable
+    {
+        return [];
     }
 }

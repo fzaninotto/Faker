@@ -25,7 +25,7 @@ final class TCNoTest extends TestCase
      */
     public function testChecksum($tcNo, $checksum)
     {
-        $this->assertEquals($checksum, TCNo::checksum($tcNo), $tcNo);
+        self::assertSame($checksum, TCNo::checksum($tcNo), $tcNo);
     }
 
     public function validatorProvider()
@@ -49,6 +49,6 @@ final class TCNoTest extends TestCase
      */
     public function testIsValid($tcNo, $isValid)
     {
-        $this->assertEquals($isValid, TCNo::isValid($tcNo), $tcNo);
+        self::assertSame($isValid, TCNo::isValid($tcNo), $tcNo);
     }
 }

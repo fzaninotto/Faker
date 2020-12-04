@@ -2,7 +2,6 @@
 
 namespace Faker\Test\Provider;
 
-use Faker\Generator;
 use Faker\Provider\Biased;
 use Faker\Test\TestCase;
 
@@ -10,21 +9,18 @@ final class BiasedTest extends TestCase
 {
     public const MAX = 10;
     public const NUMBERS = 25000;
-    protected $generator;
     protected $results = [];
 
     protected function setUp(): void
     {
-        $this->generator = new Generator();
-        $this->generator->addProvider(new Biased($this->generator));
-
+        parent::setUp();
         $this->results = array_fill(1, self::MAX, 0);
     }
 
     public function performFake($function)
     {
         for ($i = 0; $i < self::NUMBERS; $i++) {
-            $this->results[$this->generator->biasedNumberBetween(1, self::MAX, $function)]++;
+            $this->results[$this->faker->biasedNumberBetween(1, self::MAX, $function)]++;
         }
     }
 
@@ -71,5 +67,10 @@ final class BiasedTest extends TestCase
             $this->assertGreaterThan(self::NUMBERS * $assumed * .9, $amount, "Value was more than 10 percent under the expected value");
             $this->assertLessThan(self::NUMBERS * $assumed * 1.1, $amount, "Value was more than 10 percent over the expected value");
         }
+    }
+
+    protected function getProviders(): iterable
+    {
+        yield new Biased($this->faker);
     }
 }

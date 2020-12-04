@@ -2,30 +2,24 @@
 
 namespace Faker\Test\Provider\kk_KZ;
 
-use Faker\Generator;
 use Faker\Provider\DateTime;
 use Faker\Provider\kk_KZ\Person;
 use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
-    /**
-     * @var Generator
-     */
-    private $faker;
-
-    protected function setUp(): void
-    {
-        $this->faker = new Generator();
-        $this->faker->addProvider(new Person($this->faker));
-    }
-
     public function testIndividualIdentificationNumberIsValid()
     {
         $birthDate                      = DateTime::dateTimeBetween('-30 years', '-10 years');
         $individualIdentificationNumber = $this->faker->individualIdentificationNumber($birthDate);
         $controlDigit                   = Person::checkSum($individualIdentificationNumber);
 
-        $this->assertSame($controlDigit, (int) substr($individualIdentificationNumber, 11, 1));
+        self::assertSame($controlDigit, (int) substr($individualIdentificationNumber, 11, 1));
+    }
+
+
+    protected function getProviders(): iterable
+    {
+        yield new Person($this->faker);
     }
 }

@@ -30,8 +30,8 @@ final class LuhnTest extends TestCase
      */
     public function testComputeCheckDigit($partialNumber, $checkDigit)
     {
-        $this->assertIsString($checkDigit);
-        $this->assertEquals($checkDigit, Luhn::computeCheckDigit($partialNumber));
+        self::assertIsString($checkDigit);
+        self::assertEquals($checkDigit, Luhn::computeCheckDigit($partialNumber));
     }
 
     public function validatorProvider()
@@ -57,7 +57,7 @@ final class LuhnTest extends TestCase
      */
     public function testIsValid($number, $isValid)
     {
-        $this->assertEquals($isValid, Luhn::isValid($number));
+        self::assertEquals($isValid, Luhn::isValid($number));
     }
 
     public function testGenerateLuhnNumberWithInvalidPrefix()

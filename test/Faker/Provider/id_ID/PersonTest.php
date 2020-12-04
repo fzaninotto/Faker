@@ -2,18 +2,12 @@
 
 namespace Faker\Test\Provider\id_ID;
 
-use Faker\Generator;
 use Faker\Provider\DateTime;
 use Faker\Provider\id_ID\Person;
 use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
-    /**
-     * @var Generator
-     */
-    private $faker;
-
     /**
      * @see Person::$birthPlaceCode
      */
@@ -52,42 +46,40 @@ final class PersonTest extends TestCase
         '9171', '9201', '9202', '9203', '9204', '9205', '9206', '9207', '9208', '9209', '9210', '9211', '9212', '9271',
     ];
 
-    protected function setUp(): void
-    {
-        $faker = new Generator();
-        $faker->addProvider(new Person($faker));
-        $faker->addProvider(new DateTime($faker));
-        $this->faker = $faker;
-    }
-
     public function testIfFirstNameMaleCanReturnData()
     {
         $firstNameMale = $this->faker->firstNameMale();
-        $this->assertNotEmpty($firstNameMale);
+        self::assertNotEmpty($firstNameMale);
     }
 
     public function testIfLastNameMaleCanReturnData()
     {
         $lastNameMale = $this->faker->lastNameMale();
-        $this->assertNotEmpty($lastNameMale);
+        self::assertNotEmpty($lastNameMale);
     }
 
     public function testIfFirstNameFemaleCanReturnData()
     {
         $firstNameFemale = $this->faker->firstNameFemale();
-        $this->assertNotEmpty($firstNameFemale);
+        self::assertNotEmpty($firstNameFemale);
     }
 
     public function testIfLastNameFemaleCanReturnData()
     {
         $lastNameFemale = $this->faker->lastNameFemale();
-        $this->assertNotEmpty($lastNameFemale);
+        self::assertNotEmpty($lastNameFemale);
     }
 
     public function testNikContainsBirthPlace()
     {
         $nik = $this->faker->nik();
 
-        $this->assertContains(substr($nik, 0, 4), static::$birthPlaceCode);
+        self::assertContains(substr($nik, 0, 4), static::$birthPlaceCode);
+    }
+
+    protected function getProviders(): iterable
+    {
+        yield new Person($this->faker);
+        yield new DateTime($this->faker);
     }
 }

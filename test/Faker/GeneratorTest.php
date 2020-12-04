@@ -8,126 +8,105 @@ final class GeneratorTest extends TestCase
 {
     public function testAddProviderGivesPriorityToNewlyAddedProvider()
     {
-        $generator = new Generator();
-        $generator->addProvider(new FooProvider());
-        $generator->addProvider(new BarProvider());
-        $this->assertEquals('barfoo', $generator->format('fooFormatter'));
+        $this->faker->addProvider(new FooProvider());
+        $this->faker->addProvider(new BarProvider());
+        self::assertEquals('barfoo', $this->faker->format('fooFormatter'));
     }
 
     public function testGetProvidersReturnsCorrectProviders()
     {
-        $generator = new Generator();
-        $generator->addProvider(new FooProvider());
-        $generator->addProvider(new BarProvider());
-        $this->assertInstanceOf(FooProvider::class, $generator->getProviders()[1]);
-        $this->assertInstanceOf(BarProvider::class, $generator->getProviders()[0]);
-        $this->assertCount(2, $generator->getProviders());
+        $this->faker->addProvider(new FooProvider());
+        $this->faker->addProvider(new BarProvider());
+        self::assertInstanceOf(FooProvider::class, $this->faker->getProviders()[1]);
+        self::assertInstanceOf(BarProvider::class, $this->faker->getProviders()[0]);
+        self::assertCount(2, $this->faker->getProviders());
     }
 
     public function testGetFormatterReturnsCallable()
     {
-        $generator = new Generator();
-        $provider = new FooProvider();
-        $generator->addProvider($provider);
-        $this->assertIsCallable($generator->getFormatter('fooFormatter'));
+        $this->faker->addProvider(new FooProvider());
+        self::assertIsCallable($this->faker->getFormatter('fooFormatter'));
     }
 
     public function testGetFormatterReturnsCorrectFormatter()
     {
-        $generator = new Generator();
         $provider = new FooProvider();
-        $generator->addProvider($provider);
+        $this->faker->addProvider($provider);
         $expected = [$provider, 'fooFormatter'];
-        $this->assertEquals($expected, $generator->getFormatter('fooFormatter'));
+        self::assertEquals($expected, $this->faker->getFormatter('fooFormatter'));
     }
 
     public function testGetFormatterThrowsExceptionOnIncorrectProvider()
     {
         $this->expectException(\InvalidArgumentException::class);
-        $generator = new Generator();
-        $generator->getFormatter('fooFormatter');
+        $this->faker->getFormatter('fooFormatter');
     }
 
     public function testGetFormatterThrowsExceptionOnIncorrectFormatter()
     {
         $this->expectException(\InvalidArgumentException::class);
-        $generator = new Generator();
-        $provider = new FooProvider();
-        $generator->addProvider($provider);
-        $generator->getFormatter('barFormatter');
+        $this->faker->addProvider(new FooProvider());
+        $this->faker->getFormatter('barFormatter');
     }
 
     public function testFormatCallsFormatterOnProvider()
     {
-        $generator = new Generator();
-        $provider = new FooProvider();
-        $generator->addProvider($provider);
-        $this->assertEquals('foobar', $generator->format('fooFormatter'));
+        $this->faker->addProvider(new FooProvider());
+        self::assertEquals('foobar', $this->faker->format('fooFormatter'));
     }
 
     public function testFormatTransfersArgumentsToFormatter()
     {
-        $generator = new Generator();
+        $this->faker = new Generator();
         $provider = new FooProvider();
-        $generator->addProvider($provider);
-        $this->assertEquals('bazfoo', $generator->format('fooFormatterWithArguments', ['foo']));
+        $this->faker->addProvider($provider);
+        self::assertEquals('bazfoo', $this->faker->format('fooFormatterWithArguments', ['foo']));
     }
 
     public function testParseReturnsSameStringWhenItContainsNoCurlyBraces()
     {
-        $generator = new Generator();
-        $this->assertEquals('fooBar#?', $generator->parse('fooBar#?'));
+        self::assertEquals('fooBar#?', $this->faker->parse('fooBar#?'));
     }
 
     public function testParseReturnsStringWithTokensReplacedByFormatters()
     {
-        $generator = new Generator();
-        $provider = new FooProvider();
-        $generator->addProvider($provider);
-        $this->assertEquals('This is foobar a text with foobar', $generator->parse('This is {{fooFormatter}} a text with {{ fooFormatter }}'));
+        $this->faker->addProvider(new FooProvider());
+        self::assertEquals('This is foobar a text with foobar', $this->faker->parse('This is {{fooFormatter}} a text with {{ fooFormatter }}'));
     }
 
     public function testMagicGetCallsFormat()
     {
-        $generator = new Generator();
-        $provider = new FooProvider();
-        $generator->addProvider($provider);
-        $this->assertEquals('foobar', $generator->fooFormatter);
+        $this->faker->addProvider(new FooProvider());
+        self::assertEquals('foobar', $this->faker->fooFormatter);
     }
 
     public function testMagicCallCallsFormat()
     {
-        $generator = new Generator();
-        $provider = new FooProvider();
-        $generator->addProvider($provider);
-        $this->assertEquals('foobar', $generator->fooFormatter());
+        $this->faker->addProvider(new FooProvider());
+        self::assertEquals('foobar', $this->faker->fooFormatter());
     }
 
     public function testMagicCallCallsFormatWithArguments()
     {
-        $generator = new Generator();
-        $provider = new FooProvider();
-        $generator->addProvider($provider);
-        $this->assertEquals('bazfoo', $generator->fooFormatterWithArguments('foo'));
+        $this->faker->addProvider(new FooProvider());
+        self::assertEquals('bazfoo', $this->faker->fooFormatterWithArguments('foo'));
     }
 
     public function testSeed()
     {
-        $generator = new Generator();
-
-        $generator->seed(0);
+        $this->faker->seed(0);
         $mtRandWithSeedZero = mt_rand();
-        $generator->seed(0);
-        $this->assertEquals($mtRandWithSeedZero, mt_rand(), 'seed(0) should be deterministic.');
+        $this->faker->seed(0);
+        self::assertEquals($mtRandWithSeedZero, mt_rand(), 'seed(0) should be deterministic.');
 
-        $generator->seed();
+        $this->faker->seed();
         $mtRandWithoutSeed = mt_rand();
-        $this->assertNotEquals($mtRandWithSeedZero, $mtRandWithoutSeed, 'seed() should be different than seed(0)');
-        $generator->seed();
-        $this->assertNotEquals($mtRandWithoutSeed, mt_rand(), 'seed() should not be deterministic.');
+        self::assertNotEquals($mtRandWithSeedZero, $mtRandWithoutSeed, 'seed() should be different than seed(0)');
+        $this->faker->seed();
+        self::assertNotEquals($mtRandWithoutSeed, mt_rand(), 'seed() should not be deterministic.');
 
-        $generator->seed('10');
-        $this->assertTrue(true, 'seeding with a non int value doesn\'t throw an exception');
+        $this->faker->seed('10');
+        self::assertTrue(true, 'seeding with a non int value doesn\'t throw an exception');
     }
 }
 

@@ -2,26 +2,12 @@
 
 namespace Faker\Test\Provider\fi_FI;
 
-use Faker\Generator;
 use Faker\Provider\DateTime;
 use Faker\Provider\fi_FI\Person;
 use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
-    /**
-     * @var Generator
-     */
-    private $faker;
-
-    protected function setUp(): void
-    {
-        $faker = new Generator();
-        $faker->addProvider(new DateTime($faker));
-        $faker->addProvider(new Person($faker));
-        $this->faker = $faker;
-    }
-
     public function provideSeedAndExpectedReturn()
     {
         return [
@@ -41,7 +27,7 @@ final class PersonTest extends TestCase
         $faker = $this->faker;
         $faker->seed($seed);
         $pin = $faker->personalIdentityNumber(\DateTime::createFromFormat('Y-m-d', $birthdate));
-        $this->assertEquals($expected, $pin);
+        self::assertEquals($expected, $pin);
     }
 
     public function testPersonalIdentityNumberGeneratesCompliantNumbers()
@@ -52,7 +38,7 @@ final class PersonTest extends TestCase
             for ($i = 0; $i < 10; $i++) {
                 $birthdate = $this->faker->dateTimeBetween('1800-01-01 00:00:00', '1899-12-31 23:59:59');
                 $pin = $this->faker->personalIdentityNumber($birthdate, null, true);
-                $this->assertMatchesRegularExpression('/^[0-9]{6}\+[0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
+                self::assertMatchesRegularExpression('/^[0-9]{6}\+[0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
             }
         } else { // timestamp limit for 32-bit computer
             $min="1902";
@@ -61,24 +47,30 @@ final class PersonTest extends TestCase
         for ($i = 0; $i < 10; $i++) {
             $birthdate = $this->faker->dateTimeBetween("$min-01-01 00:00:00", '1999-12-31 23:59:59');
             $pin = $this->faker->personalIdentityNumber($birthdate);
-            $this->assertMatchesRegularExpression('/^[0-9]{6}-[0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
+            self::assertMatchesRegularExpression('/^[0-9]{6}-[0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
         }
         for ($i = 0; $i < 10; $i++) {
             $birthdate = $this->faker->dateTimeBetween('2000-01-01 00:00:00', "$max-12-31 23:59:59");
             $pin = $this->faker->personalIdentityNumber($birthdate);
-            $this->assertMatchesRegularExpression('/^[0-9]{6}A[0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
+            self::assertMatchesRegularExpression('/^[0-9]{6}A[0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
         }
     }
 
     public function testPersonalIdentityNumberGeneratesOddValuesForMales()
     {
         $pin = $this->faker->personalIdentityNumber(null, 'male');
-        $this->assertEquals(1, $pin[9] % 2);
+        self::assertEquals(1, $pin[9] % 2);
     }
 
     public function testPersonalIdentityNumberGeneratesEvenValuesForFemales()
     {
         $pin = $this->faker->personalIdentityNumber(null, 'female');
-        $this->assertEquals(0, $pin[9] % 2);
+        self::assertEquals(0, $pin[9] % 2);
+    }
+
+    protected function getProviders(): iterable
+    {
+        yield new Person($this->faker);
+        yield new DateTime($this->faker);
     }
 }

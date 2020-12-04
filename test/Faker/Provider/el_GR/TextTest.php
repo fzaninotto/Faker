@@ -24,32 +24,32 @@ final class TextTest extends TestCase
 
     public function testItShouldAppendEndPunctToTheEndOfString()
     {
-        $this->assertSame(
+        self::assertSame(
             'Και δεν άκουσες το κλοπακλόπ, κλοπακλόπ, κλοπακλόπ.',
             $this->getMethod('appendEnd')->invokeArgs(null, ['Και δεν άκουσες το κλοπακλόπ, κλοπακλόπ, κλοπακλόπ '])
         );
 
-        $this->assertSame(
+        self::assertSame(
             'Και δεν άκουσες το κλοπακλόπ, κλοπακλόπ, κλοπακλόπ.',
             $this->getMethod('appendEnd')->invokeArgs(null, ['Και δεν άκουσες το κλοπακλόπ, κλοπακλόπ, κλοπακλόπ—'])
         );
 
-        $this->assertSame(
+        self::assertSame(
             'Και δεν άκουσες το κλοπακλόπ, κλοπακλόπ, κλοπακλόπ.',
             $this->getMethod('appendEnd')->invokeArgs(null, ['Και δεν άκουσες το κλοπακλόπ, κλοπακλόπ, κλοπακλόπ,'])
         );
 
-        $this->assertSame(
+        self::assertSame(
             'Και δεν άκουσες το κλοπακλόπ, κλοπακλόπ, κλοπακλόπ!.',
             $this->getMethod('appendEnd')->invokeArgs(null, ['Και δεν άκουσες το κλοπακλόπ, κλοπακλόπ, κλοπακλόπ! '])
         );
 
-        $this->assertSame(
+        self::assertSame(
             'Και δεν άκουσες το κλοπακλόπ, κλοπακλόπ, κλοπακλόπ.',
             $this->getMethod('appendEnd')->invokeArgs(null, ['Και δεν άκουσες το κλοπακλόπ, κλοπακλόπ, κλοπακλόπ; '])
         );
 
-        $this->assertSame(
+        self::assertSame(
             'Και δεν άκουσες το κλοπακλόπ, κλοπακλόπ, κλοπακλόπ.',
             $this->getMethod('appendEnd')->invokeArgs(null, ['Και δεν άκουσες το κλοπακλόπ, κλοπακλόπ, κλοπακλόπ: '])
         );

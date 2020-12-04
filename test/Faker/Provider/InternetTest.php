@@ -2,7 +2,6 @@
 
 namespace Faker\Test\Provider;
 
-use Faker\Generator;
 use Faker\Provider\Company;
 use Faker\Provider\Internet;
 use Faker\Provider\Lorem;
@@ -11,21 +10,6 @@ use Faker\Test\TestCase;
 
 final class InternetTest extends TestCase
 {
-    /**
-     * @var Generator
-     */
-    private $faker;
-
-    protected function setUp(): void
-    {
-        $faker = new Generator();
-        $faker->addProvider(new Lorem($faker));
-        $faker->addProvider(new Person($faker));
-        $faker->addProvider(new Internet($faker));
-        $faker->addProvider(new Company($faker));
-        $this->faker = $faker;
-    }
-
     public function localeDataProvider()
     {
         $providerPath = realpath(__DIR__ . '/../../../src/Faker/Provider');
@@ -45,7 +29,7 @@ final class InternetTest extends TestCase
     public function testEmailIsValid($locale)
     {
         $this->loadLocalProviders($locale);
-        $this->assertNotFalse(filter_var($this->faker->email(), FILTER_VALIDATE_EMAIL));
+        self::assertNotFalse(filter_var($this->faker->email(), FILTER_VALIDATE_EMAIL));
     }
 
     /**
@@ -56,7 +40,7 @@ final class InternetTest extends TestCase
         $this->loadLocalProviders($locale);
         $pattern = '/^[A-Za-z0-9]+([._][A-Za-z0-9]+)*$/';
         $username = $this->faker->username();
-        $this->assertMatchesRegularExpression($pattern, $username);
+        self::assertMatchesRegularExpression($pattern, $username);
     }
 
     /**
@@ -67,7 +51,7 @@ final class InternetTest extends TestCase
         $this->loadLocalProviders($locale);
         $pattern = '/^[a-z]+(\.[a-z]+)+$/';
         $domainName = $this->faker->domainName();
-        $this->assertMatchesRegularExpression($pattern, $domainName);
+        self::assertMatchesRegularExpression($pattern, $domainName);
     }
 
     /**
@@ -78,7 +62,7 @@ final class InternetTest extends TestCase
         $this->loadLocalProviders($locale);
         $pattern = '/^[a-z]+$/';
         $domainWord = $this->faker->domainWord();
-        $this->assertMatchesRegularExpression($pattern, $domainWord);
+        self::assertMatchesRegularExpression($pattern, $domainWord);
     }
 
     public function loadLocalProviders($locale)
@@ -100,14 +84,14 @@ final class InternetTest extends TestCase
 
     public function testPasswordIsValid()
     {
-        $this->assertMatchesRegularExpression('/^.{6}$/', $this->faker->password(6, 6));
+        self::assertMatchesRegularExpression('/^.{6}$/', $this->faker->password(6, 6));
     }
 
     public function testSlugIsValid()
     {
         $pattern = '/^[a-z0-9-]+$/';
         $slug = $this->faker->slug();
-        $this->assertSame(preg_match($pattern, $slug), 1);
+        self::assertSame(preg_match($pattern, $slug), 1);
     }
 
     public function testSlugWithoutVariableNbWordsProducesValidSlug()
@@ -131,36 +115,44 @@ final class InternetTest extends TestCase
 
     public function testUrlIsValid()
     {
-        $this->assertNotFalse(filter_var($this->faker->url(), FILTER_VALIDATE_URL));
+        self::assertNotFalse(filter_var($this->faker->url(), FILTER_VALIDATE_URL));
     }
 
     public function testLocalIpv4()
     {
-        $this->assertNotFalse(filter_var($this->faker->localIpv4(), FILTER_VALIDATE_IP, FILTER_FLAG_IPV4));
+        self::assertNotFalse(filter_var($this->faker->localIpv4(), FILTER_VALIDATE_IP, FILTER_FLAG_IPV4));
     }
 
     public function testIpv4()
     {
-        $this->assertNotFalse(filter_var($this->faker->ipv4(), FILTER_VALIDATE_IP, FILTER_FLAG_IPV4));
+        self::assertNotFalse(filter_var($this->faker->ipv4(), FILTER_VALIDATE_IP, FILTER_FLAG_IPV4));
     }
 
     public function testIpv4NotLocalNetwork()
     {
-        $this->assertDoesNotMatchRegularExpression('/\A0\./', $this->faker->ipv4());
+        self::assertDoesNotMatchRegularExpression('/\A0\./', $this->faker->ipv4());
     }
 
     public function testIpv4NotBroadcast()
     {
-        $this->assertNotEquals('255.255.255.255', $this->faker->ipv4());
+        self::assertNotEquals('255.255.255.255', $this->faker->ipv4());
     }
 
     public function testIpv6()
     {
-        $this->assertNotFalse(filter_var($this->faker->ipv6(), FILTER_VALIDATE_IP, FILTER_FLAG_IPV6));
+        self::assertNotFalse(filter_var($this->faker->ipv6(), FILTER_VALIDATE_IP, FILTER_FLAG_IPV6));
     }
 
     public function testMacAddress()
     {
-        $this->assertNotFalse(filter_var($this->faker->macAddress(), FILTER_VALIDATE_MAC));
+        self::assertNotFalse(filter_var($this->faker->macAddress(), FILTER_VALIDATE_MAC));
+    }
+
+    protected function getProviders(): iterable
+    {
+        yield new Lorem($this->faker);
+        yield new Person($this->faker);
+        yield new Internet($this->faker);
+        yield new Company($this->faker);
     }
 }

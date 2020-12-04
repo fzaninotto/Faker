@@ -2,29 +2,21 @@
 
 namespace Faker\Test\Provider\en_ZA;
 
-use Faker\Generator;
 use Faker\Provider\en_ZA\Company;
 use Faker\Test\TestCase;
 
 final class CompanyTest extends TestCase
 {
-    /**
-     * @var Generator
-     */
-    private $faker;
-
-    protected function setUp(): void
-    {
-        $faker = new Generator();
-        $faker->addProvider(new Company($faker));
-        $this->faker = $faker;
-    }
-
     public function testGenerateValidCompanyNumber()
     {
         $companyRegNo = $this->faker->companyNumber();
 
-        $this->assertEquals(14, strlen($companyRegNo));
-        $this->assertMatchesRegularExpression('#^\d{4}/\d{6}/\d{2}$#', $companyRegNo);
+        self::assertEquals(14, strlen($companyRegNo));
+        self::assertMatchesRegularExpression('#^\d{4}/\d{6}/\d{2}$#', $companyRegNo);
+    }
+
+    protected function getProviders(): iterable
+    {
+        yield new Company($this->faker);
     }
 }

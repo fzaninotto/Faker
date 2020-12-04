@@ -2,68 +2,54 @@
 
 namespace Faker\Test\Provider\en_SG;
 
-use Faker\Factory;
-use Faker\Generator;
 use Faker\Provider\en_SG\Person;
 use Faker\Test\TestCase;
 
 final class PersonTest extends TestCase
 {
-    /**
-     * @var Generator
-     */
-    private $faker;
-
-    protected function setUp(): void
-    {
-        $faker = Factory::create('en_SG');
-        $faker->addProvider(new Person($faker));
-        $this->faker = $faker;
-    }
-
     public function testNric(): void
     {
-        $this->assertValidSingaporeId($this->faker->nric());
+        self::assertValidSingaporeId($this->faker->nric());
     }
 
     public function testNricAfter2000(): void
     {
         $nric = $this->faker->nric(new \DateTime('2005-03-01'));
-        $this->assertMatchesRegularExpression('/^T05[0-9]{5}[A-Z]$/', $nric);
-        $this->assertValidSingaporeId($nric);
+        self::assertMatchesRegularExpression('/^T05[0-9]{5}[A-Z]$/', $nric);
+        self::assertValidSingaporeId($nric);
     }
 
     public function testNricBefore2000(): void
     {
         $nric = $this->faker->nric(new \DateTime('1993-03-01'));
-        $this->assertMatchesRegularExpression('/^S93[0-9]{5}[A-Z]$/', $nric);
-        $this->assertValidSingaporeId($nric);
+        self::assertMatchesRegularExpression('/^S93[0-9]{5}[A-Z]$/', $nric);
+        self::assertValidSingaporeId($nric);
     }
 
     public function testNricBefore1968(): void
     {
         $nric = $this->faker->nric(new \DateTime('1967-12-31'));
-        $this->assertMatchesRegularExpression('/^S0[0-1][0-9]{5}[A-Z]$/', $nric);
-        $this->assertValidSingaporeId($nric);
+        self::assertMatchesRegularExpression('/^S0[0-1][0-9]{5}[A-Z]$/', $nric);
+        self::assertValidSingaporeId($nric);
     }
 
     public function testFin(): void
     {
-        $this->assertValidSingaporeId($this->faker->fin());
+        self::assertValidSingaporeId($this->faker->fin());
     }
 
     public function testFinAfter2000(): void
     {
         $fin = $this->faker->fin(new \DateTime('2005-03-01'));
-        $this->assertMatchesRegularExpression('/^G[0-9]{7}[A-Z]$/', $fin);
-        $this->assertValidSingaporeId($fin);
+        self::assertMatchesRegularExpression('/^G[0-9]{7}[A-Z]$/', $fin);
+        self::assertValidSingaporeId($fin);
     }
 
     public function testFinBefore2000(): void
     {
         $fin = $this->faker->fin(new \DateTime('1993-03-01'));
-        $this->assertMatchesRegularExpression('/^F[0-9]{7}[A-Z]$/', $fin);
-        $this->assertValidSingaporeId($fin);
+        self::assertMatchesRegularExpression('/^F[0-9]{7}[A-Z]$/', $fin);
+        self::assertValidSingaporeId($fin);
     }
 
     public function assertValidSingaporeId(string $id): void
@@ -80,6 +66,11 @@ final class PersonTest extends TestCase
             ? ['X', 'W', 'U', 'T', 'R', 'Q', 'P', 'N', 'M', 'L', 'K']
             : ['J', 'Z', 'I', 'H', 'G', 'F', 'E', 'D', 'C', 'B', 'A'];
 
-        $this->assertSame($checksumArr[$checksum % 11], $id[8], sprintf('Invalid checksum for NRIC/FIN: %s', $id));
+        self::assertSame($checksumArr[$checksum % 11], $id[8], sprintf('Invalid checksum for NRIC/FIN: %s', $id));
+    }
+
+    protected function getProviders(): iterable
+    {
+        yield new Person($this->faker);
     }
 }

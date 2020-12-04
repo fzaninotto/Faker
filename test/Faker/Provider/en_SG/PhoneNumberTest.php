@@ -2,25 +2,11 @@
 
 namespace Faker\Test\Provider\en_SG;
 
-use Faker\Factory;
-use Faker\Generator;
 use Faker\Provider\en_SG\PhoneNumber;
 use Faker\Test\TestCase;
 
 final class PhoneNumberTest extends TestCase
 {
-    /**
-     * @var Generator
-     */
-    private $faker;
-
-    protected function setUp(): void
-    {
-        $this->faker = Factory::create('en_SG');
-        $this->faker->seed(1);
-        $this->faker->addProvider(new PhoneNumber($this->faker));
-    }
-
     // http://en.wikipedia.org/wiki/Telephone_numbers_in_Singapore#Numbering_plan
     // x means 0 to 9
     // y means 0 to 8 only
@@ -32,7 +18,7 @@ final class PhoneNumberTest extends TestCase
             $startsWith9 = preg_match('/^(\+65|65)?\s*9/', $mobileNumber);
         }
 
-        $this->assertMatchesRegularExpression('/^(\+65|65)?\s*9\s*[0-8]\d{2}\s*\d{4}$/', $mobileNumber);
+        self::assertMatchesRegularExpression('/^(\+65|65)?\s*9\s*[0-8]\d{2}\s*\d{4}$/', $mobileNumber);
     }
 
     // http://en.wikipedia.org/wiki/Telephone_numbers_in_Singapore#Numbering_plan
@@ -45,7 +31,12 @@ final class PhoneNumberTest extends TestCase
             $mobileNumber = $this->faker->mobileNumber();
             $startsWith8 = preg_match('/^(\+65|65)?\s*8/', $mobileNumber);
         }
-        $this->assertMatchesRegularExpression('/^(\+65|65)?\s*8\s*[1-8]\d{2}\s*\d{4}$/', $mobileNumber);
+        self::assertMatchesRegularExpression('/^(\+65|65)?\s*8\s*[1-8]\d{2}\s*\d{4}$/', $mobileNumber);
+    }
+
+    protected function getProviders(): iterable
+    {
+        yield new PhoneNumber($this->faker);
     }
 
     public function testTollFreeInternationalNumber()

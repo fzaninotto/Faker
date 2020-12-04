@@ -2,50 +2,43 @@
 
 namespace Faker\Test\Provider\nb_NO;
 
-use Faker\Generator;
 use Faker\Provider\nb_NO\PhoneNumber;
 use Faker\Test\TestCase;
 
 final class PhoneNumberTest extends TestCase
 {
-    /**
-     * @var Generator
-     */
-    private $faker;
-
-    protected function setUp(): void
-    {
-        $faker = new Generator();
-        $faker->addProvider(new PhoneNumber($faker));
-        $this->faker = $faker;
-    }
-
     public function testMobileNumber()
     {
         for ($i = 0; $i < 10; $i++) {
             $number = $this->faker->mobileNumber;
+            $length = strlen($number);
 
             // Check that number starts with 4 or 9 when country code is included
-            if (strlen($number) === 11) {
+            if ($length === 11) {
                 $testChar = substr($number, 3, 1);
-                $this->assertEquals(11, strlen($number));
-                $this->assertContains((int) $testChar, [4, 9]);
-                $this->assertMatchesRegularExpression('/^\+47[49]{1}[0-9]{7}$/', $number);
+                self::assertEquals(11, strlen($number));
+                self::assertContains((int) $testChar, [4, 9]);
+                self::assertMatchesRegularExpression('/^\+47[49]{1}[0-9]{7}$/', $number);
             }
 
             // Check numbers start with 4 or 9 when no country code is included
-            if (strlen($number) === 10 || strlen($number) === 8) {
+            if ($length === 10 || $length === 8) {
                 $testChar = substr($number, 0, 1);
-                $this->assertContains((int) $testChar, [4, 9]);
+                self::assertContains((int) $testChar, [4, 9]);
             }
 
-            if (strlen($number) === 10) {
-                $this->assertMatchesRegularExpression('/^[49]{1}[0-9]{2} [0-9]{2} [0-9]{3}$/', $number);
+            if ($length === 10) {
+                self::assertMatchesRegularExpression('/^[49]{1}[0-9]{2} [0-9]{2} [0-9]{3}$/', $number);
             }
 
-            if (strlen($number) === 8) {
-                $this->assertMatchesRegularExpression('/^[49]{1}[0-9]{7}$/', $number);
+            if ($length === 8) {
+                self::assertMatchesRegularExpression('/^[49]{1}[0-9]{7}$/', $number);
             }
         }
+    }
+
+    protected function getProviders(): iterable
+    {
+        yield new PhoneNumber($this->faker);
     }
 }
