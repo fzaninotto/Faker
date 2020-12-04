@@ -181,9 +181,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      */
     public function fixedLineNumber()
     {
-        return static::numerify($this->generator->parse(
+        return ltrim(static::numerify($this->generator->parse(
             static::randomElement(static::$fixedLineFormats)
-        ));
+        )));
     }
 
     /**
@@ -210,9 +210,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      */
     public function mobileNumber()
     {
-        return static::numerify($this->generator->parse(
+        return ltrim(static::numerify($this->generator->parse(
             static::randomElement(static::$mobileFormats)
-        ));
+        )));
     }
 
     /**
@@ -240,9 +240,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      */
     public function personalNumber()
     {
-        return static::numerify($this->generator->parse(
+        return ltrim(static::numerify($this->generator->parse(
             static::randomElement(static::$personalFormats)
-        ));
+        )));
     }
 
     /**
@@ -257,11 +257,11 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      */
     public static function tollFreeNumber()
     {
-        return static::numerify(
+        return ltrim(static::numerify(
             strtr(static::randomElement(static::$tollFreeFormats), [
                 '{{internationalCodePrefix}}' => static::internationalCodePrefix(),
             ])
-        );
+        ));
     }
 
     /**
@@ -288,9 +288,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      */
     public function sharedCostNumber()
     {
-        return static::numerify($this->generator->parse(
+        return ltrim(static::numerify($this->generator->parse(
             static::randomElement(static::$sharedCostFormats)
-        ));
+        )));
     }
 
     /**
@@ -317,8 +317,8 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      */
     public function premiumRateNumber()
     {
-        return static::numerify($this->generator->parse(
+        return ltrim(static::numerify($this->generator->parse(
             static::randomElement(static::$premiumRateFormats)
-        ));
+        )));
     }
 }
