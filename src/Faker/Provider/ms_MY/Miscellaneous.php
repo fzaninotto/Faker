@@ -164,6 +164,6 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
      */
     public static function numberSequence()
     {
-        return mt_rand(1, 9999);
+        return self::numberBetween(1, 9999);
     }
 }

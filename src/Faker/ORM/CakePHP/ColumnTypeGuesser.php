@@ -25,12 +25,12 @@ class ColumnTypeGuesser
                     return $generator->boolean;
                 };
             case 'integer':
-                return function () {
-                    return mt_rand(0, intval('2147483647'));
+                return function () use ($generator) {
+                    return $generator->numberBetween(0, 2147483647);
                 };
             case 'biginteger':
-                return function () {
-                    return mt_rand(0, intval('9223372036854775807'));
+                return function () use ($generator) {
+                    return $generator->numberBetween(0, PHP_INT_MAX);
                 };
             case 'decimal':
             case 'float':

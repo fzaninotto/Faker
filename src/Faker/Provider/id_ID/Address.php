@@ -312,6 +312,6 @@ class Address extends \Faker\Provider\Address
 
     public static function buildingNumber()
     {
-        return static::numberBetween(1, 999);
+        return self::numberBetween(1, 999);
     }
 }

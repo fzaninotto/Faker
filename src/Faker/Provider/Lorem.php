@@ -198,6 +198,6 @@ class Lorem extends Base
 
     protected static function randomizeNbElements($nbElements)
     {
-        return (int) ($nbElements * mt_rand(60, 140) / 100) + 1;
+        return (int) ($nbElements * self::numberBetween(60, 140) / 100) + 1;
     }
 }

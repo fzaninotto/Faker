@@ -264,7 +264,7 @@ class Person extends \Faker\Provider\Person
      */
     public function lastName()
     {
-        $determinator = static::numberBetween(0, 25);
+        $determinator = self::numberBetween(0, 25);
         if ($determinator === 0) {
             $lastName = static::randomElement(static::$longLastNames);
         } elseif ($determinator <= 10) {
@@ -328,7 +328,7 @@ class Person extends \Faker\Provider\Person
         while (count($nr) < 8) {
             $nr[] = static::randomDigit();
         }
-        $nr[] = mt_rand(0, 6);
+        $nr[] = self::numberBetween(0, 6);
         if ($nr[7] == 0 && $nr[8] == 0) {
             $nr[7] = 0;
         }

@@ -72,7 +72,7 @@ class Address extends \Faker\Provider\Address
      */
     public static function postcode1()
     {
-        return static::numberBetween(100, 999);
+        return self::numberBetween(100, 999);
     }
 
     /**
@@ -80,7 +80,7 @@ class Address extends \Faker\Provider\Address
      */
     public static function postcode2()
     {
-        return static::numberBetween(1000, 9999);
+        return self::numberBetween(1000, 9999);
     }
 
     /**
@@ -120,12 +120,12 @@ class Address extends \Faker\Provider\Address
      */
     public static function areaNumber()
     {
-        return static::numberBetween(1, 10);
+        return self::numberBetween(1, 10);
     }
 
     public static function buildingNumber()
     {
-        return static::numberBetween(101, 110);
+        return self::numberBetween(101, 110);
     }
 
     public function secondaryAddress()

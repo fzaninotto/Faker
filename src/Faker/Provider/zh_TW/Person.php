@@ -150,12 +150,12 @@ class Person extends \Faker\Provider\Person
 
     public static function firstNameMale()
     {
-        return static::randomName(static::$characterMale, mt_rand(1, 2));
+        return static::randomName(static::$characterMale, self::numberBetween(1, 2));
     }
 
     public static function firstNameFemale()
     {
-        return static::randomName(static::$characterFemale, mt_rand(1, 2));
+        return static::randomName(static::$characterFemale, self::numberBetween(1, 2));
     }
 
     public static function suffix()

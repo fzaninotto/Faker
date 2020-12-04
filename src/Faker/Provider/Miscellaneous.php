@@ -238,7 +238,7 @@ class Miscellaneous extends Base
      */
     public static function boolean($chanceOfGettingTrue = 50)
     {
-        return mt_rand(1, 100) <= $chanceOfGettingTrue;
+        return self::numberBetween(1, 100) <= $chanceOfGettingTrue;
     }
 
     /**
@@ -246,7 +246,7 @@ class Miscellaneous extends Base
      */
     public static function md5()
     {
-        return md5(mt_rand());
+        return md5(self::numberBetween());
     }
 
     /**
@@ -254,7 +254,7 @@ class Miscellaneous extends Base
      */
     public static function sha1()
     {
-        return sha1(mt_rand());
+        return sha1(self::numberBetween());
     }
 
     /**
@@ -262,7 +262,7 @@ class Miscellaneous extends Base
      */
     public static function sha256()
     {
-        return hash('sha256', mt_rand());
+        return hash('sha256', self::numberBetween());
     }
 
     /**

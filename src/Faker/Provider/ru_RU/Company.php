@@ -100,7 +100,7 @@ class Company extends \Faker\Provider\Company
     {
         if ($area_code === "" || intval($area_code) == 0) {
             //Simple generation code for areas in Russian without check for valid
-            $area_code = static::numberBetween(1, 91);
+            $area_code = self::numberBetween(1, 91);
         } else {
             $area_code = intval($area_code);
         }

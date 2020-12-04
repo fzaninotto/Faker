@@ -150,7 +150,7 @@ class Person extends \Faker\Provider\Person
     protected function getDateOfBirth($dateOfBirth)
     {
         if (empty($dateOfBirth)) {
-            $dateOfBirthParts = [static::numberBetween(1800, 2099)];
+            $dateOfBirthParts = [self::numberBetween(1800, 2099)];
         } else {
             $dateOfBirthParts = explode('-', $dateOfBirth);
         }

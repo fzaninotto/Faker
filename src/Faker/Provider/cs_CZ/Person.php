@@ -440,12 +440,12 @@ class Person extends \Faker\Provider\Person
 
         $startTimestamp = strtotime("-${maxAge} year");
         $endTimestamp = strtotime("-${minAge} year");
-        $randTimestamp = static::numberBetween($startTimestamp, $endTimestamp);
+        $randTimestamp = self::numberBetween($startTimestamp, $endTimestamp);
 
         $year = intval(date('Y', $randTimestamp));
         $month = intval(date('n', $randTimestamp));
         $day = intval(date('j', $randTimestamp));
-        $suffix = static::numberBetween(0, 999);
+        $suffix = self::numberBetween(0, 999);
 
         // women has +50 to month
         if ($gender == static::GENDER_FEMALE) {

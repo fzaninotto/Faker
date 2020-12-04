@@ -139,7 +139,7 @@ class EntityPopulator
             }
 
             $index = 0;
-            $formatters[$assocName] = function ($inserted) use ($relatedClass, &$index, $unique, $optional) {
+            $formatters[$assocName] = function ($inserted) use ($relatedClass, &$index, $unique, $optional, $generator) {
                 if (isset($inserted[$relatedClass])) {
                     if ($unique) {
                         $related = null;
@@ -152,7 +152,7 @@ class EntityPopulator
                         return $related;
                     }
 
-                    return $inserted[$relatedClass][mt_rand(0, count($inserted[$relatedClass]) - 1)];
+                    return $generator->randomElement($inserted[$relatedClass]);
                 }
 
                 return null;

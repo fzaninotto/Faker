@@ -67,8 +67,8 @@ class EntityPopulator
             }
             if ($columnMap->isForeignKey()) {
                 $relatedClass = $columnMap->getRelation()->getForeignTable()->getClassname();
-                $formatters[$columnMap->getPhpName()] = function ($inserted) use ($relatedClass) {
-                    return isset($inserted[$relatedClass]) ? $inserted[$relatedClass][mt_rand(0, count($inserted[$relatedClass]) - 1)] : null;
+                $formatters[$columnMap->getPhpName()] = function ($inserted) use ($relatedClass, $generator) {
+                    return isset($inserted[$relatedClass]) ? $generator->randomElement($inserted[$relatedClass]) : null;
                 };
                 continue;
             }
@@ -157,9 +157,8 @@ class EntityPopulator
                     };
                     break;
                 case 'sortable':
-                    $modifiers['sortable'] = function ($obj, $inserted) use ($class) {
-                        $maxRank = isset($inserted[$class]) ? count($inserted[$class]) : 0;
-                        $obj->insertAtRank(mt_rand(1, $maxRank + 1));
+                    $modifiers['sortable'] = function ($obj, $inserted) use ($class, $generator) {
+                        $obj->insertAtRank($generator->numberBetween(1, count($inserted[$class] ?? []) + 1));
                     };
                     break;
             }

@@ -71,7 +71,7 @@ class Company extends \Faker\Provider\Company
      */
     public static function vatId()
     {
-        $code = sprintf('%s%03d', static::numerify('#######'), static::numberBetween(1, 121));
+        $code = sprintf('%s%03d', static::numerify('#######'), self::numberBetween(1, 121));
 
         return sprintf('IT%s%d', $code, Luhn::computeCheckDigit($code));
     }

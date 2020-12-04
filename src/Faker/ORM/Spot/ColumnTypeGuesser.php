@@ -43,15 +43,15 @@ class ColumnTypeGuesser
                 };
             case 'integer':
                 return function () use ($generator) {
-                    return $generator->numberBetween(0, intval('2147483647'));
+                    return $generator->numberBetween(0, 2147483647);
                 };
             case 'bigint':
                 return function () use ($generator) {
-                    return $generator->numberBetween(0, intval('18446744073709551615'));
+                    return $generator->numberBetween(0, PHP_INT_MAX);
                 };
             case 'float':
                 return function () use ($generator) {
-                    return $generator->randomFloat(null, 0, intval('4294967295'));
+                    return $generator->randomFloat(null, 0, 4294967295);
                 };
             case 'string':
                 $size = $field['length'] ?? 255;

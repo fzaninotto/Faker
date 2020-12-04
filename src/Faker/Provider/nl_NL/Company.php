@@ -2,6 +2,8 @@
 
 namespace Faker\Provider\nl_NL;
 
+use Faker\Provider\Miscellaneous;
+
 class Company extends \Faker\Provider\Company
 {
     /**
@@ -69,7 +71,7 @@ class Company extends \Faker\Provider\Company
      */
     public function company()
     {
-        $determinator = static::numberBetween(0, 2);
+        $determinator = self::numberBetween(0, 2);
         switch ($determinator) {
             case 0:
                 $companyName = static::randomElement(static::$product) . ' ' . static::randomElement(static::$type);
@@ -82,7 +84,7 @@ class Company extends \Faker\Provider\Company
                 break;
         }
 
-        if (0 !== static::numberBetween(0, 1)) {
+        if (Miscellaneous::boolean()) {
             return $companyName . ' ' . static::randomElement(static::$companySuffix);
         }
 

@@ -2,14 +2,19 @@
 
 namespace Faker\ORM\Mandango;
 
+use Faker\Generator;
+
 class ColumnTypeGuesser
 {
+    /**
+     * @var Generator
+     */
     protected $generator;
 
     /**
-     * @param \Faker\Generator $generator
+     * @param Generator $generator
      */
-    public function __construct(\Faker\Generator $generator)
+    public function __construct(Generator $generator)
     {
         $this->generator = $generator;
     }
@@ -26,12 +31,12 @@ class ColumnTypeGuesser
                     return $generator->boolean;
                 };
             case 'integer':
-                return function () {
-                    return mt_rand(0, intval('4294967295'));
+                return function () use ($generator) {
+                    return $generator->numberBetween(0, 4294967295);
                 };
             case 'float':
-                return function () {
-                    return mt_rand(0, intval('4294967295')) / mt_rand(1, intval('4294967295'));
+                return function () use ($generator) {
+                    return $generator->randomFloat();
                 };
             case 'string':
                 return function () use ($generator) {
@@ -39,7 +44,7 @@ class ColumnTypeGuesser
                 };
             case 'date':
                 return function () use ($generator) {
-                    return $generator->datetime;
+                    return $generator->dateTime;
                 };
             default:
                 // no smart way to guess what the user expects here

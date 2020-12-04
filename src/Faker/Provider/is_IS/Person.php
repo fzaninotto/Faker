@@ -2,6 +2,8 @@
 
 namespace Faker\Provider\is_IS;
 
+use Faker\Provider\DateTime;
+
 /**
  * @author Birkir Gudjonsson <birkir.gudjonsson@gmail.com>
  */
@@ -101,7 +103,7 @@ class Person extends \Faker\Provider\Person
     public static function ssn()
     {
         // random birth date
-        $birthdate = new \DateTime('@' . mt_rand(0, time()));
+        $birthdate = DateTime::dateTimeThisCentury();
 
         // last four buffer
         $lastFour = null;

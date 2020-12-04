@@ -2,6 +2,8 @@
 
 namespace Faker\Provider\da_DK;
 
+use Faker\Provider\DateTime;
+
 /**
  * @link http://www.danskernesnavne.navneforskning.ku.dk/Personnavne.asp
  *
@@ -188,7 +190,7 @@ class Person extends \Faker\Provider\Person
      */
     public static function cpr()
     {
-        $birthdate = new \DateTime('@' . mt_rand(0, time()));
+        $birthdate = DateTime::dateTimeThisCentury();
 
         return sprintf('%s-%s', $birthdate->format('dmy'), static::numerify('%###'));
     }

@@ -256,7 +256,7 @@ class Payment extends Base
             switch ($class) {
                 default:
                 case 'c':
-                    $result .= mt_rand(0, 100) <= 50 ? static::randomDigit() : strtoupper(static::randomLetter());
+                    $result .= Miscellaneous::boolean() ? static::randomDigit() : strtoupper(static::randomLetter());
                     break;
                 case 'a':
                     $result .= strtoupper(static::randomLetter());

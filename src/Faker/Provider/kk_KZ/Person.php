@@ -211,7 +211,7 @@ class Person extends \Faker\Provider\Person
         }
 
         do {
-            $population = mt_rand(1000, 2000);
+            $population = self::numberBetween(1000, 2000);
             $century = self::getCenturyByYear((int) $birthDate->format('Y'));
 
             $iin = $birthDate->format('ymd');

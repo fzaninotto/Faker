@@ -775,7 +775,7 @@ class Person extends \Faker\Provider\Person
     public static function myKadNumber($gender = null, $hyphen = false)
     {
         // year of birth
-        $yy = mt_rand(0, 99);
+        $yy = self::numberBetween(0, 99);
 
         // month of birth
         $mm = DateTime::month();
@@ -784,14 +784,14 @@ class Person extends \Faker\Provider\Person
         $dd = DateTime::dayOfMonth();
 
         // place of birth (1-59 except 17-20)
-        while (in_array($pb = mt_rand(1, 59), [17, 18, 19, 20])) {
+        while (in_array($pb = self::numberBetween(1, 59), [17, 18, 19, 20])) {
         }
 
         // random number
-        $nnn = mt_rand(0, 999);
+        $nnn = self::numberBetween(0, 999);
 
         // gender digit. Odd = MALE, Even = FEMALE
-        $g = mt_rand(0, 9);
+        $g = self::numberBetween(0, 9);
         //Credit: https://gist.github.com/mauris/3629548
         if ($gender === static::GENDER_MALE) {
             $g = $g | 1;

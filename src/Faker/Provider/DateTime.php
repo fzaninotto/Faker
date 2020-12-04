@@ -35,7 +35,7 @@ class DateTime extends Base
      */
     public static function unixTime($max = 'now')
     {
-        return mt_rand(0, static::getMaxTimestamp($max));
+        return self::numberBetween(0, static::getMaxTimestamp($max));
     }
 
     /**
@@ -70,7 +70,7 @@ class DateTime extends Base
     {
         $min = (PHP_INT_SIZE > 4 ? -62135597361 : -PHP_INT_MAX);
         return static::setTimezone(
-            new \DateTime('@' . mt_rand($min, static::getMaxTimestamp($max))),
+            new \DateTime('@' . self::numberBetween($min, static::getMaxTimestamp($max))),
             $timezone
         );
     }
@@ -134,7 +134,7 @@ class DateTime extends Base
             throw new \InvalidArgumentException('Start date must be anterior to end date.');
         }
 
-        $timestamp = mt_rand($startTimestamp, $endTimestamp);
+        $timestamp = self::numberBetween($startTimestamp, $endTimestamp);
 
         return static::setTimezone(
             new \DateTime('@' . $timestamp),
