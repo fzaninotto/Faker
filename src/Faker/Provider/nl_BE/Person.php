@@ -98,7 +98,7 @@ class Person extends \Faker\Provider\Person
         $dob = sprintf('%06d', $date->format('ymd'));
         $help = $date->format('Y') >= 2000 ? 2 : null;
 
-        $check = intval($help . $dob . $middle);
+        $check = (int) ($help . $dob . $middle);
         $rest = sprintf('%02d', 97 - ($check % 97));
 
         return $dob . $middle . $rest;

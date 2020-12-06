@@ -442,9 +442,9 @@ class Person extends \Faker\Provider\Person
         $endTimestamp = strtotime("-${minAge} year");
         $randTimestamp = self::numberBetween($startTimestamp, $endTimestamp);
 
-        $year = intval(date('Y', $randTimestamp));
-        $month = intval(date('n', $randTimestamp));
-        $day = intval(date('j', $randTimestamp));
+        $year = (int) (date('Y', $randTimestamp));
+        $month = (int) (date('n', $randTimestamp));
+        $day = (int) (date('j', $randTimestamp));
         $suffix = self::numberBetween(0, 999);
 
         // women has +50 to month

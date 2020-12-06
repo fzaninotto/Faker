@@ -11,6 +11,7 @@ enabled:
   - implode_call
   - magic_constant_casing
   - magic_method_casing
+  - modernize_types_casting
   - no_alias_functions
   - no_empty_statement
   - no_unneeded_curly_braces
