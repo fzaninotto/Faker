@@ -29,7 +29,7 @@ final class PersonTest extends TestCase
 
     public function testLicenceCode()
     {
-        $validLicenceCodes = ['AM', 'A1', 'A2', 'A','B', 'B+E', 'C1', 'C1+E', 'C', 'C+E', 'D1', 'D1+E', 'D', 'D+E'];
+        $validLicenceCodes = ['AM', 'A1', 'A2', 'A', 'B', 'B+E', 'C1', 'C1+E', 'C', 'C+E', 'D1', 'D1+E', 'D', 'D+E'];
 
         self::assertContains($this->faker->licenceCode, $validLicenceCodes);
     }

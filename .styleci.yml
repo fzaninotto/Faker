@@ -47,6 +47,7 @@ enabled:
   - short_array_syntax
   - standardize_not_equals
   - ternary_to_null_coalescing
+  - whitespace_after_comma_in_array
 
 disabled:
   - no_trailing_whitespace_in_string

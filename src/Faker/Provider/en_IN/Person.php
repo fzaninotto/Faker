@@ -79,36 +79,36 @@ class Person extends \Faker\Provider\Person
      * @link http://genealogy.familyeducation.com/browse/origin/indian
      */
     protected static $lastName = [
-        'Acharya','Agarwal','Agate','Aggarwal','Agrawal','Ahluwalia','Ahuja','Amble','Amin','Anand','Andra','Anne','Anthony','Apte','Arora','Arya','Atwal','Aurora',
-        'Babu','Badal','Badami','Bahl','Bahri','Bail','Bains','Bajaj','Bajwa','Bakshi','Bal','Bala','Balakrishnan','Balan','Balasubramanian','Balay','Bali','Bandi','Banerjee','Banik','Bansal','Barad','Baral','Baria','Barman','Basak','Bassi','Basu','Bath','Batra','Batta','Bava','Bawa','Bedi','Beharry','Behl','Ben','Bera','Bhagat','Bhakta','Bhalla','Bhandari','Bhardwaj','Bhargava','Bhasin','Bhat','Bhatia','Bhatnagar','Bhatt','Bhattacharyya','Bhatti','Bhavsar','Bir','Biswas','Biyani','Binnani','Boase','Bobal','Bora','Borah','Borde','Borra','Bose','Brahmbhatt','Brar','Buch','Bumb','Butala',
-        'Chacko','Chad','Chada','Chadha','Chahal','Chakrabarti','Chakraborty','Chana','Chand','Chanda','Chander','Chandra','Chandran','Char','Chatterjee','Chaudhari','Chaudhary','Chaudhry','Chaudhuri','Chaudry','Chauhan','Chawla','Cheema','Cherian','Chhabra','Chia','Chohan','Chokshi','Chopra','Choudhary','Choudhry','Choudhury','Chowdhury','Comar','Contractor',
-        'Dad','Dada','Dalal','Dani','Dar','Dara','Das','Dasgupta','Dash','Dass','Date','Datta','Dave','Dayal','De','Deep','Deo','Deol','Desai','Deshmukh','Deshpande','Devan','Devi','Dewan','Dey','Dhaliwal','Dhar','Dhawan','Dhillon','Dhingra','Dial','Din','Divan','Dixit','Doctor','Dodiya','Dora','Doshi','Dua','Dube','Dubey','Dugal','Dugar','Dutt','Dutta','D’Alia','Dyal',
+        'Acharya', 'Agarwal', 'Agate', 'Aggarwal', 'Agrawal', 'Ahluwalia', 'Ahuja', 'Amble', 'Amin', 'Anand', 'Andra', 'Anne', 'Anthony', 'Apte', 'Arora', 'Arya', 'Atwal', 'Aurora',
+        'Babu', 'Badal', 'Badami', 'Bahl', 'Bahri', 'Bail', 'Bains', 'Bajaj', 'Bajwa', 'Bakshi', 'Bal', 'Bala', 'Balakrishnan', 'Balan', 'Balasubramanian', 'Balay', 'Bali', 'Bandi', 'Banerjee', 'Banik', 'Bansal', 'Barad', 'Baral', 'Baria', 'Barman', 'Basak', 'Bassi', 'Basu', 'Bath', 'Batra', 'Batta', 'Bava', 'Bawa', 'Bedi', 'Beharry', 'Behl', 'Ben', 'Bera', 'Bhagat', 'Bhakta', 'Bhalla', 'Bhandari', 'Bhardwaj', 'Bhargava', 'Bhasin', 'Bhat', 'Bhatia', 'Bhatnagar', 'Bhatt', 'Bhattacharyya', 'Bhatti', 'Bhavsar', 'Bir', 'Biswas', 'Biyani', 'Binnani', 'Boase', 'Bobal', 'Bora', 'Borah', 'Borde', 'Borra', 'Bose', 'Brahmbhatt', 'Brar', 'Buch', 'Bumb', 'Butala',
+        'Chacko', 'Chad', 'Chada', 'Chadha', 'Chahal', 'Chakrabarti', 'Chakraborty', 'Chana', 'Chand', 'Chanda', 'Chander', 'Chandra', 'Chandran', 'Char', 'Chatterjee', 'Chaudhari', 'Chaudhary', 'Chaudhry', 'Chaudhuri', 'Chaudry', 'Chauhan', 'Chawla', 'Cheema', 'Cherian', 'Chhabra', 'Chia', 'Chohan', 'Chokshi', 'Chopra', 'Choudhary', 'Choudhry', 'Choudhury', 'Chowdhury', 'Comar', 'Contractor',
+        'Dad', 'Dada', 'Dalal', 'Dani', 'Dar', 'Dara', 'Das', 'Dasgupta', 'Dash', 'Dass', 'Date', 'Datta', 'Dave', 'Dayal', 'De', 'Deep', 'Deo', 'Deol', 'Desai', 'Deshmukh', 'Deshpande', 'Devan', 'Devi', 'Dewan', 'Dey', 'Dhaliwal', 'Dhar', 'Dhawan', 'Dhillon', 'Dhingra', 'Dial', 'Din', 'Divan', 'Dixit', 'Doctor', 'Dodiya', 'Dora', 'Doshi', 'Dua', 'Dube', 'Dubey', 'Dugal', 'Dugar', 'Dutt', 'Dutta', 'D’Alia', 'Dyal',
         'Edwin',
-        'Gaba','Gade','Gagrani','Gala','Gandhi','Ganesan','Ganesh','Ganguly','Gara','Garde','Garg','George','Gera','Ghose','Ghosh','Gill','Gobin','Goda','Goel','Gokhale','Gola','Gole','Golla','Gopal','Goswami','Gour','Goyal','Grewal','Grover','Guha','Gulati','Gupta',
-        'Halder','Handa','Hans','Hari','Harjo','Hayer','Hayre','Hegde','Hora',
-        'Inani','Issac','Iyengar','Iyer',
-        'Jacob','Jaggi','Jain','Jani','Jayaraman','Jha','Jhaveri','Johal','Joshi',
-        'Kabra','Kadakia','Kade','Kakar','Kala','Kale','Kalita','Kalla','Kamdar','Kanda','Kannan','Kant','Kapadia','Kapoor','Kapur','Kar','Kara','Karan','Kari','Karnik','Karpe','Kashyap','Kata','Kaul','Kaur','Keer','Khalsa','Khan','Khanna','Khare','Khatri','Khosla','Khurana','Kibe','Kohli','Konda','Korpal','Koshy','Kota','Kothari','Krish','Krishna','Krishnamurthy','Krishnan','Kulkarni','Kumar','Kumer','Kunda','Kurian','Kuruvilla',
-        'Lachman','Lad','Lal','Lala','Lall','Lalla','Lanka','Lata','Lodi','Loke','Loyal','Luthra',
-        'Madan','Magar','Mahabir','Mahadeo','Mahajan','Mahal','Maharaj','Maheshwari','Majumdar','Malhotra','Mall','Mallick','Malpani','Mammen','Mand','Manda','Mandal','Mander','Mane','Mangal','Mangat','Mani','Mann','Mannan','Manne','Maraj','Masih','Master','Mathai','Mathew','Mathur','Matthai','Meda','Mehan','Mehra','Mehrotra','Mehta','Meka','Memon','Menon','Merchant','Minhas','Mishra','Misra','Mistry','Mital','Mitra','Mittal','Mitter','Modi','Mody','Mogul','Mohabir','Mohan','Mohanty','Morar','More','Mukherjee','Mukhopadhyay','Muni','Munshi','Murthy','Murty','Mutti',
-        'Nadig','Nadkarni','Nagar','Nagarajan','Nagi','Nagy','Naidu','Naik','Nair','Nanda','Narain','Narang','Narasimhan','Narayan','Narayanan','Narine','Naruka','Narula','Natarajan','Nath','Natt','Nawal','Nayak','Nayar','Nazareth','Nigam','Nori',
-        'Oak','Om','Oommen','Oza',
-        'Padmanabhan','Pai','Pal','Palan','Pall','Palla','Panchal','Pandey','Pandit','Pandya','Pant','Pardeshi','Parekh','Parikh','Parmar','Parmer','Parsa','Patel','Pathak','Patil','Patla','Pau','Peri','Persad','Persaud','Philip','Pillai','Pillay','Pingle','Prabhakar','Prabhu','Pradhan','Prakash','Prasad','Prashad','Puri','Purohit',
-        'Radhakrishnan','Raghavan','Rai','Raj','Raja','Rajagopal','Rajagopalan','Rajan','Raju','Ram','Rama','Ramachandran','Ramakrishnan','Raman','Ramanathan','Ramaswamy','Ramesh','Ramkissoon','Ramnarine','Rampersad','Rampersaud','Ramroop','Ramson','Rana','Randhawa','Ranganathan','Rao','Rastogi','Ratta','Rattan','Ratti','Rau','Raval','Ravel','Ravi','Ray','Reddy','Rege','Rout','Roy',
-        'Sabharwal','Sachar','Sachdev','Sachdeva','Sagar','Saha','Sahni','Sahota','Saini','Salvi','Sama','Sami','Sampath','Samra','Samuel','Sandal','Sandhu','Sane','Sangha','Sanghvi','Sani','Sankar','Sankaran','Sant','Saraf','Saran','Sarin','Sarkar','Sarma','Sarna','Sarraf','Sastry','Sathe','Savant','Sawhney','Saxena','Sehgal','Sekhon','Sem','Sen','Sengupta','Seshadri','Seth','Sethi','Setty','Sha','Shah','Shan','Shankar','Shanker','Sharaf','Sharma','Shenoy','Shere','Sheth','Shetty','Shroff','Shukla','Sibal','Sidhu','Sing','Singh','Singhal','Sinha','Sodhi','Solanki','Som','Soman','Somani','Sodhani','Soni','Sood','Sridhar','Srinivas','Srinivasan','Srivastava','Subramaniam','Subramanian','Sule','Sundaram','Sunder','Sur','Sura','Surana','Suresh','Suri','Swaminathan','Swamy',
-        'Tailor','Tak','Talwar','Tandon','Taneja','Tank','Tara','Tata','Tella','Thaker','Thakkar','Thakur','Thaman','Thomas','Tiwari','Toor','Tripathi','Trivedi',
-        'Upadhyay','Uppal','Usman',
-        'Vaidya','Vala','Varghese','Varkey','Varma','Varty','Varughese','Vasa','Venkataraman','Venkatesh','Verma','Vig','Virk','Viswanathan','Vohra','Vora','Vyas',
-        'Wable','Wadhwa','Wagle','Wali','Walia','Walla','Warrior','Wason',
-        'Yadav','Yogi','Yohannan',
-        'Zacharia','Zachariah',
+        'Gaba', 'Gade', 'Gagrani', 'Gala', 'Gandhi', 'Ganesan', 'Ganesh', 'Ganguly', 'Gara', 'Garde', 'Garg', 'George', 'Gera', 'Ghose', 'Ghosh', 'Gill', 'Gobin', 'Goda', 'Goel', 'Gokhale', 'Gola', 'Gole', 'Golla', 'Gopal', 'Goswami', 'Gour', 'Goyal', 'Grewal', 'Grover', 'Guha', 'Gulati', 'Gupta',
+        'Halder', 'Handa', 'Hans', 'Hari', 'Harjo', 'Hayer', 'Hayre', 'Hegde', 'Hora',
+        'Inani', 'Issac', 'Iyengar', 'Iyer',
+        'Jacob', 'Jaggi', 'Jain', 'Jani', 'Jayaraman', 'Jha', 'Jhaveri', 'Johal', 'Joshi',
+        'Kabra', 'Kadakia', 'Kade', 'Kakar', 'Kala', 'Kale', 'Kalita', 'Kalla', 'Kamdar', 'Kanda', 'Kannan', 'Kant', 'Kapadia', 'Kapoor', 'Kapur', 'Kar', 'Kara', 'Karan', 'Kari', 'Karnik', 'Karpe', 'Kashyap', 'Kata', 'Kaul', 'Kaur', 'Keer', 'Khalsa', 'Khan', 'Khanna', 'Khare', 'Khatri', 'Khosla', 'Khurana', 'Kibe', 'Kohli', 'Konda', 'Korpal', 'Koshy', 'Kota', 'Kothari', 'Krish', 'Krishna', 'Krishnamurthy', 'Krishnan', 'Kulkarni', 'Kumar', 'Kumer', 'Kunda', 'Kurian', 'Kuruvilla',
+        'Lachman', 'Lad', 'Lal', 'Lala', 'Lall', 'Lalla', 'Lanka', 'Lata', 'Lodi', 'Loke', 'Loyal', 'Luthra',
+        'Madan', 'Magar', 'Mahabir', 'Mahadeo', 'Mahajan', 'Mahal', 'Maharaj', 'Maheshwari', 'Majumdar', 'Malhotra', 'Mall', 'Mallick', 'Malpani', 'Mammen', 'Mand', 'Manda', 'Mandal', 'Mander', 'Mane', 'Mangal', 'Mangat', 'Mani', 'Mann', 'Mannan', 'Manne', 'Maraj', 'Masih', 'Master', 'Mathai', 'Mathew', 'Mathur', 'Matthai', 'Meda', 'Mehan', 'Mehra', 'Mehrotra', 'Mehta', 'Meka', 'Memon', 'Menon', 'Merchant', 'Minhas', 'Mishra', 'Misra', 'Mistry', 'Mital', 'Mitra', 'Mittal', 'Mitter', 'Modi', 'Mody', 'Mogul', 'Mohabir', 'Mohan', 'Mohanty', 'Morar', 'More', 'Mukherjee', 'Mukhopadhyay', 'Muni', 'Munshi', 'Murthy', 'Murty', 'Mutti',
+        'Nadig', 'Nadkarni', 'Nagar', 'Nagarajan', 'Nagi', 'Nagy', 'Naidu', 'Naik', 'Nair', 'Nanda', 'Narain', 'Narang', 'Narasimhan', 'Narayan', 'Narayanan', 'Narine', 'Naruka', 'Narula', 'Natarajan', 'Nath', 'Natt', 'Nawal', 'Nayak', 'Nayar', 'Nazareth', 'Nigam', 'Nori',
+        'Oak', 'Om', 'Oommen', 'Oza',
+        'Padmanabhan', 'Pai', 'Pal', 'Palan', 'Pall', 'Palla', 'Panchal', 'Pandey', 'Pandit', 'Pandya', 'Pant', 'Pardeshi', 'Parekh', 'Parikh', 'Parmar', 'Parmer', 'Parsa', 'Patel', 'Pathak', 'Patil', 'Patla', 'Pau', 'Peri', 'Persad', 'Persaud', 'Philip', 'Pillai', 'Pillay', 'Pingle', 'Prabhakar', 'Prabhu', 'Pradhan', 'Prakash', 'Prasad', 'Prashad', 'Puri', 'Purohit',
+        'Radhakrishnan', 'Raghavan', 'Rai', 'Raj', 'Raja', 'Rajagopal', 'Rajagopalan', 'Rajan', 'Raju', 'Ram', 'Rama', 'Ramachandran', 'Ramakrishnan', 'Raman', 'Ramanathan', 'Ramaswamy', 'Ramesh', 'Ramkissoon', 'Ramnarine', 'Rampersad', 'Rampersaud', 'Ramroop', 'Ramson', 'Rana', 'Randhawa', 'Ranganathan', 'Rao', 'Rastogi', 'Ratta', 'Rattan', 'Ratti', 'Rau', 'Raval', 'Ravel', 'Ravi', 'Ray', 'Reddy', 'Rege', 'Rout', 'Roy',
+        'Sabharwal', 'Sachar', 'Sachdev', 'Sachdeva', 'Sagar', 'Saha', 'Sahni', 'Sahota', 'Saini', 'Salvi', 'Sama', 'Sami', 'Sampath', 'Samra', 'Samuel', 'Sandal', 'Sandhu', 'Sane', 'Sangha', 'Sanghvi', 'Sani', 'Sankar', 'Sankaran', 'Sant', 'Saraf', 'Saran', 'Sarin', 'Sarkar', 'Sarma', 'Sarna', 'Sarraf', 'Sastry', 'Sathe', 'Savant', 'Sawhney', 'Saxena', 'Sehgal', 'Sekhon', 'Sem', 'Sen', 'Sengupta', 'Seshadri', 'Seth', 'Sethi', 'Setty', 'Sha', 'Shah', 'Shan', 'Shankar', 'Shanker', 'Sharaf', 'Sharma', 'Shenoy', 'Shere', 'Sheth', 'Shetty', 'Shroff', 'Shukla', 'Sibal', 'Sidhu', 'Sing', 'Singh', 'Singhal', 'Sinha', 'Sodhi', 'Solanki', 'Som', 'Soman', 'Somani', 'Sodhani', 'Soni', 'Sood', 'Sridhar', 'Srinivas', 'Srinivasan', 'Srivastava', 'Subramaniam', 'Subramanian', 'Sule', 'Sundaram', 'Sunder', 'Sur', 'Sura', 'Surana', 'Suresh', 'Suri', 'Swaminathan', 'Swamy',
+        'Tailor', 'Tak', 'Talwar', 'Tandon', 'Taneja', 'Tank', 'Tara', 'Tata', 'Tella', 'Thaker', 'Thakkar', 'Thakur', 'Thaman', 'Thomas', 'Tiwari', 'Toor', 'Tripathi', 'Trivedi',
+        'Upadhyay', 'Uppal', 'Usman',
+        'Vaidya', 'Vala', 'Varghese', 'Varkey', 'Varma', 'Varty', 'Varughese', 'Vasa', 'Venkataraman', 'Venkatesh', 'Verma', 'Vig', 'Virk', 'Viswanathan', 'Vohra', 'Vora', 'Vyas',
+        'Wable', 'Wadhwa', 'Wagle', 'Wali', 'Walia', 'Walla', 'Warrior', 'Wason',
+        'Yadav', 'Yogi', 'Yohannan',
+        'Zacharia', 'Zachariah',
     ];
 
     /**
      * @link http://www.indianchild.com/indian_middle_names.htm
      */
     protected static $middleNameMale = [
-        'Dev','Chandra','Kumar','Lal','Prasad','Raj','Singh','Rao','Ram','Pratap','Bhai',
+        'Dev', 'Chandra', 'Kumar', 'Lal', 'Prasad', 'Raj', 'Singh', 'Rao', 'Ram', 'Pratap', 'Bhai',
     ];
 
     /**

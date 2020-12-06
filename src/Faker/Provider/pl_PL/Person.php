@@ -84,7 +84,7 @@ class Person extends \Faker\Provider\Person
      *
      * @var string[]
      */
-    protected static $title = ['mgr','inż.', 'dr', 'doc.'];
+    protected static $title = ['mgr', 'inż.', 'dr', 'doc.'];
 
     /**
      * @param string|null $gender 'male', 'female' or null for any

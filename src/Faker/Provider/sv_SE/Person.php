@@ -128,9 +128,9 @@ class Person extends \Faker\Provider\Person
         $datePart = $birthdate->format('ymd');
 
         if ($gender && $gender == static::GENDER_MALE) {
-            $randomDigits = (string) static::numerify('##') . static::randomElement([1,3,5,7,9]);
+            $randomDigits = (string) static::numerify('##') . static::randomElement([1, 3, 5, 7, 9]);
         } elseif ($gender && $gender == static::GENDER_FEMALE) {
-            $randomDigits = (string) static::numerify('##') . static::randomElement([0,2,4,6,8]);
+            $randomDigits = (string) static::numerify('##') . static::randomElement([0, 2, 4, 6, 8]);
         } else {
             $randomDigits = (string) static::numerify('###');
         }

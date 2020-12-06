@@ -42,7 +42,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     ];
 
     protected static $mobileNumberPrefixes = [
-        '0910#######',//mci
+        '0910#######', //mci
         '0911#######',
         '0912#######',
         '0913#######',

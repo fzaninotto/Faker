@@ -19,7 +19,7 @@ class Person extends \Faker\Provider\Person
      * @link https://andela-celisha-wigwe.github.io/names.html
      */
     protected static $firstNameMale = [
-        'Abimbola','Abisola','Abisoye','Adeboye','Adedayo','Adegoke', 'Akande', 'Akanni', 'Alade', 'Ayinde', 'Azubuike',
+        'Abimbola', 'Abisola', 'Abisoye', 'Adeboye', 'Adedayo', 'Adegoke', 'Akande', 'Akanni', 'Alade', 'Ayinde', 'Azubuike',
         'Banji', 'Bankole', 'Buchi', 'Bukola',
         'Chinedu', 'Chisom', 'Chukwu',
         'Damilare', 'Damilola', 'Danjuma',

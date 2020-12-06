@@ -8,7 +8,7 @@ class Company extends \Faker\Provider\Company
         '{{companyName}}',                                      // Вектор
         '{{companyPrefix}} "{{companyName}}"',                  // ТОВ "Інфоком"
         '{{companyName}}-{{companySuffix}}',                    // Сервіс-Плюс
-        '{{companyPrefix}} "{{companyName}}-{{companySuffix}}"',// ПАТ "Альфа-Стиль"
+        '{{companyPrefix}} "{{companyName}}-{{companySuffix}}"', // ПАТ "Альфа-Стиль"
     ];
 
     protected static $urlFormats = [
@@ -16,8 +16,8 @@ class Company extends \Faker\Provider\Company
         '{{companyName}}-{{companySuffix}}',
     ];
 
-    protected static $companyPrefix = ['ТОВ', 'ПП', 'ПАТ','ПрАТ'];
-    protected static $companySuffix = ['Сервіс','Плюс', 'Груп', 'Стиль', 'Дизайн'];
+    protected static $companyPrefix = ['ТОВ', 'ПП', 'ПАТ', 'ПрАТ'];
+    protected static $companySuffix = ['Сервіс', 'Плюс', 'Груп', 'Стиль', 'Дизайн'];
 
     protected static $companyName = [
         'Вектор', 'Едельвейс', 'Смарт', 'Альфа', 'Система', 'Універсал',
@@ -52,7 +52,7 @@ class Company extends \Faker\Provider\Company
         'Фармацевт', 'Фермер', 'Фізик', 'Філолог', 'Фольклорист', 'Формувальник', 'Фотограф', 'Футболіст', 'Флорист', 'Фінансист',
         'Хірург', 'Хімік', 'Художник', 'Хореограф', 'Хормейстер',
         'Шериф', 'Швачка', 'Штукатур',
-        'Ювелір','Юрист'
+        'Ювелір', 'Юрист'
     ];
 
     public function companyUrl()

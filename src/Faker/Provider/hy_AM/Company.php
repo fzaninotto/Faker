@@ -24,7 +24,7 @@ class Company extends \Faker\Provider\Company
 
     ];
 
-    protected static $companySuffix = ['ՍՊԸ','և որդիներ','ՓԲԸ','ԲԲԸ'];
+    protected static $companySuffix = ['ՍՊԸ', 'և որդիներ', 'ՓԲԸ', 'ԲԲԸ'];
 
     /**
      * @example 'Robust full-range hub'

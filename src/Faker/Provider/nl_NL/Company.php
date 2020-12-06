@@ -39,7 +39,7 @@ class Company extends \Faker\Provider\Company
     ];
 
     protected static $companySuffix = [
-        'VOF', 'CV', 'LLP', 'BV', 'NV', 'IBC', 'CSL','EESV', 'SE', 'CV', 'Stichting', '& Zonen', '& Zn'
+        'VOF', 'CV', 'LLP', 'BV', 'NV', 'IBC', 'CSL', 'EESV', 'SE', 'CV', 'Stichting', '& Zonen', '& Zn'
     ];
 
     protected static $product = [

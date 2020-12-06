@@ -60,7 +60,7 @@ class Address extends \Faker\Provider\Address
         'Cetinje', 'Nikšić', 'Danilovgrad', 'Žabljak',
         'Kolašin', 'Andrijevica', 'Berane', 'Bijelo Polje',
         'Mojkovac', 'Plav', 'Plužine', 'Pljevlja', 'Rožaje',
-        'Šavnik', 'Petnjica', 'Gusinje', 'Petrovac','Sutomore',
+        'Šavnik', 'Petnjica', 'Gusinje', 'Petrovac', 'Sutomore',
     ];
 
     /**

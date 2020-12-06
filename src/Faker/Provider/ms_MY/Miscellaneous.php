@@ -26,23 +26,23 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
      * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format
      */
     protected static $peninsularPrefix = [
-        'A','A','B','C','D','F','J','J','K','M','N','P','P','R','T','V',
-        'W','W','W','W','W','W',
+        'A', 'A', 'B', 'C', 'D', 'F', 'J', 'J', 'K', 'M', 'N', 'P', 'P', 'R', 'T', 'V',
+        'W', 'W', 'W', 'W', 'W', 'W',
     ];
 
     /**
      * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format_2
      */
     protected static $sarawakPrefix = [
-        'QA','QK','QB','QC','QL','QM','QP','QR','QS','QT'
+        'QA', 'QK', 'QB', 'QC', 'QL', 'QM', 'QP', 'QR', 'QS', 'QT'
     ];
 
     /**
      * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format_3
      */
     protected static $sabahPrefix = [
-        'SA','SAA','SAB','SAC','SB','SD','SG',
-        'SK','SL','SS','SSA','ST','STA','SU'
+        'SA', 'SAA', 'SAB', 'SAC', 'SB', 'SD', 'SG',
+        'SK', 'SL', 'SS', 'SSA', 'ST', 'STA', 'SU'
     ];
 
     /**
@@ -53,19 +53,19 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
         'A1M',
         'BAMbee',
         'Chancellor',
-        'G','G1M','GP','GT',
+        'G', 'G1M', 'GP', 'GT',
         'Jaguh',
-        'K1M','KRISS',
+        'K1M', 'KRISS',
         'LOTUS',
-        'NAAM','NAZA','NBOS',
-        'PATRIOT','Perdana','PERFECT','Perodua','Persona','Proton','Putra','PUTRAJAYA',
+        'NAAM', 'NAZA', 'NBOS',
+        'PATRIOT', 'Perdana', 'PERFECT', 'Perodua', 'Persona', 'Proton', 'Putra', 'PUTRAJAYA',
         'RIMAU',
-        'SAM','SAS','Satria','SMS','SUKOM',
-        'T1M','Tiara','TTB',
-        'U','US',
+        'SAM', 'SAS', 'Satria', 'SMS', 'SUKOM',
+        'T1M', 'Tiara', 'TTB',
+        'U', 'US',
         'VIP',
         'WAJA',
-        'XIIINAM','XOIC','XXVIASEAN','XXXIDB',
+        'XIIINAM', 'XOIC', 'XXVIASEAN', 'XXXIDB',
         'Y'
     ];
 
@@ -75,10 +75,10 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
      * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format
      */
     protected static $validAlphabets = [
-        'A','B','C','D','E','F',
-        'G','H','J','K','L','M',
-        'N','P','Q','R','S','T',
-        'U','V','W','X','Y',''
+        'A', 'B', 'C', 'D', 'E', 'F',
+        'G', 'H', 'J', 'K', 'L', 'M',
+        'N', 'P', 'Q', 'R', 'S', 'T',
+        'U', 'V', 'W', 'X', 'Y', ''
     ];
 
     /**

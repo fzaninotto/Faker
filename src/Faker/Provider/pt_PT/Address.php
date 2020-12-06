@@ -46,7 +46,7 @@ class Address extends \Faker\Provider\Address
         '%##9-###', '%##9',
     ];
 
-    protected static $buildingNumber = ['nº %', 'nº %%','nº %%%', '%', '%#', '%##'];
+    protected static $buildingNumber = ['nº %', 'nº %%', 'nº %%%', '%', '%#', '%##'];
 
     protected static $secondaryAddressFormats = [
         'Bloco %', 'Bl. %',
@@ -77,7 +77,7 @@ class Address extends \Faker\Provider\Address
         'Djibouti', 'Domênica', 'Equador', 'Egito', 'El Salvador',
         'Emirados Árabes Unidos', 'Eritrea', 'Eslováquia', 'Eslovênia',
         'Espanha', 'Estados Unidos da América', 'Estónia', 'Etiópia',
-        'Filipinas', 'Finlândia', 'Fiji','França', 'Gabão', 'Gâmbia',
+        'Filipinas', 'Finlândia', 'Fiji', 'França', 'Gabão', 'Gâmbia',
         'Georgia', 'Gana', 'Granada', 'Grécia', 'Guatemala',
         'Guiné Equatorial', 'Guiné Bissau', 'Guiana', 'Haiti', 'Honduras',
         'Hungria', 'Índia', 'Indonésia', 'Iraque', 'Irlanda', 'Irã',
@@ -89,7 +89,7 @@ class Address extends \Faker\Provider\Address
         'Marrocos', 'Mauritânia', 'Micronésia', 'Moldávia', 'Mongólia',
         'Montenegro', 'Moçambique', 'México', 'Mónaco', 'Namíbia', 'Nauru',
         'Nepal', 'Nicarágua', 'Nigéria', 'Noruega', 'Nova Guiné',
-        'Nova Zelândia', 'Níger', 'Omã', 'Qatar', 'Quênia','Quirguistão',
+        'Nova Zelândia', 'Níger', 'Omã', 'Qatar', 'Quênia', 'Quirguistão',
         'Paquistão', 'Palaos', 'Panamá', 'Papua Nova Guiné', 'Paraguai',
         'Países Baixos', 'Peru', 'Polónia', 'Portugal', 'Reino Unido',
         'Reino Unido da Grã Bretanha e Irlanda do Norte',

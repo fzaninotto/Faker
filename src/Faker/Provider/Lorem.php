@@ -6,7 +6,7 @@ class Lorem extends Base
 {
     protected static $wordList = [
         'alias', 'consequatur', 'aut', 'perferendis', 'sit', 'voluptatem',
-        'accusantium', 'doloremque', 'aperiam', 'eaque','ipsa', 'quae', 'ab',
+        'accusantium', 'doloremque', 'aperiam', 'eaque', 'ipsa', 'quae', 'ab',
         'illo', 'inventore', 'veritatis', 'et', 'quasi', 'architecto',
         'beatae', 'vitae', 'dicta', 'sunt', 'explicabo', 'aspernatur', 'aut',
         'odit', 'aut', 'fugit', 'sed', 'quia', 'consequuntur', 'magni',

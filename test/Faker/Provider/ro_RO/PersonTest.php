@@ -66,10 +66,10 @@ final class PersonTest extends TestCase
     public function validInputDataProvider()
     {
         return [
-            [Person::GENDER_MALE, '1981-06-16','B2', true, '181061642'],
-            [Person::GENDER_FEMALE, '1981-06-16','B2', true, '281061642'],
-            [Person::GENDER_MALE, '1981-06-16','B2', false, '981061642'],
-            [Person::GENDER_FEMALE, '1981-06-16','B2', false, '981061642'],
+            [Person::GENDER_MALE, '1981-06-16', 'B2', true, '181061642'],
+            [Person::GENDER_FEMALE, '1981-06-16', 'B2', true, '281061642'],
+            [Person::GENDER_MALE, '1981-06-16', 'B2', false, '981061642'],
+            [Person::GENDER_FEMALE, '1981-06-16', 'B2', false, '981061642'],
         ];
     }
     /**
