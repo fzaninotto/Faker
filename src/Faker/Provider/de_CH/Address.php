@@ -57,7 +57,7 @@ class Address extends \Faker\Provider\Address
         ['GE' => 'Genf'],
         ['GL' => 'Glarus'],
         ['GR' => 'Graubünden'],
-        ['JU' => 'Jura', ],
+        ['JU' => 'Jura'],
         ['LU' => 'Luzern'],
         ['NE' => 'Neuenburg'],
         ['NW' => 'Nidwalden'],
