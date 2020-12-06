@@ -27,10 +27,10 @@ class Company extends \Faker\Provider\Company
         return static::randomElement(static::$companyPrefix);
     }
 
-    /*
+    /**
      * Register of the National Economy
      * @link http://pl.wikipedia.org/wiki/REGON
-     * @return 9 digit number
+     * @return string 9 digit number
      */
     public static function regon()
     {

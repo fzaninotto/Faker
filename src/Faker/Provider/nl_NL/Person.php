@@ -307,7 +307,7 @@ class Person extends \Faker\Provider\Person
         return static::randomElement(static::$suffix);
     }
 
-    /*
+    /**
      * @example 'van der'
      */
     public static function prefix()
@@ -322,7 +322,6 @@ class Person extends \Faker\Provider\Person
      */
     public function idNumber()
     {
-        $return = '';
         $nr     = [];
         $nr[]   = 0;
         while (count($nr) < 8) {

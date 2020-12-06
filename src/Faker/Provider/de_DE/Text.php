@@ -1675,6 +1675,7 @@ mich an die Erde und weinte mich aus und sprang auf und lief auf die Terrasse
 hervor und sah noch dort unten im Schatten der hohen Lindenbäume ihr weißes Kleid
 nach der Gartentür schimmern, ich streckte meine Arme aus, und es verschwand.
 EOT;
+
     /*
     End of the Project Gutenberg EBook of Die Leiden des jungen Werther--Buch 1, by
     Johann Wolfgang von Goethe

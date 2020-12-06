@@ -2117,6 +2117,7 @@ Veselie mare între toți era, chiar și sărăcimea ospăta și bea!
 duce acolo bea și mănâncă. Iar pe la noi, cine are bani bea și
 mănâncă, iară cine nu, se uită și rabdă.
 EOT;
+
     /*
     *** START: FULL LICENSE ***
 

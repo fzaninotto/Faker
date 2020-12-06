@@ -46,7 +46,7 @@ class Internet extends \Faker\Provider\Internet
         'zandi', 'zare',
     ];
 
-    /*
+    /**
      * @link http://en.wikipedia.org/wiki/Persian_name
      */
     protected static $firstNameAscii = [
