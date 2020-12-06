@@ -18,7 +18,7 @@ final class PersonTest extends TestCase
         $codesString = Person::$idBirthplaceCode[$firstChar] . substr($id, 1);
 
         // After transfer the first alphabet word into 2 digit number, there should be totally 11 numbers
-        self::assertMatchesRegularExpression("/^[0-9]{11}$/", $codesString);
+        self::assertMatchesRegularExpression('/^[0-9]{11}$/', $codesString);
 
         $total = 0;
         $codesArray = str_split($codesString);

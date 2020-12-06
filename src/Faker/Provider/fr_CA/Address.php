@@ -70,7 +70,7 @@ class Address extends \Faker\Provider\fr_FR\Address
     ];
 
     protected static $addressFormats = [
-        "{{streetAddress}}, {{city}}, {{stateAbbr}} {{postcode}}",
+        '{{streetAddress}}, {{city}}, {{stateAbbr}} {{postcode}}',
     ];
 
     protected static $secondaryAddressFormats = ['Apt. ###', 'Suite ###', 'Bureau ###'];

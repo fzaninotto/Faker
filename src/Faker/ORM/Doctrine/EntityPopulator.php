@@ -197,14 +197,14 @@ class EntityPopulator
                     $value = is_callable($format) ? $format($insertedEntities, $obj) : $format;
                 } catch (\InvalidArgumentException $ex) {
                     throw new \InvalidArgumentException(sprintf(
-                        "Failed to generate a value for %s::%s: %s",
+                        'Failed to generate a value for %s::%s: %s',
                         get_class($obj),
                         $field,
                         $ex->getMessage()
                     ));
                 }
                 // Try a standard setter if it's available, otherwise fall back on reflection
-                $setter = sprintf("set%s", ucfirst($field));
+                $setter = sprintf('set%s', ucfirst($field));
                 if (is_callable([$obj, $setter])) {
                     $obj->$setter($value);
                 } else {

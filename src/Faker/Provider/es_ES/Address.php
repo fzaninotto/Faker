@@ -55,7 +55,7 @@ class Address extends \Faker\Provider\Address
         '{{streetName}}, {{buildingNumber}}, {{secondaryAddress}}',
     ];
     protected static $addressFormats = [
-        "{{streetAddress}}, {{postcode}}, {{city}}"
+        '{{streetAddress}}, {{postcode}}, {{city}}'
     ];
     protected static $secondaryAddressFormats = ['Bajos', 'Ático #º', 'Entre suelo #º', 'Bajo #º', '#º', '#º A', '#º B', '#º C', '#º D', '#º E', '#º F', '##º A', '##º B', '##º C', '##º D', '##º E', '##º F', '#º #º', '##º #º'];
 

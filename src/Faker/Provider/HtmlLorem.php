@@ -7,28 +7,28 @@ use Faker\UniqueGenerator;
 
 class HtmlLorem extends Base
 {
-    public const HTML_TAG = "html";
-    public const HEAD_TAG = "head";
-    public const BODY_TAG = "body";
-    public const DIV_TAG = "div";
-    public const P_TAG = "p";
-    public const A_TAG = "a";
-    public const SPAN_TAG = "span";
-    public const TABLE_TAG = "table";
-    public const THEAD_TAG = "thead";
-    public const TBODY_TAG = "tbody";
-    public const TR_TAG = "tr";
-    public const TD_TAG = "td";
-    public const TH_TAG = "th";
-    public const UL_TAG = "ul";
-    public const LI_TAG = "li";
-    public const H_TAG = "h";
-    public const B_TAG = "b";
-    public const I_TAG = "i";
-    public const TITLE_TAG = "title";
-    public const FORM_TAG = "form";
-    public const INPUT_TAG = "input";
-    public const LABEL_TAG = "label";
+    public const HTML_TAG = 'html';
+    public const HEAD_TAG = 'head';
+    public const BODY_TAG = 'body';
+    public const DIV_TAG = 'div';
+    public const P_TAG = 'p';
+    public const A_TAG = 'a';
+    public const SPAN_TAG = 'span';
+    public const TABLE_TAG = 'table';
+    public const THEAD_TAG = 'thead';
+    public const TBODY_TAG = 'tbody';
+    public const TR_TAG = 'tr';
+    public const TD_TAG = 'td';
+    public const TH_TAG = 'th';
+    public const UL_TAG = 'ul';
+    public const LI_TAG = 'li';
+    public const H_TAG = 'h';
+    public const B_TAG = 'b';
+    public const I_TAG = 'i';
+    public const TITLE_TAG = 'title';
+    public const FORM_TAG = 'form';
+    public const INPUT_TAG = 'input';
+    public const LABEL_TAG = 'label';
 
     private $idGenerator;
 
@@ -50,14 +50,14 @@ class HtmlLorem extends Base
         $document = new \DOMDocument();
         $this->idGenerator = new UniqueGenerator($this->generator);
 
-        $head = $document->createElement("head");
+        $head = $document->createElement('head');
         $this->addRandomTitle($head);
 
-        $body = $document->createElement("body");
+        $body = $document->createElement('body');
         $this->addLoginForm($body);
         $this->addRandomSubTree($body, $maxDepth, $maxWidth);
 
-        $html = $document->createElement("html");
+        $html = $document->createElement('html');
         $html->appendChild($head);
         $html->appendChild($body);
 
@@ -77,7 +77,7 @@ class HtmlLorem extends Base
             if ($maxDepth == 1) {
                 $this->addRandomLeaf($root);
             } else {
-                $sibling = $root->ownerDocument->createElement("div");
+                $sibling = $root->ownerDocument->createElement('div');
                 $root->appendChild($sibling);
                 $this->addRandomAttribute($sibling);
                 $this->addRandomSubTree($sibling, self::numberBetween(0, $maxDepth), $maxWidth);
@@ -125,10 +125,10 @@ class HtmlLorem extends Base
         $rand = self::numberBetween(1, 2);
         switch ($rand) {
             case 1:
-                $node->setAttribute("class", $this->generator->word);
+                $node->setAttribute('class', $this->generator->word);
                 break;
             case 2:
-                $node->setAttribute("id", (string) $this->idGenerator->randomNumber(5));
+                $node->setAttribute('id', (string) $this->idGenerator->randomNumber(5));
                 break;
         }
     }
@@ -150,7 +150,7 @@ class HtmlLorem extends Base
     {
         $text = $element->ownerDocument->createTextNode($this->generator->sentence(self::numberBetween(1, $maxLength)));
         $node = $element->ownerDocument->createElement(static::A_TAG);
-        $node->setAttribute("href", $this->generator->safeEmailDomain);
+        $node->setAttribute('href', $this->generator->safeEmailDomain);
         $node->appendChild($text);
         $element->appendChild($node);
     }
@@ -199,28 +199,28 @@ class HtmlLorem extends Base
     private function addLoginForm(\DOMElement $element)
     {
         $textInput = $element->ownerDocument->createElement(static::INPUT_TAG);
-        $textInput->setAttribute("type", "text");
-        $textInput->setAttribute("id", "username");
+        $textInput->setAttribute('type', 'text');
+        $textInput->setAttribute('id', 'username');
 
         $textLabel = $element->ownerDocument->createElement(static::LABEL_TAG);
-        $textLabel->setAttribute("for", "username");
+        $textLabel->setAttribute('for', 'username');
         $textLabel->textContent = $this->generator->word;
 
         $passwordInput = $element->ownerDocument->createElement(static::INPUT_TAG);
-        $passwordInput->setAttribute("type", "password");
-        $passwordInput->setAttribute("id", "password");
+        $passwordInput->setAttribute('type', 'password');
+        $passwordInput->setAttribute('id', 'password');
 
         $passwordLabel = $element->ownerDocument->createElement(static::LABEL_TAG);
-        $passwordLabel->setAttribute("for", "password");
+        $passwordLabel->setAttribute('for', 'password');
         $passwordLabel->textContent = $this->generator->word;
 
         $submit = $element->ownerDocument->createElement(static::INPUT_TAG);
-        $submit->setAttribute("type", "submit");
-        $submit->setAttribute("value", $this->generator->word);
+        $submit->setAttribute('type', 'submit');
+        $submit->setAttribute('value', $this->generator->word);
 
         $submit = $element->ownerDocument->createElement(static::FORM_TAG);
-        $submit->setAttribute("action", $this->generator->safeEmailDomain);
-        $submit->setAttribute("method", "POST");
+        $submit->setAttribute('action', $this->generator->safeEmailDomain);
+        $submit->setAttribute('method', 'POST');
         $submit->appendChild($textLabel);
         $submit->appendChild($textInput);
         $submit->appendChild($passwordLabel);

@@ -92,7 +92,7 @@ class UserAgent extends Base
             '(' . static::macPlatformToken() . ' rv:' . self::numberBetween(2, 6) . '.0) ' . $ver
         ];
 
-        return "Mozilla/5.0 " . static::randomElement($platforms);
+        return 'Mozilla/5.0 ' . static::randomElement($platforms);
     }
 
     /**
@@ -117,10 +117,10 @@ class UserAgent extends Base
         $platforms = [
             '(Windows; U; ' . static::windowsPlatformToken() . ") AppleWebKit/$saf (KHTML, like Gecko) Version/$ver Safari/$saf",
             '(' . static::macPlatformToken() . ' rv:' . self::numberBetween(2, 6) . '.0; ' . static::randomElement(static::$lang) . ") AppleWebKit/$saf (KHTML, like Gecko) Version/$ver Safari/$saf",
-            '(' . static::randomElement($mobileDevices) . ' ' . self::numberBetween(7, 8) . '_' . self::numberBetween(0, 2) . '_' . self::numberBetween(1, 2) . ' like Mac OS X; ' . static::randomElement(static::$lang) . ") AppleWebKit/$saf (KHTML, like Gecko) Version/" . self::numberBetween(3, 4) . ".0.5 Mobile/8B" . self::numberBetween(111, 119) . " Safari/6$saf",
+            '(' . static::randomElement($mobileDevices) . ' ' . self::numberBetween(7, 8) . '_' . self::numberBetween(0, 2) . '_' . self::numberBetween(1, 2) . ' like Mac OS X; ' . static::randomElement(static::$lang) . ") AppleWebKit/$saf (KHTML, like Gecko) Version/" . self::numberBetween(3, 4) . '.0.5 Mobile/8B' . self::numberBetween(111, 119) . " Safari/6$saf",
         ];
 
-        return "Mozilla/5.0 " . static::randomElement($platforms);
+        return 'Mozilla/5.0 ' . static::randomElement($platforms);
     }
 
     /**
@@ -135,7 +135,7 @@ class UserAgent extends Base
             '(' . static::windowsPlatformToken() . '; ' . static::randomElement(static::$lang) . ') Presto/2.' . self::numberBetween(8, 12) . '.' . self::numberBetween(160, 355) . ' Version/' . self::numberBetween(10, 12) . '.00'
         ];
 
-        return "Opera/" . self::numberBetween(8, 9) . '.' . self::numberBetween(10, 99) . ' ' . static::randomElement($platforms);
+        return 'Opera/' . self::numberBetween(8, 9) . '.' . self::numberBetween(10, 99) . ' ' . static::randomElement($platforms);
     }
 
     /**

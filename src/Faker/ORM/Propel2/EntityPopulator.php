@@ -68,7 +68,7 @@ class EntityPopulator
             if ($columnMap->isForeignKey()) {
                 $relatedClass = $columnMap->getRelation()->getForeignTable()->getClassname();
                 $formatters[$columnMap->getPhpName()] = function ($inserted) use ($relatedClass, $generator) {
-                    $relatedClass = trim($relatedClass, "\\");
+                    $relatedClass = trim($relatedClass, '\\');
                     return isset($inserted[$relatedClass]) ? $generator->randomElement($inserted[$relatedClass]) : null;
                 };
                 continue;

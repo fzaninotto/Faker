@@ -40,7 +40,7 @@ class Address extends \Faker\Provider\Address
         '{{streetName}}, {{buildingNumber}}',
     ];
     protected static $addressFormats = [
-        "{{streetAddress}}, {{postcode}}, {{prefecture}}"
+        '{{streetAddress}}, {{postcode}}, {{prefecture}}'
     ];
 
     /**

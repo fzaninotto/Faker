@@ -9,12 +9,12 @@ final class PersonTest extends TestCase
 {
     public function testLastNameFemale()
     {
-        self::assertEquals("а", substr($this->faker->lastName('female'), -2, 2));
+        self::assertEquals('а', substr($this->faker->lastName('female'), -2, 2));
     }
 
     public function testLastNameMale()
     {
-        self::assertNotEquals("а", substr($this->faker->lastName('male'), -2, 2));
+        self::assertNotEquals('а', substr($this->faker->lastName('male'), -2, 2));
     }
 
     public function testLastNameRandom()

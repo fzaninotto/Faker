@@ -45,7 +45,7 @@ final class AddressTest extends TestCase
 
     public function testRegionNameCyrOnly()
     {
-        $pattern = "/[А-ЩЯІЇЄЮ][А-ЩЯІЇЄЮа-щяіїєюь]*а$/u";
+        $pattern = '/[А-ЩЯІЇЄЮ][А-ЩЯІЇЄЮа-щяіїєюь]*а$/u';
         $regionName = $this->faker->region;
         self::assertSame(
             preg_match($pattern, $regionName),

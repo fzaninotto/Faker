@@ -147,7 +147,7 @@ class Person extends \Faker\Provider\Person
         $core = self::createCoreCode();
         $control = self::createControlCode($area, $core);
 
-        return sprintf("%03d%06d%01d", $area, $core, $control);
+        return sprintf('%03d%06d%01d', $area, $core, $control);
     }
 
     /**
@@ -156,10 +156,10 @@ class Person extends \Faker\Provider\Person
      */
     private static function createAreaCode()
     {
-        $area = "000";
+        $area = '000';
 
-        while ($area == "000") {
-            $area = static::numerify("###");
+        while ($area == '000') {
+            $area = static::numerify('###');
         }
 
         return $area;
@@ -171,7 +171,7 @@ class Person extends \Faker\Provider\Person
      */
     private static function createCoreCode()
     {
-        return static::numerify("######");
+        return static::numerify('######');
     }
 
     /**

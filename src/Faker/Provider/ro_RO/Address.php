@@ -102,7 +102,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     protected static $addressFormats = [
-        "{{streetAddress}}, {{city}}, {{county}}, CP {{postcode}}",
+        '{{streetAddress}}, {{city}}, {{county}}, CP {{postcode}}',
     ];
 
     public function cityName()

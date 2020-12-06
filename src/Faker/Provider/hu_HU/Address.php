@@ -21,7 +21,7 @@ class Address extends \Faker\Provider\Address
         '{{streetName}} {{buildingNumber}}. {{secondaryAddress}}',
     ];
     protected static $addressFormats = [
-        "{{postcode}} {{city}}, {{streetAddress}}",
+        '{{postcode}} {{city}}, {{streetAddress}}',
     ];
     protected static $secondaryAddressFormats = ['##. emelet', '##. ajtó'];
 

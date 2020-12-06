@@ -68,7 +68,7 @@ class Person extends \Faker\Provider\Person
         '{{namePrefix}}.{{firstNameFemale}}'
     ];
 
-    protected static $idNumberFormat = "{{alphabet}}{{alphabet}}########";
+    protected static $idNumberFormat = '{{alphabet}}{{alphabet}}########';
 
     /**
      * Generate an identification number.

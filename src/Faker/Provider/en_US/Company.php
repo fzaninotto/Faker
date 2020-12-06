@@ -111,6 +111,6 @@ class Company extends \Faker\Provider\Company
         $prefix = static::randomElement(static::$einPrefixes);
         $suffix = self::numberBetween(0, 9999999);
 
-        return sprintf("%02d-%07d", $prefix, $suffix);
+        return sprintf('%02d-%07d', $prefix, $suffix);
     }
 }

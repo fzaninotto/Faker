@@ -801,11 +801,11 @@ class Person extends \Faker\Provider\Person
 
         // formatting with hyphen
         if ($hyphen === true) {
-            $hyphen = "-";
+            $hyphen = '-';
         } elseif ($hyphen === false) {
-            $hyphen = "";
+            $hyphen = '';
         }
 
-        return sprintf("%02d%02d%02d%s%02d%s%03d%01d", $yy, $mm, $dd, $hyphen, $pb, $hyphen, $nnn, $g);
+        return sprintf('%02d%02d%02d%s%02d%s%03d%01d', $yy, $mm, $dd, $hyphen, $pb, $hyphen, $nnn, $g);
     }
 }

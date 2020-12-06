@@ -31,10 +31,10 @@ class Payment extends \Faker\Provider\Payment
      */
     public static function vat($spacedNationalPrefix = true)
     {
-        $prefix = $spacedNationalPrefix ? "BG " : "BG";
+        $prefix = $spacedNationalPrefix ? 'BG ' : 'BG';
 
         return sprintf(
-            "%s%d%d",
+            '%s%d%d',
             $prefix,
             self::randomNumber(5, true), // workaround for mt_getrandmax() limitation
             self::randomNumber(self::randomElement([4, 5]), true)

@@ -285,7 +285,7 @@ class Address extends \Faker\Provider\Address
         '{{streetNumber}} {{streetName}}',
     ];
     protected static $addressFormats = [
-        "{{streetAddress}}, {{city}} {{state}}",
+        '{{streetAddress}}, {{city}} {{state}}',
     ];
 
     public static function cityPrefix()

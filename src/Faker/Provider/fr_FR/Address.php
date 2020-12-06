@@ -75,7 +75,7 @@ class Address extends \Faker\Provider\Address
         ['971' => 'Guadeloupe'], ['972' => 'Martinique'], ['973' => 'Guyane'], ['974' => 'La Réunion'], ['976' => 'Mayotte']
     ];
 
-    protected static $secondaryAddressFormats = ['Apt. ###', 'Suite ###', 'Étage ###', "Bât. ###", "Chambre ###"];
+    protected static $secondaryAddressFormats = ['Apt. ###', 'Suite ###', 'Étage ###', 'Bât. ###', 'Chambre ###'];
 
     /**
      * @example 'Appt. 350'

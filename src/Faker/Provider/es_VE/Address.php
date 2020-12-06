@@ -33,8 +33,8 @@ class Address extends \Faker\Provider\es_ES\Address
         '{{streetName}}, {{secondaryAddress}}',
     ];
     protected static $addressFormats = [
-        "{{streetAddress}}, {{city}} Edo. {{state}}",
-        "{{streetAddress}}, {{city}} Edo. {{state}}, {{postcode}}"
+        '{{streetAddress}}, {{city}} Edo. {{state}}',
+        '{{streetAddress}}, {{city}} Edo. {{state}}, {{postcode}}'
     ];
     protected static $secondaryAddressFormats = ['Nro #', 'Piso #', 'Casa #', 'Hab. #', 'Apto #', 'Nro ##', 'Piso ##', 'Casa ##', 'Hab. ##', 'Apto ##'];
 

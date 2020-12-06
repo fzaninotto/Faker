@@ -15,7 +15,7 @@ final class PersonTest extends TestCase
             // should be in the format ###-##-####
             self::assertMatchesRegularExpression('/^[0-9]{3}-[0-9]{2}-[0-9]{4}$/', $number);
 
-            $parts = explode("-", $number);
+            $parts = explode('-', $number);
 
             // first part must be between 001 and 899, excluding 666
             self::assertNotEquals(666, $parts[0]);

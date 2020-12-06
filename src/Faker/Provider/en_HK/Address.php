@@ -154,8 +154,8 @@ class Address extends \Faker\Provider\Address
     ];
 
     protected static $englishStreetNames = [
-        "King's", "Queen's", "Nathan", "Robinson", "Kingston", "Irving", "Bonham", "Salisbury",
-        "Tonkin", "Nanking", "Peking", "Canton", "Amoy", "Shanghai"
+        "King's", "Queen's", 'Nathan', 'Robinson', 'Kingston', 'Irving', 'Bonham', 'Salisbury',
+        'Tonkin', 'Nanking', 'Peking', 'Canton', 'Amoy', 'Shanghai'
     ];
 
     protected static $streetSuffix = [

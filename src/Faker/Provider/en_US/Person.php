@@ -128,6 +128,6 @@ class Person extends \Faker\Provider\Person
         $group = self::numberBetween(1, 99);
         $serial = self::numberBetween(1, 9999);
 
-        return sprintf("%03d-%02d-%04d", $area, $group, $serial);
+        return sprintf('%03d-%02d-%04d', $area, $group, $serial);
     }
 }

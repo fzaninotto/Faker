@@ -94,7 +94,7 @@ final class ImageTest extends TestCase
         curl_close($curlPing);
 
         if ($httpCode < 200 | $httpCode > 300) {
-            $this->markTestSkipped("Placeholder.com is offline, skipping image download");
+            $this->markTestSkipped('Placeholder.com is offline, skipping image download');
         }
 
         $file = Image::image(sys_get_temp_dir());

@@ -52,7 +52,7 @@ class Populator
     {
         if (!$entity instanceof \Faker\ORM\Doctrine\EntityPopulator) {
             if (null === $this->manager) {
-                throw new \InvalidArgumentException("No entity manager passed to Doctrine Populator.");
+                throw new \InvalidArgumentException('No entity manager passed to Doctrine Populator.');
             }
             $entity = new \Faker\ORM\Doctrine\EntityPopulator($this->manager->getClassMetadata($entity));
         }
@@ -84,7 +84,7 @@ class Populator
             $entityManager = $this->manager;
         }
         if (null === $entityManager) {
-            throw new \InvalidArgumentException("No entity manager passed to Doctrine Populator.");
+            throw new \InvalidArgumentException('No entity manager passed to Doctrine Populator.');
         }
 
         $insertedEntities = [];

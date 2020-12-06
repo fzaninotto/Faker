@@ -31,7 +31,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     protected static $prefix = ["'s", "'t", 'a', 'aan', "aan 't", 'aan de', 'aan den', 'aan der', 'aan het',
-        "aan t", 'af', 'al', 'am', 'am de', 'auf', 'auf dem', 'auf den', 'auf der', 'auf ter', 'aus', "aus 'm",
+        'aan t', 'af', 'al', 'am', 'am de', 'auf', 'auf dem', 'auf den', 'auf der', 'auf ter', 'aus', "aus 'm",
         'aus dem', 'aus den', 'aus der', 'aus m', 'ben', 'bij', "bij 't", 'bij de', 'bij den', 'bij het', 'bij t',
         'bin', 'boven d', "boven d'", 'd', "d'", 'da', 'dal', 'dal’', 'dalla', 'das', 'de', 'de die', 'de die le',
         'de l', 'de l’', 'de la', 'de las', 'de le', 'de van der', 'deca', 'degli', 'dei', 'del', 'della', 'den',

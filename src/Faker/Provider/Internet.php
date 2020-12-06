@@ -206,11 +206,11 @@ class Internet extends Base
     {
         if (Miscellaneous::boolean()) {
             // 10.x.x.x range
-            return long2ip(self::numberBetween(ip2long("10.0.0.0"), ip2long("10.255.255.255")));
+            return long2ip(self::numberBetween(ip2long('10.0.0.0'), ip2long('10.255.255.255')));
         }
 
         // 192.168.x.x range
-        return long2ip(self::numberBetween(ip2long("192.168.0.0"), ip2long("192.168.255.255")));
+        return long2ip(self::numberBetween(ip2long('192.168.0.0'), ip2long('192.168.255.255')));
     }
 
     /**

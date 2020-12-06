@@ -84,22 +84,22 @@ class Address extends \Faker\Provider\Address
     ];
 
     protected static $addressFormats = [
-        "საქართველო, {{regionGenitiveForm}} {{regionSuffix}}, {{city}}, {{streetAddress}}, {{postcode}}",
-        "{{regionGenitiveForm}} {{regionSuffix}}, {{city}}, {{streetAddress}}, {{postcode}}",
-        "{{streetAddress}}, {{postcode}}, {{city}}, {{regionGenitiveForm}} {{regionSuffix}}",
-        "{{streetAddress}}, {{postcode}}, {{city}}, {{regionGenitiveForm}} {{regionSuffix}}, საქართველო",
-        "{{city}}, {{streetAddress}}, {{postcode}}",
-        "საქართველო, {{city}}, {{streetAddress}}, {{postcode}}",
-        "{{streetAddress}}, {{postcode}}, {{city}}",
-        "{{streetAddress}}, {{postcode}}, {{city}}, საქართველო",
+        'საქართველო, {{regionGenitiveForm}} {{regionSuffix}}, {{city}}, {{streetAddress}}, {{postcode}}',
+        '{{regionGenitiveForm}} {{regionSuffix}}, {{city}}, {{streetAddress}}, {{postcode}}',
+        '{{streetAddress}}, {{postcode}}, {{city}}, {{regionGenitiveForm}} {{regionSuffix}}',
+        '{{streetAddress}}, {{postcode}}, {{city}}, {{regionGenitiveForm}} {{regionSuffix}}, საქართველო',
+        '{{city}}, {{streetAddress}}, {{postcode}}',
+        'საქართველო, {{city}}, {{streetAddress}}, {{postcode}}',
+        '{{streetAddress}}, {{postcode}}, {{city}}',
+        '{{streetAddress}}, {{postcode}}, {{city}}, საქართველო',
     ];
 
     protected static $streetAddressFormats = [
-        "{{street}} {{streetSuffix}} #{{buildingNumber}}"
+        '{{street}} {{streetSuffix}} #{{buildingNumber}}'
     ];
 
     protected static $cityFormats = [
-        "{{cityPrefix}} {{cityName}}"
+        '{{cityPrefix}} {{cityName}}'
     ];
 
 

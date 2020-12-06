@@ -290,11 +290,11 @@ class Address extends \Faker\Provider\Address
     ];
 
     protected static $addressFormats = [
-        "{{postcode}}, {{cityAndRegion}}, {{streetPrefix}} {{streetName}}, {{buildingNumber}}",
+        '{{postcode}}, {{cityAndRegion}}, {{streetPrefix}} {{streetName}}, {{buildingNumber}}',
     ];
 
     protected static $streetAddressFormats = [
-        "{{streetPrefix}} {{streetName}}, {{buildingNumber}}"
+        '{{streetPrefix}} {{streetName}}, {{buildingNumber}}'
     ];
 
     public static function citySuffix()

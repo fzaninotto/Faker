@@ -2,7 +2,7 @@
 
 namespace Faker\Provider\pt_BR;
 
-require_once "check_digit.php";
+require_once 'check_digit.php';
 
 class Company extends \Faker\Provider\Company
 {

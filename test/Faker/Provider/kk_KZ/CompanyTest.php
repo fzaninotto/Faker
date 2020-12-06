@@ -14,7 +14,7 @@ final class CompanyTest extends TestCase
         $registrationDateAsString     = $registrationDate->format('ym');
 
         self::assertMatchesRegularExpression(
-            "/^(" . $registrationDateAsString . ")([4-6]{1})([0-3]{1})(\\d{6})$/",
+            '/^(' . $registrationDateAsString . ')([4-6]{1})([0-3]{1})(\\d{6})$/',
             $businessIdentificationNumber
         );
     }
