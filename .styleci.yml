@@ -45,6 +45,7 @@ enabled:
   - pow_to_exponentiation
   - random_api_migration
   - short_array_syntax
+  - single_quote
   - standardize_not_equals
   - ternary_to_null_coalescing
   - whitespace_after_comma_in_array
