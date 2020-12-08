@@ -31,6 +31,15 @@ class Internet extends Base
     ];
 
     /**
+     * @link https://tools.ietf.org/html/rfc1918#section-3
+     */
+    protected static $localIpBlocks = [
+        ['10.0.0.0', '10.255.255.255'],
+        ['172.16.0.0', '172.31.255.255'],
+        ['192.168.0.0', '192.168.255.255'],
+    ];
+
+    /**
      * @example 'jdoe@acme.biz'
      */
     public function email()
@@ -204,13 +213,9 @@ class Internet extends Base
      */
     public static function localIpv4()
     {
-        if (Miscellaneous::boolean()) {
-            // 10.x.x.x range
-            return long2ip(self::numberBetween(ip2long('10.0.0.0'), ip2long('10.255.255.255')));
-        }
+        $ipBlock = self::randomElement(static::$localIpBlocks);
 
-        // 192.168.x.x range
-        return long2ip(self::numberBetween(ip2long('192.168.0.0'), ip2long('192.168.255.255')));
+        return long2ip(static::numberBetween(ip2long($ipBlock[0]), ip2long($ipBlock[1])));
     }
 
     /**
