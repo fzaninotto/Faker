@@ -10,19 +10,6 @@ use Faker\Test\TestCase;
 
 final class InternetTest extends TestCase
 {
-    public function localeDataProvider()
-    {
-        $providerPath = realpath(__DIR__ . '/../../../src/Faker/Provider');
-        $localePaths = array_filter(glob($providerPath . '/*', GLOB_ONLYDIR));
-        $locales = [];
-        foreach ($localePaths as $path) {
-            $parts = explode('/', $path);
-            $locales[] = [$parts[count($parts) - 1]];
-        }
-
-        return $locales;
-    }
-
     /**
      * @dataProvider localeDataProvider
      */
@@ -67,19 +54,9 @@ final class InternetTest extends TestCase
 
     public function loadLocalProviders($locale)
     {
-        $providerPath = realpath(__DIR__ . '/../../../src/Faker/Provider');
-        if (file_exists($providerPath . '/' . $locale . '/Internet.php')) {
-            $internet = "\\Faker\\Provider\\$locale\\Internet";
-            $this->faker->addProvider(new $internet($this->faker));
-        }
-        if (file_exists($providerPath . '/' . $locale . '/Person.php')) {
-            $person = "\\Faker\\Provider\\$locale\\Person";
-            $this->faker->addProvider(new $person($this->faker));
-        }
-        if (file_exists($providerPath . '/' . $locale . '/Company.php')) {
-            $company = "\\Faker\\Provider\\$locale\\Company";
-            $this->faker->addProvider(new $company($this->faker));
-        }
+        $this->loadLocalProvider($locale, 'Internet');
+        $this->loadLocalProvider($locale, 'Person');
+        $this->loadLocalProvider($locale, 'Company');
     }
 
     public function testPasswordIsValid()

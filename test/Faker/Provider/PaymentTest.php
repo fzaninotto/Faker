@@ -12,27 +12,6 @@ use Faker\Test\TestCase;
 
 final class PaymentTest extends TestCase
 {
-    public function localeDataProvider()
-    {
-        $providerPath = realpath(__DIR__ . '/../../../src/Faker/Provider');
-        $localePaths = array_filter(glob($providerPath . '/*', GLOB_ONLYDIR));
-        foreach ($localePaths as $path) {
-            $parts = explode('/', $path);
-            $locales[] = [$parts[count($parts) - 1]];
-        }
-
-        return $locales;
-    }
-
-    public function loadLocalProviders($locale)
-    {
-        $providerPath = realpath(__DIR__ . '/../../../src/Faker/Provider');
-        if (file_exists($providerPath . '/' . $locale . '/Payment.php')) {
-            $payment = "\\Faker\\Provider\\$locale\\Payment";
-            $this->faker->addProvider(new $payment($this->faker));
-        }
-    }
-
     public function testCreditCardTypeReturnsValidVendorName()
     {
         self::assertContains($this->faker->creditCardType, ['Visa', 'Visa Retired', 'MasterCard', 'American Express', 'Discover Card', 'JCB']);
@@ -157,7 +136,7 @@ final class PaymentTest extends TestCase
             return;
         }
 
-        $this->loadLocalProviders($locale);
+        $this->loadLocalProvider($locale, 'Payment');
 
         try {
             $iban = $this->faker->bankAccountNumber;
