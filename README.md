@@ -67,4 +67,4 @@ for ($i = 0; $i < 10; $i++) {
 
 ## License
 
-Faker is released under the MIT License. See the bundled LICENSE file for details.
+Faker is released under the MIT License. See [`LICENSE`](LICENSE) for details.
