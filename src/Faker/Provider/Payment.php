@@ -12,7 +12,7 @@ class Payment extends Base
     protected static $cardVendors = [
         'Visa', 'Visa', 'Visa', 'Visa', 'Visa',
         'MasterCard', 'MasterCard', 'MasterCard', 'MasterCard', 'MasterCard',
-        'American Express', 'Discover Card', 'Visa Retired'
+        'American Express', 'Discover Card', 'Visa Retired', 'JCB',
     ];
 
     /**
@@ -62,6 +62,10 @@ class Payment extends Base
         ],
         'Discover Card' => [
             '6011###########'
+        ],
+        'JCB' => [
+            '3528###########',
+            '3589###########',
         ],
     ];
 
@@ -146,9 +150,9 @@ class Payment extends Base
     /**
      * Returns the String of a credit card number.
      *
-     * @param string  $type      Supporting any of 'Visa', 'MasterCard', 'American Express', and 'Discover'
+     * @param string $type Supporting any of 'Visa', 'MasterCard', 'American Express', 'Discover' and 'JCB'
      * @param bool $formatted Set to true if the output string should contain one separator every 4 digits
-     * @param string  $separator Separator string for formatting card number. Defaults to dash (-).
+     * @param string $separator Separator string for formatting card number. Defaults to dash (-).
      * @return string
      *
      * @example '4485480221084675'

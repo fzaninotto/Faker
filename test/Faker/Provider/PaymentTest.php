@@ -35,7 +35,7 @@ final class PaymentTest extends TestCase
 
     public function testCreditCardTypeReturnsValidVendorName()
     {
-        self::assertContains($this->faker->creditCardType, ['Visa', 'Visa Retired', 'MasterCard', 'American Express', 'Discover Card']);
+        self::assertContains($this->faker->creditCardType, ['Visa', 'Visa Retired', 'MasterCard', 'American Express', 'Discover Card', 'JCB']);
     }
 
     public function creditCardNumberProvider()
@@ -44,7 +44,8 @@ final class PaymentTest extends TestCase
             ['Discover Card', '/^6011\d{12}$/'],
             ['Visa', '/^4\d{15}$/'],
             ['Visa Retired', '/^4\d{12}$/'],
-            ['MasterCard', '/^(5[1-5]|2[2-7])\d{14}$/']
+            ['MasterCard', '/^(5[1-5]|2[2-7])\d{14}$/'],
+            ['JCB', '/^35(28|89)\d{12,15}$/'],
         ];
     }
 
