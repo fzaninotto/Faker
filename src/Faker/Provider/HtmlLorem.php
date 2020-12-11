@@ -66,7 +66,25 @@ class HtmlLorem extends Base
         return $document->saveHTML();
     }
 
-    private function addRandomSubTree(\DOMElement $root, $maxDepth, $maxWidth)
+    /**
+     * @param integer $maxDepth
+     * @param integer $maxWidth
+     *
+     * @return string
+     */
+    public function randomHtmlFragment($maxDepth = 4, $maxWidth = 4)
+    {
+        $document = new \DOMDocument();
+        $this->idGenerator = new UniqueGenerator($this->generator);
+
+        $container = $document->createDocumentFragment();
+        $this->addRandomSubTree($container, $maxDepth, $maxWidth);
+
+        $document->appendChild($container);
+        return $document->saveHTML();
+    }
+
+    private function addRandomSubTree(\DOMNode $root, $maxDepth, $maxWidth)
     {
         $maxDepth--;
         if ($maxDepth <= 0) {
@@ -198,7 +216,7 @@ class HtmlLorem extends Base
         $element->appendChild($node);
     }
 
-    private function addLoginForm(\DOMElement $element)
+    private function addLoginForm(\DOMNode $element)
     {
 
         $textInput = $element->ownerDocument->createElement(static::INPUT_TAG);

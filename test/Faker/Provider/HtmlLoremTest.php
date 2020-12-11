@@ -13,7 +13,9 @@ final class HtmlLoremTest extends TestCase
     {
         $faker = new Generator();
         $faker->addProvider(new HtmlLorem($faker));
+
         $node = $faker->randomHtml(6, 10);
+
         $this->assertStringStartsWith("<html>", $node);
         $this->assertStringEndsWith("</html>\n", $node);
     }
@@ -22,10 +24,21 @@ final class HtmlLoremTest extends TestCase
     {
         $faker = new Generator();
         $faker->addProvider(new HtmlLorem($faker));
-        $node = $faker->randomHtml(6, 10);
+
         $dom = new \DOMDocument();
-        $error = $dom->loadHTML($node);
-        $this->assertTrue($error);
+        $node = $faker->randomHtml(6, 10);
+
+        $this->assertTrue($dom->loadHTML($node));
     }
 
+    public function testRandomHtmlFragmentReturnsValidHtmlString()
+    {
+        $faker = new Generator;
+        $faker->addProvider(new HtmlLorem($faker));
+
+        $dom = new \DOMDocument;
+        $html = trim($faker->randomHtmlFragment(9, 5));
+
+        $this->assertTrue($dom->loadHTML($html));
+    }
 }

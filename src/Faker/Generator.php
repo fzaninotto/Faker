@@ -195,6 +195,7 @@ namespace Faker;
  * @property string $colorName
  *
  * @method string randomHtml($maxDepth = 4, $maxWidth = 4)
+ * @method string randomHtmlFragment($maxDepth = 4, $maxWidth = 4)
  *
  */
 class Generator
