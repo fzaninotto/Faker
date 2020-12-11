@@ -13,11 +13,11 @@ test: vendor/autoload.php ## Runs tests with phpunit
 
 static: vendor/autoload.php ## Runs static analyzers
 	vendor/bin/phpstan analyze
-	vendor/bin/psalm.phar
+	vendor/bin/psalm
 
 baseline: vendor/autoload.php ## Generate baseline files
 	vendor/bin/phpstan analyze --generate-baseline
-	vendor/bin/psalm.phar --update-baseline
+	vendor/bin/psalm --update-baseline
 
 clean: rm -rf vendor composer.lock .build  ## Cleans up build and vendor files
 

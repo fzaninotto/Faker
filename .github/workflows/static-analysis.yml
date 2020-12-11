@@ -91,4 +91,4 @@ jobs:
 
       - name: Run Psalm
         run: |
-          vendor/bin/psalm.phar --no-progress --output-format=github
+          vendor/bin/psalm --no-progress --output-format=github
