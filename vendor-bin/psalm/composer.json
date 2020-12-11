@@ -4,6 +4,9 @@
         "psalm/phar": "4.3.1"
     },
     "config": {
+        "platform": {
+            "php": "7.1.33"
+        },
         "preferred-install": "dist"
     }
 }

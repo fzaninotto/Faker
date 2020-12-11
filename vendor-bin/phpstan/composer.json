@@ -5,6 +5,9 @@
         "phpstan/phpstan-deprecation-rules": "0.12.5"
     },
     "config": {
+        "platform": {
+            "php": "7.1.33"
+        },
         "preferred-install": "dist"
     }
 }
