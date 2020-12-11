@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2020-12-11, v1.12.1
+
+This is a security release that prevents a hacker to execute code on the server.
+
 ## 2020-11-23, v1.12.0
 
 - Fix ro_RO first and last day of year calculation offset (#65)
