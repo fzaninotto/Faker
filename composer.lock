@@ -4,27 +4,27 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "78fac8183d847475a61e990972ca4303",
+    "content-hash": "f3033ba537349d14832473f1bb0c13db",
     "packages": [],
     "packages-dev": [
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
-            "version": "v0.7.0",
+            "version": "v0.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dealerdirect/phpcodesniffer-composer-installer.git",
-                "reference": "e8d808670b8f882188368faaf1144448c169c0b7"
+                "reference": "fe390591e0241955f22eb9ba327d137e501c771c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dealerdirect/phpcodesniffer-composer-installer/zipball/e8d808670b8f882188368faaf1144448c169c0b7",
-                "reference": "e8d808670b8f882188368faaf1144448c169c0b7",
+                "url": "https://api.github.com/repos/Dealerdirect/phpcodesniffer-composer-installer/zipball/fe390591e0241955f22eb9ba327d137e501c771c",
+                "reference": "fe390591e0241955f22eb9ba327d137e501c771c",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.0 || ^2.0",
                 "php": ">=5.3",
-                "squizlabs/php_codesniffer": "^2 || ^3 || 4.0.x-dev"
+                "squizlabs/php_codesniffer": "^2.0 || ^3.0 || ^4.0"
             },
             "require-dev": {
                 "composer/composer": "*",
@@ -71,7 +71,7 @@
                 "stylecheck",
                 "tests"
             ],
-            "time": "2020-06-25T14:57:39+00:00"
+            "time": "2020-12-07T18:04:37+00:00"
         },
         {
             "name": "doctrine/instantiator",
