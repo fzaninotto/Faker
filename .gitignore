@@ -1,3 +1,5 @@
-.build/
-vendor
-composer.lock
+/.build/
+/vendor/
+/vendor-bin/phpstan/vendor/
+/vendor-bin/psalm/vendor/
+/composer.lock

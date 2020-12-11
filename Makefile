@@ -23,4 +23,4 @@ clean: rm -rf vendor composer.lock .build  ## Cleans up build and vendor files
 
 vendor/autoload.php:
 	composer update --no-interaction
-	composer bin all update --no-interaction
+	composer bin all install --no-interaction
