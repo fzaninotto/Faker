@@ -75,19 +75,19 @@ final class InternetTest extends TestCase
     {
         $pattern = '/^[a-z0-9-]+$/';
         $slug = $this->faker->slug(6, false);
-        $this->assertSame(preg_match($pattern, $slug), 1);
+        self::assertSame(preg_match($pattern, $slug), 1);
     }
 
     public function testSlugWithoutVariableNbWordsProducesCorrectNumberOfNbWords()
     {
         $slug = $this->faker->slug(3, false);
-        $this->assertCount(3, explode('-', $slug));
+        self::assertCount(3, explode('-', $slug));
     }
 
     public function testSlugWithoutNbWordsIsEmpty()
     {
         $slug = $this->faker->slug(0);
-        $this->assertSame('', $slug);
+        self::assertSame('', $slug);
     }
 
     public function testUrlIsValid()

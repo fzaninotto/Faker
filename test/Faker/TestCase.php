@@ -32,7 +32,7 @@ abstract class TestCase extends BaseTestCase
      */
     public static function assertMatchesRegularExpression(string $pattern, string $string, string $message = ''): void
     {
-        static::assertThat($string, new RegularExpression($pattern), $message);
+        self::assertThat($string, new RegularExpression($pattern), $message);
     }
 
     /**
@@ -43,7 +43,7 @@ abstract class TestCase extends BaseTestCase
      */
     public static function assertDoesNotMatchRegularExpression(string $pattern, string $string, string $message = ''): void
     {
-        static::assertThat(
+        self::assertThat(
             $string,
             new LogicalNot(
                 new RegularExpression($pattern)

@@ -32,6 +32,7 @@ enabled:
   - php_unit_no_expectation_annotation
   - php_unit_ordered_covers
   - php_unit_set_up_tear_down_visibility
+  - php_unit_test_case_self_method_calls
   - phpdoc_indent
   - phpdoc_inline_tag_normalizer
   - phpdoc_no_package

@@ -33,8 +33,8 @@ final class DateTimeTest extends TestCase
          * timezone over the system timezone.
          */
         $date = DateTimeProvider::dateTime();
-        $this->assertNotSame($systemTimezone, $date->getTimezone()->getName());
-        $this->assertSame($this->defaultTz, $date->getTimezone()->getName());
+        self::assertNotSame($systemTimezone, $date->getTimezone()->getName());
+        self::assertSame($this->defaultTz, $date->getTimezone()->getName());
 
         /**
          * Restore the system timezone.
@@ -59,8 +59,8 @@ final class DateTimeTest extends TestCase
          * and not the system timezone.
          */
         $date = DateTimeProvider::dateTime();
-        $this->assertSame($systemTimezone, $date->getTimezone()->getName());
-        $this->assertNotSame($this->defaultTz, $date->getTimezone()->getName());
+        self::assertSame($systemTimezone, $date->getTimezone()->getName());
+        self::assertNotSame($this->defaultTz, $date->getTimezone()->getName());
 
         /**
          * Restore the system timezone.
@@ -71,115 +71,115 @@ final class DateTimeTest extends TestCase
     public function testUnixTime()
     {
         $timestamp = DateTimeProvider::unixTime();
-        $this->assertIsInt($timestamp);
-        $this->assertGreaterThanOrEqual(0, $timestamp);
-        $this->assertLessThanOrEqual(time(), $timestamp);
+        self::assertIsInt($timestamp);
+        self::assertGreaterThanOrEqual(0, $timestamp);
+        self::assertLessThanOrEqual(time(), $timestamp);
     }
 
     public function testDateTime()
     {
         $date = DateTimeProvider::dateTime();
-        $this->assertInstanceOf('\DateTime', $date);
-        $this->assertGreaterThanOrEqual(new \DateTime('@0'), $date);
-        $this->assertLessThanOrEqual(new \DateTime(), $date);
-        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
+        self::assertInstanceOf('\DateTime', $date);
+        self::assertGreaterThanOrEqual(new \DateTime('@0'), $date);
+        self::assertLessThanOrEqual(new \DateTime(), $date);
+        self::assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
     public function testDateTimeWithTimezone()
     {
         $date = DateTimeProvider::dateTime('now', 'America/New_York');
-        $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
+        self::assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
     }
 
     public function testDateTimeAD()
     {
         $date = DateTimeProvider::dateTimeAD();
-        $this->assertInstanceOf('\DateTime', $date);
-        $this->assertGreaterThanOrEqual(new \DateTime('0000-01-01 00:00:00'), $date);
-        $this->assertLessThanOrEqual(new \DateTime(), $date);
-        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
+        self::assertInstanceOf('\DateTime', $date);
+        self::assertGreaterThanOrEqual(new \DateTime('0000-01-01 00:00:00'), $date);
+        self::assertLessThanOrEqual(new \DateTime(), $date);
+        self::assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
     public function testDateTimeThisCentury()
     {
         $date = DateTimeProvider::dateTimeThisCentury();
-        $this->assertInstanceOf('\DateTime', $date);
-        $this->assertGreaterThanOrEqual(new \DateTime('-100 year'), $date);
-        $this->assertLessThanOrEqual(new \DateTime(), $date);
-        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
+        self::assertInstanceOf('\DateTime', $date);
+        self::assertGreaterThanOrEqual(new \DateTime('-100 year'), $date);
+        self::assertLessThanOrEqual(new \DateTime(), $date);
+        self::assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
     public function testDateTimeThisDecade()
     {
         $date = DateTimeProvider::dateTimeThisDecade();
-        $this->assertInstanceOf('\DateTime', $date);
-        $this->assertGreaterThanOrEqual(new \DateTime('-10 year'), $date);
-        $this->assertLessThanOrEqual(new \DateTime(), $date);
-        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
+        self::assertInstanceOf('\DateTime', $date);
+        self::assertGreaterThanOrEqual(new \DateTime('-10 year'), $date);
+        self::assertLessThanOrEqual(new \DateTime(), $date);
+        self::assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
     public function testDateTimeThisYear()
     {
         $date = DateTimeProvider::dateTimeThisYear();
-        $this->assertInstanceOf('\DateTime', $date);
-        $this->assertGreaterThanOrEqual(new \DateTime('first day of january this year'), $date);
-        $this->assertLessThanOrEqual(new \DateTime(), $date);
-        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
+        self::assertInstanceOf('\DateTime', $date);
+        self::assertGreaterThanOrEqual(new \DateTime('first day of january this year'), $date);
+        self::assertLessThanOrEqual(new \DateTime(), $date);
+        self::assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
     public function testDateTimeThisMonth()
     {
         $date = DateTimeProvider::dateTimeThisMonth();
-        $this->assertInstanceOf('\DateTime', $date);
-        $this->assertGreaterThanOrEqual(new \DateTime('-1 month'), $date);
-        $this->assertLessThanOrEqual(new \DateTime(), $date);
-        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
+        self::assertInstanceOf('\DateTime', $date);
+        self::assertGreaterThanOrEqual(new \DateTime('-1 month'), $date);
+        self::assertLessThanOrEqual(new \DateTime(), $date);
+        self::assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
     public function testDateTimeThisCenturyWithTimezone()
     {
         $date = DateTimeProvider::dateTimeThisCentury('now', 'America/New_York');
-        $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
+        self::assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
     }
 
     public function testDateTimeThisDecadeWithTimezone()
     {
         $date = DateTimeProvider::dateTimeThisDecade('now', 'America/New_York');
-        $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
+        self::assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
     }
 
     public function testDateTimeThisYearWithTimezone()
     {
         $date = DateTimeProvider::dateTimeThisYear('now', 'America/New_York');
-        $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
+        self::assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
     }
 
     public function testDateTimeThisMonthWithTimezone()
     {
         $date = DateTimeProvider::dateTimeThisMonth('now', 'America/New_York');
-        $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
+        self::assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
     }
 
     public function testIso8601()
     {
         $date = DateTimeProvider::iso8601();
-        $this->assertMatchesRegularExpression('/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-Z](\d{4})?$/', $date);
-        $this->assertGreaterThanOrEqual(new \DateTime('@0'), new \DateTime($date));
-        $this->assertLessThanOrEqual(new \DateTime(), new \DateTime($date));
+        self::assertMatchesRegularExpression('/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-Z](\d{4})?$/', $date);
+        self::assertGreaterThanOrEqual(new \DateTime('@0'), new \DateTime($date));
+        self::assertLessThanOrEqual(new \DateTime(), new \DateTime($date));
     }
 
     public function testDate()
     {
         $date = DateTimeProvider::date();
-        $this->assertMatchesRegularExpression('/^\d{4}-\d{2}-\d{2}$/', $date);
-        $this->assertGreaterThanOrEqual(new \DateTime('@0'), new \DateTime($date));
-        $this->assertLessThanOrEqual(new \DateTime(), new \DateTime($date));
+        self::assertMatchesRegularExpression('/^\d{4}-\d{2}-\d{2}$/', $date);
+        self::assertGreaterThanOrEqual(new \DateTime('@0'), new \DateTime($date));
+        self::assertLessThanOrEqual(new \DateTime(), new \DateTime($date));
     }
 
     public function testTime()
     {
         $date = DateTimeProvider::time();
-        $this->assertMatchesRegularExpression('/^\d{2}:\d{2}:\d{2}$/', $date);
+        self::assertMatchesRegularExpression('/^\d{2}:\d{2}:\d{2}$/', $date);
     }
 
     /**
@@ -188,10 +188,10 @@ final class DateTimeTest extends TestCase
     public function testDateTimeBetween($start, $end)
     {
         $date = DateTimeProvider::dateTimeBetween($start, $end);
-        $this->assertInstanceOf('\DateTime', $date);
-        $this->assertGreaterThanOrEqual(new \DateTime($start), $date);
-        $this->assertLessThanOrEqual(new \DateTime($end), $date);
-        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
+        self::assertInstanceOf('\DateTime', $date);
+        self::assertGreaterThanOrEqual(new \DateTime($start), $date);
+        self::assertLessThanOrEqual(new \DateTime($end), $date);
+        self::assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
     public function providerDateTimeBetween()
@@ -210,16 +210,16 @@ final class DateTimeTest extends TestCase
     public function testDateTimeInInterval($start, $interval, $isInFuture)
     {
         $date = DateTimeProvider::dateTimeInInterval($start, $interval);
-        $this->assertInstanceOf('\DateTime', $date);
+        self::assertInstanceOf('\DateTime', $date);
 
         $_interval = \DateInterval::createFromDateString($interval);
         $_start = new \DateTime($start);
         if ($isInFuture) {
-            $this->assertGreaterThanOrEqual($_start, $date);
-            $this->assertLessThanOrEqual($_start->add($_interval), $date);
+            self::assertGreaterThanOrEqual($_start, $date);
+            self::assertLessThanOrEqual($_start->add($_interval), $date);
         } else {
-            $this->assertLessThanOrEqual($_start, $date);
-            $this->assertGreaterThanOrEqual($_start->add($_interval), $date);
+            self::assertLessThanOrEqual($_start, $date);
+            self::assertGreaterThanOrEqual($_start->add($_interval), $date);
         }
     }
 
@@ -258,23 +258,23 @@ final class DateTimeTest extends TestCase
 
         //regenerate Random Date with same seed and same maximum end timestamp
         mt_srand(1);
-        $this->assertEquals($unixTime, DateTimeProvider::unixTime($max));
-        $this->assertEquals($datetimeAD, DateTimeProvider::dateTimeAD($max));
-        $this->assertEquals($dateTime1, DateTimeProvider::dateTime($max));
-        $this->assertEquals($dateTimeBetween, DateTimeProvider::dateTimeBetween('2014-03-01 06:00:00', $max));
-        $this->assertEquals($date, DateTimeProvider::date('Y-m-d', $max));
-        $this->assertEquals($time, DateTimeProvider::time('H:i:s', $max));
-        $this->assertEquals($iso8601, DateTimeProvider::iso8601($max));
-        $this->assertEquals($dateTimeThisCentury, DateTimeProvider::dateTimeThisCentury($max));
-        $this->assertEquals($dateTimeThisDecade, DateTimeProvider::dateTimeThisDecade($max));
-        $this->assertEquals($dateTimeThisMonth, DateTimeProvider::dateTimeThisMonth($max));
-        $this->assertEquals($amPm, DateTimeProvider::amPm($max));
-        $this->assertEquals($dayOfMonth, DateTimeProvider::dayOfMonth($max));
-        $this->assertEquals($dayOfWeek, DateTimeProvider::dayOfWeek($max));
-        $this->assertEquals($month, DateTimeProvider::month($max));
-        $this->assertEquals($monthName, DateTimeProvider::monthName($max));
-        $this->assertEquals($year, DateTimeProvider::year($max));
-        $this->assertEquals($dateTimeThisYear, DateTimeProvider::dateTimeThisYear($max));
+        self::assertEquals($unixTime, DateTimeProvider::unixTime($max));
+        self::assertEquals($datetimeAD, DateTimeProvider::dateTimeAD($max));
+        self::assertEquals($dateTime1, DateTimeProvider::dateTime($max));
+        self::assertEquals($dateTimeBetween, DateTimeProvider::dateTimeBetween('2014-03-01 06:00:00', $max));
+        self::assertEquals($date, DateTimeProvider::date('Y-m-d', $max));
+        self::assertEquals($time, DateTimeProvider::time('H:i:s', $max));
+        self::assertEquals($iso8601, DateTimeProvider::iso8601($max));
+        self::assertEquals($dateTimeThisCentury, DateTimeProvider::dateTimeThisCentury($max));
+        self::assertEquals($dateTimeThisDecade, DateTimeProvider::dateTimeThisDecade($max));
+        self::assertEquals($dateTimeThisMonth, DateTimeProvider::dateTimeThisMonth($max));
+        self::assertEquals($amPm, DateTimeProvider::amPm($max));
+        self::assertEquals($dayOfMonth, DateTimeProvider::dayOfMonth($max));
+        self::assertEquals($dayOfWeek, DateTimeProvider::dayOfWeek($max));
+        self::assertEquals($month, DateTimeProvider::month($max));
+        self::assertEquals($monthName, DateTimeProvider::monthName($max));
+        self::assertEquals($year, DateTimeProvider::year($max));
+        self::assertEquals($dateTimeThisYear, DateTimeProvider::dateTimeThisYear($max));
         mt_srand();
     }
 }

@@ -13,7 +13,7 @@ final class BarcodeTest extends TestCase
     {
         $code = $this->faker->ean8();
         self::assertMatchesRegularExpression('/^\d{8}$/i', $code);
-        $this->assertTrue(Ean::isValid($code));
+        self::assertTrue(Ean::isValid($code));
     }
 
     public function testEan13()
