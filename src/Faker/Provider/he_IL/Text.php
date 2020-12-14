@@ -11,7 +11,7 @@ class Text extends \Faker\Provider\Text
 
     /**
      * The Little Prince
-     * By Antoine de Saint-Exupéry
+     * By Antoine de Saint-Exupéry.
      *
      * https://he.wikisource.org/wiki/%D7%94%D7%A0%D7%A1%D7%99%D7%9A_%D7%94%D7%A7%D7%98%D7%9F
      */
