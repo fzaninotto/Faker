@@ -139,7 +139,7 @@ final class PersonTest extends TestCase
     }
 
     /**
-     * @param $value
+     * @param string $value
      * @dataProvider validCountyCodeProvider
      */
     public function test_validCountyCode_returnsValidCnp($value)
@@ -152,7 +152,7 @@ final class PersonTest extends TestCase
     }
 
     /**
-     * @param $value
+     * @param string $value
      * @dataProvider invalidCountyCodeProvider
      */
     public function test_invalidCountyCode_throwsException($value)
@@ -179,11 +179,11 @@ final class PersonTest extends TestCase
     }
 
     /**
-     * @param $gender
-     * @param $dateOfBirth
-     * @param $county
-     * @param $isResident
-     * @param $expectedCnpStart
+     * @param string $gender
+     * @param string $dateOfBirth
+     * @param string $county
+     * @param bool $isResident
+     * @param string $expectedCnpStart
      *
      * @dataProvider validInputDataProvider
      */
