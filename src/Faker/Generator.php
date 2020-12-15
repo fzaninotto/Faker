@@ -35,6 +35,7 @@ namespace Faker;
  * @property string $isbn10
  *
  * @property string $phoneNumber
+ * @property string $tollFreePhoneNumber
  * @property string $e164PhoneNumber
  *
  * @property string $catchPhrase
