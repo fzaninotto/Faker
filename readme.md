@@ -305,6 +305,7 @@ Methods accepting a `$timezone` argument default to `date_default_timezone_get()
     ean8           // '73513537'
     isbn13         // '9790404436093'
     isbn10         // '4881416324'
+    upc            // '725272730706'
 
 ### `Faker\Provider\Miscellaneous`
 
