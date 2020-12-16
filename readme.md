@@ -366,14 +366,15 @@ for ($i = 0; $i < 10; $i++) {
 print_r($values); // [1, 4, null, 9, 5, null, null, 4, 6, null]
 
 // optional() accepts a weight argument to specify the probability of receiving the default value.
-// 0 will always return the default value; 1 will always return the provider. Default weight is 0.5 (50% chance).
-$faker->optional($weight = 0.1)->randomDigit; // 90% chance of NULL
-$faker->optional($weight = 0.9)->randomDigit; // 10% chance of NULL
+// 0 will always return the default value and 100 will always return the provider.
+// Default weight is 50 (50% chance).
+$faker->optional($weight = 10)->randomDigit; // 90% chance of NULL
+$faker->optional($weight = 90)->randomDigit; // 10% chance of NULL
 
 // optional() accepts a default argument to specify the default value to return.
 // Defaults to NULL.
-$faker->optional($weight = 0.5, $default = false)->randomDigit; // 50% chance of FALSE
-$faker->optional($weight = 0.9, $default = 'abc')->word; // 10% chance of 'abc'
+$faker->optional($weight = 50, $default = false)->randomDigit; // 50% chance of FALSE
+$faker->optional($weight = 90, $default = 'abc')->word; // 10% chance of 'abc'
 
 // valid() only accepts valid values according to the passed validator functions
 $values = array();
