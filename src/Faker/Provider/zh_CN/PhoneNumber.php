@@ -11,13 +11,36 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         170, 171, // virtual operators
     );
 
+    protected static $tollFreePhoneOperators = array(
+        '400-6', '400-0',   //China Unicom
+        '400-1',            //China Mobile
+        '400-7',            //China CTT=>China Mobile
+        '400-8', '400-9',   // China Telecom
+
+    );
+
     protected static $formats = array('###########');
+
+    protected static $tollFreeFormats = array('400-###-####');
 
     public function phoneNumber()
     {
         $operator = static::randomElement(static::$operators);
         $format = static::randomElement(static::$formats);
 
-        return $operator . static::numerify(substr($format, 0, strlen($format) - strlen($operator)));
+        return $operator . static::numerify(substr($format, strlen($operator)));
+    }
+
+    public function tollFreePhoneNumber()
+    {
+        $operator = static::randomElement(static::$tollFreePhoneOperators);
+        $format = static::randomElement(static::$tollFreeFormats);
+
+        return $operator . static::numerify(substr($format, strlen($operator)));
+    }
+
+    public function e164PhoneNumber()
+    {
+        return '+86' . $this->phoneNumber();
     }
 }
