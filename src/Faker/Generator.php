@@ -240,11 +240,20 @@ class Generator
         if (isset($this->formatters[$formatter])) {
             return $this->formatters[$formatter];
         }
+        $this->formatters[$formatter] = $this->findFormatter($formatter);
+        return $this->formatters[$formatter];
+    }
+    
+    /**
+     * @param string $formatter
+     *
+     * @return Callable
+     */
+    protected function findFormatter($formatter)
+    {
         foreach ($this->providers as $provider) {
             if (method_exists($provider, $formatter)) {
-                $this->formatters[$formatter] = array($provider, $formatter);
-
-                return $this->formatters[$formatter];
+                return array($provider, $formatter);
             }
         }
         throw new \InvalidArgumentException(sprintf('Unknown formatter "%s"', $formatter));
