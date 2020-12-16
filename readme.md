@@ -426,7 +426,7 @@ You can check available Faker locales in the source code, [under the `Provider` 
 
 ## Populating Entities Using an ORM or an ODM
 
-Faker provides adapters for Object-Relational and Object-Document Mappers (currently, [Propel](http://www.propelorm.org), [Doctrine2](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/), [CakePHP](http://cakephp.org), [Spot2](https://github.com/vlucas/spot2), [Mandango](https://github.com/mandango/mandango) and [Eloquent](https://laravel.com/docs/master/eloquent) are supported). These adapters ease the population of databases through the Entity classes provided by an ORM library (or the population of document stores using Document classes provided by an ODM library).
+Faker provides adapters for Object-Relational and Object-Document Mappers. Currently, [Propel](http://www.propelorm.org), [Doctrine2](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/), [CakePHP](http://cakephp.org), [Spot2](https://github.com/vlucas/spot2), [Mandango](https://github.com/mandango/mandango) and [Eloquent](https://laravel.com/docs/master/eloquent) (through an external package linked below) are supported. These adapters ease the population of databases through the Entity classes provided by an ORM library (or the population of document stores using Document classes provided by an ODM library).
 
 To populate entities, create a new populator class (using a generator instance as parameter), then list the class and number of all the entities that must be generated. To launch the actual data population, call the `execute()` method.
 
