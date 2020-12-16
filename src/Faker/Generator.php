@@ -201,6 +201,7 @@ class Generator
 {
     protected $providers = array();
     protected $formatters = array();
+    protected $seedRestored = false;
 
     public function addProvider($provider)
     {
@@ -223,6 +224,16 @@ class Generator
                 mt_srand((int) $seed, MT_RAND_PHP);
             }
         }
+    }
+
+    public function restoreSeed()
+    {
+        if ($this->seedRestored) {
+            return;
+        }
+
+        $this->seed();
+        $this->seedRestored = true;
     }
 
     public function format($formatter, $arguments = array())
@@ -289,7 +300,7 @@ class Generator
 
     public function __destruct()
     {
-        $this->seed();
+        $this->restoreSeed();
     }
 
     public function __wakeup()

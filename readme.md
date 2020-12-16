@@ -520,6 +520,9 @@ echo $faker->name; // 'Jess Mraz I';
 > // good
 > $faker->realText($faker->numberBetween(10,20));
 > ```
+> 
+> **Tip**: When the faker object is destroyed, the seed is restored to generate unpredictable values (default behavior for mt_rand that is used internally). But you can't guess when the php garbage collector is going to collect the faker object. It can occur during a values generation sequence from another instance of faker (like in a test suite). In this case it will break your predictable values suite. To prevent this kind of problem, when you've finished to generate values, you should use `restoreSeed` on your faker instance to control the seed restore instant.
+> 
 
 
 
