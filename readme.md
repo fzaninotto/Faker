@@ -1795,6 +1795,7 @@ echo $faker->VAT; //23456789
 * [`elgentos/masquerade`](https://github.com/elgentos/masquerade): Configuration-based, platform-agnostic, locale-compatible data faker tool (out-of-the-box support for Magento 2)
 * [`ottaviano/faker-gravatar`](https://github.com/ottaviano/faker-gravatar): Generate avatars using [Gravatar](https://en.gravatar.com/site/implement/images/)
 * [`finwe/phpstan-faker`](https://github.com/finwe/phpstan-faker): PHPStan extension for Faker methods
+* [`tddwizard/magento2-fixtures`](https://github.com/tddwizard/magento2-fixtures): Improved fixtures for Magento integration tests
 
 ## License
 
