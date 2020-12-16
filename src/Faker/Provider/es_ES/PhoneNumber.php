@@ -40,7 +40,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         return static::numerify(static::randomElement(static::$mobileFormats));
     }
 
-    public static function tollFreeNumber()
+    public static function tollFreePhoneNumber()
     {
         return static::numerify(static::randomElement(static::$tollFreeFormats));
     }
