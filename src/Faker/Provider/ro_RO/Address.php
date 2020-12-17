@@ -144,34 +144,10 @@ class Address extends \Faker\Provider\Address
     }
 
     /**
-     * @example 'Splaiul Independenței'
-     */
-    public function streetName()
-    {
-        $format = static::randomElement(static::$streetNameFormats);
-
-        return $this->generator->parse($format);
-    }
-
-    /**
      * @example 'Cluj'
      */
     public function county()
     {
         return static::randomElement(static::$counties);
-    }
-
-    public function address()
-    {
-        $format = static::randomElement(static::$addressFormats);
-
-        return $this->generator->parse($format);
-    }
-
-    public function streetAddress()
-    {
-        $format = static::randomElement(static::$streetAddressFormats);
-
-        return $this->generator->parse($format);
     }
 }
