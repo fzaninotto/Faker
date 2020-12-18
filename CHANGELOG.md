@@ -1,5 +1,33 @@
 # CHANGELOG
 
+## 2020-12-18, v1.13.0
+
+Several fixes and new additions in this release. A lot of cleanup has been done
+on the codebase on both tests and consistency.
+
+- Feature/pl pl license plate (#62)
+- Fix greek phone numbers (#16)
+- Move AT payment provider logic to de_AT (#72)
+- Fix wiktionary links (#73)
+- Fix AT person links (#74)
+- Fix AT cities (#75)
+- Deprecate at_AT providers (#78)
+- Add Austrian `ssn()` to `Person` provider (#79)
+- Fix typos in id_ID Address (#83)
+- Austrian post codes (#86)
+- Updated Polish data (#70)
+- Improve Austrian social security number generation (#88)
+- Move US phone numbers with extension to own method (#91)
+- Add UK National Insurance number generator (#89)
+- Fix en_SG phone number generator (#100)
+- Remove usage of mt_rand (#87)
+- Remove whitespace from beginning of el_GR phone numbers (#105)
+- Building numbers can not be 0, 00, 000 (#107)
+- Add 172.16/12 local IPv4 block (#121)
+- Add JCB credit card type (#124)
+- Remove json_decode from emoji generation (#123)
+- Remove ro street address (#146)
+
 ## 2020-12-11, v1.12.1
 
 This is a security release that prevents a hacker to execute code on the server.
