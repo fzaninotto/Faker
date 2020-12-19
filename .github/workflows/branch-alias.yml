@@ -53,23 +53,14 @@ jobs:
 
           composer config extra.branch-alias.dev-main ${{ steps.find_alias.outputs.alias }}-dev
 
-      - name: Commit & push the new files
-        run: |
-          echo "::group::git status"
-          git status
-          echo "::endgroup::"
-
-          git add -N .
-          if [[ $(git diff --numstat | wc -l) -eq 0 ]]; then
-            echo "No changes found. Exiting."
-            exit 0;
-          fi
-
-          git config --local user.email "noreply@github.com"
-          git config --local user.name "GitHub"
-
-          echo "::group::git push"
-          git add .
-          git commit -m "Update branch alias"
-          git push
-          echo "::endgroup::"
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          base: main
+          branch: branch-alias-update
+          author: GitHub <noreply@github.com>
+          committer: GitHub <noreply@github.com>
+          commit-message: Updating branch alias to ${{ steps.find_alias.outputs.alias }}
+          title: Update branch alias
+          body: |
+            Since we just tagged a new version, we need to update composer.json branch alias.
