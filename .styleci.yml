@@ -6,6 +6,19 @@ enabled:
   - alpha_ordered_imports
   - array_indentation
   - binary_operator_spaces
+  - blank_line_before_break
+  - blank_line_before_cases
+  - blank_line_before_continue
+  - blank_line_before_do
+  - blank_line_before_exit
+  - blank_line_before_for
+  - blank_line_before_include
+  - blank_line_before_return
+  - blank_line_before_switch
+  - blank_line_before_throw
+  - blank_line_before_try
+  - blank_line_before_while
+  - blank_line_before_yield
   - cast_spaces
   - combine_nested_dirname
   - implode_call
