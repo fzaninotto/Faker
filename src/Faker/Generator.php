@@ -73,6 +73,7 @@ namespace Faker;
  * @method string text($maxNbChars = 200)
  *
  * @method string realText($maxNbChars = 200, $indexSize = 2)
+ * @method string realTextBetween($minNbChars = 150, $maxNbChars = 200, $indexSize = 2)
  *
  * @property string $email
  * @property string $safeEmail
