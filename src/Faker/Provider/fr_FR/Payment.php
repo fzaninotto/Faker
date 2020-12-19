@@ -26,6 +26,7 @@ class Payment extends \Faker\Provider\Payment
             $siren = trim(chunk_split($siren, 3, ' '));
             $pattern = "%s %'.02d %s";
         }
+
         return sprintf($pattern, 'FR', $key, $siren);
     }
 

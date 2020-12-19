@@ -22,6 +22,7 @@ final class PersonTest extends TestCase
 
         $total = 0;
         $codesArray = str_split($codesString);
+
         foreach ($codesArray as $key => $code) {
             $total += $code * Person::$idDigitValidator[$key];
         }

@@ -128,8 +128,11 @@ final class InternetTest extends TestCase
     protected function getProviders(): iterable
     {
         yield new Lorem($this->faker);
+
         yield new Person($this->faker);
+
         yield new Internet($this->faker);
+
         yield new Company($this->faker);
     }
 }

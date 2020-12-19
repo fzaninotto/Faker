@@ -26,49 +26,59 @@ class ColumnTypeGuesser
     {
         $generator = $this->generator;
         $type = $field['type'];
+
         switch ($type) {
             case 'boolean':
                 return function () use ($generator) {
                     return $generator->boolean;
                 };
+
             case 'decimal':
                 $size = $field['precision'] ?? 2;
 
                 return function () use ($generator, $size) {
                     return $generator->randomNumber($size + 2) / 100;
                 };
+
             case 'smallint':
                 return function () use ($generator) {
                     return $generator->numberBetween(0, 65535);
                 };
+
             case 'integer':
                 return function () use ($generator) {
                     return $generator->numberBetween(0, 2147483647);
                 };
+
             case 'bigint':
                 return function () use ($generator) {
                     return $generator->numberBetween(0, PHP_INT_MAX);
                 };
+
             case 'float':
                 return function () use ($generator) {
                     return $generator->randomFloat(null, 0, 4294967295);
                 };
+
             case 'string':
                 $size = $field['length'] ?? 255;
 
                 return function () use ($generator, $size) {
                     return $generator->text($size);
                 };
+
             case 'text':
                 return function () use ($generator) {
                     return $generator->text;
                 };
+
             case 'datetime':
             case 'date':
             case 'time':
                 return function () use ($generator) {
                     return $generator->datetime;
                 };
+
             default:
                 // no smart way to guess what the user expects here
                 return null;

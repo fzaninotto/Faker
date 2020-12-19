@@ -238,6 +238,7 @@ class Payment extends Base
                 $length = 24;
             } else {
                 $length = 0;
+
                 foreach ($format as $part) {
                     list($class, $groupCount) = $part;
                     $length += $groupCount;
@@ -249,6 +250,7 @@ class Payment extends Base
         }
 
         $expandedFormat = '';
+
         foreach ($format as $item) {
             list($class, $length) = $item;
             $expandedFormat .= str_repeat($class, $length);
@@ -256,17 +258,23 @@ class Payment extends Base
 
         $result = $prefix;
         $expandedFormat = substr($expandedFormat, strlen($result));
+
         foreach (str_split($expandedFormat) as $class) {
             switch ($class) {
                 default:
                 case 'c':
                     $result .= Miscellaneous::boolean() ? static::randomDigit() : strtoupper(static::randomLetter());
+
                     break;
+
                 case 'a':
                     $result .= strtoupper(static::randomLetter());
+
                     break;
+
                 case 'n':
                     $result .= static::randomDigit();
+
                     break;
             }
         }

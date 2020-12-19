@@ -45,6 +45,7 @@ abstract class Text extends Base
         $resultLength = 0;
         // take a random starting point
         $next = static::randomKey($words);
+
         while ($resultLength < $maxNbChars && isset($words[$next])) {
             // fetch a random word to append
             $word = static::randomElement($words[$next]);
@@ -80,6 +81,7 @@ abstract class Text extends Base
             $parts = $this->getExplodedText();
             $words = [];
             $index = [];
+
             for ($i = 0; $i < $indexSize; $i++) {
                 $index[] = array_shift($parts);
             }
@@ -131,6 +133,7 @@ abstract class Text extends Base
         if (static::$textStartsWithUppercase) {
             $isValid = preg_match('/^\p{Lu}/u', $word);
         }
+
         return $isValid;
     }
 

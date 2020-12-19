@@ -60,6 +60,7 @@ class EntityPopulator
         $tableMap = $peerClass::getTableMap();
         $nameGuesser = new \Faker\Guesser\Name($generator);
         $columnTypeGuesser = new \Faker\ORM\Propel\ColumnTypeGuesser($generator);
+
         foreach ($tableMap->getColumns() as $columnMap) {
             // skip behavior columns, handled by modifiers
             if ($this->isColumnBehavior($columnMap)) {
@@ -70,6 +71,7 @@ class EntityPopulator
                 $formatters[$columnMap->getPhpName()] = function ($inserted) use ($relatedClass, $generator) {
                     return isset($inserted[$relatedClass]) ? $generator->randomElement($inserted[$relatedClass]) : null;
                 };
+
                 continue;
             }
             if ($columnMap->isPrimaryKey()) {
@@ -77,10 +79,12 @@ class EntityPopulator
             }
             if ($formatter = $nameGuesser->guessFormat($columnMap->getPhpName(), $columnMap->getSize())) {
                 $formatters[$columnMap->getPhpName()] = $formatter;
+
                 continue;
             }
             if ($formatter = $columnTypeGuesser->guessFormat($columnMap)) {
                 $formatters[$columnMap->getPhpName()] = $formatter;
+
                 continue;
             }
         }
@@ -96,18 +100,22 @@ class EntityPopulator
     {
         foreach ($columnMap->getTable()->getBehaviors() as $name => $params) {
             $columnName = Base::toLower($columnMap->getName());
+
             switch ($name) {
                 case 'nested_set':
                     $columnNames = [$params['left_column'], $params['right_column'], $params['level_column']];
                     if (in_array($columnName, $columnNames)) {
                         return true;
                     }
+
                     break;
+
                 case 'timestampable':
                     $columnNames = [$params['create_column'], $params['update_column']];
                     if (in_array($columnName, $columnNames)) {
                         return true;
                     }
+
                     break;
             }
         }
@@ -143,6 +151,7 @@ class EntityPopulator
         $class = $this->class;
         $peerClass = $class::PEER;
         $tableMap = $peerClass::getTableMap();
+
         foreach ($tableMap->getBehaviors() as $name => $params) {
             switch ($name) {
                 case 'nested_set':
@@ -155,11 +164,14 @@ class EntityPopulator
                             $obj->makeRoot();
                         }
                     };
+
                     break;
+
                 case 'sortable':
                     $modifiers['sortable'] = function ($obj, $inserted) use ($class, $generator) {
                         $obj->insertAtRank($generator->numberBetween(1, count($inserted[$class] ?? []) + 1));
                     };
+
                     break;
             }
         }
@@ -173,11 +185,13 @@ class EntityPopulator
     public function execute($con, $insertedEntities)
     {
         $obj = new $this->class();
+
         foreach ($this->getColumnFormatters() as $column => $format) {
             if (null !== $format) {
                 $obj->setByName($column, is_callable($format) ? $format($insertedEntities, $obj) : $format);
             }
         }
+
         foreach ($this->getModifiers() as $modifier) {
             $modifier($obj, $insertedEntities);
         }

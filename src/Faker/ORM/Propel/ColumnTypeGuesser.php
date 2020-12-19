@@ -36,12 +36,14 @@ class ColumnTypeGuesser
             };
         }
         $type = $column->getType();
+
         switch ($type) {
             case PropelColumnTypes::BOOLEAN:
             case PropelColumnTypes::BOOLEAN_EMU:
                 return function () use ($generator) {
                     return $generator->boolean;
                 };
+
             case PropelColumnTypes::NUMERIC:
             case PropelColumnTypes::DECIMAL:
                 $size = $column->getSize();
@@ -49,28 +51,34 @@ class ColumnTypeGuesser
                 return function () use ($generator, $size) {
                     return $generator->randomNumber($size + 2) / 100;
                 };
+
             case PropelColumnTypes::TINYINT:
                 return function () use ($generator) {
                     return $generator->numberBetween(0, 127);
                 };
+
             case PropelColumnTypes::SMALLINT:
                 return function () use ($generator) {
                     return $generator->numberBetween(0, 32767);
                 };
+
             case PropelColumnTypes::INTEGER:
                 return function () use ($generator) {
                     return $generator->numberBetween(0, 2147483647);
                 };
+
             case PropelColumnTypes::BIGINT:
                 return function () use ($generator) {
                     return $generator->numberBetween(0, PHP_INT_MAX);
                 };
+
             case PropelColumnTypes::FLOAT:
             case PropelColumnTypes::DOUBLE:
             case PropelColumnTypes::REAL:
             return function () use ($generator) {
                 return $generator->randomFloat();
             };
+
             case PropelColumnTypes::CHAR:
             case PropelColumnTypes::VARCHAR:
             case PropelColumnTypes::BINARY:
@@ -80,6 +88,7 @@ class ColumnTypeGuesser
                 return function () use ($generator, $size) {
                     return $generator->text($size);
                 };
+
             case PropelColumnTypes::LONGVARCHAR:
             case PropelColumnTypes::LONGVARBINARY:
             case PropelColumnTypes::CLOB:
@@ -88,12 +97,14 @@ class ColumnTypeGuesser
                 return function () use ($generator) {
                     return $generator->text;
                 };
+
             case PropelColumnTypes::ENUM:
                 $valueSet = $column->getValueSet();
 
                 return function () use ($generator, $valueSet) {
                     return $generator->randomElement($valueSet);
                 };
+
             case PropelColumnTypes::OBJECT:
             case PropelColumnTypes::PHP_ARRAY:
             default:

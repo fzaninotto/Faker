@@ -42,6 +42,7 @@ final class PaymentTest extends TestCase
         if (preg_match($pattern, $fixedString)) {
             $isValid = true;
         }
+
         return $isValid;
     }
 

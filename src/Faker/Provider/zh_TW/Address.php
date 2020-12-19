@@ -362,6 +362,7 @@ class Address extends \Faker\Provider\Address
         $digits = [
             '', '一', '二', '三', '四', '五', '六', '七', '八', '九',
         ];
+
         return $digits[static::randomDigitNotNull()];
     }
 
@@ -389,6 +390,7 @@ class Address extends \Faker\Provider\Address
     {
         $county = static::randomElement(array_keys(static::$city));
         $city = static::randomElement(static::$city[$county]);
+
         return $county . $city;
     }
 

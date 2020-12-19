@@ -238,6 +238,7 @@ class Generator
         if (isset($this->formatters[$formatter])) {
             return $this->formatters[$formatter];
         }
+
         foreach ($this->providers as $provider) {
             if (method_exists($provider, $formatter)) {
                 $this->formatters[$formatter] = [$provider, $formatter];
@@ -245,6 +246,7 @@ class Generator
                 return $this->formatters[$formatter];
             }
         }
+
         throw new \InvalidArgumentException(sprintf('Unknown formatter "%s"', $formatter));
     }
 

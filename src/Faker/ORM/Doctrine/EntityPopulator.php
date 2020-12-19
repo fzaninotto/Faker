@@ -90,6 +90,7 @@ class EntityPopulator
         $formatters = [];
         $nameGuesser = new \Faker\Guesser\Name($generator);
         $columnTypeGuesser = new ColumnTypeGuesser($generator);
+
         foreach ($this->class->getFieldNames() as $fieldName) {
             if ($this->class->isIdentifier($fieldName) || !$this->class->hasField($fieldName)) {
                 continue;
@@ -98,10 +99,12 @@ class EntityPopulator
             $size = $this->class->fieldMappings[$fieldName]['length'] ?? null;
             if ($formatter = $nameGuesser->guessFormat($fieldName, $size)) {
                 $formatters[$fieldName] = $formatter;
+
                 continue;
             }
             if ($formatter = $columnTypeGuesser->guessFormat($fieldName, $this->class)) {
                 $formatters[$fieldName] = $formatter;
+
                 continue;
             }
         }
@@ -116,22 +119,26 @@ class EntityPopulator
             $unique = $optional = false;
             if ($this->class instanceof \Doctrine\ORM\Mapping\ClassMetadata) {
                 $mappings = $this->class->getAssociationMappings();
+
                 foreach ($mappings as $mapping) {
                     if ($mapping['targetEntity'] == $relatedClass) {
                         if ($mapping['type'] == \Doctrine\ORM\Mapping\ClassMetadata::ONE_TO_ONE) {
                             $unique = true;
                             $optional = $mapping['joinColumns'][0]['nullable'] ?? false;
+
                             break;
                         }
                     }
                 }
             } elseif ($this->class instanceof \Doctrine\ODM\MongoDB\Mapping\ClassMetadata) {
                 $mappings = $this->class->associationMappings;
+
                 foreach ($mappings as $mapping) {
                     if ($mapping['targetDocument'] == $relatedClass) {
                         if ($mapping['type'] == \Doctrine\ODM\MongoDB\Mapping\ClassMetadata::ONE && $mapping['association'] == \Doctrine\ODM\MongoDB\Mapping\ClassMetadata::REFERENCE_ONE) {
                             $unique = true;
                             $optional = $mapping['nullable'] ?? false;
+
                             break;
                         }
                     }
@@ -177,6 +184,7 @@ class EntityPopulator
 
         if ($generateId) {
             $idsName = $this->class->getIdentifier();
+
             foreach ($idsName as $idName) {
                 $id = $this->generateId($obj, $idName, $manager);
                 $this->class->reflFields[$idName]->setValue($obj, $id);
@@ -236,6 +244,7 @@ class EntityPopulator
         $ids = array_map('current', $result->toArray());
 
         $id = null;
+
         do {
             $id = mt_rand();
         } while (in_array($id, $ids));

@@ -45,6 +45,7 @@ final class AddressTest extends TestCase
     protected function getProviders(): iterable
     {
         yield new Address($this->faker);
+
         yield new Person($this->faker);
     }
 }

@@ -124,6 +124,7 @@ class Address extends \Faker\Provider\it_IT\Address
     public static function cantonShort()
     {
         $canton = static::canton();
+
         return key($canton);
     }
 
@@ -134,6 +135,7 @@ class Address extends \Faker\Provider\it_IT\Address
     public static function cantonName()
     {
         $canton = static::canton();
+
         return current($canton);
     }
 }

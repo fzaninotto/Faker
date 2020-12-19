@@ -214,6 +214,7 @@ final class PersonTest extends TestCase
             $checkNumber = 279146358279;
 
             $checksum = 0;
+
             foreach (range(0, 11) as $digit) {
                 $checksum += (int) substr($cnp, $digit, 1) * (int) substr($checkNumber, $digit, 1);
             }
@@ -231,6 +232,7 @@ final class PersonTest extends TestCase
     protected function getProviders(): iterable
     {
         yield new Person($this->faker);
+
         yield new DateTime($this->faker);
     }
 }

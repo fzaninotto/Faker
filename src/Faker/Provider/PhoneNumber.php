@@ -23,6 +23,7 @@ class PhoneNumber extends Base
     public function e164PhoneNumber()
     {
         $formats = ['+%############'];
+
         return static::numerify($this->generator->parse(static::randomElement($formats)));
     }
 
@@ -38,6 +39,7 @@ class PhoneNumber extends Base
     {
         $imei = (string) static::numerify('##############');
         $imei .= Luhn::computeCheckDigit($imei);
+
         return $imei;
     }
 }

@@ -59,6 +59,7 @@ class Base
         if ($result >= $except) {
             $result++;
         }
+
         return $result;
     }
 
@@ -137,6 +138,7 @@ class Base
     {
         $min = $int1 < $int2 ? $int1 : $int2;
         $max = $int1 < $int2 ? $int2 : $int1;
+
         return mt_rand($min, $max);
     }
 
@@ -248,6 +250,7 @@ class Base
             return null;
         }
         $keys = array_keys($array);
+
         return $keys[mt_rand(0, count($keys) - 1)];
     }
 
@@ -273,6 +276,7 @@ class Base
         if (is_string($arg)) {
             return static::shuffleString($arg);
         }
+
         throw new \InvalidArgumentException('shuffle() only supports strings or arrays');
     }
 
@@ -296,6 +300,7 @@ class Base
         $shuffledArray = [];
         $i = 0;
         reset($array);
+
         foreach ($array as $key => $value) {
             if ($i == 0) {
                 $j = 0;
@@ -310,6 +315,7 @@ class Base
             }
             $i++;
         }
+
         return $shuffledArray;
     }
 
@@ -336,12 +342,14 @@ class Base
             // UTF8-safe str_split()
             $array = [];
             $strlen = mb_strlen($string, $encoding);
+
             for ($i = 0; $i < $strlen; $i++) {
                 $array []= mb_substr($string, $i, 1, $encoding);
             }
         } else {
             $array = str_split($string, 1);
         }
+
         return implode('', static::shuffleArray($array));
     }
 
@@ -350,11 +358,13 @@ class Base
         if (($pos = strpos($string, $wildcard)) === false) {
             return $string;
         }
+
         for ($i = $pos, $last = strrpos($string, $wildcard, $pos) + 1; $i < $last; $i++) {
             if ($string[$i] === $wildcard) {
                 $string[$i] = call_user_func($callback);
             }
         }
+
         return $string;
     }
 
@@ -381,11 +391,13 @@ class Base
             $maxAtOnce = strlen((string) mt_getrandmax()) - 1;
             $numbers = '';
             $i = 0;
+
             while ($i < $nbReplacements) {
                 $size = min($nbReplacements - $i, $maxAtOnce);
                 $numbers .= str_pad(static::randomNumber($size), $size, '0', STR_PAD_LEFT);
                 $i += $size;
             }
+
             for ($i = 0; $i < $nbReplacements; $i++) {
                 $string[$toReplace[$i]] = $numbers[$i];
             }
@@ -418,6 +430,7 @@ class Base
         $string = self::replaceWildcard($string, '*', function () {
             return mt_rand(0, 1) ? '#' : '?';
         });
+
         return static::lexify(static::numerify($string));
     }
 

@@ -165,6 +165,7 @@ class Person extends \Faker\Provider\Person
         }
 
         $checksum = 0;
+
         for ($i = 0; $i < $length; $i++) {
             $checksum += $weights[$i] * $result[$i];
         }
@@ -186,9 +187,11 @@ class Person extends \Faker\Provider\Person
         $high = [static::randomDigit(), static::randomDigit(), static::randomDigit(), static::randomDigit(), static::randomDigit()];
         $weights = [7, 3, 1, 7, 3, 1, 7, 3];
         $checksum = 0;
+
         for ($i = 0, $size = count($low); $i < $size; $i++) {
             $checksum += $weights[$i] * (ord($low[$i]) - 55);
         }
+
         for ($i = 0, $size = count($high); $i < $size; $i++) {
             $checksum += $weights[$i + 3] * $high[$i];
         }
@@ -207,6 +210,7 @@ class Person extends \Faker\Provider\Person
     {
         $weights = [6, 5, 7, 2, 3, 4, 5, 6, 7];
         $result = [];
+
         do {
             $result = [
                 static::randomDigitNotNull(), static::randomDigitNotNull(), static::randomDigitNotNull(),
@@ -214,6 +218,7 @@ class Person extends \Faker\Provider\Person
                 static::randomDigit(), static::randomDigit(), static::randomDigit(),
             ];
             $checksum = 0;
+
             for ($i = 0, $size = count($result); $i < $size; $i++) {
                 $checksum += $weights[$i] * $result[$i];
             }

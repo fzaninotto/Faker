@@ -17,6 +17,7 @@ class Factory
     public static function create($locale = self::DEFAULT_LOCALE)
     {
         $generator = new Generator();
+
         foreach (static::$defaultProviders as $provider) {
             $providerClassName = self::getProviderClassname($provider, $locale);
             $generator->addProvider(new $providerClassName($generator));
@@ -43,6 +44,7 @@ class Factory
         if ($providerClass = self::findProviderClassname($provider)) {
             return $providerClass;
         }
+
         throw new \InvalidArgumentException(sprintf('Unable to find provider "%s" with locale "%s"', $provider, $locale));
     }
 

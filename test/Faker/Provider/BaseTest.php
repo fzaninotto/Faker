@@ -386,12 +386,14 @@ final class BaseTest extends TestCase
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         $values = [];
+
         for ($i=0; $i < 10; $i++) {
             $values[]= $faker->optional()->randomDigit;
         }
         self::assertContains(null, $values);
 
         $values = [];
+
         for ($i=0; $i < 10; $i++) {
             $values[]= $faker->optional(50)->randomDigit;
         }
@@ -442,6 +444,7 @@ final class BaseTest extends TestCase
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         $values = [];
+
         for ($i=0; $i < 10; $i++) {
             $values[]= $faker->unique()->randomDigit;
         }
@@ -454,6 +457,7 @@ final class BaseTest extends TestCase
         $this->expectException(\OverflowException::class);
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
+
         for ($i=0; $i < 11; $i++) {
             $faker->unique()->randomDigit;
         }
@@ -464,10 +468,12 @@ final class BaseTest extends TestCase
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         $values = [];
+
         for ($i=0; $i < 10; $i++) {
             $values[]= $faker->unique()->randomDigit;
         }
         $values[]= $faker->unique(true)->randomDigit;
+
         for ($i=0; $i < 9; $i++) {
             $values[]= $faker->unique()->randomDigit;
         }
@@ -497,6 +503,7 @@ final class BaseTest extends TestCase
         $evenValidator = function ($digit) {
             return $digit % 2 === 0;
         };
+
         for ($i=0; $i < 50; $i++) {
             $values[$faker->valid($evenValidator)->randomDigit] = true;
         }
@@ -513,6 +520,7 @@ final class BaseTest extends TestCase
         $evenValidator = function ($digit) {
             return $digit % 2 === 0;
         };
+
         for ($i=0; $i < 11; $i++) {
             $faker->valid($evenValidator)->randomElement([1, 3, 5, 7, 9]);
         }

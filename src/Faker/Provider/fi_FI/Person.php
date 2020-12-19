@@ -105,13 +105,19 @@ class Person extends \Faker\Provider\Person
         switch ((int) ($birthdate->format('Y') / 100)) {
             case 18:
                 $centurySign = '+';
+
                 break;
+
             case 19:
                 $centurySign = '-';
+
                 break;
+
             case 20:
                 $centurySign = 'A';
+
                 break;
+
             default:
                 throw new \InvalidArgumentException('Year must be between 1800 and 2099 inclusive.');
         }

@@ -62,6 +62,7 @@ class HtmlLorem extends Base
         $html->appendChild($body);
 
         $document->appendChild($html);
+
         return $document->saveHTML();
     }
 
@@ -73,6 +74,7 @@ class HtmlLorem extends Base
         }
 
         $siblings = self::numberBetween(1, $maxWidth);
+
         for ($i = 0; $i < $siblings; $i++) {
             if ($maxDepth == 1) {
                 $this->addRandomLeaf($root);
@@ -83,39 +85,58 @@ class HtmlLorem extends Base
                 $this->addRandomSubTree($sibling, self::numberBetween(0, $maxDepth), $maxWidth);
             }
         }
+
         return $root;
     }
 
     private function addRandomLeaf(\DOMElement $node)
     {
         $rand = self::numberBetween(1, 10);
+
         switch ($rand) {
             case 1:
                 $this->addRandomP($node);
+
                 break;
+
             case 2:
                 $this->addRandomA($node);
+
                 break;
+
             case 3:
                 $this->addRandomSpan($node);
+
                 break;
+
             case 4:
                 $this->addRandomUL($node);
+
                 break;
+
             case 5:
                 $this->addRandomH($node);
+
                 break;
+
             case 6:
                 $this->addRandomB($node);
+
                 break;
+
             case 7:
                 $this->addRandomI($node);
+
                 break;
+
             case 8:
                 $this->addRandomTable($node);
+
                 break;
+
             default:
                 $this->addRandomText($node);
+
                 break;
         }
     }
@@ -123,12 +144,16 @@ class HtmlLorem extends Base
     private function addRandomAttribute(\DOMElement $node)
     {
         $rand = self::numberBetween(1, 2);
+
         switch ($rand) {
             case 1:
                 $node->setAttribute('class', $this->generator->word);
+
                 break;
+
             case 2:
                 $node->setAttribute('id', (string) $this->idGenerator->randomNumber(5));
+
                 break;
         }
     }
@@ -242,14 +267,17 @@ class HtmlLorem extends Base
 
         $tr = $element->ownerDocument->createElement(static::TR_TAG);
         $thead->appendChild($tr);
+
         for ($i = 0; $i < $cols; $i++) {
             $th = $element->ownerDocument->createElement(static::TH_TAG);
             $th->textContent = $this->generator->sentence(self::numberBetween(1, $maxTitle));
             $tr->appendChild($th);
         }
+
         for ($i = 0; $i < $rows; $i++) {
             $tr = $element->ownerDocument->createElement(static::TR_TAG);
             $tbody->appendChild($tr);
+
             for ($j = 0; $j < $cols; $j++) {
                 $th = $element->ownerDocument->createElement(static::TD_TAG);
                 $th->textContent = $this->generator->sentence(self::numberBetween(1, $maxLength));
@@ -263,6 +291,7 @@ class HtmlLorem extends Base
     {
         $num = self::numberBetween(1, $maxItems);
         $ul = $element->ownerDocument->createElement(static::UL_TAG);
+
         for ($i = 0; $i < $num; $i++) {
             $li = $element->ownerDocument->createElement(static::LI_TAG);
             $li->textContent = $this->generator->sentence(self::numberBetween(1, $maxLength));

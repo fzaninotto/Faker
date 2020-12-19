@@ -11,18 +11,26 @@ final class IsbnTest extends TestCase
     public function isbnChecksumProvider(): iterable
     {
         yield ['997150210', '0'];
+
         yield ['999215810', '7'];
+
         yield ['960425059', '0'];
     }
 
     public function isbnValidationProvider(): iterable
     {
         yield ['9971502100', true];
+
         yield ['0754013235', true];
+
         yield ['093583933X', true];
+
         yield ['0935839330', false];
+
         yield ['1434856045', false];
+
         yield ['143485604', false];
+
         yield ['093583933A', false];
     }
 

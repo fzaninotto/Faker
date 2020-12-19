@@ -147,13 +147,18 @@ class Person extends \Faker\Provider\Person
             $birthdate = $this->generator->dateTimeThisCentury();
         }
         $birthDateString = $birthdate->format('ymd');
+
         switch (strtolower($gender)) {
             case static::GENDER_FEMALE:
                 $genderDigit = self::numberBetween(0, 4);
+
                 break;
+
             case static::GENDER_MALE:
                 $genderDigit = self::numberBetween(5, 9);
+
                 break;
+
             default:
                 $genderDigit = self::numberBetween(0, 9);
         }

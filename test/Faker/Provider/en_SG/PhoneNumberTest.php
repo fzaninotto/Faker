@@ -13,6 +13,7 @@ final class PhoneNumberTest extends TestCase
     public function testMobilePhoneNumberStartWith9Returns9yxxxxxx()
     {
         $startsWith9 = false;
+
         while (!$startsWith9) {
             $mobileNumber = $this->faker->mobileNumber();
             $startsWith9 = preg_match('/^(\+65|65)?\s*9/', $mobileNumber);
@@ -27,6 +28,7 @@ final class PhoneNumberTest extends TestCase
     public function testMobilePhoneNumberStartWith8Returns8zxxxxxx()
     {
         $startsWith8 = false;
+
         while (!$startsWith8) {
             $mobileNumber = $this->faker->mobileNumber();
             $startsWith8 = preg_match('/^(\+65|65)?\s*8/', $mobileNumber);

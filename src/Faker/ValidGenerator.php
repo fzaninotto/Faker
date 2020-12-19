@@ -52,6 +52,7 @@ class ValidGenerator
     public function __call($name, $arguments)
     {
         $i = 0;
+
         do {
             $res = call_user_func_array([$this->generator, $name], $arguments);
             $i++;

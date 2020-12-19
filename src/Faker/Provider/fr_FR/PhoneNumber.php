@@ -73,6 +73,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     {
         $phoneNumber = $this->phoneNumber07WithSeparator();
         $phoneNumber = str_replace(' ', '', $phoneNumber);
+
         return $phoneNumber;
     }
 
@@ -85,6 +86,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     {
         $phoneNumber = $this->generator->numberBetween(3, 9);
         $phoneNumber .= $this->numerify('# ## ## ##');
+
         return $phoneNumber;
     }
 
@@ -92,6 +94,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     {
         $phoneNumber = $this->phoneNumber08WithSeparator();
         $phoneNumber = str_replace(' ', '', $phoneNumber);
+
         return $phoneNumber;
     }
 
@@ -117,6 +120,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     public function phoneNumber08WithSeparator()
     {
         $regex = '([012]{1}\d{1}|(9[1-357-9])( \d{2}){3}';
+
         return $this->regexify($regex);
     }
 

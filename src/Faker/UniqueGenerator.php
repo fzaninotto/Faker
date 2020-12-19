@@ -44,6 +44,7 @@ class UniqueGenerator
             $this->uniques[$name] = [];
         }
         $i = 0;
+
         do {
             $res = call_user_func_array([$this->generator, $name], $arguments);
             $i++;

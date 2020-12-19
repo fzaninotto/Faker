@@ -25,6 +25,7 @@ class TCNo
         $evenSum = 0;
 
         $identityArray = array_map('intval', str_split($identityPrefix)); // Creates array from int
+
         foreach ($identityArray as $index => $digit) {
             if ($index % 2 == 0) {
                 $evenSum += $digit;

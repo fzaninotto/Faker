@@ -64,10 +64,12 @@ class EntityPopulator
         foreach ($metadata['fields'] as $fieldName => $field) {
             if ($formatter = $nameGuesser->guessFormat($fieldName)) {
                 $formatters[$fieldName] = $formatter;
+
                 continue;
             }
             if ($formatter = $columnTypeGuesser->guessFormat($field)) {
                 $formatters[$fieldName] = $formatter;
+
                 continue;
             }
         }
@@ -100,6 +102,7 @@ class EntityPopulator
         $metadata = $mandango->getMetadata($this->class);
 
         $obj = $mandango->create($this->class);
+
         foreach ($this->columnFormatters as $column => $format) {
             if (null !== $format) {
                 $value =  is_callable($format) ? $format($insertedEntities, $obj) : $format;

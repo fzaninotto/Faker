@@ -80,6 +80,7 @@ final class PersonTest extends TestCase
     protected function getProviders(): iterable
     {
         yield new Person($this->faker);
+
         yield new DateTime($this->faker);
     }
 }

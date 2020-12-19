@@ -167,6 +167,7 @@ class Person extends \Faker\Provider\Person
             // no break
             case 3:
                 break;
+
             default:
                 throw new \InvalidArgumentException("Invalid date of birth - must be null or in the 'Y-m-d', 'Y-m', 'Y' format");
         }
@@ -203,6 +204,7 @@ class Person extends \Faker\Provider\Person
             if ($gender == Person::GENDER_MALE) {
                 return 3;
             }
+
             return 4;
         }
 
@@ -210,12 +212,14 @@ class Person extends \Faker\Provider\Person
             if ($gender == Person::GENDER_MALE) {
                 return 1;
             }
+
             return 2;
         }
 
         if ($gender == Person::GENDER_MALE) {
             return 5;
         }
+
         return 6;
     }
 
@@ -230,6 +234,7 @@ class Person extends \Faker\Provider\Person
         $checkNumber = 279146358279;
 
         $checksum = 0;
+
         foreach (range(0, 11) as $digit) {
             $checksum += (int) substr($value, $digit, 1) * (int) substr($checkNumber, $digit, 1);
         }

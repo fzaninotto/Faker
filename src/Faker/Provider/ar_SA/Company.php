@@ -43,6 +43,7 @@ class Company extends \Faker\Provider\Company
     public function catchPhrase()
     {
         $result = [];
+
         foreach (static::$catchPhraseWords as &$word) {
             $result[] = static::randomElement($word);
         }
@@ -56,6 +57,7 @@ class Company extends \Faker\Provider\Company
     public function bs()
     {
         $result = [];
+
         foreach (static::$bsWords as &$word) {
             $result[] = static::randomElement($word);
         }
@@ -69,6 +71,7 @@ class Company extends \Faker\Provider\Company
     public static function companyIdNumber()
     {
         $partialValue = static::numerify(700 . str_repeat('#', 6));
+
         return Luhn::generateLuhnNumber($partialValue);
     }
 }

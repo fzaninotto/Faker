@@ -133,6 +133,7 @@ final class PaymentTest extends TestCase
         if (!isset($this->ibanFormats[$countryCode])) {
             // No IBAN format available
             self::markTestSkipped("bankAccountNumber not implemented for country $countryCode");
+
             return;
         }
 
@@ -143,6 +144,7 @@ final class PaymentTest extends TestCase
         } catch (\InvalidArgumentException $e) {
             // Not implemented, nothing to test
             self::markTestSkipped("bankAccountNumber not implemented for $locale");
+
             return;
         }
 
@@ -156,9 +158,11 @@ final class PaymentTest extends TestCase
     public function ibanFormatProvider()
     {
         $return = [];
+
         foreach ($this->ibanFormats as $countryCode => $regex) {
             $return[] = [$countryCode, $regex];
         }
+
         return $return;
     }
     /**
@@ -178,8 +182,11 @@ final class PaymentTest extends TestCase
     protected function getProviders(): iterable
     {
         yield new BaseProvider($this->faker);
+
         yield new DateTimeProvider($this->faker);
+
         yield new PersonProvider($this->faker);
+
         yield new PaymentProvider($this->faker);
     }
 }

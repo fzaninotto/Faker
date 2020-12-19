@@ -59,6 +59,7 @@ class EntityPopulator
                     return true;
                 }
             }
+
             return false;
         };
 
@@ -71,6 +72,7 @@ class EntityPopulator
             foreach ($guessers as $guesser) {
                 if ($formatter = $guesser->guessFormat($column, $table)) {
                     $formatters[$column] = $formatter;
+
                     break;
                 }
             }
@@ -88,6 +90,7 @@ class EntityPopulator
         $table = $this->getTable($this->class);
 
         $belongsTo = $table->associations()->type('BelongsTo');
+
         foreach ($belongsTo as $assoc) {
             $modifiers['belongsTo' . $assoc->name()] = function ($data, $insertedEntities) use ($assoc) {
                 $table = $assoc->target();
@@ -111,6 +114,7 @@ class EntityPopulator
 
                 $foreignKey = $foreignKeys[array_rand($foreignKeys)];
                 $data[$assoc->foreignKey()] = $foreignKey;
+
                 return $data;
             };
         }
@@ -161,6 +165,7 @@ class EntityPopulator
         if (!empty($this->connectionName)) {
             $options['connection'] = $this->connectionName;
         }
+
         return TableRegistry::get($class, $options);
     }
 }

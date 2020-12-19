@@ -658,6 +658,7 @@ class Address extends \Faker\Provider\Address
         ];
 
         $postcode = is_null($state) ? static::randomElement($format) : $format[$state];
+
         return (string) static::randomElement($postcode);
     }
 
@@ -688,6 +689,7 @@ class Address extends \Faker\Provider\Address
     public function city()
     {
         $state = static::randomElement(array_keys(static::$towns));
+
         return static::randomElement(static::$towns[$state]);
     }
 
@@ -701,6 +703,7 @@ class Address extends \Faker\Provider\Address
     public function state()
     {
         $state = static::randomElement(array_keys(static::$states));
+
         return static::randomElement(static::$states[$state]);
     }
 }

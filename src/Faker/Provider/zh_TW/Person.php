@@ -142,9 +142,11 @@ class Person extends \Faker\Provider\Person
     public static function randomName($pool, $n)
     {
         $name = '';
+
         for ($i = 0; $i < $n; ++$i) {
             $name .= static::randomElement($pool);
         }
+
         return $name;
     }
 

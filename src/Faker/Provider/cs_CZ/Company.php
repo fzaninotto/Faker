@@ -105,6 +105,7 @@ class Company extends \Faker\Provider\Company
         $ico = static::numerify('#######');
         $split = str_split($ico);
         $prod = 0;
+
         foreach ([8, 7, 6, 5, 4, 3, 2] as $i => $p) {
             $prod += $p * $split[$i];
         }

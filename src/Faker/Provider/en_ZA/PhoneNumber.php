@@ -36,24 +36,34 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     public static function areaCode()
     {
         $digits[] = self::numberBetween(1, 5);
+
         switch ($digits[0]) {
             case 1:
                 $digits[] = self::numberBetween(1, 8);
+
                 break;
+
             case 2:
                 $number = self::numberBetween(1, 8);
                 $digits[] = in_array($number, [5, 6]) ? $number + 2 : $number;
+
                 break;
+
             case 3:
                 $number = self::numberBetween(1, 8);
                 $digits[] = in_array($number, [7, 8]) ? $number - 2 : $number;
+
                 break;
+
             case 4:
                 $digits[] = self::numberBetween(1, 9);
+
                 break;
+
             case 5:
                 $number = self::numberBetween(1, 8);
                 $digits[] = in_array($number, [2, 5]) ? $number + 2 : $number;
+
                 break;
         }
 
@@ -63,16 +73,22 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     public static function cellphoneCode()
     {
         $digits[] = self::numberBetween(6, 8);
+
         switch ($digits[0]) {
             case 6:
                 $digits[] = self::numberBetween(0, 2);
+
                 break;
+
             case 7:
                 $number = self::numberBetween(1, 9);
                 $digits[] = in_array($number, [5, 7]) ? $number + 1 : $number;
+
                 break;
+
             case 8:
                 $digits[] = self::numberBetween(1, 9);
+
                 break;
         }
 

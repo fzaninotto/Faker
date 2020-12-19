@@ -16,6 +16,7 @@ class DateTime extends \Faker\Provider\DateTime
             'Saturday' => 'შაბათი',
         ];
         $week = static::dateTime($max)->format('l');
+
         return $map[$week] ?? $week;
     }
 
@@ -36,6 +37,7 @@ class DateTime extends \Faker\Provider\DateTime
             'December' => 'დეკემბერი',
         ];
         $month = static::dateTime($max)->format('F');
+
         return $map[$month] ?? $month;
     }
 }

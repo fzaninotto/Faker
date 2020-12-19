@@ -23,9 +23,11 @@ class Luhn
         $number = (string) $number;
         $length = strlen($number);
         $sum = 0;
+
         for ($i = $length - 1; $i >= 0; $i -= 2) {
             $sum += $number[$i];
         }
+
         for ($i = $length - 2; $i >= 0; $i -= 2) {
             $sum += array_sum(str_split($number[$i] * 2));
         }
@@ -70,6 +72,7 @@ class Luhn
         if (!preg_match('/^\d+$/', $partialValue)) {
             throw new InvalidArgumentException('Argument should be an integer.');
         }
+
         return $partialValue . Luhn::computeCheckDigit($partialValue);
     }
 }

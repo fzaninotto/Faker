@@ -69,6 +69,7 @@ class DateTime extends Base
     public static function dateTimeAD($max = 'now', $timezone = null)
     {
         $min = (PHP_INT_SIZE > 4 ? -62135597361 : -PHP_INT_MAX);
+
         return static::setTimezone(
             new \DateTime('@' . self::numberBetween($min, static::getMaxTimestamp($max))),
             $timezone

@@ -32,6 +32,7 @@ class Text extends \Faker\Provider\Text
         $resultLength = 0;
         // take a random starting point
         $next = static::randomKey($words);
+
         while ($resultLength < $maxNbChars && isset($words[$next])) {
             // fetch a random word to append
             $word = static::randomElement($words[$next]);

@@ -196,6 +196,7 @@ class Person extends \Faker\Provider\Person
         if (($sum % 11) < 2) {
             return $sum % 11;
         }
+
         return 11 - ($sum % 11);
     }
 }

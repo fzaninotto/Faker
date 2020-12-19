@@ -35,6 +35,7 @@ final class PersonTest extends TestCase
         if (strtotime('1800-01-01 00:00:00')) {
             $min='1900';
             $max='2099';
+
             for ($i = 0; $i < 10; $i++) {
                 $birthdate = $this->faker->dateTimeBetween('1800-01-01 00:00:00', '1899-12-31 23:59:59');
                 $pin = $this->faker->personalIdentityNumber($birthdate, null, true);
@@ -44,11 +45,13 @@ final class PersonTest extends TestCase
             $min='1902';
             $max='2037';
         }
+
         for ($i = 0; $i < 10; $i++) {
             $birthdate = $this->faker->dateTimeBetween("$min-01-01 00:00:00", '1999-12-31 23:59:59');
             $pin = $this->faker->personalIdentityNumber($birthdate);
             self::assertMatchesRegularExpression('/^[0-9]{6}-[0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
         }
+
         for ($i = 0; $i < 10; $i++) {
             $birthdate = $this->faker->dateTimeBetween('2000-01-01 00:00:00', "$max-12-31 23:59:59");
             $pin = $this->faker->personalIdentityNumber($birthdate);
@@ -71,6 +74,7 @@ final class PersonTest extends TestCase
     protected function getProviders(): iterable
     {
         yield new Person($this->faker);
+
         yield new DateTime($this->faker);
     }
 }

@@ -64,6 +64,7 @@ class Company extends \Faker\Provider\Company
     public function catchPhrase()
     {
         $result = [];
+
         foreach (static::$catchPhraseWords as &$word) {
             $result[] = static::randomElement($word);
         }
@@ -106,6 +107,7 @@ class Company extends \Faker\Provider\Company
         }
         $area_code = str_pad($area_code, 2, '0', STR_PAD_LEFT);
         $inn_base =  $area_code . static::numerify('#######');
+
         return $inn_base . \Faker\Calculator\Inn::checksum($inn_base);
     }
 
@@ -114,6 +116,7 @@ class Company extends \Faker\Provider\Company
         if ($inn == '' || strlen($inn) < 4) {
             $inn = static::inn();
         }
+
         return substr($inn, 0, 4) . '01001';
     }
 }

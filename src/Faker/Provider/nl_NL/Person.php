@@ -324,6 +324,7 @@ class Person extends \Faker\Provider\Person
     {
         $nr     = [];
         $nr[]   = 0;
+
         while (count($nr) < 8) {
             $nr[] = static::randomDigit();
         }
@@ -343,6 +344,7 @@ class Person extends \Faker\Provider\Person
                 $nr[1]++;
             }
         }
+
         return implode('', array_reverse($nr));
     }
 }
