@@ -71,6 +71,7 @@ abstract class Text extends Base
 
         $words = $this->getConsecutiveWords($indexSize);
         $iterations = 0;
+
         do {
             $iterations++;
             if ($iterations >= 100) {
