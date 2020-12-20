@@ -29,7 +29,7 @@ class Company extends \Faker\Provider\Company
      */
     protected static $noun = [
         'bezpečnost', 'pohodlí', 'seo', 'rychlost', 'testování', 'údržbu', 'odebírání', 'výstavbu',
-        'návrh', 'prodej', 'nákup', 'zprostředkování', 'odvoz', 'přepravu', 'pronájem',
+        'návrh', 'prodej', 'nákup', 'zprostředkování', 'odvoz', 'přepravu', 'pronájem'
     ];
 
     /**
@@ -46,7 +46,7 @@ class Company extends \Faker\Provider\Company
         'pro vás', 'pro vaší službu', 'a jsme jednička na trhu', 'pro lepší svět', 'zdarma', 'se zárukou',
         's inovací', 'turbíny', 'mrakodrapů', 'lampiónků a svíček', 'bourací techniky', 'nákupních košíků',
         'vašeho webu', 'pro vaše zákazníky', 'za nízkou cenu', 'jako jediní na trhu', 'webu', 'internetu',
-        'vaší rodiny', 'vašich známých', 'vašich stránek', 'čehokoliv na světě', 'za hubičku',
+        'vaší rodiny', 'vašich známých', 'vašich stránek', 'čehokoliv na světě', 'za hubičku'
     ];
 
     /**
@@ -95,10 +95,9 @@ class Company extends \Faker\Provider\Company
     }
 
     /**
-     * Generates valid czech IČO.
+     * Generates valid czech IČO
      *
      * @see http://phpfashion.com/jak-overit-platne-ic-a-rodne-cislo
-     *
      * @return string
      */
     public function ico()
@@ -117,6 +116,6 @@ class Company extends \Faker\Provider\Company
             return "{$ico}0";
         }
 
-        return $ico.(11 - $mod);
+        return $ico . (11 - $mod);
     }
 }

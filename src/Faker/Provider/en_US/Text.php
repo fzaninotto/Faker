@@ -5,7 +5,7 @@ namespace Faker\Provider\en_US;
 class Text extends \Faker\Provider\Text
 {
     /**
-     * Project Gutenberg's Alice's Adventures in Wonderland, by Lewis Carroll.
+     * Project Gutenberg's Alice's Adventures in Wonderland, by Lewis Carroll
      *
      * This eBook is for the use of anyone anywhere at no cost and with
      * almost no restrictions whatsoever.  You may copy it, give it away or
@@ -33,7 +33,6 @@ class Text extends \Faker\Provider\Text
      * THE MILLENNIUM FULCRUM EDITION 3.0
      *
      * @see http://www.gutenberg.org/cache/epub/11/pg11.txt
-     *
      * @var string
      */
     protected static $baseText = <<<'EOT'

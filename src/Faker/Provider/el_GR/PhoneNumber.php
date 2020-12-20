@@ -223,7 +223,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         return static::numerify(
             strtr(static::randomElement(static::$mobileFormats), [
                 '{{internationalCodePrefix}}' => static::internationalCodePrefix(),
-                '{{mobileCode}}'              => static::mobileCode(),
+                '{{mobileCode}}' => static::mobileCode(),
             ])
         );
     }

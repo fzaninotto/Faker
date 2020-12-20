@@ -12,12 +12,12 @@ class Company extends \Faker\Provider\Company
     ];
 
     protected static $companyPrefixes = [
-        'ООО', 'ЗАО', 'ООО Компания', 'ОАО', 'ОАО', 'ПАО', 'МКК', 'МФО',
+        'ООО', 'ЗАО', 'ООО Компания', 'ОАО', 'ОАО', 'ПАО', 'МКК', 'МФО'
     ];
 
     protected static $companyNameSuffixes = [
         'Маш', 'Наладка', 'Экспедиция', 'Пром', 'Комплекс', 'Машина', 'Снос', '-М', 'Лизинг', 'Траст', 'Снаб',
-        '-H', 'Трест', 'Банк', 'Опт', 'Проф', 'Сбыт', 'Центр',
+        '-H', 'Трест', 'Банк', 'Опт', 'Проф', 'Сбыт', 'Центр'
     ];
     /**
      * @note Words and parts of words that usually used in company names
@@ -27,7 +27,7 @@ class Company extends \Faker\Provider\Company
         'Мотор', 'Рос', 'Тяж', 'Тех', 'Сантех', 'Урал', 'Башкир', 'Тверь', 'Казань', 'Обл', 'Бух', 'Хоз', 'Электро',
         'Текстиль', 'Восток', 'Орион', 'Юпитер', 'Финанс', 'Микро', 'Радио', 'Мобайл', 'Дизайн', 'Метал', 'Нефть',
         'Телеком', 'Инфо', 'Сервис', 'Софт', 'IT', 'Рыб', 'Глав', 'Вектор', 'Рем', 'Гор', 'Газ', 'Монтаж', 'Мор',
-        'Реч', 'Флот', 'Cиб', 'Каз', 'Инж', 'Вод', 'Пив', 'Хмель', 'Мяс', 'Томск', 'Омск', 'Север', 'Лен',
+        'Реч', 'Флот', 'Cиб', 'Каз', 'Инж', 'Вод', 'Пив', 'Хмель', 'Мяс', 'Томск', 'Омск', 'Север', 'Лен'
     ];
 
     protected static $catchPhraseWords = [
@@ -55,7 +55,7 @@ class Company extends \Faker\Provider\Company
         'Печник', 'Пианист', 'Писатель', 'Продюсер', 'Промоутер', 'Психолог', 'Радист', 'Редактор', 'Садовник',
         'Системный аналитик', 'Стилист', 'Столяр', 'Сторож', 'Телефонистка', 'Телохранитель', 'Технический писатель',
         'Учёный', 'Физик', 'Финансовый советник', 'Фотограф', 'Фрезеровщик', 'Художник', 'Чабан', 'Штурман',
-        'Экономист', 'Электромонтёр',
+        'Экономист', 'Электромонтёр'
     ];
 
     /**
@@ -106,9 +106,9 @@ class Company extends \Faker\Provider\Company
             $area_code = (int) $area_code;
         }
         $area_code = str_pad($area_code, 2, '0', STR_PAD_LEFT);
-        $inn_base = $area_code.static::numerify('#######');
+        $inn_base =  $area_code . static::numerify('#######');
 
-        return $inn_base.\Faker\Calculator\Inn::checksum($inn_base);
+        return $inn_base . \Faker\Calculator\Inn::checksum($inn_base);
     }
 
     public static function kpp($inn = '')
@@ -117,6 +117,6 @@ class Company extends \Faker\Provider\Company
             $inn = static::inn();
         }
 
-        return substr($inn, 0, 4).'01001';
+        return substr($inn, 0, 4) . '01001';
     }
 }

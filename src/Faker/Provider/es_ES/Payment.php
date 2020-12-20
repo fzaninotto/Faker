@@ -7,14 +7,11 @@ class Payment extends \Faker\Provider\Payment
     private static $vatMap = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'N', 'P', 'Q', 'R', 'S', 'U', 'V', 'W'];
 
     /**
-     * International Bank Account Number (IBAN).
-     *
+     * International Bank Account Number (IBAN)
      * @link http://en.wikipedia.org/wiki/International_Bank_Account_Number
-     *
-     * @param string $prefix      for generating bank account number of a specific bank
-     * @param string $countryCode ISO 3166-1 alpha-2 country code
-     * @param int    $length      total length without country code and 2 check digits
-     *
+     * @param  string  $prefix      for generating bank account number of a specific bank
+     * @param  string  $countryCode ISO 3166-1 alpha-2 country code
+     * @param  int $length      total length without country code and 2 check digits
      * @return string
      */
     public static function bankAccountNumber($prefix = '', $countryCode = 'ES', $length = null)
@@ -23,7 +20,7 @@ class Payment extends \Faker\Provider\Payment
     }
 
     /**
-     * Value Added Tax (VAT).
+     * Value Added Tax (VAT)
      *
      * @example 'B93694545'
      *
@@ -37,6 +34,6 @@ class Payment extends \Faker\Provider\Payment
         $letter = static::randomElement(self::$vatMap);
         $number = static::numerify('########');
 
-        return $letter.$number;
+        return $letter . $number;
     }
 }

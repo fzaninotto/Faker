@@ -6,14 +6,13 @@ class Text extends \Faker\Provider\Text
 {
     /**
      * Author: Rejtő Jenő
-     * Title: Piszkos Fred, a kapitány.
+     * Title: Piszkos Fred, a kapitány
      *
      * Language: Hungarian
      *
      * License: Public Domain, since 2014.01.01
      *
      * @see http://mek.oszk.hu/01000/01038/
-     *
      * @var string
      */
     protected static $baseText = <<<'EOT'

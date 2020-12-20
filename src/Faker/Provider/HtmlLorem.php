@@ -190,7 +190,7 @@ class HtmlLorem extends Base
 
     private function addRandomH(\DOMElement $element, $maxLength = 10)
     {
-        $h = static::H_TAG.(string) self::numberBetween(1, 3);
+        $h = static::H_TAG . (string) self::numberBetween(1, 3);
         $text = $element->ownerDocument->createTextNode($this->generator->sentence(self::numberBetween(1, $maxLength)));
         $node = $element->ownerDocument->createElement($h);
         $node->appendChild($text);

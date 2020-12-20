@@ -9,9 +9,10 @@ class Color extends \Faker\Provider\Color
      * @link https://id.wikipedia.org/wiki/Kategori:Warna
      * @link https://id.wikipedia.org/wiki/Warna_tersier
      **/
+
     protected static $safeColorNames = ['abu-abu', 'biru', 'biru dongker', 'biru laut', 'cokelat',
         'emas', 'hijau', 'hitam', 'jingga', 'krem', 'kuning', 'magenta', 'mawar', 'merah', 'merah jambu',
-        'merah marun', 'nila', 'perak', 'putih', 'sepia', 'teal', 'toska', 'ungu', 'violet', 'zaitun',
+        'merah marun', 'nila', 'perak', 'putih', 'sepia', 'teal', 'toska', 'ungu', 'violet', 'zaitun'
     ];
 
     /**
@@ -35,6 +36,6 @@ class Color extends \Faker\Provider\Color
         'Salmon', 'Salmon Gelap', 'Salmon Terang', 'Sawo', 'Sawo Matang',
         'Tembaga', 'Tomat',
         'Ungu', 'Ungu Gelap', 'Ungu Kebiruan', 'Ungu Kecokelatan', 'Ungu Lembayung', 'Ungu Lembayung Muda', 'Ungu Muda', 'Ungu Terong',
-        'Zaitun', 'Zaitun Hijau Gelap',
+        'Zaitun', 'Zaitun Hijau Gelap'
     ];
 }

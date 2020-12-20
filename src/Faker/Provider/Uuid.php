@@ -6,14 +6,13 @@ class Uuid extends Base
 {
     /**
      * Generate name based md5 UUID (version 3).
-     *
      * @example '7e57d004-2b97-0e7a-b45f-5387367791cd'
      */
     public static function uuid()
     {
         // fix for compatibility with 32bit architecture; each mt_rand call is restricted to 32bit
         // two such calls will cause 64bits of randomness regardless of architecture
-        $seed = self::numberBetween(0, 2147483647).'#'.self::numberBetween(0, 2147483647);
+        $seed = self::numberBetween(0, 2147483647) . '#' . self::numberBetween(0, 2147483647);
 
         // Hash the seed and convert to a byte array
         $val = md5($seed, true);

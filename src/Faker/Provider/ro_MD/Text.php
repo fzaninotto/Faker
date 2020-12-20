@@ -5,7 +5,7 @@ namespace Faker\Provider\ro_MD;
 class Text extends \Faker\Provider\Text
 {
     /**
-     * From ro.wikisource.org.
+     * From ro.wikisource.org
      *
      * Acest text este disponibil sub licența Creative Commons cu atribuire
      * și distribuire în condiții identice; pot exista și clauze suplimentare.
@@ -23,7 +23,6 @@ class Text extends \Faker\Provider\Text
      *
      * @see     https://wikimediafoundation.org/wiki/Terms_of_Use/
      * @link    https://ro.wikisource.org/wiki/Povestea_lui_Harap-Alb
-     *
      * @var string
      */
     protected static $baseText = <<<'EOT'

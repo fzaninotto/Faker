@@ -8,12 +8,11 @@ class TCNo
 {
     /**
      * Generates Turkish Identity Number Checksum
-     * Gets first 9 digit as prefix and calculates checksum.
+     * Gets first 9 digit as prefix and calculates checksum
      *
      * https://en.wikipedia.org/wiki/Turkish_Identification_Number
      *
      * @param string $identityPrefix
-     *
      * @return string Checksum (two digit)
      */
     public static function checksum($identityPrefix)
@@ -38,14 +37,13 @@ class TCNo
         $tenthDigit = (7 * $evenSum - $oddSum) % 10;
         $eleventhDigit = ($evenSum + $oddSum + $tenthDigit) % 10;
 
-        return $tenthDigit.$eleventhDigit;
+        return $tenthDigit . $eleventhDigit;
     }
 
     /**
-     * Checks whether a TCNo has a valid checksum.
+     * Checks whether a TCNo has a valid checksum
      *
      * @param string $tcNo
-     *
      * @return bool
      */
     public static function isValid($tcNo)

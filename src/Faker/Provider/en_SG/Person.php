@@ -7,7 +7,7 @@ use Faker\Provider\DateTime;
 class Person extends \Faker\Provider\Person
 {
     /**
-     * National Registration Identity Card number.
+     * National Registration Identity Card number
      *
      * @param \DateTime|null $birthDate birth date
      *
@@ -19,7 +19,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * Foreign Identification Number.
+     * Foreign Identification Number
      *
      * @param \DateTime|null $issueDate issue date
      *
@@ -31,7 +31,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * Singapore NRIC (citizens) or FIN (foreigners) number.
+     * Singapore NRIC (citizens) or FIN (foreigners) number
      *
      * @param \DateTime|null $issueDate birth/issue date
      * @param bool           $foreigner whether a person is foreigner or citizen
@@ -59,7 +59,7 @@ class Person extends \Faker\Provider\Person
 
         $length = count($weights);
 
-        for ($i = strlen($result); $i < $length; $i++) {
+        for ($i = strlen($result); $i < $length; ++$i) {
             $result .= static::randomDigit();
         }
 
@@ -69,6 +69,6 @@ class Person extends \Faker\Provider\Person
             $checksum += (int) $result[$i] * $weights[$i];
         }
 
-        return $prefix.$result.$checksumArr[$checksum % 11];
+        return $prefix . $result . $checksumArr[$checksum % 11];
     }
 }

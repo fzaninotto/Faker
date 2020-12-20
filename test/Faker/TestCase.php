@@ -65,7 +65,7 @@ abstract class TestCase extends BaseTestCase
 
     protected static function getAllLocales(): array
     {
-        return array_map('basename', glob(__DIR__.'/../../src/Faker/Provider/*_*', GLOB_ONLYDIR));
+        return array_map('basename', glob(__DIR__ . '/../../src/Faker/Provider/*_*', GLOB_ONLYDIR));
     }
 
     protected function loadLocalProvider(string $locale, string $provider): void

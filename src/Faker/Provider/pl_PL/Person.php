@@ -3,8 +3,7 @@
 namespace Faker\Provider\pl_PL;
 
 /**
- * Most popular first and last names published by Ministry of the Interior:.
- *
+ * Most popular first and last names published by Ministry of the Interior:
  * @link https://msw.gov.pl/pl/sprawy-obywatelskie/ewidencja-ludnosci-dowo/statystyki-imion-i-nazw
  */
 class Person extends \Faker\Provider\Person
@@ -81,7 +80,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * Unisex academic degree.
+     * Unisex academic degree
      *
      * @var string[]
      */
@@ -89,7 +88,6 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @param string|null $gender 'male', 'female' or null for any
-     *
      * @example 'Adamczyk'
      */
     public function lastName($gender = null)
@@ -119,7 +117,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * replaced by specific unisex Polish title.
+     * replaced by specific unisex Polish title
      */
     public static function titleMale()
     {
@@ -127,7 +125,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * replaced by specific unisex Polish title.
+     * replaced by specific unisex Polish title
      */
     public static function titleFemale()
     {
@@ -135,14 +133,11 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * PESEL - Universal Electronic System for Registration of the Population.
-     *
+     * PESEL - Universal Electronic System for Registration of the Population
      * @link http://en.wikipedia.org/wiki/PESEL
-     *
-     * @param DateTime $birthdate
-     * @param string   $sex       M for male or F for female
-     *
-     * @return string 11 digit number, like 44051401358
+     * @param  DateTime $birthdate
+     * @param  string   $sex       M for male or F for female
+     * @return string   11 digit number, like 44051401358
      */
     public static function pesel($birthdate = null, $sex = null)
     {
@@ -181,10 +176,8 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * National Identity Card number.
-     *
+     * National Identity Card number
      * @link http://en.wikipedia.org/wiki/Polish_National_Identity_Card
-     *
      * @return string 3 letters and 6 digits, like ABA300000
      */
     public static function personalIdentityNumber()
@@ -204,15 +197,13 @@ class Person extends \Faker\Provider\Person
         }
         $checksum %= 10;
 
-        return implode('', $low).$checksum.implode('', $high);
+        return implode('', $low) . $checksum . implode('', $high);
     }
 
     /**
-     * Taxpayer Identification Number (NIP in Polish).
-     *
+     * Taxpayer Identification Number (NIP in Polish)
      * @link http://en.wikipedia.org/wiki/PESEL#Other_identifiers
      * @link http://pl.wikipedia.org/wiki/NIP
-     *
      * @return string 10 digit number
      */
     public static function taxpayerIdentificationNumber()

@@ -46,9 +46,8 @@ class Populator
     }
 
     /**
-     * @throws \Exception
-     *
      * @return $this
+     * @throws \Exception
      */
     public function addGuesser($class)
     {
@@ -57,7 +56,7 @@ class Populator
         }
 
         if (!method_exists($class, 'guessFormat')) {
-            throw new \Exception('Missing required custom guesser method: '.get_class($class).'::guessFormat()');
+            throw new \Exception('Missing required custom guesser method: ' . get_class($class) . '::guessFormat()');
         }
 
         $this->guessers[get_class($class)] = $class;
@@ -68,7 +67,6 @@ class Populator
     /**
      * @param array $customColumnFormatters
      * @param array $customModifiers
-     *
      * @return $this
      */
     public function addEntity($entity, $number, $customColumnFormatters = [], $customModifiers = [])
@@ -96,7 +94,6 @@ class Populator
 
     /**
      * @param array $options
-     *
      * @return array
      */
     public function execute($options = [])

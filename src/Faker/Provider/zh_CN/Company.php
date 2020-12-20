@@ -5,7 +5,7 @@ namespace Faker\Provider\zh_CN;
 class Company extends \Faker\Provider\Company
 {
     protected static $formats = [
-        '{{companyPrefix}}{{companySuffix}}',
+        '{{companyPrefix}}{{companySuffix}}'
     ];
 
     protected static $companyPrefix = [
@@ -25,14 +25,13 @@ class Company extends \Faker\Provider\Company
         '太极', '群英', '合联电子', '同兴万点', '襄樊地球村',
         '精芯', '艾提科信', '昊嘉', '鸿睿思博', '四通', '富罳',
         '商软冠联', '诺依曼软件', '东方峻景', '华成育卓', '趋势',
-        '维涛', '通际名联',
+        '维涛', '通际名联'
     ];
 
     protected static $companySuffix = ['科技', '网络', '信息', '传媒'];
 
     /**
      * @see blog.renren.com/share/223844062/2387611567
-     *
      * @var array
      */
     protected static $catchPhrase = [
@@ -225,7 +224,7 @@ class Company extends \Faker\Provider\Company
 
     public static function companySuffix()
     {
-        return parent::companySuffix().'有限公司';
+        return parent::companySuffix() . '有限公司';
     }
 
     public function catchPhrase()

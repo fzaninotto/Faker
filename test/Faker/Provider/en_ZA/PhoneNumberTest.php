@@ -33,7 +33,7 @@ final class PhoneNumberTest extends TestCase
                 self::assertEquals('0', $digits[0]);
             }
 
-            $areaCode = $digits[0].$digits[1].$digits[2].$digits[3];
+            $areaCode = $digits[0] . $digits[1] . $digits[2] . $digits[3];
             self::assertContains($areaCode, ['0800', '0860', '0861', '0862']);
         }
     }

@@ -29,7 +29,7 @@ class Person extends \Faker\Provider\Person
         'V' => 29,
         'W' => 32,
         'X' => 30,
-        'Z' => 33,
+        'Z' => 33
     ];
 
     /**
@@ -143,7 +143,7 @@ class Person extends \Faker\Provider\Person
     {
         $name = '';
 
-        for ($i = 0; $i < $n; $i++) {
+        for ($i = 0; $i < $n; ++$i) {
             $name .= static::randomElement($pool);
         }
 
@@ -171,7 +171,7 @@ class Person extends \Faker\Provider\Person
      * @see https://en.wikipedia.org/wiki/National_Identification_Card_(Republic_of_China)
      *
      * @return string Length 10 alphanumeric characters, begins with 1 latin character (birthplace),
-     *                1 number (gender) and then 8 numbers (the last one is check digit).
+     * 1 number (gender) and then 8 numbers (the last one is check digit).
      */
     public function personalIdentityNumber($gender = null)
     {
@@ -183,7 +183,7 @@ class Person extends \Faker\Provider\Person
 
         $randomNumberCode = self::randomNumber(7, true);
 
-        $codes = str_split($birthPlaceCode.$genderCode.$randomNumberCode);
+        $codes = str_split($birthPlaceCode . $genderCode . $randomNumberCode);
         $total = 0;
 
         foreach ($codes as $key => $code) {
@@ -196,6 +196,6 @@ class Person extends \Faker\Provider\Person
             $checkSumDigit = 0;
         }
 
-        return $birthPlace.$genderCode.$randomNumberCode.$checkSumDigit;
+        return $birthPlace . $genderCode . $randomNumberCode . $checkSumDigit;
     }
 }

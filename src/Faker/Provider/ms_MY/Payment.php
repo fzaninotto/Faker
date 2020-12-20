@@ -7,7 +7,7 @@ class Payment extends \Faker\Provider\Payment
     protected static $bankFormats = [
         '{{localBank}}',
         '{{foreignBank}}',
-        '{{governmentBank}}',
+        '{{governmentBank}}'
     ];
 
     /**
@@ -34,7 +34,7 @@ class Payment extends \Faker\Provider\Payment
         'Hong Leong Bank ',
         'Maybank',
         'Public Bank',
-        'RHB Bank',
+        'RHB Bank'
     ];
 
     /**
@@ -59,7 +59,7 @@ class Payment extends \Faker\Provider\Payment
         'Standard Chartered Bank Malaysia Berhad',
         'Sumitomo Mitsui Banking Corporation Malaysia Berhad',
         'The Bank of Nova Scotia Berhad',
-        'United Overseas Bank (Malaysia) Bhd.',
+        'United Overseas Bank (Malaysia) Bhd.'
     ];
 
     /**
@@ -139,11 +139,11 @@ class Payment extends \Faker\Provider\Payment
      * @link https://en.wikipedia.org/wiki/Malaysian_ringgit
      */
     protected static $currencySymbol = [
-        'RM',
+        'RM'
     ];
 
     /**
-     * Return a Malaysian Bank.
+     * Return a Malaysian Bank
      *
      * @example 'Maybank'
      *
@@ -157,7 +157,7 @@ class Payment extends \Faker\Provider\Payment
     }
 
     /**
-     * Return a Malaysian Bank account number.
+     * Return a Malaysian Bank account number
      *
      * @example '1234567890123456'
      *
@@ -171,7 +171,7 @@ class Payment extends \Faker\Provider\Payment
     }
 
     /**
-     * Return a Malaysian Local Bank.
+     * Return a Malaysian Local Bank
      *
      * @example 'Public Bank'
      *
@@ -183,7 +183,7 @@ class Payment extends \Faker\Provider\Payment
     }
 
     /**
-     * Return a Malaysian Foreign Bank.
+     * Return a Malaysian Foreign Bank
      *
      * @example 'Citibank Berhad'
      *
@@ -195,7 +195,7 @@ class Payment extends \Faker\Provider\Payment
     }
 
     /**
-     * Return a Malaysian Government Bank.
+     * Return a Malaysian Government Bank
      *
      * @example 'Bank Simpanan Nasional'
      *
@@ -207,7 +207,7 @@ class Payment extends \Faker\Provider\Payment
     }
 
     /**
-     * Return a Malaysian insurance company.
+     * Return a Malaysian insurance company
      *
      * @example 'AIA Malaysia'
      *
@@ -219,7 +219,7 @@ class Payment extends \Faker\Provider\Payment
     }
 
     /**
-     * Return a Malaysian Bank SWIFT Code.
+     * Return a Malaysian Bank SWIFT Code
      *
      * @example 'MBBEMYKLXXX'
      *
@@ -231,7 +231,7 @@ class Payment extends \Faker\Provider\Payment
     }
 
     /**
-     * Return the Malaysian currency symbol.
+     * Return the Malaysian currency symbol
      *
      * @example 'RM'
      *

@@ -41,14 +41,14 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '{{areaCode}}-{{exchangeCode}}-#### x#####',
         '({{areaCode}}) {{exchangeCode}}-#### x#####',
         '1-{{areaCode}}-{{exchangeCode}}-#### x#####',
-        '{{areaCode}}.{{exchangeCode}}.#### x#####',
+        '{{areaCode}}.{{exchangeCode}}.#### x#####'
     ];
 
     /**
      * @see https://en.wikipedia.org/wiki/Toll-free_telephone_number#United_States
      */
     protected static $tollFreeAreaCodes = [
-        800, 844, 855, 866, 877, 888,
+        800, 844, 855, 866, 877, 888
     ];
     protected static $tollFreeFormats = [
         // Standard formats
@@ -72,7 +72,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     /**
      * @return string
-     *
      * @example '555-123-546 x123'
      */
     public function phoneNumberWithExtension()
@@ -81,7 +80,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     }
 
     /**
-     * NPA-format area code.
+     * NPA-format area code
      *
      * @see https://en.wikipedia.org/wiki/North_American_Numbering_Plan#Numbering_system
      *
@@ -97,7 +96,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     }
 
     /**
-     * NXX-format central office exchange code.
+     * NXX-format central office exchange code
      *
      * @see https://en.wikipedia.org/wiki/North_American_Numbering_Plan#Numbering_system
      *

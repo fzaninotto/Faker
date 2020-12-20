@@ -25,20 +25,20 @@ final class ColorTest extends TestCase
     public function testRgbColor()
     {
         $regexp = '([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])';
-        self::assertMatchesRegularExpression('/^'.$regexp.','.$regexp.','.$regexp.'$/i', Color::rgbColor());
+        self::assertMatchesRegularExpression('/^' . $regexp . ',' . $regexp . ',' . $regexp . '$/i', Color::rgbColor());
     }
 
     public function testRgbCssColor()
     {
         $regexp = '([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])';
-        self::assertMatchesRegularExpression('/^rgb\('.$regexp.','.$regexp.','.$regexp.'\)$/i', Color::rgbCssColor());
+        self::assertMatchesRegularExpression('/^rgb\(' . $regexp . ',' . $regexp . ',' . $regexp . '\)$/i', Color::rgbCssColor());
     }
 
     public function testRgbaCssColor()
     {
         $regexp = '([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])';
         $regexpAlpha = '([01]?(\.\d+)?)';
-        self::assertMatchesRegularExpression('/^rgba\('.$regexp.','.$regexp.','.$regexp.','.$regexpAlpha.'\)$/i', Color::rgbaCssColor());
+        self::assertMatchesRegularExpression('/^rgba\(' . $regexp . ',' . $regexp . ',' . $regexp . ',' . $regexpAlpha . '\)$/i', Color::rgbaCssColor());
     }
 
     public function testSafeColorName()
@@ -55,7 +55,7 @@ final class ColorTest extends TestCase
     {
         $regexp360 = '(?:36[0]|3[0-5][0-9]|[12][0-9][0-9]|[1-9]?[0-9])';
         $regexp100 = '(?:100|[1-9]?[0-9])';
-        self::assertMatchesRegularExpression('/^'.$regexp360.','.$regexp100.','.$regexp100.'$/', Color::hslColor());
+        self::assertMatchesRegularExpression('/^' . $regexp360 . ',' . $regexp100 . ',' . $regexp100 . '$/', Color::hslColor());
     }
 
     public function testHslColorArray()

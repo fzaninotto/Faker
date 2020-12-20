@@ -6,10 +6,9 @@ class Text extends \Faker\Provider\Text
 {
     /**
      * Benito Pérez Galdós
-     * Tarfalgar.
+     * Tarfalgar
      *
      * @see http://www.gutenberg.org/cache/epub/16961/pg16961.txt
-     *
      * @var string
      */
     protected static $baseText = <<<'EOT'

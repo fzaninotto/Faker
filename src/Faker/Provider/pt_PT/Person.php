@@ -42,14 +42,14 @@ class Person extends \Faker\Provider\Person
         '72######',
         '77######',
         '79######',
-        '8#######',
+        '8#######' ,
         '90######',
         '98######',
-        '99######',
+        '99######'
     ];
 
     /**
-     * Taxpayer Identification Number (NIF in Portugal).
+     * Taxpayer Identification Number (NIF in Portugal)
      *
      * @link http://pt.wikipedia.org/wiki/N%C3%BAmero_de_identifica%C3%A7%C3%A3o_fiscal
      *
@@ -60,11 +60,11 @@ class Person extends \Faker\Provider\Person
         $firstEightDigits = static::numerify(static::randomElement(static::$firstEightDigitsFormat));
         $lastDigit = static::dvCalcMod11($firstEightDigits);
 
-        return $firstEightDigits.$lastDigit;
+        return $firstEightDigits . $lastDigit;
     }
 
     /**
-     * Generate module.
+     * Generate module
      *
      * @link http://pt.wikipedia.org/wiki/D%C3%ADgito_verificador
      *
@@ -101,6 +101,7 @@ class Person extends \Faker\Provider\Person
     /**
      * @link http://nomesportugueses.blogspot.pt/2012/01/lista-dos-cem-nomes-mais-usados-em.html
      */
+
     protected static $firstNameMale = [
         'Rodrigo', 'João', 'Martim', 'Afonso', 'Tomás', 'Gonçalo', 'Francisco', 'Tiago',
         'Diogo', 'Guilherme', 'Pedro', 'Miguel', 'Rafael', 'Gabriel', 'Santiago', 'Dinis',
@@ -113,7 +114,7 @@ class Person extends \Faker\Provider\Person
         'Vítor', 'Edgar', 'Kevin', 'Joaquim', 'Igor', 'Ângelo', 'Enzo', 'Valentim', 'Flávio',
         'Joel', 'Fernando', 'Sebastião', 'Tomé', 'César', 'Cláudio', 'Nelson', 'Lisandro', 'Jaime',
         'Gil', 'Mauro', 'Sandro', 'Hélder', 'Matheus', 'William', 'Gaspar', 'Márcio',
-        'Martinho', 'Emanuel', 'Marcos', 'Telmo', 'Davi', 'Wilson',
+        'Martinho', 'Emanuel', 'Marcos', 'Telmo', 'Davi', 'Wilson'
     ];
 
     protected static $firstNameFemale = [

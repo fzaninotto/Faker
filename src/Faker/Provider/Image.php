@@ -3,7 +3,7 @@
 namespace Faker\Provider;
 
 /**
- * Depends on image generation from http://lorempixel.com/.
+ * Depends on image generation from http://lorempixel.com/
  */
 class Image extends Base
 {
@@ -12,27 +12,26 @@ class Image extends Base
 
     /**
      * @var array
-     *
      * @deprecated Categories are no longer used as a list in the placeholder API but referenced as string instead
      */
     protected static $categories = [
         'abstract', 'animals', 'business', 'cats', 'city', 'food', 'nightlife',
-        'fashion', 'people', 'nature', 'sports', 'technics', 'transport',
+        'fashion', 'people', 'nature', 'sports', 'technics', 'transport'
     ];
 
     /**
-     * Generate the URL that will return a random image.
+     * Generate the URL that will return a random image
      *
      * Set randomize to false to remove the random GET parameter at the end of the url.
      *
      * @example 'http://via.placeholder.com/640x480.png/CCCCCC?text=well+hi+there'
      *
-     * @param int         $width
-     * @param int         $height
+     * @param int $width
+     * @param int $height
      * @param string|null $category
-     * @param bool        $randomize
+     * @param bool $randomize
      * @param string|null $word
-     * @param bool        $gray
+     * @param bool $gray
      *
      * @return string
      */
@@ -64,12 +63,12 @@ class Image extends Base
             self::BASE_URL,
             $size,
             $backgroundColor,
-            count($imageParts) > 0 ? '?text='.urlencode(implode(' ', $imageParts)) : ''
+            count($imageParts) > 0 ? '?text=' . urlencode(implode(' ', $imageParts)) : ''
         );
     }
 
     /**
-     * Download a remote random image to disk and return its location.
+     * Download a remote random image to disk and return its location
      *
      * Requires curl, or allow_url_fopen to be on in php.ini.
      *
@@ -94,8 +93,8 @@ class Image extends Base
         // Generate a random filename. Use the server address so that a file
         // generated at the same time on a different server won't have a collision.
         $name = md5(uniqid(empty($_SERVER['SERVER_ADDR']) ? '' : $_SERVER['SERVER_ADDR'], true));
-        $filename = $name.'.png';
-        $filepath = $dir.DIRECTORY_SEPARATOR.$filename;
+        $filename = $name . '.png';
+        $filepath = $dir . DIRECTORY_SEPARATOR . $filename;
 
         $url = static::imageUrl($width, $height, $category, $randomize, $word, $gray);
 

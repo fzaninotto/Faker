@@ -52,14 +52,14 @@ final class PersonTest extends TestCase
             ['DB'], ['DJ'], ['GL'], ['GR'], ['GJ'], ['HR'], ['HD'], ['IL'],
             ['IS'], ['IF'], ['MM'], ['MH'], ['MS'], ['NT'], ['OT'], ['PH'],
             ['SM'], ['SJ'], ['SB'], ['SV'], ['TR'], ['TM'], ['TL'], ['VS'],
-            ['VL'], ['VN'], ['B1'], ['B2'], ['B3'], ['B4'], ['B5'], ['B6'],
+            ['VL'], ['VN'], ['B1'], ['B2'], ['B3'], ['B4'], ['B5'], ['B6']
         ];
     }
 
     public function invalidCountyCodeProvider()
     {
         return [
-            ['JK'], ['REW'], ['x'], ['FF'], ['aaaddadaada'],
+            ['JK'], ['REW'], ['x'], ['FF'], ['aaaddadaada']
         ];
     }
 
@@ -72,7 +72,9 @@ final class PersonTest extends TestCase
             [Person::GENDER_FEMALE, '1981-06-16', 'B2', false, '981061642'],
         ];
     }
-
+    /**
+     *
+     */
     public function test_allRandom_returnsValidCnp()
     {
         $cnp = $this->faker->cnp;
@@ -82,6 +84,9 @@ final class PersonTest extends TestCase
         );
     }
 
+    /**
+     *
+     */
     public function test_validGender_returnsValidCnp()
     {
         $cnp = $this->faker->cnp(Person::GENDER_MALE);
@@ -156,6 +161,9 @@ final class PersonTest extends TestCase
         $this->faker->cnp(null, null, $value);
     }
 
+    /**
+     *
+     */
     public function test_nonResident_returnsValidCnp()
     {
         $cnp = $this->faker->cnp(null, null, null, false);
@@ -174,7 +182,7 @@ final class PersonTest extends TestCase
      * @param string $gender
      * @param string $dateOfBirth
      * @param string $county
-     * @param bool   $isResident
+     * @param bool $isResident
      * @param string $expectedCnpStart
      *
      * @dataProvider validInputDataProvider
@@ -188,6 +196,7 @@ final class PersonTest extends TestCase
             sprintf("Invalid CNP '%' generated for non valid data", $cnp)
         );
     }
+
 
     protected function isValidFemaleCnp($value)
     {

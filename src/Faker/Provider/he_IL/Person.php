@@ -23,7 +23,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * {@link} http://www.mamy.co.il/%D7%A9%D7%9E%D7%95%D7%AA-%D7%9C%D7%AA%D7%99%D7%A0%D7%95%D7%A7%D7%95%D7%AA.
+     * {@link} http://www.mamy.co.il/%D7%A9%D7%9E%D7%95%D7%AA-%D7%9C%D7%AA%D7%99%D7%A0%D7%95%D7%A7%D7%95%D7%AA
      **/
     protected static $firstNameMale = [
         'אבטו', 'אבי', 'אביאור', 'אביאל', 'אביאסף', 'אביב', 'אביגדור', 'אבידור', 'אבידן', 'אביה', 'אביהו', 'אביהוד', 'אביחי', 'אבי-חן', 'אבינועם', 'אביעד', 'אביעם', 'אביר', 'אבירז', 'אבירן', 'אבישי', 'אביתר',
@@ -115,7 +115,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * {@link} http://toladot.blogspot.co.il/p/blog-page_28.html.
+     * {@link} http://toladot.blogspot.co.il/p/blog-page_28.html
      **/
     protected static $lastName = [
         'אויערבך', 'אולמן', 'אונגרישר', 'אונטרמן', 'אופנהיים', 'אזולאי', 'אטינגר', 'איגר', 'איגרא', 'אידלשטיין', 'אייבשיץ', 'אייגש', 'איידלש', 'אייזנשטאט', 'אייכנשטיין', 'איסרליש', 'אלטשולר', 'אלישיב', 'אפשטיין',

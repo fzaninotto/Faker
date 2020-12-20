@@ -50,7 +50,7 @@ return $config
         'combine_nested_dirname' => true,
         'compact_nullable_typehint' => true,
         'concat_space' => [
-            'spacing' => 'none',
+            'spacing' => 'one',
         ],
         'declare_equal_normalize' => true,
         'function_typehint_space' => true,

@@ -10,8 +10,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     protected static $faxFormats = ['7#######'];
 
     /**
-     * Return an en_HK mobile phone number.
-     *
+     * Return an en_HK mobile phone number
      * @return string
      */
     public static function mobileNumber()
@@ -20,8 +19,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     }
 
     /**
-     * Return an en_HK landline number.
-     *
+     * Return an en_HK landline number
      * @return string
      */
     public static function landlineNumber()
@@ -30,8 +28,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     }
 
     /**
-     * Return an en_HK fax number.
-     *
+     * Return an en_HK fax number
      * @return string
      */
     public static function faxNumber()

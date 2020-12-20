@@ -12,7 +12,7 @@ class Internet extends \Faker\Provider\Internet
     ];
 
     /**
-     * General tld and local tld.
+     * General tld and local tld
      *
      * @link http://idwebhost.com/
      * @link http://domain.id/

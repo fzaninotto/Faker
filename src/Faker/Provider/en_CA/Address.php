@@ -3,8 +3,9 @@
 namespace Faker\Provider\en_CA;
 
 /**
- * Extend US class since most fields share the same format.
+ * Extend US class since most fields share the same format
  */
+
 class Address extends \Faker\Provider\en_US\Address
 {
     protected static $postcode = ['?#? #?#', '?#?-#?#', '?#?#?#'];
@@ -24,7 +25,7 @@ class Address extends \Faker\Provider\en_US\Address
     ];
 
     protected static $provinceAbbr = [
-        'AB', 'BC', 'MB', 'NB', 'NL', 'NT', 'NS', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT',
+        'AB', 'BC', 'MB', 'NB', 'NL', 'NT', 'NS', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT'
     ];
 
     protected static $addressFormats = [
@@ -48,8 +49,7 @@ class Address extends \Faker\Provider\en_US\Address
     }
 
     /**
-     * Returns a postalcode-safe letter.
-     *
+     * Returns a postalcode-safe letter
      * @example A1B 2C3
      */
     public static function randomPostcodeLetter()

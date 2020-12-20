@@ -15,7 +15,7 @@ class Address extends \Faker\Provider\Address
         'تهران', 'خراسان جنوبی', 'خراسان رضوی', 'خراسان شمالی', 'خوزستان', 'زنجان', 'سمنان',
         'سیستان و بلوچستان', 'فارس', 'قزوین', 'قم', 'لرستان', 'مازندران', 'مرکزی', 'هرمزگان',
         'همدان', 'چهارمحال و بختیاری', 'کردستان', 'کرمان', 'کرمانشاه', 'کهگیلویه و بویراحمد',
-        'گلستان', 'گیلان', 'یزد',
+        'گلستان', 'گیلان', 'یزد'
     ];
 
     protected static $cityFormats = [
@@ -23,10 +23,10 @@ class Address extends \Faker\Provider\Address
         '{{cityPrefix}} {{cityName}}',
     ];
     protected static $streetNameFormats = [
-        '{{streetPrefix}} {{lastName}}',
+        '{{streetPrefix}} {{lastName}}'
     ];
     protected static $streetAddressFormats = [
-        '{{streetName}} {{building}}',
+        '{{streetName}} {{building}}'
     ];
     protected static $addressFormats = [
         '{{city}} {{streetAddress}} {{postcodePrefix}} {{postcode}}',

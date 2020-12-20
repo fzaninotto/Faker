@@ -41,15 +41,15 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     ];
 
     protected static $tollFreeInternationalNumber = [
-        '800 ### ####',
+        '800 ### ####'
     ];
 
     protected static $tollFreeLineNumber = [
-        '1800 ### ####',
+        '1800 ### ####'
     ];
 
     protected static $premiumPhoneNumber = [
-        '1900 ### ####',
+        '1900 ### ####'
     ];
 
     public function tollFreeInternationalNumber()

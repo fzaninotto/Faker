@@ -14,10 +14,9 @@ class Biased extends Base
      * between $min and $max. Otherwise two new doubles are created until the pair
      * is accepted.
      *
-     * @param int      $min      Minimum value of the generated integers.
-     * @param int      $max      Maximum value of the generated integers.
+     * @param int $min Minimum value of the generated integers.
+     * @param int $max Maximum value of the generated integers.
      * @param callable $function A function mapping x ∈ [0, 1] onto a double ∈ [0, 1]
-     *
      * @return int An integer between $min and $max.
      */
     public function biasedNumberBetween($min = 0, $max = 100, $function = 'sqrt')

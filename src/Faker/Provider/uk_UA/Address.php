@@ -7,7 +7,7 @@ class Address extends \Faker\Provider\Address
     protected static $cityPrefix = ['місто'];
     protected static $regionSuffix = ['область'];
     protected static $streetPrefix = [
-        'вул.', 'пров.', 'пл.', 'просп.',
+        'вул.', 'пров.', 'пл.', 'просп.'
     ];
     protected static $buildingNumber = ['%#'];
     protected static $postcode = ['#####'];
@@ -228,7 +228,7 @@ class Address extends \Faker\Provider\Address
         'Хмельницька',
         'Черкаська',
         'Чернівецька',
-        'Чернігівська',
+        'Чернігівська'
     ];
 
     protected static $city = [
@@ -255,7 +255,7 @@ class Address extends \Faker\Provider\Address
         'Хмельницький',
         'Черкаси',
         'Чернівці',
-        'Чернігів',
+        'Чернігів'
     ];
 
     /**
@@ -286,7 +286,7 @@ class Address extends \Faker\Provider\Address
         'Інститутська',
         'Пирогова',
         'М. Коцюбинського',
-        'Володимирська',
+        'Володимирська'
     ];
 
     protected static $addressFormats = [
@@ -294,7 +294,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     protected static $streetAddressFormats = [
-        '{{streetPrefix}} {{streetName}}, {{buildingNumber}}',
+        '{{streetPrefix}} {{streetName}}, {{buildingNumber}}'
     ];
 
     public static function citySuffix()
@@ -341,10 +341,8 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Get city and region together
-     * We need it because city and region must comply each other in Ukraine.
-     *
+     * We need it because city and region must comply each other in Ukraine
      * @example 'Закарпатська область, місто Ужгород'
-     *
      * @return string
      */
     public function cityAndRegion()

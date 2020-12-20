@@ -28,10 +28,8 @@ class Company extends \Faker\Provider\Company
     }
 
     /**
-     * Register of the National Economy.
-     *
+     * Register of the National Economy
      * @link http://pl.wikipedia.org/wiki/REGON
-     *
      * @return string 9 digit number
      */
     public static function regon()
@@ -58,10 +56,8 @@ class Company extends \Faker\Provider\Company
     }
 
     /**
-     * Register of the National Economy, local entity number.
-     *
+     * Register of the National Economy, local entity number
      * @link http://pl.wikipedia.org/wiki/REGON
-     *
      * @return 14 digit number
      */
     public static function regonLocal()

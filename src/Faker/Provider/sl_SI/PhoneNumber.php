@@ -13,6 +13,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '0########',
         '+386 # ### ####',
         '00386 # ### ####',
-        '0# ### ####',
+        '0# ### ####'
     ];
 }

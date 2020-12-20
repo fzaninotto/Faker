@@ -17,7 +17,7 @@ class Internet extends \Faker\Provider\Internet
     ];
 
     /**
-     * {@link} http://ko.wikipedia.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%9D%98_%EC%9D%B8%EA%B5%AC%EC%88%9C_%EC%84%B1%EC%94%A8_%EB%AA%A9%EB%A1%9D.
+     * {@link} http://ko.wikipedia.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%9D%98_%EC%9D%B8%EA%B5%AC%EC%88%9C_%EC%84%B1%EC%94%A8_%EB%AA%A9%EB%A1%9D
      */
     protected static $lastNameAscii = [
         'ahn', 'bae', 'baek', 'chang', 'cheon', 'cho', 'choi', 'chung', 'gang', 'go', 'gwak', 'gwon', 'ha', 'han',
@@ -26,7 +26,7 @@ class Internet extends \Faker\Provider\Internet
     ];
 
     /**
-     * {@link} http://ko.wikipedia.org/wiki/%ED%95%9C%EA%B5%AD%EC%9D%98_%EC%84%B1%EC%94%A8%EC%99%80_%EC%9D%B4%EB%A6%84#.EC.8B.9C.EB.8C.80.EB.B3.84_.EA.B0.80.EC.9E.A5_.ED.9D.94.ED.95.9C_.EC.9D.B4.EB.A6.84_10.EC.84.A0.28.E9.81.B8.29.
+     * {@link} http://ko.wikipedia.org/wiki/%ED%95%9C%EA%B5%AD%EC%9D%98_%EC%84%B1%EC%94%A8%EC%99%80_%EC%9D%B4%EB%A6%84#.EC.8B.9C.EB.8C.80.EB.B3.84_.EA.B0.80.EC.9E.A5_.ED.9D.94.ED.95.9C_.EC.9D.B4.EB.A6.84_10.EC.84.A0.28.E9.81.B8.29
      */
     protected static $firstNameAscii = [
         'areum', 'arin', 'banhee', 'bom', 'bomi', 'bomin', 'boram', 'byungcheol', 'byungho', 'chaehyun', 'chaewon',
@@ -53,7 +53,7 @@ class Internet extends \Faker\Provider\Internet
         'suran', 'suwon', 'suwon', 'suyoun', 'taehee', 'taeho', 'taehyun', 'wonhee', 'wonjin', 'wonjun', 'woojin',
         'yeji', 'yejin', 'yejun', 'yeojin', 'yeon', 'yewon', 'youngcheol', 'younggil', 'youngha', 'youngho', 'younghun',
         'younghwa', 'youngil', 'youngjin', 'youngjin', 'youngshik', 'youngsoo', 'youngtae', 'youngwhan', 'youngwhan',
-        'younhee', 'younsun', 'yujin', 'yujung', 'yunkyoung', 'yunmi', 'yunseo', 'yunyoung', 'yuri',
+        'younhee', 'younsun', 'yujin', 'yujung', 'yunkyoung', 'yunmi', 'yunseo', 'yunyoung', 'yuri'
     ];
 
     public static function lastNameAscii()
@@ -81,6 +81,6 @@ class Internet extends \Faker\Provider\Internet
      */
     public function domainName()
     {
-        return static::randomElement(static::$lastNameAscii).'.'.$this->tld();
+        return static::randomElement(static::$lastNameAscii) . '.' . $this->tld();
     }
 }

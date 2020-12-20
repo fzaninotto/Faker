@@ -37,7 +37,7 @@ class Person extends \Faker\Provider\Person
         'Radim', 'Radomír', 'René', 'Richard', 'Robert', 'Roman', 'Rostislav',
         'Rudolf', 'Stanislav', 'Šimon', 'Štefan', 'Štěpán', 'Tomáš',
         'Václav', 'Vasyl', 'Viktor', 'Vít', 'Vítězslav', 'Vladimír',
-        'Vladislav', 'Vlastimil', 'Vojtěch', 'Zbyněk', 'Zdeněk',
+        'Vladislav', 'Vlastimil', 'Vojtěch', 'Zbyněk', 'Zdeněk'
     ];
 
     protected static $firstNameFemale = [
@@ -53,7 +53,7 @@ class Person extends \Faker\Provider\Person
         'Radka', 'Renata', 'Renáta', 'Romana', 'Růžena', 'Simona', 'Soňa',
         'Stanislava', 'Šárka', 'Štěpánka', 'Tereza', 'Vendula', 'Věra',
         'Veronika', 'Vladimíra', 'Vlasta', 'Zdenka', 'Zdeňka', 'Zdeňka',
-        'Zuzana',
+        'Zuzana'
     ];
 
     protected static $lastNameMale = [
@@ -211,7 +211,7 @@ class Person extends \Faker\Provider\Person
         'Zdražil', 'Zedník', 'Zelenka', 'Zelený', 'Zelinka', 'Zemánek',
         'Zeman', 'Zezula', 'Zíka', 'Zikmund', 'Zima', 'Zlámal', 'Zoubek',
         'Zouhar', 'Zvěřina', 'Žáček', 'Žák', 'Žďárský', 'Žemlička',
-        'Žídek', 'Žižka', 'Žůrek',
+        'Žídek', 'Žižka', 'Žůrek'
     ];
 
     protected static $lastNameFemale = [
@@ -418,20 +418,20 @@ class Person extends \Faker\Provider\Person
         'Zelená', 'Zelinková', 'Zemánková', 'Zemanová', 'Zezulová',
         'Zíková', 'Zikmundová', 'Zimová', 'Zlámalová', 'Zoubková',
         'Zouharová', 'Zvěřinová', 'Žáčková', 'Žáková', 'Žďárská',
-        'Žemličková', 'Žídková', 'Žižková', 'Žůrková',
+        'Žemličková', 'Žídková', 'Žižková', 'Žůrková'
     ];
 
     protected static $title = [
-        'Bc.', 'Ing.', 'MUDr.', 'MVDr.', 'Mgr.', 'JUDr.', 'PhDr.', 'RNDr.', 'doc.', 'Dr.',
+        'Bc.', 'Ing.', 'MUDr.', 'MVDr.', 'Mgr.', 'JUDr.', 'PhDr.', 'RNDr.', 'doc.', 'Dr.'
     ];
 
     /**
-     * @param string|null $gender 'male', 'female' or null for any
-     * @param int         $minAge minimal age of "generated person" in years
-     * @param int         $maxAge maximal age of "generated person" in years
-     *
      * @return czech birth number
+     * @param string|null $gender 'male', 'female' or null for any
+     * @param int $minAge minimal age of "generated person" in years
+     * @param int $maxAge maximal age of "generated person" in years
      */
+
     public function birthNumber($gender = null, $minAge = 0, $maxAge = 100, $slashProbability = 50)
     {
         if ($gender === null) {
@@ -469,7 +469,7 @@ class Person extends \Faker\Provider\Person
 
         // add slash
         if ($this->generator->boolean($slashProbability)) {
-            $birthNumber = substr($birthNumber, 0, 6).'/'.substr($birthNumber, 6);
+            $birthNumber = substr($birthNumber, 0, 6) . '/' . substr($birthNumber, 6);
         }
 
         return $birthNumber;
@@ -491,7 +491,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * replaced by specific unisex Czech title.
+     * replaced by specific unisex Czech title
      */
     public static function titleMale()
     {
@@ -499,7 +499,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * replaced by specific unisex Czech title.
+     * replaced by specific unisex Czech title
      */
     public static function titleFemale()
     {
@@ -508,7 +508,6 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @param string|null $gender 'male', 'female' or null for any
-     *
      * @example 'Albrecht'
      */
     public function lastName($gender = null)

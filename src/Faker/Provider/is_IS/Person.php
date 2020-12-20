@@ -40,7 +40,7 @@ class Person extends \Faker\Provider\Person
      * @var string Icelandic middle names.
      */
     protected static $middleName = [
-        'Aðaldal', 'Aldan', 'Arnberg', 'Arnfjörð', 'Austan', 'Austdal', 'Austfjörð', 'Áss', 'Bakkdal', 'Bakkmann', 'Bald', 'Ben', 'Bergholt', 'Bergland', 'Bíldsfells', 'Bjarg', 'Bjarndal', 'Bjarnfjörð', 'Bláfeld', 'Blómkvist', 'Borgdal', 'Brekkmann', 'Brim', 'Brúnsteð', 'Dalhoff', 'Dan', 'Diljan', 'Ektavon', 'Eldberg', 'Elísberg', 'Elvan', 'Espólín', 'Eyhlíð', 'Eyvík', 'Falk', 'Finndal', 'Fossberg', 'Freydal', 'Friðhólm', 'Giljan', 'Gilsfjörð', 'Gnarr', 'Gnurr', 'Grendal', 'Grindvík', 'Gull', 'Haffjörð', 'Hafnes', 'Hafnfjörð', 'Har', 'Heimdal', 'Heimsberg', 'Helgfell', 'Herberg', 'Hildiberg', 'Hjaltdal', 'Hlíðkvist', 'Hnappdal', 'Hnífsdal', 'Hofland', 'Hofteig', 'Hornfjörð', 'Hólmberg', 'Hrafnan', 'Hrafndal', 'Hraunberg', 'Hreinberg', 'Hreindal', 'Hrútfjörð', 'Hvammdal', 'Hvítfeld', 'Höfðdal', 'Hörðdal', 'Íshólm', 'Júl', 'Kjarrval', 'Knaran', 'Knarran', 'Krossdal', 'Laufkvist', 'Laufland', 'Laugdal', 'Laxfoss', 'Liljan', 'Linddal', 'Línberg', 'Ljós', 'Loðmfjörð', 'Lyngberg', 'Magdal', 'Magg', 'Matt', 'Miðdal', 'Miðvík', 'Mjófjörð', 'Móberg', 'Mýrmann', 'Nesmann', 'Norðland', 'Núpdal', 'Ólfjörð', 'Ósland', 'Ósmann', 'Reginbald', 'Reykfell', 'Reykfjörð', 'Reynholt', 'Salberg', 'Sandhólm', 'Seljan', 'Sigurhólm', 'Skagalín', 'Skíðdal', 'Snæberg', 'Snædahl', 'Sólan', 'Stardal', 'Stein', 'Steinbekk', 'Steinberg', 'Storm', 'Straumberg', 'Svanhild', 'Svarfdal', 'Sædal', 'Val', 'Valagils', 'Vald', 'Varmdal', 'Vatnsfjörð', 'Vattar', 'Vattnes', 'Viðfjörð', 'Vídalín', 'Víking', 'Vopnfjörð', 'Yngling', 'Þor', 'Önfjörð', 'Örbekk', 'Öxdal', 'Öxndal',
+        'Aðaldal', 'Aldan', 'Arnberg', 'Arnfjörð', 'Austan', 'Austdal', 'Austfjörð', 'Áss', 'Bakkdal', 'Bakkmann', 'Bald', 'Ben', 'Bergholt', 'Bergland', 'Bíldsfells', 'Bjarg', 'Bjarndal', 'Bjarnfjörð', 'Bláfeld', 'Blómkvist', 'Borgdal', 'Brekkmann', 'Brim', 'Brúnsteð', 'Dalhoff', 'Dan', 'Diljan', 'Ektavon', 'Eldberg', 'Elísberg', 'Elvan', 'Espólín', 'Eyhlíð', 'Eyvík', 'Falk', 'Finndal', 'Fossberg', 'Freydal', 'Friðhólm', 'Giljan', 'Gilsfjörð', 'Gnarr', 'Gnurr', 'Grendal', 'Grindvík', 'Gull', 'Haffjörð', 'Hafnes', 'Hafnfjörð', 'Har', 'Heimdal', 'Heimsberg', 'Helgfell', 'Herberg', 'Hildiberg', 'Hjaltdal', 'Hlíðkvist', 'Hnappdal', 'Hnífsdal', 'Hofland', 'Hofteig', 'Hornfjörð', 'Hólmberg', 'Hrafnan', 'Hrafndal', 'Hraunberg', 'Hreinberg', 'Hreindal', 'Hrútfjörð', 'Hvammdal', 'Hvítfeld', 'Höfðdal', 'Hörðdal', 'Íshólm', 'Júl', 'Kjarrval', 'Knaran', 'Knarran', 'Krossdal', 'Laufkvist', 'Laufland', 'Laugdal', 'Laxfoss', 'Liljan', 'Linddal', 'Línberg', 'Ljós', 'Loðmfjörð', 'Lyngberg', 'Magdal', 'Magg', 'Matt', 'Miðdal', 'Miðvík', 'Mjófjörð', 'Móberg', 'Mýrmann', 'Nesmann', 'Norðland', 'Núpdal', 'Ólfjörð', 'Ósland', 'Ósmann', 'Reginbald', 'Reykfell', 'Reykfjörð', 'Reynholt', 'Salberg', 'Sandhólm', 'Seljan', 'Sigurhólm', 'Skagalín', 'Skíðdal', 'Snæberg', 'Snædahl', 'Sólan', 'Stardal', 'Stein', 'Steinbekk', 'Steinberg', 'Storm', 'Straumberg', 'Svanhild', 'Svarfdal', 'Sædal', 'Val', 'Valagils', 'Vald', 'Varmdal', 'Vatnsfjörð', 'Vattar', 'Vattnes', 'Viðfjörð', 'Vídalín', 'Víking', 'Vopnfjörð', 'Yngling', 'Þor', 'Önfjörð', 'Örbekk', 'Öxdal', 'Öxndal'
     ];
 
     /**
@@ -54,7 +54,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * Generate prepared last name for further processing.
+     * Generate prepared last name for further processing
      *
      * @return string
      */
@@ -80,7 +80,7 @@ class Person extends \Faker\Provider\Person
      */
     public function lastNameMale()
     {
-        return $this->lastName().'son';
+        return $this->lastName() . 'son';
     }
 
     /**
@@ -90,7 +90,7 @@ class Person extends \Faker\Provider\Person
      */
     public function lastNameFemale()
     {
-        return $this->lastName().'dóttir';
+        return $this->lastName() . 'dóttir';
     }
 
     /**
@@ -114,12 +114,12 @@ class Person extends \Faker\Provider\Person
         // valid flag
         $valid = false;
 
-        while (!$valid) {
+        while (! $valid) {
             // make two random numbers
-            $rand = static::randomDigit().static::randomDigit();
+            $rand = static::randomDigit() . static::randomDigit();
 
             // 8 char string with birth date and two random numbers
-            $tmp = $birthdate->format('dmy').$rand;
+            $tmp = $birthdate->format('dmy') . $rand;
 
             // loop through temp string
             for ($i = 7, $sum = 0; $i >= 0; $i--) {
@@ -131,7 +131,7 @@ class Person extends \Faker\Provider\Person
             $chk = ($sum % 11 === 0) ? 0 : (11 - ($sum % 11));
 
             if ($chk < 10) {
-                $lastFour = $rand.$chk.substr($birthdate->format('Y'), 1, 1);
+                $lastFour = $rand . $chk . substr($birthdate->format('Y'), 1, 1);
 
                 $valid = true;
             }

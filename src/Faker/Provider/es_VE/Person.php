@@ -6,7 +6,6 @@ class Person extends \Faker\Provider\Person
 {
     /**
      * CNE is the official national election registry org.
-     *
      * @link http://www.cne.gob.ve/web/registro_electoral/ciudadanos_111_129_2011.php
      */
     protected static $maleNameFormats = [
@@ -20,7 +19,6 @@ class Person extends \Faker\Provider\Person
 
     /**
      * CNE is the official national election registry org.
-     *
      * @link http://www.cne.gob.ve/web/registro_electoral/ciudadanos_111_129_2011.php
      */
     protected static $femaleNameFormats = [
@@ -34,7 +32,6 @@ class Person extends \Faker\Provider\Person
 
     /**
      * CNE is the official national election registry org.
-     *
      * @link http://www.cne.gob.ve/web/registro_electoral/ciudadanos_111_129_2011.php
      */
     protected static $firstNameMale = [
@@ -50,7 +47,6 @@ class Person extends \Faker\Provider\Person
 
     /**
      * CNE is the official national election registry org.
-     *
      * @link http://www.cne.gob.ve/web/registro_electoral/ciudadanos_111_129_2011.php
      */
     protected static $firstNameFemale = [
@@ -67,7 +63,6 @@ class Person extends \Faker\Provider\Person
 
     /**
      * CNE is the official national election registry org.
-     *
      * @link http://www.cne.gob.ve/web/registro_electoral/ciudadanos_111_129_2011.php
      */
     protected static $lastName = [
@@ -134,7 +129,7 @@ class Person extends \Faker\Provider\Person
         'Vega', 'Vela', 'Velasco', 'Velásquez', 'Velázquez', 'Venegas', 'Vera', 'Verdugo', 'Verduzco', 'Vergara', 'Vicente', 'Vidal', 'Viera',
         'Vigil', 'Vila', 'Villa', 'Villagómez', 'Villalba', 'Villalobos', 'Villalpando', 'Villanueva', 'Villar', 'Villareal', 'Villarreal',
         'Villaseñor', 'Villegas', 'Vásquez', 'Vázquez', 'Vélez', 'Véliz', 'Ybarra', 'Yáñez', 'Zambrano', 'Zamora', 'Zamudio', 'Zapata',
-        'Zaragoza', 'Zarate', 'Zavala', 'Zayas', 'Zelaya', 'Zepeda', 'Zúñiga', 'de Anda', 'de Jesús', 'Águilar', 'Álvarez', 'Ávalos', 'Ávila',
+        'Zaragoza', 'Zarate', 'Zavala', 'Zayas', 'Zelaya', 'Zepeda', 'Zúñiga', 'de Anda', 'de Jesús', 'Águilar', 'Álvarez', 'Ávalos', 'Ávila'
     ];
 
     protected static $titleMale = ['Sr.', 'Dn.', 'Dr.', 'Lcdo.', 'Ing.'];
@@ -154,22 +149,19 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * Generate random national identification number (cédula de identidad). Ex V-8756432.
-     *
+     * Generate random national identification number (cédula de identidad). Ex V-8756432
      * @param string $separator
-     *
      * @return string CNE is the official national election registry org.
-     *                CNE is the official national election registry org.
-     *
+     * CNE is the official national election registry org.
      * @link http://www.cne.gob.ve/web/registro_electoral/ciudadanos_111_129_2011.php
      */
     public function nationalId($separator = '')
     {
         $id = static::randomElement(static::$nationalityId);
         if ($id == 'V') {
-            return $id.$separator.$this->numberBetween(10000, 100000000);
+            return $id . $separator . $this->numberBetween(10000, 100000000);
         }
 
-        return $id.$separator.$this->numberBetween(80000000, 100000000);
+        return $id . $separator . $this->numberBetween(80000000, 100000000);
     }
 }

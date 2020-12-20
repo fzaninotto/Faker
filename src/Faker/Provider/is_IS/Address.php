@@ -42,7 +42,7 @@ class Address extends \Faker\Provider\Address
         'Svartfjallaland', 'Svasíland', 'Sviss', 'Svíþjóð', 'Sýrland', 'Tadsjikistan', 'Taíland', 'Taívan', 'Tansanía',
         'Tékkland', 'Tonga', 'Tógó', 'Tókelá', 'Trínidad og Tóbagó', 'Tsjad', 'Tsjetsjenía', 'Turks- og Caicos-eyjar',
         'Túnis', 'Túrkmenistan', 'Túvalú', 'Tyrkland', 'Ungverjaland', 'Úganda', 'Úkraína', 'Úrúgvæ', 'Úsbekistan',
-        'Vanúatú', 'Venesúela', 'Vestur-Kongó', 'Vestur-Sahara', 'Víetnam', 'Wales', 'Wallis- og Fútúnaeyjar', 'Þýskaland',
+        'Vanúatú', 'Venesúela', 'Vestur-Kongó', 'Vestur-Sahara', 'Víetnam', 'Wales', 'Wallis- og Fútúnaeyjar', 'Þýskaland'
     ];
 
     /**
@@ -60,7 +60,7 @@ class Address extends \Faker\Provider\Address
         'Mjóifjörður', 'Borgarfjörður', 'Reyðarfjörður', 'Eskifjörður', 'Neskaupstaður', 'Fáskrúðsfjörður',
         'Stöðvarfjörður', 'Breiðdalsvík', 'Djúpivogur', 'Höfn', 'Selfoss', 'Hveragerði', 'Þorlákshöfn', 'Ölfus',
         'Eyrarbakki', 'Stokkseyri', 'Laugarvatn', 'Flúðir', 'Hella', 'Hvolsvöllur', 'Vík', 'Kirkjubæjarklaustur',
-        'Vestmannaeyjar',
+        'Vestmannaeyjar'
     ];
 
     /**
@@ -71,7 +71,7 @@ class Address extends \Faker\Provider\Address
         'garðar', 'höfði', 'heimar', 'hamar', 'hólar', 'háls', 'kvísl', 'lækur',
         'leiti', 'land', 'múli', 'nes', 'rimi', 'stígur', 'stræti', 'stekkur',
         'slóð', 'skógar', 'sel', 'teigur', 'tún', 'vangur', 'vegur', 'vogur',
-        'vað',
+        'vað'
     ];
 
     /**
@@ -81,21 +81,21 @@ class Address extends \Faker\Provider\Address
         'Aðal', 'Austur', 'Bakka', 'Braga', 'Báru', 'Brunn', 'Fiski', 'Leifs',
         'Týs', 'Birki', 'Suður', 'Norður', 'Vestur', 'Austur', 'Sanda', 'Skógar',
         'Stór', 'Sunnu', 'Tungu', 'Tangar', 'Úlfarfells', 'Vagn', 'Vind', 'Ysti',
-        'Þing', 'Hamra', 'Hóla', 'Kríu', 'Iðu', 'Spóa', 'Starra', 'Uglu', 'Vals',
+        'Þing', 'Hamra', 'Hóla', 'Kríu', 'Iðu', 'Spóa', 'Starra', 'Uglu', 'Vals'
     ];
 
     /**
      * @var Icelandic zip code.
      **/
     protected static $postcode = [
-        '%##',
+        '%##'
     ];
 
     /**
      * @var array Icelandic regions.
      */
     protected static $regionNames = [
-        'Höfuðborgarsvæðið', 'Norðurland', 'Suðurland', 'Vesturland', 'Vestfirðir', 'Austurland', 'Suðurnes',
+        'Höfuðborgarsvæðið', 'Norðurland', 'Suðurland', 'Vesturland', 'Vestfirðir', 'Austurland', 'Suðurnes'
     ];
 
     /**
@@ -119,14 +119,14 @@ class Address extends \Faker\Provider\Address
         '{{streetPrefix}}{{streetSuffix}}',
         '{{streetPrefix}}{{streetSuffix}}',
         '{{firstNameMale}}{{streetSuffix}}',
-        '{{firstNameFemale}}{{streetSuffix}}',
+        '{{firstNameFemale}}{{streetSuffix}}'
     ];
 
     /**
      * @var array Icelandic street's address formats.
      */
     protected static $streetAddressFormats = [
-        '{{streetName}} {{buildingNumber}}',
+        '{{streetName}} {{buildingNumber}}'
     ];
 
     /**

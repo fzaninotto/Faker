@@ -16,12 +16,12 @@ class Company extends \Faker\Provider\Company
     ];
 
     protected static $companyPrefix = [
-        'شرکت', 'موسسه', 'سازمان', 'بنیاد',
+        'شرکت', 'موسسه', 'سازمان', 'بنیاد'
     ];
 
     protected static $companyField = [
         'فناوری اطلاعات', 'راه و ساختمان', 'توسعه معادن', 'استخراج و اکتشاف',
-        'سرمایه گذاری', 'نساجی', 'کاریابی', 'تجهیزات اداری', 'تولیدی', 'فولاد',
+        'سرمایه گذاری', 'نساجی', 'کاریابی', 'تجهیزات اداری', 'تولیدی', 'فولاد'
     ];
 
     protected static $contract = [
@@ -30,7 +30,6 @@ class Company extends \Faker\Provider\Company
 
     /**
      * @example 'شرکت'
-     *
      * @return string
      */
     public static function companyPrefix()
@@ -40,7 +39,6 @@ class Company extends \Faker\Provider\Company
 
     /**
      * @example 'سرمایه گذاری'
-     *
      * @return string
      */
     public static function companyField()
@@ -50,7 +48,6 @@ class Company extends \Faker\Provider\Company
 
     /**
      * @example 'تمام وقت'
-     *
      * @return string
      */
     public function contract()

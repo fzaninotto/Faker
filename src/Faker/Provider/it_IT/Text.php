@@ -7,7 +7,7 @@ class Text extends \Faker\Provider\Text
     /**
      * Carlo Collodi
      * Pinocchio
-     * Questo e-book è stato realizzato anche grazie al sostegno di:.
+     * Questo e-book è stato realizzato anche grazie al sostegno di:
      *
      * E-text
      * Web design, Editoria, Multimedia
@@ -101,7 +101,6 @@ class Text extends \Faker\Provider\Text
      * XXXVI Finalmente Pinocchio cessa d’essere un burattino e diventa un ragazzo.
      *
      * @see http://www.liberliber.it/libri/c/collodi/index.php#elenco_opere
-     *
      * @var string
      */
     protected static $baseText = <<<'EOT'

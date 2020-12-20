@@ -119,7 +119,7 @@ final class FooProvider
 
     public function fooFormatterWithArguments($value = '')
     {
-        return 'baz'.$value;
+        return 'baz' . $value;
     }
 }
 

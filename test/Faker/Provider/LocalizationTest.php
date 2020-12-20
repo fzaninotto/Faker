@@ -13,7 +13,7 @@ final class LocalizationTest extends TestCase
     public function testLocalizedProvidersDoNotThrowErrors(string $locale): void
     {
         $faker = Factory::create($locale);
-        self::assertNotNull($faker->name, 'Localized Name Provider '.$locale.' does not throw errors');
-        self::assertNotNull($faker->address, 'Localized Address Provider '.$locale.' does not throw errors');
+        self::assertNotNull($faker->name, 'Localized Name Provider ' . $locale . ' does not throw errors');
+        self::assertNotNull($faker->address, 'Localized Address Provider ' . $locale . ' does not throw errors');
     }
 }

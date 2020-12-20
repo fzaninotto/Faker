@@ -12,7 +12,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     protected static $streetAddressFormats = [
-        '{{buildingPrefix}}{{buildingNumber}}, {{streetName}}',
+        '{{buildingPrefix}}{{buildingNumber}}, {{streetName}}'
     ];
 
     /**
@@ -30,7 +30,7 @@ class Address extends \Faker\Provider\Address
         '%##',
         '%-%',
         '?-##-##',
-        '%?-##',
+        '%?-##'
     ];
 
     protected static $streetNameFormats = [
@@ -64,14 +64,14 @@ class Address extends \Faker\Provider\Address
     ];
 
     /**
-     * 'Jalan' & 'Jln' are more frequently used than 'Lorong'.
+     * 'Jalan' & 'Jln' are more frequently used than 'Lorong'
      *
      * @link https://en.wikipedia.org/wiki/List_of_roads_in_Kuala_Lumpur#Standard_translations
      */
     protected static $streetPrefix = [
         'Jln', 'Jln',
         'Jalan', 'Jalan', 'Jalan',
-        'Lorong',
+        'Lorong'
     ];
 
     /**
@@ -102,7 +102,7 @@ class Address extends \Faker\Provider\Address
         'Vermont', 'Vivekananda',
         'Wan Kadir', 'Wesley', 'Wisma Putra',
         'Yaacob Latif', 'Yap Ah Loy', 'Yap Ah Shak', 'Yap Kwan Seng', 'Yew',
-        'Zaaba', 'Zainal Abidin',
+        'Zaaba', 'Zainal Abidin'
     ];
 
     /**
@@ -114,7 +114,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     /**
-     * 'Bandar' and 'Taman' are the most common township prefix.
+     * 'Bandar' and 'Taman' are the most common township prefix
      *
      * @link https://en.wikipedia.org/wiki/Template:Greater_Kuala_Lumpur > Townships
      * @link https://en.wikipedia.org/wiki/Template:Johor > Townships
@@ -244,7 +244,7 @@ class Address extends \Faker\Provider\Address
             'Batu Manikar',
             'Kiamsam',
             'Layang-Layang',
-            'Rancha-Rancha',
+            'Rancha-Rancha'
         ],
         'melaka' => [
             'Alor Gajah',
@@ -393,7 +393,7 @@ class Address extends \Faker\Provider\Address
             'Rantau Abang',
             'Teluk Kalung',
             'Wakaf Tapai',
-        ],
+        ]
     ];
 
     /**
@@ -402,65 +402,65 @@ class Address extends \Faker\Provider\Address
     protected static $states = [
         'johor' => [
             'Johor Darul Ta\'zim',
-            'Johor',
+            'Johor'
         ],
         'kedah' => [
             'Kedah Darul Aman',
-            'Kedah',
+            'Kedah'
         ],
         'kelantan' => [
             'Kelantan Darul Naim',
-            'Kelantan',
+            'Kelantan'
         ],
         'kl' => [
             'KL',
             'Kuala Lumpur',
-            'WP Kuala Lumpur',
+            'WP Kuala Lumpur'
         ],
         'labuan' => [
-            'Labuan',
+            'Labuan'
         ],
         'melaka' => [
             'Malacca',
-            'Melaka',
+            'Melaka'
         ],
         'nsembilan' => [
             'Negeri Sembilan Darul Khusus',
-            'Negeri Sembilan',
+            'Negeri Sembilan'
         ],
         'pahang' => [
             'Pahang Darul Makmur',
-            'Pahang',
+            'Pahang'
         ],
         'penang' => [
             'Penang',
-            'Pulau Pinang',
+            'Pulau Pinang'
         ],
         'perak' => [
             'Perak Darul Ridzuan',
-            'Perak',
+            'Perak'
         ],
         'perlis' => [
             'Perlis Indera Kayangan',
-            'Perlis',
+            'Perlis'
         ],
         'putrajaya' => [
-            'Putrajaya',
+            'Putrajaya'
         ],
         'sabah' => [
-            'Sabah',
+            'Sabah'
         ],
         'sarawak' => [
-            'Sarawak',
+            'Sarawak'
         ],
         'selangor' => [
             'Selangor Darul Ehsan',
-            'Selangor',
+            'Selangor'
         ],
         'terengganu' => [
             'Terengganu Darul Iman',
-            'Terengganu',
-        ],
+            'Terengganu'
+        ]
     ];
 
     /**
@@ -494,7 +494,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     /**
-     * Return a building prefix.
+     * Return a building prefix
      *
      * @example 'No.'
      *
@@ -506,7 +506,7 @@ class Address extends \Faker\Provider\Address
     }
 
     /**
-     * Return a building number.
+     * Return a building number
      *
      * @example '123'
      *
@@ -518,7 +518,7 @@ class Address extends \Faker\Provider\Address
     }
 
     /**
-     * Return a street prefix.
+     * Return a street prefix
      *
      * @example 'Jalan'
      */
@@ -530,7 +530,7 @@ class Address extends \Faker\Provider\Address
     }
 
     /**
-     * Return a complete streename.
+     * Return a complete streename
      *
      * @example 'Jalan Utama 7'
      *
@@ -544,7 +544,7 @@ class Address extends \Faker\Provider\Address
     }
 
     /**
-     * Return a randown township.
+     * Return a randown township
      *
      * @example Taman Bahagia
      *
@@ -558,7 +558,7 @@ class Address extends \Faker\Provider\Address
     }
 
     /**
-     * Return a township prefix abbreviation.
+     * Return a township prefix abbreviation
      *
      * @example 'USJ'
      *
@@ -570,7 +570,7 @@ class Address extends \Faker\Provider\Address
     }
 
     /**
-     * Return a township prefix.
+     * Return a township prefix
      *
      * @example 'Taman'
      *
@@ -582,7 +582,7 @@ class Address extends \Faker\Provider\Address
     }
 
     /**
-     * Return a township suffix.
+     * Return a township suffix
      *
      * @example 'Bahagia'
      */
@@ -592,10 +592,9 @@ class Address extends \Faker\Provider\Address
     }
 
     /**
-     * Return a postcode based on state.
+     * Return a postcode based on state
      *
      * @example '55100'
-     *
      * @link https://en.wikipedia.org/wiki/Postal_codes_in_Malaysia#States
      *
      * @param null|string $state 'state' or null
@@ -606,56 +605,56 @@ class Address extends \Faker\Provider\Address
     {
         $format = [
             'perlis' => [ // (01000 - 02800)
-                '0'.self::numberBetween(1000, 2800),
+                '0' . self::numberBetween(1000, 2800)
             ],
             'kedah' => [ // (05000 - 09810)
-                '0'.self::numberBetween(5000, 9810),
+                '0' . self::numberBetween(5000, 9810)
             ],
             'penang' => [ // (10000 - 14400)
-                self::numberBetween(10000, 14400),
+                self::numberBetween(10000, 14400)
             ],
             'kelantan' => [ // (15000 - 18500)
-                self::numberBetween(15000, 18500),
+                self::numberBetween(15000, 18500)
             ],
             'terengganu' => [ // (20000 - 24300)
-                self::numberBetween(20000, 24300),
+                self::numberBetween(20000, 24300)
             ],
             'pahang' => [ // (25000 - 28800 | 39000 - 39200 | 49000, 69000)
                 self::numberBetween(25000, 28800),
                 self::numberBetween(39000, 39200),
-                self::numberBetween(49000, 69000),
+                self::numberBetween(49000, 69000)
             ],
             'perak' => [ // (30000 - 36810)
-                self::numberBetween(30000, 36810),
+                self::numberBetween(30000, 36810)
             ],
             'selangor' => [ // (40000 - 48300 | 63000 - 68100)
                 self::numberBetween(40000, 48300),
-                self::numberBetween(63000, 68100),
+                self::numberBetween(63000, 68100)
             ],
             'kl' => [ // (50000 - 60000)
                 self::numberBetween(50000, 60000),
             ],
             'putrajaya' => [ // (62000 - 62988)
-                self::numberBetween(62000, 62988),
+                self::numberBetween(62000, 62988)
             ],
             'nsembilan' => [ // (70000 - 73509)
-                self::numberBetween(70000, 73509),
+                self::numberBetween(70000, 73509)
             ],
             'melaka' => [ // (75000 - 78309)
-                self::numberBetween(75000, 78309),
+                self::numberBetween(75000, 78309)
             ],
             'johor' => [ // (79000 - 86900)
-                self::numberBetween(79000, 86900),
+                self::numberBetween(79000, 86900)
             ],
             'labuan' => [ // (87000 - 87033)
-                self::numberBetween(87000, 87033),
+                self::numberBetween(87000, 87033)
             ],
             'sabah' => [ // (88000 - 91309)
-                self::numberBetween(88000, 91309),
+                self::numberBetween(88000, 91309)
             ],
             'sarawak' => [ // (93000 - 98859)
-                self::numberBetween(93000, 98859),
-            ],
+                self::numberBetween(93000, 98859)
+            ]
         ];
 
         $postcode = is_null($state) ? static::randomElement($format) : $format[$state];
@@ -664,7 +663,7 @@ class Address extends \Faker\Provider\Address
     }
 
     /**
-     * Return the complete town address with matching postcode and state.
+     * Return the complete town address with matching postcode and state
      *
      * @example 55100 Bukit Bintang, Kuala Lumpur
      *
@@ -677,11 +676,11 @@ class Address extends \Faker\Provider\Address
         $town = static::randomElement(static::$towns[$state]);
         $state = static::randomElement(static::$states[$state]);
 
-        return $postcode.' '.$town.', '.$state;
+        return $postcode . ' ' . $town . ', ' . $state;
     }
 
     /**
-     * Return a random city (town).
+     * Return a random city (town)
      *
      * @example 'Ampang'
      *
@@ -695,7 +694,7 @@ class Address extends \Faker\Provider\Address
     }
 
     /**
-     * Return a random state.
+     * Return a random state
      *
      * @example 'Johor'
      *

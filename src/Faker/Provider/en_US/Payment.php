@@ -22,7 +22,7 @@ class Payment extends \Faker\Provider\Payment
 
         $result = sprintf('%02d%01d%01d%04d', $district + $type, $clearingCenter, $state, $institution);
 
-        return $result.self::calculateRoutingNumberChecksum($result);
+        return $result . self::calculateRoutingNumberChecksum($result);
     }
 
     public static function calculateRoutingNumberChecksum($routing)

@@ -5,7 +5,7 @@ namespace Faker\Provider\ko_KR;
 class Text extends \Faker\Provider\Text
 {
     /**
-     * From ko.wikisource.org.
+     * From ko.wikisource.org
      *
      * License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
      *
@@ -14,10 +14,8 @@ class Text extends \Faker\Provider\Text
      * Language: Korean
      *
      * @licence https://creativecommons.org/licenses/by-sa/3.0/deed.ko
-     *
      * @see     https://wikimediafoundation.org/wiki/Terms_of_Use/
      * @link    https://ko.wikisource.org/wiki/유정
-     *
      * @var string
      */
     protected static $baseText = <<<'EOT'

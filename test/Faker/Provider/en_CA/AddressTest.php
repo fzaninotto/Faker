@@ -7,7 +7,7 @@ use Faker\Test\TestCase;
 final class AddressTest extends TestCase
 {
     /**
-     * Test the validity of province.
+     * Test the validity of province
      */
     public function testProvince()
     {
@@ -18,7 +18,7 @@ final class AddressTest extends TestCase
     }
 
     /**
-     * Test the validity of province abbreviation.
+     * Test the validity of province abbreviation
      */
     public function testProvinceAbbr()
     {
@@ -29,7 +29,7 @@ final class AddressTest extends TestCase
     }
 
     /**
-     * Test the validity of postcode letter.
+     * Test the validity of postcode letter
      */
     public function testPostcodeLetter()
     {
@@ -40,7 +40,7 @@ final class AddressTest extends TestCase
     }
 
     /**
-     * Test the validity of Canadian postcode.
+     * Test the validity of Canadian postcode
      */
     public function testPostcode()
     {

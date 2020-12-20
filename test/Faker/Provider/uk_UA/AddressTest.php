@@ -12,7 +12,7 @@ final class AddressTest extends TestCase
         $main = '[0-9]{5}';
         $pattern = "/^($main)|($main-[0-9]{3})+$/";
         $postcode = $this->faker->postcode;
-        self::assertMatchesRegularExpression($pattern, $postcode, 'Post code '.$postcode.' is wrong!');
+        self::assertMatchesRegularExpression($pattern, $postcode, 'Post code ' . $postcode . ' is wrong!');
     }
 
     public function testEmptySuffixes()
@@ -28,7 +28,7 @@ final class AddressTest extends TestCase
         self::assertSame(
             preg_match($pattern, $streetName),
             1,
-            'Street name '.$streetName.' is wrong!'
+            'Street name ' . $streetName . ' is wrong!'
         );
     }
 
@@ -39,7 +39,7 @@ final class AddressTest extends TestCase
         self::assertSame(
             preg_match($pattern, $city),
             1,
-            'City name '.$city.' is wrong!'
+            'City name ' . $city . ' is wrong!'
         );
     }
 
@@ -50,7 +50,7 @@ final class AddressTest extends TestCase
         self::assertSame(
             preg_match($pattern, $regionName),
             1,
-            'Region name '.$regionName.' is wrong!'
+            'Region name ' . $regionName . ' is wrong!'
         );
     }
 
@@ -61,7 +61,7 @@ final class AddressTest extends TestCase
         self::assertSame(
             preg_match($pattern, $country),
             1,
-            'Country name '.$country.' is wrong!'
+            'Country name ' . $country . ' is wrong!'
         );
     }
 

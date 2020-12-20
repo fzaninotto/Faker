@@ -18,6 +18,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         $operator = static::randomElement(static::$operators);
         $format = static::randomElement(static::$formats);
 
-        return $operator.static::numerify(substr($format, 0, strlen($format) - strlen($operator)));
+        return $operator . static::numerify(substr($format, 0, strlen($format) - strlen($operator)));
     }
 }

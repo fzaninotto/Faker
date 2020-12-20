@@ -15,7 +15,7 @@ final class AddressTest extends TestCase
     }
 
     /**
-     * Test the name of the Nigerian State/County.
+     * Test the name of the Nigerian State/County
      */
     public function testCountyIsAValidString()
     {

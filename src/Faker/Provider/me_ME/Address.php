@@ -112,8 +112,8 @@ class Address extends \Faker\Provider\Address
     public static function localCoordinates()
     {
         return [
-            'latitude'  => static::latitude(42.43, 42.45),
-            'longitude' => static::longitude(19.16, 19.27),
+            'latitude' => static::latitude(42.43, 42.45),
+            'longitude' => static::longitude(19.16, 19.27)
         ];
     }
 }

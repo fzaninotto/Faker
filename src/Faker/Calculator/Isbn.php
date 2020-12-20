@@ -3,7 +3,7 @@
 namespace Faker\Calculator;
 
 /**
- * Utility class for validating ISBN-10.
+ * Utility class for validating ISBN-10
  */
 class Isbn
 {
@@ -11,12 +11,10 @@ class Isbn
     public const PATTERN = '/^\d{9}[0-9X]$/';
 
     /**
-     * ISBN-10 check digit.
-     *
+     * ISBN-10 check digit
      * @link http://en.wikipedia.org/wiki/International_Standard_Book_Number#ISBN-10_check_digits
      *
-     * @param string $input ISBN without check-digit
-     *
+     * @param  string           $input ISBN without check-digit
      * @throws \LengthException When wrong input length passed
      *
      * @return string
@@ -45,7 +43,7 @@ class Isbn
     }
 
     /**
-     * Checks whether the provided number is a valid ISBN-10 number.
+     * Checks whether the provided number is a valid ISBN-10 number
      *
      * @param string $isbn ISBN to check
      *

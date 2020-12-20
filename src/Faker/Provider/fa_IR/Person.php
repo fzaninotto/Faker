@@ -136,12 +136,9 @@ class Person extends \Faker\Provider\Person
     protected static $titleFemale = ['خانم', 'استاد', 'دکتر', 'مهندس'];
 
     /**
-     * This method returns a valid Iranian nationalCode.
-     *
+     * This method returns a valid Iranian nationalCode
      * @example '8075859741'
-     *
      * @link https://fa.wikipedia.org/wiki/%DA%A9%D8%A7%D8%B1%D8%AA_%D8%B4%D9%86%D8%A7%D8%B3%D8%A7%DB%8C%DB%8C_%D9%85%D9%84%DB%8C#%D8%AD%D8%B3%D8%A7%D8%A8_%DA%A9%D8%B1%D8%AF%D9%86_%DA%A9%D8%AF_%DA%A9%D9%86%D8%AA%D8%B1%D9%84
-     *
      * @return string
      */
     public static function nationalCode()
@@ -154,8 +151,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * This method generates a 3-digit valid area code to be used in nationalCode.
-     *
+     * This method generates a 3-digit valid area code to be used in nationalCode
      * @return int|string
      */
     private static function createAreaCode()
@@ -170,8 +166,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * This method randomly generates a 6-digit core code for nationalCode.
-     *
+     * This method randomly generates a 6-digit core code for nationalCode
      * @return string
      */
     private static function createCoreCode()
@@ -180,18 +175,15 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * This method uses the Iranian nationalCode validation algorithm to generate a valid 10-digit code.
-     *
+     * This method uses the Iranian nationalCode validation algorithm to generate a valid 10-digit code
      * @param string $area
      * @param string $core
-     *
      * @link https://fa.wikipedia.org/wiki/%DA%A9%D8%A7%D8%B1%D8%AA_%D8%B4%D9%86%D8%A7%D8%B3%D8%A7%DB%8C%DB%8C_%D9%85%D9%84%DB%8C#%D8%AD%D8%B3%D8%A7%D8%A8_%DA%A9%D8%B1%D8%AF%D9%86_%DA%A9%D8%AF_%DA%A9%D9%86%D8%AA%D8%B1%D9%84
-     *
      * @return int
      */
     private static function createControlCode($area, $core)
     {
-        $subNationalCodeString = $area.$core;
+        $subNationalCodeString = $area . $core;
 
         $sum = 0;
         $count = 0;

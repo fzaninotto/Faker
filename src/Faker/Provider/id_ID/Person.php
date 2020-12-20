@@ -232,8 +232,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * For academic title.
-     *
+     * For academic title
      * @link http://id.wikipedia.org/wiki/Gelar_akademik
      */
     private static $suffix = ['S.Ked', 'S.Gz', 'S.Pt', 'S.IP', 'S.E.I',
@@ -241,7 +240,7 @@ class Person extends \Faker\Provider\Person
         'S.Sos', 'S.Farm', 'M.M.', 'M.Kom.', 'M.TI.', 'M.Pd', 'M.Farm', 'M.Ak', ];
 
     /**
-     * Return last name.
+     * Return last name
      *
      * @param string|null $gender male or female or null for any
      *
@@ -261,8 +260,9 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * Return last name for male.
+     * Return last name for male
      *
+     * @access public
      * @return string last name
      */
     public static function lastNameMale()
@@ -271,8 +271,9 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * Return last name for female.
+     * Return last name for female
      *
+     * @access public
      * @return string last name
      */
     public static function lastNameFemale()
@@ -281,8 +282,9 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * For academic title.
+     * For academic title
      *
+     * @access public
      * @return string suffix
      */
     public static function suffix()
@@ -291,18 +293,17 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * Generates Nomor Induk Kependudukan (NIK).
+     * Generates Nomor Induk Kependudukan (NIK)
      *
      * @link https://en.wikipedia.org/wiki/National_identification_number#Indonesia
      *
-     * @param null|string    $gender
+     * @param null|string $gender
      * @param null|\DateTime $birthDate
-     *
      * @return string
      */
     public function nik($gender = null, $birthDate = null)
     {
-        // generate first numbers (region data)
+        # generate first numbers (region data)
         $nik = $this->birthPlaceCode();
         $nik .= $this->generator->numerify('##');
 
@@ -314,7 +315,7 @@ class Person extends \Faker\Provider\Person
             $gender = $this->generator->randomElement([self::GENDER_MALE, self::GENDER_FEMALE]);
         }
 
-        // if gender is female, add 40 to days
+        # if gender is female, add 40 to days
         if ($gender == self::GENDER_FEMALE) {
             $nik .= $birthDate->format('d') + 40;
         } else {
@@ -323,14 +324,14 @@ class Person extends \Faker\Provider\Person
 
         $nik .= $birthDate->format('my');
 
-        // add last random digits
+        # add last random digits
         $nik .= $this->generator->numerify('####');
 
         return $nik;
     }
 
     /**
-     * Generates birth place code for NIK.
+     * Generates birth place code for NIK
      *
      * @link https://id.wikipedia.org/wiki/Nomor_Induk_Kependudukan
      * @link http://informasipedia.com/wilayah-indonesia/daftar-kabupaten-kota-di-indonesia/

@@ -7,17 +7,16 @@ class Address extends \Faker\Provider\Address
     protected static $buildingNumber = ['%##', '%#', '%', '%/%', '%#[abc]', '%[abc]'];
 
     protected static $streetSuffixLong = [
-        'Gasse', 'Platz', 'Ring', 'Straße', 'Weg', 'Allee',
+        'Gasse', 'Platz', 'Ring', 'Straße', 'Weg', 'Allee'
     ];
     protected static $streetSuffixShort = [
-        'gasse', 'platz', 'ring', 'straße', 'str.', 'weg', 'allee',
+        'gasse', 'platz', 'ring', 'straße', 'str.', 'weg', 'allee'
     ];
 
     protected static $postcode = ['#####'];
 
     /**
      * @var array
-     *
      * @see https://de.wikipedia.org/wiki/Liste_der_Gro%C3%9F-_und_Mittelst%C3%A4dte_in_Deutschland
      */
     protected static $cityNames = [
@@ -51,7 +50,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     protected static $state = [
-        'Baden-Württemberg', 'Bayern', 'Berlin', 'Brandenburg', 'Bremen', 'Hamburg', 'Hessen', 'Mecklenburg-Vorpommern', 'Niedersachsen', 'Nordrhein-Westfalen', 'Rheinland-Pfalz', 'Saarland', 'Sachsen', 'Sachsen-Anhalt', 'Schleswig-Holstein', 'Thüringen',
+        'Baden-Württemberg', 'Bayern', 'Berlin', 'Brandenburg', 'Bremen', 'Hamburg', 'Hessen', 'Mecklenburg-Vorpommern', 'Niedersachsen', 'Nordrhein-Westfalen', 'Rheinland-Pfalz', 'Saarland', 'Sachsen', 'Sachsen-Anhalt', 'Schleswig-Holstein', 'Thüringen'
     ];
 
     protected static $country = [
@@ -86,7 +85,7 @@ class Address extends \Faker\Provider\Address
 
     protected static $streetNameFormats = [
         '{{lastName}}{{streetSuffixShort}}',
-        '{{firstName}}-{{lastName}}-{{streetSuffixLong}}',
+        '{{firstName}}-{{lastName}}-{{streetSuffixLong}}'
     ];
 
     protected static $streetAddressFormats = [

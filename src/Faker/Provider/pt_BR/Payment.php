@@ -7,26 +7,26 @@ class Payment extends \Faker\Provider\Payment
     protected static $cardVendors = [
         'Visa', 'Visa', 'Visa', 'Visa', 'Visa',
         'MasterCard', 'MasterCard', 'MasterCard', 'MasterCard', 'MasterCard',
-        'American Express', 'Discover Card', 'Diners', 'Elo', 'Hipercard',
+        'American Express', 'Discover Card', 'Diners', 'Elo', 'Hipercard'
     ];
 
     // see https://gist.github.com/erikhenrique/5931368 / http://pt.stackoverflow.com/q/3715/26461
     protected static $cardParams = [
         'Visa' => [
-            '4##############',
+            '4##############'
         ],
         'MasterCard' => [
-            '5##############',
+            '5##############'
         ],
         'American Express' => [
             '34############',
-            '37############',
+            '37############'
         ],
         'Discover Card' => [
             '6011###########',
             '622############',
             '64#############',
-            '65#############',
+            '65#############'
         ],
         'Diners' => [
             '301############',
@@ -53,25 +53,23 @@ class Payment extends \Faker\Provider\Payment
             '60#############',
         ],
         'Aura' => [
-            '50#############',
-        ],
+            '50#############'
+        ]
     ];
 
     /**
-     * International Bank Account Number (IBAN).
-     *
+     * International Bank Account Number (IBAN)
      * @link http://en.wikipedia.org/wiki/International_Bank_Account_Number
-     *
-     * @param string $prefix      for generating bank account number of a specific bank
-     * @param string $countryCode ISO 3166-1 alpha-2 country code
-     * @param int    $length      total length without country code and 2 check digits
-     *
+     * @param  string  $prefix      for generating bank account number of a specific bank
+     * @param  string  $countryCode ISO 3166-1 alpha-2 country code
+     * @param  int $length      total length without country code and 2 check digits
      * @return string
      */
     public static function bankAccountNumber($prefix = '', $countryCode = 'BR', $length = null)
     {
         return static::iban($countryCode, $prefix, $length);
     }
+
 
     /**
      * @see list of Brazilians banks (2018-02-15), source: https://pt.wikipedia.org/wiki/Lista_de_bancos_do_Brasil

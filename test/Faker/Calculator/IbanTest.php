@@ -159,6 +159,7 @@ final class IbanTest extends TestCase
             ['YY24KIHB12476423125915947930915268',     true],
             ['ZZ25VLQT382332233206588011313776421',    true],
 
+
             ['AL4721211009000000023569874',           false],
             ['AD120001203020035910010',               false],
             ['AT61190430023457320',                   false],
@@ -294,7 +295,6 @@ final class IbanTest extends TestCase
 
         return $return;
     }
-
     /**
      * @dataProvider mod97Provider
      */

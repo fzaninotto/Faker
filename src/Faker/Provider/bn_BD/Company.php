@@ -5,15 +5,15 @@ namespace Faker\Provider\bn_BD;
 class Company extends \Faker\Provider\Company
 {
     protected static $formats = [
-        '{{companyName}} {{companyType}}',
+        '{{companyName}} {{companyType}}'
     ];
 
     protected static $names = [
-        'রহিম', 'করিম', 'বাবলু',
+        'রহিম', 'করিম', 'বাবলু'
     ];
 
     protected static $types = [
-        'সিমেন্ট', 'সার', 'ঢেউটিন',
+        'সিমেন্ট', 'সার', 'ঢেউটিন'
     ];
 
     public static function companyType()

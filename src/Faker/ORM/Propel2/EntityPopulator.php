@@ -50,7 +50,6 @@ class EntityPopulator
 
     /**
      * @param \Faker\Generator $generator
-     *
      * @return array
      */
     public function guessColumnFormatters(\Faker\Generator $generator)
@@ -97,7 +96,6 @@ class EntityPopulator
 
     /**
      * @param ColumnMap $columnMap
-     *
      * @return bool
      */
     protected function isColumnBehavior(ColumnMap $columnMap)
@@ -147,7 +145,6 @@ class EntityPopulator
 
     /**
      * @param \Faker\Generator $generator
-     *
      * @return array
      */
     public function guessModifiers(\Faker\Generator $generator)
@@ -162,7 +159,7 @@ class EntityPopulator
                 case 'nested_set':
                     $modifiers['nested_set'] = function ($obj, $inserted) use ($class, $generator) {
                         if (isset($inserted[$class])) {
-                            $queryClass = $class.'Query';
+                            $queryClass = $class . 'Query';
                             $parent = $queryClass::create()->findPk($generator->randomElement($inserted[$class]));
                             $obj->insertAsLastChildOf($parent);
                         } else {

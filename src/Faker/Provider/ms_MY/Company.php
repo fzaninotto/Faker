@@ -12,7 +12,7 @@ class Company extends \Faker\Provider\Company
     ];
 
     /**
-     * There are more Private Limited Companies(Sdn Bhd) than Public Listed Companies(Berhad).
+     * There are more Private Limited Companies(Sdn Bhd) than Public Listed Companies(Berhad)
      *
      * @link http://www.risscorporateservices.com/types-of-business-entities.html
      */
@@ -22,7 +22,7 @@ class Company extends \Faker\Provider\Company
         'Bhd.',
         'Enterprise',
         'Sdn Bhd', 'Sdn Bhd', 'Sdn Bhd', 'Sdn Bhd',
-        'Sdn. Bhd.', 'Sdn. Bhd.', 'Sdn. Bhd.', 'Sdn. Bhd.',
+        'Sdn. Bhd.', 'Sdn. Bhd.', 'Sdn. Bhd.', 'Sdn. Bhd.'
     ];
 
     /**
@@ -51,7 +51,7 @@ class Company extends \Faker\Provider\Company
         'U Mobile', 'UEM Group', 'UMW Holdings',
         'VADS', 'ViTrox',
         'Wasco Energy',
-        'YTL Corporation',
+        'YTL Corporation'
     ];
 
     /**
@@ -80,11 +80,11 @@ class Company extends \Faker\Provider\Company
         'Tag', 'Talian Paip', 'Taman', 'Tanaman', 'Tanda Dan Stiker', 'Tangki', 'Tasik', 'Tatahias Haiwan', 'Teknologi Hijau', 'Teknologi Maklumat Dan Komunikasi', 'Tekstil', 'Tekstil Guna Semula Kakitangan', 'Tekstil Pakai Buang Kakitangan', 'Telecommunication', 'Telekomunikasi', 'Telly Clerk', 'Tempat Letak Kereta', 'Tenaga Buruh', 'Ternakan', 'Terusan', 'Topografi', 'Trailer Dan Aksesori', 'Tukun Tiruan', 'Tumbuhan',
         'Ubat Haiwan', 'Ubat Tidak Berjadual', 'Ujian Makmal', 'Ukuran',
         'Varnishing',
-        'WAN', 'Wayar Elektrik Dan Aksesori', 'Wireless',
+        'WAN', 'Wayar Elektrik Dan Aksesori', 'Wireless'
     ];
 
     /**
-     * Return a random company name.
+     * Return a random company name
      *
      * @example 'AirAsia'
      */
@@ -94,7 +94,7 @@ class Company extends \Faker\Provider\Company
     }
 
     /**
-     * Return a random industry.
+     * Return a random industry
      *
      * @example 'Automobil'
      */

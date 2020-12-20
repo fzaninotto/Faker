@@ -21,7 +21,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
 
     /**
      * Some alphabet has higher frequency that coincides with the current number
-     * of registrations. E.g. W = Wilayah Persekutuan.
+     * of registrations. E.g. W = Wilayah Persekutuan
      *
      * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format
      */
@@ -34,7 +34,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
      * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format_2
      */
     protected static $sarawakPrefix = [
-        'QA', 'QK', 'QB', 'QC', 'QL', 'QM', 'QP', 'QR', 'QS', 'QT',
+        'QA', 'QK', 'QB', 'QC', 'QL', 'QM', 'QP', 'QR', 'QS', 'QT'
     ];
 
     /**
@@ -42,7 +42,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
      */
     protected static $sabahPrefix = [
         'SA', 'SAA', 'SAB', 'SAC', 'SB', 'SD', 'SG',
-        'SK', 'SL', 'SS', 'SSA', 'ST', 'STA', 'SU',
+        'SK', 'SL', 'SS', 'SSA', 'ST', 'STA', 'SU'
     ];
 
     /**
@@ -66,11 +66,11 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
         'VIP',
         'WAJA',
         'XIIINAM', 'XOIC', 'XXVIASEAN', 'XXXIDB',
-        'Y',
+        'Y'
     ];
 
     /**
-     * Chances of having an empty alphabet will be 1/24.
+     * Chances of having an empty alphabet will be 1/24
      *
      * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format
      */
@@ -78,11 +78,11 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
         'A', 'B', 'C', 'D', 'E', 'F',
         'G', 'H', 'J', 'K', 'L', 'M',
         'N', 'P', 'Q', 'R', 'S', 'T',
-        'U', 'V', 'W', 'X', 'Y', '',
+        'U', 'V', 'W', 'X', 'Y', ''
     ];
 
     /**
-     * Return a valid Malaysia JPJ(Road Transport Department) vehicle licence plate number.
+     * Return a valid Malaysia JPJ(Road Transport Department) vehicle licence plate number
      *
      * @example 'WKN 2368'
      *
@@ -96,7 +96,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
     }
 
     /**
-     * Return Peninsular prefix alphabet.
+     * Return Peninsular prefix alphabet
      *
      * @example 'W'
      *
@@ -108,7 +108,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
     }
 
     /**
-     * Return Sarawak state prefix alphabet.
+     * Return Sarawak state prefix alphabet
      *
      * @example 'QA'
      *
@@ -120,7 +120,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
     }
 
     /**
-     * Return Sabah state prefix alphabet.
+     * Return Sabah state prefix alphabet
      *
      * @example 'SA'
      *
@@ -132,7 +132,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
     }
 
     /**
-     * Return specialty licence plate prefix.
+     * Return specialty licence plate prefix
      *
      * @example 'G1M'
      *
@@ -144,7 +144,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
     }
 
     /**
-     * Return a valid license plate alphabet.
+     * Return a valid license plate alphabet
      *
      * @example 'A'
      *
@@ -156,7 +156,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
     }
 
     /**
-     * Return a valid number sequence between 1 and 9999.
+     * Return a valid number sequence between 1 and 9999
      *
      * @example '1234'
      *

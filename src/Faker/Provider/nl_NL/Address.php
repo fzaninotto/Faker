@@ -60,7 +60,7 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Export of BAG (http://bag.vrom.nl/)
-     * last updated 2012/11/09.
+     * last updated 2012/11/09
      *
      * @var array
      */
@@ -92,7 +92,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     protected static $state = [
-        'Drenthe', 'Gelderland', 'Groningen', 'Flevoland', 'Friesland', 'Noord-Brabant', 'Noord-Holland', 'Overijssel', 'Limburg', 'Utrecht', 'Zeeland', 'Zuid-Holland',
+        'Drenthe', 'Gelderland', 'Groningen', 'Flevoland', 'Friesland', 'Noord-Brabant', 'Noord-Holland', 'Overijssel', 'Limburg', 'Utrecht', 'Zeeland', 'Zuid-Holland'
     ];
 
     protected static $country = [
@@ -119,7 +119,7 @@ class Address extends \Faker\Provider\Address
         'Uruguay',
         'Vanuatu', 'Venezuela', 'Verenigde Arabische Emiraten', 'Verenigd Koninkrijk', 'Verenigde Staten van Amerika', 'Vaticaanstad', 'Vietnam',
         'Wallis en Futuna', 'Westerlijke Shara', 'Wit-Rusland',
-        'Zambia', 'Zuid-Afrika', 'Zuid-Georgia en de Zuidelijke Sandwicheilanden', 'Zimbabwe',
+        'Zambia', 'Zuid-Afrika', 'Zuid-Georgia en de Zuidelijke Sandwicheilanden', 'Zimbabwe'
     ];
 
     /**

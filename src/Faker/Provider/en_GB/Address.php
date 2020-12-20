@@ -85,11 +85,11 @@ class Address extends \Faker\Provider\Address
         'PE29 2HJ', 'LS1 9QA', 'BN14 7AR', 'BS5 8PJ', 'OX3 7PJ', 'W6 7AN', 'S60 2PT', 'G12 9BH', 'IP5 1LR', 'B26 3SX', 'PE21 8PT', 'RM14 2LD',
         'PL9 9NN', 'NG20 0JZ', 'W1K 7AF', 'AB31 4DX', 'PL1 4EH', 'IP19 0NS', 'LS28 9NF', 'CH64 3TH', 'G13 1XN', 'NG5 1JR', 'W10 6DY', 'BS27 3XD',
         'ST21 6SR', 'PL4 9RB', 'BA15 2QE', 'TR20 9RG', 'NG34 9HJ', 'BD22 9DN', 'LE4 4JR', 'KA9 2RN', 'W1G 6JQ', 'B14 5TF', 'SA16 0HY', 'N8 7AU',
-        'LE17 5PD', 'PE25 2RA', 'SE19 2BG', 'OX12 8PJ', 'DY5 3EH', 'NG19 7QJ', 'G43 1HQ',
+        'LE17 5PD', 'PE25 2RA', 'SE19 2BG', 'OX12 8PJ', 'DY5 3EH', 'NG19 7QJ', 'G43 1HQ'
     ];
 
     protected static $county = [
-        'Aberdeenshire', 'Anglesey', 'Angus', 'Argyll', 'Ayrshire', 'Banffshire', 'Bedfordshire', 'Berwickshire', 'Breconshire', 'Buckinghamshire', 'Bute', 'Caernarvonshire', 'Caithness', 'Cambridgeshire', 'Cardiganshire', 'Carmarthenshire', 'Cheshire', 'Clackmannanshire', 'Cornwall', 'Isles of Scilly', 'Cumbria', 'Denbighshire', 'Derbyshire', 'Devon', 'Dorset', 'Dumbartonshire', 'Dumfriesshire', 'Durham', 'East Lothian', 'East Sussex', 'Essex', 'Fife', 'Flintshire', 'Glamorgan', 'Gloucestershire', 'Greater London', 'Greater Manchester', 'Hampshire', 'Hertfordshire', 'Inverness', 'Kent', 'Kincardineshire', 'Kinross-shire', 'Kirkcudbrightshire', 'Lanarkshire', 'Lancashire', 'Leicestershire', 'Lincolnshire', 'London', 'Merionethshire', 'Merseyside', 'Midlothian', 'Monmouthshire', 'Montgomeryshire', 'Moray', 'Nairnshire', 'Norfolk', 'North Yorkshire', 'Northamptonshire', 'Northumberland', 'Nottinghamshire', 'Orkney', 'Oxfordshire', 'Peebleshire', 'Pembrokeshire', 'Perthshire', 'Radnorshire', 'Renfrewshire', 'Ross & Cromarty', 'Roxburghshire', 'Selkirkshire', 'Shetland', 'Shropshire', 'Somerset', 'South Yorkshire', 'Staffordshire', 'Stirlingshire', 'Suffolk', 'Surrey', 'Sutherland', 'Tyne and Wear', 'Warwickshire', 'West Lothian', 'West Midlands', 'West Sussex', 'West Yorkshire', 'Wigtownshire', 'Wiltshire', 'Worcestershire',
+        'Aberdeenshire', 'Anglesey', 'Angus', 'Argyll', 'Ayrshire', 'Banffshire', 'Bedfordshire', 'Berwickshire', 'Breconshire', 'Buckinghamshire', 'Bute', 'Caernarvonshire', 'Caithness', 'Cambridgeshire', 'Cardiganshire', 'Carmarthenshire', 'Cheshire', 'Clackmannanshire', 'Cornwall', 'Isles of Scilly', 'Cumbria', 'Denbighshire', 'Derbyshire', 'Devon', 'Dorset', 'Dumbartonshire', 'Dumfriesshire', 'Durham', 'East Lothian', 'East Sussex', 'Essex', 'Fife', 'Flintshire', 'Glamorgan', 'Gloucestershire', 'Greater London', 'Greater Manchester', 'Hampshire', 'Hertfordshire', 'Inverness', 'Kent', 'Kincardineshire', 'Kinross-shire', 'Kirkcudbrightshire', 'Lanarkshire', 'Lancashire', 'Leicestershire', 'Lincolnshire', 'London', 'Merionethshire', 'Merseyside', 'Midlothian', 'Monmouthshire', 'Montgomeryshire', 'Moray', 'Nairnshire', 'Norfolk', 'North Yorkshire', 'Northamptonshire', 'Northumberland', 'Nottinghamshire', 'Orkney', 'Oxfordshire', 'Peebleshire', 'Pembrokeshire', 'Perthshire', 'Radnorshire', 'Renfrewshire', 'Ross & Cromarty', 'Roxburghshire', 'Selkirkshire', 'Shetland', 'Shropshire', 'Somerset', 'South Yorkshire', 'Staffordshire', 'Stirlingshire', 'Suffolk', 'Surrey', 'Sutherland', 'Tyne and Wear', 'Warwickshire', 'West Lothian', 'West Midlands', 'West Sussex', 'West Yorkshire', 'Wigtownshire', 'Wiltshire', 'Worcestershire'
     ];
 
     protected static $country = [
@@ -117,7 +117,7 @@ class Address extends \Faker\Provider\Address
         'Vanuatu', 'Venezuela', 'Vietnam',
         'Wallis and Futuna', 'Western Sahara',
         'Yemen',
-        'Zambia', 'Zimbabwe',
+        'Zambia', 'Zimbabwe'
     ];
 
     protected static $cityFormats = [
@@ -128,7 +128,7 @@ class Address extends \Faker\Provider\Address
     ];
     protected static $streetNameFormats = [
         '{{firstName}} {{streetSuffix}}',
-        '{{lastName}} {{streetSuffix}}',
+        '{{lastName}} {{streetSuffix}}'
     ];
     protected static $streetAddressFormats = [
         '{{buildingNumber}} {{streetName}}',

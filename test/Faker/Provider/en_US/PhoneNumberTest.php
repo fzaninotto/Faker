@@ -56,7 +56,7 @@ final class PhoneNumberTest extends TestCase
             // 10 digits
             self::assertCount(10, $digits);
 
-            $areaCode = $digits[0].$digits[1].$digits[2];
+            $areaCode = $digits[0] . $digits[1] . $digits[2];
             self::assertContains($areaCode, ['800', '822', '833', '844', '855', '866', '877', '888', '880', '887', '889']);
 
             // Last two digits of exchange code cannot be 1

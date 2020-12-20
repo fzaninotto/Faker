@@ -7,11 +7,11 @@ class Address extends \Faker\Provider\es_ES\Address
     protected static $cityPrefix = ['San', 'Puerto', 'Gral.', 'Don'];
     protected static $citySuffix = ['Alta', 'Baja', 'Norte', 'Este', ' Sur', ' Oeste'];
     protected static $buildingNumber = ['%####', '%###', '%##', '%#', '%'];
-    protected static $streetPrefix = ['Jr.', 'Av.', 'Cl.', 'Urb.'];
+    protected static $streetPrefix = ['Jr.', 'Av.', 'Cl.', 'Urb.' ];
     protected static $streetSuffix = [''];
     protected static $postcode = ['LIMA ##'];
     protected static $state = [
-        'Lima', 'Callao', 'Arequipa', 'Cuzco', 'Piura', 'Iquitos', 'Huaraz', 'Tacna', 'Ayacucho', 'Pucallpa', 'Trujillo', 'Chimbote', 'Ica', 'Moquegua', 'Puno', 'Tarapoto', 'Cajamarca', 'Lambayeque', 'Huanuco', 'Jauja', 'Tumbes', 'Madre de Dios',
+        'Lima', 'Callao', 'Arequipa', 'Cuzco', 'Piura', 'Iquitos', 'Huaraz', 'Tacna', 'Ayacucho', 'Pucallpa', 'Trujillo', 'Chimbote', 'Ica', 'Moquegua', 'Puno', 'Tarapoto', 'Cajamarca', 'Lambayeque', 'Huanuco', 'Jauja', 'Tumbes', 'Madre de Dios'
     ];
     protected static $cityFormats = [
         '{{cityPrefix}} {{firstName}} {{lastName}}',

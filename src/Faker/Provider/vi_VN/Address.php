@@ -113,7 +113,7 @@ class Address extends \Faker\Provider\Address
         'Vanuatu', 'Venezuela', 'Vietnam',
         'Wallis and Futuna', 'Western Sahara',
         'Yemen',
-        'Zambia', 'Zimbabwe',
+        'Zambia', 'Zimbabwe'
     ];
 
     public function hamletName()

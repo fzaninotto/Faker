@@ -16,7 +16,7 @@ class Internet extends \Faker\Provider\Internet
     ];
 
     protected static $freeEmailDomain = [
-        'gmail.com', 'yahoo.co.jp', 'hotmail.co.jp', 'mail.goo.ne.jp',
+        'gmail.com', 'yahoo.co.jp', 'hotmail.co.jp', 'mail.goo.ne.jp'
     ];
 
     protected static $tld = [
@@ -24,7 +24,7 @@ class Internet extends \Faker\Provider\Internet
     ];
 
     /**
-     * {@link} http://dic.nicovideo.jp/a/%E6%97%A5%E6%9C%AC%E3%81%AE%E8%8B%97%E5%AD%97%28%E5%90%8D%E5%AD%97%29%E3%81%AE%E4%B8%80%E8%A6%A7.
+     * {@link} http://dic.nicovideo.jp/a/%E6%97%A5%E6%9C%AC%E3%81%AE%E8%8B%97%E5%AD%97%28%E5%90%8D%E5%AD%97%29%E3%81%AE%E4%B8%80%E8%A6%A7
      */
     protected static $lastNameAscii = [
         'aota', 'aoyama', 'ishida', 'idaka', 'ito', 'uno', 'ekoda', 'ogaki',
@@ -40,7 +40,7 @@ class Internet extends \Faker\Provider\Internet
 
     /**
      * {@link} http://dic.nicovideo.jp/a/%E6%97%A5%E6%9C%AC%E4%BA%BA%E3%81%AE%E5%90%8D%E5%89%8D%E4%B8%80%E8%A6%A7
-     * {@link} http://www.meijiyasuda.co.jp/enjoy/ranking/.
+     * {@link} http://www.meijiyasuda.co.jp/enjoy/ranking/
      */
     protected static $firstNameAscii = [
         'akira', 'atsushi', 'osamu',
@@ -88,6 +88,6 @@ class Internet extends \Faker\Provider\Internet
      */
     public function domainName()
     {
-        return static::randomElement(static::$lastNameAscii).'.'.$this->tld();
+        return static::randomElement(static::$lastNameAscii) . '.' . $this->tld();
     }
 }

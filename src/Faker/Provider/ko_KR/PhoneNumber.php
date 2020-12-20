@@ -31,6 +31,8 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         return self::numerify($this->generator->parse($format));
     }
 
+
+
     public function cellPhoneNumber()
     {
         $format = self::randomElement(array_slice(static::$formats, 6, 1));

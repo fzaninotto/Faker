@@ -7,22 +7,21 @@ class Address extends \Faker\Provider\Address
     protected static $buildingNumber = ['%###', '%##', '%#', '%#?', '%', '%?'];
 
     protected static $streetPrefix = [
-        'Stor', 'Små', 'Lill', 'Sjö', 'Kungs', 'Drottning', 'Hamn', 'Brunns', 'Linné', 'Vasa', 'Ring', 'Freds',
+        'Stor', 'Små', 'Lill', 'Sjö', 'Kungs', 'Drottning', 'Hamn', 'Brunns', 'Linné', 'Vasa', 'Ring', 'Freds'
     ];
 
     protected static $streetSuffix = [
-        'vägen', 'gatan', 'gränd', 'stigen', 'backen', 'liden',
+        'vägen', 'gatan', 'gränd', 'stigen', 'backen', 'liden'
     ];
 
     protected static $streetSuffixWord = [
-        'Allé', 'Gata', 'Väg', 'Backe',
+        'Allé', 'Gata', 'Väg', 'Backe'
     ];
 
     protected static $postcode = ['%####', '%## ##'];
 
     /**
      * @var array Swedish city names
-     *
      * @link http://sv.wikipedia.org/wiki/Lista_%C3%B6ver_Sveriges_t%C3%A4torter
      */
     protected static $cityNames = [
@@ -51,11 +50,11 @@ class Address extends \Faker\Provider\Address
         'Zinkgruvan',
         'Åby', 'Åby', 'Åbyggeby', 'Åbytorp', 'Åhus', 'Åkarp', 'Åkers styckebruk', 'Åkersberga', 'Ålberga', 'Åled', 'Ålem', 'Åmmeberg', 'Åmot', 'Åmotfors', 'Åmsele', 'Åmynnet', 'Åmål', 'Ånge', 'Ånäset', 'Åre', 'Årjäng', 'Årstad', 'Årsunda', 'Åryd', 'Åryd', 'Ås', 'Ås', 'Åsa', 'Åsarne', 'Åsarp', 'Åsbro', 'Åsby', 'Åseda', 'Åsele', 'Åselstad', 'Åsen', 'Åsenhöga', 'Åsensbruk', 'Åshammar', 'Åsljunga', 'Åstol', 'Åstorp', 'Återvall', 'Åtorp', 'Åtvidaberg',
         'Älandsbro', 'Älgarås', 'Älghult', 'Älmhult', 'Älmsta', 'Älta', 'Älvdalen', 'Älvkarleby', 'Älvnäs', 'Älvsbyn', 'Älvsered', 'Älvängen', 'Äng', 'Änge', 'Ängelholm', 'Ängsholmen', 'Ängsvik', 'Äppelbo', 'Ärla', 'Äsköping', 'Äspered', 'Äsperöd', 'Ätran',
-        'Öbonäs', 'Öckerö', 'Ödeborg', 'Ödeshög', 'Ödsmål', 'Ödåkra', 'Öggestorp', 'Öjersjö', 'Ölmanäs', 'Ölmbrotorp', 'Ölme', 'Ölmstad', 'Ölsta', 'Önneköp', 'Önnestad', 'Örbyhus', 'Örebro', 'Öregrund', 'Örkelljunga', 'Örnsköldsvik', 'Örserum', 'Örsjö', 'Örslösa', 'Örsundsbro', 'Örtagården', 'Örtofta', 'Örviken', 'Ösmo', 'Östadkulle', 'Östansjö', 'Östavall', 'Österbybruk', 'Österbymo', 'Österforse', 'Österfärnebo', 'Österhagen och Bergliden', 'Österslöv', 'Österstad', 'Östersund', 'Östervåla', 'Östhammar', 'Östhamra', 'Östmark', 'Östnor', 'Östorp och Ådran', 'Östra Bispgården', 'Östra Frölunda', 'Östra Grevie', 'Östra Husby', 'Östra Kallfors', 'Östra Karup', 'Östra Ljungby', 'Östra Ryd', 'Östra Sönnarslöv', 'Östra Tommarp', 'Östra Ånneröd', 'Östraby', 'Överboda', 'Överhörnäs', 'Överkalix', 'Överlida', 'Övertorneå', 'Överum', 'Övre Soppero', 'Övre Svartlå', 'Öxabäck', 'Öxeryd',
+        'Öbonäs', 'Öckerö', 'Ödeborg', 'Ödeshög', 'Ödsmål', 'Ödåkra', 'Öggestorp', 'Öjersjö', 'Ölmanäs', 'Ölmbrotorp', 'Ölme', 'Ölmstad', 'Ölsta', 'Önneköp', 'Önnestad', 'Örbyhus', 'Örebro', 'Öregrund', 'Örkelljunga', 'Örnsköldsvik', 'Örserum', 'Örsjö', 'Örslösa', 'Örsundsbro', 'Örtagården', 'Örtofta', 'Örviken', 'Ösmo', 'Östadkulle', 'Östansjö', 'Östavall', 'Österbybruk', 'Österbymo', 'Österforse', 'Österfärnebo', 'Österhagen och Bergliden', 'Österslöv', 'Österstad', 'Östersund', 'Östervåla', 'Östhammar', 'Östhamra', 'Östmark', 'Östnor', 'Östorp och Ådran', 'Östra Bispgården', 'Östra Frölunda', 'Östra Grevie', 'Östra Husby', 'Östra Kallfors', 'Östra Karup', 'Östra Ljungby', 'Östra Ryd', 'Östra Sönnarslöv', 'Östra Tommarp', 'Östra Ånneröd', 'Östraby', 'Överboda', 'Överhörnäs', 'Överkalix', 'Överlida', 'Övertorneå', 'Överum', 'Övre Soppero', 'Övre Svartlå', 'Öxabäck', 'Öxeryd'
     ];
 
     protected static $cityFormats = [
-        '{{cityName}}',
+        '{{cityName}}'
     ];
 
     protected static $state = [];
@@ -87,7 +86,7 @@ class Address extends \Faker\Provider\Address
         'Vanuatu', 'Vatikanstaten', 'Venezuela', 'Vietnam', 'Vitryssland', 'Västsahara', 'Wallis- och Futunaöarna',
         'Zambia', 'Zimbabwe',
         'Åland',
-        'Österrike', 'Östtimor',
+        'Österrike', 'Östtimor'
     ];
 
     /**
@@ -102,25 +101,25 @@ class Address extends \Faker\Provider\Address
         '{{streetPrefix}}{{streetSuffix}}',
         '{{streetPrefix}}{{streetSuffix}}',
         '{{streetPrefix}}{{streetSuffix}}',
-        '{{lastName}} {{streetSuffixWord}}',
+        '{{lastName}} {{streetSuffixWord}}'
     ];
 
     /**
      * @var array Swedish street address formats
      */
     protected static $streetAddressFormats = [
-        '{{streetName}} {{buildingNumber}}',
+        '{{streetName}} {{buildingNumber}}'
     ];
 
     /**
      * @var array Swedish address formats
      */
     protected static $addressFormats = [
-        "{{streetAddress}}\n{{postcode}} {{city}}",
+        "{{streetAddress}}\n{{postcode}} {{city}}"
     ];
 
     /**
-     * Randomly return a real city name.
+     * Randomly return a real city name
      *
      * @return string
      */

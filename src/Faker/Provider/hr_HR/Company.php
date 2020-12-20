@@ -11,11 +11,11 @@ class Company extends \Faker\Provider\Company
     ];
 
     protected static $companySuffix = [
-        'd.o.o.', 'j.d.o.o.', 'Security',
+        'd.o.o.', 'j.d.o.o.', 'Security'
     ];
 
     protected static $companyPrefix = [
-        'Autoškola', 'Cvjećarnica', 'Informatički obrt', 'Kamenorezački obrt', 'Kladionice', 'Market', 'Mesnica', 'Prijevoznički obrt', 'Suvenirnica', 'Turistička agencija', 'Voćarna',
+        'Autoškola', 'Cvjećarnica', 'Informatički obrt', 'Kamenorezački obrt', 'Kladionice', 'Market', 'Mesnica', 'Prijevoznički obrt', 'Suvenirnica', 'Turistička agencija', 'Voćarna'
     ];
 
     public static function companyPrefix()

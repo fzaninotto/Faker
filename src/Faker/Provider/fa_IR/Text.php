@@ -5,16 +5,13 @@ namespace Faker\Provider\fa_IR;
 class Text extends \Faker\Provider\Text
 {
     /**
-     * generates text string in arabic.
+     * generates text string in arabic
      *
      * @example 'از تاریخ‌الشعرا را بکوبند روی نبش دیوار کوچه‌شان. تابلوی مدرسه.'
-     *
-     * @param int $maxNbChars
-     * @param int $indexSize
-     *
-     * @throws \InvalidArgumentException
-     *
+     * @param  int                   $maxNbChars
+     * @param  int                   $indexSize
      * @return string
+     * @throws \InvalidArgumentException
      */
     public function realText($maxNbChars = 200, $indexSize = 2)
     {
@@ -61,18 +58,17 @@ class Text extends \Faker\Provider\Text
         // build result
         $result = implode(' ', $result);
 
-        return $result.'.';
+        return $result . '.';
     }
 
     /**
-     * License: Creative Commons Attribution-ShareAlike License.
+     * License: Creative Commons Attribution-ShareAlike License
      *
      * Title: مدیر مدرسه
      * Author: جلال آل‌احمد
      * Language: Persian
      *
      * @see http://fa.wikisource.org/wiki/%D9%85%D8%AF%DB%8C%D8%B1_%D9%85%D8%AF%D8%B1%D8%B3%D9%87
-     *
      * @var string
      */
     protected static $baseText = <<<'EOT'

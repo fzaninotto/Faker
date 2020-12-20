@@ -79,7 +79,7 @@ class Person extends \Faker\Provider\Person
         'Wettenranta', 'Wiitanen', 'Wirtanen', 'Wiskari',
         'Ylijälä', 'Yliannala', 'Ylijoki', 'Ylikangas', 'Ylioja', 'Ylitalo', 'Ylppö', 'Yläjoki', 'Yrjänen', 'Yrjänä', 'Yrjölä', 'Yrttiaho', 'Yömaa',
         'Äijälä', 'Ämmälä', 'Änäkkälä', 'Äyräs', 'Äärynen',
-        'Översti', 'Öysti', 'Öörni',
+        'Översti', 'Öysti', 'Öörni'
     ];
 
     protected static $titleMale = ['Hra.', 'Tri.'];
@@ -87,13 +87,10 @@ class Person extends \Faker\Provider\Person
     protected static $titleFemale = ['Rva.', 'Nti.', 'Tri.'];
 
     /**
-     * National Personal Identity Number (Henkilötunnus).
-     *
+     * National Personal Identity Number (Henkilötunnus)
      * @link http://www.finlex.fi/fi/laki/ajantasa/2010/20100128
-     *
      * @param \DateTime $birthdate
-     * @param string    $gender    Person::GENDER_MALE || Person::GENDER_FEMALE
-     *
+     * @param string $gender Person::GENDER_MALE || Person::GENDER_FEMALE
      * @return string on format DDMMYYCZZZQ, where DDMMYY is the date of birth, C the century sign, ZZZ the individual number and Q the control character (checksum)
      */
     public function personalIdentityNumber(\DateTime $birthdate = null, $gender = null)
@@ -147,8 +144,8 @@ class Person extends \Faker\Provider\Person
         }
         $randomDigits = str_pad($randomDigits, 3, '0', STR_PAD_LEFT);
 
-        $checksum = $checksumCharacters[(int) ($datePart.$randomDigits) % strlen($checksumCharacters)];
+        $checksum = $checksumCharacters[(int) ($datePart . $randomDigits) % strlen($checksumCharacters)];
 
-        return $datePart.$centurySign.$randomDigits.$checksum;
+        return $datePart . $centurySign . $randomDigits . $checksum;
     }
 }

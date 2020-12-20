@@ -22,20 +22,18 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     ];
 
     /**
-     * An array of en_GB mobile (cell) phone number formats.
-     *
+     * An array of en_GB mobile (cell) phone number formats
      * @var array
      */
     protected static $mobileFormats = [
         // Local
         '07#########',
         '07### ######',
-        '07### ### ###',
+        '07### ### ###'
     ];
 
     /**
-     * Return a en_GB mobile phone number.
-     *
+     * Return a en_GB mobile phone number
      * @return string
      */
     public static function mobileNumber()

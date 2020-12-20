@@ -14,13 +14,12 @@ final class TCNoTest extends TestCase
             ['350630743', '78'],
             ['550600932', '88'],
             ['487932947', '70'],
-            ['168113862', '40'],
+            ['168113862', '40']
         ];
     }
 
     /**
      * @dataProvider checksumProvider
-     *
      * @param $tcNo
      * @param $checksum
      */
@@ -45,7 +44,6 @@ final class TCNoTest extends TestCase
 
     /**
      * @dataProvider validatorProvider
-     *
      * @param $tcNo
      * @param $isValid
      */

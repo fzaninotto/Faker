@@ -166,9 +166,9 @@ class Person extends \Faker\Provider\Person
         $citizenDigit = ($citizen === true) ? '0' : '1';
         $raceDigit = self::numberBetween(8, 9);
 
-        $partialIdNumber = $birthDateString.$genderDigit.$sequenceDigits.$citizenDigit.$raceDigit;
+        $partialIdNumber = $birthDateString . $genderDigit . $sequenceDigits . $citizenDigit . $raceDigit;
 
-        return $partialIdNumber.Luhn::computeCheckDigit($partialIdNumber);
+        return $partialIdNumber . Luhn::computeCheckDigit($partialIdNumber);
     }
 
     /**

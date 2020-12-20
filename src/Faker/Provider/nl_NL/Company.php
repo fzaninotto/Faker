@@ -39,7 +39,7 @@ class Company extends \Faker\Provider\Company
     ];
 
     protected static $companySuffix = [
-        'VOF', 'CV', 'LLP', 'BV', 'NV', 'IBC', 'CSL', 'EESV', 'SE', 'CV', 'Stichting', '& Zonen', '& Zn',
+        'VOF', 'CV', 'LLP', 'BV', 'NV', 'IBC', 'CSL', 'EESV', 'SE', 'CV', 'Stichting', '& Zonen', '& Zn'
     ];
 
     protected static $product = [
@@ -48,20 +48,21 @@ class Company extends \Faker\Provider\Company
         'Video', 'Sieraden', 'Kook', 'Woon', 'Pizza', 'Mode', 'Haar', 'Kleding', 'Antiek', 'Interieur', 'Gadget',
         'Foto', 'Computer', 'Witgoed', 'Bruingoed', 'Broeken', 'Pakken', 'Maatpak', 'Fietsen', 'Speelgoed',
         'Barbecue', 'Sport', 'Fitness', 'Brillen', 'Bakkers', 'Drank', 'Zuivel', 'Pret', 'Vis', 'Wijn', 'Salade',
-        'Terras', 'Borrel', 'Dieren', 'Aquaria', 'Verf', 'Behang', 'Tegel', 'Badkamer', 'Decoratie',
+        'Terras', 'Borrel', 'Dieren', 'Aquaria', 'Verf', 'Behang', 'Tegel', 'Badkamer', 'Decoratie'
     ];
 
     protected static $type = [
         'Markt', 'Kampioen', 'Expert', 'Concurrent', 'Shop', 'Expert', 'Magazijn',
         'Dump', 'Store', 'Studio', 'Boulevard', 'Fabriek', 'Groep', 'Huis', 'Salon', 'Vakhuis', 'Winkel', 'Gigant',
-        'Reus', 'Plaza', 'Park', 'Tuin',
+        'Reus', 'Plaza', 'Park', 'Tuin'
     ];
 
     protected static $store = [
         'Boekhandel', 'Super', 'Tabakzaak', 'Schoenmaker', 'Kaashandel', 'Slagerij',
         'Smederij', 'Bakkerij', 'Bierbrouwer', 'Kapperszaak', 'Groenteboer', 'Bioboer', 'Fietsenmaker', 'Opticien',
-        'Café', 'Garage',
+        'Café', 'Garage'
     ];
+
 
     /**
      * @example 'Fietsenmaker Zijlemans'
@@ -74,30 +75,30 @@ class Company extends \Faker\Provider\Company
 
         switch ($determinator) {
             case 0:
-                $companyName = static::randomElement(static::$product).' '.static::randomElement(static::$type);
+                $companyName = static::randomElement(static::$product) . ' ' . static::randomElement(static::$type);
 
                 break;
 
             case 1:
-                $companyName = static::randomElement(static::$product).strtolower(static::randomElement(static::$type));
+                $companyName = static::randomElement(static::$product) . strtolower(static::randomElement(static::$type));
 
                 break;
 
             case 2:
-                $companyName = static::randomElement(static::$store).' '.$this->generator->lastName;
+                $companyName = static::randomElement(static::$store) . ' ' . $this->generator->lastName;
 
                 break;
         }
 
         if (Miscellaneous::boolean()) {
-            return $companyName.' '.static::randomElement(static::$companySuffix);
+            return $companyName . ' ' . static::randomElement(static::$companySuffix);
         }
 
         return $companyName;
     }
 
     /**
-     * Belasting Toegevoegde Waarde (BTW) = VAT.
+     * Belasting Toegevoegde Waarde (BTW) = VAT
      *
      * @example 'NL123456789B01'
      *
@@ -111,7 +112,7 @@ class Company extends \Faker\Provider\Company
     }
 
     /**
-     * Alias dutch vat number format.
+     * Alias dutch vat number format
      *
      * @return string
      */

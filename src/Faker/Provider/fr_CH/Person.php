@@ -89,13 +89,12 @@ class Person extends \Faker\Provider\fr_FR\Person
     ];
 
     /**
-     * Generates a valid random AVS13 (swiss social security) number.
+     * Generates a valid random AVS13 (swiss social security) number
      *
      * This function will generate a valid random AVS13 number and return it
      * as a formatted string.
      *
      * @see https://www.zas.admin.ch/zas/fr/home/partenaires-et-institutions-/navs13.html
-     *
      * @return string
      */
     public static function avs13()

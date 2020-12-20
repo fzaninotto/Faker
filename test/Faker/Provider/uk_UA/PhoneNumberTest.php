@@ -14,7 +14,7 @@ final class PhoneNumberTest extends TestCase
         self::assertSame(
             preg_match($pattern, $phoneNumber),
             1,
-            'Phone number format '.$phoneNumber.' is wrong!'
+            'Phone number format ' . $phoneNumber . ' is wrong!'
         );
     }
 

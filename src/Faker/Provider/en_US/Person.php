@@ -79,7 +79,7 @@ class Person extends \Faker\Provider\Person
         'Vada', 'Valentina', 'Valentine', 'Valerie', 'Vallie', 'Vanessa', 'Veda', 'Velda', 'Vella', 'Velma', 'Velva', 'Vena', 'Verda', 'Verdie', 'Vergie', 'Verla', 'Verlie', 'Verna', 'Vernice', 'Vernie', 'Verona', 'Veronica', 'Vesta', 'Vicenta', 'Vickie', 'Vicky', 'Victoria', 'Vida', 'Vilma', 'Vincenza', 'Viola', 'Violet', 'Violette', 'Virgie', 'Virginia', 'Virginie', 'Vita', 'Viva', 'Vivian', 'Viviane', 'Vivianne', 'Vivien', 'Vivienne',
         'Wanda', 'Wava', 'Wendy', 'Whitney', 'Wilhelmine', 'Willa', 'Willie', 'Willow', 'Wilma', 'Winifred', 'Winnifred', 'Winona',
         'Yadira', 'Yasmeen', 'Yasmin', 'Yasmine', 'Yazmin', 'Yesenia', 'Yessenia', 'Yolanda', 'Yoshiko', 'Yvette', 'Yvonne',
-        'Zaria', 'Zelda', 'Zella', 'Zelma', 'Zena', 'Zetta', 'Zita', 'Zoe', 'Zoey', 'Zoie', 'Zoila', 'Zola', 'Zora', 'Zula',
+        'Zaria', 'Zelda', 'Zella', 'Zelma', 'Zena', 'Zetta', 'Zita', 'Zoe', 'Zoey', 'Zoie', 'Zoila', 'Zola', 'Zora', 'Zula'
     ];
 
     protected static $lastName = [
@@ -106,7 +106,7 @@ class Person extends \Faker\Provider\Person
         'Vandervort', 'Veum', 'Volkman', 'Von', 'VonRueden',
         'Waelchi', 'Walker', 'Walsh', 'Walter', 'Ward', 'Waters', 'Watsica', 'Weber', 'Wehner', 'Weimann', 'Weissnat', 'Welch', 'West', 'White', 'Wiegand', 'Wilderman', 'Wilkinson', 'Will', 'Williamson', 'Willms', 'Windler', 'Wintheiser', 'Wisoky', 'Wisozk', 'Witting', 'Wiza', 'Wolf', 'Wolff', 'Wuckert', 'Wunsch', 'Wyman',
         'Yost', 'Yundt',
-        'Zboncak', 'Zemlak', 'Ziemann', 'Zieme', 'Zulauf',
+        'Zboncak', 'Zemlak', 'Ziemann', 'Zieme', 'Zulauf'
     ];
 
     protected static $suffix = ['Jr.', 'Sr.', 'I', 'II', 'III', 'IV', 'V', 'MD', 'DDS', 'PhD', 'DVM'];

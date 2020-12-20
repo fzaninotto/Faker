@@ -17,6 +17,7 @@ final class PersonTest extends TestCase
         self::assertMatchesRegularExpression('/^[А-Я]{2}\d{8}$/u', $this->faker->idNumber);
     }
 
+
     protected function getProviders(): iterable
     {
         yield new Person($this->faker);

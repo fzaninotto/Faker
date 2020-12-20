@@ -71,7 +71,7 @@ class Person extends \Faker\Provider\Person
         'Ulibarri', 'Ulloa', 'Urbina', 'Ureña', 'Urías', 'Uribe', 'Urrutia',
         'Vaca', 'Valadez', 'Valdés', 'Valdez', 'Valdivia', 'Valencia', 'Valentín', 'Valenzuela', 'Valladares', 'Valle', 'Vallejo', 'Valles', 'Valverde', 'Vanegas', 'Varela', 'Vargas', 'Vásquez', 'Vázquez', 'Vega', 'Vela', 'Velasco', 'Velásquez', 'Velázquez', 'Vélez', 'Véliz', 'Venegas', 'Vera', 'Verdugo', 'Verduzco', 'Vergara', 'Viera', 'Vigil', 'Villa', 'Villagómez', 'Villalobos', 'Villalpando', 'Villanueva', 'Villareal', 'Villarreal', 'Villaseñor', 'Villegas',
         'Yáñez', 'Ybarra',
-        'Zambrano', 'Zamora', 'Zamudio', 'Zapata', 'Zaragoza', 'Zarate', 'Zavala', 'Zayas', 'Zelaya', 'Zepeda', 'Zúñiga',
+        'Zambrano', 'Zamora', 'Zamudio', 'Zapata', 'Zaragoza', 'Zarate', 'Zavala', 'Zayas', 'Zelaya', 'Zepeda', 'Zúñiga'
     ];
 
     protected static $titleMale = ['Sr.', 'Dn.', 'Dr.', 'Lic.', 'Ing.'];
@@ -88,8 +88,9 @@ class Person extends \Faker\Provider\Person
         return static::randomElement(static::$suffix);
     }
 
+
     /**
-     * Generate a Documento Nacional de Identidad (DNI) number.
+     * Generate a Documento Nacional de Identidad (DNI) number
      *
      * Doesn't include a checksum, as peruvians commonly use only the first
      * 8 digits.

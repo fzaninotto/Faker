@@ -33,7 +33,7 @@ class Person extends \Faker\Provider\Person
         'Juan Pablo', 'Juan Sebastián', 'Julián', 'Kevin', 'Lautaro', 'Leonardo', 'Lorenzo', 'Lucas', 'Luciano', 'Luis', 'Manuel', 'Mario',
         'Martín', 'Mateo', 'Matthew', 'Matías', 'Maximiliano', 'Miguel', 'Miguel Ángel', 'Máximo', 'Nahuel', 'Pablo', 'Pedro', 'Rafael',
         'Ricardo', 'Rodrigo', 'Samuel', 'Santiago', 'Santino', 'Sebastián', 'Sergio', 'Simón', 'Thiago', 'Tomas', 'Valentino', 'Valentín',
-        'Vicente', 'Bautista', 'Juan Esteban', 'Hidalgo',
+        'Vicente', 'Bautista', 'Juan Esteban', 'Hidalgo'
     ];
 
     protected static $firstNameFemale = [
@@ -45,7 +45,7 @@ class Person extends \Faker\Provider\Person
         'Mariana', 'Mariangel', 'Martina', 'María', 'María Alejandra', 'María Camila', 'María Fernanda', 'María José', 'María Paula', 'Micaela', 'Michelle', 'Miranda',
         'Montserrat', 'Mía', 'Nadia', 'Natalia', 'Nicole', 'Oliva', 'Olivia', 'Ornela', 'Paula', 'Paulina', 'Rafaela', 'Rebeca',
         'Regina', 'Renata', 'Romina', 'Salomé', 'Samantha', 'Sara', 'Silvana', 'Sofía', 'Sophie', 'Valentina', 'Valeria', 'Valery',
-        'Victoria', 'Violeta', 'Zoe', 'Aitana', 'Sara Sofía', 'Ximena',
+        'Victoria', 'Violeta', 'Zoe', 'Aitana', 'Sara Sofía', 'Ximena'
     ];
 
     protected static $lastName = [
@@ -71,7 +71,7 @@ class Person extends \Faker\Provider\Person
         'Ulibarri', 'Ulloa', 'Urbina', 'Ureña', 'Urías', 'Uribe', 'Urrutia',
         'Vaca', 'Valadez', 'Valdés', 'Valdez', 'Valdivia', 'Valencia', 'Valentín', 'Valenzuela', 'Valladares', 'Valle', 'Vallejo', 'Valles', 'Valverde', 'Vanegas', 'Varela', 'Vargas', 'Vásquez', 'Vázquez', 'Vega', 'Vela', 'Velasco', 'Velásquez', 'Velázquez', 'Vélez', 'Véliz', 'Venegas', 'Vera', 'Verdugo', 'Verduzco', 'Vergara', 'Viera', 'Vigil', 'Villa', 'Villagómez', 'Villalobos', 'Villalpando', 'Villanueva', 'Villareal', 'Villarreal', 'Villaseñor', 'Villegas',
         'Yáñez', 'Ybarra',
-        'Zambrano', 'Zamora', 'Zamudio', 'Zapata', 'Zaragoza', 'Zarate', 'Zavala', 'Zayas', 'Zelaya', 'Zepeda', 'Zúñiga',
+        'Zambrano', 'Zamora', 'Zamudio', 'Zapata', 'Zaragoza', 'Zarate', 'Zavala', 'Zayas', 'Zelaya', 'Zepeda', 'Zúñiga'
     ];
 
     protected static $titleMale = ['Sr.', 'Dn.', 'Dr.', 'Lic.', 'Ing.'];

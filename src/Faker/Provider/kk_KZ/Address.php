@@ -75,7 +75,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     protected static $streetAddressFormats = [
-        '{{street}} {{streetSuffix}}, {{buildingNumber}}',
+        '{{street}} {{streetSuffix}}, {{buildingNumber}}'
     ];
 
     public static function buildingNumber()

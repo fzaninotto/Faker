@@ -8,7 +8,7 @@ use Faker\Test\TestCase;
 final class CompanyTest extends TestCase
 {
     /**
-     * national Id format validator.
+     * national Id format validator
      */
     public function testNationalId()
     {

@@ -7,6 +7,7 @@ class Person extends \Faker\Provider\Person
     /**
      * This provider uses wikipedia's top Korean last names. These cover more than 90% of Korean population.
      */
+
     protected static $maleNameFormats = [
         '{{lastName}}{{firstNameMale}}',
     ];
@@ -16,7 +17,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * {@link} http://ko.wikipedia.org/wiki/%ED%95%9C%EA%B5%AD%EC%9D%98_%EC%84%B1%EC%94%A8%EC%99%80_%EC%9D%B4%EB%A6%84#.EC.8B.9C.EB.8C.80.EB.B3.84_.EA.B0.80.EC.9E.A5_.ED.9D.94.ED.95.9C_.EC.9D.B4.EB.A6.84_10.EC.84.A0.28.E9.81.B8.29.
+     * {@link} http://ko.wikipedia.org/wiki/%ED%95%9C%EA%B5%AD%EC%9D%98_%EC%84%B1%EC%94%A8%EC%99%80_%EC%9D%B4%EB%A6%84#.EC.8B.9C.EB.8C.80.EB.B3.84_.EA.B0.80.EC.9E.A5_.ED.9D.94.ED.95.9C_.EC.9D.B4.EB.A6.84_10.EC.84.A0.28.E9.81.B8.29
      */
     protected static $firstNameMale = [
         '건우', '건호', '경석', '경수', '경춘', '경환', '광수', '광현', '구범', '규산', '기수', '남수', '남호', '대선', '대수', '도윤',
@@ -42,7 +43,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * {@link} http://ko.wikipedia.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%9D%98_%EC%9D%B8%EA%B5%AC%EC%88%9C_%EC%84%B1%EC%94%A8_%EB%AA%A9%EB%A1%9D.
+     * {@link} http://ko.wikipedia.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%9D%98_%EC%9D%B8%EA%B5%AC%EC%88%9C_%EC%84%B1%EC%94%A8_%EB%AA%A9%EB%A1%9D
      */
     protected static $lastName = [
         '김', '이', '박', '최', '정', '강', '조', '윤', '장', '임', '오', '한', '신', '서', '권', '황', '안', '송', '류', '홍',

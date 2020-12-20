@@ -31,10 +31,9 @@ class Populator
 
     /**
      * Populator constructor.
-     *
-     * @param Generator          $generator
+     * @param Generator $generator
      * @param ObjectManager|null $manager
-     * @param int                $batchSize
+     * @param int $batchSize
      */
     public function __construct(Generator $generator, ObjectManager $manager = null, $batchSize = 1000)
     {
@@ -93,8 +92,8 @@ class Populator
         foreach ($this->quantities as $class => $number) {
             $generateId = $this->generateId[$class];
 
-            for ($i = 0; $i < $number; $i++) {
-                $insertedEntities[$class][] = $this->entities[$class]->execute(
+            for ($i=0; $i < $number; $i++) {
+                $insertedEntities[$class][]= $this->entities[$class]->execute(
                     $entityManager,
                     $insertedEntities,
                     $generateId

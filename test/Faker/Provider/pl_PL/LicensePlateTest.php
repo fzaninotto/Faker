@@ -7,7 +7,7 @@ use Faker\Test\TestCase;
 final class LicensePlateTest extends TestCase
 {
     /**
-     * Test the validity of license plate.
+     * Test the validity of license plate
      */
     public function testNonSpecialLicensePlates()
     {
@@ -20,7 +20,7 @@ final class LicensePlateTest extends TestCase
     }
 
     /**
-     * Test that special license plates are filtered out.
+     * Test that special license plates are filtered out
      */
     public function testExplicitlyNonSpecialLicensePlates()
     {
@@ -35,7 +35,7 @@ final class LicensePlateTest extends TestCase
     }
 
     /**
-     * Test that special license plates are filtered out.
+     * Test that special license plates are filtered out
      */
     public function testWithSpecialLicensePlates()
     {
@@ -50,7 +50,7 @@ final class LicensePlateTest extends TestCase
     }
 
     /**
-     * Test that license plate belongs to podkapracikie voivodeship.
+     * Test that license plate belongs to podkapracikie voivodeship
      */
     public function testPodkarpackieLicensePlate()
     {
@@ -66,7 +66,7 @@ final class LicensePlateTest extends TestCase
     }
 
     /**
-     * Test that license plate belongs to łodzkie voivodeship or to army.
+     * Test that license plate belongs to łodzkie voivodeship or to army
      */
     public function testLodzkieOrArmyLicensePlate()
     {
@@ -82,7 +82,7 @@ final class LicensePlateTest extends TestCase
     }
 
     /**
-     * Test that license plate belongs to łodzkie voivodeship but filters out army.
+     * Test that license plate belongs to łodzkie voivodeship but filters out army
      */
     public function testLodzkieButNotArmyLicensePlate()
     {
@@ -98,7 +98,7 @@ final class LicensePlateTest extends TestCase
     }
 
     /**
-     * Test that license plate belongs is generated when invorrect voivodeship is given.
+     * Test that license plate belongs is generated when invorrect voivodeship is given
      */
     public function testNoCorrectVoivodeshipLicensePlate()
     {
@@ -114,7 +114,7 @@ final class LicensePlateTest extends TestCase
     }
 
     /**
-     * Test that correct license plate is generated when no voivodeship is given.
+     * Test that correct license plate is generated when no voivodeship is given
      */
     public function testNoVoivodeshipLicensePlate()
     {
@@ -130,7 +130,7 @@ final class LicensePlateTest extends TestCase
     }
 
     /**
-     * Test that correct license plate is generated when no voivodeship or county is given.
+     * Test that correct license plate is generated when no voivodeship or county is given
      */
     public function testNoVoivodeshipNoCountyLicensePlate()
     {
@@ -147,7 +147,7 @@ final class LicensePlateTest extends TestCase
     }
 
     /**
-     * Test that license plate belongs to one of warszawski zachodni or radomski counties or to Border Guard.
+     * Test that license plate belongs to one of warszawski zachodni or radomski counties or to Border Guard
      */
     public function testVoivodeshipCountyLicensePlate()
     {
@@ -164,7 +164,7 @@ final class LicensePlateTest extends TestCase
     }
 
     /**
-     * Test that correct license plate belonging to the correct voivedeship is generated when non-existing county is given.
+     * Test that correct license plate belonging to the correct voivedeship is generated when non-existing county is given
      */
     public function testVoivodeshipFakeCountyLicensePlate()
     {
@@ -181,7 +181,7 @@ final class LicensePlateTest extends TestCase
     }
 
     /**
-     * Test that correct license plate is generated when non-existing voivodeship is given.
+     * Test that correct license plate is generated when non-existing voivodeship is given
      */
     public function testVoivodeshipFakeVoivodeshipLicensePlate()
     {
@@ -198,7 +198,7 @@ final class LicensePlateTest extends TestCase
     }
 
     /**
-     * Test that correct license plate is generated when null is given instead of voivodeships list.
+     * Test that correct license plate is generated when null is given instead of voivodeships list
      */
     public function testVoivodeshipNullVoivodeshipArrayLicensePlate()
     {
@@ -215,7 +215,7 @@ final class LicensePlateTest extends TestCase
     }
 
     /**
-     * Test that correct license plate is generated when null is given in voivodeships array.
+     * Test that correct license plate is generated when null is given in voivodeships array
      */
     public function testVoivodeshipNullVoivodeshipLicensePlate()
     {
@@ -232,7 +232,7 @@ final class LicensePlateTest extends TestCase
     }
 
     /**
-     * Test that special license plate is not generated when 1st argument is false.
+     * Test that special license plate is not generated when 1st argument is false
      */
     public function testVoivodeship1stArgumentFalse()
     {
@@ -249,7 +249,7 @@ final class LicensePlateTest extends TestCase
     }
 
     /**
-     * Test that special license plate is generated when 1st argument is true.
+     * Test that special license plate is generated when 1st argument is true
      */
     public function testVoivodeship1stArgumentTrue()
     {

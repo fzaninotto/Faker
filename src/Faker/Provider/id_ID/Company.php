@@ -22,7 +22,7 @@ class Company extends \Faker\Provider\Company
     protected static $companySuffix = ['(Persero) Tbk', 'Tbk'];
 
     /**
-     * Get company prefix.
+     * Get company prefix
      *
      * @return string company prefix
      */
@@ -32,7 +32,7 @@ class Company extends \Faker\Provider\Company
     }
 
     /**
-     * Get company suffix.
+     * Get company suffix
      *
      * @return string company suffix
      */

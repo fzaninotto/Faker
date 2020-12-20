@@ -6,7 +6,7 @@ class Text extends \Faker\Provider\Text
 {
     /**
      * The Project Gutenberg EBook of De legende en de heldhaftige, vroolijke en
-     * roemrijke daden van Uilenspiegel en Lamme Goedzak in Vlaanderenland en elders, by Charles de Coster.
+     * roemrijke daden van Uilenspiegel en Lamme Goedzak in Vlaanderenland en elders, by Charles de Coster
      *
      * This eBook is for the use of anyone anywhere at no cost and with
      * almost no restrictions whatsoever.  You may copy it, give it away or
@@ -25,7 +25,6 @@ class Text extends \Faker\Provider\Text
      * Language: Dutch
      *
      * @see http://www.gutenberg.org/cache/epub/11208/pg11208.txt
-     *
      * @var string
      */
     protected static $baseText = <<<'EOT'

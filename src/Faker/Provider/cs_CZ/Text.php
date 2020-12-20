@@ -13,7 +13,7 @@ class Text extends \Faker\Provider\Text
     }
 
     /**
-     * License: PD old 70.
+     * License: PD old 70
      *
      * Title: Krakatit
      * Author: Karel Čapek
@@ -21,7 +21,6 @@ class Text extends \Faker\Provider\Text
      * Language: Czech
      *
      * @see https://cs.wikisource.org/wiki/Krakatit
-     *
      * @var string
      *
      * Karel Čapek

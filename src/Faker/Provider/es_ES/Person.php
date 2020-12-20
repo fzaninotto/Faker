@@ -29,7 +29,7 @@ class Person extends \Faker\Provider\Person
     /**
      * {@link} http://www.ine.es/daco/daco42/nombyapel/nombyapel.htm
      * {@link} http://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177009&menu=ultiDatos&idp=1254734710990
-     * Manually added accent marks because the source lacks of them.
+     * Manually added accent marks because the source lacks of them
      */
     protected static $firstNameMale = [
         'Aaron', 'Adam', 'Adrián', 'Aitor', 'Alberto', 'Aleix', 'Alejandro', 'Alex', 'Alonso', 'Álvaro', 'Ander', 'Andrés', 'Ángel', 'Antonio', 'Arnau', 'Asier',
@@ -123,7 +123,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * Generate a Documento Nacional de Identidad (DNI) number.
+     * Generate a Documento Nacional de Identidad (DNI) number
      *
      * @example '77446565E'
      *
@@ -134,7 +134,7 @@ class Person extends \Faker\Provider\Person
         $number = static::numerify('########');
         $letter = self::$crcMap[$number % 23];
 
-        return $number.$letter;
+        return $number . $letter;
     }
 
     /**

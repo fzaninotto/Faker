@@ -19,7 +19,7 @@ class Person extends \Faker\Provider\Person
         'Noah', 'Noé', 'Nolan', 'Nore', 'Quinten', 'Raphaël', 'Rayan', 'Robbe',
         'Robin', 'Romain', 'Ruben', 'Rune', 'Sacha', 'Sam', 'Samuel', 'Sander',
         'Seppe', 'Simon', 'Stan', 'Théo', 'Thomas', 'Tibo', 'Tom', 'Tristan', 'Tuur',
-        'Vic', 'Victor', 'Vince', 'Warre', 'Xander', 'Yanis',
+        'Vic', 'Victor', 'Vince', 'Warre', 'Xander', 'Yanis'
     ];
 
     protected static $firstNameFemale = [
@@ -34,7 +34,7 @@ class Person extends \Faker\Provider\Person
         'Malak', 'Manon', 'Margaux', 'Margot', 'Marie', 'Marion', 'Maya', 'Merel',
         'Mila', 'Nina', 'Noa', 'Noémie', 'Noor', 'Nora', 'Océane', 'Olivia', 'Pauline',
         'Rania', 'Robin', 'Romane', 'Roos', 'Salma', 'Sara', 'Sarah', 'Senne',
-        'Siebe', 'Sofia', 'Tess', 'Victoria', 'Wout', 'Yana', 'Yasmine', 'Zoé', 'Zoë',
+        'Siebe', 'Sofia', 'Tess', 'Victoria', 'Wout', 'Yana', 'Yasmine', 'Zoé', 'Zoë'
     ];
 
     protected static $lastName = [
@@ -69,7 +69,7 @@ class Person extends \Faker\Provider\Person
         'Vandamme', 'Vandenberghe', 'Verbeeck', 'Verbeke', 'Verbruggen', 'Vercammen',
         'Verhaegen', 'Verhaeghe', 'Verhelst', 'Verheyen', 'Verhoeven', 'Verlinden',
         'Vermeersch', 'Vermeiren', 'Vermeulen', 'Verschueren', 'Verstraete', 'Verstraeten',
-        'Vervoort', 'Wauters', 'Willems', 'Wouters', 'Wuyts', 'Yildirim', 'Yilmaz',
+        'Vervoort', 'Wauters', 'Willems', 'Wouters', 'Wuyts', 'Yildirim', 'Yilmaz'
     ];
 
     /**
@@ -82,7 +82,6 @@ class Person extends \Faker\Provider\Person
      *  @link https://nl.wikipedia.org/wiki/Rijksregisternummer
      *
      *  @param string|null $gender 'male', 'female' or null for any
-     *
      *  @return string
      */
     public static function rrn($gender = null)
@@ -99,9 +98,9 @@ class Person extends \Faker\Provider\Person
         $dob = sprintf('%06d', $date->format('ymd'));
         $help = $date->format('Y') >= 2000 ? 2 : null;
 
-        $check = (int) ($help.$dob.$middle);
+        $check = (int) ($help . $dob . $middle);
         $rest = sprintf('%02d', 97 - ($check % 97));
 
-        return $dob.$middle.$rest;
+        return $dob . $middle . $rest;
     }
 }

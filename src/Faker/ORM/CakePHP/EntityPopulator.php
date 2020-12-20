@@ -63,6 +63,7 @@ class EntityPopulator
             return false;
         };
 
+
         foreach ($schema->columns() as $column) {
             if ($column == $pk[0] || $isForeignKey($column)) {
                 continue;
@@ -91,7 +92,7 @@ class EntityPopulator
         $belongsTo = $table->associations()->type('BelongsTo');
 
         foreach ($belongsTo as $assoc) {
-            $modifiers['belongsTo'.$assoc->name()] = function ($data, $insertedEntities) use ($assoc) {
+            $modifiers['belongsTo' . $assoc->name()] = function ($data, $insertedEntities) use ($assoc) {
                 $table = $assoc->target();
                 $foreignModel = $table->alias();
 
