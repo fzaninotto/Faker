@@ -1,9 +1,9 @@
+.PHONY: build
+build: cs test static ## Runs test targets
+
 .PHONY: help
 help:
 	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
-
-.PHONY: build
-build: cs test static ## Runs test targets
 
 .PHONY: cs
 cs: vendor/autoload.php ## Fixes coding standard issues with php-cs-fixer
