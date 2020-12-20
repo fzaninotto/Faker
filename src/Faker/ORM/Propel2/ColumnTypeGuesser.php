@@ -19,6 +19,7 @@ class ColumnTypeGuesser
 
     /**
      * @param ColumnMap $column
+     *
      * @return \Closure|null
      */
     public function guessFormat(ColumnMap $column)

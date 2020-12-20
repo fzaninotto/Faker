@@ -165,6 +165,7 @@ final class PaymentTest extends TestCase
 
         return $return;
     }
+
     /**
      * @dataProvider ibanFormatProvider
      */

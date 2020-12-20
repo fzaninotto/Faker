@@ -55,7 +55,7 @@ class Person extends \Faker\Provider\Person
         'Samuel', 'Sandro', 'Santiago', 'Saulo', 'Sebastião', 'Sergio', 'Simon', 'Simão', 'Sérgio', 'Teobaldo',
         'Thales', 'Thiago', 'Thomas', 'Théo', 'Tiago', 'Tomás', 'Téo', 'Valentin', 'Vicente', 'Victor', 'Vinícius',
         'Vitor', 'Wagner', 'Walter', 'Wellington', 'Wesley', 'William', 'Willian', 'Wilson', 'Yuri', 'Ziraldo', 'Ícaro',
-        'Ítalo'
+        'Ítalo',
     ];
 
     protected static $firstNameFemale = [
@@ -84,7 +84,7 @@ class Person extends \Faker\Provider\Person
         'Sofia', 'Sophia', 'Sophie', 'Stefany', 'Stella', 'Stephanie', 'Stephany', 'Suelen', 'Sueli', 'Suellen',
         'Suzana', 'Sônia', 'Tainara', 'Talita', 'Tatiana', 'Tatiane', 'Taís', 'Tessália', 'Thalia', 'Thalissa',
         'Thalita', 'Thaís', 'Tábata', 'Tâmara', 'Valentina', 'Valéria', 'Vanessa', 'Verônica', 'Violeta', 'Vitória',
-        'Viviane', 'Yasmin', 'Yohanna'
+        'Viviane', 'Yasmin', 'Yohanna',
     ];
 
     protected static $lastName = [
@@ -105,7 +105,7 @@ class Person extends \Faker\Provider\Person
         'Sepúlveda', 'Serna', 'Serra', 'Serrano', 'Soares', 'Solano', 'Soto', 'Souza', 'Tamoio', 'Teles', 'Toledo',
         'Torres', 'Uchoa', 'Urias', 'Valdez', 'Vale', 'Valente', 'Valentin', 'Valência', 'Vasques', 'Vega', 'Velasques',
         'Verdara', 'Verdugo', 'Vieira', 'Vila', 'Zamana', 'Zambrano', 'Zaragoça', 'da Cruz', 'da Rosa', 'da Silva',
-        'das Dores', 'das Neves', 'de Aguiar', 'de Arruda', 'de Freitas', 'de Oliveira', 'de Souza'
+        'das Dores', 'das Neves', 'de Aguiar', 'de Arruda', 'de Freitas', 'de Oliveira', 'de Souza',
     ];
 
     protected static $titleMale = ['Sr.', 'Dr.'];
@@ -124,8 +124,11 @@ class Person extends \Faker\Provider\Person
 
     /**
      * A random CPF number.
+     *
      * @link http://en.wikipedia.org/wiki/Cadastro_de_Pessoas_F%C3%ADsicas
+     *
      * @param bool $formatted If the number should have dots/dashes or not.
+     *
      * @return string
      */
     public function cpf($formatted = true)
@@ -139,8 +142,11 @@ class Person extends \Faker\Provider\Person
 
     /**
      * A random RG number, following Sao Paulo state's rules.
+     *
      * @link http://pt.wikipedia.org/wiki/C%C3%A9dula_de_identidade
+     *
      * @param bool $formatted If the number should have dots/dashes or not.
+     *
      * @return string
      */
     public function rg($formatted = true)

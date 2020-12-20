@@ -112,11 +112,9 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * Return male middle name
+     * Return male middle name.
      *
      * @example 'Kumar'
-     *
-     * @access public
      *
      * @return string Middle name
      */

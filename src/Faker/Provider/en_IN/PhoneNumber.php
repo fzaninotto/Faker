@@ -8,11 +8,12 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '+91 ## ########',
         '+91 ### #######',
         '0## ########',
-        '0### #######'
+        '0### #######',
     ];
 
     /**
-     * An array of en_IN mobile (cell) phone number formats
+     * An array of en_IN mobile (cell) phone number formats.
+     *
      * @var array
      */
     protected static $mobileFormats = [
@@ -21,11 +22,12 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '+91 7#########',
         '09#########',
         '08#########',
-        '07#########'
+        '07#########',
     ];
 
     /**
-     * Return a en_IN mobile phone number
+     * Return a en_IN mobile phone number.
+     *
      * @return string
      */
     public static function mobileNumber()

@@ -5,7 +5,7 @@ namespace Faker\Provider\pl_PL;
 class Text extends \Faker\Provider\Text
 {
     /**
-     * The Project Gutenberg EBook of Sklepy cynamonowe, by Bruno Schulz
+     * The Project Gutenberg EBook of Sklepy cynamonowe, by Bruno Schulz.
      *
      * Copyright laws are changing all over the world. Be sure to check the
      * copyright laws for your country before downloading or redistributing
@@ -65,6 +65,7 @@ class Text extends \Faker\Provider\Text
      * KARAKONY WICHURA NOC WIELKIEGO SEZONU
      *
      * @see http://www.gutenberg.org/cache/epub/8119/pg8119.txt
+     *
      * @var string
      */
     protected static $baseText = <<<'EOT'

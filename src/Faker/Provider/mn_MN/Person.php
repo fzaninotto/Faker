@@ -32,7 +32,7 @@ class Person extends \Faker\Provider\Person
         'Шижуудай', 'Шинч', 'Шинэсочи', 'Ширахул',
         'Эди', 'Элжгэдэй', 'Элхудур', 'Эрххар', 'Эхлэлсайхан',
         'Ю-Хунан', 'Юрүхан',
-        'Ядир', 'Ялавач', 'Ялбаг'
+        'Ядир', 'Ялавач', 'Ялбаг',
     ];
 
     /**
@@ -53,7 +53,7 @@ class Person extends \Faker\Provider\Person
         'Хожинбэх', 'Хорижин', 'Хуагчин', 'Хутугтай', 'Хуурчин',
         'Цотан',
         'Чаалун', 'Чаурбэх', 'Чэчэйхэн',
-        'Эбэхэй'
+        'Эбэхэй',
     ];
 
     protected static $namePrefix = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'К', 'Л', 'М', 'Н', 'О', 'Ө', 'П', 'Р', 'С', 'Т', 'У', 'Ү', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Э', 'Ю', 'Я'];
@@ -61,11 +61,11 @@ class Person extends \Faker\Provider\Person
     protected static $alphabet = ['А', 'Л', 'Х', 'Б', 'М', 'Ц', 'В', 'Н', 'Ч', 'Г', 'О', 'Ш', 'Д', 'Ө', 'Щ', 'Е', 'П', 'Ъ', 'Ё', 'Р', 'Ы', 'Ж', 'С', 'Ь', 'З', 'Т', 'Э', 'И', 'У', 'Ю', 'Й', 'Ү', 'Я', 'К', 'Ф'];
 
     protected static $maleNameFormats = [
-        '{{namePrefix}}.{{firstNameMale}}'
+        '{{namePrefix}}.{{firstNameMale}}',
     ];
 
     protected static $femaleNameFormats = [
-        '{{namePrefix}}.{{firstNameFemale}}'
+        '{{namePrefix}}.{{firstNameFemale}}',
     ];
 
     protected static $idNumberFormat = '{{alphabet}}{{alphabet}}########';
@@ -82,6 +82,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @return string
+     *
      * @example 'Ф'
      */
     public function alphabet()
@@ -91,6 +92,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @return string
+     *
      * @example 'Э'
      */
     public function namePrefix()

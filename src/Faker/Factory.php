@@ -9,9 +9,10 @@ class Factory
     protected static $defaultProviders = ['Address', 'Barcode', 'Biased', 'Color', 'Company', 'DateTime', 'File', 'HtmlLorem', 'Image', 'Internet', 'Lorem', 'Medical', 'Miscellaneous', 'Payment', 'Person', 'PhoneNumber', 'Text', 'UserAgent', 'Uuid'];
 
     /**
-     * Create a new generator
+     * Create a new generator.
      *
      * @param string $locale
+     *
      * @return Generator
      */
     public static function create($locale = self::DEFAULT_LOCALE)
@@ -29,6 +30,7 @@ class Factory
     /**
      * @param string $provider
      * @param string $locale
+     *
      * @return string
      */
     protected static function getProviderClassname($provider, $locale = '')
@@ -51,11 +53,12 @@ class Factory
     /**
      * @param string $provider
      * @param string $locale
+     *
      * @return string|null
      */
     protected static function findProviderClassname($provider, $locale = '')
     {
-        $providerClass = 'Faker\\' . ($locale ? sprintf('Provider\%s\%s', $locale, $provider) : sprintf('Provider\%s', $provider));
+        $providerClass = 'Faker\\'.($locale ? sprintf('Provider\%s\%s', $locale, $provider) : sprintf('Provider\%s', $provider));
         if (class_exists($providerClass, true)) {
             return $providerClass;
         }

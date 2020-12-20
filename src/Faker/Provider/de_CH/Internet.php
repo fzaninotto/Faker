@@ -11,7 +11,7 @@ class Internet extends \Faker\Provider\Internet
         'googlemail.com',
         'gmx.ch',
         'bluewin.ch',
-        'swissonline.ch'
+        'swissonline.ch',
     ];
     protected static $tld = ['com', 'com', 'com', 'net', 'org', 'li', 'ch', 'ch'];
 }

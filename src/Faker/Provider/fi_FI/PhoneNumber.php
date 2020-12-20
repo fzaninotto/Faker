@@ -6,6 +6,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
     /**
      * @link https://www.viestintavirasto.fi/en/internettelephone/numberingoftelecommunicationsnetworks/localcallsandtelecommunicationsareas/mapoftelecommunicationsareas.html
+     *
      * @var array
      */
     protected static $landLineareaCodes = [
@@ -26,6 +27,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     /**
      * @link https://www.viestintavirasto.fi/en/internettelephone/numberingoftelecommunicationsnetworks/mobilenetworks/mobilenetworkareacodes.html
+     *
      * @var array
      */
     protected static $mobileNetworkAreaCodes = [

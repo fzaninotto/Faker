@@ -12,7 +12,7 @@ class Company extends \Faker\Provider\Company
         '{{lastName}} & {{lastName}} {{companySuffix}}',
         '{{lastName}} & {{lastName}}',
         '{{lastName}} och {{lastName}}',
-        '{{lastName}} och {{lastName}} {{companySuffix}}'
+        '{{lastName}} och {{lastName}} {{companySuffix}}',
     ];
 
     protected static $companySuffix = ['AB', 'HB'];

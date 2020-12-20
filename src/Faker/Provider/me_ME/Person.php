@@ -36,7 +36,7 @@ class Person extends \Faker\Provider\Person
         'Hvalimir', 'Hvalislav', 'Hranimir', 'Hranislav', 'Hraniša', 'Hrastimir', 'Hristijan', 'Hristoslav',
         'Cvejan', 'Cvijan', 'Cvetin', 'Cvijetin', 'Cvetko', 'Cvjetko', 'Cvetoje', 'Cvjetoje', 'Cvetoš', 'Cvjetoš', 'Cviko', 'Curko',
         'Časlav', 'Čedomir', 'Čubrilo',
-        'Šakota', 'Šale', 'Šumenko', 'Šutan'
+        'Šakota', 'Šale', 'Šumenko', 'Šutan',
     ];
 
     protected static $firstNameFemale = [
@@ -64,7 +64,7 @@ class Person extends \Faker\Provider\Person
         'Ćerana', 'Ubavka', 'Una', 'Fema', 'Hranislava',
         'Cveta', 'Cvijeta',
         'Čarna',
-        'Šana'
+        'Šana',
     ];
 
     /**
@@ -97,6 +97,6 @@ class Person extends \Faker\Provider\Person
         'Cajić', 'Cakić', 'Carić', 'Caričić', 'Cvejić', 'Cvetić', 'Cvijetić', 'Cvijić', 'Cvikić', 'Cvišić', 'Cenić', 'Cenkić', 'Civišić', 'Civrić', 'Ciglić', 'Ciklušić', 'Cicvarić', 'Cmiljanić', 'Cmolić', 'Conić', 'Crnovčić', 'Cukanić', 'Cukić', 'Cuparić',
         'Čabrić', 'Čavić', 'Čajić', 'Čalenić', 'Čalić', 'Čamagić', 'Čantrić', 'Čaprnjić', 'Čarapić', 'Čarnić', 'Čvokić', 'Čvorić', 'Čeleketić', 'Čemerikić', 'Čečarić', 'Čivčić', 'Čikarić', 'Čikić', 'Čiplić', 'Čipčić', 'Čičić', 'Čkovrić', 'Čobelić', 'Čobeljić', 'Čović', 'Čojić', 'Čojčić', 'Čolanić', 'Čolić', 'Čomić', 'Čonkić', 'Čonjagić', 'Čorbić', 'Čotrić', 'Čočurić', 'Čubrić', 'Čudić', 'Čukarić', 'Čukić', 'Čumić', 'Čupeljić', 'Čuperkić', 'Čupić', 'Čuturić',
         'Džavrić', 'Džajić', 'Džambić', 'Džadžić', 'Dželebdžić', 'Džikić', 'Džinić', 'Džodić', 'Džombić', 'Džomić', 'Džonić',
-        'Šakić', 'Šakotić', 'Šalinić', 'Šamatić', 'Šantić', 'Šapić', 'Šaponić', 'Šaponjić', 'Šapurić', 'Šarančić', 'Šarić', 'Šarkić', 'Šaronjić', 'Šašić', 'Švabić', 'Ševarlić', 'Šević', 'Ševkušić', 'Šestić', 'Šibalić', 'Šijakinjić', 'Šijačić', 'Šikanić', 'Šikanjić', 'Šimšić', 'Šipetić', 'Šišić', 'Šljivić', 'Šljukić', 'Šmigić', 'Šobajić', 'Šobačić', 'Šorgić', 'Šoškić', 'Špirić', 'Štakić', 'Štulić', 'Šubakić', 'Šubarić', 'Šubić', 'Šuleić', 'Šulejić', 'Šuletić', 'Šulkić', 'Šuluburić', 'Šuljagić', 'Šumatić', 'Šunderić', 'Šunkić', 'Šunjevarić', 'Šutuljić', 'Šušić', 'Šušulić'
+        'Šakić', 'Šakotić', 'Šalinić', 'Šamatić', 'Šantić', 'Šapić', 'Šaponić', 'Šaponjić', 'Šapurić', 'Šarančić', 'Šarić', 'Šarkić', 'Šaronjić', 'Šašić', 'Švabić', 'Ševarlić', 'Šević', 'Ševkušić', 'Šestić', 'Šibalić', 'Šijakinjić', 'Šijačić', 'Šikanić', 'Šikanjić', 'Šimšić', 'Šipetić', 'Šišić', 'Šljivić', 'Šljukić', 'Šmigić', 'Šobajić', 'Šobačić', 'Šorgić', 'Šoškić', 'Špirić', 'Štakić', 'Štulić', 'Šubakić', 'Šubarić', 'Šubić', 'Šuleić', 'Šulejić', 'Šuletić', 'Šulkić', 'Šuluburić', 'Šuljagić', 'Šumatić', 'Šunderić', 'Šunkić', 'Šunjevarić', 'Šutuljić', 'Šušić', 'Šušulić',
     ];
 }

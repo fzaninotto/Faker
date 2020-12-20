@@ -27,7 +27,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     protected static $lastName = [
-        'খান', 'শেখ', 'শিকদার', 'আলী', 'তাসনীম', 'তাবাসসুম'
+        'খান', 'শেখ', 'শিকদার', 'আলী', 'তাসনীম', 'তাবাসসুম',
     ];
 
     protected static $titleMale = ['মি.'];

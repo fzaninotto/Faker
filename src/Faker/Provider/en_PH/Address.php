@@ -5,12 +5,12 @@ namespace Faker\Provider\en_PH;
 class Address extends \Faker\Provider\en_US\Address
 {
     protected static $streetNameFormats = [
-        '{{lastName}} {{streetSuffix}}'
+        '{{lastName}} {{streetSuffix}}',
     ];
 
     //http://en.wikipedia.org/wiki/Postal_addresses_in_the_Philippines
     protected static $addressFormats = [
-        '{{streetAddress}}, {{barangay}}, {{city}} {{postcode}} {{province}}', '{{streetAddress}}, {{municipality}} {{postcode}} {{province}}'
+        '{{streetAddress}}, {{barangay}}, {{city}} {{postcode}} {{province}}', '{{streetAddress}}, {{municipality}} {{postcode}} {{province}}',
     ];
 
     protected static $buildingNumber = ['##A', '%#', '##A/##', '%#/%#'];
@@ -37,7 +37,7 @@ class Address extends \Faker\Provider\en_US\Address
         'South Cotabato', 'Southern Leyte', 'Sultan Kudarat', 'Sulu',
         'Surigao del Norte', 'Surigao del Sur', 'Tarlac',
         'Tawi-Tawi', 'Zambales', 'Zamboanga del Norte',
-        'Zamboanga del Sur', 'Zamboanga Sibugay', 'Metro Manila'
+        'Zamboanga del Sur', 'Zamboanga Sibugay', 'Metro Manila',
     ];
 
     //http://en.wikipedia.org/wiki/List_of_cities_in_the_Philippines
@@ -67,7 +67,7 @@ class Address extends \Faker\Provider\en_US\Address
         'Urdaneta', 'Lucena', 'Tayabas', 'Antipolo', 'Calbayog', 'Catbalogan',
         'Sorsogon City', 'General Santos', 'Koronadal', 'Maasin', 'Tacurong',
         'Surigao City', 'Bislig', 'Tandag', 'Tarlac City', 'Olongapo',
-        'Dapitan', 'Dipolog', 'Pagadian', 'Zamboanga City'
+        'Dapitan', 'Dipolog', 'Pagadian', 'Zamboanga City',
     ];
 
     //http://en.wikipedia.org/wiki/List_of_Philippine_cities_and_municipalities_by_population
@@ -388,11 +388,11 @@ class Address extends \Faker\Provider\en_US\Address
         'Tambulig', 'Tigbao', 'Tukuran', 'Vincenzo A. Sagun', 'Alicia',
         'Buug', 'Diplahan', 'Imelda', 'Ipil', 'Kabasalan', 'Mabuhay',
         'Malangas', 'Naga', 'Olutanga', 'Payao', 'Roseller Lim', 'Siay',
-        'Talusan', 'Titay', 'Tungawan'
+        'Talusan', 'Titay', 'Tungawan',
     ];
 
     protected static $barangay = [
-        'Poblacion'
+        'Poblacion',
     ];
 
     public function province()

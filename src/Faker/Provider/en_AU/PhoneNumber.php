@@ -41,7 +41,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     ];
 
     protected static $areacodes = [
-        '2', '3', '7', '8'
+        '2', '3', '7', '8',
     ];
 
     public static function mobileNumber()

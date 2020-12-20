@@ -5,15 +5,16 @@ namespace Faker\Calculator;
 class Iban
 {
     /**
-     * Generates IBAN Checksum
+     * Generates IBAN Checksum.
      *
      * @param string $iban
+     *
      * @return string Checksum (numeric string)
      */
     public static function checksum($iban)
     {
         // Move first four digits to end and set checksum to '00'
-        $checkString = substr($iban, 4) . substr($iban, 0, 2) . '00';
+        $checkString = substr($iban, 4).substr($iban, 0, 2).'00';
 
         // Replace all letters with their number equivalents
         $checkString = preg_replace_callback('/[A-Z]/', ['self', 'alphaToNumberCallback'], $checkString);
@@ -35,9 +36,10 @@ class Iban
     }
 
     /**
-     * Converts letter to number
+     * Converts letter to number.
      *
      * @param string $char
+     *
      * @return int
      */
     public static function alphaToNumber($char)
@@ -46,9 +48,10 @@ class Iban
     }
 
     /**
-     * Calculates mod97 on a numeric string
+     * Calculates mod97 on a numeric string.
      *
      * @param string $number Numeric string
+     *
      * @return int
      */
     public static function mod97($number)
@@ -63,9 +66,10 @@ class Iban
     }
 
     /**
-     * Checks whether an IBAN has a valid checksum
+     * Checks whether an IBAN has a valid checksum.
      *
      * @param string $iban
+     *
      * @return bool
      */
     public static function isValid($iban)

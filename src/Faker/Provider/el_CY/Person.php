@@ -6,6 +6,7 @@ class Person extends \Faker\Provider\Person
 {
     /**
      * @var array
+     *
      * @link http://www.mof.gov.cy/mof/cystat/statistics.nsf/populationcondition_22main_gr/populationcondition_22main_gr?OpenForm&sub=2&sel=2
      */
     protected static $firstNameMale = [
@@ -37,6 +38,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @var array
+     *
      * @link http://www.mof.gov.cy/mof/cystat/statistics.nsf/populationcondition_22main_gr/populationcondition_22main_gr?OpenForm&sub=2&sel=2
      */
     protected static $firstNameFemale = [
@@ -67,6 +69,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @var array
+     *
      * @link http://www.mof.gov.cy/mof/cystat/statistics.nsf/populationcondition_22main_gr/populationcondition_22main_gr?OpenForm&sub=2&sel=2
      */
     protected static $lastName = [

@@ -36,7 +36,7 @@ class Address extends \Faker\Provider\fr_FR\Address
         'Valangin', 'Vevey', 'Villeneuve', 'Viège',
         'Waldenburg', 'Walenstadt', 'Wangen an der Aare', 'Werdenberg', 'Wiedlisbach', 'Wil', 'Willisau', 'Winterthour',
         'Yverdon-les-Bains',
-        'Zofingue', 'Zoug', 'Zurich'
+        'Zofingue', 'Zoug', 'Zurich',
     ];
 
     /**
@@ -68,7 +68,7 @@ class Address extends \Faker\Provider\fr_FR\Address
         ['VD' => 'Vaud'],
         ['VS' => 'Valais'],
         ['ZG' => 'Zoug'],
-        ['ZH' => 'Zurich']
+        ['ZH' => 'Zurich'],
     ];
 
     protected static $cityFormats = [
@@ -78,7 +78,7 @@ class Address extends \Faker\Provider\fr_FR\Address
     protected static $streetNameFormats = [
         '{{streetPrefix}} {{lastName}}',
         '{{streetPrefix}} de {{cityName}}',
-        '{{streetPrefix}} de {{lastName}}'
+        '{{streetPrefix}} de {{lastName}}',
     ];
 
     protected static $streetAddressFormats = [
@@ -89,8 +89,10 @@ class Address extends \Faker\Provider\fr_FR\Address
     ];
 
     /**
-     * Returns a random street prefix
+     * Returns a random street prefix.
+     *
      * @example Rue
+     *
      * @return string
      */
     public static function streetPrefix()
@@ -100,7 +102,9 @@ class Address extends \Faker\Provider\fr_FR\Address
 
     /**
      * Returns a random city name.
+     *
      * @example Luzern
+     *
      * @return string
      */
     public function cityName()
@@ -109,8 +113,10 @@ class Address extends \Faker\Provider\fr_FR\Address
     }
 
     /**
-     * Returns a canton
+     * Returns a canton.
+     *
      * @example array('BE' => 'Bern')
+     *
      * @return array
      */
     public static function canton()
@@ -120,6 +126,7 @@ class Address extends \Faker\Provider\fr_FR\Address
 
     /**
      * Returns the abbreviation of a canton.
+     *
      * @return string
      */
     public static function cantonShort()
@@ -131,6 +138,7 @@ class Address extends \Faker\Provider\fr_FR\Address
 
     /**
      * Returns the name of canton.
+     *
      * @return string
      */
     public static function cantonName()

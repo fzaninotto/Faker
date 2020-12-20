@@ -53,11 +53,11 @@ class Address extends \Faker\Provider\Address
         'Chandigarh',
         'Dadra and Nagar Haveli', 'Daman and Diu', 'Delhi',
         'Lakshadweep',
-        'Puducherry'
+        'Puducherry',
     ];
 
     protected static $stateAbbr = [
-        'AP', 'AR', 'AS', 'BR', 'CG', 'GA', 'GJ', 'HR', 'HP', 'JK', 'JH', 'KA', 'KL', 'MP', 'MH', 'MN', 'ML', 'MZ', 'NL', 'OD', 'PB', 'RJ', 'SK', 'TN', 'TS', 'TR', 'UP', 'UK', 'WB', 'AN', 'CH', 'DN', 'DD', 'DL', 'LD', 'PY'
+        'AP', 'AR', 'AS', 'BR', 'CG', 'GA', 'GJ', 'HR', 'HP', 'JK', 'JH', 'KA', 'KL', 'MP', 'MH', 'MN', 'ML', 'MZ', 'NL', 'OD', 'PB', 'RJ', 'SK', 'TN', 'TS', 'TR', 'UP', 'UK', 'WB', 'AN', 'CH', 'DN', 'DD', 'DL', 'LD', 'PY',
     ];
 
     protected static $country = [
@@ -85,7 +85,7 @@ class Address extends \Faker\Provider\Address
         'Vanuatu', 'Venezuela', 'Vietnam',
         'Wallis and Futuna', 'Western Sahara',
         'Yemen',
-        'Zambia', 'Zimbabwe'
+        'Zambia', 'Zimbabwe',
     ];
     protected static $localityName = [
         'Aundh', 'Andheri',
@@ -108,7 +108,7 @@ class Address extends \Faker\Provider\Address
     ];
     protected static $localityFormats = [
         '{{firstName}}{{areaSuffix}}',
-        '{{localityName}}'
+        '{{localityName}}',
     ];
     protected static $addressFormats = [
         '{{streetAddress}} {{city}} - {{postcode}}',
@@ -117,7 +117,7 @@ class Address extends \Faker\Provider\Address
         'Society', 'Apartments', 'Heights', 'Villas',
     ];
     protected static $societyNameFormat = [
-        '{{firstName}} {{societySuffix}}'
+        '{{firstName}} {{societySuffix}}',
     ];
     protected static $streetAddressFormats = [
 

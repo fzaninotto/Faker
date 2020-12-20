@@ -7,7 +7,7 @@ class Address extends \Faker\Provider\Address
     protected static $cityPrefix = ['São', 'Porto', 'Vila', 'Santa'];
     protected static $citySuffix = ['do Norte', 'do Leste', 'do Sul', 'd\'Oeste'];
     protected static $streetPrefix = [
-        'Av.', 'Avenida', 'R.', 'Rua', 'Travessa', 'Largo'
+        'Av.', 'Avenida', 'R.', 'Rua', 'Travessa', 'Largo',
     ];
     protected static $buildingNumber = ['%####', '%###', '%##', '%#', '%'];
     protected static $postcode = ['#####-###'];
@@ -17,18 +17,18 @@ class Address extends \Faker\Provider\Address
         'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba',
         'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro',
         'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima',
-        'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins'
+        'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins',
     ];
     protected static $stateAbbr = [
         'AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS',
         'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC',
-        'SP', 'SE', 'TO'
+        'SP', 'SE', 'TO',
     ];
     protected static $region = [
-        'Centro-Oeste', 'Nordeste', 'Norte', 'Sudeste', 'Sul'
+        'Centro-Oeste', 'Nordeste', 'Norte', 'Sudeste', 'Sul',
     ];
     protected static $regionAbbr = [
-        'CO', 'N', 'NE', 'SE', 'S'
+        'CO', 'N', 'NE', 'SE', 'S',
     ];
     protected static $country = [
         'Afeganistão', 'África do Sul', 'Albânia', 'Alemanha', 'Andorra',
@@ -70,7 +70,7 @@ class Address extends \Faker\Provider\Address
         'Togo', 'Tonga', 'Trinidad e Tobago', 'Turcomenistão', 'Turquia',
         'Tuvalu', 'Tunísia', 'Ucrânia', 'Uganda', 'Uruguai', 'Uzbequistão',
         'Vaticano', 'Vanuatu', 'Venezuela', 'Vietnã', 'Yemen', 'Zâmbia',
-        'Zimbábue'
+        'Zimbábue',
     ];
     protected static $cityFormats = [
         '{{cityPrefix}} {{firstName}} {{citySuffix}}',
@@ -81,7 +81,7 @@ class Address extends \Faker\Provider\Address
     protected static $streetNameFormats = [
         '{{streetPrefix}} {{firstName}}',
         '{{streetPrefix}} {{lastName}}',
-        '{{streetPrefix}} {{firstName}} {{lastName}}'
+        '{{streetPrefix}} {{firstName}} {{lastName}}',
     ];
     protected static $streetAddressFormats = [
         '{{streetName}}, {{buildingNumber}}',
@@ -93,7 +93,7 @@ class Address extends \Faker\Provider\Address
     protected static $secondaryAddressFormats = [
         'Bloco A', 'Bloco B', 'Bloco C', 'Bc. # Ap. ##', 'Bc. ## Ap. ##',
         '#º Andar', '##º Andar', '###º Andar', 'Apto #', 'Apto ##', 'Apto ###',
-        'Apto ####', 'F', 'Fundos', 'Anexo'
+        'Apto ####', 'F', 'Fundos', 'Anexo',
     ];
 
     /**

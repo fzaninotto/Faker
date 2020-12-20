@@ -35,7 +35,7 @@ class Address extends \Faker\Provider\Address
         'Paredes', 'Penafiel', 'Peniche', 'Peso da Régua', 'Pinhel', 'Pombal', 'Ponta Delgada', 'Ponte de Sor', 'Portalegre', 'Portimão', 'Porto', 'Porto Santo', 'Póvoa de Santa Iria', 'Póvoa de Varzim', 'Quarteira', 'Queluz', 'Ribeira Grande', 'Rio Maior',
         'Rio Tinto', 'Sacavém', 'Santa Comba Dão', 'Santa Cruz', 'Santa Maria da Feira', 'Santana', 'Santarém', 'Santiago do Cacém', 'Santo Tirso',
         'São João da Madeira', 'São Mamede de Infesta', 'Seia', 'Seixal', 'Setúbal', 'Silves', 'Sines', 'Tarouca', 'Tavira', 'Tomar', 'Tondela', 'Torres Novas', 'Torres Vedras', 'Valbom', 'Vale de Cambra', 'Valongo', 'Valpaços', 'Vendas Novas',
-        'Viana do Castelo', 'Vila do Conde', 'Vila Franca de Xira', 'Vila Nova de Famalicão', 'Vila Nova de Foz Côa', 'Vila Nova de Gaia', 'Vila Praia da Vitória', 'Vila Real', 'Vila Real de Santo António', 'Viseu', 'Vizela'
+        'Viana do Castelo', 'Vila do Conde', 'Vila Franca de Xira', 'Vila Nova de Famalicão', 'Vila Nova de Foz Côa', 'Vila Nova de Gaia', 'Vila Praia da Vitória', 'Vila Real', 'Vila Real de Santo António', 'Viseu', 'Vizela',
     ];
 
     protected static $postcode = [
@@ -103,7 +103,7 @@ class Address extends \Faker\Provider\Address
         'Togo', 'Tonga', 'Trinidad e Tobago', 'Turcomenistão', 'Turquia',
         'Tuvalu', 'Tunísia', 'Ucrânia', 'Uganda', 'Uruguai', 'Uzbequistão',
         'Vaticano', 'Vanuatu', 'Venezuela', 'Vietnã', 'Yemen', 'Zâmbia',
-        'Zimbábue'
+        'Zimbábue',
     ];
 
     /**

@@ -68,6 +68,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '0937#######',
         '0990#######', // MCI
     ];
+
     public static function mobileNumber()
     {
         return static::numerify(static::randomElement(static::$mobileNumberPrefixes));

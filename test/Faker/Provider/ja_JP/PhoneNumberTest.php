@@ -16,7 +16,6 @@ final class PhoneNumberTest extends TestCase
         }
     }
 
-
     protected function getProviders(): iterable
     {
         yield new PhoneNumber($this->faker);
