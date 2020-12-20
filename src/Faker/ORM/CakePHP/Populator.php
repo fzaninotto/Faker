@@ -46,8 +46,8 @@ class Populator
     }
 
     /**
-     * @return $this
      * @throws \Exception
+     * @return $this
      */
     public function addGuesser($class)
     {

@@ -10,8 +10,8 @@ class Text extends \Faker\Provider\Text
      * @example 'از تاریخ‌الشعرا را بکوبند روی نبش دیوار کوچه‌شان. تابلوی مدرسه.'
      * @param  int                   $maxNbChars
      * @param  int                   $indexSize
-     * @return string
      * @throws \InvalidArgumentException
+     * @return string
      */
     public function realText($maxNbChars = 200, $indexSize = 2)
     {
