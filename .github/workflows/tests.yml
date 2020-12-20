@@ -7,11 +7,11 @@ on:
       - "main"
       - "[0-9].*"
 
-name: Continuous Integration
+name: Tests
 
 jobs:
-  tests:
-    name: CI on ${{ matrix.operating-system }} with PHP ${{ matrix.php-version }}
+  phpunit:
+    name: PHPUnit on ${{ matrix.operating-system }} with PHP ${{ matrix.php-version }}
 
     strategy:
       matrix:
