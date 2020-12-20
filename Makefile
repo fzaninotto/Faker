@@ -11,11 +11,11 @@ cs: vendor/autoload.php ## Fixes coding standard issues with php-cs-fixer
 
 .PHONY: coverage
 coverage: vendor/autoload.php ## Collects coverage with phpunit
-	vendor/bin/phpunit --coverage-text --coverage-clover=.build/logs/clover.xml
+	vendor/bin/simple-phpunit --coverage-text --coverage-clover=.build/logs/clover.xml
 
 .PHONY: test
 test: vendor/autoload.php ## Runs tests with phpunit
-	vendor/bin/phpunit
+	vendor/bin/simple-phpunit
 
 .PHONY: static
 static: vendor/autoload.php ## Runs static analyzers
@@ -33,3 +33,4 @@ clean: rm -rf vendor composer.lock .build  ## Cleans up build and vendor files
 vendor/autoload.php:
 	composer update --no-interaction
 	composer bin all install --no-interaction
+	vendor/bin/simple-phpunit install
