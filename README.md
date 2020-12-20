@@ -2,7 +2,6 @@
 
 [![Packagist Downloads](https://img.shields.io/packagist/dm/FakerPHP/Faker)](https://packagist.org/packages/fakerphp/faker)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/FakerPHP/Faker/Continuous%20Integration/main)](https://github.com/FakerPHP/Faker/actions)
-[![StyleCI](https://github.styleci.io/repos/307658860/shield?branch=main&style=flat)](https://github.styleci.io/repos/307658860?branch=main)
 
 Faker is a PHP library that generates fake data for you. Whether you need to bootstrap your database, create good-looking XML documents, fill-in your persistence to stress test it, or anonymize data taken from a production service, Faker is for you.
 

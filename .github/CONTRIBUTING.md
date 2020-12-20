@@ -4,7 +4,7 @@ If you've written a new formatter, added a new locale, or fixed a bug, your cont
 
 Before proposing a pull request, check the following:
 
-* Your code should follow the [PSR-12 coding style guide](https://www.php-fig.org/psr/psr-12/). [StyleCI](https://styleci.io/) will handle compliance automatically on merge. Do not enable StyleCI on your fork.
+* Your code should follow our coding standard. Run `make cs` to fix coding standard issues.
 * Unit tests should pass after your patch. Run the tests in your local environment (with `make test`) or check the continuous integration status for your pull request.
 * As much as possible, add unit tests for your code
 * Never use `rand()` in your provider. Faker uses the Mersenne Twister Randomizer, so use `mt_rand()` or any of the base generators (`randomNumber`, `randomElement`, etc.) instead.

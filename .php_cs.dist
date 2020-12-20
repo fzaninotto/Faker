@@ -1,0 +1,127 @@
+<?php
+
+declare(strict_types=1);
+
+$finder = PhpCsFixer\Finder::create()
+    ->exclude([
+        '.build/',
+        '.github/',
+        'vendor-bin/',
+    ])
+    ->ignoreDotFiles(false)
+    ->in(__DIR__)
+    ->name('.php_cs.dist');
+
+$config = new PhpCsFixer\Config('faker');
+
+return $config
+    ->setFinder($finder)
+    ->setRiskyAllowed(true)
+    ->setRules([
+        '@PSR2' => true,
+        'array_indentation' => true,
+        'array_syntax' => [
+            'syntax' => 'short',
+        ],
+        'blank_line_after_opening_tag' => true,
+        'blank_line_before_statement' => [
+            'statements' => [
+                'break',
+                'continue',
+                'default',
+                'die',
+                'do',
+                'exit',
+                'for',
+                'foreach',
+                'include',
+                'include_once',
+                'require',
+                'require_once',
+                'return',
+                'switch',
+                'throw',
+                'try',
+                'while',
+                'yield',
+            ],
+        ],
+        'cast_spaces' => true,
+        'combine_nested_dirname' => true,
+        'compact_nullable_typehint' => true,
+        'concat_space' => [
+            'spacing' => 'one',
+        ],
+        'declare_equal_normalize' => true,
+        'function_typehint_space' => true,
+        'implode_call' => true,
+        'lambda_not_used_import' => true,
+        'lowercase_cast' => true,
+        'lowercase_static_reference' => true,
+        'magic_constant_casing' => true,
+        'magic_method_casing' => true,
+        'modernize_types_casting' => true,
+        'new_with_braces' => true,
+        'no_alias_functions' => true,
+        'no_blank_lines_after_class_opening' => true,
+        'no_empty_statement' => true,
+        'no_leading_import_slash' => true,
+        'no_leading_namespace_whitespace' => true,
+        'no_unneeded_curly_braces' => true,
+        'no_unneeded_final_method' => true,
+        'no_unreachable_default_argument_value' => true,
+        'no_unset_cast' => true,
+        'no_unused_imports' => true,
+        'no_whitespace_in_blank_line' => true,
+        'non_printable_character' => true,
+        'normalize_index_brace' => true,
+        'ordered_imports' => true,
+        'php_unit_construct' => true,
+        'php_unit_dedicate_assert' => true,
+        'php_unit_dedicate_assert_internal_type' => true,
+        'php_unit_expectation' => true,
+        'php_unit_fqcn_annotation' => true,
+        'php_unit_mock' => true,
+        'php_unit_mock_short_will_return' => true,
+        'php_unit_namespaced' => true,
+        'php_unit_no_expectation_annotation' => true,
+        'php_unit_ordered_covers' => true,
+        'php_unit_set_up_tear_down_visibility' => true,
+        'php_unit_test_case_static_method_calls' => [
+            'call_type' => 'self',
+        ],
+        'phpdoc_indent' => true,
+        'phpdoc_inline_tag_normalizer' => true,
+        'phpdoc_no_alias_tag' => [
+            'replacements' => [
+                'type' => 'var',
+            ],
+        ],
+        'phpdoc_no_package' => true,
+        'phpdoc_return_self_reference' => true,
+        'phpdoc_scalar' => true,
+        'phpdoc_single_line_var_spacing' => true,
+        'phpdoc_trim' => true,
+        'phpdoc_types' => true,
+        'phpdoc_var_without_name' => true,
+        'pow_to_exponentiation' => true,
+        'psr_autoloading' => true,
+        'random_api_migration' => true,
+        'return_type_declaration' => true,
+        'short_scalar_cast' => true,
+        'single_blank_line_before_namespace' => true,
+        'single_quote' => true,
+        'single_trait_insert_per_statement' => true,
+        'standardize_not_equals' => true,
+        'switch_case_space' => true,
+        'ternary_operator_spaces' => true,
+        'ternary_to_null_coalescing' => true,
+        'visibility_required' => [
+            'elements' => [
+                'const',
+                'method',
+                'property',
+            ],
+        ],
+        'whitespace_after_comma_in_array' => true,
+    ]);
