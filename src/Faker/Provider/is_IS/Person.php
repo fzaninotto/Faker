@@ -5,7 +5,6 @@ namespace Faker\Provider\is_IS;
 use Faker\Provider\DateTime;
 
 /**
- * @author Birkir Gudjonsson <birkir.gudjonsson@gmail.com>
  */
 class Person extends \Faker\Provider\Person
 {

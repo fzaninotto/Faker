@@ -3,7 +3,6 @@
 namespace Faker\Provider\is_IS;
 
 /**
- * @author Birkir Gudjonsson <birkir.gudjonsson@gmail.com>
  */
 class Internet extends \Faker\Provider\Internet
 {

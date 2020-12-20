@@ -6,8 +6,6 @@ use Faker\Provider\DateTime;
 
 /**
  * @link http://www.danskernesnavne.navneforskning.ku.dk/Personnavne.asp
- *
- * @author Antoine Corcy <contact@sbin.dk>
  */
 class Person extends \Faker\Provider\Person
 {

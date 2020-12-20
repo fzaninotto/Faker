@@ -3,7 +3,6 @@
 namespace Faker\Provider;
 
 /**
- * @author lsv
  */
 class Color extends Base
 {

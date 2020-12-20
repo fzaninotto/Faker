@@ -54,6 +54,11 @@ return $config
         ],
         'declare_equal_normalize' => true,
         'function_typehint_space' => true,
+        'general_phpdoc_annotation_remove' => [
+            'annotations' => [
+                'author',
+            ],
+        ],
         'implode_call' => true,
         'lambda_not_used_import' => true,
         'lowercase_cast' => true,

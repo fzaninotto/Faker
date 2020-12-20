@@ -3,7 +3,6 @@
 namespace Faker\Provider\is_IS;
 
 /**
- * @author Birkir Gudjonsson <birkir.gudjonsson@gmail.com>
  */
 class Company extends \Faker\Provider\Company
 {

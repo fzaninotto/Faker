@@ -3,7 +3,6 @@
 namespace Faker\Provider\da_DK;
 
 /**
- * @author Antoine Corcy <contact@sbin.dk>
  */
 class Address extends \Faker\Provider\Address
 {
