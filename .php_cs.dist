@@ -86,6 +86,7 @@ return $config
         'php_unit_dedicate_assert_internal_type' => true,
         'php_unit_expectation' => true,
         'php_unit_fqcn_annotation' => true,
+        'php_unit_method_casing' => true,
         'php_unit_mock' => true,
         'php_unit_mock_short_will_return' => true,
         'php_unit_namespaced' => true,
