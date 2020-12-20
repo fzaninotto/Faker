@@ -4,8 +4,6 @@ namespace Faker\Provider\is_IS;
 
 use Faker\Provider\DateTime;
 
-/**
- */
 class Person extends \Faker\Provider\Person
 {
     /**

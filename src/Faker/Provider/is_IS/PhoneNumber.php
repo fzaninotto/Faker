@@ -2,8 +2,6 @@
 
 namespace Faker\Provider\is_IS;
 
-/**
- */
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
     /**

@@ -2,8 +2,6 @@
 
 namespace Faker\Provider\da_DK;
 
-/**
- */
 class Address extends \Faker\Provider\Address
 {
     /**

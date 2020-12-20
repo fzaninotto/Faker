@@ -2,8 +2,6 @@
 
 namespace Faker\Provider\et_EE;
 
-/**
- */
 class Person extends \Faker\Provider\Person
 {
     /**

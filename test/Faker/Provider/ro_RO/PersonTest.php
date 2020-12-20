@@ -72,9 +72,7 @@ final class PersonTest extends TestCase
             [Person::GENDER_FEMALE, '1981-06-16', 'B2', false, '981061642'],
         ];
     }
-    /**
-     *
-     */
+
     public function testAllRandomReturnsValidCnp()
     {
         $cnp = $this->faker->cnp;
@@ -84,9 +82,7 @@ final class PersonTest extends TestCase
         );
     }
 
-    /**
-     *
-     */
+
     public function testValidGenderReturnsValidCnp()
     {
         $cnp = $this->faker->cnp(Person::GENDER_MALE);
@@ -161,9 +157,7 @@ final class PersonTest extends TestCase
         $this->faker->cnp(null, null, $value);
     }
 
-    /**
-     *
-     */
+
     public function testNonResidentReturnsValidCnp()
     {
         $cnp = $this->faker->cnp(null, null, null, false);

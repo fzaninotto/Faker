@@ -2,8 +2,6 @@
 
 namespace Faker\Provider\is_IS;
 
-/**
- */
 class Internet extends \Faker\Provider\Internet
 {
     /**

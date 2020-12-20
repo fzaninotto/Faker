@@ -2,8 +2,6 @@
 
 namespace Faker\Provider;
 
-/**
- */
 class Color extends Base
 {
     protected static $safeColorNames = [
