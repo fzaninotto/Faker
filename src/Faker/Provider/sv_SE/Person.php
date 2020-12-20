@@ -116,9 +116,9 @@ class Person extends \Faker\Provider\Person
     /**
      * National Personal Identity number (personnummer)
      * @link http://en.wikipedia.org/wiki/Personal_identity_number_(Sweden)
-     * @param \DateTime $birthdate
-     * @param string $gender Person::GENDER_MALE || Person::GENDER_FEMALE
-     * @return string on format XXXXXX-XXXX
+     * @param  \DateTime $birthdate
+     * @param  string    $gender    Person::GENDER_MALE || Person::GENDER_FEMALE
+     * @return string    on format XXXXXX-XXXX
      */
     public function personalIdentityNumber(\DateTime $birthdate = null, $gender = null)
     {

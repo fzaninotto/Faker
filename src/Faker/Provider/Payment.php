@@ -150,9 +150,9 @@ class Payment extends Base
     /**
      * Returns the String of a credit card number.
      *
-     * @param string $type Supporting any of 'Visa', 'MasterCard', 'American Express', 'Discover' and 'JCB'
-     * @param bool $formatted Set to true if the output string should contain one separator every 4 digits
-     * @param string $separator Separator string for formatting card number. Defaults to dash (-).
+     * @param  string $type      Supporting any of 'Visa', 'MasterCard', 'American Express', 'Discover' and 'JCB'
+     * @param  bool   $formatted Set to true if the output string should contain one separator every 4 digits
+     * @param  string $separator Separator string for formatting card number. Defaults to dash (-).
      * @return string
      *
      * @example '4485480221084675'
@@ -179,7 +179,7 @@ class Payment extends Base
     }
 
     /**
-     * @param bool $valid True (by default) to get a valid expiration date, false to get a maybe valid date
+     * @param  bool      $valid True (by default) to get a valid expiration date, false to get a maybe valid date
      * @return \DateTime
      * @example 04/13
      */
@@ -193,8 +193,8 @@ class Payment extends Base
     }
 
     /**
-     * @param bool $valid                True (by default) to get a valid expiration date, false to get a maybe valid date
-     * @param string  $expirationDateFormat
+     * @param  bool   $valid                True (by default) to get a valid expiration date, false to get a maybe valid date
+     * @param  string $expirationDateFormat
      * @return string
      * @example '04/13'
      */
@@ -204,7 +204,7 @@ class Payment extends Base
     }
 
     /**
-     * @param  bool $valid True (by default) to get a valid expiration date, false to get a maybe valid date
+     * @param  bool  $valid True (by default) to get a valid expiration date, false to get a maybe valid date
      * @return array
      */
     public function creditCardDetails($valid = true)
@@ -223,9 +223,9 @@ class Payment extends Base
      * International Bank Account Number (IBAN)
      *
      * @link http://en.wikipedia.org/wiki/International_Bank_Account_Number
-     * @param  string  $countryCode ISO 3166-1 alpha-2 country code
-     * @param  string  $prefix      for generating bank account number of a specific bank
-     * @param  int $length      total length without country code and 2 check digits
+     * @param  string $countryCode ISO 3166-1 alpha-2 country code
+     * @param  string $prefix      for generating bank account number of a specific bank
+     * @param  int    $length      total length without country code and 2 check digits
      * @return string
      */
     public static function iban($countryCode = null, $prefix = '', $length = null)
@@ -289,7 +289,7 @@ class Payment extends Base
      *
      * @example 'RZTIAT22263'
      * @link    http://en.wikipedia.org/wiki/ISO_9362
-     * @return  string Swift/Bic number
+     * @return string Swift/Bic number
      */
     public static function swiftBicNumber()
     {

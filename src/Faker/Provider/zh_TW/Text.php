@@ -856,7 +856,7 @@ EOT;
     /**
      * Convert original string to utf-8 encoding.
      *
-     * @param string $text
+     * @param  string $text
      * @return array
      */
     protected static function utf8Encoding($text)

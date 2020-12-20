@@ -105,9 +105,9 @@ class Address extends Base
 
     /**
      * @example '77.147489'
-     * @param float|int $min
-     * @param float|int $max
-     * @return float Uses signed degrees format (returns a float number between -90 and 90)
+     * @param  float|int $min
+     * @param  float|int $max
+     * @return float     Uses signed degrees format (returns a float number between -90 and 90)
      */
     public static function latitude($min = -90, $max = 90)
     {
@@ -116,9 +116,9 @@ class Address extends Base
 
     /**
      * @example '86.211205'
-     * @param float|int $min
-     * @param float|int $max
-     * @return float Uses signed degrees format (returns a float number between -180 and 180)
+     * @param  float|int $min
+     * @param  float|int $max
+     * @return float     Uses signed degrees format (returns a float number between -180 and 180)
      */
     public static function longitude($min = -180, $max = 180)
     {

@@ -43,9 +43,9 @@ class EntityPopulator
     protected $useExistingData = false;
 
     /**
-     * @param Mapper $mapper
+     * @param Mapper  $mapper
      * @param Locator $locator
-     * @param bool $useExistingData
+     * @param bool    $useExistingData
      */
     public function __construct(Mapper $mapper, Locator $locator, $useExistingData = false)
     {
@@ -105,7 +105,7 @@ class EntityPopulator
     }
 
     /**
-     * @param Generator $generator
+     * @param  Generator $generator
      * @return array
      */
     public function guessColumnFormatters(Generator $generator)

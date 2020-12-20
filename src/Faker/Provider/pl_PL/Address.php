@@ -52,7 +52,7 @@ class Address extends \Faker\Provider\Address
     ];
     /**
      * @var array 250 Polish cities with biggest number of streets. Extracted from data issued by the official
-     * public postal service of Poland.
+     *            public postal service of Poland.
      * @link http://www.poczta-polska.pl/
      */
     protected static $city = [
@@ -92,7 +92,7 @@ class Address extends \Faker\Provider\Address
     ];
     /**
      * @var array 549 most common Polish street names. Extracted from data issued by the official public
-     * postal service of Poland.
+     *            postal service of Poland.
      * @link http://www.poczta-polska.pl/
      */
     protected static $street = [

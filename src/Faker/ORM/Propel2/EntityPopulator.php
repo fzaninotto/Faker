@@ -49,7 +49,7 @@ class EntityPopulator
     }
 
     /**
-     * @param \Faker\Generator $generator
+     * @param  \Faker\Generator $generator
      * @return array
      */
     public function guessColumnFormatters(\Faker\Generator $generator)
@@ -95,7 +95,7 @@ class EntityPopulator
     }
 
     /**
-     * @param ColumnMap $columnMap
+     * @param  ColumnMap $columnMap
      * @return bool
      */
     protected function isColumnBehavior(ColumnMap $columnMap)
@@ -144,7 +144,7 @@ class EntityPopulator
     }
 
     /**
-     * @param \Faker\Generator $generator
+     * @param  \Faker\Generator $generator
      * @return array
      */
     public function guessModifiers(\Faker\Generator $generator)

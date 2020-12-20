@@ -82,7 +82,7 @@ class EntityPopulator
     }
 
     /**
-     * @param \Faker\Generator $generator
+     * @param  \Faker\Generator $generator
      * @return array
      */
     public function guessColumnFormatters(\Faker\Generator $generator)
@@ -171,8 +171,8 @@ class EntityPopulator
 
     /**
      * Insert one new record using the Entity class.
-     * @param ObjectManager $manager
-     * @param bool $generateId
+     * @param  ObjectManager   $manager
+     * @param  bool            $generateId
      * @return EntityPopulator
      */
     public function execute(ObjectManager $manager, $insertedEntities, $generateId = false)
@@ -230,7 +230,7 @@ class EntityPopulator
     }
 
     /**
-     * @param ObjectManager $manager
+     * @param  ObjectManager $manager
      * @return int|null
      */
     private function generateId($obj, $column, ObjectManager $manager)

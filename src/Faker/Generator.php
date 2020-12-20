@@ -279,7 +279,7 @@ class Generator
 
     /**
      * @param string $method
-     * @param array $attributes
+     * @param array  $attributes
      *
      * @return mixed
      */

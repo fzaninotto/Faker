@@ -92,7 +92,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      * @example '+6012-345-6789'
      *
      * @param bool $countryCodePrefix true, false
-     * @param bool $formatting true, false
+     * @param bool $formatting        true, false
      *
      * @return string
      */
@@ -153,7 +153,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      * @example '+603-4567-8912'
      *
      * @param bool $countryCodePrefix true, false
-     * @param bool $formatting true, false
+     * @param bool $formatting        true, false
      *
      * @return string
      */
@@ -178,7 +178,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      * @example '+6015-678-9234'
      *
      * @param bool $countryCodePrefix true, false
-     * @param bool $formatting true, false
+     * @param bool $formatting        true, false
      *
      * @return string
      */

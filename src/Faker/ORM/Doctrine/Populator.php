@@ -31,9 +31,9 @@ class Populator
 
     /**
      * Populator constructor.
-     * @param Generator $generator
+     * @param Generator          $generator
      * @param ObjectManager|null $manager
-     * @param int $batchSize
+     * @param int                $batchSize
      */
     public function __construct(Generator $generator, ObjectManager $manager = null, $batchSize = 1000)
     {

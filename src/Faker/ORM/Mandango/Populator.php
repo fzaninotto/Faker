@@ -17,7 +17,7 @@ class Populator
 
     /**
      * @param \Faker\Generator $generator
-     * @param Mandango $mandango
+     * @param Mandango         $mandango
      */
     public function __construct(\Faker\Generator $generator, Mandango $mandango)
     {

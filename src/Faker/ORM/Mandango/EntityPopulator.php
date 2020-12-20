@@ -48,8 +48,8 @@ class EntityPopulator
     }
 
     /**
-     * @param \Faker\Generator $generator
-     * @param Mandango $mandango
+     * @param  \Faker\Generator $generator
+     * @param  Mandango         $mandango
      * @return array
      */
     public function guessColumnFormatters(\Faker\Generator $generator, Mandango $mandango)

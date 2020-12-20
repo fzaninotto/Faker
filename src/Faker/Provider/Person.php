@@ -40,7 +40,7 @@ class Person extends Base
     protected static $titleFemale = ['Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.'];
 
     /**
-     * @param string|null $gender 'male', 'female' or null for any
+     * @param  string|null $gender 'male', 'female' or null for any
      * @return string
      * @example 'John Doe'
      */
@@ -58,7 +58,7 @@ class Person extends Base
     }
 
     /**
-     * @param string|null $gender 'male', 'female' or null for any
+     * @param  string|null $gender 'male', 'female' or null for any
      * @return string
      * @example 'John'
      */
@@ -94,7 +94,7 @@ class Person extends Base
 
     /**
      * @example 'Mrs.'
-     * @param string|null $gender 'male', 'female' or null for any
+     * @param  string|null $gender 'male', 'female' or null for any
      * @return string
      */
     public function title($gender = null)

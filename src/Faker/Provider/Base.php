@@ -50,7 +50,7 @@ class Base
     /**
      * Generates a random digit, which cannot be $except
      *
-     * @param int $except
+     * @param  int $except
      * @return int
      */
     public static function randomDigitNot($except)
@@ -68,7 +68,7 @@ class Base
      *
      * The maximum value returned is mt_getrandmax()
      *
-     * @param int $nbDigits Defaults to a random number between 1 and 9
+     * @param int  $nbDigits Defaults to a random number between 1 and 9
      * @param bool $strict   Whether the returned number should have exactly $nbDigits
      * @example 79907610
      *
@@ -176,8 +176,8 @@ class Base
      * Returns randomly ordered subsequence of $count elements from a provided array
      *
      * @param  array            $array           Array to take elements from. Defaults to a-c
-     * @param  int          $count           Number of elements to take.
-     * @param  bool          $allowDuplicates Allow elements to be picked several times. Defaults to false
+     * @param  int              $count           Number of elements to take.
+     * @param  bool             $allowDuplicates Allow elements to be picked several times. Defaults to false
      * @throws \LengthException When requesting more elements than provided
      *
      * @return array New array with $count elements from $array
@@ -241,7 +241,7 @@ class Base
     /**
      * Returns a random key from a passed associative array
      *
-     * @param  array $array
+     * @param  array           $array
      * @return int|string|null
      */
     public static function randomKey($array = [])
@@ -265,7 +265,7 @@ class Base
      * @see shuffleArray()
      * @see shuffleString()
      *
-     * @param array|string $arg The set to shuffle
+     * @param  array|string $arg The set to shuffle
      * @return array|string The shuffled set
      */
     public static function shuffle($arg = '')
@@ -292,7 +292,7 @@ class Base
      *
      * @example $faker->shuffleArray([1, 2, 3]); // [2, 1, 3]
      *
-     * @param array $array The set to shuffle
+     * @param  array $array The set to shuffle
      * @return array The shuffled set
      */
     public static function shuffleArray($array = [])
@@ -332,8 +332,8 @@ class Base
      *
      * @example $faker->shuffleString('hello, world'); // 'rlo,h eold!lw'
      *
-     * @param string $string The set to shuffle
-     * @param string $encoding The string encoding (defaults to UTF-8)
+     * @param  string $string   The set to shuffle
+     * @param  string $encoding The string encoding (defaults to UTF-8)
      * @return string The shuffled set
      */
     public static function shuffleString($string = '', $encoding = 'UTF-8')
@@ -470,7 +470,7 @@ class Base
      *
      * @see https://github.com/icomefromthenet/ReverseRegex for a more robust implementation
      *
-     * @param string $regex A regular expression (delimiters are optional)
+     * @param  string $regex A regular expression (delimiters are optional)
      * @return string
      */
     public static function regexify($regex = '')
@@ -549,10 +549,10 @@ class Base
     /**
      * Chainable method for making any formatter optional.
      *
-     * @param float|int $weight Set the probability of receiving a null value.
-     *                              "0" will always return null, "1" will always return the generator.
-     *                              If $weight is an integer value, then the same system works
-     *                              between 0 (always get false) and 100 (always get true).
+     * @param  float|int  $weight Set the probability of receiving a null value.
+     *                            "0" will always return null, "1" will always return the generator.
+     *                            If $weight is an integer value, then the same system works
+     *                            between 0 (always get false) and 100 (always get true).
      * @return mixed|null
      */
     public function optional($weight = 0.5, $default = null)
@@ -579,9 +579,9 @@ class Base
      * $faker->unique()->randomElement(array(1, 2, 3));
      * </code>
      *
-     * @param bool $reset      If set to true, resets the list of existing values
-     * @param int $maxRetries Maximum number of retries to find a unique value,
-     *                                       After which an OverflowException is thrown.
+     * @param  bool               $reset      If set to true, resets the list of existing values
+     * @param  int                $maxRetries Maximum number of retries to find a unique value,
+     *                                        After which an OverflowException is thrown.
      * @throws \OverflowException When no unique value can be found by iterating $maxRetries times
      *
      * @return UniqueGenerator A proxy class returning only non-existing values
@@ -611,9 +611,9 @@ class Base
      * print_r($values); // [0, 4, 8, 4, 2, 6, 0, 8, 8, 6]
      * </code>
      *
-     * @param Closure $validator  A function returning true for valid values
-     * @param int $maxRetries Maximum number of retries to find a unique value,
-     *                            After which an OverflowException is thrown.
+     * @param  Closure            $validator  A function returning true for valid values
+     * @param  int                $maxRetries Maximum number of retries to find a unique value,
+     *                                        After which an OverflowException is thrown.
      * @throws \OverflowException When no valid value can be found by iterating $maxRetries times
      *
      * @return ValidGenerator A proxy class returning only valid values

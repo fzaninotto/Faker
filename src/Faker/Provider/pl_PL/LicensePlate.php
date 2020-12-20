@@ -504,9 +504,9 @@ class LicensePlate extends Base
     /**
      * Generates random license plate.
      *
-     * @param  bool       $special      whether special license plates should be included
-     * @param  array|null $voivodeships list of voivodeships license plate should be generated from
-     * @param  array|null $counties     list of counties license plate should be generated from
+     * @param bool       $special      whether special license plates should be included
+     * @param array|null $voivodeships list of voivodeships license plate should be generated from
+     * @param array|null $counties     list of counties license plate should be generated from
      *
      * @return string
      */

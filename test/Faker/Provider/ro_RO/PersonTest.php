@@ -182,7 +182,7 @@ final class PersonTest extends TestCase
      * @param string $gender
      * @param string $dateOfBirth
      * @param string $county
-     * @param bool $isResident
+     * @param bool   $isResident
      * @param string $expectedCnpStart
      *
      * @dataProvider validInputDataProvider

@@ -57,7 +57,7 @@ class Lorem extends Base
      * Generate an array of random words
      *
      * @example array('Lorem', 'ipsum', 'dolor')
-     * @param  int      $nb     how many words to return
+     * @param  int          $nb     how many words to return
      * @param  bool         $asText if true the sentences are returned as one string
      * @return array|string
      */
@@ -76,9 +76,9 @@ class Lorem extends Base
      * Generate a random sentence
      *
      * @example 'Lorem ipsum dolor sit amet.'
-     * @param int $nbWords         around how many words the sentence should contain
-     * @param bool $variableNbWords set to false if you want exactly $nbWords returned,
-     *                                  otherwise $nbWords may vary by +/-40% with a minimum of 1
+     * @param  int    $nbWords         around how many words the sentence should contain
+     * @param  bool   $variableNbWords set to false if you want exactly $nbWords returned,
+     *                                 otherwise $nbWords may vary by +/-40% with a minimum of 1
      * @return string
      */
     public static function sentence($nbWords = 6, $variableNbWords = true)
@@ -100,7 +100,7 @@ class Lorem extends Base
      * Generate an array of sentences
      *
      * @example array('Lorem ipsum dolor sit amet.', 'Consectetur adipisicing eli.')
-     * @param  int      $nb     how many sentences to return
+     * @param  int          $nb     how many sentences to return
      * @param  bool         $asText if true the sentences are returned as one string
      * @return array|string
      */
@@ -119,9 +119,9 @@ class Lorem extends Base
      * Generate a single paragraph
      *
      * @example 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'
-     * @param int $nbSentences         around how many sentences the paragraph should contain
-     * @param bool $variableNbSentences set to false if you want exactly $nbSentences returned,
-     *                                      otherwise $nbSentences may vary by +/-40% with a minimum of 1
+     * @param  int    $nbSentences         around how many sentences the paragraph should contain
+     * @param  bool   $variableNbSentences set to false if you want exactly $nbSentences returned,
+     *                                     otherwise $nbSentences may vary by +/-40% with a minimum of 1
      * @return string
      */
     public static function paragraph($nbSentences = 3, $variableNbSentences = true)
@@ -140,7 +140,7 @@ class Lorem extends Base
      * Generate an array of paragraphs
      *
      * @example array($paragraph1, $paragraph2, $paragraph3)
-     * @param  int      $nb     how many paragraphs to return
+     * @param  int          $nb     how many paragraphs to return
      * @param  bool         $asText if true the paragraphs are returned as one string, separated by two newlines
      * @return array|string
      */
@@ -161,7 +161,7 @@ class Lorem extends Base
      *
      * @example 'Sapiente sunt omnis. Ut pariatur ad autem ducimus et. Voluptas rem voluptas sint modi dolorem amet.'
      *
-     * @param  int $maxNbChars Maximum number of characters the text should contain (minimum 5)
+     * @param int $maxNbChars Maximum number of characters the text should contain (minimum 5)
      *
      * @return string
      */

@@ -19,7 +19,7 @@ class ColumnTypeGuesser
     }
 
     /**
-     * @param array $field
+     * @param  array         $field
      * @return \Closure|null
      */
     public function guessFormat(array $field)

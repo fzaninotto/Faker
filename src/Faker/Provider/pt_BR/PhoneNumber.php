@@ -33,7 +33,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     /**
      * Generates a 9-digit cellphone number without formatting characters.
-     * @param bool $formatted [def: true] If it should return a formatted number or not.
+     * @param  bool   $formatted [def: true] If it should return a formatted number or not.
      * @return string
      */
     public static function cellphone($formatted = true)
@@ -49,7 +49,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     /**
      * Generates an 9-digit landline number without formatting characters.
-     * @param bool $formatted [def: true] If it should return a formatted number or not.
+     * @param  bool   $formatted [def: true] If it should return a formatted number or not.
      * @return string
      */
     public static function landline($formatted = true)
@@ -65,7 +65,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     /**
      * Randomizes between cellphone and landline numbers.
-     * @param bool $formatted [def: true] If it should return a formatted number or not.
+     * @param  bool  $formatted [def: true] If it should return a formatted number or not.
      * @return mixed
      */
     public static function phone($formatted = true)
@@ -81,8 +81,8 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     /**
      * Generates a complete phone number.
-     * @param string $type      [def: landline] One of "landline" or "cellphone". Defaults to "landline" on invalid values.
-     * @param bool   $formatted [def: true] If the number should be formatted or not.
+     * @param  string $type      [def: landline] One of "landline" or "cellphone". Defaults to "landline" on invalid values.
+     * @param  bool   $formatted [def: true] If the number should be formatted or not.
      * @return string
      */
     protected static function anyPhoneNumber($type, $formatted = true)
@@ -97,7 +97,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     /**
      * Concatenates {@link areaCode} and {@link cellphone} into a national cellphone number.
-     * @param bool $formatted [def: true] If it should return a formatted number or not.
+     * @param  bool   $formatted [def: true] If it should return a formatted number or not.
      * @return string
      */
     public static function cellphoneNumber($formatted = true)
@@ -107,7 +107,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     /**
      * Concatenates {@link areaCode} and {@link landline} into a national landline number.
-     * @param bool $formatted [def: true] If it should return a formatted number or not.
+     * @param  bool   $formatted [def: true] If it should return a formatted number or not.
      * @return string
      */
     public static function landlineNumber($formatted = true)

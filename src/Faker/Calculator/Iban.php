@@ -7,7 +7,7 @@ class Iban
     /**
      * Generates IBAN Checksum
      *
-     * @param string $iban
+     * @param  string $iban
      * @return string Checksum (numeric string)
      */
     public static function checksum($iban)
@@ -37,7 +37,7 @@ class Iban
     /**
      * Converts letter to number
      *
-     * @param string $char
+     * @param  string $char
      * @return int
      */
     public static function alphaToNumber($char)
@@ -48,7 +48,7 @@ class Iban
     /**
      * Calculates mod97 on a numeric string
      *
-     * @param string $number Numeric string
+     * @param  string $number Numeric string
      * @return int
      */
     public static function mod97($number)
@@ -65,7 +65,7 @@ class Iban
     /**
      * Checks whether an IBAN has a valid checksum
      *
-     * @param string $iban
+     * @param  string $iban
      * @return bool
      */
     public static function isValid($iban)
