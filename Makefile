@@ -1,5 +1,5 @@
 .PHONY: build
-build: cs test static ## Runs test targets
+build: cs static test ## Runs cs, static, and test targets
 
 .PHONY: help
 help:
