@@ -82,7 +82,6 @@ final class PersonTest extends TestCase
         );
     }
 
-
     public function testValidGenderReturnsValidCnp()
     {
         $cnp = $this->faker->cnp(Person::GENDER_MALE);
@@ -157,7 +156,6 @@ final class PersonTest extends TestCase
         $this->faker->cnp(null, null, $value);
     }
 
-
     public function testNonResidentReturnsValidCnp()
     {
         $cnp = $this->faker->cnp(null, null, null, false);
@@ -190,7 +188,6 @@ final class PersonTest extends TestCase
             sprintf("Invalid CNP '%' generated for non valid data", $cnp)
         );
     }
-
 
     protected function isValidFemaleCnp($value)
     {

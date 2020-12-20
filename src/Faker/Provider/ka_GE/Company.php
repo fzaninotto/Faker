@@ -26,7 +26,6 @@ class Company extends \Faker\Provider\Company
         '{{companyPrefix}} {{companyNameElement}}{{companyNameElement}}{{companyNameElement}}{{companyNameSuffix}}',
     ];
 
-
     /**
      * @example 'იმ ელექტროალმასგეოსაბჭო'
      */

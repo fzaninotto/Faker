@@ -133,6 +133,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
         return static::numerify($this->generator->parse($format));
     }
+
     /**
      * @example '0891951357'
      */

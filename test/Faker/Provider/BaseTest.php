@@ -24,7 +24,6 @@ final class BaseTest extends TestCase
         self::assertLessThan(10, BaseProvider::randomDigitNotNull());
     }
 
-
     public function testRandomDigitNotReturnsValidDigit()
     {
         for ($i = 0; $i <= 9; $i++) {

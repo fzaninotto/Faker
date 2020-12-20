@@ -47,6 +47,11 @@ return $config
             ],
         ],
         'cast_spaces' => true,
+        'class_attributes_separation' => [
+            'elements' => [
+                'method' => 'one',
+            ],
+        ],
         'combine_nested_dirname' => true,
         'compact_nullable_typehint' => true,
         'concat_space' => [

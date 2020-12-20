@@ -295,6 +295,7 @@ final class IbanTest extends TestCase
 
         return $return;
     }
+
     /**
      * @dataProvider mod97Provider
      */

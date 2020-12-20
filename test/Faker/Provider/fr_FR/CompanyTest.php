@@ -55,7 +55,6 @@ final class CompanyTest extends TestCase
         self::assertTrue($isCatchPhraseValid);
     }
 
-
     protected function getProviders(): iterable
     {
         yield new Company($this->faker);

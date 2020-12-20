@@ -38,7 +38,6 @@ final class ProviderOverrideTest extends TestCase
         self::assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->country);
     }
 
-
     /**
      * @dataProvider localeDataProvider
      *
@@ -50,7 +49,6 @@ final class ProviderOverrideTest extends TestCase
 
         self::assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->company);
     }
-
 
     /**
      * @dataProvider localeDataProvider
@@ -64,7 +62,6 @@ final class ProviderOverrideTest extends TestCase
         self::assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->century);
         self::assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->timezone);
     }
-
 
     /**
      * @dataProvider localeDataProvider
@@ -87,7 +84,6 @@ final class ProviderOverrideTest extends TestCase
         self::assertMatchesRegularExpression(static::TEST_EMAIL_REGEX, $faker->companyEmail);
     }
 
-
     /**
      * @dataProvider localeDataProvider
      *
@@ -103,7 +99,6 @@ final class ProviderOverrideTest extends TestCase
         self::assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->lastName);
     }
 
-
     /**
      * @dataProvider localeDataProvider
      *
@@ -116,7 +111,6 @@ final class ProviderOverrideTest extends TestCase
         self::assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->phoneNumber);
     }
 
-
     /**
      * @dataProvider localeDataProvider
      *
@@ -128,7 +122,6 @@ final class ProviderOverrideTest extends TestCase
 
         self::assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->userAgent);
     }
-
 
     /**
      * @dataProvider localeDataProvider

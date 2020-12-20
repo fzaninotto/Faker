@@ -17,7 +17,6 @@ final class PersonTest extends TestCase
         self::assertSame($controlDigit, (int) substr($individualIdentificationNumber, 11, 1));
     }
 
-
     protected function getProviders(): iterable
     {
         yield new Person($this->faker);

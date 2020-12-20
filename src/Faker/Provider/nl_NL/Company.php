@@ -63,7 +63,6 @@ class Company extends \Faker\Provider\Company
         'Café', 'Garage'
     ];
 
-
     /**
      * @example 'Fietsenmaker Zijlemans'
      *

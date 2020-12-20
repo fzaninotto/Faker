@@ -19,7 +19,6 @@ final class CompanyTest extends TestCase
         );
     }
 
-
     protected function getProviders(): iterable
     {
         yield new Company($this->faker);

@@ -8,7 +8,6 @@ class ColumnTypeGuesser
 {
     protected $generator;
 
-
     /**
      * ColumnTypeGuesser constructor.
      * @param Generator $generator

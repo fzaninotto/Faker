@@ -94,6 +94,7 @@ class Internet extends Base
 
         return static::randomElement($domains);
     }
+
     /**
      * @example 'jdoe'
      */
@@ -115,6 +116,7 @@ class Internet extends Base
 
         return $username;
     }
+
     /**
      * @example 'fY4èHdZv68'
      */

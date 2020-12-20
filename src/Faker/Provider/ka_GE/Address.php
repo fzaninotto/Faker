@@ -102,7 +102,6 @@ class Address extends \Faker\Provider\Address
         '{{cityPrefix}} {{cityName}}'
     ];
 
-
     public static function regionSuffix()
     {
         return static::randomElement(static::$regionSuffix);

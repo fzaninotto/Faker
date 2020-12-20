@@ -70,7 +70,6 @@ class Payment extends \Faker\Provider\Payment
         return static::iban($countryCode, $prefix, $length);
     }
 
-
     /**
      * @see list of Brazilians banks (2018-02-15), source: https://pt.wikipedia.org/wiki/Lista_de_bancos_do_Brasil
      */

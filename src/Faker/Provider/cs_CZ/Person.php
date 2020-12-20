@@ -431,7 +431,6 @@ class Person extends \Faker\Provider\Person
      * @param  int         $maxAge maximal age of "generated person" in years
      * @return czech       birth number
      */
-
     public function birthNumber($gender = null, $minAge = 0, $maxAge = 100, $slashProbability = 50)
     {
         if ($gender === null) {
