@@ -7,7 +7,6 @@ build: cs test static ## Runs test targets
 
 .PHONY: cs
 cs: vendor/autoload.php ## Fixes coding standard issues with php-cs-fixer
-	mkdir -p .build/
 	vendor/bin/php-cs-fixer fix --diff --diff-format=udiff --verbose
 
 .PHONY: coverage
