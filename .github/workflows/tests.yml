@@ -56,10 +56,8 @@ jobs:
       - name: Download dependencies
         run: |
           composer update --no-interaction --no-progress --optimize-autoloader
+          ./vendor/bin/simple-phpunit install
 
       - name: Run tests with PHPUnit
         run: |
-          echo ::group::Install
-          ./vendor/bin/simple-phpunit install
-          echo ::endgroup::
           ./vendor/bin/simple-phpunit
