@@ -15,7 +15,7 @@ final class HtmlLoremTest extends TestCase
         $faker->addProvider(new HtmlLorem($faker));
         $node = $faker->randomHtml(6, 10);
         $this->assertStringStartsWith("<html>", $node);
-        $this->assertStringEndsWith("</html>\n", $node);
+        $this->assertStringEndsWith("</html>", $node);
     }
 
     public function testRandomHtmlReturnsValidHTMLString()
