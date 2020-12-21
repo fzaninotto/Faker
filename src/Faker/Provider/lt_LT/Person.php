@@ -326,7 +326,7 @@ class Person extends \Faker\Provider\Person
         $firstNumber = (int) floor($birthdate->format('Y') / 100) * 2 - 34 - $genderNumber;
 
         $datePart = $birthdate->format('ymd');
-        $randomDigits = (string) (! $randomNumber || strlen($randomNumber) < 3) ? static::numerify('###') : substr($randomNumber, 0, 3);
+        $randomDigits = (string) (!$randomNumber || strlen($randomNumber) < 3) ? static::numerify('###') : substr($randomNumber, 0, 3);
         $partOfPerosnalCode = $firstNumber . $datePart . $randomDigits;
 
         $sum = self::calculateSum($partOfPerosnalCode, 1);

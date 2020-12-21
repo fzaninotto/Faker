@@ -111,7 +111,7 @@ class Person extends \Faker\Provider\Person
         // valid flag
         $valid = false;
 
-        while (! $valid) {
+        while (!$valid) {
             // make two random numbers
             $rand = static::randomDigit() . static::randomDigit();
 

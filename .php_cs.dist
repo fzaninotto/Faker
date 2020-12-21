@@ -137,6 +137,7 @@ return $config
         'switch_case_space' => true,
         'ternary_operator_spaces' => true,
         'ternary_to_null_coalescing' => true,
+        'unary_operator_spaces' => true,
         'visibility_required' => [
             'elements' => [
                 'const',

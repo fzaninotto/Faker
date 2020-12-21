@@ -805,7 +805,7 @@ EOT;
         $chars = [];
 
         foreach (preg_split('//u', str_replace(PHP_EOL, '', $text)) as $char) {
-            if (! empty($char)) {
+            if (!empty($char)) {
                 $chars[] = $char;
             }
         }
@@ -822,7 +822,7 @@ EOT;
 
     protected static function validStart($word)
     {
-        return ! in_array($word, static::$notBeginPunct);
+        return !in_array($word, static::$notBeginPunct);
     }
 
     protected static function appendEnd($text)
