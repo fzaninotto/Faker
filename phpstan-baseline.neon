@@ -761,11 +761,6 @@ parameters:
 			path: src/Faker/Provider/File.php
 
 		-
-			message: "#^Parameter \\#2 \\$max of function mt_rand expects int, string given\\.$#"
-			count: 1
-			path: src/Faker/Provider/Internet.php
-
-		-
 			message: "#^Parameter \\#1 \\$str of function md5 expects string, int given\\.$#"
 			count: 1
 			path: src/Faker/Provider/Miscellaneous.php
@@ -954,21 +949,6 @@ parameters:
 			message: "#^Parameter \\#3 \\$pad_string of function str_pad expects string, int given\\.$#"
 			count: 1
 			path: src/Faker/Provider/zh_CN/Address.php
-
-		-
-			message: "#^Call to an undefined method Faker\\\\Generator\\:\\:userName\\(\\)\\.$#"
-			count: 1
-			path: src/Faker/Provider/zh_TW/Internet.php
-
-		-
-			message: "#^Call to an undefined method Faker\\\\Generator\\:\\:domainWord\\(\\)\\.$#"
-			count: 1
-			path: src/Faker/Provider/zh_TW/Internet.php
-
-		-
-			message: "#^Call to an undefined method Faker\\\\Generator\\:\\:creditCardDetails\\(\\)\\.$#"
-			count: 1
-			path: src/Faker/Provider/zh_TW/Payment.php
 
 		-
 			message: "#^Variable \\$chars might not be defined\\.$#"
