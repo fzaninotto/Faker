@@ -34,6 +34,12 @@
     "conflict": {
         "fzaninotto/faker": "*"
     },
+    "suggest": {
+        "ext-curl": "Required by Faker\\Provider\\Image to download images.",
+        "ext-dom": "Required by Faker\\Provider\\HtmlLorem for generating random HTML.",
+        "ext-iconv": "Required by Faker\\Provider\\ru_RU\\Text::realText() for generating real Russian text.",
+        "ext-mbstring": "Required for multibyte Unicode string functionality."
+    },
     "config": {
         "sort-packages": true
     }
