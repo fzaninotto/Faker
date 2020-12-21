@@ -249,7 +249,7 @@ class Person extends \Faker\Provider\Person
     {
         $sum = 0;
 
-        for ($i = 0; $i <= 10; $i++) {
+        for ($i = 0; $i <= 10; ++$i) {
             $sum += (int) $iinValue[$i] * $sequence[$i];
         }
 

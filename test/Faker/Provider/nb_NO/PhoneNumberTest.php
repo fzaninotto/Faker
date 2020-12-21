@@ -9,7 +9,7 @@ final class PhoneNumberTest extends TestCase
 {
     public function testMobileNumber()
     {
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 10; ++$i) {
             $number = $this->faker->mobileNumber;
             $length = strlen($number);
 

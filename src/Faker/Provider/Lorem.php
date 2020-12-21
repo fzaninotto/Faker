@@ -65,7 +65,7 @@ class Lorem extends Base
     {
         $words = [];
 
-        for ($i=0; $i < $nb; $i++) {
+        for ($i=0; $i < $nb; ++$i) {
             $words []= static::word();
         }
 
@@ -108,7 +108,7 @@ class Lorem extends Base
     {
         $sentences = [];
 
-        for ($i=0; $i < $nb; $i++) {
+        for ($i=0; $i < $nb; ++$i) {
             $sentences []= static::sentence();
         }
 
@@ -148,7 +148,7 @@ class Lorem extends Base
     {
         $paragraphs = [];
 
-        for ($i=0; $i < $nb; $i++) {
+        for ($i=0; $i < $nb; ++$i) {
             $paragraphs []= static::paragraph();
         }
 

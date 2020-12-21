@@ -9,7 +9,7 @@ final class PhoneNumberTest extends TestCase
 {
     public function testPhoneNumber()
     {
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 10; ++$i) {
             $number = $this->faker->phoneNumber;
 
             $digits = array_values(array_filter(str_split($number), 'ctype_digit'));
@@ -25,7 +25,7 @@ final class PhoneNumberTest extends TestCase
 
     public function testTollFreePhoneNumber()
     {
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 10; ++$i) {
             $number = $this->faker->tollFreeNumber;
             $digits = array_values(array_filter(str_split($number), 'ctype_digit'));
 
@@ -40,7 +40,7 @@ final class PhoneNumberTest extends TestCase
 
     public function testCellPhoneNumber()
     {
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 10; ++$i) {
             $number = $this->faker->mobileNumber;
             $digits = array_values(array_filter(str_split($number), 'ctype_digit'));
 

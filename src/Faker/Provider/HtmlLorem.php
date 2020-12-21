@@ -68,14 +68,14 @@ class HtmlLorem extends Base
 
     private function addRandomSubTree(\DOMElement $root, $maxDepth, $maxWidth)
     {
-        $maxDepth--;
+        --$maxDepth;
         if ($maxDepth <= 0) {
             return $root;
         }
 
         $siblings = self::numberBetween(1, $maxWidth);
 
-        for ($i = 0; $i < $siblings; $i++) {
+        for ($i = 0; $i < $siblings; ++$i) {
             if ($maxDepth == 1) {
                 $this->addRandomLeaf($root);
             } else {
@@ -268,17 +268,17 @@ class HtmlLorem extends Base
         $tr = $element->ownerDocument->createElement(static::TR_TAG);
         $thead->appendChild($tr);
 
-        for ($i = 0; $i < $cols; $i++) {
+        for ($i = 0; $i < $cols; ++$i) {
             $th = $element->ownerDocument->createElement(static::TH_TAG);
             $th->textContent = $this->generator->sentence(self::numberBetween(1, $maxTitle));
             $tr->appendChild($th);
         }
 
-        for ($i = 0; $i < $rows; $i++) {
+        for ($i = 0; $i < $rows; ++$i) {
             $tr = $element->ownerDocument->createElement(static::TR_TAG);
             $tbody->appendChild($tr);
 
-            for ($j = 0; $j < $cols; $j++) {
+            for ($j = 0; $j < $cols; ++$j) {
                 $th = $element->ownerDocument->createElement(static::TD_TAG);
                 $th->textContent = $this->generator->sentence(self::numberBetween(1, $maxLength));
                 $tr->appendChild($th);
@@ -292,7 +292,7 @@ class HtmlLorem extends Base
         $num = self::numberBetween(1, $maxItems);
         $ul = $element->ownerDocument->createElement(static::UL_TAG);
 
-        for ($i = 0; $i < $num; $i++) {
+        for ($i = 0; $i < $num; ++$i) {
             $li = $element->ownerDocument->createElement(static::LI_TAG);
             $li->textContent = $this->generator->sentence(self::numberBetween(1, $maxLength));
             $ul->appendChild($li);

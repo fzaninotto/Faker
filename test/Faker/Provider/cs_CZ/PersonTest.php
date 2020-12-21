@@ -10,7 +10,7 @@ final class PersonTest extends TestCase
 {
     public function testBirthNumber()
     {
-        for ($i = 0; $i < 1000; $i++) {
+        for ($i = 0; $i < 1000; ++$i) {
             $birthNumber = $this->faker->birthNumber();
             $birthNumber = str_replace('/', '', $birthNumber);
 

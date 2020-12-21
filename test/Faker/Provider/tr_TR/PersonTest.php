@@ -10,7 +10,7 @@ final class PersonTest extends TestCase
 {
     public function testTCNo()
     {
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 100; ++$i) {
             $number = $this->faker->tcNo;
 
             self::assertEquals(11, strlen($number));

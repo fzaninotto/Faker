@@ -154,7 +154,7 @@ class EntityPopulator
                             $related = $inserted[$relatedClass][$index];
                         }
 
-                        $index++;
+                        ++$index;
 
                         return $related;
                     }

@@ -11,7 +11,7 @@ final class LicensePlateTest extends TestCase
      */
     public function testNonSpecialLicensePlates()
     {
-        for ($i = 0; $i < 40; $i++) {
+        for ($i = 0; $i < 40; ++$i) {
             $licensePlate = $this->faker->licensePlate;
             self::assertNotEmpty($licensePlate);
             self::assertIsString($licensePlate);
@@ -24,7 +24,7 @@ final class LicensePlateTest extends TestCase
      */
     public function testExplicitlyNonSpecialLicensePlates()
     {
-        for ($i = 0; $i < 40; $i++) {
+        for ($i = 0; $i < 40; ++$i) {
             $licensePlate = $this->faker->licensePlate(
                 false
             );
@@ -39,7 +39,7 @@ final class LicensePlateTest extends TestCase
      */
     public function testWithSpecialLicensePlates()
     {
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 5; ++$i) {
             $licensePlate = $this->faker->licensePlate(
                 true
             );
@@ -54,7 +54,7 @@ final class LicensePlateTest extends TestCase
      */
     public function testPodkarpackieLicensePlate()
     {
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 5; ++$i) {
             $licensePlate = $this->faker->licensePlate(
                 false,
                 ['podkarpackie']
@@ -70,7 +70,7 @@ final class LicensePlateTest extends TestCase
      */
     public function testLodzkieOrArmyLicensePlate()
     {
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 5; ++$i) {
             $licensePlate = $this->faker->licensePlate(
                 true,
                 ['łódzkie', 'army']
@@ -86,7 +86,7 @@ final class LicensePlateTest extends TestCase
      */
     public function testLodzkieButNotArmyLicensePlate()
     {
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 5; ++$i) {
             $licensePlate = $this->faker->licensePlate(
                 false,
                 ['łódzkie', 'army']
@@ -102,7 +102,7 @@ final class LicensePlateTest extends TestCase
      */
     public function testNoCorrectVoivodeshipLicensePlate()
     {
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 5; ++$i) {
             $licensePlate = $this->faker->licensePlate(
                 true,
                 ['fake voivodeship', 'fake voivodeship2']
@@ -118,7 +118,7 @@ final class LicensePlateTest extends TestCase
      */
     public function testNoVoivodeshipLicensePlate()
     {
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 5; ++$i) {
             $licensePlate = $this->faker->licensePlate(
                 true,
                 []
@@ -134,7 +134,7 @@ final class LicensePlateTest extends TestCase
      */
     public function testNoVoivodeshipNoCountyLicensePlate()
     {
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 5; ++$i) {
             $licensePlate = $this->faker->licensePlate(
                 true,
                 [],
@@ -151,7 +151,7 @@ final class LicensePlateTest extends TestCase
      */
     public function testVoivodeshipCountyLicensePlate()
     {
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 5; ++$i) {
             $licensePlate = $this->faker->licensePlate(
                 true,
                 ['mazowieckie', 'services'],
@@ -168,7 +168,7 @@ final class LicensePlateTest extends TestCase
      */
     public function testVoivodeshipFakeCountyLicensePlate()
     {
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 5; ++$i) {
             $licensePlate = $this->faker->licensePlate(
                 true,
                 ['mazowieckie', 'services'],
@@ -185,7 +185,7 @@ final class LicensePlateTest extends TestCase
      */
     public function testVoivodeshipFakeVoivodeshipLicensePlate()
     {
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 5; ++$i) {
             $licensePlate = $this->faker->licensePlate(
                 true,
                 ['fake voivodeship'],
@@ -202,7 +202,7 @@ final class LicensePlateTest extends TestCase
      */
     public function testVoivodeshipNullVoivodeshipArrayLicensePlate()
     {
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 5; ++$i) {
             $licensePlate = $this->faker->licensePlate(
                 true,
                 null,
@@ -219,7 +219,7 @@ final class LicensePlateTest extends TestCase
      */
     public function testVoivodeshipNullVoivodeshipLicensePlate()
     {
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 5; ++$i) {
             $licensePlate = $this->faker->licensePlate(
                 true,
                 [null],
@@ -236,7 +236,7 @@ final class LicensePlateTest extends TestCase
      */
     public function testVoivodeship1stArgumentFalse()
     {
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 5; ++$i) {
             $licensePlate = $this->faker->licensePlate(
                 false,
                 ['mazowieckie', 'services'],
@@ -253,7 +253,7 @@ final class LicensePlateTest extends TestCase
      */
     public function testVoivodeship1stArgumentTrue()
     {
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 5; ++$i) {
             $licensePlate = $this->faker->licensePlate(
                 true,
                 ['services'],

@@ -9,7 +9,7 @@ final class PhoneNumberTest extends TestCase
 {
     public function testPhoneNumber()
     {
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 100; ++$i) {
             $number = $this->faker->phoneNumber;
             $baseNumber = preg_replace('/ *x.*$/', '', $number); // Remove possible extension
             $digits = array_values(array_filter(str_split($baseNumber), 'ctype_digit'));
@@ -43,7 +43,7 @@ final class PhoneNumberTest extends TestCase
 
     public function testTollFreePhoneNumber()
     {
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 100; ++$i) {
             $number = $this->faker->tollFreePhoneNumber;
             $digits = array_values(array_filter(str_split($number), 'ctype_digit'));
 

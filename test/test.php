@@ -6,7 +6,7 @@ $faker->seed(5);
 echo '<?xml version="1.0" encoding="UTF-8"?>';
 ?>
 <contacts>
-<?php for ($i=0; $i < 10; $i++): ?>
+<?php for ($i=0; $i < 10; ++$i): ?>
   <contact firstName="<?php echo $faker->firstName ?>" lastName="<?php echo $faker->lastName ?>" email="<?php echo $faker->email ?>" >
     <phone number="<?php echo $faker->phoneNumber ?>"/>
 <?php if ($faker->boolean(25)): ?>

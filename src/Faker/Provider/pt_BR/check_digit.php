@@ -18,7 +18,7 @@ function check_digit($numbers)
     $second_algorithm = $length >= 12;
     $verifier = 0;
 
-    for ($i = 1; $i <= $length; $i++) {
+    for ($i = 1; $i <= $length; ++$i) {
         if (!$second_algorithm) {
             $multiplier = $i + 1;
         } else {

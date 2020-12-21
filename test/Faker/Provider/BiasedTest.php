@@ -19,8 +19,8 @@ final class BiasedTest extends TestCase
 
     public function performFake($function)
     {
-        for ($i = 0; $i < self::NUMBERS; $i++) {
-            $this->results[$this->faker->biasedNumberBetween(1, self::MAX, $function)]++;
+        for ($i = 0; $i < self::NUMBERS; ++$i) {
+            ++$this->results[$this->faker->biasedNumberBetween(1, self::MAX, $function)];
         }
     }
 

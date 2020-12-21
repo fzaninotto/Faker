@@ -338,10 +338,10 @@ class Person extends \Faker\Provider\Person
         if ($nr[0] > 9) {
             if ($nr[1] > 0) {
                 $nr[0] = 8;
-                $nr[1]--;
+                --$nr[1];
             } else {
                 $nr[0] = 1;
-                $nr[1]++;
+                ++$nr[1];
             }
         }
 

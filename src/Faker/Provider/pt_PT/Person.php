@@ -78,14 +78,14 @@ class Person extends \Faker\Provider\Person
         $sum = 0;
         $factor = 2;
 
-        for ($i = strlen($number); $i > 0; $i--) {
+        for ($i = strlen($number); $i > 0; --$i) {
             $numbers[$i] = substr($number, $i - 1, 1);
             $partial[$i] = $numbers[$i] * $factor;
             $sum += $partial[$i];
             if ($factor == $base) {
                 $factor = 1;
             }
-            $factor++;
+            ++$factor;
         }
         $res = $sum % 11;
 

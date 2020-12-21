@@ -188,9 +188,9 @@ class Person extends \Faker\Provider\Person
         $sum = 0;
         $count = 0;
 
-        for ($i = 10; $i > 1; $i--) {
+        for ($i = 10; $i > 1; --$i) {
             $sum += $subNationalCodeString[$count] * ($i);
-            $count++;
+            ++$count;
         }
 
         if (($sum % 11) < 2) {

@@ -9,7 +9,7 @@ final class PersonTest extends TestCase
 {
     public function testSsn()
     {
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 100; ++$i) {
             $number = $this->faker->ssn;
 
             // should be in the format ###-##-####

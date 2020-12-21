@@ -9,7 +9,7 @@ final class PersonTest extends TestCase
 {
     public function testSsnWithDefaultValuesCorrect()
     {
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 100; ++$i) {
             $number = $this->faker->ssn;
 
             // Should have 10 characters: 3 consecutive number, 1 verification number, 6 birth date

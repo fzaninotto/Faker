@@ -57,7 +57,7 @@ class Base
     {
         $result = self::numberBetween(0, 8);
         if ($result >= $except) {
-            $result++;
+            ++$result;
         }
 
         return $result;
@@ -216,7 +216,7 @@ class Base
             }
 
             $elements[] = $arr[$allKeys[$num]];
-            $numElements++;
+            ++$numElements;
         }
 
         return $elements;
@@ -313,7 +313,7 @@ class Base
                 $shuffledArray[]= $shuffledArray[$j];
                 $shuffledArray[$j] = $value;
             }
-            $i++;
+            ++$i;
         }
 
         return $shuffledArray;
@@ -343,7 +343,7 @@ class Base
             $array = [];
             $strlen = mb_strlen($string, $encoding);
 
-            for ($i = 0; $i < $strlen; $i++) {
+            for ($i = 0; $i < $strlen; ++$i) {
                 $array []= mb_substr($string, $i, 1, $encoding);
             }
         } else {
@@ -359,7 +359,7 @@ class Base
             return $string;
         }
 
-        for ($i = $pos, $last = strrpos($string, $wildcard, $pos) + 1; $i < $last; $i++) {
+        for ($i = $pos, $last = strrpos($string, $wildcard, $pos) + 1; $i < $last; ++$i) {
             if ($string[$i] === $wildcard) {
                 $string[$i] = call_user_func($callback);
             }
@@ -381,7 +381,7 @@ class Base
         // count the number of hashes and generate once a large number
         $toReplace = [];
         if (($pos = strpos($string, '#')) !== false) {
-            for ($i = $pos, $last = strrpos($string, '#', $pos) + 1; $i < $last; $i++) {
+            for ($i = $pos, $last = strrpos($string, '#', $pos) + 1; $i < $last; ++$i) {
                 if ($string[$i] === '#') {
                     $toReplace[] = $i;
                 }
@@ -398,7 +398,7 @@ class Base
                 $i += $size;
             }
 
-            for ($i = 0; $i < $nbReplacements; $i++) {
+            for ($i = 0; $i < $nbReplacements; ++$i) {
                 $string[$toReplace[$i]] = $numbers[$i];
             }
         }

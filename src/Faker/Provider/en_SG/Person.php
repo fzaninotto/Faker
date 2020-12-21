@@ -65,7 +65,7 @@ class Person extends \Faker\Provider\Person
 
         $checksum = in_array($prefix, ['G', 'T'], true) ? 4 : 0;
 
-        for ($i = 0; $i < $length; $i++) {
+        for ($i = 0; $i < $length; ++$i) {
             $checksum += (int) $result[$i] * $weights[$i];
         }
 

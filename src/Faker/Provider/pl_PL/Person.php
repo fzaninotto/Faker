@@ -155,7 +155,7 @@ class Person extends \Faker\Provider\Person
 
         $result = [(int) ($year / 10), $year % 10, (int) ($month / 10), $month % 10, (int) ($day / 10), $day % 10];
 
-        for ($i = 6; $i < $length; $i++) {
+        for ($i = 6; $i < $length; ++$i) {
             $result[$i] = static::randomDigit();
         }
 
@@ -166,7 +166,7 @@ class Person extends \Faker\Provider\Person
 
         $checksum = 0;
 
-        for ($i = 0; $i < $length; $i++) {
+        for ($i = 0; $i < $length; ++$i) {
             $checksum += $weights[$i] * $result[$i];
         }
         $checksum = (10 - ($checksum % 10)) % 10;
@@ -188,11 +188,11 @@ class Person extends \Faker\Provider\Person
         $weights = [7, 3, 1, 7, 3, 1, 7, 3];
         $checksum = 0;
 
-        for ($i = 0, $size = count($low); $i < $size; $i++) {
+        for ($i = 0, $size = count($low); $i < $size; ++$i) {
             $checksum += $weights[$i] * (ord($low[$i]) - 55);
         }
 
-        for ($i = 0, $size = count($high); $i < $size; $i++) {
+        for ($i = 0, $size = count($high); $i < $size; ++$i) {
             $checksum += $weights[$i + 3] * $high[$i];
         }
         $checksum %= 10;
@@ -219,7 +219,7 @@ class Person extends \Faker\Provider\Person
             ];
             $checksum = 0;
 
-            for ($i = 0, $size = count($result); $i < $size; $i++) {
+            for ($i = 0, $size = count($result); $i < $size; ++$i) {
                 $checksum += $weights[$i] * $result[$i];
             }
             $checksum %= 11;

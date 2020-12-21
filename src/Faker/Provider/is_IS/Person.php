@@ -119,7 +119,7 @@ class Person extends \Faker\Provider\Person
             $tmp = $birthdate->format('dmy') . $rand;
 
             // loop through temp string
-            for ($i = 7, $sum = 0; $i >= 0; $i--) {
+            for ($i = 7, $sum = 0; $i >= 0; --$i) {
                 // calculate security variable
                 $sum += ($tmp[$i] * $ref[$i]);
             }

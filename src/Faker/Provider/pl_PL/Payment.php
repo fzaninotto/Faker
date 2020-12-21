@@ -107,7 +107,7 @@ class Payment extends \Faker\Provider\Payment
         $checksum = 0;
         $weights = [7, 1, 3, 9, 7, 1, 3];
 
-        for ($i = 0; $i < 7; $i++) {
+        for ($i = 0; $i < 7; ++$i) {
             $checksum += $weights[$i] * (int) $iban[$i];
         }
         $checksum = $checksum % 10;

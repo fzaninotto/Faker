@@ -101,7 +101,7 @@ class Populator
         $insertedEntities = [];
 
         foreach ($this->quantities as $class => $number) {
-            for ($i = 0; $i < $number; $i++) {
+            for ($i = 0; $i < $number; ++$i) {
                 $insertedEntities[$class][] = $this->entities[$class]->execute($class, $insertedEntities, $options);
             }
         }

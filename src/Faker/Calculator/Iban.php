@@ -55,7 +55,7 @@ class Iban
     {
         $checksum = (int) $number[0];
 
-        for ($i = 1, $size = strlen($number); $i < $size; $i++) {
+        for ($i = 1, $size = strlen($number); $i < $size; ++$i) {
             $checksum = (10 * $checksum + (int) $number[$i]) % 97;
         }
 

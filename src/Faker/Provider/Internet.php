@@ -204,7 +204,7 @@ class Internet extends Base
     {
         $res = [];
 
-        for ($i=0; $i < 8; $i++) {
+        for ($i=0; $i < 8; ++$i) {
             $res []= dechex(self::numberBetween(0, 65535));
         }
 
@@ -228,7 +228,7 @@ class Internet extends Base
     {
         $mac = [];
 
-        for ($i=0; $i < 6; $i++) {
+        for ($i=0; $i < 6; ++$i) {
             $mac[] = sprintf('%02X', self::numberBetween(0, 0xff));
         }
 

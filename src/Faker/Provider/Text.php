@@ -73,7 +73,7 @@ abstract class Text extends Base
         $iterations = 0;
 
         do {
-            $iterations++;
+            ++$iterations;
             if ($iterations >= 100) {
                 throw new \OverflowException(sprintf('Maximum retries of %d reached without finding a valid real text', $iterations));
             }
@@ -132,11 +132,11 @@ abstract class Text extends Base
             $words = [];
             $index = [];
 
-            for ($i = 0; $i < $indexSize; $i++) {
+            for ($i = 0; $i < $indexSize; ++$i) {
                 $index[] = array_shift($parts);
             }
 
-            for ($i = 0, $count = count($parts); $i < $count; $i++) {
+            for ($i = 0, $count = count($parts); $i < $count; ++$i) {
                 $stringIndex = static::implode($index);
                 if (!isset($words[$stringIndex])) {
                     $words[$stringIndex] = [];
