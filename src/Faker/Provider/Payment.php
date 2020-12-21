@@ -242,6 +242,7 @@ class Payment extends Base
         $countryCode = is_null($countryCode) ? self::randomKey(self::$ibanFormats) : strtoupper($countryCode);
 
         $format = !isset(static::$ibanFormats[$countryCode]) ? null : static::$ibanFormats[$countryCode];
+
         if ($length === null) {
             if ($format === null) {
                 $length = 24;
@@ -254,6 +255,7 @@ class Payment extends Base
                 }
             }
         }
+
         if ($format === null) {
             $format = [['n', $length]];
         }

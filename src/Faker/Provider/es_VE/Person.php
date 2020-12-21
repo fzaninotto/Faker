@@ -166,6 +166,7 @@ class Person extends \Faker\Provider\Person
     public function nationalId($separator = '')
     {
         $id = static::randomElement(static::$nationalityId);
+
         if ($id == 'V') {
             return $id . $separator . $this->numberBetween(10000, 100000000);
         }

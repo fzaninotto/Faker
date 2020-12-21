@@ -98,11 +98,13 @@ class EntityPopulator
             }
 
             $size = $this->class->fieldMappings[$fieldName]['length'] ?? null;
+
             if ($formatter = $nameGuesser->guessFormat($fieldName, $size)) {
                 $formatters[$fieldName] = $formatter;
 
                 continue;
             }
+
             if ($formatter = $columnTypeGuesser->guessFormat($fieldName, $this->class)) {
                 $formatters[$fieldName] = $formatter;
 
@@ -118,6 +120,7 @@ class EntityPopulator
             $relatedClass = $this->class->getAssociationTargetClass($assocName);
 
             $unique = $optional = false;
+
             if ($this->class instanceof \Doctrine\ORM\Mapping\ClassMetadata) {
                 $mappings = $this->class->getAssociationMappings();
 
@@ -151,6 +154,7 @@ class EntityPopulator
                 if (isset($inserted[$relatedClass])) {
                     if ($unique) {
                         $related = null;
+
                         if (isset($inserted[$relatedClass][$index]) || !$optional) {
                             $related = $inserted[$relatedClass][$index];
                         }
@@ -216,6 +220,7 @@ class EntityPopulator
                 }
                 // Try a standard setter if it's available, otherwise fall back on reflection
                 $setter = sprintf('set%s', ucfirst($field));
+
                 if (is_callable([$obj, $setter])) {
                     $obj->$setter($value);
                 } else {

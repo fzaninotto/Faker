@@ -82,6 +82,7 @@ class Person extends \Faker\Provider\Person
             $numbers[$i] = substr($number, $i - 1, 1);
             $partial[$i] = $numbers[$i] * $factor;
             $sum += $partial[$i];
+
             if ($factor == $base) {
                 $factor = 1;
             }

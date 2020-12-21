@@ -35,10 +35,12 @@ class Populator
             $entity = new \Faker\ORM\Propel2\EntityPopulator($entity);
         }
         $entity->setColumnFormatters($entity->guessColumnFormatters($this->generator));
+
         if ($customColumnFormatters) {
             $entity->mergeColumnFormattersWith($customColumnFormatters);
         }
         $entity->setModifiers($entity->guessModifiers($this->generator));
+
         if ($customModifiers) {
             $entity->mergeModifiersWith($customModifiers);
         }
@@ -70,6 +72,7 @@ class Populator
             }
         }
         $con->commit();
+
         if ($isInstancePoolingEnabled) {
             Propel::enableInstancePooling();
         }

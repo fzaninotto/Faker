@@ -78,11 +78,13 @@ class Populator
         }
 
         $entity->columnFormatters = $entity->guessColumnFormatters($this);
+
         if ($customColumnFormatters) {
             $entity->mergeColumnFormattersWith($customColumnFormatters);
         }
 
         $entity->modifiers = $entity->guessModifiers($this);
+
         if ($customModifiers) {
             $entity->mergeModifiersWith($customModifiers);
         }

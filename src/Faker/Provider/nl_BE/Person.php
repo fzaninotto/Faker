@@ -88,6 +88,7 @@ class Person extends \Faker\Provider\Person
     public static function rrn($gender = null)
     {
         $middle = self::numberBetween(1, 997);
+
         if ($gender === static::GENDER_MALE) {
             $middle = $middle % 2 === 1 ? $middle : $middle + 1;
         } elseif ($gender === static::GENDER_FEMALE) {

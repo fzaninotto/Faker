@@ -118,6 +118,7 @@ class Person extends \Faker\Provider\Person
     public function cnp($gender = null, $dateOfBirth = null, $county = null, $isResident = true)
     {
         $genders = [Person::GENDER_MALE, Person::GENDER_FEMALE];
+
         if (empty($gender)) {
             $gender = static::randomElement($genders);
         } elseif (!in_array($gender, $genders)) {

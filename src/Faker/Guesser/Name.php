@@ -26,11 +26,13 @@ class Name
     {
         $name = Base::toLower($name);
         $generator = $this->generator;
+
         if (preg_match('/^is[_A-Z]/', $name)) {
             return function () use ($generator) {
                 return $generator->boolean;
             };
         }
+
         if (preg_match('/(_a|A)t$/', $name)) {
             return function () use ($generator) {
                 return $generator->dateTime;

@@ -43,12 +43,14 @@ class Populator
         $useExistingData = false
     ) {
         $mapper = $this->locator->mapper($entityName);
+
         if (null === $mapper) {
             throw new \InvalidArgumentException('No mapper can be found for entity ' . $entityName);
         }
         $entity = new EntityPopulator($mapper, $this->locator, $useExistingData);
 
         $entity->setColumnFormatters($entity->guessColumnFormatters($this->generator));
+
         if ($customColumnFormatters) {
             $entity->mergeColumnFormattersWith($customColumnFormatters);
         }
@@ -70,6 +72,7 @@ class Populator
         if (null === $locator) {
             $locator = $this->locator;
         }
+
         if (null === $locator) {
             throw new \InvalidArgumentException('No entity manager passed to Spot Populator.');
         }

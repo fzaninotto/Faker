@@ -96,6 +96,7 @@ class EntityPopulator
                 $foreignModel = $table->alias();
 
                 $foreignKeys = [];
+
                 if (!empty($insertedEntities[$foreignModel])) {
                     $foreignKeys = $insertedEntities[$foreignModel];
                 } else {
@@ -146,6 +147,7 @@ class EntityPopulator
         }
 
         $pk = $table->primaryKey();
+
         if (is_string($pk)) {
             return $entity->{$pk};
         }
@@ -161,6 +163,7 @@ class EntityPopulator
     protected function getTable($class)
     {
         $options = [];
+
         if (!empty($this->connectionName)) {
             $options['connection'] = $this->connectionName;
         }

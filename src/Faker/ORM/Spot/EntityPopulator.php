@@ -120,11 +120,13 @@ class EntityPopulator
             if ($field['primary'] === true) {
                 continue;
             }
+
             if ($formatter = $nameGuesser->guessFormat($fieldName)) {
                 $formatters[$fieldName] = $formatter;
 
                 continue;
             }
+
             if ($formatter = $columnTypeGuesser->guessFormat($field)) {
                 $formatters[$fieldName] = $formatter;
 
@@ -155,6 +157,7 @@ class EntityPopulator
                         // So let's find something existing in DB.
                         $mapper = $locator->mapper($entityName);
                         $records = $mapper->all()->limit(self::RELATED_FETCH_COUNT)->toArray();
+
                         if (empty($records)) {
                             return null;
                         }

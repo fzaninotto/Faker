@@ -126,6 +126,7 @@ class Person extends \Faker\Provider\Person
         }
 
         $randomDigits = self::numberBetween(0, 89);
+
         if ($gender && $gender == static::GENDER_MALE) {
             if ($randomDigits === 0) {
                 $randomDigits .= static::randomElement([3, 5, 7, 9]);

@@ -47,12 +47,15 @@ class Image extends Base
         $size = sprintf('%dx%d.png', $width, $height);
 
         $imageParts = [];
+
         if ($category !== null) {
             $imageParts[] = $category;
         }
+
         if ($word !== null) {
             $imageParts[] = $word;
         }
+
         if ($randomize === true) {
             $imageParts[] = Lorem::word();
         }

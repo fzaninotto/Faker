@@ -25,6 +25,7 @@ class ColumnTypeGuesser
     public function guessFormat(ColumnMap $column)
     {
         $generator = $this->generator;
+
         if ($column->isTemporal()) {
             if ($column->isEpochTemporal()) {
                 return function () use ($generator) {

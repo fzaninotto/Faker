@@ -37,6 +37,7 @@ class Populator
             $entity = new \Faker\ORM\Mandango\EntityPopulator($entity);
         }
         $entity->setColumnFormatters($entity->guessColumnFormatters($this->generator, $this->mandango));
+
         if ($customColumnFormatters) {
             $entity->mergeColumnFormattersWith($customColumnFormatters);
         }

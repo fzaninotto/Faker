@@ -461,6 +461,7 @@ class Person extends \Faker\Provider\Person
         // from year 1954 birth number includes CRC
         if ($year >= 1954) {
             $crc = intval($birthNumber, 10) % 11;
+
             if ($crc == 10) {
                 $crc = 0;
             }

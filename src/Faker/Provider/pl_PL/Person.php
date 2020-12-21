@@ -166,6 +166,7 @@ class Person extends \Faker\Provider\Person
         }
 
         $result[$length - 1] |= 1;
+
         if ($sex == 'F') {
             $result[$length - 1] -= 1;
         }

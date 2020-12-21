@@ -68,6 +68,7 @@ class EntityPopulator
 
                 continue;
             }
+
             if ($formatter = $columnTypeGuesser->guessFormat($field)) {
                 $formatters[$fieldName] = $formatter;
 

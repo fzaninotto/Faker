@@ -265,6 +265,7 @@ class Person extends \Faker\Provider\Person
     public function lastName()
     {
         $determinator = self::numberBetween(0, 25);
+
         if ($determinator === 0) {
             $lastName = static::randomElement(static::$longLastNames);
         } elseif ($determinator <= 10) {
@@ -329,12 +330,14 @@ class Person extends \Faker\Provider\Person
             $nr[] = static::randomDigit();
         }
         $nr[] = self::numberBetween(0, 6);
+
         if ($nr[7] == 0 && $nr[8] == 0) {
             $nr[7] = 0;
         }
 
         $bsn   = (9 * $nr[8]) + (8 * $nr[7]) + (7 * $nr[6]) + (6 * $nr[5]) + (5 * $nr[4]) + (4 * $nr[3]) + (3 * $nr[2]) + (2 * $nr[1]);
         $nr[0] = floor($bsn - floor($bsn / 11) * 11);
+
         if ($nr[0] > 9) {
             if ($nr[1] > 0) {
                 $nr[0] = 8;

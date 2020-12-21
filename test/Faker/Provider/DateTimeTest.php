@@ -214,6 +214,7 @@ final class DateTimeTest extends TestCase
 
         $_interval = \DateInterval::createFromDateString($interval);
         $_start = new \DateTime($start);
+
         if ($isInFuture) {
             self::assertGreaterThanOrEqual($_start, $date);
             self::assertLessThanOrEqual($_start->add($_interval), $date);

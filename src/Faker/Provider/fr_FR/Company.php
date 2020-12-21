@@ -117,6 +117,7 @@ class Company extends \Faker\Provider\Company
         $nicFormat = static::randomElement(static::$siretNicFormats);
         $siret .= $this->numerify($nicFormat);
         $siret .= Luhn::computeCheckDigit($siret);
+
         if ($formatted) {
             $siret = substr($siret, 0, 3) . ' ' . substr($siret, 3, 3) . ' ' . substr($siret, 6, 3) . ' ' . substr($siret, 9, 5);
         }
@@ -135,6 +136,7 @@ class Company extends \Faker\Provider\Company
     {
         $siren = self::numerify('%#######');
         $siren .= Luhn::computeCheckDigit($siren);
+
         if ($formatted) {
             $siren = substr($siren, 0, 3) . ' ' . substr($siren, 3, 3) . ' ' . substr($siren, 6, 3);
         }

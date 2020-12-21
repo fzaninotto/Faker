@@ -91,6 +91,7 @@ class Lorem extends Base
         if ($nbWords <= 0) {
             return '';
         }
+
         if ($variableNbWords) {
             $nbWords = self::randomizeNbElements($nbWords);
         }
@@ -138,6 +139,7 @@ class Lorem extends Base
         if ($nbSentences <= 0) {
             return '';
         }
+
         if ($variableNbSentences) {
             $nbSentences = self::randomizeNbElements($nbSentences);
         }

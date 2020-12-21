@@ -111,6 +111,7 @@ class Company extends \Faker\Provider\Company
             $prod += $p * $split[$i];
         }
         $mod = $prod % 11;
+
         if ($mod === 0 || $mod === 10) {
             return "{$ico}1";
         }

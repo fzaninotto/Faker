@@ -69,6 +69,7 @@ class HtmlLorem extends Base
     private function addRandomSubTree(\DOMElement $root, $maxDepth, $maxWidth)
     {
         --$maxDepth;
+
         if ($maxDepth <= 0) {
             return $root;
         }

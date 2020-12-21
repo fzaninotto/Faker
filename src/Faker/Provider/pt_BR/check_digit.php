@@ -30,6 +30,7 @@ function check_digit($numbers)
     }
 
     $verifier = 11 - ($verifier % 11);
+
     if ($verifier >= 10) {
         $verifier = 0;
     }

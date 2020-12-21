@@ -181,6 +181,7 @@ class Internet extends Base
         if ($nbWords <= 0) {
             return '';
         }
+
         if ($variableNbWords) {
             $nbWords = (int) ($nbWords * self::numberBetween(60, 140) / 100) + 1;
         }
@@ -242,6 +243,7 @@ class Internet extends Base
         }
 
         $transId = 'Any-Latin; Latin-ASCII; NFD; [:Nonspacing Mark:] Remove; NFC;';
+
         if (class_exists('Transliterator', false) && $transliterator = \Transliterator::create($transId)) {
             $transString = $transliterator->transliterate($string);
         } else {

@@ -78,6 +78,7 @@ abstract class Text extends Base
 
         do {
             ++$iterations;
+
             if ($iterations >= 100) {
                 throw new \OverflowException(sprintf('Maximum retries of %d reached without finding a valid real text', $iterations));
             }
@@ -143,6 +144,7 @@ abstract class Text extends Base
 
             for ($i = 0, $count = count($parts); $i < $count; ++$i) {
                 $stringIndex = static::implode($index);
+
                 if (!isset($words[$stringIndex])) {
                     $words[$stringIndex] = [];
                 }
@@ -185,6 +187,7 @@ abstract class Text extends Base
     protected static function validStart($word)
     {
         $isValid = true;
+
         if (static::$textStartsWithUppercase) {
             $isValid = preg_match('/^\p{Lu}/u', $word);
         }

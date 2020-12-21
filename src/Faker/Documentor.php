@@ -33,6 +33,7 @@ class Documentor
                     continue;
                 }
                 $methodName = $reflmethod->name;
+
                 if ($reflmethod->isConstructor()) {
                     continue;
                 }
@@ -40,6 +41,7 @@ class Documentor
 
                 foreach ($reflmethod->getParameters() as $reflparameter) {
                     $parameter = '$' . $reflparameter->getName();
+
                     if ($reflparameter->isDefaultValueAvailable()) {
                         $parameter .= ' = ' . var_export($reflparameter->getDefaultValue(), true);
                     }
@@ -52,6 +54,7 @@ class Documentor
                 } catch (\InvalidArgumentException $e) {
                     $example = '';
                 }
+
                 if (is_array($example)) {
                     $example = "array('" . implode("', '", $example) . "')";
                 } elseif ($example instanceof \DateTime) {

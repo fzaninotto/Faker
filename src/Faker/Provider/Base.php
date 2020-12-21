@@ -57,6 +57,7 @@ class Base
     public static function randomDigitNot($except)
     {
         $result = self::numberBetween(0, 8);
+
         if ($result >= $except) {
             ++$result;
         }
@@ -81,13 +82,16 @@ class Base
         if (!is_bool($strict)) {
             throw new \InvalidArgumentException('randomNumber() generates numbers of fixed width. To generate numbers between two boundaries, use numberBetween() instead.');
         }
+
         if (null === $nbDigits) {
             $nbDigits = static::randomDigitNotNull();
         }
         $max = 10 ** $nbDigits - 1;
+
         if ($max > mt_getrandmax()) {
             throw new \InvalidArgumentException('randomNumber() can only generate numbers up to mt_getrandmax()');
         }
+
         if ($strict) {
             return mt_rand(10 ** ($nbDigits - 1), $max);
         }
@@ -114,6 +118,7 @@ class Base
 
         if (null === $max) {
             $max = static::randomNumber();
+
             if ($min > $max) {
                 $max = $min;
             }
@@ -281,6 +286,7 @@ class Base
         if (is_array($arg)) {
             return static::shuffleArray($arg);
         }
+
         if (is_string($arg)) {
             return static::shuffleString($arg);
         }
@@ -316,6 +322,7 @@ class Base
             } else {
                 $j = mt_rand(0, $i);
             }
+
             if ($j == $i) {
                 $shuffledArray[]= $value;
             } else {
@@ -391,6 +398,7 @@ class Base
         // instead of using randomDigit() several times, which is slow,
         // count the number of hashes and generate once a large number
         $toReplace = [];
+
         if (($pos = strpos($string, '#')) !== false) {
             for ($i = $pos, $last = strrpos($string, '#', $pos) + 1; $i < $last; ++$i) {
                 if ($string[$i] === '#') {
@@ -398,6 +406,7 @@ class Base
                 }
             }
         }
+
         if ($nbReplacements = count($toReplace)) {
             $maxAtOnce = strlen((string) mt_getrandmax()) - 1;
             $numbers = '';

@@ -67,6 +67,7 @@ class EntityPopulator
             if ($this->isColumnBehavior($columnMap)) {
                 continue;
             }
+
             if ($columnMap->isForeignKey()) {
                 $relatedClass = $columnMap->getRelation()->getForeignTable()->getClassname();
                 $formatters[$columnMap->getPhpName()] = function ($inserted) use ($relatedClass, $generator) {
@@ -77,14 +78,17 @@ class EntityPopulator
 
                 continue;
             }
+
             if ($columnMap->isPrimaryKey()) {
                 continue;
             }
+
             if ($formatter = $nameGuesser->guessFormat($columnMap->getPhpName(), $columnMap->getSize())) {
                 $formatters[$columnMap->getPhpName()] = $formatter;
 
                 continue;
             }
+
             if ($formatter = $columnTypeGuesser->guessFormat($columnMap)) {
                 $formatters[$columnMap->getPhpName()] = $formatter;
 
@@ -108,6 +112,7 @@ class EntityPopulator
             switch ($name) {
                 case 'nested_set':
                     $columnNames = [$params['left_column'], $params['right_column'], $params['level_column']];
+
                     if (in_array($columnName, $columnNames)) {
                         return true;
                     }
@@ -116,6 +121,7 @@ class EntityPopulator
 
                 case 'timestampable':
                     $columnNames = [$params['create_column'], $params['update_column']];
+
                     if (in_array($columnName, $columnNames)) {
                         return true;
                     }

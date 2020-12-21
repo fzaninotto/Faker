@@ -37,9 +37,11 @@ final class PaymentTest extends TestCase
     {
         $isValid = false;
         $fixedString = strtoupper($givenString);
+
         if (is_int($fixedString[0])) {
             $fixedString = substr('000000000' . $givenString, -9);
         }
+
         if (preg_match($pattern, $fixedString)) {
             $isValid = true;
         }

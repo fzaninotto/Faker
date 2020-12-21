@@ -49,6 +49,7 @@ class Company extends \Faker\Provider\Company
             $checksum += $weights[$i] * $result[$i];
         }
         $checksum %= 11;
+
         if ($checksum == 10) {
             $checksum = 0;
         }
@@ -78,6 +79,7 @@ class Company extends \Faker\Provider\Company
             $checksum += $weights[$i] * $result[$i];
         }
         $checksum %= 11;
+
         if ($checksum == 10) {
             $checksum = 0;
         }

@@ -58,6 +58,7 @@ class Populator
             $entity = new \Faker\ORM\Doctrine\EntityPopulator($this->manager->getClassMetadata($entity));
         }
         $entity->setColumnFormatters($entity->guessColumnFormatters($this->generator));
+
         if ($customColumnFormatters) {
             $entity->mergeColumnFormattersWith($customColumnFormatters);
         }
@@ -84,6 +85,7 @@ class Populator
         if (null === $entityManager) {
             $entityManager = $this->manager;
         }
+
         if (null === $entityManager) {
             throw new \InvalidArgumentException('No entity manager passed to Doctrine Populator.');
         }
@@ -99,6 +101,7 @@ class Populator
                     $insertedEntities,
                     $generateId
                 );
+
                 if (count($insertedEntities) % $this->batchSize === 0) {
                     $entityManager->flush();
                 }

@@ -34,6 +34,7 @@ return $config
                 'exit',
                 'for',
                 'foreach',
+                'if',
                 'include',
                 'include_once',
                 'require',

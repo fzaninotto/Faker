@@ -26,6 +26,7 @@ final class PersonTest extends TestCase
             if ($month > 50) {
                 $month -= 50;
             }
+
             if ($year >= 2004 && $month > 20) {
                 $month -= 20;
             }
@@ -36,6 +37,7 @@ final class PersonTest extends TestCase
             if (strlen($birthNumber) == 10) {
                 $crc = (int) substr($birthNumber, -1);
                 $refCrc = (int) substr($birthNumber, 0, -1) % 11;
+
                 if ($refCrc == 10) {
                     $refCrc = 0;
                 }

@@ -103,6 +103,7 @@ class UserAgent extends Base
     public static function safari()
     {
         $saf = self::numberBetween(531, 535) . '.' . self::numberBetween(1, 50) . '.' . self::numberBetween(1, 7);
+
         if (Miscellaneous::boolean()) {
             $ver = self::numberBetween(4, 5) . '.' . self::numberBetween(0, 1);
         } else {
