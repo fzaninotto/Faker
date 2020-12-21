@@ -2,6 +2,10 @@
 
 namespace Faker\Calculator;
 
+/**
+ * @deprecated moved to ru_RU\Company, use {@link \Faker\Provider\ru_RU\Company}.
+ * @see \Faker\Provider\ru_RU\Company
+ */
 class Inn
 {
     /**
@@ -12,17 +16,13 @@ class Inn
      * @param string $inn
      *
      * @return string Checksum (one digit)
+     *
+     * @deprecated use {@link \Faker\Provider\ru_RU\Company::inn10Checksum()} instead
+     * @see \Faker\Provider\ru_RU\Company::inn10Checksum()
      */
     public static function checksum($inn)
     {
-        $multipliers = [2, 4, 10, 3, 5, 9, 4, 6, 8];
-        $sum = 0;
-
-        for ($i = 0; $i < 9; ++$i) {
-            $sum += (int) $inn[$i] * $multipliers[$i];
-        }
-
-        return (string) (($sum % 11) % 10);
+        return \Faker\Provider\ru_RU\Company::inn10Checksum($inn);
     }
 
     /**
@@ -31,9 +31,12 @@ class Inn
      * @param string $inn
      *
      * @return bool
+     *
+     * @deprecated use {@link \Faker\Provider\ru_RU\Company::inn10IsValid()} instead
+     * @see \Faker\Provider\ru_RU\Company::inn10IsValid()
      */
     public static function isValid($inn)
     {
-        return strlen($inn) === 10 && self::checksum($inn) === $inn[9];
+        return \Faker\Provider\ru_RU\Company::inn10IsValid($inn);
     }
 }

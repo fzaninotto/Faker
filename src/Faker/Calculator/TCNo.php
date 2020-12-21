@@ -2,8 +2,10 @@
 
 namespace Faker\Calculator;
 
-use InvalidArgumentException;
-
+/**
+ * @deprecated moved to tr_TR\Person, use {@link \Faker\Provider\tr_TR\Person}.
+ * @see \Faker\Provider\tr_TR\Person
+ */
 class TCNo
 {
     /**
@@ -15,30 +17,13 @@ class TCNo
      * @param string $identityPrefix
      *
      * @return string Checksum (two digit)
+     *
+     * @deprecated use {@link \Faker\Provider\tr_TR\Person::tcNoChecksum()} instead
+     * @see \Faker\Provider\tr_TR\Person::tcNoChecksum()
      */
     public static function checksum($identityPrefix)
     {
-        if (strlen((string) $identityPrefix) !== 9) {
-            throw new InvalidArgumentException('Argument should be an integer and should be 9 digits.');
-        }
-
-        $oddSum = 0;
-        $evenSum = 0;
-
-        $identityArray = array_map('intval', str_split($identityPrefix)); // Creates array from int
-
-        foreach ($identityArray as $index => $digit) {
-            if ($index % 2 == 0) {
-                $evenSum += $digit;
-            } else {
-                $oddSum += $digit;
-            }
-        }
-
-        $tenthDigit = (7 * $evenSum - $oddSum) % 10;
-        $eleventhDigit = ($evenSum + $oddSum + $tenthDigit) % 10;
-
-        return $tenthDigit . $eleventhDigit;
+        return \Faker\Provider\tr_TR\Person::tcNoChecksum($identityPrefix);
     }
 
     /**
@@ -47,9 +32,12 @@ class TCNo
      * @param string $tcNo
      *
      * @return bool
+     *
+     * @deprecated use {@link \Faker\Provider\tr_TR\Person::tcNoIsValid()} instead
+     * @see \Faker\Provider\tr_TR\Person::tcNoIsValid()
      */
     public static function isValid($tcNo)
     {
-        return self::checksum(substr($tcNo, 0, -2)) === substr($tcNo, -2, 2);
+        return \Faker\Provider\tr_TR\Person::tcNoIsValid($tcNo);
     }
 }
