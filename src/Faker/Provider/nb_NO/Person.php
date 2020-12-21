@@ -315,7 +315,6 @@ class Person extends \Faker\Provider\Person
                 $genderDigit = (string) static::numerify('#');
         }
 
-
         $digits = $datePart . $randomDigits . $genderDigit;
 
         /**
@@ -323,7 +322,6 @@ class Person extends \Faker\Provider\Person
          * @link http://no.wikipedia.org/wiki/F%C3%B8dselsnummer
          */
         $checksum = (string) static::numerify('##');
-
 
         return $digits . $checksum;
     }

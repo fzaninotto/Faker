@@ -135,7 +135,6 @@ class Person extends \Faker\Provider\Person
             $randomDigits = (string) static::numerify('###');
         }
 
-
         $checksum = Luhn::computeCheckDigit($datePart . $randomDigits);
 
         return $datePart . '-' . $randomDigits . $checksum;

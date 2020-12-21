@@ -63,7 +63,6 @@ class EntityPopulator
             return false;
         };
 
-
         foreach ($schema->columns() as $column) {
             if ($column == $pk[0] || $isForeignKey($column)) {
                 continue;

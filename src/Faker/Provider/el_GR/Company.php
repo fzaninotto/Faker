@@ -18,7 +18,6 @@ class Company extends \Faker\Provider\Company
 
     protected static $grafm = ['#########'];
 
-
     protected static $doy = [
         'Α\' Αθήνας',
         'Β\' Αθήνας',
@@ -42,7 +41,6 @@ class Company extends \Faker\Provider\Company
         'ΔΟΥ ΠΛΟΙΩΝ',
         'ΦΑΕΕ ΑΘΗΝΩΝ'
     ];
-
 
     protected static $object = [
         'Προγραμματιστής',

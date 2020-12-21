@@ -29,7 +29,6 @@ class Address extends \Faker\Provider\Address
 
     protected static $postcode = ['#####'];
 
-
     /**
      * @link https://hr.wikipedia.org/wiki/Dodatak:Popis_gradova_u_Hrvatskoj
      */

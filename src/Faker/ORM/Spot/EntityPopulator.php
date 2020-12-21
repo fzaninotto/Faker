@@ -183,7 +183,6 @@ class EntityPopulator
 
         $this->mapper->insert($obj);
 
-
         return $obj;
     }
 

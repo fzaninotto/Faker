@@ -132,7 +132,6 @@ class Address extends \Faker\Provider\Address
         '{{town}} {{estateSuffix}}',
     ];
 
-
     protected static $villageSuffixes = ['Village', 'Tsuen', 'San Tsuen', 'New Village', 'Wai'];
 
     protected static $estateSuffixes = ['Estate', 'Court'];

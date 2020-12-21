@@ -96,7 +96,6 @@ class Address extends \Faker\Provider\Address
         'Berlevåg', 'Tana', 'Nesseby', 'Båtsfjord', 'Sør-Varanger'
     ];
 
-
     /**
      * @var array Norwegian county names
      * @link https://no.wikipedia.org/wiki/Norges_fylker
