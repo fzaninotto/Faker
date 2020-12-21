@@ -106,9 +106,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
         if ($countryCodePrefix) {
             return static::countryCodePrefix($formatting) . static::numerify($this->generator->parse($format));
-        } else {
-            return static::numerify($this->generator->parse($format));
         }
+
+        return static::numerify($this->generator->parse($format));
     }
 
     /**
@@ -167,9 +167,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
         if ($countryCodePrefix) {
             return static::countryCodePrefix($formatting) . static::numerify($this->generator->parse($format));
-        } else {
-            return static::numerify($this->generator->parse($format));
         }
+
+        return static::numerify($this->generator->parse($format));
     }
 
     /**
@@ -192,9 +192,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
         if ($countryCodePrefix) {
             return static::countryCodePrefix($formatting) . static::numerify($this->generator->parse($format));
-        } else {
-            return static::numerify($this->generator->parse($format));
         }
+
+        return static::numerify($this->generator->parse($format));
     }
 
     /**
@@ -210,8 +210,8 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     {
         if ($formatting) {
             return static::randomElement(static::$plusSymbol) . static::randomElement(static::$countryCodePrefix);
-        } else {
-            return static::randomElement(static::$countryCodePrefix);
         }
+
+        return static::randomElement(static::$countryCodePrefix);
     }
 }
