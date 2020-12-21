@@ -6,7 +6,7 @@ class Address extends \Faker\Provider\Address
 {
     /**
      * @link http://www.rtvslo.si/strani/abecedni-seznam-obcin/3103
-     **/
+     */
     protected static $city = [
         'Ajdovščina', 'Apače', 'Beltinci', 'Benedikt', 'Bistrica ob Sotli', 'Bled', 'Bloke', 'Bohinj', 'Borovnica', 'Bovec',
         'Braslovče', 'Brda', 'Brezovica', 'Brežice', 'Cankova', 'Celje', 'Cerklje na Gorenjskem', 'Cerknica', 'Cerkno',

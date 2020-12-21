@@ -68,7 +68,7 @@ class Company extends \Faker\Provider\Company
 
     /**
      * example 7001010101
-     **/
+     */
     public static function companyIdNumber()
     {
         $partialValue = static::numerify(700 . str_repeat('#', 6));

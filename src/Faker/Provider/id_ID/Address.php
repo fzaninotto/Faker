@@ -6,7 +6,7 @@ class Address extends \Faker\Provider\Address
 {
     /**
      * @link http://bandung.go.id/images/download/daftarruasjalan.htm
-     **/
+     */
     protected static $street = [
         'Abang', 'Abdul', 'Abdul Muis', 'Abdul Rahmat', 'Abdul. Muis', 'Abdullah',
         'Aceh', 'Achmad', 'Achmad Yani', 'Acordion', 'Adisucipto',
@@ -100,7 +100,7 @@ class Address extends \Faker\Provider\Address
 
     /**
      * @link http://id.wikipedia.org/wiki/Daftar_negara-negara_di_dunia
-     **/
+     */
     protected static $country = [
         'Afganistan', 'Afrika Selatan', 'Albania', 'Aljazair',
         'Amerika Serikat', 'Andorra', 'Angola', 'Anguilla',

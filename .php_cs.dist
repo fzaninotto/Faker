@@ -74,6 +74,7 @@ return $config
         'magic_constant_casing' => true,
         'magic_method_casing' => true,
         'modernize_types_casting' => true,
+        'multiline_comment_opening_closing' => true,
         'new_with_braces' => true,
         'no_alias_functions' => true,
         'no_blank_lines_after_class_opening' => true,

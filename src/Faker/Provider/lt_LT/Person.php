@@ -23,7 +23,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @link https://lt.wikipedia.org/wiki/S%C4%85ra%C5%A1as:Lietuvoje_paplit%C4%99_vardai
-     **/
+     */
     protected static $firstNameMale = [
         'Abramas', 'Abraomas', 'Achilas', 'Adalbertas', 'Adamas', 'Adas', 'Adolfas', 'Adolis', 'Adomas',
         'Adrijus', 'Agatas', 'Agnius', 'Aidas', 'Ainius', 'Aistis', 'Aivaras', 'Akimas', 'Akvilinas', 'Albertas', 'Albrechtas',
