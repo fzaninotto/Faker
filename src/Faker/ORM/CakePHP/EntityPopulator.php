@@ -53,7 +53,7 @@ class EntityPopulator
         $schema = $table->schema();
         $pk = $schema->primaryKey();
         $guessers = $populator->getGuessers() + ['ColumnTypeGuesser' => new ColumnTypeGuesser($populator->getGenerator())];
-        $isForeignKey = function ($column) use ($table) {
+        $isForeignKey = static function ($column) use ($table) {
             foreach ($table->associations()->type('BelongsTo') as $assoc) {
                 if ($column == $assoc->foreignKey()) {
                     return true;
@@ -102,7 +102,7 @@ class EntityPopulator
                 } else {
                     $foreignKeys = $table->find('all')
                     ->select(['id'])
-                    ->map(function ($row) {
+                    ->map(static function ($row) {
                         return $row->id;
                     })
                     ->toArray();

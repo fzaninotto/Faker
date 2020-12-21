@@ -139,7 +139,7 @@ class EntityPopulator
             }
 
             $index = 0;
-            $formatters[$assocName] = function ($inserted) use ($relatedClass, &$index, $unique, $optional, $generator) {
+            $formatters[$assocName] = static function ($inserted) use ($relatedClass, &$index, $unique, $optional, $generator) {
                 if (isset($inserted[$relatedClass])) {
                     if ($unique) {
                         $related = null;

@@ -19,7 +19,7 @@ class ValidGenerator
     public function __construct(Generator $generator, $validator = null, $maxRetries = 10000)
     {
         if (null === $validator) {
-            $validator = function () {
+            $validator = static function () {
                 return true;
             };
         } elseif (!is_callable($validator)) {

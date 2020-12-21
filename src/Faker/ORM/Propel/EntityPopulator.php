@@ -68,7 +68,7 @@ class EntityPopulator
 
             if ($columnMap->isForeignKey()) {
                 $relatedClass = $columnMap->getRelation()->getForeignTable()->getClassname();
-                $formatters[$columnMap->getPhpName()] = function ($inserted) use ($relatedClass, $generator) {
+                $formatters[$columnMap->getPhpName()] = static function ($inserted) use ($relatedClass, $generator) {
                     return isset($inserted[$relatedClass]) ? $generator->randomElement($inserted[$relatedClass]) : null;
                 };
 
@@ -158,7 +158,7 @@ class EntityPopulator
         foreach ($tableMap->getBehaviors() as $name => $params) {
             switch ($name) {
                 case 'nested_set':
-                    $modifiers['nested_set'] = function ($obj, $inserted) use ($class, $generator) {
+                    $modifiers['nested_set'] = static function ($obj, $inserted) use ($class, $generator) {
                         if (isset($inserted[$class])) {
                             $queryClass = $class . 'Query';
                             $parent = $queryClass::create()->findPk($generator->randomElement($inserted[$class]));
@@ -171,7 +171,7 @@ class EntityPopulator
                     break;
 
                 case 'sortable':
-                    $modifiers['sortable'] = function ($obj, $inserted) use ($class, $generator) {
+                    $modifiers['sortable'] = static function ($obj, $inserted) use ($class, $generator) {
                         $obj->insertAtRank($generator->numberBetween(1, count($inserted[$class] ?? []) + 1));
                     };
 

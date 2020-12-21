@@ -80,7 +80,7 @@ class EntityPopulator
             }
             $referenceClass = $reference['class'];
 
-            $formatters[$referenceName] = function ($insertedEntities) use ($referenceClass) {
+            $formatters[$referenceName] = static function ($insertedEntities) use ($referenceClass) {
                 if (isset($insertedEntities[$referenceClass])) {
                     return Base::randomElement($insertedEntities[$referenceClass]);
                 }

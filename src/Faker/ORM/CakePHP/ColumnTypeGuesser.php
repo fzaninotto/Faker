@@ -21,28 +21,28 @@ class ColumnTypeGuesser
 
         switch ($schema->columnType($column)) {
             case 'boolean':
-                return function () use ($generator) {
+                return static function () use ($generator) {
                     return $generator->boolean;
                 };
 
             case 'integer':
-                return function () use ($generator) {
+                return static function () use ($generator) {
                     return $generator->numberBetween(0, 2147483647);
                 };
 
             case 'biginteger':
-                return function () use ($generator) {
+                return static function () use ($generator) {
                     return $generator->numberBetween(0, PHP_INT_MAX);
                 };
 
             case 'decimal':
             case 'float':
-                return function () use ($generator) {
+                return static function () use ($generator) {
                     return $generator->randomFloat();
                 };
 
             case 'uuid':
-                return function () use ($generator) {
+                return static function () use ($generator) {
                     return $generator->uuid();
                 };
 
@@ -54,12 +54,12 @@ class ColumnTypeGuesser
                 }
                 $length = $columnData['length'];
 
-                return function () use ($generator, $length) {
+                return static function () use ($generator, $length) {
                     return $generator->text($length);
                 };
 
             case 'text':
-                return function () use ($generator) {
+                return static function () use ($generator) {
                     return $generator->text();
                 };
 
@@ -67,7 +67,7 @@ class ColumnTypeGuesser
             case 'datetime':
             case 'timestamp':
             case 'time':
-                return function () use ($generator) {
+                return static function () use ($generator) {
                     return $generator->datetime();
                 };
 

@@ -440,7 +440,7 @@ class Base
      */
     public static function bothify($string = '## ??')
     {
-        $string = self::replaceWildcard($string, '*', function () {
+        $string = self::replaceWildcard($string, '*', static function () {
             return mt_rand(0, 1) ? '#' : '?';
         });
 
@@ -500,29 +500,29 @@ class Base
         $regex = preg_replace('/(?<!\\\)\*/', '{0,' . static::randomDigitNotNull() . '}', $regex);
         $regex = preg_replace('/(?<!\\\)\+/', '{1,' . static::randomDigitNotNull() . '}', $regex);
         // [12]{1,2} becomes [12] or [12][12]
-        $regex = preg_replace_callback('/(\[[^\]]+\])\{(\d+),(\d+)\}/', function ($matches) {
+        $regex = preg_replace_callback('/(\[[^\]]+\])\{(\d+),(\d+)\}/', static function ($matches) {
             return str_repeat($matches[1], Base::randomElement(range($matches[2], $matches[3])));
         }, $regex);
         // (12|34){1,2} becomes (12|34) or (12|34)(12|34)
-        $regex = preg_replace_callback('/(\([^\)]+\))\{(\d+),(\d+)\}/', function ($matches) {
+        $regex = preg_replace_callback('/(\([^\)]+\))\{(\d+),(\d+)\}/', static function ($matches) {
             return str_repeat($matches[1], Base::randomElement(range($matches[2], $matches[3])));
         }, $regex);
         // A{1,2} becomes A or AA or \d{3} becomes \d\d\d
-        $regex = preg_replace_callback('/(\\\?.)\{(\d+),(\d+)\}/', function ($matches) {
+        $regex = preg_replace_callback('/(\\\?.)\{(\d+),(\d+)\}/', static function ($matches) {
             return str_repeat($matches[1], Base::randomElement(range($matches[2], $matches[3])));
         }, $regex);
         // (this|that) becomes 'this' or 'that'
-        $regex = preg_replace_callback('/\((.*?)\)/', function ($matches) {
+        $regex = preg_replace_callback('/\((.*?)\)/', static function ($matches) {
             return Base::randomElement(explode('|', str_replace(['(', ')'], '', $matches[1])));
         }, $regex);
         // All A-F inside of [] become ABCDEF
-        $regex = preg_replace_callback('/\[([^\]]+)\]/', function ($matches) {
-            return '[' . preg_replace_callback('/(\w|\d)\-(\w|\d)/', function ($range) {
+        $regex = preg_replace_callback('/\[([^\]]+)\]/', static function ($matches) {
+            return '[' . preg_replace_callback('/(\w|\d)\-(\w|\d)/', static function ($range) {
                 return implode('', range($range[1], $range[2]));
             }, $matches[1]) . ']';
         }, $regex);
         // All [ABC] become B (or A or C)
-        $regex = preg_replace_callback('/\[([^\]]+)\]/', function ($matches) {
+        $regex = preg_replace_callback('/\[([^\]]+)\]/', static function ($matches) {
             $randomElement = Base::randomElement(str_split($matches[1]));
             //[.] should not be a random character, but a literal .
             return str_replace('.', '\.', $randomElement);
