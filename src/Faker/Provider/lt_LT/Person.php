@@ -374,9 +374,9 @@ class Person extends \Faker\Provider\Person
     private static function calculateSum($numbers, $time = 1)
     {
         if ($time == 1) {
-            $multipliers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1 ];
+            $multipliers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1];
         } else {
-            $multipliers = [3, 4, 5, 6, 7, 8, 9, 1, 2, 3 ];
+            $multipliers = [3, 4, 5, 6, 7, 8, 9, 1, 2, 3];
         }
 
         $sum = 0;

@@ -71,9 +71,9 @@ class Address extends \Faker\Provider\en_US\Address
         'Zombo'
     ];
 
-    protected static $postcode = [ '#', '##', '###', '####', '#####' ];
+    protected static $postcode = ['#', '##', '###', '####', '#####'];
 
-    protected static $region = [ 'Central', 'East', 'North', 'West' ];
+    protected static $region = ['Central', 'East', 'North', 'West'];
 
     /**
      * @example 'Fort Portal'
