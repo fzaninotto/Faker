@@ -783,6 +783,29 @@ Fugiat non in itaque sunt nobis totam. Sed nesciunt est deleniti cumque alias. R
 
 ## Language specific formatters
 
+### `Faker\Provider\ar_EG\Person`
+
+```php
+<?php
+
+echo $faker->nationalIdNumber; // Citizen ID number (14-digit). ex: 20661507756430
+```
+
+### `Faker\Provider\ar_EG\Address`
+
+```php
+echo $faker->subDivision; // Governors subdvisions. ex: 'مركز بنها'
+echo $faker->governors; // Governors names. ex: 'القاهرة'
+echo $faker->secondaryAddress; // Secondary address. ex: 'عمارة رقم 20'
+echo $faker->streetPrefix; // Street prefix. ex: 'طريق'
+```
+
+### `Faker\Provider\ar_EG\Company`
+
+```php
+echo $faker->companyPrefix; // Company name prefix. ex: شركة
+```
+
 ### `Faker\Provider\ar_SA\Person`
 
 ```php
