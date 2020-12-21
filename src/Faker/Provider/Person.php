@@ -70,7 +70,8 @@ class Person extends Base
     {
         if ($gender === static::GENDER_MALE) {
             return static::firstNameMale();
-        } elseif ($gender === static::GENDER_FEMALE) {
+        }
+        if ($gender === static::GENDER_FEMALE) {
             return static::firstNameFemale();
         }
 
@@ -108,7 +109,8 @@ class Person extends Base
     {
         if ($gender === static::GENDER_MALE) {
             return static::titleMale();
-        } elseif ($gender === static::GENDER_FEMALE) {
+        }
+        if ($gender === static::GENDER_FEMALE) {
             return static::titleFemale();
         }
 

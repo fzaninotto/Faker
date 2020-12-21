@@ -91,7 +91,8 @@ class Person extends \Faker\Provider\Person
     {
         if ($gender === static::GENDER_MALE) {
             return $this->middleNameMale();
-        } elseif ($gender === static::GENDER_FEMALE) {
+        }
+        if ($gender === static::GENDER_FEMALE) {
             return $this->middleNameFemale();
         }
 
