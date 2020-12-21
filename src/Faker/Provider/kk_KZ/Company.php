@@ -52,7 +52,7 @@ class Company extends \Faker\Provider\Company
     /**
      * National Business Identification Numbers
      *
-     * @link   http://egov.kz/wps/portal/Content?contentPath=%2Fegovcontent%2Fbus_business%2Ffor_businessmen%2Farticle%2Fbusiness_identification_number&lang=en
+     * @see   http://egov.kz/wps/portal/Content?contentPath=%2Fegovcontent%2Fbus_business%2Ffor_businessmen%2Farticle%2Fbusiness_identification_number&lang=en
      *
      * @param \DateTime $registrationDate
      *

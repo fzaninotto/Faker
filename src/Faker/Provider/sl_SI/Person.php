@@ -21,8 +21,8 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * @link http://www.stat.si/imena_top_imena_spol.asp?r=True
-     * @link http://www.stat.si/doc/vsebina/05/imena/TOPIMENA_SI.xlsx
+     * @see http://www.stat.si/imena_top_imena_spol.asp?r=True
+     * @see http://www.stat.si/doc/vsebina/05/imena/TOPIMENA_SI.xlsx
      */
     protected static $firstNameMale = [
         'Adam', 'Adolf', 'Albert', 'Albin', 'Aleks', 'Aleksandar', 'Aleksander', 'Aleksej', 'Alen',
@@ -53,8 +53,8 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * @link http://www.stat.si/imena_top_imena_spol.asp?r=True
-     * @link http://www.stat.si/doc/vsebina/05/imena/TOPIMENA_SI.xlsx
+     * @see http://www.stat.si/imena_top_imena_spol.asp?r=True
+     * @see http://www.stat.si/doc/vsebina/05/imena/TOPIMENA_SI.xlsx
      */
     protected static $firstNameFemale = [
         'Ajda', 'Ajla', 'Albina', 'Aleksandra', 'Alenka', 'Alina', 'Alja', 'Alojzija', 'Amalija',
@@ -87,7 +87,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * @link http://www.stat.si/imena_top_priimki.asp?r=True
+     * @see http://www.stat.si/imena_top_priimki.asp?r=True
      */
     protected static $lastName = [
         'Ambrožič', 'Babič', 'Bajc', 'Bergant', 'Bevc', 'Bezjak', 'Bizjak', 'Blatnik', 'Blažič',

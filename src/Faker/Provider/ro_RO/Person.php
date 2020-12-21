@@ -104,7 +104,7 @@ class Person extends \Faker\Provider\Person
     /**
      * Personal Numerical Code (CNP)
      *
-     * @link http://ro.wikipedia.org/wiki/Cod_numeric_personal
+     * @see http://ro.wikipedia.org/wiki/Cod_numeric_personal
      *
      * @example 1111111111118
      *

@@ -18,14 +18,14 @@ class Company extends \Faker\Provider\Company
     /**
      * Common suffixes
      *
-     * @link https://www.brreg.no/bedrift/organisasjonsformer/
+     * @see https://www.brreg.no/bedrift/organisasjonsformer/
      */
     protected static $companySuffix = ['ANS', 'AS', 'ASA', 'BA', 'DA', 'ENK', 'GFS', 'KTRF', 'NUF', 'PK', 'SA', 'SPA', 'STI', 'VIFE'];
 
     /**
      * 1500 random job titles from Statistisk Sentralbyrå
      *
-     * @link http://www.ssb.no/a/yrke/yrke.csv
+     * @see http://www.ssb.no/a/yrke/yrke.csv
      */
     protected static $jobTitleFormat = [
         'Administrasjonsdirektør', 'Administrasjonskonsulent', 'Administrasjonssekretær', 'Administrasjonssjef', 'Administrerende Overlege', 'Admiral', 'Advokatassistent', 'Aerobicinstruktør', 'Afis-Fullmektig', 'Agrotekniker', 'Ais-Fullmektig', 'Akrobat', 'Aktivitør', 'Akupunktør', 'Alarmoperatør', 'Allmenningbestyrer', 'Allmennpraktiserende Lege', 'Amanuensis', 'Ambassaderåd', 'Ambassadesekretær', 'Ambulansemedhjelper', 'Ambulansesjef', 'Ambulerende Vaktmester', 'Ammoniakkoker', 'Anestesilege', 'Animatør', 'Anleggsdykker', 'Anleggsgartnermester', 'Anleggsmaskinkjører', 'Anleggsmaskinmekaniker', 'Anleggsoperatør', 'Annenflyger', 'Annonseakkvisitør', 'Annonsebehandler', 'Annonsekonsulent', 'Annonseselger', 'Annonsesjef', 'Anretningshjelp', 'Apotekmedarbeider', 'Arbeidsmedisiner', 'Arbeidssjef', 'Arbeidsstudieingeniør', 'Arbeidsterapeut', 'Arbeidstilrettelegger', 'Arbeidstilsynskontrollør', 'Arbeidstilsynsrådgiver', 'Arkivassistent', 'Arkivmedarbeider', 'Arrestforvarer', 'Asfaltarbeider', 'Asfaltverkarbeider', 'Asfaltør', 'Assistentfotograf', 'Assisterende Administrerende Direktør', 'Assisterende Banksjef', 'Assisterende Bestyrer', 'Assisterende Borer', 'Assisterende Byfogd', 'Assisterende Fylkeshelsesjef', 'Assisterende Fylkeslege', 'Assisterende Fylkesmann', 'Assisterende Helsedirektør', 'Assisterende Kjøkkensjef', 'Assisterende Kommunegartner', 'Assisterende Sjefflygeleder', 'Assisterende Sjefspsykolog', 'Assisterende Sykepleiesjef', 'Assisterende Vaktmester', 'Astrofysiker', 'Astronom', 'Atomfysiker', 'Attache', 'Autoklavoperatør', 'Autoklavpasser', 'Automasjonsingeniør', 'Automatiker', 'Automatiseringsmontør', 'Avdelingsarkitekt', 'Avdelingsbanksjef', 'Avdelingsbetjent', 'Avdelingsdirektør', 'Avdelingsergoterapeut', 'Avdelingsingeniør', 'Avdelingsleder/fysioterapeut', 'Avdelingspsykolog', 'Avdelingssekretær', 'Avdelingssjef', 'Avdelingssjef Akvakultur Mv.', 'Avdelingssjef Restaurant', 'Avdelingssykepleier', 'Avlaster', 'Avlskonsulent', 'Avløser',

@@ -109,7 +109,7 @@ class Person extends \Faker\Provider\Person
     /**
      * National Personal Identity number (personas kods)
      *
-     * @link https://en.wikipedia.org/wiki/National_identification_number#Latvia
+     * @see https://en.wikipedia.org/wiki/National_identification_number#Latvia
      *
      * @param \DateTime $birthdate
      *

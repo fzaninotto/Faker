@@ -19,14 +19,14 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     ];
 
     /**
-     * @link https://en.wikipedia.org/wiki/Telephone_numbers_in_Malaysia#Mobile_phone_codes_and_IP_telephony
+     * @see https://en.wikipedia.org/wiki/Telephone_numbers_in_Malaysia#Mobile_phone_codes_and_IP_telephony
      */
     protected static $zeroOneOnePrefix = ['10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '22', '23', '32'];
     protected static $zeroOneFourPrefix = ['2', '3', '4', '5', '6', '7', '8', '9'];
     protected static $zeroOneFivePrefix = ['1', '2', '3', '4', '5', '6', '9'];
 
     /**
-     * @link https://en.wikipedia.org/wiki/Telephone_numbers_in_Malaysia#Mobile_phone_codes_and_IP_telephony
+     * @see https://en.wikipedia.org/wiki/Telephone_numbers_in_Malaysia#Mobile_phone_codes_and_IP_telephony
      */
     protected static $mobileNumberFormatsWithFormatting = [
         '010-### ####',
@@ -53,7 +53,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     ];
 
     /**
-     * @link https://en.wikipedia.org/wiki/Telephone_numbers_in_Malaysia#Geographic_area_codes
+     * @see https://en.wikipedia.org/wiki/Telephone_numbers_in_Malaysia#Geographic_area_codes
      */
     protected static $fixedLineNumberFormatsWithFormatting = [
         '03-#### ####',
@@ -76,7 +76,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     ];
 
     /**
-     * @link https://en.wikipedia.org/wiki/Telephone_numbers_in_Malaysia#Mobile_phone_codes_and_IP_telephony
+     * @see https://en.wikipedia.org/wiki/Telephone_numbers_in_Malaysia#Mobile_phone_codes_and_IP_telephony
      */
     protected static $voipNumberWithFormatting = [
         '015-{{zeroOneFivePrefix}}## ####',

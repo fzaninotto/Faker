@@ -5,7 +5,7 @@ namespace Faker\Provider\ms_MY;
 class Address extends \Faker\Provider\Address
 {
     /**
-     * @link https://en.wikipedia.org/wiki/Addresses_in_Malaysia
+     * @see https://en.wikipedia.org/wiki/Addresses_in_Malaysia
      */
     protected static $addressFormats = [
         '{{streetAddress}}, {{township}}, {{townState}}',
@@ -66,7 +66,7 @@ class Address extends \Faker\Provider\Address
     /**
      * 'Jalan' & 'Jln' are more frequently used than 'Lorong'
      *
-     * @link https://en.wikipedia.org/wiki/List_of_roads_in_Kuala_Lumpur#Standard_translations
+     * @see https://en.wikipedia.org/wiki/List_of_roads_in_Kuala_Lumpur#Standard_translations
      */
     protected static $streetPrefix = [
         'Jln', 'Jln',
@@ -75,10 +75,10 @@ class Address extends \Faker\Provider\Address
     ];
 
     /**
-     * @link https://en.wikipedia.org/wiki/List_of_roads_in_Kuala_Lumpur
-     * @link https://en.wikipedia.org/wiki/List_of_roads_in_Ipoh
-     * @link https://en.wikipedia.org/wiki/Transportation_in_Seremban#Inner_city_roads
-     * @link https://en.wikipedia.org/wiki/List_of_streets_in_George_Town,_Penang
+     * @see https://en.wikipedia.org/wiki/List_of_roads_in_Kuala_Lumpur
+     * @see https://en.wikipedia.org/wiki/List_of_roads_in_Ipoh
+     * @see https://en.wikipedia.org/wiki/Transportation_in_Seremban#Inner_city_roads
+     * @see https://en.wikipedia.org/wiki/List_of_streets_in_George_Town,_Penang
      */
     protected static $streetSuffix = [
         'Air Itam', 'Alor', 'Ampang', 'Ampang Hilir', 'Anson', 'Ariffin',
@@ -106,8 +106,8 @@ class Address extends \Faker\Provider\Address
     ];
 
     /**
-     * @link https://en.wikipedia.org/wiki/List_of_Petaling_Jaya_city_sections
-     * @link https://en.wikipedia.org/wiki/UEP_Subang_Jaya#History
+     * @see https://en.wikipedia.org/wiki/List_of_Petaling_Jaya_city_sections
+     * @see https://en.wikipedia.org/wiki/UEP_Subang_Jaya#History
      */
     protected static $townshipPrefixAbbr = [
         'SS', 'Seksyen ', 'PJS', 'PJU', 'USJ ',
@@ -116,16 +116,16 @@ class Address extends \Faker\Provider\Address
     /**
      * 'Bandar' and 'Taman' are the most common township prefix
      *
-     * @link https://en.wikipedia.org/wiki/Template:Greater_Kuala_Lumpur > Townships
-     * @link https://en.wikipedia.org/wiki/Template:Johor > Townships
-     * @link https://en.wikipedia.org/wiki/Template:Kedah > Townships
-     * @link https://en.wikipedia.org/wiki/Template:Kelantan > Townships
-     * @link https://en.wikipedia.org/wiki/Template:Melaka > Townships
-     * @link https://en.wikipedia.org/wiki/Template:Negeri_Sembilan > Townships
-     * @link https://en.wikipedia.org/wiki/Template:Perak > Townships
-     * @link https://en.wikipedia.org/wiki/Template:Penang > Townships
-     * @link https://en.wikipedia.org/wiki/Template:Selangor > Townships
-     * @link https://en.wikipedia.org/wiki/Template:Terengganu > Townships
+     * @see https://en.wikipedia.org/wiki/Template:Greater_Kuala_Lumpur > Townships
+     * @see https://en.wikipedia.org/wiki/Template:Johor > Townships
+     * @see https://en.wikipedia.org/wiki/Template:Kedah > Townships
+     * @see https://en.wikipedia.org/wiki/Template:Kelantan > Townships
+     * @see https://en.wikipedia.org/wiki/Template:Melaka > Townships
+     * @see https://en.wikipedia.org/wiki/Template:Negeri_Sembilan > Townships
+     * @see https://en.wikipedia.org/wiki/Template:Perak > Townships
+     * @see https://en.wikipedia.org/wiki/Template:Penang > Townships
+     * @see https://en.wikipedia.org/wiki/Template:Selangor > Townships
+     * @see https://en.wikipedia.org/wiki/Template:Terengganu > Townships
      */
     protected static $townshipPrefix = [
         'Alam', 'Apartment', 'Ara',
@@ -162,21 +162,21 @@ class Address extends \Faker\Provider\Address
     ];
 
     /**
-     * @link https://en.wikipedia.org/wiki/Template:Greater_Kuala_Lumpur
-     * @link https://en.wikipedia.org/wiki/Template:Johor
-     * @link https://en.wikipedia.org/wiki/Template:Kedah
-     * @link https://en.wikipedia.org/wiki/Template:Kelantan
-     * @link https://en.wikipedia.org/wiki/Template:Labuan
-     * @link https://en.wikipedia.org/wiki/Template:Melaka
-     * @link https://en.wikipedia.org/wiki/Template:Negeri_Sembilan
-     * @link https://en.wikipedia.org/wiki/Template:Pahang
-     * @link https://en.wikipedia.org/wiki/Template:Perak
-     * @link https://en.wikipedia.org/wiki/Template:Perlis
-     * @link https://en.wikipedia.org/wiki/Template:Penang
-     * @link https://en.wikipedia.org/wiki/Template:Sabah
-     * @link https://en.wikipedia.org/wiki/Template:Sarawak
-     * @link https://en.wikipedia.org/wiki/Template:Selangor
-     * @link https://en.wikipedia.org/wiki/Template:Terengganu
+     * @see https://en.wikipedia.org/wiki/Template:Greater_Kuala_Lumpur
+     * @see https://en.wikipedia.org/wiki/Template:Johor
+     * @see https://en.wikipedia.org/wiki/Template:Kedah
+     * @see https://en.wikipedia.org/wiki/Template:Kelantan
+     * @see https://en.wikipedia.org/wiki/Template:Labuan
+     * @see https://en.wikipedia.org/wiki/Template:Melaka
+     * @see https://en.wikipedia.org/wiki/Template:Negeri_Sembilan
+     * @see https://en.wikipedia.org/wiki/Template:Pahang
+     * @see https://en.wikipedia.org/wiki/Template:Perak
+     * @see https://en.wikipedia.org/wiki/Template:Perlis
+     * @see https://en.wikipedia.org/wiki/Template:Penang
+     * @see https://en.wikipedia.org/wiki/Template:Sabah
+     * @see https://en.wikipedia.org/wiki/Template:Sarawak
+     * @see https://en.wikipedia.org/wiki/Template:Selangor
+     * @see https://en.wikipedia.org/wiki/Template:Terengganu
      */
     protected static $towns = [
         'johor' => [
@@ -397,7 +397,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     /**
-     * @link https://en.wikipedia.org/wiki/States_and_federal_territories_of_Malaysia
+     * @see https://en.wikipedia.org/wiki/States_and_federal_territories_of_Malaysia
      */
     protected static $states = [
         'johor' => [
@@ -464,7 +464,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     /**
-     * @link https://ms.wikipedia.org/wiki/Senarai_negara_berdaulat
+     * @see https://ms.wikipedia.org/wiki/Senarai_negara_berdaulat
      */
     protected static $country = [
         'Abkhazia', 'Afghanistan', 'Afrika Selatan', 'Republik Afrika Tengah', 'Akrotiri dan Dhekelia', 'Albania', 'Algeria', 'Amerika Syarikat', 'Andorra', 'Angola', 'Antigua dan Barbuda', 'Arab Saudi', 'Argentina', 'Armenia', 'Australia', 'Austria', 'Azerbaijan',
@@ -596,7 +596,7 @@ class Address extends \Faker\Provider\Address
      *
      * @example '55100'
      *
-     * @link https://en.wikipedia.org/wiki/Postal_codes_in_Malaysia#States
+     * @see https://en.wikipedia.org/wiki/Postal_codes_in_Malaysia#States
      *
      * @param string|null $state 'state' or null
      *

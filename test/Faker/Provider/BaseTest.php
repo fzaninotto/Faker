@@ -403,7 +403,7 @@ final class BaseTest extends TestCase
     }
 
     /**
-     * @link https://github.com/fzaninotto/Faker/issues/265
+     * @see https://github.com/fzaninotto/Faker/issues/265
      */
     public function testOptionalPercentageAndWeight()
     {

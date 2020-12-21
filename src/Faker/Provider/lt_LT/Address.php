@@ -53,14 +53,14 @@ class Address extends \Faker\Provider\Address
         'Šventoji Liucija', 'Žaliasis Kyšulys', ];
 
     /**
-     * @link https://lt.wikipedia.org/wiki/Lietuvos_etnokult%C5%ABriniai_regionai
+     * @see https://lt.wikipedia.org/wiki/Lietuvos_etnokult%C5%ABriniai_regionai
      */
     protected static $region = [
         'Aukštaitija', 'Dzūkija', 'Suvalkija', 'Žemaitija',
     ];
 
     /**
-     * @link https://lt.wikipedia.org/wiki/S%C4%85ra%C5%A1as:Lietuvos_miestai_pagal_gyventojus
+     * @see https://lt.wikipedia.org/wiki/S%C4%85ra%C5%A1as:Lietuvos_miestai_pagal_gyventojus
      */
     protected static $city = ['Vilnius', 'Kaunas', 'Klaipėda', 'Šiauliai', 'Panevėžys',
         'Alytus', 'Marijampolė', 'Mažeikiai', 'Jonava', 'Utena', 'Kėdainiai', 'Telšiai', 'Visaginas', 'Tauragė',
@@ -78,7 +78,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     /**
-     * @link https://en.wikipedia.org/wiki/Municipalities_of_Lithuania
+     * @see https://en.wikipedia.org/wiki/Municipalities_of_Lithuania
      */
     private static $municipality = [
         'Akmenės rajono savivaldybė',
@@ -198,7 +198,7 @@ class Address extends \Faker\Provider\Address
     /**
      * Lithuania municipality
      *
-     * @link https://en.wikipedia.org/wiki/Municipality
+     * @see https://en.wikipedia.org/wiki/Municipality
      *
      * @return string
      */

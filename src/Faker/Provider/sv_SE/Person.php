@@ -23,7 +23,7 @@ class Person extends \Faker\Provider\Person
     /**
      * @var array Swedish female first names
      *
-     * @link http://spraakbanken.gu.se/statistik/lbfnamnalf.phtml
+     * @see http://spraakbanken.gu.se/statistik/lbfnamnalf.phtml
      */
     protected static $firstNameFemale = [
 
@@ -56,7 +56,7 @@ class Person extends \Faker\Provider\Person
     /**
      * @var array Swedish male first names
      *
-     * @link http://spraakbanken.gu.se/statistik/lbfnamnalf.phtml
+     * @see http://spraakbanken.gu.se/statistik/lbfnamnalf.phtml
      */
     protected static $firstNameMale = [
         'Abraham', 'Adam', 'Adolf', 'Adrian', 'Agaton', 'Agne', 'Albert', 'Albin', 'Aldor', 'Alex', 'Alexander', 'Alexis', 'Alexius', 'Alf', 'Alfons', 'Alfred', 'Algot', 'Allan', 'Alrik', 'Alvar', 'Alve', 'Amandus', 'Anders', 'André', 'Andreas', 'Anselm', 'Anshelm', 'Antero', 'Anton', 'Antonius', 'Arne', 'Arnold', 'Aron', 'Arthur', 'Artur', 'Arvid', 'Assar', 'Astor', 'August', 'Augustin', 'Axel',
@@ -89,7 +89,7 @@ class Person extends \Faker\Provider\Person
     /**
      * @var array Swedish common last names
      *
-     * @link http://www.scb.se/sv_/Hitta-statistik/Statistik-efter-amne/Befolkning/Amnesovergripande-statistik/Namnstatistik/30898/2012A01x/Samtliga-folkbokforda--Efternamn-topplistor/Efternamn-topp-100/
+     * @see http://www.scb.se/sv_/Hitta-statistik/Statistik-efter-amne/Befolkning/Amnesovergripande-statistik/Namnstatistik/30898/2012A01x/Samtliga-folkbokforda--Efternamn-topplistor/Efternamn-topp-100/
      */
     protected static $lastName = [
 
@@ -119,7 +119,7 @@ class Person extends \Faker\Provider\Person
     /**
      * National Personal Identity number (personnummer)
      *
-     * @link http://en.wikipedia.org/wiki/Personal_identity_number_(Sweden)
+     * @see http://en.wikipedia.org/wiki/Personal_identity_number_(Sweden)
      *
      * @param \DateTime $birthdate
      * @param string    $gender    Person::GENDER_MALE || Person::GENDER_FEMALE

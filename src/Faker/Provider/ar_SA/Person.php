@@ -26,7 +26,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * @link http://muslim-names.us/
+     * @see http://muslim-names.us/
      */
     protected static $firstNameMale = [
 
@@ -49,7 +49,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * @link http://muslim-names.us/
+     * @see http://muslim-names.us/
      */
     protected static $firstNameFemale = [
         'آثار', 'آلاء', 'آناء', 'آية', 'أبرار', 'أحلام', 'أروى', 'أريج', 'أسماء', 'أسيل', 'أصاله', 'أفنان', 'ألاء', 'أماني', 'أمل', 'أميرة', 'أنسام', 'أنوار', 'إباء', 'إخلاص', 'إسراء', 'إسلام', 'إكرام', 'إنعام', 'إيمان', 'إيناس', 'ابتهاج', 'ابتهال', 'أبرار', 'إخلاص', 'ارجوان', 'أروى', 'أريج',

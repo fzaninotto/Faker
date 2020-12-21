@@ -5,7 +5,7 @@ namespace Faker\Provider\pl_PL;
 /**
  * Most popular first and last names published by Ministry of the Interior:
  *
- * @link https://msw.gov.pl/pl/sprawy-obywatelskie/ewidencja-ludnosci-dowo/statystyki-imion-i-nazw
+ * @see https://msw.gov.pl/pl/sprawy-obywatelskie/ewidencja-ludnosci-dowo/statystyki-imion-i-nazw
  */
 class Person extends \Faker\Provider\Person
 {
@@ -139,7 +139,7 @@ class Person extends \Faker\Provider\Person
     /**
      * PESEL - Universal Electronic System for Registration of the Population
      *
-     * @link http://en.wikipedia.org/wiki/PESEL
+     * @see http://en.wikipedia.org/wiki/PESEL
      *
      * @param DateTime $birthdate
      * @param string   $sex       M for male or F for female
@@ -186,7 +186,7 @@ class Person extends \Faker\Provider\Person
     /**
      * National Identity Card number
      *
-     * @link http://en.wikipedia.org/wiki/Polish_National_Identity_Card
+     * @see http://en.wikipedia.org/wiki/Polish_National_Identity_Card
      *
      * @return string 3 letters and 6 digits, like ABA300000
      */
@@ -213,8 +213,8 @@ class Person extends \Faker\Provider\Person
     /**
      * Taxpayer Identification Number (NIP in Polish)
      *
-     * @link http://en.wikipedia.org/wiki/PESEL#Other_identifiers
-     * @link http://pl.wikipedia.org/wiki/NIP
+     * @see http://en.wikipedia.org/wiki/PESEL#Other_identifiers
+     * @see http://pl.wikipedia.org/wiki/NIP
      *
      * @return string 10 digit number
      */

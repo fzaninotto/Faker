@@ -21,7 +21,7 @@ class Person extends \Faker\Provider\Person
     /**
      * @var array Norwegian female first names
      *
-     * @link http://spraakbanken.gu.se/statistik/lbfnamnalf.phtml
+     * @see http://spraakbanken.gu.se/statistik/lbfnamnalf.phtml
      */
     protected static $firstNameFemale = [
         'Abida', 'Abigail', 'Abir', 'Ada', 'Adel', 'Adelaine', 'Adele', 'Adelen', 'Adelin', 'Adelina', 'Adeline',
@@ -127,7 +127,7 @@ class Person extends \Faker\Provider\Person
     /**
      * @var array Norwegian male first names
      *
-     * @link http://www.mammanett.no/navn/leksikon/alle?field_name_sex_value=m&title=
+     * @see http://www.mammanett.no/navn/leksikon/alle?field_name_sex_value=m&title=
      */
     protected static $firstNameMale = [
         'Abbas', 'Abdallah', 'Abdelaziz', 'Abdelkader', 'Abdi', 'Abdiasis', 'Abdifatah', 'Abdikadir', 'Abdinasir',
@@ -258,7 +258,7 @@ class Person extends \Faker\Provider\Person
     /**
      * @var array Norwegian common last names (200 first from the link)
      *
-     * @link http://www.ssb.no/befolkning/statistikker/navn/aar/2015-01-27?fane=tabell&sort=nummer&tabell=216066
+     * @see http://www.ssb.no/befolkning/statistikker/navn/aar/2015-01-27?fane=tabell&sort=nummer&tabell=216066
      */
     protected static $lastName = [
         'Aas', 'Aase', 'Aasen', 'Abrahamsen', 'Ahmed', 'Ali', 'Amundsen', 'Andersen', 'Andersson', 'Andreassen',
@@ -286,7 +286,7 @@ class Person extends \Faker\Provider\Person
     /**
      * National Personal Identity number (personnummer)
      *
-     * @link https://no.wikipedia.org/wiki/Personnummer
+     * @see https://no.wikipedia.org/wiki/Personnummer
      *
      * @param \DateTime $birthdate
      * @param string    $gender    Person::GENDER_MALE || Person::GENDER_FEMALE
@@ -303,7 +303,7 @@ class Person extends \Faker\Provider\Person
         /**
          * @todo These number should be random based on birth year
          *
-         * @link http://no.wikipedia.org/wiki/F%C3%B8dselsnummer
+         * @see http://no.wikipedia.org/wiki/F%C3%B8dselsnummer
          */
         $randomDigits = (string) static::numerify('##');
 
@@ -327,7 +327,7 @@ class Person extends \Faker\Provider\Person
         /**
          * @todo Calculate modulo 11 of $digits
          *
-         * @link http://no.wikipedia.org/wiki/F%C3%B8dselsnummer
+         * @see http://no.wikipedia.org/wiki/F%C3%B8dselsnummer
          */
         $checksum = (string) static::numerify('##');
 

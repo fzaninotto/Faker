@@ -49,7 +49,7 @@ class Person extends \Faker\Provider\Person
     protected static $titleFemale = ['小姐', '太太', '博士', '教授'];
 
     /**
-     * @link http://zh.wikipedia.org/wiki/%E7%99%BE%E5%AE%B6%E5%A7%93
+     * @see http://zh.wikipedia.org/wiki/%E7%99%BE%E5%AE%B6%E5%A7%93
      */
     protected static $lastName = [
         '趙', '錢', '孫', '李', '周', '吳', '鄭', '王', '馮',
@@ -120,7 +120,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * @link http://technology.chtsai.org/namefreq/
+     * @see http://technology.chtsai.org/namefreq/
      */
     protected static $characterMale = [
         '佳', '俊', '信', '偉', '傑', '冠', '君', '哲',

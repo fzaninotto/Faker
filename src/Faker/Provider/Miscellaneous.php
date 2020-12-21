@@ -5,7 +5,7 @@ namespace Faker\Provider;
 class Miscellaneous extends Base
 {
     /**
-     * @link https://en.wikipedia.org/wiki/Emoji#Unicode_blocks
+     * @see https://en.wikipedia.org/wiki/Emoji#Unicode_blocks
      * On date of 2017-03-26
      *
      * U+1F600 - U+1F637 in Unicode Codepoint Escape Syntax
@@ -28,7 +28,7 @@ class Miscellaneous extends Base
     ];
 
     /**
-     * @link https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+     * @see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
      * On date of 2016-04-22
      */
     protected static $languageCode = [
@@ -54,7 +54,7 @@ class Miscellaneous extends Base
     ];
 
     /**
-     * @link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+     * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      * On date of 2014-10-19
      */
     protected static $countryCode = [
@@ -86,7 +86,7 @@ class Miscellaneous extends Base
     ];
 
     /**
-     * @link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
+     * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
      * On date of 2014-10-19
      */
     protected static $countryISOAlpha3 = [
@@ -201,7 +201,7 @@ class Miscellaneous extends Base
     ];
 
     /**
-     * @link https://en.wikipedia.org/wiki/ISO_4217
+     * @see https://en.wikipedia.org/wiki/ISO_4217
      * On date of 2019-09-27
      *
      * With the following exceptions:
@@ -276,7 +276,7 @@ class Miscellaneous extends Base
     /**
      * @example 'FR'
      *
-     * @link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+     * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      */
     public static function countryCode()
     {
@@ -286,7 +286,7 @@ class Miscellaneous extends Base
     /**
      * @example 'FRA'
      *
-     * @link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
+     * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
      */
     public static function countryISOAlpha3()
     {
@@ -304,7 +304,7 @@ class Miscellaneous extends Base
     /**
      * @example 'EUR'
      *
-     * @link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+     * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      */
     public static function currencyCode()
     {
@@ -314,7 +314,7 @@ class Miscellaneous extends Base
     /**
      * Returns an Emoji (Unicode character between U+1F600 and U+1F637).
      *
-     * @link https://en.wikipedia.org/wiki/Emoji#Unicode_blocks
+     * @see https://en.wikipedia.org/wiki/Emoji#Unicode_blocks
      */
     public static function emoji()
     {

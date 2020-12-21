@@ -5,7 +5,7 @@ namespace Faker\Provider\ms_MY;
 class Miscellaneous extends \Faker\Provider\Miscellaneous
 {
     /**
-     * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia
+     * @see https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia
      */
     protected static $jpjNumberPlateFormats = [
         '{{peninsularPrefix}}{{validAlphabet}}{{validAlphabet}} {{numberSequence}}',
@@ -23,7 +23,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
      * Some alphabet has higher frequency that coincides with the current number
      * of registrations. E.g. W = Wilayah Persekutuan
      *
-     * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format
+     * @see https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format
      */
     protected static $peninsularPrefix = [
         'A', 'A', 'B', 'C', 'D', 'F', 'J', 'J', 'K', 'M', 'N', 'P', 'P', 'R', 'T', 'V',
@@ -31,14 +31,14 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
     ];
 
     /**
-     * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format_2
+     * @see https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format_2
      */
     protected static $sarawakPrefix = [
         'QA', 'QK', 'QB', 'QC', 'QL', 'QM', 'QP', 'QR', 'QS', 'QT',
     ];
 
     /**
-     * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format_3
+     * @see https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format_3
      */
     protected static $sabahPrefix = [
         'SA', 'SAA', 'SAB', 'SAC', 'SB', 'SD', 'SG',
@@ -46,7 +46,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
     ];
 
     /**
-     * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Commemorative_plates
+     * @see https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Commemorative_plates
      */
     protected static $specialPrefix = [
         '1M4U',
@@ -72,7 +72,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
     /**
      * Chances of having an empty alphabet will be 1/24
      *
-     * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format
+     * @see https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format
      */
     protected static $validAlphabets = [
         'A', 'B', 'C', 'D', 'E', 'F',

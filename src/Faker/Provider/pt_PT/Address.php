@@ -21,14 +21,14 @@ class Address extends \Faker\Provider\Address
     ];
 
     /**
-     * @link http://www.univ-ab.pt/PINTAC/carta_normas.htm address example in letters *
+     * @see http://www.univ-ab.pt/PINTAC/carta_normas.htm address example in letters *
      */
     protected static $addressFormats = [
         '{{streetAddress}} {{postcode}} {{city}}',
     ];
 
     /**
-     * @link http://www.mapadeportugal.net/indicecidades.asp *
+     * @see http://www.mapadeportugal.net/indicecidades.asp *
      */
     private static $cities = [
         'Abrantes', 'Agualva-Cacém', 'Águeda', 'Albufeira', 'Alcácer do Sal', 'Alcobaça', 'Almada', 'Almeirim', 'Alverca do Ribatejo', 'Amadora', 'Amarante', 'Amora', 'Anadia', 'Angra do Heroísmo', 'Aveiro', 'Barcelos', 'Barreiro',
@@ -67,7 +67,7 @@ class Address extends \Faker\Provider\Address
     }
 
     /**
-     * @link http://www.indexmundi.com/pt/ *
+     * @see http://www.indexmundi.com/pt/ *
      */
     protected static $country = [
         'Afeganistão', 'África do Sul', 'Albânia', 'Alemanha', 'Andorra',

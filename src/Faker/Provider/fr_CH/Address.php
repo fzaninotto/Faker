@@ -11,7 +11,7 @@ class Address extends \Faker\Provider\fr_FR\Address
     protected static $postcode = ['####'];
 
     /**
-     * @link https://fr.wikipedia.org/wiki/Villes_de_Suisse
+     * @see https://fr.wikipedia.org/wiki/Villes_de_Suisse
      */
     protected static $cityNames = [
         'Aarau', 'Aarberg', 'Aarburg', 'Agno', 'Aigle VD', 'Altdorf', 'Altstätten', 'Appenzell', 'Arbon', 'Ascona', 'Aubonne', 'Avenches',
@@ -40,7 +40,7 @@ class Address extends \Faker\Provider\fr_FR\Address
     ];
 
     /**
-     * @link https://fr.wikipedia.org/wiki/Canton_suisse
+     * @see https://fr.wikipedia.org/wiki/Canton_suisse
      */
     protected static $canton = [
         ['AG' => 'Argovie'],

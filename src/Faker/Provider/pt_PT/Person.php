@@ -27,7 +27,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * @link http://goo.gl/v6bScG document with all pt abreviations *
+     * @see http://goo.gl/v6bScG document with all pt abreviations *
      */
     protected static $titleMale = ['Sr.', 'Dr.', 'Exmo.', 'Eng.', 'Eng.º', 'Ex.', 'Exº'];
     protected static $titleFemale = ['Sra.', 'Dra.', 'Exma', 'Eng.ª', 'Exª'];
@@ -53,7 +53,7 @@ class Person extends \Faker\Provider\Person
     /**
      * Taxpayer Identification Number (NIF in Portugal)
      *
-     * @link http://pt.wikipedia.org/wiki/N%C3%BAmero_de_identifica%C3%A7%C3%A3o_fiscal
+     * @see http://pt.wikipedia.org/wiki/N%C3%BAmero_de_identifica%C3%A7%C3%A3o_fiscal
      *
      * @return string 9 digit number
      */
@@ -68,7 +68,7 @@ class Person extends \Faker\Provider\Person
     /**
      * Generate module
      *
-     * @link http://pt.wikipedia.org/wiki/D%C3%ADgito_verificador
+     * @see http://pt.wikipedia.org/wiki/D%C3%ADgito_verificador
      *
      * @param string $number number
      *
@@ -102,7 +102,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * @link http://nomesportugueses.blogspot.pt/2012/01/lista-dos-cem-nomes-mais-usados-em.html
+     * @see http://nomesportugueses.blogspot.pt/2012/01/lista-dos-cem-nomes-mais-usados-em.html
      */
 
     protected static $firstNameMale = [

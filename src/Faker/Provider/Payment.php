@@ -71,7 +71,7 @@ class Payment extends Base
     ];
 
     /**
-     * @var array list of IBAN formats, source: @link https://www.swift.com/standards/data-standards/iban
+     * @var array list of IBAN formats, source: @see https://www.swift.com/standards/data-standards/iban
      */
     protected static $ibanFormats = [
         'AD' => [['n', 4],    ['n', 4],  ['c', 12]],
@@ -229,7 +229,7 @@ class Payment extends Base
     /**
      * International Bank Account Number (IBAN)
      *
-     * @link http://en.wikipedia.org/wiki/International_Bank_Account_Number
+     * @see http://en.wikipedia.org/wiki/International_Bank_Account_Number
      *
      * @param string $countryCode ISO 3166-1 alpha-2 country code
      * @param string $prefix      for generating bank account number of a specific bank
@@ -300,7 +300,7 @@ class Payment extends Base
      *
      * @example 'RZTIAT22263'
      *
-     * @link    http://en.wikipedia.org/wiki/ISO_9362
+     * @see    http://en.wikipedia.org/wiki/ISO_9362
      *
      * @return string Swift/Bic number
      */

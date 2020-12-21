@@ -11,7 +11,7 @@ class Address extends \Faker\Provider\it_IT\Address
     protected static $postcode = ['####'];
 
     /**
-     * @link https://it.wikipedia.org/wiki/Citt%C3%A0_svizzere
+     * @see https://it.wikipedia.org/wiki/Citt%C3%A0_svizzere
      */
     protected static $cityNames = [
         'Aarau', 'Adliswil', 'Aesch', 'Affoltern am Albis', 'Allschwil', 'Altstätten', 'Amriswil', 'Arbon', 'Arth',
@@ -40,7 +40,7 @@ class Address extends \Faker\Provider\it_IT\Address
     ];
 
     /**
-     * @link https://it.wikipedia.org/wiki/Cantoni_della_Svizzera
+     * @see https://it.wikipedia.org/wiki/Cantoni_della_Svizzera
      */
     protected static $canton = [
         ['AG' => 'Argovia'],

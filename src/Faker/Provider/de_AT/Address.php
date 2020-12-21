@@ -16,7 +16,7 @@ class Address extends \Faker\Provider\Address
     /**
      * @var string[]
      *
-     * @link http://www.statistik.at/verzeichnis/reglisten/gemliste_knz.xls - postal codes of all Austrian cities with the status 'Statutarstadt (SR)' or 'Stadtgemeinde (ST)'
+     * @see http://www.statistik.at/verzeichnis/reglisten/gemliste_knz.xls - postal codes of all Austrian cities with the status 'Statutarstadt (SR)' or 'Stadtgemeinde (ST)'
      */
     protected static $postcode = [
         '1010', '1020', '1030', '1040', '1050', '1060', '1070', '1080', '1090', '1100', '1110', '1120', '1130', '1140',

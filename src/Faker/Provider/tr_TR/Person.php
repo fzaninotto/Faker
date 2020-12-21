@@ -24,7 +24,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * @link http://www.guzelisimler.com/en_cok_aranan_erkek_isimleri.php
+     * @see http://www.guzelisimler.com/en_cok_aranan_erkek_isimleri.php
      *
      * @var array Turkish first names.
      */
@@ -36,7 +36,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * @link http://www.guzelisimler.com/en_cok_aranan_kiz_isimleri.php
+     * @see http://www.guzelisimler.com/en_cok_aranan_kiz_isimleri.php
      *
      * @var array Turkish first names.
      */
@@ -45,7 +45,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * @link http://tr.wikipedia.org/wiki/Kategori:T%C3%BCrk%C3%A7e_soyadlar%C4%B1
+     * @see http://tr.wikipedia.org/wiki/Kategori:T%C3%BCrk%C3%A7e_soyadlar%C4%B1
      *
      * @var array Turkish last names.
      */
@@ -100,7 +100,7 @@ class Person extends \Faker\Provider\Person
     /**
      * National Personal Identity number (tc kimlik no)
      *
-     * @link https://en.wikipedia.org/wiki/Turkish_Identification_Number
+     * @see https://en.wikipedia.org/wiki/Turkish_Identification_Number
      *
      * @return string on format XXXXXXXXXXX
      */

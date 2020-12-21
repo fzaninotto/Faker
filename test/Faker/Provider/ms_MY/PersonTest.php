@@ -8,7 +8,7 @@ use Faker\Test\TestCase;
 final class PersonTest extends TestCase
 {
     /**
-     * @link https://en.wikipedia.org/wiki/Malaysian_identity_card#Structure_of_the_National_Registration_Identity_Card_Number_(NRIC)
+     * @see https://en.wikipedia.org/wiki/Malaysian_identity_card#Structure_of_the_National_Registration_Identity_Card_Number_(NRIC)
      */
     public function testPersonalIdentityCardNumber()
     {

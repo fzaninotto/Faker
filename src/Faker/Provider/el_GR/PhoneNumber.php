@@ -3,8 +3,8 @@
 namespace Faker\Provider\el_GR;
 
 /**
- * @link https://en.wikipedia.org/wiki/Telephone_numbers_in_Greece
- * @link https://github.com/giggsey/libphonenumber-for-php/blob/master/src/data/PhoneNumberMetadata_GR.php
+ * @see https://en.wikipedia.org/wiki/Telephone_numbers_in_Greece
+ * @see https://github.com/giggsey/libphonenumber-for-php/blob/master/src/data/PhoneNumberMetadata_GR.php
  */
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {

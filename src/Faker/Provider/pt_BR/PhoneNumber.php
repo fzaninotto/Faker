@@ -9,14 +9,14 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     /**
      * Since december 2016 all mobile phone numbers in brazil begin with 9 and landlines 2, 3 or 4.
      *
-     * @link http://www.anatel.gov.br/Portal/exibirPortalPaginaEspecial.do?org.apache.struts.taglib.html.TOKEN=9594e1d11fbc996d52bda44e608bb744&codItemCanal=1794&pastaSelecionada=2984
+     * @see http://www.anatel.gov.br/Portal/exibirPortalPaginaEspecial.do?org.apache.struts.taglib.html.TOKEN=9594e1d11fbc996d52bda44e608bb744&codItemCanal=1794&pastaSelecionada=2984
      */
     protected static $cellphoneFormats = ['9####-####'];
 
     /**
      * Generates a 2-digit area code not composed by zeroes.
      *
-     * @link http://www.anatel.gov.br/legislacao/resolucoes/16-2001/383-resolucao-263.
+     * @see http://www.anatel.gov.br/legislacao/resolucoes/16-2001/383-resolucao-263.
      *
      * @return string
      */

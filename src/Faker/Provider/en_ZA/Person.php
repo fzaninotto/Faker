@@ -133,7 +133,7 @@ class Person extends \Faker\Provider\Person
     protected static $licenceCodes = ['A', 'A1', 'B', 'C', 'C1', 'C2', 'EB', 'EC', 'EC1', 'I', 'L', 'L1'];
 
     /**
-     * @link https://en.wikipedia.org/wiki/National_identification_number#South_Africa
+     * @see https://en.wikipedia.org/wiki/National_identification_number#South_Africa
      *
      * @param \DateTime $birthdate
      * @param bool      $citizen

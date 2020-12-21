@@ -5,7 +5,7 @@ namespace Faker\Provider\id_ID;
 class Address extends \Faker\Provider\Address
 {
     /**
-     * @link http://bandung.go.id/images/download/daftarruasjalan.htm
+     * @see http://bandung.go.id/images/download/daftarruasjalan.htm
      */
     protected static $street = [
         'Abang', 'Abdul', 'Abdul Muis', 'Abdul Rahmat', 'Abdul. Muis', 'Abdullah',
@@ -70,7 +70,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     /**
-     * @link http://kodepos.nomor.net/_kodepos.php?_i=provinsi-kodepos
+     * @see http://kodepos.nomor.net/_kodepos.php?_i=provinsi-kodepos
      */
     protected static $state = [
         'Aceh', 'Sumatera Utara', 'Sumatera Barat', 'Jambi', 'Kepulauan Bangka Belitung', 'Riau',
@@ -86,7 +86,7 @@ class Address extends \Faker\Provider\Address
     /**
      * Abbreviated State Names.
      *
-     * @link https://en.wikipedia.org/wiki/Provinces_of_Indonesia#Table_of_provinces
+     * @see https://en.wikipedia.org/wiki/Provinces_of_Indonesia#Table_of_provinces
      *
      * @var array
      */
@@ -99,7 +99,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     /**
-     * @link http://id.wikipedia.org/wiki/Daftar_negara-negara_di_dunia
+     * @see http://id.wikipedia.org/wiki/Daftar_negara-negara_di_dunia
      */
     protected static $country = [
         'Afganistan', 'Afrika Selatan', 'Albania', 'Aljazair',
@@ -224,7 +224,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     /**
-     * @link http://id.wikipedia.org/wiki/Daftar_kabupaten_dan_kota_Indonesia#Daftar_kota
+     * @see http://id.wikipedia.org/wiki/Daftar_kabupaten_dan_kota_Indonesia#Daftar_kota
      */
     protected static $cityNames = [
         'Administrasi Jakarta Barat', 'Administrasi Jakarta Pusat',

@@ -5,7 +5,7 @@ namespace Faker\Provider\me_ME;
 class Person extends \Faker\Provider\Person
 {
     /**
-     * @link http://sr.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA_%D1%81%D1%80%D0%BF%D1%81%D0%BA%D0%B8%D1%85_%D0%B8%D0%BC%D0%B5%D0%BD%D0%B0
+     * @see http://sr.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA_%D1%81%D1%80%D0%BF%D1%81%D0%BA%D0%B8%D1%85_%D0%B8%D0%BC%D0%B5%D0%BD%D0%B0
      */
     protected static $firstNameMale = [
         'Avakum', 'Avram', 'Adam', 'Aksentije', 'Aleksandar', 'Aleksandron', 'Aleksa', 'Aleksije', 'Aleksej', 'Alimpije', 'Andrej', 'Andrija', 'Andrijaš', 'Anđelko', 'Antonije', 'Aranđel', 'Arsenije', 'Arsen', 'Arsa', 'Arso', 'Atanasije', 'Atanacko', 'Aćim', 'Agnija',
@@ -68,7 +68,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * @link http://sr.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA_%D1%81%D1%80%D0%BF%D1%81%D0%BA%D0%B8%D1%85_%D0%BF%D1%80%D0%B5%D0%B7%D0%B8%D0%BC%D0%B5%D0%BD%D0%B0_%D1%81%D0%B0_%D0%BD%D0%B0%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%BE%D0%BC_-%D0%B8%D1%9B
+     * @see http://sr.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA_%D1%81%D1%80%D0%BF%D1%81%D0%BA%D0%B8%D1%85_%D0%BF%D1%80%D0%B5%D0%B7%D0%B8%D0%BC%D0%B5%D0%BD%D0%B0_%D1%81%D0%B0_%D0%BD%D0%B0%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%BE%D0%BC_-%D0%B8%D1%9B
      */
     protected static $lastName = [
         'Abadžić', 'Abdulić', 'Abramić', 'Avalić', 'Avdulić', 'Avrić', 'Aguridić', 'Adamić', 'Azarić', 'Ajdačić', 'Ajdučić', 'Aksentić', 'Aksić', 'Alavantić', 'Aladić', 'Alargić', 'Albijanić', 'Aleksandrić', 'Aleksendrić', 'Aleksić', 'Alimpić', 'Aličić', 'Aljančić', 'Amidžić', 'Ananić', 'Andić', 'Andrejić', 'Andrijanić', 'Andrić', 'Androbić', 'Anđelić', 'Anđić', 'Anđušić', 'Anić', 'Aničić', 'Ankić', 'Anojčić', 'Anokić', 'Antić', 'Antonić', 'Anušić', 'Apelić', 'Apić', 'Arambašić', 'Ardalić', 'Arsenić', 'Arsić', 'Atlagić', 'Aćimić', 'Aćić', 'Acić', 'Ačić', 'Adžić', 'Aškrabić', 'Ašćerić',

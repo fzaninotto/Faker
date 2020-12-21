@@ -29,7 +29,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     /**
-     * @link http://blog.davidou.org/archives/583
+     * @see http://blog.davidou.org/archives/583
      */
     protected static $street = [
         '東英二', '大公十三', '美術南一', '漁港',
@@ -158,7 +158,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     /**
-     * @link http://zh.wikipedia.org/wiki/%E8%87%BA%E7%81%A3%E8%A1%8C%E6%94%BF%E5%8D%80%E5%8A%83
+     * @see http://zh.wikipedia.org/wiki/%E8%87%BA%E7%81%A3%E8%A1%8C%E6%94%BF%E5%8D%80%E5%8A%83
      */
     protected static $city = [
         '新北市' => [
@@ -293,7 +293,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     /**
-     * @link http://terms.naer.edu.tw/download/287/
+     * @see http://terms.naer.edu.tw/download/287/
      */
     protected static $country = [
         '不丹', '中非', '丹麥', '伊朗', '冰島', '剛果',

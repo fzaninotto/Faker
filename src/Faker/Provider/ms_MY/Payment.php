@@ -11,7 +11,7 @@ class Payment extends \Faker\Provider\Payment
     ];
 
     /**
-     * @link http://www.muamalat.com.my/consumer-banking/internet-banking/popup-ibg.html
+     * @see http://www.muamalat.com.my/consumer-banking/internet-banking/popup-ibg.html
      */
     protected static $bankAccountNumberFormats = [
         '##########',
@@ -24,7 +24,7 @@ class Payment extends \Faker\Provider\Payment
     ];
 
     /**
-     * @link https://en.wikipedia.org/wiki/List_of_banks_in_Malaysia
+     * @see https://en.wikipedia.org/wiki/List_of_banks_in_Malaysia
      */
     protected static $localBanks = [
         'Affin Bank',
@@ -38,7 +38,7 @@ class Payment extends \Faker\Provider\Payment
     ];
 
     /**
-     * @link https://en.wikipedia.org/wiki/List_of_banks_in_Malaysia#List_of_foreign_banks_(commercial)
+     * @see https://en.wikipedia.org/wiki/List_of_banks_in_Malaysia#List_of_foreign_banks_(commercial)
      */
     protected static $foreignBanks = [
         'Bangkok Bank Berhad',
@@ -63,7 +63,7 @@ class Payment extends \Faker\Provider\Payment
     ];
 
     /**
-     * @link https://en.wikipedia.org/wiki/List_of_banks_in_Malaysia#Development_Financial_Institutions_(Government-owned_banks)_(full_list)
+     * @see https://en.wikipedia.org/wiki/List_of_banks_in_Malaysia#Development_Financial_Institutions_(Government-owned_banks)_(full_list)
      */
     protected static $governmentBanks = [
         'Agro Bank Malaysia',
@@ -81,7 +81,7 @@ class Payment extends \Faker\Provider\Payment
     ];
 
     /**
-     * @link https://en.wikipedia.org/wiki/List_of_banks_in_Malaysia#Investment-Link_Funds_(Insurance_Companies_-_Takaful_included)
+     * @see https://en.wikipedia.org/wiki/List_of_banks_in_Malaysia#Investment-Link_Funds_(Insurance_Companies_-_Takaful_included)
      */
     protected static $insuranceCompanies = [
         'AIA Malaysia',
@@ -102,7 +102,7 @@ class Payment extends \Faker\Provider\Payment
     ];
 
     /**
-     * @link http://www.bankswiftcode.org/malaysia/
+     * @see http://www.bankswiftcode.org/malaysia/
      */
     protected static $swiftCodes = [
         'ABNAMY2AXXX', 'ABNAMYKLPNG', 'ABNAMYKLXXX', 'AFBQMYKLXXX', 'AIBBMYKLXXX',
@@ -136,7 +136,7 @@ class Payment extends \Faker\Provider\Payment
     ];
 
     /**
-     * @link https://en.wikipedia.org/wiki/Malaysian_ringgit
+     * @see https://en.wikipedia.org/wiki/Malaysian_ringgit
      */
     protected static $currencySymbol = [
         'RM',

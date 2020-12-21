@@ -31,7 +31,7 @@ class Internet extends Base
     ];
 
     /**
-     * @link https://tools.ietf.org/html/rfc1918#section-3
+     * @see https://tools.ietf.org/html/rfc1918#section-3
      */
     protected static $localIpBlocks = [
         ['10.0.0.0', '10.255.255.255'],

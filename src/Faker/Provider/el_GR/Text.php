@@ -24,7 +24,7 @@ class Text extends \Faker\Provider\Text
      * @licence Creative Commons Attribution-ShareAlike https://creativecommons.org/licenses/by-sa/3.0/deed.el
      *
      * @see     https://wikimediafoundation.org/wiki/Terms_of_Use/
-     * @link    https://el.wikisource.org/wiki/%CE%A4%CF%81%CE%B5%CE%BB%CE%B1%CE%BD%CF%84%CF%8E%CE%BD%CE%B7%CF%82
+     * @see    https://el.wikisource.org/wiki/%CE%A4%CF%81%CE%B5%CE%BB%CE%B1%CE%BD%CF%84%CF%8E%CE%BD%CE%B7%CF%82
      *
      * @var string
      */

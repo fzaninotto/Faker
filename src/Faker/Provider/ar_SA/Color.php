@@ -11,7 +11,7 @@ class Color extends \Faker\Provider\Color
     ];
 
     /**
-     * @link https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%A7%D9%84%D8%A3%D9%84%D9%88%D8%A7%D9%86_(%D9%85%D8%AA%D8%B6%D8%A7%D9%85%D8%A9)
+     * @see https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%A7%D9%84%D8%A3%D9%84%D9%88%D8%A7%D9%86_(%D9%85%D8%AA%D8%B6%D8%A7%D9%85%D8%A9)
      */
     protected static $allColorNames = [
         'استقلالي', 'انصهاري الذهب', 'أبنوسي', 'أبيض', 'أبيض الشبح', 'أبيض زهوري', 'أبيض عتيق', 'أبيض مضاد للإشعاع',

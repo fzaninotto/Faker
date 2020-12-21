@@ -26,7 +26,7 @@ class Address extends \Faker\Provider\Address
     /**
      * @var array Norwegian city names
      *
-     * @link https://no.wikipedia.org/wiki/Liste_over_norske_byer
+     * @see https://no.wikipedia.org/wiki/Liste_over_norske_byer
      */
     protected static $cityNames = [
         'Alta', 'Arendal', 'Askim', 'Bergen', 'Bodø', 'Brekstad', 'Brevik', 'Brumunddal', 'Bryne', 'Brønnøysund',
@@ -50,7 +50,7 @@ class Address extends \Faker\Provider\Address
     /**
      * @var array Norwegian municipality names
      *
-     * @link https://no.wikipedia.org/wiki/Norges_kommuner
+     * @see https://no.wikipedia.org/wiki/Norges_kommuner
      */
     protected static $kommuneNames = [
         'Halden', 'Moss', 'Sarpsborg', 'Fredrikstad', 'Hvaler', 'Aremark', 'Marker', 'Rømskog', 'Trøgstad', 'Spydeberg',
@@ -101,7 +101,7 @@ class Address extends \Faker\Provider\Address
     /**
      * @var array Norwegian county names
      *
-     * @link https://no.wikipedia.org/wiki/Norges_fylker
+     * @see https://no.wikipedia.org/wiki/Norges_fylker
      */
     protected static $countyNames = [
         'Østfold', 'Akershus', 'Oslo', 'Hedmark', 'Oppland', 'Buskerud', 'Vestfold', 'Telemark', 'Aust-Agder',

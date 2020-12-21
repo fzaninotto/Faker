@@ -317,7 +317,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * @link https://nl.wikipedia.org/wiki/Burgerservicenummer#11-proef
+     * @see https://nl.wikipedia.org/wiki/Burgerservicenummer#11-proef
      *
      * @return string
      */

@@ -15,7 +15,7 @@ class Address extends \Faker\Provider\Address
     protected static $postcode = ['LV ####'];
 
     /**
-     * @link https://lv.wikipedia.org/wiki/Suver%C4%93no_valstu_uzskait%C4%ABjums
+     * @see https://lv.wikipedia.org/wiki/Suver%C4%93no_valstu_uzskait%C4%ABjums
      */
     protected static $country = [
         'Afganistāna', 'Albānija', 'Alžīrija', 'Amerikas Savienotās Valstis', 'Andora', 'Angola', 'Antigva un Barbuda',

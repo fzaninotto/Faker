@@ -9,7 +9,7 @@ class Address extends \Faker\Provider\Address
     protected static $cityPrefix = ['شمال', 'شرق', 'غرب', 'جنوب', 'وسط', ];
 
     /**
-     * @link http://ar.wikipedia.org/wiki/%D9%85%D9%84%D8%AD%D9%82:%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D9%85%D8%AF%D9%86_%D8%A7%D9%84%D8%A3%D8%B1%D8%AF%D9%86
+     * @see http://ar.wikipedia.org/wiki/%D9%85%D9%84%D8%AD%D9%82:%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D9%85%D8%AF%D9%86_%D8%A7%D9%84%D8%A3%D8%B1%D8%AF%D9%86
      */
     protected static $cityName = [
         'اربد', 'أبو نصير', 'الجبيهه', 'الحصن', 'الرصيفة', 'الرمثا', 'الزرقاء', 'السلط', 'الشهيد عزمي', 'الصريح', 'الضليل', 'الطفيلة', 'العقبة',     'القويسمة', 'الكرك', 'المشارع', 'المفرق', 'الهاشمية', 'ام قصير', 'ايدون',
@@ -32,7 +32,7 @@ class Address extends \Faker\Provider\Address
     protected static $postcode = ['#####', '#####-####'];
 
     /**
-     * @link http://ar.wikipedia.org/wiki/%D9%85%D9%84%D8%AD%D9%82:%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%A7%D9%84%D9%88%D9%84%D8%A7%D9%8A%D8%A7%D8%AA_%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A%D8%A9_%D8%AD%D8%B3%D8%A8_%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%AD%D8%A9
+     * @see http://ar.wikipedia.org/wiki/%D9%85%D9%84%D8%AD%D9%82:%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%A7%D9%84%D9%88%D9%84%D8%A7%D9%8A%D8%A7%D8%AA_%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A%D8%A9_%D8%AD%D8%B3%D8%A8_%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%AD%D8%A9
      */
     protected static $state = [
         'آيوا', 'أركنساس', 'أريزونا', 'ألاباما', 'ألاسكا', 'أوريغون', 'أوكلاهوما', 'أوهايو', 'أيداهو', 'إلينوي', 'إنديانا', 'الاباما', 'الجزر العذراء الأمريكية',
@@ -56,7 +56,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     /**
-     * @link http://www.nationsonline.org/oneworld/countrynames_arabic.htm
+     * @see http://www.nationsonline.org/oneworld/countrynames_arabic.htm
      */
     protected static $country = [
         'الكاريبي', 'أمريكا الوسطى', 'أنتيجوا وبربودا', 'أنجولا', 'أنجويلا', 'أندورا', 'اندونيسيا', 'أورجواي', 'أوروبا', 'أوزبكستان', 'أوغندا', 'أوقيانوسيا', 'أوقيانوسيا النائية', 'أوكرانيا', 'ايران', 'أيرلندا', 'أيسلندا', 'ايطاليا',

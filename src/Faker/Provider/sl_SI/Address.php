@@ -5,7 +5,7 @@ namespace Faker\Provider\sl_SI;
 class Address extends \Faker\Provider\Address
 {
     /**
-     * @link http://www.rtvslo.si/strani/abecedni-seznam-obcin/3103
+     * @see http://www.rtvslo.si/strani/abecedni-seznam-obcin/3103
      */
     protected static $city = [
         'Ajdovščina', 'Apače', 'Beltinci', 'Benedikt', 'Bistrica ob Sotli', 'Bled', 'Bloke', 'Bohinj', 'Borovnica', 'Bovec',
@@ -41,8 +41,8 @@ class Address extends \Faker\Provider\Address
     /**
      * Most common street names in Slovenia
      *
-     * @link http://www.stat.si/krajevnaimena/pregledi_ulice_najpogostejse.asp
-     * @link http://www.stat.si/KrajevnaImena/pregledi_naselja_najpogostejsa.asp
+     * @see http://www.stat.si/krajevnaimena/pregledi_ulice_najpogostejse.asp
+     * @see http://www.stat.si/KrajevnaImena/pregledi_naselja_najpogostejsa.asp
      */
     protected static $street = [
         'Šolska ulica', 'Prešernova ulica', 'Cankarjeva ulica', 'Vrtna ulica', 'Gregorčičeva ulica', 'Kajuhova ulica', 'Prečna ulica',
@@ -58,7 +58,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     /**
-     * @link http://sl.wikipedia.org/wiki/Seznam_suverenih_držav
+     * @see http://sl.wikipedia.org/wiki/Seznam_suverenih_držav
      */
     protected static $country = [
         'Afganistan', 'Albanija', 'Alžirija', 'Andora', 'Angola', 'Antigva in Barbuda', 'Argentina', 'Armenija', 'Avstralija', 'Avstrija',

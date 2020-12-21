@@ -41,7 +41,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     ];
 
     /**
-     * @link http://en.wikipedia.org/wiki/Telephone_numbers_in_Romania#Last_years
+     * @see http://en.wikipedia.org/wiki/Telephone_numbers_in_Romania#Last_years
      */
     public function phoneNumber()
     {

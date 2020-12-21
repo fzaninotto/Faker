@@ -22,7 +22,7 @@ class Person extends \Faker\Provider\Person
     protected static $titleFemale = ['p.', 'ponia', 'panelė'];
 
     /**
-     * @link https://lt.wikipedia.org/wiki/S%C4%85ra%C5%A1as:Lietuvoje_paplit%C4%99_vardai
+     * @see https://lt.wikipedia.org/wiki/S%C4%85ra%C5%A1as:Lietuvoje_paplit%C4%99_vardai
      */
     protected static $firstNameMale = [
         'Abramas', 'Abraomas', 'Achilas', 'Adalbertas', 'Adamas', 'Adas', 'Adolfas', 'Adolis', 'Adomas',
@@ -113,7 +113,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * @link https://lt.wikipedia.org/wiki/S%C4%85ra%C5%A1as:Lietuvoje_paplit%C4%99_vardai
+     * @see https://lt.wikipedia.org/wiki/S%C4%85ra%C5%A1as:Lietuvoje_paplit%C4%99_vardai
      */
     protected static $firstNameFemale = [
         'Ada', 'Adelė', 'Adelija', 'Adelina', 'Adolfa', 'Adolfina',
@@ -235,7 +235,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * @link http://www.horoskopai.lt/gaires/populiariausios-pavardes-lietuvoje/
+     * @see http://www.horoskopai.lt/gaires/populiariausios-pavardes-lietuvoje/
      */
     protected static $lastNameMale = [
         'Kazlaukas', 'Jankauskas', 'Petrauskas', 'Stankevičius', 'Vasiliauskas', 'Žukauskas', 'Butkus',
@@ -243,7 +243,7 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * @link http://www.horoskopai.lt/gaires/populiariausios-pavardes-lietuvoje/
+     * @see http://www.horoskopai.lt/gaires/populiariausios-pavardes-lietuvoje/
      */
     protected static $lastNameFemale = [
         'Kazlauskienė', 'Jankauskienė', 'Petrauskienė', 'Stankevičienė', 'Vasiliauskienė', 'Paulauskienė',
@@ -322,8 +322,8 @@ class Person extends \Faker\Provider\Person
     /**
      * National Personal Identity number (asmens kodas)
      *
-     * @link https://en.wikipedia.org/wiki/National_identification_number#Lithuania
-     * @link https://lt.wikipedia.org/wiki/Asmens_kodas
+     * @see https://en.wikipedia.org/wiki/National_identification_number#Lithuania
+     * @see https://lt.wikipedia.org/wiki/Asmens_kodas
      *
      * @param string    $gender       [male|female]
      * @param \DateTime $birthdate
@@ -364,8 +364,8 @@ class Person extends \Faker\Provider\Person
     /**
      * Calculate the sum of personal code
      *
-     * @link https://en.wikipedia.org/wiki/National_identification_number#Lithuania
-     * @link https://lt.wikipedia.org/wiki/Asmens_kodas
+     * @see https://en.wikipedia.org/wiki/National_identification_number#Lithuania
+     * @see https://lt.wikipedia.org/wiki/Asmens_kodas
      *
      * @param string $numbers
      * @param int    $time    [1|2]

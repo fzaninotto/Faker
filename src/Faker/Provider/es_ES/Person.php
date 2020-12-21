@@ -127,7 +127,7 @@ class Person extends \Faker\Provider\Person
      *
      * @example '77446565E'
      *
-     * @link https://es.wikibooks.org/wiki/Algoritmo_para_obtener_la_letra_del_NIF#Algoritmo
+     * @see https://es.wikibooks.org/wiki/Algoritmo_para_obtener_la_letra_del_NIF#Algoritmo
      */
     public static function dni()
     {
