@@ -83,6 +83,7 @@ return $config
         'no_extra_blank_lines' => true,
         'no_leading_import_slash' => true,
         'no_leading_namespace_whitespace' => true,
+        'no_spaces_around_offset' => true,
         'no_superfluous_elseif' => true,
         'no_superfluous_phpdoc_tags' => true,
         'no_unneeded_curly_braces' => true,

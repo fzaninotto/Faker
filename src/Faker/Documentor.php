@@ -42,7 +42,7 @@ class Documentor
                     if ($reflparameter->isDefaultValueAvailable()) {
                         $parameter .= ' = ' . var_export($reflparameter->getDefaultValue(), true);
                     }
-                    $parameters []= $parameter;
+                    $parameters[]= $parameter;
                 }
                 $parameters = $parameters ? '(' . implode(', ', $parameters) . ')' : '';
 
