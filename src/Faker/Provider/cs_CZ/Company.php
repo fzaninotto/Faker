@@ -115,6 +115,7 @@ class Company extends \Faker\Provider\Company
         if ($mod === 0 || $mod === 10) {
             return "{$ico}1";
         }
+
         if ($mod === 1) {
             return "{$ico}0";
         }

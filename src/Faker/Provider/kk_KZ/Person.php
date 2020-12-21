@@ -185,9 +185,11 @@ class Person extends \Faker\Provider\Person
         if ($year >= 2000 && $year <= DateTime::year()) {
             return self::CENTURY_21ST;
         }
+
         if ($year >= 1900) {
             return self::CENTURY_20TH;
         }
+
         if ($year >= 1800) {
             return self::CENTURY_19TH;
         }

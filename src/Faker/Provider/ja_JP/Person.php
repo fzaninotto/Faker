@@ -113,6 +113,7 @@ class Person extends \Faker\Provider\Person
         if ($gender === static::GENDER_MALE) {
             return static::firstKanaNameMale();
         }
+
         if ($gender === static::GENDER_FEMALE) {
             return static::firstKanaNameFemale();
         }
