@@ -161,7 +161,7 @@ class Payment extends Base
      */
     public static function creditCardNumber($type = null, $formatted = false, $separator = '-')
     {
-        if (is_null($type)) {
+        if (null === $type) {
             $type = static::creditCardType();
         }
         $mask = static::randomElement(static::$cardParams[$type]);
@@ -206,7 +206,7 @@ class Payment extends Base
      */
     public function creditCardExpirationDateString($valid = true, $expirationDateFormat = null)
     {
-        return $this->creditCardExpirationDate($valid)->format(is_null($expirationDateFormat) ? static::$expirationDateFormat : $expirationDateFormat);
+        return $this->creditCardExpirationDate($valid)->format(null === $expirationDateFormat ? static::$expirationDateFormat : $expirationDateFormat);
     }
 
     /**
@@ -239,7 +239,7 @@ class Payment extends Base
      */
     public static function iban($countryCode = null, $prefix = '', $length = null)
     {
-        $countryCode = is_null($countryCode) ? self::randomKey(self::$ibanFormats) : strtoupper($countryCode);
+        $countryCode = null === $countryCode ? self::randomKey(self::$ibanFormats) : strtoupper($countryCode);
 
         $format = !isset(static::$ibanFormats[$countryCode]) ? null : static::$ibanFormats[$countryCode];
 

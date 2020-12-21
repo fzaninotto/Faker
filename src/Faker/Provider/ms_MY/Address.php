@@ -658,7 +658,7 @@ class Address extends \Faker\Provider\Address
             ]
         ];
 
-        $postcode = is_null($state) ? static::randomElement($format) : $format[$state];
+        $postcode = null === $state ? static::randomElement($format) : $format[$state];
 
         return (string) static::randomElement($postcode);
     }

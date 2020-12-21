@@ -127,7 +127,7 @@ class Person extends \Faker\Provider\Person
 
         $date = $this->getDateOfBirth($dateOfBirth);
 
-        if (is_null($county)) {
+        if (null === $county) {
             $countyCode = static::randomElement(array_values(static::$cnpCountyCodes));
         } elseif (!array_key_exists($county, static::$cnpCountyCodes)) {
             throw new \InvalidArgumentException("Invalid county code '{$county}' received");

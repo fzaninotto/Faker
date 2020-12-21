@@ -67,6 +67,7 @@ return $config
         ],
         'implode_call' => true,
         'increment_style' => true,
+        'is_null' => true,
         'lambda_not_used_import' => true,
         'lowercase_cast' => true,
         'lowercase_static_reference' => true,

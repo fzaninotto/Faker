@@ -133,7 +133,7 @@ class EntityPopulator
         $entity = $table->newEntity();
 
         foreach ($this->columnFormatters as $column => $format) {
-            if (!is_null($format)) {
+            if (null !== $format) {
                 $entity->{$column} = is_callable($format) ? $format($insertedEntities, $table) : $format;
             }
         }
