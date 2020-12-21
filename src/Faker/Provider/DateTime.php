@@ -376,6 +376,6 @@ class DateTime extends Base
      */
     private static function resolveTimezone($timezone)
     {
-        return ((null === $timezone) ? ((null === static::$defaultTimezone) ? date_default_timezone_get() : static::$defaultTimezone) : $timezone);
+        return (null === $timezone) ? ((null === static::$defaultTimezone) ? date_default_timezone_get() : static::$defaultTimezone) : $timezone;
     }
 }
