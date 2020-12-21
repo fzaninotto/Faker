@@ -29,6 +29,7 @@ class Text extends \Faker\Provider\Text
      * mcicora@yahoo.com.
      *
      * @see http://www.gutenberg.org/cache/epub/2407/pg2407.txt
+     *
      * @var string
      */
     protected static $baseText = <<<'EOT'

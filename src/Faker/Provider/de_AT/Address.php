@@ -15,6 +15,7 @@ class Address extends \Faker\Provider\Address
 
     /**
      * @var string[]
+     *
      * @link http://www.statistik.at/verzeichnis/reglisten/gemliste_knz.xls - postal codes of all Austrian cities with the status 'Statutarstadt (SR)' or 'Stadtgemeinde (ST)'
      */
     protected static $postcode = [
@@ -38,6 +39,7 @@ class Address extends \Faker\Provider\Address
 
     /**
      * @var array
+     *
      * @see https://de.wikipedia.org/wiki/Liste_der_St%C3%A4dte_in_%C3%96sterreich
      */
     protected static $cityNames = [

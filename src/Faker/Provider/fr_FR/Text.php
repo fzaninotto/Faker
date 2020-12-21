@@ -27,6 +27,7 @@ class Text extends \Faker\Provider\Text
      * (1857)
      *
      * @see http://www.gutenberg.org/cache/epub/14155/pg14155.txt
+     *
      * @var string
      */
     protected static $baseText = <<<'EOT'

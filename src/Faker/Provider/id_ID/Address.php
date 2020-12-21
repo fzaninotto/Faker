@@ -87,6 +87,7 @@ class Address extends \Faker\Provider\Address
      * Abbreviated State Names.
      *
      * @link https://en.wikipedia.org/wiki/Provinces_of_Indonesia#Table_of_provinces
+     *
      * @var array
      */
     protected static $stateAbbr = [

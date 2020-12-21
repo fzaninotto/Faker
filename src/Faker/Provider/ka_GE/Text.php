@@ -16,6 +16,7 @@ class Text extends \Faker\Provider\Text
      * About Author: http://en.wikipedia.org/wiki/Ilia_Chavchavadze
      *
      * @see http://www.nplg.gov.ge/gsdl/cgi-bin/library.exe?e=q-00000-00---off-0vertwo--00-1----0-10-0---0---0direct-10-DT--4----Doc---0-1l--11-en-50---20-about-%E1%83%AD%E1%83%90%E1%83%95%E1%83%AD%E1%83%90%E1%83%95%E1%83%90%E1%83%AB%E1%83%94+%E1%83%99%E1%83%90%E1%83%AA%E1%83%98%E1%83%90+%E1%83%90%E1%83%93%E1%83%90%E1%83%9B%E1%83%98%E1%83%90%E1%83%9C%E1%83%98--00-3-1-00-0-0-11-1-0utfZz-8-00&a=d&c=vertwo&srp=0&srn=0&cl=search&d=HASH81409ccfa8b32143543b5f
+     *
      * @var string
      */
     protected static $baseText = <<<'EOT'

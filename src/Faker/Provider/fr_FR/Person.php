@@ -72,6 +72,7 @@ class Person extends \Faker\Provider\Person
      * Generates a NIR / Sécurité Sociale number (13 digits + 2 digits for the key)
      *
      * @see https://fr.wikipedia.org/wiki/Num%C3%A9ro_de_s%C3%A9curit%C3%A9_sociale_en_France
+     *
      * @return string
      */
     public function nir($gender = null, $formatted = false)

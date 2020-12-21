@@ -13,6 +13,7 @@ class Text extends \Faker\Provider\Text
      * License: Public Domain, since 2014.01.01
      *
      * @see http://mek.oszk.hu/01000/01038/
+     *
      * @var string
      */
     protected static $baseText = <<<'EOT'

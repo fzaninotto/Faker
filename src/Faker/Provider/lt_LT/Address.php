@@ -197,7 +197,9 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Lithuania municipality
+     *
      * @link https://en.wikipedia.org/wiki/Municipality
+     *
      * @return string
      */
     public function municipality()

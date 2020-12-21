@@ -99,7 +99,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * National Personal Identity number (tc kimlik no)
+     *
      * @link https://en.wikipedia.org/wiki/Turkish_Identification_Number
+     *
      * @return string on format XXXXXXXXXXX
      */
     public function tcNo()

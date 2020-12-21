@@ -16,6 +16,7 @@ class Populator
 
     /**
      * Populator constructor.
+     *
      * @param \Faker\Generator $generator
      * @param Locator|null     $locator
      */

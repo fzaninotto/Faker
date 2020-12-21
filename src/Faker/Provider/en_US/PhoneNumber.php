@@ -72,6 +72,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     /**
      * @return string
+     *
      * @example '555-123-546 x123'
      */
     public function phoneNumberWithExtension()

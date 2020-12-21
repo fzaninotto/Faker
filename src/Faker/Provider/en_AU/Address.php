@@ -72,6 +72,7 @@ class Address extends \Faker\Provider\en_US\Address
 
     /**
      * Returns a sane building letter
+     *
      * @example B
      */
     public static function buildingLetter()
@@ -81,6 +82,7 @@ class Address extends \Faker\Provider\en_US\Address
 
     /**
      * Returns a sane city prefix
+     *
      * @example West
      */
     public static function cityPrefix()
@@ -90,6 +92,7 @@ class Address extends \Faker\Provider\en_US\Address
 
     /**
      * Returns a sane street suffix
+     *
      * @example Beach
      */
     public static function streetSuffix()
@@ -99,6 +102,7 @@ class Address extends \Faker\Provider\en_US\Address
 
     /**
      * Returns a sane state
+     *
      * @example New South Wales
      */
     public static function state()

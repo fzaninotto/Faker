@@ -15,7 +15,8 @@ class Ean
      *
      * @see https://en.wikipedia.org/wiki/International_Article_Number
      *
-     * @param  string $digits
+     * @param string $digits
+     *
      * @return int
      */
     public static function checksum($digits)
@@ -34,7 +35,8 @@ class Ean
      * Checks whether the provided number is an EAN compliant number and that
      * the checksum is correct.
      *
-     * @param  string $ean An EAN number
+     * @param string $ean An EAN number
+     *
      * @return bool
      */
     public static function isValid($ean)

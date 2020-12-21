@@ -38,8 +38,10 @@ class DateTime extends \Faker\Provider\DateTime
     }
 
     /**
-     * @param  \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     *
      * @return string
+     *
      * @example '2'
      */
     public static function dayOfMonth($max = 'now')
@@ -49,7 +51,9 @@ class DateTime extends \Faker\Provider\DateTime
 
     /**
      * Full date with inflected month
+     *
      * @return string
+     *
      * @example '16. listopadu 2003'
      */
     public function formattedDate()

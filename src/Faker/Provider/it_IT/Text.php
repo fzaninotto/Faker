@@ -101,6 +101,7 @@ class Text extends \Faker\Provider\Text
      * XXXVI Finalmente Pinocchio cessa d’essere un burattino e diventa un ragazzo.
      *
      * @see http://www.liberliber.it/libri/c/collodi/index.php#elenco_opere
+     *
      * @var string
      */
     protected static $baseText = <<<'EOT'

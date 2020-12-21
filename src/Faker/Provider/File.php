@@ -8,6 +8,7 @@ class File extends Base
      * MIME types from the apache.org file. Some types are truncated.
      *
      * @var array Map of MIME types => file extension(s)
+     *
      * @link http://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types
      */
     protected static $mimeTypes = [
@@ -541,6 +542,7 @@ class File extends Base
      * Get a random MIME type
      *
      * @return string
+     *
      * @example 'video/avi'
      */
     public static function mimeType()
@@ -552,6 +554,7 @@ class File extends Base
      * Get a random file extension (without a dot)
      *
      * @example avi
+     *
      * @return string
      */
     public static function fileExtension()
@@ -564,9 +567,10 @@ class File extends Base
     /**
      * Copy a random file from the source directory to the target directory and returns the filename/fullpath
      *
-     * @param  string $sourceDirectory The directory to look for random file taking
-     * @param  string $targetDirectory
-     * @param  bool   $fullPath        Whether to have the full path or just the filename
+     * @param string $sourceDirectory The directory to look for random file taking
+     * @param string $targetDirectory
+     * @param bool   $fullPath        Whether to have the full path or just the filename
+     *
      * @return string
      */
     public static function file($sourceDirectory = '/tmp', $targetDirectory = '/tmp', $fullPath = true)

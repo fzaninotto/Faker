@@ -106,6 +106,7 @@ class Company extends \Faker\Provider\Company
      * Employer Identification Number (EIN)
      *
      * @link https://en.wikipedia.org/wiki/Employer_Identification_Number
+     *
      * @example '12-3456789'
      */
     public static function ein()

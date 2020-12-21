@@ -20,6 +20,7 @@ final class TCNoTest extends TestCase
 
     /**
      * @dataProvider checksumProvider
+     *
      * @param $tcNo
      * @param $checksum
      */
@@ -44,6 +45,7 @@ final class TCNoTest extends TestCase
 
     /**
      * @dataProvider validatorProvider
+     *
      * @param $tcNo
      * @param $isValid
      */

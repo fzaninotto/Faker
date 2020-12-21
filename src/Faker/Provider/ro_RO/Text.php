@@ -12,6 +12,7 @@ class Text extends \Faker\Provider\Text
      *
      * @see https://creativecommons.org/licenses/by-sa/3.0/deed.en
      * @link https://ro.wikisource.org/wiki/Neghini%C8%9B%C4%83
+     *
      * @var string
      */
     protected static $baseText = <<<'EOT'

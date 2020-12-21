@@ -12,6 +12,7 @@ class Image extends Base
 
     /**
      * @var array
+     *
      * @deprecated Categories are no longer used as a list in the placeholder API but referenced as string instead
      */
     protected static $categories = [

@@ -6,6 +6,7 @@ class Person extends \Faker\Provider\Person
 {
     /**
      * CNE is the official national election registry org.
+     *
      * @link http://www.cne.gob.ve/web/registro_electoral/ciudadanos_111_129_2011.php
      */
     protected static $maleNameFormats = [
@@ -19,6 +20,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * CNE is the official national election registry org.
+     *
      * @link http://www.cne.gob.ve/web/registro_electoral/ciudadanos_111_129_2011.php
      */
     protected static $femaleNameFormats = [
@@ -32,6 +34,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * CNE is the official national election registry org.
+     *
      * @link http://www.cne.gob.ve/web/registro_electoral/ciudadanos_111_129_2011.php
      */
     protected static $firstNameMale = [
@@ -47,6 +50,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * CNE is the official national election registry org.
+     *
      * @link http://www.cne.gob.ve/web/registro_electoral/ciudadanos_111_129_2011.php
      */
     protected static $firstNameFemale = [
@@ -63,6 +67,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * CNE is the official national election registry org.
+     *
      * @link http://www.cne.gob.ve/web/registro_electoral/ciudadanos_111_129_2011.php
      */
     protected static $lastName = [
@@ -150,9 +155,12 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Generate random national identification number (cédula de identidad). Ex V-8756432
-     * @param  string $separator
+     *
+     * @param string $separator
+     *
      * @return string CNE is the official national election registry org.
-     *                          CNE is the official national election registry org.
+     *                CNE is the official national election registry org.
+     *
      * @link http://www.cne.gob.ve/web/registro_electoral/ciudadanos_111_129_2011.php
      */
     public function nationalId($separator = '')

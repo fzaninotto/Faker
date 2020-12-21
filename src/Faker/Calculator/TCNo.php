@@ -12,7 +12,8 @@ class TCNo
      *
      * https://en.wikipedia.org/wiki/Turkish_Identification_Number
      *
-     * @param  string $identityPrefix
+     * @param string $identityPrefix
+     *
      * @return string Checksum (two digit)
      */
     public static function checksum($identityPrefix)
@@ -43,7 +44,8 @@ class TCNo
     /**
      * Checks whether a TCNo has a valid checksum
      *
-     * @param  string $tcNo
+     * @param string $tcNo
+     *
      * @return bool
      */
     public static function isValid($tcNo)

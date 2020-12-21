@@ -17,12 +17,14 @@ class Company extends \Faker\Provider\Company
 
     /**
      * Common suffixes
+     *
      * @link https://www.brreg.no/bedrift/organisasjonsformer/
      */
     protected static $companySuffix = ['ANS', 'AS', 'ASA', 'BA', 'DA', 'ENK', 'GFS', 'KTRF', 'NUF', 'PK', 'SA', 'SPA', 'STI', 'VIFE'];
 
     /**
      * 1500 random job titles from Statistisk Sentralbyrå
+     *
      * @link http://www.ssb.no/a/yrke/yrke.csv
      */
     protected static $jobTitleFormat = [

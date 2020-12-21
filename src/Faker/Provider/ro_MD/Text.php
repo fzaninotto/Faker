@@ -23,6 +23,7 @@ class Text extends \Faker\Provider\Text
      *
      * @see     https://wikimediafoundation.org/wiki/Terms_of_Use/
      * @link    https://ro.wikisource.org/wiki/Povestea_lui_Harap-Alb
+     *
      * @var string
      */
     protected static $baseText = <<<'EOT'

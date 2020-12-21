@@ -22,6 +22,7 @@ class Address extends \Faker\Provider\Address
 
     /**
      * @var array Swedish city names
+     *
      * @link http://sv.wikipedia.org/wiki/Lista_%C3%B6ver_Sveriges_t%C3%A4torter
      */
     protected static $cityNames = [

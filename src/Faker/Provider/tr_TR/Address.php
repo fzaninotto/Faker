@@ -40,6 +40,7 @@ class Address extends \Faker\Provider\Address
 
     /**
      * @var array Countries in Turkish
+     *
      * @link https://tr.wikipedia.org/wiki/%C3%9Clkeler_listesi
      */
     protected static $country = [

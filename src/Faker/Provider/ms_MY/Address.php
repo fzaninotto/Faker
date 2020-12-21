@@ -595,6 +595,7 @@ class Address extends \Faker\Provider\Address
      * Return a postcode based on state
      *
      * @example '55100'
+     *
      * @link https://en.wikipedia.org/wiki/Postal_codes_in_Malaysia#States
      *
      * @param string|null $state 'state' or null

@@ -108,9 +108,12 @@ class Person extends \Faker\Provider\Person
 
     /**
      * National Personal Identity number (personas kods)
+     *
      * @link https://en.wikipedia.org/wiki/National_identification_number#Latvia
-     * @param  \DateTime $birthdate
-     * @return string    on format XXXXXX-XXXXX
+     *
+     * @param \DateTime $birthdate
+     *
+     * @return string on format XXXXXX-XXXXX
      */
     public function personalIdentityNumber(\DateTime $birthdate = null)
     {

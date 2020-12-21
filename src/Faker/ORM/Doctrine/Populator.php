@@ -31,6 +31,7 @@ class Populator
 
     /**
      * Populator constructor.
+     *
      * @param Generator          $generator
      * @param ObjectManager|null $manager
      * @param int                $batchSize

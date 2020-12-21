@@ -93,6 +93,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Generates a random National Insurance number.
+     *
      * @link https://www.gov.uk/hmrc-internal-manuals/national-insurance-manual/nim39110
      */
     public function nino(): string

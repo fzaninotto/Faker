@@ -65,6 +65,7 @@ class Text extends \Faker\Provider\Text
      * KARAKONY WICHURA NOC WIELKIEGO SEZONU
      *
      * @see http://www.gutenberg.org/cache/epub/8119/pg8119.txt
+     *
      * @var string
      */
     protected static $baseText = <<<'EOT'

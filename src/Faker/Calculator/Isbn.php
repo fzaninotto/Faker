@@ -12,9 +12,11 @@ class Isbn
 
     /**
      * ISBN-10 check digit
+     *
      * @link http://en.wikipedia.org/wiki/International_Standard_Book_Number#ISBN-10_check_digits
      *
-     * @param  string           $input ISBN without check-digit
+     * @param string $input ISBN without check-digit
+     *
      * @throws \LengthException When wrong input length passed
      *
      * @return string

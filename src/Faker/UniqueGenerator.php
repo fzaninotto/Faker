@@ -24,7 +24,9 @@ class UniqueGenerator
 
     /**
      * Catch and proxy all generator calls but return only unique values
-     * @param  string $attribute
+     *
+     * @param string $attribute
+     *
      * @return mixed
      */
     public function __get($attribute)
@@ -34,8 +36,10 @@ class UniqueGenerator
 
     /**
      * Catch and proxy all generator calls with arguments but return only unique values
-     * @param  string $name
-     * @param  array  $arguments
+     *
+     * @param string $name
+     * @param array  $arguments
+     *
      * @return mixed
      */
     public function __call($name, $arguments)

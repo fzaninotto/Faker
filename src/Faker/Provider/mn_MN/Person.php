@@ -82,6 +82,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @return string
+     *
      * @example 'Ф'
      */
     public function alphabet()
@@ -91,6 +92,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * @return string
+     *
      * @example 'Э'
      */
     public function namePrefix()

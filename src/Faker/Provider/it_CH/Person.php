@@ -92,6 +92,7 @@ class Person extends \Faker\Provider\it_IT\Person
      * This function acts as an alias for the function defined in the fr_CH provider.
      *
      * @see \Faker\Provider\fr_CH\Person::avs13()
+     *
      * @return string
      */
     public static function avs13()

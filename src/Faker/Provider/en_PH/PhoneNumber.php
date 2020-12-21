@@ -49,6 +49,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     /**
      * Return a en_PH mobile phone number
+     *
      * @return string
      */
     public static function mobileNumber()

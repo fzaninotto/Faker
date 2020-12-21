@@ -21,6 +21,7 @@ class Text extends \Faker\Provider\Text
      * Language: Czech
      *
      * @see https://cs.wikisource.org/wiki/Krakatit
+     *
      * @var string
      *
      * Karel Čapek

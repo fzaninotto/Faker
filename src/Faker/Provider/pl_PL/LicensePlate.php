@@ -531,8 +531,9 @@ class LicensePlate extends Base
     /**
      * Selects random area from the list of available and requested.
      *
-     * @param  array      $available
-     * @param  array|null $requested
+     * @param array      $available
+     * @param array|null $requested
+     *
      * @return mixed
      */
     protected static function selectRandomArea(array $available, ?array $requested)

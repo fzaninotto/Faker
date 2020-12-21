@@ -19,11 +19,13 @@ abstract class Text extends Base
      * possible following words as the value.
      *
      * @example 'Alice, swallowing down her flamingo, and began by taking the little golden key'
-     * @param  int    $maxNbChars Maximum number of characters the text should contain (minimum: 10)
-     * @param  int    $indexSize  Determines how many words are considered for the generation of the next word.
-     *                            The minimum is 1, and it produces a higher level of randomness, although the
-     *                            generated text usually doesn't make sense. Higher index sizes (up to 5)
-     *                            produce more correct text, at the price of less randomness.
+     *
+     * @param int $maxNbChars Maximum number of characters the text should contain (minimum: 10)
+     * @param int $indexSize  Determines how many words are considered for the generation of the next word.
+     *                        The minimum is 1, and it produces a higher level of randomness, although the
+     *                        generated text usually doesn't make sense. Higher index sizes (up to 5)
+     *                        produce more correct text, at the price of less randomness.
+     *
      * @return string
      */
     public function realText($maxNbChars = 200, $indexSize = 2)
@@ -39,12 +41,14 @@ abstract class Text extends Base
      * possible following words as the value.
      *
      * @example 'Alice, swallowing down her flamingo, and began by taking the little golden key'
-     * @param  int    $minNbChars Minimum number of characters the text should contain (maximum: 8)
-     * @param  int    $maxNbChars Maximum number of characters the text should contain (minimum: 10)
-     * @param  int    $indexSize  Determines how many words are considered for the generation of the next word.
-     *                            The minimum is 1, and it produces a higher level of randomness, although the
-     *                            generated text usually doesn't make sense. Higher index sizes (up to 5)
-     *                            produce more correct text, at the price of less randomness.
+     *
+     * @param int $minNbChars Minimum number of characters the text should contain (maximum: 8)
+     * @param int $maxNbChars Maximum number of characters the text should contain (minimum: 10)
+     * @param int $indexSize  Determines how many words are considered for the generation of the next word.
+     *                        The minimum is 1, and it produces a higher level of randomness, although the
+     *                        generated text usually doesn't make sense. Higher index sizes (up to 5)
+     *                        produce more correct text, at the price of less randomness.
+     *
      * @return string
      */
     public function realTextBetween($minNbChars = 160, $maxNbChars = 200, $indexSize = 2)
@@ -85,8 +89,9 @@ abstract class Text extends Base
     }
 
     /**
-     * @param  int    $maxNbChars
-     * @param  array  $words
+     * @param int   $maxNbChars
+     * @param array $words
+     *
      * @return string
      */
     protected function generateText($maxNbChars, $words)

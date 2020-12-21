@@ -342,7 +342,9 @@ class Address extends \Faker\Provider\Address
     /**
      * Get city and region together
      * We need it because city and region must comply each other in Ukraine
+     *
      * @example 'Закарпатська область, місто Ужгород'
+     *
      * @return string
      */
     public function cityAndRegion()

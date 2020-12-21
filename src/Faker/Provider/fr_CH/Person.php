@@ -95,6 +95,7 @@ class Person extends \Faker\Provider\fr_FR\Person
      * as a formatted string.
      *
      * @see https://www.zas.admin.ch/zas/fr/home/partenaires-et-institutions-/navs13.html
+     *
      * @return string
      */
     public static function avs13()

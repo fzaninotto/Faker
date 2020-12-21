@@ -40,6 +40,7 @@ class Text extends \Faker\Provider\Text
      * 1911. "Titaantjes" in "Groot-Nederland" van Juni 1915.
      *
      * @see http://www.gutenberg.org/cache/epub/29719/pg29719.txt
+     *
      * @var string
      */
     protected static $baseText = <<<'EOT'

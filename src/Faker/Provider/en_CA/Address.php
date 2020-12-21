@@ -50,6 +50,7 @@ class Address extends \Faker\Provider\en_US\Address
 
     /**
      * Returns a postalcode-safe letter
+     *
      * @example A1B 2C3
      */
     public static function randomPostcodeLetter()

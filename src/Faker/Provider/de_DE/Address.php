@@ -17,6 +17,7 @@ class Address extends \Faker\Provider\Address
 
     /**
      * @var array
+     *
      * @see https://de.wikipedia.org/wiki/Liste_der_Gro%C3%9F-_und_Mittelst%C3%A4dte_in_Deutschland
      */
     protected static $cityNames = [

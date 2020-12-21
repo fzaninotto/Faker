@@ -25,6 +25,7 @@ class Text extends \Faker\Provider\Text
      * Language: Dutch
      *
      * @see http://www.gutenberg.org/cache/epub/11208/pg11208.txt
+     *
      * @var string
      */
     protected static $baseText = <<<'EOT'

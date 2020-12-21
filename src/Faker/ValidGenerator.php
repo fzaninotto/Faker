@@ -33,6 +33,7 @@ class ValidGenerator
 
     /**
      * Catch and proxy all generator calls but return only valid values
+     *
      * @param string $attribute
      *
      * @return mixed
@@ -44,6 +45,7 @@ class ValidGenerator
 
     /**
      * Catch and proxy all generator calls with arguments but return only valid values
+     *
      * @param string $name
      * @param array  $arguments
      *

@@ -18,7 +18,9 @@ class Text extends \Faker\Provider\Text
      * Title: 吶喊 Call to Arms (1922)
      * Author: 魯迅 Lu Xun
      * Language: Traditional Chinese
+     *
      * @see https://zh.wikisource.org/wiki/%E5%90%B6%E5%96%8A
+     *
      * @var string
      */
     protected static $baseText = <<<'EOT'
@@ -856,7 +858,8 @@ EOT;
     /**
      * Convert original string to utf-8 encoding.
      *
-     * @param  string $text
+     * @param string $text
+     *
      * @return array
      */
     protected static function utf8Encoding($text)

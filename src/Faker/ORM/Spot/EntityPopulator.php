@@ -105,7 +105,8 @@ class EntityPopulator
     }
 
     /**
-     * @param  Generator $generator
+     * @param Generator $generator
+     *
      * @return array
      */
     public function guessColumnFormatters(Generator $generator)
