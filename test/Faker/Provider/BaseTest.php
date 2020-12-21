@@ -339,6 +339,7 @@ final class BaseTest extends TestCase
             ['\.\*\?\+', 'escaped characters'],
             ['[.]', 'literal dot in character class'],
             ['.', 'catch-all dot'],
+            ['\\\\', 'escaped backslash'],
             ['[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}', 'complex regex'],
         ];
     }
