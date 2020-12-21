@@ -97,6 +97,10 @@ return $config
         'no_whitespace_in_blank_line' => true,
         'non_printable_character' => true,
         'normalize_index_brace' => true,
+        'operator_linebreak' => [
+            'only_booleans' => true,
+            'position' => 'beginning',
+        ],
         'ordered_imports' => true,
         'php_unit_construct' => true,
         'php_unit_dedicate_assert' => true,

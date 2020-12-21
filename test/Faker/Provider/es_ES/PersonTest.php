@@ -15,8 +15,8 @@ final class PersonTest extends TestCase
     // validation taken from http://kiwwito.com/php-function-for-spanish-dni-nie-validation/
     public function isValidDNI($string)
     {
-        if (strlen($string) != 9 ||
-            preg_match('/^[XYZ]?([0-9]{7,8})([A-Z])$/i', $string, $matches) !== 1) {
+        if (strlen($string) != 9
+            || preg_match('/^[XYZ]?([0-9]{7,8})([A-Z])$/i', $string, $matches) !== 1) {
             return false;
         }
 
