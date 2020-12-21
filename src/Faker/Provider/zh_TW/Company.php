@@ -5,13 +5,13 @@ namespace Faker\Provider\zh_TW;
 class Company extends \Faker\Provider\Company
 {
     protected static $companyEnSuffix = [
-        'Inc', 'and Sons', 'LLC', 'Group', 'PLC', 'Ltd'
+        'Inc', 'and Sons', 'LLC', 'Group', 'PLC', 'Ltd',
     ];
 
     protected static $companyEnFormats = [
         '{{lastNameEn}} {{companyEnSuffix}}',
         '{{lastNameEn}}-{{lastNameEn}}',
-        '{{lastNameEn}}, {{lastNameEn}} and {{lastNameEn}}'
+        '{{lastNameEn}}, {{lastNameEn}} and {{lastNameEn}}',
     ];
 
     protected static $formats = [
@@ -44,7 +44,7 @@ class Company extends \Faker\Provider\Company
         '百貨', '酒店', '數位',
     ];
     protected static $companySuffix = [
-        '公司', '有限公司', '股份有限公司'
+        '公司', '有限公司', '股份有限公司',
     ];
     /**
      * @link https://zh-tw.facebook.com/notes/%E7%8E%A9%E5%BB%A3%E5%91%8Aplaying-with-advertising/%E5%9B%9E%E9%A1%A7%E8%87%BA%E7%81%A3%E6%AD%B7%E5%B1%86%E5%BB%A3%E5%91%8A%E9%87%91%E5%8F%A5%E7%8D%8E/294008963985215
@@ -213,7 +213,7 @@ class Company extends \Faker\Provider\Company
             '焦點', '方案', '解決方案', '社群', '科技', '技術',
             '內容', '入口', '供應鍊', '介面', '系統', '頻寬',
             '模型', '網路', '使用經驗', '評量', '方法',
-        ]
+        ],
     ];
 
     public static function companyEnSuffix()

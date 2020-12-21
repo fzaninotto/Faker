@@ -7,7 +7,7 @@ class Payment extends \Faker\Provider\Payment
     protected static $bankFormats = [
         '{{localBank}}',
         '{{foreignBank}}',
-        '{{governmentBank}}'
+        '{{governmentBank}}',
     ];
 
     /**
@@ -34,7 +34,7 @@ class Payment extends \Faker\Provider\Payment
         'Hong Leong Bank ',
         'Maybank',
         'Public Bank',
-        'RHB Bank'
+        'RHB Bank',
     ];
 
     /**
@@ -59,7 +59,7 @@ class Payment extends \Faker\Provider\Payment
         'Standard Chartered Bank Malaysia Berhad',
         'Sumitomo Mitsui Banking Corporation Malaysia Berhad',
         'The Bank of Nova Scotia Berhad',
-        'United Overseas Bank (Malaysia) Bhd.'
+        'United Overseas Bank (Malaysia) Bhd.',
     ];
 
     /**
@@ -139,7 +139,7 @@ class Payment extends \Faker\Provider\Payment
      * @link https://en.wikipedia.org/wiki/Malaysian_ringgit
      */
     protected static $currencySymbol = [
-        'RM'
+        'RM',
     ];
 
     /**

@@ -46,6 +46,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         // More generic formats
         '+38(0##)#######',
         '+38(0###)######',
-        '+38(0####)#####'
+        '+38(0####)#####',
     ];
 }

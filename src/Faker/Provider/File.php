@@ -39,7 +39,7 @@ class File extends Base
             'bpk',
             'dump',
             'elc',
-            'deploy'
+            'deploy',
         ],
         'application/ogg'                                                           => 'ogx',
         'application/omdoc+xml'                                                     => 'omdoc',
@@ -127,7 +127,7 @@ class File extends Base
             'xla',
             'xlc',
             'xlt',
-            'xlw'
+            'xlw',
         ],
         'application/vnd.ms-excel.addin.macroenabled.12'                            => 'xlam',
         'application/vnd.ms-excel.sheet.binary.macroenabled.12'                     => 'xlsb',
@@ -189,7 +189,7 @@ class File extends Base
             'qwd',
             'qwt',
             'qxl',
-            'qxb'
+            'qxb',
         ],
         'application/vnd.realvnc.bed'                                               => 'bed',
         'application/vnd.recordare.musicxml'                                        => 'mxl',
@@ -279,7 +279,7 @@ class File extends Base
             'cxt',
             'w3d',
             'fgd',
-            'swa'
+            'swa',
         ],
         'application/x-font-ttf'                                                    => ['ttf', 'ttc'],
         'application/x-font-type1'                                                  => ['pfa', 'pfb', 'pfm', 'afm'],
@@ -312,7 +312,7 @@ class File extends Base
         'application/x-msmediaview'                                                 => [
             'mvb',
             'm13',
-            'm14'
+            'm14',
         ],
         'application/x-msmetafile'                                                  => ['wmf', 'wmz', 'emf', 'emz'],
         'application/x-rar-compressed'                                              => 'rar',
@@ -367,7 +367,7 @@ class File extends Base
             'mp2a',
             'mp3',
             'm2a',
-            'm3a'
+            'm3a',
         ],
         'audio/ogg'                                                                 => ['oga', 'ogg', 'spx'],
         'audio/vnd.dece.audio'                                                      => ['uva', 'uvva'],
@@ -457,7 +457,7 @@ class File extends Base
             'def',
             'list',
             'log',
-            'in'
+            'in',
         ],
         'text/prs.lines.tag'                                                        => 'dsc',
         'text/richtext'                                                             => 'rtx',
@@ -469,7 +469,7 @@ class File extends Base
             'roff',
             'man',
             'me',
-            'ms'
+            'ms',
         ],
         'text/turtle'                                                               => 'ttl',
         'text/uri-list'                                                             => ['uri', 'uris', 'urls'],

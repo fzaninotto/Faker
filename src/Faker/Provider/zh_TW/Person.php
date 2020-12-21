@@ -29,7 +29,7 @@ class Person extends \Faker\Provider\Person
         'V' => 29,
         'W' => 32,
         'X' => 30,
-        'Z' => 33
+        'Z' => 33,
     ];
 
     /**

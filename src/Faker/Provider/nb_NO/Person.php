@@ -121,7 +121,7 @@ class Person extends \Faker\Provider\Person
         'Vårin', 'Wanda', 'Wanja', 'Wenche', 'Wendy', 'Wera', 'Weronika', 'Wibecke', 'Wibeke', 'Wigdis', 'Wilde',
         'Wilma', 'Winnie', 'Xuan', 'Yasmin', 'Ylva', 'Yngvild', 'Yvonne', 'Zahida', 'Zahra', 'Zainab', 'Zara',
         'Zuzanna', 'Øydis', 'Øyvor', 'Ågot', 'Aasa', 'Aase', 'Åse', 'Åshild', 'Aashild', 'Åslaug', 'Åsne', 'Åsta',
-        'Aasta'
+        'Aasta',
     ];
 
     /**
@@ -252,7 +252,7 @@ class Person extends \Faker\Provider\Person
         'Younes', 'Yousef', 'Yousuf', 'Yrjan', 'Zahid', 'Zakaria', 'Zbigniew', 'Zdzislaw', 'Zoran', 'Zygmunt',
         'Øistein', 'Øivind', 'Ørjan', 'Ørjar', 'Ørn', 'Ørnulf', 'Ørnulv', 'Ørvar', 'Østen', 'Øyolv', 'Øystein',
         'Øyvind', 'Ådne', 'Aage', 'Åge', 'Aake', 'Åke', 'Åmund', 'Åne', 'Ånen', 'Ånon', 'Ånund', 'Aaron', 'Åskjell',
-        'Åsleif', 'Åsleik', 'Åsleiv', 'Åsmund', 'Aasmund', 'Åsulv', 'Åsvald', 'Åvar'
+        'Åsleif', 'Åsleik', 'Åsleiv', 'Åsmund', 'Aasmund', 'Åsulv', 'Åsvald', 'Åvar',
     ];
 
     /**
@@ -280,7 +280,7 @@ class Person extends \Faker\Provider\Person
         'Sivertsen', 'Sletten', 'Solbakken', 'Solberg', 'Solheim', 'Solli', 'Solvang', 'Steen', 'Stene', 'Stokke',
         'Strand', 'Strøm', 'Sunde', 'Sveen', 'Svendsen', 'Syversen', 'Sæther', 'Sætre', 'Sørensen', 'Sørlie', 'Tangen',
         'Teigen', 'Thomassen', 'Thoresen', 'Thorsen', 'Tollefsen', 'Torgersen', 'Torp', 'Tran', 'Tveit', 'Vik', 'Viken',
-        'Wang', 'Wiik', 'Wilhelmsen', 'Wold', 'Ødegaard', 'Ødegård', 'Øien'
+        'Wang', 'Wiik', 'Wilhelmsen', 'Wold', 'Ødegaard', 'Ødegård', 'Øien',
     ];
 
     /**

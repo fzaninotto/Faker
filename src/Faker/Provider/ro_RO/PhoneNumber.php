@@ -21,7 +21,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         ],
         'mobile' => [
             '07########',
-        ]
+        ],
     ];
 
     protected static $specialFormats = [
@@ -37,7 +37,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
             '0900######',
             '0903######', // financial information
             '0906######', // adult entertainment
-        ]
+        ],
     ];
 
     /**

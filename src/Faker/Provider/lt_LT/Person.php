@@ -109,7 +109,7 @@ class Person extends \Faker\Provider\Person
         'Vytenis', 'Vytis', 'Vyturys', 'Vladas', 'Vladimiras', 'Vladislavas', 'Vladislovas', 'Vladlenas', 'Voicechas',
         'Voldemaras', 'Vsevolodas', 'Zacharijus', 'Zakarijus', 'Zbignevas', 'Zdislavas', 'Zenius', 'Zenonas', 'Zigfridas',
         'Zygfridas', 'Zigmantas', 'Zigmas', 'Zygmuntas', 'Zinovijus', 'Žanas', 'Žeimantas', 'Žilvinas', 'Žibartas', 'Žybartas',
-        'Žydrius', 'Žydrūnas', 'Žygaudas', 'Žygimantas', 'Žygintas', 'Žygis', 'Žymantas', 'Žvaigždžius'
+        'Žydrius', 'Žydrūnas', 'Žygaudas', 'Žygimantas', 'Žygintas', 'Žygis', 'Žymantas', 'Žvaigždžius',
     ];
 
     /**
@@ -231,7 +231,7 @@ class Person extends \Faker\Provider\Person
         'Vladė', 'Vladislava', 'Vladislova', 'Vladlena', 'Vilita', 'Zabelė', 'Zanė', 'Zelma', 'Zenė',
         'Zigfrida', 'Zigmantė', 'Zylė', 'Zina', 'Zinaida', 'Zita', 'Zofija', 'Zoja', 'Zosė', 'Zuzana',
         'Žana', 'Žaneta', 'Žara', 'Žeimantė', 'Žemyna', 'Žibuoklė', 'Žibutė', 'Žiedė', 'Živilė', 'Žydrė',
-        'Žydronė', 'Žydrūnė', 'Žygimantė', 'Žyginta', 'Žilvinė', 'Žymantė', 'Žoržeta'
+        'Žydronė', 'Žydrūnė', 'Žygimantė', 'Žyginta', 'Žilvinė', 'Žymantė', 'Žoržeta',
     ];
 
     /**
@@ -248,7 +248,7 @@ class Person extends \Faker\Provider\Person
     protected static $lastNameFemale = [
         'Kazlauskienė', 'Jankauskienė', 'Petrauskienė', 'Stankevičienė', 'Vasiliauskienė', 'Paulauskienė',
         'Žukauskienė', 'Urbonienė', 'Kavaliauskienė', 'Navickienė', 'Kazlauskaitė', 'Jankauskaitė', 'Stankevičiūtė',
-        'Petrauskaitė', 'Vasiliauskaitė', 'Butkutė', 'Pociūtė', 'Lukoševičiūtė', 'Balčiūnaitė', 'Kavaliauskaitė'
+        'Petrauskaitė', 'Vasiliauskaitė', 'Butkutė', 'Pociūtė', 'Lukoševičiūtė', 'Balčiūnaitė', 'Kavaliauskaitė',
     ];
 
     /**

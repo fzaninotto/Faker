@@ -16,7 +16,7 @@ class Internet extends \Faker\Provider\Internet
     ];
 
     protected static $freeEmailDomain = [
-        'gmail.com', 'yahoo.co.jp', 'hotmail.co.jp', 'mail.goo.ne.jp'
+        'gmail.com', 'yahoo.co.jp', 'hotmail.co.jp', 'mail.goo.ne.jp',
     ];
 
     protected static $tld = [

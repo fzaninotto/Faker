@@ -77,6 +77,6 @@ class Person extends \Faker\Provider\Person
         'Raymond', 'Renaud', 'Richard', 'Rioux', 'Robert', 'Rousseau', 'Roy',
         'Savard', 'Simard', 'St-Pierre',
         'Tardif', 'Tessier', 'Thériault', 'Therrien', 'Thibault', 'Tremblay', 'Trudel', 'Turcotte',
-        'Vachon', 'Vaillancourt', 'Villeneuve'
+        'Vachon', 'Vaillancourt', 'Villeneuve',
     ];
 }

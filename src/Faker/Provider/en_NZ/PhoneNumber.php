@@ -12,7 +12,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     protected static $formats = [
         // National Calls
         '{{areaCode}}{{beginningNumber}}######',
-        '{{areaCode}} {{beginningNumber}}## ####'
+        '{{areaCode}} {{beginningNumber}}## ####',
     ];
 
     /**
@@ -25,7 +25,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '02########',
         '02#########',
         '02# ### ####',
-        '02# #### ####'
+        '02# #### ####',
     ];
 
     /**
@@ -48,7 +48,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      * @var array
      */
     protected static $areaCodes = [
-        '02', '03', '04', '06', '07', '09'
+        '02', '03', '04', '06', '07', '09',
     ];
 
     /**
@@ -57,7 +57,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      * @var array
      */
     protected static $beginningNumbers = [
-        '2', '3', '4', '5', '6', '7', '8', '9'
+        '2', '3', '4', '5', '6', '7', '8', '9',
     ];
 
     /**

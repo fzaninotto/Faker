@@ -23,11 +23,11 @@ class Person extends \Faker\Provider\Person
     ];
 
     protected static $title = [
-        'mr.', 'dr.', 'ir.', 'drs', 'bacc.', 'kand.', 'dr.h.c.', 'prof.', 'ds.', 'ing.', 'bc.'
+        'mr.', 'dr.', 'ir.', 'drs', 'bacc.', 'kand.', 'dr.h.c.', 'prof.', 'ds.', 'ing.', 'bc.',
     ];
 
     protected static $suffix = [
-        'BA', 'Bsc', 'LLB', 'LLM', 'MA', 'Msc', 'MPhil', 'D', 'PhD', 'AD', 'B', 'M'
+        'BA', 'Bsc', 'LLB', 'LLM', 'MA', 'Msc', 'MPhil', 'D', 'PhD', 'AD', 'B', 'M',
     ];
 
     protected static $prefix = ["'s", "'t", 'a', 'aan', "aan 't", 'aan de', 'aan den', 'aan der', 'aan het',
@@ -43,7 +43,7 @@ class Person extends \Faker\Provider\Person
         'uijt ten', 'uit', "uit 't", 'uit de', 'uit den', 'uit het', 'uit t', 'uit te de', 'uit ten', 'unter', 'van',
         "van 't", 'van De', 'van de', 'van de l', "van de l'", 'van den', 'van der', 'van gen', 'van het', 'van la',
         'van t', 'van ter', 'van van de', 'ver', 'vom', 'von', "von 't", 'von dem', 'von den', 'von der', 'von t', 'voor',
-        "voor 't", 'voor de', 'voor den', "voor in 't", 'voor in t', 'vor', 'vor der', 'zu', 'zum', 'zur'
+        "voor 't", 'voor de', 'voor den', "voor in 't", 'voor in t', 'vor', 'vor der', 'zu', 'zum', 'zur',
     ];
 
     protected static $commonDutchLastNames = [
@@ -60,7 +60,7 @@ class Person extends \Faker\Provider\Person
         'de Vos', 'Bosch', 'van Dongen', 'Schipper', 'de Koning', 'van der Laan', 'Koning', 'Driessen', 'van Doorn',
         'Hermans', 'Evers', 'van den Bosch', 'van der Meulen', 'Hofman', 'Bosman', 'Wolters', 'Sanders',
         'van der Horst', 'Mol', 'Kuijpers', 'Molenaar', 'van de Pol', 'van den Pol', 'van der Pol', 'de Leeuw',
-        'Verbeek'
+        'Verbeek',
     ];
 
     protected static $dutchLastNames = [
@@ -184,7 +184,7 @@ class Person extends \Faker\Provider\Person
         'Wilson', 'Winnrich', 'Winters', 'Wipstrik', 'de Wit', 'van den Wittenboer', 'Wolffel',
         'Wolfswinkel', 'Wolters', 'Wolzak', 'Wooning', 'Woudenberg', 'Wouters', 'Wouters van Eijndhoven', 'Woutersz',
         'Wright', 'Wunderink', 'Wutke', 'Zaal', 'Zeemans', 'Zeldenrust', 'Zevenboom', 'van der Zijl', 'Zijlemans',
-        'Zijlmans', 'Zuidweg', 'Zuijdveld', 'van Zwaben', 'Zwart', 'Zwijsen'
+        'Zijlmans', 'Zuidweg', 'Zuijdveld', 'van Zwaben', 'Zwart', 'Zwijsen',
     ];
 
     protected static $commonForeignLastNames = [
@@ -196,7 +196,7 @@ class Person extends \Faker\Provider\Person
         'Erdoğan', 'Loukili', 'Tekin', 'Ramlal', 'Yavuz', 'Sambo', 'Coşkun', 'Yalçin', 'Biharie', 'Köse', 'Dogan',
         'Aktaş', 'Avci', 'Uysal', 'Badal', 'Bozkurt', 'Ramos', 'Moussaoui', 'Akin', 'Özer', 'Malik', 'Sital',
         'El Idrissi', 'Aziz', 'Demirel', 'Henriquez', 'Janga', 'Hooi', 'Geerman', 'Güler', 'Aksoy', 'Soekhoe', 'Turan',
-        'Güneş', 'Narain', 'Ahmadi', 'Esajas', 'Zhou', 'Tahiri', 'Çiçek', 'Mohan', 'Cicilia', 'Mangal'
+        'Güneş', 'Narain', 'Ahmadi', 'Esajas', 'Zhou', 'Tahiri', 'Çiçek', 'Mohan', 'Cicilia', 'Mangal',
     ];
 
     protected static $longLastNames = [
@@ -208,7 +208,7 @@ class Person extends \Faker\Provider\Person
         'Martena van Burmania Vegilin van Claerbergen', 'Paspoort van Grijpskerke en Poppendamme',
         'de Pruyssenaere de la Woestijne', 'Rahajoe genaamd en geschreven ten Kate', 'de la Rive Box',
         'Spiegelmaker Spanjaard', 'Spring in ‘t Veld', 'Vos Specht', 'Vroeg in de Wei', 'Zowran von Ranzow',
-        'Zuérius Boxhorn van Miggrode', 'Zum Vörde Sive Vörding'
+        'Zuérius Boxhorn van Miggrode', 'Zum Vörde Sive Vörding',
     ];
 
     protected static $firstNameFemale = [
@@ -232,7 +232,7 @@ class Person extends \Faker\Provider\Person
         'Féline', 'Yasmine', 'Evelien', 'Ize', 'Mirte', 'Ninthe', 'Ecrin', 'Kyara', 'Maya', 'Nisa', 'Leah', 'Maryam',
         'Angelina', 'Catharina', 'Lindsey', 'Loes', 'Yinthe', 'Sienna', 'Adriana', 'Esila', 'Jente', 'Lizz', 'Lucy',
         'Nadine', 'Selina', 'Fatima', 'Maaike', 'Aaliyah', 'Amina', 'Inaya', 'Selena', 'Frederique', 'Pippa', 'Puk',
-        'Sylvie', 'Annemijn', 'Helena', 'Jayda', 'Nadia', 'Amelia', 'Jinthe', 'Jolijn', 'Maja', 'Tirza'
+        'Sylvie', 'Annemijn', 'Helena', 'Jayda', 'Nadia', 'Amelia', 'Jinthe', 'Jolijn', 'Maja', 'Tirza',
     ];
 
     protected static $firstNameMale = [
@@ -256,7 +256,7 @@ class Person extends \Faker\Provider\Person
         'Collin', 'Luke', 'Merijn', 'Vigo', 'Beau', 'Bilal', 'Jorn', 'Vincent', 'Matthias', 'Ayden', 'Maxim', 'Yassin',
         'Dion', 'Jake', 'Kyano', 'Kick', 'Mustafa', 'Michael', 'Youssef', 'Elias', 'Naud', 'Senna', 'Brian', 'Jari',
         'Mehmet', 'Micha', 'Stefan', 'Arie', 'Duuk', 'Zakaria', 'Ayoub', 'Faas', 'Olaf', 'Tristan', 'Mads', 'Berend',
-        'Mart', 'Sten', 'Ivan', 'Philip', 'Giel', 'Lex', 'Rik', 'Tyler'
+        'Mart', 'Sten', 'Ivan', 'Philip', 'Giel', 'Lex', 'Rik', 'Tyler',
     ];
 
     /**

@@ -12,7 +12,7 @@ class Person extends \Faker\Provider\Person
         'Mathis', 'Mathéo', 'Mats', 'Matteo', 'Mauro', 'Maxim', 'Maxime', 'Mehdi', 'Milan', 'Mohamed', 'Mohammed', 'Nathan',
         'Nicolas', 'Niels', 'Noah', 'Nolan', 'Quinten', 'Raphaël', 'Rayan', 'Robbe', 'Romain', 'Ruben', 'Rune', 'Sacha',
         'Sam', 'Samuel', 'Sander', 'Simon', 'Stan', 'Thomas', 'Théo', 'Tibo', 'Tom', 'Tristan', 'Vic', 'Victor',
-        'Vince', 'Wout', 'Xander', 'Yanis', 'Jarne', 'Lowie', 'Mathys', 'Senne', 'Seppe', 'Siebe', 'Tuur', 'Warre'
+        'Vince', 'Wout', 'Xander', 'Yanis', 'Jarne', 'Lowie', 'Mathys', 'Senne', 'Seppe', 'Siebe', 'Tuur', 'Warre',
     ];
 
     protected static $firstNameFemale = [
@@ -24,7 +24,7 @@ class Person extends \Faker\Provider\Person
         'Lola', 'Lore', 'Lotte', 'Louise', 'Lucie', 'Luna', 'Léa', 'Malak', 'Manon', 'Margaux', 'Margot', 'Marie',
         'Marion', 'Maya', 'Maëlle', 'Merel', 'Mila', 'Nina', 'Noa', 'Noor', 'Nora', 'Nore', 'Noé', 'Noémie',
         'Océane', 'Olivia', 'Pauline', 'Rania', 'Robin', 'Romane', 'Salma', 'Sara', 'Sarah', 'Sofia', 'Tess', 'Victoria',
-        'Yana', 'Yasmine', 'Zoé', 'Zoë', 'Ferre', 'Roos'
+        'Yana', 'Yasmine', 'Zoé', 'Zoë', 'Ferre', 'Roos',
     ];
 
     protected static $lastName = [
@@ -40,7 +40,7 @@ class Person extends \Faker\Provider\Person
         'Pierre', 'Pieters', 'Piette', 'Piron', 'Pirotte', 'Poncelet', 'Raes', 'Remy', 'Renard', 'Robert', 'Roels', 'Roland', 'Rousseau', 'Sahin', 'Saidi', 'Schmitz', 'Segers', 'Servais', 'Simon',
         'Simons', 'Smet', 'Smets', 'Somers', 'Stevens', 'Thijs', 'Thiry', 'Thomas', 'Thys', 'Timmermans', 'Toussaint', 'Tran', 'Urbain', 'Van Acker', 'Van Damme', 'Van de Velde', 'Van den Bossche',
         'Van den Broeck', 'Van Dyck', 'Van Hecke', 'Van Hoof', 'Vandamme', 'Vandenberghe', 'Verbeeck', 'Verbeke', 'Verbruggen', 'Vercammen', 'Verhaegen', 'Verhaeghe', 'Verhelst', 'Verheyen',
-        'Verhoeven', 'Verlinden', 'Vermeersch', 'Vermeiren', 'Vermeulen', 'Verschueren', 'Verstraete', 'Verstraeten', 'Vervoort', 'Wauters', 'Willems', 'Wouters', 'Wuyts', 'Yildirim', 'Yilmaz'
+        'Verhoeven', 'Verlinden', 'Vermeersch', 'Vermeiren', 'Vermeulen', 'Verschueren', 'Verstraete', 'Verstraeten', 'Vervoort', 'Wauters', 'Willems', 'Wouters', 'Wuyts', 'Yildirim', 'Yilmaz',
     ];
 
     protected static $titleMale = ['M.', 'Dr.', 'Pr.', 'Me.', 'Mgr'];

@@ -66,7 +66,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     protected static $streetPrefix = [
-        'Ds.', 'Dk.', 'Gg.', 'Jln.', 'Jr.', 'Kpg.', 'Ki.', 'Psr.'
+        'Ds.', 'Dk.', 'Gg.', 'Jln.', 'Jr.', 'Kpg.', 'Ki.', 'Psr.',
     ];
 
     /**
@@ -80,7 +80,7 @@ class Address extends \Faker\Provider\Address
         'Kalimantan Tengah', 'Kalimantan Selatan', 'Kalimantan Timur',
         'Kalimantan Utara', 'Sulawesi Selatan', 'Sulawesi Utara', 'Gorontalo',
         'Sulawesi Tengah', 'Sulawesi Barat', 'Sulawesi Tenggara', 'Maluku',
-        'Maluku Utara', 'Papua Barat', 'Papua'
+        'Maluku Utara', 'Papua Barat', 'Papua',
     ];
 
     /**
@@ -95,7 +95,7 @@ class Address extends \Faker\Provider\Address
         'Lampung', 'Banten', 'DKI', 'Jabar', 'Jateng', 'Jatim', 'NTT', 'DIY',
         'Bali', 'NTB', 'Kalbar', 'Kalteng', 'Kalsel', 'Kaltim', 'Kaltara', 'Sulsel',
         'Sulut', 'Gorontalo', 'Sulteng', 'Sulbar', 'Sultra', 'Maluku', 'Malut',
-        'Pabar', 'Papua'
+        'Pabar', 'Papua',
     ];
 
     /**
@@ -220,7 +220,7 @@ class Address extends \Faker\Provider\Address
         // http://id.wikipedia.org/wiki/United_States_Virgin_Islands
         'Wilayah Samudra Hindia Britania',
 
-        'Wilayah Selatan Perancis', 'Yaman', 'Yunani', 'Zambia', 'Zimbabwe'
+        'Wilayah Selatan Perancis', 'Yaman', 'Yunani', 'Zambia', 'Zimbabwe',
     ];
 
     /**
@@ -260,7 +260,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     protected static $streetNameFormats = [
-        '{{street}}'
+        '{{street}}',
     ];
 
     protected static $streetAddressFormats = [

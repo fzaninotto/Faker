@@ -50,7 +50,7 @@ class Address extends \Faker\Provider\Address
      * @var array Danish zip code.
      */
     protected static $postcode = [
-        '%###'
+        '%###',
     ];
 
     /**

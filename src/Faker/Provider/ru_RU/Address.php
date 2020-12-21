@@ -74,7 +74,7 @@ class Address extends \Faker\Provider\Address
 
     protected static $street = [
         'Косиора', 'Ладыгина', 'Ленина', 'Ломоносова', 'Домодедовская', 'Гоголя', '1905 года', 'Чехова', 'Сталина',
-        'Космонавтов', 'Гагарина', 'Славы', 'Бухарестская', 'Будапештсткая', 'Балканская'
+        'Космонавтов', 'Гагарина', 'Славы', 'Бухарестская', 'Будапештсткая', 'Балканская',
     ];
 
     protected static $addressFormats = [
@@ -82,7 +82,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     protected static $streetAddressFormats = [
-        '{{streetPrefix}} {{street}}, {{buildingNumber}}'
+        '{{streetPrefix}} {{street}}, {{buildingNumber}}',
     ];
 
     public static function buildingNumber()

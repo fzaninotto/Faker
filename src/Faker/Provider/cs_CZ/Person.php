@@ -37,7 +37,7 @@ class Person extends \Faker\Provider\Person
         'Radim', 'Radomír', 'René', 'Richard', 'Robert', 'Roman', 'Rostislav',
         'Rudolf', 'Stanislav', 'Šimon', 'Štefan', 'Štěpán', 'Tomáš',
         'Václav', 'Vasyl', 'Viktor', 'Vít', 'Vítězslav', 'Vladimír',
-        'Vladislav', 'Vlastimil', 'Vojtěch', 'Zbyněk', 'Zdeněk'
+        'Vladislav', 'Vlastimil', 'Vojtěch', 'Zbyněk', 'Zdeněk',
     ];
 
     protected static $firstNameFemale = [
@@ -53,7 +53,7 @@ class Person extends \Faker\Provider\Person
         'Radka', 'Renata', 'Renáta', 'Romana', 'Růžena', 'Simona', 'Soňa',
         'Stanislava', 'Šárka', 'Štěpánka', 'Tereza', 'Vendula', 'Věra',
         'Veronika', 'Vladimíra', 'Vlasta', 'Zdenka', 'Zdeňka', 'Zdeňka',
-        'Zuzana'
+        'Zuzana',
     ];
 
     protected static $lastNameMale = [
@@ -211,7 +211,7 @@ class Person extends \Faker\Provider\Person
         'Zdražil', 'Zedník', 'Zelenka', 'Zelený', 'Zelinka', 'Zemánek',
         'Zeman', 'Zezula', 'Zíka', 'Zikmund', 'Zima', 'Zlámal', 'Zoubek',
         'Zouhar', 'Zvěřina', 'Žáček', 'Žák', 'Žďárský', 'Žemlička',
-        'Žídek', 'Žižka', 'Žůrek'
+        'Žídek', 'Žižka', 'Žůrek',
     ];
 
     protected static $lastNameFemale = [
@@ -418,11 +418,11 @@ class Person extends \Faker\Provider\Person
         'Zelená', 'Zelinková', 'Zemánková', 'Zemanová', 'Zezulová',
         'Zíková', 'Zikmundová', 'Zimová', 'Zlámalová', 'Zoubková',
         'Zouharová', 'Zvěřinová', 'Žáčková', 'Žáková', 'Žďárská',
-        'Žemličková', 'Žídková', 'Žižková', 'Žůrková'
+        'Žemličková', 'Žídková', 'Žižková', 'Žůrková',
     ];
 
     protected static $title = [
-        'Bc.', 'Ing.', 'MUDr.', 'MVDr.', 'Mgr.', 'JUDr.', 'PhDr.', 'RNDr.', 'doc.', 'Dr.'
+        'Bc.', 'Ing.', 'MUDr.', 'MVDr.', 'Mgr.', 'JUDr.', 'PhDr.', 'RNDr.', 'doc.', 'Dr.',
     ];
 
     /**

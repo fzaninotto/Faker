@@ -36,7 +36,7 @@ class Address extends \Faker\Provider\it_IT\Address
         'Val-de-Travers', 'Vernier', 'Versoix', 'Vevey', 'Veyrier', 'Villars-sur-Glâne', 'Volketswil',
         'Wallisellen', 'Weinfelden', 'Wettingen', 'Wetzikon', 'Wil', 'Winterthur', 'Wohlen', 'Worb', 'Wädenswil',
         'Yverdon-les-Bains',
-        'Zofingen', 'Zollikon', 'Zugo', 'Zurigo'
+        'Zofingen', 'Zollikon', 'Zugo', 'Zurigo',
     ];
 
     /**
@@ -68,7 +68,7 @@ class Address extends \Faker\Provider\it_IT\Address
         ['VD' => 'Vaud'],
         ['VS' => 'Vallese'],
         ['ZG' => 'Zugo'],
-        ['ZH' => 'Zurigo']
+        ['ZH' => 'Zurigo'],
     ];
 
     protected static $cityFormats = [
@@ -77,7 +77,7 @@ class Address extends \Faker\Provider\it_IT\Address
 
     protected static $streetNameFormats = [
         '{{streetSuffix}} {{firstName}}',
-        '{{streetSuffix}} {{lastName}}'
+        '{{streetSuffix}} {{lastName}}',
     ];
 
     protected static $streetAddressFormats = [

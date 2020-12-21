@@ -45,7 +45,7 @@ class Person extends \Faker\Provider\Person
         '8#######' ,
         '90######',
         '98######',
-        '99######'
+        '99######',
     ];
 
     /**
@@ -115,7 +115,7 @@ class Person extends \Faker\Provider\Person
         'Vítor', 'Edgar', 'Kevin', 'Joaquim', 'Igor', 'Ângelo', 'Enzo', 'Valentim', 'Flávio',
         'Joel', 'Fernando', 'Sebastião', 'Tomé', 'César', 'Cláudio', 'Nelson', 'Lisandro', 'Jaime',
         'Gil', 'Mauro', 'Sandro', 'Hélder', 'Matheus', 'William', 'Gaspar', 'Márcio',
-        'Martinho', 'Emanuel', 'Marcos', 'Telmo', 'Davi', 'Wilson'
+        'Martinho', 'Emanuel', 'Marcos', 'Telmo', 'Davi', 'Wilson',
     ];
 
     protected static $firstNameFemale = [

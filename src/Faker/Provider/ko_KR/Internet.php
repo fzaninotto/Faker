@@ -53,7 +53,7 @@ class Internet extends \Faker\Provider\Internet
         'suran', 'suwon', 'suwon', 'suyoun', 'taehee', 'taeho', 'taehyun', 'wonhee', 'wonjin', 'wonjun', 'woojin',
         'yeji', 'yejin', 'yejun', 'yeojin', 'yeon', 'yewon', 'youngcheol', 'younggil', 'youngha', 'youngho', 'younghun',
         'younghwa', 'youngil', 'youngjin', 'youngjin', 'youngshik', 'youngsoo', 'youngtae', 'youngwhan', 'youngwhan',
-        'younhee', 'younsun', 'yujin', 'yujung', 'yunkyoung', 'yunmi', 'yunseo', 'yunyoung', 'yuri'
+        'younhee', 'younsun', 'yujin', 'yujung', 'yunkyoung', 'yunmi', 'yunseo', 'yunyoung', 'yuri',
     ];
 
     public static function lastNameAscii()

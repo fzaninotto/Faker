@@ -50,7 +50,7 @@ class Person extends \Faker\Provider\Person
         'Valborg', 'Vanja', 'Vega', 'Vendela', 'Vendla', 'Vera', 'Veronica', 'Veronika', 'Victoria', 'Viktoria', 'Vilhelmina', 'Vilma', 'Viola', 'Virginia', 'Vivan', 'Viveca', 'Viveka', 'Vivi', 'Vivian', 'Viviann', 'Vivianne', 'Vivi-Ann', 'Vivi-Anne',
         'Wilhelmina',
         'Ylva', 'Yvonne',
-        'Åsa', 'Åse'
+        'Åsa', 'Åse',
     ];
 
     /**
@@ -83,7 +83,7 @@ class Person extends \Faker\Provider\Person
         'Waldemar', 'Walter', 'Werner', 'Wilhelm', 'William', 'Willy',
         'Yngve',
         'Åke',
-        'Örjan', 'Östen'
+        'Örjan', 'Östen',
     ];
 
     /**
@@ -113,7 +113,7 @@ class Person extends \Faker\Provider\Person
         'Viklund',
         'Wallin', 'Wikström',
         'Åberg', 'Åkesson', 'Åström',
-        'Öberg'
+        'Öberg',
     ];
 
     /**

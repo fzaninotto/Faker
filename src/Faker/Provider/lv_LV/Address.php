@@ -45,18 +45,18 @@ class Address extends \Faker\Provider\Address
     ];
 
     protected static $region = [
-        'Kurzemes', 'Latgales', 'Rīgas', 'Vidzemes', 'Zemgales'
+        'Kurzemes', 'Latgales', 'Rīgas', 'Vidzemes', 'Zemgales',
     ];
 
     protected static $city = ['Aizkraukle' , 'Aluksne', 'Balvi', 'Bauska', 'Cesis',
         'Daugavpils', 'Dobele', 'Gulbene', 'Jekabpils', 'Jelgava', 'Kraslava', 'Kuldiga', 'Liepaja',
-        'Limbazi', 'Ludza', 'Madona', 'Mobile Phones', 'Ogre', 'Preili', 'Rezekne', 'Rīga', 'Ventspils'
+        'Limbazi', 'Ludza', 'Madona', 'Mobile Phones', 'Ogre', 'Preili', 'Rezekne', 'Rīga', 'Ventspils',
     ];
 
     protected static $street = [
         'Alfrēda Kalniņa', 'Alksnāja', 'Amatu', 'Anglikāņu', 'Arhitektu', 'Arsenāla', 'Artilērijas',
         'Aspazijas', 'Atgriežu', 'Audēju', 'Basteja', 'Baumaņa', 'Bīskapa', 'Blaumaņa', 'Brīvības', 'Brīvības',
-        'Bruņinieku', 'Dainas', 'Daugavas'
+        'Bruņinieku', 'Dainas', 'Daugavas',
     ];
 
     protected static $addressFormats = [

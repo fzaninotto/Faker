@@ -28,7 +28,7 @@ class Company extends \Faker\Provider\Company
      */
     protected static $noun = [
         'la sécurité', 'le plaisir', 'le confort', 'la simplicité', "l'assurance", "l'art", 'le pouvoir', 'le droit',
-        'la possibilité', "l'avantage", 'la liberté'
+        'la possibilité', "l'avantage", 'la liberté',
     ];
 
     /**
@@ -36,7 +36,7 @@ class Company extends \Faker\Provider\Company
      */
     protected static $verb = [
         'de rouler', "d'avancer", "d'évoluer", 'de changer', "d'innover", 'de louer', "d'atteindre vos buts",
-        'de concrétiser vos projets'
+        'de concrétiser vos projets',
     ];
 
     /**
@@ -45,7 +45,7 @@ class Company extends \Faker\Provider\Company
     protected static $attribute = [
         'de manière efficace', 'plus rapidement', 'plus facilement', 'plus simplement', 'en toute tranquilité',
         'avant-tout', 'autrement', 'naturellement', 'à la pointe', 'sans soucis', "à l'état pur",
-        'à sa source', 'de manière sûre', 'en toute sécurité'
+        'à sa source', 'de manière sûre', 'en toute sécurité',
     ];
 
     /**

@@ -49,7 +49,7 @@ class Person extends \Faker\Provider\Person
         'Tadej', 'Tai', 'Taj', 'Tarik', 'Teo', 'Tevž', 'Tian', 'Tilen', 'Tim', 'Timotej', 'Tine',
         'Tjaš', 'Tomaž', 'Tomislav', 'Tristan', 'Urban', 'Uroš', 'Val', 'Valentin', 'Valter',
         'Vid', 'Viktor', 'Viljem', 'Vincenc', 'Vinko', 'Vito', 'Vladimir', 'Vlado', 'Vojko',
-        'Zdenko', 'Zdravko', 'Zlatko', 'Zoran', 'Zvonko', 'Štefan', 'Žak', 'Žan', 'Željko', 'Žiga'
+        'Zdenko', 'Zdravko', 'Zlatko', 'Zoran', 'Zvonko', 'Štefan', 'Žak', 'Žan', 'Željko', 'Žiga',
     ];
 
     /**
@@ -83,7 +83,7 @@ class Person extends \Faker\Provider\Person
         'Tisa', 'Tjaša', 'Ula', 'Urša', 'Urška', 'Valentina', 'Valerija', 'Vanja', 'Vera',
         'Veronika', 'Vesna', 'Vida', 'Viktorija', 'Vita', 'Vlasta', 'Zala', 'Zara', 'Zarja',
         'Zdenka', 'Zlatka', 'Zofija', 'Zoja', 'Zora', 'Zvonka', 'Špela', 'Štefanija', 'Štefka',
-        'Žana', 'Živa'
+        'Žana', 'Živa',
     ];
 
     /**
@@ -112,11 +112,11 @@ class Person extends \Faker\Provider\Person
         'Turk', 'Uršič', 'Vidic', 'Vidmar', 'Vidovič', 'Vodopivec', 'Volk', 'Vovk', 'Zadravec',
         'Zajc', 'Zakrajšek', 'Zalar', 'Zalokar', 'Založnik', 'Zemljič', 'Zorko', 'Zorman', 'Zupan',
         'Zupanc', 'Zupančič', 'Zver', 'Čeh', 'Černe', 'Čuk', 'Šinkovec', 'Škof', 'Šmid',
-        'Štrukelj', 'Šuštar', 'Žagar', 'Železnik', 'Žibert', 'Žižek', 'Žnidaršič'
+        'Štrukelj', 'Šuštar', 'Žagar', 'Železnik', 'Žibert', 'Žižek', 'Žnidaršič',
     ];
 
     protected static $title = [
-        'dr.', 'mag.', 'inž.', 'univ. dipl.', 'dipl.', 'univ. dipl. inž.', 'dipl. inž.', 'prof.', 'akad.', 'dr. med.', 'spec.'
+        'dr.', 'mag.', 'inž.', 'univ. dipl.', 'dipl.', 'univ. dipl. inž.', 'dipl. inž.', 'prof.', 'akad.', 'dr. med.', 'spec.',
     ];
 
     /**

@@ -37,7 +37,7 @@ class Address extends \Faker\Provider\fr_FR\Address
         '-de-Forsyth', '-de-Panet', '-de-la-Rivière-du-Sud', '-de-Dorset', '-de-Shenley', '-de-Leeds', '-de-Wolfestown',
         '-de-Joly', '-de-Brébeuf', '-de-Coleraine', '-des-Érables', '-Bretenières', '-de-Lauzon', '-de-Standon',
         '-de-Gonzague', '-de-Beaurivage', '-de-Dorchester', '-de-Cranbourne', '-de-Broughton', '-de-la-Rivière-du-Sud',
-        '-des-Aulnaies', '-les-Mines', '-de-Lotbinière', '-de-Patton', '-sur-Rivière-du-Sud', '-de-Beauregard', '-de-Watford'
+        '-des-Aulnaies', '-les-Mines', '-de-Lotbinière', '-de-Patton', '-sur-Rivière-du-Sud', '-de-Beauregard', '-de-Watford',
     ];
 
     /**
@@ -51,7 +51,7 @@ class Address extends \Faker\Provider\fr_FR\Address
     protected static $buildingNumber = ['%####', '%###', '%##', '%#', '%'];
 
     protected static $streetSuffix = [
-        'Autoroute', 'Avenue', 'Boulevard', 'Chemin', 'Route', 'Rue', 'Pont'
+        'Autoroute', 'Avenue', 'Boulevard', 'Chemin', 'Route', 'Rue', 'Pont',
     ];
 
     protected static $postcode = ['?#? #?#', '?#?#?#'];
@@ -61,7 +61,7 @@ class Address extends \Faker\Provider\fr_FR\Address
      */
     protected static $streetNameFormats = [
         '{{streetSuffix}} {{firstName}}',
-        '{{streetSuffix}} {{lastName}}'
+        '{{streetSuffix}} {{lastName}}',
     ];
 
     protected static $streetAddressFormats = [
@@ -76,11 +76,11 @@ class Address extends \Faker\Provider\fr_FR\Address
     protected static $secondaryAddressFormats = ['Apt. ###', 'Suite ###', 'Bureau ###'];
 
     protected static $state = [
-        'Alberta', 'Colombie-Britannique', 'Manitoba', 'Nouveau-Brunswick', 'Terre-Neuve-et-Labrador', 'Nouvelle-Écosse', 'Ontario', 'Île-du-Prince-Édouard', 'Québec', 'Saskatchewan'
+        'Alberta', 'Colombie-Britannique', 'Manitoba', 'Nouveau-Brunswick', 'Terre-Neuve-et-Labrador', 'Nouvelle-Écosse', 'Ontario', 'Île-du-Prince-Édouard', 'Québec', 'Saskatchewan',
     ];
 
     protected static $stateAbbr = [
-        'AB', 'BC', 'MB', 'NB', 'NL', 'NS', 'ON', 'PE', 'QC', 'SK'
+        'AB', 'BC', 'MB', 'NB', 'NL', 'NS', 'ON', 'PE', 'QC', 'SK',
     ];
 
     /**

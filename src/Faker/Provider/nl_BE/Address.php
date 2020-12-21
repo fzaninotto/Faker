@@ -20,7 +20,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     protected static $streetAddressFormats = [
-        '{{streetName}} {{buildingNumber}}'
+        '{{streetName}} {{buildingNumber}}',
     ];
 
     protected static $streetNameFormats = ['{{lastName}}{{streetSuffix}}'];
@@ -57,12 +57,12 @@ class Address extends \Faker\Provider\Address
         'Roeselare', 'Ronse', 'Saint-Ghislain', 'Saint-Hubert', 'Sankt Vith', 'Scherpenheuvel-Zichem', 'Seraing',
         'Sint-Niklaas', 'Sint-Truiden', 'Spa', 'Stavelot', 'Thuin', 'Tielt', 'Tienen', 'Tongeren', 'Torhout',
         'Turnhout', 'Verviers', 'Veurne', 'Vilvoorde', 'Virton', 'Walcourt', 'Waregem', 'Waver', 'Wervik', 'Wezet',
-        'Zinnik', 'Zottegem', 'Zoutleeuw'
+        'Zinnik', 'Zottegem', 'Zoutleeuw',
     ];
 
     protected static $state = [
         'Antwerpen', 'Limburg', 'Oost-Vlaanderen', 'Vlaams-Brabant', 'West-Vlaanderen',
-        'Henegouwen', 'Luik', 'Luxemburg', 'Namen', 'Waals-Brabant'
+        'Henegouwen', 'Luik', 'Luxemburg', 'Namen', 'Waals-Brabant',
     ];
 
     protected static $country = [
@@ -98,7 +98,7 @@ class Address extends \Faker\Provider\Address
         'Tunesië', 'Turkije', 'Turkmenistan', 'Turks- en Caicoseilanden', 'Tuvalu', 'Tsjechische Republiek',
         'Uruguay', 'Vanuatu', 'Venezuela', 'Verenigde Arabische Emiraten', 'Verenigd Koninkrijk',
         'Verenigde Staten van Amerika', 'Vaticaanstad', 'Vietnam', 'Wallis en Futuna', 'Westerlijke Shara',
-        'Wit-Rusland', 'Zambia', 'Zuid-Afrika', 'Zuid-Georgia en de Zuidelijke Sandwicheilanden', 'Zimbabwe'
+        'Wit-Rusland', 'Zambia', 'Zuid-Afrika', 'Zuid-Georgia en de Zuidelijke Sandwicheilanden', 'Zimbabwe',
     ];
 
     public static function postcode()

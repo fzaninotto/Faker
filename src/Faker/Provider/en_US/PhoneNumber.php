@@ -41,14 +41,14 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '{{areaCode}}-{{exchangeCode}}-#### x#####',
         '({{areaCode}}) {{exchangeCode}}-#### x#####',
         '1-{{areaCode}}-{{exchangeCode}}-#### x#####',
-        '{{areaCode}}.{{exchangeCode}}.#### x#####'
+        '{{areaCode}}.{{exchangeCode}}.#### x#####',
     ];
 
     /**
      * @see https://en.wikipedia.org/wiki/Toll-free_telephone_number#United_States
      */
     protected static $tollFreeAreaCodes = [
-        800, 844, 855, 866, 877, 888
+        800, 844, 855, 866, 877, 888,
     ];
     protected static $tollFreeFormats = [
         // Standard formats

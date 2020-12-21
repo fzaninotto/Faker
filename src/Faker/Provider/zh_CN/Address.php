@@ -13,7 +13,7 @@ class Address extends \Faker\Provider\Address
         '南京', '成都', '贵阳', '昆明',
         '南宁', '拉萨', '杭州', '南昌',
         '广州', '福州', '海口',
-        '香港', '澳门'
+        '香港', '澳门',
     ];
 
     protected static $states = [
@@ -26,7 +26,7 @@ class Address extends \Faker\Provider\Address
         '重庆市', '四川省', '贵州省', '云南省',
         '西藏自治区', '陕西省', '甘肃省', '青海省',
         '宁夏回族自治区', '新疆维吾尔自治区',
-        '香港特别行政区', '澳门特别行政区', '台湾省'
+        '香港特别行政区', '澳门特别行政区', '台湾省',
     ];
 
     protected static $stateAbbr = [
@@ -38,7 +38,7 @@ class Address extends \Faker\Provider\Address
         '青', '鲁', '晋', '陕',
         '沪', '川', '津', '藏',
         '新', '滇', '浙', '港',
-        '澳', '台'
+        '澳', '台',
     ];
 
     protected static $areas = [
@@ -55,7 +55,7 @@ class Address extends \Faker\Provider\Address
         '花溪区', '吉利区', '新城区', '怀柔区',
         '六枝特区', '涪城区', '清浦区', '南溪区',
         '淄川区', '高明区', '金水区', '中原区',
-        '高新开发区', '经济开发新区', '新区'
+        '高新开发区', '经济开发新区', '新区',
     ];
 
     protected static $country = [
@@ -105,7 +105,7 @@ class Address extends \Faker\Provider\Address
         '英国', '乌拉圭', '乌兹别克斯坦', '瓦努阿图', '梵蒂冈',
         '委内瑞拉', '越南', '维尔京群岛', '维尔京群岛和圣罗克伊',
         '威克岛', '瓦里斯和富士那群岛', '西撒哈拉', '也门', '南斯拉夫',
-        '扎伊尔', '赞比亚', '桑给巴尔', '津巴布韦', '中华人民共和国', '中国'
+        '扎伊尔', '赞比亚', '桑给巴尔', '津巴布韦', '中华人民共和国', '中国',
     ];
 
     public function city()

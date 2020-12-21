@@ -7,7 +7,7 @@ class Address extends \Faker\Provider\fr_FR\Address
     protected static $postcode = ['####'];
 
     protected static $streetAddressFormats = [
-        '{{streetName}} {{buildingNumber}}'
+        '{{streetName}} {{buildingNumber}}',
     ];
 
     protected static $streetNameFormats = ['{{streetSuffix}} {{lastName}}'];
@@ -19,7 +19,7 @@ class Address extends \Faker\Provider\fr_FR\Address
     ];
 
     protected static $streetSuffix = [
-        'rue', 'avenue', 'boulevard', 'chemin', 'chaussée', 'impasse', 'place'
+        'rue', 'avenue', 'boulevard', 'chemin', 'chaussée', 'impasse', 'place',
     ];
 
     /**
@@ -38,16 +38,16 @@ class Address extends \Faker\Provider\fr_FR\Address
         'Ninove', 'Nivelles', 'Ostende', 'Ottignies-Louvain-la-Neuve', 'Oudenburg', 'Peer', 'Péruwelz', 'Philippeville', 'Poperinge', 'Renaix', 'Rochefort', 'Roulers',
         'Saint-Ghislain', 'Saint-Hubert', 'Saint-Nicolas', 'Saint-Trond', 'Saint-Vith', 'Seraing', 'Soignies', 'Stavelot', 'Termonde', 'Thuin',
         'Tielt', 'Tirlemont', 'Tongres', 'Torhout', 'Tournai', 'Turnhout', 'Verviers', 'Vilvorde', 'Virton', 'Visé', 'Walcourt', 'Waregem', 'Waremme', 'Wavre', 'Wervik',
-        'Ypres', 'Zottegem'
+        'Ypres', 'Zottegem',
     ];
 
     protected static $region = [
-        'Wallonie', 'Flandre', 'Bruxelles-Capitale'
+        'Wallonie', 'Flandre', 'Bruxelles-Capitale',
     ];
 
     protected static $province = [
         'Anvers', 'Limbourg', 'Flandre orientale', 'Brabant flamand', 'Flandre occidentale',
-        'Hainaut', 'Liège', 'Luxembourg', 'Namur', 'Brabant wallon'
+        'Hainaut', 'Liège', 'Luxembourg', 'Namur', 'Brabant wallon',
     ];
 
     /**

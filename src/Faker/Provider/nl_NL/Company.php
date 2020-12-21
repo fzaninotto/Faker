@@ -39,7 +39,7 @@ class Company extends \Faker\Provider\Company
     ];
 
     protected static $companySuffix = [
-        'VOF', 'CV', 'LLP', 'BV', 'NV', 'IBC', 'CSL', 'EESV', 'SE', 'CV', 'Stichting', '& Zonen', '& Zn'
+        'VOF', 'CV', 'LLP', 'BV', 'NV', 'IBC', 'CSL', 'EESV', 'SE', 'CV', 'Stichting', '& Zonen', '& Zn',
     ];
 
     protected static $product = [
@@ -48,19 +48,19 @@ class Company extends \Faker\Provider\Company
         'Video', 'Sieraden', 'Kook', 'Woon', 'Pizza', 'Mode', 'Haar', 'Kleding', 'Antiek', 'Interieur', 'Gadget',
         'Foto', 'Computer', 'Witgoed', 'Bruingoed', 'Broeken', 'Pakken', 'Maatpak', 'Fietsen', 'Speelgoed',
         'Barbecue', 'Sport', 'Fitness', 'Brillen', 'Bakkers', 'Drank', 'Zuivel', 'Pret', 'Vis', 'Wijn', 'Salade',
-        'Terras', 'Borrel', 'Dieren', 'Aquaria', 'Verf', 'Behang', 'Tegel', 'Badkamer', 'Decoratie'
+        'Terras', 'Borrel', 'Dieren', 'Aquaria', 'Verf', 'Behang', 'Tegel', 'Badkamer', 'Decoratie',
     ];
 
     protected static $type = [
         'Markt', 'Kampioen', 'Expert', 'Concurrent', 'Shop', 'Expert', 'Magazijn',
         'Dump', 'Store', 'Studio', 'Boulevard', 'Fabriek', 'Groep', 'Huis', 'Salon', 'Vakhuis', 'Winkel', 'Gigant',
-        'Reus', 'Plaza', 'Park', 'Tuin'
+        'Reus', 'Plaza', 'Park', 'Tuin',
     ];
 
     protected static $store = [
         'Boekhandel', 'Super', 'Tabakzaak', 'Schoenmaker', 'Kaashandel', 'Slagerij',
         'Smederij', 'Bakkerij', 'Bierbrouwer', 'Kapperszaak', 'Groenteboer', 'Bioboer', 'Fietsenmaker', 'Opticien',
-        'Café', 'Garage'
+        'Café', 'Garage',
     ];
 
     /**

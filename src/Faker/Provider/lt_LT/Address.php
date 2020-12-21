@@ -50,13 +50,13 @@ class Address extends \Faker\Provider\Address
         'Urugvajus', 'Uzbekistanas', 'Vakarų Sachara', 'Vanuatu', 'Vatikanas', 'Venesuela', 'Vengrija', 'Vietnamas',
         'Vokietija', 'Wallisas ir Futuna', 'Zambija', 'Zimbabvė', 'Čadas', 'Čekija', 'Čilė', 'Šiaurės Korėja', 'Šri Lanka',
         'Švedija', 'Šveicarija', 'Šventasis Vincentas ir Grenadinai', 'Švento Baltramiejaus sala', 'Šventoji Elena',
-        'Šventoji Liucija', 'Žaliasis Kyšulys'];
+        'Šventoji Liucija', 'Žaliasis Kyšulys', ];
 
     /**
      * @link https://lt.wikipedia.org/wiki/Lietuvos_etnokult%C5%ABriniai_regionai
      */
     protected static $region = [
-        'Aukštaitija', 'Dzūkija', 'Suvalkija', 'Žemaitija'
+        'Aukštaitija', 'Dzūkija', 'Suvalkija', 'Žemaitija',
     ];
 
     /**
@@ -64,11 +64,11 @@ class Address extends \Faker\Provider\Address
      */
     protected static $city = ['Vilnius', 'Kaunas', 'Klaipėda', 'Šiauliai', 'Panevėžys',
         'Alytus', 'Marijampolė', 'Mažeikiai', 'Jonava', 'Utena', 'Kėdainiai', 'Telšiai', 'Visaginas', 'Tauragė',
-        'Ukmergė'
+        'Ukmergė',
     ];
 
     protected static $street = [
-        'Klaipėdos', 'Vilniaus', 'Kauno', 'Žalgirio', 'Saltoniškių', 'Laisvės', 'Didžioji', 'Liepų'
+        'Klaipėdos', 'Vilniaus', 'Kauno', 'Žalgirio', 'Saltoniškių', 'Laisvės', 'Didžioji', 'Liepų',
     ];
 
     protected static $addressFormats = [

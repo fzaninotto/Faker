@@ -41,7 +41,7 @@ class Lorem extends Base
         'voluptates', 'repudiandae', 'sint', 'et', 'molestiae', 'non',
         'recusandae', 'itaque', 'earum', 'rerum', 'hic', 'tenetur', 'a',
         'sapiente', 'delectus', 'ut', 'aut', 'reiciendis', 'voluptatibus',
-        'maiores', 'doloribus', 'asperiores', 'repellat'
+        'maiores', 'doloribus', 'asperiores', 'repellat',
     ];
 
     /**

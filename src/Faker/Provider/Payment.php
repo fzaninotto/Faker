@@ -31,7 +31,7 @@ class Payment extends Base
             '40240071#######',
             '4485###########',
             '4716###########',
-            '4##############'
+            '4##############',
         ],
         'Visa Retired' => [
             '4539########',
@@ -55,14 +55,14 @@ class Payment extends Base
             '52#############',
             '53#############',
             '54#############',
-            '55#############'
+            '55#############',
         ],
         'American Express' => [
             '34############',
-            '37############'
+            '37############',
         ],
         'Discover Card' => [
-            '6011###########'
+            '6011###########',
         ],
         'JCB' => [
             '3528###########',
@@ -222,7 +222,7 @@ class Payment extends Base
             'type'   => $type,
             'number' => static::creditCardNumber($type),
             'name'   => $this->generator->name(),
-            'expirationDate' => $this->creditCardExpirationDateString($valid)
+            'expirationDate' => $this->creditCardExpirationDateString($valid),
         ];
     }
 

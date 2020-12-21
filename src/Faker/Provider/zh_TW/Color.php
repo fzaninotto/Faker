@@ -10,7 +10,7 @@ class Color extends \Faker\Provider\Color
     protected static $safeColorNames = [
         '黑色', '粟色', '綠色', '藏青', '橄欖色',
         '紫', '鳧綠', '鮮綠色', '藍色', '銀色',
-        '灰色', '黃色', '品紅', '水色', '白色'
+        '灰色', '黃色', '品紅', '水色', '白色',
     ];
 
     protected static $allColorNames = [

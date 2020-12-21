@@ -9,7 +9,7 @@ class UserAgent extends Base
     protected static $windowsPlatformTokens = [
         'Windows NT 6.2', 'Windows NT 6.1', 'Windows NT 6.0', 'Windows NT 5.2', 'Windows NT 5.1',
         'Windows NT 5.01', 'Windows NT 5.0', 'Windows NT 4.0', 'Windows 98; Win 9x 4.90', 'Windows 98',
-        'Windows 95', 'Windows CE'
+        'Windows 95', 'Windows CE',
     ];
 
     /**
@@ -71,7 +71,7 @@ class UserAgent extends Base
         $platforms = [
             '(' . static::linuxPlatformToken() . ") AppleWebKit/$saf (KHTML, like Gecko) Chrome/" . self::numberBetween(36, 40) . '.0.' . self::numberBetween(800, 899) . ".0 Mobile Safari/$saf",
             '(' . static::windowsPlatformToken() . ") AppleWebKit/$saf (KHTML, like Gecko) Chrome/" . self::numberBetween(36, 40) . '.0.' . self::numberBetween(800, 899) . ".0 Mobile Safari/$saf",
-            '(' . static::macPlatformToken() . ") AppleWebKit/$saf (KHTML, like Gecko) Chrome/" . self::numberBetween(36, 40) . '.0.' . self::numberBetween(800, 899) . ".0 Mobile Safari/$saf"
+            '(' . static::macPlatformToken() . ") AppleWebKit/$saf (KHTML, like Gecko) Chrome/" . self::numberBetween(36, 40) . '.0.' . self::numberBetween(800, 899) . ".0 Mobile Safari/$saf",
         ];
 
         return 'Mozilla/5.0 ' . static::randomElement($platforms);
@@ -89,7 +89,7 @@ class UserAgent extends Base
         $platforms = [
             '(' . static::windowsPlatformToken() . '; ' . static::randomElement(static::$lang) . '; rv:1.9.' . self::numberBetween(0, 2) . '.20) ' . $ver,
             '(' . static::linuxPlatformToken() . '; rv:' . self::numberBetween(5, 7) . '.0) ' . $ver,
-            '(' . static::macPlatformToken() . ' rv:' . self::numberBetween(2, 6) . '.0) ' . $ver
+            '(' . static::macPlatformToken() . ' rv:' . self::numberBetween(2, 6) . '.0) ' . $ver,
         ];
 
         return 'Mozilla/5.0 ' . static::randomElement($platforms);
@@ -112,7 +112,7 @@ class UserAgent extends Base
 
         $mobileDevices = [
             'iPhone; CPU iPhone OS',
-            'iPad; CPU OS'
+            'iPad; CPU OS',
         ];
 
         $platforms = [
@@ -133,7 +133,7 @@ class UserAgent extends Base
     {
         $platforms = [
             '(' . static::linuxPlatformToken() . '; ' . static::randomElement(static::$lang) . ') Presto/2.' . self::numberBetween(8, 12) . '.' . self::numberBetween(160, 355) . ' Version/' . self::numberBetween(10, 12) . '.00',
-            '(' . static::windowsPlatformToken() . '; ' . static::randomElement(static::$lang) . ') Presto/2.' . self::numberBetween(8, 12) . '.' . self::numberBetween(160, 355) . ' Version/' . self::numberBetween(10, 12) . '.00'
+            '(' . static::windowsPlatformToken() . '; ' . static::randomElement(static::$lang) . ') Presto/2.' . self::numberBetween(8, 12) . '.' . self::numberBetween(160, 355) . ' Version/' . self::numberBetween(10, 12) . '.00',
         ];
 
         return 'Opera/' . self::numberBetween(8, 9) . '.' . self::numberBetween(10, 99) . ' ' . static::randomElement($platforms);

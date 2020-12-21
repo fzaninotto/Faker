@@ -30,7 +30,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         // Local
         '07#########',
         '07### ######',
-        '07### ### ###'
+        '07### ### ###',
     ];
 
     /**

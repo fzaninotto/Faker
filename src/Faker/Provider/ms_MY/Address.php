@@ -12,7 +12,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     protected static $streetAddressFormats = [
-        '{{buildingPrefix}}{{buildingNumber}}, {{streetName}}'
+        '{{buildingPrefix}}{{buildingNumber}}, {{streetName}}',
     ];
 
     /**
@@ -30,7 +30,7 @@ class Address extends \Faker\Provider\Address
         '%##',
         '%-%',
         '?-##-##',
-        '%?-##'
+        '%?-##',
     ];
 
     protected static $streetNameFormats = [
@@ -71,7 +71,7 @@ class Address extends \Faker\Provider\Address
     protected static $streetPrefix = [
         'Jln', 'Jln',
         'Jalan', 'Jalan', 'Jalan',
-        'Lorong'
+        'Lorong',
     ];
 
     /**
@@ -102,7 +102,7 @@ class Address extends \Faker\Provider\Address
         'Vermont', 'Vivekananda',
         'Wan Kadir', 'Wesley', 'Wisma Putra',
         'Yaacob Latif', 'Yap Ah Loy', 'Yap Ah Shak', 'Yap Kwan Seng', 'Yew',
-        'Zaaba', 'Zainal Abidin'
+        'Zaaba', 'Zainal Abidin',
     ];
 
     /**
@@ -244,7 +244,7 @@ class Address extends \Faker\Provider\Address
             'Batu Manikar',
             'Kiamsam',
             'Layang-Layang',
-            'Rancha-Rancha'
+            'Rancha-Rancha',
         ],
         'melaka' => [
             'Alor Gajah',
@@ -393,7 +393,7 @@ class Address extends \Faker\Provider\Address
             'Rantau Abang',
             'Teluk Kalung',
             'Wakaf Tapai',
-        ]
+        ],
     ];
 
     /**
@@ -402,65 +402,65 @@ class Address extends \Faker\Provider\Address
     protected static $states = [
         'johor' => [
             'Johor Darul Ta\'zim',
-            'Johor'
+            'Johor',
         ],
         'kedah' => [
             'Kedah Darul Aman',
-            'Kedah'
+            'Kedah',
         ],
         'kelantan' => [
             'Kelantan Darul Naim',
-            'Kelantan'
+            'Kelantan',
         ],
         'kl' => [
             'KL',
             'Kuala Lumpur',
-            'WP Kuala Lumpur'
+            'WP Kuala Lumpur',
         ],
         'labuan' => [
-            'Labuan'
+            'Labuan',
         ],
         'melaka' => [
             'Malacca',
-            'Melaka'
+            'Melaka',
         ],
         'nsembilan' => [
             'Negeri Sembilan Darul Khusus',
-            'Negeri Sembilan'
+            'Negeri Sembilan',
         ],
         'pahang' => [
             'Pahang Darul Makmur',
-            'Pahang'
+            'Pahang',
         ],
         'penang' => [
             'Penang',
-            'Pulau Pinang'
+            'Pulau Pinang',
         ],
         'perak' => [
             'Perak Darul Ridzuan',
-            'Perak'
+            'Perak',
         ],
         'perlis' => [
             'Perlis Indera Kayangan',
-            'Perlis'
+            'Perlis',
         ],
         'putrajaya' => [
-            'Putrajaya'
+            'Putrajaya',
         ],
         'sabah' => [
-            'Sabah'
+            'Sabah',
         ],
         'sarawak' => [
-            'Sarawak'
+            'Sarawak',
         ],
         'selangor' => [
             'Selangor Darul Ehsan',
-            'Selangor'
+            'Selangor',
         ],
         'terengganu' => [
             'Terengganu Darul Iman',
-            'Terengganu'
-        ]
+            'Terengganu',
+        ],
     ];
 
     /**
@@ -606,56 +606,56 @@ class Address extends \Faker\Provider\Address
     {
         $format = [
             'perlis' => [ // (01000 - 02800)
-                '0' . self::numberBetween(1000, 2800)
+                '0' . self::numberBetween(1000, 2800),
             ],
             'kedah' => [ // (05000 - 09810)
-                '0' . self::numberBetween(5000, 9810)
+                '0' . self::numberBetween(5000, 9810),
             ],
             'penang' => [ // (10000 - 14400)
-                self::numberBetween(10000, 14400)
+                self::numberBetween(10000, 14400),
             ],
             'kelantan' => [ // (15000 - 18500)
-                self::numberBetween(15000, 18500)
+                self::numberBetween(15000, 18500),
             ],
             'terengganu' => [ // (20000 - 24300)
-                self::numberBetween(20000, 24300)
+                self::numberBetween(20000, 24300),
             ],
             'pahang' => [ // (25000 - 28800 | 39000 - 39200 | 49000, 69000)
                 self::numberBetween(25000, 28800),
                 self::numberBetween(39000, 39200),
-                self::numberBetween(49000, 69000)
+                self::numberBetween(49000, 69000),
             ],
             'perak' => [ // (30000 - 36810)
-                self::numberBetween(30000, 36810)
+                self::numberBetween(30000, 36810),
             ],
             'selangor' => [ // (40000 - 48300 | 63000 - 68100)
                 self::numberBetween(40000, 48300),
-                self::numberBetween(63000, 68100)
+                self::numberBetween(63000, 68100),
             ],
             'kl' => [ // (50000 - 60000)
                 self::numberBetween(50000, 60000),
             ],
             'putrajaya' => [ // (62000 - 62988)
-                self::numberBetween(62000, 62988)
+                self::numberBetween(62000, 62988),
             ],
             'nsembilan' => [ // (70000 - 73509)
-                self::numberBetween(70000, 73509)
+                self::numberBetween(70000, 73509),
             ],
             'melaka' => [ // (75000 - 78309)
-                self::numberBetween(75000, 78309)
+                self::numberBetween(75000, 78309),
             ],
             'johor' => [ // (79000 - 86900)
-                self::numberBetween(79000, 86900)
+                self::numberBetween(79000, 86900),
             ],
             'labuan' => [ // (87000 - 87033)
-                self::numberBetween(87000, 87033)
+                self::numberBetween(87000, 87033),
             ],
             'sabah' => [ // (88000 - 91309)
-                self::numberBetween(88000, 91309)
+                self::numberBetween(88000, 91309),
             ],
             'sarawak' => [ // (93000 - 98859)
-                self::numberBetween(93000, 98859)
-            ]
+                self::numberBetween(93000, 98859),
+            ],
         ];
 
         $postcode = null === $state ? static::randomElement($format) : $format[$state];

@@ -8,15 +8,15 @@ namespace Faker\Provider\cs_CZ;
 class DateTime extends \Faker\Provider\DateTime
 {
     protected static $days = [
-        'neděle', 'pondělí', 'úterý', 'středa', 'čtvrtek', 'pátek', 'sobota'
+        'neděle', 'pondělí', 'úterý', 'středa', 'čtvrtek', 'pátek', 'sobota',
     ];
     protected static $months = [
         'leden', 'únor', 'březen', 'duben', 'květen', 'červen', 'červenec',
-        'srpen', 'září', 'říjen', 'listopad', 'prosinec'
+        'srpen', 'září', 'říjen', 'listopad', 'prosinec',
     ];
     protected static $monthsGenitive  = [
         'ledna', 'února', 'března', 'dubna', 'května', 'června', 'července',
-        'srpna', 'září', 'října', 'listopadu', 'prosince'
+        'srpna', 'září', 'října', 'listopadu', 'prosince',
     ];
     protected static $formattedDateFormat = [
         '{{dayOfMonth}}. {{monthNameGenitive}} {{year}}',

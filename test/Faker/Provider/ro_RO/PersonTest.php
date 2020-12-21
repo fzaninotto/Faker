@@ -52,14 +52,14 @@ final class PersonTest extends TestCase
             ['DB'], ['DJ'], ['GL'], ['GR'], ['GJ'], ['HR'], ['HD'], ['IL'],
             ['IS'], ['IF'], ['MM'], ['MH'], ['MS'], ['NT'], ['OT'], ['PH'],
             ['SM'], ['SJ'], ['SB'], ['SV'], ['TR'], ['TM'], ['TL'], ['VS'],
-            ['VL'], ['VN'], ['B1'], ['B2'], ['B3'], ['B4'], ['B5'], ['B6']
+            ['VL'], ['VN'], ['B1'], ['B2'], ['B3'], ['B4'], ['B5'], ['B6'],
         ];
     }
 
     public function invalidCountyCodeProvider()
     {
         return [
-            ['JK'], ['REW'], ['x'], ['FF'], ['aaaddadaada']
+            ['JK'], ['REW'], ['x'], ['FF'], ['aaaddadaada'],
         ];
     }
 

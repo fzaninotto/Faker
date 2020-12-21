@@ -7,18 +7,18 @@ class Address extends \Faker\Provider\Address
     protected static $buildingNumber = ['%###', '%##', '%#', '%#?', '%', '%?'];
 
     protected static $streetPrefix = [
-        'Øvre', 'Nedre', 'Søndre', 'Gamle', 'Østre', 'Vestre'
+        'Øvre', 'Nedre', 'Søndre', 'Gamle', 'Østre', 'Vestre',
     ];
 
     protected static $streetSuffix = [
         'alléen', 'bakken', 'berget', 'bråten', 'eggen', 'engen', 'ekra', 'faret', 'flata', 'gata', 'gjerdet', 'grenda',
         'gropa', 'hagen', 'haugen', 'havna', 'holtet', 'høgda', 'jordet', 'kollen', 'kroken', 'lia', 'lunden', 'lyngen',
         'løkka', 'marka', 'moen', 'myra', 'plassen', 'ringen', 'roa', 'røa', 'skogen', 'skrenten', 'spranget', 'stien',
-        'stranda', 'stubben', 'stykket', 'svingen', 'tjernet', 'toppen', 'tunet', 'vollen', 'vika', 'åsen'
+        'stranda', 'stubben', 'stykket', 'svingen', 'tjernet', 'toppen', 'tunet', 'vollen', 'vika', 'åsen',
     ];
 
     protected static $streetSuffixWord = [
-        'sgate', 'svei', 's Gate', 's Vei', 'gata', 'veien'
+        'sgate', 'svei', 's Gate', 's Vei', 'gata', 'veien',
     ];
 
     protected static $postcode = ['####', '####', '####', '0###'];
@@ -40,11 +40,11 @@ class Address extends \Faker\Provider\Address
         'Sandvika', 'Sarpsborg', 'Sauda', 'Ski', 'Skien', 'Skudeneshavn', 'Sortland', 'Stathelle', 'Stavanger',
         'Stavern', 'Steinkjer', 'Stjørdalshalsen', 'Stokmarknes', 'Stord', 'Svelvik', 'Svolvær', 'Tromsø', 'Trondheim',
         'Tvedestrand', 'Tønsberg', 'Ulsteinvik', 'Vadsø', 'Vardø', 'Verdalsøra', 'Vinstra', 'Åkrehamn', 'Ålesund',
-        'Åndalsnes', 'Åsgårdstrand'
+        'Åndalsnes', 'Åsgårdstrand',
     ];
 
     protected static $cityFormats = [
-        '{{cityName}}'
+        '{{cityName}}',
     ];
 
     /**
@@ -95,7 +95,7 @@ class Address extends \Faker\Provider\Address
         'Målselv', 'Sørreisa', 'Dyrøy', 'Tranøy', 'Torsken', 'Berg', 'Lenvik', 'Balsfjord', 'Karlsøy', 'Lyngen',
         'Storfjord', 'Kåfjord', 'Skjervøy', 'Nordreisa', 'Kvænangen', 'Vardø', 'Vadsø', 'Hammerfest', 'Kautokeino',
         'Alta', 'Loppa', 'Hasvik', 'Kvalsund', 'Måsøy', 'Nordkapp', 'Porsanger', 'Karasjok', 'Lebesby', 'Gamvik',
-        'Berlevåg', 'Tana', 'Nesseby', 'Båtsfjord', 'Sør-Varanger'
+        'Berlevåg', 'Tana', 'Nesseby', 'Båtsfjord', 'Sør-Varanger',
     ];
 
     /**
@@ -106,7 +106,7 @@ class Address extends \Faker\Provider\Address
     protected static $countyNames = [
         'Østfold', 'Akershus', 'Oslo', 'Hedmark', 'Oppland', 'Buskerud', 'Vestfold', 'Telemark', 'Aust-Agder',
         'Vest-Agder', 'Rogaland', 'Hordaland', 'Sogn og Fjordane', 'Møre og Romsdal', 'Sør-Trøndelag', 'Nord-Trøndelag',
-        'Nordland', 'Troms', 'Finnmark', 'Svalbard', 'Jan Mayen', 'Kontinentalsokkelen'
+        'Nordland', 'Troms', 'Finnmark', 'Svalbard', 'Jan Mayen', 'Kontinentalsokkelen',
     ];
 
     protected static $country = [
@@ -133,7 +133,7 @@ class Address extends \Faker\Provider\Address
         'Sør-Korea', 'Sør-Ossetia', 'Sør-Sudan', 'Tadsjikistan', 'Taiwan', 'Tanzania', 'Thailand', 'Togo', 'Tonga',
         'Transnistria', 'Trinidad og Tobago', 'Tsjad', 'Tsjekkia', 'Tunisia', 'Turkmenistan', 'Tuvalu', 'Tyrkia',
         'Tyskland', 'Uganda', 'USA', 'Ukraina', 'Ungarn', 'Uruguay', 'Usbekistan', 'Vanuatu', 'Vatikanstaten',
-        'Venezuela', 'Vietnam', 'Zambia', 'Zimbabwe', 'Østerrike', 'Øst-Timor'
+        'Venezuela', 'Vietnam', 'Zambia', 'Zimbabwe', 'Østerrike', 'Øst-Timor',
     ];
 
     /**
@@ -148,21 +148,21 @@ class Address extends \Faker\Provider\Address
         '{{streetPrefix}}{{streetSuffix}}',
         '{{streetPrefix}}{{streetSuffix}}',
         '{{streetPrefix}}{{streetSuffix}}',
-        '{{lastName}} {{streetSuffixWord}}'
+        '{{lastName}} {{streetSuffixWord}}',
     ];
 
     /**
      * @var array Norwegian street address formats
      */
     protected static $streetAddressFormats = [
-        '{{streetName}} {{buildingNumber}}'
+        '{{streetName}} {{buildingNumber}}',
     ];
 
     /**
      * @var array Norwegian address formats
      */
     protected static $addressFormats = [
-        "{{streetAddress}}\n{{postcode}} {{city}}"
+        "{{streetAddress}}\n{{postcode}} {{city}}",
     ];
 
     /**

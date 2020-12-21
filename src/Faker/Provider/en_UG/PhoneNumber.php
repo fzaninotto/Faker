@@ -12,6 +12,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '07## ### ###',
         '07########',
         '04## ### ###',
-        '04########'
+        '04########',
     ];
 }

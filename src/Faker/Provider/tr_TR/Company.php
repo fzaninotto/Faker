@@ -26,7 +26,7 @@ class Company extends \Faker\Provider\Company
         'Otomotiv', 'Pazarlama', 'Perakende Ticaret', 'Petrol', 'Petrolcülük', 'Sanayi',
         'Sağlık Hizmetleri', 'Servis ve Ticaret', 'Süt Ürünleri', 'Tarım Sanayi',
         'Tavukçuluk', 'Tekstil', 'Telekomunikasyon', 'Tersane ve Ulaşım Sanayi',
-        'Ticaret', 'Ticaret ve Sanayi', 'Ticaret ve Taahhüt', 'Turizm', 'Yatırım'
+        'Ticaret', 'Ticaret ve Sanayi', 'Ticaret ve Taahhüt', 'Turizm', 'Yatırım',
     ];
 
     /**
@@ -84,7 +84,7 @@ class Company extends \Faker\Provider\Company
         'Uzay bilimcisi', 'Vali', 'Veri hazırlama ve kontrol işletmeni', 'Veteriner hekim',
         'Veteriner sağlık teknikeri', 'Veznedar', 'Vinç operatörü', 'Vitrinci', 'Yarbay',
         'Yardımcı pilot', 'Yargıç', 'Yazar', 'Yazı işleri müdürü', 'Yazılım mühendisi',
-        'Yer gösterici', 'Yol bekçisi', 'Yorgancı', 'Yoğurtçu', 'Yıkıcı', 'Zabıta', 'Zoolog'
+        'Yer gösterici', 'Yol bekçisi', 'Yorgancı', 'Yoğurtçu', 'Yıkıcı', 'Zabıta', 'Zoolog',
     ];
 
     /**

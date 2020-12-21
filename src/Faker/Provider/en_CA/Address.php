@@ -25,7 +25,7 @@ class Address extends \Faker\Provider\en_US\Address
     ];
 
     protected static $provinceAbbr = [
-        'AB', 'BC', 'MB', 'NB', 'NL', 'NT', 'NS', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT'
+        'AB', 'BC', 'MB', 'NB', 'NL', 'NT', 'NS', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT',
     ];
 
     protected static $addressFormats = [

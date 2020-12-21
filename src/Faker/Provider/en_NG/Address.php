@@ -22,7 +22,7 @@ class Address extends \Faker\Provider\Address
         'Sokoto',
         'Taraba',
         'Yobe',
-        'Zamfara'
+        'Zamfara',
     ];
 
     protected static $country = [
@@ -50,7 +50,7 @@ class Address extends \Faker\Provider\Address
         'Vanuatu', 'Venezuela', 'Vietnam',
         'Wallis and Futuna', 'Western Sahara',
         'Yemen',
-        'Zambia', 'Zimbabwe'
+        'Zambia', 'Zimbabwe',
     ];
 
     private static $regions = [
@@ -69,7 +69,7 @@ class Address extends \Faker\Provider\Address
         'Port-Harcourt',
         'Sokoto',
         'Umuahia', 'Uyo',
-        'Yenagoa', 'Yola'
+        'Yenagoa', 'Yola',
     ];
 
     /**

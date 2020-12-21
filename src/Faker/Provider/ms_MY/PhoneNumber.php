@@ -7,15 +7,15 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     protected static $formats = [
         '{{mobileNumber}}',
         '{{fixedLineNumber}}',
-        '{{voipNumber}}'
+        '{{voipNumber}}',
     ];
 
     protected static $plusSymbol = [
-        '+'
+        '+',
     ];
 
     protected static $countryCodePrefix = [
-        '6'
+        '6',
     ];
 
     /**
@@ -79,11 +79,11 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      * @link https://en.wikipedia.org/wiki/Telephone_numbers_in_Malaysia#Mobile_phone_codes_and_IP_telephony
      */
     protected static $voipNumberWithFormatting = [
-        '015-{{zeroOneFivePrefix}}## ####'
+        '015-{{zeroOneFivePrefix}}## ####',
     ];
 
     protected static $voipNumber = [
-        '015{{zeroOneFivePrefix}}######'
+        '015{{zeroOneFivePrefix}}######',
     ];
 
     /**

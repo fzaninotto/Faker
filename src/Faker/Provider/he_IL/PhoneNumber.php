@@ -9,6 +9,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '0#-#######',
         '972-5#-#######',
         '972-#-########',
-        '0#########'
+        '0#########',
     ];
 }

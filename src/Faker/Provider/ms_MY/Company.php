@@ -22,7 +22,7 @@ class Company extends \Faker\Provider\Company
         'Bhd.',
         'Enterprise',
         'Sdn Bhd', 'Sdn Bhd', 'Sdn Bhd', 'Sdn Bhd',
-        'Sdn. Bhd.', 'Sdn. Bhd.', 'Sdn. Bhd.', 'Sdn. Bhd.'
+        'Sdn. Bhd.', 'Sdn. Bhd.', 'Sdn. Bhd.', 'Sdn. Bhd.',
     ];
 
     /**
@@ -51,7 +51,7 @@ class Company extends \Faker\Provider\Company
         'U Mobile', 'UEM Group', 'UMW Holdings',
         'VADS', 'ViTrox',
         'Wasco Energy',
-        'YTL Corporation'
+        'YTL Corporation',
     ];
 
     /**
@@ -80,7 +80,7 @@ class Company extends \Faker\Provider\Company
         'Tag', 'Talian Paip', 'Taman', 'Tanaman', 'Tanda Dan Stiker', 'Tangki', 'Tasik', 'Tatahias Haiwan', 'Teknologi Hijau', 'Teknologi Maklumat Dan Komunikasi', 'Tekstil', 'Tekstil Guna Semula Kakitangan', 'Tekstil Pakai Buang Kakitangan', 'Telecommunication', 'Telekomunikasi', 'Telly Clerk', 'Tempat Letak Kereta', 'Tenaga Buruh', 'Ternakan', 'Terusan', 'Topografi', 'Trailer Dan Aksesori', 'Tukun Tiruan', 'Tumbuhan',
         'Ubat Haiwan', 'Ubat Tidak Berjadual', 'Ujian Makmal', 'Ukuran',
         'Varnishing',
-        'WAN', 'Wayar Elektrik Dan Aksesori', 'Wireless'
+        'WAN', 'Wayar Elektrik Dan Aksesori', 'Wireless',
     ];
 
     /**

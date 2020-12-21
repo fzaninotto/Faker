@@ -8,7 +8,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '+91 ## ########',
         '+91 ### #######',
         '0## ########',
-        '0### #######'
+        '0### #######',
     ];
 
     /**
@@ -22,7 +22,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '+91 7#########',
         '09#########',
         '08#########',
-        '07#########'
+        '07#########',
     ];
 
     /**

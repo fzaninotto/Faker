@@ -6,12 +6,12 @@ class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = [
         '{{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{firstNameMale}} {{lastName}}'
+        '{{firstNameMale}} {{firstNameMale}} {{lastName}}',
     ];
 
     protected static $femaleNameFormats = [
         '{{firstNameFemale}} {{lastName}}',
-        '{{firstNameFemale}} {{firstNameFemale}} {{lastName}}'
+        '{{firstNameFemale}} {{firstNameFemale}} {{lastName}}',
     ];
 
     /**
@@ -58,7 +58,7 @@ class Person extends \Faker\Provider\Person
         'Rasheedah',
         'Sekinat', 'Simisola', 'Sumayyah',
         'Titi', 'Titilayo', 'Toluwani',
-        'Zainab'
+        'Zainab',
     ];
 
     /**
@@ -85,6 +85,6 @@ class Person extends \Faker\Provider\Person
         'Taiwo', 'Tamunoemi', 'Tella', 'Temitope', 'Tolulope',
         'Uchechi',
         'Wasiu', 'Wilcox', 'Wuraola',
-        'Yaqub', 'Yussuf'
+        'Yaqub', 'Yussuf',
     ];
 }

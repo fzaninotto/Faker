@@ -12,7 +12,7 @@ class Person extends \Faker\Provider\Person
         '{{firstNameMale}} {{lastName}}',
         '{{lastName}} {{firstNameMale}}',
         '{{firstNameMale}} {{lastNameMale}}',
-        '{{lastNameMale}} {{firstNameMale}}'
+        '{{lastNameMale}} {{firstNameMale}}',
     ];
 
     /**
@@ -23,7 +23,7 @@ class Person extends \Faker\Provider\Person
         '{{firstNameFemale}} {{lastName}}',
         '{{lastName}} {{firstNameFemale}}',
         '{{firstNameFemale}} {{lastNameFemale}}',
-        '{{lastNameFemale}} {{firstNameFemale}}'
+        '{{lastNameFemale}} {{firstNameFemale}}',
     ];
 
     protected static $firstNameMale = [
@@ -47,7 +47,7 @@ class Person extends \Faker\Provider\Person
         'Sam', 'Samson', 'Sean', 'Shawn', 'Sid', 'Sidney', 'Solomon', 'Steve', 'Stevie', 'Stewart', 'Stuart',
         'Taylor', 'Theodore', 'Thomas', 'Timmy', 'Timothy', 'Titus', 'Tom', 'Tony', 'Travis', 'Trevor', 'Troy', 'Trystan', 'Tyler', 'Tyson',
         'Victor', 'Vince', 'Vincent', 'Vinnie',
-        'Walter', 'Warren', 'Wilford', 'Wilfred', 'Will', 'William', 'Willis', 'Willy', 'Wilson'
+        'Walter', 'Warren', 'Wilford', 'Wilfred', 'Will', 'William', 'Willis', 'Willy', 'Wilson',
     ];
 
     protected static $firstNameFemale = [
@@ -72,7 +72,7 @@ class Person extends \Faker\Provider\Person
         'Valentine', 'Valerie', 'Vanessa', 'Veronica', 'Vickie', 'Vicky', 'Victoria', 'Viola', 'Violet', 'Violette', 'Viva', 'Vivian', 'Viviane', 'Vivianne', 'Vivien', 'Vivienne',
         'Wanda', 'Wendy', 'Whitney', 'Wilma', 'Winifred',
         'Yvette', 'Yvonne',
-        'Zita', 'Zoe'
+        'Zita', 'Zoe',
     ];
 
     protected static $lastNameMale = [
@@ -89,7 +89,7 @@ class Person extends \Faker\Provider\Person
         'Dushime',
         'Kabatesi', 'Kabonesa', 'Kaitesi', 'Kakiiza', 'Kakuze', 'Kaliisa', 'Karungi', 'Katusiime', 'Kebirungi', 'Kyomi', 'Kyoshabire',
         'Mahoro', 'Murungi',
-        'Nabaale', 'Nabaggala', 'Nabakooza', 'Nabaloga', 'Nabankema', 'Nabasirye', 'Nabaweesi', 'Nabayunga', 'Nabbona', 'Nabise', 'Nabukeera', 'Nabunya', 'Nabuufu', 'Nabuuso', 'Nabwami', 'Nakaayi', 'Nakabugo', 'Nakabuye', 'Nakafeero', 'Nakalanzi', 'Nakalunda', 'Nakasinde', 'Nakasolya', 'Nakasumba', 'Nakato', 'Nakaweesa', 'Nakazibwe', 'Nakiboneka', 'Nakidde', 'Nakigozi', 'Nakiguli', 'Nakimbugwe', 'Nakimuli', 'Nakinobe', 'Nakiridde', 'Nakisige', 'Nakitende', 'Nakiyemba', 'Nakku', 'Nakyagaba', 'Nakyanzi', 'Nalubuga', 'Nalubwama', 'Nalukwago', 'Naluyima', 'Nalweyiso', 'Nalwoga', 'Namaganda', 'Namagembe', 'Namatovu', 'Nambi', 'Nambogo', 'Nambooze', 'Nambuusi', 'Namenya', 'Namiiro', 'Namirembe', 'Nampemba', 'Nampijja', 'Namubiru', 'Namuddu', 'Namugenyi', 'Namugwanya', 'Namukwaya', 'Namuleme', 'Namulindwa', 'Namutebi', 'Nankindu', 'Nankinga', 'Nanteeza', 'Nantongo', 'Nanvule', 'Nanyanzi', 'Nanyombi', 'Nanyondo', 'Nanyonjo', 'Nassimwba', 'Nazziwa', 'Ndagire'
+        'Nabaale', 'Nabaggala', 'Nabakooza', 'Nabaloga', 'Nabankema', 'Nabasirye', 'Nabaweesi', 'Nabayunga', 'Nabbona', 'Nabise', 'Nabukeera', 'Nabunya', 'Nabuufu', 'Nabuuso', 'Nabwami', 'Nakaayi', 'Nakabugo', 'Nakabuye', 'Nakafeero', 'Nakalanzi', 'Nakalunda', 'Nakasinde', 'Nakasolya', 'Nakasumba', 'Nakato', 'Nakaweesa', 'Nakazibwe', 'Nakiboneka', 'Nakidde', 'Nakigozi', 'Nakiguli', 'Nakimbugwe', 'Nakimuli', 'Nakinobe', 'Nakiridde', 'Nakisige', 'Nakitende', 'Nakiyemba', 'Nakku', 'Nakyagaba', 'Nakyanzi', 'Nalubuga', 'Nalubwama', 'Nalukwago', 'Naluyima', 'Nalweyiso', 'Nalwoga', 'Namaganda', 'Namagembe', 'Namatovu', 'Nambi', 'Nambogo', 'Nambooze', 'Nambuusi', 'Namenya', 'Namiiro', 'Namirembe', 'Nampemba', 'Nampijja', 'Namubiru', 'Namuddu', 'Namugenyi', 'Namugwanya', 'Namukwaya', 'Namuleme', 'Namulindwa', 'Namutebi', 'Nankindu', 'Nankinga', 'Nanteeza', 'Nantongo', 'Nanvule', 'Nanyanzi', 'Nanyombi', 'Nanyondo', 'Nanyonjo', 'Nassimwba', 'Nazziwa', 'Ndagire',
     ];
 
     protected static $lastName = [
@@ -105,7 +105,7 @@ class Person extends \Faker\Provider\Person
         'Obol', 'Odeke', 'Okumu', 'Okumuringa', 'Opega', 'Orishaba', 'Osiki', 'Ouma',
         'Rubalema', 'Rusiimwa', 'Rwabyoma',
         'Tamale', 'Tendo', 'Tizikara', 'Tuhame', 'Tumusiime', 'Tumwebaze', 'Tumwesigye', 'Tumwiine', 'Turyasingura', 'Tusiime', 'Twasiima', 'Twesigomwe',
-        'Wasswa', 'Wavamuno', 'Were'
+        'Wasswa', 'Wavamuno', 'Were',
     ];
 
     public function lastName($gender = null)

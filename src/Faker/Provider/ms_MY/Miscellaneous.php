@@ -34,7 +34,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
      * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format_2
      */
     protected static $sarawakPrefix = [
-        'QA', 'QK', 'QB', 'QC', 'QL', 'QM', 'QP', 'QR', 'QS', 'QT'
+        'QA', 'QK', 'QB', 'QC', 'QL', 'QM', 'QP', 'QR', 'QS', 'QT',
     ];
 
     /**
@@ -42,7 +42,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
      */
     protected static $sabahPrefix = [
         'SA', 'SAA', 'SAB', 'SAC', 'SB', 'SD', 'SG',
-        'SK', 'SL', 'SS', 'SSA', 'ST', 'STA', 'SU'
+        'SK', 'SL', 'SS', 'SSA', 'ST', 'STA', 'SU',
     ];
 
     /**
@@ -66,7 +66,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
         'VIP',
         'WAJA',
         'XIIINAM', 'XOIC', 'XXVIASEAN', 'XXXIDB',
-        'Y'
+        'Y',
     ];
 
     /**
@@ -78,7 +78,7 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
         'A', 'B', 'C', 'D', 'E', 'F',
         'G', 'H', 'J', 'K', 'L', 'M',
         'N', 'P', 'Q', 'R', 'S', 'T',
-        'U', 'V', 'W', 'X', 'Y', ''
+        'U', 'V', 'W', 'X', 'Y', '',
     ];
 
     /**

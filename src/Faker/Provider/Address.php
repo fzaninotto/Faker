@@ -10,10 +10,10 @@ class Address extends Base
         '{{firstName}}{{citySuffix}}',
     ];
     protected static $streetNameFormats = [
-        '{{lastName}} {{streetSuffix}}'
+        '{{lastName}} {{streetSuffix}}',
     ];
     protected static $streetAddressFormats = [
-        '{{buildingNumber}} {{streetName}}'
+        '{{buildingNumber}} {{streetName}}',
     ];
     protected static $addressFormats = [
         '{{streetAddress}} {{postcode}} {{city}}',
@@ -138,7 +138,7 @@ class Address extends Base
     {
         return [
             'latitude' => static::latitude(),
-            'longitude' => static::longitude()
+            'longitude' => static::longitude(),
         ];
     }
 }

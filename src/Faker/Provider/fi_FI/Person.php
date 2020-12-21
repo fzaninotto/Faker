@@ -79,7 +79,7 @@ class Person extends \Faker\Provider\Person
         'Wettenranta', 'Wiitanen', 'Wirtanen', 'Wiskari',
         'Ylijälä', 'Yliannala', 'Ylijoki', 'Ylikangas', 'Ylioja', 'Ylitalo', 'Ylppö', 'Yläjoki', 'Yrjänen', 'Yrjänä', 'Yrjölä', 'Yrttiaho', 'Yömaa',
         'Äijälä', 'Ämmälä', 'Änäkkälä', 'Äyräs', 'Äärynen',
-        'Översti', 'Öysti', 'Öörni'
+        'Översti', 'Öysti', 'Öörni',
     ];
 
     protected static $titleMale = ['Hra.', 'Tri.'];

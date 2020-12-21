@@ -89,7 +89,7 @@ class Internet extends Base
         $domains = [
             'example.com',
             'example.org',
-            'example.net'
+            'example.net',
         ];
 
         return static::randomElement($domains);

@@ -16,6 +16,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '0## ### ####',
         '+39 0## ### ###',
         '3## ### ###',
-        '+39 3## ### ###'
+        '+39 3## ### ###',
     ];
 }

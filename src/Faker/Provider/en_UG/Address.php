@@ -5,7 +5,7 @@ namespace Faker\Provider\en_UG;
 class Address extends \Faker\Provider\en_US\Address
 {
     protected static $cityFormats = [
-        '{{cityName}}'
+        '{{cityName}}',
     ];
 
     /**
@@ -37,7 +37,7 @@ class Address extends \Faker\Provider\en_US\Address
         'Sembabule', 'Sironko', 'Soroti',
         'Tororo',
         'Wakiso', 'Wobulenzi',
-        'Yumbe'
+        'Yumbe',
     ];
 
     /**
@@ -68,7 +68,7 @@ class Address extends \Faker\Provider\en_US\Address
         'Tororo',
         'Wakiso',
         'Yumbe',
-        'Zombo'
+        'Zombo',
     ];
 
     protected static $postcode = ['#', '##', '###', '####', '#####'];

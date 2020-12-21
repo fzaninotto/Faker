@@ -5,7 +5,7 @@ namespace Faker\Provider\me_ME;
 class Company extends \Faker\Provider\Company
 {
     protected static $formats = [
-        '{{companyName}} {{companyType}}'
+        '{{companyName}} {{companyType}}',
     ];
 
     /**
@@ -30,11 +30,11 @@ class Company extends \Faker\Provider\Company
         'Tehnomarketi', 'Tpc Ražnatović', 'Trend A.D.', 'Trgopress',
         'Unifarm ', 'Utip Crna Gora',
         'Vatrostalna Podgorica', 'Velepromet Podgorica', 'Veletrgovina-Kolašin', 'Velimport Podgorica', 'Volumentrade Podgorica',
-        'Željeznica Crne Gore', 'Zetatrans'
+        'Željeznica Crne Gore', 'Zetatrans',
     ];
 
     protected static $types = [
-        'A.D.', 'A.D PODGORICA'
+        'A.D.', 'A.D PODGORICA',
     ];
 
     public static function companyType()

@@ -7,7 +7,7 @@ class Color extends Base
     protected static $safeColorNames = [
         'black', 'maroon', 'green', 'navy', 'olive',
         'purple', 'teal', 'lime', 'blue', 'silver',
-        'gray', 'yellow', 'fuchsia', 'aqua', 'white'
+        'gray', 'yellow', 'fuchsia', 'aqua', 'white',
     ];
 
     protected static $allColorNames = [
@@ -36,7 +36,7 @@ class Color extends Base
         'PowderBlue', 'Purple', 'Red', 'RosyBrown', 'RoyalBlue', 'SaddleBrown', 'Salmon',
         'SandyBrown', 'SeaGreen', 'SeaShell', 'Sienna', 'Silver', 'SkyBlue', 'SlateBlue',
         'SlateGray', 'Snow', 'SpringGreen', 'SteelBlue', 'Tan', 'Teal', 'Thistle', 'Tomato',
-        'Turquoise', 'Violet', 'Wheat', 'White', 'WhiteSmoke', 'Yellow', 'YellowGreen'
+        'Turquoise', 'Violet', 'Wheat', 'White', 'WhiteSmoke', 'Yellow', 'YellowGreen',
     ];
 
     /**
@@ -67,7 +67,7 @@ class Color extends Base
         return [
             hexdec(substr($color, 1, 2)),
             hexdec(substr($color, 3, 2)),
-            hexdec(substr($color, 5, 2))
+            hexdec(substr($color, 5, 2)),
         ];
     }
 
@@ -136,7 +136,7 @@ class Color extends Base
         return [
             self::numberBetween(0, 360),
             self::numberBetween(0, 100),
-            self::numberBetween(0, 100)
+            self::numberBetween(0, 100),
         ];
     }
 }

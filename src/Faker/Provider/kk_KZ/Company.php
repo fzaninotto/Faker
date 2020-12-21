@@ -12,11 +12,11 @@ class Company extends \Faker\Provider\Company
     ];
 
     protected static $companyPrefixes = [
-        'АҚ', 'ЖШС', 'ЖАҚ'
+        'АҚ', 'ЖШС', 'ЖАҚ',
     ];
 
     protected static $companyNameSuffixes = [
-        'Құрылыс', 'Машина', 'Бұзу', '-М', 'Лизинг', 'Страх', 'Ком', 'Телеком'
+        'Құрылыс', 'Машина', 'Бұзу', '-М', 'Лизинг', 'Страх', 'Ком', 'Телеком',
     ];
 
     protected static $companyElements = [
