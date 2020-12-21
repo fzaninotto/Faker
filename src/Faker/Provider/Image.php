@@ -7,7 +7,9 @@ namespace Faker\Provider;
  */
 class Image extends Base
 {
-    /** @var string */
+    /**
+     * @var string
+     */
     public const BASE_URL = 'https://via.placeholder.com';
 
     /**

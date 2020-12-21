@@ -7,7 +7,9 @@ namespace Faker\Calculator;
  */
 class Isbn
 {
-    /** @var string ISBN-10 validation pattern */
+    /**
+     * @var string ISBN-10 validation pattern
+     */
     public const PATTERN = '/^\d{9}[0-9X]$/';
 
     /**

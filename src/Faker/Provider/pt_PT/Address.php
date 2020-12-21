@@ -20,12 +20,16 @@ class Address extends \Faker\Provider\Address
         '{{streetName}}, {{buildingNumber}}, {{secondaryAddress}}',
     ];
 
-    /** @link http://www.univ-ab.pt/PINTAC/carta_normas.htm address example in letters **/
+    /**
+     * @link http://www.univ-ab.pt/PINTAC/carta_normas.htm address example in letters *
+     */
     protected static $addressFormats = [
         '{{streetAddress}} {{postcode}} {{city}}',
     ];
 
-    /** @link http://www.mapadeportugal.net/indicecidades.asp **/
+    /**
+     * @link http://www.mapadeportugal.net/indicecidades.asp *
+     */
     private static $cities = [
         'Abrantes', 'Agualva-Cacém', 'Águeda', 'Albufeira', 'Alcácer do Sal', 'Alcobaça', 'Almada', 'Almeirim', 'Alverca do Ribatejo', 'Amadora', 'Amarante', 'Amora', 'Anadia', 'Angra do Heroísmo', 'Aveiro', 'Barcelos', 'Barreiro',
         'Beja', 'Braga', 'Bragança', 'Caldas da Rainha', 'Camara de Lobos', 'Cantanhede', 'Cartaxo', 'Castelo Branco', 'Chaves', 'Coimbra', 'Covilhã', 'Elvas', 'Entroncamento', 'Ermesinde', 'Esmoriz', 'Espinho', 'Esposende', 'Estarreja',
@@ -62,7 +66,9 @@ class Address extends \Faker\Provider\Address
         return static::numerify(static::randomElement(static::$secondaryAddressFormats));
     }
 
-    /** @link http://www.indexmundi.com/pt/ **/
+    /**
+     * @link http://www.indexmundi.com/pt/ *
+     */
     protected static $country = [
         'Afeganistão', 'África do Sul', 'Albânia', 'Alemanha', 'Andorra',
         'Angola', 'Antigua e Barbuda', 'Arabia Saudita', 'Argélia',

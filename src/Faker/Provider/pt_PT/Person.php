@@ -26,7 +26,9 @@ class Person extends \Faker\Provider\Person
         '{{firstNameFemale}} {{firstNameFemale}} {{lastName}} {{lastName}} {{lastName}}',
     ];
 
-    /** @link http://goo.gl/v6bScG document with all pt abreviations **/
+    /**
+     * @link http://goo.gl/v6bScG document with all pt abreviations *
+     */
     protected static $titleMale = ['Sr.', 'Dr.', 'Exmo.', 'Eng.', 'Eng.º', 'Ex.', 'Exº'];
     protected static $titleFemale = ['Sra.', 'Dra.', 'Exma', 'Eng.ª', 'Exª'];
 
