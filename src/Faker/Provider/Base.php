@@ -97,8 +97,8 @@ class Base
      * Return a random float number
      *
      * @param int       $nbMaxDecimals
-     * @param int|float $min
-     * @param int|float $max
+     * @param float|int $min
+     * @param float|int $max
      * @example 48.8932
      *
      * @return float

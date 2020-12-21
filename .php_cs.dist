@@ -117,6 +117,10 @@ return $config
         'phpdoc_single_line_var_spacing' => true,
         'phpdoc_trim' => true,
         'phpdoc_types' => true,
+        'phpdoc_types_order' => [
+            'null_adjustment' => 'always_last',
+            'sort_algorithm' => 'alpha',
+        ],
         'phpdoc_var_without_name' => true,
         'pow_to_exponentiation' => true,
         'psr_autoloading' => true,

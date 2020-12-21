@@ -9,8 +9,8 @@ class DateTime extends Base
     protected static $defaultTimezone = null;
 
     /**
-     * @param  \DateTime|string|float|int $max
-     * @return int|false
+     * @param  \DateTime|float|int|string $max
+     * @return false|int
      */
     protected static function getMaxTimestamp($max = 'now')
     {
@@ -332,7 +332,7 @@ class DateTime extends Base
 
     /**
      * @param  string|null $timezone
-     * @return null|string
+     * @return string|null
      */
     private static function resolveTimezone($timezone)
     {

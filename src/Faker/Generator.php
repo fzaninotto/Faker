@@ -58,17 +58,17 @@ namespace Faker;
  * @property string $vat
  *
  * @property string $word
- * @property string|array $words
- * @method string|array words($nb = 3, $asText = false)
+ * @property array|string $words
+ * @method array|string words($nb = 3, $asText = false)
  * @method string word()
  * @property string $sentence
  * @method string sentence($nbWords = 6, $variableNbWords = true)
- * @property string|array $sentences
- * @method string|array sentences($nb = 3, $asText = false)
+ * @property array|string $sentences
+ * @method array|string sentences($nb = 3, $asText = false)
  * @property string $paragraph
  * @method string paragraph($nbSentences = 3, $variableNbSentences = true)
- * @property string|array $paragraphs
- * @method string|array paragraphs($nb = 3, $asText = false)
+ * @property array|string $paragraphs
+ * @method array|string paragraphs($nb = 3, $asText = false)
  * @property string $text
  * @method string text($maxNbChars = 200)
  *

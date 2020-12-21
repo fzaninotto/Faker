@@ -297,8 +297,8 @@ class Person extends \Faker\Provider\Person
      *
      * @link https://en.wikipedia.org/wiki/National_identification_number#Indonesia
      *
-     * @param  null|string    $gender
-     * @param  null|\DateTime $birthDate
+     * @param  string|null    $gender
+     * @param  \DateTime|null $birthDate
      * @return string
      */
     public function nik($gender = null, $birthDate = null)

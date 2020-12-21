@@ -107,10 +107,10 @@ class Person extends \Faker\Provider\Person
      * @link http://ro.wikipedia.org/wiki/Cod_numeric_personal
      * @example 1111111111118
      *
-     * @param  null|string $gender      Person::GENDER_MALE or Person::GENDER_FEMALE
-     * @param  null|string $dateOfBirth (1800-2099) 'Y-m-d', 'Y-m', 'Y'  I.E. '1981-06-16', '2085-03', '1900'
-     * @param  null|string $county      county code where the CNP was issued
-     * @param  null|bool   $isResident  flag if the person resides in Romania
+     * @param  string|null $gender      Person::GENDER_MALE or Person::GENDER_FEMALE
+     * @param  string|null $dateOfBirth (1800-2099) 'Y-m-d', 'Y-m', 'Y'  I.E. '1981-06-16', '2085-03', '1900'
+     * @param  string|null $county      county code where the CNP was issued
+     * @param  bool|null   $isResident  flag if the person resides in Romania
      * @return string      13 digits CNP code
      */
     public function cnp($gender = null, $dateOfBirth = null, $county = null, $isResident = true)
@@ -144,7 +144,7 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * @param  null|string $dateOfBirth
+     * @param  string|null $dateOfBirth
      * @return \DateTime
      */
     protected function getDateOfBirth($dateOfBirth)

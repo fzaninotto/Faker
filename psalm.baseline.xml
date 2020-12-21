@@ -51,7 +51,6 @@
     <UndefinedDocblockClass occurrences="3">
       <code>$this-&gt;manager</code>
       <code>ObjectManager|null</code>
-      <code>null|EntityManager</code>
     </UndefinedDocblockClass>
   </file>
   <file src="src/Faker/ORM/Mandango/EntityPopulator.php">
