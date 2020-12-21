@@ -17,8 +17,6 @@ class DefaultGenerator
 
     /**
      * @param string $attribute
-     *
-     * @return mixed
      */
     public function __get($attribute)
     {
@@ -28,8 +26,6 @@ class DefaultGenerator
     /**
      * @param string $method
      * @param array  $attributes
-     *
-     * @return mixed
      */
     public function __call($method, $attributes)
     {

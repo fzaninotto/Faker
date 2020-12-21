@@ -125,8 +125,6 @@ class Person extends \Faker\Provider\Person
      *
      * @link https://de.wikipedia.org/wiki/Sozialversicherungsnummer#.C3.96sterreich
      *
-     * @param \DateTime|null $birthdate
-     *
      * @return string
      */
     public static function ssn(\DateTime $birthdate = null)

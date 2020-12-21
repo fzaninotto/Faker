@@ -74,8 +74,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      * Randomizes between cellphone and landline numbers.
      *
      * @param bool $formatted [def: true] If it should return a formatted number or not.
-     *
-     * @return mixed
      */
     public static function phone($formatted = true)
     {
@@ -132,8 +130,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     /**
      * Randomizes between complete cellphone and landline numbers.
-     *
-     * @return mixed
      */
     public function phoneNumber()
     {
@@ -144,8 +140,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     /**
      * Randomizes between complete cellphone and landline numbers, cleared from formatting symbols.
-     *
-     * @return mixed
      */
     public static function phoneNumberCleared()
     {

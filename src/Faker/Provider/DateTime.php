@@ -340,7 +340,6 @@ class DateTime extends Base
     /**
      * Internal method to set the time zone on a DateTime.
      *
-     * @param \DateTime   $dt
      * @param string|null $timezone
      *
      * @return \DateTime

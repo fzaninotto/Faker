@@ -19,9 +19,6 @@ class Base
      */
     protected $unique;
 
-    /**
-     * @param \Faker\Generator $generator
-     */
     public function __construct(Generator $generator)
     {
         $this->generator = $generator;
@@ -153,10 +150,6 @@ class Base
 
     /**
      * Returns the passed value
-     *
-     * @param mixed $value
-     *
-     * @return mixed
      */
     public static function passthrough($value)
     {
@@ -236,8 +229,6 @@ class Base
      * Returns a random element from a passed array
      *
      * @param array $array
-     *
-     * @return mixed
      */
     public static function randomElement($array = ['a', 'b', 'c'])
     {

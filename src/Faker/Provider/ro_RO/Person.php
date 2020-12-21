@@ -193,9 +193,8 @@ class Person extends \Faker\Provider\Person
     /**
      * https://ro.wikipedia.org/wiki/Cod_numeric_personal#S
      *
-     * @param \DateTime $dateOfBirth
-     * @param bool      $isResident
-     * @param string    $gender
+     * @param bool   $isResident
+     * @param string $gender
      *
      * @return int
      */

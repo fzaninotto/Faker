@@ -9,9 +9,6 @@ class Populator
     protected $quantities = [];
     protected $guessers = [];
 
-    /**
-     * @param \Faker\Generator $generator
-     */
     public function __construct(\Faker\Generator $generator)
     {
         $this->generator = $generator;

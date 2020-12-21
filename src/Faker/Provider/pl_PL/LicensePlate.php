@@ -507,8 +507,6 @@ class LicensePlate extends Base
      * @param bool       $special      whether special license plates should be included
      * @param array|null $voivodeships list of voivodeships license plate should be generated from
      * @param array|null $counties     list of counties license plate should be generated from
-     *
-     * @return string
      */
     public static function licensePlate(
         bool $special = false,
@@ -530,11 +528,6 @@ class LicensePlate extends Base
 
     /**
      * Selects random area from the list of available and requested.
-     *
-     * @param array      $available
-     * @param array|null $requested
-     *
-     * @return mixed
      */
     protected static function selectRandomArea(array $available, ?array $requested)
     {

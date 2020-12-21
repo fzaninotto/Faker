@@ -23,9 +23,6 @@ class EntityPopulator
      */
     protected $modifiers = [];
 
-    /**
-     * @param ClassMetadata $class
-     */
     public function __construct(ClassMetadata $class)
     {
         $this->class = $class;
@@ -57,9 +54,6 @@ class EntityPopulator
         $this->columnFormatters = array_merge($this->columnFormatters, $columnFormatters);
     }
 
-    /**
-     * @param array $modifiers
-     */
     public function setModifiers(array $modifiers)
     {
         $this->modifiers = $modifiers;
@@ -73,17 +67,12 @@ class EntityPopulator
         return $this->modifiers;
     }
 
-    /**
-     * @param array $modifiers
-     */
     public function mergeModifiersWith(array $modifiers)
     {
         $this->modifiers = array_merge($this->modifiers, $modifiers);
     }
 
     /**
-     * @param \Faker\Generator $generator
-     *
      * @return array
      */
     public function guessColumnFormatters(\Faker\Generator $generator)
@@ -177,8 +166,7 @@ class EntityPopulator
     /**
      * Insert one new record using the Entity class.
      *
-     * @param ObjectManager $manager
-     * @param bool          $generateId
+     * @param bool $generateId
      *
      * @return EntityPopulator
      */
@@ -238,8 +226,6 @@ class EntityPopulator
     }
 
     /**
-     * @param ObjectManager $manager
-     *
      * @return int|null
      */
     private function generateId($obj, $column, ObjectManager $manager)

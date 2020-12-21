@@ -47,7 +47,7 @@ parameters:
 
 		-
 			message: "#^Parameter \\$class of method Faker\\\\ORM\\\\Doctrine\\\\ColumnTypeGuesser\\:\\:guessFormat\\(\\) has invalid typehint type Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
-			count: 2
+			count: 1
 			path: src/Faker/ORM/Doctrine/ColumnTypeGuesser.php
 
 		-
@@ -67,7 +67,7 @@ parameters:
 
 		-
 			message: "#^Parameter \\$class of method Faker\\\\ORM\\\\Doctrine\\\\EntityPopulator\\:\\:__construct\\(\\) has invalid typehint type Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
-			count: 2
+			count: 1
 			path: src/Faker/ORM/Doctrine/EntityPopulator.php
 
 		-
@@ -157,7 +157,7 @@ parameters:
 
 		-
 			message: "#^Parameter \\$manager of method Faker\\\\ORM\\\\Doctrine\\\\EntityPopulator\\:\\:execute\\(\\) has invalid typehint type Doctrine\\\\Common\\\\Persistence\\\\ObjectManager\\.$#"
-			count: 2
+			count: 1
 			path: src/Faker/ORM/Doctrine/EntityPopulator.php
 
 		-
@@ -187,7 +187,7 @@ parameters:
 
 		-
 			message: "#^Parameter \\$manager of method Faker\\\\ORM\\\\Doctrine\\\\EntityPopulator\\:\\:generateId\\(\\) has invalid typehint type Doctrine\\\\Common\\\\Persistence\\\\ObjectManager\\.$#"
-			count: 2
+			count: 1
 			path: src/Faker/ORM/Doctrine/EntityPopulator.php
 
 		-
@@ -202,7 +202,7 @@ parameters:
 
 		-
 			message: "#^Parameter \\$manager of method Faker\\\\ORM\\\\Doctrine\\\\Populator\\:\\:__construct\\(\\) has invalid typehint type Doctrine\\\\Common\\\\Persistence\\\\ObjectManager\\.$#"
-			count: 2
+			count: 1
 			path: src/Faker/ORM/Doctrine/Populator.php
 
 		-
@@ -227,7 +227,7 @@ parameters:
 
 		-
 			message: "#^Parameter \\$mandango of method Faker\\\\ORM\\\\Mandango\\\\EntityPopulator\\:\\:guessColumnFormatters\\(\\) has invalid typehint type Mandango\\\\Mandango\\.$#"
-			count: 2
+			count: 1
 			path: src/Faker/ORM/Mandango/EntityPopulator.php
 
 		-
@@ -237,7 +237,7 @@ parameters:
 
 		-
 			message: "#^Parameter \\$mandango of method Faker\\\\ORM\\\\Mandango\\\\EntityPopulator\\:\\:execute\\(\\) has invalid typehint type Mandango\\\\Mandango\\.$#"
-			count: 2
+			count: 1
 			path: src/Faker/ORM/Mandango/EntityPopulator.php
 
 		-
@@ -252,12 +252,12 @@ parameters:
 
 		-
 			message: "#^Parameter \\$mandango of method Faker\\\\ORM\\\\Mandango\\\\Populator\\:\\:__construct\\(\\) has invalid typehint type Mandango\\\\Mandango\\.$#"
-			count: 2
+			count: 1
 			path: src/Faker/ORM/Mandango/Populator.php
 
 		-
 			message: "#^Parameter \\$column of method Faker\\\\ORM\\\\Propel\\\\ColumnTypeGuesser\\:\\:guessFormat\\(\\) has invalid typehint type ColumnMap\\.$#"
-			count: 2
+			count: 1
 			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
 
 		-
@@ -402,7 +402,7 @@ parameters:
 
 		-
 			message: "#^Parameter \\$columnMap of method Faker\\\\ORM\\\\Propel\\\\EntityPopulator\\:\\:isColumnBehavior\\(\\) has invalid typehint type ColumnMap\\.$#"
-			count: 2
+			count: 1
 			path: src/Faker/ORM/Propel/EntityPopulator.php
 
 		-
@@ -447,7 +447,7 @@ parameters:
 
 		-
 			message: "#^Parameter \\$column of method Faker\\\\ORM\\\\Propel2\\\\ColumnTypeGuesser\\:\\:guessFormat\\(\\) has invalid typehint type Propel\\\\Runtime\\\\Map\\\\ColumnMap\\.$#"
-			count: 2
+			count: 1
 			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
 
 		-
@@ -597,7 +597,7 @@ parameters:
 
 		-
 			message: "#^Parameter \\$columnMap of method Faker\\\\ORM\\\\Propel2\\\\EntityPopulator\\:\\:isColumnBehavior\\(\\) has invalid typehint type Propel\\\\Runtime\\\\Map\\\\ColumnMap\\.$#"
-			count: 2
+			count: 1
 			path: src/Faker/ORM/Propel2/EntityPopulator.php
 
 		-
@@ -652,12 +652,12 @@ parameters:
 
 		-
 			message: "#^Parameter \\$locator of method Faker\\\\ORM\\\\Spot\\\\EntityPopulator\\:\\:__construct\\(\\) has invalid typehint type Spot\\\\Locator\\.$#"
-			count: 2
+			count: 1
 			path: src/Faker/ORM/Spot/EntityPopulator.php
 
 		-
 			message: "#^Parameter \\$mapper of method Faker\\\\ORM\\\\Spot\\\\EntityPopulator\\:\\:__construct\\(\\) has invalid typehint type Spot\\\\Mapper\\.$#"
-			count: 2
+			count: 1
 			path: src/Faker/ORM/Spot/EntityPopulator.php
 
 		-
@@ -707,7 +707,7 @@ parameters:
 
 		-
 			message: "#^Parameter \\$locator of method Faker\\\\ORM\\\\Spot\\\\Populator\\:\\:__construct\\(\\) has invalid typehint type Spot\\\\Locator\\.$#"
-			count: 2
+			count: 1
 			path: src/Faker/ORM/Spot/Populator.php
 
 		-

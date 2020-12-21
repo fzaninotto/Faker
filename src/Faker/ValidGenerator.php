@@ -13,7 +13,6 @@ class ValidGenerator
     protected $maxRetries;
 
     /**
-     * @param Generator     $generator
      * @param callable|null $validator
      * @param int           $maxRetries
      */
@@ -35,8 +34,6 @@ class ValidGenerator
      * Catch and proxy all generator calls but return only valid values
      *
      * @param string $attribute
-     *
-     * @return mixed
      */
     public function __get($attribute)
     {
@@ -48,8 +45,6 @@ class ValidGenerator
      *
      * @param string $name
      * @param array  $arguments
-     *
-     * @return mixed
      */
     public function __call($name, $arguments)
     {

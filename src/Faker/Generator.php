@@ -287,8 +287,6 @@ class Generator
 
     /**
      * @param string $attribute
-     *
-     * @return mixed
      */
     public function __get($attribute)
     {
@@ -298,8 +296,6 @@ class Generator
     /**
      * @param string $method
      * @param array  $attributes
-     *
-     * @return mixed
      */
     public function __call($method, $attributes)
     {

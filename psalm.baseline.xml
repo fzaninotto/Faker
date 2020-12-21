@@ -45,9 +45,7 @@
     </UndefinedDocblockClass>
   </file>
   <file src="src/Faker/ORM/Doctrine/Populator.php">
-    <UndefinedClass occurrences="1">
-      <code>ObjectManager|null</code>
-    </UndefinedClass>
+    <UndefinedClass occurrences="1"/>
     <UndefinedDocblockClass occurrences="3">
       <code>$this-&gt;manager</code>
       <code>ObjectManager|null</code>
@@ -145,7 +143,6 @@
   <file src="src/Faker/ORM/Spot/Populator.php">
     <UndefinedClass occurrences="2">
       <code>$this-&gt;locator</code>
-      <code>Locator|null</code>
     </UndefinedClass>
     <UndefinedDocblockClass occurrences="1">
       <code>Locator</code>

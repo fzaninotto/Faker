@@ -13,8 +13,7 @@ class UniqueGenerator
     protected $uniques = [];
 
     /**
-     * @param Generator $generator
-     * @param int       $maxRetries
+     * @param int $maxRetries
      */
     public function __construct(Generator $generator, $maxRetries = 10000)
     {
@@ -26,8 +25,6 @@ class UniqueGenerator
      * Catch and proxy all generator calls but return only unique values
      *
      * @param string $attribute
-     *
-     * @return mixed
      */
     public function __get($attribute)
     {
@@ -39,8 +36,6 @@ class UniqueGenerator
      *
      * @param string $name
      * @param array  $arguments
-     *
-     * @return mixed
      */
     public function __call($name, $arguments)
     {

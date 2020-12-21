@@ -43,9 +43,7 @@ class EntityPopulator
     protected $useExistingData = false;
 
     /**
-     * @param Mapper  $mapper
-     * @param Locator $locator
-     * @param bool    $useExistingData
+     * @param bool $useExistingData
      */
     public function __construct(Mapper $mapper, Locator $locator, $useExistingData = false)
     {
@@ -80,9 +78,6 @@ class EntityPopulator
         $this->columnFormatters = array_merge($this->columnFormatters, $columnFormatters);
     }
 
-    /**
-     * @param array $modifiers
-     */
     public function setModifiers(array $modifiers)
     {
         $this->modifiers = $modifiers;
@@ -96,17 +91,12 @@ class EntityPopulator
         return $this->modifiers;
     }
 
-    /**
-     * @param array $modifiers
-     */
     public function mergeModifiersWith(array $modifiers)
     {
         $this->modifiers = array_merge($this->modifiers, $modifiers);
     }
 
     /**
-     * @param Generator $generator
-     *
      * @return array
      */
     public function guessColumnFormatters(Generator $generator)
