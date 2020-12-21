@@ -9,7 +9,6 @@ class Color extends \Faker\Provider\Color
      * @see https://id.wikipedia.org/wiki/Kategori:Warna
      * @see https://id.wikipedia.org/wiki/Warna_tersier
      */
-
     protected static $safeColorNames = ['abu-abu', 'biru', 'biru dongker', 'biru laut', 'cokelat',
         'emas', 'hijau', 'hitam', 'jingga', 'krem', 'kuning', 'magenta', 'mawar', 'merah', 'merah jambu',
         'merah marun', 'nila', 'perak', 'putih', 'sepia', 'teal', 'toska', 'ungu', 'violet', 'zaitun',

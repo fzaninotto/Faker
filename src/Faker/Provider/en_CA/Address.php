@@ -5,7 +5,6 @@ namespace Faker\Provider\en_CA;
 /**
  * Extend US class since most fields share the same format
  */
-
 class Address extends \Faker\Provider\en_US\Address
 {
     protected static $postcode = ['?#? #?#', '?#?-#?#', '?#?#?#'];
