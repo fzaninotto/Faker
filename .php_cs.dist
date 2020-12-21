@@ -119,6 +119,7 @@ return $config
                 'type' => 'var',
             ],
         ],
+        'phpdoc_no_empty_return' => true,
         'phpdoc_no_package' => true,
         'phpdoc_order' => true,
         'phpdoc_return_self_reference' => true,

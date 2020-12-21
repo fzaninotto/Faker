@@ -353,8 +353,6 @@ class DateTime extends Base
      * Sets default time zone.
      *
      * @param string $timezone
-     *
-     * @return void
      */
     public static function setDefaultTimezone($timezone = null)
     {
