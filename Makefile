@@ -28,7 +28,8 @@ baseline: vendor/autoload.php ## Generate baseline files
 	vendor/bin/psalm --update-baseline
 
 .PHONY: clean
-clean: rm -rf vendor composer.lock .build  ## Cleans up build and vendor files
+clean:   ## Cleans up build and vendor files
+	rm -rf vendor composer.lock .build
 
 vendor/autoload.php:
 	composer update --no-interaction
