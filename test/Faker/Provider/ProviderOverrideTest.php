@@ -70,10 +70,6 @@ final class ProviderOverrideTest extends TestCase
      */
     public function testInternet($locale = null)
     {
-        if ($locale && $locale !== 'en_US' && !class_exists('Transliterator')) {
-            self::markTestSkipped('Transliterator class not available (intl extension)');
-        }
-
         $faker = Faker\Factory::create($locale);
 
         self::assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->userName);
