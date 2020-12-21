@@ -6,3 +6,4 @@ parameters:
     reportUnmatchedIgnoredErrors: false
     paths:
         - src
+    tmpDir: .build/phpstan/
