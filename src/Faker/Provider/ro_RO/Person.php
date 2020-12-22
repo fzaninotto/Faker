@@ -121,7 +121,7 @@ class Person extends \Faker\Provider\Person
 
         if (empty($gender)) {
             $gender = static::randomElement($genders);
-        } elseif (!in_array($gender, $genders)) {
+        } elseif (!in_array($gender, $genders, false)) {
             throw new \InvalidArgumentException("Gender must be '{Person::GENDER_MALE}' or '{Person::GENDER_FEMALE}'");
         }
 

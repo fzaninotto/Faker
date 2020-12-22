@@ -103,7 +103,7 @@ class Person extends \Faker\Provider\Person
 
         do {
             $prefix = implode('', self::randomElements($prefixAllowList, 2, true));
-        } while (in_array($prefix, $prefixBanList) || $prefix[1] == 'O');
+        } while (in_array($prefix, $prefixBanList, false) || $prefix[1] == 'O');
 
         $digits = static::numerify('######');
         $suffix = static::randomElement(['A', 'B', 'C', 'D']);

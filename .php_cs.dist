@@ -163,6 +163,7 @@ return $config
         'single_trait_insert_per_statement' => true,
         'standardize_not_equals' => true,
         'static_lambda' => true,
+        'strict_param' => true,
         'switch_case_space' => true,
         'ternary_operator_spaces' => true,
         'ternary_to_null_coalescing' => true,

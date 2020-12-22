@@ -242,7 +242,7 @@ class EntityPopulator
 
         do {
             $id = mt_rand();
-        } while (in_array($id, $ids));
+        } while (in_array($id, $ids, false));
 
         return $id;
     }

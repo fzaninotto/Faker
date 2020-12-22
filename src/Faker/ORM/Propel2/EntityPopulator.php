@@ -109,7 +109,7 @@ class EntityPopulator
                 case 'nested_set':
                     $columnNames = [$params['left_column'], $params['right_column'], $params['level_column']];
 
-                    if (in_array($columnName, $columnNames)) {
+                    if (in_array($columnName, $columnNames, false)) {
                         return true;
                     }
 
@@ -118,7 +118,7 @@ class EntityPopulator
                 case 'timestampable':
                     $columnNames = [$params['create_column'], $params['update_column']];
 
-                    if (in_array($columnName, $columnNames)) {
+                    if (in_array($columnName, $columnNames, false)) {
                         return true;
                     }
 

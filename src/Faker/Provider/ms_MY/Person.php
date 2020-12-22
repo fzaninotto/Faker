@@ -784,7 +784,7 @@ class Person extends \Faker\Provider\Person
         $dd = DateTime::dayOfMonth();
 
         // place of birth (1-59 except 17-20)
-        while (in_array($pb = self::numberBetween(1, 59), [17, 18, 19, 20])) {
+        while (in_array($pb = self::numberBetween(1, 59), [17, 18, 19, 20], false)) {
         }
 
         // random number

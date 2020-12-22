@@ -45,13 +45,13 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
             case 2:
                 $number = self::numberBetween(1, 8);
-                $digits[] = in_array($number, [5, 6]) ? $number + 2 : $number;
+                $digits[] = in_array($number, [5, 6], false) ? $number + 2 : $number;
 
                 break;
 
             case 3:
                 $number = self::numberBetween(1, 8);
-                $digits[] = in_array($number, [7, 8]) ? $number - 2 : $number;
+                $digits[] = in_array($number, [7, 8], false) ? $number - 2 : $number;
 
                 break;
 
@@ -62,7 +62,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
             case 5:
                 $number = self::numberBetween(1, 8);
-                $digits[] = in_array($number, [2, 5]) ? $number + 2 : $number;
+                $digits[] = in_array($number, [2, 5], false) ? $number + 2 : $number;
 
                 break;
         }
@@ -82,7 +82,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
             case 7:
                 $number = self::numberBetween(1, 9);
-                $digits[] = in_array($number, [5, 7]) ? $number + 1 : $number;
+                $digits[] = in_array($number, [5, 7], false) ? $number + 1 : $number;
 
                 break;
 

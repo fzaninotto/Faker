@@ -616,7 +616,7 @@ EOT;
 
     protected static function validStart($word)
     {
-        return !in_array($word, static::$notBeginPunct);
+        return !in_array($word, static::$notBeginPunct, false);
     }
 
     protected static function appendEnd($text)
@@ -629,10 +629,10 @@ EOT;
             $last = end($chars);
         }
         // if the last char is a not-valid-end punctuation, remove it
-        if (in_array($last, static::$notEndPunct)) {
+        if (in_array($last, static::$notEndPunct, false)) {
             $text = preg_replace('/.$/u', '', $text);
         }
         // if the last char is not a valid punctuation, append a default one.
-        return in_array($last, static::$endPunct) ? $text : $text . '。';
+        return in_array($last, static::$endPunct, false) ? $text : $text . '。';
     }
 }
