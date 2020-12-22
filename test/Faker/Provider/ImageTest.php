@@ -101,7 +101,7 @@ final class ImageTest extends TestCase
         self::assertFileExists($file);
 
         if (function_exists('getimagesize')) {
-            list($width, $height, $type, $attr) = getimagesize($file);
+            [$width, $height, $type, $attr] = getimagesize($file);
             self::assertEquals(640, $width);
             self::assertEquals(480, $height);
             self::assertEquals(constant('IMAGETYPE_PNG'), $type);
