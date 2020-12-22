@@ -8,6 +8,7 @@
         "platform": {
             "php": "7.1.33"
         },
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+        "sort-packages": true
     }
 }
