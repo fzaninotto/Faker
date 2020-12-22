@@ -6,7 +6,7 @@ class Address extends \Faker\Provider\Address
 {
     protected static $streetPrefix = ['شارع'];
 
-    protected static $cityPrefix = ['شمال', 'شرق', 'غرب', 'جنوب', 'وسط', ];
+    protected static $cityPrefix = ['شمال', 'شرق', 'غرب', 'جنوب', 'وسط'];
 
     /**
      * @see http://ar.wikipedia.org/wiki/%D9%85%D9%84%D8%AD%D9%82:%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D9%85%D8%AF%D9%86_%D8%A7%D9%84%D8%A3%D8%B1%D8%AF%D9%86
