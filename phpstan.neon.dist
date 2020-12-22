@@ -3,7 +3,6 @@ includes:
 
 parameters:
     level: 5
-    reportUnmatchedIgnoredErrors: false
     paths:
         - src
     tmpDir: .build/phpstan/
