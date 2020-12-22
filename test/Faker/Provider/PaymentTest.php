@@ -10,6 +10,9 @@ use Faker\Provider\Payment as PaymentProvider;
 use Faker\Provider\Person as PersonProvider;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PaymentTest extends TestCase
 {
     public function testCreditCardTypeReturnsValidVendorName()

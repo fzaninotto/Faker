@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\uk_UA;
 use Faker\Provider\uk_UA\Address;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class AddressTest extends TestCase
 {
     public function testPostCodeIsValid()

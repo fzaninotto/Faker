@@ -4,6 +4,9 @@ namespace Faker\Test\Provider\ru_RU;
 
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class TextTest extends TestCase
 {
     private $textClass;

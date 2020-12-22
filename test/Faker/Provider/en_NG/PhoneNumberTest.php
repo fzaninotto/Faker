@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\en_NG;
 use Faker\Provider\en_NG\PhoneNumber;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PhoneNumberTest extends TestCase
 {
     public function testPhoneNumberReturnsPhoneNumberWithOrWithoutCountryCode()

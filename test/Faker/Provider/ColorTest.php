@@ -5,6 +5,9 @@ namespace Faker\Test\Provider;
 use Faker\Provider\Color;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class ColorTest extends TestCase
 {
     public function testHexColor()

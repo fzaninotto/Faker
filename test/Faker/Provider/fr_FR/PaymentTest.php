@@ -6,6 +6,9 @@ use Faker\Calculator\Luhn;
 use Faker\Provider\fr_FR\Payment;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PaymentTest extends TestCase
 {
     public function testFormattedVat()

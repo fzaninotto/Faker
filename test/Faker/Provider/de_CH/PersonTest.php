@@ -6,6 +6,9 @@ use Faker\Calculator\Ean;
 use Faker\Provider\de_CH\Person;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PersonTest extends TestCase
 {
     public function testAvs13Number()

@@ -5,6 +5,9 @@ namespace Faker\Test\Provider;
 use Faker\Provider\DateTime as DateTimeProvider;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class DateTimeTest extends TestCase
 {
     protected function setUp(): void

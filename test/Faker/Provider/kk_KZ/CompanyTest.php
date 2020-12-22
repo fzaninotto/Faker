@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\kk_KZ;
 use Faker\Provider\kk_KZ\Company;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class CompanyTest extends TestCase
 {
     public function testBusinessIdentificationNumberIsValid()

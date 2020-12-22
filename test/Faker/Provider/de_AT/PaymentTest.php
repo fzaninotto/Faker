@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\de_AT;
 use Faker\Provider\de_AT\Payment;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PaymentTest extends TestCase
 {
     public function testVatIsValid()

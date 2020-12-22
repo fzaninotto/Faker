@@ -5,6 +5,9 @@ namespace Faker\Test\Provider;
 use Faker\Factory;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class LocalizationTest extends TestCase
 {
     /**

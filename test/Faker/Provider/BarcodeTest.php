@@ -7,6 +7,9 @@ use Faker\Calculator\Isbn;
 use Faker\Provider\Barcode;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class BarcodeTest extends TestCase
 {
     public function testEan8()

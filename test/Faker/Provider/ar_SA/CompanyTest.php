@@ -6,6 +6,9 @@ use Faker\Calculator\Luhn;
 use Faker\Provider\ar_SA\Company;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class CompanyTest extends TestCase
 {
     public function testCompanyIdNumberIsValid()

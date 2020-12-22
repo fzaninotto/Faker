@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\ar_SA;
 use Faker\Provider\ar_SA\Internet;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class InternetTest extends TestCase
 {
     public function testEmailIsValid()

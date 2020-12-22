@@ -15,7 +15,8 @@
     ],
     "require": {
         "php": "^7.1 || ^8.0",
-        "psr/container": "^1.0"
+        "psr/container": "^1.0",
+        "symfony/deprecation-contracts": "^2.2"
     },
     "require-dev": {
         "ext-intl": "*",

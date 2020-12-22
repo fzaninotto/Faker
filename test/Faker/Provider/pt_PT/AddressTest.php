@@ -6,6 +6,9 @@ use Faker\Provider\pt_PT\Address;
 use Faker\Provider\pt_PT\Person;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class AddressTest extends TestCase
 {
     public function testPostCodeIsValid()

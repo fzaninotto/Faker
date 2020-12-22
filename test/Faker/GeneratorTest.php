@@ -120,6 +120,9 @@ final class GeneratorTest extends TestCase
         self::assertEquals('This is foobar a text with foobar', $this->faker->parse('This is {{fooFormatter}} a text with {{ fooFormatter }}'));
     }
 
+    /**
+     * @group legacy
+     */
     public function testMagicGetCallsFormat()
     {
         $this->faker->addProvider(new FooProvider());

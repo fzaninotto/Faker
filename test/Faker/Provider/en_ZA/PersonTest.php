@@ -6,6 +6,9 @@ use Faker\Provider\DateTime;
 use Faker\Provider\en_ZA\Person;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PersonTest extends TestCase
 {
     public function testIdNumberWithDefaults()

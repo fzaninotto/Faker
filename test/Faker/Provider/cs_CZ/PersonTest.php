@@ -6,6 +6,9 @@ use Faker\Provider\cs_CZ\Person;
 use Faker\Provider\Miscellaneous;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PersonTest extends TestCase
 {
     public function testBirthNumber()

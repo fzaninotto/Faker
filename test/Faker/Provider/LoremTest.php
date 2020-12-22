@@ -5,6 +5,9 @@ namespace Faker\Test\Provider;
 use Faker\Provider\Lorem;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class LoremTest extends TestCase
 {
     public function testTextThrowsExceptionWhenAskedTextSizeLessThan5()
@@ -87,6 +90,9 @@ final class LoremTest extends TestCase
     }
 }
 
+/**
+ * @group legacy
+ */
 final class TestableLorem extends Lorem
 {
     public static function word()

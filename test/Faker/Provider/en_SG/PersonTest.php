@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\en_SG;
 use Faker\Provider\en_SG\Person;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PersonTest extends TestCase
 {
     public function testNric(): void

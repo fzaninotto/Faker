@@ -5,6 +5,9 @@ namespace Faker\Test\Provider;
 use Faker\Provider\Uuid as BaseProvider;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class UuidTest extends TestCase
 {
     public function testUuidReturnsUuid()

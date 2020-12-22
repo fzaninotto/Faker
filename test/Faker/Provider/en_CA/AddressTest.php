@@ -4,6 +4,9 @@ namespace Faker\Provider\en_CA;
 
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class AddressTest extends TestCase
 {
     /**

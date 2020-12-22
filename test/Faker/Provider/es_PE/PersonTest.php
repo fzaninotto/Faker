@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\es_PE;
 use Faker\Provider\es_PE\Person;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PersonTest extends TestCase
 {
     public function testDNI()

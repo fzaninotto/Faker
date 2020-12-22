@@ -8,6 +8,9 @@ use Faker\Test\TestCase;
 /**
  * Class ProviderOverrideTest
  */
+/**
+ * @group legacy
+ */
 final class ProviderOverrideTest extends TestCase
 {
     /**

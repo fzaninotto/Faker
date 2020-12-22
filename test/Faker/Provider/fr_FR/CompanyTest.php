@@ -6,6 +6,9 @@ use Faker\Calculator\Luhn;
 use Faker\Provider\fr_FR\Company;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class CompanyTest extends TestCase
 {
     public function testSiretReturnsAValidSiret()
@@ -61,6 +64,9 @@ final class CompanyTest extends TestCase
     }
 }
 
+/**
+ * @group legacy
+ */
 final class TestableCompany extends Company
 {
     public static function isCatchPhraseValid($catchPhrase)

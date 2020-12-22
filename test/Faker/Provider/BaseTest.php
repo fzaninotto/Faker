@@ -5,6 +5,9 @@ namespace Faker\Test\Provider;
 use Faker\Provider\Base as BaseProvider;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class BaseTest extends TestCase
 {
     public function testRandomDigitReturnsInteger()
@@ -563,6 +566,9 @@ final class BaseTest extends TestCase
     }
 }
 
+/**
+ * @group legacy
+ */
 final class Collection extends \ArrayObject
 {
 }

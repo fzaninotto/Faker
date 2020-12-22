@@ -4,6 +4,9 @@ namespace Faker\Provider\en_NG;
 
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class AddressTest extends TestCase
 {
     public function testPostcodeIsNotEmptyAndIsValid()

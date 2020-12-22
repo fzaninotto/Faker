@@ -6,6 +6,9 @@ use Faker\Provider\it_CH\Address;
 use Faker\Provider\it_CH\Person;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class AddressTest extends TestCase
 {
     public function testCanton()

@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\ja_JP;
 use Faker\Provider\ja_JP\Internet;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class InternetTest extends TestCase
 {
     public function testUserName()

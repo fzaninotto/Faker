@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\fr_FR;
 use Faker\Provider\fr_FR\Person;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PersonTest extends TestCase
 {
     public function testNIRReturnsTheRightGender()

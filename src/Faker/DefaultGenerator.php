@@ -17,9 +17,13 @@ class DefaultGenerator
 
     /**
      * @param string $attribute
+     *
+     * @deprecated Use a method instead.
      */
     public function __get($attribute)
     {
+        trigger_deprecation('fakerphp/faker', '1.14', 'Accessing property "%s" is deprecated, use "%s()" instead.', $attribute, $attribute);
+
         return $this->default;
     }
 

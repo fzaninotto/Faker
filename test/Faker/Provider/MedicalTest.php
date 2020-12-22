@@ -5,6 +5,9 @@ namespace Faker\Test\Provider;
 use Faker\Provider\Medical;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class MedicalTest extends TestCase
 {
     public function testBloodType(): void

@@ -8,6 +8,9 @@ use Faker\Test\TestCase;
 /**
  * @group Person
  */
+/**
+ * @group legacy
+ */
 final class PersonTest extends TestCase
 {
     public function testRrnIsValid()

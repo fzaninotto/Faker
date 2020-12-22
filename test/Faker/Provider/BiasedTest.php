@@ -5,6 +5,9 @@ namespace Faker\Test\Provider;
 use Faker\Provider\Biased;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class BiasedTest extends TestCase
 {
     public const MAX = 10;

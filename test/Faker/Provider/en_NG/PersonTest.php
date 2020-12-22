@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\en_NG;
 use Faker\Provider\en_NG\Person;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PersonTest extends TestCase
 {
     public function testPersonNameIsAValidString()

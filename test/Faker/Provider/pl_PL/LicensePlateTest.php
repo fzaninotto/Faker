@@ -4,6 +4,9 @@ namespace Faker\Provider\pl_PL;
 
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class LicensePlateTest extends TestCase
 {
     /**

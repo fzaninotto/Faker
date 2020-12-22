@@ -6,6 +6,9 @@ use Faker\Provider\Company;
 use Faker\Provider\Lorem;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class CompanyTest extends TestCase
 {
     public function testJobTitle()

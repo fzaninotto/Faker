@@ -8,6 +8,9 @@ use Faker\Provider\Lorem;
 use Faker\Provider\Person;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class InternetTest extends TestCase
 {
     /**

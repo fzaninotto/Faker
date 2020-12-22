@@ -5,6 +5,9 @@ namespace Faker\Test\Provider;
 use Faker\Provider\UserAgent;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class UserAgentTest extends TestCase
 {
     public function testRandomUserAgent()

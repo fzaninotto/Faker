@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\it_IT;
 use Faker\Provider\it_IT\Person;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PersonTest extends TestCase
 {
     public function testIfTaxIdCanReturnData()

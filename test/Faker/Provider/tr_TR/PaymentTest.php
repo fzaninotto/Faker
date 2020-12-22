@@ -4,6 +4,9 @@ namespace Faker\Provider\tr_TR;
 
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PaymentTest extends TestCase
 {
     public function testBankAccountNumber()

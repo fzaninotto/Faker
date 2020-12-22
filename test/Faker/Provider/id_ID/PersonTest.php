@@ -6,6 +6,9 @@ use Faker\Provider\DateTime;
 use Faker\Provider\id_ID\Person;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PersonTest extends TestCase
 {
     /**

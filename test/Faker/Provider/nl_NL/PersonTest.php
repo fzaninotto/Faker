@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\nl_NL;
 use Faker\Provider\nl_NL\Person;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PersonTest extends TestCase
 {
     public function testGenerateValidIdNumber()

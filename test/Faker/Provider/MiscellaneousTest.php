@@ -5,6 +5,9 @@ namespace Faker\Test\Provider;
 use Faker\Provider\Miscellaneous;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class MiscellaneousTest extends TestCase
 {
     public function testBoolean()

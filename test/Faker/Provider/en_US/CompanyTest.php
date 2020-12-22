@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\en_US;
 use Faker\Provider\en_US\Company;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class CompanyTest extends TestCase
 {
     /**

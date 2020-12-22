@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\nl_NL;
 use Faker\Provider\nl_NL\Company;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class CompanyTest extends TestCase
 {
     public function testGenerateValidVatNumber()

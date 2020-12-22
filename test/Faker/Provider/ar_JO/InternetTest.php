@@ -7,6 +7,9 @@ use Faker\Provider\fi_FI\Internet;
 use Faker\Provider\fi_FI\Person;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class InternetTest extends TestCase
 {
     public function testEmailIsValid()

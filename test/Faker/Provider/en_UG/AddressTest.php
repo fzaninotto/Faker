@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\en_UG;
 use Faker\Provider\en_UG\Address;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class AddressTest extends TestCase
 {
     public function testCityName()

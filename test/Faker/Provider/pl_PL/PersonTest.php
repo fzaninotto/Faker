@@ -6,6 +6,9 @@ use DateTime;
 use Faker\Provider\pl_PL\Person;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PersonTest extends TestCase
 {
     public function testPeselLenght()

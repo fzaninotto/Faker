@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\it_CH;
 use Faker\Provider\it_CH\PhoneNumber;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PhoneNumberTest extends TestCase
 {
     public function testPhoneNumber()

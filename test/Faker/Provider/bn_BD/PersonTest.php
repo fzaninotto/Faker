@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\bn_BD;
 use Faker\Provider\bn_BD\Person;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PersonTest extends TestCase
 {
     public function testIfFirstNameMaleCanReturnData()

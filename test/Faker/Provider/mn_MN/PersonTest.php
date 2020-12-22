@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\mn_MN;
 use Faker\Provider\mn_MN\Person;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PersonTest extends TestCase
 {
     public function testName()

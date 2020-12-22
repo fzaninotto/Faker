@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\en_SG;
 use Faker\Provider\en_SG\PhoneNumber;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PhoneNumberTest extends TestCase
 {
     // http://en.wikipedia.org/wiki/Telephone_numbers_in_Singapore#Numbering_plan

@@ -5,6 +5,9 @@ namespace Faker\Test\Provider;
 use Faker\Provider\Image;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class ImageTest extends TestCase
 {
     public function testImageUrlUses640x680AsTheDefaultSize()

@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\tr_TR;
 use Faker\Provider\tr_TR\Company;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class CompanyTest extends TestCase
 {
     public function testCompany()

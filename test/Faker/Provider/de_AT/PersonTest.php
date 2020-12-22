@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\de_AT;
 use Faker\Provider\de_AT\Person;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PersonTest extends TestCase
 {
     public function testSsnWithDefaultValuesCorrect()

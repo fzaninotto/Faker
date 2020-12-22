@@ -5,6 +5,9 @@ namespace Faker\Test\Provider;
 use Faker\Provider\HtmlLorem;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class HtmlLoremTest extends TestCase
 {
     public function testProvider()

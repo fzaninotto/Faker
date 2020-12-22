@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\el_GR;
 use Faker\Provider\el_GR\PhoneNumber;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PhoneNumberTest extends TestCase
 {
     public function testFixedLineNumber()

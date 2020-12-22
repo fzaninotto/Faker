@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\pt_BR;
 use Faker\Provider\pt_BR\Company;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class CompanyTest extends TestCase
 {
     public function testCnpjFormatIsValid()

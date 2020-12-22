@@ -5,6 +5,9 @@ namespace Faker\Test\Provider\tr_TR;
 use Faker\Provider\tr_TR\Person;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PersonTest extends TestCase
 {
     public function testTCNo()

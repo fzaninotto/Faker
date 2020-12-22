@@ -6,6 +6,9 @@ use Faker\Calculator\Luhn;
 use Faker\Provider\PhoneNumber;
 use Faker\Test\TestCase;
 
+/**
+ * @group legacy
+ */
 final class PhoneNumberTest extends TestCase
 {
     public function testPhoneNumberFormat()
