@@ -264,8 +264,6 @@ class Person extends \Faker\Provider\Person
     /**
      * Return last name for male
      *
-     * @access public
-     *
      * @return string last name
      */
     public static function lastNameMale()
@@ -276,8 +274,6 @@ class Person extends \Faker\Provider\Person
     /**
      * Return last name for female
      *
-     * @access public
-     *
      * @return string last name
      */
     public static function lastNameFemale()
@@ -287,8 +283,6 @@ class Person extends \Faker\Provider\Person
 
     /**
      * For academic title
-     *
-     * @access public
      *
      * @return string suffix
      */

@@ -122,6 +122,7 @@ return $config
         'phpdoc_indent' => true,
         'phpdoc_inline_tag_normalizer' => true,
         'phpdoc_line_span' => true,
+        'phpdoc_no_access' => true,
         'phpdoc_no_alias_tag' => [
             'replacements' => [
                 'link' => 'see',

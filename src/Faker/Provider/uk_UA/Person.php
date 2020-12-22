@@ -55,7 +55,6 @@ class Person extends \Faker\Provider\Person
      * Return male middle name
      *
      * @example 'Іванович'
-     * @access public
      *
      * @return string Middle name
      */
@@ -68,7 +67,6 @@ class Person extends \Faker\Provider\Person
      * Return female middle name
      *
      * @example 'Івановна'
-     * @access public
      *
      * @return string Middle name
      */
@@ -79,8 +77,6 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return middle name for the specified gender.
-     *
-     * @access public
      *
      * @param string|null $gender A gender the middle name should be generated
      *                            for. If the argument is skipped a random gender will be used.
