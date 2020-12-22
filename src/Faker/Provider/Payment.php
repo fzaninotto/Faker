@@ -219,9 +219,9 @@ class Payment extends Base
         $type = static::creditCardType();
 
         return [
-            'type'   => $type,
+            'type' => $type,
             'number' => static::creditCardNumber($type),
-            'name'   => $this->generator->name(),
+            'name' => $this->generator->name(),
             'expirationDate' => $this->creditCardExpirationDateString($valid),
         ];
     }

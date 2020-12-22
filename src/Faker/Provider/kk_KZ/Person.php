@@ -35,7 +35,7 @@ class Person extends \Faker\Provider\Person
      * @var array
      */
     public static $genderCenturyMap = [
-        self::GENDER_MALE   => [
+        self::GENDER_MALE => [
             self::CENTURY_19TH => self::MALE_CENTURY_19TH,
             self::CENTURY_20TH => self::MALE_CENTURY_20TH,
             self::CENTURY_21ST => self::MALE_CENTURY_21ST,

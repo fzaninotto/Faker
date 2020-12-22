@@ -179,8 +179,8 @@ class DateTime extends Base
     public static function dateTimeInInterval($date = '-30 years', $interval = '+5 days', $timezone = null)
     {
         $intervalObject = \DateInterval::createFromDateString($interval);
-        $datetime       = $date instanceof \DateTime ? $date : new \DateTime($date);
-        $otherDatetime  = clone $datetime;
+        $datetime = $date instanceof \DateTime ? $date : new \DateTime($date);
+        $otherDatetime = clone $datetime;
         $otherDatetime->add($intervalObject);
 
         $begin = $datetime > $otherDatetime ? $otherDatetime : $datetime;

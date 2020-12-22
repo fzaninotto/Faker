@@ -103,7 +103,7 @@ class EntityPopulator
 
         foreach ($this->columnFormatters as $column => $format) {
             if (null !== $format) {
-                $value =  is_callable($format) ? $format($insertedEntities, $obj) : $format;
+                $value = is_callable($format) ? $format($insertedEntities, $obj) : $format;
 
                 if (isset($metadata['fields'][$column])
                     || isset($metadata['referencesOne'][$column])) {

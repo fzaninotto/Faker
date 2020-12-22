@@ -315,9 +315,9 @@ class Base
             }
 
             if ($j == $i) {
-                $shuffledArray[]= $value;
+                $shuffledArray[] = $value;
             } else {
-                $shuffledArray[]= $shuffledArray[$j];
+                $shuffledArray[] = $shuffledArray[$j];
                 $shuffledArray[$j] = $value;
             }
             ++$i;
@@ -352,7 +352,7 @@ class Base
             $strlen = mb_strlen($string, $encoding);
 
             for ($i = 0; $i < $strlen; ++$i) {
-                $array[]= mb_substr($string, $i, 1, $encoding);
+                $array[] = mb_substr($string, $i, 1, $encoding);
             }
         } else {
             $array = str_split($string, 1);

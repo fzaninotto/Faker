@@ -128,7 +128,7 @@ class Company extends \Faker\Provider\Company
             $area_code = (int) $area_code;
         }
         $area_code = str_pad($area_code, 2, '0', STR_PAD_LEFT);
-        $inn_base =  $area_code . static::numerify('#######');
+        $inn_base = $area_code . static::numerify('#######');
 
         return $inn_base . self::inn10Checksum($inn_base);
     }

@@ -52,7 +52,7 @@ class UniqueGenerator
                 throw new \OverflowException(sprintf('Maximum retries of %d reached without finding a unique value', $this->maxRetries));
             }
         } while (array_key_exists(serialize($res), $this->uniques[$name]));
-        $this->uniques[$name][serialize($res)]= null;
+        $this->uniques[$name][serialize($res)] = null;
 
         return $res;
     }

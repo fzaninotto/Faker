@@ -9,9 +9,9 @@ final class CompanyTest extends TestCase
 {
     public function testBusinessIdentificationNumberIsValid()
     {
-        $registrationDate             = new \DateTime('now');
+        $registrationDate = new \DateTime('now');
         $businessIdentificationNumber = $this->faker->businessIdentificationNumber($registrationDate);
-        $registrationDateAsString     = $registrationDate->format('ym');
+        $registrationDateAsString = $registrationDate->format('ym');
 
         self::assertMatchesRegularExpression(
             '/^(' . $registrationDateAsString . ')([4-6]{1})([0-3]{1})(\\d{6})$/',

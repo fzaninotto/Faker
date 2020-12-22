@@ -33,8 +33,8 @@ final class PersonTest extends TestCase
     public function testPersonalIdentityNumberGeneratesCompliantNumbers()
     {
         if (strtotime('1800-01-01 00:00:00')) {
-            $min='1900';
-            $max='2099';
+            $min = '1900';
+            $max = '2099';
 
             for ($i = 0; $i < 10; ++$i) {
                 $birthdate = $this->faker->dateTimeBetween('1800-01-01 00:00:00', '1899-12-31 23:59:59');
@@ -42,8 +42,8 @@ final class PersonTest extends TestCase
                 self::assertMatchesRegularExpression('/^[0-9]{6}\+[0-9]{3}[0-9ABCDEFHJKLMNPRSTUVWXY]$/', $pin);
             }
         } else { // timestamp limit for 32-bit computer
-            $min='1902';
-            $max='2037';
+            $min = '1902';
+            $max = '2037';
         }
 
         for ($i = 0; $i < 10; ++$i) {

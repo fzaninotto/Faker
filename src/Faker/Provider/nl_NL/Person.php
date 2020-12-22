@@ -323,8 +323,8 @@ class Person extends \Faker\Provider\Person
      */
     public function idNumber()
     {
-        $nr     = [];
-        $nr[]   = 0;
+        $nr = [];
+        $nr[] = 0;
 
         while (count($nr) < 8) {
             $nr[] = static::randomDigit();
@@ -335,7 +335,7 @@ class Person extends \Faker\Provider\Person
             $nr[7] = 0;
         }
 
-        $bsn   = (9 * $nr[8]) + (8 * $nr[7]) + (7 * $nr[6]) + (6 * $nr[5]) + (5 * $nr[4]) + (4 * $nr[3]) + (3 * $nr[2]) + (2 * $nr[1]);
+        $bsn = (9 * $nr[8]) + (8 * $nr[7]) + (7 * $nr[6]) + (6 * $nr[5]) + (5 * $nr[4]) + (4 * $nr[3]) + (3 * $nr[2]) + (2 * $nr[1]);
         $nr[0] = floor($bsn - floor($bsn / 11) * 11);
 
         if ($nr[0] > 9) {

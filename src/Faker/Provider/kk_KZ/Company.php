@@ -64,10 +64,10 @@ class Company extends \Faker\Provider\Company
             $registrationDate = \Faker\Provider\DateTime::dateTimeThisYear();
         }
 
-        $dateAsString              = $registrationDate->format('ym');
-        $legalEntityType           = (string) self::numberBetween(4, 6);
+        $dateAsString = $registrationDate->format('ym');
+        $legalEntityType = (string) self::numberBetween(4, 6);
         $legalEntityAdditionalType = (string) self::numberBetween(0, 3);
-        $randomDigits              = (string) static::numerify('######');
+        $randomDigits = (string) static::numerify('######');
 
         return $dateAsString . $legalEntityType . $legalEntityAdditionalType . $randomDigits;
     }

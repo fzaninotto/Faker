@@ -10,9 +10,9 @@ final class PersonTest extends TestCase
 {
     public function testIndividualIdentificationNumberIsValid()
     {
-        $birthDate                      = DateTime::dateTimeBetween('-30 years', '-10 years');
+        $birthDate = DateTime::dateTimeBetween('-30 years', '-10 years');
         $individualIdentificationNumber = $this->faker->individualIdentificationNumber($birthDate);
-        $controlDigit                   = Person::checkSum($individualIdentificationNumber);
+        $controlDigit = Person::checkSum($individualIdentificationNumber);
 
         self::assertSame($controlDigit, (int) substr($individualIdentificationNumber, 11, 1));
     }

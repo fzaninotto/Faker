@@ -18,7 +18,7 @@ class Documentor
     {
         $formatters = [];
         $providers = array_reverse($this->generator->getProviders());
-        $providers[]= new Provider\Base($this->generator);
+        $providers[] = new Provider\Base($this->generator);
 
         foreach ($providers as $provider) {
             $providerClass = get_class($provider);
@@ -42,7 +42,7 @@ class Documentor
                     if ($reflparameter->isDefaultValueAvailable()) {
                         $parameter .= ' = ' . var_export($reflparameter->getDefaultValue(), true);
                     }
-                    $parameters[]= $parameter;
+                    $parameters[] = $parameter;
                 }
                 $parameters = $parameters ? '(' . implode(', ', $parameters) . ')' : '';
 

@@ -105,8 +105,8 @@ class Populator
         foreach ($this->quantities as $class => $number) {
             $generateId = $this->generateId[$class];
 
-            for ($i=0; $i < $number; ++$i) {
-                $insertedEntities[$class][]= $this->entities[$class]->execute(
+            for ($i = 0; $i < $number; ++$i) {
+                $insertedEntities[$class][] = $this->entities[$class]->execute(
                     $entityManager,
                     $insertedEntities,
                     $generateId

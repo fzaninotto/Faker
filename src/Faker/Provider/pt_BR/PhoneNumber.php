@@ -96,7 +96,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      */
     protected static function anyPhoneNumber($type, $formatted = true)
     {
-        $area   = static::areaCode();
+        $area = static::areaCode();
         $number = ($type == 'cellphone') ?
             static::cellphone($formatted) :
             static::landline($formatted);

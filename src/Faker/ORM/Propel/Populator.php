@@ -61,8 +61,8 @@ class Populator
         $con->beginTransaction();
 
         foreach ($this->quantities as $class => $number) {
-            for ($i=0; $i < $number; ++$i) {
-                $insertedEntities[$class][]= $this->entities[$class]->execute($con, $insertedEntities);
+            for ($i = 0; $i < $number; ++$i) {
+                $insertedEntities[$class][] = $this->entities[$class]->execute($con, $insertedEntities);
             }
         }
         $con->commit();
