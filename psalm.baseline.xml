@@ -8,6 +8,11 @@
       <code>string</code>
     </InvalidReturnType>
   </file>
+  <file src="src/Faker/Generator.php">
+    <InvalidThrow occurrences="1">
+      <code>ContainerExceptionInterface</code>
+    </InvalidThrow>
+  </file>
   <file src="src/Faker/ORM/CakePHP/EntityPopulator.php">
     <UndefinedClass occurrences="1">
       <code>TableRegistry</code>

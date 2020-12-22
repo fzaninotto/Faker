@@ -2,6 +2,9 @@
 
 namespace Faker;
 
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\ContainerInterface;
+
 /**
  * @property string $name
  *
@@ -222,6 +225,41 @@ class Generator
     protected $providers = [];
     protected $formatters = [];
 
+    private $container;
+
+    public function __construct(ContainerInterface $container = null)
+    {
+        $this->container = $container ?: Extension\ContainerBuilder::getDefault();
+    }
+
+    /**
+     * @template T of Extension\Extension
+     *
+     * @param class-string<T> $id
+     *
+     * @throws Extension\ExtensionNotFound
+     * @throws ContainerExceptionInterface
+     *
+     * @return T
+     */
+    public function ext(string $id): Extension\Extension
+    {
+        if (!$this->container->has($id)) {
+            throw new Extension\ExtensionNotFound(sprintf(
+                'No Faker extension with id "%s" was loaded.',
+                $id
+            ));
+        }
+
+        $extension = $this->container->get($id);
+
+        if ($extension instanceof Extension\GeneratorAwareExtension) {
+            $extension = $extension->withGenerator($this);
+        }
+
+        return $extension;
+    }
+
     public function addProvider($provider)
     {
         array_unshift($this->providers, $provider);
@@ -278,6 +316,21 @@ class Generator
     public function parse($string)
     {
         return preg_replace_callback('/\{\{\s?(\w+)\s?\}\}/u', [$this, 'callFormatWithMatches'], $string);
+    }
+
+    public function mimeType()
+    {
+        return $this->ext(Extension\FileExtension::class)->mimeType();
+    }
+
+    public function fileExtension()
+    {
+        return $this->ext(Extension\FileExtension::class)->extension();
+    }
+
+    public function filePath()
+    {
+        return $this->ext(Extension\FileExtension::class)->filePath();
     }
 
     protected function callFormatWithMatches($matches)

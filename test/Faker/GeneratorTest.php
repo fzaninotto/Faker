@@ -2,10 +2,56 @@
 
 namespace Faker\Test;
 
+use Faker\Core\File;
+use Faker\Extension\Container;
+use Faker\Extension\ExtensionNotFound;
+use Faker\Extension\FileExtension;
 use Faker\Generator;
 
+/**
+ * @covers \Faker\Generator
+ */
 final class GeneratorTest extends TestCase
 {
+    public function testExtReturnsAnExtensionWhenContainerHasACorrespondingDefinition(): void
+    {
+        $generator = new Generator(new Container([
+            'file' => File::class,
+        ]));
+
+        $ext = $generator->ext('file');
+
+        self::assertInstanceOf(File::class, $ext);
+    }
+
+    public function testExtThrowsAnExtensionNotFoundExceptionWhenContainerDoesNotHaveACorrespondingDefinition(): void
+    {
+        $generator = new Generator(new Container([]));
+
+        $this->expectException(ExtensionNotFound::class);
+
+        $generator->ext('foobar');
+    }
+
+    public function testConstructorBuildsDefaultExtensions(): void
+    {
+        $generator = new Generator();
+
+        $ext = $generator->ext(FileExtension::class);
+
+        self::assertInstanceOf(FileExtension::class, $ext);
+        self::assertInstanceOf(File::class, $ext);
+    }
+
+    public function testMimeType(): void
+    {
+        $generator = new Generator();
+
+        $mime = $generator->mimeType();
+
+        self::assertMatchesRegularExpression('|.*/.*|', $mime);
+    }
+
     public function testAddProviderGivesPriorityToNewlyAddedProvider()
     {
         $this->faker->addProvider(new FooProvider());
