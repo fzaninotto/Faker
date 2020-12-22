@@ -5,7 +5,6 @@
 /.gitattributes           export-ignore
 /.gitignore               export-ignore
 /.php_cs.dist             export-ignore
-/codecov.yml              export-ignore
 /Makefile                 export-ignore
 /phpstan-baseline.neon    export-ignore
 /phpstan.neon.dist        export-ignore
