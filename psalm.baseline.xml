@@ -69,9 +69,7 @@
     </UndefinedClass>
   </file>
   <file src="src/Faker/ORM/Propel/ColumnTypeGuesser.php">
-    <UndefinedClass occurrences="1">
-      <code>ColumnMap</code>
-    </UndefinedClass>
+    <UndefinedClass occurrences="1"/>
   </file>
   <file src="src/Faker/ORM/Propel/EntityPopulator.php">
     <UndefinedClass occurrences="9">
@@ -83,7 +81,6 @@
       <code>$columnMap</code>
       <code>$columnMap</code>
       <code>$columnMap</code>
-      <code>ColumnMap</code>
     </UndefinedClass>
   </file>
   <file src="src/Faker/ORM/Propel/Populator.php">

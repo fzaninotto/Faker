@@ -2,7 +2,6 @@
 
 namespace Faker\Test\Provider\pl_PL;
 
-use DateTime;
 use Faker\Provider\pl_PL\Person;
 use Faker\Test\TestCase;
 
@@ -20,7 +19,7 @@ final class PersonTest extends TestCase
 
     public function testPeselDate()
     {
-        $date = new DateTime('1990-01-01');
+        $date = new \DateTime('1990-01-01');
         $pesel = $this->faker->pesel($date);
 
         self::assertEquals('90', substr($pesel, 0, 2));
@@ -30,7 +29,7 @@ final class PersonTest extends TestCase
 
     public function testPeselDateWithYearAfter2000()
     {
-        $date = new DateTime('2001-01-01');
+        $date = new \DateTime('2001-01-01');
         $pesel = $this->faker->pesel($date);
 
         self::assertEquals('01', substr($pesel, 0, 2));
@@ -40,7 +39,7 @@ final class PersonTest extends TestCase
 
     public function testPeselDateWithYearAfter2100()
     {
-        $date = new DateTime('2101-01-01');
+        $date = new \DateTime('2101-01-01');
         $pesel = $this->faker->pesel($date);
 
         self::assertEquals('01', substr($pesel, 0, 2));
@@ -50,7 +49,7 @@ final class PersonTest extends TestCase
 
     public function testPeselDateWithYearAfter2200()
     {
-        $date = new DateTime('2201-01-01');
+        $date = new \DateTime('2201-01-01');
         $pesel = $this->faker->pesel($date);
 
         self::assertEquals('01', substr($pesel, 0, 2));
@@ -60,7 +59,7 @@ final class PersonTest extends TestCase
 
     public function testPeselDateWithYearBefore1900()
     {
-        $date = new DateTime('1801-01-01');
+        $date = new \DateTime('1801-01-01');
         $pesel = $this->faker->pesel($date);
 
         self::assertEquals('01', substr($pesel, 0, 2));

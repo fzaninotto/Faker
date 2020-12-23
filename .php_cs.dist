@@ -69,6 +69,11 @@ return $config
                 'author',
             ],
         ],
+        'global_namespace_import' => [
+            'import_classes' => false,
+            'import_constants' => false,
+            'import_functions' => false,
+        ],
         'implode_call' => true,
         'increment_style' => true,
         'is_null' => true,

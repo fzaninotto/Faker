@@ -2,8 +2,6 @@
 
 namespace Faker\Provider\tr_TR;
 
-use InvalidArgumentException;
-
 class Person extends \Faker\Provider\Person
 {
     /**
@@ -125,7 +123,7 @@ class Person extends \Faker\Provider\Person
     public static function tcNoChecksum($identityPrefix)
     {
         if (strlen((string) $identityPrefix) !== 9) {
-            throw new InvalidArgumentException('Argument should be an integer and should be 9 digits.');
+            throw new \InvalidArgumentException('Argument should be an integer and should be 9 digits.');
         }
 
         $oddSum = 0;

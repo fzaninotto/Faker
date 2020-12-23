@@ -2,7 +2,6 @@
 
 namespace Faker\ORM\Propel;
 
-use ColumnMap;
 use Faker\Provider\Base;
 
 /**
@@ -98,7 +97,7 @@ class EntityPopulator
     /**
      * @return bool
      */
-    protected function isColumnBehavior(ColumnMap $columnMap)
+    protected function isColumnBehavior(\ColumnMap $columnMap)
     {
         foreach ($columnMap->getTable()->getBehaviors() as $name => $params) {
             $columnName = Base::toLower($columnMap->getName());

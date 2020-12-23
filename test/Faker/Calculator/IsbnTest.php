@@ -4,7 +4,6 @@ namespace Faker\Test\Calculator;
 
 use Faker\Calculator\Isbn;
 use Faker\Test\TestCase;
-use LengthException;
 
 final class IsbnTest extends TestCase
 {
@@ -44,7 +43,7 @@ final class IsbnTest extends TestCase
 
     public function testInvalidChecksumIsbn(): void
     {
-        $this->expectException(LengthException::class);
+        $this->expectException(\LengthException::class);
         Isbn::checksum('9971502100');
     }
 
