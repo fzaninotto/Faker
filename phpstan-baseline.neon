@@ -206,6 +206,16 @@ parameters:
 			path: src/Faker/ORM/Doctrine/EntityPopulator.php
 
 		-
+			message: "#^PHPDoc tag @var for variable \\$repository contains unknown class Doctrine\\\\Common\\\\Persistence\\\\ObjectRepository\\.$#"
+			count: 1
+			path: src/Faker/ORM/Doctrine/EntityPopulator.php
+
+		-
+			message: "#^Call to method createQueryBuilder\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\ObjectRepository\\.$#"
+			count: 1
+			path: src/Faker/ORM/Doctrine/EntityPopulator.php
+
+		-
 			message: "#^Property Faker\\\\ORM\\\\Doctrine\\\\Populator\\:\\:\\$manager has unknown class Doctrine\\\\Common\\\\Persistence\\\\ObjectManager as its type\\.$#"
 			count: 1
 			path: src/Faker/ORM/Doctrine/Populator.php
