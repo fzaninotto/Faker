@@ -32,10 +32,10 @@ final class Container implements ContainerInterface
     }
 
     /**
-     * @throws NotInContainerException
-     * @throws ContainerException
      * @throws \InvalidArgumentException
      * @throws \RuntimeException
+     * @throws ContainerException
+     * @throws NotInContainerException
      *
      * @return Extension
      */

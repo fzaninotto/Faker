@@ -237,8 +237,8 @@ class Generator
      *
      * @param class-string<T> $id
      *
-     * @throws Extension\ExtensionNotFound
      * @throws ContainerExceptionInterface
+     * @throws Extension\ExtensionNotFound
      *
      * @return T
      */
