@@ -43,6 +43,10 @@ namespace Faker;
  * @property string $companySuffix
  * @property string $jobTitle
  *
+ * @property string $product
+ * @property string $brand
+ * @property string $category
+ *
  * @property string $creditCardType
  * @property string $creditCardNumber
  * @method string creditCardNumber($type = null, $formatted = false, $separator = '-')
