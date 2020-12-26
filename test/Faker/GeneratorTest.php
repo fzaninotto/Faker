@@ -7,6 +7,8 @@ use Faker\Extension\Container;
 use Faker\Extension\ExtensionNotFound;
 use Faker\Extension\FileExtension;
 use Faker\Generator;
+use Faker\Provider;
+use Faker\UniqueGenerator;
 
 /**
  * @covers \Faker\Generator
@@ -156,6 +158,131 @@ final class GeneratorTest extends TestCase
 
         $this->faker->seed('10');
         self::assertTrue(true, 'seeding with a non int value doesn\'t throw an exception');
+    }
+
+    public function testUniqueReturnsUniqueGenerator(): void
+    {
+        $generator = new Generator();
+
+        $generator->addProvider(new Provider\Base($generator));
+
+        $uniqueGenerator = $generator->unique();
+
+        self::assertInstanceOf(UniqueGenerator::class, $uniqueGenerator);
+    }
+
+    public function testUniqueReturnsSameUniqueGeneratorWhenUsedWithoutArguments(): void
+    {
+        $generator = new Generator();
+
+        $generator->addProvider(new Provider\Base($generator));
+
+        $uniqueGenerator = $generator->unique();
+
+        self::assertSame($uniqueGenerator, $generator->unique());
+    }
+
+    public function testUniqueReturnsSameUniqueGeneratorWhenResetIsFalse(): void
+    {
+        $generator = new Generator();
+
+        $generator->addProvider(new Provider\Base($generator));
+
+        $uniqueGenerator = $generator->unique();
+
+        self::assertSame($uniqueGenerator, $generator->unique(false));
+    }
+
+    public function testUniqueReturnsDifferentUniqueGeneratorWhenResetIsTrue(): void
+    {
+        $generator = new Generator();
+
+        $generator->addProvider(new Provider\Base($generator));
+
+        $uniqueGenerator = $generator->unique();
+
+        self::assertNotSame($uniqueGenerator, $generator->unique(true));
+    }
+
+    public function testUniqueReturnsUniqueGeneratorThatGeneratesUniqueValues(): void
+    {
+        $words = [
+            'foo',
+            'bar',
+            'baz',
+        ];
+
+        $generator = new Generator();
+
+        $generator->addProvider(new Provider\Base($generator));
+        $generator->addProvider(new class(...$words) {
+            private $words;
+
+            public function __construct(string ...$words)
+            {
+                $this->words = $words;
+            }
+
+            public function word(): string
+            {
+                $key = array_rand($this->words);
+
+                return $this->words[$key];
+            }
+        });
+
+        $uniqueGenerator = $generator->unique();
+
+        $generatedWords = [
+            $uniqueGenerator->word(),
+            $uniqueGenerator->word(),
+            $uniqueGenerator->word(),
+        ];
+
+        self::assertEquals($words, $generatedWords);
+    }
+
+    public function testUniqueReturnsUniqueGeneratorThatThrowsWhenItCanNotGenerateUniqueValuesAnymore(): void
+    {
+        $words = [
+            'foo',
+        ];
+
+        $maxRetries = 90;
+
+        $generator = new Generator();
+
+        $generator->addProvider(new Provider\Base($generator));
+        $generator->addProvider(new class(...$words) {
+            private $words;
+
+            public function __construct(string ...$words)
+            {
+                $this->words = $words;
+            }
+
+            public function word(): string
+            {
+                $key = array_rand($this->words);
+
+                return $this->words[$key];
+            }
+        });
+
+        $uniqueGenerator = $generator->unique(
+            false,
+            $maxRetries
+        );
+
+        $uniqueGenerator->word();
+
+        $this->expectException(\OverflowException::class);
+        $this->expectExceptionMessage(sprintf(
+            'Maximum retries of %d reached without finding a unique value',
+            $maxRetries
+        ));
+
+        $uniqueGenerator->word();
     }
 }
 
