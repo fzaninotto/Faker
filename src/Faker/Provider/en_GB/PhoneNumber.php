@@ -40,4 +40,14 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     {
         return static::numerify(static::randomElement(static::$mobileFormats));
     }
+    
+    /**
+     * Return a en_GB fixed line number in e164 format
+     * @return string
+     */
+    public function e164PhoneNumber()
+    {
+        $formats = array('+441#########', '+442#########', '+443#########');
+        return static::numerify($this->generator->parse(static::randomElement($formats)));
+    }
 }
