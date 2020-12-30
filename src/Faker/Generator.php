@@ -23,9 +23,6 @@ use Psr\Container\ContainerInterface;
  *
  * @property string $titleMale
  * @property string $titleFemale
- * @property string $bloodType
- * @property string $bloodRh
- * @property string $bloodGroup
  * @property string $citySuffix
  * @property string $streetSuffix
  * @property string $buildingNumber
@@ -331,6 +328,21 @@ class Generator
     public function filePath()
     {
         return $this->ext(Extension\FileExtension::class)->filePath();
+    }
+
+    public function bloodType(): string
+    {
+        return $this->ext(Extension\BloodExtension::class)->bloodType();
+    }
+
+    public function bloodRh(): string
+    {
+        return $this->ext(Extension\BloodExtension::class)->bloodRh();
+    }
+
+    public function bloodGroup(): string
+    {
+        return $this->ext(Extension\BloodExtension::class)->bloodGroup();
     }
 
     protected function callFormatWithMatches($matches)

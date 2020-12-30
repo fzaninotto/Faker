@@ -61,6 +61,7 @@ final class ContainerBuilder
     public static function defaultExtensions(): array
     {
         return [
+            BloodExtension::class => Core\Blood::class,
             FileExtension::class => Core\File::class,
         ];
     }
