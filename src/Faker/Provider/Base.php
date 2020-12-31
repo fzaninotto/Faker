@@ -139,6 +139,31 @@ class Base
         $max = $int1 < $int2 ? $int2 : $int1;
         return mt_rand($min, $max);
     }
+
+    /**
+     * Returns an array of numbers that equates to $value
+     * 
+     * @param  integer $value   The number that should be equated to.
+     * @param  array  $numbers  An array of numbers defaulting to 0
+     * @return array
+     */
+    public static function numbersThatEquatesTo($value, $numbers = array(), $min = 1, $max = 0)
+    {
+        if (array_sum($numbers) < $value) {
+            if ($max + array_sum($numbers) > $value ||
+                $max === 0) {
+                $sum = $value - array_sum($numbers);
+            } else {
+                $sum = $max;
+            }
+
+            array_push($numbers, self::numberBetween($min, $sum));
+
+            return self::numbersThatEquatesTo($value, $numbers, $min, $max);
+        } else {
+            return $numbers;
+        }
+    }
     
     /**
      * Returns the passed value
