@@ -1,7 +1,7 @@
 {
     "require": {
         "php": "^7.1 || ^8.0",
-        "vimeo/psalm": "^4.3.1"
+        "vimeo/psalm": "^4.3.2"
     },
     "config": {
         "platform": {
