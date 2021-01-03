@@ -1,3 +1,5 @@
+<p align="center"><img src="https://github.com/FakerPHP/Artwork/raw/main/src/socialcard.png" alt="Social Card of FakerPHP"></p>
+
 # Faker
 
 [![Packagist Downloads](https://img.shields.io/packagist/dm/FakerPHP/Faker)](https://packagist.org/packages/fakerphp/faker)
