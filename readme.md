@@ -906,6 +906,16 @@ echo $faker->bank; // "Volksbank Stuttgart"
 
 ```
 
+### `Faker\Provider\dv_MV\Person`
+
+```php
+<?php
+
+// Generates a random Maldives national identification number
+echo $faker->nationalIdNumber; // "A123456"
+
+```
+
 ### `Faker\Provider\en_HK\Address`
 
 ```php
