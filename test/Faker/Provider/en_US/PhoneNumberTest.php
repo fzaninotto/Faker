@@ -40,6 +40,15 @@ final class PhoneNumberTest extends TestCase
             // Last two digits of area code cannot be identical
             $this->assertNotEquals($digits[1], $digits[2]);
 
+            // Second digit of area code cannot be 9
+            $this->assertNotEquals($digits[1], 9);
+
+            // First two digits of area code cannot be 37
+            $this->assertNotEquals(implode('', array($digits[0], $digits[1])), 37);
+
+            // First two digits of area code cannot be 96
+            $this->assertNotEquals(implode('', array($digits[0], $digits[1])), 96);
+
             // Last two digits of exchange code cannot be 1
             if ($digits[4] === 1) {
                 $this->assertNotEquals($digits[4], $digits[5]);

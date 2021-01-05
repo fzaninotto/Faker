@@ -35,6 +35,42 @@ final class BaseTest extends TestCase
         }
     }
 
+    public function testRandomDigitNotInReturnsValidDigit()
+    {
+        for ($i = 0; $i <= 9; $i++) {
+            $digit = BaseProvider::randomDigitNotIn($i);
+            $this->assertGreaterThanOrEqual(0, $digit);
+            $this->assertLessThan(10, $digit);
+            $this->assertNotSame($digit, $i);
+        }
+
+        $array = array();
+        $this->assertGreaterThanOrEqual(0, BaseProvider::randomDigitNotIn($array));
+        $this->assertLessThan(10, BaseProvider::randomDigitNotIn($array));
+
+        $digit = BaseProvider::randomDigitNotIn(array(1, 3, 5, 7, 9));
+        $this->assertNotEquals(1, $digit);
+        $this->assertNotEquals(3, $digit);
+        $this->assertNotEquals(5, $digit);
+        $this->assertNotEquals(7, $digit);
+        $this->assertNotEquals(9, $digit);
+
+        $digit = BaseProvider::randomDigitNotIn(array(0, 2, 4, 6, 8));
+        $this->assertNotEquals(0, $digit);
+        $this->assertNotEquals(2, $digit);
+        $this->assertNotEquals(4, $digit);
+        $this->assertNotEquals(6, $digit);
+        $this->assertNotEquals(8, $digit);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testRandomDigitNotInThrowsExceptionWhenCalledWithInclusiveArray()
+    {
+        BaseProvider::randomDigitNotIn(array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9));
+    }
+
     /**
      * @expectedException \InvalidArgumentException
      */

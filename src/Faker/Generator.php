@@ -139,6 +139,7 @@ namespace Faker;
  *
  * @property int    $randomDigit
  * @property int    $randomDigitNot
+ * @property int    $randomDigitNotIn
  * @property int    $randomDigitNotNull
  * @property string $randomLetter
  * @property string $randomAscii

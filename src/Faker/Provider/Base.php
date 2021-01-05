@@ -63,6 +63,24 @@ class Base
     }
 
     /**
+     * Generates a random digit, which cannot be in $except
+     *
+     * @param array|int $except
+     * @return int
+     */
+    public static function randomDigitNotIn($except)
+    {
+        $digits = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+        $pool = array_diff($digits, (array) $except);
+        if (!$pool) {
+            throw new \InvalidArgumentException('The argument is inclusive of the digits 0 to 9. A digit cannot be returned.');
+        }
+        $key = self::randomElement($pool);
+
+        return $pool[$key];
+    }
+
+    /**
      * Returns a random integer with 0 to $nbDigits digits.
      *
      * The maximum value returned is mt_getrandmax()
