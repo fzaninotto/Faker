@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/FakerPHP/Artwork/raw/main/src/socialcard.png" alt="Social Card of FakerPHP"></p>
+<p style="text-align: center"><img src="https://github.com/FakerPHP/Artwork/raw/main/src/socialcard.png" alt="Social card of FakerPHP"></p>
 
 # Faker
 
@@ -27,7 +27,7 @@ Full documentation can be found over on [fakerphp.github.io](https://fakerphp.gi
 
 ### Basic Usage
 
-Use `Faker\Factory::create()` to create and initialize a faker generator, which can generate data by accessing properties named after the type of data you want.
+Use `Faker\Factory::create()` to create and initialize a Faker generator, which can generate data by accessing methods named after the type of data you want.
 
 ```php
 <?php
@@ -36,36 +36,25 @@ require_once 'vendor/autoload.php';
 // use the factory to create a Faker\Generator instance
 $faker = Faker\Factory::create();
 // generate data by accessing properties
-echo $faker->name;
-// 'Lucy Cechtelar';
-echo $faker->address;
-// "426 Jordy Lodge
-// Cartwrightshire, SC 88120-6700"
-echo $faker->text;
-// Dolores sit sint laboriosam dolorem culpa et autem. Beatae nam sunt fugit
-// et sit et mollitia sed.
-// Fuga deserunt tempora facere magni omnis. Omnis quia temporibus laudantium
-// sit minima sint.
+echo $faker->name();
+// 'Vince Sporer'
+echo $faker->email();
+// 'walter.sophia@hotmail.com'
+echo $faker->text();
+// 'Numquam ut mollitia at consequuntur inventore dolorem.'
 ```
 
-Even if this example shows a property access, each call to `$faker->name` yields a different (random) result. This is because Faker uses `__get()` magic, and forwards `Faker\Generator->$property` calls to `Faker\Generator->format($property)`.
+Each call to `$faker->name()` yields a different (random) result. This is because Faker uses `__call()` magic, and forwards `Faker\Generator->$method()` calls to `Faker\Generator->format($method, $attributes)`.
 
 ```php
 <?php
-for ($i = 0; $i < 10; $i++) {
-    echo $faker->name, "\n";
+for ($i = 0; $i < 3; $i++) {
+    echo $faker->name() . "\n";
 }
 
-// Adaline Reichel
-// Dr. Santa Prosacco DVM
-// Noemy Vandervort V
-// Lexi O'Conner
-// Gracie Weber
-// Roscoe Johns
-// Emmett Lebsack
-// Keegan Thiel
-// Wellington Koelpin II
-// Ms. Karley Kiehn V
+// Cyrus Boyle
+// Alena Cummerata
+// Orlo Bergstrom
 ```
 
 ## License
