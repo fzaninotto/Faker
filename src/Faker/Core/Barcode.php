@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Faker\Core;
 
+use Faker\Calculator;
 use Faker\Extension;
 
 /**
@@ -15,7 +16,7 @@ final class Barcode implements Extension\BarcodeExtension
     {
         $code = Extension\Helper::numerify(str_repeat('#', $length - 1));
 
-        return sprintf('%s%s', $code, \Faker\Calculator\Ean::checksum($code));
+        return sprintf('%s%s', $code, Calculator\Ean::checksum($code));
     }
 
     /**
@@ -49,7 +50,7 @@ final class Barcode implements Extension\BarcodeExtension
     {
         $code = Extension\Helper::numerify(str_repeat('#', 9));
 
-        return sprintf('%s%s', $code, \Faker\Calculator\Isbn::checksum($code));
+        return sprintf('%s%s', $code, Calculator\Isbn::checksum($code));
     }
 
     /**
@@ -63,6 +64,6 @@ final class Barcode implements Extension\BarcodeExtension
     {
         $code = '97' . mt_rand(8, 9) . Extension\Helper::numerify(str_repeat('#', 9));
 
-        return sprintf('%s%s', $code, \Faker\Calculator\Ean::checksum($code));
+        return sprintf('%s%s', $code, Calculator\Ean::checksum($code));
     }
 }
