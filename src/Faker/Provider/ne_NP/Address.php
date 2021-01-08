@@ -19,6 +19,7 @@ class Address extends \Faker\Provider\Address
         'Baglung', 'Baitadi', 'Bajhang', 'Bajura', 'Banke', 'Bara', 'Bardiya', 'Bhaktapur', 'Bhojpur',
         'Chitwan',
         'Dadeldhura', 'Dailekh', 'Dang Deukhuri', 'Darchula', 'Dhading', 'Dhankuta', 'Dhanusa', 'Dolakha', 'Dolpa', 'Doti',
+        'Eastern Rukum',
         'Gorkha', 'Gulmi',
         'Humla',
         'Ilam',
@@ -26,13 +27,14 @@ class Address extends \Faker\Provider\Address
         'Kailali', 'Kalikot', 'Kanchanpur', 'Kapilvastu', 'Kaski', 'Kathmandu', 'Kavrepalanchok', 'Khotang',
         'Lalitpur', 'Lamjung',
         'Mahottari', 'Makwanpur', 'Manang', 'Morang', 'Mugu', 'Mustang', 'Myagdi',
-        'Nawalparasi', 'Nuwakot',
+        'Nawalpur', 'Nuwakot',
         'Okhaldhunga',
-        'Palpa', 'Panchthar', 'Parbat', 'Parsa', 'Pyuthan',
-        'Ramechhap', 'Rasuwa', 'Rautahat', 'Rolpa', 'Rukum', 'Rupandehi',
+        'Palpa', 'Panchthar', 'Parasi', 'Parbat', 'Parsa', 'Pyuthan',
+        'Ramechhap', 'Rasuwa', 'Rautahat', 'Rolpa', 'Rupandehi',
         'Salyan', 'Sankhuwasabha', 'Saptari', 'Sarlahi', 'Sindhuli', 'Sindhupalchok', 'Siraha', 'Solukhumbu', 'Sunsari', 'Surkhet', 'Syangja',
         'Tanahu', 'Taplejung', 'Terhathum',
         'Udayapur',
+        'Western Rukum',
     ];
 
     /**
