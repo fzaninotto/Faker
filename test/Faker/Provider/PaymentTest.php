@@ -64,6 +64,7 @@ final class PaymentTest extends TestCase
         'AD' => '/^AD\d{2}\d{4}\d{4}[A-Z0-9]{12}$/',
         'AE' => '/^AE\d{2}\d{3}\d{16}$/',
         'AL' => '/^AL\d{2}\d{8}[A-Z0-9]{16}$/',
+        'AR' => '/^AR\d{2}\d{4}\d{4}\d{1}\d{1}\d{14}$/',
         'AT' => '/^AT\d{2}\d{5}\d{11}$/',
         'AZ' => '/^AZ\d{2}[A-Z]{4}[A-Z0-9]{20}$/',
         'BA' => '/^BA\d{2}\d{3}\d{3}\d{8}\d{2}$/',
@@ -109,6 +110,7 @@ final class PaymentTest extends TestCase
         'MU' => '/^MU\d{2}[A-Z]{4}\d{2}\d{2}\d{12}\d{3}[A-Z]{3}$/',
         'NL' => '/^NL\d{2}[A-Z]{4}\d{10}$/',
         'NO' => '/^NO\d{2}\d{4}\d{6}\d{1}$/',
+        'PE' => '/^PE\d{2}\d{4}\d{4}\d{1}\d{1}\d{14}$/',
         'PK' => '/^PK\d{2}[A-Z]{4}[A-Z0-9]{16}$/',
         'PL' => '/^PL\d{2}\d{8}\d{16}$/',
         'PS' => '/^PS\d{2}[A-Z]{4}[A-Z0-9]{21}$/',
@@ -122,6 +124,7 @@ final class PaymentTest extends TestCase
         'SM' => '/^SM\d{2}[A-Z]{1}\d{5}\d{5}[A-Z0-9]{12}$/',
         'TN' => '/^TN\d{2}\d{2}\d{3}\d{13}\d{2}$/',
         'TR' => '/^TR\d{2}\d{5}\d{1}[A-Z0-9]{16}$/',
+        'VE' => '/^VE\d{2}\d{4}\d{4}\d{1}\d{1}\d{14}$/',
         'VG' => '/^VG\d{2}[A-Z]{4}\d{16}$/',
     ];
 
