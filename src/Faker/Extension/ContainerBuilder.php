@@ -64,6 +64,7 @@ final class ContainerBuilder
             BarcodeExtension::class => Core\Barcode::class,
             BloodExtension::class => Core\Blood::class,
             FileExtension::class => Core\File::class,
+            NumberExtension::class => Core\Number::class,
         ];
     }
 

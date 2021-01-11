@@ -166,10 +166,7 @@ use Psr\Container\ContainerInterface;
  * @property string $randomLetter
  * @property string $randomAscii
  *
- * @method int randomNumber($nbDigits = null, $strict = false)
  * @method int|string|null randomKey(array $array = array())
- * @method int numberBetween($min = 0, $max = 2147483647)
- * @method float randomFloat($nbMaxDecimals = null, $min = 0, $max = null)
  * @method mixed randomElement(array $array = array('a', 'b', 'c'))
  * @method array randomElements(array $array = array('a', 'b', 'c'), $count = 1, $allowDuplicates = false)
  * @method array|string shuffle($arg = '')
@@ -363,6 +360,65 @@ class Generator
     public function isbn13(): string
     {
         return $this->ext(Extension\BarcodeExtension::class)->isbn13();
+    }
+
+    /**
+     * Returns a random number between $int1 and $int2 (any order)
+     *
+     * @example 79907610
+     */
+    public function numberBetween($int1 = 0, $int2 = 2147483647): int
+    {
+        return $this->ext(Extension\NumberExtension::class)->numberBetween((int) $int1, (int) $int2);
+    }
+
+    /**
+     * Returns a random number between 0 and 9
+     */
+    public function randomDigit(): int
+    {
+        return $this->ext(Extension\NumberExtension::class)->randomDigit();
+    }
+
+    /**
+     * Generates a random digit, which cannot be $except
+     */
+    public function randomDigitNot($except): int
+    {
+        return $this->ext(Extension\NumberExtension::class)->randomDigitNot((int) $except);
+    }
+
+    /**
+     * Returns a random number between 1 and 9
+     */
+    public function randomDigitNotZero(): int
+    {
+        return $this->ext(Extension\NumberExtension::class)->randomDigitNotZero();
+    }
+
+    /**
+     * Return a random float number
+     *
+     * @example 48.8932
+     */
+    public function randomFloat($nbMaxDecimals = null, $min = 0, $max = null): float
+    {
+        return $this->ext(Extension\NumberExtension::class)->randomFloat((int) $nbMaxDecimals, (float) $min, (float) $max);
+    }
+
+    /**
+     * Returns a random integer with 0 to $nbDigits digits.
+     *
+     * The maximum value returned is mt_getrandmax()
+     *
+     * @param int|null $nbDigits Defaults to a random number between 1 and 9
+     * @param bool     $strict   Whether the returned number should have exactly $nbDigits
+     *
+     * @example 79907610
+     */
+    public function randomNumber($nbDigits = null, $strict = false): int
+    {
+        return $this->ext(Extension\NumberExtension::class)->randomNumber((int) $nbDigits, (bool) $strict);
     }
 
     protected function callFormatWithMatches($matches)
