@@ -545,21 +545,11 @@ final class File implements Extension\FileExtension
         'video/x-sgi-movie' => 'movie',
     ];
 
-    /**
-     * Get a random MIME type
-     *
-     * @example 'video/avi'
-     */
     public function mimeType(): string
     {
         return array_rand($this->mimeTypes, 1);
     }
 
-    /**
-     * Get a random file extension (without a dot)
-     *
-     * @example avi
-     */
     public function extension(): string
     {
         $extension = $this->mimeTypes[array_rand($this->mimeTypes, 1)];
@@ -567,9 +557,6 @@ final class File implements Extension\FileExtension
         return is_array($extension) ? $extension[array_rand($extension, 1)] : $extension;
     }
 
-    /**
-     * Get a full path to a new real file on the system.
-     */
     public function filePath(): string
     {
         return tempnam(sys_get_temp_dir(), 'faker');
