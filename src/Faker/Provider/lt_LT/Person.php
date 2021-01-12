@@ -14,8 +14,8 @@ class Person extends \Faker\Provider\Person
     );
 
     protected static $lastNameFormat = array(
-        '{{firstNameMale}}',
-        '{{firstNameFemale}}',
+        '{{lastNameMale}}',
+        '{{lastNameFemale}}',
     );
 
     protected static $titleMale = array('p.', 'ponas');
