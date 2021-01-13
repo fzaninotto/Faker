@@ -50,6 +50,12 @@ final class HelperTest extends TestCase
         self::assertEquals(20, strlen(Helper::numerify($largePattern)));
     }
 
+    public function testNumerifyReturnsLargeNumber()
+    {
+        $result = Helper::numerify(str_repeat('#', 10));
+        self::assertGreaterThan(100, (int) $result);
+    }
+
     public function testLexifyReturnsSameStringWhenItContainsNoQuestionMark()
     {
         self::assertEquals('fooBar#', Helper::lexify('fooBar#'));

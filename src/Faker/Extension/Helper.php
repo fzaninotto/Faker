@@ -48,7 +48,7 @@ final class Helper
 
             while ($i < $nbReplacements) {
                 $size = min($nbReplacements - $i, $maxAtOnce);
-                $numbers .= str_pad((string) mt_rand(0, $size), $size, '0', STR_PAD_LEFT);
+                $numbers .= str_pad((string) mt_rand(0, 10 ** $size - 1), $size, '0', STR_PAD_LEFT);
                 $i += $size;
             }
 
