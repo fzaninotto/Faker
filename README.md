@@ -35,7 +35,7 @@ require_once 'vendor/autoload.php';
 
 // use the factory to create a Faker\Generator instance
 $faker = Faker\Factory::create();
-// generate data by accessing properties
+// generate data by calling methods
 echo $faker->name();
 // 'Vince Sporer'
 echo $faker->email();
@@ -52,9 +52,9 @@ for ($i = 0; $i < 3; $i++) {
     echo $faker->name() . "\n";
 }
 
-// Cyrus Boyle
-// Alena Cummerata
-// Orlo Bergstrom
+// 'Cyrus Boyle'
+// 'Alena Cummerata'
+// 'Orlo Bergstrom'
 ```
 
 ## License
