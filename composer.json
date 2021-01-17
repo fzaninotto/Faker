@@ -36,9 +36,6 @@
     "conflict": {
         "fzaninotto/faker": "*"
     },
-    "replace": {
-        "fzaninotto/faker": "1.9.*"
-    },
     "suggest": {
         "ext-curl": "Required by Faker\\Provider\\Image to download images.",
         "ext-dom": "Required by Faker\\Provider\\HtmlLorem for generating random HTML.",
