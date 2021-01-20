@@ -207,4 +207,22 @@ class Address extends \Faker\Provider\Address
     {
         return static::randomElement(static::$state);
     }
+    
+        public static function latitude($min = 49.29899, $max = 54.79086)
+    {
+        return static::randomFloat(6, $min, $max);
+    }
+
+    public static function longitude($min = 14.24712, $max = 23.89251)
+    {
+        return static::randomFloat(6, $min, $max);
+    }
+
+    public static function localCoordinates()
+    {
+        return array(
+            'latitude' => static::latitude(),
+            'longitude' => static::longitude()
+        );
+    }
 }
