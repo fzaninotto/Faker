@@ -58,6 +58,10 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '{{areaCode}}.{{exchangeCode}}.#### x#####',
     ];
 
+    protected static $e164Formats = [
+        '+1##########',
+    ];
+
     /**
      * @see https://en.wikipedia.org/wiki/Toll-free_telephone_number#United_States
      */

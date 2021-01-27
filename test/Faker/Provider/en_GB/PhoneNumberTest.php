@@ -1,8 +1,8 @@
 <?php
 
-namespace Faker\Test\Provider\de_AT;
+namespace Faker\Test\Provider\en_GB;
 
-use Faker\Provider\de_AT\PhoneNumber;
+use Faker\Provider\en_GB\PhoneNumber;
 use Faker\Test\TestCase;
 
 /**
@@ -10,17 +10,11 @@ use Faker\Test\TestCase;
  */
 final class PhoneNumberTest extends TestCase
 {
-    public function testPhoneNumberFormat()
-    {
-        $number = $this->faker->phoneNumber;
-        self::assertMatchesRegularExpression('/^06\d{2} \d{7}|\+43 \d{4} \d{4}(-\d{2})?$/', $number);
-    }
-
     public function testE164PhoneNumberFormat()
     {
         for ($i = 0; $i < 10; ++$i) {
             $number = $this->faker->e164PhoneNumber();
-            self::assertMatchesRegularExpression('/^\+43\d{1,13}$/', $number);
+            self::assertMatchesRegularExpression('/^\+44\d{1,13}$/', $number);
         }
     }
 

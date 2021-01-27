@@ -69,6 +69,10 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '08{{phoneNumber08}}',
     ];
 
+    protected static $e164Formats = [
+        '+33##########',
+    ];
+
     public function phoneNumber07()
     {
         $phoneNumber = $this->phoneNumber07WithSeparator();

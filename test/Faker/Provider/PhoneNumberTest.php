@@ -11,10 +11,13 @@ use Faker\Test\TestCase;
  */
 final class PhoneNumberTest extends TestCase
 {
-    public function testPhoneNumberFormat()
+    public function testE164PhoneNumberFormat()
     {
-        $number = $this->faker->e164PhoneNumber();
-        self::assertMatchesRegularExpression('/^\+[0-9]{11,}$/', $number);
+        for ($i = 0; $i < 1000; ++$i) {
+            $number = $this->faker->e164PhoneNumber();
+            self::assertMatchesRegularExpression('/^\+[1-9]\d{1,14}$/', $number);
+            self::assertLessThanOrEqual(16, strlen($number)); // plus-sign and max. 15 digits incl. CC-prefix
+        }
     }
 
     public function testImeiReturnsValidNumber()

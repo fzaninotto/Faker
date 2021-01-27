@@ -33,6 +33,10 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '07### ### ###',
     ];
 
+    protected static $e164Formats = [
+        '+44##########',
+    ];
+
     /**
      * Return a en_GB mobile phone number
      *

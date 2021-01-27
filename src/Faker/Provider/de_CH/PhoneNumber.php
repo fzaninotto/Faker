@@ -31,6 +31,10 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '079#######',
     ];
 
+    protected static $e164Formats = [
+        '+41##########',
+    ];
+
     /**
      * Return a Swiss mobile phone number.
      *
