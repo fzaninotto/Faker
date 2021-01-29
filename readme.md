@@ -906,6 +906,22 @@ echo $faker->bank; // "Volksbank Stuttgart"
 
 ```
 
+### `Faker\Provider\en_GB\PhoneNumber`
+
+```php
+<?php
+
+// Generates a GB safe phone number (reserved by OFCOM for dramatic use)
+echo $faker->safePhoneNumber; // "01632873512"
+
+// Generates a GB mobile number
+echo $faker->mobileNumber; // "07845803796"
+
+// Generates a GB safe mobile number (reserved by OFCOM for dramatic use)
+echo $faker->safeMobileNumber; // "07700900258"
+
+```
+
 ### `Faker\Provider\en_HK\Address`
 
 ```php
