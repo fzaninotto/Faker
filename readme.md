@@ -297,6 +297,8 @@ Methods accepting a `$timezone` argument default to `date_default_timezone_get()
 
 ### `Faker\Provider\Uuid`
 
+Faker currently supports UUID version 3.
+
     uuid                   // '7e57d004-2b97-0e7a-b45f-5387367791cd'
 
 ### `Faker\Provider\Barcode`
