@@ -44,6 +44,30 @@ class Address extends \Faker\Provider\Address
         'Yemen',
         'Zambia', 'Zimbabwe'
     );
+    /**
+     * Italian cities by population at 2019-10-17
+     * @link https://it.wikipedia.org/wiki/Comuni_d%27Italia_per_popolazione
+     */
+    protected static $cityNames = array(
+        'Acerra', 'Acireale', 'Afragola', 'Agrigento', 'Alessandria', 'Altamura', 'Ancona', 'Andria', 'Anzio', 'Aprilia', 'Arezzo', 'Asti', 'Avellino', 'Aversa',
+        'Bagheria', 'Bari', 'Barletta', 'Battipaglia', 'Benevento', 'Bergamo', 'Bisceglie', 'Bitonto', 'Bologna', 'Bolzano', 'Brescia', 'Brindisi', 'Busto Arsizio',
+        'Cagliari', 'Caltanissetta', 'Carpi', 'Carrara', 'Caserta', 'Casoria', 'Castellammare di Stabia', 'Catania', 'Catanzaro', 'Cava de\' Tirreni', 'Cerignola', 'Cesena', 'Chieti', 'Cinisello Balsamo', 'Civitavecchia', 'Como', 'Corigliano-Rossano', 'Cosenza', 'Cremona', 'Crotone', 'Cuneo',
+        'Ercolano',
+        'Faenza', 'Fano', 'Ferrara', 'Firenze', 'Fiumicino', 'Foggia', 'Foligno', 'Forlì',
+        'Gallarate', 'Gela', 'Genova', 'Giugliano in Campania', 'Grosseto', 'Guidonia Montecelio',
+        'Imola',
+        'L\'Aquila', 'La Spezia', 'Lamezia Terme', 'Latina', 'Lecce', 'Legnano', 'Livorno', 'Lucca',
+        'Manfredonia', 'Marano di Napoli', 'Marsala', 'Massa', 'Matera', 'Mazara del Vallo', 'Messina', 'Milano', 'Misterbianco', 'Modena', 'Modica', 'Molfetta', 'Moncalieri', 'Montesilvano', 'Monza',
+        'Napoli', 'Novara',
+        'Olbia',
+        'Padova', 'Palermo', 'Parma', 'Pavia', 'Perugia', 'Pesaro', 'Pescara', 'Piacenza', 'Pisa', 'Pistoia', 'Pomezia', 'Pordenone', 'Portici', 'Potenza', 'Pozzuoli', 'Prato',
+        'Quartu Sant\'Elena',
+        'Ragusa', 'Ravenna', 'Reggio Calabria', 'Reggio Emilia', 'Rho', 'Rimini', 'Roma', 'Rovigo',
+        'Salerno', 'San Severo', 'Sanremo', 'Sassari', 'Savona', 'Scafati', 'Scandicci', 'Sesto San Giovanni', 'Siena', 'Siracusa',
+        'Taranto', 'Teramo', 'Terni', 'Tivoli', 'Torino', 'Torre del Greco', 'Trani', 'Trapani', 'Trento', 'Treviso', 'Trieste',
+        'Udine',
+        'Varese', 'Velletri', 'Venezia', 'Verona', 'Viareggio', 'Vicenza', 'Vigevano', 'Viterbo', 'Vittoria',
+    );
     protected static $cityFormats = array(
         '{{cityPrefix}} {{firstName}} {{citySuffix}}',
         '{{cityPrefix}} {{firstName}}',
@@ -69,6 +93,14 @@ class Address extends \Faker\Provider\Address
     public static function cityPrefix()
     {
         return static::randomElement(static::$cityPrefix);
+    }
+
+    /**
+     * @example 'Novara'
+     */
+    public function cityName()
+    {
+        return static::randomElement(static::$cityNames);
     }
 
     /**
