@@ -1242,6 +1242,9 @@ echo $faker->bankAccountNumber // "HR3789114847226078672"
 ```php
 <?php
 
+echo $faker->vat; // "12345678-2-12" - Hungarian VAT number in national format
+echo $faker->vat(false); // "HU12345678" - Hungarian EU VAT number
+
 // Generates a random bank account number
 echo $faker->bankAccountNumber; // "HU09904437680048220079300783"
 ```
