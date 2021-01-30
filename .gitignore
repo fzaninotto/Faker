@@ -1,3 +1,7 @@
 .build/
 vendor
 composer.lock
+
+# ignore IDEs directories
+.vscode/*
+.idea/*
