@@ -17,11 +17,11 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         280, 37, 54, 73, 74, 27,
         70, 211, 29,
         // Mobile
-        96, 97, 98, 162, 163, 164, 165, 166, 167, 168, 169, // Viettel
-        91, 94, 123, 124, 125, 127, 129, // Vinaphone
-        90, 93, 120, 121, 122, 126, 128, // Mobifone
-        92, 186, 188, // Vietnamobile
-        99, 199, // Gmobile
+        96, 97, 98, 32, 33, 34, 35, 36, 37, 38, 39, // Viettel
+        91, 94, 83, 84, 85, 87, 89, // Vinaphone
+        90, 93, 70, 71, 72, 76, 78, // Mobifone
+        92, 56, 58, // Vietnamobile
+        99, 59, // Gmobile
         95, // Sfone
     );
 
