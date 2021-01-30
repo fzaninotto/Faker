@@ -88,6 +88,25 @@ class Person extends \Faker\Provider\Person
         'das Dores', 'das Neves', 'de Aguiar', 'de Oliveira', 'de Souza'
     );
 
+    protected static $brRgEmitter = array(
+        "SSP - Secretaria de Segurança Pública",
+        "SDS - Secretaria de Defesa Social",
+        "SSDS - Secretaria da Segurança e da Defesa Social",
+        "IFP - Instituto de Identificação Félix Pacheco",
+        "COREN - Conselho Regional de Enfermagem",
+        "CRA - Conselho Regional de Administração",
+        "CRAS - Conselho Regional de Assistentes Sociais",
+        "CREA - Conselho Regional de Engenharia Arquitetura e Agronomia",
+        "CRM - Conselho Regional de Medicina",
+        "CRP - Conselho Regional de Psicologia",
+        "DPF - Polícia Federal",
+        "ICLA - Carteira de Identidade Classista",
+        "MAE - Ministério da Aeronáutica",
+        "MEX - Ministério do Exército",
+        "MMA - Ministério da Marinha",
+        "OAB - Ordem dos Advogados do Brasil"
+    );
+
     protected static $titleMale = array('Sr.', 'Dr.',);
 
     protected static $titleFemale = array('Sra.', 'Srta.', 'Dr.',);
@@ -114,7 +133,7 @@ class Person extends \Faker\Provider\Person
         $n .= check_digit($n);
         $n .= check_digit($n);
 
-        return $formatted? vsprintf('%d%d%d.%d%d%d.%d%d%d-%d%d', str_split($n)) : $n;
+        return $formatted ? vsprintf('%d%d%d.%d%d%d.%d%d%d-%d%d', str_split($n)) : $n;
     }
 
     /**
@@ -128,6 +147,27 @@ class Person extends \Faker\Provider\Person
         $n = $this->generator->numerify('########');
         $n .= check_digit($n);
 
-        return $formatted? vsprintf('%d%d.%d%d%d.%d%d%d-%s', str_split($n)) : $n;
+        return $formatted ? vsprintf('%d%d.%d%d%d.%d%d%d-%s', str_split($n)) : $n;
+    }
+
+    /**
+     * A random Oficial Brazilian Documents Dispatching Body name
+     * @link https://www.significados.com.br/orgao-emissor/
+     * @param bool $OnlyAbbreviation If true, return only Abbreviation name
+     * @return string
+     */
+    public function rgEmitter($OnlyAbbreviation = false)
+    {
+        return $OnlyAbbreviation ? $this->rgEmitterAbbr() : trim(array_pop(explode(" -", static::randomElement(static::$brRgEmitter))));
+    }
+
+    /**
+     * A random Oficial Brazilian Documents Dispatching Body name
+     * @link https://www.significados.com.br/orgao-emissor/
+     * @return string A Abreviation of random Dispatching Body
+     */
+    public function rgEmitterAbbr()
+    {
+        return array_shift(explode(" -", static::randomElement(static::$brRgEmitter)));
     }
 }
