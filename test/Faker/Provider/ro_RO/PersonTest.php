@@ -5,6 +5,7 @@ namespace Faker\Test\Provider\ro_RO;
 use Faker\Generator;
 use Faker\Provider\DateTime;
 use Faker\Provider\ro_RO\Person;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 final class PersonTest extends TestCase
@@ -124,17 +125,6 @@ final class PersonTest extends TestCase
     }
 
     /**
-     * @param string $value
-     *
-     * @dataProvider invalidGenderProvider
-     */
-    public function test_invalidGender_throwsException($value)
-    {
-        $this->setExpectedException('InvalidArgumentException');
-        $this->faker->cnp($value);
-    }
-
-    /**
      * @param string $value year of birth
      *
      * @dataProvider validYearProvider
@@ -149,17 +139,6 @@ final class PersonTest extends TestCase
     }
 
     /**
-     * @param string $value year of birth
-     *
-     * @dataProvider invalidYearProvider
-     */
-    public function test_invalidYear_throwsException($value)
-    {
-        $this->setExpectedException('InvalidArgumentException');
-        $this->faker->cnp(null, $value);
-    }
-
-    /**
      * @param $value
      * @dataProvider validCountyCodeProvider
      */
@@ -170,16 +149,6 @@ final class PersonTest extends TestCase
             $this->isValidCnp($cnp),
             sprintf("Invalid CNP '%' generated for valid year '%s'", $cnp, $value)
         );
-    }
-
-    /**
-     * @param $value
-     * @dataProvider invalidCountyCodeProvider
-     */
-    public function test_invalidCountyCode_throwsException($value)
-    {
-        $this->setExpectedException('InvalidArgumentException');
-        $this->faker->cnp(null, null, $value);
     }
 
     /**
