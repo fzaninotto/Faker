@@ -28,34 +28,56 @@ final class PaymentTest extends TestCase
     }
 
     /**
-     * Validation taken from https://github.com/amnesty/drupal-nif-nie-cif-validator/
-     * @link https://github.com/amnesty/drupal-nif-nie-cif-validator/blob/master/includes/nif-nie-cif.php
+     * Validation taken from https://github.com/ronanguilloux/IsoCodes
+     * @link https://github.com/ronanguilloux/IsoCodes/blob/master/src/IsoCodes/Cif.php
      */
-    function isValidCIF($docNumber)
+    function isValidCIF($cif)
     {
-        $fixedDocNumber = strtoupper($docNumber);
+        $cifCodes = 'JABCDEFGHI';
 
-        return $this->isValidCIFFormat($fixedDocNumber);
+        if (9 !== strlen($cif)) {
+            return false;
+        }
+        $cif = strtoupper(trim($cif));
+        $sum = (string) $this->getCifSum($cif);
+
+        $n = (10 - substr($sum, -1)) % 10;
+
+        if (preg_match('/^[ABCDEFGHJKNPQRSUVW]{1}/', $cif)) {
+            if (in_array($cif[0], array('A', 'B', 'E', 'H'))) {
+                // Numerico
+                return $cif[8] == $n;
+            } elseif (in_array($cif[0], array('K', 'P', 'Q', 'S'))) {
+                // Letras
+                return $cif[8] == $cifCodes[$n];
+            } else {
+                // Alfanumérico
+                if (is_numeric($cif[8])) {
+                    return $cif[8] == $n;
+                } else {
+                    return $cif[8] == $cifCodes[$n];
+                }
+            }
+        }
+
+        return false;
     }
 
-    function isValidCIFFormat($docNumber)
+    /**
+     * Validation taken from https://github.com/ronanguilloux/IsoCodes
+     * @link https://github.com/ronanguilloux/IsoCodes/blob/master/src/IsoCodes/Nif.php
+     */
+    public function getCifSum($cif)
     {
-        return $this->respectsDocPattern($docNumber, '/^[PQSNWR][0-9][0-9][0-9][0-9][0-9][0-9][0-9][A-Z0-9]/')
-                ||
-               $this->respectsDocPattern($docNumber, '/^[ABCDEFGHJUV][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]/');
-    }
+        $sum = $cif[2] + $cif[4] + $cif[6];
 
-    function respectsDocPattern($givenString, $pattern)
-    {
-        $isValid = FALSE;
-        $fixedString = strtoupper($givenString);
-        if (is_int(substr($fixedString, 0, 1))) {
-            $fixedString = substr("000000000" . $givenString, -9);
+        for ($i = 1; $i < 8; $i += 2) {
+            $tmp = (string) (2 * $cif[$i]);
+            $tmp = $tmp[0] + ((strlen($tmp) == 2) ? $tmp[1] : 0);
+            $sum += $tmp;
         }
-        if (preg_match($pattern, $fixedString)) {
-            $isValid = TRUE;
-        }
-        return $isValid;
+
+        return $sum;
     }
 
 }
