@@ -13,7 +13,7 @@ class Company extends \Faker\Provider\Company
     );
 
     protected static $types = array(
-        'সিমেন্ট', 'সার', 'ঢেউটিন'
+        'সিমেন্ট', 'সার', 'ঢেউটিন','অটোমোবাইল','ইলেকট্রনিক্স','হোটেল','প্রোপারটিস'
     );
 
     public static function companyType()
