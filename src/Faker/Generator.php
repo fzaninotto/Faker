@@ -93,12 +93,18 @@ namespace Faker;
  *
  * @property int       $unixTime
  * @property \DateTime $dateTime
+ * @property \DateTimeImmutable $dateTimeImmutable
  * @property \DateTime $dateTimeAD
+ * @property \DateTimeImmutable $dateTimeImmutableAD
  * @property string    $iso8601
  * @property \DateTime $dateTimeThisCentury
+ * @property \DateTimeImmutable $dateTimeImmutableThisCentury
  * @property \DateTime $dateTimeThisDecade
+ * @property \DateTimeImmutable $dateTimeImmutableThisDecade
  * @property \DateTime $dateTimeThisYear
+ * @property \DateTimeImmutable $dateTimeImmutableThisYear
  * @property \DateTime $dateTimeThisMonth
+ * @property \DateTimeImmutable $dateTimeImmutableThisMonth
  * @property string    $amPm
  * @property string    $dayOfMonth
  * @property string    $dayOfWeek
@@ -118,13 +124,21 @@ namespace Faker;
  * @method int unixTime($max = 'now')
  * @method string year($max = 'now')
  * @method \DateTime dateTime($max = 'now', $timezone = null)
+ * @method \DateTimeImmutable dateTimeImmutable($max = 'now', $timezone = null)
  * @method \DateTime dateTimeAd($max = 'now', $timezone = null)
+ * @method \DateTimeImmutable dateTimeImmutableAd($max = 'now', $timezone = null)
  * @method \DateTime dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null)
+ * @method \DateTimeImmutable dateTimeImmutableBetween($startDate = '-30 years', $endDate = 'now', $timezone = null)
  * @method \DateTime dateTimeInInterval($date = '-30 years', $interval = '+5 days', $timezone = null)
+ * @method \DateTimeImmutable dateTimeImmutableInInterval($date = '-30 years', $interval = '+5 days', $timezone = null)
  * @method \DateTime dateTimeThisCentury($max = 'now', $timezone = null)
+ * @method \DateTimeImmutable dateTimeImmutableThisCentury($max = 'now', $timezone = null)
  * @method \DateTime dateTimeThisDecade($max = 'now', $timezone = null)
+ * @method \DateTimeImmutable dateTimeImmutableThisDecade($max = 'now', $timezone = null)
  * @method \DateTime dateTimeThisYear($max = 'now', $timezone = null)
+ * @method \DateTimeImmutable dateTimeImmutableThisYear($max = 'now', $timezone = null)
  * @method \DateTime dateTimeThisMonth($max = 'now', $timezone = null)
+ * @method \DateTimeImmutable dateTimeImmutableThisMonth($max = 'now', $timezone = null)
  *
  * @property string $md5
  * @property string $sha1

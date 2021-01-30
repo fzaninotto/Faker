@@ -91,10 +91,43 @@ final class DateTimeTest extends TestCase
         $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
     }
 
+    /**
+     * @requires PHP 5.6
+     */
+    public function testDateTimeImmutable()
+    {
+        $date = DateTimeProvider::dateTimeImmutable();
+        $this->assertInstanceOf('\DateTimeImmutable', $date);
+        $this->assertGreaterThanOrEqual(new \DateTime('@0'), $date);
+        $this->assertLessThanOrEqual(new \DateTime(), $date);
+        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
+    }
+
+    /**
+     * @requires PHP 5.6
+     */
+    public function testDateTimeImmutableWithTimezone()
+    {
+        $date = DateTimeProvider::dateTimeImmutable('now', 'America/New_York');
+        $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
+    }
+
     public function testDateTimeAD()
     {
         $date = DateTimeProvider::dateTimeAD();
         $this->assertInstanceOf('\DateTime', $date);
+        $this->assertGreaterThanOrEqual(new \DateTime('0000-01-01 00:00:00'), $date);
+        $this->assertLessThanOrEqual(new \DateTime(), $date);
+        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
+    }
+
+    /**
+     * @requires PHP 5.6
+     */
+    public function testDateTimeImmutableAD()
+    {
+        $date = DateTimeProvider::dateTimeImmutableAD();
+        $this->assertInstanceOf('\DateTimeImmutable', $date);
         $this->assertGreaterThanOrEqual(new \DateTime('0000-01-01 00:00:00'), $date);
         $this->assertLessThanOrEqual(new \DateTime(), $date);
         $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
@@ -109,10 +142,34 @@ final class DateTimeTest extends TestCase
         $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
+    /**
+     * @requires PHP 5.6
+     */
+    public function testDateTimeImmutableThisCentury()
+    {
+        $date = DateTimeProvider::dateTimeImmutableThisCentury();
+        $this->assertInstanceOf('\DateTimeImmutable', $date);
+        $this->assertGreaterThanOrEqual(new \DateTime('-100 year'), $date);
+        $this->assertLessThanOrEqual(new \DateTime(), $date);
+        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
+    }
+
     public function testDateTimeThisDecade()
     {
         $date = DateTimeProvider::dateTimeThisDecade();
         $this->assertInstanceOf('\DateTime', $date);
+        $this->assertGreaterThanOrEqual(new \DateTime('-10 year'), $date);
+        $this->assertLessThanOrEqual(new \DateTime(), $date);
+        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
+    }
+
+    /**
+     * @requires PHP 5.6
+     */
+    public function testDateTimeImmutableThisDecade()
+    {
+        $date = DateTimeProvider::dateTimeImmutableThisDecade();
+        $this->assertInstanceOf('\DateTimeImmutable', $date);
         $this->assertGreaterThanOrEqual(new \DateTime('-10 year'), $date);
         $this->assertLessThanOrEqual(new \DateTime(), $date);
         $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
@@ -127,10 +184,34 @@ final class DateTimeTest extends TestCase
         $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
+    /**
+     * @requires PHP 5.6
+     */
+    public function testDateTimeImmutableThisYear()
+    {
+        $date = DateTimeProvider::dateTimeImmutableThisYear();
+        $this->assertInstanceOf('\DateTimeImmutable', $date);
+        $this->assertGreaterThanOrEqual(new \DateTime('-1 year'), $date);
+        $this->assertLessThanOrEqual(new \DateTime(), $date);
+        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
+    }
+
     public function testDateTimeThisMonth()
     {
         $date = DateTimeProvider::dateTimeThisMonth();
         $this->assertInstanceOf('\DateTime', $date);
+        $this->assertGreaterThanOrEqual(new \DateTime('-1 month'), $date);
+        $this->assertLessThanOrEqual(new \DateTime(), $date);
+        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
+    }
+
+    /**
+     * @requires PHP 5.6
+     */
+    public function testDateTimeImmutableThisMonth()
+    {
+        $date = DateTimeProvider::dateTimeImmutableThisMonth();
+        $this->assertInstanceOf('\DateTimeImmutable', $date);
         $this->assertGreaterThanOrEqual(new \DateTime('-1 month'), $date);
         $this->assertLessThanOrEqual(new \DateTime(), $date);
         $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
@@ -142,9 +223,27 @@ final class DateTimeTest extends TestCase
         $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
     }
 
+    /**
+     * @requires PHP 5.6
+     */
+    public function testDateTimeImmutableThisCenturyWithTimezone()
+    {
+        $date = DateTimeProvider::dateTimeImmutableThisCentury('now', 'America/New_York');
+        $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
+    }
+
     public function testDateTimeThisDecadeWithTimezone()
     {
         $date = DateTimeProvider::dateTimeThisDecade('now', 'America/New_York');
+        $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
+    }
+
+    /**
+     * @requires PHP 5.6
+     */
+    public function testDateTimeImmutableThisDecadeWithTimezone()
+    {
+        $date = DateTimeProvider::dateTimeImmutableThisDecade('now', 'America/New_York');
         $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
     }
 
@@ -154,9 +253,27 @@ final class DateTimeTest extends TestCase
         $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
     }
 
+    /**
+     * @requires PHP 5.6
+     */
+    public function testDateTimeImmutableThisYearWithTimezone()
+    {
+        $date = DateTimeProvider::dateTimeImmutableThisYear('now', 'America/New_York');
+        $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
+    }
+
     public function testDateTimeThisMonthWithTimezone()
     {
         $date = DateTimeProvider::dateTimeThisMonth('now', 'America/New_York');
+        $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
+    }
+
+    /**
+     * @requires PHP 5.6
+     */
+    public function testDateTimeImmutableThisMonthWithTimezone()
+    {
+        $date = DateTimeProvider::dateTimeImmutableThisMonth('now', 'America/New_York');
         $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
     }
 
@@ -195,6 +312,19 @@ final class DateTimeTest extends TestCase
         $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
+    /**
+     * @requires PHP 5.6
+     * @dataProvider providerDateTimeBetween
+     */
+    public function testDateTimeImmutableBetween($start, $end)
+    {
+        $date = DateTimeProvider::dateTimeImmutableBetween($start, $end);
+        $this->assertInstanceOf('\DateTimeImmutable', $date);
+        $this->assertGreaterThanOrEqual(new \DateTime($start), $date);
+        $this->assertLessThanOrEqual(new \DateTime($end), $date);
+        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
+    }
+
     public function providerDateTimeBetween()
     {
         return array(
@@ -213,6 +343,26 @@ final class DateTimeTest extends TestCase
     {
         $date = DateTimeProvider::dateTimeInInterval($start, $interval);
         $this->assertInstanceOf('\DateTime', $date);
+
+        $_interval = \DateInterval::createFromDateString($interval);
+        $_start = new \DateTime($start);
+        if ($isInFuture) {
+            $this->assertGreaterThanOrEqual($_start, $date);
+            $this->assertLessThanOrEqual($_start->add($_interval), $date);
+        } else {
+            $this->assertLessThanOrEqual($_start, $date);
+            $this->assertGreaterThanOrEqual($_start->add($_interval), $date);
+        }
+    }
+
+    /**
+     * @requires PHP 5.6
+     * @dataProvider providerDateTimeInInterval
+     */
+    public function testDateTimeImmutableInInterval($start, $interval = "+5 days", $isInFuture)
+    {
+        $date = DateTimeProvider::dateTimeImmutableInInterval($start, $interval);
+        $this->assertInstanceOf('\DateTimeImmutable', $date);
 
         $_interval = \DateInterval::createFromDateString($interval);
         $_start = new \DateTime($start);

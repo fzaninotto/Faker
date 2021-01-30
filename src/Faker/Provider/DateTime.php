@@ -9,7 +9,7 @@ class DateTime extends Base
     protected static $defaultTimezone = null;
 
     /**
-     * @param \DateTime|string|float|int $max
+     * @param \DateTimeInterface|string|float|int $max
      * @return int|false
      */
     protected static function getMaxTimestamp($max = 'now')
@@ -18,7 +18,7 @@ class DateTime extends Base
             return (int) $max;
         }
 
-        if ($max instanceof \DateTime) {
+        if ($max instanceof \DateTime || $max instanceof \DateTimeInterface) {
             return $max->getTimestamp();
         }
 
@@ -28,7 +28,7 @@ class DateTime extends Base
     /**
      * Get a timestamp between January 1, 1970 and now
      *
-     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param \DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
      * @return int
      *
      * @example 1061306726
@@ -41,7 +41,7 @@ class DateTime extends Base
     /**
      * Get a datetime object for a date between January 1, 1970 and now
      *
-     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param \DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
      * @param string $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
      * @example DateTime('2005-08-16 20:39:21')
      * @return \DateTime
@@ -57,9 +57,24 @@ class DateTime extends Base
     }
 
     /**
+     * Get an immutable datetime object for a date between January 1, 1970 and now
+     *
+     * @param \DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param string $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
+     * @example DateTimeImmutable('2005-08-16 20:39:21')
+     * @return \DateTimeImmutable
+     * @see http://php.net/manual/en/timezones.php
+     * @see http://php.net/manual/en/function.date-default-timezone-get.php
+     */
+    public static function dateTimeImmutable($max = 'now', $timezone = null)
+    {
+        return \DateTimeImmutable::createFromMutable(static::dateTime($max, $timezone));
+    }
+
+    /**
      * Get a datetime object for a date between January 1, 001 and now
      *
-     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param \DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
      * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
      * @example DateTime('1265-03-22 21:15:52')
      * @return \DateTime
@@ -76,9 +91,24 @@ class DateTime extends Base
     }
 
     /**
+     * Get an immutable datetime object for a date between January 1, 001 and now
+     *
+     * @param \DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
+     * @example DateTimeImmutable('1265-03-22 21:15:52')
+     * @return \DateTimeImmutable
+     * @see http://php.net/manual/en/timezones.php
+     * @see http://php.net/manual/en/function.date-default-timezone-get.php
+     */
+    public static function dateTimeImmutableAD($max = 'now', $timezone = null)
+    {
+        return \DateTimeImmutable::createFromMutable(static::dateTimeAD($max, $timezone));
+    }
+
+    /**
      * get a date string formatted with ISO8601
      *
-     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param \DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
      * @return string
      * @example '2003-10-21T16:05:52+0000'
      */
@@ -91,7 +121,7 @@ class DateTime extends Base
      * Get a date string between January 1, 1970 and now
      *
      * @param string               $format
-     * @param \DateTime|int|string $max    maximum timestamp used as random end limit, default to "now"
+     * @param \DateTimeInterface|int|string $max    maximum timestamp used as random end limit, default to "now"
      * @return string
      * @example '2008-11-27'
      */
@@ -104,7 +134,7 @@ class DateTime extends Base
      * Get a time string (24h format by default)
      *
      * @param string               $format
-     * @param \DateTime|int|string $max    maximum timestamp used as random end limit, default to "now"
+     * @param \DateTimeInterface|int|string $max    maximum timestamp used as random end limit, default to "now"
      * @return string
      * @example '15:02:34'
      */
@@ -117,8 +147,8 @@ class DateTime extends Base
      * Get a DateTime object based on a random date between two given dates.
      * Accepts date strings that can be recognized by strtotime().
      *
-     * @param \DateTime|string $startDate Defaults to 30 years ago
-     * @param \DateTime|string $endDate   Defaults to "now"
+     * @param \DateTimeInterface|string $startDate Defaults to 30 years ago
+     * @param \DateTimeInterface|string $endDate   Defaults to "now"
      * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
      * @example DateTime('1999-02-02 11:42:52')
      * @return \DateTime
@@ -127,7 +157,7 @@ class DateTime extends Base
      */
     public static function dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null)
     {
-        $startTimestamp = $startDate instanceof \DateTime ? $startDate->getTimestamp() : strtotime($startDate);
+        $startTimestamp = $startDate instanceof \DateTime || $startDate instanceof \DateTimeInterface ? $startDate->getTimestamp() : strtotime($startDate);
         $endTimestamp = static::getMaxTimestamp($endDate);
 
         if ($startTimestamp > $endTimestamp) {
@@ -143,11 +173,28 @@ class DateTime extends Base
     }
 
     /**
+     * Get an immutable DateTime object based on a random date between two given dates.
+     * Accepts date strings that can be recognized by strtotime().
+     *
+     * @param \DateTimeInterface|string $startDate Defaults to 30 years ago
+     * @param \DateTimeInterface|string $endDate   Defaults to "now"
+     * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
+     * @example DateTimeImmutable('1999-02-02 11:42:52')
+     * @return \DateTimeImmutable
+     * @see http://php.net/manual/en/timezones.php
+     * @see http://php.net/manual/en/function.date-default-timezone-get.php
+     */
+    public static function dateTimeImmutableBetween($startDate = '-30 years', $endDate = 'now', $timezone = null)
+    {
+        return \DateTimeImmutable::createFromMutable(static::dateTimeBetween($startDate, $endDate, $timezone));
+    }
+
+    /**
      * Get a DateTime object based on a random date between one given date and
      * an interval
      * Accepts date string that can be recognized by strtotime().
      *
-     * @param \DateTime|string $date      Defaults to 30 years ago
+     * @param \DateTimeInterface|string $date      Defaults to 30 years ago
      * @param string $interval  Defaults to 5 days after
      * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
      * @example dateTimeInInterval('1999-02-02 11:42:52', '+ 5 days')
@@ -158,7 +205,7 @@ class DateTime extends Base
     public static function dateTimeInInterval($date = '-30 years', $interval = '+5 days', $timezone = null)
     {
         $intervalObject = \DateInterval::createFromDateString($interval);
-        $datetime       = $date instanceof \DateTime ? $date : new \DateTime($date);
+        $datetime       = $date instanceof \DateTime || $date instanceof \DateTimeInterface ? new \DateTime("@{$date->getTimeStamp()}") : new \DateTime($date);
         $otherDatetime  = clone $datetime;
         $otherDatetime->add($intervalObject);
 
@@ -173,7 +220,25 @@ class DateTime extends Base
     }
 
     /**
-     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * Get an immutable DateTime object based on a random date between one given date and
+     * an interval
+     * Accepts date string that can be recognized by strtotime().
+     *
+     * @param \DateTimeInterface|string $date      Defaults to 30 years ago
+     * @param string $interval  Defaults to 5 days after
+     * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
+     * @example dateTimeImmutableInInterval('1999-02-02 11:42:52', '+ 5 days')
+     * @return \DateTimeImmutable
+     * @see http://php.net/manual/en/timezones.php
+     * @see http://php.net/manual/en/function.date-default-timezone-get.php
+     */
+    public static function dateTimeImmutableInInterval($date = '-30 years', $interval = '+5 days', $timezone = null)
+    {
+        return \DateTimeImmutable::createFromMutable(static::dateTimeInInterval($date, $interval, $timezone));
+    }
+
+    /**
+     * @param \DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
      * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
      * @example DateTime('1964-04-04 11:02:02')
      * @return \DateTime
@@ -184,7 +249,18 @@ class DateTime extends Base
     }
 
     /**
-     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param \DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
+     * @example DateTimeImmutable('1964-04-04 11:02:02')
+     * @return \DateTimeImmutable
+     */
+    public static function dateTimeImmutableThisCentury($max = 'now', $timezone = null)
+    {
+        return \DateTimeImmutable::createFromMutable(static::dateTimeThisCentury($max, $timezone));
+    }
+
+    /**
+     * @param \DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
      * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
      * @example DateTime('2010-03-10 05:18:58')
      * @return \DateTime
@@ -195,7 +271,18 @@ class DateTime extends Base
     }
 
     /**
-     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param \DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
+     * @example DateTimeImmutable('2010-03-10 05:18:58')
+     * @return \DateTimeImmutable
+     */
+    public static function dateTimeImmutableThisDecade($max = 'now', $timezone = null)
+    {
+        return \DateTimeImmutable::createFromMutable(static::dateTimeThisDecade($max, $timezone));
+    }
+
+    /**
+     * @param \DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
      * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
      * @example DateTime('2011-09-19 09:24:37')
      * @return \DateTime
@@ -206,7 +293,18 @@ class DateTime extends Base
     }
 
     /**
-     * @param \DateTime|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param \DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
+     * @example DateTimeImmutable('2011-09-19 09:24:37')
+     * @return \DateTimeImmutable
+     */
+    public static function dateTimeImmutableThisYear($max = 'now', $timezone = null)
+    {
+        return \DateTimeImmutable::createFromMutable(static::dateTimeThisYear($max, $timezone));
+    }
+
+    /**
+     * @param \DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
      * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
      * @example DateTime('2011-10-05 12:51:46')
      * @return \DateTime
@@ -214,6 +312,17 @@ class DateTime extends Base
     public static function dateTimeThisMonth($max = 'now', $timezone = null)
     {
         return static::dateTimeBetween('-1 month', $max, $timezone);
+    }
+
+    /**
+     * @param \DateTimeInterface|int|string $max maximum timestamp used as random end limit, default to "now"
+     * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
+     * @example DateTimeImmutable('2011-10-05 12:51:46')
+     * @return \DateTimeImmutable
+     */
+    public static function dateTimeImmutableThisMonth($max = 'now', $timezone = null)
+    {
+        return \DateTimeImmutable::createFromMutable(static::dateTimeThisMonth($max, $timezone));
     }
 
     /**
