@@ -2,8 +2,8 @@
 
 namespace Faker\ORM\Doctrine;
 
-use Doctrine\Common\Persistence\ObjectManager;
-use Doctrine\Common\Persistence\Mapping\ClassMetadata;
+use Doctrine\Persistence\ObjectManager;
+use Doctrine\Persistence\Mapping\ClassMetadata;
 
 /**
  * Service class for populating a table through a Doctrine Entity class.
@@ -233,7 +233,7 @@ class EntityPopulator
      */
     private function generateId($obj, $column, ObjectManager $manager)
     {
-        /* @var $repository \Doctrine\Common\Persistence\ObjectRepository */
+        /* @var $repository \Doctrine\Persistence\ObjectRepository */
         $repository = $manager->getRepository(get_class($obj));
         $result = $repository->createQueryBuilder('e')
                 ->select(sprintf('e.%s', $column))
