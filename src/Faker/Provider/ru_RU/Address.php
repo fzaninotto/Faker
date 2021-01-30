@@ -84,6 +84,10 @@ class Address extends \Faker\Provider\Address
     protected static $streetAddressFormats = array(
         "{{streetPrefix}} {{street}}, {{buildingNumber}}"
     );
+    
+    protected static $streetNameFormats = array(
+        '{{streetPrefix}} {{street}}'
+    );
 
     public static function buildingNumber()
     {
@@ -135,5 +139,12 @@ class Address extends \Faker\Provider\Address
     public static function street()
     {
         return static::randomElement(static::$street);
+    }
+    
+    public function streetName()
+    {
+        $format = static::randomElement(static::$streetNameFormats);
+
+        return $this->generator->parse($format);
     }
 }
