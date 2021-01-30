@@ -1618,9 +1618,12 @@ echo $faker->rg(false);  // '844057363'
 ```php
 <?php
 
-// Generates a Brazilian formatted and valid CNPJ
+// Generates a Brazilian formatted and valid CNPJ (Cadastro Nacional da Pessoa Jurídica)
 echo $faker->cnpj;        // '23.663.478/0001-24'
 echo $faker->cnpj(false); // '23663478000124'
+echo $faker->company; // 'Garbin Comercial Ltda.'
+echo $faker->companySuffix; // 'e Associados'
+echo $faker->jobTitle; // 'Programador de sistemas de informação'
 ```
 
 ### `Faker\Provider\ro_MD\Payment`
