@@ -1762,6 +1762,18 @@ echo $faker->VAT; //23456789
 ```
 
 
+### `Faker\Provider\ps_AF\Address`
+
+```php
+<?php
+
+// Generates a random building name
+echo $faker->building; // "شیرین دل پلازه"
+
+// Returns a random city name
+echo $faker->city // "جلال اباد"
+```
+
 ## Third-Party Libraries Extending/Based On Faker
 
 * Symfony bundles:
