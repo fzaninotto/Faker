@@ -11,4 +11,14 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '(35222) ##-####',
         '8-800-###-####',
     );
+
+    /**
+     * @example +79991230080
+     * @return string
+     */
+    public function e164PhoneNumber()
+    {
+        $formats = array('+7##########');
+        return static::numerify($this->generator->parse(static::randomElement($formats)));
+    }
 }
