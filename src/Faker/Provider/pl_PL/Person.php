@@ -80,7 +80,6 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
-     *
      * Unisex academic degree
      *
      * @var string
@@ -88,8 +87,10 @@ class Person extends \Faker\Provider\Person
     protected static $title = array('mgr','inż.', 'dr', 'doc.');
 
     /**
-     * @param string|null $gender 'male', 'female' or null for any
      * @example 'Adamczyk'
+     * @param string|null $gender 'male', 'female' or null for any
+     *
+     * @return string
      */
     public function lastName($gender = null)
     {
@@ -137,10 +138,10 @@ class Person extends \Faker\Provider\Person
      * PESEL - Universal Electronic System for Registration of the Population
      * @link http://en.wikipedia.org/wiki/PESEL
      * @param  DateTime $birthdate
-     * @param  string   $sex       M for male or F for female
+     * @param string|null $gender 'male', 'female' or null for any
      * @return string   11 digit number, like 44051401358
      */
-    public static function pesel($birthdate = null, $sex = null)
+    public static function pesel($birthdate = null, $gender = null)
     {
         if ($birthdate === null) {
             $birthdate = \Faker\Provider\DateTime::dateTimeThisCentury();
@@ -160,9 +161,11 @@ class Person extends \Faker\Provider\Person
             $result[$i] = static::randomDigit();
         }
 
-        $result[$length - 1] |= 1;
-        if ($sex == "F") {
-            $result[$length - 1] -= 1;
+        if ($gender === static::GENDER_MALE) {
+            $result[$length - 1] |= 1;
+        } elseif ($gender === static::GENDER_FEMALE) {
+            $result[$length - 1] >>= 1;
+            $result[$length - 1] <<= 1;
         }
 
         $checksum = 0;
@@ -207,7 +210,6 @@ class Person extends \Faker\Provider\Person
     public static function taxpayerIdentificationNumber()
     {
         $weights = array(6, 5, 7, 2, 3, 4, 5, 6, 7);
-        $result = array();
         do {
             $result = array(
                 static::randomDigitNotNull(), static::randomDigitNotNull(), static::randomDigitNotNull(),

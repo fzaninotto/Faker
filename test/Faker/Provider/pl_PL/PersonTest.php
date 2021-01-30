@@ -20,7 +20,7 @@ final class PersonTest extends TestCase
         $this->faker = $faker;
     }
 
-    public function testPeselLenght()
+    public function testPeselLength()
     {
         $pesel = $this->faker->pesel();
 
@@ -79,8 +79,8 @@ final class PersonTest extends TestCase
 
     public function testPeselSex()
     {
-        $male   = $this->faker->pesel(null, 'M');
-        $female = $this->faker->pesel(null, 'F');
+        $male   = $this->faker->pesel(null, 'male');
+        $female = $this->faker->pesel(null, 'female');
 
         $this->assertEquals(1, $male[9] % 2);
         $this->assertEquals(0, $female[9] % 2);
