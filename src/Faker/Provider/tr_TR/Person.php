@@ -41,7 +41,7 @@ class Person extends \Faker\Provider\Person
      * @var array Turkish first names.
      */
     protected static $firstNameFemale = array(
-        'Ada', 'Esma', 'Emel', 'Ebru', 'Şahnur', 'Ümran', 'Sinem', 'İrem', 'Rüya', 'Ece', 'Burcu'
+        'Ada', 'Esma', 'Emel', 'Ebru', 'Şahnur', 'Ümran', 'Sinem', 'İrem', 'Rüya', 'Ece', 'Burcu', 'Gamze', 'Gaye', 'Ayşe', 'Sevilay',           'Seda', 'Sena', 'Sema', 'Ayşegül', 'Beyza', 'Büşra', 'İpek', 'Eylül', 'Semra', 'Havva', 'Rabia', 'Açelya', 'Ahsen', 'Afet',             'Aleyna', 'Sıla', 'Alev'
     );
 
     /**
