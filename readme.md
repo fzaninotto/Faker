@@ -1071,6 +1071,28 @@ echo $faker->mobileNumber; // +34 612 12 24
 // Generates a Peruvian Documento Nacional de Identidad (DNI) number
 echo $faker->dni; // '83367512'
 ```
+### `Faker\Provider\es_MX\Person`
+
+```php
+<?php
+
+// Generates a persons Registro Federal de Contribuyentes (RFC) number
+echo $faker->personRfc; // 'DEGM070303BXP'
+
+// Generates a Clave Única de Registro de Población (CURP) number
+echo $faker->curp; // 'DEDF061127HNEDDF28'
+
+// Generates persons full last name
+echo $faker->fullLastName; // 'Galindo Pantoja'
+```
+### `Faker\Provider\es_MX\Payment`
+
+```php
+<?php
+
+// Generates a Clave Bancaria Estandarizada (CLABE) number
+echo $faker->clabe; // '062250246560174552'
+```
 
 ### `Faker\Provider\fa_IR\Person`
 
