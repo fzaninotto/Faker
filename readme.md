@@ -906,6 +906,21 @@ echo $faker->bank; // "Volksbank Stuttgart"
 
 ```
 
+### `Faker\Provider\en_GB\Payment`
+
+```php
+<?php
+
+echo $faker->ukBankAccountNumber(); // 8 digit UK bank account number, eg. "40506070"
+echo $faker->ukSortCode(); // 3 times 2 digits UK Sort code, eg. "01-02-03"
+
+//Optional parameters
+echo $faker->ukBankAccountNumber('0123'); // Parameter prefix will used as the beginning of the account number
+                                        // and the remaining digits will be generated, eg. "01239876"
+echo $faker->ukSortCode('', '01', ''); // Any of the 2 digit pairs can be prefilled, result eg. "10-01-20"
+
+```
+
 ### `Faker\Provider\en_HK\Address`
 
 ```php
