@@ -8,7 +8,13 @@ class Address extends \Faker\Provider\Address
 
     protected static $regionSuffix = array('regionas');
     protected static $streetSuffix = array(
-        'g.', 'gatvė', 'prospektas', 'alėja',
+        'g.', 'gatvė',
+        'skg.', 'skersgatvis',
+        'aklg.', 'akligatvis',
+        'pr.', 'prospektas',
+        'al.', 'alėja',
+        'a.', 'aikštė',
+        'skv.', 'skveras',
     );
 
     protected static $buildingNumber = array('##');
@@ -64,11 +70,42 @@ class Address extends \Faker\Provider\Address
      */
     protected static $city = array('Vilnius', 'Kaunas', 'Klaipėda', 'Šiauliai', 'Panevėžys',
         'Alytus', 'Marijampolė', 'Mažeikiai', 'Jonava', 'Utena', 'Kėdainiai', 'Telšiai', 'Visaginas', 'Tauragė',
-        'Ukmergė'
+        'Ukmergė',
     );
 
     protected static $street = array(
-        'Klaipėdos', 'Vilniaus', 'Kauno', 'Žalgirio', 'Saltoniškių', 'Laisvės', 'Didžioji', 'Liepų'
+        'Algirdo', 'Alyvų', 'Ateities', 'Atgimimo', 'Aušros', 'Ažuolyno', 'Ažuolų',
+        'Ąžuolyno', 'Ąžuolų',
+        'Bajorų', 'Bažnyčios', 'Bebrų', 'Bernardinų', 'Beržų', 'Brolių', 'Buivydiškių',
+        'Centrinė',
+        'Čiobiškio',
+        'Debesylų', 'Deltuvos', 'Didžioji', 'Didžioji', 'Draugystės', 'Draustinio', 'Draustinio', 'Dvaro', 'Dvaro', 'Dūkštų',
+        'Eglių', 'Eglių', 'Elnių', 'Ežero',
+        //'Ė',
+        //'Ė',
+        'Fabijoniškių',
+        'Gabijos', 'Ganyklos', 'Ganyklų', 'Gelvonų', 'Grigalaukio', 'Gėlių',
+        'Helsinkio',
+        'Ilgoji',
+        'Įsruties',
+        //'Y',
+        'Jaunimo', 'Juodkrantės', 'Justiniškių',
+        'Kaimelio', 'Kalno', 'Kalvų', 'Kauno', 'Kaštonų', 'Kintų', 'Klaipėdos', 'Klevų', 'Klonių', 'Krantinės', 'Kranto', 'Kreivoji',
+        'Laisvės', 'Lakštingalų', 'Lankos', 'Lankų', 'Lauko', 'Laukų', 'Laumių', 'Leičių', 'Lenktoji', 'Liepų',
+        'Malūno', 'Mergelės', 'Miglos', 'Mindaugo', 'Miško', 'Mokyklos', 'Musninkų', 'Mėtų',
+        'Naujoji', 'Nidos',
+        'Obelų', 'Olandų', 'Ozo',
+        'Paberžės', 'Pakalnės', 'Parko', 'Paupio', 'Paupio', 'Pavilnionių', 'Pelėdūnų', 'Perkūnkiemio', 'Pievų', 'Piliakalnio', 'Plento', 'Pušyno', 'Pušų',
+        'Ramunėlių', 'Riešės', 'Rožių', 'Rygos', 'Rusnės', 'Rūtų',
+        'Saltoniškių', 'Sanatorijos', 'Saulės', 'Saulėtekio', 'Sėlių', 'Siesikų', 'Skroblų', 'Slėnio', 'Sodų', 'Spaudos', 'Sudervės', 'Svarstyklių', 'Sviliškių',
+        'Šaulio', 'Šermukšnių', 'Šešuolių', 'Šiaulių', 'Šiaurės', 'Šiaurinė', 'Šilo',
+        'Taikos', 'Taikos', 'Talino', 'Tauro', 'Teatro', 'Tujų', 'Tulpių', 'Turniškių', 'Tvenkinio',
+        'Ukmergės', 'Ungurių', 'Uogų', 'Uosto', 'Urėdų', 'Užupio',
+        //'Ū',
+        //'Ų',
+        'Varnų', 'Vijoklių', 'Vilniaus', 'Vilties', 'Vingio', 'Viršilų', 'Viršuliškių', 'Vytauto', 'Vyšnių', 'Vėjų',
+        //'Z',
+        'Žalgirio', 'Žalioji', 'Žemaičių', 'Žemaitės', 'Žemynos', 'Žemuogių', 'Žiburio', 'Žiburių', 'Žiedo', 'Žvejų',
     );
 
     protected static $addressFormats = array(
