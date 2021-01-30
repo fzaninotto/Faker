@@ -15,9 +15,9 @@ class Base
     protected $generator;
 
     /**
-     * @var \Faker\UniqueGenerator
+     * @var \Faker\UniqueGenerator[]
      */
-    protected $unique;
+    protected $unique = array();
 
     /**
      * @param \Faker\Generator $generator
@@ -566,6 +566,7 @@ class Base
      * $faker->unique()->randomElement(array(1, 2, 3));
      * </code>
      *
+     * @param string  $bag        Defines separate lists of existsing values
      * @param boolean $reset      If set to true, resets the list of existing values
      * @param integer $maxRetries Maximum number of retries to find a unique value,
      *                                       After which an OverflowException is thrown.
@@ -573,13 +574,17 @@ class Base
      *
      * @return UniqueGenerator A proxy class returning only non-existing values
      */
-    public function unique($reset = false, $maxRetries = 10000)
+    public function unique($bag = null, $reset = false, $maxRetries = 10000)
     {
-        if ($reset || !$this->unique) {
-            $this->unique = new UniqueGenerator($this->generator, $maxRetries);
+        if (!is_string($bag)) {
+            return $this->unique('default', $bag, is_int($reset) ? $reset : 10000);
         }
 
-        return $this->unique;
+        if ($reset || !$this->unique) {
+            $this->unique[$bag] = new UniqueGenerator($this->generator, $maxRetries);
+        }
+
+        return $this->unique[$bag];
     }
 
     /**
