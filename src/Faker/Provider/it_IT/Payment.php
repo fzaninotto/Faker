@@ -16,4 +16,24 @@ class Payment extends \Faker\Provider\Payment
     {
         return static::iban($countryCode, $prefix, $length);
     }
+
+    /**
+     * Source:
+     * @see https://en.wikipedia.org/wiki/List_of_banks_in_Italy
+     */
+    protected static $banks = array(
+        'Banca Carige', 'Banca di Credito Cooperativo di Roma', 'Banca Mediolanum', 'Banca Monte dei Paschi di Siena', 'Banca Nazionale del Lavoro', 'Banca Popolare di Bari', 'Banca Popolare di Sondrio', 'Banca Sella Group', 'Banco BPM', 'Banco di Desio e della Brianza', 'BancoPosta', 'Bank of Italy', 'BPER Banca',
+        'Cassa Depositi e Prestiti', 'Cassa di Risparmio di Asti', 'Crediop', 'Crédit Agricole Italia', 'Credito Emiliano', 'Credito Valtellinese',
+        'Deutsche Bank (Italy)',
+        'ICCREA Banca', 'Intesa Sanpaolo', 'Istituto per il Credito Sportivo',
+        'Mediobanca',
+        'UBI Banca', 'UniCredit', 'Unipol Banca',
+    );
+    /**
+     * @example 'Unicredit SpA'
+     */
+    public static function bank()
+    {
+        return static::randomElement(static::$banks);
+    }
 }
