@@ -7,6 +7,10 @@ class Person extends Base
     const GENDER_MALE = 'male';
     const GENDER_FEMALE = 'female';
 
+    protected static $genders = array(
+      'male', 'female'
+    );
+
     protected static $titleFormat = array(
       '{{titleMale}}',
       '{{titleFemale}}',
@@ -122,5 +126,13 @@ class Person extends Base
     public static function titleFemale()
     {
         return static::randomElement(static::$titleFemale);
+    }
+
+    /**
+     * @example 'female'
+     */
+    public function gender()
+    {
+        return static::randomElement(static::$genders);
     }
 }

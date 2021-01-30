@@ -906,6 +906,20 @@ echo $faker->bank; // "Volksbank Stuttgart"
 
 ```
 
+### `Faker\Provider\de_DE\Person`
+
+```php
+<?php
+
+echo $faker->title; // "Dr., Prof."
+echo $faker->salutation; // "Frau"
+echo $faker->salutationMale; // "Herr"
+echo $faker->salutationFemale; // "Frau"
+echo $faker->name; // "Herr Dr. Thomas Müller"
+echo $faker->nameInformal; // "Thomas Müller"
+
+```
+
 ### `Faker\Provider\en_HK\Address`
 
 ```php

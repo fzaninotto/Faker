@@ -4,32 +4,55 @@ namespace Faker\Provider\de_DE;
 
 class Person extends \Faker\Provider\Person
 {
+    protected static $salutationFormat = array(
+        '{{salutationMale}}',
+        '{{salutationFemale}}',
+    );
+
     protected static $maleNameFormats = array(
+        '{{salutationMale}} {{firstNameMale}} {{lastName}}',
+        '{{salutationMale}} {{firstNameMale}} {{lastName}}',
+        '{{salutationMale}} {{firstNameMale}} {{lastName}}',
+        '{{salutationMale}} {{firstNameMale}} {{lastName}}',
+        '{{salutationMale}} {{firstNameMale}} {{lastName}}',
+        '{{salutationMale}} {{firstNameMale}} {{lastName}}-{{lastName}}',
+        '{{salutationMale}} {{titleMale}} {{firstNameMale}} {{lastName}}',
+        '{{salutationMale}} {{titleMale}} {{firstNameMale}} {{lastName}}',
+        '{{salutationMale}} {{titleMale}} {{firstNameMale}} {{lastName}}-{{lastName}}',
+    );
+
+    protected static $femaleNameFormats = array(
+        '{{salutationFemale}} {{firstNameFemale}} {{lastName}}',
+        '{{salutationFemale}} {{firstNameFemale}} {{lastName}}',
+        '{{salutationFemale}} {{firstNameFemale}} {{lastName}}',
+        '{{salutationFemale}} {{firstNameFemale}} {{lastName}}',
+        '{{salutationFemale}} {{firstNameFemale}} {{lastName}}',
+        '{{salutationFemale}} {{firstNameFemale}} {{lastName}}-{{lastName}}',
+        '{{salutationFemale}} {{titleFemale}} {{firstNameFemale}} {{lastName}}',
+        '{{salutationFemale}} {{titleFemale}} {{firstNameFemale}} {{lastName}}',
+        '{{salutationFemale}} {{titleFemale}} {{firstNameFemale}} {{lastName}}-{{lastName}}',
+    );
+
+    protected static $maleInformalNameFormats = array(
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}-{{lastName}}',
-        '{{titleMale}} {{firstNameMale}} {{lastName}}',
-        '{{firstNameMale}} {{lastName}} {{suffix}}',
-        '{{titleMale}} {{firstNameMale}} {{lastName}} {{suffix}}',
     );
 
-    protected static $femaleNameFormats = array(
+    protected static $femaleInformalNameFormats = array(
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}-{{lastName}}',
-        '{{titleFemale}} {{firstNameFemale}} {{lastName}}',
-        '{{firstNameFemale}} {{lastName}} {{suffix}}',
-        '{{titleFemale}} {{firstNameFemale}} {{lastName}} {{suffix}}',
     );
 
     /**
-         * Top 500 Names from a phone directory (6. January 2005)
-         * {@link} From http://de.wiktionary.org/wiki/Verzeichnis:Deutsch/Liste_der_h%C3%A4ufigsten_m%C3%A4nnlichen_Vornamen_Deutschlands
-         **/
+     * Top 500 Names from a phone directory (6. January 2005)
+     * {@link} From http://de.wiktionary.org/wiki/Verzeichnis:Deutsch/Liste_der_h%C3%A4ufigsten_m%C3%A4nnlichen_Vornamen_Deutschlands
+     **/
     protected static $firstNameMale = array(
         'Achim', 'Adalbert', 'Adam', 'Adolf', 'Adrian', 'Ahmed', 'Ahmet', 'Albert', 'Albin', 'Albrecht', 'Alex', 'Alexander', 'Alfons', 'Alfred', 'Ali', 'Alois', 'Aloys', 'Alwin', 'Anatoli', 'Andre', 'Andreas', 'Andree', 'Andrej', 'Andrzej', 'André', 'Andy', 'Angelo', 'Ansgar', 'Anton', 'Antonio', 'Antonius', 'Armin', 'Arnd', 'Arndt', 'Arne', 'Arno', 'Arnold', 'Arnulf', 'Arthur', 'Artur', 'August', 'Axel',
         'Bastian', 'Benedikt', 'Benjamin', 'Benno', 'Bernard', 'Bernd', 'Berndt', 'Bernhard', 'Bert', 'Berthold', 'Bertram', 'Björn', 'Bodo', 'Bogdan', 'Boris', 'Bruno', 'Burghard', 'Burkhard',
@@ -86,9 +109,9 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
-         * Top 500 Names from a phone directory (6. January 2005)
-         * {@link} https://de.wiktionary.org/wiki/Verzeichnis:Deutsch/Liste_der_h%C3%A4ufigsten_Nachnamen_Deutschlands
-         **/
+     * Top 500 Names from a phone directory (6. January 2005)
+     * {@link} https://de.wiktionary.org/wiki/Verzeichnis:Deutsch/Liste_der_h%C3%A4ufigsten_Nachnamen_Deutschlands
+     **/
     protected static $lastName = array(
         'Ackermann', 'Adam', 'Adler', 'Ahrens', 'Albers', 'Albert', 'Albrecht', 'Altmann', 'Anders', 'Appel', 'Arndt', 'Arnold', 'Auer',
         'Bach', 'Bachmann', 'Bader', 'Baier', 'Bartels', 'Barth', 'Barthel', 'Bartsch', 'Bauer', 'Baum', 'Baumann', 'Baumgartner', 'Baur', 'Bayer', 'Beck', 'Becker', 'Beckmann', 'Beer', 'Behrendt', 'Behrens', 'Beier', 'Bender', 'Benz', 'Berg', 'Berger', 'Bergmann', 'Berndt', 'Bernhardt', 'Bertram', 'Betz', 'Beyer', 'Binder', 'Bischoff', 'Bittner', 'Blank', 'Block', 'Blum', 'Bock', 'Bode', 'Born', 'Brand', 'Brandl', 'Brandt', 'Braun', 'Brenner', 'Breuer', 'Brinkmann', 'Brunner', 'Bruns', 'Brückner', 'Buchholz', 'Buck', 'Burger', 'Burkhardt', 'Busch', 'Busse', 'Bär', 'Böhm', 'Böhme', 'Böttcher', 'Bühler', 'Büttner',
@@ -114,8 +137,11 @@ class Person extends \Faker\Provider\Person
         'Zander', 'Zeller', 'Ziegler', 'Zimmer', 'Zimmermann',
     );
 
-    protected static $titleMale = array('Herr', 'Herr Dr.', 'Herr Prof.', 'Herr Prof. Dr.');
-    protected static $titleFemale = array('Frau', 'Frau Dr.', 'Frau Prof.', 'Frau Prof. Dr.');
+    protected static $salutationMale = array('Herr');
+    protected static $salutationFemale = array('Frau');
+
+    protected static $titleMale = array('Dr.', 'Prof.', 'Prof. Dr.');
+    protected static $titleFemale = array('Dr.', 'Prof.', 'Prof. Dr.');
 
     protected static $suffix = array('B.Sc.', 'B.A.', 'B.Eng.', 'MBA.');
 
@@ -125,5 +151,55 @@ class Person extends \Faker\Provider\Person
     public static function suffix()
     {
         return static::randomElement(static::$suffix);
+    }
+
+    /**
+     * @param string|null $gender 'male', 'female' or null for any
+     * @return string
+     * @example 'John Doe'
+     */
+    public function nameInformal($gender = null)
+    {
+        if ($gender === static::GENDER_MALE) {
+            $format = static::randomElement(static::$maleInformalNameFormats);
+        } elseif ($gender === static::GENDER_FEMALE) {
+            $format = static::randomElement(static::$femaleInformalNameFormats);
+        } else {
+            $format = static::randomElement(array_merge(static::$maleInformalNameFormats, static::$femaleInformalNameFormats));
+        }
+
+        return $this->generator->parse($format);
+    }
+
+    /**
+     * @example 'Frau.'
+     * @param string|null $gender 'male', 'female' or null for any
+     * @return string
+     */
+    public function title($gender = null)
+    {
+        if ($gender === static::GENDER_MALE) {
+            return static::titleMale();
+        } elseif ($gender === static::GENDER_FEMALE) {
+            return static::titleFemale();
+        }
+
+        return $this->generator->parse(static::randomElement(static::$titleFormat));
+    }
+
+    /**
+     * @example 'Mr.'
+     */
+    public static function salutationMale()
+    {
+        return static::randomElement(static::$titleMale);
+    }
+
+    /**
+     * @example 'Mrs.'
+     */
+    public static function salutationFemale()
+    {
+        return static::randomElement(static::$titleFemale);
     }
 }
