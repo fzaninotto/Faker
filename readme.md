@@ -1543,6 +1543,18 @@ echo $faker->regon; // "714676680"
 echo $faker->regonLocal; // "15346111382836"
 ```
 
+### `Faker\Provider\pl_PL\PhoneNumber`
+
+```php
+<?php
+
+// Generates a random phone number
+echo $faker->phoneNumber; // "714676680"
+// Generates a random mobile phone number using real WST
+echo $faker->mobilePhoneNumber; // "0048793461113"
+```
+
+
 ### `Faker\Provider\pl_PL\Payment`
 
 ```php
