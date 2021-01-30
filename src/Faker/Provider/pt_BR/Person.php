@@ -111,8 +111,8 @@ class Person extends \Faker\Provider\Person
     public function cpf($formatted = true)
     {
         $n = $this->generator->numerify('#########');
-        $n .= check_digit($n);
-        $n .= check_digit($n);
+        $n .= check_digit_mod11($n);
+        $n .= check_digit_mod11($n);
 
         return $formatted? vsprintf('%d%d%d.%d%d%d.%d%d%d-%d%d', str_split($n)) : $n;
     }
@@ -126,7 +126,7 @@ class Person extends \Faker\Provider\Person
     public function rg($formatted = true)
     {
         $n = $this->generator->numerify('########');
-        $n .= check_digit($n);
+        $n .= check_digit_mod11($n);
 
         return $formatted? vsprintf('%d%d.%d%d%d.%d%d%d-%s', str_split($n)) : $n;
     }

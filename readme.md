@@ -1621,6 +1621,8 @@ echo $faker->rg(false);  // '844057363'
 // Generates a Brazilian formatted and valid CNPJ
 echo $faker->cnpj;        // '23.663.478/0001-24'
 echo $faker->cnpj(false); // '23663478000124'
+echo $faker->ie;          // '110.042.490.114'
+echo $faker->ie(false);   // '110042490114'
 ```
 
 ### `Faker\Provider\ro_MD\Payment`
