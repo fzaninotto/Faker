@@ -76,6 +76,16 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         return $phoneNumber;
     }
 
+    public function e164PhoneNumber()
+    {
+        $formats = \array_filter(self::$formats, function ($phoneNumber) {
+            $phoneNumber = \str_replace(' ', '', $phoneNumber);
+            return substr($phoneNumber, 0, 3) == '+33';
+        });
+
+        return \str_replace(array(' ', '(0)'), array('', ''), static::numerify($this->generator->parse(static::randomElement($formats))));
+    }
+
     /**
      * Only 073 to 079 are acceptable prefixes with 07
      *
