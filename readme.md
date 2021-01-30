@@ -128,6 +128,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
     randomNumber($nbDigits = NULL, $strict = false) // 79907610
     randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL) // 48.8932
     numberBetween($min = 1000, $max = 9000) // 8567
+    normallyDistributedNumber($avg = 0, $sd = 1) // 2
     randomLetter            // 'b'
     // returns randomly ordered subsequence of a provided array
     randomElements($array = array ('a','b','c'), $count = 1) // array('c')

@@ -145,6 +145,7 @@ namespace Faker;
  * @method int randomNumber($nbDigits = null, $strict = false)
  * @method int|string|null randomKey(array $array = array())
  * @method int numberBetween($min = 0, $max = 2147483647)
+ * @method int normallyDistributedNumber($avg = 0, $sd = 1)
  * @method float randomFloat($nbMaxDecimals = null, $min = 0, $max = null)
  * @method mixed randomElement(array $array = array('a', 'b', 'c'))
  * @method array randomElements(array $array = array('a', 'b', 'c'), $count = 1, $allowDuplicates = false)

@@ -139,6 +139,47 @@ class Base
         $max = $int1 < $int2 ? $int2 : $int1;
         return mt_rand($min, $max);
     }
+
+    /**
+     * Returns a random number normally distributed about the mean and standard deviation
+     *
+     * @param integer $avg
+     * @param integer $sd
+     *
+     * @return integer
+     */
+    public static function normallyDistributedNumber($avg = 0, $sd = 1)
+    {
+        $random_arrray = [];
+        $random_sign = [1, -1];
+
+        $sd2 = $sd*2;
+        $sd3 = $sd*3;
+        $sd4 = $sd*4;
+
+
+        for ($i=0; $i < 683; $i++) {
+            $random_number = $avg + (static::numberBetween(0, $sd) * $random_sign[array_rand($random_sign)]);
+            array_push($random_arrray, $random_number);
+        }
+
+        for ($i=0; $i < 271; $i++) {
+            $random_number = $avg + (static::numberBetween($sd, $sd2) * $random_sign[array_rand($random_sign)]);
+            array_push($random_arrray, $random_number);
+        }
+
+        for ($i=0; $i < 43; $i++) {
+            $random_number = $avg + (static::numberBetween($sd2, $sd3) * $random_sign[array_rand($random_sign)]);
+            array_push($random_arrray, $random_number);
+        }
+
+        for ($i=0; $i < 3; $i++) {
+            $random_number = $avg + (static::numberBetween($sd3, $sd4) * $random_sign[array_rand($random_sign)]);
+            array_push($random_arrray, $random_number);
+        }
+
+        return $random_arrray[array_rand($random_arrray)];
+    }
     
     /**
      * Returns the passed value
