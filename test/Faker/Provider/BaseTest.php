@@ -360,6 +360,7 @@ final class BaseTest extends TestCase
     {
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
+        $this->assertNotNull($faker->optional(1.0)->randomDigit);
         $this->assertNotNull($faker->optional(100)->randomDigit);
     }
 
