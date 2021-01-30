@@ -35,6 +35,11 @@ class Name
                 return $generator->dateTime;
             };
         }
+        if (preg_match('/_?(uuid)$/', $name)) {
+            return function () use ($generator) {
+                return $generator->uuid;
+            };
+        }
         switch (str_replace('_', '', $name)) {
             case 'firstname':
                 return function () use ($generator) {
