@@ -53,4 +53,24 @@ class Payment extends \Faker\Provider\Payment
     {
         return static::randomElement(static::$banks);
     }
+
+    /**
+     * Value Added Tax (VAT)
+     *
+     * @example 'DE123456789', ('spaced') 'DE 123456789'
+     *
+     * @see http://ec.europa.eu/taxation_customs/vies/faq.html?locale=en#item_11
+     * @see http://www.iecomputersystems.com/ordering/eu_vat_numbers.htm
+     * @see http://en.wikipedia.org/wiki/VAT_identification_number
+     *
+     * @param bool $spacedNationalPrefix
+     *
+     * @return string VAT Number
+     */
+    public static function vat($spacedNationalPrefix = false)
+    {
+        $prefix = $spacedNationalPrefix ? "DE " : "DE";
+
+        return sprintf("%s%d", $prefix, self::randomNumber(9, true));
+    }
 }
