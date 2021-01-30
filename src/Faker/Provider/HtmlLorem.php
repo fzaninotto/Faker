@@ -24,8 +24,8 @@ class HtmlLorem extends Base
     const UL_TAG = "ul";
     const LI_TAG = "li";
     const H_TAG = "h";
-    const B_TAG = "b";
-    const I_TAG = "i";
+    const B_TAG = "strong";
+    const I_TAG = "em";
     const TITLE_TAG = "title";
     const FORM_TAG = "form";
     const INPUT_TAG = "input";
