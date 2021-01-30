@@ -96,4 +96,34 @@ class Person extends \Faker\Provider\Person
             static::GENDER_FEMALE,
         )));
     }
+
+    /**
+     * Individual Identification Number:
+     * @link https://en.wikipedia.org/wiki/National_identification_number#Ukraine
+     * Check digit calculation algorithm:
+     * @link https://github.com/iiifx-production/ukraine-identification-number
+     * @param  DateTime $birthdate
+     * @param  string   $sex 'male' for male or 'female' for female
+     * @return string   10 digit number, for example: 34713401358
+     */
+    public static function individualIdentificationNumber($birthdate = null, $sex = null)
+    {
+        $birthdate = $birthdate ?: \Faker\Provider\DateTime::dateTimeThisCentury();
+        $sex = $sex ?: self::randomElement(array(static::GENDER_MALE, static::GENDER_FEMALE));
+
+        // real life examples shows that the birth date itself is also included in counting the days from 1900-01-01
+        $iid = $birthdate->diff(new \DateTime('1900-01-01'))->days + 1;
+        $iid = $iid . static::numerify('###');
+        $iid = $iid . ($sex == static::GENDER_MALE ? static::numberBetween(0, 4) * 2 + 1 : static::numberBetween(0, 4) * 2);
+
+        $weights = array(-1, 5, 7, 9, 4, 6, 10, 5, 7);
+        $checksum = 0;
+        for ($i = 0; $i < count($weights); $i++) {
+            $checksum += $weights[$i] * $iid[$i];
+        }
+        $checksum = $checksum % 11 % 10;
+        $iid = $iid . $checksum;
+
+        return $iid;
+    }
 }

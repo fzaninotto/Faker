@@ -1743,6 +1743,18 @@ echo $faker->bank; // '中国建设银行'
 echo $faker->bank; // "Ощадбанк"
 ```
 
+### `Faker\Provider\uk_UA\Person`
+
+```php
+<?php
+
+// Generates a random individual identification number
+echo $faker->individualIdentificationNumber; // "3657149761"
+// Since identification number depends on birth date and gender
+// you can optionally specify either one or both of those.
+echo $faker->individualIdentificationNumber(new \DateTime('1995-03-04'), 'female'); // "3476157907"
+```
+
 ### `Faker\Provider\zh_TW\Person`
 
 ```php
