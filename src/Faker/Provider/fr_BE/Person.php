@@ -46,4 +46,22 @@ class Person extends \Faker\Provider\Person
     protected static $titleMale = array('M.', 'Dr.', 'Pr.', 'Me.', 'Mgr');
 
     protected static $titleFemale = array('Mme.', 'Mlle', 'Dr.', 'Pr.', 'Me.');
+
+    /**
+     * In Belgium, the ‘numéro de registre national’ (abbreviated “N.N.”)
+     * is a number which is used to uniquely identify each citizen and/or
+     * owner of an ID card.
+     *
+     * Since this has already been implemented in the nl_BE provider, this
+     * method simply “proxies” the call to it to avoid code duplication.
+     *
+     * @link https://fr.wikipedia.org/wiki/Num%C3%A9ro_de_registre_national Wikipedia page in French
+     *
+     * @param string|null $gender 'male', 'female' or null for any
+     * @return string
+     */
+    public static function nn($gender = null)
+    {
+        return \Faker\Provider\nl_BE\Person::rrn($gender);
+    }
 }
