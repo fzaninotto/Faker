@@ -60,7 +60,11 @@ class ColumnTypeGuesser
             case 'timestamp':
             case 'time':
                 return function () use ($generator) {
-                    return $generator->datetime();
+                    $datetime = $generator->datetime();
+                    if (floatval(\Cake\Core\Configure::version() >= 3.3)) {
+                        return new \Cake\I18n\FrozenTime($datetime->format('Y-m-d H:i:s'));
+                    }
+                    return $datetime;
                 };
 
             case 'binary':
