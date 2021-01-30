@@ -115,6 +115,14 @@ class Person extends \Faker\Provider\Person
 
     /**
      * National Personal Identity number (personnummer)
+     * For example, a number of social security numbers are used in training databases
+     * within the Swedish Tax Agency and for testing of IT systems and can
+     * therefore not given to people. This applies, for example, to social security number i
+     * series 980-999. It has been known in society that social security number in
+     * These series are usually not given to people. These social security numbers
+     * has therefore traditionally been used as fictitious numbers in the IT systems
+     * in various businesses and in advertising.
+     * Considering GDPR, introduced soon, one should use fictitious numbers
      * @link http://en.wikipedia.org/wiki/Personal_identity_number_(Sweden)
      * @param \DateTime $birthdate
      * @param string $gender Person::GENDER_MALE || Person::GENDER_FEMALE
@@ -128,11 +136,11 @@ class Person extends \Faker\Provider\Person
         $datePart = $birthdate->format('ymd');
 
         if ($gender && $gender == static::GENDER_MALE) {
-            $randomDigits = (string)static::numerify('##') . static::randomElement(array(1,3,5,7,9));
+            $randomDigits = (string)static::numberBetween(98, 99) . static::randomElement(array(1,3,5,7,9));
         } elseif ($gender && $gender == static::GENDER_FEMALE) {
-            $randomDigits = (string)static::numerify('##') . static::randomElement(array(0,2,4,6,8));
+            $randomDigits = (string)static::numberBetween(98, 99) . static::randomElement(array(0,2,4,6,8));
         } else {
-            $randomDigits = (string)static::numerify('###');
+            $randomDigits = (string)static::numberBetween(980, 999);
         }
 
 

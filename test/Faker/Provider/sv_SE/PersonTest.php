@@ -22,11 +22,11 @@ final class PersonTest extends TestCase
     public function provideSeedAndExpectedReturn()
     {
         return array(
-            array(1, '720727', '720727-5798'),
-            array(2, '710414', '710414-5664'),
-            array(3, '591012', '591012-4519'),
-            array(4, '180307', '180307-0356'),
-            array(5, '820904', '820904-7748')
+            array(1, '720727', '720727-9915'),
+            array(2, '710414', '710414-9914'),
+            array(3, '591012', '591012-9898'),
+            array(4, '180307', '180307-9803'),
+            array(5, '820904', '820904-9959')
         );
     }
 
