@@ -98,6 +98,20 @@ final class BaseTest extends TestCase
         $this->assertLessThanOrEqual($nbMaxDecimals, strlen($parts[1]));
     }
 
+    public function testRandomFloatReturnsFloatGreaterThanOrEqualToMin()
+    {
+        $min = 0.01;
+        $max = null;
+        $nbMaxDecimals = null;
+
+        for ($i = 0; $i < 1000; $i++) {
+            $result = BaseProvider::randomFloat($nbMaxDecimals, $min, $max);
+
+            $this->assertInternalType('float', $result);
+            $this->assertGreaterThanOrEqual($min, $result);
+        }
+    }
+
     public function testRandomLetterReturnsString()
     {
         $this->assertInternalType('string', BaseProvider::randomLetter());
