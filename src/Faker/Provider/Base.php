@@ -28,6 +28,28 @@ class Base
     }
 
     /**
+     * Return an odd number based on the given number
+     *
+     * @param integer $number
+     * @return int
+     */
+    private static function odd($number)
+    {
+        return $number | 1;
+    }
+
+    /**
+     * Return an even number based on the given number
+     *
+     * @param integer $number
+     * @return int
+     */
+    private static function even($number)
+    {
+        return $number & ~1;
+    }
+
+    /**
      * Returns a random number between 0 and 9
      *
      * @return integer
@@ -38,13 +60,57 @@ class Base
     }
 
     /**
-     * Returns a random number between 1 and 9
+     * Returns a random odd number between 0 and 9
+     *
+     * @return integer
+     */
+    public static function randomOddDigit()
+    {
+        return self::odd(self::randomDigit());
+    }
+
+    /**
+     * Returns a random even number between 0 and 9
+     *
+     * @return integer
+     */
+    public static function randomEvenDigit()
+    {
+        return self::even(self::randomDigit());
+    }
+
+    /**
+     * Returns a random number between 1 and 9.
      *
      * @return integer
      */
     public static function randomDigitNotNull()
     {
         return mt_rand(1, 9);
+    }
+
+    /**
+     * Returns a random odd number between 1 and 9
+     *
+     * @return integer
+     */
+    public static function randomOddDigitNotNull()
+    {
+        return self::odd(self::randomDigitNotNull());
+    }
+
+    /**
+     * Returns a random even number between 2 and 8
+     *
+     * I had to adjust the mt_rand minimum to 2, otherwise
+     * it would sometimes return 0 because 0 is technically
+     * an even number.
+     *
+     * @return integer
+     */
+    public static function randomEvenDigitNotNull()
+    {
+        return self::even(mt_rand(2, 8));
     }
 
     /**
@@ -59,6 +125,39 @@ class Base
         if ($result >= $except) {
             $result++;
         }
+        return $result;
+    }
+
+    /**
+     * Generates a random odd digit, which cannot be $except
+     *
+     * @param int $except
+     * @return int
+     */
+    public static function randomOddDigitNot($except)
+    {
+        do {
+            $result = self::oddNumberBetween(1, 9);
+        } while (intval($except) === intval($result));
+
+        return $result;
+    }
+
+    /**
+     * Generates a random even digit, which cannot be $except
+     *
+     * I had to adjust the minimum to 2, otherwise it would
+     * sometimes return 0 because 0 is technically an even number.
+     *
+     * @param int $except
+     * @return int
+     */
+    public static function randomEvenDigitNot($except)
+    {
+        do {
+            $result = self::evenNumberBetween(2, 8);
+        } while (intval($except) === intval($result));
+
         return $result;
     }
 
@@ -90,6 +189,38 @@ class Base
         }
 
         return mt_rand(0, $max);
+    }
+
+    /**
+     * Returns a random odd integer with 0 to $nbDigits digits.
+     *
+     * The maximum value returned is mt_getrandmax()
+     *
+     * @param integer $nbDigits Defaults to a random number between 1 and 9
+     * @param boolean $strict   Whether the returned number should have exactly $nbDigits
+     * @example 92614919
+     *
+     * @return integer
+     */
+    public static function randomOddNumber($nbDigits = null, $strict = false)
+    {
+        return self::odd(self::randomNumber($nbDigits, $strict));
+    }
+
+    /**
+     * Returns a random even integer with 0 to $nbDigits digits.
+     *
+     * The maximum value returned is mt_getrandmax()
+     *
+     * @param integer $nbDigits Defaults to a random number between 1 and 9
+     * @param boolean $strict   Whether the returned number should have exactly $nbDigits
+     * @example 31144796
+     *
+     * @return integer
+     */
+    public static function randomEvenNumber($nbDigits = null, $strict = false)
+    {
+        return self::even(self::randomNumber($nbDigits, $strict));
     }
 
     /**
@@ -139,7 +270,35 @@ class Base
         $max = $int1 < $int2 ? $int2 : $int1;
         return mt_rand($min, $max);
     }
-    
+
+    /**
+     * Returns a random odd number between $int1 and $int2 (any order)
+     *
+     * @param integer $int1 default to 1
+     * @param integer $int2 defaults to 32 bit max integer, ie 2147483647
+     * @example 51105959
+     *
+     * @return integer
+     */
+    public static function oddNumberBetween($int1 = 1, $int2 = 2147483647)
+    {
+        return self::odd(self::numberBetween($int1 < 1 ? 1 : $int1, $int2));
+    }
+
+    /**
+     * Returns a random even number between $int1 and $int2 (any order)
+     *
+     * @param integer $int1 default to 0
+     * @param integer $int2 defaults to 32 bit max integer, ie 2147483646
+     * @example 50737272
+     *
+     * @return integer
+     */
+    public static function evenNumberBetween($int1 = 0, $int2 = 2147483646)
+    {
+        return self::even(self::numberBetween($int1, $int2));
+    }
+
     /**
      * Returns the passed value
      *

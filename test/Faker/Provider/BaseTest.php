@@ -8,6 +8,31 @@ use Traversable;
 
 final class BaseTest extends TestCase
 {
+    /**
+     * @var string
+     */
+    private $previousLocale;
+
+    public function setUp()
+    {
+        /**
+         * Set the locale to ANSI C to avoid PHP's weird decimal point localization.
+         */
+        $this->previousLocale = setlocale(LC_NUMERIC, 'C');
+
+        parent::setUp();
+    }
+
+    public function tearDown()
+    {
+        /**
+         * Set the locale back to the previous value;
+         */
+        setlocale(LC_NUMERIC, $this->previousLocale);
+
+        parent::setUp();
+    }
+    
     public function testRandomDigitReturnsInteger()
     {
         $this->assertInternalType('integer', BaseProvider::randomDigit());
@@ -19,12 +44,35 @@ final class BaseTest extends TestCase
         $this->assertLessThan(10, BaseProvider::randomDigit());
     }
 
+    public function testRandomOddDigitReturnsOddDigit()
+    {
+        $this->assertNotEquals(0, BaseProvider::randomOddDigit() % 2);
+    }
+
+    public function testRandomEvenDigitReturnsEvenDigit()
+    {
+        $this->assertEquals(0, BaseProvider::randomEvenDigit() % 2);
+    }
+
     public function testRandomDigitNotNullReturnsNotNullDigit()
     {
         $this->assertGreaterThan(0, BaseProvider::randomDigitNotNull());
         $this->assertLessThan(10, BaseProvider::randomDigitNotNull());
     }
 
+    public function testRandomOddDigitNotNullReturnsOddNotNullDigit()
+    {
+        $this->assertGreaterThan(0, BaseProvider::randomOddDigitNotNull());
+        $this->assertLessThan(10, BaseProvider::randomOddDigitNotNull());
+        $this->assertNotEquals(0, BaseProvider::randomOddDigitNotNull() % 2);
+    }
+
+    public function testRandomEvenDigitNotNullReturnsEvenNotNullDigit()
+    {
+        $this->assertGreaterThan(0, BaseProvider::randomEvenDigitNotNull());
+        $this->assertLessThan(10, BaseProvider::randomEvenDigitNotNull());
+        $this->assertEquals(0, BaseProvider::randomEvenDigitNotNull() % 2);
+    }
 
     public function testRandomDigitNotReturnsValidDigit()
     {
@@ -32,6 +80,26 @@ final class BaseTest extends TestCase
             $this->assertGreaterThanOrEqual(0, BaseProvider::randomDigitNot($i));
             $this->assertLessThan(10, BaseProvider::randomDigitNot($i));
             $this->assertNotSame(BaseProvider::randomDigitNot($i), $i);
+        }
+    }
+
+    public function testRandomOddDigitNotReturnsValidDigit()
+    {
+        foreach (range(1,9,2) as $i) {
+            $this->assertGreaterThanOrEqual(0, BaseProvider::randomOddDigitNot($i));
+            $this->assertLessThan(10, BaseProvider::randomOddDigitNot($i));
+            $this->assertNotSame(BaseProvider::randomOddDigitNot($i), $i);
+            $this->assertNotEquals(0, BaseProvider::randomOddDigitNot($i) % 2);
+        }
+    }
+
+    public function testRandomEvenDigitNotReturnsValidEvenDigit()
+    {
+        foreach (range(0, 9, 2) as $i) {
+            $this->assertGreaterThanOrEqual(2, BaseProvider::randomEvenDigitNot($i));
+            $this->assertLessThan(9, BaseProvider::randomEvenDigitNot($i));
+            $this->assertNotSame(BaseProvider::randomEvenDigitNot($i), $i);
+            $this->assertEquals(0, BaseProvider::randomEvenDigitNot($i) % 2);
         }
     }
 
@@ -46,9 +114,41 @@ final class BaseTest extends TestCase
     /**
      * @expectedException \InvalidArgumentException
      */
+    public function testRandomOddNumberThrowsExceptionWhenCalledWithAMax()
+    {
+        BaseProvider::randomOddNumber(5, 200);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testRandomEvenNumberThrowsExceptionWhenCalledWithAMax()
+    {
+        BaseProvider::randomEvenNumber(5, 200);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
     public function testRandomNumberThrowsExceptionWhenCalledWithATooHighNumberOfDigits()
     {
         BaseProvider::randomNumber(10);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testRandomOddNumberThrowsExceptionWhenCalledWithATooHighNumberOfDigits()
+    {
+        BaseProvider::randomOddNumber(10);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testRandomEvenNumberThrowsExceptionWhenCalledWithATooHighNumberOfDigits()
+    {
+        BaseProvider::randomEvenNumber(10);
     }
 
     public function testRandomNumberReturnsInteger()
@@ -63,9 +163,29 @@ final class BaseTest extends TestCase
         $this->assertLessThan(1000, BaseProvider::randomNumber(3));
     }
 
+    public function testRandomOddNumberReturnsOddNumber()
+    {
+        $this->assertNotEquals(0, BaseProvider::randomOddNumber() % 2);
+    }
+
+    public function testRandomEvenNumberReturnsOddNumber()
+    {
+        $this->assertEquals(0, BaseProvider::randomEvenNumber() % 2);
+    }
+
     public function testRandomNumberAcceptsStrictParamToEnforceNumberSize()
     {
         $this->assertEquals(5, strlen((string) BaseProvider::randomNumber(5, true)));
+    }
+
+    public function testRandomOddNumberAcceptsStrictParamToEnforceNumberSize()
+    {
+        $this->assertEquals(5, strlen((string) BaseProvider::randomOddNumber(5, true)));
+    }
+
+    public function testRandomEvenNumberAcceptsStrictParamToEnforceNumberSize()
+    {
+        $this->assertEquals(5, strlen((string) BaseProvider::randomEvenNumber(5, true)));
     }
 
     public function testNumberBetween()
@@ -77,7 +197,36 @@ final class BaseTest extends TestCase
         $this->assertGreaterThanOrEqual(BaseProvider::numberBetween($min, $max), $max);
     }
 
+    public function testOddNumberBetween()
+    {
+        $min = 5;
+        $max = 7;
+
+        $this->assertGreaterThanOrEqual($min, BaseProvider::oddNumberBetween($min, $max));
+        $this->assertGreaterThanOrEqual(BaseProvider::oddNumberBetween($min, $max), $max);
+    }
+
+    public function testEvenNumberBetween()
+    {
+        $min = 4;
+        $max = 6;
+
+        $this->assertGreaterThanOrEqual($min, BaseProvider::evenNumberBetween($min, $max));
+        $this->assertGreaterThanOrEqual(BaseProvider::evenNumberBetween($min, $max), $max);
+    }
+
     public function testNumberBetweenAcceptsZeroAsMax()
+    {
+        $this->assertEquals(0, BaseProvider::numberBetween(0, 0));
+    }
+
+    public function testOddNumberBetweenAcceptsZeroAsMax()
+    {
+        $this->assertNotEquals(0, BaseProvider::oddNumberBetween(0, 0));
+        $this->assertEquals(1, BaseProvider::oddNumberBetween(0, 0));
+    }
+
+    public function testEvenNumberBetweenAcceptsZeroAsMax()
     {
         $this->assertEquals(0, BaseProvider::numberBetween(0, 0));
     }
