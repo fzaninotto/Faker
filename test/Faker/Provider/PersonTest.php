@@ -2,9 +2,11 @@
 
 namespace Faker\Test\Provider;
 
-use Faker\Provider\Person;
 use Faker\Generator;
+use Faker\Provider\Person;
 use PHPUnit\Framework\TestCase;
+use ReflectionException;
+use ReflectionProperty;
 
 final class PersonTest extends TestCase
 {
@@ -83,5 +85,43 @@ final class PersonTest extends TestCase
         $this->assertContains($faker->name('foobar'), array('John Doe', 'Jane Doe'));
         $this->assertContains($faker->name('male'), array('John Doe'));
         $this->assertContains($faker->name('female'), array('Jane Doe'));
+    }
+
+    public function localeProviderForPerson()
+    {
+        $locales = array();
+        foreach (glob(__DIR__ . '/../../../src/Faker/Provider/*/Person.php') as $localizedPerson) {
+            preg_match('#/([a-zA-Z_]+)/Person\.php#', $localizedPerson, $matches);
+            $locales[] = array($matches[1]);
+        }
+        return $locales;
+    }
+    /**
+     * @dataProvider localeProviderForPerson
+     *
+     * @param string $locale
+     * @throws ReflectionException
+     */
+    public function testFacebookCompliance($locale)
+    {
+        $personClassName = sprintf('Faker\Provider\%s\Person', $locale);
+        foreach (array('firstNameMale', 'firstNameFemale', 'lastName') as $propertyName) {
+            $propertyReflection = new ReflectionProperty($personClassName, $propertyName);
+            $propertyReflection->setAccessible(true);
+            /** @var string[] $names */
+            $names = $propertyReflection->getValue();
+            foreach ($names as $name) {
+                $this->assertNotRegExp(
+                    '/(.)\\1{2,}/',
+                    $name,
+                    sprintf(
+                        'Property %s::$%s contains name with 3+ consecutive identical characters: "%s"',
+                        $personClassName,
+                        $propertyName,
+                        $name
+                    )
+                );
+            }
+        }
     }
 }
