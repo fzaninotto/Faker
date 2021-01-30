@@ -1031,6 +1031,27 @@ echo $faker->tollFreeNumber; // 0800 555 5555
 echo $faker->mobileNumber; // 082 123 5555
 ```
 
+### `Faker\Provider\es_CO\Person`
+
+```php
+<?php
+
+// Generates Número Único de Identificación Personal (NUIP) number
+echo $faker->nuip; // '1234567890'
+```
+
+### `Faker\Provider\es_CO\Address`
+
+```php
+<?php
+
+// Generates a state (department) name
+echo $faker->state; // 'Antioquia'
+
+// Generates a community (municipality) name
+echo $faker->community; // 'Puerto Alegría'
+```
+
 ### `Faker\Provider\es_ES\Person`
 
 ```php
