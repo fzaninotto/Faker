@@ -35,4 +35,14 @@ class DefaultGenerator
     {
         return $this->default;
     }
+
+    /**
+     * @param string $attribute
+     *
+     * @return boolean
+     */
+    public function __isset($attribute)
+    {
+        return true;
+    }
 }

@@ -286,6 +286,21 @@ class Generator
     {
         return $this->format($method, $attributes);
     }
+    
+    /**
+     * @param string $attribute
+     *
+     * @return boolean
+     */
+    public function __isset($attribute)
+    {
+        try {
+            $this->format($attribute);
+        } catch (\InvalidArgumentException $e) {
+            return false;
+        }
+        return true;
+    }
 
     public function __destruct()
     {
