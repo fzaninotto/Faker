@@ -60,3 +60,17 @@ for ($i = 0; $i < 3; $i++) {
 ## License
 
 Faker is released under the MIT License. See [`LICENSE`](LICENSE) for details.
+
+## Backward compatibility promise
+
+Faker is using [Semver](https://semver.org/). This means that versions are tagged
+with MAJOR.MINOR.PATCH. Only a new major version will be allowed to break backward
+compatibility (BC).
+
+Classes marked as `@experimental` or `@internal` are not included in our backward compatibility promise.
+You are also not guaranteed that the value returned from a method is always the
+same. You are guaranteed that the data type will not change.
+
+PHP 8 introduced [named arguments](https://wiki.php.net/rfc/named_params), which
+increased the cost and reduces flexibility for package maintainers. The names of the
+arguments for methods in Faker is not included in our BC promise.
