@@ -916,11 +916,6 @@ parameters:
 			path: src/Faker/Provider/pl_PL/Company.php
 
 		-
-			message: "#^Static call to instance method Faker\\\\Provider\\\\pl_PL\\\\Person\\:\\:title\\(\\)\\.$#"
-			count: 2
-			path: src/Faker/Provider/pl_PL/Person.php
-
-		-
 			message: "#^Parameter \\$birthdate of method Faker\\\\Provider\\\\pl_PL\\\\Person\\:\\:pesel\\(\\) has invalid typehint type Faker\\\\Provider\\\\pl_PL\\\\DateTime\\.$#"
 			count: 1
 			path: src/Faker/Provider/pl_PL/Person.php

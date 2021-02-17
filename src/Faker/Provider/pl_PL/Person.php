@@ -125,7 +125,7 @@ class Person extends \Faker\Provider\Person
      */
     public static function titleMale()
     {
-        return static::title();
+        return static::randomElement(static::$title);
     }
 
     /**
@@ -133,7 +133,7 @@ class Person extends \Faker\Provider\Person
      */
     public static function titleFemale()
     {
-        return static::title();
+        return static::randomElement(static::$title);
     }
 
     /**
