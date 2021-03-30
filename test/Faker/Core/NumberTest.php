@@ -40,6 +40,11 @@ final class NumberTest extends TestCase
         $this->faker->randomNumber(10);
     }
 
+    public function testRandomNumberHasValidNullableAutogenerate()
+    {
+        self::assertGreaterThan(0, $this->faker->randomNumber());
+    }
+
     public function testRandomNumberReturnsInteger()
     {
         self::assertIsInt($this->faker->randomNumber());

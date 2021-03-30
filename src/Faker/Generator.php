@@ -470,7 +470,10 @@ class Generator
      */
     public function randomNumber($nbDigits = null, $strict = false): int
     {
-        return $this->ext(Extension\NumberExtension::class)->randomNumber((int) $nbDigits, (bool) $strict);
+        return $this->ext(Extension\NumberExtension::class)->randomNumber(
+            $nbDigits !== null ? (int) $nbDigits : null,
+            (bool) $strict
+        );
     }
 
     protected function callFormatWithMatches($matches)
