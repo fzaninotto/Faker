@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2021-03-30, v1.14.1
+
+- Fix where randomNumber and randomFloat would return a 0 value (#291 / #292)
+
 ## 2021-03-29, v1.14.0
 
 - Fix for realText to ensure the text keeps closer to its boundaries (#152)
