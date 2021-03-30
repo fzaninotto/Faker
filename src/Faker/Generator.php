@@ -455,7 +455,11 @@ class Generator
      */
     public function randomFloat($nbMaxDecimals = null, $min = 0, $max = null): float
     {
-        return $this->ext(Extension\NumberExtension::class)->randomFloat((int) $nbMaxDecimals, (float) $min, (float) $max);
+        return $this->ext(Extension\NumberExtension::class)->randomFloat(
+            $nbMaxDecimals !== null ? (int) $nbMaxDecimals : null,
+            (float) $min,
+            $max !== null ? (float) $max : null
+        );
     }
 
     /**

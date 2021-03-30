@@ -91,4 +91,9 @@ final class NumberTest extends TestCase
         self::assertLessThanOrEqual($max, $result);
         self::assertLessThanOrEqual($nbMaxDecimals, strlen($parts[1]));
     }
+
+    public function testRandomFloatHasValidNullableAutogenerate()
+    {
+        self::assertGreaterThan(0, $this->faker->randomFloat());
+    }
 }
