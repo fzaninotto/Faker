@@ -41,6 +41,8 @@ class Internet extends Base
 
     /**
      * @example 'jdoe@acme.biz'
+     *
+     * @return string
      */
     public function email()
     {
@@ -51,6 +53,8 @@ class Internet extends Base
 
     /**
      * @example 'jdoe@example.com'
+     *
+     * @return string
      */
     final public function safeEmail()
     {
@@ -59,6 +63,8 @@ class Internet extends Base
 
     /**
      * @example 'jdoe@gmail.com'
+     *
+     * @return string
      */
     public function freeEmail()
     {
@@ -67,6 +73,8 @@ class Internet extends Base
 
     /**
      * @example 'jdoe@dawson.com'
+     *
+     * @return string
      */
     public function companyEmail()
     {
@@ -75,6 +83,8 @@ class Internet extends Base
 
     /**
      * @example 'gmail.com'
+     *
+     * @return string
      */
     public static function freeEmailDomain()
     {
@@ -83,6 +93,8 @@ class Internet extends Base
 
     /**
      * @example 'example.org'
+     *
+     * @return string
      */
     final public static function safeEmailDomain()
     {
@@ -97,6 +109,8 @@ class Internet extends Base
 
     /**
      * @example 'jdoe'
+     *
+     * @return string
      */
     public function userName()
     {
@@ -119,6 +133,8 @@ class Internet extends Base
 
     /**
      * @example 'fY4èHdZv68'
+     *
+     * @return string
      */
     public function password($minLength = 6, $maxLength = 20)
     {
@@ -129,6 +145,8 @@ class Internet extends Base
 
     /**
      * @example 'tiramisu.com'
+     *
+     * @return string
      */
     public function domainName()
     {
@@ -137,6 +155,8 @@ class Internet extends Base
 
     /**
      * @example 'faber'
+     *
+     * @return string
      */
     public function domainWord()
     {
@@ -157,6 +177,8 @@ class Internet extends Base
 
     /**
      * @example 'com'
+     *
+     * @return string
      */
     public function tld()
     {
@@ -165,6 +187,8 @@ class Internet extends Base
 
     /**
      * @example 'http://www.runolfsdottir.com/'
+     *
+     * @return string
      */
     public function url()
     {
@@ -175,6 +199,8 @@ class Internet extends Base
 
     /**
      * @example 'aut-repellat-commodi-vel-itaque-nihil-id-saepe-nostrum'
+     *
+     * @return string
      */
     public function slug($nbWords = 6, $variableNbWords = true)
     {
@@ -192,6 +218,8 @@ class Internet extends Base
 
     /**
      * @example '237.149.115.38'
+     *
+     * @return string
      */
     public function ipv4()
     {
@@ -200,6 +228,8 @@ class Internet extends Base
 
     /**
      * @example '35cd:186d:3e23:2986:ef9f:5b41:42a4:e6f1'
+     *
+     * @return string
      */
     public function ipv6()
     {
@@ -214,6 +244,8 @@ class Internet extends Base
 
     /**
      * @example '10.1.1.17'
+     *
+     * @return string
      */
     public static function localIpv4()
     {
@@ -224,6 +256,8 @@ class Internet extends Base
 
     /**
      * @example '32:F1:39:2F:D6:18'
+     *
+     * @return string
      */
     public static function macAddress()
     {

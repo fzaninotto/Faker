@@ -231,6 +231,8 @@ class PhoneNumber extends Base
 
     /**
      * @example '555-123-546'
+     *
+     * @return string
      */
     public function phoneNumber()
     {

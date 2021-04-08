@@ -736,11 +736,6 @@ parameters:
 			path: src/Faker/ORM/Spot/Populator.php
 
 		-
-			message: "#^Return typehint of method Faker\\\\Provider\\\\Address\\:\\:localCoordinates\\(\\) has invalid type Faker\\\\Provider\\\\latitude\\.$#"
-			count: 1
-			path: src/Faker/Provider/Address.php
-
-		-
 			message: "#^Instanceof between array and Traversable will always evaluate to false\\.$#"
 			count: 2
 			path: src/Faker/Provider/Base.php
@@ -899,11 +894,6 @@ parameters:
 			message: "#^Call to an undefined static method Faker\\\\Provider\\\\ja_JP\\\\Text\\:\\:split\\(\\)\\.$#"
 			count: 1
 			path: src/Faker/Provider/ja_JP/Text.php
-
-		-
-			message: "#^Return typehint of method Faker\\\\Provider\\\\me_ME\\\\Address\\:\\:localCoordinates\\(\\) has invalid type Faker\\\\Provider\\\\latitude\\.$#"
-			count: 1
-			path: src/Faker/Provider/me_ME/Address.php
 
 		-
 			message: "#^Variable \\$companyName might not be defined\\.$#"

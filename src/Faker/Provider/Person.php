@@ -79,11 +79,17 @@ class Person extends Base
         return $this->generator->parse(static::randomElement(static::$firstNameFormat));
     }
 
+    /**
+     * @return string
+     */
     public static function firstNameMale()
     {
         return static::randomElement(static::$firstNameMale);
     }
 
+    /**
+     * @return string
+     */
     public static function firstNameFemale()
     {
         return static::randomElement(static::$firstNameFemale);
@@ -121,6 +127,8 @@ class Person extends Base
 
     /**
      * @example 'Mr.'
+     *
+     * @return string
      */
     public static function titleMale()
     {
@@ -129,6 +137,8 @@ class Person extends Base
 
     /**
      * @example 'Mrs.'
+     *
+     * @return string
      */
     public static function titleFemale()
     {

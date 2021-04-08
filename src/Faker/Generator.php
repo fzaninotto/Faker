@@ -6,213 +6,557 @@ use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\ContainerInterface;
 
 /**
- * @property string $name
- *
- * @method string name(string $gender = null)
- *
- * @property string $firstName
- *
- * @method string firstName(string $gender = null)
- *
- * @property string $firstNameMale
- * @property string $firstNameFemale
- * @property string $lastName
- * @property string $title
- *
- * @method string title(string $gender = null)
- *
- * @property string $titleMale
- * @property string $titleFemale
  * @property string $citySuffix
+ *
+ * @method string citySuffix()
+ *
  * @property string $streetSuffix
+ *
+ * @method string streetSuffix()
+ *
  * @property string $buildingNumber
+ *
+ * @method string buildingNumber()
+ *
  * @property string $city
+ *
+ * @method string city()
+ *
  * @property string $streetName
+ *
+ * @method string streetName()
+ *
  * @property string $streetAddress
- * @property string $secondaryAddress
+ *
+ * @method string streetAddress()
+ *
  * @property string $postcode
+ *
+ * @method string postcode()
+ *
  * @property string $address
- * @property string $state
+ *
+ * @method string address()
+ *
  * @property string $country
- * @property float  $latitude
- * @property float  $longitude
- * @property string $ean13
- * @property string $ean8
- * @property string $isbn13
- * @property string $isbn10
- * @property string $phoneNumber
- * @property string $e164PhoneNumber
- * @property string $catchPhrase
- * @property string $bs
+ *
+ * @method string country()
+ *
+ * @property float $latitude
+ *
+ * @method float latitude($min = -90, $max = 90)
+ *
+ * @property float $longitude
+ *
+ * @method float longitude($min = -180, $max = 180)
+ *
+ * @property float[] $localCoordinates
+ *
+ * @method float[] localCoordinates()
+ *
+ * @property int $randomDigitNotNull
+ *
+ * @method int randomDigitNotNull()
+ *
+ * @property mixed $passthrough
+ *
+ * @method mixed passthrough($value)
+ *
+ * @property string $randomLetter
+ *
+ * @method string randomLetter()
+ *
+ * @property string $randomAscii
+ *
+ * @method string randomAscii()
+ *
+ * @property array $randomElements
+ *
+ * @method array randomElements($array = ['a', 'b', 'c'], $count = 1, $allowDuplicates = false)
+ *
+ * @property mixed $randomElement
+ *
+ * @method mixed randomElement($array = ['a', 'b', 'c'])
+ *
+ * @property int $randomKey
+ *
+ * @method int randomKey($array = [])
+ *
+ * @property array $shuffle
+ *
+ * @method array shuffle($arg = '')
+ *
+ * @property array $shuffleArray
+ *
+ * @method array shuffleArray($array = [])
+ *
+ * @property string $shuffleString
+ *
+ * @method string shuffleString($string = '', $encoding = 'UTF-8')
+ *
+ * @property string $numerify
+ *
+ * @method string numerify($string = '###')
+ *
+ * @property string $lexify
+ *
+ * @method string lexify($string = '????')
+ *
+ * @property string $bothify
+ *
+ * @method string bothify($string = '## ??')
+ *
+ * @property string $asciify
+ *
+ * @method string asciify($string = '****')
+ *
+ * @property string $regexify
+ *
+ * @method string regexify($regex = '')
+ *
+ * @property string $toLower
+ *
+ * @method string toLower($string = '')
+ *
+ * @property string $toUpper
+ *
+ * @method string toUpper($string = '')
+ *
+ * @property mixed $optional
+ *
+ * @method mixed optional($weight = null, $default = null)
+ *
+ * @property UniqueGenerator $unique
+ *
+ * @method UniqueGenerator unique($reset = false, $maxRetries = 10000)
+ *
+ * @property ValidGenerator $valid
+ *
+ * @method ValidGenerator valid($validator = null, $maxRetries = 10000)
+ *
+ * @property int $biasedNumberBetween
+ *
+ * @method int biasedNumberBetween($min = 0, $max = 100, $function = 'sqrt')
+ *
+ * @property string $hexColor
+ *
+ * @method string hexColor()
+ *
+ * @property string $safeHexColor
+ *
+ * @method string safeHexColor()
+ *
+ * @property array $rgbColorAsArray
+ *
+ * @method array rgbColorAsArray()
+ *
+ * @property string $rgbColor
+ *
+ * @method string rgbColor()
+ *
+ * @property string $rgbCssColor
+ *
+ * @method string rgbCssColor()
+ *
+ * @property string $rgbaCssColor
+ *
+ * @method string rgbaCssColor()
+ *
+ * @property string $safeColorName
+ *
+ * @method string safeColorName()
+ *
+ * @property string $colorName
+ *
+ * @method string colorName()
+ *
+ * @property string $hslColor
+ *
+ * @method string hslColor()
+ *
+ * @property array $hslColorAsArray
+ *
+ * @method array hslColorAsArray()
+ *
  * @property string $company
+ *
+ * @method string company()
+ *
  * @property string $companySuffix
+ *
+ * @method string companySuffix()
+ *
  * @property string $jobTitle
- * @property string $creditCardType
- * @property string $creditCardNumber
  *
- * @method string creditCardNumber($type = null, $formatted = false, $separator = '-')
+ * @method string jobTitle()
  *
- * @property \DateTime $creditCardExpirationDate
- * @property string $creditCardExpirationDateString
- * @property array $creditCardDetails
- * @property string $bankAccountNumber
+ * @property int $unixTime
  *
- * @method string iban($countryCode = null, $prefix = '', $length = null)
+ * @method int unixTime($max = 'now')
  *
- * @property string $swiftBicNumber
- * @property string $vat
- * @property string $word
- * @property array|string $words
+ * @property \DateTime $dateTime
  *
- * @method array|string words($nb = 3, $asText = false)
- * @method string word()
+ * @method \DateTime dateTime($max = 'now', $timezone = null)
  *
- * @property string $sentence
+ * @property \DateTime $dateTimeAD
  *
- * @method string sentence($nbWords = 6, $variableNbWords = true)
+ * @method \DateTime dateTimeAD($max = 'now', $timezone = null)
  *
- * @property array|string $sentences
+ * @property string $iso8601
  *
- * @method array|string sentences($nb = 3, $asText = false)
+ * @method string iso8601($max = 'now')
  *
- * @property string $paragraph
+ * @property string $date
  *
- * @method string paragraph($nbSentences = 3, $variableNbSentences = true)
+ * @method string date($format = 'Y-m-d', $max = 'now')
  *
- * @property array|string $paragraphs
+ * @property string $time
  *
- * @method array|string paragraphs($nb = 3, $asText = false)
+ * @method string time($format = 'H:i:s', $max = 'now')
  *
- * @property string $text
+ * @property \DateTime $dateTimeBetween
  *
- * @method string text($maxNbChars = 200)
- * @method string realText($maxNbChars = 200, $indexSize = 2)
- * @method string realTextBetween($minNbChars = 150, $maxNbChars = 200, $indexSize = 2)
+ * @method \DateTime dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null)
+ *
+ * @property \DateTime $dateTimeInInterval
+ *
+ * @method \DateTime dateTimeInInterval($date = '-30 years', $interval = '+5 days', $timezone = null)
+ *
+ * @property \DateTime $dateTimeThisCentury
+ *
+ * @method \DateTime dateTimeThisCentury($max = 'now', $timezone = null)
+ *
+ * @property \DateTime $dateTimeThisDecade
+ *
+ * @method \DateTime dateTimeThisDecade($max = 'now', $timezone = null)
+ *
+ * @property \DateTime $dateTimeThisYear
+ *
+ * @method \DateTime dateTimeThisYear($max = 'now', $timezone = null)
+ *
+ * @property \DateTime $dateTimeThisMonth
+ *
+ * @method \DateTime dateTimeThisMonth($max = 'now', $timezone = null)
+ *
+ * @property string $amPm
+ *
+ * @method string amPm($max = 'now')
+ *
+ * @property string $dayOfMonth
+ *
+ * @method string dayOfMonth($max = 'now')
+ *
+ * @property string $dayOfWeek
+ *
+ * @method string dayOfWeek($max = 'now')
+ *
+ * @property string $month
+ *
+ * @method string month($max = 'now')
+ *
+ * @property string $monthName
+ *
+ * @method string monthName($max = 'now')
+ *
+ * @property string $year
+ *
+ * @method string year($max = 'now')
+ *
+ * @property string $century
+ *
+ * @method string century()
+ *
+ * @property string $timezone
+ *
+ * @method string timezone()
+ *
+ * @property void $setDefaultTimezone
+ *
+ * @method void setDefaultTimezone($timezone = null)
+ *
+ * @property string $getDefaultTimezone
+ *
+ * @method string getDefaultTimezone()
+ *
+ * @property string $file
+ *
+ * @method string file($sourceDirectory = '/tmp', $targetDirectory = '/tmp', $fullPath = true)
+ *
+ * @property string $randomHtml
+ *
+ * @method string randomHtml($maxDepth = 4, $maxWidth = 4)
+ *
+ * @property string $imageUrl
+ *
+ * @method string imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
+ *
+ * @property string $image
+ *
+ * @method string image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true, $randomize = true, $word = null, $gray = false)
  *
  * @property string $email
+ *
+ * @method string email()
+ *
  * @property string $safeEmail
+ *
+ * @method string safeEmail()
+ *
  * @property string $freeEmail
+ *
+ * @method string freeEmail()
+ *
  * @property string $companyEmail
+ *
+ * @method string companyEmail()
+ *
  * @property string $freeEmailDomain
+ *
+ * @method string freeEmailDomain()
+ *
  * @property string $safeEmailDomain
+ *
+ * @method string safeEmailDomain()
+ *
  * @property string $userName
+ *
+ * @method string userName()
+ *
  * @property string $password
  *
  * @method string password($minLength = 6, $maxLength = 20)
  *
  * @property string $domainName
+ *
+ * @method string domainName()
+ *
  * @property string $domainWord
+ *
+ * @method string domainWord()
+ *
  * @property string $tld
+ *
+ * @method string tld()
+ *
  * @property string $url
+ *
+ * @method string url()
+ *
  * @property string $slug
  *
  * @method string slug($nbWords = 6, $variableNbWords = true)
  *
  * @property string $ipv4
+ *
+ * @method string ipv4()
+ *
  * @property string $ipv6
+ *
+ * @method string ipv6()
+ *
  * @property string $localIpv4
+ *
+ * @method string localIpv4()
+ *
  * @property string $macAddress
- * @property int       $unixTime
- * @property \DateTime $dateTime
- * @property \DateTime $dateTimeAD
- * @property string    $iso8601
- * @property \DateTime $dateTimeThisCentury
- * @property \DateTime $dateTimeThisDecade
- * @property \DateTime $dateTimeThisYear
- * @property \DateTime $dateTimeThisMonth
- * @property string    $amPm
- * @property string    $dayOfMonth
- * @property string    $dayOfWeek
- * @property string    $month
- * @property string    $monthName
- * @property string    $year
- * @property string    $century
- * @property string    $timezone
  *
- * @method string amPm($max = 'now')
- * @method string date($format = 'Y-m-d', $max = 'now')
- * @method string dayOfMonth($max = 'now')
- * @method string dayOfWeek($max = 'now')
- * @method string iso8601($max = 'now')
- * @method string month($max = 'now')
- * @method string monthName($max = 'now')
- * @method string time($format = 'H:i:s', $max = 'now')
- * @method int unixTime($max = 'now')
- * @method string year($max = 'now')
- * @method \DateTime dateTime($max = 'now', $timezone = null)
- * @method \DateTime dateTimeAd($max = 'now', $timezone = null)
- * @method \DateTime dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null)
- * @method \DateTime dateTimeInInterval($date = '-30 years', $interval = '+5 days', $timezone = null)
- * @method \DateTime dateTimeThisCentury($max = 'now', $timezone = null)
- * @method \DateTime dateTimeThisDecade($max = 'now', $timezone = null)
- * @method \DateTime dateTimeThisYear($max = 'now', $timezone = null)
- * @method \DateTime dateTimeThisMonth($max = 'now', $timezone = null)
+ * @method string macAddress()
  *
- * @property string $md5
- * @property string $sha1
- * @property string $sha256
- * @property string $locale
- * @property string $countryCode
- * @property string $countryISOAlpha3
- * @property string $languageCode
- * @property string $currencyCode
+ * @property string $word
+ *
+ * @method string word()
+ *
+ * @property array $words
+ *
+ * @method array words($nb = 3, $asText = false)
+ *
+ * @property string $sentence
+ *
+ * @method string sentence($nbWords = 6, $variableNbWords = true)
+ *
+ * @property array $sentences
+ *
+ * @method array sentences($nb = 3, $asText = false)
+ *
+ * @property string $paragraph
+ *
+ * @method string paragraph($nbSentences = 3, $variableNbSentences = true)
+ *
+ * @property array $paragraphs
+ *
+ * @method array paragraphs($nb = 3, $asText = false)
+ *
+ * @property string $text
+ *
+ * @method string text($maxNbChars = 200)
+ *
  * @property bool $boolean
  *
  * @method bool boolean($chanceOfGettingTrue = 50)
  *
- * @property int    $randomDigit
- * @property int    $randomDigitNot
- * @property int    $randomDigitNotNull
- * @property string $randomLetter
- * @property string $randomAscii
+ * @property string $md5
  *
- * @method int|string|null randomKey(array $array = array())
- * @method mixed randomElement(array $array = array('a', 'b', 'c'))
- * @method array randomElements(array $array = array('a', 'b', 'c'), $count = 1, $allowDuplicates = false)
- * @method array|string shuffle($arg = '')
- * @method array shuffleArray(array $array = array())
- * @method string shuffleString($string = '', $encoding = 'UTF-8')
- * @method string numerify($string = '###')
- * @method string lexify($string = '????')
- * @method string bothify($string = '## ??')
- * @method string asciify($string = '****')
- * @method string regexify($regex = '')
- * @method string toLower($string = '')
- * @method string toUpper($string = '')
- * @method Generator optional($weight = 0.5, $default = null)
- * @method Generator unique($reset = false, $maxRetries = 10000)
- * @method Generator valid($validator = null, $maxRetries = 10000)
- * @method mixed passthrough($passthrough)
- * @method int biasedNumberBetween($min = 0, $max = 100, $function = 'sqrt')
+ * @method string md5()
+ *
+ * @property string $sha1
+ *
+ * @method string sha1()
+ *
+ * @property string $sha256
+ *
+ * @method string sha256()
+ *
+ * @property string $locale
+ *
+ * @method string locale()
+ *
+ * @property string $countryCode
+ *
+ * @method string countryCode()
+ *
+ * @property string $countryISOAlpha3
+ *
+ * @method string countryISOAlpha3()
+ *
+ * @property string $languageCode
+ *
+ * @method string languageCode()
+ *
+ * @property string $currencyCode
+ *
+ * @method string currencyCode()
+ *
+ * @property string $emoji
+ *
+ * @method string emoji()
+ *
+ * @property string $creditCardType
+ *
+ * @method string creditCardType()
+ *
+ * @property string $creditCardNumber
+ *
+ * @method string creditCardNumber($type = null, $formatted = false, $separator = '-')
+ *
+ * @property \DateTime $creditCardExpirationDate
+ *
+ * @method \DateTime creditCardExpirationDate($valid = true)
+ *
+ * @property string $creditCardExpirationDateString
+ *
+ * @method string creditCardExpirationDateString($valid = true, $expirationDateFormat = null)
+ *
+ * @property array $creditCardDetails
+ *
+ * @method array creditCardDetails($valid = true)
+ *
+ * @property string $iban
+ *
+ * @method string iban($countryCode = null, $prefix = '', $length = null)
+ *
+ * @property string $swiftBicNumber
+ *
+ * @method string swiftBicNumber()
+ *
+ * @property string $name
+ *
+ * @method string name($gender = null)
+ *
+ * @property string $firstName
+ *
+ * @method string firstName($gender = null)
+ *
+ * @property string $firstNameMale
+ *
+ * @method string firstNameMale()
+ *
+ * @property string $firstNameFemale
+ *
+ * @method string firstNameFemale()
+ *
+ * @property string $lastName
+ *
+ * @method string lastName()
+ *
+ * @property string $title
+ *
+ * @method string title($gender = null)
+ *
+ * @property string $titleMale
+ *
+ * @method string titleMale()
+ *
+ * @property string $titleFemale
+ *
+ * @method string titleFemale()
+ *
+ * @property string $phoneNumber
+ *
+ * @method string phoneNumber()
+ *
+ * @property string $e164PhoneNumber
+ *
+ * @method string e164PhoneNumber()
+ *
+ * @property int $imei
+ *
+ * @method int imei()
+ *
+ * @property string $realText
+ *
+ * @method string realText($maxNbChars = 200, $indexSize = 2)
+ *
+ * @property string $realTextBetween
+ *
+ * @method string realTextBetween($minNbChars = 160, $maxNbChars = 200, $indexSize = 2)
  *
  * @property string $macProcessor
+ *
+ * @method string macProcessor()
+ *
  * @property string $linuxProcessor
+ *
+ * @method string linuxProcessor()
+ *
  * @property string $userAgent
+ *
+ * @method string userAgent()
+ *
  * @property string $chrome
+ *
+ * @method string chrome()
+ *
  * @property string $firefox
+ *
+ * @method string firefox()
+ *
  * @property string $safari
+ *
+ * @method string safari()
+ *
  * @property string $opera
+ *
+ * @method string opera()
+ *
  * @property string $internetExplorer
+ *
+ * @method string internetExplorer()
+ *
  * @property string $windowsPlatformToken
+ *
+ * @method string windowsPlatformToken()
+ *
  * @property string $macPlatformToken
+ *
+ * @method string macPlatformToken()
+ *
  * @property string $linuxPlatformToken
+ *
+ * @method string linuxPlatformToken()
+ *
  * @property string $uuid
- * @property string $mimeType
- * @property string $fileExtension
  *
- * @method string file($sourceDirectory = '/tmp', $targetDirectory = '/tmp', $fullPath = true)
- * @method string imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
- * @method string image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true, $randomize = true, $word = null)
- *
- * @property string $hexColor
- * @property string $safeHexColor
- * @property string $rgbColor
- * @property array $rgbColorAsArray
- * @property string $rgbCssColor
- * @property string $safeColorName
- * @property string $colorName
- *
- * @method string randomHtml($maxDepth = 4, $maxWidth = 4)
+ * @method string uuid()
  */
 class Generator
 {
