@@ -22,12 +22,12 @@ test: vendor ## Runs tests with phpunit
 
 .PHONY: static
 static: vendor ## Runs static analyzers
-	vendor/bin/phpstan analyze
+	vendor/bin/phpstan
 	vendor/bin/psalm
 
 .PHONY: baseline
 baseline: vendor ## Generate baseline files
-	vendor/bin/phpstan analyze --generate-baseline
+	vendor/bin/phpstan --generate-baseline
 	vendor/bin/psalm --update-baseline
 
 .PHONY: clean

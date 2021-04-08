@@ -49,7 +49,7 @@ jobs:
 
       - name: Run PHPStan
         run: |
-          vendor/bin/phpstan analyze --no-progress
+          vendor/bin/phpstan --no-progress
 
   psalm:
     name: Psalm
