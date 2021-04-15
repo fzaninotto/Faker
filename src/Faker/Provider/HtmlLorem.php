@@ -152,7 +152,7 @@ class HtmlLorem extends Base
 
         switch ($rand) {
             case 1:
-                $node->setAttribute('class', $this->generator->word);
+                $node->setAttribute('class', $this->generator->word());
 
                 break;
 
@@ -234,7 +234,7 @@ class HtmlLorem extends Base
 
         $textLabel = $element->ownerDocument->createElement(static::LABEL_TAG);
         $textLabel->setAttribute('for', 'username');
-        $textLabel->textContent = $this->generator->word;
+        $textLabel->textContent = $this->generator->word();
 
         $passwordInput = $element->ownerDocument->createElement(static::INPUT_TAG);
         $passwordInput->setAttribute('type', 'password');
@@ -242,11 +242,11 @@ class HtmlLorem extends Base
 
         $passwordLabel = $element->ownerDocument->createElement(static::LABEL_TAG);
         $passwordLabel->setAttribute('for', 'password');
-        $passwordLabel->textContent = $this->generator->word;
+        $passwordLabel->textContent = $this->generator->word();
 
         $submit = $element->ownerDocument->createElement(static::INPUT_TAG);
         $submit->setAttribute('type', 'submit');
-        $submit->setAttribute('value', $this->generator->word);
+        $submit->setAttribute('value', $this->generator->word());
 
         $submit = $element->ownerDocument->createElement(static::FORM_TAG);
         $submit->setAttribute('action', $this->generator->safeEmailDomain);
