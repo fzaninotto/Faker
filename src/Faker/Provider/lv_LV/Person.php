@@ -84,16 +84,40 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     * {@link} http://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BE%D0%B1%D1%89%D0%B5%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B8%D1%85_%D1%84%D0%B0%D0%BC%D0%B8%D0%BB%D0%B8%D0%B9
+     * {@link} https://lv.wikipedia.org/wiki/Kategorija:Latvie%C5%A1u_uzv%C4%81rdi
      */
     protected static $lastName = [
-        'Raņķi', 'Muižeļi', 'Dumpji', 'Ozoliņi', 'Kalniņi', 'Sēļi', 'Kreši', 'Dāles', 'Rungaiņi',
-        'Kalniņš', 'Lejiņš', 'Celmiņš', 'Bērziņš', 'Ozoliņš', 'Liepiņš', 'Siliņš', 'Vilciņš', 'Lācītis',
-        'Priedīte', 'Saulīte', 'Gailītis', 'Muciņš', 'Krieviņš', 'Zviedrītis', 'Polītis',
-        'Latkovskis', 'Lazovskis', 'Kovaļevskis', 'Dombrovskis', 'Jankovskis', 'Ratkēvičs', 'Kokorevičs', 'Jurēvics',
-        'Jankevics', 'Baldunčiks', 'Šileiko', 'Budreiko', 'Andreiko', 'Blaumanis', 'Silmanis', 'Staltmanis',
-        'Andersons', 'Kirhenšteins', 'Švarcbahs', 'Bendorfs', 'Veinbergs', 'Rozentāls', 'Neilands', 'Freidenfelds',
-        'Veidenbaums', 'Kronvalds',
+        'Abuls', 'Aizupe', 'Akmentiņš', 'Alksnis', 'Alunāns', 'Ancāns', 'Andžāns', 'Ankipāns', 'Aparjode', 'Apine', 'Apinis', 'Aploks', 'Apse', 'Apsītis', 'Arājs', 'Asars', 'Astra', 'Augstkalns', 'Augškalns', 'Auniņš', 'Auns', 'Auškāps', 'Auziņa', 'Auziņš', 'Avens', 'Avens', 'Avotiņš', 'Avots',
+        'Ābele', 'Ābelīte', 'Ābola', 'Āboliņa', 'Āboliņš', 'Ābols', 'Āboltiņa', 'Āboltiņš', 'Ārgalis',
+        'Bajārs', 'Baldzēns', 'Bāliņa', 'Bāliņš', 'Balode', 'Balodis', 'Baltgailis', 'Baltiņš', 'Banga', 'Bārbale', 'Bārda', 'Bargais', 'Barkāns', 'Barons', 'Baušķenieks', 'Bebris', 'Berģis', 'Bertāns', 'Bērziņa', 'Bērziņš', 'Bērzkalns', 'Bērzs', 'Bētiņš', 'Biezais', 'Birkavs', 'Birkerts', 'Birze', 'Birznieks', 'Bisenieks', 'Bite', 'Bitenieks', 'Bļodnieks', 'Bojārs', 'Brasla', 'Breikšs', 'Brencēns', 'Brice', 'Briede', 'Briedis', 'Broks', 'Brože', 'Buiķis', 'Buks', 'Bulis', 'Bumbiere', 'Burvis', 'Butāne', 'Butkus',
+        'Cālītis', 'Caune', 'Caunītis', 'Celmiņa', 'Celmiņš', 'Celms', 'Ceplītis', 'Cērps', 'Cielēns', 'Ciemiņš', 'Cipruss', 'Cipulis', 'Cīrulis',
+        'Čaklais', 'Čakste', 'Čevers', 'Čukste',
+        'Dāboliņš', 'Daiders', 'Dālderis', 'Dambis', 'Dārziņš', 'Dārznieks', 'Deglavs', 'Dimants', 'Dobelis', 'Draviņš', 'Dravnieks', 'Dubra', 'Dukure', 'Dukurs', 'Dumpe', 'Dumpis', 'Dzelme', 'Dzelzītis', 'Dzenis', 'Dzenītis', 'Dzērve', 'Dzintars', 'Dzirne', 'Džeriņš',
+        'Egle', 'Eglīte', 'Eglītis', 'Eiduka', 'Eisaks', 'Elksne', 'Endzelīna', 'Endzelīns', 'Endziņš', 'Eniņš', 'Ezeriņš',
+        'Ēķis', 'Ērglis',
+        'Freimanis',
+        'Gaigals', 'Gaile', 'Gailis', 'Gailītis', 'Galviņš', 'Garanča', 'Gauja', 'Goba', 'Goppers', 'Gorkšs', 'Grantiņš', 'Graudiņš', 'Grauds', 'Grava', 'Grāvelis', 'Greste', 'Grēviņš', 'Grīva', 'Grūbe', 'Gruzītis', 'Gulbe', 'Gulbis',
+        'Ģīlis', 'Ģirģens',
+        'Igaunis', 'Ikauniece', 'Ikaunieks', 'Indriksone', 'Indriksons', 'Irbe',
+        'Īvāns',
+        'Jankausks', 'Jaudzems', 'Jaunzeme', 'Jaunzemis', 'Jaunzems', 'Jurjāns', 'Jūsmiņš',
+        'Kadiķis', 'Kaijaks', 'Kaktiņš', 'Kalējs', 'Kalna', 'Kalnbērzs', 'Kalniņa', 'Kalniņš', 'Kalnozols', 'Kalns', 'Kalpaks', 'Kambala', 'Kantāns', 'Kants', 'Kaņeps', 'Karašausks', 'Kārkliņa', 'Kārkliņš', 'Kauliņš', 'Kauls', 'Kazlausks', 'Kazričs', 'Kirmuška', 'Kivlenieks', 'Klētniece', 'Klišāns', 'Kļava', 'Kļaviņa', 'Kļaviņš', 'Kociņš', 'Kokina', 'Kokins', 'Kokle', 'Kozlovskis', 'Kramiņš', 'Krastiņa', 'Krastiņš', 'Krauklis', 'Krieviņš', 'Krievs', 'Krollis', 'Krūkliņš', 'Krūmiņa', 'Krūmiņš', 'Krustiņš', 'Kubiļus', 'Kubuliņa', 'Kugrēns', 'Kukainis', 'Kukule', 'Kukulis', 'Kūlis', 'Kundziņš', 'Kurpnieks', 'Kursītis', 'Kusiņš', 'Kušķis', 'Kvēps',
+        'Ķemere', 'Ķempe', 'Ķēniņš', 'Ķibilds', 'Ķuzis',
+        'Ladusāns', 'Lāce', 'Lācis', 'Lagzdiņš', 'Laime', 'Laimiņš', 'Laizāne', 'Laizāns', 'Lapainis', 'Lapiņš', 'Lapsa', 'Latvis', 'Lauks', 'Lauskis', 'Laviņa', 'Laviņš', 'Lazda', 'Lazdiņš', 'Legzdiņš', 'Leitāns', 'Leitis', 'Leja', 'Lejiņš', 'Lejnieks', 'Lībietis', 'Līce', 'Līdaka', 'Lieģis', 'Lielais', 'Lielgalvis', 'Liepa', 'Liepiņa', 'Liepiņš', 'Liepkalne', 'Linga', 'Liniņš', 'Ločmele', 'Ločmelis', 'Logina', 'Logins', 'Loze', 'Lujāns', 'Lūkins', 'Lūriņa', 'Lūsis',
+        'Ļaksa',
+        'Mangulis', 'Matīsa', 'Mauriņa', 'Mediņš', 'Mednis', 'Melbārde', 'Melbārdis', 'Mellupe', 'Melngailis', 'Mētra', 'Mežaraups', 'Mežciems', 'Mežlauks', 'Mežulis', 'Miezis', 'Miezītis', 'Miglinieks', 'Misāns', 'Miķelsons', 'Muceniece', 'Mucenieks', 'Muciņš', 'Muižniece', 'Muižnieks', 'Muktupāvela', 'Muktupāvels', 'Mūrniece', 'Mūrnieks',
+        'Neretniece', 'Niedra', 'Niedre',
+        'Oliņš', 'Osis', 'Oškalns', 'Ošs', 'Ozola', 'Ozoliņa', 'Ozoliņš', 'Ozols',
+        'Pabērzs', 'Paegle', 'Pauļuks', 'Pelšs', 'Peniķis', 'Petrausks', 'Pīrāgs', 'Plaude', 'Plaudis', 'Plotnieks', 'Plūme', 'Pļaviņš', 'Pļavniece', 'Podnieks', 'Poikāns', 'Polis', 'Pormalis', 'Prauliņa', 'Prauliņš', 'Priede', 'Priedīte', 'Pūce', 'Pujāts', 'Puķe', 'Pumpurs', 'Pūpols', 'Pupurs', 'Puriņš', 'Purnis', 'Purviņš', 'Putniņa', 'Putniņš', 'Putra',
+        'Radziņa', 'Radziņš', 'Rancāns', 'Raņķis', 'Rapa', 'Rausis', 'Reinika', 'Reiniks', 'Reizniece', 'Repše', 'Riekstiņš', 'Rijnieks', 'Rītiņš', 'Robežnieks', 'Roga', 'Rokpelnis', 'Ronis', 'Roze', 'Roziņš', 'Rozītis', 'Rožlapa', 'Rubene', 'Rubenis', 'Rudzīte', 'Rudzītis', 'Rullis', 'Rūmnieks', 'Rūtiņš',
+        'Sabonis', 'Saliņš', 'Salmiņš', 'Salnis', 'Saulietis', 'Saulīte', 'Saulītis', 'Sedlenieks', 'Segliņa', 'Segliņš', 'Seile', 'Seiļs', 'Sesks', 'Siliņa', 'Siliņš', 'Sīlis', 'Sīmanis', 'Sirmais', 'Skābardis', 'Skalbe', 'Skrastiņa', 'Skrastiņš', 'Skride', 'Skrinda', 'Skudra', 'Skuja', 'Skujenieks', 'Skujiņa', 'Skujiņš', 'Skulme', 'Sodums', 'Spridzāns', 'Sproģe', 'Sproģis', 'Sprūdžs', 'Spūlis', 'Stabiņš', 'Stalts', 'Staprāns', 'Stepiņš', 'Stradiņš', 'Straumanis', 'Straume', 'Straupe', 'Strautmane', 'Strautmanis', 'Strautnieks', 'Strazdiņš', 'Strazds', 'Strēlis', 'Strēlnieks', 'Strods', 'Sudmalis', 'Sudraba', 'Sukurs', 'Sukuts',
+        'Šķēle', 'Šnepsts',
+        'Tauriņš', 'Teilāne', 'Tērauda', 'Timma', 'Tīruma', 'Titāns', 'Turss',
+        'Upenieks', 'Upītis', 'Upmale', 'Urtāns', 'Ušpelis', 'Uzuliņš',
+        'Ūdentiņš', 'Ūders', 'Ūdre', 'Ūdris',
+        'Vācietis', 'Vairogs', 'Vaišļa', 'Vaivods', 'Vanags', 'Varslavāns', 'Vasarietis', 'Vazdika', 'Vazdiks', 'Vecozols', 'Vecumnieks', 'Vecvagars', 'Vērdiņš', 'Vīgante', 'Vīksna', 'Vīksne', 'Vilcāne', 'Vilciņa', 'Vilciņš', 'Vilkaste', 'Vilks', 'Viļums', 'Vimba', 'Vītola', 'Vītoliņš', 'Vītols',
+        'Zaķis', 'Zāle', 'Zālīte', 'Zālītis', 'Zaļupe', 'Zariņa', 'Zariņš', 'Zelčs', 'Zeltiņa', 'Zeltiņš', 'Zemdega', 'Zemgals', 'Zemītis', 'Zemzaris', 'Ziedonis', 'Ziemele', 'Ziemelis', 'Zīle', 'Zirnis', 'Znotiņš', 'Zvagulis', 'Zvejnieks', 'Zviedris', 'Zvirbulis', 'Zvirgzdiņš',
+        'Žagars', 'Žukausks',
     ];
 
     public function driverLicence()
