@@ -34,7 +34,7 @@ jobs:
         run: echo "::set-output name=directory::$(composer config cache-dir)"
 
       - name: Cache dependencies installed with composer
-        uses: actions/cache@v2.1.4
+        uses: actions/cache@v2.1.5
         with:
           path: ${{ steps.composer-cache.outputs.directory }}
           key: composer-${{ runner.os }}-${{ matrix.php-version }}-${{ hashFiles('composer.*') }}
@@ -49,7 +49,7 @@ jobs:
           composer bin php-cs-fixer install --no-interaction --no-progress --optimize-autoloader
 
       - name: Cache cache file for php-cs-fixer
-        uses: actions/cache@v2.1.4
+        uses: actions/cache@v2.1.5
         with:
           path: .php_cs.cache
           key: composer-${{ runner.os }}-${{ matrix.php-version }}-${{ hashFiles('composer.*') }}
