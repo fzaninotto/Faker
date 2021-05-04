@@ -180,7 +180,7 @@ class HtmlLorem extends Base
     {
         $text = $element->ownerDocument->createTextNode($this->generator->sentence(self::numberBetween(1, $maxLength)));
         $node = $element->ownerDocument->createElement(static::A_TAG);
-        $node->setAttribute('href', $this->generator->safeEmailDomain);
+        $node->setAttribute('href', $this->generator->safeEmailDomain());
         $node->appendChild($text);
         $element->appendChild($node);
     }
@@ -249,7 +249,7 @@ class HtmlLorem extends Base
         $submit->setAttribute('value', $this->generator->word());
 
         $submit = $element->ownerDocument->createElement(static::FORM_TAG);
-        $submit->setAttribute('action', $this->generator->safeEmailDomain);
+        $submit->setAttribute('action', $this->generator->safeEmailDomain());
         $submit->setAttribute('method', 'POST');
         $submit->appendChild($textLabel);
         $submit->appendChild($textInput);

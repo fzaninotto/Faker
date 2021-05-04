@@ -36,6 +36,11 @@ parameters:
 			path: src/Faker/ORM/CakePHP/EntityPopulator.php
 
 		-
+			message: "#^Access to protected property Faker\\\\ORM\\\\CakePHP\\\\EntityPopulator\\:\\:\\$class\\.$#"
+			count: 1
+			path: src/Faker/ORM/CakePHP/Populator.php
+
+		-
 			message: "#^Access to protected property Faker\\\\ORM\\\\CakePHP\\\\EntityPopulator\\:\\:\\$columnFormatters\\.$#"
 			count: 1
 			path: src/Faker/ORM/CakePHP/Populator.php
@@ -51,13 +56,8 @@ parameters:
 			path: src/Faker/ORM/CakePHP/Populator.php
 
 		-
-			message: "#^Access to protected property Faker\\\\ORM\\\\CakePHP\\\\EntityPopulator\\:\\:\\$class\\.$#"
-			count: 1
-			path: src/Faker/ORM/CakePHP/Populator.php
-
-		-
-			message: "#^Parameter \\$class of method Faker\\\\ORM\\\\Doctrine\\\\ColumnTypeGuesser\\:\\:guessFormat\\(\\) has invalid typehint type Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
-			count: 1
+			message: "#^Access to property \\$fieldMappings on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
+			count: 2
 			path: src/Faker/ORM/Doctrine/ColumnTypeGuesser.php
 
 		-
@@ -66,72 +66,12 @@ parameters:
 			path: src/Faker/ORM/Doctrine/ColumnTypeGuesser.php
 
 		-
-			message: "#^Access to property \\$fieldMappings on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
-			count: 2
+			message: "#^Parameter \\$class of method Faker\\\\ORM\\\\Doctrine\\\\ColumnTypeGuesser\\:\\:guessFormat\\(\\) has invalid typehint type Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
+			count: 1
 			path: src/Faker/ORM/Doctrine/ColumnTypeGuesser.php
 
 		-
-			message: "#^Property Faker\\\\ORM\\\\Doctrine\\\\EntityPopulator\\:\\:\\$class has unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata as its type\\.$#"
-			count: 1
-			path: src/Faker/ORM/Doctrine/EntityPopulator.php
-
-		-
-			message: "#^Parameter \\$class of method Faker\\\\ORM\\\\Doctrine\\\\EntityPopulator\\:\\:__construct\\(\\) has invalid typehint type Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
-			count: 1
-			path: src/Faker/ORM/Doctrine/EntityPopulator.php
-
-		-
-			message: "#^Call to method getName\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
-			count: 1
-			path: src/Faker/ORM/Doctrine/EntityPopulator.php
-
-		-
-			message: "#^Call to method getFieldNames\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
-			count: 1
-			path: src/Faker/ORM/Doctrine/EntityPopulator.php
-
-		-
-			message: "#^Call to method hasField\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
-			count: 1
-			path: src/Faker/ORM/Doctrine/EntityPopulator.php
-
-		-
-			message: "#^Call to method isIdentifier\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
-			count: 1
-			path: src/Faker/ORM/Doctrine/EntityPopulator.php
-
-		-
-			message: "#^Access to property \\$fieldMappings on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
-			count: 1
-			path: src/Faker/ORM/Doctrine/EntityPopulator.php
-
-		-
-			message: "#^Call to method getAssociationNames\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
-			count: 1
-			path: src/Faker/ORM/Doctrine/EntityPopulator.php
-
-		-
-			message: "#^Call to method isCollectionValuedAssociation\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
-			count: 1
-			path: src/Faker/ORM/Doctrine/EntityPopulator.php
-
-		-
-			message: "#^Call to method getAssociationTargetClass\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
-			count: 1
-			path: src/Faker/ORM/Doctrine/EntityPopulator.php
-
-		-
-			message: "#^Class Doctrine\\\\ORM\\\\Mapping\\\\ClassMetadata not found\\.$#"
-			count: 1
-			path: src/Faker/ORM/Doctrine/EntityPopulator.php
-
-		-
-			message: "#^Call to method getAssociationMappings\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
-			count: 1
-			path: src/Faker/ORM/Doctrine/EntityPopulator.php
-
-		-
-			message: "#^Call to method getAssociationMappings\\(\\) on an unknown class Doctrine\\\\ORM\\\\Mapping\\\\ClassMetadata\\.$#"
+			message: "#^Access to constant ONE on an unknown class Doctrine\\\\ODM\\\\MongoDB\\\\Mapping\\\\ClassMetadata\\.$#"
 			count: 1
 			path: src/Faker/ORM/Doctrine/EntityPopulator.php
 
@@ -141,7 +81,7 @@ parameters:
 			path: src/Faker/ORM/Doctrine/EntityPopulator.php
 
 		-
-			message: "#^Class Doctrine\\\\ODM\\\\MongoDB\\\\Mapping\\\\ClassMetadata not found\\.$#"
+			message: "#^Access to constant REFERENCE_ONE on an unknown class Doctrine\\\\ODM\\\\MongoDB\\\\Mapping\\\\ClassMetadata\\.$#"
 			count: 1
 			path: src/Faker/ORM/Doctrine/EntityPopulator.php
 
@@ -156,27 +96,7 @@ parameters:
 			path: src/Faker/ORM/Doctrine/EntityPopulator.php
 
 		-
-			message: "#^Access to constant ONE on an unknown class Doctrine\\\\ODM\\\\MongoDB\\\\Mapping\\\\ClassMetadata\\.$#"
-			count: 1
-			path: src/Faker/ORM/Doctrine/EntityPopulator.php
-
-		-
-			message: "#^Access to constant REFERENCE_ONE on an unknown class Doctrine\\\\ODM\\\\MongoDB\\\\Mapping\\\\ClassMetadata\\.$#"
-			count: 1
-			path: src/Faker/ORM/Doctrine/EntityPopulator.php
-
-		-
-			message: "#^Parameter \\$manager of method Faker\\\\ORM\\\\Doctrine\\\\EntityPopulator\\:\\:execute\\(\\) has invalid typehint type Doctrine\\\\Common\\\\Persistence\\\\ObjectManager\\.$#"
-			count: 1
-			path: src/Faker/ORM/Doctrine/EntityPopulator.php
-
-		-
-			message: "#^Call to method newInstance\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
-			count: 1
-			path: src/Faker/ORM/Doctrine/EntityPopulator.php
-
-		-
-			message: "#^Call to method getIdentifier\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
+			message: "#^Access to property \\$fieldMappings on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
 			count: 1
 			path: src/Faker/ORM/Doctrine/EntityPopulator.php
 
@@ -186,17 +106,42 @@ parameters:
 			path: src/Faker/ORM/Doctrine/EntityPopulator.php
 
 		-
-			message: "#^Call to method persist\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\ObjectManager\\.$#"
+			message: "#^Call to method createQueryBuilder\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\ObjectRepository\\.$#"
 			count: 1
 			path: src/Faker/ORM/Doctrine/EntityPopulator.php
 
 		-
-			message: "#^Method Faker\\\\ORM\\\\Doctrine\\\\EntityPopulator\\:\\:generateId\\(\\) never returns null so it can be removed from the return typehint\\.$#"
+			message: "#^Call to method getAssociationMappings\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
 			count: 1
 			path: src/Faker/ORM/Doctrine/EntityPopulator.php
 
 		-
-			message: "#^Parameter \\$manager of method Faker\\\\ORM\\\\Doctrine\\\\EntityPopulator\\:\\:generateId\\(\\) has invalid typehint type Doctrine\\\\Common\\\\Persistence\\\\ObjectManager\\.$#"
+			message: "#^Call to method getAssociationMappings\\(\\) on an unknown class Doctrine\\\\ORM\\\\Mapping\\\\ClassMetadata\\.$#"
+			count: 1
+			path: src/Faker/ORM/Doctrine/EntityPopulator.php
+
+		-
+			message: "#^Call to method getAssociationNames\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
+			count: 1
+			path: src/Faker/ORM/Doctrine/EntityPopulator.php
+
+		-
+			message: "#^Call to method getAssociationTargetClass\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
+			count: 1
+			path: src/Faker/ORM/Doctrine/EntityPopulator.php
+
+		-
+			message: "#^Call to method getFieldNames\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
+			count: 1
+			path: src/Faker/ORM/Doctrine/EntityPopulator.php
+
+		-
+			message: "#^Call to method getIdentifier\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
+			count: 1
+			path: src/Faker/ORM/Doctrine/EntityPopulator.php
+
+		-
+			message: "#^Call to method getName\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
 			count: 1
 			path: src/Faker/ORM/Doctrine/EntityPopulator.php
 
@@ -206,23 +151,78 @@ parameters:
 			path: src/Faker/ORM/Doctrine/EntityPopulator.php
 
 		-
+			message: "#^Call to method hasField\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
+			count: 1
+			path: src/Faker/ORM/Doctrine/EntityPopulator.php
+
+		-
+			message: "#^Call to method isCollectionValuedAssociation\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
+			count: 1
+			path: src/Faker/ORM/Doctrine/EntityPopulator.php
+
+		-
+			message: "#^Call to method isIdentifier\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
+			count: 1
+			path: src/Faker/ORM/Doctrine/EntityPopulator.php
+
+		-
+			message: "#^Call to method newInstance\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
+			count: 1
+			path: src/Faker/ORM/Doctrine/EntityPopulator.php
+
+		-
+			message: "#^Call to method persist\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\ObjectManager\\.$#"
+			count: 1
+			path: src/Faker/ORM/Doctrine/EntityPopulator.php
+
+		-
+			message: "#^Class Doctrine\\\\ODM\\\\MongoDB\\\\Mapping\\\\ClassMetadata not found\\.$#"
+			count: 1
+			path: src/Faker/ORM/Doctrine/EntityPopulator.php
+
+		-
+			message: "#^Class Doctrine\\\\ORM\\\\Mapping\\\\ClassMetadata not found\\.$#"
+			count: 1
+			path: src/Faker/ORM/Doctrine/EntityPopulator.php
+
+		-
+			message: "#^Method Faker\\\\ORM\\\\Doctrine\\\\EntityPopulator\\:\\:generateId\\(\\) never returns null so it can be removed from the return typehint\\.$#"
+			count: 1
+			path: src/Faker/ORM/Doctrine/EntityPopulator.php
+
+		-
 			message: "#^PHPDoc tag @var for variable \\$repository contains unknown class Doctrine\\\\Common\\\\Persistence\\\\ObjectRepository\\.$#"
 			count: 1
 			path: src/Faker/ORM/Doctrine/EntityPopulator.php
 
 		-
-			message: "#^Call to method createQueryBuilder\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\ObjectRepository\\.$#"
+			message: "#^Parameter \\$class of method Faker\\\\ORM\\\\Doctrine\\\\EntityPopulator\\:\\:__construct\\(\\) has invalid typehint type Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata\\.$#"
 			count: 1
 			path: src/Faker/ORM/Doctrine/EntityPopulator.php
 
 		-
-			message: "#^Property Faker\\\\ORM\\\\Doctrine\\\\Populator\\:\\:\\$manager has unknown class Doctrine\\\\Common\\\\Persistence\\\\ObjectManager as its type\\.$#"
+			message: "#^Parameter \\$manager of method Faker\\\\ORM\\\\Doctrine\\\\EntityPopulator\\:\\:execute\\(\\) has invalid typehint type Doctrine\\\\Common\\\\Persistence\\\\ObjectManager\\.$#"
 			count: 1
+			path: src/Faker/ORM/Doctrine/EntityPopulator.php
+
+		-
+			message: "#^Parameter \\$manager of method Faker\\\\ORM\\\\Doctrine\\\\EntityPopulator\\:\\:generateId\\(\\) has invalid typehint type Doctrine\\\\Common\\\\Persistence\\\\ObjectManager\\.$#"
+			count: 1
+			path: src/Faker/ORM/Doctrine/EntityPopulator.php
+
+		-
+			message: "#^Property Faker\\\\ORM\\\\Doctrine\\\\EntityPopulator\\:\\:\\$class has unknown class Doctrine\\\\Common\\\\Persistence\\\\Mapping\\\\ClassMetadata as its type\\.$#"
+			count: 1
+			path: src/Faker/ORM/Doctrine/EntityPopulator.php
+
+		-
+			message: "#^Call to method flush\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\ObjectManager\\.$#"
+			count: 2
 			path: src/Faker/ORM/Doctrine/Populator.php
 
 		-
-			message: "#^Parameter \\$manager of method Faker\\\\ORM\\\\Doctrine\\\\Populator\\:\\:__construct\\(\\) has invalid typehint type Doctrine\\\\Common\\\\Persistence\\\\ObjectManager\\.$#"
-			count: 1
+			message: "#^Call to method flush\\(\\) on an unknown class Faker\\\\ORM\\\\Doctrine\\\\EntityManager\\.$#"
+			count: 2
 			path: src/Faker/ORM/Doctrine/Populator.php
 
 		-
@@ -236,17 +236,17 @@ parameters:
 			path: src/Faker/ORM/Doctrine/Populator.php
 
 		-
-			message: "#^Call to method flush\\(\\) on an unknown class Doctrine\\\\Common\\\\Persistence\\\\ObjectManager\\.$#"
-			count: 2
+			message: "#^Parameter \\$manager of method Faker\\\\ORM\\\\Doctrine\\\\Populator\\:\\:__construct\\(\\) has invalid typehint type Doctrine\\\\Common\\\\Persistence\\\\ObjectManager\\.$#"
+			count: 1
 			path: src/Faker/ORM/Doctrine/Populator.php
 
 		-
-			message: "#^Call to method flush\\(\\) on an unknown class Faker\\\\ORM\\\\Doctrine\\\\EntityManager\\.$#"
-			count: 2
+			message: "#^Property Faker\\\\ORM\\\\Doctrine\\\\Populator\\:\\:\\$manager has unknown class Doctrine\\\\Common\\\\Persistence\\\\ObjectManager as its type\\.$#"
+			count: 1
 			path: src/Faker/ORM/Doctrine/Populator.php
 
 		-
-			message: "#^Parameter \\$mandango of method Faker\\\\ORM\\\\Mandango\\\\EntityPopulator\\:\\:guessColumnFormatters\\(\\) has invalid typehint type Mandango\\\\Mandango\\.$#"
+			message: "#^Call to method create\\(\\) on an unknown class Mandango\\\\Mandango\\.$#"
 			count: 1
 			path: src/Faker/ORM/Mandango/EntityPopulator.php
 
@@ -256,17 +256,17 @@ parameters:
 			path: src/Faker/ORM/Mandango/EntityPopulator.php
 
 		-
+			message: "#^Call to method persist\\(\\) on an unknown class Mandango\\\\Mandango\\.$#"
+			count: 1
+			path: src/Faker/ORM/Mandango/EntityPopulator.php
+
+		-
 			message: "#^Parameter \\$mandango of method Faker\\\\ORM\\\\Mandango\\\\EntityPopulator\\:\\:execute\\(\\) has invalid typehint type Mandango\\\\Mandango\\.$#"
 			count: 1
 			path: src/Faker/ORM/Mandango/EntityPopulator.php
 
 		-
-			message: "#^Call to method create\\(\\) on an unknown class Mandango\\\\Mandango\\.$#"
-			count: 1
-			path: src/Faker/ORM/Mandango/EntityPopulator.php
-
-		-
-			message: "#^Call to method persist\\(\\) on an unknown class Mandango\\\\Mandango\\.$#"
+			message: "#^Parameter \\$mandango of method Faker\\\\ORM\\\\Mandango\\\\EntityPopulator\\:\\:guessColumnFormatters\\(\\) has invalid typehint type Mandango\\\\Mandango\\.$#"
 			count: 1
 			path: src/Faker/ORM/Mandango/EntityPopulator.php
 
@@ -276,22 +276,17 @@ parameters:
 			path: src/Faker/ORM/Mandango/Populator.php
 
 		-
-			message: "#^Parameter \\$column of method Faker\\\\ORM\\\\Propel\\\\ColumnTypeGuesser\\:\\:guessFormat\\(\\) has invalid typehint type ColumnMap\\.$#"
+			message: "#^Access to constant BIGINT on an unknown class PropelColumnTypes\\.$#"
 			count: 1
 			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
 
 		-
-			message: "#^Call to method isTemporal\\(\\) on an unknown class ColumnMap\\.$#"
+			message: "#^Access to constant BINARY on an unknown class PropelColumnTypes\\.$#"
 			count: 1
 			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
 
 		-
-			message: "#^Call to method isEpochTemporal\\(\\) on an unknown class ColumnMap\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
-
-		-
-			message: "#^Call to method getType\\(\\) on an unknown class ColumnMap\\.$#"
+			message: "#^Access to constant BLOB on an unknown class PropelColumnTypes\\.$#"
 			count: 1
 			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
 
@@ -306,82 +301,7 @@ parameters:
 			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
 
 		-
-			message: "#^Access to constant NUMERIC on an unknown class PropelColumnTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant DECIMAL on an unknown class PropelColumnTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
-
-		-
-			message: "#^Call to method getSize\\(\\) on an unknown class ColumnMap\\.$#"
-			count: 2
-			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant TINYINT on an unknown class PropelColumnTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant SMALLINT on an unknown class PropelColumnTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant INTEGER on an unknown class PropelColumnTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant BIGINT on an unknown class PropelColumnTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant FLOAT on an unknown class PropelColumnTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant DOUBLE on an unknown class PropelColumnTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant REAL on an unknown class PropelColumnTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
-
-		-
 			message: "#^Access to constant CHAR on an unknown class PropelColumnTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant VARCHAR on an unknown class PropelColumnTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant BINARY on an unknown class PropelColumnTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant VARBINARY on an unknown class PropelColumnTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant LONGVARCHAR on an unknown class PropelColumnTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant LONGVARBINARY on an unknown class PropelColumnTypes\\.$#"
 			count: 1
 			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
 
@@ -396,7 +316,12 @@ parameters:
 			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
 
 		-
-			message: "#^Access to constant BLOB on an unknown class PropelColumnTypes\\.$#"
+			message: "#^Access to constant DECIMAL on an unknown class PropelColumnTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
+
+		-
+			message: "#^Access to constant DOUBLE on an unknown class PropelColumnTypes\\.$#"
 			count: 1
 			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
 
@@ -406,7 +331,27 @@ parameters:
 			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
 
 		-
-			message: "#^Call to method getValueSet\\(\\) on an unknown class ColumnMap\\.$#"
+			message: "#^Access to constant FLOAT on an unknown class PropelColumnTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
+
+		-
+			message: "#^Access to constant INTEGER on an unknown class PropelColumnTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
+
+		-
+			message: "#^Access to constant LONGVARBINARY on an unknown class PropelColumnTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
+
+		-
+			message: "#^Access to constant LONGVARCHAR on an unknown class PropelColumnTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
+
+		-
+			message: "#^Access to constant NUMERIC on an unknown class PropelColumnTypes\\.$#"
 			count: 1
 			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
 
@@ -421,7 +366,62 @@ parameters:
 			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
 
 		-
-			message: "#^Parameter \\$columnMap of method Faker\\\\ORM\\\\Propel\\\\EntityPopulator\\:\\:isColumnBehavior\\(\\) has invalid typehint type ColumnMap\\.$#"
+			message: "#^Access to constant REAL on an unknown class PropelColumnTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
+
+		-
+			message: "#^Access to constant SMALLINT on an unknown class PropelColumnTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
+
+		-
+			message: "#^Access to constant TINYINT on an unknown class PropelColumnTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
+
+		-
+			message: "#^Access to constant VARBINARY on an unknown class PropelColumnTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
+
+		-
+			message: "#^Access to constant VARCHAR on an unknown class PropelColumnTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
+
+		-
+			message: "#^Call to method getSize\\(\\) on an unknown class ColumnMap\\.$#"
+			count: 2
+			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
+
+		-
+			message: "#^Call to method getType\\(\\) on an unknown class ColumnMap\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
+
+		-
+			message: "#^Call to method getValueSet\\(\\) on an unknown class ColumnMap\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
+
+		-
+			message: "#^Call to method isEpochTemporal\\(\\) on an unknown class ColumnMap\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
+
+		-
+			message: "#^Call to method isTemporal\\(\\) on an unknown class ColumnMap\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
+
+		-
+			message: "#^Parameter \\$column of method Faker\\\\ORM\\\\Propel\\\\ColumnTypeGuesser\\:\\:guessFormat\\(\\) has invalid typehint type ColumnMap\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel/ColumnTypeGuesser.php
+
+		-
+			message: "#^Call to method getName\\(\\) on an unknown class ColumnMap\\.$#"
 			count: 1
 			path: src/Faker/ORM/Propel/EntityPopulator.php
 
@@ -431,17 +431,12 @@ parameters:
 			path: src/Faker/ORM/Propel/EntityPopulator.php
 
 		-
-			message: "#^Call to method getName\\(\\) on an unknown class ColumnMap\\.$#"
+			message: "#^Parameter \\$columnMap of method Faker\\\\ORM\\\\Propel\\\\EntityPopulator\\:\\:isColumnBehavior\\(\\) has invalid typehint type ColumnMap\\.$#"
 			count: 1
 			path: src/Faker/ORM/Propel/EntityPopulator.php
 
 		-
-			message: "#^Parameter \\$con of method Faker\\\\ORM\\\\Propel\\\\Populator\\:\\:execute\\(\\) has invalid typehint type Faker\\\\ORM\\\\Propel\\\\PropelPDO\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel/Populator.php
-
-		-
-			message: "#^Call to static method isInstancePoolingEnabled\\(\\) on an unknown class Propel\\.$#"
+			message: "#^Access to constant CONNECTION_WRITE on an unknown class Propel\\.$#"
 			count: 1
 			path: src/Faker/ORM/Propel/Populator.php
 
@@ -456,22 +451,42 @@ parameters:
 			path: src/Faker/ORM/Propel/Populator.php
 
 		-
-			message: "#^Access to constant CONNECTION_WRITE on an unknown class Propel\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel/Populator.php
-
-		-
 			message: "#^Call to static method getConnection\\(\\) on an unknown class Propel\\.$#"
 			count: 1
 			path: src/Faker/ORM/Propel/Populator.php
 
 		-
-			message: "#^Parameter \\$column of method Faker\\\\ORM\\\\Propel2\\\\ColumnTypeGuesser\\:\\:guessFormat\\(\\) has invalid typehint type Propel\\\\Runtime\\\\Map\\\\ColumnMap\\.$#"
+			message: "#^Call to static method isInstancePoolingEnabled\\(\\) on an unknown class Propel\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel/Populator.php
+
+		-
+			message: "#^Parameter \\$con of method Faker\\\\ORM\\\\Propel\\\\Populator\\:\\:execute\\(\\) has invalid typehint type Faker\\\\ORM\\\\Propel\\\\PropelPDO\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel/Populator.php
+
+		-
+			message: "#^Access to constant BIGINT on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
 			count: 1
 			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
 
 		-
-			message: "#^Call to method isTemporal\\(\\) on an unknown class Propel\\\\Runtime\\\\Map\\\\ColumnMap\\.$#"
+			message: "#^Access to constant BINARY on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
+
+		-
+			message: "#^Access to constant BLOB on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
+
+		-
+			message: "#^Access to constant BOOLEAN on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
+
+		-
+			message: "#^Access to constant BOOLEAN_EMU on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
 			count: 1
 			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
 
@@ -486,97 +501,7 @@ parameters:
 			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
 
 		-
-			message: "#^Call to method getType\\(\\) on an unknown class Propel\\\\Runtime\\\\Map\\\\ColumnMap\\.$#"
-			count: 3
-			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant BOOLEAN on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant BOOLEAN_EMU on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant NUMERIC on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant DECIMAL on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
-
-		-
-			message: "#^Call to method getSize\\(\\) on an unknown class Propel\\\\Runtime\\\\Map\\\\ColumnMap\\.$#"
-			count: 2
-			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant TINYINT on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant SMALLINT on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant INTEGER on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant BIGINT on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant FLOAT on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant DOUBLE on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant REAL on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
-
-		-
 			message: "#^Access to constant CHAR on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant VARCHAR on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant BINARY on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant VARBINARY on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant LONGVARCHAR on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
-
-		-
-			message: "#^Access to constant LONGVARBINARY on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
 			count: 1
 			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
 
@@ -591,7 +516,12 @@ parameters:
 			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
 
 		-
-			message: "#^Access to constant BLOB on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
+			message: "#^Access to constant DECIMAL on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
+
+		-
+			message: "#^Access to constant DOUBLE on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
 			count: 1
 			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
 
@@ -601,7 +531,27 @@ parameters:
 			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
 
 		-
-			message: "#^Call to method getValueSet\\(\\) on an unknown class Propel\\\\Runtime\\\\Map\\\\ColumnMap\\.$#"
+			message: "#^Access to constant FLOAT on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
+
+		-
+			message: "#^Access to constant INTEGER on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
+
+		-
+			message: "#^Access to constant LONGVARBINARY on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
+
+		-
+			message: "#^Access to constant LONGVARCHAR on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
+
+		-
+			message: "#^Access to constant NUMERIC on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
 			count: 1
 			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
 
@@ -616,7 +566,57 @@ parameters:
 			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
 
 		-
-			message: "#^Parameter \\$columnMap of method Faker\\\\ORM\\\\Propel2\\\\EntityPopulator\\:\\:isColumnBehavior\\(\\) has invalid typehint type Propel\\\\Runtime\\\\Map\\\\ColumnMap\\.$#"
+			message: "#^Access to constant REAL on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
+
+		-
+			message: "#^Access to constant SMALLINT on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
+
+		-
+			message: "#^Access to constant TINYINT on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
+
+		-
+			message: "#^Access to constant VARBINARY on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
+
+		-
+			message: "#^Access to constant VARCHAR on an unknown class Propel\\\\Generator\\\\Model\\\\PropelTypes\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
+
+		-
+			message: "#^Call to method getSize\\(\\) on an unknown class Propel\\\\Runtime\\\\Map\\\\ColumnMap\\.$#"
+			count: 2
+			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
+
+		-
+			message: "#^Call to method getType\\(\\) on an unknown class Propel\\\\Runtime\\\\Map\\\\ColumnMap\\.$#"
+			count: 3
+			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
+
+		-
+			message: "#^Call to method getValueSet\\(\\) on an unknown class Propel\\\\Runtime\\\\Map\\\\ColumnMap\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
+
+		-
+			message: "#^Call to method isTemporal\\(\\) on an unknown class Propel\\\\Runtime\\\\Map\\\\ColumnMap\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
+
+		-
+			message: "#^Parameter \\$column of method Faker\\\\ORM\\\\Propel2\\\\ColumnTypeGuesser\\:\\:guessFormat\\(\\) has invalid typehint type Propel\\\\Runtime\\\\Map\\\\ColumnMap\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel2/ColumnTypeGuesser.php
+
+		-
+			message: "#^Call to method getName\\(\\) on an unknown class Propel\\\\Runtime\\\\Map\\\\ColumnMap\\.$#"
 			count: 1
 			path: src/Faker/ORM/Propel2/EntityPopulator.php
 
@@ -626,17 +626,12 @@ parameters:
 			path: src/Faker/ORM/Propel2/EntityPopulator.php
 
 		-
-			message: "#^Call to method getName\\(\\) on an unknown class Propel\\\\Runtime\\\\Map\\\\ColumnMap\\.$#"
+			message: "#^Parameter \\$columnMap of method Faker\\\\ORM\\\\Propel2\\\\EntityPopulator\\:\\:isColumnBehavior\\(\\) has invalid typehint type Propel\\\\Runtime\\\\Map\\\\ColumnMap\\.$#"
 			count: 1
 			path: src/Faker/ORM/Propel2/EntityPopulator.php
 
 		-
-			message: "#^Parameter \\$con of method Faker\\\\ORM\\\\Propel2\\\\Populator\\:\\:execute\\(\\) has invalid typehint type Faker\\\\ORM\\\\Propel2\\\\PropelPDO\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel2/Populator.php
-
-		-
-			message: "#^Call to static method isInstancePoolingEnabled\\(\\) on an unknown class Propel\\\\Runtime\\\\Propel\\.$#"
+			message: "#^Access to constant CONNECTION_WRITE on an unknown class Propel\\\\Runtime\\\\ServiceContainer\\\\ServiceContainerInterface\\.$#"
 			count: 1
 			path: src/Faker/ORM/Propel2/Populator.php
 
@@ -651,22 +646,62 @@ parameters:
 			path: src/Faker/ORM/Propel2/Populator.php
 
 		-
-			message: "#^Access to constant CONNECTION_WRITE on an unknown class Propel\\\\Runtime\\\\ServiceContainer\\\\ServiceContainerInterface\\.$#"
-			count: 1
-			path: src/Faker/ORM/Propel2/Populator.php
-
-		-
 			message: "#^Call to static method getConnection\\(\\) on an unknown class Propel\\\\Runtime\\\\Propel\\.$#"
 			count: 1
 			path: src/Faker/ORM/Propel2/Populator.php
 
 		-
-			message: "#^Property Faker\\\\ORM\\\\Spot\\\\EntityPopulator\\:\\:\\$mapper has unknown class Spot\\\\Mapper as its type\\.$#"
+			message: "#^Call to static method isInstancePoolingEnabled\\(\\) on an unknown class Propel\\\\Runtime\\\\Propel\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel2/Populator.php
+
+		-
+			message: "#^Parameter \\$con of method Faker\\\\ORM\\\\Propel2\\\\Populator\\:\\:execute\\(\\) has invalid typehint type Faker\\\\ORM\\\\Propel2\\\\PropelPDO\\.$#"
+			count: 1
+			path: src/Faker/ORM/Propel2/Populator.php
+
+		-
+			message: "#^Call to method build\\(\\) on an unknown class Spot\\\\Mapper\\.$#"
+			count: 2
+			path: src/Faker/ORM/Spot/EntityPopulator.php
+
+		-
+			message: "#^Call to method entity\\(\\) on an unknown class Spot\\\\Mapper\\.$#"
 			count: 1
 			path: src/Faker/ORM/Spot/EntityPopulator.php
 
 		-
-			message: "#^Property Faker\\\\ORM\\\\Spot\\\\EntityPopulator\\:\\:\\$locator has unknown class Spot\\\\Locator as its type\\.$#"
+			message: "#^Call to method entityName\\(\\) on an unknown class Spot\\\\Relation\\\\BelongsTo\\.$#"
+			count: 1
+			path: src/Faker/ORM/Spot/EntityPopulator.php
+
+		-
+			message: "#^Call to method fields\\(\\) on an unknown class Spot\\\\Mapper\\.$#"
+			count: 1
+			path: src/Faker/ORM/Spot/EntityPopulator.php
+
+		-
+			message: "#^Call to method insert\\(\\) on an unknown class Spot\\\\Mapper\\.$#"
+			count: 1
+			path: src/Faker/ORM/Spot/EntityPopulator.php
+
+		-
+			message: "#^Call to method localKey\\(\\) on an unknown class Spot\\\\Relation\\\\BelongsTo\\.$#"
+			count: 1
+			path: src/Faker/ORM/Spot/EntityPopulator.php
+
+		-
+			message: "#^Call to method mapper\\(\\) on an unknown class Spot\\\\Locator\\.$#"
+			count: 1
+			path: src/Faker/ORM/Spot/EntityPopulator.php
+
+		-
+			message: "#^Class Spot\\\\Relation\\\\BelongsTo not found\\.$#"
+			count: 1
+			path: src/Faker/ORM/Spot/EntityPopulator.php
+
+		-
+			message: "#^Method Faker\\\\ORM\\\\Spot\\\\EntityPopulator\\:\\:getMapper\\(\\) should return string but returns Spot\\\\Mapper\\.$#"
 			count: 1
 			path: src/Faker/ORM/Spot/EntityPopulator.php
 
@@ -681,47 +716,12 @@ parameters:
 			path: src/Faker/ORM/Spot/EntityPopulator.php
 
 		-
-			message: "#^Method Faker\\\\ORM\\\\Spot\\\\EntityPopulator\\:\\:getMapper\\(\\) should return string but returns Spot\\\\Mapper\\.$#"
+			message: "#^Property Faker\\\\ORM\\\\Spot\\\\EntityPopulator\\:\\:\\$locator has unknown class Spot\\\\Locator as its type\\.$#"
 			count: 1
 			path: src/Faker/ORM/Spot/EntityPopulator.php
 
 		-
-			message: "#^Call to method fields\\(\\) on an unknown class Spot\\\\Mapper\\.$#"
-			count: 1
-			path: src/Faker/ORM/Spot/EntityPopulator.php
-
-		-
-			message: "#^Call to method entity\\(\\) on an unknown class Spot\\\\Mapper\\.$#"
-			count: 1
-			path: src/Faker/ORM/Spot/EntityPopulator.php
-
-		-
-			message: "#^Call to method build\\(\\) on an unknown class Spot\\\\Mapper\\.$#"
-			count: 2
-			path: src/Faker/ORM/Spot/EntityPopulator.php
-
-		-
-			message: "#^Class Spot\\\\Relation\\\\BelongsTo not found\\.$#"
-			count: 1
-			path: src/Faker/ORM/Spot/EntityPopulator.php
-
-		-
-			message: "#^Call to method localKey\\(\\) on an unknown class Spot\\\\Relation\\\\BelongsTo\\.$#"
-			count: 1
-			path: src/Faker/ORM/Spot/EntityPopulator.php
-
-		-
-			message: "#^Call to method entityName\\(\\) on an unknown class Spot\\\\Relation\\\\BelongsTo\\.$#"
-			count: 1
-			path: src/Faker/ORM/Spot/EntityPopulator.php
-
-		-
-			message: "#^Call to method mapper\\(\\) on an unknown class Spot\\\\Locator\\.$#"
-			count: 1
-			path: src/Faker/ORM/Spot/EntityPopulator.php
-
-		-
-			message: "#^Call to method insert\\(\\) on an unknown class Spot\\\\Mapper\\.$#"
+			message: "#^Property Faker\\\\ORM\\\\Spot\\\\EntityPopulator\\:\\:\\$mapper has unknown class Spot\\\\Mapper as its type\\.$#"
 			count: 1
 			path: src/Faker/ORM/Spot/EntityPopulator.php
 
@@ -741,17 +741,7 @@ parameters:
 			path: src/Faker/Provider/Base.php
 
 		-
-			message: "#^Ternary operator condition is always false\\.$#"
-			count: 1
-			path: src/Faker/Provider/Base.php
-
-		-
-			message: "#^Result of && is always false\\.$#"
-			count: 1
-			path: src/Faker/Provider/Base.php
-
-		-
-			message: "#^Unreachable statement \\- code above always terminates\\.$#"
+			message: "#^Negated boolean expression is always false\\.$#"
 			count: 1
 			path: src/Faker/Provider/Base.php
 
@@ -761,12 +751,22 @@ parameters:
 			path: src/Faker/Provider/Base.php
 
 		-
-			message: "#^Negated boolean expression is always false\\.$#"
+			message: "#^Parameter \\$validator of method Faker\\\\Provider\\\\Base\\:\\:valid\\(\\) has invalid typehint type Faker\\\\Provider\\\\Closure\\.$#"
 			count: 1
 			path: src/Faker/Provider/Base.php
 
 		-
-			message: "#^Parameter \\$validator of method Faker\\\\Provider\\\\Base\\:\\:valid\\(\\) has invalid typehint type Faker\\\\Provider\\\\Closure\\.$#"
+			message: "#^Result of && is always false\\.$#"
+			count: 1
+			path: src/Faker/Provider/Base.php
+
+		-
+			message: "#^Ternary operator condition is always false\\.$#"
+			count: 1
+			path: src/Faker/Provider/Base.php
+
+		-
+			message: "#^Unreachable statement \\- code above always terminates\\.$#"
 			count: 1
 			path: src/Faker/Provider/Base.php
 
@@ -796,7 +796,7 @@ parameters:
 			path: src/Faker/Provider/PhoneNumber.php
 
 		-
-			message: "#^Access to an undefined static property Faker\\\\Provider\\\\ar_SA\\\\Address\\:\\:\\$cityPrefix\\.$#"
+			message: "#^Access to an undefined static property static\\(Faker\\\\Provider\\\\ar_SA\\\\Address\\)\\:\\:\\$cityPrefix\\.$#"
 			count: 1
 			path: src/Faker/Provider/ar_SA/Address.php
 
@@ -811,12 +811,12 @@ parameters:
 			path: src/Faker/Provider/cs_CZ/DateTime.php
 
 		-
-			message: "#^Return typehint of method Faker\\\\Provider\\\\cs_CZ\\\\Person\\:\\:birthNumber\\(\\) has invalid type Faker\\\\Provider\\\\cs_CZ\\\\czech\\.$#"
+			message: "#^Method Faker\\\\Provider\\\\cs_CZ\\\\Person\\:\\:birthNumber\\(\\) should return Faker\\\\Provider\\\\cs_CZ\\\\czech but returns string\\.$#"
 			count: 1
 			path: src/Faker/Provider/cs_CZ/Person.php
 
 		-
-			message: "#^Method Faker\\\\Provider\\\\cs_CZ\\\\Person\\:\\:birthNumber\\(\\) should return Faker\\\\Provider\\\\cs_CZ\\\\czech but returns string\\.$#"
+			message: "#^Return typehint of method Faker\\\\Provider\\\\cs_CZ\\\\Person\\:\\:birthNumber\\(\\) has invalid type Faker\\\\Provider\\\\cs_CZ\\\\czech\\.$#"
 			count: 1
 			path: src/Faker/Provider/cs_CZ/Person.php
 
@@ -836,12 +836,12 @@ parameters:
 			path: src/Faker/Provider/en_ZA/Person.php
 
 		-
-			message: "#^Method Faker\\\\Provider\\\\fa_IR\\\\Person\\:\\:createAreaCode\\(\\) never returns int so it can be removed from the return typehint\\.$#"
+			message: "#^Binary operation \"\\*\" between string and int\\<2, max\\> results in an error\\.$#"
 			count: 1
 			path: src/Faker/Provider/fa_IR/Person.php
 
 		-
-			message: "#^Binary operation \"\\*\" between string and int\\<2, max\\> results in an error\\.$#"
+			message: "#^Method Faker\\\\Provider\\\\fa_IR\\\\Person\\:\\:createAreaCode\\(\\) never returns int so it can be removed from the return typehint\\.$#"
 			count: 1
 			path: src/Faker/Provider/fa_IR/Person.php
 
@@ -866,6 +866,16 @@ parameters:
 			path: src/Faker/Provider/is_IS/Address.php
 
 		-
+			message: "#^Binary operation \"\\*\" between string and string results in an error\\.$#"
+			count: 1
+			path: src/Faker/Provider/is_IS/Person.php
+
+		-
+			message: "#^Parameter \\#1 \\$array of static method Faker\\\\Provider\\\\Base\\:\\:randomElement\\(\\) expects array, string given\\.$#"
+			count: 1
+			path: src/Faker/Provider/is_IS/Person.php
+
+		-
 			message: "#^Static property Faker\\\\Provider\\\\is_IS\\\\Person\\:\\:\\$firstNameFemale \\(string\\) does not accept default value of type array\\<int, string\\>\\.$#"
 			count: 1
 			path: src/Faker/Provider/is_IS/Person.php
@@ -881,17 +891,7 @@ parameters:
 			path: src/Faker/Provider/is_IS/Person.php
 
 		-
-			message: "#^Parameter \\#1 \\$array of static method Faker\\\\Provider\\\\Base\\:\\:randomElement\\(\\) expects array, string given\\.$#"
-			count: 1
-			path: src/Faker/Provider/is_IS/Person.php
-
-		-
-			message: "#^Binary operation \"\\*\" between string and string results in an error\\.$#"
-			count: 1
-			path: src/Faker/Provider/is_IS/Person.php
-
-		-
-			message: "#^Call to an undefined static method Faker\\\\Provider\\\\ja_JP\\\\Text\\:\\:split\\(\\)\\.$#"
+			message: "#^Call to an undefined static method static\\(Faker\\\\Provider\\\\ja_JP\\\\Text\\)\\:\\:split\\(\\)\\.$#"
 			count: 1
 			path: src/Faker/Provider/ja_JP/Text.php
 
@@ -906,7 +906,7 @@ parameters:
 			path: src/Faker/Provider/pl_PL/Company.php
 
 		-
-			message: "#^Parameter \\$birthdate of method Faker\\\\Provider\\\\pl_PL\\\\Person\\:\\:pesel\\(\\) has invalid typehint type Faker\\\\Provider\\\\pl_PL\\\\DateTime\\.$#"
+			message: "#^Binary operation \"\\+\" between string and int results in an error\\.$#"
 			count: 1
 			path: src/Faker/Provider/pl_PL/Person.php
 
@@ -916,7 +916,7 @@ parameters:
 			path: src/Faker/Provider/pl_PL/Person.php
 
 		-
-			message: "#^Binary operation \"\\+\" between string and int results in an error\\.$#"
+			message: "#^Parameter \\$birthdate of method Faker\\\\Provider\\\\pl_PL\\\\Person\\:\\:pesel\\(\\) has invalid typehint type Faker\\\\Provider\\\\pl_PL\\\\DateTime\\.$#"
 			count: 1
 			path: src/Faker/Provider/pl_PL/Person.php
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="4.3.2@57b53ff26237074fdf5cbcb034f7da5172be4524">
+<files psalm-version="4.7.1@cd53e047a58f71f646dd6bf45476076ab07b5d44">
   <file src="src/Faker/Calculator/Luhn.php">
     <InvalidReturnStatement occurrences="1">
       <code>0</code>
@@ -217,10 +217,6 @@
     </InvalidReturnType>
   </file>
   <file src="src/Faker/Provider/pl_PL/Person.php">
-    <NonStaticSelfCall occurrences="2">
-      <code>static::title()</code>
-      <code>static::title()</code>
-    </NonStaticSelfCall>
     <UndefinedDocblockClass occurrences="1">
       <code>DateTime</code>
     </UndefinedDocblockClass>
