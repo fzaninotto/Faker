@@ -3,5 +3,5 @@
 /vendor-bin/php-cs-fixer/vendor/
 /vendor-bin/phpstan/vendor/
 /vendor-bin/psalm/vendor/
-/.php_cs.cache
+/.php-cs-fixer.cache
 /composer.lock

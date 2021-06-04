@@ -60,4 +60,4 @@ jobs:
 
       - name: Run php-cs-fixer
         run: |
-          vendor/bin/php-cs-fixer fix --diff --diff-format=udiff --dry-run --verbose
+          vendor/bin/php-cs-fixer fix --diff --dry-run --verbose

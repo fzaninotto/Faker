@@ -10,7 +10,7 @@ Before proposing a pull request, please read these contribution guidelines.
 
 * Communicate in English on issues and pull requests.
 * Pull requests should only contain related changes.
-* Your code should follow [our coding standard](/.php_cs.dist). Run `make cs` to fix code style issues.
+* Your code should follow [our coding standard](/.php-cs-fixer.dist.php). Run `make cs` to fix code style issues.
 * Your code should be covered by unit tests.
 * All checks must pass before your code is merged. Run `make test` to run unit tests.
 

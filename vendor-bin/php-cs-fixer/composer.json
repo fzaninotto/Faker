@@ -1,7 +1,7 @@
 {
     "require": {
         "php": "^7.1 || ^8.0",
-        "friendsofphp/php-cs-fixer": "^2.18.6"
+        "friendsofphp/php-cs-fixer": "^3.0.0"
     },
     "config": {
         "platform": {
