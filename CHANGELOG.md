@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 2021-07-06, v1.15
+
+- Updated the generator phpdoc to help identify magic methods (#307)
+- Prevent direct access and triggered deprecation warning for "word" (#302)
+- Updated length on all global e164 numbers (#301)
+- Updated last names from different source (#312)
+- Don't generate birth number of '000' for Swedish personal identity (#306)
+- Add job list for localization id_ID (#339)
+
 ## 2021-03-30, v1.14.1
 
 - Fix where randomNumber and randomFloat would return a 0 value (#291 / #292)
