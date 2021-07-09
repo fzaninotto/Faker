@@ -5,6 +5,8 @@ namespace Faker;
 /**
  * Proxy for other generators, to return only valid values. Works with
  * Faker\Generator\Base->valid()
+ *
+ * @mixin Generator
  */
 class ValidGenerator
 {

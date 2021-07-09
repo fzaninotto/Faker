@@ -5,6 +5,8 @@ namespace Faker;
 /**
  * Proxy for other generators, to return only unique values. Works with
  * Faker\Generator\Base->unique()
+ *
+ * @mixin Generator
  */
 class UniqueGenerator
 {

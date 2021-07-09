@@ -5,6 +5,8 @@ namespace Faker;
 /**
  * This generator returns a default value for all called properties
  * and methods. It works with Faker\Generator\Base->optional().
+ *
+ * @mixin Generator
  */
 class DefaultGenerator
 {
