@@ -84,7 +84,7 @@ class Company extends \Faker\Provider\Company
                 break;
 
             case 2:
-                $companyName = static::randomElement(static::$store) . ' ' . $this->generator->lastName;
+                $companyName = static::randomElement(static::$store) . ' ' . $this->generator->lastName();
 
                 break;
         }
