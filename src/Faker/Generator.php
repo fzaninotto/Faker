@@ -617,31 +617,44 @@ class Generator
         }
     }
 
-    public function format($formatter, $arguments = [])
+    public function format($format, $arguments = [])
     {
-        return call_user_func_array($this->getFormatter($formatter), $arguments);
+        return call_user_func_array($this->getFormatter($format), $arguments);
     }
 
     /**
-     * @param string $formatter
+     * @param string $format
      *
      * @return callable
      */
-    public function getFormatter($formatter)
+    public function getFormatter($format)
     {
-        if (isset($this->formatters[$formatter])) {
-            return $this->formatters[$formatter];
+        if (isset($this->formatters[$format])) {
+            return $this->formatters[$format];
+        }
+
+        if (method_exists($this, $format)) {
+            $this->formatters[$format] = [$this, $format];
+
+            return $this->formatters[$format];
+        }
+
+        // "Faker\Core\Barcode->ean13"
+        if (preg_match('|^([a-zA-Z0-9\\\]+)->([a-zA-Z0-9]+)$|', $format, $matches)) {
+            $this->formatters[$format] = [$this->ext($matches[1]), $matches[2]];
+
+            return $this->formatters[$format];
         }
 
         foreach ($this->providers as $provider) {
-            if (method_exists($provider, $formatter)) {
-                $this->formatters[$formatter] = [$provider, $formatter];
+            if (method_exists($provider, $format)) {
+                $this->formatters[$format] = [$provider, $format];
 
-                return $this->formatters[$formatter];
+                return $this->formatters[$format];
             }
         }
 
-        throw new \InvalidArgumentException(sprintf('Unknown formatter "%s"', $formatter));
+        throw new \InvalidArgumentException(sprintf('Unknown format "%s"', $format));
     }
 
     /**
@@ -653,7 +666,11 @@ class Generator
      */
     public function parse($string)
     {
-        return preg_replace_callback('/\{\{\s?(\w+)\s?\}\}/u', [$this, 'callFormatWithMatches'], $string);
+        $callback = function ($matches) {
+            return $this->format($matches[1]);
+        };
+
+        return preg_replace_callback('/\{\{\s?(\w+)\s?\}\}/u', $callback, $string);
     }
 
     /**
@@ -839,8 +856,13 @@ class Generator
         return $this->ext(Extension\VersionExtension::class)->semver($preRelease, $build);
     }
 
+    /**
+     * @deprecated
+     */
     protected function callFormatWithMatches($matches)
     {
+        trigger_deprecation('fakerphp/faker', '1.14', 'Protected method "callFormatWithMatches()" is deprecated and will be removed.');
+
         return $this->format($matches[1]);
     }
 

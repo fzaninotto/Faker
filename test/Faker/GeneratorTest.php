@@ -2,8 +2,11 @@
 
 namespace Faker\Test;
 
+use Faker\Core\Blood;
 use Faker\Core\File;
+use Faker\Extension\BloodExtension;
 use Faker\Extension\Container;
+use Faker\Extension\ContainerBuilder;
 use Faker\Extension\ExtensionNotFound;
 use Faker\Extension\FileExtension;
 use Faker\Generator;
@@ -109,6 +112,26 @@ final class GeneratorTest extends TestCase
         $provider = new Fixture\Provider\FooProvider();
         $this->faker->addProvider($provider);
         self::assertEquals('bazfoo', $this->faker->format('fooFormatterWithArguments', ['foo']));
+    }
+
+    public function testFormatterCallsGenerator()
+    {
+        $builder = new ContainerBuilder();
+        $builder->add(Blood::class, BloodExtension::class);
+        $faker = new Generator($builder->build());
+
+        $output = $faker->format('bloodType');
+        self::assertTrue(in_array($output, ['A', 'AB', 'B', '0'], true));
+    }
+
+    public function testFormatterCallsExtension()
+    {
+        $builder = new ContainerBuilder();
+        $builder->add(Blood::class);
+        $faker = new Generator($builder->build());
+
+        $output = $faker->format('Faker\Core\Blood->bloodType');
+        self::assertTrue(in_array($output, ['A', 'AB', 'B', '0'], true));
     }
 
     public function testParseReturnsSameStringWhenItContainsNoCurlyBraces()
