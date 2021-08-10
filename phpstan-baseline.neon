@@ -921,6 +921,11 @@ parameters:
 			path: src/Faker/Provider/pl_PL/Person.php
 
 		-
+			message: "#^Parameter \\#1 \\$function of function call_user_func expects callable\\(\\)\\: mixed, non\\-empty\\-string given\\.$#"
+			count: 3
+			path: src/Faker/Provider/pt_BR/PhoneNumber.php
+
+		-
 			message: "#^Binary operation \"\\*\" between string and int results in an error\\.$#"
 			count: 1
 			path: src/Faker/Provider/pt_BR/check_digit.php
