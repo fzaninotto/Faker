@@ -16,5 +16,5 @@ interface GeneratorAwareExtension extends Extension
      * immutability of the extension, and MUST return an instance that has the
      * new Generator.
      */
-    public function withGenerator(Generator $generator): self;
+    public function withGenerator(Generator $generator): Extension;
 }
