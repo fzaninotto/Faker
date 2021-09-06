@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## 2021-09-06, v1.16
+
+- Add Company extension
+- Add Address extension
+- Add Person extension
+- Add PhoneNumber extension
+- Add VersionExtension (#350)
+- Stricter types in Extension\Container and Extension\GeneratorAwareExtension (#345)
+- Fix deprecated property access in `nl_NL` (#348)
+- Add support for `psr/container` >= 2.0 (#354)
+- Add missing union types in Faker\Generator (#352)
+
 ## 2021-07-06, v1.15
 
 - Updated the generator phpdoc to help identify magic methods (#307)
