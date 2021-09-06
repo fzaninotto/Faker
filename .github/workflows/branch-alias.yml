@@ -63,4 +63,4 @@ jobs:
           commit-message: Updating branch alias to ${{ steps.find_alias.outputs.alias }}
           title: Update branch alias
           body: |
-            Since we just tagged a new version, we need to update composer.json branch alias.
+            Since we just tagged a new version, we need to update composer.json branch alias. This should not be merged until there are new features, as it would prevent patch releases.
