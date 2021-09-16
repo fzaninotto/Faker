@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9731d52d4961ffacdfb54ce3ae3e4a49",
+    "content-hash": "6feb458185a9dd68bf51d3977c3070c4",
     "packages": [
         {
             "name": "phpstan/extension-installer",
@@ -53,16 +53,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "0.12.94",
+            "version": "0.12.99",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "3d0ba4c198a24e3c3fc489f3ec6ac9612c4be5d6"
+                "reference": "b4d40f1d759942f523be267a1bab6884f46ca3f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/3d0ba4c198a24e3c3fc489f3ec6ac9612c4be5d6",
-                "reference": "3d0ba4c198a24e3c3fc489f3ec6ac9612c4be5d6",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/b4d40f1d759942f523be267a1bab6884f46ca3f7",
+                "reference": "b4d40f1d759942f523be267a1bab6884f46ca3f7",
                 "shasum": ""
             },
             "require": {
@@ -93,7 +93,7 @@
             "description": "PHPStan - PHP Static Analysis Tool",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/0.12.94"
+                "source": "https://github.com/phpstan/phpstan/tree/0.12.99"
             },
             "funding": [
                 {
@@ -113,7 +113,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-07-30T09:05:27+00:00"
+            "time": "2021-09-12T20:09:55+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",

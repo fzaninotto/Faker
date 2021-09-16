@@ -906,7 +906,7 @@ parameters:
 			path: src/Faker/Provider/pl_PL/Company.php
 
 		-
-			message: "#^Binary operation \"\\+\" between string and int results in an error\\.$#"
+			message: "#^Binary operation \"\\+\" between string and int\\<\\-80, 80\\> results in an error\\.$#"
 			count: 1
 			path: src/Faker/Provider/pl_PL/Person.php
 
@@ -919,11 +919,6 @@ parameters:
 			message: "#^Parameter \\$birthdate of method Faker\\\\Provider\\\\pl_PL\\\\Person\\:\\:pesel\\(\\) has invalid typehint type Faker\\\\Provider\\\\pl_PL\\\\DateTime\\.$#"
 			count: 1
 			path: src/Faker/Provider/pl_PL/Person.php
-
-		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func expects callable\\(\\)\\: mixed, non\\-empty\\-string given\\.$#"
-			count: 3
-			path: src/Faker/Provider/pt_BR/PhoneNumber.php
 
 		-
 			message: "#^Binary operation \"\\*\" between string and int results in an error\\.$#"
