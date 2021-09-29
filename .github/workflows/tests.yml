@@ -23,6 +23,7 @@ jobs:
           - '7.3'
           - '7.4'
           - '8.0'
+          - '8.1'
         include:
           - operating-system: 'windows-latest'
             php-version: '7.1'
@@ -55,10 +56,12 @@ jobs:
             composer-
 
       - name: Download dependencies
-        run: |
-          composer update --no-interaction --no-progress --optimize-autoloader
-          ./vendor/bin/simple-phpunit install
+        run: composer update --no-interaction --no-progress --optimize-autoloader
 
-      - name: Run tests with PHPUnit
-        run: |
-          ./vendor/bin/simple-phpunit
+      - name: Run tests
+        if: ${{ '8.1' != matrix.php-version }}
+        run: ./vendor/bin/simple-phpunit
+
+      - name: Run tests for php 8.1
+        if: ${{ '8.1' == matrix.php-version }}
+        run: SYMFONY_PHPUNIT_VERSION=9.5 ./vendor/bin/simple-phpunit

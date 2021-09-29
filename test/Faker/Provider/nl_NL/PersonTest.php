@@ -18,7 +18,7 @@ final class PersonTest extends TestCase
         $sum = -1 * $idNumber % 10;
 
         for ($multiplier = 2; $idNumber > 0; ++$multiplier) {
-            $val = ($idNumber /= 10) % 10;
+            $val = (int) ($idNumber /= 10) % 10;
             $sum += $multiplier * $val;
         }
         self::assertTrue($sum != 0 && $sum % 11 == 0);
