@@ -21,11 +21,6 @@ parameters:
 			path: src/Faker/Extension/ContainerBuilder.php
 
 		-
-			message: "#^PHPDoc tag @throws with type Faker\\\\Extension\\\\ExtensionNotFound\\|Psr\\\\Container\\\\ContainerExceptionInterface is not subtype of Throwable$#"
-			count: 1
-			path: src/Faker/Generator.php
-
-		-
 			message: "#^Unreachable statement \\- code above always terminates\\.$#"
 			count: 1
 			path: src/Faker/Guesser/Name.php
