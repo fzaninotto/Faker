@@ -3,3 +3,4 @@ parameters:
         - '#\[BC\] CHANGED: Property Faker\\Provider\\[a-zA-Z]+::\$[1-9a-zA-Z]+ changed default value#'
         - '#\[BC\] CHANGED: Property Faker\\Provider\\[a-z_A-Z]+\\[a-zA-Z]+::\$[1-9a-zA-Z]+ changed default value#'
         - '#\[BC\] CHANGED: Property Faker\\Factory::\$defaultProviders changed default value#'
+        - '#\[BC\] CHANGED: Type documentation for property Faker\\Provider\\en_ZA\\Internet::\$tld changed from having no type to array#'
