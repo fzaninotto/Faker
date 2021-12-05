@@ -188,6 +188,11 @@
       <code>czech</code>
     </UndefinedDocblockClass>
   </file>
+  <file src="src/Faker/Provider/en_SG/Person.php">
+    <InvalidArrayOffset occurrences="1">
+      <code>$checksumArr[$checksum % 11]</code>
+    </InvalidArrayOffset>
+  </file>
   <file src="src/Faker/Provider/is_IS/Address.php">
     <InvalidPropertyAssignmentValue occurrences="1"/>
     <UndefinedDocblockClass occurrences="2">
