@@ -1,6 +1,8 @@
-# CHANGELOG
+# Changelog
 
-## 2021-09-06, v1.16
+## [Unreleased](https://github.com/FakerPHP/Faker/compare/v1.16.0..main)
+
+## [2021-09-06, v1.16.0](https://github.com/FakerPHP/Faker/compare/v1.15.0..v1.16.0)
 
 - Add Company extension
 - Add Address extension
@@ -12,7 +14,7 @@
 - Add support for `psr/container` >= 2.0 (#354)
 - Add missing union types in Faker\Generator (#352)
 
-## 2021-07-06, v1.15
+## [2021-07-06, v1.15.0](https://github.com/FakerPHP/Faker/compare/v1.14.1..v1.15.0)
 
 - Updated the generator phpdoc to help identify magic methods (#307)
 - Prevent direct access and triggered deprecation warning for "word" (#302)
@@ -21,11 +23,11 @@
 - Don't generate birth number of '000' for Swedish personal identity (#306)
 - Add job list for localization id_ID (#339)
 
-## 2021-03-30, v1.14.1
+## [2021-03-30, v1.14.1](https://github.com/FakerPHP/Faker/compare/v1.14.0..v1.14.1)
 
 - Fix where randomNumber and randomFloat would return a 0 value (#291 / #292)
 
-## 2021-03-29, v1.14.0
+## [2021-03-29, v1.14.0](https://github.com/FakerPHP/Faker/compare/v1.13.0..v1.14.0)
 
 - Fix for realText to ensure the text keeps closer to its boundaries (#152)
 - Fix where regexify produces a random character instead of a literal dot (#135
@@ -57,7 +59,7 @@
 - Various code style updates
 - Added a note about our breaking change promise (#273)
 
-## 2020-12-18, v1.13.0
+## [2020-12-18, v1.13.0](https://github.com/FakerPHP/Faker/compare/v1.12.1..v1.13.0)
 
 Several fixes and new additions in this release. A lot of cleanup has been done
 on the codebase on both tests and consistency.
@@ -85,11 +87,11 @@ on the codebase on both tests and consistency.
 - Remove json_decode from emoji generation (#123)
 - Remove ro street address (#146)
 
-## 2020-12-11, v1.12.1
+## [2020-12-11, v1.12.1](https://github.com/FakerPHP/Faker/compare/v1.12.0..v1.12.1)
 
 This is a security release that prevents a hacker to execute code on the server.
 
-## 2020-11-23, v1.12.0
+## [2020-11-23, v1.12.0](https://github.com/FakerPHP/Faker/compare/v1.11.0..v1.12.0)
 
 - Fix ro_RO first and last day of year calculation offset (#65)
 - Fix en_NG locale test namespaces that did not match PSR-4 (#57)
@@ -97,20 +99,20 @@ This is a security release that prevents a hacker to execute code on the server.
 - Added provider for Lithuanian municipalities (#58)
 - Added blood types provider (#61)
 
-## 2020-11-15, v1.11.0
+## [2020-11-15, v1.11.0](https://github.com/FakerPHP/Faker/compare/v1.10.1..v1.11.0)
 
 - Added Provider for Swedish Municipalities
 - Updates to person names in pt_BR
 - Many code style changes
 
-## 2020-10-28, v1.10.1
+## [2020-10-28, v1.10.1](https://github.com/FakerPHP/Faker/compare/v1.10.0..v1.10.1)
 
 - Updates the Danish addresses in dk_DK
 - Removed offense company names in nl_NL
 - Clarify changelog with original fork
 - Standin replacement for LoremPixel to Placeholder.com (#11)
 
-## 2020-10-27, v1.10.0
+## [2020-10-27, v1.10.0](https://github.com/FakerPHP/Faker/compare/v1.9.1..v1.10.0)
 
 - Support PHP 7.1-8.0
 - Fix typo in de_DE Company Provider
