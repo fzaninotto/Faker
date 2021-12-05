@@ -1,6 +1,15 @@
-# Changelog
+# CHANGELOG
 
-## [Unreleased](https://github.com/FakerPHP/Faker/compare/v1.16.0..main)
+## [Unreleased](https://github.com/FakerPHP/Faker/compare/v1.17.0..main)
+
+## [2021-12-05, v1.17.0](https://github.com/FakerPHP/Faker/compare/v1.16.0..v1.17.0)
+
+- Partial PHP 8.1 compatibility (#373)
+- Add payment provider for `ne_NP` locale (#375)
+- Add Egyptian Arabic `ar_EG` locale (#377)
+- Updated list of South African TLDs (#383)
+- Fixed formatting of E.164 numbers (#380)
+- Allow `symfony/deprecation-contracts` `^3.0` (#397)
 
 ## [2021-09-06, v1.16.0](https://github.com/FakerPHP/Faker/compare/v1.15.0..v1.16.0)
 
