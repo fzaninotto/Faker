@@ -279,8 +279,10 @@ class Payment extends Base
      * @link    http://en.wikipedia.org/wiki/ISO_9362
      * @return  string Swift/Bic number
      */
-    public static function swiftBicNumber()
+    public static function swiftBicNumber($countryCode = null)
     {
-        return self::regexify("^([A-Z]){4}([A-Z]){2}([0-9A-Z]){2}([0-9A-Z]{3})?$");
+        $countryCode = null === $countryCode ? self::randomKey(self::$ibanFormats) : strtoupper($countryCode);
+
+        return self::regexify('^([A-Z]){4}' . $countryCode. '([0-9A-Z]){2}([0-9A-Z]{3})?$');
     }
 }

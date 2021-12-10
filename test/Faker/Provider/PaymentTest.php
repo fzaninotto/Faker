@@ -9,6 +9,7 @@ use Faker\Provider\Base as BaseProvider;
 use Faker\Provider\DateTime as DateTimeProvider;
 use Faker\Provider\Payment as PaymentProvider;
 use Faker\Provider\Person as PersonProvider;
+use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\TestCase;
 
 final class PaymentTest extends TestCase
@@ -205,5 +206,39 @@ final class PaymentTest extends TestCase
 
         // Test checksum
         $this->assertTrue(Iban::isValid($iban), "Checksum for $iban is invalid");
+    }
+
+    /**
+     * @dataProvider bicCountryProvider
+     */
+    public function testSwiftBicNumber($country = null)
+    {
+        if (null === $country) {
+            $bic = $this->faker->swiftBicNumber;
+        } else {
+            $bic = $this->faker->swiftBicNumber($country);
+        }
+
+        $this->assertContains(strlen($bic), array(8, 11));
+        $this->assertTrue(ctype_alnum($bic));
+        $this->assertTrue(ctype_alpha(substr($bic, 0, 4)));
+
+        $bicCountryCode = substr($bic, 4, 2);
+        $this->assertTrue(ctype_alpha($bicCountryCode));
+        $countryCodes = Assert::readAttribute('\\Faker\\Provider\\Miscellaneous', 'countryCode');
+        $this->assertContains($bicCountryCode, $countryCodes);
+
+        if ($country) {
+            $this->assertEquals($country, $bicCountryCode);
+        }
+    }
+
+    public function bicCountryProvider()
+    {
+        return array(
+            array(null),
+            array('IT'),
+            array('GB'),
+        );
     }
 }
