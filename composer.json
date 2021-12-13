@@ -44,6 +44,9 @@
         "ext-mbstring": "Required for multibyte Unicode string functionality."
     },
     "config": {
+        "allow-plugins": {
+            "bamarni/composer-bin-plugin": true
+        },
         "sort-packages": true
     },
     "extra": {
