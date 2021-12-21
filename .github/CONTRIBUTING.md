@@ -20,7 +20,7 @@ When writing code for Faker, you should know about these conventions / best prac
 
 * Never use `rand()` in your provider. Faker utilizes the Mersenne Twister Randomizer, so use `mt_rand()` or any of the base generators (`randomNumber`, `randomElement`, etc.) instead.
 * If you add a new provider which embeds a lot of data (e.g. first names in a new language), please add a `@see` PHPDoc to the reference you used for this list (example [in the `en_US` locale](https://github.com/FakerPHP/Faker/blob/main/src/Faker/Provider/en_US/Text.php#L35)). This will ease future updates of the list and debates about the most relevant data for this provider.
-* If you add long list of random data, please split the list into several lines. This makes diffs easier to read, and facilitates core review.
+* If you add long list of random data, please split the list into several lines. This makes diffs easier to read, and facilitates code review.
 * If you add a new formatter, please document it in [the documentation](https://github.com/FakerPHP/fakerphp.github.io). Please add a line about the new formatter in the `@property` or `@method` PHPDoc entries in [Generator.php](https://github.com/FakerPHP/Faker/blob/main/src/Faker/Generator.php#L6-L118) to help IDEs with autocompletion.
 * If your new formatter is specific to a certain locale, document them in the respective [locale documentation](https://github.com/FakerPHP/fakerphp.github.io/tree/main/docs/locales).
 * Avoid changing existing sets of data. Some developers use Faker for seeding unit tests, changing the data makes their tests fail.
