@@ -601,6 +601,8 @@ class Generator
     public function addProvider($provider)
     {
         array_unshift($this->providers, $provider);
+
+        $this->formatters = [];
     }
 
     public function getProviders()

@@ -2,6 +2,8 @@
 
 ## [Unreleased](https://github.com/FakerPHP/Faker/compare/v1.17.0..main)
 
+- Reset formatters when adding a new provider (#366)
+
 ## [2021-12-05, v1.17.0](https://github.com/FakerPHP/Faker/compare/v1.16.0..v1.17.0)
 
 - Partial PHP 8.1 compatibility (#373)

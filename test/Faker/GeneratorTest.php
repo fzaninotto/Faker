@@ -87,6 +87,24 @@ final class GeneratorTest extends TestCase
         self::assertEquals($expected, $this->faker->getFormatter('fooFormatter'));
     }
 
+    public function testAddProviderClearsPreviousFormatters(): void
+    {
+        $this->faker->addProvider(new Fixture\Provider\FooProvider());
+
+        $this->faker->fooFormatter();
+
+        $newProvider = new Fixture\Provider\BarProvider();
+
+        $this->faker->addProvider($newProvider);
+
+        $expected = [
+            $newProvider,
+            'fooFormatter',
+        ];
+
+        self::assertSame($expected, $this->faker->getFormatter('fooFormatter'));
+    }
+
     public function testGetFormatterThrowsExceptionOnIncorrectProvider()
     {
         $this->expectException(\InvalidArgumentException::class);
