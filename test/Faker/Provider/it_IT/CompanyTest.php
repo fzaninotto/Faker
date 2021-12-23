@@ -12,8 +12,8 @@ final class CompanyTest extends TestCase
 {
     public function testIfTaxIdCanReturnData()
     {
-        $vatId = $this->faker->vatId();
-        self::assertMatchesRegularExpression('/^IT[0-9]{11}$/', $vatId);
+        $vat = $this->faker->vat();
+        self::assertMatchesRegularExpression('/^IT[0-9]{11}$/', $vat);
     }
 
     protected function getProviders(): iterable
