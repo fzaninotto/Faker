@@ -176,13 +176,21 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
+     * Note! When calculating individual identification number
+     *   2000-01-01 - 2000-12-31 counts as 21th century
+     *   1900-01-01 - 1900-12-31 counts as 20th century
+     *
      * @param int $year
      *
-     * @return int|null
+     * @return int
      */
     private static function getCenturyByYear($year)
     {
-        if ($year >= 2000 && $year <= DateTime::year()) {
+        if (($year >= 2100) || ($year < 1800)) {
+            throw new \InvalidArgumentException('Unexpected century');
+        }
+
+        if ($year >= 2000) {
             return self::CENTURY_21ST;
         }
 
@@ -190,11 +198,7 @@ class Person extends \Faker\Provider\Person
             return self::CENTURY_20TH;
         }
 
-        if ($year >= 1800) {
-            return self::CENTURY_19TH;
-        }
-
-        return null;
+        return self::CENTURY_19TH;
     }
 
     /**
