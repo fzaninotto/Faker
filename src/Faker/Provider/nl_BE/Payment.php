@@ -5,7 +5,7 @@ namespace Faker\Provider\nl_BE;
 class Payment extends \Faker\Provider\Payment
 {
     /**
-     * International Bank Account Number (IBAN)
+     * International Bank Account Number (IBAN).
      *
      * @see http://en.wikipedia.org/wiki/International_Bank_Account_Number
      *
@@ -21,7 +21,7 @@ class Payment extends \Faker\Provider\Payment
     }
 
     /**
-     * Value Added Tax (VAT)
+     * Value Added Tax (VAT).
      *
      * @example 'BE0123456789', ('spaced') 'BE 0123456789'
      *
@@ -37,6 +37,13 @@ class Payment extends \Faker\Provider\Payment
     {
         $prefix = $spacedNationalPrefix ? 'BE ' : 'BE';
 
-        return sprintf('%s0%d', $prefix, self::randomNumber(9, true));
+        // Generate 7 numbers of vat.
+        $firstSeven = self::randomNumber(7, true);
+
+        // Generate checksum for number
+        $checksum = 97 - fmod($firstSeven, 97);
+
+        // '0' + 7 numbers + checksum
+        return sprintf('%s0%s%s', $prefix, $firstSeven, $checksum);
     }
 }
