@@ -51,7 +51,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "v1.17-dev"
+            "dev-main": "v1.18-dev"
         }
     }
 }
