@@ -4,9 +4,11 @@ namespace Faker;
 
 /**
  * This generator returns a default value for all called properties
- * and methods. It works with Faker\Generator\Base->optional().
+ * and methods.
  *
  * @mixin Generator
+ *
+ * @deprecated Use ChanceGenerator instead
  */
 class DefaultGenerator
 {
@@ -14,7 +16,14 @@ class DefaultGenerator
 
     public function __construct($default = null)
     {
+        trigger_deprecation('fakerphp/faker', '1.16', 'Class "%s" is deprecated, use "%s" instead.', __CLASS__, ChanceGenerator::class);
+
         $this->default = $default;
+    }
+
+    public function ext()
+    {
+        return $this;
     }
 
     /**

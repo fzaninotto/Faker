@@ -40,7 +40,7 @@ final class Number implements Extension\NumberExtension
         return mt_rand(1, 9);
     }
 
-    public function randomFloat(int $nbMaxDecimals = null, float $min = 0, float $max = null): float
+    public function randomFloat(?int $nbMaxDecimals = null, float $min = 0, ?float $max = null): float
     {
         if (null === $nbMaxDecimals) {
             $nbMaxDecimals = $this->randomDigit();

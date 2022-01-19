@@ -37,7 +37,7 @@ interface NumberExtension extends Extension
      *
      * @example 48.8932
      */
-    public function randomFloat(?int $nbMaxDecimals, float $min, float $max): float;
+    public function randomFloat(?int $nbMaxDecimals, float $min, ?float $max): float;
 
     /**
      * Returns a random integer with 0 to $nbDigits digits.

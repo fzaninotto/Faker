@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="4.7.1@cd53e047a58f71f646dd6bf45476076ab07b5d44">
+<files psalm-version="4.17.0@6f4707aa41c9174353a6434bba3fc8840f981d9c">
   <file src="src/Faker/Calculator/Luhn.php">
     <InvalidReturnStatement occurrences="1">
       <code>0</code>
@@ -9,10 +9,17 @@
     </InvalidReturnType>
   </file>
   <file src="src/Faker/Generator.php">
-    <InvalidThrow occurrences="1">
-      <code>ContainerExceptionInterface</code>
-    </InvalidThrow>
-  </file>
+    <InvalidReturnStatement occurrences="3">
+      <code>$this-&gt;uniqueGenerator</code>
+      <code>new ChanceGenerator($this, $weight, $default)</code>
+      <code>new ValidGenerator($this, $validator, $maxRetries)</code>
+    </InvalidReturnStatement>
+    <InvalidReturnType occurrences="3">
+      <code>self</code>
+      <code>self</code>
+      <code>self</code>
+    </InvalidReturnType>
+    </file>
   <file src="src/Faker/ORM/CakePHP/EntityPopulator.php">
     <UndefinedClass occurrences="1">
       <code>TableRegistry</code>

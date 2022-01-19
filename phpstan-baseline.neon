@@ -21,6 +21,21 @@ parameters:
 			path: src/Faker/Extension/ContainerBuilder.php
 
 		-
+			message: "#^Method Faker\\\\Generator\\:\\:optional\\(\\) should return Faker\\\\Generator but returns Faker\\\\ChanceGenerator\\.$#"
+			count: 1
+			path: src/Faker/Generator.php
+
+		-
+			message: "#^Method Faker\\\\Generator\\:\\:unique\\(\\) should return Faker\\\\Generator but returns Faker\\\\UniqueGenerator\\.$#"
+			count: 1
+			path: src/Faker/Generator.php
+
+		-
+			message: "#^Method Faker\\\\Generator\\:\\:valid\\(\\) should return Faker\\\\Generator but returns Faker\\\\ValidGenerator\\.$#"
+			count: 1
+			path: src/Faker/Generator.php
+
+		-
 			message: "#^Unreachable statement \\- code above always terminates\\.$#"
 			count: 1
 			path: src/Faker/Guesser/Name.php
@@ -733,6 +748,15 @@ parameters:
 		-
 			message: "#^Instanceof between array and Traversable will always evaluate to false\\.$#"
 			count: 2
+			path: src/Faker/Provider/Base.php
+
+		-
+			message:
+				"""
+					#^Instantiation of deprecated class Faker\\\\DefaultGenerator\\:
+					Use ChanceGenerator instead$#
+				"""
+			count: 1
 			path: src/Faker/Provider/Base.php
 
 		-

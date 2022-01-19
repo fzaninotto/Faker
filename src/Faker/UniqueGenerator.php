@@ -2,6 +2,8 @@
 
 namespace Faker;
 
+use Faker\Extension\Extension;
+
 /**
  * Proxy for other generators that returns only unique values.
  *
@@ -11,14 +13,7 @@ namespace Faker;
  */
 class UniqueGenerator
 {
-    /**
-     * @var Generator
-     */
     protected $generator;
-
-    /**
-     * @var int
-     */
     protected $maxRetries;
 
     /**
@@ -34,12 +29,20 @@ class UniqueGenerator
     protected $uniques = [];
 
     /**
-     * @param int $maxRetries
+     * @param Extension|Generator                $generator
+     * @param int                                $maxRetries
+     * @param array<string, array<string, null>> $uniques
      */
-    public function __construct(Generator $generator, $maxRetries = 10000)
+    public function __construct($generator, $maxRetries = 10000, &$uniques = [])
     {
         $this->generator = $generator;
         $this->maxRetries = $maxRetries;
+        $this->uniques = &$uniques;
+    }
+
+    public function ext(string $id)
+    {
+        return new self($this->generator->ext($id), $this->maxRetries, $this->uniques);
     }
 
     /**

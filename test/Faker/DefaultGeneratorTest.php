@@ -25,6 +25,9 @@ final class DefaultGeneratorTest extends TestCase
         self::assertNotNull($generator->bar);
     }
 
+    /**
+     * @group legacy
+     */
     public function testGeneratorReturnsDefaultValueForAnyMethodCall()
     {
         $generator = new DefaultGenerator(123);
