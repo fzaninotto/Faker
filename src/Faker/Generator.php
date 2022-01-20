@@ -736,7 +736,7 @@ class Generator
             return $this->format($matches[1]);
         };
 
-        return preg_replace_callback('/\{\{\s?(\w+)\s?\}\}/u', $callback, $string);
+        return preg_replace_callback('/{{\s?(\w+|[\w\\\]+->\w+?)\s?}}/u', $callback, $string);
     }
 
     /**
