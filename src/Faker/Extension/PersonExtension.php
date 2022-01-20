@@ -13,11 +13,9 @@ interface PersonExtension extends Extension
     /**
      * @param string|null $gender 'male', 'female' or null for any
      *
-     * @return string
-     *
      * @example 'John Doe'
      */
-    public function name(?string $gender = null);
+    public function name(?string $gender = null): string;
 
     /**
      * @param string|null $gender 'male', 'female' or null for any
