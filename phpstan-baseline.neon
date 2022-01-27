@@ -865,16 +865,6 @@ parameters:
 			path: src/Faker/Provider/id_ID/Person.php
 
 		-
-			message: "#^Property Faker\\\\Provider\\\\is_IS\\\\Address\\:\\:\\$postcode has unknown class Faker\\\\Provider\\\\is_IS\\\\Icelandic as its type\\.$#"
-			count: 1
-			path: src/Faker/Provider/is_IS/Address.php
-
-		-
-			message: "#^Static property Faker\\\\Provider\\\\is_IS\\\\Address\\:\\:\\$postcode \\(Faker\\\\Provider\\\\is_IS\\\\Icelandic\\) does not accept default value of type array\\<int, string\\>\\.$#"
-			count: 1
-			path: src/Faker/Provider/is_IS/Address.php
-
-		-
 			message: "#^Binary operation \"\\*\" between string and string results in an error\\.$#"
 			count: 1
 			path: src/Faker/Provider/is_IS/Person.php

@@ -82,7 +82,7 @@ class Address extends \Faker\Provider\Address
     ];
 
     /**
-     * @var Icelandic zip code.
+     * @var array Icelandic zip code.
      */
     protected static $postcode = [
         '%##',
