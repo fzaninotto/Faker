@@ -880,26 +880,6 @@ parameters:
 			path: src/Faker/Provider/is_IS/Person.php
 
 		-
-			message: "#^Parameter \\#1 \\$array of static method Faker\\\\Provider\\\\Base\\:\\:randomElement\\(\\) expects array, string given\\.$#"
-			count: 1
-			path: src/Faker/Provider/is_IS/Person.php
-
-		-
-			message: "#^Static property Faker\\\\Provider\\\\is_IS\\\\Person\\:\\:\\$firstNameFemale \\(string\\) does not accept default value of type array\\<int, string\\>\\.$#"
-			count: 1
-			path: src/Faker/Provider/is_IS/Person.php
-
-		-
-			message: "#^Static property Faker\\\\Provider\\\\is_IS\\\\Person\\:\\:\\$firstNameMale \\(string\\) does not accept default value of type array\\<int, string\\>\\.$#"
-			count: 1
-			path: src/Faker/Provider/is_IS/Person.php
-
-		-
-			message: "#^Static property Faker\\\\Provider\\\\is_IS\\\\Person\\:\\:\\$middleName \\(string\\) does not accept default value of type array\\<int, string\\>\\.$#"
-			count: 1
-			path: src/Faker/Provider/is_IS/Person.php
-
-		-
 			message: "#^Call to an undefined static method static\\(Faker\\\\Provider\\\\ja_JP\\\\Text\\)\\:\\:split\\(\\)\\.$#"
 			count: 1
 			path: src/Faker/Provider/ja_JP/Text.php
