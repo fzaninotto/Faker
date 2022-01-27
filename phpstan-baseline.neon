@@ -830,16 +830,6 @@ parameters:
 			path: src/Faker/Provider/cs_CZ/DateTime.php
 
 		-
-			message: "#^Method Faker\\\\Provider\\\\cs_CZ\\\\Person\\:\\:birthNumber\\(\\) should return Faker\\\\Provider\\\\cs_CZ\\\\czech but returns string\\.$#"
-			count: 1
-			path: src/Faker/Provider/cs_CZ/Person.php
-
-		-
-			message: "#^Return typehint of method Faker\\\\Provider\\\\cs_CZ\\\\Person\\:\\:birthNumber\\(\\) has invalid type Faker\\\\Provider\\\\cs_CZ\\\\czech\\.$#"
-			count: 1
-			path: src/Faker/Provider/cs_CZ/Person.php
-
-		-
 			message: "#^Static call to instance method Faker\\\\Provider\\\\cs_CZ\\\\Person\\:\\:birthNumber\\(\\)\\.$#"
 			count: 2
 			path: src/Faker/Provider/cs_CZ/Person.php

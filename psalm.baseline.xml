@@ -181,19 +181,10 @@
     </UndefinedPropertyFetch>
   </file>
   <file src="src/Faker/Provider/cs_CZ/Person.php">
-    <InvalidReturnStatement occurrences="1">
-      <code>$birthNumber</code>
-    </InvalidReturnStatement>
-    <InvalidReturnType occurrences="1">
-      <code>czech</code>
-    </InvalidReturnType>
     <NonStaticSelfCall occurrences="2">
       <code>static::birthNumber(static::GENDER_FEMALE)</code>
       <code>static::birthNumber(static::GENDER_MALE)</code>
     </NonStaticSelfCall>
-    <UndefinedDocblockClass occurrences="1">
-      <code>czech</code>
-    </UndefinedDocblockClass>
   </file>
   <file src="src/Faker/Provider/en_SG/Person.php">
     <InvalidArrayOffset occurrences="1">
