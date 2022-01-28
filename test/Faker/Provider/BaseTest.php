@@ -333,6 +333,7 @@ final class BaseTest extends TestCase
             ['[aeiou]', 'basic character class'],
             ['[a-z]', 'character class range'],
             ['[a-z1-9]', 'multiple character class range'],
+            ['[a-z\-]{4}', 'character class range with quantifier and escaped character'],
             ['a*b+c?', 'single character quantifiers'],
             ['a{2}', 'brackets quantifiers'],
             ['a{2,3}', 'min-max brackets quantifiers'],
