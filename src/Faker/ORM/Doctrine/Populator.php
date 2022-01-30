@@ -86,7 +86,7 @@ class Populator
      * Please note that large amounts of data will result in more memory usage since the the Populator will return
      * all newly created primary keys after executing.
      *
-     * @param EntityManager|null $entityManager A Doctrine connection object
+     * @param ObjectManager|null $entityManager A Doctrine connection object
      *
      * @return array A list of the inserted PKs
      */

@@ -1,6 +1,8 @@
 # CHANGELOG
 
 ## [Unreleased](https://github.com/FakerPHP/Faker/compare/v1.18.0..main)
+- Fixed usage of `Doctrine\Persistence` dependency
+- Added conflict with `doctrine/persistence` below version `1.4`
 
 ## [2022-01-23, v1.18.0](https://github.com/FakerPHP/Faker/compare/v1.17.0..v1.18.0)
 
@@ -13,7 +15,7 @@
 - Person->name was missing string return type (#424)
 - Generate a valid BE TAX number (#415)
 - Added the UUID extension to Core (#427)
-- 
+
 ## [2021-12-05, v1.17.0](https://github.com/FakerPHP/Faker/compare/v1.16.0..v1.17.0)
 
 - Partial PHP 8.1 compatibility (#373)
