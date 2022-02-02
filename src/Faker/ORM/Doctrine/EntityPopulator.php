@@ -5,6 +5,8 @@ namespace Faker\ORM\Doctrine;
 use Doctrine\Common\Persistence\Mapping\ClassMetadata;
 use Doctrine\Common\Persistence\ObjectManager;
 
+require_once 'backward-compatibility.php';
+
 /**
  * Service class for populating a table through a Doctrine Entity class.
  */

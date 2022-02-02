@@ -27,10 +27,7 @@
     "autoload": {
         "psr-4": {
             "Faker\\": "src/Faker/"
-        },
-        "files": [
-            "src/Faker/ORM/Doctrine/backward-compatibility.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
