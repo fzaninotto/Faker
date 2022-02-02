@@ -8,3 +8,5 @@ parameters:
         - '#\[BC\] CHANGED: The parameter \$generator of Faker\\UniqueGenerator\#\_\_construct\(\) changed from Faker\\Generator to no type#'
         - '#\[BC\] CHANGED: The return type of Faker\\Extension\\PersonExtension\#name\(\) changed from no type to string#'
         - '#\[BC\] CHANGED: The parameter \$max of Faker\\Extension\\NumberExtension\#randomFloat\(\) changed from float to float\|null#'
+        - '#\[BC\] REMOVED: Method Faker\\Generator\#uuid\(\) was removed#'
+        - '#\[BC\] REMOVED: Method Faker\\Generator\#uuid3\(\) was removed#'

@@ -798,34 +798,6 @@ class Generator
     }
 
     /**
-     * Get a random v3 uuid
-     *
-     * @example '7e57d004-2b97-0e7a-b45f-5387367791cd'
-     *
-     * @deprecated call uuid3() instead
-     */
-    public function uuid(): string
-    {
-        trigger_deprecation(
-            'fakerphp/faker',
-            '1.18',
-            'Method uuid() is deprecated, call uuid3() instead'
-        );
-
-        return $this->uuid3();
-    }
-
-    /**
-     * Get a random v3 uuid
-     *
-     * @example '7e57d004-2b97-0e7a-b45f-5387367791cd'
-     */
-    public function uuid3(): string
-    {
-        return $this->ext(Extension\UuidExtension::class)->uuid3();
-    }
-
-    /**
      * Get a random EAN13 barcode.
      *
      * @example '4006381333931'
