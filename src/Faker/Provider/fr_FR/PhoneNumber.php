@@ -70,7 +70,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     ];
 
     protected static $e164Formats = [
-        '+33##########',
+        '+33#########',
     ];
 
     public function phoneNumber07()
