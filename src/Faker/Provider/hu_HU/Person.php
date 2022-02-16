@@ -2,6 +2,11 @@
 
 namespace Faker\Provider\hu_HU;
 
+/**
+ * More info about the hungarian names and hungarian name abbreviations can be found here:
+ *
+ * @see https://en.wikipedia.org/wiki/Hungarian_names and https://en.wiktionary.org/wiki/Category:Hungarian_abbreviations
+ */
 class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = [
@@ -16,9 +21,11 @@ class Person extends \Faker\Provider\Person
         '{{title}} {{lastName}} {{firstNameFemale}}',
         '{{lastName}} {{firstNameFemale}} {{suffix}}',
         '{{title}} {{lastName}} {{firstNameFemale}} {{suffix}}',
-        // ..né
+        '{{lastNameFemaleMarried}} {{$lastName}} {{firstNameFemale}}',
+        '{{title}} {{lastNameFemaleMarried}} {{firstNameFemale}}',
         '{{lastName}} {{firstNameMaleNe}}',
         '{{title}} {{lastName}} {{firstNameMaleNe}}',
+        '{{lastName}}-{{lastName}} {{firstNameFemale}}',
     ];
 
     protected static $firstNameMale = [
@@ -35,6 +42,19 @@ class Person extends \Faker\Provider\Person
         'Benedekné', 'Hunorné', 'Jenőné', 'Jánosné', 'Mihályné', 'Mátyásné', 'Szervácné', 'Zsomborné', 'Zétényné', 'Árpádné',
     ];
 
+    protected static $lastNameFemaleMarried = [
+        'Antalné', 'Bakosné', 'Balláné', 'Balogné', 'Baloghné', 'Balázsné', 'Barnáné', 'Bartáné', 'Biróné', 'Bodnárné',
+        'Bogdánné', 'Bognárné', 'Borbélyné', 'Borosné', 'Budainé', 'Bálintné', 'Csonkáné', 'Deákné', 'Dobosné', 'Dudásné',
+        'Faragóné', 'Farkasné', 'Fazekasné', 'Fehérné', 'Feketéné', 'Fodorné', 'Fábiánné', 'Fülöpné', 'Gulyásné', 'Gálné',
+        'Gáspárné', 'Hajdúné', 'Halászné', 'Hegedűsné', 'Horváthné', 'Illésné', 'Jakabné', 'Juhászné', 'Jónásné', 'Katonáné',
+        'Kelemenné', 'Kerekesné', 'Királyné', 'Kisné', 'Kissné', 'Kocsisné', 'Kovácsné', 'Kozmané', 'Lakatosné', 'Lengyelné',
+        'Lukácsné', 'Lászlóné', 'Magyarné', 'Majorné', 'Molnárné', 'Máténé', 'Mészárosné', 'Nagyné', 'Nemesné', 'Novákné',
+        'Némethné', 'Oláhné', 'Orbánné', 'Oroszné', 'Orsósné', 'Papné', 'Pappné', 'Patakiné', 'Pintérné', 'Pálné', 'Pásztorné',
+        'Péterné', 'Ráczné', 'Simonné', 'Siposné', 'Somogyiné', 'Soósné', 'Szabóné', 'Szalainé', 'Szekeresné', 'Szilágyiné',
+        'Székelyné', 'Szücsné', 'Szőkené', 'Szűcsné', 'Sándorné', 'Takácsné', 'Tamásné', 'Tóthné', 'Törökné', 'Vargáné', 'Vassné',
+        'Veresné', 'Vinczéné', 'Virágné', 'Váradiné', 'Véghné', 'Vörösné',
+    ];
+
     protected static $firstNameFemale = [
         'Adél', 'Alexa', 'Andrea', 'Angéla', 'Anikó', 'Beatrix', 'Bettina', 'Dalma', 'Dorina', 'Dorottya', 'Evelin', 'Fanni', 'Flóra', 'Gabriella',
         'Georgina', 'Gitta', 'Gizella', 'Gréta', 'Henrietta', 'Izabella', 'Johanna', 'Judit', 'Julianna', 'Jázmin', 'Kata', 'Katalin',
@@ -48,25 +68,16 @@ class Person extends \Faker\Provider\Person
         'Antal', 'Bakos', 'Balla', 'Balog', 'Balogh', 'Balázs', 'Barna', 'Barta', 'Biró', 'Bodnár', 'Bogdán', 'Bognár', 'Borbély', 'Boros', 'Budai', 'Bálint', 'Csonka', 'Deák', 'Dobos', 'Dudás', 'Faragó', 'Farkas', 'Fazekas', 'Fehér', 'Fekete', 'Fodor', 'Fábián', 'Fülöp', 'Gulyás', 'Gál', 'Gáspár', 'Hajdu', 'Halász', 'Hegedüs', 'Hegedűs', 'Horváth', 'Illés', 'Jakab', 'Juhász', 'Jónás', 'Katona', 'Kelemen', 'Kerekes', 'Király', 'Kis', 'Kiss', 'Kocsis', 'Kovács', 'Kozma', 'Lakatos', 'Lengyel', 'Lukács', 'László', 'Magyar', 'Major', 'Molnár', 'Máté', 'Mészáros', 'Nagy', 'Nemes', 'Novák', 'Németh', 'Oláh', 'Orbán', 'Orosz', 'Orsós', 'Pap', 'Papp', 'Pataki', 'Pintér', 'Pál', 'Pásztor', 'Péter', 'Rácz', 'Simon', 'Sipos', 'Somogyi', 'Soós', 'Szabó', 'Szalai', 'Szekeres', 'Szilágyi', 'Székely', 'Szücs', 'Szőke', 'Szűcs', 'Sándor', 'Takács', 'Tamás', 'Tóth', 'Török', 'Varga', 'Vass', 'Veres', 'Vincze', 'Virág', 'Váradi', 'Végh', 'Vörös',
     ];
 
-    protected static $title = ['Dr.', 'Prof.', 'id.', 'ifj.'];
+    protected static $title = ['Dr.', 'Prof.', 'Id.', 'Ifj.', 'Báró', 'Gróf', 'Özv.'];
+
+    protected static $titleFemale = ['Özv.', 'Dr.', 'Prof.'];
+
+    protected static $titleMale = ['Dr.', 'Prof.', 'Id.', 'Ifj.', 'Báró', 'Gróf'];
 
     private static $suffix = ['PhD'];
 
-    public function title($gender = null)
-    {
-        return static::titleMale();
-    }
-
     /**
-     * replaced by specific unisex hungarian title
-     */
-    public static function titleMale()
-    {
-        return static::randomElement(static::$title);
-    }
-
-    /**
-     * specific Hungarian name format for females after marriage
+     * Specific Hungarian name format for females after marriage
      */
     public static function firstNameMaleNe()
     {
@@ -74,14 +85,8 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
-     * replaced by specific unisex hungarian title
-     */
-    public static function titleFemale()
-    {
-        return static::titleMale();
-    }
-
-    /**
+     * Replaced by specific suffix
+     *
      * @example 'PhD'
      */
     public static function suffix()
