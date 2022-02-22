@@ -33,6 +33,8 @@ final class PaymentTest extends TestCase
 
         // Mod97 check on first 8 digits
         $checksum = 97 - fmod(substr($numbers, 0, 8), 97);
+        // Make sure checksum is 2 characters long
+        $checksum = sprintf('%02d', $checksum);
 
         self::assertEquals((string) $checksum, substr($numbers, 8, 10));
     }
