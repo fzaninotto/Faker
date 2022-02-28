@@ -2,11 +2,11 @@
 
 namespace Faker\Test;
 
+use Faker\Container\Container;
+use Faker\Container\ContainerBuilder;
 use Faker\Core\Blood;
 use Faker\Core\File;
 use Faker\Extension\BloodExtension;
-use Faker\Extension\Container;
-use Faker\Extension\ContainerBuilder;
 use Faker\Extension\ExtensionNotFound;
 use Faker\Extension\FileExtension;
 use Faker\Generator;

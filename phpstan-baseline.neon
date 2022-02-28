@@ -18,7 +18,7 @@ parameters:
 		-
 			message: "#^Result of && is always false\\.$#"
 			count: 1
-			path: src/Faker/Extension/ContainerBuilder.php
+			path: src/Faker/Container/ContainerBuilder.php
 
 		-
 			message: "#^Method Faker\\\\Generator\\:\\:optional\\(\\) should return Faker\\\\Generator but returns Faker\\\\ChanceGenerator\\.$#"

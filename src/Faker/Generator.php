@@ -2,7 +2,7 @@
 
 namespace Faker;
 
-use Psr\Container\ContainerInterface;
+use Faker\Container\ContainerInterface;
 
 /**
  * @property string $citySuffix
@@ -559,7 +559,7 @@ class Generator
 
     public function __construct(ContainerInterface $container = null)
     {
-        $this->container = $container ?: Extension\ContainerBuilder::getDefault();
+        $this->container = $container ?: Container\ContainerBuilder::getDefault();
     }
 
     /**

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Faker\Extension;
+namespace Faker\Container;
 
 use Psr\Container\ContainerExceptionInterface;
 

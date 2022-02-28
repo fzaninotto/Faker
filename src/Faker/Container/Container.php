@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Faker\Extension;
+namespace Faker\Container;
 
-use Psr\Container\ContainerInterface;
+use Faker\Extension\Extension;
 
 /**
  * A simple implementation of a container.
@@ -32,16 +32,16 @@ final class Container implements ContainerInterface
     }
 
     /**
+     * Retrieve a definition from the container.
+     *
      * @param string $id
      *
      * @throws \InvalidArgumentException
      * @throws \RuntimeException
      * @throws ContainerException
      * @throws NotInContainerException
-     *
-     * @return Extension
      */
-    public function get($id)
+    public function get($id): Extension
     {
         if (!is_string($id)) {
             throw new \InvalidArgumentException(sprintf(
@@ -63,47 +63,7 @@ final class Container implements ContainerInterface
 
         $definition = $this->definitions[$id];
 
-        if (is_callable($definition)) {
-            try {
-                $service = $definition();
-            } catch (\Throwable $e) {
-                throw new ContainerException(
-                    sprintf(
-                        'Error while invoking callable for "%s"',
-                        $id
-                    ),
-                    0,
-                    $e
-                );
-            }
-        } elseif (is_object($definition)) {
-            $service = $definition;
-        } elseif (is_string($definition)) {
-            if (!class_exists($definition)) {
-                throw new ContainerException(sprintf(
-                    'Could not instantiate class "%s". Class was not found.',
-                    $id
-                ));
-            }
-
-            try {
-                $service = new $definition();
-            } catch (\Throwable $e) {
-                throw new ContainerException(
-                    sprintf(
-                        'Could not instantiate class "%s"',
-                        $id
-                    ),
-                    0,
-                    $e
-                );
-            }
-        } else {
-            throw new ContainerException(sprintf(
-                'Invalid type for definition with id "%s"',
-                $id
-            ));
-        }
+        $service = $this->services[$id] = $this->getService($id, $definition);
 
         if (!$service instanceof Extension) {
             throw new \RuntimeException(sprintf(
@@ -113,12 +73,52 @@ final class Container implements ContainerInterface
             ));
         }
 
-        $this->services[$id] = $service;
-
         return $service;
     }
 
     /**
+     * Get the service from a definition.
+     *
+     * @param callable|object|string $definition
+     */
+    private function getService($id, $definition)
+    {
+        if (is_callable($definition)) {
+            try {
+                return $definition();
+            } catch (\Throwable $e) {
+                throw new ContainerException(
+                    sprintf('Error while invoking callable for "%s"', $id),
+                    0,
+                    $e
+                );
+            }
+        } elseif (is_object($definition)) {
+            return $definition;
+        } elseif (is_string($definition)) {
+            if (class_exists($definition)) {
+                try {
+                    return new $definition();
+                } catch (\Throwable $e) {
+                    throw new ContainerException(sprintf('Could not instantiate class "%s"', $id), 0, $e);
+                }
+            }
+
+            throw new ContainerException(sprintf(
+                'Could not instantiate class "%s". Class was not found.',
+                $id
+            ));
+        } else {
+            throw new ContainerException(sprintf(
+                'Invalid type for definition with id "%s"',
+                $id
+            ));
+        }
+    }
+
+    /**
+     * Check if the container contains a given identifier.
+     *
      * @param string $id
      *
      * @throws \InvalidArgumentException
@@ -133,5 +133,13 @@ final class Container implements ContainerInterface
         }
 
         return array_key_exists($id, $this->definitions);
+    }
+
+    /**
+     * Get the bindings between Extension interfaces and implementations.
+     */
+    public function getDefinitions(): array
+    {
+        return $this->definitions;
     }
 }
