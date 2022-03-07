@@ -21,6 +21,14 @@ final class PhoneNumberTest extends TestCase
         }
     }
 
+    public function testE164PhoneNumberFormat()
+    {
+        for ($i = 0; $i < 10; ++$i) {
+            $number = $this->faker->e164PhoneNumber();
+            self::assertMatchesRegularExpression('/^\+90\d{10}$/', $number);
+        }
+    }
+
     protected function getProviders(): iterable
     {
         yield new PhoneNumber($this->faker);
