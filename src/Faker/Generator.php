@@ -513,6 +513,10 @@ use Faker\Container\ContainerInterface;
  *
  * @method string chrome()
  *
+ * @property string $msedge
+ *
+ * @method string msedge()
+ *
  * @property string $firefox
  *
  * @method string firefox()
@@ -536,6 +540,10 @@ use Faker\Container\ContainerInterface;
  * @property string $macPlatformToken
  *
  * @method string macPlatformToken()
+ *
+ * @property string $iosMobileToken
+ *
+ * @method string iosMobileToken()
  *
  * @property string $linuxPlatformToken
  *

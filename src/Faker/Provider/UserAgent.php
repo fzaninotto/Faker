@@ -4,7 +4,7 @@ namespace Faker\Provider;
 
 class UserAgent extends Base
 {
-    protected static $userAgents = ['firefox', 'chrome', 'internetExplorer', 'opera', 'safari'];
+    protected static $userAgents = ['firefox', 'chrome', 'internetExplorer', 'opera', 'safari', 'edge'];
 
     protected static $windowsPlatformTokens = [
         'Windows NT 6.2', 'Windows NT 6.1', 'Windows NT 6.0', 'Windows NT 5.2', 'Windows NT 5.1',
@@ -25,7 +25,7 @@ class UserAgent extends Base
     /**
      * Add as many languages as you like.
      */
-    protected static $lang = ['en-US', 'sl-SI'];
+    protected static $lang = ['en-US', 'sl-SI', 'nl-NL'];
 
     /**
      * Generate mac processor
@@ -76,6 +76,28 @@ class UserAgent extends Base
             '(' . static::linuxPlatformToken() . ") AppleWebKit/$saf (KHTML, like Gecko) Chrome/" . self::numberBetween(36, 40) . '.0.' . self::numberBetween(800, 899) . ".0 Mobile Safari/$saf",
             '(' . static::windowsPlatformToken() . ") AppleWebKit/$saf (KHTML, like Gecko) Chrome/" . self::numberBetween(36, 40) . '.0.' . self::numberBetween(800, 899) . ".0 Mobile Safari/$saf",
             '(' . static::macPlatformToken() . ") AppleWebKit/$saf (KHTML, like Gecko) Chrome/" . self::numberBetween(36, 40) . '.0.' . self::numberBetween(800, 899) . ".0 Mobile Safari/$saf",
+        ];
+
+        return 'Mozilla/5.0 ' . static::randomElement($platforms);
+    }
+
+    /**
+     * Generate Edge user agent
+     *
+     * @example 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36 Edg/99.0.1150.36'
+     *
+     * @return string
+     */
+    public static function msedge()
+    {
+        $saf = self::numberBetween(531, 537) . '.' . self::numberBetween(0, 2);
+        $chrv = self::numberBetween(79, 99) . '.0';
+
+        $platforms = [
+            '(' . static::windowsPlatformToken() . ") AppleWebKit/$saf (KHTML, like Gecko) Chrome/$chrv" . '.' . self::numberBetween(4000, 4844) . '.' . self::numberBetween(10, 99) . " Safari/$saf Edg/$chrv" . self::numberBetween(1000, 1146) . '.' . self::numberBetween(0, 99),
+            '(' . static::macPlatformToken() . ") AppleWebKit/$saf (KHTML, like Gecko) Chrome/$chrv" . '.' . self::numberBetween(4000, 4844) . '.' . self::numberBetween(10, 99) . " Safari/$saf Edg/$chrv" . self::numberBetween(1000, 1146) . '.' . self::numberBetween(0, 99),
+            '(' . static::linuxPlatformToken() . ") AppleWebKit/$saf (KHTML, like Gecko) Chrome/$chrv" . '.' . self::numberBetween(4000, 4844) . '.' . self::numberBetween(10, 99) . " Safari/$saf EdgA/$chrv" . self::numberBetween(1000, 1146) . '.' . self::numberBetween(0, 99),
+            '(' . static::iosMobileToken() . ") AppleWebKit/$saf (KHTML, like Gecko) Version/15.0 EdgiOS/$chrv" . self::numberBetween(1000, 1146) . '.' . self::numberBetween(0, 99) . " Mobile/15E148 Safari/$saf",
         ];
 
         return 'Mozilla/5.0 ' . static::randomElement($platforms);
@@ -175,6 +197,16 @@ class UserAgent extends Base
     public static function macPlatformToken()
     {
         return 'Macintosh; ' . static::randomElement(static::$macProcessor) . ' Mac OS X 10_' . self::numberBetween(5, 8) . '_' . self::numberBetween(0, 9);
+    }
+
+    /**
+     * @return string
+     */
+    public static function iosMobileToken()
+    {
+        $iosVer = self::numberBetween(13, 15) . '_' . self::numberBetween(0, 2);
+
+        return 'iPhone; CPU iPhone OS ' . $iosVer . ' like Mac OS X';
     }
 
     /**
