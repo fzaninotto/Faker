@@ -4,7 +4,7 @@ namespace Faker\Provider;
 
 class UserAgent extends Base
 {
-    protected static $userAgents = ['firefox', 'chrome', 'internetExplorer', 'opera', 'safari', 'edge'];
+    protected static $userAgents = ['firefox', 'chrome', 'internetExplorer', 'opera', 'safari', 'msedge'];
 
     protected static $windowsPlatformTokens = [
         'Windows NT 6.2', 'Windows NT 6.1', 'Windows NT 6.0', 'Windows NT 5.2', 'Windows NT 5.1',

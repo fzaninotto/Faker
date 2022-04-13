@@ -10,6 +10,18 @@ use Faker\Test\TestCase;
  */
 final class UserAgentTest extends TestCase
 {
+    public function testAllAgents()
+    {
+        $agent = new UserAgent($this->faker);
+        $reflection = new \ReflectionClass($agent);
+        $agents = $reflection->getProperty('userAgents');
+        $agents->setAccessible(true);
+
+        foreach ($agents->getValue() as $method) {
+            self::assertNotNull(UserAgent::$method());
+        }
+    }
+
     public function testRandomUserAgent()
     {
         self::assertNotNull(UserAgent::userAgent());
