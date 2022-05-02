@@ -436,7 +436,7 @@ class Base
      * Replaces hash signs ('#') and question marks ('?') with random numbers and letters
      * An asterisk ('*') is replaced with either a random number or a random letter
      *
-     * @param string $string String that needs to bet parsed
+     * @param string $string String that needs to be parsed
      *
      * @return string
      */
