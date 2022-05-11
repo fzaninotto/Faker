@@ -12,6 +12,10 @@ class Image extends Base
      */
     public const BASE_URL = 'https://via.placeholder.com';
 
+    public const FORMAT_JPG = 'jpg';
+    public const FORMAT_JPEG = 'jpeg';
+    public const FORMAT_PNG = 'png';
+
     /**
      * @var array
      *
@@ -35,6 +39,7 @@ class Image extends Base
      * @param bool        $randomize
      * @param string|null $word
      * @param bool        $gray
+     * @param string      $format
      *
      * @return string
      */
@@ -44,9 +49,21 @@ class Image extends Base
         $category = null,
         $randomize = true,
         $word = null,
-        $gray = false
+        $gray = false,
+        $format = 'png'
     ) {
-        $size = sprintf('%dx%d.png', $width, $height);
+        // Validate image format
+        $imageFormats = static::getFormats();
+
+        if (!in_array(strtolower($format), $imageFormats, true)) {
+            throw new \InvalidArgumentException(sprintf(
+                'Invalid image format "%s". Allowable formats are: %s',
+                $format,
+                implode(', ', $imageFormats)
+            ));
+        }
+
+        $size = sprintf('%dx%d.%s', $width, $height, $format);
 
         $imageParts = [];
 
@@ -90,7 +107,8 @@ class Image extends Base
         $fullPath = true,
         $randomize = true,
         $word = null,
-        $gray = false
+        $gray = false,
+        $format = 'png'
     ) {
         $dir = null === $dir ? sys_get_temp_dir() : $dir; // GNU/Linux / OS X / Windows compatible
         // Validate directory path
@@ -101,10 +119,10 @@ class Image extends Base
         // Generate a random filename. Use the server address so that a file
         // generated at the same time on a different server won't have a collision.
         $name = md5(uniqid(empty($_SERVER['SERVER_ADDR']) ? '' : $_SERVER['SERVER_ADDR'], true));
-        $filename = $name . '.png';
+        $filename = sprintf('%s.%s', $name, $format);
         $filepath = $dir . DIRECTORY_SEPARATOR . $filename;
 
-        $url = static::imageUrl($width, $height, $category, $randomize, $word, $gray);
+        $url = static::imageUrl($width, $height, $category, $randomize, $word, $gray, $format);
 
         // save file
         if (function_exists('curl_exec')) {
@@ -135,5 +153,19 @@ class Image extends Base
         }
 
         return $fullPath ? $filepath : $filename;
+    }
+
+    public static function getFormats(): array
+    {
+        return array_keys(static::getFormatConstants());
+    }
+
+    public static function getFormatConstants(): array
+    {
+        return [
+            static::FORMAT_JPG => constant('IMAGETYPE_JPEG'),
+            static::FORMAT_JPEG => constant('IMAGETYPE_JPEG'),
+            static::FORMAT_PNG => constant('IMAGETYPE_PNG'),
+        ];
     }
 }
