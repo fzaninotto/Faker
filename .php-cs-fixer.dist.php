@@ -13,7 +13,10 @@ $finder = PhpCsFixer\Finder::create()
 
 $config = new PhpCsFixer\Config('faker');
 
-mkdir('.build/php-cs-fixer', 0755, true);
+if (!is_dir('.build/php-cs-fixer')) {
+    mkdir('.build/php-cs-fixer', 0755, true);
+}
+
 return $config
     ->setCacheFile('.build/php-cs-fixer/cache')
     ->setFinder($finder)
