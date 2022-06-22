@@ -217,8 +217,14 @@ final class DateTime implements DateTimeExtension, GeneratorAwareExtension
         return Helper::randomElement($this->centuries);
     }
 
-    public function timezone(): string
+    public function timezone(string $countryCode = null): string
     {
-        return Helper::randomElement(\DateTimeZone::listIdentifiers());
+        if ($countryCode) {
+            $timezones = \DateTimeZone::listIdentifiers(\DateTimeZone::PER_COUNTRY, $countryCode);
+        } else {
+            $timezones = \DateTimeZone::listIdentifiers();
+        }
+
+        return Helper::randomElement($timezones);
     }
 }

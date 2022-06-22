@@ -234,7 +234,9 @@ interface DateTimeExtension
     /**
      * Get a random timezone, uses `\DateTimeZone::listIdentifiers()` internally.
      *
+     * @param string|null $countryCode two-letter ISO 3166-1 compatible country code
+     *
      * @example 'Europe/Rome'
      */
-    public function timezone(): string;
+    public function timezone(string $countryCode = null): string;
 }

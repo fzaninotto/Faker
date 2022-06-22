@@ -255,7 +255,7 @@ use Faker\Container\ContainerInterface;
  *
  * @property string $timezone
  *
- * @method string timezone()
+ * @method string timezone($countryCode = null)
  *
  * @property void $setDefaultTimezone
  *

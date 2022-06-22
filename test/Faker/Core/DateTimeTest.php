@@ -221,8 +221,11 @@ final class DateTimeTest extends TestCase
     public function testTimezone()
     {
         $timezone = $this->extension->timezone();
+        $countryTimezone = $this->extension->timezone('US');
 
         self::assertIsString($timezone);
         self::assertContains($timezone, \DateTimeZone::listIdentifiers());
+        self::assertIsString($countryTimezone);
+        self::assertContains($countryTimezone, \DateTimeZone::listIdentifiers(\DateTimeZone::PER_COUNTRY, 'US'));
     }
 }
