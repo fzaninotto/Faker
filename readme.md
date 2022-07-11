@@ -938,6 +938,64 @@ echo $faker->faxNumber; // "71937729"
 
 ```
 
+### `Faker\Provider\en_KE\Address`
+
+```php
+<?php
+
+// Generates a random valid kenyan town name
+echo $faker->town; // "Kikuyu"
+
+//Generate a random valid kenyan Center name
+echo $faker->center; // "Kitengela"
+
+//Generate a valid random Kenyan Street Name
+echo $faker->street; // "University Way"
+
+//Generate a valid random county name
+echo $faker->county; // "Bomet"
+
+//Generate a valid random municipality name
+echo $faker->municipality; // "Thika"
+```
+### `Faker\Provider\en_KE\PhoneNumber`
+```php
+<?php
+
+//Generate random safaricom number
+echo $faker->safaricom // "0701032617"
+
+//Generate random telkom number
+echo $faker->telkom; // "0770589963"
+
+//Generate random airtel number
+echo $faker->airtel; // "0739641523"
+
+//Generate random equitel number
+echo $faker->equitel; // "0763915144"
+
+//Generate random faiba number
+echo $faker->faiba; // "0747653231"
+
+//Generate a random landline number
+echo $faker->landline; // "203532000"
+```
+### `Faker\Provider\en_KE\Person`
+```php
+<?php
+
+//Generate random last name for kenyan male
+echo $faker->lastNameMale; // "Ochieng'"
+
+//Generate random last name for kenyan female
+echo $faker->lastNameFemale; // "Njoki"
+
+//Generate random ID Number
+echo $faker->idNumber;
+
+//Generate random valid KRA PIN
+echo $faker->kraPin;
+```
 ### `Faker\Provider\en_NG\Address`
 
 ```php
