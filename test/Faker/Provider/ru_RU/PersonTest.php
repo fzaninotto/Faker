@@ -6,14 +6,14 @@ use Faker\Generator;
 use Faker\Provider\ru_RU\Person;
 use PHPUnit\Framework\TestCase;
 
-class PersonTest extends TestCase
+final class PersonTest extends TestCase
 {
     /**
      * @var Generator
      */
     private $faker;
 
-    public function setUp()
+    protected function setUp()
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
@@ -22,12 +22,12 @@ class PersonTest extends TestCase
 
     public function testLastNameFemale()
     {
-        $this->assertEquals("a", substr($this->faker->lastName('female'), -1));
+        $this->assertEquals("а", substr($this->faker->lastName('female'), -2, 2));
     }
 
     public function testLastNameMale()
     {
-        $this->assertNotEquals("a", substr($this->faker->lastName('male'), -1));
+        $this->assertNotEquals("а", substr($this->faker->lastName('male'), -2, 2));
     }
 
     public function testLastNameRandom()

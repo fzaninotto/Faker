@@ -6,7 +6,7 @@ use Faker\Provider\en_US\Company;
 use Faker\Generator;
 use PHPUnit\Framework\TestCase;
 
-class CompanyTest extends TestCase
+final class CompanyTest extends TestCase
 {
 
     /**
@@ -14,7 +14,7 @@ class CompanyTest extends TestCase
      */
     private $faker;
 
-    public function setUp()
+    protected function setUp()
     {
         $faker = new Generator();
         $faker->addProvider(new Company($faker));

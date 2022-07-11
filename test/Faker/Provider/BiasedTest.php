@@ -5,7 +5,7 @@ use Faker\Provider\Biased;
 use Faker\Generator;
 use PHPUnit\Framework\TestCase;
 
-class BiasedTest extends TestCase
+final class BiasedTest extends TestCase
 {
     const MAX = 10;
     const NUMBERS = 25000;

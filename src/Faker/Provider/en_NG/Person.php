@@ -1,7 +1,5 @@
 <?php
 
-// data source
-
 namespace Faker\Provider\en_NG;
 
 class Person extends \Faker\Provider\Person

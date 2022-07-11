@@ -7,7 +7,7 @@ namespace Faker\Test\Calculator;
 use Faker\Calculator\Ean;
 use PHPUnit\Framework\TestCase;
 
-class EanTest extends TestCase
+final class EanTest extends TestCase
 {
     public function Ean8checksumProvider()
     {

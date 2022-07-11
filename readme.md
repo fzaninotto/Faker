@@ -1,12 +1,17 @@
 # Faker
 
+[![Monthly Downloads](https://poser.pugx.org/fzaninotto/faker/d/monthly.png)](https://packagist.org/packages/fzaninotto/faker)
+[![Continuous Integration](https://github.com/fzaninotto/Faker/workflows/Continuous%20Integration/badge.svg?branch=master)](https://github.com/fzaninotto/Faker/actions)
+[![codecov](https://codecov.io/gh/fzaninotto/Faker/branch/master/graph/badge.svg)](https://codecov.io/gh/fzaninotto/Faker)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/eceb78a9-38d4-4ad5-8b6b-b52f323e3549/mini.png)](https://insight.sensiolabs.com/projects/eceb78a9-38d4-4ad5-8b6b-b52f323e3549)
+
 Faker is a PHP library that generates fake data for you. Whether you need to bootstrap your database, create good-looking XML documents, fill-in your persistence to stress test it, or anonymize data taken from a production service, Faker is for you.
 
 Faker is heavily inspired by Perl's [Data::Faker](http://search.cpan.org/~jasonk/Data-Faker-0.07/), and by ruby's [Faker](https://rubygems.org/gems/faker).
 
 Faker requires PHP >= 5.3.3.
 
-[![Monthly Downloads](https://poser.pugx.org/fzaninotto/faker/d/monthly.png)](https://packagist.org/packages/fzaninotto/faker) [![Build Status](https://travis-ci.org/fzaninotto/Faker.svg?branch=master)](https://travis-ci.org/fzaninotto/Faker) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/eceb78a9-38d4-4ad5-8b6b-b52f323e3549/mini.png)](https://insight.sensiolabs.com/projects/eceb78a9-38d4-4ad5-8b6b-b52f323e3549)
+**Faker is archived**. Read the reasons behind this decision here: [https://marmelab.com/blog/2020/10/21/sunsetting-faker.html](https://marmelab.com/blog/2020/10/21/sunsetting-faker.html) 
 
 # Table of Contents
 
@@ -53,7 +58,7 @@ composer require fzaninotto/faker
 
 ### Autoloading
 
-Faker supports both `PSR-0` as `PSR-4` autoloaders. 
+Faker supports both `PSR-0` as `PSR-4` autoloaders.
 ```php
 <?php
 # When installed via composer
@@ -383,7 +388,7 @@ print_r($values); // [0, 4, 8, 4, 2, 6, 0, 8, 8, 6]
 // just like unique(), valid() throws an overflow exception when it can't generate a valid value
 $values = array();
 try {
-  $faker->valid($evenValidator)->randomElement(1, 3, 5, 7, 9);
+  $faker->valid($evenValidator)->randomElement([1, 3, 5, 7, 9]);
 } catch (\OverflowException $e) {
   echo "Can't pick an even number in that set!";
 }
@@ -1015,7 +1020,7 @@ echo $faker->name; // 'Oluwunmi Mayowa'
 <?php
 
 // Generates a cell (mobile) phone number
-echo $faker->cellNumber; // "021 123 4567"
+echo $faker->mobileNumber; // "021 123 4567"
 
 // Generates a toll free number
 echo $faker->tollFreeNumber; // "0800 123 456"
@@ -1847,6 +1852,7 @@ echo $faker->VAT; //23456789
 * [`drupol/belgian-national-number-faker`](https://github.com/drupol/belgian-national-number-faker): Generate fake Belgian national numbers
 * [`elgentos/masquerade`](https://github.com/elgentos/masquerade): Configuration-based, platform-agnostic, locale-compatible data faker tool (out-of-the-box support for Magento 2)
 * [`ottaviano/faker-gravatar`](https://github.com/ottaviano/faker-gravatar): Generate avatars using [Gravatar](https://en.gravatar.com/site/implement/images/)
+* [`finwe/phpstan-faker`](https://github.com/finwe/phpstan-faker): PHPStan extension for Faker methods
 
 ## License
 

@@ -37,6 +37,8 @@ namespace Faker;
  * @property string $phoneNumber
  * @property string $e164PhoneNumber
  *
+ * @property string $catchPhrase
+ * @property string $bs
  * @property string $company
  * @property string $companySuffix
  * @property string $jobTitle
@@ -288,5 +290,10 @@ class Generator
     public function __destruct()
     {
         $this->seed();
+    }
+
+    public function __wakeup()
+    {
+        $this->formatters = [];
     }
 }

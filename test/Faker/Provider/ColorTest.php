@@ -5,7 +5,7 @@ namespace Faker\Test\Provider;
 use Faker\Provider\Color;
 use PHPUnit\Framework\TestCase;
 
-class ColorTest extends TestCase
+final class ColorTest extends TestCase
 {
 
     public function testHexColor()

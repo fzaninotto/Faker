@@ -6,11 +6,11 @@ use Faker\Factory;
 use Faker\Provider\en_SG\PhoneNumber;
 use PHPUnit\Framework\TestCase;
 
-class PhoneNumberTest extends TestCase
+final class PhoneNumberTest extends TestCase
 {
     private $faker;
 
-    public function setUp()
+    protected function setUp()
     {
         $this->faker = Factory::create('en_SG');
         $this->faker->seed(1);

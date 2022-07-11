@@ -5,7 +5,7 @@ namespace Faker\Test\Calculator;
 use Faker\Calculator\Luhn;
 use PHPUnit\Framework\TestCase;
 
-class LuhnTest extends TestCase
+final class LuhnTest extends TestCase
 {
 
     public function checkDigitProvider()

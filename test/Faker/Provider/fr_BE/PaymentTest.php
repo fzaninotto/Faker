@@ -6,14 +6,14 @@ use Faker\Generator;
 use Faker\Provider\fr_BE\Payment;
 use PHPUnit\Framework\TestCase;
 
-class PaymentTest extends TestCase
+final class PaymentTest extends TestCase
 {
     /**
      * @var Generator
      */
     private $faker;
 
-    public function setUp()
+    protected function setUp()
     {
         $faker = new Generator();
         $faker->addProvider(new Payment($faker));

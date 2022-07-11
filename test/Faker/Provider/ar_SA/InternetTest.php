@@ -8,7 +8,7 @@ use Faker\Provider\ar_SA\Internet;
 use Faker\Provider\ar_SA\Company;
 use PHPUnit\Framework\TestCase;
 
-class InternetTest extends TestCase
+final class InternetTest extends TestCase
 {
 
     /**
@@ -16,7 +16,7 @@ class InternetTest extends TestCase
      */
     private $faker;
 
-    public function setUp()
+    protected function setUp()
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));

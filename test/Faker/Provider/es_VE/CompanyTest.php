@@ -1,9 +1,4 @@
 <?php
-/**
- * Created by Domingo Oropeza <dioh_@hotmail.com> for Faker
- * Date: 01/09/2017
- * Time: 09:45 PM
- */
 
 namespace Faker\Test\Provider\es_VE;
 
@@ -11,14 +6,14 @@ use Faker\Generator;
 use Faker\Provider\es_VE\Company;
 use PHPUnit\Framework\TestCase;
 
-class CompanyTest extends TestCase
+final class CompanyTest extends TestCase
 {
     /**
      * @var Generator
      */
     private $faker;
 
-    public function setUp()
+    protected function setUp()
     {
         $faker = new Generator();
         $faker->seed(1);

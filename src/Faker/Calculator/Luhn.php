@@ -24,10 +24,10 @@ class Luhn
         $length = strlen($number);
         $sum = 0;
         for ($i = $length - 1; $i >= 0; $i -= 2) {
-            $sum += $number{$i};
+            $sum += $number[$i];
         }
         for ($i = $length - 2; $i >= 0; $i -= 2) {
-            $sum += array_sum(str_split($number{$i} * 2));
+            $sum += array_sum(str_split($number[$i] * 2));
         }
 
         return $sum % 10;

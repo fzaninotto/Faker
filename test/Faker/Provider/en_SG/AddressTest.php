@@ -6,9 +6,9 @@ use Faker\Factory;
 use Faker\Provider\en_SG\Address;
 use PHPUnit\Framework\TestCase;
 
-class AddressTest extends TestCase
+final class AddressTest extends TestCase
 {
-    public function setUp()
+    protected function setUp()
     {
         $faker = Factory::create('en_SG');
         $faker->addProvider(new Address($faker));

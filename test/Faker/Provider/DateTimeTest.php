@@ -5,15 +5,15 @@ namespace Faker\Test\Provider;
 use Faker\Provider\DateTime as DateTimeProvider;
 use PHPUnit\Framework\TestCase;
 
-class DateTimeTest extends TestCase
+final class DateTimeTest extends TestCase
 {
-    public function setUp()
+    protected function setUp()
     {
         $this->defaultTz = 'UTC';
         DateTimeProvider::setDefaultTimezone($this->defaultTz);
     }
 
-    public function tearDown()
+    protected function tearDown()
     {
         DateTimeProvider::setDefaultTimezone();
     }
@@ -122,7 +122,7 @@ class DateTimeTest extends TestCase
     {
         $date = DateTimeProvider::dateTimeThisYear();
         $this->assertInstanceOf('\DateTime', $date);
-        $this->assertGreaterThanOrEqual(new \DateTime('-1 year'), $date);
+        $this->assertGreaterThanOrEqual(new \DateTime('first day of january this year'), $date);
         $this->assertLessThanOrEqual(new \DateTime(), $date);
         $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
