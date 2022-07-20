@@ -52,6 +52,12 @@ class Image extends Base
         $gray = false,
         $format = 'png'
     ) {
+        trigger_deprecation(
+            'fakerphp/faker',
+            '1.20',
+            'Provider is deprecated and will no longer be available in Faker 2. Please use a custom provider instead'
+        );
+
         // Validate image format
         $imageFormats = static::getFormats();
 
@@ -110,6 +116,12 @@ class Image extends Base
         $gray = false,
         $format = 'png'
     ) {
+        trigger_deprecation(
+            'fakerphp/faker',
+            '1.20',
+            'Provider is deprecated and will no longer be available in Faker 2. Please use a custom provider instead'
+        );
+
         $dir = null === $dir ? sys_get_temp_dir() : $dir; // GNU/Linux / OS X / Windows compatible
         // Validate directory path
         if (!is_dir($dir) || !is_writable($dir)) {
@@ -157,11 +169,23 @@ class Image extends Base
 
     public static function getFormats(): array
     {
+        trigger_deprecation(
+            'fakerphp/faker',
+            '1.20',
+            'Provider is deprecated and will no longer be available in Faker 2. Please use a custom provider instead'
+        );
+
         return array_keys(static::getFormatConstants());
     }
 
     public static function getFormatConstants(): array
     {
+        trigger_deprecation(
+            'fakerphp/faker',
+            '1.20',
+            'Provider is deprecated and will no longer be available in Faker 2. Please use a custom provider instead'
+        );
+
         return [
             static::FORMAT_JPG => constant('IMAGETYPE_JPEG'),
             static::FORMAT_JPEG => constant('IMAGETYPE_JPEG'),

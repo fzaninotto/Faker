@@ -1,6 +1,19 @@
 # CHANGELOG
 
-## [Unreleased](https://github.com/FakerPHP/Faker/compare/v1.19.0...main)
+## [Unreleased](https://github.com/FakerPHP/Faker/compare/v1.20.0...main)
+
+## [2022-07-20, v1.20.0](https://github.com/FakerPHP/Faker/compare/v1.19.0..v1.20.0)
+
+- Fixed typo in French phone number (#452)
+- Fixed some Hungarian naming bugs (#451)
+- Fixed bug where the NL-BE VAT generation was incorrect (#455)
+- Improve Turkish phone numbers for E164 and added landline support (#460)
+- Add Microsoft Edge User Agent (#464)
+- Added option to set image formats on Faker\Provider\Image (#473)
+- Added support for French color translations (#466)
+- Support filtering timezones by country code (#480)
+- Fixed typo in some greek names (#490)
+- Marked the Faker\Provider\Image as deprecated
 
 ## [2022-02-02, v1.19.0](https://github.com/FakerPHP/Faker/compare/v1.18.0..v1.19.0)
 
@@ -13,7 +26,7 @@
 - Fix is_IS Address docbock type (#438)
 - Fix regexify escape backslash in character class (#434)
 - Removed UUID from Generator to be able to extend it (#441)
--
+
 ## [2022-01-23, v1.18.0](https://github.com/FakerPHP/Faker/compare/v1.17.0..v1.18.0)
 
 - Deprecated UUID, use uuid3 to specify version (#427)
