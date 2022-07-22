@@ -93,4 +93,9 @@ class Person extends \Faker\Provider\Person
     {
         return static::randomElement(static::$suffix);
     }
+
+    public static function lastNameFemaleMarried()
+    {
+        return static::randomElement(static::$lastNameFemaleMarried);
+    }
 }
