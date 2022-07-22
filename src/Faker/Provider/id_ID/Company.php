@@ -14,7 +14,7 @@ class Company extends \Faker\Provider\Company
     /**
      * @see http://id.wikipedia.org/wiki/Jenis_badan_usaha
      */
-    protected static $companyPrefix = ['PT', 'CV', 'UD', 'PD', 'Perum'];
+    protected static $companyPrefix = ['PT', 'Fa', 'CV', 'UD', 'PJ', 'PD', 'Perum', 'Yayasan'];
 
     /**
      * @see https://www.amesbostonhotel.com/macam-macam-profesi-pekerjaan/
