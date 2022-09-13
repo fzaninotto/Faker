@@ -6,16 +6,39 @@ use Faker\Provider\de_DE\PhoneNumber;
 use Faker\Test\TestCase;
 
 /**
- * @group legacy
+ * @group legacy de
  */
 final class PhoneNumberTest extends TestCase
 {
+    public function testPhoneNumber()
+    {
+        for ($i = 0; $i < 100; ++$i) {
+            $number = $this->faker->phoneNumber();
+
+            // Test format
+            self::assertMatchesRegularExpression('/^(\+?49)?(0)?(\s?\(?\d{2,6}\)?)(\s?)(\d{3})(\s?)(\d{3,4})$/', $number);
+        }
+    }
+
     public function testE164PhoneNumberFormat()
     {
-        for ($i = 0; $i < 10; ++$i) {
+        for ($i = 0; $i < 100; ++$i) {
             $number = $this->faker->e164PhoneNumber();
-            self::assertMatchesRegularExpression('/^\+49\d{1,13}$/', $number);
+            self::assertMatchesRegularExpression('/^(\+49)(\d{9,12})$/', $number);
         }
+    }
+
+    public function testMobileNumberFormat()
+    {
+        for ($i = 0; $i < 100; ++$i) {
+            $number = $this->faker->mobileNumber();
+            self::assertMatchesRegularExpression('/^(\+49)?(0)?(\s?)(\d{3,4})(\s?)(\d{3})(\s?)(\d{4})$/', $number);
+        }
+    }
+
+    public function testTollFreeAreaCode()
+    {
+        self::assertContains($this->faker->tollFreeAreaCode(), [800]);
     }
 
     protected function getProviders(): iterable
