@@ -238,7 +238,7 @@ class Person extends \Faker\Provider\Person
      * @see http://www.horoskopai.lt/gaires/populiariausios-pavardes-lietuvoje/
      */
     protected static $lastNameMale = [
-        'Kazlaukas', 'Jankauskas', 'Petrauskas', 'Stankevičius', 'Vasiliauskas', 'Žukauskas', 'Butkus',
+        'Kazlauskas', 'Jankauskas', 'Petrauskas', 'Stankevičius', 'Vasiliauskas', 'Žukauskas', 'Butkus',
         'Kateiva', 'Paulauskas', 'Urbonas', 'Kavaliauskas', 'Baranauskas', 'Pocius', 'Sakalauskas',
     ];
 
