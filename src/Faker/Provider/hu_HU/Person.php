@@ -21,7 +21,7 @@ class Person extends \Faker\Provider\Person
         '{{title}} {{lastName}} {{firstNameFemale}}',
         '{{lastName}} {{firstNameFemale}} {{suffix}}',
         '{{title}} {{lastName}} {{firstNameFemale}} {{suffix}}',
-        '{{lastNameFemaleMarried}} {{$lastName}} {{firstNameFemale}}',
+        '{{lastNameFemaleMarried}} {{lastName}} {{firstNameFemale}}',
         '{{title}} {{lastNameFemaleMarried}} {{firstNameFemale}}',
         '{{lastName}} {{firstNameMaleNe}}',
         '{{title}} {{lastName}} {{firstNameMaleNe}}',
