@@ -28,7 +28,7 @@ jobs:
           echo "Last tag was $TAG"
           ARR=(${TAG//./ })
           ARR[1]=$((${ARR[1]}+1))
-          echo ::set-output name=alias::${ARR[0]}.${ARR[1]}
+          echo "name=alias::${ARR[0]}.${ARR[1]}" >> $GITHUB_OUTPUT
 
       - name: Update branch alias
         run: |
