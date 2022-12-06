@@ -24,9 +24,6 @@ jobs:
           - '7.4'
           - '8.0'
           - '8.1'
-        include:
-          - operating-system: 'windows-latest'
-            php-version: '7.1'
 
     runs-on: ${{ matrix.operating-system }}
 
