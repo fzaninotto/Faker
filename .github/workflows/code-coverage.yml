@@ -29,14 +29,14 @@ jobs:
           extensions: intl
           php-version: ${{ matrix.php-version }}
 
-      - name: Get composer cache directory
+      - name: Determine composer cache directory
         id: composer-cache
-        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+        run: echo "directory=$(composer config cache-dir)" >> $GITHUB_OUTPUT
 
-      - name: Cache dependencies
+      - name: Cache dependencies installed with composer
         uses: actions/cache@v3
         with:
-          path: ${{ steps.composer-cache.outputs.dir }}
+          path: ${{ steps.composer-cache.outputs.directory }}
           key: composer-${{ runner.os }}-${{ matrix.php-version }}-${{ hashFiles('composer.*') }}
           restore-keys: |
             composer-${{ runner.os }}-${{ matrix.php-version }}-
