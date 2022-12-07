@@ -102,7 +102,11 @@ return $config
         'no_spaces_around_offset' => true,
         'no_superfluous_elseif' => true,
         'no_superfluous_phpdoc_tags' => true,
-        'no_trailing_comma_in_singleline_array' => true,
+        'no_trailing_comma_in_singleline' => [
+            'elements' => [
+                'array',
+            ],
+        ],
         'no_unneeded_control_parentheses' => true,
         'no_unneeded_curly_braces' => true,
         'no_unneeded_final_method' => true,
