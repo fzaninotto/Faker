@@ -1,21 +1,20 @@
-
-on:
-  pull_request:
+on: # yamllint disable-line rule:truthy
+  pull_request: ~
   push:
     branches:
       - "main"
       - "[0-9].*"
 
-name: BC Check
+name: "BC Check"
 
 jobs:
   roave-bc-check:
-    name: Roave BC Check
-    runs-on: ubuntu-latest
+    name: "Roave BC Check"
+    runs-on: "ubuntu-latest"
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: "Checkout code"
+        uses: "actions/checkout@v3"
 
-      - name: Roave BC Check
-        uses: docker://nyholm/roave-bc-check-ga
+      - name: "Roave BC Check"
+        uses: "docker://nyholm/roave-bc-check-ga"

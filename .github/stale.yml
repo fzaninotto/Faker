@@ -1,10 +1,10 @@
 daysUntilStale: 14
 daysUntilClose: 7
 exemptLabels:
-  - pinned
-  - security
+  - "pinned"
+  - "security"
 # Label to use when marking an issue as stale
-staleLabel: lifecycle/stale
+staleLabel: "lifecycle/stale"
 # Comment to post when marking an issue as stale. Set to `false` to disable
 markComment: >
   This issue has been automatically marked as stale because it has not had

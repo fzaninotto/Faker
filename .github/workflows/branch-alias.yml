@@ -1,28 +1,28 @@
-name: Update branch alias
+name: "Update branch alias"
 
-on:
+on: # yamllint disable-line rule:truthy
   push:
-    tags: ['*']
+    tags: ["*"]
 
 jobs:
   branch-alias:
-    name: Update branch alias
-    runs-on: ubuntu-latest
+    name: "Update branch alias"
+    runs-on: "ubuntu-latest"
 
     steps:
-      - name: Set up PHP
-        uses: shivammathur/setup-php@v2
+      - name: "Set up PHP"
+        uses: "shivammathur/setup-php@v2"
         with:
-          php-version: 7.4
-          coverage: none
+          php-version: "7.4"
+          coverage: "none"
 
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: "Checkout code"
+        uses: "actions/checkout@v3"
         with:
-          ref: main
+          ref: "main"
 
-      - name: Find branch alias
-        id: find_alias
+      - name: "Find branch alias"
+        id: "find_alias"
         run: |
           TAG=$(echo $GITHUB_REF | cut -d'/' -f 3)
           echo "Last tag was $TAG"
@@ -30,7 +30,7 @@ jobs:
           ARR[1]=$((${ARR[1]}+1))
           echo "name=alias::${ARR[0]}.${ARR[1]}" >> $GITHUB_OUTPUT
 
-      - name: Update branch alias
+      - name: "Update branch alias"
         run: |
           CURRENT_ALIAS=$(composer config extra.branch-alias.dev-main | cut -d'-' -f 1)
 
@@ -53,15 +53,15 @@ jobs:
 
           composer config extra.branch-alias.dev-main ${{ steps.find_alias.outputs.alias }}-dev
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
+      - name: "Create Pull Request"
+        uses: "peter-evans/create-pull-request@v4"
         with:
-          base: main
-          branch: branch-alias-update
-          author: GitHub <noreply@github.com>
-          committer: GitHub <noreply@github.com>
-          commit-message: Updating branch alias to ${{ steps.find_alias.outputs.alias }}
-          title: Update branch alias
-          labels: pinned, do not merge
+          base: "main"
+          branch: "branch-alias-update"
+          author: "GitHub <noreply@github.com>"
+          committer: "GitHub <noreply@github.com>"
+          commit-message: "Updating branch alias to ${{ steps.find_alias.outputs.alias }}"
+          title: "Update branch alias"
+          labels: "pinned, do not merge"
           body: |
             Since we just tagged a new version, we need to update composer.json branch alias. This should not be merged until there are new features, as it would prevent patch releases.

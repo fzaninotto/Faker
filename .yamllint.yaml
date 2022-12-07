@@ -1,0 +1,67 @@
+extends: "default"
+
+ignore: |
+  .build/
+  vendor/
+  vendor-bin/
+  roave-bc-check.yaml
+
+rules:
+  braces:
+    max-spaces-inside-empty: 0
+    max-spaces-inside: 1
+    min-spaces-inside-empty: 0
+    min-spaces-inside: 1
+  brackets:
+    max-spaces-inside-empty: 0
+    max-spaces-inside: 0
+    min-spaces-inside-empty: 0
+    min-spaces-inside: 0
+  colons:
+    max-spaces-after: 1
+    max-spaces-before: 0
+  commas:
+    max-spaces-after: 1
+    max-spaces-before: 0
+    min-spaces-after: 1
+  comments:
+    ignore-shebangs: true
+    min-spaces-from-content: 1
+    require-starting-space: true
+  comments-indentation: "enable"
+  document-end:
+    present: false
+  document-start:
+    present: false
+  indentation:
+    check-multi-line-strings: false
+    indent-sequences: true
+    spaces: 2
+  empty-lines:
+    max-end: 0
+    max-start: 0
+    max: 1
+  empty-values:
+    forbid-in-block-mappings: true
+    forbid-in-flow-mappings: true
+  hyphens:
+    max-spaces-after: 2
+  key-duplicates: "enable"
+  key-ordering: "disable"
+  line-length: "disable"
+  new-line-at-end-of-file: "enable"
+  new-lines:
+    type: "unix"
+  octal-values:
+    forbid-implicit-octal: true
+  quoted-strings:
+    quote-type: "double"
+  trailing-spaces: "enable"
+  truthy:
+    allowed-values:
+      - "false"
+      - "true"
+
+yaml-files:
+  - "*.yaml"
+  - "*.yml"
