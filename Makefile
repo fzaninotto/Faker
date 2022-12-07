@@ -28,7 +28,7 @@ static: vendor ## Runs static analyzers
 .PHONY: baseline
 baseline: vendor ## Generate baseline files
 	vendor/bin/phpstan --generate-baseline
-	vendor/bin/psalm --update-baseline
+	vendor/bin/psalm --set-baseline=psalm.baseline.xml
 
 .PHONY: clean
 clean:   ## Cleans up build and vendor files
