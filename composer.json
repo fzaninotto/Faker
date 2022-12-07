@@ -50,10 +50,7 @@
             "bamarni/composer-bin-plugin": true,
             "composer/package-versions-deprecated": true
         },
-        "sort-packages": true,
-        "platform": {
-            "php": "7.4.32"
-        }
+        "sort-packages": true
     },
     "extra": {
         "branch-alias": {
