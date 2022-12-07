@@ -15,7 +15,7 @@ It's heavily inspired by Perl's [Data::Faker](https://metacpan.org/pod/Data::Fak
 
 ### Installation
 
-Faker requires PHP >= 7.1.
+Faker requires PHP >= 7.4.
 
 ```shell
 composer require fakerphp/faker

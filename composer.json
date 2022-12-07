@@ -14,7 +14,7 @@
         }
     ],
     "require": {
-        "php": "^7.1 || ^8.0",
+        "php": "^7.4 || ^8.0",
         "psr/container": "^1.0 || ^2.0",
         "symfony/deprecation-contracts": "^2.2 || ^3.0"
     },
@@ -50,7 +50,10 @@
             "bamarni/composer-bin-plugin": true,
             "composer/package-versions-deprecated": true
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "platform": {
+            "php": "7.4.32"
+        }
     },
     "extra": {
         "branch-alias": {

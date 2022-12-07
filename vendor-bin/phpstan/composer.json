@@ -1,13 +1,13 @@
 {
     "require": {
-        "php": "^7.1 || ^8.0",
+        "php": "^7.4 || ^8.0",
         "phpstan/extension-installer": "^1.1.0",
         "phpstan/phpstan": "^0.12.100",
         "phpstan/phpstan-deprecation-rules": "^0.12.6"
     },
     "config": {
         "platform": {
-            "php": "7.1.33"
+            "php": "7.4.32"
         },
         "preferred-install": "dist",
         "sort-packages": true,
