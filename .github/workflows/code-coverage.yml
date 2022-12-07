@@ -25,7 +25,7 @@ jobs:
       - name: "Install PHP with extensions"
         uses: "shivammathur/setup-php@v2"
         with:
-          coverage: "pcov"
+          coverage: "xdebug"
           extensions: "intl"
           php-version: "${{ matrix.php-version }}"
 
