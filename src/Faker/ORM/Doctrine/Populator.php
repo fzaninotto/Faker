@@ -111,7 +111,7 @@ class Populator
                 $insertedEntities[$class][] = $this->entities[$class]->execute(
                     $entityManager,
                     $insertedEntities,
-                    $generateId
+                    $generateId,
                 );
 
                 if (count($insertedEntities) % $this->batchSize === 0) {

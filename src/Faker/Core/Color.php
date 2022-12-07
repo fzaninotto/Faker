@@ -78,7 +78,7 @@ final class Color implements Extension\ColorExtension
             $color[1],
             $color[1],
             $color[2],
-            $color[2]
+            $color[2],
         );
     }
 
@@ -113,7 +113,7 @@ final class Color implements Extension\ColorExtension
     {
         return sprintf(
             'rgb(%s)',
-            $this->rgbColor()
+            $this->rgbColor(),
         );
     }
 
@@ -127,7 +127,7 @@ final class Color implements Extension\ColorExtension
         return sprintf(
             'rgba(%s,%s)',
             $this->rgbColor(),
-            $number->randomFloat(1, 0, 1)
+            $number->randomFloat(1, 0, 1),
         );
     }
 
@@ -158,7 +158,7 @@ final class Color implements Extension\ColorExtension
             '%s,%s,%s',
             $number->numberBetween(0, 360),
             $number->numberBetween(0, 100),
-            $number->numberBetween(0, 100)
+            $number->numberBetween(0, 100),
         );
     }
 

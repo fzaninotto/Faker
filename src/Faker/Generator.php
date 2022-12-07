@@ -584,7 +584,7 @@ class Generator
         if (!$this->container->has($id)) {
             throw new Extension\ExtensionNotFound(sprintf(
                 'No Faker extension with id "%s" was loaded.',
-                $id
+                $id,
             ));
         }
 
@@ -893,7 +893,7 @@ class Generator
         return $this->ext(Extension\NumberExtension::class)->randomFloat(
             $nbMaxDecimals !== null ? (int) $nbMaxDecimals : null,
             (float) $min,
-            $max !== null ? (float) $max : null
+            $max !== null ? (float) $max : null,
         );
     }
 
@@ -911,7 +911,7 @@ class Generator
     {
         return $this->ext(Extension\NumberExtension::class)->randomNumber(
             $nbDigits !== null ? (int) $nbDigits : null,
-            (bool) $strict
+            (bool) $strict,
         );
     }
 

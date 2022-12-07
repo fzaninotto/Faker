@@ -27,7 +27,7 @@ final class ContainerBuilderTest extends TestCase
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage(sprintf(
             'First argument to "%s::add()" must be a string, callable or object.',
-            ContainerBuilder::class
+            ContainerBuilder::class,
         ));
 
         $containerBuilder->add($value);
@@ -77,7 +77,7 @@ final class ContainerBuilderTest extends TestCase
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage(sprintf(
             'Second argument to "%s::add()" is required not passing a string or object as first argument',
-            ContainerBuilder::class
+            ContainerBuilder::class,
         ));
 
         $containerBuilder->add($value);

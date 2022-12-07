@@ -36,7 +36,7 @@ final class Blood implements Extension\BloodExtension
         return sprintf(
             '%s%s',
             $this->bloodType(),
-            $this->bloodRh()
+            $this->bloodRh(),
         );
     }
 }

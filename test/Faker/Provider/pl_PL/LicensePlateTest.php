@@ -29,7 +29,7 @@ final class LicensePlateTest extends TestCase
     {
         for ($i = 0; $i < 40; ++$i) {
             $licensePlate = $this->faker->licensePlate(
-                false
+                false,
             );
             self::assertNotEmpty($licensePlate);
             self::assertIsString($licensePlate);
@@ -44,7 +44,7 @@ final class LicensePlateTest extends TestCase
     {
         for ($i = 0; $i < 5; ++$i) {
             $licensePlate = $this->faker->licensePlate(
-                true
+                true,
             );
             self::assertNotEmpty($licensePlate);
             self::assertIsString($licensePlate);
@@ -60,7 +60,7 @@ final class LicensePlateTest extends TestCase
         for ($i = 0; $i < 5; ++$i) {
             $licensePlate = $this->faker->licensePlate(
                 false,
-                ['podkarpackie']
+                ['podkarpackie'],
             );
             self::assertNotEmpty($licensePlate);
             self::assertIsString($licensePlate);
@@ -76,7 +76,7 @@ final class LicensePlateTest extends TestCase
         for ($i = 0; $i < 5; ++$i) {
             $licensePlate = $this->faker->licensePlate(
                 true,
-                ['łódzkie', 'army']
+                ['łódzkie', 'army'],
             );
             self::assertNotEmpty($licensePlate);
             self::assertIsString($licensePlate);
@@ -92,7 +92,7 @@ final class LicensePlateTest extends TestCase
         for ($i = 0; $i < 5; ++$i) {
             $licensePlate = $this->faker->licensePlate(
                 false,
-                ['łódzkie', 'army']
+                ['łódzkie', 'army'],
             );
             self::assertNotEmpty($licensePlate);
             self::assertIsString($licensePlate);
@@ -108,7 +108,7 @@ final class LicensePlateTest extends TestCase
         for ($i = 0; $i < 5; ++$i) {
             $licensePlate = $this->faker->licensePlate(
                 true,
-                ['fake voivodeship', 'fake voivodeship2']
+                ['fake voivodeship', 'fake voivodeship2'],
             );
             self::assertNotEmpty($licensePlate);
             self::assertIsString($licensePlate);
@@ -124,7 +124,7 @@ final class LicensePlateTest extends TestCase
         for ($i = 0; $i < 5; ++$i) {
             $licensePlate = $this->faker->licensePlate(
                 true,
-                []
+                [],
             );
             self::assertNotEmpty($licensePlate);
             self::assertIsString($licensePlate);
@@ -141,7 +141,7 @@ final class LicensePlateTest extends TestCase
             $licensePlate = $this->faker->licensePlate(
                 true,
                 [],
-                []
+                [],
             );
             self::assertNotEmpty($licensePlate);
             self::assertIsString($licensePlate);
@@ -158,7 +158,7 @@ final class LicensePlateTest extends TestCase
             $licensePlate = $this->faker->licensePlate(
                 true,
                 ['mazowieckie', 'services'],
-                ['Straż Graniczna', 'warszawski zachodni', 'radomski']
+                ['Straż Graniczna', 'warszawski zachodni', 'radomski'],
             );
             self::assertNotEmpty($licensePlate);
             self::assertIsString($licensePlate);
@@ -175,7 +175,7 @@ final class LicensePlateTest extends TestCase
             $licensePlate = $this->faker->licensePlate(
                 true,
                 ['mazowieckie', 'services'],
-                ['fake county']
+                ['fake county'],
             );
             self::assertNotEmpty($licensePlate);
             self::assertIsString($licensePlate);
@@ -192,7 +192,7 @@ final class LicensePlateTest extends TestCase
             $licensePlate = $this->faker->licensePlate(
                 true,
                 ['fake voivodeship'],
-                ['Straż Graniczna', 'warszawski zachodni', 'radomski']
+                ['Straż Graniczna', 'warszawski zachodni', 'radomski'],
             );
             self::assertNotEmpty($licensePlate);
             self::assertIsString($licensePlate);
@@ -209,7 +209,7 @@ final class LicensePlateTest extends TestCase
             $licensePlate = $this->faker->licensePlate(
                 true,
                 null,
-                ['Straż Graniczna', 'warszawski zachodni', 'radomski']
+                ['Straż Graniczna', 'warszawski zachodni', 'radomski'],
             );
             self::assertNotEmpty($licensePlate);
             self::assertIsString($licensePlate);
@@ -226,7 +226,7 @@ final class LicensePlateTest extends TestCase
             $licensePlate = $this->faker->licensePlate(
                 true,
                 [null],
-                ['Straż Graniczna', 'warszawski zachodni', 'radomski']
+                ['Straż Graniczna', 'warszawski zachodni', 'radomski'],
             );
             self::assertNotEmpty($licensePlate);
             self::assertIsString($licensePlate);
@@ -243,7 +243,7 @@ final class LicensePlateTest extends TestCase
             $licensePlate = $this->faker->licensePlate(
                 false,
                 ['mazowieckie', 'services'],
-                null
+                null,
             );
             self::assertNotEmpty($licensePlate);
             self::assertIsString($licensePlate);
@@ -260,7 +260,7 @@ final class LicensePlateTest extends TestCase
             $licensePlate = $this->faker->licensePlate(
                 true,
                 ['services'],
-                null
+                null,
             );
             self::assertNotEmpty($licensePlate);
             self::assertIsString($licensePlate);

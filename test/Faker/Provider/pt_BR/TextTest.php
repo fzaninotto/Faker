@@ -29,32 +29,32 @@ final class TextTest extends TestCase
     {
         self::assertSame(
             'Uma noite destas.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['Uma noite destas, '])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['Uma noite destas, ']),
         );
 
         self::assertSame(
             'Uma noite destas.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['Uma noite destas—   '])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['Uma noite destas—   ']),
         );
 
         self::assertSame(
             'Uma noite destas.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['Uma noite destas,'])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['Uma noite destas,']),
         );
 
         self::assertSame(
             'Uma noite destas!.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['Uma noite destas! '])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['Uma noite destas! ']),
         );
 
         self::assertSame(
             'Uma noite destas.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['Uma noite destas: '])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['Uma noite destas: ']),
         );
 
         self::assertSame(
             'Uma noite destas.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['Uma noite destas; '])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['Uma noite destas; ']),
         );
     }
 }

@@ -205,7 +205,7 @@ class EntityPopulator
                         'Failed to generate a value for %s::%s: %s',
                         get_class($obj),
                         $field,
-                        $ex->getMessage()
+                        $ex->getMessage(),
                     ));
                 }
                 // Try a standard setter if it's available, otherwise fall back on reflection

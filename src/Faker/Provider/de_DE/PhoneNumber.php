@@ -121,7 +121,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     public function mobileNumber()
     {
         return ltrim(static::numerify($this->generator->parse(
-            static::randomElement(static::$mobileFormats)
+            static::randomElement(static::$mobileFormats),
         )));
     }
 }

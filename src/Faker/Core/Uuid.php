@@ -50,7 +50,7 @@ final class Uuid implements UuidExtension
             $byte[12],
             $byte[13],
             $byte[14],
-            $byte[15]
+            $byte[15],
         );
     }
 }

@@ -31,7 +31,7 @@ final class AddressTest extends TestCase
         self::assertSame(
             preg_match($pattern, $streetName),
             1,
-            'Street name ' . $streetName . ' is wrong!'
+            'Street name ' . $streetName . ' is wrong!',
         );
     }
 
@@ -42,7 +42,7 @@ final class AddressTest extends TestCase
         self::assertSame(
             preg_match($pattern, $city),
             1,
-            'City name ' . $city . ' is wrong!'
+            'City name ' . $city . ' is wrong!',
         );
     }
 
@@ -53,7 +53,7 @@ final class AddressTest extends TestCase
         self::assertSame(
             preg_match($pattern, $regionName),
             1,
-            'Region name ' . $regionName . ' is wrong!'
+            'Region name ' . $regionName . ' is wrong!',
         );
     }
 
@@ -64,7 +64,7 @@ final class AddressTest extends TestCase
         self::assertSame(
             preg_match($pattern, $country),
             1,
-            'Country name ' . $country . ' is wrong!'
+            'Country name ' . $country . ' is wrong!',
         );
     }
 

@@ -26,7 +26,7 @@ final class Version implements VersionExtension
             mt_rand(0, 99),
             mt_rand(0, 99),
             $preRelease && mt_rand(0, 1) ? '-' . $this->semverPreReleaseIdentifier() : '',
-            $build && mt_rand(0, 1) ? '+' . $this->semverBuildIdentifier() : ''
+            $build && mt_rand(0, 1) ? '+' . $this->semverBuildIdentifier() : '',
         );
     }
 

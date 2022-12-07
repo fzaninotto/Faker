@@ -138,7 +138,7 @@ class Color extends Base
             '%s,%s,%s',
             self::numberBetween(0, 360),
             self::numberBetween(0, 100),
-            self::numberBetween(0, 100)
+            self::numberBetween(0, 100),
         );
     }
 

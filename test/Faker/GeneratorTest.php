@@ -312,7 +312,7 @@ final class GeneratorTest extends TestCase
 
         $uniqueGenerator = $generator->unique(
             false,
-            $maxRetries
+            $maxRetries,
         );
 
         $uniqueGenerator->word();
@@ -320,7 +320,7 @@ final class GeneratorTest extends TestCase
         $this->expectException(\OverflowException::class);
         $this->expectExceptionMessage(sprintf(
             'Maximum retries of %d reached without finding a unique value',
-            $maxRetries
+            $maxRetries,
         ));
 
         $uniqueGenerator->word();

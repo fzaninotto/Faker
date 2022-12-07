@@ -34,7 +34,7 @@ final class ContainerBuilder
         if (!is_string($value) && !is_callable($value) && !is_object($value)) {
             throw new \InvalidArgumentException(sprintf(
                 'First argument to "%s::add()" must be a string, callable or object.',
-                self::class
+                self::class,
             ));
         }
 
@@ -46,7 +46,7 @@ final class ContainerBuilder
             } else {
                 throw new \InvalidArgumentException(sprintf(
                     'Second argument to "%s::add()" is required not passing a string or object as first argument',
-                    self::class
+                    self::class,
                 ));
             }
         }

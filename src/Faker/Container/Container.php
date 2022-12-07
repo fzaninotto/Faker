@@ -46,7 +46,7 @@ final class Container implements ContainerInterface
         if (!is_string($id)) {
             throw new \InvalidArgumentException(sprintf(
                 'First argument of %s::get() must be string',
-                self::class
+                self::class,
             ));
         }
 
@@ -57,7 +57,7 @@ final class Container implements ContainerInterface
         if (!$this->has($id)) {
             throw new NotInContainerException(sprintf(
                 'There is not service with id "%s" in the container.',
-                $id
+                $id,
             ));
         }
 
@@ -69,7 +69,7 @@ final class Container implements ContainerInterface
             throw new \RuntimeException(sprintf(
                 'Service resolved for identifier "%s" does not implement the %s" interface.',
                 $id,
-                Extension::class
+                Extension::class,
             ));
         }
 
@@ -90,7 +90,7 @@ final class Container implements ContainerInterface
                 throw new ContainerException(
                     sprintf('Error while invoking callable for "%s"', $id),
                     0,
-                    $e
+                    $e,
                 );
             }
         } elseif (is_object($definition)) {
@@ -106,12 +106,12 @@ final class Container implements ContainerInterface
 
             throw new ContainerException(sprintf(
                 'Could not instantiate class "%s". Class was not found.',
-                $id
+                $id,
             ));
         } else {
             throw new ContainerException(sprintf(
                 'Invalid type for definition with id "%s"',
-                $id
+                $id,
             ));
         }
     }
@@ -128,7 +128,7 @@ final class Container implements ContainerInterface
         if (!is_string($id)) {
             throw new \InvalidArgumentException(sprintf(
                 'First argument of %s::get() must be string',
-                self::class
+                self::class,
             ));
         }
 

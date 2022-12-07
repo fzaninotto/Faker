@@ -32,7 +32,7 @@ final class CompanyTest extends TestCase
         self::assertGreaterThanOrEqual(
             3,
             count(explode(' ', $this->faker->catchPhrase)),
-            "'$phrase' - should be contain 3 word"
+            "'$phrase' - should be contain 3 word",
         );
     }
 

@@ -57,7 +57,7 @@ class DateTime extends Base
     {
         return static::setTimezone(
             new \DateTime('@' . static::unixTime($max)),
-            $timezone
+            $timezone,
         );
     }
 
@@ -80,7 +80,7 @@ class DateTime extends Base
 
         return static::setTimezone(
             new \DateTime('@' . self::numberBetween($min, static::getMaxTimestamp($max))),
-            $timezone
+            $timezone,
         );
     }
 
@@ -156,7 +156,7 @@ class DateTime extends Base
 
         return static::setTimezone(
             new \DateTime('@' . $timestamp),
-            $timezone
+            $timezone,
         );
     }
 
@@ -189,7 +189,7 @@ class DateTime extends Base
         return static::dateTimeBetween(
             $begin,
             $end,
-            $timezone
+            $timezone,
         );
     }
 

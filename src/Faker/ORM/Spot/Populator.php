@@ -79,7 +79,7 @@ class Populator
         foreach ($this->quantities as $entityName => $number) {
             for ($i = 0; $i < $number; ++$i) {
                 $insertedEntities[$entityName][] = $this->entities[$entityName]->execute(
-                    $insertedEntities
+                    $insertedEntities,
                 );
             }
         }

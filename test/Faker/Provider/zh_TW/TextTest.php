@@ -29,12 +29,12 @@ final class TextTest extends TestCase
     {
         self::assertSame(
             ['中', '文', '測', '試', '真', '有', '趣'],
-            $this->getMethod('explode')->invokeArgs(null, ['中文測試真有趣'])
+            $this->getMethod('explode')->invokeArgs(null, ['中文測試真有趣']),
         );
 
         self::assertSame(
             ['標', '點', '，', '符', '號', '！'],
-            $this->getMethod('explode')->invokeArgs(null, ['標點，符號！'])
+            $this->getMethod('explode')->invokeArgs(null, ['標點，符號！']),
         );
     }
 
@@ -42,7 +42,7 @@ final class TextTest extends TestCase
     {
         self::assertContains(
             $this->getMethod('strlen')->invokeArgs(null, ['中文測試真有趣']),
-            [7, 21]
+            [7, 21],
         );
     }
 
@@ -63,17 +63,17 @@ final class TextTest extends TestCase
     {
         self::assertSame(
             '中文測試真有趣。',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['中文測試真有趣'])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['中文測試真有趣']),
         );
 
         self::assertSame(
             '中文測試真有趣。',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['中文測試真有趣，'])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['中文測試真有趣，']),
         );
 
         self::assertSame(
             '中文測試真有趣！',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['中文測試真有趣！'])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['中文測試真有趣！']),
         );
     }
 }

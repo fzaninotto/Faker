@@ -426,7 +426,7 @@ final class BaseTest extends TestCase
 
         self::assertEquals(
             round(array_sum($valuesOld) / 10000, 2),
-            round(array_sum($valuesNew) / 10000, 2)
+            round(array_sum($valuesNew) / 10000, 2),
         );
     }
 

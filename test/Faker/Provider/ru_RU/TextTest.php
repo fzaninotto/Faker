@@ -29,32 +29,32 @@ final class TextTest extends TestCase
     {
         self::assertSame(
             'На другой день Чичиков отправился на обед и вечер.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер '])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер ']),
         );
 
         self::assertSame(
             'На другой день Чичиков отправился на обед и вечер.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер—'])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер—']),
         );
 
         self::assertSame(
             'На другой день Чичиков отправился на обед и вечер.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер,'])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер,']),
         );
 
         self::assertSame(
             'На другой день Чичиков отправился на обед и вечер!.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер! '])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер! ']),
         );
 
         self::assertSame(
             'На другой день Чичиков отправился на обед и вечер.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер; '])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер; ']),
         );
 
         self::assertSame(
             'На другой день Чичиков отправился на обед и вечер.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер: '])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['На другой день Чичиков отправился на обед и вечер: ']),
         );
     }
 }

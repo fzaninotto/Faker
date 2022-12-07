@@ -58,7 +58,7 @@ final class ContainerTest extends TestCase
         $this->expectExceptionMessage(sprintf(
             'Service resolved for identifier "%s" does not implement the %s" interface.',
             $id,
-            Extension::class
+            Extension::class,
         ));
 
         $container->get($id);

@@ -93,7 +93,7 @@ class Person extends \Faker\Provider\Person
     public static function idNumber()
     {
         $partialValue = static::numerify(
-            static::randomElement([1, 2]) . str_repeat('#', 8)
+            static::randomElement([1, 2]) . str_repeat('#', 8),
         );
 
         return Luhn::generateLuhnNumber($partialValue);

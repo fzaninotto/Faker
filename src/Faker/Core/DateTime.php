@@ -89,7 +89,7 @@ final class DateTime implements DateTimeExtension, GeneratorAwareExtension
     {
         return $this->setTimezone(
             $this->getTimestampDateTime($this->unixTime($until)),
-            $timezone
+            $timezone,
         );
     }
 
@@ -99,7 +99,7 @@ final class DateTime implements DateTimeExtension, GeneratorAwareExtension
 
         return $this->setTimezone(
             $this->getTimestampDateTime($this->generator->numberBetween($min, $this->getTimestamp($until))),
-            $timezone
+            $timezone,
         );
     }
 
@@ -116,7 +116,7 @@ final class DateTime implements DateTimeExtension, GeneratorAwareExtension
 
         return $this->setTimezone(
             $this->getTimestampDateTime($timestamp),
-            $timezone
+            $timezone,
         );
     }
 

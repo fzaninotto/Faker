@@ -29,32 +29,32 @@ final class TextTest extends TestCase
     {
         self::assertSame(
             'ჭეშმარიტია. ჩვენც ისე.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['ჭეშმარიტია. ჩვენც ისე '])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['ჭეშმარიტია. ჩვენც ისე ']),
         );
 
         self::assertSame(
             'ჭეშმარიტია. ჩვენც ისე.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['ჭეშმარიტია. ჩვენც ისე— '])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['ჭეშმარიტია. ჩვენც ისე— ']),
         );
 
         self::assertSame(
             'ჭეშმარიტია. ჩვენც ისე.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['ჭეშმარიტია. ჩვენც ისე,  '])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['ჭეშმარიტია. ჩვენც ისე,  ']),
         );
 
         self::assertSame(
             'ჭეშმარიტია. ჩვენც ისე!.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['ჭეშმარიტია. ჩვენც ისე! '])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['ჭეშმარიტია. ჩვენც ისე! ']),
         );
 
         self::assertSame(
             'ჭეშმარიტია. ჩვენც ისე.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['ჭეშმარიტია. ჩვენც ისე; '])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['ჭეშმარიტია. ჩვენც ისე; ']),
         );
 
         self::assertSame(
             'ჭეშმარიტია. ჩვენც ისე.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['ჭეშმარიტია. ჩვენც ისე: '])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['ჭეშმარიტია. ჩვენც ისე: ']),
         );
     }
 }

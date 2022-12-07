@@ -81,7 +81,7 @@ final class PersonTest extends TestCase
         $cnp = $this->faker->cnp;
         self::assertTrue(
             $this->isValidCnp($cnp),
-            sprintf("Invalid CNP '%' generated", $cnp)
+            sprintf("Invalid CNP '%' generated", $cnp),
         );
     }
 
@@ -90,13 +90,13 @@ final class PersonTest extends TestCase
         $cnp = $this->faker->cnp(Person::GENDER_MALE);
         self::assertTrue(
             $this->isValidMaleCnp($cnp),
-            sprintf("Invalid CNP '%' generated for '%s' gender", $cnp, Person::GENDER_MALE)
+            sprintf("Invalid CNP '%' generated for '%s' gender", $cnp, Person::GENDER_MALE),
         );
 
         $cnp = $this->faker->cnp(Person::GENDER_FEMALE);
         self::assertTrue(
             $this->isValidFemaleCnp($cnp),
-            sprintf("Invalid CNP '%' generated for '%s' gender", $cnp, Person::GENDER_FEMALE)
+            sprintf("Invalid CNP '%' generated for '%s' gender", $cnp, Person::GENDER_FEMALE),
         );
     }
 
@@ -121,7 +121,7 @@ final class PersonTest extends TestCase
         $cnp = $this->faker->cnp(null, $value);
         self::assertTrue(
             $this->isValidCnp($cnp),
-            sprintf("Invalid CNP '%' generated for valid year '%s'", $cnp, $value)
+            sprintf("Invalid CNP '%' generated for valid year '%s'", $cnp, $value),
         );
     }
 
@@ -146,7 +146,7 @@ final class PersonTest extends TestCase
         $cnp = $this->faker->cnp(null, null, $value);
         self::assertTrue(
             $this->isValidCnp($cnp),
-            sprintf("Invalid CNP '%' generated for valid year '%s'", $cnp, $value)
+            sprintf("Invalid CNP '%' generated for valid year '%s'", $cnp, $value),
         );
     }
 
@@ -166,12 +166,12 @@ final class PersonTest extends TestCase
         $cnp = $this->faker->cnp(null, null, null, false);
         self::assertTrue(
             $this->isValidCnp($cnp),
-            sprintf("Invalid CNP '%' generated for non resident", $cnp)
+            sprintf("Invalid CNP '%' generated for non resident", $cnp),
         );
         self::assertStringStartsWith(
             '9',
             $cnp,
-            sprintf("Invalid CNP '%' generated for non resident (should start with 9)", $cnp)
+            sprintf("Invalid CNP '%' generated for non resident (should start with 9)", $cnp),
         );
     }
 
@@ -190,7 +190,7 @@ final class PersonTest extends TestCase
         self::assertStringStartsWith(
             $expectedCnpStart,
             $cnp,
-            sprintf("Invalid CNP '%' generated for non valid data", $cnp)
+            sprintf("Invalid CNP '%' generated for non valid data", $cnp),
         );
     }
 

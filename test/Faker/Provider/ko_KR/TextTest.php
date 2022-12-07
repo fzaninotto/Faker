@@ -29,32 +29,32 @@ final class TextTest extends TestCase
     {
         self::assertSame(
             '최석(崔晳)으로부터 최후의 편지가.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['최석(崔晳)으로부터 최후의 편지가 '])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['최석(崔晳)으로부터 최후의 편지가 ']),
         );
 
         self::assertSame(
             '최석(崔晳)으로부터 최후의 편지가.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['최석(崔晳)으로부터 최후의 편지가—'])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['최석(崔晳)으로부터 최후의 편지가—']),
         );
 
         self::assertSame(
             '최석(崔晳)으로부터 최후의 편지가.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['최석(崔晳)으로부터 최후의 편지가,'])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['최석(崔晳)으로부터 최후의 편지가,']),
         );
 
         self::assertSame(
             '최석(崔晳)으로부터 최후의 편지가!.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['최석(崔晳)으로부터 최후의 편지가! '])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['최석(崔晳)으로부터 최후의 편지가! ']),
         );
 
         self::assertSame(
             '최석(崔晳)으로부터 최후의 편지가.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['최석(崔晳)으로부터 최후의 편지가: '])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['최석(崔晳)으로부터 최후의 편지가: ']),
         );
 
         self::assertSame(
             '최석(崔晳)으로부터 최후의 편지가.',
-            $this->getMethod('appendEnd')->invokeArgs(null, ['최석(崔晳)으로부터 최후의 편지가; '])
+            $this->getMethod('appendEnd')->invokeArgs(null, ['최석(崔晳)으로부터 최후의 편지가; ']),
         );
     }
 }

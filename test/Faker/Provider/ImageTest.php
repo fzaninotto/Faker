@@ -14,7 +14,7 @@ final class ImageTest extends TestCase
     {
         self::assertMatchesRegularExpression(
             '#^https://via.placeholder.com/640x480.png/#',
-            Image::imageUrl()
+            Image::imageUrl(),
         );
     }
 
@@ -22,7 +22,7 @@ final class ImageTest extends TestCase
     {
         self::assertMatchesRegularExpression(
             '#^https://via.placeholder.com/800x400.png/#',
-            Image::imageUrl(800, 400)
+            Image::imageUrl(800, 400),
         );
     }
 
@@ -30,7 +30,7 @@ final class ImageTest extends TestCase
     {
         self::assertMatchesRegularExpression(
             '#^https://via.placeholder.com/800x400.png/[\w]{6}\?text=nature\+.*#',
-            Image::imageUrl(800, 400, 'nature')
+            Image::imageUrl(800, 400, 'nature'),
         );
     }
 
@@ -38,7 +38,7 @@ final class ImageTest extends TestCase
     {
         self::assertMatchesRegularExpression(
             '#^https://via.placeholder.com/800x400.png/[\w]{6}\?text=nature\+Faker#',
-            Image::imageUrl(800, 400, 'nature', false, 'Faker')
+            Image::imageUrl(800, 400, 'nature', false, 'Faker'),
         );
     }
 
@@ -50,12 +50,12 @@ final class ImageTest extends TestCase
             'nature',
             false,
             'Faker',
-            false
+            false,
         );
 
         self::assertMatchesRegularExpression(
             '#^https://via.placeholder.com/800x400.png/[\w]{6}\?text=nature\+Faker#',
-            $imageUrl
+            $imageUrl,
         );
     }
 
@@ -67,12 +67,12 @@ final class ImageTest extends TestCase
             'nature',
             false,
             'Faker',
-            true
+            true,
         );
 
         self::assertMatchesRegularExpression(
             '#^https://via.placeholder.com/800x400.png/CCCCCC\?text=nature\+Faker#',
-            $imageUrl
+            $imageUrl,
         );
     }
 
@@ -95,7 +95,7 @@ final class ImageTest extends TestCase
             false,
             'Faker',
             true,
-            'foo'
+            'foo',
         );
     }
 
@@ -109,12 +109,12 @@ final class ImageTest extends TestCase
                 false,
                 'Faker',
                 true,
-                $format
+                $format,
             );
 
             self::assertMatchesRegularExpression(
                 "#^https://via.placeholder.com/800x400.{$format}/CCCCCC\?text=nature\+Faker#",
-                $imageUrl
+                $imageUrl,
             );
         }
     }
@@ -145,7 +145,7 @@ final class ImageTest extends TestCase
                 false,
                 'Faker',
                 true,
-                $format
+                $format,
             );
             self::assertFileExists($file);
 
