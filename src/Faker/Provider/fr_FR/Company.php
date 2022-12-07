@@ -173,6 +173,7 @@ class Company extends \Faker\Provider\Company
 
     /**
      * @see http://www.pole-emploi.fr/candidat/le-code-rome-et-les-fiches-metiers-@/article.jspz?id=60702
+     *
      * @note Randomly took 300 from this list
      */
     protected static $jobTitleFormat = [

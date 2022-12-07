@@ -138,6 +138,7 @@ final class PersonTest extends TestCase
 
     /**
      * @param string $value
+     *
      * @dataProvider validCountyCodeProvider
      */
     public function testValidCountyCodeReturnsValidCnp($value)
@@ -151,6 +152,7 @@ final class PersonTest extends TestCase
 
     /**
      * @param string $value
+     *
      * @dataProvider invalidCountyCodeProvider
      */
     public function testInvalidCountyCodeThrowsException($value)

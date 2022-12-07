@@ -34,7 +34,7 @@ final class ContainerBuilderTest extends TestCase
     }
 
     /**
-     * @return \Generator<string, array{0: array|bool|float|int|null|resource}>
+     * @return \Generator<string, array{0: array|bool|float|int|resource|null}>
      */
     public function provideInvalidValue(): \Generator
     {

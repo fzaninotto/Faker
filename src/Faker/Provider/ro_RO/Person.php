@@ -163,12 +163,12 @@ class Person extends \Faker\Provider\Person
         switch (count($dateOfBirthParts)) {
             case 1:
                 $dateOfBirthParts[] = $baseDate->format('m');
-            //don't break, we need the day also
-            // no break
+                //don't break, we need the day also
+                // no break
             case 2:
                 $dateOfBirthParts[] = $baseDate->format('d');
-            //don't break, next line will
-            // no break
+                //don't break, next line will
+                // no break
             case 3:
                 break;
 

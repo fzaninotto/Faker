@@ -69,9 +69,9 @@ class ColumnTypeGuesser
             case \PropelColumnTypes::FLOAT:
             case \PropelColumnTypes::DOUBLE:
             case \PropelColumnTypes::REAL:
-            return static function () use ($generator) {
-                return $generator->randomFloat();
-            };
+                return static function () use ($generator) {
+                    return $generator->randomFloat();
+                };
 
             case \PropelColumnTypes::CHAR:
             case \PropelColumnTypes::VARCHAR:
@@ -102,7 +102,7 @@ class ColumnTypeGuesser
             case \PropelColumnTypes::OBJECT:
             case \PropelColumnTypes::PHP_ARRAY:
             default:
-            // no smart way to guess what the user expects here
+                // no smart way to guess what the user expects here
                 return null;
         }
     }

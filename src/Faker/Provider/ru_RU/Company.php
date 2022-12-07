@@ -44,6 +44,7 @@ class Company extends \Faker\Provider\Company
 
     /**
      * @see https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9F%D1%80%D0%BE%D1%84%D0%B5%D1%81%D1%81%D0%B8%D0%B8
+     *
      * @note Randomly took from this list - some jobs titles for each letter
      */
     protected static $jobTitleFormat = [

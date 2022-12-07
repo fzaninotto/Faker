@@ -21,7 +21,6 @@ class Company extends \Faker\Provider\Company
     public static function vat(string $type = null): string
     {
         switch ($type) {
-
             case static::VAT_TYPE_BRANCH:
                 return static::generateBranchTraderVatNumber();
 
@@ -33,7 +32,6 @@ class Company extends \Faker\Provider\Company
 
             default:
                 return static::generateStandardVatNumber();
-
         }
     }
 
