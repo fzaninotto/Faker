@@ -1,9 +1,9 @@
 {
     "require": {
         "php": "^7.4 || ^8.0",
-        "phpstan/extension-installer": "^1.1.0",
-        "phpstan/phpstan": "^0.12.100",
-        "phpstan/phpstan-deprecation-rules": "^0.12.6"
+        "phpstan/extension-installer": "^1.2.0",
+        "phpstan/phpstan": "^1.9.2",
+        "phpstan/phpstan-deprecation-rules": "^1.0.0"
     },
     "config": {
         "platform": {
