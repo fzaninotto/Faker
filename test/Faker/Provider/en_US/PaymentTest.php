@@ -9,14 +9,14 @@ use Faker\Test\TestCase;
  */
 final class PaymentTest extends TestCase
 {
-    public function testBankAccountNumber()
+    public function testBankAccountNumber(): void
     {
         $accNo = $this->faker->bankAccountNumber;
         self::assertTrue(ctype_digit($accNo));
         self::assertLessThanOrEqual(17, strlen($accNo));
     }
 
-    public function testBankRoutingNumber()
+    public function testBankRoutingNumber(): void
     {
         $routingNo = $this->faker->bankRoutingNumber;
         self::assertMatchesRegularExpression('/^\d{9}$/', $routingNo);
@@ -67,7 +67,7 @@ final class PaymentTest extends TestCase
     /**
      * @dataProvider routingNumberProvider
      */
-    public function testCalculateRoutingNumberChecksum($routingNo)
+    public function testCalculateRoutingNumberChecksum($routingNo): void
     {
         self::assertEquals($routingNo[8], Payment::calculateRoutingNumberChecksum($routingNo), $routingNo);
     }

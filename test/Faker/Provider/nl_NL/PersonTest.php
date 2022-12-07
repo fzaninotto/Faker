@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testGenerateValidIdNumber()
+    public function testGenerateValidIdNumber(): void
     {
         $idNumber = $this->faker->idNumber();
         self::assertEquals(9, strlen($idNumber));

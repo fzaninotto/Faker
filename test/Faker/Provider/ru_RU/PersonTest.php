@@ -10,17 +10,17 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testLastNameFemale()
+    public function testLastNameFemale(): void
     {
         self::assertEquals('а', substr($this->faker->lastName('female'), -2, 2));
     }
 
-    public function testLastNameMale()
+    public function testLastNameMale(): void
     {
         self::assertNotEquals('а', substr($this->faker->lastName('male'), -2, 2));
     }
 
-    public function testLastNameRandom()
+    public function testLastNameRandom(): void
     {
         self::assertNotNull($this->faker->lastName());
     }

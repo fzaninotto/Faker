@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class CompanyTest extends TestCase
 {
-    public function testVAT()
+    public function testVAT(): void
     {
         self::assertEquals(8, floor(log10($this->faker->VAT) + 1));
     }

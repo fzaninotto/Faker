@@ -12,7 +12,7 @@ use Faker\Test\TestCase;
  */
 final class InternetTest extends TestCase
 {
-    public function testEmailIsValid()
+    public function testEmailIsValid(): void
     {
         $email = $this->faker->email();
         self::assertNotFalse(filter_var($email, FILTER_VALIDATE_EMAIL));

@@ -9,7 +9,7 @@ use Faker\Test\TestCase;
  */
 final class AddressTest extends TestCase
 {
-    public function testPostcodeIsNotEmptyAndIsValid()
+    public function testPostcodeIsNotEmptyAndIsValid(): void
     {
         $postcode = $this->faker->postcode();
 
@@ -20,7 +20,7 @@ final class AddressTest extends TestCase
     /**
      * Test the name of the Nigerian State/County
      */
-    public function testCountyIsAValidString()
+    public function testCountyIsAValidString(): void
     {
         $county = $this->faker->county;
 
@@ -31,7 +31,7 @@ final class AddressTest extends TestCase
     /**
      * Test the name of the Nigerian Region in a State.
      */
-    public function testRegionIsAValidString()
+    public function testRegionIsAValidString(): void
     {
         $region = $this->faker->region;
 

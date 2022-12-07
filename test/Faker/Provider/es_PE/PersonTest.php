@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testDNI()
+    public function testDNI(): void
     {
         $dni = $this->faker->dni;
         self::assertMatchesRegularExpression('/\A[0-9]{8}\Z/', $dni);

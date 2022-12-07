@@ -25,7 +25,7 @@ final class PersonTest extends TestCase
     /**
      * @dataProvider provideSeedAndExpectedReturn
      */
-    public function testPersonalIdentityNumberUsesBirthDateIfProvided($seed, $birthdate, $expected)
+    public function testPersonalIdentityNumberUsesBirthDateIfProvided($seed, $birthdate, $expected): void
     {
         $faker = $this->faker;
         $faker->seed($seed);
@@ -33,7 +33,7 @@ final class PersonTest extends TestCase
         self::assertEquals($expected, $pin);
     }
 
-    public function testPersonalIdentityNumberGeneratesCompliantNumbers()
+    public function testPersonalIdentityNumberGeneratesCompliantNumbers(): void
     {
         if (strtotime('1800-01-01 00:00:00')) {
             $min = '1900';
@@ -62,13 +62,13 @@ final class PersonTest extends TestCase
         }
     }
 
-    public function testPersonalIdentityNumberGeneratesOddValuesForMales()
+    public function testPersonalIdentityNumberGeneratesOddValuesForMales(): void
     {
         $pin = $this->faker->personalIdentityNumber(null, 'male');
         self::assertEquals(1, $pin[9] % 2);
     }
 
-    public function testPersonalIdentityNumberGeneratesEvenValuesForFemales()
+    public function testPersonalIdentityNumberGeneratesEvenValuesForFemales(): void
     {
         $pin = $this->faker->personalIdentityNumber(null, 'female');
         self::assertEquals(0, $pin[9] % 2);

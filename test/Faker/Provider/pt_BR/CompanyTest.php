@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class CompanyTest extends TestCase
 {
-    public function testCnpjFormatIsValid()
+    public function testCnpjFormatIsValid(): void
     {
         $cnpj = $this->faker->cnpj(false);
         self::assertMatchesRegularExpression('/\d{8}\d{4}\d{2}/', $cnpj);

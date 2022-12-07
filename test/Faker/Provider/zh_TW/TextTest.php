@@ -25,7 +25,7 @@ final class TextTest extends TestCase
         return $method;
     }
 
-    public function testItShouldExplodeTheStringToArray()
+    public function testItShouldExplodeTheStringToArray(): void
     {
         self::assertSame(
             ['中', '文', '測', '試', '真', '有', '趣'],
@@ -38,7 +38,7 @@ final class TextTest extends TestCase
         );
     }
 
-    public function testItShouldReturnTheStringLength()
+    public function testItShouldReturnTheStringLength(): void
     {
         self::assertContains(
             $this->getMethod('strlen')->invokeArgs(null, ['中文測試真有趣']),
@@ -46,7 +46,7 @@ final class TextTest extends TestCase
         );
     }
 
-    public function testItShouldReturnTheCharacterIsValidStartOrNot()
+    public function testItShouldReturnTheCharacterIsValidStartOrNot(): void
     {
         self::assertTrue($this->getMethod('validStart')->invokeArgs(null, ['中']));
 
@@ -59,7 +59,7 @@ final class TextTest extends TestCase
         self::assertFalse($this->getMethod('validStart')->invokeArgs(null, ['！']));
     }
 
-    public function testItShouldAppendEndPunctToTheEndOfString()
+    public function testItShouldAppendEndPunctToTheEndOfString(): void
     {
         self::assertSame(
             '中文測試真有趣。',

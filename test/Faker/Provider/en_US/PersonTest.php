@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testSsn()
+    public function testSsn(): void
     {
         for ($i = 0; $i < 100; ++$i) {
             $number = $this->faker->ssn;

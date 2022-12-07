@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class CompanyTest extends TestCase
 {
-    public function testIfTaxIdCanReturnData()
+    public function testIfTaxIdCanReturnData(): void
     {
         $vat = $this->faker->vat();
         self::assertMatchesRegularExpression('/^IT[0-9]{11}$/', $vat);

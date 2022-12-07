@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class AddressTest extends TestCase
 {
-    public function testLatitude()
+    public function testLatitude(): void
     {
         $latitude = $this->faker->latitude();
         self::assertIsFloat($latitude);
@@ -18,7 +18,7 @@ final class AddressTest extends TestCase
         self::assertLessThanOrEqual(90, $latitude);
     }
 
-    public function testLongitude()
+    public function testLongitude(): void
     {
         $longitude = $this->faker->longitude();
         self::assertIsFloat($longitude);
@@ -26,7 +26,7 @@ final class AddressTest extends TestCase
         self::assertLessThanOrEqual(180, $longitude);
     }
 
-    public function testCoordinate()
+    public function testCoordinate(): void
     {
         $coordinate = $this->faker->localCoordinates();
         self::assertIsArray($coordinate);

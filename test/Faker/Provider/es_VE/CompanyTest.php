@@ -13,7 +13,7 @@ final class CompanyTest extends TestCase
     /**
      * national Id format validator
      */
-    public function testNationalId()
+    public function testNationalId(): void
     {
         $pattern = '/^[VJGECP]-?\d{8}-?\d$/';
         $rif = $this->faker->taxpayerIdentificationNumber;

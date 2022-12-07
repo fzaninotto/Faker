@@ -13,7 +13,7 @@ final class PersonTest extends TestCase
     /**
      * @dataProvider firstNameProvider
      */
-    public function testFirstName($gender, $expected)
+    public function testFirstName($gender, $expected): void
     {
         self::assertContains($this->faker->firstName($gender), $expected);
     }
@@ -28,12 +28,12 @@ final class PersonTest extends TestCase
         ];
     }
 
-    public function testFirstNameMale()
+    public function testFirstNameMale(): void
     {
         self::assertContains(Person::firstNameMale(), ['John']);
     }
 
-    public function testFirstNameFemale()
+    public function testFirstNameFemale(): void
     {
         self::assertContains(Person::firstNameFemale(), ['Jane']);
     }
@@ -41,7 +41,7 @@ final class PersonTest extends TestCase
     /**
      * @dataProvider titleProvider
      */
-    public function testTitle($gender, $expected)
+    public function testTitle($gender, $expected): void
     {
         self::assertContains($this->faker->title($gender), $expected);
     }
@@ -56,22 +56,22 @@ final class PersonTest extends TestCase
         ];
     }
 
-    public function testTitleMale()
+    public function testTitleMale(): void
     {
         self::assertContains(Person::titleMale(), ['Mr.', 'Dr.', 'Prof.']);
     }
 
-    public function testTitleFemale()
+    public function testTitleFemale(): void
     {
         self::assertContains(Person::titleFemale(), ['Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.']);
     }
 
-    public function testLastNameReturnsDoe()
+    public function testLastNameReturnsDoe(): void
     {
         self::assertEquals($this->faker->lastName(), 'Doe');
     }
 
-    public function testNameReturnsFirstNameAndLastName()
+    public function testNameReturnsFirstNameAndLastName(): void
     {
         self::assertContains($this->faker->name(), ['John Doe', 'Jane Doe']);
         self::assertContains($this->faker->name('foobar'), ['John Doe', 'Jane Doe']);

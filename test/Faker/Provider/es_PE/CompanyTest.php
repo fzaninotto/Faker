@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class CompanyTest extends TestCase
 {
-    public function testGenerateValidRuc()
+    public function testGenerateValidRuc(): void
     {
         $companyRUC = $this->faker->ruc();
 
@@ -18,14 +18,14 @@ final class CompanyTest extends TestCase
         self::assertMatchesRegularExpression('/^([1|2])0\d{9}$/', $companyRUC);
     }
 
-    public function testGenerateValidRucPersonaNatural()
+    public function testGenerateValidRucPersonaNatural(): void
     {
         $companyRUC = $this->faker->ruc(true);
 
         self::assertMatchesRegularExpression('/^10\d{9}$/', $companyRUC);
     }
 
-    public function testGenerateValidRucPersonaJuridica()
+    public function testGenerateValidRucPersonaJuridica(): void
     {
         $companyRUC = $this->faker->ruc(false);
 

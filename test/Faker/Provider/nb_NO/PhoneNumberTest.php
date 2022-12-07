@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class PhoneNumberTest extends TestCase
 {
-    public function testMobileNumber()
+    public function testMobileNumber(): void
     {
         for ($i = 0; $i < 10; ++$i) {
             $number = $this->faker->mobileNumber;

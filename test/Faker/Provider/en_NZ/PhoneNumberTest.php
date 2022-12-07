@@ -10,13 +10,13 @@ use Faker\Test\TestCase;
  */
 final class PhoneNumberTest extends TestCase
 {
-    public function testIfPhoneNumberCanReturnData()
+    public function testIfPhoneNumberCanReturnData(): void
     {
         $number = $this->faker->phoneNumber;
         self::assertNotEmpty($number);
     }
 
-    public function phoneNumberFormat()
+    public function phoneNumberFormat(): void
     {
         $number = $this->faker->phoneNumber;
         self::assertMatchesRegularExpression(

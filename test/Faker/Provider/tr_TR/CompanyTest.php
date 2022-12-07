@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class CompanyTest extends TestCase
 {
-    public function testCompany()
+    public function testCompany(): void
     {
         $company = $this->faker->companyField;
         self::assertNotNull($company);

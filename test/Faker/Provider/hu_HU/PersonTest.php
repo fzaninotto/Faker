@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testValidMariedFemaleLastnames()
+    public function testValidMariedFemaleLastnames(): void
     {
         self::assertEquals('Báró Vassné Zsóka', $this->faker->name('female'));
         self::assertEquals('Prof. Szőke Bendegúz', $this->faker->name('female'));

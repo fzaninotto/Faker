@@ -27,17 +27,17 @@ class EntityPopulator
     /**
      * @param string $name
      */
-    public function __set($name, $value)
+    public function __set($name, $value): void
     {
         $this->{$name} = $value;
     }
 
-    public function mergeColumnFormattersWith($columnFormatters)
+    public function mergeColumnFormattersWith($columnFormatters): void
     {
         $this->columnFormatters = array_merge($this->columnFormatters, $columnFormatters);
     }
 
-    public function mergeModifiersWith($modifiers)
+    public function mergeModifiersWith($modifiers): void
     {
         $this->modifiers = array_merge($this->modifiers, $modifiers);
     }
@@ -155,7 +155,7 @@ class EntityPopulator
         return $entity->{$pk[0]};
     }
 
-    public function setConnection($name)
+    public function setConnection($name): void
     {
         $this->connectionName = $name;
     }

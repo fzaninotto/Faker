@@ -597,7 +597,7 @@ class Generator
         return $extension;
     }
 
-    public function addProvider($provider)
+    public function addProvider($provider): void
     {
         array_unshift($this->providers, $provider);
 
@@ -682,7 +682,7 @@ class Generator
         return new ValidGenerator($this, $validator, $maxRetries);
     }
 
-    public function seed($seed = null)
+    public function seed($seed = null): void
     {
         if ($seed === null) {
             mt_srand();
@@ -966,7 +966,7 @@ class Generator
         $this->seed();
     }
 
-    public function __wakeup()
+    public function __wakeup(): void
     {
         $this->formatters = [];
     }

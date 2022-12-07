@@ -38,7 +38,7 @@ class Populator
         $customColumnFormatters = [],
         $customModifiers = [],
         $useExistingData = false
-    ) {
+    ): void {
         $mapper = $this->locator->mapper($entityName);
 
         if (null === $mapper) {

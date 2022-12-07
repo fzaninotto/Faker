@@ -10,17 +10,17 @@ use Faker\Test\TestCase;
  */
 final class PhoneNumberTest extends TestCase
 {
-    public function testPhoneNumberReturnsNormalPhoneNumber()
+    public function testPhoneNumberReturnsNormalPhoneNumber(): void
     {
         self::assertMatchesRegularExpression('/^0(?:[23][13-7]|7\d)\d{7}$/', $this->faker->phoneNumber());
     }
 
-    public function testTollFreePhoneNumberReturnsTollFreePhoneNumber()
+    public function testTollFreePhoneNumberReturnsTollFreePhoneNumber(): void
     {
         self::assertMatchesRegularExpression('/^08(?:0[01267]|70)\d{6}$/', $this->faker->tollFreePhoneNumber());
     }
 
-    public function testPremiumRatePhoneNumberReturnsPremiumRatePhoneNumber()
+    public function testPremiumRatePhoneNumberReturnsPremiumRatePhoneNumber(): void
     {
         self::assertMatchesRegularExpression('/^090[036]\d{6}$/', $this->faker->premiumRatePhoneNumber());
     }

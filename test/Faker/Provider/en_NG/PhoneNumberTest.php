@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class PhoneNumberTest extends TestCase
 {
-    public function testPhoneNumberReturnsPhoneNumberWithOrWithoutCountryCode()
+    public function testPhoneNumberReturnsPhoneNumberWithOrWithoutCountryCode(): void
     {
         $phoneNumber = $this->faker->phoneNumber();
 

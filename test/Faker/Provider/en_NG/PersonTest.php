@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testPersonNameIsAValidString()
+    public function testPersonNameIsAValidString(): void
     {
         $name = $this->faker->name;
 

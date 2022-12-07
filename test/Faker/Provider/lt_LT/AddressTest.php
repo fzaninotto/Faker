@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class AddressTest extends TestCase
 {
-    public function testMunicipality()
+    public function testMunicipality(): void
     {
         self::assertStringEndsWith('savivaldybė', $this->faker->municipality());
     }

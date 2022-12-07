@@ -20,14 +20,14 @@ final class BiasedTest extends TestCase
         $this->results = array_fill(1, self::MAX, 0);
     }
 
-    public function performFake($function)
+    public function performFake($function): void
     {
         for ($i = 0; $i < self::NUMBERS; ++$i) {
             ++$this->results[$this->faker->biasedNumberBetween(1, self::MAX, $function)];
         }
     }
 
-    public function testUnbiased()
+    public function testUnbiased(): void
     {
         $this->performFake(['\Faker\Provider\Biased', 'unbiased']);
 
@@ -42,7 +42,7 @@ final class BiasedTest extends TestCase
         }
     }
 
-    public function testLinearHigh()
+    public function testLinearHigh(): void
     {
         $this->performFake(['\Faker\Provider\Biased', 'linearHigh']);
 
@@ -56,7 +56,7 @@ final class BiasedTest extends TestCase
         }
     }
 
-    public function testLinearLow()
+    public function testLinearLow(): void
     {
         $this->performFake(['\Faker\Provider\Biased', 'linearLow']);
 

@@ -12,7 +12,7 @@ final class AddressTest extends TestCase
     /**
      * Test the validity of province
      */
-    public function testProvince()
+    public function testProvince(): void
     {
         $province = $this->faker->province();
         self::assertNotEmpty($province);
@@ -23,7 +23,7 @@ final class AddressTest extends TestCase
     /**
      * Test the validity of province abbreviation
      */
-    public function testProvinceAbbr()
+    public function testProvinceAbbr(): void
     {
         $provinceAbbr = $this->faker->provinceAbbr();
         self::assertNotEmpty($provinceAbbr);
@@ -34,7 +34,7 @@ final class AddressTest extends TestCase
     /**
      * Test the validity of postcode letter
      */
-    public function testPostcodeLetter()
+    public function testPostcodeLetter(): void
     {
         $postcodeLetter = $this->faker->randomPostcodeLetter();
         self::assertNotEmpty($postcodeLetter);
@@ -45,7 +45,7 @@ final class AddressTest extends TestCase
     /**
      * Test the validity of Canadian postcode
      */
-    public function testPostcode()
+    public function testPostcode(): void
     {
         $postcode = $this->faker->postcode();
         self::assertNotEmpty($postcode);

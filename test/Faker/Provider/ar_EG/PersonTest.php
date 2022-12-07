@@ -11,7 +11,7 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testNationalIdNumber()
+    public function testNationalIdNumber(): void
     {
         $nationalIdNumber = $this->faker->nationalIdNumber();
         self::assertMatchesRegularExpression('/^2\d{13}$/', $nationalIdNumber);

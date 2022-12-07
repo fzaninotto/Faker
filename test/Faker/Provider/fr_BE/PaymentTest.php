@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class PaymentTest extends TestCase
 {
-    public function testVatIsValid()
+    public function testVatIsValid(): void
     {
         $vat = $this->faker->vat();
         $unspacedVat = $this->faker->vat(false);

@@ -10,21 +10,21 @@ use Faker\Test\TestCase;
  */
 final class AddressTest extends TestCase
 {
-    public function testCityName()
+    public function testCityName(): void
     {
         $city = $this->faker->cityName();
         self::assertNotEmpty($city);
         self::assertIsString($city);
     }
 
-    public function testDistrict()
+    public function testDistrict(): void
     {
         $district = $this->faker->district();
         self::assertNotEmpty($district);
         self::assertIsString($district);
     }
 
-    public function testRegion()
+    public function testRegion(): void
     {
         $region = $this->faker->region();
         self::assertNotEmpty($region);

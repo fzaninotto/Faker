@@ -11,7 +11,7 @@ use Faker\Test\TestCase;
  */
 final class CompanyTest extends TestCase
 {
-    public function testJobTitle()
+    public function testJobTitle(): void
     {
         $jobTitle = $this->faker->jobTitle();
         $pattern = '/^[A-Za-z]+$/';

@@ -356,7 +356,7 @@ class DateTime extends Base
      *
      * @param string $timezone
      */
-    public static function setDefaultTimezone($timezone = null)
+    public static function setDefaultTimezone($timezone = null): void
     {
         static::$defaultTimezone = $timezone;
     }

@@ -13,7 +13,7 @@ final class AddressTest extends TestCase
     /**
      * @see https://en.wikipedia.org/wiki/List_of_postal_codes_in_Austria
      */
-    public function testPostcodeReturnsPostcodeThatMatchesAustrianFormat()
+    public function testPostcodeReturnsPostcodeThatMatchesAustrianFormat(): void
     {
         $postcode = $this->faker->postcode;
 

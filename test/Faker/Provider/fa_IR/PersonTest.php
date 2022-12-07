@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testNationalCode()
+    public function testNationalCode(): void
     {
         for ($i = 0; $i < 100; ++$i) {
             $nationalCode = $this->faker->nationalCode;

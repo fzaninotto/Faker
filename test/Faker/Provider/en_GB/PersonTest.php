@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testNationalInsuranceNumber()
+    public function testNationalInsuranceNumber(): void
     {
         $result = $this->faker->nino;
 

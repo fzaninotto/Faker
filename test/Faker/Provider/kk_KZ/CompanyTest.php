@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class CompanyTest extends TestCase
 {
-    public function testBusinessIdentificationNumberIsValid()
+    public function testBusinessIdentificationNumberIsValid(): void
     {
         $registrationDate = new \DateTime('now');
         $businessIdentificationNumber = $this->faker->businessIdentificationNumber($registrationDate);

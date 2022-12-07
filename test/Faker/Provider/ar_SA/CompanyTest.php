@@ -11,7 +11,7 @@ use Faker\Test\TestCase;
  */
 final class CompanyTest extends TestCase
 {
-    public function testCompanyIdNumberIsValid()
+    public function testCompanyIdNumberIsValid(): void
     {
         $companyIdNumber = $this->faker->companyIdNumber;
         self::assertMatchesRegularExpression('/^700\d{7}$/', $companyIdNumber);

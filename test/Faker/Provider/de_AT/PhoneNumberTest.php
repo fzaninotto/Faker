@@ -10,13 +10,13 @@ use Faker\Test\TestCase;
  */
 final class PhoneNumberTest extends TestCase
 {
-    public function testPhoneNumberFormat()
+    public function testPhoneNumberFormat(): void
     {
         $number = $this->faker->phoneNumber;
         self::assertMatchesRegularExpression('/^06\d{2} \d{7}|\+43 \d{4} \d{4}(-\d{2})?$/', $number);
     }
 
-    public function testE164PhoneNumberFormat()
+    public function testE164PhoneNumberFormat(): void
     {
         for ($i = 0; $i < 10; ++$i) {
             $number = $this->faker->e164PhoneNumber();

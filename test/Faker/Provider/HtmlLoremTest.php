@@ -10,14 +10,14 @@ use Faker\Test\TestCase;
  */
 final class HtmlLoremTest extends TestCase
 {
-    public function testProvider()
+    public function testProvider(): void
     {
         $node = $this->faker->randomHtml(6, 10);
         self::assertStringStartsWith('<html>', $node);
         self::assertStringEndsWith("</html>\n", $node);
     }
 
-    public function testRandomHtmlReturnsValidHTMLString()
+    public function testRandomHtmlReturnsValidHTMLString(): void
     {
         $node = $this->faker->randomHtml(6, 10);
         $dom = new \DOMDocument();

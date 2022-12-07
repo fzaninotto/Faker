@@ -10,13 +10,13 @@ use Faker\Test\TestCase;
  */
 final class ColorTest extends TestCase
 {
-    public function testColorName()
+    public function testColorName(): void
     {
         self::assertEquals('Mandarine', $this->faker->colorName());
         self::assertEquals('Acajou', $this->faker->colorName());
     }
 
-    public function testSafeColorName()
+    public function testSafeColorName(): void
     {
         self::assertEquals('bleu', $this->faker->safeColorName());
         self::assertEquals('noir', $this->faker->safeColorName());

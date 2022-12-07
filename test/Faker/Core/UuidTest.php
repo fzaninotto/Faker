@@ -7,14 +7,14 @@ use Faker\Test\TestCase;
 
 final class UuidTest extends TestCase
 {
-    public function testUuidReturnsUuid()
+    public function testUuidReturnsUuid(): void
     {
         $instance = new Uuid();
         $uuid = $instance->uuid3();
         self::assertTrue($this->isUuid($uuid));
     }
 
-    public function testUuidExpectedSeed()
+    public function testUuidExpectedSeed(): void
     {
         $instance = new Uuid();
 

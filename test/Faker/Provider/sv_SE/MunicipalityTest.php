@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class MunicipalityTest extends TestCase
 {
-    public function testGenerate()
+    public function testGenerate(): void
     {
         self::assertNotEmpty($this->faker->municipality());
     }

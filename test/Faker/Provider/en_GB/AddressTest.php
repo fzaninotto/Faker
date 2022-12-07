@@ -9,7 +9,7 @@ use Faker\Test\TestCase;
  */
 final class AddressTest extends TestCase
 {
-    public function testPostcode()
+    public function testPostcode(): void
     {
         $postcode = $this->faker->postcode();
         self::assertNotEmpty($postcode);

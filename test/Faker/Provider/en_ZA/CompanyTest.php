@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class CompanyTest extends TestCase
 {
-    public function testGenerateValidCompanyNumber()
+    public function testGenerateValidCompanyNumber(): void
     {
         $companyRegNo = $this->faker->companyNumber();
 

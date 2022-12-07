@@ -49,31 +49,31 @@ final class PersonTest extends TestCase
         '9171', '9201', '9202', '9203', '9204', '9205', '9206', '9207', '9208', '9209', '9210', '9211', '9212', '9271',
     ];
 
-    public function testIfFirstNameMaleCanReturnData()
+    public function testIfFirstNameMaleCanReturnData(): void
     {
         $firstNameMale = $this->faker->firstNameMale();
         self::assertNotEmpty($firstNameMale);
     }
 
-    public function testIfLastNameMaleCanReturnData()
+    public function testIfLastNameMaleCanReturnData(): void
     {
         $lastNameMale = $this->faker->lastNameMale();
         self::assertNotEmpty($lastNameMale);
     }
 
-    public function testIfFirstNameFemaleCanReturnData()
+    public function testIfFirstNameFemaleCanReturnData(): void
     {
         $firstNameFemale = $this->faker->firstNameFemale();
         self::assertNotEmpty($firstNameFemale);
     }
 
-    public function testIfLastNameFemaleCanReturnData()
+    public function testIfLastNameFemaleCanReturnData(): void
     {
         $lastNameFemale = $this->faker->lastNameFemale();
         self::assertNotEmpty($lastNameFemale);
     }
 
-    public function testNikContainsBirthPlace()
+    public function testNikContainsBirthPlace(): void
     {
         $nik = $this->faker->nik();
 

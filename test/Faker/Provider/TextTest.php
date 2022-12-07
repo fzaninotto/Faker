@@ -21,7 +21,7 @@ final class TextTest extends TestCase
      *           [200]
      *           [500]
      */
-    public function testRealTextMaxLength($length)
+    public function testRealTextMaxLength($length): void
     {
         self::assertLessThan($length, strlen($this->faker->realText($length)));
     }
@@ -37,12 +37,12 @@ final class TextTest extends TestCase
      *           [200]
      *           [500]
      */
-    public function testRealTextMinLength($length)
+    public function testRealTextMinLength($length): void
     {
         self::assertGreaterThanOrEqual($length * 0.8, strlen($this->faker->realText($length)));
     }
 
-    public function testRealTextMaxIndex()
+    public function testRealTextMaxIndex(): void
     {
         $this->expectException(\InvalidArgumentException::class);
 
@@ -51,7 +51,7 @@ final class TextTest extends TestCase
         self::fail('The index should be less than or equal to 5.');
     }
 
-    public function testRealTextMinIndex()
+    public function testRealTextMinIndex(): void
     {
         $this->expectException(\InvalidArgumentException::class);
 
@@ -60,7 +60,7 @@ final class TextTest extends TestCase
         self::fail('The index should be greater than or equal to 1.');
     }
 
-    public function testRealTextMinNbChars()
+    public function testRealTextMinNbChars(): void
     {
         $this->expectException(\InvalidArgumentException::class);
 
@@ -78,7 +78,7 @@ final class TextTest extends TestCase
      *           [180, 200]
      *           [1950, 2000]
      */
-    public function testRealTextBetweenTextLength($min, $max)
+    public function testRealTextBetweenTextLength($min, $max): void
     {
         $strlen = strlen($this->faker->realTextBetween($min, $max));
 
@@ -86,7 +86,7 @@ final class TextTest extends TestCase
         self::assertLessThan($max, $strlen);
     }
 
-    public function testRealTextBetweenMinNbChars()
+    public function testRealTextBetweenMinNbChars(): void
     {
         $this->expectException(\InvalidArgumentException::class);
 
@@ -95,7 +95,7 @@ final class TextTest extends TestCase
         self::fail('minNbChars should be smaller than maxNbChars');
     }
 
-    public function testRealTextBetweenMinNbCharsGreaterThan1()
+    public function testRealTextBetweenMinNbCharsGreaterThan1(): void
     {
         $this->expectException(\InvalidArgumentException::class);
 

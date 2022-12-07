@@ -11,7 +11,7 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testIdNumberWithDefaults()
+    public function testIdNumberWithDefaults(): void
     {
         $idNumber = $this->faker->idNumber();
 
@@ -20,7 +20,7 @@ final class PersonTest extends TestCase
         self::assertIsString($idNumber);
     }
 
-    public function testIdNumberForMales()
+    public function testIdNumberForMales(): void
     {
         $idNumber = $this->faker->idNumber(new \DateTime(), true, 'male');
 
@@ -29,7 +29,7 @@ final class PersonTest extends TestCase
         self::assertContains($genderDigit, ['5', '6', '7', '8', '9']);
     }
 
-    public function testIdNumberForFemales()
+    public function testIdNumberForFemales(): void
     {
         $idNumber = $this->faker->idNumber(new \DateTime(), true, 'female');
 
@@ -38,21 +38,21 @@ final class PersonTest extends TestCase
         self::assertContains($genderDigit, ['0', '1', '2', '3', '4']);
     }
 
-    public function testLicenceCode()
+    public function testLicenceCode(): void
     {
         $validLicenceCodes = ['A', 'A1', 'B', 'C', 'C1', 'C2', 'EB', 'EC', 'EC1', 'I', 'L', 'L1'];
 
         self::assertContains($this->faker->licenceCode, $validLicenceCodes);
     }
 
-    public function testMaleTitles()
+    public function testMaleTitles(): void
     {
         $validMaleTitles = ['Mr.', 'Dr.', 'Prof.', 'Rev.', 'Hon.'];
 
         self::assertContains(Person::titleMale(), $validMaleTitles);
     }
 
-    public function testFemaleTitles()
+    public function testFemaleTitles(): void
     {
         $validateFemaleTitles = ['Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.', 'Rev.', 'Hon.'];
 

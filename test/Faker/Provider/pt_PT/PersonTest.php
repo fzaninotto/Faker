@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testTaxpayerIdentificationNumberIsValid()
+    public function testTaxpayerIdentificationNumberIsValid(): void
     {
         $tin = $this->faker->taxpayerIdentificationNumber();
         self::assertTrue(self::isValidTin($tin), $tin);

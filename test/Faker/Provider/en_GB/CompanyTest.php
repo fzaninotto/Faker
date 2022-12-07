@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class CompanyTest extends TestCase
 {
-    public function testModulus97Algorithm()
+    public function testModulus97Algorithm(): void
     {
         // 9755 format
         self::assertSame('27', $this->faker->calculateModulus97(1234567));
@@ -20,30 +20,30 @@ final class CompanyTest extends TestCase
         self::assertSame('06', $this->faker->calculateModulus97(1271786));
     }
 
-    public function testModulus97AlgorithmWithInvalidArgument()
+    public function testModulus97AlgorithmWithInvalidArgument(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         $this->faker->calculateModulus97(123);
     }
 
-    public function testVat()
+    public function testVat(): void
     {
         $this->assertDefaultVatFormat($this->faker->vat());
         $this->assertDefaultVatFormat($this->faker->vat(Company::VAT_TYPE_DEFAULT));
     }
 
-    private function assertDefaultVatFormat($number)
+    private function assertDefaultVatFormat($number): void
     {
         self::assertEquals(1, preg_match('/^GB[\d]{3} [\d]{4} [\d]{2}$/', $number));
     }
 
-    public function testVatBranchType()
+    public function testVatBranchType(): void
     {
         $number = $this->faker->vat(Company::VAT_TYPE_BRANCH);
         self::assertEquals(1, preg_match('/^GB[\d]{3} [\d]{4} [\d]{2} [\d]{3}$/', $number));
     }
 
-    public function testVatGovernmentType()
+    public function testVatGovernmentType(): void
     {
         $number = $this->faker->vat(Company::VAT_TYPE_GOVERNMENT);
         $match = preg_match('/^GBGD([\d]{3})$/', $number, $matches);
@@ -51,7 +51,7 @@ final class CompanyTest extends TestCase
         self::assertTrue($matches[1] < 499);
     }
 
-    public function testVatHealthAuthorityType()
+    public function testVatHealthAuthorityType(): void
     {
         $number = $this->faker->vat(Company::VAT_TYPE_HEALTH_AUTHORITY);
         $match = preg_match('/^GBHA([\d]{3})$/', $number, $matches);

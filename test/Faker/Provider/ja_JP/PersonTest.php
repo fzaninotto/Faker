@@ -10,27 +10,27 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testKanaNameMaleReturns()
+    public function testKanaNameMaleReturns(): void
     {
         self::assertEquals('アオタ ミノル', $this->faker->kanaName('male'));
     }
 
-    public function testKanaNameFemaleReturns()
+    public function testKanaNameFemaleReturns(): void
     {
         self::assertEquals('アオタ ミキ', $this->faker->kanaName('female'));
     }
 
-    public function testFirstKanaNameMaleReturns()
+    public function testFirstKanaNameMaleReturns(): void
     {
         self::assertEquals('ヒデキ', $this->faker->firstKanaName('male'));
     }
 
-    public function testFirstKanaNameFemaleReturns()
+    public function testFirstKanaNameFemaleReturns(): void
     {
         self::assertEquals('マアヤ', $this->faker->firstKanaName('female'));
     }
 
-    public function testLastKanaNameReturnsNakajima()
+    public function testLastKanaNameReturnsNakajima(): void
     {
         self::assertEquals('ナカジマ', $this->faker->lastKanaName);
     }

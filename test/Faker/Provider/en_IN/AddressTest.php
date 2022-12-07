@@ -9,7 +9,7 @@ use Faker\Test\TestCase;
  */
 final class AddressTest extends TestCase
 {
-    public function testCity()
+    public function testCity(): void
     {
         $city = $this->faker->city();
         self::assertNotEmpty($city);
@@ -17,7 +17,7 @@ final class AddressTest extends TestCase
         self::assertMatchesRegularExpression('/[A-Z][a-z]+/', $city);
     }
 
-    public function testCountry()
+    public function testCountry(): void
     {
         $country = $this->faker->country();
         self::assertNotEmpty($country);
@@ -25,7 +25,7 @@ final class AddressTest extends TestCase
         self::assertMatchesRegularExpression('/[A-Z][a-z]+/', $country);
     }
 
-    public function testLocalityName()
+    public function testLocalityName(): void
     {
         $localityName = $this->faker->localityName();
         self::assertNotEmpty($localityName);
@@ -33,7 +33,7 @@ final class AddressTest extends TestCase
         self::assertMatchesRegularExpression('/[A-Z][a-z]+/', $localityName);
     }
 
-    public function testAreaSuffix()
+    public function testAreaSuffix(): void
     {
         $areaSuffix = $this->faker->areaSuffix();
         self::assertNotEmpty($areaSuffix);

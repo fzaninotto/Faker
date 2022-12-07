@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class PaymentTest extends TestCase
 {
-    public function testVatIsValid()
+    public function testVatIsValid(): void
     {
         $vat = $this->faker->vat();
         $unspacedVat = $this->faker->vat(false);
@@ -18,7 +18,7 @@ final class PaymentTest extends TestCase
         self::assertMatchesRegularExpression('/^(ATU\d{8})$/', $unspacedVat);
     }
 
-    public function testBankAccountNumber()
+    public function testBankAccountNumber(): void
     {
         $accNo = $this->faker->bankAccountNumber;
         self::assertEquals(substr($accNo, 0, 2), 'AT');

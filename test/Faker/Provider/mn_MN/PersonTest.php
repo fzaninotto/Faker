@@ -10,12 +10,12 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testName()
+    public function testName(): void
     {
         self::assertMatchesRegularExpression('/^[А-Я]{1}\.[\w\W]+$/u', $this->faker->name);
     }
 
-    public function testIdNumber()
+    public function testIdNumber(): void
     {
         self::assertMatchesRegularExpression('/^[А-Я]{2}\d{8}$/u', $this->faker->idNumber);
     }

@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class PhoneNumberTest extends TestCase
 {
-    public function testPhoneNumber()
+    public function testPhoneNumber(): void
     {
         for ($i = 0; $i < 100; ++$i) {
             $number = $this->faker->phoneNumber;
@@ -39,12 +39,12 @@ final class PhoneNumberTest extends TestCase
         }
     }
 
-    public function testTollFreeAreaCode()
+    public function testTollFreeAreaCode(): void
     {
         self::assertContains($this->faker->tollFreeAreaCode, [800, 822, 833, 844, 855, 866, 877, 888, 880, 887, 889]);
     }
 
-    public function testTollFreePhoneNumber()
+    public function testTollFreePhoneNumber(): void
     {
         for ($i = 0; $i < 100; ++$i) {
             $number = $this->faker->tollFreePhoneNumber;
@@ -72,7 +72,7 @@ final class PhoneNumberTest extends TestCase
         }
     }
 
-    public function testE164PhoneNumberFormat()
+    public function testE164PhoneNumberFormat(): void
     {
         for ($i = 0; $i < 10; ++$i) {
             $number = $this->faker->e164PhoneNumber();

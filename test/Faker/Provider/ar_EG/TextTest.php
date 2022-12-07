@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class TextTest extends TestCase
 {
-    public function testText()
+    public function testText(): void
     {
         self::assertNotSame('', $this->faker->realtext(200, 2));
     }

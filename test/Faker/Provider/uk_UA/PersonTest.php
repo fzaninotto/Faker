@@ -10,27 +10,27 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testFirstNameMaleReturns()
+    public function testFirstNameMaleReturns(): void
     {
         self::assertEquals('Максим', $this->faker->firstNameMale());
     }
 
-    public function testFirstNameFemaleReturns()
+    public function testFirstNameFemaleReturns(): void
     {
         self::assertEquals('Людмила', $this->faker->firstNameFemale());
     }
 
-    public function testMiddleNameMaleReturns()
+    public function testMiddleNameMaleReturns(): void
     {
         self::assertEquals('Миколайович', $this->faker->middleNameMale());
     }
 
-    public function testMiddleNameFemaleReturns()
+    public function testMiddleNameFemaleReturns(): void
     {
         self::assertEquals('Миколаївна', $this->faker->middleNameFemale());
     }
 
-    public function testLastNameReturns()
+    public function testLastNameReturns(): void
     {
         self::assertEquals('Броваренко', $this->faker->lastName());
     }

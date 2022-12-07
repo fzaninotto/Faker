@@ -11,14 +11,14 @@ use Faker\Test\TestCase;
  */
 final class CompanyTest extends TestCase
 {
-    public function testSiretReturnsAValidSiret()
+    public function testSiretReturnsAValidSiret(): void
     {
         $siret = $this->faker->siret(false);
         self::assertMatchesRegularExpression("/^\d{14}$/", $siret);
         self::assertTrue(Luhn::isValid($siret));
     }
 
-    public function testSiretReturnsAWellFormattedSiret()
+    public function testSiretReturnsAWellFormattedSiret(): void
     {
         $siret = $this->faker->siret();
         self::assertMatchesRegularExpression("/^\d{3}\s\d{3}\s\d{3}\s\d{5}$/", $siret);
@@ -26,14 +26,14 @@ final class CompanyTest extends TestCase
         self::assertTrue(Luhn::isValid($siret));
     }
 
-    public function testSirenReturnsAValidSiren()
+    public function testSirenReturnsAValidSiren(): void
     {
         $siren = $this->faker->siren(false);
         self::assertMatchesRegularExpression("/^\d{9}$/", $siren);
         self::assertTrue(Luhn::isValid($siren));
     }
 
-    public function testSirenReturnsAWellFormattedSiren()
+    public function testSirenReturnsAWellFormattedSiren(): void
     {
         $siren = $this->faker->siren();
         self::assertMatchesRegularExpression("/^\d{3}\s\d{3}\s\d{3}$/", $siren);
@@ -41,18 +41,18 @@ final class CompanyTest extends TestCase
         self::assertTrue(Luhn::isValid($siren));
     }
 
-    public function testCatchPhraseReturnsValidCatchPhrase()
+    public function testCatchPhraseReturnsValidCatchPhrase(): void
     {
         self::assertTrue(TestableCompany::isCatchPhraseValid($this->faker->catchPhrase()));
     }
 
-    public function testIsCatchPhraseValidReturnsFalseWhenAWordsAppearsTwice()
+    public function testIsCatchPhraseValidReturnsFalseWhenAWordsAppearsTwice(): void
     {
         $isCatchPhraseValid = TestableCompany::isCatchPhraseValid('La sécurité de rouler en toute sécurité');
         self::assertFalse($isCatchPhraseValid);
     }
 
-    public function testIsCatchPhraseValidReturnsTrueWhenNoWordAppearsTwice()
+    public function testIsCatchPhraseValidReturnsTrueWhenNoWordAppearsTwice(): void
     {
         $isCatchPhraseValid = TestableCompany::isCatchPhraseValid('La sécurité de rouler en toute simplicité');
         self::assertTrue($isCatchPhraseValid);

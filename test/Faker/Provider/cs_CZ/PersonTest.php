@@ -11,7 +11,7 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testBirthNumber()
+    public function testBirthNumber(): void
     {
         for ($i = 0; $i < 1000; ++$i) {
             $birthNumber = $this->faker->birthNumber();

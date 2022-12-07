@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class PaymentTest extends TestCase
 {
-    public function testVatIsValid()
+    public function testVatIsValid(): void
     {
         $vat = $this->faker->vat();
         $unspacedVat = $this->faker->vat(false);
@@ -21,7 +21,7 @@ final class PaymentTest extends TestCase
         $this->validateChecksum($unspacedVat);
     }
 
-    private function validateChecksum($vat)
+    private function validateChecksum($vat): void
     {
         // Remove the "BE " part from the beginning
         $numbers = trim(substr($vat, 2));

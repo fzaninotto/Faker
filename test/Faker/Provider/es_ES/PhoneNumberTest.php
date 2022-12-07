@@ -10,12 +10,12 @@ use Faker\Test\TestCase;
  */
 final class PhoneNumberTest extends TestCase
 {
-    public function testMobileNumber()
+    public function testMobileNumber(): void
     {
         self::assertNotEquals('', $this->faker->mobileNumber());
     }
 
-    public function testTollFreeNumber()
+    public function testTollFreeNumber(): void
     {
         self::assertEquals(11, strlen($this->faker->tollFreeNumber()));
     }

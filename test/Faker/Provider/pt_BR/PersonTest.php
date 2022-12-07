@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testCpfFormatIsValid()
+    public function testCpfFormatIsValid(): void
     {
         $cpf = $this->faker->cpf(false);
         self::assertMatchesRegularExpression('/\d{9}\d{2}/', $cpf);
@@ -18,7 +18,7 @@ final class PersonTest extends TestCase
         self::assertMatchesRegularExpression('/\d{3}\.\d{3}\.\d{3}-\d{2}/', $cpf);
     }
 
-    public function testRgFormatIsValid()
+    public function testRgFormatIsValid(): void
     {
         $rg = $this->faker->rg(false);
         self::assertMatchesRegularExpression('/\d{8}\d/', $rg);

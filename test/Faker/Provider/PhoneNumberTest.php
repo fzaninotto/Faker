@@ -11,7 +11,7 @@ use Faker\Test\TestCase;
  */
 final class PhoneNumberTest extends TestCase
 {
-    public function testE164PhoneNumberFormat()
+    public function testE164PhoneNumberFormat(): void
     {
         for ($i = 0; $i < 1000; ++$i) {
             $number = $this->faker->e164PhoneNumber();
@@ -20,7 +20,7 @@ final class PhoneNumberTest extends TestCase
         }
     }
 
-    public function testImeiReturnsValidNumber()
+    public function testImeiReturnsValidNumber(): void
     {
         $imei = $this->faker->imei();
         self::assertTrue(Luhn::isValid($imei));

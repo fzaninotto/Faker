@@ -10,24 +10,24 @@ use Faker\Test\TestCase;
  */
 final class BaseTest extends TestCase
 {
-    public function testRandomDigitReturnsInteger()
+    public function testRandomDigitReturnsInteger(): void
     {
         self::assertIsInt(BaseProvider::randomDigit());
     }
 
-    public function testRandomDigitReturnsDigit()
+    public function testRandomDigitReturnsDigit(): void
     {
         self::assertGreaterThanOrEqual(0, BaseProvider::randomDigit());
         self::assertLessThan(10, BaseProvider::randomDigit());
     }
 
-    public function testRandomDigitNotNullReturnsNotNullDigit()
+    public function testRandomDigitNotNullReturnsNotNullDigit(): void
     {
         self::assertGreaterThan(0, BaseProvider::randomDigitNotNull());
         self::assertLessThan(10, BaseProvider::randomDigitNotNull());
     }
 
-    public function testRandomDigitNotReturnsValidDigit()
+    public function testRandomDigitNotReturnsValidDigit(): void
     {
         for ($i = 0; $i <= 9; ++$i) {
             self::assertGreaterThanOrEqual(0, BaseProvider::randomDigitNot($i));
@@ -36,36 +36,36 @@ final class BaseTest extends TestCase
         }
     }
 
-    public function testRandomNumberThrowsExceptionWhenCalledWithAMax()
+    public function testRandomNumberThrowsExceptionWhenCalledWithAMax(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         BaseProvider::randomNumber(5, 200);
     }
 
-    public function testRandomNumberThrowsExceptionWhenCalledWithATooHighNumberOfDigits()
+    public function testRandomNumberThrowsExceptionWhenCalledWithATooHighNumberOfDigits(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         BaseProvider::randomNumber(10);
     }
 
-    public function testRandomNumberReturnsInteger()
+    public function testRandomNumberReturnsInteger(): void
     {
         self::assertIsInt(BaseProvider::randomNumber());
         self::assertIsInt(BaseProvider::randomNumber(5, false));
     }
 
-    public function testRandomNumberReturnsDigit()
+    public function testRandomNumberReturnsDigit(): void
     {
         self::assertGreaterThanOrEqual(0, BaseProvider::randomNumber(3));
         self::assertLessThan(1000, BaseProvider::randomNumber(3));
     }
 
-    public function testRandomNumberAcceptsStrictParamToEnforceNumberSize()
+    public function testRandomNumberAcceptsStrictParamToEnforceNumberSize(): void
     {
         self::assertEquals(5, strlen((string) BaseProvider::randomNumber(5, true)));
     }
 
-    public function testNumberBetween()
+    public function testNumberBetween(): void
     {
         $min = 5;
         $max = 6;
@@ -74,12 +74,12 @@ final class BaseTest extends TestCase
         self::assertGreaterThanOrEqual(BaseProvider::numberBetween($min, $max), $max);
     }
 
-    public function testNumberBetweenAcceptsZeroAsMax()
+    public function testNumberBetweenAcceptsZeroAsMax(): void
     {
         self::assertEquals(0, BaseProvider::numberBetween(0, 0));
     }
 
-    public function testRandomFloat()
+    public function testRandomFloat(): void
     {
         $min = 4;
         $max = 10;
@@ -95,94 +95,94 @@ final class BaseTest extends TestCase
         self::assertLessThanOrEqual($nbMaxDecimals, strlen($parts[1]));
     }
 
-    public function testRandomLetterReturnsString()
+    public function testRandomLetterReturnsString(): void
     {
         self::assertIsString(BaseProvider::randomLetter());
     }
 
-    public function testRandomLetterReturnsSingleLetter()
+    public function testRandomLetterReturnsSingleLetter(): void
     {
         self::assertEquals(1, strlen(BaseProvider::randomLetter()));
     }
 
-    public function testRandomLetterReturnsLowercaseLetter()
+    public function testRandomLetterReturnsLowercaseLetter(): void
     {
         $lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz';
         self::assertNotFalse(strpos($lowercaseLetters, BaseProvider::randomLetter()));
     }
 
-    public function testRandomAsciiReturnsString()
+    public function testRandomAsciiReturnsString(): void
     {
         self::assertIsString(BaseProvider::randomAscii());
     }
 
-    public function testRandomAsciiReturnsSingleCharacter()
+    public function testRandomAsciiReturnsSingleCharacter(): void
     {
         self::assertEquals(1, strlen(BaseProvider::randomAscii()));
     }
 
-    public function testRandomAsciiReturnsAsciiCharacter()
+    public function testRandomAsciiReturnsAsciiCharacter(): void
     {
         $lowercaseLetters = '!"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
         self::assertNotFalse(strpos($lowercaseLetters, BaseProvider::randomAscii()));
     }
 
-    public function testRandomElementReturnsNullWhenArrayEmpty()
+    public function testRandomElementReturnsNullWhenArrayEmpty(): void
     {
         self::assertNull(BaseProvider::randomElement([]));
     }
 
-    public function testRandomElementReturnsNullWhenCollectionEmpty()
+    public function testRandomElementReturnsNullWhenCollectionEmpty(): void
     {
         self::assertNull(BaseProvider::randomElement(new Collection([])));
     }
 
-    public function testRandomElementReturnsElementFromArray()
+    public function testRandomElementReturnsElementFromArray(): void
     {
         $elements = ['23', 'e', 32, '#'];
         self::assertContains(BaseProvider::randomElement($elements), $elements);
     }
 
-    public function testRandomElementReturnsElementFromAssociativeArray()
+    public function testRandomElementReturnsElementFromAssociativeArray(): void
     {
         $elements = ['tata' => '23', 'toto' => 'e', 'tutu' => 32, 'titi' => '#'];
         self::assertContains(BaseProvider::randomElement($elements), $elements);
     }
 
-    public function testRandomElementReturnsElementFromCollection()
+    public function testRandomElementReturnsElementFromCollection(): void
     {
         $collection = new Collection(['one', 'two', 'three']);
         self::assertContains(BaseProvider::randomElement($collection), $collection);
     }
 
-    public function testShuffleReturnsStringWhenPassedAStringArgument()
+    public function testShuffleReturnsStringWhenPassedAStringArgument(): void
     {
         self::assertIsString(BaseProvider::shuffle('foo'));
     }
 
-    public function testShuffleReturnsArrayWhenPassedAnArrayArgument()
+    public function testShuffleReturnsArrayWhenPassedAnArrayArgument(): void
     {
         self::assertIsArray(BaseProvider::shuffle([1, 2, 3]));
     }
 
-    public function testShuffleThrowsExceptionWhenPassedAnInvalidArgument()
+    public function testShuffleThrowsExceptionWhenPassedAnInvalidArgument(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         BaseProvider::shuffle(false);
     }
 
-    public function testShuffleArraySupportsEmptyArrays()
+    public function testShuffleArraySupportsEmptyArrays(): void
     {
         self::assertEquals([], BaseProvider::shuffleArray([]));
     }
 
-    public function testShuffleArrayReturnsAnArrayOfTheSameSize()
+    public function testShuffleArrayReturnsAnArrayOfTheSameSize(): void
     {
         $array = [1, 2, 3, 4, 5];
         self::assertSameSize($array, BaseProvider::shuffleArray($array));
     }
 
-    public function testShuffleArrayReturnsAnArrayWithSameElements()
+    public function testShuffleArrayReturnsAnArrayWithSameElements(): void
     {
         $array = [2, 4, 6, 8, 10];
         $shuffleArray = BaseProvider::shuffleArray($array);
@@ -193,32 +193,32 @@ final class BaseTest extends TestCase
         self::assertContains(10, $shuffleArray);
     }
 
-    public function testShuffleArrayReturnsADifferentArrayThanTheOriginal()
+    public function testShuffleArrayReturnsADifferentArrayThanTheOriginal(): void
     {
         $arr = [1, 2, 3, 4, 5];
         $shuffledArray = BaseProvider::shuffleArray($arr);
         self::assertNotEquals($arr, $shuffledArray);
     }
 
-    public function testShuffleArrayLeavesTheOriginalArrayUntouched()
+    public function testShuffleArrayLeavesTheOriginalArrayUntouched(): void
     {
         $arr = [1, 2, 3, 4, 5];
         BaseProvider::shuffleArray($arr);
         self::assertEquals($arr, [1, 2, 3, 4, 5]);
     }
 
-    public function testShuffleStringSupportsEmptyStrings()
+    public function testShuffleStringSupportsEmptyStrings(): void
     {
         self::assertEquals('', BaseProvider::shuffleString(''));
     }
 
-    public function testShuffleStringReturnsAnStringOfTheSameSize()
+    public function testShuffleStringReturnsAnStringOfTheSameSize(): void
     {
         $string = 'abcdef';
         self::assertEquals(strlen($string), strlen(BaseProvider::shuffleString($string)));
     }
 
-    public function testShuffleStringReturnsAnStringWithSameElements()
+    public function testShuffleStringReturnsAnStringWithSameElements(): void
     {
         $string = 'acegi';
         $shuffleString = BaseProvider::shuffleString($string);
@@ -229,78 +229,78 @@ final class BaseTest extends TestCase
         self::assertStringContainsString('i', $shuffleString);
     }
 
-    public function testShuffleStringReturnsADifferentStringThanTheOriginal()
+    public function testShuffleStringReturnsADifferentStringThanTheOriginal(): void
     {
         $string = 'abcdef';
         $shuffledString = BaseProvider::shuffleString($string);
         self::assertNotEquals($string, $shuffledString);
     }
 
-    public function testShuffleStringLeavesTheOriginalStringUntouched()
+    public function testShuffleStringLeavesTheOriginalStringUntouched(): void
     {
         $string = 'abcdef';
         BaseProvider::shuffleString($string);
         self::assertEquals($string, 'abcdef');
     }
 
-    public function testNumerifyReturnsSameStringWhenItContainsNoHashSign()
+    public function testNumerifyReturnsSameStringWhenItContainsNoHashSign(): void
     {
         self::assertEquals('fooBar?', BaseProvider::numerify('fooBar?'));
     }
 
-    public function testNumerifyReturnsStringWithHashSignsReplacedByDigits()
+    public function testNumerifyReturnsStringWithHashSignsReplacedByDigits(): void
     {
         self::assertMatchesRegularExpression('/foo\dBa\dr/', BaseProvider::numerify('foo#Ba#r'));
     }
 
-    public function testNumerifyReturnsStringWithPercentageSignsReplacedByDigits()
+    public function testNumerifyReturnsStringWithPercentageSignsReplacedByDigits(): void
     {
         self::assertMatchesRegularExpression('/foo\dBa\dr/', BaseProvider::numerify('foo%Ba%r'));
     }
 
-    public function testNumerifyReturnsStringWithPercentageSignsReplacedByNotNullDigits()
+    public function testNumerifyReturnsStringWithPercentageSignsReplacedByNotNullDigits(): void
     {
         self::assertNotEquals('0', BaseProvider::numerify('%'));
     }
 
-    public function testNumerifyCanGenerateALargeNumberOfDigits()
+    public function testNumerifyCanGenerateALargeNumberOfDigits(): void
     {
         $largePattern = str_repeat('#', 20); // definitely larger than PHP_INT_MAX on all systems
         self::assertEquals(20, strlen(BaseProvider::numerify($largePattern)));
     }
 
-    public function testLexifyReturnsSameStringWhenItContainsNoQuestionMark()
+    public function testLexifyReturnsSameStringWhenItContainsNoQuestionMark(): void
     {
         self::assertEquals('fooBar#', BaseProvider::lexify('fooBar#'));
     }
 
-    public function testLexifyReturnsStringWithQuestionMarksReplacedByLetters()
+    public function testLexifyReturnsStringWithQuestionMarksReplacedByLetters(): void
     {
         self::assertMatchesRegularExpression('/foo[a-z]Ba[a-z]r/', BaseProvider::lexify('foo?Ba?r'));
     }
 
-    public function testBothifyCombinesNumerifyAndLexify()
+    public function testBothifyCombinesNumerifyAndLexify(): void
     {
         self::assertMatchesRegularExpression('/foo[a-z]Ba\dr/', BaseProvider::bothify('foo?Ba#r'));
     }
 
-    public function testBothifyAsterisk()
+    public function testBothifyAsterisk(): void
     {
         self::assertMatchesRegularExpression('/foo([a-z]|\d)Ba([a-z]|\d)r/', BaseProvider::bothify('foo*Ba*r'));
     }
 
-    public function testBothifyUtf()
+    public function testBothifyUtf(): void
     {
         $utf = 'œ∑´®†¥¨ˆøπ“‘和製╯°□°╯︵ ┻━┻🐵 🙈 ﺚﻣ ﻦﻔﺳ ﺲﻘﻄﺗ ﻮﺑﺎﻠﺘﺣﺪﻳﺩ،, ﺝﺰﻳﺮﺘﻳ ﺏﺎﺴﺘﺧﺩﺎﻣ ﺄﻧ ﺪﻧﻭ. ﺇﺫ ﻪﻧﺍ؟ ﺎﻠﺴﺗﺍﺭ ﻮﺘ';
         self::assertMatchesRegularExpression('/' . $utf . 'foo\dB[a-z]a([a-z]|\d)r/u', BaseProvider::bothify($utf . 'foo#B?a*r'));
     }
 
-    public function testAsciifyReturnsSameStringWhenItContainsNoStarSign()
+    public function testAsciifyReturnsSameStringWhenItContainsNoStarSign(): void
     {
         self::assertEquals('fooBar?', BaseProvider::asciify('fooBar?'));
     }
 
-    public function testAsciifyReturnsStringWithStarSignsReplacedByAsciiChars()
+    public function testAsciifyReturnsStringWithStarSignsReplacedByAsciiChars(): void
     {
         self::assertMatchesRegularExpression('/foo.Ba.r/', BaseProvider::asciify('foo*Ba*r'));
     }
@@ -319,7 +319,7 @@ final class BaseTest extends TestCase
     /**
      * @dataProvider regexifyBasicDataProvider
      */
-    public function testRegexifyBasicFeatures($input, $output, $message)
+    public function testRegexifyBasicFeatures($input, $output, $message): void
     {
         self::assertEquals($output, BaseProvider::regexify($input), $message);
     }
@@ -351,26 +351,26 @@ final class BaseTest extends TestCase
     /**
      * @dataProvider regexifyDataProvider
      */
-    public function testRegexifySupportedRegexSyntax($pattern, $message)
+    public function testRegexifySupportedRegexSyntax($pattern, $message): void
     {
         self::assertMatchesRegularExpression('/' . $pattern . '/', BaseProvider::regexify($pattern), 'Regexify supports ' . $message);
     }
 
-    public function testOptionalReturnsProviderValueWhenCalledWithWeight1()
+    public function testOptionalReturnsProviderValueWhenCalledWithWeight1(): void
     {
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         self::assertNotNull($faker->optional(100)->randomDigit);
     }
 
-    public function testOptionalReturnsNullWhenCalledWithWeight0()
+    public function testOptionalReturnsNullWhenCalledWithWeight0(): void
     {
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         self::assertNull($faker->optional(0)->randomDigit);
     }
 
-    public function testOptionalAllowsChainingPropertyAccess()
+    public function testOptionalAllowsChainingPropertyAccess(): void
     {
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
@@ -379,7 +379,7 @@ final class BaseTest extends TestCase
         self::assertNull($faker->optional(0)->count);
     }
 
-    public function testOptionalAllowsChainingMethodCall()
+    public function testOptionalAllowsChainingMethodCall(): void
     {
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
@@ -388,7 +388,7 @@ final class BaseTest extends TestCase
         self::assertNull($faker->optional(0)->count());
     }
 
-    public function testOptionalAllowsChainingProviderCallRandomlyReturnNull()
+    public function testOptionalAllowsChainingProviderCallRandomlyReturnNull(): void
     {
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
@@ -410,7 +410,7 @@ final class BaseTest extends TestCase
     /**
      * @see https://github.com/fzaninotto/Faker/issues/265
      */
-    public function testOptionalPercentageAndWeight()
+    public function testOptionalPercentageAndWeight(): void
     {
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
@@ -430,7 +430,7 @@ final class BaseTest extends TestCase
         );
     }
 
-    public function testUniqueAllowsChainingPropertyAccess()
+    public function testUniqueAllowsChainingPropertyAccess(): void
     {
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
@@ -438,7 +438,7 @@ final class BaseTest extends TestCase
         self::assertEquals(1, $faker->unique()->count);
     }
 
-    public function testUniqueAllowsChainingMethodCall()
+    public function testUniqueAllowsChainingMethodCall(): void
     {
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
@@ -446,7 +446,7 @@ final class BaseTest extends TestCase
         self::assertEquals(1, $faker->unique()->count());
     }
 
-    public function testUniqueReturnsOnlyUniqueValues()
+    public function testUniqueReturnsOnlyUniqueValues(): void
     {
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
@@ -459,7 +459,7 @@ final class BaseTest extends TestCase
         self::assertEquals([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], $values);
     }
 
-    public function testUniqueThrowsExceptionWhenNoUniqueValueCanBeGenerated()
+    public function testUniqueThrowsExceptionWhenNoUniqueValueCanBeGenerated(): void
     {
         $this->expectException(\OverflowException::class);
         $faker = new \Faker\Generator();
@@ -470,7 +470,7 @@ final class BaseTest extends TestCase
         }
     }
 
-    public function testUniqueCanResetUniquesWhenPassedTrueAsArgument()
+    public function testUniqueCanResetUniquesWhenPassedTrueAsArgument(): void
     {
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
@@ -488,21 +488,21 @@ final class BaseTest extends TestCase
         self::assertEquals([0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9], $values);
     }
 
-    public function testValidAllowsChainingPropertyAccess()
+    public function testValidAllowsChainingPropertyAccess(): void
     {
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         self::assertLessThan(10, $faker->valid()->randomDigit);
     }
 
-    public function testValidAllowsChainingMethodCall()
+    public function testValidAllowsChainingMethodCall(): void
     {
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
         self::assertLessThan(10, $faker->valid()->numberBetween(5, 9));
     }
 
-    public function testValidReturnsOnlyValidValues()
+    public function testValidReturnsOnlyValidValues(): void
     {
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
@@ -519,7 +519,7 @@ final class BaseTest extends TestCase
         self::assertEquals([0, 2, 4, 6, 8], $uniqueValues);
     }
 
-    public function testValidThrowsExceptionWhenNoValidValueCanBeGenerated()
+    public function testValidThrowsExceptionWhenNoValidValueCanBeGenerated(): void
     {
         $this->expectException(\OverflowException::class);
         $faker = new \Faker\Generator();
@@ -533,7 +533,7 @@ final class BaseTest extends TestCase
         }
     }
 
-    public function testValidThrowsExceptionWhenParameterIsNotCallable()
+    public function testValidThrowsExceptionWhenParameterIsNotCallable(): void
     {
         $faker = new \Faker\Generator();
         $faker->addProvider(new \Faker\Provider\Base($faker));
@@ -541,14 +541,14 @@ final class BaseTest extends TestCase
         $faker->valid(12)->randomElement([1, 3, 5, 7, 9]);
     }
 
-    public function testRandomElementsThrowsWhenRequestingTooManyKeys()
+    public function testRandomElementsThrowsWhenRequestingTooManyKeys(): void
     {
         $this->expectException(\LengthException::class);
         $this->expectExceptionMessage('Cannot get 2 elements, only 1 in array');
         BaseProvider::randomElements(['foo'], 2);
     }
 
-    public function testRandomElements()
+    public function testRandomElements(): void
     {
         self::assertCount(1, BaseProvider::randomElements(), 'Should work without any input');
 

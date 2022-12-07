@@ -30,7 +30,7 @@ class EntityPopulator
         return $this->class;
     }
 
-    public function setColumnFormatters($columnFormatters)
+    public function setColumnFormatters($columnFormatters): void
     {
         $this->columnFormatters = $columnFormatters;
     }
@@ -43,7 +43,7 @@ class EntityPopulator
         return $this->columnFormatters;
     }
 
-    public function mergeColumnFormattersWith($columnFormatters)
+    public function mergeColumnFormattersWith($columnFormatters): void
     {
         $this->columnFormatters = array_merge($this->columnFormatters, $columnFormatters);
     }
@@ -129,7 +129,7 @@ class EntityPopulator
         return false;
     }
 
-    public function setModifiers($modifiers)
+    public function setModifiers($modifiers): void
     {
         $this->modifiers = $modifiers;
     }
@@ -142,7 +142,7 @@ class EntityPopulator
         return $this->modifiers;
     }
 
-    public function mergeModifiersWith($modifiers)
+    public function mergeModifiersWith($modifiers): void
     {
         $this->modifiers = array_merge($this->modifiers, $modifiers);
     }
@@ -160,7 +160,7 @@ class EntityPopulator
         foreach ($tableMap->getBehaviors() as $name => $params) {
             switch ($name) {
                 case 'nested_set':
-                    $modifiers['nested_set'] = static function ($obj, $inserted) use ($class, $generator) {
+                    $modifiers['nested_set'] = static function ($obj, $inserted) use ($class, $generator): void {
                         if (isset($inserted[$class])) {
                             $queryClass = $class . 'Query';
                             $parent = $queryClass::create()->findPk($generator->randomElement($inserted[$class]));
@@ -173,7 +173,7 @@ class EntityPopulator
                     break;
 
                 case 'sortable':
-                    $modifiers['sortable'] = static function ($obj, $inserted) use ($class, $generator) {
+                    $modifiers['sortable'] = static function ($obj, $inserted) use ($class, $generator): void {
                         $obj->insertAtRank($generator->numberBetween(1, count($inserted[$class] ?? []) + 1));
                     };
 

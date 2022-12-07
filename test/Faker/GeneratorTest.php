@@ -57,14 +57,14 @@ final class GeneratorTest extends TestCase
         self::assertMatchesRegularExpression('|.*/.*|', $mime);
     }
 
-    public function testAddProviderGivesPriorityToNewlyAddedProvider()
+    public function testAddProviderGivesPriorityToNewlyAddedProvider(): void
     {
         $this->faker->addProvider(new Fixture\Provider\FooProvider());
         $this->faker->addProvider(new Fixture\Provider\BarProvider());
         self::assertEquals('barfoo', $this->faker->format('fooFormatter'));
     }
 
-    public function testGetProvidersReturnsCorrectProviders()
+    public function testGetProvidersReturnsCorrectProviders(): void
     {
         $this->faker->addProvider(new Fixture\Provider\FooProvider());
         $this->faker->addProvider(new Fixture\Provider\BarProvider());
@@ -73,13 +73,13 @@ final class GeneratorTest extends TestCase
         self::assertCount(2, $this->faker->getProviders());
     }
 
-    public function testGetFormatterReturnsCallable()
+    public function testGetFormatterReturnsCallable(): void
     {
         $this->faker->addProvider(new Fixture\Provider\FooProvider());
         self::assertIsCallable($this->faker->getFormatter('fooFormatter'));
     }
 
-    public function testGetFormatterReturnsCorrectFormatter()
+    public function testGetFormatterReturnsCorrectFormatter(): void
     {
         $provider = new Fixture\Provider\FooProvider();
         $this->faker->addProvider($provider);
@@ -105,26 +105,26 @@ final class GeneratorTest extends TestCase
         self::assertSame($expected, $this->faker->getFormatter('fooFormatter'));
     }
 
-    public function testGetFormatterThrowsExceptionOnIncorrectProvider()
+    public function testGetFormatterThrowsExceptionOnIncorrectProvider(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         $this->faker->getFormatter('fooFormatter');
     }
 
-    public function testGetFormatterThrowsExceptionOnIncorrectFormatter()
+    public function testGetFormatterThrowsExceptionOnIncorrectFormatter(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         $this->faker->addProvider(new Fixture\Provider\FooProvider());
         $this->faker->getFormatter('barFormatter');
     }
 
-    public function testFormatCallsFormatterOnProvider()
+    public function testFormatCallsFormatterOnProvider(): void
     {
         $this->faker->addProvider(new Fixture\Provider\FooProvider());
         self::assertEquals('foobar', $this->faker->format('fooFormatter'));
     }
 
-    public function testFormatTransfersArgumentsToFormatter()
+    public function testFormatTransfersArgumentsToFormatter(): void
     {
         $this->faker = new Generator();
         $provider = new Fixture\Provider\FooProvider();
@@ -132,7 +132,7 @@ final class GeneratorTest extends TestCase
         self::assertEquals('bazfoo', $this->faker->format('fooFormatterWithArguments', ['foo']));
     }
 
-    public function testFormatterCallsGenerator()
+    public function testFormatterCallsGenerator(): void
     {
         $builder = new ContainerBuilder();
         $builder->add(Blood::class, BloodExtension::class);
@@ -142,7 +142,7 @@ final class GeneratorTest extends TestCase
         self::assertTrue(in_array($output, ['A', 'AB', 'B', '0'], true));
     }
 
-    public function testFormatterCallsExtension()
+    public function testFormatterCallsExtension(): void
     {
         $builder = new ContainerBuilder();
         $builder->add(Blood::class);
@@ -152,12 +152,12 @@ final class GeneratorTest extends TestCase
         self::assertTrue(in_array($output, ['A', 'AB', 'B', '0'], true));
     }
 
-    public function testParseReturnsSameStringWhenItContainsNoCurlyBraces()
+    public function testParseReturnsSameStringWhenItContainsNoCurlyBraces(): void
     {
         self::assertEquals('fooBar#?', $this->faker->parse('fooBar#?'));
     }
 
-    public function testParseReturnsStringWithTokensReplacedByFormatters()
+    public function testParseReturnsStringWithTokensReplacedByFormatters(): void
     {
         $this->faker->addProvider(new Fixture\Provider\FooProvider());
         self::assertEquals('This is foobar a text with foobar', $this->faker->parse('This is {{fooFormatter}} a text with {{ fooFormatter }}'));
@@ -166,25 +166,25 @@ final class GeneratorTest extends TestCase
     /**
      * @group legacy
      */
-    public function testMagicGetCallsFormat()
+    public function testMagicGetCallsFormat(): void
     {
         $this->faker->addProvider(new Fixture\Provider\FooProvider());
         self::assertEquals('foobar', $this->faker->fooFormatter);
     }
 
-    public function testMagicCallCallsFormat()
+    public function testMagicCallCallsFormat(): void
     {
         $this->faker->addProvider(new Fixture\Provider\FooProvider());
         self::assertEquals('foobar', $this->faker->fooFormatter());
     }
 
-    public function testMagicCallCallsFormatWithArguments()
+    public function testMagicCallCallsFormatWithArguments(): void
     {
         $this->faker->addProvider(new Fixture\Provider\FooProvider());
         self::assertEquals('bazfoo', $this->faker->fooFormatterWithArguments('foo'));
     }
 
-    public function testSeed()
+    public function testSeed(): void
     {
         $this->faker->seed(0);
         $mtRandWithSeedZero = mt_rand();

@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class PhoneNumberTest extends TestCase
 {
-    public function testFixedLineNumber()
+    public function testFixedLineNumber(): void
     {
         $fixedLineNumber = $this->faker->fixedLineNumber();
         self::assertNotSame(' ', $fixedLineNumber[0]);
@@ -20,7 +20,7 @@ final class PhoneNumberTest extends TestCase
         );
     }
 
-    public function testMobileNumber()
+    public function testMobileNumber(): void
     {
         $mobileNumber = $this->faker->mobileNumber();
         self::assertNotSame(' ', $mobileNumber[0]);
@@ -30,7 +30,7 @@ final class PhoneNumberTest extends TestCase
         );
     }
 
-    public function testPersonalNumber()
+    public function testPersonalNumber(): void
     {
         $personalNumber = $this->faker->personalNumber();
         self::assertNotSame(' ', $personalNumber[0]);
@@ -40,7 +40,7 @@ final class PhoneNumberTest extends TestCase
         );
     }
 
-    public function testTollFreeNumber()
+    public function testTollFreeNumber(): void
     {
         $tollFreeNumber = $this->faker->tollFreeNumber();
         self::assertNotSame(' ', $tollFreeNumber[0]);
@@ -50,7 +50,7 @@ final class PhoneNumberTest extends TestCase
         );
     }
 
-    public function testSharedCostNumber()
+    public function testSharedCostNumber(): void
     {
         $sharedCostNumber = $this->faker->sharedCostNumber();
         self::assertNotSame(' ', $sharedCostNumber[0]);
@@ -60,7 +60,7 @@ final class PhoneNumberTest extends TestCase
         );
     }
 
-    public function testPremiumRateNumber()
+    public function testPremiumRateNumber(): void
     {
         $premiumRateNumber = $this->faker->premiumRateNumber();
         self::assertNotSame(' ', $premiumRateNumber[0]);

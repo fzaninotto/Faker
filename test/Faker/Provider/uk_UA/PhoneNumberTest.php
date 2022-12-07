@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class PhoneNumberTest extends TestCase
 {
-    public function testPhoneNumberFormat()
+    public function testPhoneNumberFormat(): void
     {
         $pattern = "/((\+38)(((\(\d{3}\))\d{7}|(\(\d{4}\))\d{6})|(\d{8})))|0\d{9}/";
         $phoneNumber = $this->faker->phoneNumber;
@@ -21,7 +21,7 @@ final class PhoneNumberTest extends TestCase
         );
     }
 
-    public function testE164PhoneNumberFormat()
+    public function testE164PhoneNumberFormat(): void
     {
         $pattern = '/^\+?380[1-9]\d{8}$/';
         $phoneNumber = $this->faker->e164PhoneNumber;

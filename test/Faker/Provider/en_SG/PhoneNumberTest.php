@@ -13,7 +13,7 @@ final class PhoneNumberTest extends TestCase
     // http://en.wikipedia.org/wiki/Telephone_numbers_in_Singapore#Numbering_plan
     // x means 0 to 9
     // y means 0 to 8 only
-    public function testMobilePhoneNumberStartWith9Returns9yxxxxxx()
+    public function testMobilePhoneNumberStartWith9Returns9yxxxxxx(): void
     {
         $startsWith9 = false;
 
@@ -28,7 +28,7 @@ final class PhoneNumberTest extends TestCase
     // http://en.wikipedia.org/wiki/Telephone_numbers_in_Singapore#Numbering_plan
     // x means 0 to 9
     // z means 1 to 8 only
-    public function testMobilePhoneNumberStartWith8Returns8zxxxxxx()
+    public function testMobilePhoneNumberStartWith8Returns8zxxxxxx(): void
     {
         $startsWith8 = false;
 
@@ -44,27 +44,27 @@ final class PhoneNumberTest extends TestCase
         yield new PhoneNumber($this->faker);
     }
 
-    public function testTollFreeInternationalNumber()
+    public function testTollFreeInternationalNumber(): void
     {
         self::assertMatchesRegularExpression('/^800\s*\d{3}\s*\d{4}$/', $this->faker->tollFreeInternationalNumber);
     }
 
-    public function testTollFreeLineNumber()
+    public function testTollFreeLineNumber(): void
     {
         self::assertMatchesRegularExpression('/^1800\s*\d{3}\s*\d{4}$/', $this->faker->tollFreeLineNumber);
     }
 
-    public function testPremiumPhoneNumber()
+    public function testPremiumPhoneNumber(): void
     {
         self::assertMatchesRegularExpression('/^1900\s*\d{3}\s*\d{4}$/', $this->faker->premiumPhoneNumber);
     }
 
-    public function testFixedLineNumber()
+    public function testFixedLineNumber(): void
     {
         self::assertMatchesRegularExpression('/^(\+65|65)?\s*6\d{3}\s*\d{4}$/', $this->faker->fixedLineNumber);
     }
 
-    public function testVoipNumber()
+    public function testVoipNumber(): void
     {
         self::assertMatchesRegularExpression('/^(\+65|65)?\s*3\d{3}\s*\d{4}$/', $this->faker->voipNumber);
     }

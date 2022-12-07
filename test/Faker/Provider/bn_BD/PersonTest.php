@@ -10,13 +10,13 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testIfFirstNameMaleCanReturnData()
+    public function testIfFirstNameMaleCanReturnData(): void
     {
         $firstNameMale = $this->faker->firstNameMale();
         self::assertNotEmpty($firstNameMale);
     }
 
-    public function testIfFirstNameFemaleCanReturnData()
+    public function testIfFirstNameFemaleCanReturnData(): void
     {
         $firstNameFemale = $this->faker->firstNameFemale();
         self::assertNotEmpty($firstNameFemale);

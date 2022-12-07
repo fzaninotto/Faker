@@ -10,14 +10,14 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testPeselLenght()
+    public function testPeselLenght(): void
     {
         $pesel = $this->faker->pesel();
 
         self::assertEquals(11, strlen($pesel));
     }
 
-    public function testPeselDate()
+    public function testPeselDate(): void
     {
         $date = new \DateTime('1990-01-01');
         $pesel = $this->faker->pesel($date);
@@ -27,7 +27,7 @@ final class PersonTest extends TestCase
         self::assertEquals('01', substr($pesel, 4, 2));
     }
 
-    public function testPeselDateWithYearAfter2000()
+    public function testPeselDateWithYearAfter2000(): void
     {
         $date = new \DateTime('2001-01-01');
         $pesel = $this->faker->pesel($date);
@@ -37,7 +37,7 @@ final class PersonTest extends TestCase
         self::assertEquals('01', substr($pesel, 4, 2));
     }
 
-    public function testPeselDateWithYearAfter2100()
+    public function testPeselDateWithYearAfter2100(): void
     {
         $date = new \DateTime('2101-01-01');
         $pesel = $this->faker->pesel($date);
@@ -47,7 +47,7 @@ final class PersonTest extends TestCase
         self::assertEquals('01', substr($pesel, 4, 2));
     }
 
-    public function testPeselDateWithYearAfter2200()
+    public function testPeselDateWithYearAfter2200(): void
     {
         $date = new \DateTime('2201-01-01');
         $pesel = $this->faker->pesel($date);
@@ -57,7 +57,7 @@ final class PersonTest extends TestCase
         self::assertEquals('01', substr($pesel, 4, 2));
     }
 
-    public function testPeselDateWithYearBefore1900()
+    public function testPeselDateWithYearBefore1900(): void
     {
         $date = new \DateTime('1801-01-01');
         $pesel = $this->faker->pesel($date);
@@ -67,7 +67,7 @@ final class PersonTest extends TestCase
         self::assertEquals('01', substr($pesel, 4, 2));
     }
 
-    public function testPeselSex()
+    public function testPeselSex(): void
     {
         $male = $this->faker->pesel(null, 'M');
         $female = $this->faker->pesel(null, 'F');
@@ -76,7 +76,7 @@ final class PersonTest extends TestCase
         self::assertEquals(0, $female[9] % 2);
     }
 
-    public function testPeselCheckSum()
+    public function testPeselCheckSum(): void
     {
         $pesel = $this->faker->pesel();
         $weights = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3, 1];
@@ -89,7 +89,7 @@ final class PersonTest extends TestCase
         self::assertEquals(0, $sum % 10);
     }
 
-    public function testTitle()
+    public function testTitle(): void
     {
         self::assertContains($this->faker->titleFemale(), ['mgr', 'inż.', 'dr', 'doc.']);
         self::assertContains($this->faker->titleMale(), ['mgr', 'inż.', 'dr', 'doc.']);

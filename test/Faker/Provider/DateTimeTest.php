@@ -21,7 +21,7 @@ final class DateTimeTest extends TestCase
         DateTimeProvider::setDefaultTimezone();
     }
 
-    public function testPreferDefaultTimezoneOverSystemTimezone()
+    public function testPreferDefaultTimezoneOverSystemTimezone(): void
     {
         /**
          * Set the system timezone to something *other* than the timezone used
@@ -45,7 +45,7 @@ final class DateTimeTest extends TestCase
         date_default_timezone_set($originalSystemTimezone);
     }
 
-    public function testUseSystemTimezoneWhenDefaultTimezoneIsNotSet()
+    public function testUseSystemTimezoneWhenDefaultTimezoneIsNotSet(): void
     {
         /**
          * Set the system timezone to something *other* than the timezone used
@@ -71,7 +71,7 @@ final class DateTimeTest extends TestCase
         date_default_timezone_set($originalSystemTimezone);
     }
 
-    public function testUnixTime()
+    public function testUnixTime(): void
     {
         $timestamp = DateTimeProvider::unixTime();
         self::assertIsInt($timestamp);
@@ -79,7 +79,7 @@ final class DateTimeTest extends TestCase
         self::assertLessThanOrEqual(time(), $timestamp);
     }
 
-    public function testDateTime()
+    public function testDateTime(): void
     {
         $date = DateTimeProvider::dateTime();
         self::assertInstanceOf('\DateTime', $date);
@@ -88,13 +88,13 @@ final class DateTimeTest extends TestCase
         self::assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
-    public function testDateTimeWithTimezone()
+    public function testDateTimeWithTimezone(): void
     {
         $date = DateTimeProvider::dateTime('now', 'America/New_York');
         self::assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
     }
 
-    public function testDateTimeAD()
+    public function testDateTimeAD(): void
     {
         $date = DateTimeProvider::dateTimeAD();
         self::assertInstanceOf('\DateTime', $date);
@@ -103,7 +103,7 @@ final class DateTimeTest extends TestCase
         self::assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
-    public function testDateTimeThisCentury()
+    public function testDateTimeThisCentury(): void
     {
         $date = DateTimeProvider::dateTimeThisCentury();
         self::assertInstanceOf('\DateTime', $date);
@@ -112,7 +112,7 @@ final class DateTimeTest extends TestCase
         self::assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
-    public function testDateTimeThisDecade()
+    public function testDateTimeThisDecade(): void
     {
         $date = DateTimeProvider::dateTimeThisDecade();
         self::assertInstanceOf('\DateTime', $date);
@@ -121,7 +121,7 @@ final class DateTimeTest extends TestCase
         self::assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
-    public function testDateTimeThisYear()
+    public function testDateTimeThisYear(): void
     {
         $date = DateTimeProvider::dateTimeThisYear();
         self::assertInstanceOf('\DateTime', $date);
@@ -130,7 +130,7 @@ final class DateTimeTest extends TestCase
         self::assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
-    public function testDateTimeThisMonth()
+    public function testDateTimeThisMonth(): void
     {
         $date = DateTimeProvider::dateTimeThisMonth();
         self::assertInstanceOf('\DateTime', $date);
@@ -139,31 +139,31 @@ final class DateTimeTest extends TestCase
         self::assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
-    public function testDateTimeThisCenturyWithTimezone()
+    public function testDateTimeThisCenturyWithTimezone(): void
     {
         $date = DateTimeProvider::dateTimeThisCentury('now', 'America/New_York');
         self::assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
     }
 
-    public function testDateTimeThisDecadeWithTimezone()
+    public function testDateTimeThisDecadeWithTimezone(): void
     {
         $date = DateTimeProvider::dateTimeThisDecade('now', 'America/New_York');
         self::assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
     }
 
-    public function testDateTimeThisYearWithTimezone()
+    public function testDateTimeThisYearWithTimezone(): void
     {
         $date = DateTimeProvider::dateTimeThisYear('now', 'America/New_York');
         self::assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
     }
 
-    public function testDateTimeThisMonthWithTimezone()
+    public function testDateTimeThisMonthWithTimezone(): void
     {
         $date = DateTimeProvider::dateTimeThisMonth('now', 'America/New_York');
         self::assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
     }
 
-    public function testIso8601()
+    public function testIso8601(): void
     {
         $date = DateTimeProvider::iso8601();
         self::assertMatchesRegularExpression('/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-Z](\d{4})?$/', $date);
@@ -171,7 +171,7 @@ final class DateTimeTest extends TestCase
         self::assertLessThanOrEqual(new \DateTime(), new \DateTime($date));
     }
 
-    public function testDate()
+    public function testDate(): void
     {
         $date = DateTimeProvider::date();
         self::assertMatchesRegularExpression('/^\d{4}-\d{2}-\d{2}$/', $date);
@@ -179,7 +179,7 @@ final class DateTimeTest extends TestCase
         self::assertLessThanOrEqual(new \DateTime(), new \DateTime($date));
     }
 
-    public function testTime()
+    public function testTime(): void
     {
         $date = DateTimeProvider::time();
         self::assertMatchesRegularExpression('/^\d{2}:\d{2}:\d{2}$/', $date);
@@ -188,7 +188,7 @@ final class DateTimeTest extends TestCase
     /**
      * @dataProvider providerDateTimeBetween
      */
-    public function testDateTimeBetween($start, $end)
+    public function testDateTimeBetween($start, $end): void
     {
         $date = DateTimeProvider::dateTimeBetween($start, $end);
         self::assertInstanceOf('\DateTime', $date);
@@ -210,7 +210,7 @@ final class DateTimeTest extends TestCase
     /**
      * @dataProvider providerDateTimeInInterval
      */
-    public function testDateTimeInInterval($start, $interval, $isInFuture)
+    public function testDateTimeInInterval($start, $interval, $isInFuture): void
     {
         $date = DateTimeProvider::dateTimeInInterval($start, $interval);
         self::assertInstanceOf('\DateTime', $date);
@@ -236,7 +236,7 @@ final class DateTimeTest extends TestCase
         ];
     }
 
-    public function testFixedSeedWithMaximumTimestamp()
+    public function testFixedSeedWithMaximumTimestamp(): void
     {
         $max = '2118-03-01 12:00:00';
 

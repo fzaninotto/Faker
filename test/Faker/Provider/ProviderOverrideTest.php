@@ -31,7 +31,7 @@ final class ProviderOverrideTest extends TestCase
      *
      * @param string $locale
      */
-    public function testAddress($locale = null)
+    public function testAddress($locale = null): void
     {
         $faker = Faker\Factory::create($locale);
 
@@ -46,7 +46,7 @@ final class ProviderOverrideTest extends TestCase
      *
      * @param string $locale
      */
-    public function testCompany($locale = null)
+    public function testCompany($locale = null): void
     {
         $faker = Faker\Factory::create($locale);
 
@@ -58,7 +58,7 @@ final class ProviderOverrideTest extends TestCase
      *
      * @param string $locale
      */
-    public function testDateTime($locale = null)
+    public function testDateTime($locale = null): void
     {
         $faker = Faker\Factory::create($locale);
 
@@ -71,7 +71,7 @@ final class ProviderOverrideTest extends TestCase
      *
      * @param string $locale
      */
-    public function testInternet($locale = null)
+    public function testInternet($locale = null): void
     {
         $faker = Faker\Factory::create($locale);
 
@@ -88,7 +88,7 @@ final class ProviderOverrideTest extends TestCase
      *
      * @param string $locale
      */
-    public function testPerson($locale = null)
+    public function testPerson($locale = null): void
     {
         $faker = Faker\Factory::create($locale);
 
@@ -103,7 +103,7 @@ final class ProviderOverrideTest extends TestCase
      *
      * @param string $locale
      */
-    public function testPhoneNumber($locale = null)
+    public function testPhoneNumber($locale = null): void
     {
         $faker = Faker\Factory::create($locale);
 
@@ -115,7 +115,7 @@ final class ProviderOverrideTest extends TestCase
      *
      * @param string $locale
      */
-    public function testUserAgent($locale = null)
+    public function testUserAgent($locale = null): void
     {
         $faker = Faker\Factory::create($locale);
 
@@ -128,7 +128,7 @@ final class ProviderOverrideTest extends TestCase
      * @param null   $locale
      * @param string $locale
      */
-    public function testUuid($locale = null)
+    public function testUuid($locale = null): void
     {
         $faker = Faker\Factory::create($locale);
 

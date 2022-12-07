@@ -10,43 +10,43 @@ use Faker\Test\TestCase;
  */
 final class PhoneNumberTest extends TestCase
 {
-    public function testMobileNumber()
+    public function testMobileNumber(): void
     {
         $mobileNumber = $this->faker->mobileNumber();
         self::assertMatchesRegularExpression('/^(\+33 |\+33 \(0\)|0)(6|7)(?:(\s{1})?\d{2}){4}$/', $mobileNumber);
     }
 
-    public function testMobileNumber07Format()
+    public function testMobileNumber07Format(): void
     {
         $mobileNumberFormat = $this->faker->phoneNumber07();
         self::assertMatchesRegularExpression('/^([3-9]{1})\d(\d{2}){3}$/', $mobileNumberFormat);
     }
 
-    public function testMobileNumber07WithSeparatorFormat()
+    public function testMobileNumber07WithSeparatorFormat(): void
     {
         $mobileNumberFormat = $this->faker->phoneNumber07WithSeparator();
         self::assertMatchesRegularExpression('/^([3-9]{1})\d( \d{2}){3}$/', $mobileNumberFormat);
     }
 
-    public function testServiceNumber()
+    public function testServiceNumber(): void
     {
         $serviceNumber = $this->faker->serviceNumber();
         self::assertMatchesRegularExpression('/^(\+33 |\+33 \(0\)|0)8(?:(\s{1})?\d{2}){4}$/', $serviceNumber);
     }
 
-    public function testServiceNumberFormat()
+    public function testServiceNumberFormat(): void
     {
         $serviceNumberFormat = $this->faker->phoneNumber08();
         self::assertMatchesRegularExpression('/^((0|1|2)\d{1}|9[^46])\d{6}$/', $serviceNumberFormat);
     }
 
-    public function testServiceNumberWithSeparatorFormat()
+    public function testServiceNumberWithSeparatorFormat(): void
     {
         $serviceNumberFormat = $this->faker->phoneNumber08WithSeparator();
         self::assertMatchesRegularExpression('/^((0|1|2)\d{1}|9[^46])( \d{2}){3}$/', $serviceNumberFormat);
     }
 
-    public function testE164PhoneNumberFormat()
+    public function testE164PhoneNumberFormat(): void
     {
         for ($i = 0; $i < 10; ++$i) {
             $number = $this->faker->e164PhoneNumber();

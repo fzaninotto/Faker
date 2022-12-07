@@ -16,7 +16,7 @@ final class PersonTest extends TestCase
      *   2000-01-01 - 2000-12-31 counts as 21th century
      *   1900-01-01 - 1900-12-31 counts as 20th century
      */
-    public function testIndividualIdentificationNumberIsValid()
+    public function testIndividualIdentificationNumberIsValid(): void
     {
         // 21st century.
         $birthDate = DateTime::dateTimeBetween('2000-01-01', '2099-12-31');

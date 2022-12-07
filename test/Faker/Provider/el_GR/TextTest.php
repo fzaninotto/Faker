@@ -25,7 +25,7 @@ final class TextTest extends TestCase
         return $method;
     }
 
-    public function testItShouldAppendEndPunctToTheEndOfString()
+    public function testItShouldAppendEndPunctToTheEndOfString(): void
     {
         self::assertSame(
             'Και δεν άκουσες το κλοπακλόπ, κλοπακλόπ, κλοπακλόπ.',

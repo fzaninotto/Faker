@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class PaymentTest extends TestCase
 {
-    public function testVAT()
+    public function testVAT(): void
     {
         $vat = $this->faker->vat();
 

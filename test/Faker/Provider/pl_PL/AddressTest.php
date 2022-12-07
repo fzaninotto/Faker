@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class AddressTest extends TestCase
 {
-    public function testState()
+    public function testState(): void
     {
         $state = $this->faker->state();
         self::assertNotEmpty($state);

@@ -38,7 +38,7 @@ class EntityPopulator
         return $this->class->getName();
     }
 
-    public function setColumnFormatters($columnFormatters)
+    public function setColumnFormatters($columnFormatters): void
     {
         $this->columnFormatters = $columnFormatters;
     }
@@ -51,12 +51,12 @@ class EntityPopulator
         return $this->columnFormatters;
     }
 
-    public function mergeColumnFormattersWith($columnFormatters)
+    public function mergeColumnFormattersWith($columnFormatters): void
     {
         $this->columnFormatters = array_merge($this->columnFormatters, $columnFormatters);
     }
 
-    public function setModifiers(array $modifiers)
+    public function setModifiers(array $modifiers): void
     {
         $this->modifiers = $modifiers;
     }
@@ -69,7 +69,7 @@ class EntityPopulator
         return $this->modifiers;
     }
 
-    public function mergeModifiersWith(array $modifiers)
+    public function mergeModifiersWith(array $modifiers): void
     {
         $this->modifiers = array_merge($this->modifiers, $modifiers);
     }
@@ -193,7 +193,7 @@ class EntityPopulator
         return $obj;
     }
 
-    private function fillColumns($obj, $insertedEntities)
+    private function fillColumns($obj, $insertedEntities): void
     {
         foreach ($this->columnFormatters as $field => $format) {
             if (null !== $format) {
@@ -220,7 +220,7 @@ class EntityPopulator
         }
     }
 
-    private function callMethods($obj, $insertedEntities)
+    private function callMethods($obj, $insertedEntities): void
     {
         foreach ($this->getModifiers() as $modifier) {
             $modifier($obj, $insertedEntities);

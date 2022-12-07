@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class InternetTest extends TestCase
 {
-    public function testEmailIsValid()
+    public function testEmailIsValid(): void
     {
         $email = $this->faker->email();
         self::assertMatchesRegularExpression('/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-z]{2,3}$/', $email);

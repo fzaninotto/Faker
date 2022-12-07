@@ -34,7 +34,7 @@ class Isbn
         $digits = str_split($input);
         array_walk(
             $digits,
-            static function (&$digit, $position) {
+            static function (&$digit, $position): void {
                 $digit = (10 - $position) * $digit;
             }
         );

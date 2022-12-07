@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testSsnWithDefaultValuesCorrect()
+    public function testSsnWithDefaultValuesCorrect(): void
     {
         for ($i = 0; $i < 100; ++$i) {
             $number = $this->faker->ssn;
@@ -27,7 +27,7 @@ final class PersonTest extends TestCase
         }
     }
 
-    public function testSsnWithGivenBirthDateCorrect()
+    public function testSsnWithGivenBirthDateCorrect(): void
     {
         $number = $this->faker->ssn(new \DateTime('2010-09-08 06:05:04'));
 
@@ -50,7 +50,7 @@ final class PersonTest extends TestCase
         yield new Person($this->faker);
     }
 
-    private function assertCorrectSsnVerificationNumber($ssn)
+    private function assertCorrectSsnVerificationNumber($ssn): void
     {
         $weights = [3, 7, 9, 0, 5, 8, 4, 2, 1, 6];
         $checkSum = 0;

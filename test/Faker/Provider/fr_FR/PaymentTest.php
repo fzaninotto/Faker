@@ -11,7 +11,7 @@ use Faker\Test\TestCase;
  */
 final class PaymentTest extends TestCase
 {
-    public function testFormattedVat()
+    public function testFormattedVat(): void
     {
         $vat = $this->faker->vat(true);
         self::assertMatchesRegularExpression("/^FR\s\w{2}\s\d{3}\s\d{3}\s\d{3}$/", $vat);
@@ -27,7 +27,7 @@ final class PaymentTest extends TestCase
         }
     }
 
-    public function testUnformattedVat()
+    public function testUnformattedVat(): void
     {
         $vat = $this->faker->vat(false);
         self::assertMatchesRegularExpression("/^FR\w{2}\d{9}$/", $vat);

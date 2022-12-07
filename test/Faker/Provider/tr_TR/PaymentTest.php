@@ -9,7 +9,7 @@ use Faker\Test\TestCase;
  */
 final class PaymentTest extends TestCase
 {
-    public function testBankAccountNumber()
+    public function testBankAccountNumber(): void
     {
         $accNo = $this->faker->bankAccountNumber;
         self::assertSame(substr($accNo, 0, 2), 'TR');

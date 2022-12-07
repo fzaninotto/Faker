@@ -13,7 +13,7 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testRrnIsValid()
+    public function testRrnIsValid(): void
     {
         $rrn = $this->faker->rrn();
 
@@ -29,13 +29,13 @@ final class PersonTest extends TestCase
         self::assertLessThan(997, $middle);
     }
 
-    public function testRrnIsMale()
+    public function testRrnIsMale(): void
     {
         $rrn = $this->faker->rrn('male');
         self::assertEquals(substr($rrn, 6, 3) % 2, 1);
     }
 
-    public function testRrnIsFemale()
+    public function testRrnIsFemale(): void
     {
         $rrn = $this->faker->rrn('female');
         self::assertEquals(substr($rrn, 6, 3) % 2, 0);

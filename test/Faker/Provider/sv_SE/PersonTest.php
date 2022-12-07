@@ -25,7 +25,7 @@ final class PersonTest extends TestCase
     /**
      * @dataProvider provideSeedAndExpectedReturn
      */
-    public function testPersonalIdentityNumberUsesBirthDateIfProvided($seed, $birthdate, $expected)
+    public function testPersonalIdentityNumberUsesBirthDateIfProvided($seed, $birthdate, $expected): void
     {
         $faker = $this->faker;
         $faker->seed($seed);
@@ -33,25 +33,25 @@ final class PersonTest extends TestCase
         self::assertEquals($expected, $pin);
     }
 
-    public function testPersonalIdentityNumberGeneratesLuhnCompliantNumbers()
+    public function testPersonalIdentityNumberGeneratesLuhnCompliantNumbers(): void
     {
         $pin = str_replace('-', '', $this->faker->personalIdentityNumber());
         self::assertTrue(Luhn::isValid($pin));
     }
 
-    public function testPersonalIdentityNumberGeneratesOddValuesForMales()
+    public function testPersonalIdentityNumberGeneratesOddValuesForMales(): void
     {
         $pin = $this->faker->personalIdentityNumber(null, 'male');
         self::assertEquals(1, $pin[9] % 2);
     }
 
-    public function testPersonalIdentityNumberGeneratesEvenValuesForFemales()
+    public function testPersonalIdentityNumberGeneratesEvenValuesForFemales(): void
     {
         $pin = $this->faker->personalIdentityNumber(null, 'female');
         self::assertEquals(0, $pin[9] % 2);
     }
 
-    public function testBirthNumberNot000()
+    public function testBirthNumberNot000(): void
     {
         $faker = $this->faker;
         $faker->seed(97270);
@@ -60,7 +60,7 @@ final class PersonTest extends TestCase
         self::assertNotEquals('000', substr($pin, 7, 3));
     }
 
-    public function testBirthNumberGeneratesEvenValuesForFemales()
+    public function testBirthNumberGeneratesEvenValuesForFemales(): void
     {
         $faker = $this->faker;
         $faker->seed(372920);

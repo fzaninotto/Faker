@@ -11,7 +11,7 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testAvs13Number()
+    public function testAvs13Number(): void
     {
         $avs = $this->faker->avs13;
         self::assertMatchesRegularExpression('/^756\.([0-9]{4})\.([0-9]{4})\.([0-9]{2})$/', $avs);

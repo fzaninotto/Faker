@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class CompanyTest extends TestCase
 {
-    public function testGenerateValidVatNumber()
+    public function testGenerateValidVatNumber(): void
     {
         $vatNo = $this->faker->vat();
 
@@ -18,7 +18,7 @@ final class CompanyTest extends TestCase
         self::assertMatchesRegularExpression('/^NL[0-9]{9}B[0-9]{2}$/', $vatNo);
     }
 
-    public function testGenerateValidBtwNumberAlias()
+    public function testGenerateValidBtwNumberAlias(): void
     {
         $btwNo = $this->faker->btw();
 

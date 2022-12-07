@@ -10,12 +10,12 @@ use Faker\Test\TestCase;
  */
 final class InternetTest extends TestCase
 {
-    public function testUserName()
+    public function testUserName(): void
     {
         self::assertEquals('akira72', $this->faker->userName);
     }
 
-    public function testDomainName()
+    public function testDomainName(): void
     {
         self::assertEquals('nakajima.com', $this->faker->domainName);
     }

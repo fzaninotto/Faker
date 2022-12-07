@@ -11,7 +11,7 @@ use Faker\Test\TestCase;
  */
 final class AddressTest extends TestCase
 {
-    public function testPostCodeIsValid()
+    public function testPostCodeIsValid(): void
     {
         $main = '[1-9]{1}[0-9]{2}[0,1,4,5,9]{1}';
         $pattern = "/^($main)|($main-[0-9]{3})+$/";
@@ -19,7 +19,7 @@ final class AddressTest extends TestCase
         self::assertSame(preg_match($pattern, $postcode), 1, $postcode);
     }
 
-    public function testAddressIsSingleLine()
+    public function testAddressIsSingleLine(): void
     {
         $this->faker->addProvider(new Person($this->faker));
 

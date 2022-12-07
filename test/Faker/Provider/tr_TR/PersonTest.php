@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testTCNo()
+    public function testTCNo(): void
     {
         for ($i = 0; $i < 100; ++$i) {
             $number = $this->faker->tcNo;
@@ -37,7 +37,7 @@ final class PersonTest extends TestCase
      * @param string $tcNo
      * @param string $checksum
      */
-    public function testTcNoChecksum($tcNo, $checksum)
+    public function testTcNoChecksum($tcNo, $checksum): void
     {
         self::assertSame($checksum, $this->faker->tcNoChecksum($tcNo), $tcNo);
     }
@@ -62,7 +62,7 @@ final class PersonTest extends TestCase
      * @param string $tcNo
      * @param bool   $isValid
      */
-    public function testIsValid($tcNo, $isValid)
+    public function testIsValid($tcNo, $isValid): void
     {
         self::assertSame($isValid, $this->faker->tcNoisValid($tcNo), $tcNo);
     }

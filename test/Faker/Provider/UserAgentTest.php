@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class UserAgentTest extends TestCase
 {
-    public function testAllAgents()
+    public function testAllAgents(): void
     {
         $agent = new UserAgent($this->faker);
         $reflection = new \ReflectionClass($agent);
@@ -22,37 +22,37 @@ final class UserAgentTest extends TestCase
         }
     }
 
-    public function testRandomUserAgent()
+    public function testRandomUserAgent(): void
     {
         self::assertNotNull(UserAgent::userAgent());
     }
 
-    public function testFirefoxUserAgent()
+    public function testFirefoxUserAgent(): void
     {
         self::assertStringContainsString(' Firefox/', UserAgent::firefox());
     }
 
-    public function testSafariUserAgent()
+    public function testSafariUserAgent(): void
     {
         self::assertStringContainsString('Safari/', UserAgent::safari());
     }
 
-    public function testInternetExplorerUserAgent()
+    public function testInternetExplorerUserAgent(): void
     {
         self::assertStringStartsWith('Mozilla/5.0 (compatible; MSIE ', UserAgent::internetExplorer());
     }
 
-    public function testOperaUserAgent()
+    public function testOperaUserAgent(): void
     {
         self::assertStringStartsWith('Opera/', UserAgent::opera());
     }
 
-    public function testChromeUserAgent()
+    public function testChromeUserAgent(): void
     {
         self::assertStringContainsString('(KHTML, like Gecko) Chrome/', UserAgent::chrome());
     }
 
-    public function testMSEdgeUserAgent()
+    public function testMSEdgeUserAgent(): void
     {
         self::assertStringContainsString('Edg', UserAgent::msedge());
     }

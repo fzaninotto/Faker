@@ -10,12 +10,12 @@ use Faker\Test\TestCase;
  */
 final class AddressTest extends TestCase
 {
-    public function testStreetNumber()
+    public function testStreetNumber(): void
     {
         self::assertMatchesRegularExpression('/^\d{2,3}$/', $this->faker->streetNumber());
     }
 
-    public function testBlockNumber()
+    public function testBlockNumber(): void
     {
         self::assertMatchesRegularExpression('/^Blk\s*\d{2,3}[A-H]*$/i', $this->faker->blockNumber());
     }

@@ -15,7 +15,7 @@ use Faker\Test\TestCase;
  */
 final class PaymentTest extends TestCase
 {
-    public function testCreditCardTypeReturnsValidVendorName()
+    public function testCreditCardTypeReturnsValidVendorName(): void
     {
         self::assertContains($this->faker->creditCardType, ['Visa', 'Visa Retired', 'MasterCard', 'American Express', 'Discover Card', 'JCB']);
     }
@@ -34,26 +34,26 @@ final class PaymentTest extends TestCase
     /**
      * @dataProvider creditCardNumberProvider
      */
-    public function testCreditCardNumberReturnsValidCreditCardNumber($type, $regexp)
+    public function testCreditCardNumberReturnsValidCreditCardNumber($type, $regexp): void
     {
         $cardNumber = $this->faker->creditCardNumber($type);
         self::assertMatchesRegularExpression($regexp, $cardNumber);
         self::assertTrue(Luhn::isValid($cardNumber));
     }
 
-    public function testCreditCardNumberCanFormatOutput()
+    public function testCreditCardNumberCanFormatOutput(): void
     {
         self::assertMatchesRegularExpression('/^6011-\d{4}-\d{4}-\d{4}$/', $this->faker->creditCardNumber('Discover Card', true));
     }
 
-    public function testCreditCardExpirationDateReturnsValidDateByDefault()
+    public function testCreditCardExpirationDateReturnsValidDateByDefault(): void
     {
         $expirationDate = $this->faker->creditCardExpirationDate;
         self::assertGreaterThan(time(), $expirationDate->getTimestamp());
         self::assertLessThan(strtotime('+36 months'), $expirationDate->getTimestamp());
     }
 
-    public function testRandomCard()
+    public function testRandomCard(): void
     {
         $cardDetails = $this->faker->creditCardDetails;
         self::assertEquals(count($cardDetails), 4);
@@ -132,7 +132,7 @@ final class PaymentTest extends TestCase
     /**
      * @dataProvider localeDataProvider
      */
-    public function testBankAccountNumber($locale)
+    public function testBankAccountNumber($locale): void
     {
         $parts = explode('_', $locale);
         $countryCode = array_pop($parts);
@@ -176,7 +176,7 @@ final class PaymentTest extends TestCase
     /**
      * @dataProvider ibanFormatProvider
      */
-    public function testIban($countryCode, $regex)
+    public function testIban($countryCode, $regex): void
     {
         $iban = $this->faker->iban($countryCode);
 

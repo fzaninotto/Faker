@@ -10,7 +10,7 @@ use Faker\Test\TestCase;
  */
 final class PersonTest extends TestCase
 {
-    public function testNationalId()
+    public function testNationalId(): void
     {
         $pattern = '/(?:^V-?\d{5,9}$)|(?:^E-?\d{8,9}$)/';
 
