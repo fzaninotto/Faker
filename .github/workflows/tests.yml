@@ -53,9 +53,4 @@ jobs:
         run: "composer update --no-interaction --no-progress --optimize-autoloader"
 
       - name: "Run tests"
-        if: "${{ '8.1' != matrix.php-version }}"
         run: "./vendor/bin/simple-phpunit"
-
-      - name: "Run tests for php 8.1"
-        if: "${{ '8.1' == matrix.php-version }}"
-        run: "SYMFONY_PHPUNIT_VERSION=9.5 ./vendor/bin/simple-phpunit"
