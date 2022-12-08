@@ -45,11 +45,10 @@ jobs:
       - name: "Download dependencies"
         run: |
           composer update --no-interaction --no-progress --optimize-autoloader
-          vendor/bin/simple-phpunit install
 
       - name: "Collect code coverage with PHPUnit"
         run: |
-          vendor/bin/simple-phpunit --coverage-clover=.build/logs/clover.xml
+          vendor/bin/phpunit --coverage-clover=.build/logs/clover.xml
 
       - name: "Send code coverage report to codecov.io"
         run: |

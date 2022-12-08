@@ -14,11 +14,11 @@ cs: vendor ## Fixes coding standard issues with php-cs-fixer
 
 .PHONY: coverage
 coverage: vendor ## Collects coverage with phpunit
-	vendor/bin/simple-phpunit --coverage-text --coverage-clover=.build/logs/clover.xml
+	vendor/bin/phpunit --coverage-text --coverage-clover=.build/logs/clover.xml
 
 .PHONY: test
 test: vendor ## Runs tests with phpunit
-	vendor/bin/simple-phpunit
+	vendor/bin/phpunit
 
 .PHONY: static
 static: vendor ## Runs static analyzers
@@ -37,4 +37,3 @@ clean:   ## Cleans up build and vendor files
 vendor: always
 	composer update --no-interaction
 	composer bin all install --no-interaction
-	vendor/bin/simple-phpunit install

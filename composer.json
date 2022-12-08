@@ -22,6 +22,7 @@
         "ext-intl": "*",
         "bamarni/composer-bin-plugin": "^1.4.1",
         "doctrine/persistence": "^1.3 || ^2.0",
+        "phpunit/phpunit": "^9.5.26",
         "symfony/phpunit-bridge": "^5.4.16"
     },
     "autoload": {

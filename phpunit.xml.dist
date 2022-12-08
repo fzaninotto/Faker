@@ -9,6 +9,9 @@
     columns="max"
     verbose="true"
 >
+    <listeners>
+        <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener"/>
+    </listeners>
     <php>
         <env name="SYMFONY_DEPRECATIONS_HELPER" value="max[self]=404"/>
     </php>

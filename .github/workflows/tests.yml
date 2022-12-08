@@ -51,4 +51,4 @@ jobs:
         run: "composer update --no-interaction --no-progress --optimize-autoloader"
 
       - name: "Run tests"
-        run: "./vendor/bin/simple-phpunit"
+        run: "./vendor/bin/phpunit"
