@@ -10,7 +10,7 @@
     verbose="true"
 >
     <php>
-        <env name="SYMFONY_DEPRECATIONS_HELPER" value="max[self]=605"/>
+        <env name="SYMFONY_DEPRECATIONS_HELPER" value="max[self]=404"/>
     </php>
     <testsuites>
         <testsuite name="Faker Test Suite">

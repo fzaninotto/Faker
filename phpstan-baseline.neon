@@ -6,16 +6,6 @@ parameters:
 			path: src/Faker/Calculator/Iban.php
 
 		-
-			message: "#^Parameter \\#2 \\$callback of function preg_replace_callback expects callable\\(array\\<int\\|string, string\\>\\)\\: string, array\\{'self', 'alphaToNumberCallba…'\\} given\\.$#"
-			count: 1
-			path: src/Faker/Calculator/Iban.php
-
-		-
-			message: "#^Static method Faker\\\\Calculator\\\\Iban\\:\\:alphaToNumberCallback\\(\\) is unused\\.$#"
-			count: 1
-			path: src/Faker/Calculator/Iban.php
-
-		-
 			message: "#^Binary operation \"\\*\" between int and string results in an error\\.$#"
 			count: 1
 			path: src/Faker/Calculator/Isbn.php
