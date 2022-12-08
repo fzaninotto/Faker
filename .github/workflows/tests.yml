@@ -19,6 +19,7 @@ jobs:
           - "7.4"
           - "8.0"
           - "8.1"
+          - "8.2"
 
     runs-on: "ubuntu-latest"
 
