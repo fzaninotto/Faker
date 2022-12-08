@@ -35,10 +35,9 @@ jobs:
         uses: "actions/cache@v3"
         with:
           path: "${{ steps.composer-cache.outputs.directory }}"
-          key: "composer-${{ runner.os }}-${{ matrix.php-version }}-${{ hashFiles('composer.*') }}"
+          key: "composer-${{ matrix.php-version }}-${{ hashFiles('composer.*') }}"
           restore-keys: |
-            composer-${{ runner.os }}-${{ matrix.php-version }}-
-            composer-${{ runner.os }}-
+            composer-${{ matrix.php-version }}-
             composer-
 
       - name: "Download dependencies"
@@ -77,10 +76,9 @@ jobs:
         uses: "actions/cache@v3"
         with:
           path: "${{ steps.composer-cache.outputs.directory }}"
-          key: "composer-${{ runner.os }}-${{ matrix.php-version }}-${{ hashFiles('composer.*') }}"
+          key: "composer-${{ matrix.php-version }}-${{ hashFiles('composer.*') }}"
           restore-keys: |
-            composer-${{ runner.os }}-${{ matrix.php-version }}-
-            composer-${{ runner.os }}-
+            composer-${{ matrix.php-version }}-
             composer-
 
       - name: "Download dependencies"

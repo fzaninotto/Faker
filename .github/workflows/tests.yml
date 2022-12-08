@@ -11,18 +11,16 @@ name: "Tests"
 
 jobs:
   phpunit:
-    name: "PHPUnit on ${{ matrix.operating-system }} with PHP ${{ matrix.php-version }}"
+    name: "PHPUnit"
 
     strategy:
       matrix:
-        operating-system:
-          - "ubuntu-latest"
         php-version:
           - "7.4"
           - "8.0"
           - "8.1"
 
-    runs-on: "${{ matrix.operating-system }}"
+    runs-on: "ubuntu-latest"
 
     steps:
       - name: "Checkout code"
@@ -43,10 +41,9 @@ jobs:
         uses: "actions/cache@v3"
         with:
           path: "${{ steps.composer-cache.outputs.directory }}"
-          key: "composer-${{ runner.os }}-${{ matrix.php-version }}-${{ hashFiles('composer.*') }}"
+          key: "composer-${{ matrix.php-version }}-${{ hashFiles('composer.*') }}"
           restore-keys: |
-            composer-${{ runner.os }}-${{ matrix.php-version }}-
-            composer-${{ runner.os }}-
+            composer-${{ matrix.php-version }}-
             composer-
 
       - name: "Download dependencies"
