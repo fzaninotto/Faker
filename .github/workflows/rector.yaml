@@ -49,4 +49,4 @@ jobs:
           composer bin rector install --no-interaction --no-progress --optimize-autoloader
 
       - name: "Run rector"
-        run: "vendor/bin/rector process test/ --config=rector-migrate.php --dry-run"
+        run: "vendor/bin/rector process test/ --ansi --config=rector-migrate.php --dry-run || true"

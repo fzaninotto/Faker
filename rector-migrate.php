@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Faker\Generator;
 use Rector\Config;
 use Rector\Transform;
 
