@@ -13,7 +13,7 @@
         <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener"/>
     </listeners>
     <php>
-        <env name="SYMFONY_DEPRECATIONS_HELPER" value="max[self]=404"/>
+        <env name="SYMFONY_DEPRECATIONS_HELPER" value="max[self]=0"/>
     </php>
     <testsuites>
         <testsuite name="Faker Test Suite">

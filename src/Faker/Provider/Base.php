@@ -363,7 +363,7 @@ class Base
         return implode('', static::shuffleArray($array));
     }
 
-    private static function replaceWildcard($string, $wildcard = '#', $callback = 'static::randomDigit')
+    private static function replaceWildcard($string, $wildcard, $callback)
     {
         if (($pos = strpos($string, $wildcard)) === false) {
             return $string;
@@ -415,7 +415,7 @@ class Base
                 $string[$toReplace[$i]] = $numbers[$i];
             }
         }
-        $string = self::replaceWildcard($string, '%', 'static::randomDigitNotNull');
+        $string = self::replaceWildcard($string, '%', [static::class, 'randomDigitNotNull']);
 
         return $string;
     }
@@ -429,7 +429,7 @@ class Base
      */
     public static function lexify($string = '????')
     {
-        return self::replaceWildcard($string, '?', 'static::randomLetter');
+        return self::replaceWildcard($string, '?', [static::class,  'randomLetter']);
     }
 
     /**
@@ -460,7 +460,7 @@ class Base
      */
     public static function asciify($string = '****')
     {
-        return preg_replace_callback('/\*/u', 'static::randomAscii', $string);
+        return preg_replace_callback('/\*/u', [static::class, 'randomAscii'], $string);
     }
 
     /**
@@ -532,8 +532,8 @@ class Base
             return str_replace('.', '\.', $randomElement);
         }, $regex);
         // replace \d with number and \w with letter and . with ascii
-        $regex = preg_replace_callback('/\\\w/', 'static::randomLetter', $regex);
-        $regex = preg_replace_callback('/\\\d/', 'static::randomDigit', $regex);
+        $regex = preg_replace_callback('/\\\w/', [static::class, 'randomLetter'], $regex);
+        $regex = preg_replace_callback('/\\\d/', [static::class, 'randomDigit'], $regex);
         //replace . with ascii except backslash
         $regex = preg_replace_callback('/(?<!\\\)\./', static function () {
             $chr = static::asciify('*');

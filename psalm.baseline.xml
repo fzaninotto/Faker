@@ -139,6 +139,9 @@
     </UndefinedDocblockClass>
   </file>
   <file src="src/Faker/Provider/Base.php">
+    <InvalidArgument occurrences="1">
+      <code>[static::class, 'randomDigit']</code>
+    </InvalidArgument>
     <NoValue occurrences="1">
       <code>$array</code>
     </NoValue>
