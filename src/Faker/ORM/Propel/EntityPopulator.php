@@ -29,7 +29,7 @@ class EntityPopulator
         return $this->class;
     }
 
-    public function setColumnFormatters($columnFormatters): void
+    public function setColumnFormatters($columnFormatters)
     {
         $this->columnFormatters = $columnFormatters;
     }
@@ -42,7 +42,7 @@ class EntityPopulator
         return $this->columnFormatters;
     }
 
-    public function mergeColumnFormattersWith($columnFormatters): void
+    public function mergeColumnFormattersWith($columnFormatters)
     {
         $this->columnFormatters = array_merge($this->columnFormatters, $columnFormatters);
     }
@@ -126,7 +126,7 @@ class EntityPopulator
         return false;
     }
 
-    public function setModifiers($modifiers): void
+    public function setModifiers($modifiers)
     {
         $this->modifiers = $modifiers;
     }
@@ -139,7 +139,7 @@ class EntityPopulator
         return $this->modifiers;
     }
 
-    public function mergeModifiersWith($modifiers): void
+    public function mergeModifiersWith($modifiers)
     {
         $this->modifiers = array_merge($this->modifiers, $modifiers);
     }

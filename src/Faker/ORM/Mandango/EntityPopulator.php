@@ -29,7 +29,7 @@ class EntityPopulator
         return $this->class;
     }
 
-    public function setColumnFormatters($columnFormatters): void
+    public function setColumnFormatters($columnFormatters)
     {
         $this->columnFormatters = $columnFormatters;
     }
@@ -42,7 +42,7 @@ class EntityPopulator
         return $this->columnFormatters;
     }
 
-    public function mergeColumnFormattersWith($columnFormatters): void
+    public function mergeColumnFormattersWith($columnFormatters)
     {
         $this->columnFormatters = array_merge($this->columnFormatters, $columnFormatters);
     }

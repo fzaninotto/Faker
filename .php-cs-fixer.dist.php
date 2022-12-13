@@ -206,6 +206,6 @@ return $config
                 'property',
             ],
         ],
-        'void_return' => true,
+        'void_return' => false,
         'whitespace_after_comma_in_array' => true,
     ]);

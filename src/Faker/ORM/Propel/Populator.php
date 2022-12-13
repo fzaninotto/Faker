@@ -23,7 +23,7 @@ class Populator
      * @param mixed $entity A Propel ActiveRecord classname, or a \Faker\ORM\Propel\EntityPopulator instance
      * @param int   $number The number of entities to populate
      */
-    public function addEntity($entity, $number, $customColumnFormatters = [], $customModifiers = []): void
+    public function addEntity($entity, $number, $customColumnFormatters = [], $customModifiers = [])
     {
         if (!$entity instanceof \Faker\ORM\Propel\EntityPopulator) {
             $entity = new \Faker\ORM\Propel\EntityPopulator($entity);
