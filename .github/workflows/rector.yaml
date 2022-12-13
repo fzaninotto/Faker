@@ -45,8 +45,8 @@ jobs:
 
       - name: "Download dependencies"
         run: |
-          composer update --no-interaction --no-progress --optimize-autoloader
-          composer bin rector install --no-interaction --no-progress --optimize-autoloader
+          composer update --ansi --no-interaction --no-progress --optimize-autoloader
+          composer bin rector install --ansi --no-interaction --no-progress --optimize-autoloader
 
       - name: "Run rector"
         run: "vendor/bin/rector process test/ --ansi --config=rector-migrate.php --dry-run || true"

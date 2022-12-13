@@ -44,11 +44,11 @@ jobs:
 
       - name: "Download dependencies"
         run: |
-          composer update --no-interaction --no-progress --optimize-autoloader
+          composer update --ansi --no-interaction --no-progress --optimize-autoloader
 
       - name: "Collect code coverage with PHPUnit"
         run: |
-          vendor/bin/phpunit --coverage-clover=.build/logs/clover.xml
+          vendor/bin/phpunit --colors=always --coverage-clover=.build/logs/clover.xml
 
       - name: "Send code coverage report to codecov.io"
         run: |

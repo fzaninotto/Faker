@@ -44,8 +44,8 @@ jobs:
 
       - name: "Download dependencies"
         run: |
-          composer update --no-interaction --no-progress --optimize-autoloader
-          composer bin php-cs-fixer install --no-interaction --no-progress --optimize-autoloader
+          composer update --ansi --no-interaction --no-progress --optimize-autoloader
+          composer bin php-cs-fixer install --ansi --no-interaction --no-progress --optimize-autoloader
 
       - name: "Cache cache file for php-cs-fixer"
         uses: "actions/cache@v3"
@@ -59,7 +59,7 @@ jobs:
 
       - name: "Run php-cs-fixer"
         run: |
-          vendor/bin/php-cs-fixer fix --diff --dry-run --verbose
+          vendor/bin/php-cs-fixer fix --ansi --diff --dry-run --verbose
 
   yamllint:
     name: "yamllint"

@@ -42,12 +42,12 @@ jobs:
 
       - name: "Download dependencies"
         run: |
-          composer update --no-interaction --no-progress --optimize-autoloader
-          composer bin phpstan install --no-interaction --no-progress --optimize-autoloader
+          composer update --ansi --no-interaction --no-progress --optimize-autoloader
+          composer bin phpstan install --ansi --no-interaction --no-progress --optimize-autoloader
 
       - name: "Run PHPStan"
         run: |
-          vendor/bin/phpstan --no-progress
+          vendor/bin/phpstan --ansi --no-progress
 
   psalm:
     name: "Psalm"
@@ -83,8 +83,8 @@ jobs:
 
       - name: "Download dependencies"
         run: |
-          composer update --no-interaction --no-progress --optimize-autoloader
-          composer bin psalm install --no-interaction --no-progress --optimize-autoloader
+          composer update --ansi --no-interaction --no-progress --optimize-autoloader
+          composer bin psalm install --ansi --no-interaction --no-progress --optimize-autoloader
 
       - name: "Run Psalm"
         run: |

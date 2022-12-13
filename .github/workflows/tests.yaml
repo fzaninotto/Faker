@@ -48,7 +48,7 @@ jobs:
             composer-
 
       - name: "Download dependencies"
-        run: "composer update --no-interaction --no-progress --optimize-autoloader"
+        run: "composer update --ansi --no-interaction --no-progress --optimize-autoloader"
 
       - name: "Run tests"
-        run: "./vendor/bin/phpunit"
+        run: "./vendor/bin/phpunit --colors=always"
