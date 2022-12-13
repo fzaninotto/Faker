@@ -20,6 +20,10 @@ coverage: vendor ## Collects coverage with phpunit
 test: vendor ## Runs tests with phpunit
 	vendor/bin/phpunit
 
+.PHONY: rector
+rector: vendor ## Runs rector
+	vendor/bin/rector process test/ --config=rector-migrate.php --dry-run
+
 .PHONY: static
 static: vendor ## Runs static analyzers
 	vendor/bin/phpstan

@@ -57,6 +57,37 @@ for ($i = 0; $i < 3; $i++) {
 // 'Orlo Bergstrom'
 ```
 
+## Automated refactoring
+
+If you already used this library with its properties, they are now deprecated and needs to be replaced by their equivalent methods.
+
+You can use the provided [Rector](https://github.com/rectorphp/rector) config file to automate the work.
+
+Run
+
+```bash
+composer require --dev rector/rector
+```
+
+to install `rector/rector`.
+
+Run
+
+```bash
+vendor/bin/rector process src/ --config vendor/fakerphp/faker/rector-migrate.php
+```
+
+to run `rector/rector`.
+
+*Note:* do not forget to replace `src/` with the path to your source directory.
+
+Another way is to use it in your `rector.php` file:
+
+```php
+$rectorConfig->import('vendor/fakerphp/faker/rector-migrate.php');
+$faker($rectorConfig);
+```
+
 ## License
 
 Faker is released under the MIT License. See [`LICENSE`](LICENSE) for details.
