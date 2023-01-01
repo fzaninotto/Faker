@@ -3,7 +3,7 @@
         "php": "^7.4 || ^8.0",
         "phpstan/extension-installer": "^1.2.0",
         "phpstan/phpstan": "^1.9.4",
-        "phpstan/phpstan-deprecation-rules": "^1.0.0"
+        "phpstan/phpstan-deprecation-rules": "^1.1.1"
     },
     "config": {
         "platform": {
