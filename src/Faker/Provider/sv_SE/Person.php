@@ -59,7 +59,7 @@ class Person extends \Faker\Provider\Person
      * @see http://spraakbanken.gu.se/statistik/lbfnamnalf.phtml
      */
     protected static $firstNameMale = [
-        'Abraham', 'Adam', 'Adolf', 'Adrian', 'Agaton', 'Agne', 'Albert', 'Albin', 'Aldor', 'Alex', 'Alexander', 'Alexis', 'Alexius', 'Alf', 'Alfons', 'Alfred', 'Algot', 'Allan', 'Alrik', 'Alvar', 'Alve', 'Amandus', 'Anders', 'André', 'Andreas', 'Anselm', 'Anshelm', 'Antero', 'Anton', 'Antonius', 'Arne', 'Arnold', 'Aron', 'Arthur', 'Artur', 'Arvid', 'Assar', 'Astor', 'August', 'Augustin', 'Axel',
+        'Abraham', 'Adam', 'Adrian', 'Agaton', 'Agne', 'Albert', 'Albin', 'Aldor', 'Alex', 'Alexander', 'Alexis', 'Alexius', 'Alf', 'Alfons', 'Alfred', 'Algot', 'Allan', 'Alrik', 'Alvar', 'Alve', 'Amandus', 'Anders', 'André', 'Andreas', 'Anselm', 'Anshelm', 'Antero', 'Anton', 'Antonius', 'Arne', 'Arnold', 'Aron', 'Arthur', 'Artur', 'Arvid', 'Assar', 'Astor', 'August', 'Augustin', 'Axel',
         'Bengt', 'Bengt-Göran', 'Bengt-Olof', 'Bengt-Åke', 'Benny', 'Berndt', 'Berne', 'Bernhard', 'Bernt', 'Bert', 'Berth', 'Berthold', 'Bertil', 'Bill', 'Billy', 'Birger', 'Bjarne', 'Björn', 'Bo', 'Boris', 'Bror', 'Bruno', 'Brynolf', 'Börje',
         'Carl', 'Carl-Axel', 'Carl-Erik', 'Carl-Gustaf', 'Carl-Gustav', 'Carl-Johan', 'Charles', 'Christer', 'Christian', 'Claes', 'Claes-Göran', 'Clarence', 'Clas', 'Conny', 'Crister', 'Curt',
         'Dag', 'Dan', 'Daniel', 'David', 'Dennis', 'Dick', 'Donald', 'Douglas',

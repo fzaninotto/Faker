@@ -36,7 +36,7 @@ class Person extends \Faker\Provider\Person
      * @var array Danish first names.
      */
     protected static $firstNameMale = [
-        'Aage', 'Adam', 'Adolf', 'Ahmad', 'Ahmed', 'Aksel', 'Albert', 'Alex', 'Alexander', 'Alf', 'Alfred', 'Ali', 'Allan',
+        'Aage', 'Adam', 'Ahmad', 'Ahmed', 'Aksel', 'Albert', 'Alex', 'Alexander', 'Alf', 'Alfred', 'Ali', 'Allan',
         'Anders', 'Andreas', 'Anker', 'Anton', 'Arne', 'Arnold', 'Arthur', 'Asbjørn', 'Asger', 'August', 'Axel', 'Benjamin',
         'Benny', 'Bent', 'Bernhard', 'Birger', 'Bjarne', 'Bjørn', 'Bo', 'Brian', 'Bruno', 'Børge', 'Carl', 'Carlo',
         'Carsten', 'Casper', 'Charles', 'Chris', 'Christian', 'Christoffer', 'Christopher', 'Claus', 'Dan', 'Daniel', 'David', 'Dennis',
