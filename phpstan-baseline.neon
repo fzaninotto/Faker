@@ -679,6 +679,16 @@ parameters:
 			path: src/Faker/Provider/File.php
 
 		-
+			message: "#^Unreachable statement \\- code above always terminates\\.$#"
+			count: 1
+			path: src/Faker/Provider/Lorem.php
+
+		-
+			message: "#^Variable \\$text in empty\\(\\) always exists and is always falsy\\.$#"
+			count: 1
+			path: src/Faker/Provider/Lorem.php
+
+		-
 			message: "#^Parameter \\#1 \\$str of function md5 expects string, int given\\.$#"
 			count: 1
 			path: src/Faker/Provider/Miscellaneous.php
