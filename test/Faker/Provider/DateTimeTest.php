@@ -281,4 +281,15 @@ final class DateTimeTest extends TestCase
         self::assertEquals($dateTimeThisYear, DateTimeProvider::dateTimeThisYear($max));
         mt_srand();
     }
+
+    public function testTimezone(): void
+    {
+        $timezone = DateTimeProvider::timezone();
+        $countryTimezone = DateTimeProvider::timezone('US');
+
+        self::assertIsString($timezone);
+        self::assertContains($timezone, \DateTimeZone::listIdentifiers());
+        self::assertIsString($countryTimezone);
+        self::assertContains($countryTimezone, \DateTimeZone::listIdentifiers(\DateTimeZone::PER_COUNTRY, 'US'));
+    }
 }
