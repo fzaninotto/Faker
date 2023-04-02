@@ -649,11 +649,6 @@ parameters:
 			path: src/Faker/Provider/Base.php
 
 		-
-			message: "#^Ternary operator condition is always false\\.$#"
-			count: 1
-			path: src/Faker/Provider/Base.php
-
-		-
 			message: "#^Unreachable statement \\- code above always terminates\\.$#"
 			count: 1
 			path: src/Faker/Provider/Base.php

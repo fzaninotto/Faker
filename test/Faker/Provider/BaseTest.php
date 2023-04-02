@@ -556,6 +556,10 @@ final class BaseTest extends TestCase
         self::assertIsArray($empty);
         self::assertCount(0, $empty);
 
+        $emptyTraversable = BaseProvider::randomElements(new \ArrayIterator(), 0);
+        self::assertIsArray($emptyTraversable);
+        self::assertCount(0, $emptyTraversable);
+
         $shuffled = BaseProvider::randomElements(['foo', 'bar', 'baz'], 3);
         self::assertContains('foo', $shuffled);
         self::assertContains('bar', $shuffled);
