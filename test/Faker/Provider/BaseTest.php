@@ -548,26 +548,42 @@ final class BaseTest extends TestCase
         BaseProvider::randomElements(['foo'], 2);
     }
 
-    public function testRandomElements(): void
+    public function testRandomElementsWorksWithoutArgument(): void
     {
         self::assertCount(1, BaseProvider::randomElements(), 'Should work without any input');
+    }
 
-        $empty = BaseProvider::randomElements([], 0);
-        self::assertIsArray($empty);
-        self::assertCount(0, $empty);
+    public function testRandomElementsWorksWithEmptyArray(): void
+    {
+        $randomElements = BaseProvider::randomElements([], 0);
 
-        $emptyTraversable = BaseProvider::randomElements(new \ArrayIterator(), 0);
-        self::assertIsArray($emptyTraversable);
-        self::assertCount(0, $emptyTraversable);
+        self::assertIsArray($randomElements);
+        self::assertCount(0, $randomElements);
+    }
 
-        $shuffled = BaseProvider::randomElements(['foo', 'bar', 'baz'], 3);
-        self::assertContains('foo', $shuffled);
-        self::assertContains('bar', $shuffled);
-        self::assertContains('baz', $shuffled);
+    public function testRandomElementsWorksWithEmptyTraversable(): void
+    {
+        $randomElements = BaseProvider::randomElements(new \ArrayIterator(), 0);
 
-        $allowDuplicates = BaseProvider::randomElements(['foo', 'bar'], 3, true);
-        self::assertCount(3, $allowDuplicates);
-        self::assertContainsOnly('string', $allowDuplicates);
+        self::assertIsArray($randomElements);
+        self::assertCount(0, $randomElements);
+    }
+
+    public function testRandomElementsWorksWithNonEmptyTraversable(): void
+    {
+        $randomElements = BaseProvider::randomElements(['foo', 'bar', 'baz'], 3);
+
+        self::assertContains('foo', $randomElements);
+        self::assertContains('bar', $randomElements);
+        self::assertContains('baz', $randomElements);
+    }
+
+    public function testRandomElementsWorksWithAllowDuplicates(): void
+    {
+        $randomElements = BaseProvider::randomElements(['foo', 'bar'], 3, true);
+
+        self::assertCount(3, $randomElements);
+        self::assertContainsOnly('string', $randomElements);
     }
 }
 
