@@ -54,7 +54,7 @@ jobs:
           composer config extra.branch-alias.dev-main ${{ steps.find_alias.outputs.alias }}-dev
 
       - name: "Create Pull Request"
-        uses: "peter-evans/create-pull-request@v4"
+        uses: "peter-evans/create-pull-request@v5"
         with:
           base: "main"
           branch: "branch-alias-update"
