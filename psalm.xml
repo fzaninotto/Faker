@@ -7,6 +7,7 @@
     errorBaseline="psalm.baseline.xml"
     errorLevel="5"
     findUnusedBaselineEntry="true"
+    findUnusedCode="false"
     resolveFromConfigFile="true"
 >
     <projectFiles>
