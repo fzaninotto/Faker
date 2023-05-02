@@ -183,7 +183,8 @@ class Base
      * @param int                $count           Number of elements to take.
      * @param bool               $allowDuplicates Allow elements to be picked several times. Defaults to false
      *
-     * @throws \LengthException When requesting more elements than provided
+     * @throws \InvalidArgumentException
+     * @throws \LengthException          When requesting more elements than provided
      *
      * @return array New array with $count elements from $array
      */
@@ -193,6 +194,14 @@ class Base
 
         if ($array instanceof \Traversable) {
             $elements = \iterator_to_array($array, false);
+        }
+
+        if (!is_array($elements)) {
+            throw new \InvalidArgumentException(sprintf(
+                'Argument for parameter $array needs to be array or an instance of %s, got %s instead.',
+                \Traversable::class,
+                is_object($array) ? get_class($array) : gettype($array),
+            ));
         }
 
         $numberOfElements = count($elements);
@@ -237,6 +246,8 @@ class Base
      * Returns a random element from a passed array
      *
      * @param array|\Traversable $array
+     *
+     * @throws \InvalidArgumentException
      */
     public static function randomElement($array = ['a', 'b', 'c'])
     {
@@ -248,6 +259,14 @@ class Base
 
         if ($elements === []) {
             return null;
+        }
+
+        if (!is_array($elements)) {
+            throw new \InvalidArgumentException(sprintf(
+                'Argument for parameter $array needs to be array or an instance of %s, got %s instead.',
+                \Traversable::class,
+                is_object($array) ? get_class($array) : gettype($array),
+            ));
         }
 
         $randomElements = static::randomElements($elements, 1);

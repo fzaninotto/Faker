@@ -548,6 +548,30 @@ final class BaseTest extends TestCase
         BaseProvider::randomElements(['foo'], 2);
     }
 
+    public function testRandomElementsRejectsInvalidArgument(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage(sprintf(
+            'Argument for parameter $array needs to be array or an instance of %s, got %s instead.',
+            \Traversable::class,
+            \stdClass::class,
+        ));
+
+        BaseProvider::randomElements(new \stdClass());
+    }
+
+    public function testRandomElementRejectsInvalidArgument(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage(sprintf(
+            'Argument for parameter $array needs to be array or an instance of %s, got %s instead.',
+            \Traversable::class,
+            'string',
+        ));
+
+        BaseProvider::randomElement('foo');
+    }
+
     public function testRandomElementsWorksWithoutArgument(): void
     {
         self::assertCount(1, BaseProvider::randomElements(), 'Should work without any input');
