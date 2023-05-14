@@ -1,6 +1,12 @@
 # CHANGELOG
 
-## [Unreleased](https://github.com/FakerPHP/Faker/compare/v1.20.0...main)
+## [Unreleased](https://github.com/FakerPHP/Faker/compare/v1.22.0...main)
+
+## [2023-05-14, v1.22.0](https://github.com/FakerPHP/Faker/compare/v1.21.0..v1.22.0)
+
+- Fixed `randomElements()` to accept empty iterator (#605)
+- Added support for passing an `Enum` to `randomElement()` and `randomElements()` (#620)
+- Started rejecting invalid arguments passed to `randomElement()` and `randomElements()` (#642)
 
 ## [2022-12-13, v1.21.0](https://github.com/FakerPHP/Faker/compare/v1.20.0..v1.21.0)
 
