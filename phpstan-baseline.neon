@@ -611,6 +611,11 @@ parameters:
 			path: src/Faker/ORM/Spot/Populator.php
 
 		-
+			message: "#^Class UnitEnum not found\\.$#"
+			count: 2
+			path: src/Faker/Provider/Base.php
+
+		-
 			message: """
 				#^Instantiation of deprecated class Faker\\\\DefaultGenerator\\:
 				Use ChanceGenerator instead$#

@@ -179,9 +179,9 @@ class Base
     /**
      * Returns randomly ordered subsequence of $count elements from a provided array
      *
-     * @param array|\Traversable $array           Array to take elements from. Defaults to a-c
-     * @param int                $count           Number of elements to take.
-     * @param bool               $allowDuplicates Allow elements to be picked several times. Defaults to false
+     * @param array|class-string|\Traversable $array           Array to take elements from. Defaults to a-c
+     * @param int                             $count           Number of elements to take.
+     * @param bool                            $allowDuplicates Allow elements to be picked several times. Defaults to false
      *
      * @throws \InvalidArgumentException
      * @throws \LengthException          When requesting more elements than provided
@@ -192,13 +192,18 @@ class Base
     {
         $elements = $array;
 
+        if (is_string($array) && function_exists('enum_exists') && enum_exists($array)) {
+            $elements = $array::cases();
+        }
+
         if ($array instanceof \Traversable) {
             $elements = \iterator_to_array($array, false);
         }
 
         if (!is_array($elements)) {
             throw new \InvalidArgumentException(sprintf(
-                'Argument for parameter $array needs to be array or an instance of %s, got %s instead.',
+                'Argument for parameter $array needs to be array, an instance of %s, or an instance of %s, got %s instead.',
+                \UnitEnum::class,
                 \Traversable::class,
                 is_object($array) ? get_class($array) : gettype($array),
             ));
@@ -245,13 +250,17 @@ class Base
     /**
      * Returns a random element from a passed array
      *
-     * @param array|\Traversable $array
+     * @param array|class-string|\Traversable $array
      *
      * @throws \InvalidArgumentException
      */
     public static function randomElement($array = ['a', 'b', 'c'])
     {
         $elements = $array;
+
+        if (is_string($array) && function_exists('enum_exists') && enum_exists($array)) {
+            $elements = $array::cases();
+        }
 
         if ($array instanceof \Traversable) {
             $elements = iterator_to_array($array, false);
@@ -263,7 +272,8 @@ class Base
 
         if (!is_array($elements)) {
             throw new \InvalidArgumentException(sprintf(
-                'Argument for parameter $array needs to be array or an instance of %s, got %s instead.',
+                'Argument for parameter $array needs to be array, an instance of %s, or an instance of %s, got %s instead.',
+                \UnitEnum::class,
                 \Traversable::class,
                 is_object($array) ? get_class($array) : gettype($array),
             ));

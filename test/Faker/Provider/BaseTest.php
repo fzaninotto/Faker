@@ -3,6 +3,7 @@
 namespace Faker\Test\Provider;
 
 use Faker\Provider\Base as BaseProvider;
+use Faker\Test\Fixture;
 use Faker\Test\TestCase;
 
 /**
@@ -552,7 +553,8 @@ final class BaseTest extends TestCase
     {
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage(sprintf(
-            'Argument for parameter $array needs to be array or an instance of %s, got %s instead.',
+            'Argument for parameter $array needs to be array, an instance of %s, or an instance of %s, got %s instead.',
+            \UnitEnum::class,
             \Traversable::class,
             \stdClass::class,
         ));
@@ -564,7 +566,8 @@ final class BaseTest extends TestCase
     {
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage(sprintf(
-            'Argument for parameter $array needs to be array or an instance of %s, got %s instead.',
+            'Argument for parameter $array needs to be array, an instance of %s, or an instance of %s, got %s instead.',
+            \UnitEnum::class,
             \Traversable::class,
             'string',
         ));
@@ -608,6 +611,29 @@ final class BaseTest extends TestCase
 
         self::assertCount(3, $randomElements);
         self::assertContainsOnly('string', $randomElements);
+    }
+
+    /**
+     * @requires PHP 8.1
+     */
+    public function testRandomElementsWithEnum(): void
+    {
+        $count = 2;
+
+        $randomElements = BaseProvider::randomElements(Fixture\Enum\BackedEnum::class, $count);
+
+        self::assertCount($count, $randomElements);
+        self::assertContainsOnlyInstancesOf(Fixture\Enum\BackedEnum::class, $randomElements);
+    }
+
+    /**
+     * @requires PHP 8.1
+     */
+    public function testRandomElementWithEnum(): void
+    {
+        $randomElement = BaseProvider::randomElement(Fixture\Enum\BackedEnum::class);
+
+        self::assertInstanceOf(Fixture\Enum\BackedEnum::class, $randomElement);
     }
 }
 

@@ -8,6 +8,9 @@ $finder = PhpCsFixer\Finder::create()
         '.github/',
         'vendor-bin/',
     ])
+    ->notPath([
+        'test/Fixture/Enum/BackedEnum.php',
+    ])
     ->ignoreDotFiles(false)
     ->in(__DIR__);
 
