@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="5.9.0@8b9ad1eb9e8b7d3101f949291da2b9f7767cd163">
+<files psalm-version="5.11.0@c9b192ab8400fdaf04b2b13d110575adc879aa90">
   <file src="src/Faker/Calculator/Luhn.php">
     <InvalidReturnStatement>
       <code>0</code>
@@ -28,6 +28,7 @@
   <file src="src/Faker/ORM/Doctrine/EntityPopulator.php">
     <UndefinedClass>
       <code><![CDATA[$this->class]]></code>
+      <code><![CDATA[$this->class->associationMappings]]></code>
       <code>\Doctrine\ODM\MongoDB\Mapping\ClassMetadata</code>
       <code>\Doctrine\ODM\MongoDB\Mapping\ClassMetadata</code>
       <code>\Doctrine\ODM\MongoDB\Mapping\ClassMetadata</code>
