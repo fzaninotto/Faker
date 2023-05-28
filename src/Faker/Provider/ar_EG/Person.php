@@ -2,8 +2,6 @@
 
 namespace Faker\Provider\ar_EG;
 
-use Faker\Calculator\Luhn;
-
 class Person extends \Faker\Provider\Person
 {
     protected static $maleNameFormats = [
@@ -80,16 +78,30 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
+     * @see https://ar.wikipedia.org/wiki/%D8%A8%D8%B7%D8%A7%D9%82%D8%A9_%D8%A7%D9%84%D8%B1%D9%82%D9%85_%D8%A7%D9%84%D9%82%D9%88%D9%85%D9%8A_%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A%D8%A9
+     *
      * @example 27512310101010
+     *
+     * @return string
      */
-    public static function nationalIdNumber()
+    public static function nationalIdNumber($gender = null)
     {
-        $timestamp = self::numberBetween(1, time());
+        $randomBirthDateTimestamp = mt_rand(strtotime('1950-Jan-10'), strtotime('2005-Dec-25'));
 
-        $date = explode(':', date('y:m:d', $timestamp));
+        $centuryId = ((int) date('Y', $randomBirthDateTimestamp)) >= 2000 ? 3 : 2;
+        $fullBirthDate = date('ymd', $randomBirthDateTimestamp);
+        $governorateId = Address::governorateId();
+        $birthRegistrationSequence = mt_rand(1, 500);
 
-        $partialValue = static::numerify(2 . $date[0] . $date[1] . $date[2] . str_repeat('#', 6));
+        if ($gender === static::GENDER_MALE) {
+            $birthRegistrationSequence = $birthRegistrationSequence | 1; // Convert to the nearest odd number
+        } elseif ($gender === static::GENDER_FEMALE) {
+            $birthRegistrationSequence = $birthRegistrationSequence & ~1; // Convert to the nearest even number
+        }
 
-        return Luhn::generateLuhnNumber($partialValue);
+        $birthRegistrationSequence = str_pad((string) $birthRegistrationSequence, 4, '0', STR_PAD_LEFT);
+        $randomCheckDigit = mt_rand(1, 9);
+
+        return $centuryId . $fullBirthDate . $governorateId . $birthRegistrationSequence . $randomCheckDigit;
     }
 }
