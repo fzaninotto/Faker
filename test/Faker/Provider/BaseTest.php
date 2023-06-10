@@ -580,6 +580,11 @@ final class BaseTest extends TestCase
         self::assertCount(1, BaseProvider::randomElements(), 'Should work without any input');
     }
 
+    public function testRandomElementsReturnsRandomCountWhenNull(): void
+    {
+        self::assertCount(2, BaseProvider::randomElements(['foo', 'bar', 'baz'], null), 'Should return random count when null');
+    }
+
     public function testRandomElementsWorksWithEmptyArray(): void
     {
         $randomElements = BaseProvider::randomElements([], 0);
