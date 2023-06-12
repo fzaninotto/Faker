@@ -1,6 +1,10 @@
 # CHANGELOG
 
-## [Unreleased](https://github.com/FakerPHP/Faker/compare/v1.22.0...main)
+## [Unreleased](https://github.com/FakerPHP/Faker/compare/v1.23.0...main)
+
+## [2023-06-12, v1.23.0](https://github.com/FakerPHP/Faker/compare/v1.22.0..v1.23.0)
+
+- Update `randomElements` to return random number of elements when no count is provided (#658)
 
 ## [2023-05-14, v1.22.0](https://github.com/FakerPHP/Faker/compare/v1.21.0..v1.22.0)
 
