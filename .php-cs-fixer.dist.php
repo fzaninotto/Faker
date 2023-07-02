@@ -54,6 +54,10 @@ return $config
                 'yield',
             ],
         ],
+        'blank_lines_before_namespace' => [
+            'max_line_breaks' => 2,
+            'min_line_breaks' => 2,
+        ],
         'cast_spaces' => true,
         'class_attributes_separation' => [
             'elements' => [
@@ -186,7 +190,6 @@ return $config
         'return_type_declaration' => true,
         'semicolon_after_instruction' => true,
         'short_scalar_cast' => true,
-        'single_blank_line_before_namespace' => true,
         'single_line_comment_style' => true,
         'single_quote' => true,
         'single_space_around_construct' => [

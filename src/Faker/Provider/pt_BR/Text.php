@@ -5,52 +5,52 @@ namespace Faker\Provider\pt_BR;
 class Text extends \Faker\Provider\Text
 {
     /**
-     *   The Project Gutenberg EBook of Dom Casmurro, by Machado de Assis
+     * The Project Gutenberg EBook of Dom Casmurro, by Machado de Assis
      *
-     *   This eBook is for the use of anyone anywhere in the United States and most
-     *   other parts of the world at no cost and with almost no restrictions
-     *   whatsoever.  You may copy it, give it away or re-use it under the terms of
-     *   the Project Gutenberg License included with this eBook or online at
-     *   www.gutenberg.org.  If you are not located in the United States, you'll have
-     *   to check the laws of the country where you are located before using this ebook.
+     * This eBook is for the use of anyone anywhere in the United States and most
+     * other parts of the world at no cost and with almost no restrictions
+     * whatsoever.  You may copy it, give it away or re-use it under the terms of
+     * the Project Gutenberg License included with this eBook or online at
+     * www.gutenberg.org.  If you are not located in the United States, you'll have
+     * to check the laws of the country where you are located before using this ebook.
      *
-     *   Title: Dom Casmurro
+     * Title: Dom Casmurro
      *
-     *   Author: Machado de Assis
+     * Author: Machado de Assis
      *
-     *   Release Date: October 15, 2017 [EBook #55752]
+     * Release Date: October 15, 2017 [EBook #55752]
      *
-     *   Language: Portuguese
+     * Language: Portuguese
      *
-     *   *** START OF THIS PROJECT GUTENBERG EBOOK DOM CASMURRO ***
+     * *** START OF THIS PROJECT GUTENBERG EBOOK DOM CASMURRO ***
      *
-     *   Produced by Laura Natal Rodriguez & Marc D'Hooghe at Free
-     *   Literature (online soon in an extended version,also linking
-     *   to free sources for education worldwide ... MOOC's,
-     *   educational materials,...) (Images generously made available
-     *   by the Bibliotheca Nacional Digital Brasil.)
+     * Produced by Laura Natal Rodriguez & Marc D'Hooghe at Free
+     * Literature (online soon in an extended version,also linking
+     * to free sources for education worldwide ... MOOC's,
+     * educational materials,...) (Images generously made available
+     * by the Bibliotheca Nacional Digital Brasil.)
      *
-     *   DOM CASMURRO
+     * DOM CASMURRO
      *
-     *   POR
+     * POR
      *
-     *   MACHADO DE ASSIS
+     * MACHADO DE ASSIS
      *
-     *   DA ACADEMIA BRAZILEIRA
+     * DA ACADEMIA BRAZILEIRA
      *
-     *   H. GARNIER, LIVREIRO-EDITOR
+     * H. GARNIER, LIVREIRO-EDITOR
      *
-     *   RUA MOREIRA CEZAR, 71
+     * RUA MOREIRA CEZAR, 71
      *
-     *   RIO DE JANEIRO
+     * RIO DE JANEIRO
      *
-     *   6, RUE DES SAINTS-PÈRES, 6
+     * 6, RUE DES SAINTS-PÈRES, 6
      *
-     *   PARIZ
+     * PARIZ
      *
-     *   @see https://www.gutenberg.org/cache/epub/55752/pg55752.txt
+     * @see https://www.gutenberg.org/cache/epub/55752/pg55752.txt
      *
-     *   @var string
+     * @var string
      */
     protected static $baseText = <<<'EOT'
 I

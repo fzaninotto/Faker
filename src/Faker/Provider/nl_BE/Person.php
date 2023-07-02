@@ -73,17 +73,17 @@ class Person extends \Faker\Provider\Person
     ];
 
     /**
-     *  Belgian Rijksregister numbers are used to identify each citizen,
-     *  it consists of three parts, the person's day of birth, in the
-     *  format 'ymd', followed by a number between 1 and 997, odd for
-     *  males, even for females. The last part is used to check if it's
-     *  a valid number.
+     * Belgian Rijksregister numbers are used to identify each citizen,
+     * it consists of three parts, the person's day of birth, in the
+     * format 'ymd', followed by a number between 1 and 997, odd for
+     * males, even for females. The last part is used to check if it's
+     * a valid number.
      *
      *  @see https://nl.wikipedia.org/wiki/Rijksregisternummer
      *
-     *  @param string|null $gender 'male', 'female' or null for any
+     * @param string|null $gender 'male', 'female' or null for any
      *
-     *  @return string
+     * @return string
      */
     public static function rrn($gender = null)
     {
