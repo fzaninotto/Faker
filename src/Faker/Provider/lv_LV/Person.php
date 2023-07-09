@@ -2,7 +2,6 @@
 
 namespace Faker\Provider\lv_LV;
 
-use Faker\Calculator\Luhn;
 use Faker\Provider\DateTime;
 
 class Person extends \Faker\Provider\Person
@@ -145,11 +144,32 @@ class Person extends \Faker\Provider\Person
             $birthdate = DateTime::dateTimeThisCentury();
         }
 
+        $year = $birthdate->format('Y');
+
+        if ($year >= 2000 && $year <= 2099) {
+            $century = 2;
+        } elseif ($year >= 1900 && $year <= 1999) {
+            $century = 1;
+        } else {
+            $century = 0;
+        }
+
         $datePart = $birthdate->format('dmy');
-        $randomDigits = (string) static::numerify('####');
+        $serialNumber = static::numerify('###');
 
-        $checksum = Luhn::computeCheckDigit($datePart . $randomDigits);
+        $partialNumberSplit = str_split($datePart . $century . $serialNumber);
 
-        return $datePart . '-' . $randomDigits . $checksum;
+        $idDigitValidator = [1, 6, 3, 7, 9, 10, 5, 8, 4, 2];
+        $total = 0;
+
+        foreach ($partialNumberSplit as $key => $digit) {
+            if (isset($idDigitValidator[$key])) {
+                $total += $idDigitValidator[$key] * (int) $digit;
+            }
+        }
+
+        $checksumDigit = (1101 - $total) % 11 % 10;
+
+        return $datePart . '-' . $century . $serialNumber . $checksumDigit;
     }
 }
