@@ -11,6 +11,6 @@
 /phpstan-baseline.neon    export-ignore
 /phpstan.neon.dist        export-ignore
 /phpunit.xml.dist         export-ignore
-/psalm-baseline.xml       export-ignore
+/psalm.baseline.xml       export-ignore
 /psalm.xml                export-ignore
 /roave-bc-check.yaml      export-ignore
