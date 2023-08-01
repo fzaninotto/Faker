@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="5.11.0@c9b192ab8400fdaf04b2b13d110575adc879aa90">
+<files psalm-version="5.14.1@b9d355e0829c397b9b3b47d0c0ed042a8a70284d">
   <file src="src/Faker/Calculator/Luhn.php">
     <InvalidReturnStatement>
       <code>0</code>
@@ -142,6 +142,13 @@
   <file src="src/Faker/Provider/Base.php">
     <InvalidArgument>
       <code>[static::class, 'randomDigit']</code>
+      <code>static function ($matches) {
+            // remove backslashes (that are not followed by another backslash) because they are escape characters
+            $match = preg_replace('/\\\(?!\\\)/', '', $matches[1]);
+            $randomElement = Base::randomElement(str_split($match));
+            //[.] should not be a random character, but a literal .
+            return str_replace('.', '\.', $randomElement);
+        }</code>
     </InvalidArgument>
     <UndefinedClass>
       <code>\UnitEnum</code>
