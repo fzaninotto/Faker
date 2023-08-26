@@ -10,6 +10,14 @@ use Faker\Test\TestCase;
  */
 final class AddressTest extends TestCase
 {
+    public function testPostcode(): void
+    {
+        $postcode = $this->faker->postcode();
+        self::assertNotEmpty($postcode);
+        self::assertIsString($postcode);
+        self::assertMatchesRegularExpression('@^\d{5}$@', $postcode);
+    }
+
     public function testSecondaryAddress(): void
     {
         self::assertEquals('Étage 007', $this->faker->secondaryAddress());
