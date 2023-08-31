@@ -6,7 +6,7 @@ use Faker\Provider\Base;
 
 /**
  * Generator of Polish vehicle registration numbers.
- * {@link} http://prawo.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20170002355
+ * {@link} https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20220001847
  * {@link} https://pl.wikipedia.org/wiki/Tablice_rejestracyjne_w_Polsce#Tablice_standardowe
  */
 class LicensePlate extends Base
@@ -15,37 +15,37 @@ class LicensePlate extends Base
      * @var array list of Polish voivodeships and respective vehicle registration number prefixes.
      */
     protected static $voivodeships = [
-        'dolnośląskie' => 'D',
-        'kujawsko-pomorskie' => 'C',
-        'lubelskie' => 'L',
-        'lubuskie' => 'F',
-        'łódzkie' => 'E',
-        'małopolskie' => 'K',
-        'mazowieckie' => 'W',
-        'opolskie' => 'O',
-        'podkarpackie' => 'R',
-        'podlaskie' => 'B',
-        'pomorskie' => 'G',
-        'śląskie' => 'S',
-        'świętokrzyskie' => 'T',
-        'warmińsko-mazurskie' => 'N',
-        'wielkopolskie' => 'P',
-        'zachodniopomorskie' => 'Z',
+        'dolnośląskie' => ['D', 'V'],
+        'kujawsko-pomorskie' => ['C'],
+        'lubelskie' => ['L'],
+        'lubuskie' => ['F'],
+        'łódzkie' => ['E'],
+        'małopolskie' => ['K', 'J'],
+        'mazowieckie' => ['W', 'A'],
+        'opolskie' => ['O'],
+        'podkarpackie' => ['R', 'Y'],
+        'podlaskie' => ['B'],
+        'pomorskie' => ['G', 'X'],
+        'śląskie' => ['S', 'I'],
+        'świętokrzyskie' => ['T'],
+        'warmińsko-mazurskie' => ['N'],
+        'wielkopolskie' => ['P', 'M'],
+        'zachodniopomorskie' => ['Z'],
     ];
 
     /**
      * @var array list of special vehicle registration number prefixes.
      */
     protected static $specials = [
-        'army' => 'U',
-        'services' => 'H',
+        'army' => ['U'],
+        'services' => ['H'],
     ];
 
     /**
      * @var array list of Polish counties and respective vehicle registration number prefixes.
      */
     protected static $counties = [
-        'D' => [
+        'dolnośląskie' => [
             'Jelenia Góra' => ['J'],
             'Legnica' => ['L'],
             'Wałbrzych' => ['B'],
@@ -77,7 +77,7 @@ class LicensePlate extends Base
             'zgorzelecki' => ['ZG'],
             'złotoryjski' => ['ZL'],
         ],
-        'C' => [
+        'kujawsko-pomorskie' => [
             'Bydgoszcz' => ['B'],
             'Grudziądz' => ['G'],
             'Toruń' => ['T'],
@@ -102,7 +102,7 @@ class LicensePlate extends Base
             'włocławski' => ['WL'],
             'żniński' => ['ZN'],
         ],
-        'L' => [
+        'lubelskie' => [
             'Biała Podlaska' => ['B'],
             'Chełm' => ['C'],
             'Lublin' => ['U'],
@@ -128,7 +128,7 @@ class LicensePlate extends Base
             'włodawski' => ['WL'],
             'zamojski' => ['ZA'],
         ],
-        'F' => [
+        'lubuskie' => [
             'Gorzów Wielkopolski' => ['G'],
             'Zielona Góra' => ['Z'],
             'gorzowski' => ['GW'],
@@ -144,8 +144,8 @@ class LicensePlate extends Base
             'żagański' => ['ZG'],
             'żarski' => ['ZA'],
         ],
-        'E' => [
-            'Łódź' => ['L'],
+        'łódzkie' => [
+            'Łódź' => ['L', 'D'],
             'Piotrków Trybunalski' => ['P'],
             'Skierniewice' => ['S'],
             'brzeziński' => ['BR'],
@@ -170,8 +170,8 @@ class LicensePlate extends Base
             'zduńskowolski' => ['ZD'],
             'zgierski' => ['ZG'],
         ],
-        'K' => [
-            'Kraków' => ['R'],
+        'małopolskie' => [
+            'Kraków' => ['R', 'K'],
             'Nowy Sącz' => ['N'],
             'Tarnów' => ['T'],
             'bocheński' => ['BA', 'BC'],
@@ -179,7 +179,7 @@ class LicensePlate extends Base
             'chrzanowski' => ['CH'],
             'dąbrowski' => ['DA'],
             'gorlicki' => ['GR'],
-            'krakowski' => ['RA'],
+            'krakowski' => ['RA', 'RK'],
             'limanowski' => ['LI'],
             'miechowski' => ['MI'],
             'myślenicki' => ['MY'],
@@ -194,7 +194,7 @@ class LicensePlate extends Base
             'wadowicki' => ['WA'],
             'wielicki' => ['WI'],
         ],
-        'W' => [
+        'mazowieckie' => [
             'Ostrołęka' => ['O'],
             'Płock' => ['P'],
             'Radom' => ['R'],
@@ -216,7 +216,7 @@ class LicensePlate extends Base
             'ostrołęcki' => ['OS'],
             'ostrowski' => ['OR'],
             'otwocki' => ['OT'],
-            'piaseczyński' => ['PA', 'PI'],
+            'piaseczyński' => ['PA', 'PI', 'PW', 'PX'],
             'płocki' => ['PL'],
             'płoński' => ['PN'],
             'pruszkowski' => ['PP', 'PR', 'PS'],
@@ -238,7 +238,7 @@ class LicensePlate extends Base
             'żuromiński' => ['ZU'],
             'żyrardowski' => ['ZY'],
         ],
-        'O' => [
+        'opolskie' => [
             'Opole' => ['P'],
             'brzeski' => ['B'],
             'głubczycki' => ['GL'],
@@ -252,7 +252,7 @@ class LicensePlate extends Base
             'prudnicki' => ['PR'],
             'strzelecki' => ['ST'],
         ],
-        'R' => [
+        'podkarpackie' => [
             'Krosno' => ['K'],
             'Przemyśl' => ['P'],
             'Rzeszów' => ['Z'],
@@ -273,18 +273,18 @@ class LicensePlate extends Base
             'przemyski' => ['PR'],
             'przeworski' => ['PZ'],
             'ropczycko-sędziszowski' => ['RS'],
-            'rzeszowski' => ['ZE'],
+            'rzeszowski' => ['ZE', 'ZR', 'ZZ'],
             'sanocki' => ['SA'],
             'stalowowolski' => ['ST'],
             'strzyżowski' => ['SR'],
             'tarnobrzeski' => ['TA'],
         ],
-        'B' => [
+        'podlaskie' => [
             'Białystok' => ['I'],
             'Łomża' => ['L'],
             'Suwałki' => ['S'],
             'augustowski' => ['AU'],
-            'białostocki' => ['IA'],
+            'białostocki' => ['IA', 'IB'],
             'bielski' => ['BI'],
             'grajewski' => ['GR'],
             'hajnowski' => ['HA'],
@@ -298,7 +298,7 @@ class LicensePlate extends Base
             'wysokomazowiecki' => ['WM'],
             'zambrowski' => ['ZA'],
         ],
-        'G' => [
+        'pomorskie' => [
             'Gdańsk' => ['D'],
             'Gdynia' => ['A'],
             'Słupsk' => ['S'],
@@ -307,7 +307,7 @@ class LicensePlate extends Base
             'chojnicki' => ['CH'],
             'człuchowski' => ['CZ'],
             'gdański' => ['DA'],
-            'kartuski' => ['KY', 'KA'],
+            'kartuski' => ['KA', 'KY', 'KZ'],
             'kościerski' => ['KS'],
             'kwidzyński' => ['KW'],
             'lęborski' => ['LE'],
@@ -320,7 +320,7 @@ class LicensePlate extends Base
             'tczewski' => ['TC'],
             'wejherowski' => ['WE', 'WO'],
         ],
-        'S' => [
+        'śląskie' => [
             'Bielsko-Biała' => ['B'],
             'Bytom' => ['Y'],
             'Chorzów' => ['H'],
@@ -340,9 +340,9 @@ class LicensePlate extends Base
             'Tychy' => ['T'],
             'Zabrze' => ['Z'],
             'Żory' => ['ZO'],
-            'będziński' => ['BE'],
+            'będziński' => ['BE', 'BN', 'E'],
             'bielski' => ['BI'],
-            'cieszyński' => ['CN', 'CI'],
+            'cieszyński' => ['CI', 'CN'],
             'częstochowski' => ['CZ'],
             'gliwicki' => ['GL'],
             'kłobucki' => ['KL'],
@@ -358,7 +358,7 @@ class LicensePlate extends Base
             'zawierciański' => ['ZA'],
             'żywiecki' => ['ZY'],
         ],
-        'T' => [
+        'świętokrzyskie' => [
             'Kielce' => ['K'],
             'buski' => ['BU'],
             'jędrzejowski' => ['JE'],
@@ -374,7 +374,7 @@ class LicensePlate extends Base
             'staszowski' => ['SZ'],
             'włoszczowski' => ['LW'],
         ],
-        'N' => [
+        'warmińsko-mazurskie' => [
             'Elbląg' => ['E'],
             'Olsztyn' => ['O'],
             'bartoszycki' => ['BA'],
@@ -397,7 +397,7 @@ class LicensePlate extends Base
             'szczycieński' => ['SZ'],
             'węgorzewski' => ['WE'],
         ],
-        'P' => [
+        'wielkopolskie' => [
             'Kalisz' => ['A', 'K'],
             'Konin' => ['KO', 'N'],
             'Leszno' => ['L'],
@@ -434,7 +434,7 @@ class LicensePlate extends Base
             'wrzesiński' => ['WR'],
             'złotowski' => ['ZL'],
         ],
-        'Z' => [
+        'zachodniopomorskie' => [
             'Koszalin' => ['K'],
             'Szczecin' => ['S', 'Z'],
             'Świnoujście' => ['SW'],
@@ -457,10 +457,10 @@ class LicensePlate extends Base
             'świdwiński' => ['SD'],
             'wałecki' => ['WA'],
         ],
-        'U' => [
+        'army' => [
             'Siły Zbrojne Rzeczypospolitej Polskiej' => ['A', 'B', 'C', 'D', 'E', 'G', 'I', 'J', 'K', 'L'],
         ],
-        'H' => [
+        'services' => [
             'Centralne Biuro Antykorupcyjne' => ['A'],
             'Służba Ochrony Państwa' => ['BA', 'BB', 'BE', 'BF', 'BG'],
             'Służba Celno-Skarbowa' => ['CA', 'CB', 'CC', 'CD', 'CE', 'CF', 'CG', 'CH', 'CJ', 'CK', 'CL', 'CM', 'CN', 'CO', 'CP', 'CR'],
@@ -514,12 +514,13 @@ class LicensePlate extends Base
         ?array $counties = null
     ): string {
         $voivodeshipsAvailable = static::$voivodeships + ($special ? static::$specials : []);
-        $voivodeshipCode = static::selectRandomArea($voivodeshipsAvailable, $voivodeships);
+        $voivodeshipSelected = static::selectRandomArea($voivodeshipsAvailable, $voivodeships);
+        $voivodeshipCode = static::randomElement($voivodeshipsAvailable[$voivodeshipSelected]);
 
-        $countiesAvailable = static::$counties[$voivodeshipCode];
+        $countiesAvailable = static::$counties[$voivodeshipSelected];
         $countySelected = self::selectRandomArea($countiesAvailable, $counties);
 
-        $countyCode = static::randomElement($countySelected);
+        $countyCode = static::randomElement(static::$counties[$voivodeshipSelected][$countySelected]);
 
         $suffix = static::regexify(static::randomElement(strlen($countyCode) === 1 ? static::$plateSuffixesGroup1 : static::$plateSuffixesGroup2));
 
@@ -528,6 +529,8 @@ class LicensePlate extends Base
 
     /**
      * Selects random area from the list of available and requested.
+     *
+     * @return string
      */
     protected static function selectRandomArea(array $available, ?array $requested)
     {
@@ -537,6 +540,6 @@ class LicensePlate extends Base
             $requested = array_keys($available);
         }
 
-        return $available[static::randomElement($requested)];
+        return static::randomElement($requested);
     }
 }

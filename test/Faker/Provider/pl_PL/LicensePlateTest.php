@@ -64,7 +64,7 @@ final class LicensePlateTest extends TestCase
             );
             self::assertNotEmpty($licensePlate);
             self::assertIsString($licensePlate);
-            self::assertMatchesRegularExpression('/^(?:R[A-PR-Z] [A-PR-Z\d]{5}|R[A-PR-Z]{2} [A-PR-Z\d]{4,5})$/', $licensePlate);
+            self::assertMatchesRegularExpression('/^(?:[RY][A-PR-Z] [A-PR-Z\d]{5}|[RY][A-PR-Z]{2} [A-PR-Z\d]{4,5})$/', $licensePlate);
         }
     }
 
@@ -162,7 +162,7 @@ final class LicensePlateTest extends TestCase
             );
             self::assertNotEmpty($licensePlate);
             self::assertIsString($licensePlate);
-            self::assertMatchesRegularExpression('/^(?:WZ [A-PR-Z\d]{5}|(?:WRA|HWA|HWK) [A-PR-Z\d]{4,5})$/', $licensePlate);
+            self::assertMatchesRegularExpression('/^(?:[AW]Z [A-PR-Z\d]{5}|(?:[AW]RA|HWA|HWK) [A-PR-Z\d]{4,5})$/', $licensePlate);
         }
     }
 
@@ -179,7 +179,7 @@ final class LicensePlateTest extends TestCase
             );
             self::assertNotEmpty($licensePlate);
             self::assertIsString($licensePlate);
-            self::assertMatchesRegularExpression('/^(?:[WH][A-PR-Z] [A-PR-Z\d]{5}|[WH][A-PR-Z]{2} [A-PR-Z\d]{4,5})$/', $licensePlate);
+            self::assertMatchesRegularExpression('/^(?:[AWH][A-PR-Z] [A-PR-Z\d]{5}|[AWH][A-PR-Z]{2} [A-PR-Z\d]{4,5})$/', $licensePlate);
         }
     }
 
@@ -247,7 +247,7 @@ final class LicensePlateTest extends TestCase
             );
             self::assertNotEmpty($licensePlate);
             self::assertIsString($licensePlate);
-            self::assertMatchesRegularExpression('/^(?:W[A-PR-Z] [A-PR-Z\d]{5}|W[A-PR-Z]{2} [A-PR-Z\d]{4,5})$/', $licensePlate);
+            self::assertMatchesRegularExpression('/^(?:[AW][A-PR-Z] [A-PR-Z\d]{5}|[AW][A-PR-Z]{2} [A-PR-Z\d]{4,5})$/', $licensePlate);
         }
     }
 
