@@ -1,7 +1,7 @@
 {
     "require": {
         "php": "^8.1",
-        "rector/rector": "^0.17.7"
+        "rector/rector": "^0.18.1"
     },
     "config": {
         "platform": {
