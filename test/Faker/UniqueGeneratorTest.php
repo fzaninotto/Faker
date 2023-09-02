@@ -23,5 +23,7 @@ final class UniqueGeneratorTest extends TestCase
         for ($i = 0; $i < 10; ++$i) {
             $this->faker->unique()->ext(NumberExtension::class)->numberBetween(0, 9);
         }
+
+        $this->addToAssertionCount(1);
     }
 }
