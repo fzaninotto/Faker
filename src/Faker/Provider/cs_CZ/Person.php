@@ -451,6 +451,7 @@ class Person extends \Faker\Provider\Person
         if ($gender == static::GENDER_FEMALE) {
             $month += 50;
         }
+
         // from year 2004 everyone has +20 to month when birth numbers in one day are exhausted
         if ($year >= 2004 && $this->generator->boolean(10)) {
             $month += 20;

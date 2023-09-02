@@ -121,8 +121,7 @@ class Person extends \Faker\Provider\Person
      *
      * @see http://en.wikipedia.org/wiki/Personal_identity_number_(Sweden)
      *
-     * @param \DateTime $birthdate
-     * @param string    $gender    Person::GENDER_MALE || Person::GENDER_FEMALE
+     * @param string $gender Person::GENDER_MALE || Person::GENDER_FEMALE
      *
      * @return string on format XXXXXX-XXXX
      */

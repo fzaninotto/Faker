@@ -325,9 +325,8 @@ class Person extends \Faker\Provider\Person
      * @see https://en.wikipedia.org/wiki/National_identification_number#Lithuania
      * @see https://lt.wikipedia.org/wiki/Asmens_kodas
      *
-     * @param string    $gender       [male|female]
-     * @param \DateTime $birthdate
-     * @param string    $randomNumber three integers
+     * @param string $gender       [male|female]
+     * @param string $randomNumber three integers
      *
      * @return string on format XXXXXXXXXXX
      */

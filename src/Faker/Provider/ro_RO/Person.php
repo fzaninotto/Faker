@@ -182,6 +182,7 @@ class Person extends \Faker\Provider\Person
 
         $dateOfBirthFinal = implode('-', $dateOfBirthParts);
         $date = \DateTime::createFromFormat('Y-m-d', $dateOfBirthFinal);
+
         //a full (invalid) date might have been supplied, check if it converts
         if ($date->format('Y-m-d') !== $dateOfBirthFinal) {
             throw new \InvalidArgumentException("Invalid date of birth - '{$date->format('Y-m-d')}' generated based on '{$dateOfBirth}' received");

@@ -135,9 +135,8 @@ class Person extends \Faker\Provider\Person
     /**
      * @see https://en.wikipedia.org/wiki/National_identification_number#South_Africa
      *
-     * @param \DateTime $birthdate
-     * @param bool      $citizen
-     * @param string    $gender
+     * @param bool   $citizen
+     * @param string $gender
      *
      * @return string
      */
