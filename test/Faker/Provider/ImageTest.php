@@ -185,7 +185,7 @@ final class ImageTest extends TestCase
         $httpCode = curl_getinfo($curlPing, CURLINFO_HTTP_CODE);
         curl_close($curlPing);
 
-        if ($httpCode < 200 | $httpCode > 300) {
+        if ($httpCode < 200 || $httpCode > 300) {
             self::markTestSkipped(sprintf('"%s" is offline, skipping test', $url));
         }
     }
