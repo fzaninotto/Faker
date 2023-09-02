@@ -11,16 +11,20 @@ name: "Tests"
 
 jobs:
   phpunit:
-    name: "PHPUnit"
+    name: "PHPUnit (${{ matrix.php-version }})"
 
     strategy:
       matrix:
+        experimental:
+          - false
         php-version:
           - "7.4"
           - "8.0"
           - "8.1"
           - "8.2"
-          - "8.3"
+        include:
+          - experimental: true
+            php-version: "8.3"
 
     runs-on: "ubuntu-latest"
 
@@ -53,3 +57,4 @@ jobs:
 
       - name: "Run tests"
         run: "./vendor/bin/phpunit --colors=always"
+        continue-on-error: "${{ matrix.experimental }}"
