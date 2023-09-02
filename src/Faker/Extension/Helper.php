@@ -83,7 +83,7 @@ final class Helper
     public static function bothify(string $string): string
     {
         $string = self::replaceWildcard($string, '*', static function () {
-            return mt_rand(0, 1) ? '#' : '?';
+            return mt_rand(0, 1) === 1 ? '#' : '?';
         });
 
         return static::lexify(static::numerify($string));

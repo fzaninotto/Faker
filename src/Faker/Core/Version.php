@@ -25,8 +25,8 @@ final class Version implements VersionExtension
             mt_rand(0, 9),
             mt_rand(0, 99),
             mt_rand(0, 99),
-            $preRelease && mt_rand(0, 1) ? '-' . $this->semverPreReleaseIdentifier() : '',
-            $build && mt_rand(0, 1) ? '+' . $this->semverBuildIdentifier() : '',
+            $preRelease && mt_rand(0, 1) === 1 ? '-' . $this->semverPreReleaseIdentifier() : '',
+            $build && mt_rand(0, 1) === 1 ? '+' . $this->semverBuildIdentifier() : '',
         );
     }
 
@@ -37,7 +37,7 @@ final class Version implements VersionExtension
     {
         $ident = Helper::randomElement($this->semverCommonPreReleaseIdentifiers);
 
-        if (!mt_rand(0, 1)) {
+        if (mt_rand(0, 1) !== 1) {
             return $ident;
         }
 
@@ -49,7 +49,7 @@ final class Version implements VersionExtension
      */
     private function semverBuildIdentifier(): string
     {
-        if (mt_rand(0, 1)) {
+        if (mt_rand(0, 1) === 1) {
             // short git revision syntax: https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection
             return substr(sha1(Helper::lexify('??????')), 0, 7);
         }
