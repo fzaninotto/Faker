@@ -7,6 +7,7 @@
     cacheResultFile=".build/.phpunit.result.cache"
     colors="true"
     columns="max"
+    executionOrder="random"
     verbose="true"
 >
     <listeners>
