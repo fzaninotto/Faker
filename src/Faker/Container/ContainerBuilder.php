@@ -22,7 +22,7 @@ final class ContainerBuilder
     /**
      * @var array<string, callable|object|string>
      */
-    private $definitions = [];
+    private array $definitions = [];
 
     /**
      * @param callable|object|string $value

@@ -16,9 +16,9 @@ final class Container implements ContainerInterface
     /**
      * @var array<string, callable|object|string>
      */
-    private $definitions;
+    private array $definitions;
 
-    private $services = [];
+    private array $services = [];
 
     /**
      * Create a container object with a set of definitions. The array value MUST
