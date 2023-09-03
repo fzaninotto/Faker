@@ -29,26 +29,13 @@ final class ContainerBuilder
      *
      * @throws \InvalidArgumentException
      */
-    public function add($value, string $name = null): self
+    public function add($value, string $name): self
     {
         if (!is_string($value) && !is_callable($value) && !is_object($value)) {
             throw new \InvalidArgumentException(sprintf(
                 'First argument to "%s::add()" must be a string, callable or object.',
                 self::class,
             ));
-        }
-
-        if ($name === null) {
-            if (is_string($value)) {
-                $name = $value;
-            } elseif (is_object($value)) {
-                $name = get_class($value);
-            } else {
-                throw new \InvalidArgumentException(sprintf(
-                    'Second argument to "%s::add()" is required not passing a string or object as first argument',
-                    self::class,
-                ));
-            }
         }
 
         $this->definitions[$name] = $value;

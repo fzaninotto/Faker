@@ -145,7 +145,7 @@ final class GeneratorTest extends TestCase
     public function testFormatterCallsExtension(): void
     {
         $builder = new ContainerBuilder();
-        $builder->add(Blood::class);
+        $builder->add(Blood::class, Blood::class);
         $faker = new Generator($builder->build());
 
         $output = $faker->format('Faker\Core\Blood->bloodType');

@@ -7,7 +7,6 @@ namespace Faker\Test\Extension;
 use Faker\Container\ContainerBuilder;
 use Faker\Container\ContainerInterface;
 use Faker\Core\File;
-use Faker\Extension\Extension;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -30,7 +29,7 @@ final class ContainerBuilderTest extends TestCase
             ContainerBuilder::class,
         ));
 
-        $containerBuilder->add($value);
+        $containerBuilder->add($value, 'foo');
     }
 
     /**
@@ -59,46 +58,6 @@ final class ContainerBuilderTest extends TestCase
         }
     }
 
-    public function testAddRejectsNameWhenValueIsCallableAndNameIsNull(): void
-    {
-        $value = [
-            new class() {
-                public static function create(): Extension
-                {
-                    return new class() implements Extension {
-                    };
-                }
-            },
-            'create',
-        ];
-
-        $containerBuilder = new ContainerBuilder();
-
-        $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage(sprintf(
-            'Second argument to "%s::add()" is required not passing a string or object as first argument',
-            ContainerBuilder::class,
-        ));
-
-        $containerBuilder->add($value);
-    }
-
-    public function testAddAcceptsValueWhenItIsAnObjectAndNameIsNull(): void
-    {
-        $value = new class() implements Extension {};
-
-        $name = get_class($value);
-
-        $containerBuilder = new ContainerBuilder();
-
-        $containerBuilder->add($value);
-
-        $container = $containerBuilder->build();
-
-        self::assertTrue($container->has($name));
-        self::assertSame($value, $container->get($name));
-    }
-
     public function testBuildEmpty(): void
     {
         $builder = new ContainerBuilder();
@@ -112,7 +71,7 @@ final class ContainerBuilderTest extends TestCase
     {
         $builder = new ContainerBuilder();
 
-        $builder->add(File::class);
+        $builder->add(File::class, 'foo');
 
         $container = $builder->build();
 
@@ -123,8 +82,8 @@ final class ContainerBuilderTest extends TestCase
     {
         $builder = new ContainerBuilder();
 
-        $builder->add(File::class);
-        $builder->add(File::class);
+        $builder->add(File::class, 'foo');
+        $builder->add(File::class, 'foo');
 
         $container = $builder->build();
 
