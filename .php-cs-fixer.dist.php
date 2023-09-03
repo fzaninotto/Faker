@@ -74,7 +74,6 @@ return $config
         'curly_braces_position' => true,
         'declare_equal_normalize' => true,
         'declare_parentheses' => true,
-        'function_typehint_space' => true,
         'general_phpdoc_annotation_remove' => [
             'annotations' => [
                 'author',
@@ -222,6 +221,11 @@ return $config
             ],
         ],
         'trim_array_spaces' => true,
+        'type_declaration_spaces' => [
+            'elements' => [
+                'function',
+            ],
+        ],
         'unary_operator_spaces' => true,
         'visibility_required' => [
             'elements' => [
