@@ -18,3 +18,4 @@ parameters:
     - '#\[BC\] CHANGED: The parameter \$container of Faker\\Generator\#\_\_construct\(\) changed from Psr\\Container\\ContainerInterface\|null to Faker\\Container\\ContainerInterface\|null#'
     - '#\[BC\] CHANGED: The number of required arguments for Faker\\Container\\ContainerBuilder\#add\(\) increased from 1 to 2#'
     - '#\[BC\] CHANGED: The parameter \$name of Faker\\Container\\ContainerBuilder\#add\(\) changed from string\|null to a non-contravariant string#'
+    - '#\[BC\] CHANGED: The parameter \$value of Faker\\Container\\ContainerBuilder\#add\(\) changed from no type to a non-contravariant string#'

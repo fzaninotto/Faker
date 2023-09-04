@@ -29,7 +29,7 @@ final class ContainerBuilder
      *
      * @throws \InvalidArgumentException
      */
-    public function add($value, string $name): self
+    public function add(string $name, $value): self
     {
         if (!is_string($value) && !is_callable($value) && !is_object($value)) {
             throw new \InvalidArgumentException(sprintf(
@@ -71,7 +71,7 @@ final class ContainerBuilder
         $instance = new self();
 
         foreach (self::defaultExtensions() as $id => $definition) {
-            $instance->add($definition, $id);
+            $instance->add($id, $definition);
         }
 
         return $instance->build();

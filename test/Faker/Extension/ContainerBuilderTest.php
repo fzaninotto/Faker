@@ -29,7 +29,7 @@ final class ContainerBuilderTest extends TestCase
             ContainerBuilder::class,
         ));
 
-        $containerBuilder->add($value, 'foo');
+        $containerBuilder->add('foo', $value);
     }
 
     /**
@@ -71,7 +71,7 @@ final class ContainerBuilderTest extends TestCase
     {
         $builder = new ContainerBuilder();
 
-        $builder->add(File::class, 'foo');
+        $builder->add('foo', File::class);
 
         $container = $builder->build();
 
@@ -82,8 +82,8 @@ final class ContainerBuilderTest extends TestCase
     {
         $builder = new ContainerBuilder();
 
-        $builder->add(File::class, 'foo');
-        $builder->add(File::class, 'foo');
+        $builder->add('foo', File::class);
+        $builder->add('foo', File::class);
 
         $container = $builder->build();
 
@@ -94,7 +94,7 @@ final class ContainerBuilderTest extends TestCase
     {
         $builder = new ContainerBuilder();
 
-        $builder->add(new File(), 'foo');
+        $builder->add('foo', new File());
 
         $container = $builder->build();
 
@@ -105,9 +105,9 @@ final class ContainerBuilderTest extends TestCase
     {
         $builder = new ContainerBuilder();
 
-        $builder->add(static function () {
+        $builder->add('foo', static function () {
             return new File();
-        }, 'foo');
+        });
 
         $container = $builder->build();
 
