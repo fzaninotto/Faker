@@ -44,7 +44,7 @@ class Luhn
         $checkDigit = self::checksum($partialNumber . '0');
 
         if ($checkDigit === 0) {
-            return 0;
+            return '0';
         }
 
         return (string) (10 - $checkDigit);

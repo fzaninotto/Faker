@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <files psalm-version="5.15.0@5c774aca4746caf3d239d9c8cadb9f882ca29352">
-  <file src="src/Faker/Calculator/Luhn.php">
-    <InvalidReturnStatement>
-      <code>0</code>
-    </InvalidReturnStatement>
-    <InvalidReturnType>
-      <code>string</code>
-    </InvalidReturnType>
-  </file>
   <file src="src/Faker/Generator.php">
     <InvalidReturnStatement>
       <code><![CDATA[$this->uniqueGenerator]]></code>

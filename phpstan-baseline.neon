@@ -16,11 +16,6 @@ parameters:
 			path: src/Faker/Calculator/Luhn.php
 
 		-
-			message: "#^Method Faker\\\\Calculator\\\\Luhn\\:\\:computeCheckDigit\\(\\) should return string but returns int\\.$#"
-			count: 1
-			path: src/Faker/Calculator/Luhn.php
-
-		-
 			message: "#^Result of && is always false\\.$#"
 			count: 1
 			path: src/Faker/Container/ContainerBuilder.php
