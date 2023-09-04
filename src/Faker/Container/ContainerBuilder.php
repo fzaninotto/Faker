@@ -61,8 +61,8 @@ final class ContainerBuilder
             DateTimeExtension::class => Core\DateTime::class,
             FileExtension::class => Core\File::class,
             NumberExtension::class => Core\Number::class,
-            VersionExtension::class => Core\Version::class,
             UuidExtension::class => Core\Uuid::class,
+            VersionExtension::class => Core\Version::class,
         ];
     }
 
