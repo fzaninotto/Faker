@@ -29,7 +29,7 @@ final class ContainerBuilder
      *
      * @throws \InvalidArgumentException
      */
-    public function add(string $name, $value): self
+    public function add(string $id, $value): self
     {
         if (!is_string($value) && !is_callable($value) && !is_object($value)) {
             throw new \InvalidArgumentException(sprintf(
@@ -38,7 +38,7 @@ final class ContainerBuilder
             ));
         }
 
-        $this->definitions[$name] = $value;
+        $this->definitions[$id] = $value;
 
         return $this;
     }
