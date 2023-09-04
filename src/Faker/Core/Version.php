@@ -7,6 +7,9 @@ namespace Faker\Core;
 use Faker\Extension;
 use Faker\Provider\DateTime;
 
+/**
+ * @experimental This class is experimental and does not fall under our BC promise
+ */
 final class Version implements Extension\VersionExtension
 {
     private Extension\NumberExtension $numberExtension;

@@ -4,6 +4,9 @@ namespace Faker\Core;
 
 use Faker\Extension;
 
+/**
+ * @experimental This class is experimental and does not fall under our BC promise
+ */
 final class Uuid implements Extension\UuidExtension
 {
     private Extension\NumberExtension $numberExtension;
