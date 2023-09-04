@@ -134,12 +134,4 @@ final class Container implements ContainerInterface
 
         return array_key_exists($id, $this->definitions);
     }
-
-    /**
-     * Get the bindings between Extension interfaces and implementations.
-     */
-    public function getDefinitions(): array
-    {
-        return $this->definitions;
-    }
 }
