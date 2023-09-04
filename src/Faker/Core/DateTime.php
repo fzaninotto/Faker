@@ -30,7 +30,7 @@ final class DateTime implements DateTimeExtension, GeneratorAwareExtension
      *
      * @return false|int
      */
-    protected function getTimestamp($until = 'now')
+    private function getTimestamp($until = 'now')
     {
         if (is_numeric($until)) {
             return (int) $until;
@@ -48,22 +48,12 @@ final class DateTime implements DateTimeExtension, GeneratorAwareExtension
      *
      * @param int $timestamp the UNIX / POSIX-compatible timestamp
      */
-    protected function getTimestampDateTime(int $timestamp): \DateTime
+    private function getTimestampDateTime(int $timestamp): \DateTime
     {
         return new \DateTime('@' . $timestamp);
     }
 
-    protected function setDefaultTimezone(string $timezone = null): void
-    {
-        $this->defaultTimezone = $timezone;
-    }
-
-    protected function getDefaultTimezone(): ?string
-    {
-        return $this->defaultTimezone;
-    }
-
-    protected function resolveTimezone(?string $timezone): string
+    private function resolveTimezone(?string $timezone): string
     {
         if ($timezone !== null) {
             return $timezone;
@@ -75,7 +65,7 @@ final class DateTime implements DateTimeExtension, GeneratorAwareExtension
     /**
      * Internal method to set the timezone on a DateTime object.
      */
-    protected function setTimezone(\DateTime $dateTime, ?string $timezone): \DateTime
+    private function setTimezone(\DateTime $dateTime, ?string $timezone): \DateTime
     {
         $timezone = $this->resolveTimezone($timezone);
 
