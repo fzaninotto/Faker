@@ -8,7 +8,7 @@ use Faker\Extension\GeneratorAwareExtensionTrait;
 use Faker\Extension\Helper;
 
 /**
- * @experimental
+ * @experimental This class is experimental and does not fall under our BC promise
  *
  * @since 1.20.0
  */
