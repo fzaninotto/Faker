@@ -26,7 +26,7 @@ final class Number implements Extension\NumberExtension
 
     public function randomDigitNot(int $except): int
     {
-        $result = self::numberBetween(0, 8);
+        $result = $this->numberBetween(0, 8);
 
         if ($result >= $except) {
             ++$result;
