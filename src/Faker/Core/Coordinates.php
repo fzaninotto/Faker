@@ -9,7 +9,7 @@ use Faker\Extension;
 /**
  * @experimental This class is experimental and does not fall under our BC promise
  */
-class Coordinates implements Extension\Extension
+final class Coordinates implements Extension\Extension
 {
     private Extension\NumberExtension $numberExtension;
 
