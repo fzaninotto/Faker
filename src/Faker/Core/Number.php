@@ -21,7 +21,7 @@ final class Number implements Extension\NumberExtension
 
     public function randomDigit(): int
     {
-        return mt_rand(0, 9);
+        return $this->numberBetween(0, 9);
     }
 
     public function randomDigitNot(int $except): int
@@ -37,7 +37,7 @@ final class Number implements Extension\NumberExtension
 
     public function randomDigitNotZero(): int
     {
-        return mt_rand(1, 9);
+        return $this->numberBetween(1, 9);
     }
 
     public function randomFloat(?int $nbMaxDecimals = null, float $min = 0, ?float $max = null): float
@@ -60,7 +60,7 @@ final class Number implements Extension\NumberExtension
             $max = $tmp;
         }
 
-        return round($min + mt_rand() / mt_getrandmax() * ($max - $min), $nbMaxDecimals);
+        return round($min + $this->numberBetween() / mt_getrandmax() * ($max - $min), $nbMaxDecimals);
     }
 
     public function randomNumber(int $nbDigits = null, bool $strict = false): int
@@ -75,9 +75,9 @@ final class Number implements Extension\NumberExtension
         }
 
         if ($strict) {
-            return mt_rand(10 ** ($nbDigits - 1), $max);
+            return $this->numberBetween(10 ** ($nbDigits - 1), $max);
         }
 
-        return mt_rand(0, $max);
+        return $this->numberBetween(0, $max);
     }
 }

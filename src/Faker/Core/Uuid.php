@@ -2,17 +2,23 @@
 
 namespace Faker\Core;
 
-use Faker\Extension\UuidExtension;
+use Faker\Extension;
 
-final class Uuid implements UuidExtension
+final class Uuid implements Extension\UuidExtension
 {
+    private Extension\NumberExtension $numberExtension;
+
+    public function __construct(Extension\NumberExtension $numberExtension = null)
+    {
+
+        $this->numberExtension = $numberExtension ?: new Number();
+    }
+
     public function uuid3(): string
     {
-        $number = new Number();
-
         // fix for compatibility with 32bit architecture; each mt_rand call is restricted to 32bit
         // two such calls will cause 64bits of randomness regardless of architecture
-        $seed = $number->numberBetween(0, 2147483647) . '#' . $number->numberBetween(0, 2147483647);
+        $seed = $this->numberExtension->numberBetween(0, 2147483647) . '#' . $this->numberExtension->numberBetween(0, 2147483647);
 
         // Hash the seed and convert to a byte array
         $val = md5($seed, true);
