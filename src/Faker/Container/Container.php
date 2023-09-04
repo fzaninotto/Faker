@@ -63,7 +63,7 @@ final class Container implements ContainerInterface
 
         $definition = $this->definitions[$id];
 
-        $service = $this->services[$id] = $this->getService($id, $definition);
+        $service = $this->getService($id, $definition);
 
         if (!$service instanceof Extension) {
             throw new \RuntimeException(sprintf(
@@ -72,6 +72,8 @@ final class Container implements ContainerInterface
                 Extension::class,
             ));
         }
+
+        $this->services[$id] = $service;
 
         return $service;
     }

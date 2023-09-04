@@ -65,6 +65,33 @@ final class ContainerTest extends TestCase
     }
 
     /**
+     * @dataProvider provideDefinitionThatDoesNotResolveToExtension
+     */
+    public function testGetThrowsRuntimeExceptionWhenServiceResolvedForIdentifierIsNotAnExtensionOnSecondTry($definition): void
+    {
+        $id = 'file';
+
+        $container = new Container([
+            $id => $definition,
+        ]);
+
+        try {
+            $container->get($id);
+        } catch (\RuntimeException $e) {
+            // do nothing
+        }
+
+        $this->expectException(\RuntimeException::class);
+        $this->expectExceptionMessage(sprintf(
+            'Service resolved for identifier "%s" does not implement the %s" interface.',
+            $id,
+            Extension::class,
+        ));
+
+        $container->get($id);
+    }
+
+    /**
      * @return \Generator<string, array{0: callable|object|string}>
      */
     public function provideDefinitionThatDoesNotResolveToExtension(): \Generator
