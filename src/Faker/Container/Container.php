@@ -81,7 +81,7 @@ final class Container implements ContainerInterface
      *
      * @param callable|object|string $definition
      */
-    private function getService($id, $definition)
+    private function getService(string $id, $definition)
     {
         if (is_callable($definition)) {
             try {
