@@ -13,7 +13,7 @@ final class Version implements Extension\VersionExtension
     /**
      * @var string[]
      */
-    private $semverCommonPreReleaseIdentifiers = ['alpha', 'beta', 'rc'];
+    private array $semverCommonPreReleaseIdentifiers = ['alpha', 'beta', 'rc'];
 
     public function __construct(Extension\NumberExtension $numberExtension = null)
     {

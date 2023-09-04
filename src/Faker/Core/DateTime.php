@@ -19,12 +19,9 @@ final class DateTime implements DateTimeExtension, GeneratorAwareExtension
     /**
      * @var string[]
      */
-    private $centuries = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV', 'XVI', 'XVII', 'XVIII', 'XIX', 'XX', 'XXI'];
+    private array $centuries = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV', 'XVI', 'XVII', 'XVIII', 'XIX', 'XX', 'XXI'];
 
-    /**
-     * @var string
-     */
-    private $defaultTimezone = null;
+    private ?string $defaultTimezone = null;
 
     /**
      * Get the POSIX-timestamp of a DateTime, int or string.
