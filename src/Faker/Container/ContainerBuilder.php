@@ -5,14 +5,7 @@ declare(strict_types=1);
 namespace Faker\Container;
 
 use Faker\Core;
-use Faker\Extension\BarcodeExtension;
-use Faker\Extension\BloodExtension;
-use Faker\Extension\ColorExtension;
-use Faker\Extension\DateTimeExtension;
-use Faker\Extension\FileExtension;
-use Faker\Extension\NumberExtension;
-use Faker\Extension\UuidExtension;
-use Faker\Extension\VersionExtension;
+use Faker\Extension;
 
 /**
  * @experimental This class is experimental and does not fall under our BC promise
@@ -55,14 +48,14 @@ final class ContainerBuilder
     public static function defaultExtensions(): array
     {
         return [
-            BarcodeExtension::class => Core\Barcode::class,
-            BloodExtension::class => Core\Blood::class,
-            ColorExtension::class => Core\Color::class,
-            DateTimeExtension::class => Core\DateTime::class,
-            FileExtension::class => Core\File::class,
-            NumberExtension::class => Core\Number::class,
-            UuidExtension::class => Core\Uuid::class,
-            VersionExtension::class => Core\Version::class,
+            Extension\BarcodeExtension::class => Core\Barcode::class,
+            Extension\BloodExtension::class => Core\Blood::class,
+            Extension\ColorExtension::class => Core\Color::class,
+            Extension\DateTimeExtension::class => Core\DateTime::class,
+            Extension\FileExtension::class => Core\File::class,
+            Extension\NumberExtension::class => Core\Number::class,
+            Extension\UuidExtension::class => Core\Uuid::class,
+            Extension\VersionExtension::class => Core\Version::class,
         ];
     }
 
