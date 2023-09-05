@@ -206,7 +206,7 @@ final class PersonTest extends TestCase
 
     protected function isValidCnp($cnp)
     {
-        if (preg_match(static::TEST_CNP_REGEX, $cnp) !== false) {
+        if (preg_match(self::TEST_CNP_REGEX, $cnp) !== false) {
             $checkNumber = 279146358279;
 
             $checksum = 0;

@@ -187,6 +187,7 @@ return $config
         'random_api_migration' => true,
         'return_assignment' => true,
         'return_type_declaration' => true,
+        'self_static_accessor' => true,
         'semicolon_after_instruction' => true,
         'short_scalar_cast' => true,
         'single_line_comment_style' => true,

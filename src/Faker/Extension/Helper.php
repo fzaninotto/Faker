@@ -86,7 +86,7 @@ final class Helper
             return mt_rand(0, 1) === 1 ? '#' : '?';
         });
 
-        return static::lexify(static::numerify($string));
+        return self::lexify(self::numerify($string));
     }
 
     private static function replaceWildcard(string $string, string $wildcard, callable $callback): string

@@ -77,7 +77,7 @@ final class PersonTest extends TestCase
     {
         $nik = $this->faker->nik();
 
-        self::assertContains(substr($nik, 0, 4), static::$birthPlaceCode);
+        self::assertContains(substr($nik, 0, 4), self::$birthPlaceCode);
     }
 
     protected function getProviders(): iterable
