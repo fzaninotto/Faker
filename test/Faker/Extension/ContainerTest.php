@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace Faker\Test\Extension;
 
 use Faker\Container\Container;
+use Faker\Container\ContainerException;
 use Faker\Core\File;
 use Faker\Extension\Extension;
+use Faker\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
@@ -16,11 +18,29 @@ use Psr\Container\NotFoundExceptionInterface;
  */
 final class ContainerTest extends TestCase
 {
+    public function testHasThrowsInvalidArgumentExceptionWhenIdentifierIsNotAString(): void
+    {
+        $container = new Container([]);
+
+        $this->expectException(\InvalidArgumentException::class);
+
+        $container->has(false);
+    }
+
     public function testHasReturnsFalseWhenContainerDoesNotHaveDefinitionForService(): void
     {
         $container = new Container([]);
 
         self::assertFalse($container->has('foo'));
+    }
+
+    public function testGetThrowsInvalidArgumentExceptionWhenIdentifierIsNotAString(): void
+    {
+        $container = new Container([]);
+
+        $this->expectException(\InvalidArgumentException::class);
+
+        $container->get(false);
     }
 
     public function testGetThrowsNotFoundExceptionWhenContainerDoesNotHaveDefinitionForService(): void
@@ -41,6 +61,42 @@ final class ContainerTest extends TestCase
         $object = $container->get('file');
 
         self::assertInstanceOf(File::class, $object);
+    }
+
+    public function testGetThrowsRuntimeExceptionWhenServiceCouldNotBeResolvedFromCallable(): void
+    {
+        $id = 'foo';
+
+        $container = new Container([
+            $id => static function (): void {
+                throw new \RuntimeException();
+            },
+        ]);
+
+        $this->expectException(ContainerException::class);
+        $this->expectExceptionMessage(sprintf(
+            'Error while invoking callable for "%s"',
+            $id,
+        ));
+
+        $container->get($id);
+    }
+
+    public function testGetThrowsRuntimeExceptionWhenServiceCouldNotBeResolvedFromClass(): void
+    {
+        $id = 'foo';
+
+        $container = new Container([
+            $id => Test\Fixture\Container\UnconstructableClass::class,
+        ]);
+
+        $this->expectException(ContainerException::class);
+        $this->expectExceptionMessage(sprintf(
+            'Could not instantiate class "%s"',
+            $id,
+        ));
+
+        $container->get($id);
     }
 
     /**
