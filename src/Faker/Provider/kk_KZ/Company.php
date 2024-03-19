@@ -4,30 +4,54 @@ namespace Faker\Provider\kk_KZ;
 
 class Company extends \Faker\Provider\Company
 {
-    protected static $companyNameFormats = array(
+    protected static array $companyNameFormats = [
         '{{companyPrefix}} {{companyNameElement}}',
         '{{companyPrefix}} {{companyNameElement}}{{companyNameElement}}',
         '{{companyPrefix}} {{companyNameElement}}{{companyNameElement}}{{companyNameElement}}',
         '{{companyPrefix}} {{companyNameElement}}{{companyNameElement}}{{companyNameElement}}{{companyNameSuffix}}',
-    );
+    ];
 
-    protected static $companyPrefixes = array(
-        'АҚ', 'ЖШС', 'ЖАҚ'
-    );
+    protected static array $companyPrefixes = [
+        'АҚ',
+        'ЖШС',
+        'ЖАҚ',
+    ];
 
-    protected static $companyNameSuffixes = array(
-        'Құрылыс', 'Машина', 'Бұзу', '-М', 'Лизинг', 'Страх', 'Ком', 'Телеком'
-    );
+    protected static array $companyNameSuffixes = [
+        'Құрылыс',
+        'Машина',
+        'Бұзу',
+        '-М',
+        'Лизинг',
+        'Страх',
+        'Ком',
+        'Телеком',
+    ];
 
-    protected static $companyElements = array(
-        'Қазақ', 'Кітап', 'Цемент', 'Лифт', 'Креп', 'Авто', 'Теле', 'Транс', 'Алмаз', 'Метиз',
-        'Мотор', 'Қаз', 'Тех', 'Сантех', 'Алматы', 'Астана', 'Электро',
-    );
+    protected static array $companyElements = [
+        'Қазақ',
+        'Кітап',
+        'Цемент',
+        'Лифт',
+        'Креп',
+        'Авто',
+        'Теле',
+        'Транс',
+        'Алмаз',
+        'Метиз',
+        'Мотор',
+        'Қаз',
+        'Тех',
+        'Сантех',
+        'Алматы',
+        'Астана',
+        'Электро',
+    ];
 
     /**
      * @example 'ЖШС АлматыТелеком'
      */
-    public function company()
+    public function company(): string
     {
         $format = static::randomElement(static::$companyNameFormats);
 
@@ -50,23 +74,23 @@ class Company extends \Faker\Provider\Company
     }
 
     /**
-     * National Business Identification Numbers
+     * National Business Identification Numbers.
      *
-     * @link   http://egov.kz/wps/portal/Content?contentPath=%2Fegovcontent%2Fbus_business%2Ffor_businessmen%2Farticle%2Fbusiness_identification_number&lang=en
-     * @param  \DateTime $registrationDate
+     * @see   http://egov.kz/wps/portal/Content?contentPath=%2Fegovcontent%2Fbus_business%2Ffor_businessmen%2Farticle%2Fbusiness_identification_number&lang=en
+     *
      * @return string 12 digits, like 150140000019
      */
-    public static function businessIdentificationNumber(\DateTime $registrationDate = null)
+    public static function businessIdentificationNumber(?\DateTime $registrationDate = null): string
     {
         if (!$registrationDate) {
             $registrationDate = \Faker\Provider\DateTime::dateTimeThisYear();
         }
 
-        $dateAsString              = $registrationDate->format('ym');
-        $legalEntityType           = (string) static::numberBetween(4, 6);
+        $dateAsString = $registrationDate->format('ym');
+        $legalEntityType = (string) static::numberBetween(4, 6);
         $legalEntityAdditionalType = (string) static::numberBetween(0, 3);
-        $randomDigits              = (string) static::numerify('######');
+        $randomDigits = static::numerify('######');
 
-        return $dateAsString . $legalEntityType . $legalEntityAdditionalType . $randomDigits;
+        return $dateAsString.$legalEntityType.$legalEntityAdditionalType.$randomDigits;
     }
 }

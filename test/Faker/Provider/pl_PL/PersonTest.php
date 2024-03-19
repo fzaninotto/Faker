@@ -8,89 +8,86 @@ use PHPUnit\Framework\TestCase;
 
 final class PersonTest extends TestCase
 {
-    /**
-     * @var Generator
-     */
-    private $faker;
+    private Generator $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
         $this->faker = $faker;
     }
 
-    public function testPeselLenght()
+    public function testPeselLenght(): void
     {
         $pesel = $this->faker->pesel();
 
-        $this->assertEquals(11, strlen($pesel));
+        $this->assertEquals(11, \strlen($pesel));
     }
 
-    public function testPeselDate()
+    public function testPeselDate(): void
     {
-        $date  = new DateTime('1990-01-01');
+        $date = new DateTime('1990-01-01');
         $pesel = $this->faker->pesel($date);
 
-        $this->assertEquals('90', substr($pesel, 0, 2));
-        $this->assertEquals('01', substr($pesel, 2, 2));
-        $this->assertEquals('01', substr($pesel, 4, 2));
+        $this->assertEquals('90', \substr($pesel, 0, 2));
+        $this->assertEquals('01', \substr($pesel, 2, 2));
+        $this->assertEquals('01', \substr($pesel, 4, 2));
     }
 
-    public function testPeselDateWithYearAfter2000()
+    public function testPeselDateWithYearAfter2000(): void
     {
-        $date  = new DateTime('2001-01-01');
+        $date = new DateTime('2001-01-01');
         $pesel = $this->faker->pesel($date);
 
-        $this->assertEquals('01', substr($pesel, 0, 2));
-        $this->assertEquals('21', substr($pesel, 2, 2));
-        $this->assertEquals('01', substr($pesel, 4, 2));
+        $this->assertEquals('01', \substr($pesel, 0, 2));
+        $this->assertEquals('21', \substr($pesel, 2, 2));
+        $this->assertEquals('01', \substr($pesel, 4, 2));
     }
 
-    public function testPeselDateWithYearAfter2100()
+    public function testPeselDateWithYearAfter2100(): void
     {
-        $date  = new DateTime('2101-01-01');
+        $date = new DateTime('2101-01-01');
         $pesel = $this->faker->pesel($date);
 
-        $this->assertEquals('01', substr($pesel, 0, 2));
-        $this->assertEquals('41', substr($pesel, 2, 2));
-        $this->assertEquals('01', substr($pesel, 4, 2));
+        $this->assertEquals('01', \substr($pesel, 0, 2));
+        $this->assertEquals('41', \substr($pesel, 2, 2));
+        $this->assertEquals('01', \substr($pesel, 4, 2));
     }
 
-    public function testPeselDateWithYearAfter2200()
+    public function testPeselDateWithYearAfter2200(): void
     {
-        $date  = new DateTime('2201-01-01');
+        $date = new DateTime('2201-01-01');
         $pesel = $this->faker->pesel($date);
 
-        $this->assertEquals('01', substr($pesel, 0, 2));
-        $this->assertEquals('61', substr($pesel, 2, 2));
-        $this->assertEquals('01', substr($pesel, 4, 2));
+        $this->assertEquals('01', \substr($pesel, 0, 2));
+        $this->assertEquals('61', \substr($pesel, 2, 2));
+        $this->assertEquals('01', \substr($pesel, 4, 2));
     }
 
-    public function testPeselDateWithYearBefore1900()
+    public function testPeselDateWithYearBefore1900(): void
     {
-        $date  = new DateTime('1801-01-01');
+        $date = new DateTime('1801-01-01');
         $pesel = $this->faker->pesel($date);
 
-        $this->assertEquals('01', substr($pesel, 0, 2));
-        $this->assertEquals('81', substr($pesel, 2, 2));
-        $this->assertEquals('01', substr($pesel, 4, 2));
+        $this->assertEquals('01', \substr($pesel, 0, 2));
+        $this->assertEquals('81', \substr($pesel, 2, 2));
+        $this->assertEquals('01', \substr($pesel, 4, 2));
     }
 
-    public function testPeselSex()
+    public function testPeselSex(): void
     {
-        $male   = $this->faker->pesel(null, 'M');
+        $male = $this->faker->pesel(null, 'M');
         $female = $this->faker->pesel(null, 'F');
 
         $this->assertEquals(1, $male[9] % 2);
         $this->assertEquals(0, $female[9] % 2);
     }
 
-    public function testPeselCheckSum()
+    public function testPeselCheckSum(): void
     {
-        $pesel   = $this->faker->pesel();
-        $weights = array(1, 3, 7, 9, 1, 3, 7, 9, 1, 3, 1);
-        $sum     = 0;
+        $pesel = $this->faker->pesel();
+        $weights = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3, 1];
+        $sum = 0;
 
         foreach ($weights as $key => $weight) {
             $sum += $pesel[$key] * $weight;

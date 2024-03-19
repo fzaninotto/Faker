@@ -8,29 +8,24 @@ use PHPUnit\Framework\TestCase;
 
 final class PhoneNumberTest extends TestCase
 {
+    private Generator $faker;
 
-    /**
-     * @var Faker\Generator
-     */
-    private $faker;
-
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new PhoneNumber($faker));
         $this->faker = $faker;
     }
 
-    public function testIfPhoneNumberCanReturnData()
+    public function testIfPhoneNumberCanReturnData(): void
     {
-      $number = $this->faker->phoneNumber;
-      $this->assertNotEmpty($number);
+        $number = $this->faker->phoneNumber;
+        $this->assertNotEmpty($number);
     }
 
-    public function phoneNumberFormat()
+    public function phoneNumberFormat(): void
     {
-      $number = $this->faker->phoneNumber;
-      $this->assertRegExp('/(^\([0]\d{1}\))(\d{7}$)|(^\([0][2]\d{1}\))(\d{6,8}$)|([0][8][0][0])([\s])(\d{5,8}$)/', $number);
+        $number = $this->faker->phoneNumber;
+        $this->assertMatchesRegularExpression('/(^\([0]\d{1}\))(\d{7}$)|(^\([0][2]\d{1}\))(\d{6,8}$)|([0][8][0][0])([\s])(\d{5,8}$)/', $number);
     }
 }
-?>

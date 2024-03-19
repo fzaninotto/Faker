@@ -8,25 +8,27 @@ use PHPUnit\Framework\TestCase;
 
 final class PhoneNumberTest extends TestCase
 {
-    protected function setUp()
+    protected Generator $faker;
+
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new PhoneNumber($faker));
         $this->faker = $faker;
     }
 
-    public function testPhoneNumberReturnsNormalPhoneNumber()
+    public function testPhoneNumberReturnsNormalPhoneNumber(): void
     {
-        $this->assertRegExp('/^0(?:[23][13-7]|7\d)\d{7}$/', $this->faker->phoneNumber());
+        $this->assertMatchesRegularExpression('/^0(?:[23][13-7]|7\d)\d{7}$/', $this->faker->phoneNumber());
     }
 
-    public function testTollFreePhoneNumberReturnsTollFreePhoneNumber()
+    public function testTollFreePhoneNumberReturnsTollFreePhoneNumber(): void
     {
-        $this->assertRegExp('/^08(?:0[01267]|70)\d{6}$/', $this->faker->tollFreePhoneNumber());
+        $this->assertMatchesRegularExpression('/^08(?:0[01267]|70)\d{6}$/', $this->faker->tollFreePhoneNumber());
     }
 
-    public function testPremiumRatePhoneNumberReturnsPremiumRatePhoneNumber()
+    public function testPremiumRatePhoneNumberReturnsPremiumRatePhoneNumber(): void
     {
-        $this->assertRegExp('/^090[036]\d{6}$/', $this->faker->premiumRatePhoneNumber());
+        $this->assertMatchesRegularExpression('/^090[036]\d{6}$/', $this->faker->premiumRatePhoneNumber());
     }
 }

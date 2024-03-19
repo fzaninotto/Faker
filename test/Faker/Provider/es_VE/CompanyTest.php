@@ -8,12 +8,9 @@ use PHPUnit\Framework\TestCase;
 
 final class CompanyTest extends TestCase
 {
-    /**
-     * @var Generator
-     */
-    private $faker;
+    private Generator $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->seed(1);
@@ -22,17 +19,15 @@ final class CompanyTest extends TestCase
     }
 
     /**
-     * national Id format validator
+     * national Id format validator.
      */
-    public function testNationalId()
+    public function testNationalId(): void
     {
         $pattern = '/^[VJGECP]-?\d{8}-?\d$/';
         $rif = $this->faker->taxpayerIdentificationNumber;
-        $this->assertRegExp($pattern, $rif);
+        $this->assertMatchesRegularExpression($pattern, $rif);
 
         $rif = $this->faker->taxpayerIdentificationNumber('-');
-        $this->assertRegExp($pattern, $rif);
+        $this->assertMatchesRegularExpression($pattern, $rif);
     }
-
-
 }

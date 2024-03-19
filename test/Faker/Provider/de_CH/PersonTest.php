@@ -9,26 +9,26 @@ use PHPUnit\Framework\TestCase;
 
 final class PersonTest extends TestCase
 {
-    private $faker;
+    private Generator $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
         $this->faker = $faker;
     }
 
-    public function testAvs13Number()
+    public function testAvs13Number(): void
     {
         $avs = $this->faker->avs13;
-        $this->assertRegExp('/^756\.([0-9]{4})\.([0-9]{4})\.([0-9]{2})$/', $avs);
-        $this->assertTrue(Ean::isValid(str_replace('.', '', $avs)));
+        $this->assertMatchesRegularExpression('/^756\.([0-9]{4})\.([0-9]{4})\.([0-9]{2})$/', $avs);
+        $this->assertTrue(Ean::isValid(\str_replace('.', '', $avs)));
     }
 
-    public function testAhv13Number()
+    public function testAhv13Number(): void
     {
         $ahv = $this->faker->ahv13;
-        $this->assertRegExp('/^756\.([0-9]{4})\.([0-9]{4})\.([0-9]{2})$/', $ahv);
-        $this->assertTrue(Ean::isValid(str_replace('.', '', $ahv)));
+        $this->assertMatchesRegularExpression('/^756\.([0-9]{4})\.([0-9]{4})\.([0-9]{2})$/', $ahv);
+        $this->assertTrue(Ean::isValid(\str_replace('.', '', $ahv)));
     }
 }

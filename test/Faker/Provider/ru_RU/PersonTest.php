@@ -8,29 +8,26 @@ use PHPUnit\Framework\TestCase;
 
 final class PersonTest extends TestCase
 {
-    /**
-     * @var Generator
-     */
-    private $faker;
+    private Generator $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
         $this->faker = $faker;
     }
 
-    public function testLastNameFemale()
+    public function testLastNameFemale(): void
     {
-        $this->assertEquals("a", substr($this->faker->lastName('female'), -1));
+        $this->assertEquals('a', \substr($this->faker->lastName('female'), -1));
     }
 
-    public function testLastNameMale()
+    public function testLastNameMale(): void
     {
-        $this->assertNotEquals("a", substr($this->faker->lastName('male'), -1));
+        $this->assertNotEquals('a', \substr($this->faker->lastName('male'), -1));
     }
 
-    public function testLastNameRandom()
+    public function testLastNameRandom(): void
     {
         $this->assertNotNull($this->faker->lastName());
     }

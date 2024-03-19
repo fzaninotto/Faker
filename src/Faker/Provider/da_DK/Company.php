@@ -10,7 +10,7 @@ class Company extends \Faker\Provider\Company
     /**
      * @var array Danish company name formats.
      */
-    protected static $formats = array(
+    protected static array $formats = [
         '{{lastName}} {{companySuffix}}',
         '{{lastName}} {{companySuffix}}',
         '{{lastName}} {{companySuffix}}',
@@ -27,43 +27,39 @@ class Company extends \Faker\Provider\Company
         '{{middleName}} og {{middleName}} {{companySuffix}}',
         '{{middleName}} & {{lastName}}',
         '{{middleName}} og {{lastName}}',
-    );
+    ];
 
     /**
      * @var array Company suffixes.
      */
-    protected static $companySuffix = array('ApS', 'A/S', 'I/S', 'K/S');
+    protected static array $companySuffix = ['ApS', 'A/S', 'I/S', 'K/S'];
 
     /**
-     * @link http://cvr.dk/Site/Forms/CMS/DisplayPage.aspx?pageid=60
+     * @see http://cvr.dk/Site/Forms/CMS/DisplayPage.aspx?pageid=60
      *
      * @var string CVR number format.
      */
-    protected static $cvrFormat = '%#######';
+    protected static string $cvrFormat = '%#######';
 
     /**
-     * @link http://cvr.dk/Site/Forms/CMS/DisplayPage.aspx?pageid=60
+     * @see http://cvr.dk/Site/Forms/CMS/DisplayPage.aspx?pageid=60
      *
      * @var string P number (production number) format.
      */
-    protected static $pFormat = '%#########';
+    protected static string $pFormat = '%#########';
 
     /**
      * Generates a CVR number (8 digits).
-     *
-     * @return string
      */
-    public static function cvr()
+    public static function cvr(): string
     {
         return static::numerify(static::$cvrFormat);
     }
 
     /**
      * Generates a P entity number (10 digits).
-     *
-     * @return string
      */
-    public static function p()
+    public static function p(): string
     {
         return static::numerify(static::$pFormat);
     }

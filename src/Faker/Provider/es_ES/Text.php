@@ -6,12 +6,11 @@ class Text extends \Faker\Provider\Text
 {
     /**
      * Benito Pérez Galdós
-     * Tarfalgar
+     * Tarfalgar.
      *
      * @see http://www.gutenberg.org/cache/epub/16961/pg16961.txt
-     * @var string
      */
-    protected static $baseText = <<<'EOT'
+    protected static string $baseText = <<<'EOT'
 Se me permitirá que antes de referir el gran suceso de que fui testigo, diga algunas palabras sobre mi infancia, explicando por qué extraña manera me llevaron los azares de la vida a presenciar la terrible catástrofe de nuestra marina.
 Al hablar de mi nacimiento, no imitaré a la mayor parte de los que cuentan hechos de su propia vida, quienes empiezan nombrando su parentela, las más veces noble, siempre hidalga por lo menos, si no se dicen descendientes del mismo Emperador de Trapisonda. Yo, en esta parte, no puedo adornar mi libro con sonoros apellidos; y fuera de mi madre, a quien conocí por poco tiempo, no tengo noticia de ninguno de mis ascendientes, si no es de Adán, cuyo parentesco me parece indiscutible. Doy principio, pues, a mi historia como Pablos, el buscón de Segovia: afortunadamente Dios ha querido que en esto sólo nos parezcamos.
 Yo nací en Cádiz, y en el famoso barrio de la Viña, que no es hoy, ni menos era entonces, academia de buenas costumbres. La memoria no me da luz alguna sobre mi persona y mis acciones en la niñez, sino desde la edad de seis años; y si recuerdo esta fecha, es porque la asocio a un suceso naval de que oí hablar entonces: el combate del cabo de San Vicente, acaecido en 1797.

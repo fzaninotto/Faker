@@ -4,25 +4,24 @@ namespace Faker\Provider\ja_JP;
 
 class Text extends \Faker\Provider\Text
 {
-    protected static $separator = '';
-    protected static $separatorLen = 0;
+    protected static string $separator = '';
+    protected static int $separatorLen = 0;
 
     /**
-     * All punctuation in $baseText: 、 。 「 」 『 』 ！ ？ ー ， ： ；
+     * All punctuation in $baseText: 、 。 「 」 『 』 ！ ？ ー ， ： ；.
      */
-    protected static $notEndPunct = array('、', '「', '『', 'ー', '，', '：', '；');
-    protected static $endPunct = array('。', '」', '』', '！', '？');
-    protected static $notBeginPunct = array('、', '。', '」', '』', '！', '？', 'ー', '，', '：', '；');
+    protected static array $notEndPunct = ['、', '「', '『', 'ー', '，', '：', '；'];
+    protected static array $endPunct = ['。', '」', '』', '！', '？'];
+    protected static array $notBeginPunct = ['、', '。', '」', '』', '！', '？', 'ー', '，', '：', '；'];
 
     /**
      * Title: 銀河鉄道の夜 Night On The Milky Way Train
      * Author: 宮沢賢治 Kenji Miyazawa
-     * Language: Japanese
+     * Language: Japanese.
      *
      * @see http://www.aozora.gr.jp/cards/000081/files/43737_19215.html
-     * @var string
      */
-    protected static $baseText = <<<'EOT'
+    protected static string $baseText = <<<'EOT'
 一　午後の授業
 
 「ではみなさんは、そういうふうに川だと言いわれたり、乳ちちの流ながれたあとだと言いわれたりしていた、このぼんやりと白いものがほんとうは何かご承知しょうちですか」先生は、黒板こくばんにつるした大きな黒い星座せいざの図の、上から下へ白くけぶった銀河帯ぎんがたいのようなところを指さしながら、みんなに問といをかけました。
@@ -595,41 +594,43 @@ class Text extends \Faker\Provider\Text
 ジョバンニはもういろいろなことで胸むねがいっぱいで、なんにも言いえずに博士はかせの前をはなれて、早くお母さんに牛乳ぎゅうにゅうを持もって行って、お父さんの帰ることを知らせようと思うと、もういちもくさんに河原かわらを街まちの方へ走りました。
 EOT;
 
-    protected static function explode($text)
+    protected static function explode($text): array
     {
-        $chars = array();
-        foreach (preg_split('//u', preg_replace('/\s+/u', '', $text)) as $char) {
-            if ($char !== '') {
+        $chars = [];
+        foreach (\preg_split('//u', \preg_replace('/\s+/u', '', $text)) as $char) {
+            if ('' !== $char) {
                 $chars[] = $char;
             }
         }
+
         return $chars;
     }
 
-    protected static function strlen($text)
+    protected static function strlen($text): int
     {
-        return function_exists('mb_strlen') ? mb_strlen($text, 'UTF-8') : count(static::explode($text));
+        return \function_exists('mb_strlen') ? \mb_strlen($text, 'UTF-8') : \count(static::explode($text));
     }
 
-    protected static function validStart($word)
+    protected static function validStart($word): bool|int
     {
-        return !in_array($word, static::$notBeginPunct);
+        return !\in_array($word, static::$notBeginPunct);
     }
 
-    protected static function appendEnd($text)
+    protected static function appendEnd($text): string
     {
         // extract the last char of $text
-        if (function_exists('mb_substr')) {
-            $last = mb_substr($text, 0, mb_strlen($text) - 1, 'UTF-8');
+        if (\function_exists('mb_substr')) {
+            $last = \mb_substr($text, 0, -1, 'UTF-8');
         } else {
             $chars = static::split($text);
-            $last = end($chars);
+            $last = \end($chars);
         }
         // if the last char is a not-valid-end punctuation, remove it
-        if (in_array($last, static::$notEndPunct)) {
-            $text = preg_replace('/.$/u', '', $text);
+        if (\in_array($last, static::$notEndPunct, true)) {
+            $text = \preg_replace('/.$/u', '', $text);
         }
+
         // if the last char is not a valid punctuation, append a default one.
-        return in_array($last, static::$endPunct) ? $text : $text . '。';
+        return \in_array($last, static::$endPunct, true) ? $text : $text.'。';
     }
 }

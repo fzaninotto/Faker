@@ -4,158 +4,491 @@ namespace Faker\Provider\en_IN;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $city = array(
-        'Agra','Ahmedabad','Ajmer','Alwar',
-        'Bengaluru','Bhubhaneshwar','Bhopal','Bikaner',
-        'Chennai','Chandigarh',
-        'Darjeeling','Dehra Dun','Delhi',
+    protected static array $city = [
+        'Agra',
+        'Ahmedabad',
+        'Ajmer',
+        'Alwar',
+        'Bengaluru',
+        'Bhubhaneshwar',
+        'Bhopal',
+        'Bikaner',
+        'Chennai',
+        'Chandigarh',
+        'Darjeeling',
+        'Dehra Dun',
+        'Delhi',
         'Faridabad',
-        'Gandhinagar','Guwahati','Gangtok','Gurgaon',
-        'Hyderabad','Hisar',
+        'Gandhinagar',
+        'Guwahati',
+        'Gangtok',
+        'Gurgaon',
+        'Hyderabad',
+        'Hisar',
         'Indore',
-        'Jaipur','Jodhpur','Jammu','Jamnagar','Jabalpur',
-        'Kolkata','Kanpur','Kota','Kochi',
-        'Ludhiana','Lucknow',
-        'Mumbai','Meerut','Mysore',
-        'Nagpur','Nashik','Noida','New Delhi',
-        'Pune','Patna','Panaji','Pilani','Pondicherry',
-        'Ratlam','Raipur','Ranchi','Rajkot',
-        'Surat','Simla','Srinagar',
-        'Thiruvananthapuram','Trichy',
+        'Jaipur',
+        'Jodhpur',
+        'Jammu',
+        'Jamnagar',
+        'Jabalpur',
+        'Kolkata',
+        'Kanpur',
+        'Kota',
+        'Kochi',
+        'Ludhiana',
+        'Lucknow',
+        'Mumbai',
+        'Meerut',
+        'Mysore',
+        'Nagpur',
+        'Nashik',
+        'Noida',
+        'New Delhi',
+        'Pune',
+        'Patna',
+        'Panaji',
+        'Pilani',
+        'Pondicherry',
+        'Ratlam',
+        'Raipur',
+        'Ranchi',
+        'Rajkot',
+        'Surat',
+        'Simla',
+        'Srinagar',
+        'Thiruvananthapuram',
+        'Trichy',
         'Udaipur',
-        'Vishakhapattanam','Vadodara',
+        'Vishakhapattanam',
+        'Vadodara',
         'Warangal',
-    );
+    ];
 
-    protected static $state = array(
-        
+    protected static array $state = [
         // States
-        'Andhra Pradesh', 'Arunachal Pradesh', 'Assam',
+        'Andhra Pradesh',
+        'Arunachal Pradesh',
+        'Assam',
         'Bihar',
         'Chhattisgarh',
-        'Goa', 'Gujarat',
-        'Haryana', 'Himachal Pradesh',
+        'Goa',
+        'Gujarat',
+        'Haryana',
+        'Himachal Pradesh',
         'Jammu and Kashmir',
         'Jharkhand',
-        'Karnataka', 'Kerala',
-        'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram',
+        'Karnataka',
+        'Kerala',
+        'Madhya Pradesh',
+        'Maharashtra',
+        'Manipur',
+        'Meghalaya',
+        'Mizoram',
         'Nagaland',
         'Odisha',
         'Punjab',
         'Rajasthan',
         'Sikkim',
-        'Tamil Nadu', 'Telangana', 'Tripura',
-        'Uttar Pradesh', 'Uttarakhand',
+        'Tamil Nadu',
+        'Telangana',
+        'Tripura',
+        'Uttar Pradesh',
+        'Uttarakhand',
         'West Bengal',
-        
+
         // Union Territories
         'Andaman and Nicobar Islands',
         'Chandigarh',
-        'Dadra and Nagar Haveli', 'Daman and Diu', 'Delhi',
+        'Dadra and Nagar Haveli',
+        'Daman and Diu',
+        'Delhi',
         'Lakshadweep',
-        'Puducherry'
-    );
+        'Puducherry',
+    ];
 
-    protected static $stateAbbr = array(
-       'AP', 'AR', 'AS', 'BR', 'CG', 'GA', 'GJ', 'HR', 'HP', 'JK', 'JH', 'KA', 'KL', 'MP', 'MH', 'MN', 'ML', 'MZ', 'NL', 'OD', 'PB', 'RJ', 'SK', 'TN', 'TS', 'TR', 'UP', 'UK', 'WB', 'AN', 'CH', 'DN', 'DD', 'DL', 'LD', 'PY'
-    );
+    protected static array $stateAbbr = [
+        'AP',
+        'AR',
+        'AS',
+        'BR',
+        'CG',
+        'GA',
+        'GJ',
+        'HR',
+        'HP',
+        'JK',
+        'JH',
+        'KA',
+        'KL',
+        'MP',
+        'MH',
+        'MN',
+        'ML',
+        'MZ',
+        'NL',
+        'OD',
+        'PB',
+        'RJ',
+        'SK',
+        'TN',
+        'TS',
+        'TR',
+        'UP',
+        'UK',
+        'WB',
+        'AN',
+        'CH',
+        'DN',
+        'DD',
+        'DL',
+        'LD',
+        'PY',
+    ];
 
-    protected static $country = array(
-        'Afghanistan', 'Albania', 'Algeria', 'American Samoa', 'Andorra', 'Angola', 'Anguilla', 'Antarctica (the territory South of 60 deg S)', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan',
-        'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Bouvet Island (Bouvetoya)', 'Brazil', 'British Indian Ocean Territory (Chagos Archipelago)', 'British Virgin Islands', 'Brunei Darussalam', 'Bulgaria', 'Burkina Faso', 'Burundi',
-        'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Cayman Islands', 'Central African Republic', 'Chad', 'Chile', 'China', 'Christmas Island', 'Cocos (Keeling) Islands', 'Colombia', 'Comoros', 'Congo', 'Congo', 'Cook Islands', 'Costa Rica', 'Cote d\'Ivoire', 'Croatia', 'Cuba', 'Cyprus', 'Czech Republic',
-        'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic',
-        'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Ethiopia',
-        'Faroe Islands', 'Falkland Islands (Malvinas)', 'Fiji', 'Finland', 'France', 'French Guiana', 'French Polynesia', 'French Southern Territories',
-        'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Gibraltar', 'Greece', 'Greenland', 'Grenada', 'Guadeloupe', 'Guam', 'Guatemala', 'Guernsey', 'Guinea', 'Guinea-Bissau', 'Guyana',
-        'Haiti', 'Heard Island and McDonald Islands', 'Holy See (Vatican City State)', 'Honduras', 'Hong Kong', 'Hungary',
-        'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Isle of Man', 'Israel', 'Italy',
-        'Jamaica', 'Japan', 'Jersey', 'Jordan',
-        'Kazakhstan', 'Kenya', 'Kiribati', 'Korea', 'Korea', 'Kuwait', 'Kyrgyz Republic',
-        'Lao People\'s Democratic Republic', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libyan Arab Jamahiriya', 'Liechtenstein', 'Lithuania', 'Luxembourg',
-        'Macao', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Martinique', 'Mauritania', 'Mauritius', 'Mayotte', 'Mexico', 'Micronesia', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat', 'Morocco', 'Mozambique', 'Myanmar',
-        'Namibia', 'Nauru', 'Nepal', 'Netherlands Antilles', 'Netherlands', 'New Caledonia', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Niue', 'Norfolk Island', 'Northern Mariana Islands', 'Norway',
+    protected static array $country = [
+        'Afghanistan',
+        'Albania',
+        'Algeria',
+        'American Samoa',
+        'Andorra',
+        'Angola',
+        'Anguilla',
+        'Antarctica (the territory South of 60 deg S)',
+        'Antigua and Barbuda',
+        'Argentina',
+        'Armenia',
+        'Aruba',
+        'Australia',
+        'Austria',
+        'Azerbaijan',
+        'Bahamas',
+        'Bahrain',
+        'Bangladesh',
+        'Barbados',
+        'Belarus',
+        'Belgium',
+        'Belize',
+        'Benin',
+        'Bermuda',
+        'Bhutan',
+        'Bolivia',
+        'Bosnia and Herzegovina',
+        'Botswana',
+        'Bouvet Island (Bouvetoya)',
+        'Brazil',
+        'British Indian Ocean Territory (Chagos Archipelago)',
+        'British Virgin Islands',
+        'Brunei Darussalam',
+        'Bulgaria',
+        'Burkina Faso',
+        'Burundi',
+        'Cambodia',
+        'Cameroon',
+        'Canada',
+        'Cape Verde',
+        'Cayman Islands',
+        'Central African Republic',
+        'Chad',
+        'Chile',
+        'China',
+        'Christmas Island',
+        'Cocos (Keeling) Islands',
+        'Colombia',
+        'Comoros',
+        'Congo',
+        'Congo',
+        'Cook Islands',
+        'Costa Rica',
+        'Cote d\'Ivoire',
+        'Croatia',
+        'Cuba',
+        'Cyprus',
+        'Czech Republic',
+        'Denmark',
+        'Djibouti',
+        'Dominica',
+        'Dominican Republic',
+        'Ecuador',
+        'Egypt',
+        'El Salvador',
+        'Equatorial Guinea',
+        'Eritrea',
+        'Estonia',
+        'Ethiopia',
+        'Faroe Islands',
+        'Falkland Islands (Malvinas)',
+        'Fiji',
+        'Finland',
+        'France',
+        'French Guiana',
+        'French Polynesia',
+        'French Southern Territories',
+        'Gabon',
+        'Gambia',
+        'Georgia',
+        'Germany',
+        'Ghana',
+        'Gibraltar',
+        'Greece',
+        'Greenland',
+        'Grenada',
+        'Guadeloupe',
+        'Guam',
+        'Guatemala',
+        'Guernsey',
+        'Guinea',
+        'Guinea-Bissau',
+        'Guyana',
+        'Haiti',
+        'Heard Island and McDonald Islands',
+        'Holy See (Vatican City State)',
+        'Honduras',
+        'Hong Kong',
+        'Hungary',
+        'Iceland',
+        'India',
+        'Indonesia',
+        'Iran',
+        'Iraq',
+        'Ireland',
+        'Isle of Man',
+        'Israel',
+        'Italy',
+        'Jamaica',
+        'Japan',
+        'Jersey',
+        'Jordan',
+        'Kazakhstan',
+        'Kenya',
+        'Kiribati',
+        'Korea',
+        'Korea',
+        'Kuwait',
+        'Kyrgyz Republic',
+        'Lao People\'s Democratic Republic',
+        'Latvia',
+        'Lebanon',
+        'Lesotho',
+        'Liberia',
+        'Libyan Arab Jamahiriya',
+        'Liechtenstein',
+        'Lithuania',
+        'Luxembourg',
+        'Macao',
+        'Macedonia',
+        'Madagascar',
+        'Malawi',
+        'Malaysia',
+        'Maldives',
+        'Mali',
+        'Malta',
+        'Marshall Islands',
+        'Martinique',
+        'Mauritania',
+        'Mauritius',
+        'Mayotte',
+        'Mexico',
+        'Micronesia',
+        'Moldova',
+        'Monaco',
+        'Mongolia',
+        'Montenegro',
+        'Montserrat',
+        'Morocco',
+        'Mozambique',
+        'Myanmar',
+        'Namibia',
+        'Nauru',
+        'Nepal',
+        'Netherlands Antilles',
+        'Netherlands',
+        'New Caledonia',
+        'New Zealand',
+        'Nicaragua',
+        'Niger',
+        'Nigeria',
+        'Niue',
+        'Norfolk Island',
+        'Northern Mariana Islands',
+        'Norway',
         'Oman',
-        'Pakistan', 'Palau', 'Palestinian Territories', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Pitcairn Islands', 'Poland', 'Portugal', 'Puerto Rico',
+        'Pakistan',
+        'Palau',
+        'Palestinian Territories',
+        'Panama',
+        'Papua New Guinea',
+        'Paraguay',
+        'Peru',
+        'Philippines',
+        'Pitcairn Islands',
+        'Poland',
+        'Portugal',
+        'Puerto Rico',
         'Qatar',
-        'Reunion', 'Romania', 'Russian Federation', 'Rwanda',
-        'Saint Barthelemy', 'Saint Helena', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Martin', 'Saint Pierre and Miquelon', 'Saint Vincent and the Grenadines', 'Samoa', 'San Marino', 'Sao Tome and Principe', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia (Slovak Republic)', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'South Georgia and the South Sandwich Islands', 'Spain', 'Sri Lanka', 'Sudan', 'Suriname', 'Svalbard & Jan Mayen Islands', 'Swaziland', 'Sweden', 'Switzerland', 'Syrian Arab Republic',
-        'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', 'Timor-Leste', 'Togo', 'Tokelau', 'Tonga', 'Trinidad and Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Turks and Caicos Islands', 'Tuvalu',
-        'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States of America', 'United States Minor Outlying Islands', 'United States Virgin Islands', 'Uruguay', 'Uzbekistan',
-        'Vanuatu', 'Venezuela', 'Vietnam',
-        'Wallis and Futuna', 'Western Sahara',
+        'Reunion',
+        'Romania',
+        'Russian Federation',
+        'Rwanda',
+        'Saint Barthelemy',
+        'Saint Helena',
+        'Saint Kitts and Nevis',
+        'Saint Lucia',
+        'Saint Martin',
+        'Saint Pierre and Miquelon',
+        'Saint Vincent and the Grenadines',
+        'Samoa',
+        'San Marino',
+        'Sao Tome and Principe',
+        'Saudi Arabia',
+        'Senegal',
+        'Serbia',
+        'Seychelles',
+        'Sierra Leone',
+        'Singapore',
+        'Slovakia (Slovak Republic)',
+        'Slovenia',
+        'Solomon Islands',
+        'Somalia',
+        'South Africa',
+        'South Georgia and the South Sandwich Islands',
+        'Spain',
+        'Sri Lanka',
+        'Sudan',
+        'Suriname',
+        'Svalbard & Jan Mayen Islands',
+        'Swaziland',
+        'Sweden',
+        'Switzerland',
+        'Syrian Arab Republic',
+        'Taiwan',
+        'Tajikistan',
+        'Tanzania',
+        'Thailand',
+        'Timor-Leste',
+        'Togo',
+        'Tokelau',
+        'Tonga',
+        'Trinidad and Tobago',
+        'Tunisia',
+        'Turkey',
+        'Turkmenistan',
+        'Turks and Caicos Islands',
+        'Tuvalu',
+        'Uganda',
+        'Ukraine',
+        'United Arab Emirates',
+        'United Kingdom',
+        'United States of America',
+        'United States Minor Outlying Islands',
+        'United States Virgin Islands',
+        'Uruguay',
+        'Uzbekistan',
+        'Vanuatu',
+        'Venezuela',
+        'Vietnam',
+        'Wallis and Futuna',
+        'Western Sahara',
         'Yemen',
-        'Zambia', 'Zimbabwe'
-    );
-    protected static $localityName = array(
-        'Aundh','Andheri',
-        'Borivali','Bandra',
-        'Chinchwad','Chandpole','Churchgate','Cyber City',
-        'Dadar','Deccan Gymkhana',
+        'Zambia',
+        'Zimbabwe',
+    ];
+    protected static array $localityName = [
+        'Aundh',
+        'Andheri',
+        'Borivali',
+        'Bandra',
+        'Chinchwad',
+        'Chandpole',
+        'Churchgate',
+        'Cyber City',
+        'Dadar',
+        'Deccan Gymkhana',
         'Goregaon',
-        'Hadapsar','Harmada','Hinjewadi',
-        'Kormangala','Kharadi',
-        'Marathahalli','Model Town','Mansarovar','Malad',
+        'Hadapsar',
+        'Harmada',
+        'Hinjewadi',
+        'Kormangala',
+        'Kharadi',
+        'Marathahalli',
+        'Model Town',
+        'Mansarovar',
+        'Malad',
         'Sodala',
-        'Virar','Vikhroli',
-        'Yerwada','Yeshwanthpura',
-    );
-    protected static $areaSuffix = array(
-        ' Nagar','Pur','Garh','Gunj',' Chowk',
-    );
-    protected static $postcode = array(
-        '1#####','2#####','3#####','4#####','5#####',
-    );
-    protected static $localityFormats = array(
+        'Virar',
+        'Vikhroli',
+        'Yerwada',
+        'Yeshwanthpura',
+    ];
+    protected static array $areaSuffix = [
+        ' Nagar',
+        'Pur',
+        'Garh',
+        'Gunj',
+        ' Chowk',
+    ];
+    protected static array $postcode = [
+        '1#####',
+        '2#####',
+        '3#####',
+        '4#####',
+        '5#####',
+    ];
+    protected static array $localityFormats = [
         '{{firstName}}{{areaSuffix}}',
-        '{{localityName}}'
-    );
-    protected static $addressFormats = array(
+        '{{localityName}}',
+    ];
+    protected static array $addressFormats = [
         '{{streetAddress}} {{city}} - {{postcode}}',
-    );
-    protected static $societySuffix = array(
-        'Society','Apartments','Heights','Villas',
-    );
-    protected static $societyNameFormat = array(
-        '{{firstName}} {{societySuffix}}'
-    );
-    protected static $streetAddressFormats = array(
-        
+    ];
+    protected static array $societySuffix = [
+        'Society',
+        'Apartments',
+        'Heights',
+        'Villas',
+    ];
+    protected static array $societyNameFormat = [
+        '{{firstName}} {{societySuffix}}',
+    ];
+    protected static array $streetAddressFormats = [
         '{{buildingNumber}}, {{locality}},',
         '{{buildingNumber}}, {{societyName}}, {{locality}}',
-    );
+    ];
+
     public function societySuffix()
     {
         return static::randomElement(static::$societySuffix);
     }
+
     /**
      * @example Shanti Apartments
      */
-    public function societyName()
+    public function societyName(): string
     {
         return $this->generator->parse(static::randomElement(static::$societyNameFormat));
     }
+
     /**
      * @example Mumbai
      */
-    public function city()
+    public function city(): string
     {
         return static::randomElement(static::$city);
     }
+
     /**
      * @example Vaishali Nagar
      */
-    public function locality()
+    public function locality(): string
     {
         return $this->generator->parse(static::randomElement(static::$localityFormats));
     }
-    /*
-     * @example Kharadi
-     */
-    public function localityName()
+
+    // @example Kharadi
+    public function localityName(): string
     {
         return $this->generator->parse(static::randomElement(static::$localityName));
     }
+
     /**
      * @example Nagar
      */
@@ -167,7 +500,7 @@ class Address extends \Faker\Provider\Address
     /**
      * @example 'Delhi'
      */
-    public static function state()
+    public static function state(): string
     {
         return static::randomElement(static::$state);
     }

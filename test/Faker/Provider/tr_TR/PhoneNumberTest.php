@@ -8,27 +8,23 @@ use PHPUnit\Framework\TestCase;
 
 final class PhoneNumberTest extends TestCase
 {
+    private Generator $faker;
 
-    /**
-     * @var Generator
-     */
-    private $faker;
-
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new PhoneNumber($faker));
         $this->faker = $faker;
     }
 
-    public function testPhoneNumber()
+    public function testPhoneNumber(): void
     {
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 100; ++$i) {
             $number = $this->faker->phoneNumber;
-            $baseNumber = preg_replace('/ *x.*$/', '', $number); // Remove possible extension
-            $digits = array_values(array_filter(str_split($baseNumber), 'ctype_digit'));
+            $baseNumber = \preg_replace('/ *x.*$/', '', $number); // Remove possible extension
+            $digits = \array_values(\array_filter(\str_split($baseNumber), 'ctype_digit'));
 
-            $this->assertGreaterThan(10, count($digits));
+            $this->assertGreaterThan(10, \count($digits));
         }
     }
 }

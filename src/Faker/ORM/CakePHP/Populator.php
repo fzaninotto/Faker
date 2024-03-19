@@ -4,32 +4,22 @@ namespace Faker\ORM\CakePHP;
 
 class Populator
 {
+    protected \Faker\Generator $generator;
+    protected array $entities = [];
+    protected array $quantities = [];
+    protected array $guessers = [];
 
-    protected $generator;
-    protected $entities = [];
-    protected $quantities = [];
-    protected $guessers = [];
-
-    /**
-     * @param \Faker\Generator $generator
-     */
     public function __construct(\Faker\Generator $generator)
     {
         $this->generator = $generator;
     }
 
-    /**
-     * @return \Faker\Generator
-     */
-    public function getGenerator()
+    public function getGenerator(): \Faker\Generator
     {
         return $this->generator;
     }
 
-    /**
-     * @return array
-     */
-    public function getGuessers()
+    public function getGuessers(): array
     {
         return $this->guessers;
     }
@@ -37,38 +27,39 @@ class Populator
     /**
      * @return $this
      */
-    public function removeGuesser($name)
+    public function removeGuesser($name): static
     {
         if ($this->guessers[$name]) {
             unset($this->guessers[$name]);
         }
+
         return $this;
     }
 
     /**
-     * @return $this
      * @throws \Exception
+     *
+     * @return $this
      */
-    public function addGuesser($class)
+    public function addGuesser($class): static
     {
-        if (!is_object($class)) {
+        if (!\is_object($class)) {
             $class = new $class($this->generator);
         }
 
-        if (!method_exists($class, 'guessFormat')) {
-            throw new \Exception('Missing required custom guesser method: ' . get_class($class) . '::guessFormat()');
+        if (!\method_exists($class, 'guessFormat')) {
+            throw new \RuntimeException('Missing required custom guesser method: '.$class::class.'::guessFormat()');
         }
 
-        $this->guessers[get_class($class)] = $class;
+        $this->guessers[$class::class] = $class;
+
         return $this;
     }
 
     /**
-     * @param array $customColumnFormatters
-     * @param array $customModifiers
      * @return $this
      */
-    public function addEntity($entity, $number, $customColumnFormatters = [], $customModifiers = [])
+    public function addEntity($entity, $number, array $customColumnFormatters = [], array $customModifiers = []): static
     {
         if (!$entity instanceof EntityPopulator) {
             $entity = new EntityPopulator($entity);
@@ -79,7 +70,7 @@ class Populator
             $entity->mergeColumnFormattersWith($customColumnFormatters);
         }
 
-        $entity->modifiers = $entity->guessModifiers($this);
+        $entity->modifiers = $entity->guessModifiers();
         if ($customModifiers) {
             $entity->mergeModifiersWith($customModifiers);
         }
@@ -87,19 +78,16 @@ class Populator
         $class = $entity->class;
         $this->entities[$class] = $entity;
         $this->quantities[$class] = $number;
+
         return $this;
     }
 
-    /**
-     * @param array $options
-     * @return array
-     */
-    public function execute($options = [])
+    public function execute(array $options = []): array
     {
         $insertedEntities = [];
 
         foreach ($this->quantities as $class => $number) {
-            for ($i = 0; $i < $number; $i++) {
+            for ($i = 0; $i < $number; ++$i) {
                 $insertedEntities[$class][] = $this->entities[$class]->execute($class, $insertedEntities, $options);
             }
         }

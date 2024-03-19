@@ -8,24 +8,20 @@ use PHPUnit\Framework\TestCase;
 
 final class PaymentTest extends TestCase
 {
+    private Generator $faker;
 
-    /**
-     * @var Generator
-     */
-    private $faker;
-
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Payment($faker));
         $this->faker = $faker;
     }
 
-    public function testVatIsValid()
+    public function testVatIsValid(): void
     {
         $vat = $this->faker->vat();
         $unspacedVat = $this->faker->vat(false);
-        $this->assertRegExp('/^(AT U\d{8})$/', $vat);
-        $this->assertRegExp('/^(ATU\d{8})$/', $unspacedVat);
+        $this->assertMatchesRegularExpression('/^(AT U\d{8})$/', $vat);
+        $this->assertMatchesRegularExpression('/^(ATU\d{8})$/', $unspacedVat);
     }
 }

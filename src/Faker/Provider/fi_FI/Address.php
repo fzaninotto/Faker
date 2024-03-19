@@ -4,65 +4,283 @@ namespace Faker\Provider\fi_FI;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $cityPrefix = array('Pohjois', 'Etelä', 'Itä', 'Länsi', 'Uusi', 'Uus');
-    protected static $citySuffix = array('kylä', 'niemi', 'järvi', 'joki', 'lampi', 'mäki', 'vesi', 'niemi', 'harju', 'lahti', 'harju', 'salmi', 'koski', 'pudas', 'saari');
-    protected static $buildingNumber = array('####', '###', '##', '#', '#');
-    protected static $streetSuffix = array(
-        'tie', 'kuja', 'polku', 'kierros', 'kulma', 'katu', 'kaarre', 'kaari', 'rinne', 'kaarto', 'haka', 'silta', 'rinne', 'töyry'
-    );
-    protected static $postcode = array('#####');
-    protected static $state = array(
-        'Ahvenanmaa', 'Etelä-Karjala', 'Etelä-Pohjanmaa', 'Etelä-Savo', 'Kainuu', 'Kanta-Häme', 'Keski-Pohjanmaa', 'Keski-Suomi', 'Kymenlaakso', 'Lappi', 'Pirkanmaa', 'Pohjanmaa', 'Pohjois-Karjala', 'Pohjois-Pohjanmaa', 'Pohjois-Savo', 'Päijät-Häme', 'Satakunta', 'Uusimaa', 'Varsinais-Suomi'
-    );
-    protected static $country = array(
-        'Afganistan', 'Alankomaat', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Antigua ja Barbuda', 'Argentiina', 'Armenia', 'Australia', 'Azerbaidẑan',
-        'Bahama', 'Bahrain', 'Bangladesh', 'Barbados', 'Belgia', 'Belize', 'Benin', 'Bhutan', 'Bolivia', 'Bosnia ja Hertsegovina', 'Botswana', 'Brasilia', 'Brunel', 'Bulgaria', 'Burkina Faso', 'Burundi',
-        'Chile', 'Costa Rica',
-        'Djibouti', 'Dominica', 'Dominikaaninen tasavalta',
-        'Ecuador', 'Egypti', 'El Salvador', 'Eritrea', 'Espanja', 'Etelä-Afrikka', 'Etelä-Korea', 'Etelä-Sudan', 'Etiopia', 'Fidẑi', 'Filippiinit',
-        'Gabon', 'Gambia', 'Georgia', 'Ghana', 'Grenada', 'Guatemala', 'Guinea-Bissau', 'Guinea', 'Guyana',
-        'Haiti', 'Honduras',
-        'Indonesia', 'Intia', 'Irak', 'Iran', 'Irlanti', 'Islanti', 'Israel', 'Italia', 'Itä-Timor', 'Itävalta',
-        'Jamaika', 'Japani', 'Jemen', 'Jordania',
-        'Kambodẑa', 'Kamerun', 'Kanada', 'Kap Verde', 'Kazakstan', 'Kenia', 'Keski-Afrikan tasavalta', 'Kiina', 'Kirgisia', 'Kiribati', 'Kolumbia', 'Komorit', 'Kongon demokraattinen tasavalta', 'Kongon tasavalta', 'Kosovo', 'Kreikka', 'Kroatia', 'Kuuba', 'Kuwait', 'Kypros',
-        'Laos', 'Latvia', 'Lesotho', 'Libanon', 'Liberai', 'Libya', 'Lichtenstein', 'Liettua', 'Luxemburg',
-        'Madagaskar', 'Makedonia', 'Malawi', 'Malediivit', 'Malesia', 'Mali', 'Malta', 'Marokko', 'Marshallinsaaret', 'Mauritania', 'Mauritius', 'Meksiko', 'Mikronesia', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Mosambik', 'Myanmar',
-        'Namibia', 'Nauru', 'Nepal', 'Nicaragua', 'Nigeria', 'Niger', 'Norja', 'Norsunluurannikko',
+    protected static array $cityPrefix = ['Pohjois', 'Etelä', 'Itä', 'Länsi', 'Uusi', 'Uus'];
+    protected static array $citySuffix = [
+        'kylä',
+        'niemi',
+        'järvi',
+        'joki',
+        'lampi',
+        'mäki',
+        'vesi',
+        'niemi',
+        'harju',
+        'lahti',
+        'harju',
+        'salmi',
+        'koski',
+        'pudas',
+        'saari',
+    ];
+    protected static array $buildingNumber = ['####', '###', '##', '#', '#'];
+    protected static array $streetSuffix = [
+        'tie',
+        'kuja',
+        'polku',
+        'kierros',
+        'kulma',
+        'katu',
+        'kaarre',
+        'kaari',
+        'rinne',
+        'kaarto',
+        'haka',
+        'silta',
+        'rinne',
+        'töyry',
+    ];
+    protected static array $postcode = ['#####'];
+    protected static array $state = [
+        'Ahvenanmaa',
+        'Etelä-Karjala',
+        'Etelä-Pohjanmaa',
+        'Etelä-Savo',
+        'Kainuu',
+        'Kanta-Häme',
+        'Keski-Pohjanmaa',
+        'Keski-Suomi',
+        'Kymenlaakso',
+        'Lappi',
+        'Pirkanmaa',
+        'Pohjanmaa',
+        'Pohjois-Karjala',
+        'Pohjois-Pohjanmaa',
+        'Pohjois-Savo',
+        'Päijät-Häme',
+        'Satakunta',
+        'Uusimaa',
+        'Varsinais-Suomi',
+    ];
+    protected static array $country = [
+        'Afganistan',
+        'Alankomaat',
+        'Albania',
+        'Algeria',
+        'Andorra',
+        'Angola',
+        'Antigua ja Barbuda',
+        'Argentiina',
+        'Armenia',
+        'Australia',
+        'Azerbaidẑan',
+        'Bahama',
+        'Bahrain',
+        'Bangladesh',
+        'Barbados',
+        'Belgia',
+        'Belize',
+        'Benin',
+        'Bhutan',
+        'Bolivia',
+        'Bosnia ja Hertsegovina',
+        'Botswana',
+        'Brasilia',
+        'Brunel',
+        'Bulgaria',
+        'Burkina Faso',
+        'Burundi',
+        'Chile',
+        'Costa Rica',
+        'Djibouti',
+        'Dominica',
+        'Dominikaaninen tasavalta',
+        'Ecuador',
+        'Egypti',
+        'El Salvador',
+        'Eritrea',
+        'Espanja',
+        'Etelä-Afrikka',
+        'Etelä-Korea',
+        'Etelä-Sudan',
+        'Etiopia',
+        'Fidẑi',
+        'Filippiinit',
+        'Gabon',
+        'Gambia',
+        'Georgia',
+        'Ghana',
+        'Grenada',
+        'Guatemala',
+        'Guinea-Bissau',
+        'Guinea',
+        'Guyana',
+        'Haiti',
+        'Honduras',
+        'Indonesia',
+        'Intia',
+        'Irak',
+        'Iran',
+        'Irlanti',
+        'Islanti',
+        'Israel',
+        'Italia',
+        'Itä-Timor',
+        'Itävalta',
+        'Jamaika',
+        'Japani',
+        'Jemen',
+        'Jordania',
+        'Kambodẑa',
+        'Kamerun',
+        'Kanada',
+        'Kap Verde',
+        'Kazakstan',
+        'Kenia',
+        'Keski-Afrikan tasavalta',
+        'Kiina',
+        'Kirgisia',
+        'Kiribati',
+        'Kolumbia',
+        'Komorit',
+        'Kongon demokraattinen tasavalta',
+        'Kongon tasavalta',
+        'Kosovo',
+        'Kreikka',
+        'Kroatia',
+        'Kuuba',
+        'Kuwait',
+        'Kypros',
+        'Laos',
+        'Latvia',
+        'Lesotho',
+        'Libanon',
+        'Liberai',
+        'Libya',
+        'Lichtenstein',
+        'Liettua',
+        'Luxemburg',
+        'Madagaskar',
+        'Makedonia',
+        'Malawi',
+        'Malediivit',
+        'Malesia',
+        'Mali',
+        'Malta',
+        'Marokko',
+        'Marshallinsaaret',
+        'Mauritania',
+        'Mauritius',
+        'Meksiko',
+        'Mikronesia',
+        'Moldova',
+        'Monaco',
+        'Mongolia',
+        'Montenegro',
+        'Mosambik',
+        'Myanmar',
+        'Namibia',
+        'Nauru',
+        'Nepal',
+        'Nicaragua',
+        'Nigeria',
+        'Niger',
+        'Norja',
+        'Norsunluurannikko',
         'Oman',
-        'Pakistan', 'Palau', 'Panama', 'Papua-Uusi-Guinea', 'Paraguay', 'Peru', 'Pohjois-Korea', 'Portugali', 'Puola', 'Päiväntasaajan Guinea',
+        'Pakistan',
+        'Palau',
+        'Panama',
+        'Papua-Uusi-Guinea',
+        'Paraguay',
+        'Peru',
+        'Pohjois-Korea',
+        'Portugali',
+        'Puola',
+        'Päiväntasaajan Guinea',
         'Qatar',
-        'Ranska', 'Romania', 'Ruanda', 'Ruotsi',
-        'Saint Kitts ja Nevis', 'Saint Lucia', 'Saint Vincent ja Grenadiinit', 'Saksa', 'Salomonsaaret', 'Sambia', 'Samoa', 'San Marino', 'São Tomé ja Príncipe', 'Saudi-Arabia', 'Senegal', 'Serbia', 'Seychellit', 'Sierra Leone', 'Singapore', 'Slovakia', 'Somalia', 'Sri Lanka', 'Sudan', 'Suomi', 'Suriname', 'Swazimaa', 'Sveitsi', 'Syyria',
-        'Tadẑikistan', 'Tansania', 'Tanska', 'Thaimaa', 'Togo', 'Tonga', 'Trinidad ja Tobago', 'Tšad', 'Tšekki', 'Tunisia', 'Turkki', 'Turkmenistan', 'Tuvalu',
-        'Uganda', 'Ukraina', 'Unkari', 'Uruguay', 'Uusi-Seelanti', 'Uzbekistan',
-        'Valko-Venäjä', 'Vanuatu', 'Vatikaanivaltio', 'Venzuela', 'Venäjä', 'Vietnam', 'Viro',
-        'Yhdistyneet Arabiemiirikunnat', 'Yhdistynyt kuningaskunta', 'Yhdysvallat',
-        'Zimbabwe'
-    );
-    protected static $cityFormats = array(
+        'Ranska',
+        'Romania',
+        'Ruanda',
+        'Ruotsi',
+        'Saint Kitts ja Nevis',
+        'Saint Lucia',
+        'Saint Vincent ja Grenadiinit',
+        'Saksa',
+        'Salomonsaaret',
+        'Sambia',
+        'Samoa',
+        'San Marino',
+        'São Tomé ja Príncipe',
+        'Saudi-Arabia',
+        'Senegal',
+        'Serbia',
+        'Seychellit',
+        'Sierra Leone',
+        'Singapore',
+        'Slovakia',
+        'Somalia',
+        'Sri Lanka',
+        'Sudan',
+        'Suomi',
+        'Suriname',
+        'Swazimaa',
+        'Sveitsi',
+        'Syyria',
+        'Tadẑikistan',
+        'Tansania',
+        'Tanska',
+        'Thaimaa',
+        'Togo',
+        'Tonga',
+        'Trinidad ja Tobago',
+        'Tšad',
+        'Tšekki',
+        'Tunisia',
+        'Turkki',
+        'Turkmenistan',
+        'Tuvalu',
+        'Uganda',
+        'Ukraina',
+        'Unkari',
+        'Uruguay',
+        'Uusi-Seelanti',
+        'Uzbekistan',
+        'Valko-Venäjä',
+        'Vanuatu',
+        'Vatikaanivaltio',
+        'Venzuela',
+        'Venäjä',
+        'Vietnam',
+        'Viro',
+        'Yhdistyneet Arabiemiirikunnat',
+        'Yhdistynyt kuningaskunta',
+        'Yhdysvallat',
+        'Zimbabwe',
+    ];
+    protected static array $cityFormats = [
         '{{cityPrefix}}-{{firstName}}{{citySuffix}}',
         '{{cityPrefix}}-{{firstName}}',
         '{{firstName}}{{citySuffix}}',
         '{{lastName}}{{citySuffix}}',
-    );
-    protected static $streetNameFormats = array(
+    ];
+    protected static array $streetNameFormats = [
         '{{firstName}}{{streetSuffix}}',
-        '{{lastName}}{{streetSuffix}}'
-    );
-    protected static $streetAddressFormats = array(
+        '{{lastName}}{{streetSuffix}}',
+    ];
+    protected static array $streetAddressFormats = [
         '{{streetName}} {{buildingNumber}}',
-        '{{streetName}} {{buildingNumber}} {{secondaryAddress}}'
-    );
-    protected static $addressFormats = array(
+        '{{streetName}} {{buildingNumber}} {{secondaryAddress}}',
+    ];
+    protected static array $addressFormats = [
         "{{streetAddress}}\n{{postcode}} {{city}}, {{state}}",
         "{{streetAddress}}\n{{postcode}} {{city}}",
-    );
-    protected static $secondaryAddressFormats = array('###');
+    ];
+    protected static array $secondaryAddressFormats = ['###'];
 
     /**
      * @example 'Pohjois'
      */
-    public static function cityPrefix()
+    public static function cityPrefix(): string
     {
         return static::randomElement(static::$cityPrefix);
     }
@@ -70,7 +288,7 @@ class Address extends \Faker\Provider\Address
     /**
      * @example '123'
      */
-    public static function secondaryAddress()
+    public static function secondaryAddress(): string
     {
         return static::numerify(static::randomElement(static::$secondaryAddressFormats));
     }
@@ -78,7 +296,7 @@ class Address extends \Faker\Provider\Address
     /**
      * @example 'Pohjois-Pohjanmaa'
      */
-    public static function state()
+    public static function state(): string
     {
         return static::randomElement(static::$state);
     }

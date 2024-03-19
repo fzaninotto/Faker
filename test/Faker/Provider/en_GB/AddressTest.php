@@ -7,30 +7,20 @@ use PHPUnit\Framework\TestCase;
 
 final class AddressTest extends TestCase
 {
+    private Generator $faker;
 
-    /**
-     * @var Generator
-     */
-    private $faker;
-
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Address($faker));
         $this->faker = $faker;
     }
 
-    /**
-     *
-     */
-    public function testPostcode()
+    public function testPostcode(): void
     {
-
         $postcode = $this->faker->postcode();
         $this->assertNotEmpty($postcode);
-        $this->assertInternalType('string', $postcode);
-        $this->assertRegExp('@^(GIR ?0AA|[A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]([0-9ABEHMNPRV-Y])?)|[0-9][A-HJKPS-UW]) ?[0-9][ABD-HJLNP-UW-Z]{2})$@i', $postcode);
-
+        $this->assertIsString($postcode);
+        $this->assertMatchesRegularExpression('@^(GIR ?0AA|[A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]([0-9ABEHMNPRV-Y])?)|[0-9][A-HJKPS-UW]) ?[0-9][ABD-HJLNP-UW-Z]{2})$@i', $postcode);
     }
-
 }

@@ -8,107 +8,106 @@ namespace Faker\Provider;
  */
 class Barcode extends Base
 {
-    private function ean($length = 13)
+    private function ean(int $length = 13): string
     {
-        $code = static::numerify(str_repeat('#', $length - 1));
+        $code = static::numerify(\str_repeat('#', $length - 1));
 
-        return $code . static::eanChecksum($code);
+        return $code.static::eanChecksum($code);
     }
 
     /**
-     * Utility function for computing EAN checksums
-     *
-     * @param string $input
-     *
-     * @return integer
+     * Utility function for computing EAN checksums.
      */
-    protected static function eanChecksum($input)
+    protected static function eanChecksum(string $input): int
     {
-        $sequence = (strlen($input) + 1) === 8 ? array(3, 1) : array(1, 3);
+        $sequence = (\strlen($input) + 1) === 8 ? [3, 1] : [1, 3];
         $sums = 0;
-        foreach (str_split($input) as $n => $digit) {
+        foreach (\str_split($input) as $n => $digit) {
             $sums += $digit * $sequence[$n % 2];
         }
+
         return (10 - $sums % 10) % 10;
     }
 
     /**
-     * ISBN-10 check digit
-     * @link http://en.wikipedia.org/wiki/International_Standard_Book_Number#ISBN-10_check_digits
+     * ISBN-10 check digit.
      *
-     * @param  string           $input ISBN without check-digit
+     * @see http://en.wikipedia.org/wiki/International_Standard_Book_Number#ISBN-10_check_digits
+     *
+     * @param string $input ISBN without check-digit
+     *
      * @throws \LengthException When wrong input length passed
      *
-     * @return integer Check digit
+     * @return int Check digit
      */
-    protected static function isbnChecksum($input)
+    protected static function isbnChecksum(string $input): int
     {
         // We're calculating check digit for ISBN-10
         // so, the length of the input should be 9
         $length = 9;
 
-        if (strlen($input) !== $length) {
-            throw new \LengthException(sprintf('Input length should be equal to %d', $length));
+        if (\strlen($input) !== $length) {
+            throw new \LengthException(\sprintf('Input length should be equal to %d', $length));
         }
 
-        $digits = str_split($input);
-        array_walk(
+        $digits = \str_split($input);
+        \array_walk(
             $digits,
-            function (&$digit, $position) {
-                $digit = (10 - $position) * $digit;
+            static function(&$digit, $position) {
+                $digit *= (10 - $position);
             }
         );
-        $result = (11 - array_sum($digits) % 11) % 11;
+        $result = (11 - \array_sum($digits) % 11) % 11;
 
         // 10 is replaced by X
-        return ($result < 10)?$result:'X';
+        return ($result < 10) ? $result : 'X';
     }
 
     /**
      * Get a random EAN13 barcode.
-     * @return string
+     *
      * @example '4006381333931'
      */
-    public function ean13()
+    public function ean13(): string
     {
         return $this->ean(13);
     }
 
     /**
      * Get a random EAN8 barcode.
-     * @return string
+     *
      * @example '73513537'
      */
-    public function ean8()
+    public function ean8(): string
     {
         return $this->ean(8);
     }
 
     /**
-     * Get a random ISBN-10 code
-     * @link http://en.wikipedia.org/wiki/International_Standard_Book_Number
+     * Get a random ISBN-10 code.
      *
-     * @return string
+     * @see http://en.wikipedia.org/wiki/International_Standard_Book_Number
+     *
      * @example '4881416324'
      */
-    public function isbn10()
+    public function isbn10(): string
     {
-        $code = static::numerify(str_repeat('#', 9));
+        $code = static::numerify(\str_repeat('#', 9));
 
-        return $code . static::isbnChecksum($code);
+        return $code.static::isbnChecksum($code);
     }
 
     /**
-     * Get a random ISBN-13 code
-     * @link http://en.wikipedia.org/wiki/International_Standard_Book_Number
+     * Get a random ISBN-13 code.
      *
-     * @return string
+     * @see http://en.wikipedia.org/wiki/International_Standard_Book_Number
+     *
      * @example '9790404436093'
      */
-    public function isbn13()
+    public function isbn13(): string
     {
-        $code = '97' . static::numberBetween(8, 9) . static::numerify(str_repeat('#', 9));
+        $code = '97'.static::numberBetween(8, 9).static::numerify(\str_repeat('#', 9));
 
-        return $code . static::eanChecksum($code);
+        return $code.static::eanChecksum($code);
     }
 }

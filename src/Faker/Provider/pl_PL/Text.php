@@ -5,7 +5,7 @@ namespace Faker\Provider\pl_PL;
 class Text extends \Faker\Provider\Text
 {
     /**
-     * The Project Gutenberg EBook of Sklepy cynamonowe, by Bruno Schulz
+     * The Project Gutenberg EBook of Sklepy cynamonowe, by Bruno Schulz.
      *
      * Copyright laws are changing all over the world. Be sure to check the
      * copyright laws for your country before downloading or redistributing
@@ -65,9 +65,8 @@ class Text extends \Faker\Provider\Text
      * KARAKONY WICHURA NOC WIELKIEGO SEZONU
      *
      * @see http://www.gutenberg.org/cache/epub/8119/pg8119.txt
-     * @var string
      */
-    protected static $baseText = <<<'EOT'
+    protected static string $baseText = <<<'EOT'
 SIERPIEŃ
 
 1 W lipcu ojciec mój wyjeżdżał do wód i zostawiał mnie z matką i
@@ -75,7 +74,7 @@ starszym bratem na pastwę białych od żaru i oszołamiających dni letnich.
 Wertowaliśmy, odurzeni światłem, w tej wielkiej księdze wakacji, której
 wszystkie karty pałały od blasku i miały na dnie słodki do omdlenia
 miąższ złotych gruszek. Adela wracała w świetliste poranki, jak Pomona z
-ognia dnia rozżagwionego, wysypując z koszyka barwną urodę słońca - 
+ognia dnia rozżagwionego, wysypując z koszyka barwną urodę słońca -
 lśniące, pełne wody pod przejrzystą skórką czereśnie, tajemnicze, czarne
 wiśnie, których woń przekraczała to, co ziszczało się w smaku; morele, w
 których miąższu złotym był rdzeń długich popołudni; a obok tej czystej
@@ -732,7 +731,7 @@ lekkomyślnych i płochych, którymi zasypać mogły cale miasto, jak
 kolorową fantastyczną śnieżycą. Nagle było im gorąco i otwierały okno,
 ażeby w niecierpliwości swej samotni, w głodzie obcych twarzy,
 przynajmniej bezimienną twarz zobaczyć, do okna przyciśniętą. Wachlowały
-rozpalone swe policzki przed wzbierającą firankami nocą zimową - 
+rozpalone swe policzki przed wzbierającą firankami nocą zimową -
 odsłaniały płonące dekolty, pełne nienawiści do siebie i rywalizacji,
 gotowe stanąć do walki o tego pierrota, którego by ciemny powiew nocy
 przywiał na okno. Ach! jak mało wymagały one od rzeczywistości. Miały
@@ -753,7 +752,7 @@ drzwi podniósł firanki u okna, panienki dawały się oglądać, kręcąc się 
 biodrach, polśniewając emalią oczu, lakiem skrzypiących pantofelków,
 sprzączkami podwiązek pod wzdętą od wiatru sukienką; szmatki jęły umykać
 po podłodze, jak szczury, ku uchylonym drzwiom ciemnego pokoju, a ojciec
-mój przyglądał się uważnie prychającym osóbkom, szepcąc półgłosem: - 
+mój przyglądał się uważnie prychającym osóbkom, szepcąc półgłosem: -
 Genus avium... jeśli się nie mylę, scansores albo pistacci... w
 najwyższym stopniu godne uwagi. Przypadkowe to spotkanie stało się
 początkiem całej serii seansów, podczas których ojciec mój zdołał rychło
@@ -824,7 +823,7 @@ Jest ono nieraz koniecznym gwałtem wobec opornych i skostniałych form
 bytu, które przestały być zajmujące. W interesie ciekawego i ważnego
 eksperymentu może ono nawet stanowić zasługę. Tu jest punkt wyjścia dla
 nowej apologii sadyzmu. Mój ojciec był niewyczerpany w gloryfikacji tego
-przedziwnego elementu, jakim była materia. - Nie ma materii martwej - 
+przedziwnego elementu, jakim była materia. - Nie ma materii martwej -
 nauczał - martwota jest jedynie pozorem, za którym ukrywają się nieznane
 formy życia. Skala tych form jest nieskończona, a odcienie i niuanse
 niewyczerpane. Demiurgos był w posiadaniu ważnych i ciekawych recept
@@ -1013,7 +1012,7 @@ zdarza się, że zasklepiają się w sobie, zarastają cegłą i, raz na zawsze
 stracone dla naszej pamięci, powoli tracą też swą egzystencję. Drzwi,
 prowadzące do nich z jakiegoś podestu tylnych schodów, mogą być tak
 dhigo przeoczane przez domowników, aż wrastają, wchodzą w ścianę, która
-zaciera ich ślad w fantastycznym rysunku pęknięć i rys. - Wszedłem raz - 
+zaciera ich ślad w fantastycznym rysunku pęknięć i rys. - Wszedłem raz -
 mówił ojciec mój - wczesnym rankiem na schyłku zimy, po wielu miesiącach
 nieobecności, do takiego na wpół zapomnianego traktu i zdumiony byłem
 wyglądem tych pokojów. Z wszystkich szpar w podłodze, z wszystkich
@@ -1026,7 +1025,7 @@ fontanny koronkowego listowia, bijące aż pod malowane niebo sufitu
 rozpylonym chlorofilem. W przyspieszonym procesie kwitnienia kiełkowały
 w tym listowiu ogromne, białe i różowe kwiaty, pączkowały w oczach,
 bujały od środka różowym miąższem i przelewały się przez brzegi, gubiąc
-płatki i rozpadając się w prędkim przekwitaniu. - Byłem szczęśliwy - 
+płatki i rozpadając się w prędkim przekwitaniu. - Byłem szczęśliwy -
 mówił mój ojciec - z tego niespodzianego rozkwitu, który napełnił
 powietrze migotliwym szelestem, łagodnym szumem, przesypującym się jak
 kolorowe confetti przez cienkie rózgi gałązek. Widziałem, jak z drgania
@@ -1043,7 +1042,7 @@ odcieni, jakie przybierała wielokształtna materia. Fascynowały go formy
 graniczne, wątpliwe i problematyczne, jak ektoplazma somnambulików,
 pseudomateria, emanacja kataleptyczna mózgu, która w pewnych wypadkach
 rozrastała się z ust uśpionego na cały stół, napełniała cały pokój, jako
-bujająca, rzadka tkanka, astralne ciasto, na pograniczu ciała i ducha. - 
+bujająca, rzadka tkanka, astralne ciasto, na pograniczu ciała i ducha. -
 Kto wie - mówił - ile jest cierpiących, okaleczonych, fragmentarycznych
 postaci życia, jak sztucznie sklecone, gwoździami na gwałt zbite życie
 szaf i stołów, ukrzyżowanego drzewa, cichych męczenników okrutnej
@@ -1140,7 +1139,7 @@ tego własnej swej osoby, zwiniętej w kłębek drżący - towarzyszyło mu
 poczucie osamotnienia i bezdomności. Ach, życie - młode i wątłe życie,
 wypuszczone z zaufanej ciemności, z przytulnego ciepła łona
 macierzystego w wielki i obcy, świetlany świat, jakże kurczy się ono i
-cofa, jak wzdraga się zaakceptować tę imprezę, którą mu proponują - 
+cofa, jak wzdraga się zaakceptować tę imprezę, którą mu proponują -
 pełne awersji i zniechęcenia! Lecz zwolna mały Nemrod (otrzymał był to
 dumne i wojownicze imię) zaczyna smakować w życiu. Wyłączne opanowanie
 obrazem macierzystej prajedni ustępuje urokowi wielości. Świat zaczyna
@@ -1165,7 +1164,7 @@ wyskoczyć. Sceneria jego młodego życia, kuchnia z wonnymi cebrami, ze
 Adeli, z jej hałaśliwym krzątaniem się - nie straszy go więcej. Przywykł
 uważać ją za swoją domenę, zadomowił się w niej i począł rozwijać w
 stosunku do niej niejasne poczucie przynależności, ojczyzny. Chyba że
-niespodzianie spadał nań kataklizm w postaci szorowania podłogi - 
+niespodzianie spadał nań kataklizm w postaci szorowania podłogi -
 obalenie praw natury, chlusty ciepłego ługu, podmywające wszystkie
 meble, i groźny szurgot szczotek Adeli. Ale niebezpieczeństwo mija,
 szczotka uspokojona i nieruchoma leży cicho w kącie, schnąca podłoga
@@ -1370,7 +1369,7 @@ istniały.
 SKLEPY CYNAMONOWE W okresie najkrótszych, sennych dni zimowych, ujętych
 z obu stron, od poranku i od wieczora, w futrzane krawędzie zmierzchów,
 gdy miasto rozgałęziało się coraz głębiej w labirynty zimowych nocy, z
-trudem przywoływane przez krótki świt do opamiętania, do powrotu - 
+trudem przywoływane przez krótki świt do opamiętania, do powrotu -
 ojciec mój był już zatracony, zaprzedany, zaprzysiężony tamtej sferze.
 Twarz jego i głowa zarastały wówczas bujnie i dziko siwym włosem,
 sterczącym nieregularnie wiechciami, szczecinami, długimi pędzlami,
@@ -1470,7 +1469,7 @@ spuszczonymi oczyma, w dyskretnym milczeniu, i pełni byli mądrości i
 wyrozumienia dla ich najtajniejszych życzeń. Ale nade wszystko była tam
 jedna księgarnia, w której raz oglądałem rzadkie i zakazane druki,
 publikacje tajnych klubów, zdejmując zasłonę z tajemnic dręczących i
-upojnych. Tak rzadko zdarzała się sposobność odwiedzania tych sklepów - 
+upojnych. Tak rzadko zdarzała się sposobność odwiedzania tych sklepów -
 i w dodatku z małą, lecz wystarczającą sumą pieniędzy w kieszeni. Nie
 można było pominąć tej okazji mimo ważności misji powierzonej naszej
 gorliwości. Trzeba się było zapuścić według mego obliczenia w boczną
@@ -1513,7 +1512,7 @@ stawiał zbyt ścisłych wymagań. Niektórzy przynosili sobie z domu
 poduszki i układali się na ławkach do powierzchownej drzemki. I tylko
 najpilniejsi rysowali pod samą świecą, w złotym kręgu jej blasku.
 Czekaliśmy zazwyczaj długo na przyjście profesora, nudząc się wśród
-sennych rozmów. Wreszcie otwierały się drzwi jego pokoju i wchodził - 
+sennych rozmów. Wreszcie otwierały się drzwi jego pokoju i wchodził -
 mały, z piękną brodą, pełen ezoterycznych uśmiechów, dyskretnych
 przemilczeń i aromatu tajemnicy. Szybko zaciskał za sobą drzwi gabinetu,
 przez które w momencie otworzenia tłoczyła się za jego głową ciżba
@@ -1521,7 +1520,7 @@ gipsowych cieni, fragmentów klasycznych, bolesnych Niobid, Danaid i
 Tantalidów, cały smutny i jałowy Olimp, więdnący od lat w tym muzeum
 gipsów. Zmierzch tego pokoju mętniał i za dnia i przelewał się sennie od
 gipsowych marzeń, pustych spojrzeń, blednących owali i zamyśleń
-odchodzących w nicość. Lubiliśmy nieraz podsłuchiwać pod drzwiami - 
+odchodzących w nicość. Lubiliśmy nieraz podsłuchiwać pod drzwiami -
 ciszy, pełnej westchnień i szeptów tego kruszejącego w pajęczynach
 rumowiska, tego rozkładającego się w nudzie i monotonii zmierzchu bogów.
 Profesor przechadzał się dostojnie, pełen namaszczenia, wzdłuż pustych
@@ -1976,7 +1975,7 @@ jaką przeszła do porządku dziennego nad stratą ojca. Nigdy go nie
 kochała - myślałem - a ponieważ ojciec nie był zakorzeniony w sercu
 żadnej kobiety, przeto nie mógł też wróść w żadną realność i unosił się
 wiecznie na peryferii życia, w półrealnych regionach, na krawędziach
-rzeczywistosci. Nawet na uczciwą obywatelską śmierć nie zasłużył sobie - 
+rzeczywistosci. Nawet na uczciwą obywatelską śmierć nie zasłużył sobie -
 myślałem - wszystko u niego musiało, być dziwaczne i wątpliwe.
 Postanowiłem w stosownej chwili zaskoczyć matkę otwartą rozmową. Owego
 dnia (był ciężki dzień zimowy i od rana już sypał się miękki puch
@@ -1998,7 +1997,7 @@ nie mogły się powstrzymać, robiły perskie oczko, dawały sobie znaki,
 mówiły niemym, kolorowym alfabetem, pełnym sekretnych znaczeń. Irytowało
 mnie to szydercze porozumienie, ta migotliwa zmowa poza mymi plecami. Z
 kolanami przyciśniętymi do sofy matki, badając dwoma palcami, jakby w
-zamyśleniu, delikatną materię jej szlafroka, rzekłem niby mimochodem: - 
+zamyśleniu, delikatną materię jej szlafroka, rzekłem niby mimochodem: -
 Chciałem cię już od dawna zapytać: prawda, że to jest on? - I chociaż
 nie wskazałem nawet spojrzeniem na kondora, matka odgadła od razu,
 zmieszała się bardzo i spuściła oczy. Dałem umyślnie upłynąć chwili,
@@ -2054,7 +2053,7 @@ dziwnego rytuału, w którym ze zgrozą poznałem imitację ceremoniału
 karakoniego. Od tego czasu wyrzekliśmy się ojca. Podobieństwo do
 karakona występowało z dniem każdym wyraźniej - mój ojciec zamieniał się
 w karakona. Zaczęliśmy się przyzwyczajać do tego. Widywaliśmy go coraz
-rzadziej, całymi tygodniami znikał gdzieś na swych karakonich drogach - 
+rzadziej, całymi tygodniami znikał gdzieś na swych karakonich drogach -
 przestaliśmy go odróżniać, zlał się w zupełności z tym czarnym
 niesamowitym plemieniem. Kto mógł powiedzieć, czy żył gdzieś jeszcze w
 jakiejś szparze podłogi, czy przebiegał nocami pokoje, zaplątany w afery

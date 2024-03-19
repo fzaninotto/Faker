@@ -4,26 +4,20 @@ namespace Faker;
 
 /**
  * Proxy for other generators, to return only valid values. Works with
- * Faker\Generator\Base->valid()
+ * Faker\Generator\Base->valid().
  */
 class ValidGenerator
 {
-    protected $generator;
+    protected Generator $generator;
+    /** @var callable|\Closure|null */
     protected $validator;
-    protected $maxRetries;
+    protected int $maxRetries;
 
-    /**
-     * @param Generator $generator
-     * @param callable|null $validator
-     * @param integer $maxRetries
-     */
-    public function __construct(Generator $generator, $validator = null, $maxRetries = 10000)
+    public function __construct(Generator $generator, mixed $validator = null, int $maxRetries = 10000)
     {
-        if (is_null($validator)) {
-            $validator = function () {
-                return true;
-            };
-        } elseif (!is_callable($validator)) {
+        if (null === $validator) {
+            $validator = static fn() => true;
+        } elseif (!\is_callable($validator)) {
             throw new \InvalidArgumentException('valid() only accepts callables as first argument');
         }
         $this->generator = $generator;
@@ -32,33 +26,26 @@ class ValidGenerator
     }
 
     /**
-     * Catch and proxy all generator calls but return only valid values
-     * @param string $attribute
-     *
-     * @return mixed
+     * Catch and proxy all generator calls but return only valid values.
      */
-    public function __get($attribute)
+    public function __get(string $attribute): mixed
     {
-        return $this->__call($attribute, array());
+        return $this->__call($attribute, []);
     }
 
     /**
-     * Catch and proxy all generator calls with arguments but return only valid values
-     * @param string $name
-     * @param array $arguments
-     *
-     * @return mixed
+     * Catch and proxy all generator calls with arguments but return only valid values.
      */
-    public function __call($name, $arguments)
+    public function __call(string $name, array $arguments): mixed
     {
         $i = 0;
         do {
-            $res = call_user_func_array(array($this->generator, $name), $arguments);
-            $i++;
+            $res = \call_user_func_array([$this->generator, $name], $arguments);
+            ++$i;
             if ($i > $this->maxRetries) {
-                throw new \OverflowException(sprintf('Maximum retries of %d reached without finding a valid value', $this->maxRetries));
+                throw new \OverflowException(\sprintf('Maximum retries of %d reached without finding a valid value', $this->maxRetries));
             }
-        } while (!call_user_func($this->validator, $res));
+        } while (!\call_user_func($this->validator, $res));
 
         return $res;
     }

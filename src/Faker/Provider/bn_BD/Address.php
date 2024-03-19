@@ -4,21 +4,35 @@ namespace Faker\Provider\bn_BD;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $cityPrefix = array('দক্ষিন', 'পূর্ব', 'পশ্চিম', 'উত্তর', 'নতুন', 'লেইক', 'পোর্ট');
-    protected static $citySuffix = array('টাউন', 'তলা', 'হাট', 'খানা');
+    protected static array $cityPrefix = ['দক্ষিন', 'পূর্ব', 'পশ্চিম', 'উত্তর', 'নতুন', 'লেইক', 'পোর্ট'];
+    protected static array $citySuffix = ['টাউন', 'তলা', 'হাট', 'খানা'];
 
-    protected static $streetNames = array(
-        'বরকত', 'হাজী', 'করিমউদ্দিন'
-    );
+    protected static array $streetNames = [
+        'বরকত',
+        'হাজী',
+        'করিমউদ্দিন',
+    ];
 
-    protected static $streetSuffix = array(
-        'তলী', 'গলি', 'চিপা', 'ব্রীজ', 'সড়ক', 'বাইপাস', 'ক্যাম্প',
-    );
-    protected static $postcode = array('#####', '#####-####');
-    protected static $state = array(
-        'খুলনা', 'বরিশাল', 'চিটাগং', 'ঢাকা', 'রাজশাহী', 'সিলেট', 'কুমিল্লা'
-    );
-    protected static $country = array(
+    protected static array $streetSuffix = [
+        'তলী',
+        'গলি',
+        'চিপা',
+        'ব্রীজ',
+        'সড়ক',
+        'বাইপাস',
+        'ক্যাম্প',
+    ];
+    protected static array $postcode = ['#####', '#####-####'];
+    protected static array $state = [
+        'খুলনা',
+        'বরিশাল',
+        'চিটাগং',
+        'ঢাকা',
+        'রাজশাহী',
+        'সিলেট',
+        'কুমিল্লা',
+    ];
+    protected static array $country = [
         'অস্ট্রিয়া',
         'অস্ট্রেলিয়া',
         'অ্যাঙ্গোলা',
@@ -272,33 +286,31 @@ class Address extends \Faker\Provider\Address
         'হণ্ডুরাস',
         'হাইতি',
         'হাঙ্গেরি',
-    );
-    protected static $cityFormats = array(
+    ];
+    protected static array $cityFormats = [
         '{{cityPrefix}}{{citySuffix}}',
-
-    );
-    protected static $streetNameFormats = array(
+    ];
+    protected static array $streetNameFormats = [
         '{{banglaStreetName}} {{streetSuffix}}',
-
-    );
-    protected static $streetAddressFormats = array(
+    ];
+    protected static array $streetAddressFormats = [
         '{{streetNumber}} {{streetName}}',
-    );
-    protected static $addressFormats = array(
-        "{{streetAddress}}, {{city}} {{state}}",
-    );
+    ];
+    protected static array $addressFormats = [
+        '{{streetAddress}}, {{city}} {{state}}',
+    ];
 
-    public static function cityPrefix()
+    public static function cityPrefix(): string
     {
         return static::randomElement(static::$cityPrefix);
     }
 
-    public static function state()
+    public static function state(): string
     {
         return static::randomElement(static::$state);
     }
 
-    public static function streetNumber()
+    public static function streetNumber(): array|string
     {
         return Utils::getBanglaNumber(static::numberBetween(1, 100));
     }

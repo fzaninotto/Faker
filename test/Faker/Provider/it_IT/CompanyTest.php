@@ -8,17 +8,18 @@ use PHPUnit\Framework\TestCase;
 
 final class CompanyTest extends TestCase
 {
-    protected function setUp()
+    protected Generator $faker;
+
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Company($faker));
         $this->faker = $faker;
     }
 
-    public function testIfTaxIdCanReturnData()
+    public function testIfTaxIdCanReturnData(): void
     {
         $vatId = $this->faker->vatId();
-        $this->assertRegExp('/^IT[0-9]{11}$/', $vatId);
+        $this->assertMatchesRegularExpression('/^IT[0-9]{11}$/', $vatId);
     }
-
 }

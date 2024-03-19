@@ -8,23 +8,24 @@ use PHPUnit\Framework\TestCase;
 
 final class PersonTest extends TestCase
 {
-    protected function setUp()
+    protected Generator $faker;
+
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
         $this->faker = $faker;
     }
 
-    public function testIfFirstNameMaleCanReturnData()
+    public function testIfFirstNameMaleCanReturnData(): void
     {
         $firstNameMale = $this->faker->firstNameMale();
         $this->assertNotEmpty($firstNameMale);
     }
 
-    public function testIfFirstNameFemaleCanReturnData()
+    public function testIfFirstNameFemaleCanReturnData(): void
     {
         $firstNameFemale = $this->faker->firstNameFemale();
         $this->assertNotEmpty($firstNameFemale);
     }
 }
-?>

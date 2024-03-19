@@ -4,20 +4,18 @@ namespace Faker\Provider\fr_CH;
 
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
-    protected static $formats = array(
+    protected static array $formats = [
         '+41 (0)## ### ## ##',
         '+41(0)#########',
         '+41 ## ### ## ##',
         '0#########',
         '0## ### ## ##',
-    );
+    ];
 
     /**
      * An array of Swiss mobile (cell) phone number formats.
-     *
-     * @var array
      */
-    protected static $mobileFormats = array(
+    protected static array $mobileFormats = [
         // Local
         '075 ### ## ##',
         '075#######',
@@ -29,14 +27,12 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '078#######',
         '079 ### ## ##',
         '079#######',
-    );
+    ];
 
     /**
      * Return a Swiss mobile phone number.
-     *
-     * @return string
      */
-    public static function mobileNumber()
+    public static function mobileNumber(): string
     {
         return static::numerify(static::randomElement(static::$mobileFormats));
     }

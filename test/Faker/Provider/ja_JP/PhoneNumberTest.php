@@ -8,15 +8,15 @@ use PHPUnit\Framework\TestCase;
 
 final class PhoneNumberTest extends TestCase
 {
-    public function testPhoneNumber()
+    public function testPhoneNumber(): void
     {
         $faker = new Generator();
         $faker->addProvider(new PhoneNumber($faker));
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 10; ++$i) {
             $phoneNumber = $faker->phoneNumber;
             $this->assertNotEmpty($phoneNumber);
-            $this->assertRegExp('/^0\d{1,4}-\d{1,4}-\d{3,4}$/', $phoneNumber);
+            $this->assertMatchesRegularExpression('/^0\d{1,4}-\d{1,4}-\d{3,4}$/', $phoneNumber);
         }
     }
 }

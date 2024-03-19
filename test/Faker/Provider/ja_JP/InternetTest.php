@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 final class InternetTest extends TestCase
 {
-    public function testUserName()
+    public function testUserName(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Internet($faker));
@@ -17,7 +17,7 @@ final class InternetTest extends TestCase
         $this->assertEquals('akira72', $faker->userName);
     }
 
-    public function testDomainName()
+    public function testDomainName(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Internet($faker));

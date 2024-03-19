@@ -8,20 +8,17 @@ use PHPUnit\Framework\TestCase;
 
 final class CompanyTest extends TestCase
 {
-    /**
-     * @var Generator
-     */
-    private $faker;
+    private Generator $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Company($faker));
         $this->faker = $faker;
     }
 
-    public function testVAT()
+    public function testVAT(): void
     {
-        $this->assertEquals(8, floor(log10($this->faker->VAT) + 1));
+        $this->assertEquals(8, \floor(\log10($this->faker->VAT) + 1));
     }
 }

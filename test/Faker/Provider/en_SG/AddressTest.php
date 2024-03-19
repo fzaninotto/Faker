@@ -3,25 +3,28 @@
 namespace Faker\Test\Provider\en_SG;
 
 use Faker\Factory;
+use Faker\Generator;
 use Faker\Provider\en_SG\Address;
 use PHPUnit\Framework\TestCase;
 
 final class AddressTest extends TestCase
 {
-    protected function setUp()
+    protected Generator $faker;
+
+    protected function setUp(): void
     {
         $faker = Factory::create('en_SG');
         $faker->addProvider(new Address($faker));
         $this->faker = $faker;
     }
 
-    public function testStreetNumber()
+    public function testStreetNumber(): void
     {
-        $this->assertRegExp('/^\d{2,3}$/', $this->faker->streetNumber());
+        $this->assertMatchesRegularExpression('/^\d{2,3}$/', $this->faker->streetNumber());
     }
 
-    public function testBlockNumber()
+    public function testBlockNumber(): void
     {
-        $this->assertRegExp('/^Blk\s*\d{2,3}[A-H]*$/i', $this->faker->blockNumber());
+        $this->assertMatchesRegularExpression('/^Blk\s*\d{2,3}[A-H]*$/i', $this->faker->blockNumber());
     }
 }

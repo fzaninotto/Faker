@@ -2,19 +2,15 @@
 
 namespace Faker\Test\Provider\de_AT;
 
-
 use Faker\Generator;
 use Faker\Provider\de_AT\Address;
 use PHPUnit\Framework\TestCase;
 
 final class AddressTest extends TestCase
 {
-    /**
-     * @var Generator
-     */
-    private $faker;
+    private Generator $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
 
@@ -26,10 +22,10 @@ final class AddressTest extends TestCase
     /**
      * @see https://en.wikipedia.org/wiki/List_of_postal_codes_in_Austria
      */
-    public function testPostcodeReturnsPostcodeThatMatchesAustrianFormat()
+    public function testPostcodeReturnsPostcodeThatMatchesAustrianFormat(): void
     {
         $postcode = $this->faker->postcode;
 
-        $this->assertRegExp('/^[1-9]\d{3}$/', $postcode);
+        $this->assertMatchesRegularExpression('/^[1-9]\d{3}$/', $postcode);
     }
 }

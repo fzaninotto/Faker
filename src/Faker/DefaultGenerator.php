@@ -8,30 +8,19 @@ namespace Faker;
  */
 class DefaultGenerator
 {
-    protected $default;
+    protected mixed $default;
 
-    public function __construct($default = null)
+    public function __construct(mixed $default = null)
     {
         $this->default = $default;
     }
 
-    /**
-     * @param string $attribute
-     *
-     * @return mixed
-     */
-    public function __get($attribute)
+    public function __get(string $attribute): mixed
     {
         return $this->default;
     }
 
-    /**
-     * @param string $method
-     * @param array $attributes
-     *
-     * @return mixed
-     */
-    public function __call($method, $attributes)
+    public function __call(string $method, array $attributes): mixed
     {
         return $this->default;
     }

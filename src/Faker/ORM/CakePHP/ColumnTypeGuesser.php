@@ -4,62 +4,60 @@ namespace Faker\ORM\CakePHP;
 
 class ColumnTypeGuesser
 {
-    protected $generator;
+    protected \Faker\Generator $generator;
 
     public function __construct(\Faker\Generator $generator)
     {
         $this->generator = $generator;
     }
 
-    /**
-     * @return \Closure|null
-     */
-    public function guessFormat($column, $table)
+    public function guessFormat($column, $table): ?\Closure
     {
         $generator = $this->generator;
         $schema = $table->schema();
 
         switch ($schema->columnType($column)) {
             case 'boolean':
-                return function () use ($generator) {
+                return static function() use ($generator) {
                     return $generator->boolean;
                 };
             case 'integer':
-                return function () {
-                    return mt_rand(0, intval('2147483647'));
+                return static function() {
+                    return \random_int(0, 2147483647);
                 };
             case 'biginteger':
-                return function () {
-                    return mt_rand(0, intval('9223372036854775807'));
+                return static function() {
+                    return \random_int(0, 9223372036854775807);
                 };
             case 'decimal':
             case 'float':
-                return function () use ($generator) {
+                return static function() use ($generator) {
                     return $generator->randomFloat();
                 };
             case 'uuid':
-                return function () use ($generator) {
+                return static function() use ($generator) {
                     return $generator->uuid();
                 };
             case 'string':
-                if (method_exists($schema, 'getColumn')) {
+                if (\method_exists($schema, 'getColumn')) {
                     $columnData = $schema->getColumn($column);
                 } else {
                     $columnData = $schema->column($column);
                 }
                 $length = $columnData['length'];
-                return function () use ($generator, $length) {
+
+                return static function() use ($generator, $length) {
                     return $generator->text($length);
                 };
             case 'text':
-                return function () use ($generator) {
+                return static function() use ($generator) {
                     return $generator->text();
                 };
             case 'date':
             case 'datetime':
             case 'timestamp':
             case 'time':
-                return function () use ($generator) {
+                return static function() use ($generator) {
                     return $generator->datetime();
                 };
 

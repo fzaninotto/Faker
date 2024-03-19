@@ -8,28 +8,28 @@ use PHPUnit\Framework\TestCase;
 
 final class CompanyTest extends TestCase
 {
-    private $faker;
+    private Generator $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Company($faker));
         $this->faker = $faker;
     }
 
-    public function testGenerateValidVatNumber()
+    public function testGenerateValidVatNumber(): void
     {
         $vatNo = $this->faker->vat();
 
-        $this->assertEquals(14, strlen($vatNo));
-        $this->assertRegExp('/^NL[0-9]{9}B[0-9]{2}$/', $vatNo);
+        $this->assertEquals(14, \strlen($vatNo));
+        $this->assertMatchesRegularExpression('/^NL[0-9]{9}B[0-9]{2}$/', $vatNo);
     }
 
-    public function testGenerateValidBtwNumberAlias()
+    public function testGenerateValidBtwNumberAlias(): void
     {
         $btwNo = $this->faker->btw();
 
-        $this->assertEquals(14, strlen($btwNo));
-        $this->assertRegExp('/^NL[0-9]{9}B[0-9]{2}$/', $btwNo);
+        $this->assertEquals(14, \strlen($btwNo));
+        $this->assertMatchesRegularExpression('/^NL[0-9]{9}B[0-9]{2}$/', $btwNo);
     }
 }

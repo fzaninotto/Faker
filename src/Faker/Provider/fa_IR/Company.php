@@ -4,7 +4,7 @@ namespace Faker\Provider\fa_IR;
 
 class Company extends \Faker\Provider\Company
 {
-    protected static $formats = array(
+    protected static array $formats = [
         '{{companyPrefix}} {{companyField}} {{firstName}}',
         '{{companyPrefix}} {{companyField}} {{firstName}}',
         '{{companyPrefix}} {{companyField}} {{firstName}}',
@@ -13,44 +13,57 @@ class Company extends \Faker\Provider\Company
         '{{companyField}} {{firstName}}',
         '{{companyField}} {{firstName}}',
         '{{companyField}} {{lastName}}',
-    );
+    ];
 
-    protected static $companyPrefix = array(
-        'شرکت', 'موسسه', 'سازمان', 'بنیاد'
-    );
+    protected static array $companyPrefix = [
+        'شرکت',
+        'موسسه',
+        'سازمان',
+        'بنیاد',
+    ];
 
-    protected static $companyField = array(
-        'فناوری اطلاعات', 'راه و ساختمان', 'توسعه معادن', 'استخراج و اکتشاف',
-        'سرمایه گذاری', 'نساجی', 'کاریابی', 'تجهیزات اداری', 'تولیدی', 'فولاد'
-    );
+    protected static array $companyField = [
+        'فناوری اطلاعات',
+        'راه و ساختمان',
+        'توسعه معادن',
+        'استخراج و اکتشاف',
+        'سرمایه گذاری',
+        'نساجی',
+        'کاریابی',
+        'تجهیزات اداری',
+        'تولیدی',
+        'فولاد',
+    ];
 
-    protected static $contract = array(
-        'رسمی', 'پیمانی', 'تمام وقت', 'پاره وقت', 'پروژه ای', 'ساعتی',
-    );
+    protected static array $contract = [
+        'رسمی',
+        'پیمانی',
+        'تمام وقت',
+        'پاره وقت',
+        'پروژه ای',
+        'ساعتی',
+    ];
 
     /**
      * @example 'شرکت'
-     * @return string
      */
-    public static function companyPrefix()
+    public static function companyPrefix(): string
     {
         return static::randomElement(static::$companyPrefix);
     }
 
     /**
      * @example 'سرمایه گذاری'
-     * @return string
      */
-    public static function companyField()
+    public static function companyField(): string
     {
         return static::randomElement(static::$companyField);
     }
 
     /**
-    * @example 'تمام وقت'
-    * @return string
-    */
-    public function contract()
+     * @example 'تمام وقت'
+     */
+    public function contract(): string
     {
         return static::randomElement(static::$contract);
     }

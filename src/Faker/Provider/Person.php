@@ -4,54 +4,54 @@ namespace Faker\Provider;
 
 class Person extends Base
 {
-    const GENDER_MALE = 'male';
-    const GENDER_FEMALE = 'female';
+    public const GENDER_MALE = 'male';
+    public const GENDER_FEMALE = 'female';
 
-    protected static $titleFormat = array(
-      '{{titleMale}}',
-      '{{titleFemale}}',
-    );
+    protected static array $titleFormat = [
+        '{{titleMale}}',
+        '{{titleFemale}}',
+    ];
 
-    protected static $firstNameFormat = array(
-      '{{firstNameMale}}',
-      '{{firstNameFemale}}',
-    );
+    protected static array $firstNameFormat = [
+        '{{firstNameMale}}',
+        '{{firstNameFemale}}',
+    ];
 
-    protected static $maleNameFormats = array(
+    protected static array $maleNameFormats = [
         '{{firstNameMale}} {{lastName}}',
-    );
+    ];
 
-    protected static $femaleNameFormats = array(
+    protected static array $femaleNameFormats = [
         '{{firstNameFemale}} {{lastName}}',
-    );
+    ];
 
-    protected static $firstNameMale = array(
+    protected static array $firstNameMale = [
         'John',
-    );
+    ];
 
-    protected static $firstNameFemale = array(
+    protected static array $firstNameFemale = [
         'Jane',
-    );
+    ];
 
-    protected static $lastName = array('Doe');
+    protected static array $lastName = ['Doe'];
 
-    protected static $titleMale = array('Mr.', 'Dr.', 'Prof.');
+    protected static array $titleMale = ['Mr.', 'Dr.', 'Prof.'];
 
-    protected static $titleFemale = array('Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.');
+    protected static array $titleFemale = ['Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.'];
 
     /**
      * @param string|null $gender 'male', 'female' or null for any
-     * @return string
+     *
      * @example 'John Doe'
      */
-    public function name($gender = null)
+    public function name(?string $gender = null): string
     {
         if ($gender === static::GENDER_MALE) {
             $format = static::randomElement(static::$maleNameFormats);
         } elseif ($gender === static::GENDER_FEMALE) {
             $format = static::randomElement(static::$femaleNameFormats);
         } else {
-            $format = static::randomElement(array_merge(static::$maleNameFormats, static::$femaleNameFormats));
+            $format = static::randomElement(\array_merge(static::$maleNameFormats, static::$femaleNameFormats));
         }
 
         return $this->generator->parse($format);
@@ -59,49 +59,50 @@ class Person extends Base
 
     /**
      * @param string|null $gender 'male', 'female' or null for any
-     * @return string
+     *
      * @example 'John'
      */
-    public function firstName($gender = null)
+    public function firstName(?string $gender = null): string
     {
         if ($gender === static::GENDER_MALE) {
             return static::firstNameMale();
-        } elseif ($gender === static::GENDER_FEMALE) {
+        }
+        if ($gender === static::GENDER_FEMALE) {
             return static::firstNameFemale();
         }
 
         return $this->generator->parse(static::randomElement(static::$firstNameFormat));
     }
 
-    public static function firstNameMale()
+    public static function firstNameMale(): string
     {
         return static::randomElement(static::$firstNameMale);
     }
 
-    public static function firstNameFemale()
+    public static function firstNameFemale(): string
     {
         return static::randomElement(static::$firstNameFemale);
     }
 
     /**
      * @example 'Doe'
-     * @return string
      */
-    public function lastName()
+    public function lastName(): string
     {
         return static::randomElement(static::$lastName);
     }
 
     /**
-     * @example 'Mrs.'
      * @param string|null $gender 'male', 'female' or null for any
-     * @return string
+     *
+     * @example 'Mrs.'
      */
-    public function title($gender = null)
+    public function title(?string $gender = null): string
     {
         if ($gender === static::GENDER_MALE) {
             return static::titleMale();
-        } elseif ($gender === static::GENDER_FEMALE) {
+        }
+        if ($gender === static::GENDER_FEMALE) {
             return static::titleFemale();
         }
 
@@ -111,7 +112,7 @@ class Person extends Base
     /**
      * @example 'Mr.'
      */
-    public static function titleMale()
+    public static function titleMale(): string
     {
         return static::randomElement(static::$titleMale);
     }
@@ -119,7 +120,7 @@ class Person extends Base
     /**
      * @example 'Mrs.'
      */
-    public static function titleFemale()
+    public static function titleFemale(): string
     {
         return static::randomElement(static::$titleFemale);
     }

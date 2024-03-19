@@ -4,12 +4,12 @@ namespace Faker\Provider\zh_TW;
 
 class Internet extends \Faker\Provider\Internet
 {
-    public function userName()
+    public function userName(): string
     {
         return \Faker\Factory::create('en_US')->userName();
     }
 
-    public function domainWord()
+    public function domainWord(): string
     {
         return \Faker\Factory::create('en_US')->domainWord();
     }

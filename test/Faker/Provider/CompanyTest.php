@@ -9,12 +9,9 @@ use PHPUnit\Framework\TestCase;
 
 final class CompanyTest extends TestCase
 {
-    /**
-     * @var Generator
-     */
-    private $faker;
+    private Generator $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Company($faker));
@@ -22,10 +19,10 @@ final class CompanyTest extends TestCase
         $this->faker = $faker;
     }
 
-    public function testJobTitle()
+    public function testJobTitle(): void
     {
         $jobTitle = $this->faker->jobTitle();
         $pattern = '/^[A-Za-z]+$/';
-        $this->assertRegExp($pattern, $jobTitle);
+        $this->assertMatchesRegularExpression($pattern, $jobTitle);
     }
 }

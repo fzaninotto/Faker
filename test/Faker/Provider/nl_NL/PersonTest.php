@@ -8,26 +8,25 @@ use PHPUnit\Framework\TestCase;
 
 final class PersonTest extends TestCase
 {
-    private $faker;
+    private Generator $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
         $this->faker = $faker;
     }
 
-    public function testGenerateValidIdNumber()
+    public function testGenerateValidIdNumber(): void
     {
         $idNumber = $this->faker->idNumber();
-        $this->assertEquals(9, strlen($idNumber));
-
+        $this->assertEquals(9, \strlen($idNumber));
 
         $sum = -1 * $idNumber % 10;
-        for ($multiplier = 2; $idNumber > 0; $multiplier++) {
+        for ($multiplier = 2; $idNumber > 0; ++$multiplier) {
             $val = ($idNumber /= 10) % 10;
             $sum += $multiplier * $val;
         }
-        $this->assertTrue($sum != 0 && $sum % 11 == 0);
+        $this->assertTrue(0 !== $sum && 0 === $sum % 11);
     }
 }

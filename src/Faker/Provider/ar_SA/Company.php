@@ -6,33 +6,42 @@ use Faker\Calculator\Luhn;
 
 class Company extends \Faker\Provider\Company
 {
-    protected static $formats = array(
+    protected static array $formats = [
         '{{lastName}} {{companySuffix}}',
         '{{companyPrefix}} {{lastName}} {{companySuffix}}',
         '{{companyPrefix}} {{lastName}}',
-    );
+    ];
 
-    protected static $bsWords = array(
-        array()
-    );
+    protected static array $bsWords = [
+        [],
+    ];
 
-    protected static $catchPhraseWords = array(
-        array('الخدمات','الحلول','الانظمة'),
-        array(
-            'الذهبية','الذكية','المتطورة','المتقدمة', 'الدولية', 'المتخصصه', 'السريعة',
-            'المثلى', 'الابداعية', 'المتكاملة', 'المتغيرة', 'المثالية'
-            ),
-    );
+    protected static array $catchPhraseWords = [
+        ['الخدمات', 'الحلول', 'الانظمة'],
+        [
+            'الذهبية',
+            'الذكية',
+            'المتطورة',
+            'المتقدمة',
+            'الدولية',
+            'المتخصصه',
+            'السريعة',
+            'المثلى',
+            'الابداعية',
+            'المتكاملة',
+            'المتغيرة',
+            'المثالية',
+        ],
+    ];
 
-    protected static $companyPrefix = array('شركة', 'مؤسسة', 'مجموعة', 'مكتب', 'أكاديمية', 'معرض');
+    protected static array $companyPrefix = ['شركة', 'مؤسسة', 'مجموعة', 'مكتب', 'أكاديمية', 'معرض'];
 
-    protected static $companySuffix = array('وأولاده', 'للمساهمة المحدودة', ' ذ.م.م', 'مساهمة عامة', 'وشركائه');
+    protected static array $companySuffix = ['وأولاده', 'للمساهمة المحدودة', ' ذ.م.م', 'مساهمة عامة', 'وشركائه'];
 
     /**
      * @example 'مؤسسة'
-     * @return string
      */
-    public function companyPrefix()
+    public function companyPrefix(): string
     {
         return static::randomElement(self::$companyPrefix);
     }
@@ -40,35 +49,36 @@ class Company extends \Faker\Provider\Company
     /**
      * @example 'الحلول المتقدمة'
      */
-    public function catchPhrase()
+    public function catchPhrase(): string
     {
-        $result = array();
+        $result = [];
         foreach (static::$catchPhraseWords as &$word) {
             $result[] = static::randomElement($word);
         }
 
-        return join(' ', $result);
+        return \implode(' ', $result);
     }
 
     /**
      * @example 'integrate extensible convergence'
      */
-    public function bs()
+    public function bs(): string
     {
-        $result = array();
+        $result = [];
         foreach (static::$bsWords as &$word) {
             $result[] = static::randomElement($word);
         }
 
-        return join(' ', $result);
+        return \implode(' ', $result);
     }
 
     /**
-     * example 7001010101
+     * example 7001010101.
      **/
-    public static function companyIdNumber()
+    public static function companyIdNumber(): string
     {
-        $partialValue = static::numerify(700 . str_repeat('#', 6));
+        $partialValue = static::numerify(700 .\str_repeat('#', 6));
+
         return Luhn::generateLuhnNumber($partialValue);
     }
 }

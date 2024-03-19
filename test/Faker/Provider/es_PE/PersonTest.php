@@ -8,12 +8,9 @@ use PHPUnit\Framework\TestCase;
 
 final class PersonTest extends TestCase
 {
-    /**
-     * @var Generator
-     */
-    private $faker;
+    private Generator $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->seed(1);
@@ -21,9 +18,9 @@ final class PersonTest extends TestCase
         $this->faker = $faker;
     }
 
-    public function testDNI()
+    public function testDNI(): void
     {
         $dni = $this->faker->dni;
-        $this->assertRegExp('/\A[0-9]{8}\Z/', $dni);
+        $this->assertMatchesRegularExpression('/\A[0-9]{8}\Z/', $dni);
     }
 }

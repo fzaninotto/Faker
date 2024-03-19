@@ -2,77 +2,48 @@
 
 namespace Faker\ORM\Doctrine;
 
-use Doctrine\Common\Persistence\Mapping\ClassMetadata;
+use Doctrine\Persistence\Mapping\ClassMetadata;
+use Faker\Generator;
 
 class ColumnTypeGuesser
 {
-    protected $generator;
-
-    /**
-     * @param \Faker\Generator $generator
-     */
-    public function __construct(\Faker\Generator $generator)
+    public function __construct(protected Generator $generator)
     {
-        $this->generator = $generator;
     }
 
-    /**
-     * @param ClassMetadata $class
-     * @return \Closure|null
-     */
-    public function guessFormat($fieldName, ClassMetadata $class)
+    public function guessFormat(string $fieldName, ClassMetadata $class): ?callable
     {
         $generator = $this->generator;
         $type = $class->getTypeOfField($fieldName);
         switch ($type) {
             case 'boolean':
-                return function () use ($generator) {
-                    return $generator->boolean;
-                };
+                return static fn() => $generator->boolean;
             case 'decimal':
-                $size = isset($class->fieldMappings[$fieldName]['precision']) ? $class->fieldMappings[$fieldName]['precision'] : 2;
+                $size = $class->fieldMappings[$fieldName]['precision'] ?? 2;
 
-                return function () use ($generator, $size) {
-                    return $generator->randomNumber($size + 2) / 100;
-                };
+                return static fn() => $generator->randomNumber($size + 2) / 100;
             case 'smallint':
-                return function () {
-                    return mt_rand(0, 65535);
-                };
+                return static fn() => \random_int(0, 65535);
             case 'integer':
-                return function () {
-                    return mt_rand(0, intval('2147483647'));
-                };
+                return static fn() => \random_int(0, 2147483647);
             case 'bigint':
-                return function () {
-                    return mt_rand(0, intval('18446744073709551615'));
-                };
+                return static fn() => \random_int(0, 18446744073709551615);
             case 'float':
-                return function () {
-                    return mt_rand(0, intval('4294967295'))/mt_rand(1, intval('4294967295'));
-                };
+                return static fn() => \random_int(0, 4294967295 / \random_int(1, 4294967295));
             case 'string':
-                $size = isset($class->fieldMappings[$fieldName]['length']) ? $class->fieldMappings[$fieldName]['length'] : 255;
+                $size = $class->fieldMappings[$fieldName]['length'] ?? 255;
 
-                return function () use ($generator, $size) {
-                    return $generator->text($size);
-                };
+                return static fn() => $generator->text($size);
             case 'text':
-                return function () use ($generator) {
-                    return $generator->text;
-                };
+                return static fn() => $generator->text;
             case 'datetime':
             case 'date':
             case 'time':
-                return function () use ($generator) {
-                    return $generator->datetime;
-                };
+                return static fn() => $generator->datetime;
             case 'datetime_immutable':
             case 'date_immutable':
             case 'time_immutable':
-                return function () use ($generator) {
-                    return \DateTimeImmutable::createFromMutable($generator->datetime);
-                };
+                return static fn() => \DateTimeImmutable::createFromMutable($generator->datetime);
             default:
                 // no smart way to guess what the user expects here
                 return null;

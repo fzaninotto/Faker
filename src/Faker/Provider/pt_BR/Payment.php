@@ -4,77 +4,89 @@ namespace Faker\Provider\pt_BR;
 
 class Payment extends \Faker\Provider\Payment
 {
-    protected static $cardVendors = array(
-        'Visa', 'Visa', 'Visa', 'Visa', 'Visa',
-        'MasterCard', 'MasterCard', 'MasterCard', 'MasterCard', 'MasterCard',
-        'American Express', 'Discover Card', 'Diners', 'Elo', 'Hipercard'
-    );
+    protected static array $cardVendors = [
+        'Visa',
+        'Visa',
+        'Visa',
+        'Visa',
+        'Visa',
+        'MasterCard',
+        'MasterCard',
+        'MasterCard',
+        'MasterCard',
+        'MasterCard',
+        'American Express',
+        'Discover Card',
+        'Diners',
+        'Elo',
+        'Hipercard',
+    ];
 
     // see https://gist.github.com/erikhenrique/5931368 / http://pt.stackoverflow.com/q/3715/26461
-    protected static $cardParams = array(
-        'Visa' => array(
-            "4##############"
-        ),
-        'MasterCard' => array(
-            "5##############"
-        ),
-        'American Express' => array(
-            "34############",
-            "37############"
-        ),
-        'Discover Card' => array(
-            "6011###########",
-            "622############",
-            "64#############",
-            "65#############"
-        ),
-        'Diners' => array(
-            "301############",
-            "301##########",
-            "305############",
-            "305##########",
-            "36#############",
-            "36###########",
-            "38#############",
-            "38###########",
-        ),
-        'Elo' => array(
-            "636368#########",
-            "438935#########",
-            "504175#########",
-            "451416#########",
-            "636297#########",
-            "5067###########",
-            "4576###########",
-            "4011###########",
-        ),
-        'Hipercard' => array(
-            "38#############",
-            "60#############",
-        ),
-        "Aura" => array(
-            "50#############"
-        )
-    );
+    protected static array $cardParams = [
+        'Visa' => [
+            '4##############',
+        ],
+        'MasterCard' => [
+            '5##############',
+        ],
+        'American Express' => [
+            '34############',
+            '37############',
+        ],
+        'Discover Card' => [
+            '6011###########',
+            '622############',
+            '64#############',
+            '65#############',
+        ],
+        'Diners' => [
+            '301############',
+            '301##########',
+            '305############',
+            '305##########',
+            '36#############',
+            '36###########',
+            '38#############',
+            '38###########',
+        ],
+        'Elo' => [
+            '636368#########',
+            '438935#########',
+            '504175#########',
+            '451416#########',
+            '636297#########',
+            '5067###########',
+            '4576###########',
+            '4011###########',
+        ],
+        'Hipercard' => [
+            '38#############',
+            '60#############',
+        ],
+        'Aura' => [
+            '50#############',
+        ],
+    ];
 
     /**
-     * International Bank Account Number (IBAN)
-     * @link http://en.wikipedia.org/wiki/International_Bank_Account_Number
-     * @param  string  $prefix      for generating bank account number of a specific bank
-     * @param  string  $countryCode ISO 3166-1 alpha-2 country code
-     * @param  integer $length      total length without country code and 2 check digits
-     * @return string
+     * International Bank Account Number (IBAN).
+     *
+     * @see http://en.wikipedia.org/wiki/International_Bank_Account_Number
+     *
+     * @param string   $prefix      for generating bank account number of a specific bank
+     * @param string   $countryCode ISO 3166-1 alpha-2 country code
+     * @param int|null $length      total length without country code and 2 check digits
      */
-    public static function bankAccountNumber($prefix = '', $countryCode = 'BR', $length = null)
+    public static function bankAccountNumber(string $prefix = '', string $countryCode = 'BR', ?int $length = null): string
     {
         return static::iban($countryCode, $prefix, $length);
     }
 
-
     /**
      * @see list of Brazilians banks (2018-02-15), source: https://pt.wikipedia.org/wiki/Lista_de_bancos_do_Brasil
      */
-    protected static $banks = array(
+    protected static array $banks = [
         'BADESUL Desenvolvimento S.A. – Agência de Fomento/RS',
         'Banco Central do Brasil',
         'Banco da Amazônia',
@@ -134,7 +146,7 @@ class Payment extends \Faker\Provider\Payment
         'Banco Neon',
         'Nu Pagamentos S.A',
         'XP Investimentos Corretora de Câmbio Títulos e Valores Mobiliários S.A',
-    );
+    ];
 
     /**
      * @example 'Banco Neon'

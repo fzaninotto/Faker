@@ -2,86 +2,83 @@
 
 namespace Faker\Test\Provider;
 
-use Faker\Provider\Person;
 use Faker\Generator;
+use Faker\Provider\Person;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 final class PersonTest extends TestCase
 {
-    /**
-     * @dataProvider firstNameProvider
-     */
-    public function testFirstName($gender, $expected)
+    #[DataProvider('firstNameProvider')]
+    public function testFirstName($gender, $expected): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
         $this->assertContains($faker->firstName($gender), $expected);
     }
 
-    public function firstNameProvider()
+    public static function firstNameProvider(): array
     {
-        return array(
-            array(null, array('John', 'Jane')),
-            array('foobar', array('John', 'Jane')),
-            array('male', array('John')),
-            array('female', array('Jane')),
-        );
+        return [
+            [null, ['John', 'Jane']],
+            ['foobar', ['John', 'Jane']],
+            ['male', ['John']],
+            ['female', ['Jane']],
+        ];
     }
 
-    public function testFirstNameMale()
+    public function testFirstNameMale(): void
     {
-        $this->assertContains(Person::firstNameMale(), array('John'));
+        $this->assertContains(Person::firstNameMale(), ['John']);
     }
 
-    public function testFirstNameFemale()
+    public function testFirstNameFemale(): void
     {
-        $this->assertContains(Person::firstNameFemale(), array('Jane'));
+        $this->assertContains(Person::firstNameFemale(), ['Jane']);
     }
 
-    /**
-     * @dataProvider titleProvider
-     */
-    public function testTitle($gender, $expected)
+    #[DataProvider('titleProvider')]
+    public function testTitle($gender, $expected): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
         $this->assertContains($faker->title($gender), $expected);
     }
 
-    public function titleProvider()
+    public static function titleProvider(): array
     {
-        return array(
-            array(null, array('Mr.', 'Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.')),
-            array('foobar', array('Mr.', 'Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.')),
-            array('male', array('Mr.', 'Dr.', 'Prof.')),
-            array('female', array('Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.')),
-        );
+        return [
+            [null, ['Mr.', 'Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.']],
+            ['foobar', ['Mr.', 'Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.']],
+            ['male', ['Mr.', 'Dr.', 'Prof.']],
+            ['female', ['Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.']],
+        ];
     }
 
-    public function testTitleMale()
+    public function testTitleMale(): void
     {
-        $this->assertContains(Person::titleMale(), array('Mr.', 'Dr.', 'Prof.'));
+        $this->assertContains(Person::titleMale(), ['Mr.', 'Dr.', 'Prof.']);
     }
 
-    public function testTitleFemale()
+    public function testTitleFemale(): void
     {
-        $this->assertContains(Person::titleFemale(), array('Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.'));
+        $this->assertContains(Person::titleFemale(), ['Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.']);
     }
 
-    public function testLastNameReturnsDoe()
+    public function testLastNameReturnsDoe(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
-        $this->assertEquals($faker->lastName(), 'Doe');
+        $this->assertEquals('Doe', $faker->lastName());
     }
 
-    public function testNameReturnsFirstNameAndLastName()
+    public function testNameReturnsFirstNameAndLastName(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
-        $this->assertContains($faker->name(), array('John Doe', 'Jane Doe'));
-        $this->assertContains($faker->name('foobar'), array('John Doe', 'Jane Doe'));
-        $this->assertContains($faker->name('male'), array('John Doe'));
-        $this->assertContains($faker->name('female'), array('Jane Doe'));
+        $this->assertContains($faker->name(), ['John Doe', 'Jane Doe']);
+        $this->assertContains($faker->name('foobar'), ['John Doe', 'Jane Doe']);
+        $this->assertContains($faker->name('male'), ['John Doe']);
+        $this->assertContains($faker->name('female'), ['Jane Doe']);
     }
 }

@@ -4,7 +4,7 @@ namespace Faker\Provider\hy_AM;
 
 class Company extends \Faker\Provider\Company
 {
-    protected static $formats = array(
+    protected static array $formats = [
         '{{lastName}} {{companySuffix}}',
         '{{lastName}} {{companySuffix}}',
         '{{lastName}} {{companySuffix}}',
@@ -14,41 +14,39 @@ class Company extends \Faker\Provider\Company
         '{{lastName}} {{companySuffix}}',
         '{{lastName}} {{companySuffix}}',
         '{{lastName}} եղբայրներ',
-    );
+    ];
 
-    protected static $catchPhraseWords = array(
+    protected static array $catchPhraseWords = [
+    ];
 
-    );
+    protected static array $bsWords = [
+    ];
 
-    protected static $bsWords = array(
-
-    );
-
-    protected static $companySuffix = array('ՍՊԸ','և որդիներ','ՓԲԸ','ԲԲԸ');
+    protected static array $companySuffix = ['ՍՊԸ', 'և որդիներ', 'ՓԲԸ', 'ԲԲԸ'];
 
     /**
      * @example 'Robust full-range hub'
      */
-    public function catchPhrase()
+    public function catchPhrase(): string
     {
-        $result = array();
+        $result = [];
         foreach (static::$catchPhraseWords as &$word) {
             $result[] = static::randomElement($word);
         }
 
-        return join(' ', $result);
+        return \implode(' ', $result);
     }
 
     /**
      * @example 'integrate extensible convergence'
      */
-    public function bs()
+    public function bs(): string
     {
-        $result = array();
+        $result = [];
         foreach (static::$bsWords as &$word) {
             $result[] = static::randomElement($word);
         }
 
-        return join(' ', $result);
+        return \implode(' ', $result);
     }
 }

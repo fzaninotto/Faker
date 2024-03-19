@@ -8,17 +8,18 @@ use PHPUnit\Framework\TestCase;
 
 final class PersonTest extends TestCase
 {
-    protected function setUp()
+    private Generator $faker;
+
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
         $this->faker = $faker;
     }
 
-    public function testIfTaxIdCanReturnData()
+    public function testIfTaxIdCanReturnData(): void
     {
         $taxId = $this->faker->taxId();
-        $this->assertRegExp('/^[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$/', $taxId);
+        $this->assertMatchesRegularExpression('/^[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$/', $taxId);
     }
-
 }

@@ -5,10 +5,9 @@ namespace Faker\Provider\fi_FI;
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
     /**
-     * @link https://www.viestintavirasto.fi/en/internettelephone/numberingoftelecommunicationsnetworks/localcallsandtelecommunicationsareas/mapoftelecommunicationsareas.html
-     * @var array
+     * @see https://www.viestintavirasto.fi/en/internettelephone/numberingoftelecommunicationsnetworks/localcallsandtelecommunicationsareas/mapoftelecommunicationsareas.html
      */
-    protected static $landLineareaCodes = array(
+    protected static array $landLineareaCodes = [
         '02',
         '03',
         '05',
@@ -22,78 +21,59 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '017',
         '018',
         '019',
-    );
+    ];
 
     /**
-     * @link https://www.viestintavirasto.fi/en/internettelephone/numberingoftelecommunicationsnetworks/mobilenetworks/mobilenetworkareacodes.html
-     * @var array
+     * @see https://www.viestintavirasto.fi/en/internettelephone/numberingoftelecommunicationsnetworks/mobilenetworks/mobilenetworkareacodes.html
      */
-    protected static $mobileNetworkAreaCodes = array(
+    protected static array $mobileNetworkAreaCodes = [
         '040',
         '050',
         '044',
         '045',
-    );
+    ];
 
-    protected static $numberFormats = array(
+    protected static array $numberFormats = [
         '### ####',
         '#######',
-    );
+    ];
 
-    protected static $formats = array(
+    protected static array $formats = [
         '+358 ({{ e164MobileNetworkAreaCode }}) {{ numberFormat }}',
         '+358 {{ e164MobileNetworkAreaCode }} {{ numberFormat }}',
         '+358 ({{ e164landLineAreaCode }}) {{ numberFormat }}',
         '+358 {{ e164landLineAreaCode }} {{ numberFormat }}',
         '{{ mobileNetworkAreaCode }}{{ separator }}{{ numberFormat }}',
         '{{ landLineAreaCode }}{{ separator }}{{ numberFormat }}',
-    );
+    ];
 
-    /**
-     * @return string
-     */
-    public function landLineAreaCode()
+    public function landLineAreaCode(): string
     {
         return static::randomElement(static::$landLineareaCodes);
     }
 
-    /**
-     * @return string
-     */
-    public function e164landLineAreaCode()
+    public function e164landLineAreaCode(): string
     {
-        return substr(static::randomElement(static::$landLineareaCodes), 1);
+        return \substr(static::randomElement(static::$landLineareaCodes), 1);
     }
 
-    /**
-     * @return string
-     */
-    public function mobileNetworkAreaCode()
+    public function mobileNetworkAreaCode(): string
     {
         return static::randomElement(static::$mobileNetworkAreaCodes);
     }
 
-    /**
-     * @return string
-     */
-    public function e164MobileNetworkAreaCode()
+    public function e164MobileNetworkAreaCode(): string
     {
-        return substr(static::randomElement(static::$mobileNetworkAreaCodes), 1);
+        return \substr(static::randomElement(static::$mobileNetworkAreaCodes), 1);
     }
 
-    /**
-     * @return string
-     */
-    public function numberFormat()
+    public function numberFormat(): string
     {
         return static::randomElement(static::$numberFormats);
     }
 
-    /**
-     * @return string
-     */
-    public function separator()
+    public function separator(): string
     {
-        return static::randomElement(array(' ', '-'));
+        return static::randomElement([' ', '-']);
     }
 }

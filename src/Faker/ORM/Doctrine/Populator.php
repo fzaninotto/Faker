@@ -2,7 +2,7 @@
 
 namespace Faker\ORM\Doctrine;
 
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Persistence\ObjectManager;
 use Faker\Generator;
 
 /**
@@ -11,31 +11,22 @@ use Faker\Generator;
  */
 class Populator
 {
-    /** @var int  */
-    protected $batchSize;
+    protected int $batchSize;
 
-    /** @var Generator  */
-    protected $generator;
+    protected Generator $generator;
 
-    /** @var ObjectManager|null  */
-    protected $manager;
+    protected ?ObjectManager $manager;
 
-    /** @var array  */
-    protected $entities = array();
+    protected array $entities = [];
 
-    /** @var array  */
-    protected $quantities = array();
+    protected array $quantities = [];
 
-    /** @var array  */
-    protected $generateId = array();
+    protected array $generateId = [];
 
     /**
      * Populator constructor.
-     * @param Generator $generator
-     * @param ObjectManager|null $manager
-     * @param int $batchSize
      */
-    public function __construct(Generator $generator, ObjectManager $manager = null, $batchSize = 1000)
+    public function __construct(Generator $generator, ?ObjectManager $manager = null, int $batchSize = 1000)
     {
         $this->generator = $generator;
         $this->manager = $manager;
@@ -48,13 +39,13 @@ class Populator
      * @param mixed $entity A Doctrine classname, or a \Faker\ORM\Doctrine\EntityPopulator instance
      * @param int   $number The number of entities to populate
      */
-    public function addEntity($entity, $number, $customColumnFormatters = array(), $customModifiers = array(), $generateId = false)
+    public function addEntity(mixed $entity, int $number, array $customColumnFormatters = [], array $customModifiers = [], bool $generateId = false): void
     {
-        if (!$entity instanceof \Faker\ORM\Doctrine\EntityPopulator) {
+        if (!$entity instanceof EntityPopulator) {
             if (null === $this->manager) {
-                throw new \InvalidArgumentException("No entity manager passed to Doctrine Populator.");
+                throw new \InvalidArgumentException('No entity manager passed to Doctrine Populator.');
             }
-            $entity = new \Faker\ORM\Doctrine\EntityPopulator($this->manager->getClassMetadata($entity));
+            $entity = new EntityPopulator($this->manager->getClassMetadata($entity));
         }
         $entity->setColumnFormatters($entity->guessColumnFormatters($this->generator));
         if ($customColumnFormatters) {
@@ -71,32 +62,32 @@ class Populator
     /**
      * Populate the database using all the Entity classes previously added.
      *
-     * Please note that large amounts of data will result in more memory usage since the the Populator will return
+     * Please note that large amounts of data will result in more memory usage since the Populator will return
      * all newly created primary keys after executing.
      *
-     * @param null|EntityManager $entityManager A Doctrine connection object
+     * @param ObjectManager|null $entityManager A Doctrine connection object
      *
      * @return array A list of the inserted PKs
      */
-    public function execute($entityManager = null)
+    public function execute(?ObjectManager $entityManager = null): array
     {
         if (null === $entityManager) {
             $entityManager = $this->manager;
         }
         if (null === $entityManager) {
-            throw new \InvalidArgumentException("No entity manager passed to Doctrine Populator.");
+            throw new \InvalidArgumentException('No entity manager passed to Doctrine Populator.');
         }
 
-        $insertedEntities = array();
+        $insertedEntities = [];
         foreach ($this->quantities as $class => $number) {
             $generateId = $this->generateId[$class];
-            for ($i=0; $i < $number; $i++) {
-                $insertedEntities[$class][]= $this->entities[$class]->execute(
+            for ($i = 0; $i < $number; ++$i) {
+                $insertedEntities[$class][] = $this->entities[$class]->execute(
                     $entityManager,
                     $insertedEntities,
                     $generateId
                 );
-                if (count($insertedEntities) % $this->batchSize === 0) {
+                if (0 === \count($insertedEntities) % $this->batchSize) {
                     $entityManager->flush();
                     $entityManager->clear($class);
                 }

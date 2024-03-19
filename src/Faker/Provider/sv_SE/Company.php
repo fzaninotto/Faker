@@ -4,7 +4,7 @@ namespace Faker\Provider\sv_SE;
 
 class Company extends \Faker\Provider\Company
 {
-    protected static $formats = array(
+    protected static array $formats = [
         '{{lastName}} {{companySuffix}}',
         '{{lastName}} {{companySuffix}}',
         '{{lastName}} {{companySuffix}}',
@@ -12,14 +12,37 @@ class Company extends \Faker\Provider\Company
         '{{lastName}} & {{lastName}} {{companySuffix}}',
         '{{lastName}} & {{lastName}}',
         '{{lastName}} och {{lastName}}',
-        '{{lastName}} och {{lastName}} {{companySuffix}}'
-    );
+        '{{lastName}} och {{lastName}} {{companySuffix}}',
+    ];
 
-    protected static $companySuffix = array('AB', 'HB');
-    
-    protected static $jobTitles = array('Automationsingenjör', 'Bagare', 'Digital Designer', 'Ekonom', 'Ekonomichef', 'Elektronikingenjör', 'Försäljare', 'Försäljningschef', 'Innovationsdirektör', 'Investeringsdirektör', 'Journalist', 'Kock', 'Kulturstrateg', 'Läkare', 'Lokförare', 'Mäklare', 'Programmerare', 'Projektledare', 'Sjuksköterska', 'Utvecklare', 'UX Designer', 'Webbutvecklare');
-    
-    public function jobTitle()
+    protected static array $companySuffix = ['AB', 'HB'];
+
+    protected static array $jobTitles = [
+        'Automationsingenjör',
+        'Bagare',
+        'Digital Designer',
+        'Ekonom',
+        'Ekonomichef',
+        'Elektronikingenjör',
+        'Försäljare',
+        'Försäljningschef',
+        'Innovationsdirektör',
+        'Investeringsdirektör',
+        'Journalist',
+        'Kock',
+        'Kulturstrateg',
+        'Läkare',
+        'Lokförare',
+        'Mäklare',
+        'Programmerare',
+        'Projektledare',
+        'Sjuksköterska',
+        'Utvecklare',
+        'UX Designer',
+        'Webbutvecklare',
+    ];
+
+    public function jobTitle(): string
     {
         return static::randomElement(static::$jobTitles);
     }

@@ -9,57 +9,57 @@ use PHPUnit\Framework\TestCase;
 
 final class CompanyTest extends TestCase
 {
-    private $faker;
+    private Generator $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Company($faker));
         $this->faker = $faker;
     }
 
-    public function testSiretReturnsAValidSiret()
+    public function testSiretReturnsAValidSiret(): void
     {
         $siret = $this->faker->siret(false);
-        $this->assertRegExp("/^\d{14}$/", $siret);
+        $this->assertMatchesRegularExpression("/^\d{14}$/", $siret);
         $this->assertTrue(Luhn::isValid($siret));
     }
 
-    public function testSiretReturnsAWellFormattedSiret()
+    public function testSiretReturnsAWellFormattedSiret(): void
     {
         $siret = $this->faker->siret();
-        $this->assertRegExp("/^\d{3}\s\d{3}\s\d{3}\s\d{5}$/", $siret);
-        $siret = str_replace(' ', '', $siret);
+        $this->assertMatchesRegularExpression("/^\d{3}\s\d{3}\s\d{3}\s\d{5}$/", $siret);
+        $siret = \str_replace(' ', '', $siret);
         $this->assertTrue(Luhn::isValid($siret));
     }
 
-    public function testSirenReturnsAValidSiren()
+    public function testSirenReturnsAValidSiren(): void
     {
         $siren = $this->faker->siren(false);
-        $this->assertRegExp("/^\d{9}$/", $siren);
+        $this->assertMatchesRegularExpression("/^\d{9}$/", $siren);
         $this->assertTrue(Luhn::isValid($siren));
     }
 
-    public function testSirenReturnsAWellFormattedSiren()
+    public function testSirenReturnsAWellFormattedSiren(): void
     {
         $siren = $this->faker->siren();
-        $this->assertRegExp("/^\d{3}\s\d{3}\s\d{3}$/", $siren);
-        $siren = str_replace(' ', '', $siren);
+        $this->assertMatchesRegularExpression("/^\d{3}\s\d{3}\s\d{3}$/", $siren);
+        $siren = \str_replace(' ', '', $siren);
         $this->assertTrue(Luhn::isValid($siren));
     }
 
-    public function testCatchPhraseReturnsValidCatchPhrase()
+    public function testCatchPhraseReturnsValidCatchPhrase(): void
     {
         $this->assertTrue(TestableCompany::isCatchPhraseValid($this->faker->catchPhrase()));
     }
 
-    public function testIsCatchPhraseValidReturnsFalseWhenAWordsAppearsTwice()
+    public function testIsCatchPhraseValidReturnsFalseWhenAWordsAppearsTwice(): void
     {
         $isCatchPhraseValid = TestableCompany::isCatchPhraseValid('La sécurité de rouler en toute sécurité');
         $this->assertFalse($isCatchPhraseValid);
     }
 
-    public function testIsCatchPhraseValidReturnsTrueWhenNoWordAppearsTwice()
+    public function testIsCatchPhraseValidReturnsTrueWhenNoWordAppearsTwice(): void
     {
         $isCatchPhraseValid = TestableCompany::isCatchPhraseValid('La sécurité de rouler en toute simplicité');
         $this->assertTrue($isCatchPhraseValid);
@@ -68,7 +68,7 @@ final class CompanyTest extends TestCase
 
 final class TestableCompany extends Company
 {
-    public static function isCatchPhraseValid($catchPhrase)
+    public static function isCatchPhraseValid(string $catchPhrase): bool
     {
         return parent::isCatchPhraseValid($catchPhrase);
     }

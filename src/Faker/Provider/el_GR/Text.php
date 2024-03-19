@@ -24,11 +24,9 @@ class Text extends \Faker\Provider\Text
      * @licence Creative Commons Attribution-ShareAlike https://creativecommons.org/licenses/by-sa/3.0/deed.el
      *
      * @see     https://wikimediafoundation.org/wiki/Terms_of_Use/
-     * @link    https://el.wikisource.org/wiki/%CE%A4%CF%81%CE%B5%CE%BB%CE%B1%CE%BD%CF%84%CF%8E%CE%BD%CE%B7%CF%82
-     *
-     * @var string
+     * @see    https://el.wikisource.org/wiki/%CE%A4%CF%81%CE%B5%CE%BB%CE%B1%CE%BD%CF%84%CF%8E%CE%BD%CE%B7%CF%82
      */
-    protected static $baseText = <<<'EOT'
+    protected static string $baseText = <<<'EOT'
 Ο Αντώνης ήταν πολύ σκάνταλος και πολύ άτακτος και κάθε λίγο έβρισκε τον μπελά του. Δεν περνούσε μέρα που να μην έτρωγε δυο τρεις κατσάδες, πότε από τη θεία του, πότε από τη μαγείρισσα, πότε από την Αγγλίδα δασκάλα και πότε από την τραπεζιέρα, και κάθε λίγο αναγκάζουνταν ν' ανακατώνεται ο θείος. Σαν έφθανε απέξω ο θείος και άκουε την καινούρια αταξία του Αντώνη, το αγαθό του πρόσωπο αγρίευε όσο μπορούσε, σούρωνε τ' άσπρα του φρύδια και, κουνώντας το σταχτί του κεφάλι, έλεγε αυστηρά:
 - Αντώνη, ακούω πάλι πως έκανες αταξίες! Φοβούμαι πως δε θα τα πάμε καλά!
 Αυτές ήταν οι σοβαρές περιστάσεις. Άκουε η Αλεξάνδρα, η μεγάλη αδελφή, και ντρέπουνταν για τον αδελφό της. Άκουε η Πουλουδιά, η μικρότερη αδελφή, κι ένιωθε την καρδιά της να παίζει τούμπανο. Άκουε και ο μικρός ο Αλέξανδρος, καθισμένος στο πάτωμα, με το δάχτυλο στο στόμα, και αποφάσιζε μέσα του πως εκείνος δεν ήθελε να γίνει έτσι κακό παιδί σαν τον Αντώνη.
@@ -2259,7 +2257,7 @@ EOT;
     *** START: FULL LICENSE ***
         Creative Commons Legal Code
         Attribution-ShareAlike 3.0 Unported
-    
+
     CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE
     LEGAL SERVICES. DISTRIBUTION OF THIS LICENSE DOES NOT CREATE AN
     ATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS

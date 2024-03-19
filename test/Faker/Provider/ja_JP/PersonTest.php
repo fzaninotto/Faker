@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 final class PersonTest extends TestCase
 {
-    public function testKanaNameMaleReturns()
+    public function testKanaNameMaleReturns(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
@@ -17,7 +17,7 @@ final class PersonTest extends TestCase
         $this->assertEquals('アオタ ミノル', $faker->kanaName('male'));
     }
 
-    public function testKanaNameFemaleReturns()
+    public function testKanaNameFemaleReturns(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
@@ -26,7 +26,7 @@ final class PersonTest extends TestCase
         $this->assertEquals('アオタ ミキ', $faker->kanaName('female'));
     }
 
-    public function testFirstKanaNameMaleReturns()
+    public function testFirstKanaNameMaleReturns(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
@@ -35,7 +35,7 @@ final class PersonTest extends TestCase
         $this->assertEquals('ヒデキ', $faker->firstKanaName('male'));
     }
 
-    public function testFirstKanaNameFemaleReturns()
+    public function testFirstKanaNameFemaleReturns(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
@@ -44,7 +44,7 @@ final class PersonTest extends TestCase
         $this->assertEquals('マアヤ', $faker->firstKanaName('female'));
     }
 
-    public function testLastKanaNameReturnsNakajima()
+    public function testLastKanaNameReturnsNakajima(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));

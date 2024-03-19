@@ -5,7 +5,7 @@ namespace Faker\Provider\ro_MD;
 class Text extends \Faker\Provider\Text
 {
     /**
-     * From ro.wikisource.org
+     * From ro.wikisource.org.
      *
      * Acest text este disponibil sub licența Creative Commons cu atribuire
      * și distribuire în condiții identice; pot exista și clauze suplimentare.
@@ -22,10 +22,9 @@ class Text extends \Faker\Provider\Text
      * Language: Romanian
      *
      * @see     https://wikimediafoundation.org/wiki/Terms_of_Use/
-     * @link    https://ro.wikisource.org/wiki/Povestea_lui_Harap-Alb
-     * @var string
+     * @see    https://ro.wikisource.org/wiki/Povestea_lui_Harap-Alb
      */
-    protected static $baseText = <<<'EOT'
+    protected static string $baseText = <<<'EOT'
 Amu cică era odată într-o țară un crai, care avea trei feciori.
 Și craiul acela mai avea un frate mai mare, care era împărat
 într-o altă țară, mai depărtată. Și împăratul, fratele craiului,
