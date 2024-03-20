@@ -3,48 +3,44 @@
 namespace Faker\Test\Calculator;
 
 use Faker\Calculator\Inn;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 final class InnTest extends TestCase
 {
-
-    public function checksumProvider()
+    public static function checksumProvider(): array
     {
-        return array(
-            array('143525744', '4'),
-            array('500109285', '3'),
-            array('500109285', '3'),
-            array('500109285', '3'),
-            array('027615723', '1')
-        );
+        return [
+            ['143525744', '4'],
+            ['500109285', '3'],
+            ['500109285', '3'],
+            ['500109285', '3'],
+            ['027615723', '1'],
+        ];
     }
 
-    /**
-     * @dataProvider checksumProvider
-     */
-    public function testChecksum($inn, $checksum)
+    #[DataProvider('checksumProvider')]
+    public function testChecksum($inn, $checksum): void
     {
         $this->assertEquals($checksum, Inn::checksum($inn), $inn);
     }
 
-    public function validatorProvider()
+    public static function validatorProvider(): array
     {
-        return array(
-            array('5902179757', true),
-            array('5408294405', true),
-            array('2724164617', true),
-            array('0726000515', true),
-            array('6312123552', true),
+        return [
+            ['5902179757', true],
+            ['5408294405', true],
+            ['2724164617', true],
+            ['0726000515', true],
+            ['6312123552', true],
 
-            array('1111111111', false),
-            array('0123456789', false),
-        );
+            ['1111111111', false],
+            ['0123456789', false],
+        ];
     }
 
-    /**
-     * @dataProvider validatorProvider
-     */
-    public function testIsValid($inn, $isValid)
+    #[DataProvider('validatorProvider')]
+    public function testIsValid($inn, $isValid): void
     {
         $this->assertEquals($isValid, Inn::isValid($inn), $inn);
     }

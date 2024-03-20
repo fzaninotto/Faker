@@ -4,33 +4,81 @@ namespace Faker\Provider\ar_SA;
 
 class Internet extends \Faker\Provider\Internet
 {
-    protected static $userNameFormats = array(
+    protected static array $userNameFormats = [
         '{{lastNameAscii}}.{{firstNameAscii}}',
         '{{firstNameAscii}}.{{lastNameAscii}}',
         '{{firstNameAscii}}##',
         '?{{lastNameAscii}}',
-    );
-    protected static $safeEmailTld = array(
-        'com', 'jo', 'me', 'net', 'org',
-    );
+    ];
+    protected static array $safeEmailTld = [
+        'com',
+        'jo',
+        'me',
+        'net',
+        'org',
+    ];
 
-    protected static $tld = array(
-        'biz', 'com', 'info', 'sa', 'net', 'org',
-    );
+    protected static array $tld = [
+        'biz',
+        'com',
+        'info',
+        'sa',
+        'net',
+        'org',
+    ];
 
-    protected static $lastNameAscii = array(
-        'abbad', 'abbadi', 'abbas', 'abulebbeh', 'flefel', 'hadi', 'hamad', 'hasan', 'jabri', 'kanaan', 'karam', 'maanee', 'melhem', 'nimry', 'obaisi', 'qasem', 'qawasmee', 'rabee', 'rashwani', 'shami', 'zaloum',
-    );
-    protected static $firstNameAscii = array(
-        'abd', 'abdullah', 'ahmad', 'akram', 'amr', 'bashar', 'bilal', 'fadi', 'ibrahim', 'khaled', 'layth', 'mohammad', 'mutaz', 'omar', 'osama', 'rami', 'saleem', 'samer', 'sami', 'yazan',
-    );
+    protected static array $lastNameAscii = [
+        'abbad',
+        'abbadi',
+        'abbas',
+        'abulebbeh',
+        'flefel',
+        'hadi',
+        'hamad',
+        'hasan',
+        'jabri',
+        'kanaan',
+        'karam',
+        'maanee',
+        'melhem',
+        'nimry',
+        'obaisi',
+        'qasem',
+        'qawasmee',
+        'rabee',
+        'rashwani',
+        'shami',
+        'zaloum',
+    ];
+    protected static array $firstNameAscii = [
+        'abd',
+        'abdullah',
+        'ahmad',
+        'akram',
+        'amr',
+        'bashar',
+        'bilal',
+        'fadi',
+        'ibrahim',
+        'khaled',
+        'layth',
+        'mohammad',
+        'mutaz',
+        'omar',
+        'osama',
+        'rami',
+        'saleem',
+        'samer',
+        'sami',
+        'yazan',
+    ];
 
-    public static function lastNameAscii()
+    public static function lastNameAscii(): string
     {
         return static::randomElement(static::$lastNameAscii);
     }
 
-    public static function firstNameAscii()
+    public static function firstNameAscii(): string
     {
         return static::randomElement(static::$firstNameAscii);
     }
@@ -38,7 +86,7 @@ class Internet extends \Faker\Provider\Internet
     /**
      * @example 'ahmad.abbadi'
      */
-    public function userName()
+    public function userName(): string
     {
         $format = static::randomElement(static::$userNameFormats);
 
@@ -48,8 +96,8 @@ class Internet extends \Faker\Provider\Internet
     /**
      * @example 'wewebit.jo'
      */
-    public function domainName()
+    public function domainName(): string
     {
-        return static::randomElement(static::$lastNameAscii) . '.' . $this->tld();
+        return static::randomElement(static::$lastNameAscii).'.'.$this->tld();
     }
 }

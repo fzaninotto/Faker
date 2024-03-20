@@ -6,7 +6,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
     // Phone numbers can't start by 00 in France
     // 01 is the most common prefix
-    protected static $formats = array(
+    protected static array $formats = [
         '+33 (0)1 ## ## ## ##',
         '+33 (0)1 ## ## ## ##',
         '+33 (0)2 ## ## ## ##',
@@ -47,11 +47,11 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '07 {{phoneNumber07WithSeparator}}',
         '08 {{phoneNumber08WithSeparator}}',
         '09 ## ## ## ##',
-    );
+    ];
 
     // Mobile phone numbers start by 06 and 07
     // 06 is the most common prefix
-    protected static $mobileFormats  = array(
+    protected static array $mobileFormats = [
         '+33 (0)6 ## ## ## ##',
         '+33 6 ## ## ## ##',
         '+33 (0)7 {{phoneNumber07WithSeparator}}',
@@ -60,39 +60,40 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '07{{phoneNumber07}}',
         '06 ## ## ## ##',
         '07 {{phoneNumber07WithSeparator}}',
-    );
+    ];
 
-    protected static $serviceFormats = array(
+    protected static array $serviceFormats = [
         '+33 (0)8 {{phoneNumber08WithSeparator}}',
         '+33 8 {{phoneNumber08WithSeparator}}',
         '08 {{phoneNumber08WithSeparator}}',
         '08{{phoneNumber08}}',
-    );
+    ];
 
-    public function phoneNumber07()
+    public function phoneNumber07(): array|string
     {
         $phoneNumber = $this->phoneNumber07WithSeparator();
-        $phoneNumber = str_replace(' ', '', $phoneNumber);
-        return $phoneNumber;
+
+        return \str_replace(' ', '', $phoneNumber);
     }
 
     /**
-     * Only 073 to 079 are acceptable prefixes with 07
+     * Only 073 to 079 are acceptable prefixes with 07.
      *
      * @see http://www.arcep.fr/index.php?id=8146
      */
-    public function phoneNumber07WithSeparator()
+    public function phoneNumber07WithSeparator(): string
     {
         $phoneNumber = $this->generator->numberBetween(3, 9);
-        $phoneNumber .= $this->numerify('# ## ## ##');
+        $phoneNumber .= self::numerify('# ## ## ##');
+
         return $phoneNumber;
     }
 
-    public function phoneNumber08()
+    public function phoneNumber08(): array|string
     {
         $phoneNumber = $this->phoneNumber08WithSeparator();
-        $phoneNumber = str_replace(' ', '', $phoneNumber);
-        return $phoneNumber;
+
+        return \str_replace(' ', '', $phoneNumber);
     }
 
     /**
@@ -114,25 +115,27 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      * @see https://www.arcep.fr/index.php?id=8146#c9625
      * @see https://issuetracker.google.com/u/1/issues/73269839
      */
-    public function phoneNumber08WithSeparator()
+    public function phoneNumber08WithSeparator(): string
     {
         $regex = '([012]{1}\d{1}|(9[1-357-9])( \d{2}){3}';
-        return $this->regexify($regex);
+
+        return self::regexify($regex);
     }
 
     /**
      * @example '0601020304'
      */
-    public function mobileNumber()
+    public function mobileNumber(): string
     {
         $format = static::randomElement(static::$mobileFormats);
 
         return static::numerify($this->generator->parse($format));
     }
+
     /**
      * @example '0891951357'
      */
-    public function serviceNumber()
+    public function serviceNumber(): string
     {
         $format = static::randomElement(static::$serviceFormats);
 

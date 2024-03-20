@@ -4,29 +4,29 @@ namespace Faker\Provider;
 
 class Address extends Base
 {
-    protected static $citySuffix = array('Ville');
-    protected static $streetSuffix = array('Street');
-    protected static $cityFormats = array(
+    protected static array $citySuffix = ['Ville'];
+    protected static array $streetSuffix = ['Street'];
+    protected static array $cityFormats = [
         '{{firstName}}{{citySuffix}}',
-    );
-    protected static $streetNameFormats = array(
-        '{{lastName}} {{streetSuffix}}'
-    );
-    protected static $streetAddressFormats = array(
-        '{{buildingNumber}} {{streetName}}'
-    );
-    protected static $addressFormats = array(
+    ];
+    protected static array $streetNameFormats = [
+        '{{lastName}} {{streetSuffix}}',
+    ];
+    protected static array $streetAddressFormats = [
+        '{{buildingNumber}} {{streetName}}',
+    ];
+    protected static array $addressFormats = [
         '{{streetAddress}} {{postcode}} {{city}}',
-    );
+    ];
 
-    protected static $buildingNumber = array('%#');
-    protected static $postcode = array('#####');
-    protected static $country = array();
+    protected static array $buildingNumber = ['%#'];
+    protected static array $postcode = ['#####'];
+    protected static array $country = [];
 
     /**
      * @example 'town'
      */
-    public static function citySuffix()
+    public static function citySuffix(): string
     {
         return static::randomElement(static::$citySuffix);
     }
@@ -34,7 +34,7 @@ class Address extends Base
     /**
      * @example 'Avenue'
      */
-    public static function streetSuffix()
+    public static function streetSuffix(): string
     {
         return static::randomElement(static::$streetSuffix);
     }
@@ -42,7 +42,7 @@ class Address extends Base
     /**
      * @example '791'
      */
-    public static function buildingNumber()
+    public static function buildingNumber(): string
     {
         return static::numerify(static::randomElement(static::$buildingNumber));
     }
@@ -50,7 +50,7 @@ class Address extends Base
     /**
      * @example 'Sashabury'
      */
-    public function city()
+    public function city(): string
     {
         $format = static::randomElement(static::$cityFormats);
 
@@ -60,7 +60,7 @@ class Address extends Base
     /**
      * @example 'Crist Parks'
      */
-    public function streetName()
+    public function streetName(): string
     {
         $format = static::randomElement(static::$streetNameFormats);
 
@@ -70,7 +70,7 @@ class Address extends Base
     /**
      * @example '791 Crist Parks'
      */
-    public function streetAddress()
+    public function streetAddress(): string
     {
         $format = static::randomElement(static::$streetAddressFormats);
 
@@ -80,7 +80,7 @@ class Address extends Base
     /**
      * @example 86039-9874
      */
-    public static function postcode()
+    public static function postcode(): string
     {
         return static::toUpper(static::bothify(static::randomElement(static::$postcode)));
     }
@@ -88,7 +88,7 @@ class Address extends Base
     /**
      * @example '791 Crist Parks, Sashabury, IL 86039-9874'
      */
-    public function address()
+    public function address(): string
     {
         $format = static::randomElement(static::$addressFormats);
 
@@ -98,42 +98,41 @@ class Address extends Base
     /**
      * @example 'Japan'
      */
-    public static function country()
+    public static function country(): string
     {
         return static::randomElement(static::$country);
     }
 
     /**
-     * @example '77.147489'
-     * @param float|int $min
-     * @param float|int $max
      * @return float Uses signed degrees format (returns a float number between -90 and 90)
+     *
+     * @example '77.147489'
      */
-    public static function latitude($min = -90, $max = 90)
+    public static function latitude(int|float $min = -90, int|float $max = 90): float
     {
         return static::randomFloat(6, $min, $max);
     }
 
     /**
-     * @example '86.211205'
-     * @param float|int $min
-     * @param float|int $max
      * @return float Uses signed degrees format (returns a float number between -180 and 180)
+     *
+     * @example '86.211205'
      */
-    public static function longitude($min = -180, $max = 180)
+    public static function longitude(int|float $min = -180, int|float $max = 180): float
     {
         return static::randomFloat(6, $min, $max);
     }
 
     /**
+     * @return array latitude, longitude
+     *
      * @example array('77.147489', '86.211205')
-     * @return array | latitude, longitude
      */
-    public static function localCoordinates()
+    public static function localCoordinates(): array
     {
-        return array(
+        return [
             'latitude' => static::latitude(),
-            'longitude' => static::longitude()
-        );
+            'longitude' => static::longitude(),
+        ];
     }
 }

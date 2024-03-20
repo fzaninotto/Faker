@@ -8,37 +8,33 @@ use PHPUnit\Framework\TestCase;
 
 final class AddressTest extends TestCase
 {
+    private Generator $faker;
 
-/**
- * @var Faker\Generator
- */
-  private $faker;
+    protected function setUp(): void
+    {
+        $faker = new Generator();
+        $faker->addProvider(new Address($faker));
+        $this->faker = $faker;
+    }
 
-  protected function setUp()
-  {
-      $faker = new Generator();
-      $faker->addProvider(new Address($faker));
-      $this->faker = $faker;
-  }
+    public function testCityName(): void
+    {
+        $city = $this->faker->cityName();
+        $this->assertNotEmpty($city);
+        $this->assertIsString($city);
+    }
 
-  public function testCityName()
-  {
-    $city = $this->faker->cityName();
-    $this->assertNotEmpty($city);
-    $this->assertInternalType('string', $city);
-  }
+    public function testDistrict(): void
+    {
+        $district = $this->faker->district();
+        $this->assertNotEmpty($district);
+        $this->assertIsString($district);
+    }
 
-  public function testDistrict()
-  {
-    $district = $this->faker->district();
-    $this->assertNotEmpty($district);
-    $this->assertInternalType('string', $district);
-  }
-
-  public function testRegion()
-  {
-    $region = $this->faker->region();
-    $this->assertNotEmpty($region);
-    $this->assertInternaltype('string', $region);
-  }
+    public function testRegion(): void
+    {
+        $region = $this->faker->region();
+        $this->assertNotEmpty($region);
+        $this->assertIsString($region);
+    }
 }

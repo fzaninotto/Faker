@@ -4,24 +4,24 @@ namespace Faker\Provider\zh_TW;
 
 class Text extends \Faker\Provider\Text
 {
-    protected static $separator = '';
-    protected static $separatorLen = 0;
+    protected static string $separator = '';
+    protected static int $separatorLen = 0;
 
     /**
-     * All punctuation in $baseText: 、 。 「 」 『 』 ！ ？ ー ， ： ；
+     * All punctuation in $baseText: 、 。 「 」 『 』 ！ ？ ー ， ： ；.
      */
-    protected static $notEndPunct = array('、', '「', '『', 'ー', '，', '：', '；');
-    protected static $endPunct = array('。', '」', '』', '！', '？');
-    protected static $notBeginPunct = array('、', '。', '」', '』', '！', '？', 'ー', '，', '：', '；');
+    protected static array $notEndPunct = ['、', '「', '『', 'ー', '，', '：', '；'];
+    protected static array $endPunct = ['。', '」', '』', '！', '？'];
+    protected static array $notBeginPunct = ['、', '。', '」', '』', '！', '？', 'ー', '，', '：', '；'];
 
     /**
      * Title: 吶喊 Call to Arms (1922)
      * Author: 魯迅 Lu Xun
-     * Language: Traditional Chinese
+     * Language: Traditional Chinese.
+     *
      * @see https://zh.wikisource.org/wiki/%E5%90%B6%E5%96%8A
-     * @var string
      */
-    protected static $baseText = <<<'EOT'
+    protected static string $baseText = <<<'EOT'
 我在年青時候也曾經做過許多夢，後來大半忘卻了，但自己也並不以爲可惜。所謂回憶者，雖說可以使人歡欣，有時也不免使人寂寞，使精神的絲縷還牽著已逝的寂寞的時光，又有什麼意味呢，而我偏苦于不能全忘卻，這不能全忘的一部分，到現在便成了《吶喊》的來由。
 我有四年多，曾經常常，——幾乎是每天，出入于質鋪和藥店裏，年紀可是忘卻了，總之是藥店的櫃臺正和我一樣高，質鋪的是比我高一倍，我從一倍高的櫃臺外送上衣服或首飾去，在侮蔑裡接了錢，再到一樣高的櫃臺上給我久病的父親去買藥。回家之後，又須忙別的事了，因爲開方的醫生是最有名的，以此所用的藥引也奇特：冬天的蘆根，經霜三年的甘蔗，蟋蟀要原對的，結子的平地木，……多不是容易辦到的東西。然而我的父親終于日重一日的亡故了。
 有誰從小康人家而墜入困頓的麼，我以爲在這途路中，大概可以看見世人的真面目；我要到N進K學堂去了，仿佛是想走異路，逃異地，去尋求別樣的人們。我的母親沒有法，辦了八元的川資，說是由我的自便；然而伊哭了，這正是情理中的事，因爲那時讀書應試是正路，所謂學洋務，社會上便以爲是一種走投無路的人，只得將靈魂賣給鬼子，要加倍的奚落而且排斥的，而況伊又看不見自己的兒子了。然而我也顧不得這些事，終于到N去進了K學堂了，在這學堂裏，我纔知道世上還有所謂格致，算學，地理，歷史，繪圖和體操。生理學並不教，但我們卻看到些木版的《全體新論》和《化學衛生論》之類了。我還記得先前的醫生的議論和方藥，和現在所知道的比較起來，便漸漸的悟得中醫不過是一種有意的或無意的騙子，同時又很起了對于被騙的病人和他的家族的同情；而且從譯出的歷史上，又知道了日本維新是大半發端于西方醫學的事實。
@@ -798,14 +798,14 @@ N兩眼望著屋樑，似乎想些事，仍然說：
 至於輿論，在未莊是無異議，自然都說阿Q壞，被槍斃便是他的壞的證據：不壞又何至於被槍斃呢？而城裏的輿論卻不佳，他們多半不滿足，以為槍斃並無殺頭這般好看；而且那是怎樣的一個可笑的死囚呵，游了那麼久的街，竟沒有唱一句戲：他們白跟一趟了。
 EOT;
 
-    protected static $encoding = 'UTF-8';
+    protected static string $encoding = 'UTF-8';
 
-    protected static function explode($text)
+    protected static function explode($text): array
     {
-        $chars = array();
+        $chars = [];
 
-        foreach (preg_split('//u', str_replace(PHP_EOL, '', $text)) as $char) {
-            if (! empty($char)) {
+        foreach (\preg_split('//u', \str_replace(\PHP_EOL, '', $text)) as $char) {
+            if (!empty($char)) {
                 $chars[] = $char;
             }
         }
@@ -813,64 +813,59 @@ EOT;
         return $chars;
     }
 
-    protected static function strlen($text)
+    protected static function strlen($text): int
     {
-        return function_exists('mb_strlen')
-            ? mb_strlen($text, static::$encoding)
-            : count(static::explode($text));
+        return \function_exists('mb_strlen')
+            ? \mb_strlen($text, static::$encoding)
+            : \count(static::explode($text));
     }
 
-    protected static function validStart($word)
+    protected static function validStart($word): bool|int
     {
-        return ! in_array($word, static::$notBeginPunct);
+        return !\in_array($word, static::$notBeginPunct);
     }
 
-    protected static function appendEnd($text)
+    protected static function appendEnd($text): string
     {
-        $mbAvailable = extension_loaded('mbstring');
+        $mbAvailable = \extension_loaded('mbstring');
 
         // extract the last char of $text
         if ($mbAvailable) {
             // in order to support php 5.3, third param use 1 instead of null
             // https://secure.php.net/manual/en/function.mb-substr.php#refsect1-function.mb-substr-changelog
-            $last = mb_substr($text, mb_strlen($text, static::$encoding) - 1, 1, static::$encoding);
+            $last = \mb_substr($text, \mb_strlen($text, static::$encoding) - 1, 1, static::$encoding);
         } else {
             $chars = static::utf8Encoding($text);
-            $last = $chars[count($chars) - 1];
+            $last = $chars[\count($chars) - 1];
         }
 
         // if the last char is a not-valid-end punctuation, remove it
-        if (in_array($last, static::$notEndPunct)) {
+        if (\in_array($last, static::$notEndPunct)) {
             if ($mbAvailable) {
-                $text = mb_substr($text, 0, mb_strlen($text, static::$encoding) - 1, static::$encoding);
+                $text = \mb_substr($text, 0, \mb_strlen($text, static::$encoding) - 1, static::$encoding);
             } else {
-                array_pop($chars);
-                $text = implode('', $chars);
+                \array_pop($chars);
+                $text = \implode('', $chars);
             }
         }
 
         // if the last char is not a valid punctuation, append a default one.
-        return in_array($last, static::$endPunct) ? $text : $text . '。';
+        return \in_array($last, static::$endPunct) ? $text : $text.'。';
     }
 
     /**
      * Convert original string to utf-8 encoding.
-     *
-     * @param string $text
-     * @return array
      */
-    protected static function utf8Encoding($text)
+    protected static function utf8Encoding(string $text): array
     {
-        $encoding = array();
+        $encoding = [];
 
-        $chars = str_split($text);
+        $chars = \str_split($text);
 
-        $countChars = count($chars);
+        foreach ($chars as $i => $iValue) {
+            $temp = $iValue;
 
-        for ($i = 0; $i < $countChars; ++$i) {
-            $temp = $chars[$i];
-
-            $ord = ord($chars[$i]);
+            $ord = \ord($iValue);
 
             switch (true) {
                 case $ord > 251:
@@ -887,7 +882,6 @@ EOT;
                     // no break
                 case $ord > 191:
                     $temp .= $chars[++$i];
-                    // no break
             }
 
             $encoding[] = $temp;

@@ -1,32 +1,31 @@
 <?php
 
-
 namespace Faker\Provider\en_US;
 
 class Payment extends \Faker\Provider\Payment
 {
-    public function bankAccountNumber()
+    public function bankAccountNumber(): string
     {
         // Length between 5 and 17, biased towards center
         $length = self::numberBetween(0, 3) + self::numberBetween(0, 3) + self::numberBetween(0, 3) + self::numberBetween(0, 3) + 5;
 
-        return self::numerify(str_repeat('#', $length));
+        return self::numerify(\str_repeat('#', $length));
     }
 
-    public function bankRoutingNumber()
+    public function bankRoutingNumber(): string
     {
         $district = self::numberBetween(1, 12);
-        $type = self::randomElement(array(0, 0, 0, 0, 20, 20, 60));
+        $type = self::randomElement([0, 0, 0, 0, 20, 20, 60]);
         $clearingCenter = self::randomDigitNotNull();
         $state = self::randomDigit();
         $institution = self::randomNumber(4, true);
 
-        $result = sprintf('%02d%01d%01d%04d', $district + $type, $clearingCenter, $state, $institution);
+        $result = \sprintf('%02d%01d%01d%04d', $district + $type, $clearingCenter, $state, $institution);
 
-        return $result . self::calculateRoutingNumberChecksum($result);
+        return $result.self::calculateRoutingNumberChecksum($result);
     }
 
-    public static function calculateRoutingNumberChecksum($routing)
+    public static function calculateRoutingNumberChecksum($routing): int
     {
         return (
             7 * ($routing[0] + $routing[3] + $routing[6]) +

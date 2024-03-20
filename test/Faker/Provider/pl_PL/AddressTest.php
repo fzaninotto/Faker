@@ -7,12 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 final class AddressTest extends TestCase
 {
-    /**
-     * @var Generator
-     */
-    private $faker;
+    private Generator $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Address($faker));
@@ -20,13 +17,13 @@ final class AddressTest extends TestCase
     }
 
     /**
-     * Test the validity of state
+     * Test the validity of state.
      */
-    public function testState()
+    public function testState(): void
     {
         $state = $this->faker->state();
         $this->assertNotEmpty($state);
-        $this->assertInternalType('string', $state);
-        $this->assertRegExp('/[a-z]+/', $state);
+        $this->assertIsString($state);
+        $this->assertMatchesRegularExpression('/[a-z]+/', $state);
     }
 }

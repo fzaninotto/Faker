@@ -16,38 +16,22 @@ class EntityPopulator
     /**
      * When fetching existing data - fetch only few first rows.
      */
-    const RELATED_FETCH_COUNT = 10;
+    public const RELATED_FETCH_COUNT = 10;
 
-    /**
-     * @var Mapper
-     */
-    protected $mapper;
+    protected Mapper $mapper;
 
-    /**
-     * @var Locator
-     */
-    protected $locator;
+    protected Locator $locator;
 
-    /**
-     * @var array
-     */
-    protected $columnFormatters = array();
-    /**
-     * @var array
-     */
-    protected $modifiers = array();
+    protected array $columnFormatters = [];
+    protected array $modifiers = [];
 
     /**
      * @var bool
      */
-    protected $useExistingData = false;
+    protected mixed $useExistingData = false;
 
     /**
      * Class constructor.
-     *
-     * @param Mapper $mapper
-     * @param Locator $locator
-     * @param $useExistingData
      */
     public function __construct(Mapper $mapper, Locator $locator, $useExistingData = false)
     {
@@ -56,74 +40,49 @@ class EntityPopulator
         $this->useExistingData = $useExistingData;
     }
 
-    /**
-     * @return string
-     */
-    public function getMapper()
+    public function getMapper(): Mapper
     {
         return $this->mapper;
     }
 
-    /**
-     * @param $columnFormatters
-     */
-    public function setColumnFormatters($columnFormatters)
+    public function setColumnFormatters($columnFormatters): void
     {
         $this->columnFormatters = $columnFormatters;
     }
 
-    /**
-     * @return array
-     */
-    public function getColumnFormatters()
+    public function getColumnFormatters(): array
     {
         return $this->columnFormatters;
     }
 
-    /**
-     * @param $columnFormatters
-     */
-    public function mergeColumnFormattersWith($columnFormatters)
+    public function mergeColumnFormattersWith($columnFormatters): void
     {
-        $this->columnFormatters = array_merge($this->columnFormatters, $columnFormatters);
+        $this->columnFormatters = \array_merge($this->columnFormatters, $columnFormatters);
     }
 
-    /**
-     * @param array $modifiers
-     */
-    public function setModifiers(array $modifiers)
+    public function setModifiers(array $modifiers): void
     {
         $this->modifiers = $modifiers;
     }
 
-    /**
-     * @return array
-     */
-    public function getModifiers()
+    public function getModifiers(): array
     {
         return $this->modifiers;
     }
 
-    /**
-     * @param array $modifiers
-     */
-    public function mergeModifiersWith(array $modifiers)
+    public function mergeModifiersWith(array $modifiers): void
     {
-        $this->modifiers = array_merge($this->modifiers, $modifiers);
+        $this->modifiers = \array_merge($this->modifiers, $modifiers);
     }
 
-    /**
-     * @param Generator $generator
-     * @return array
-     */
-    public function guessColumnFormatters(Generator $generator)
+    public function guessColumnFormatters(Generator $generator): array
     {
-        $formatters = array();
+        $formatters = [];
         $nameGuesser = new Name($generator);
         $columnTypeGuesser = new ColumnTypeGuesser($generator);
         $fields = $this->mapper->fields();
         foreach ($fields as $fieldName => $field) {
-            if ($field['primary'] === true) {
+            if (true === $field['primary']) {
                 continue;
             }
             if ($formatter = $nameGuesser->guessFormat($fieldName)) {
@@ -132,7 +91,6 @@ class EntityPopulator
             }
             if ($formatter = $columnTypeGuesser->guessFormat($field)) {
                 $formatters[$fieldName] = $formatter;
-                continue;
             }
         }
         $entityName = $this->mapper->entity();
@@ -148,9 +106,9 @@ class EntityPopulator
 
                 $locator = $this->locator;
 
-                $formatters[$fieldName] = function ($inserted) use ($required, $entityName, $locator) {
+                $formatters[$fieldName] = function($inserted) use ($required, $entityName, $locator) {
                     if (!empty($inserted[$entityName])) {
-                        return $inserted[$entityName][mt_rand(0, count($inserted[$entityName]) - 1)]->get('id');
+                        return $inserted[$entityName][\random_int(0, \count($inserted[$entityName]) - 1)]->get('id');
                     }
 
                     if ($required && $this->useExistingData) {
@@ -162,7 +120,7 @@ class EntityPopulator
                             return null;
                         }
 
-                        return $records[mt_rand(0, count($records) - 1)]['id'];
+                        return $records[\random_int(0, \count($records) - 1)]['id'];
                     }
 
                     return null;
@@ -175,11 +133,8 @@ class EntityPopulator
 
     /**
      * Insert one new record using the Entity class.
-     *
-     * @param $insertedEntities
-     * @return string
      */
-    public function execute($insertedEntities)
+    public function execute($insertedEntities): string
     {
         $obj = $this->mapper->build([]);
 
@@ -188,29 +143,20 @@ class EntityPopulator
 
         $this->mapper->insert($obj);
 
-
         return $obj;
     }
 
-    /**
-     * @param $obj
-     * @param $insertedEntities
-     */
-    private function fillColumns($obj, $insertedEntities)
+    private function fillColumns($obj, $insertedEntities): void
     {
         foreach ($this->columnFormatters as $field => $format) {
             if (null !== $format) {
-                $value = is_callable($format) ? $format($insertedEntities, $obj) : $format;
+                $value = \is_callable($format) ? $format($insertedEntities, $obj) : $format;
                 $obj->set($field, $value);
             }
         }
     }
 
-    /**
-     * @param $obj
-     * @param $insertedEntities
-     */
-    private function callMethods($obj, $insertedEntities)
+    private function callMethods($obj, $insertedEntities): void
     {
         foreach ($this->getModifiers() as $modifier) {
             $modifier($obj, $insertedEntities);

@@ -7,33 +7,33 @@ use PHPUnit\Framework\TestCase;
 
 final class UserAgentTest extends TestCase
 {
-    public function testRandomUserAgent()
+    public function testRandomUserAgent(): void
     {
         $this->assertNotNull(UserAgent::userAgent());
     }
 
-    public function testFirefoxUserAgent()
+    public function testFirefoxUserAgent(): void
     {
-        $this->stringContains(' Firefox/', UserAgent::firefox());
+        $this->assertStringContainsStringIgnoringCase(' Firefox/', UserAgent::firefox());
     }
 
-    public function testSafariUserAgent()
+    public function testSafariUserAgent(): void
     {
-        $this->stringContains('Safari/', UserAgent::safari());
+        $this->assertStringContainsStringIgnoringCase('Safari/', UserAgent::safari());
     }
 
-    public function testInternetExplorerUserAgent()
+    public function testInternetExplorerUserAgent(): void
     {
         $this->assertStringStartsWith('Mozilla/5.0 (compatible; MSIE ', UserAgent::internetExplorer());
     }
 
-    public function testOperaUserAgent()
+    public function testOperaUserAgent(): void
     {
         $this->assertStringStartsWith('Opera/', UserAgent::opera());
     }
 
-    public function testChromeUserAgent()
+    public function testChromeUserAgent(): void
     {
-        $this->stringContains('(KHTML, like Gecko) Chrome/', UserAgent::chrome());
+        $this->assertStringContainsStringIgnoringCase('(KHTML, like Gecko) Chrome/', UserAgent::chrome());
     }
 }

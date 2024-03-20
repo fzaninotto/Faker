@@ -10,7 +10,7 @@ class Company extends \Faker\Provider\Company
     /**
      * @var array Danish company name formats.
      */
-    protected static $formats = array(
+    protected static array $formats = [
         '{{lastName}} {{companySuffix}}',
         '{{lastName}} {{companySuffix}}',
         '{{lastName}} {{companySuffix}}',
@@ -27,26 +27,24 @@ class Company extends \Faker\Provider\Company
         '{{middleName}} og {{middleName}} {{companySuffix}}',
         '{{middleName}} & {{lastName}}',
         '{{middleName}} og {{lastName}}',
-    );
+    ];
 
     /**
      * @var array Company suffixes.
      */
-    protected static $companySuffix = array('ehf.', 'hf.', 'sf.');
+    protected static array $companySuffix = ['ehf.', 'hf.', 'sf.'];
 
     /**
-     * @link http://www.rsk.is/atvinnurekstur/virdisaukaskattur/
+     * @see http://www.rsk.is/atvinnurekstur/virdisaukaskattur/
      *
      * @var string VSK number format.
      */
-    protected static $vskFormat = '%####';
+    protected static string $vskFormat = '%####';
 
     /**
      * Generates a VSK number (5 digits).
-     *
-     * @return string
      */
-    public static function vsk()
+    public static function vsk(): string
     {
         return static::numerify(static::$vskFormat);
     }

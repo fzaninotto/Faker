@@ -3,26 +3,49 @@
 namespace Faker\Provider\en_CA;
 
 /**
- * Extend US class since most fields share the same format
+ * Extend US class since most fields share the same format.
  */
-
 class Address extends \Faker\Provider\en_US\Address
 {
-    protected static $postcode = array('?#? #?#', '?#?-#?#', '?#?#?#');
+    protected static array $postcode = ['?#? #?#', '?#?-#?#', '?#?#?#'];
 
-    protected static $postcodeLetters = array('A','B','C','E','G','H','J','K','L','M','N','P','R','S','T','V','X','Y');
+    protected static array $postcodeLetters = ['A', 'B', 'C', 'E', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'R', 'S', 'T', 'V', 'X', 'Y'];
 
-    protected static $province = array(
-        'Alberta', 'British Columbia', 'Manitoba', 'New Brunswick', 'Newfoundland and Labrador', 'Northwest Territories', 'Nova Scotia', 'Nunavut', 'Ontario', 'Prince Edward Island', 'Quebec', 'Saskatchewan', 'Yukon Territory',
-    );
+    protected static array $province = [
+        'Alberta',
+        'British Columbia',
+        'Manitoba',
+        'New Brunswick',
+        'Newfoundland and Labrador',
+        'Northwest Territories',
+        'Nova Scotia',
+        'Nunavut',
+        'Ontario',
+        'Prince Edward Island',
+        'Quebec',
+        'Saskatchewan',
+        'Yukon Territory',
+    ];
 
-    protected static $provinceAbbr = array(
-        'AB', 'BC', 'MB', 'NB', 'NL', 'NT', 'NS', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT'
-    );
+    protected static array $provinceAbbr = [
+        'AB',
+        'BC',
+        'MB',
+        'NB',
+        'NL',
+        'NT',
+        'NS',
+        'NU',
+        'ON',
+        'PE',
+        'QC',
+        'SK',
+        'YT',
+    ];
 
-    protected static $addressFormats = array(
+    protected static array $addressFormats = [
         "{{streetAddress}}\n{{city}}, {{provinceAbbr}}  {{postcode}}",
-    );
+    ];
 
     /**
      * @example 'Ontario'
@@ -41,7 +64,8 @@ class Address extends \Faker\Provider\en_US\Address
     }
 
     /**
-     * Returns a postalcode-safe letter
+     * Returns a postalcode-safe letter.
+     *
      * @example A1B 2C3
      */
     public static function randomPostcodeLetter()
@@ -52,12 +76,12 @@ class Address extends \Faker\Provider\en_US\Address
     /**
      * @example A1B 2C3
      */
-    public static function postcode()
+    public static function postcode(): string
     {
         $string = static::randomElement(static::$postcode);
 
-        $string = preg_replace_callback('/\#/u', 'static::randomDigit', $string);
-        $string = preg_replace_callback('/\?/u', 'static::randomPostcodeLetter', $string);
+        $string = \preg_replace_callback('/\#/u', [__CLASS__, 'randomDigit'], $string);
+        $string = \preg_replace_callback('/\?/u', [__CLASS__, 'randomPostcodeLetter'], $string);
 
         return static::toUpper($string);
     }

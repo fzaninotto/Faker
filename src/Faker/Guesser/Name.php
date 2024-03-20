@@ -2,155 +2,90 @@
 
 namespace Faker\Guesser;
 
-use \Faker\Provider\Base;
+use Faker\Generator;
+use Faker\Provider\Base;
 
 class Name
 {
-    protected $generator;
-
-    /**
-     * @param \Faker\Generator $generator
-     */
-    public function __construct(\Faker\Generator $generator)
+    public function __construct(protected Generator $generator)
     {
-        $this->generator = $generator;
     }
 
-    /**
-     * @param string $name
-     * @param int|null $size Length of field, if known
-     * @return callable
-     */
-    public function guessFormat($name, $size = null)
+    public function guessFormat(string $name, ?int $size = null): callable
     {
         $name = Base::toLower($name);
         $generator = $this->generator;
-        if (preg_match('/^is[_A-Z]/', $name)) {
-            return function () use ($generator) {
-                return $generator->boolean;
-            };
+        if (\preg_match('/^is[_A-Z]/', $name)) {
+            return static fn() => $generator->boolean;
         }
-        if (preg_match('/(_a|A)t$/', $name)) {
-            return function () use ($generator) {
-                return $generator->dateTime;
-            };
+        if (\preg_match('/(_a|A)t$/', $name)) {
+            return static fn() => $generator->dateTime;
         }
-        switch (str_replace('_', '', $name)) {
+        switch (\str_replace('_', '', $name)) {
             case 'firstname':
-                return function () use ($generator) {
-                    return $generator->firstName;
-                };
+                return static fn() => $generator->firstName;
             case 'lastname':
-                return function () use ($generator) {
-                    return $generator->lastName;
-                };
+                return static fn() => $generator->lastName;
             case 'username':
             case 'login':
-                return function () use ($generator) {
-                    return $generator->userName;
-                };
+                return static fn() => $generator->userName;
             case 'email':
             case 'emailaddress':
-                return function () use ($generator) {
-                    return $generator->email;
-                };
+                return static fn() => $generator->email;
             case 'phonenumber':
             case 'phone':
             case 'telephone':
             case 'telnumber':
-                return function () use ($generator) {
-                    return $generator->phoneNumber;
-                };
+                return static fn() => $generator->phoneNumber;
             case 'address':
-                return function () use ($generator) {
-                    return $generator->address;
-                };
+                return static fn() => $generator->address;
             case 'city':
             case 'town':
-                return function () use ($generator) {
-                    return $generator->city;
-                };
+                return static fn() => $generator->city;
             case 'streetaddress':
-                return function () use ($generator) {
-                    return $generator->streetAddress;
-                };
+                return static fn() => $generator->streetAddress;
             case 'postcode':
             case 'zipcode':
-                return function () use ($generator) {
-                    return $generator->postcode;
-                };
+                return static fn() => $generator->postcode;
             case 'state':
-                return function () use ($generator) {
-                    return $generator->state;
-                };
+                return static fn() => $generator->state;
             case 'county':
-                if ($this->generator->locale == 'en_US') {
-                    return function () use ($generator) {
-                        return sprintf('%s County', $generator->city);
-                    };
+                if ('en_US' === $this->generator->locale) {
+                    return static fn() => \sprintf('%s County', $generator->city);
                 }
 
-                return function () use ($generator) {
-                    return $generator->state;
-                };
+                return static fn() => $generator->state;
             case 'country':
-                switch ($size) {
-                    case 2:
-                        return function () use ($generator) {
-                            return $generator->countryCode;
-                        };
-                    case 3:
-                        return function () use ($generator) {
-                            return $generator->countryISOAlpha3;
-                        };
-                    case 5:
-                    case 6:
-                        return function () use ($generator) {
-                            return $generator->locale;
-                        };
-                    default:
-                        return function () use ($generator) {
-                            return $generator->country;
-                        };
-                }
-                break;
-            case 'locale':
-                return function () use ($generator) {
-                    return $generator->locale;
+                return match ($size) {
+                    2 => static fn() => $generator->countryCode,
+                    3 => static fn() => $generator->countryISOAlpha3,
+                    5, 6 => static fn() => $generator->locale,
+                    default => static fn() => $generator->country,
                 };
+            case 'locale':
+                return static fn() => $generator->locale;
             case 'currency':
             case 'currencycode':
-                return function () use ($generator) {
-                    return $generator->currencyCode;
-                };
+                return static fn() => $generator->currencyCode;
             case 'url':
             case 'website':
-                return function () use ($generator) {
-                    return $generator->url;
-                };
+                return static fn() => $generator->url;
             case 'company':
             case 'companyname':
             case 'employer':
-                return function () use ($generator) {
-                    return $generator->company;
-                };
+                return static fn() => $generator->company;
             case 'title':
-                if ($size !== null && $size <= 10) {
-                    return function () use ($generator) {
-                        return $generator->title;
-                    };
+                if (null !== $size && $size <= 10) {
+                    return static fn() => $generator->title;
                 }
 
-                return function () use ($generator) {
-                    return $generator->sentence;
-                };
+                return static fn() => $generator->sentence;
             case 'body':
             case 'summary':
             case 'article':
             case 'description':
-                return function () use ($generator) {
-                    return $generator->text;
-                };
+                return static fn() => $generator->text;
         }
+        throw new \RuntimeException(\sprintf('Unknown format "%s"', $name));
     }
 }

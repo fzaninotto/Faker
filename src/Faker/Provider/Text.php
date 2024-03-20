@@ -4,12 +4,12 @@ namespace Faker\Provider;
 
 abstract class Text extends Base
 {
-    protected static $baseText = '';
-    protected static $separator = ' ';
-    protected static $separatorLen = 1;
-    protected $explodedText;
-    protected $consecutiveWords = array();
-    protected static $textStartsWithUppercase = true;
+    protected static string $baseText = '';
+    protected static string $separator = ' ';
+    protected static int $separatorLen = 1;
+    protected ?array $explodedText = null;
+    protected array $consecutiveWords = [];
+    protected static bool $textStartsWithUppercase = true;
 
     /**
      * Generate a text string by the Markov chain algorithm.
@@ -18,15 +18,15 @@ abstract class Text extends Base
      * generates a weighted table with the specified number of words as the index and the
      * possible following words as the value.
      *
+     * @param int $maxNbChars Maximum number of characters the text should contain (minimum: 10)
+     * @param int $indexSize  Determines how many words are considered for the generation of the next word.
+     *                        The minimum is 1, and it produces a higher level of randomness, although the
+     *                        generated text usually doesn't make sense. Higher index sizes (up to 5)
+     *                        produce more correct text, at the price of less randomness.
+     *
      * @example 'Alice, swallowing down her flamingo, and began by taking the little golden key'
-     * @param integer $maxNbChars Maximum number of characters the text should contain (minimum: 10)
-     * @param integer $indexSize  Determines how many words are considered for the generation of the next word.
-     *                             The minimum is 1, and it produces a higher level of randomness, although the
-     *                             generated text usually doesn't make sense. Higher index sizes (up to 5)
-     *                             produce more correct text, at the price of less randomness.
-     * @return string
      */
-    public function realText($maxNbChars = 200, $indexSize = 2)
+    public function realText(int $maxNbChars = 200, int $indexSize = 2): string
     {
         if ($maxNbChars < 10) {
             throw new \InvalidArgumentException('maxNbChars must be at least 10');
@@ -41,7 +41,7 @@ abstract class Text extends Base
         }
 
         $words = $this->getConsecutiveWords($indexSize);
-        $result = array();
+        $result = [];
         $resultLength = 0;
         // take a random starting point
         $next = static::randomKey($words);
@@ -52,11 +52,11 @@ abstract class Text extends Base
             // calculate next index
             $currentWords = static::explode($next);
             $currentWords[] = $word;
-            array_shift($currentWords);
+            \array_shift($currentWords);
             $next = static::implode($currentWords);
 
             // ensure text starts with an uppercase letter
-            if ($resultLength == 0 && !static::validStart($word)) {
+            if (0 === $resultLength && !static::validStart($word)) {
                 continue;
             }
 
@@ -66,7 +66,7 @@ abstract class Text extends Base
         }
 
         // remove the element that caused the text to overflow
-        array_pop($result);
+        \array_pop($result);
 
         // build result
         $result = static::implode($result);
@@ -78,20 +78,20 @@ abstract class Text extends Base
     {
         if (!isset($this->consecutiveWords[$indexSize])) {
             $parts = $this->getExplodedText();
-            $words = array();
-            $index = array();
-            for ($i = 0; $i < $indexSize; $i++) {
-                $index[] = array_shift($parts);
+            $words = [];
+            $index = [];
+            for ($i = 0; $i < $indexSize; ++$i) {
+                $index[] = \array_shift($parts);
             }
 
-            for ($i = 0, $count = count($parts); $i < $count; $i++) {
+            foreach ($parts as $iValue) {
                 $stringIndex = static::implode($index);
                 if (!isset($words[$stringIndex])) {
-                    $words[$stringIndex] = array();
+                    $words[$stringIndex] = [];
                 }
-                $word = $parts[$i];
+                $word = $iValue;
                 $words[$stringIndex][] = $word;
-                array_shift($index);
+                \array_shift($index);
                 $index[] = $word;
             }
             // cache look up words for performance
@@ -101,41 +101,42 @@ abstract class Text extends Base
         return $this->consecutiveWords[$indexSize];
     }
 
-    protected function getExplodedText()
+    protected function getExplodedText(): array
     {
-        if ($this->explodedText === null) {
-            $this->explodedText = static::explode(preg_replace('/\s+/u', ' ', static::$baseText));
+        if (null === $this->explodedText) {
+            $this->explodedText = static::explode(\preg_replace('/\s+/u', ' ', static::$baseText));
         }
 
         return $this->explodedText;
     }
 
-    protected static function explode($text)
+    protected static function explode($text): array
     {
-        return explode(static::$separator, $text);
+        return \explode(static::$separator, $text);
     }
 
-    protected static function implode($words)
+    protected static function implode($words): string
     {
-        return implode(static::$separator, $words);
+        return \implode(static::$separator, $words);
     }
 
-    protected static function strlen($text)
+    protected static function strlen($text): int
     {
-        return function_exists('mb_strlen') ? mb_strlen($text, 'UTF-8') : strlen($text);
+        return \function_exists('mb_strlen') ? \mb_strlen($text, 'UTF-8') : \strlen($text);
     }
 
-    protected static function validStart($word)
+    protected static function validStart($word): bool|int
     {
         $isValid = true;
         if (static::$textStartsWithUppercase) {
-            $isValid = preg_match('/^\p{Lu}/u', $word);
+            $isValid = \preg_match('/^\p{Lu}/u', $word);
         }
+
         return $isValid;
     }
 
-    protected static function appendEnd($text)
+    protected static function appendEnd($text): string
     {
-        return preg_replace("/([ ,-:;\x{2013}\x{2014}]+$)/us", '', $text).'.';
+        return \preg_replace("/([ ,-:;\x{2013}\x{2014}]+$)/us", '', $text).'.';
     }
 }

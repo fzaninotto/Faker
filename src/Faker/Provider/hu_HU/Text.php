@@ -5,18 +5,16 @@ namespace Faker\Provider\hu_HU;
 class Text extends \Faker\Provider\Text
 {
     /**
-     *
      * Author: Rejtő Jenő
-     * Title: Piszkos Fred, a kapitány
+     * Title: Piszkos Fred, a kapitány.
      *
      * Language: Hungarian
      *
      * License: Public Domain, since 2014.01.01
      *
      * @see http://mek.oszk.hu/01000/01038/
-     * @var string
      */
-    protected static $baseText = <<<'EOT'
+    protected static string $baseText = <<<'EOT'
 ELSŐ FEJEZET
 1
 - Uram! A késemért jöttem!
@@ -245,7 +243,7 @@ Az ifjú szeme felragyogott.
 ...Előhúzta a tárcáját, és átadott kétezer dollárt, azután vállon veregette a pincért, és otthagyta.
 Nem hitte, hogy ébren van, vagy ha igen, akkor a fiú őrült, és a hatalmas, ronda ember az ápolója.
 Két... ezer... dollár! Ezen az eseten érdemes gondolkozni! De hiába tartotta ilyesmire érdemesnek az esetet, mert rajtaütésszerűen elaludt.
- 
+
 MÁSODIK FEJEZET
 1
 José pincér aludt. Aludt, miközben egy pillanatra megállt a levessel, aludt, amíg a szakács tálcára tette a húst, és aludt, amikor egy svéd magántanár ölébe kitálalta.
@@ -1114,7 +1112,7 @@ Az idegen továbbment.
 A másik sűrűn pislogott, azután megtapogatta az arcát, és diadalmasan nézett a távolodó felé...
 - Most már beszélhetsz! Ilyen pofon csak egy van a világon! Istenemre, ez Fülig Jimmy!
 ...Alkonyatkor már tisztán látszott Szingapur, és sorra gyúló lámpái mint sárgás csillagok ragyogtak fel az ég alján.
- 
+
 HARMADIK FEJEZET
 1
 Lassan haladt a Honolulu-Star. Szingapur hatalmas kikötője közelinek látszott a mesebeli roppant burának tűnő porfátyol alatt, amely befedte.
@@ -1312,7 +1310,7 @@ Most valami egészen váratlan dolog történt.
 A herceg zsebre dugta a kezét, és nevetett. Szívből, jókedvűen. Erre már a rendőr és a lakáj is részvéttel nézték, pedig olyan egészséges, derűs kacagás volt ez, olyan pajzán, tiszta, csengő hangsorozat, mintha felséges tréfát hallott volna.
 - Mit nevet? - szólt rá idegesen a rendőr.
 - Arra gondoltam, hogy nagyapám örök időkre megszüntette a bennszülöttek testi fenyítését. És én önt, Mr. Greenwood, Almira főterén akasztás előtt rinocéroszbőr korbáccsal addig veretem, amíg nem mondja el százszor, hogy: "Szegény elmebeteg!"
- 
+
 NEGYEDIK FEJEZET
 Fülig Jimmy naplója
 I
@@ -1349,7 +1347,7 @@ Ilyeneket mesélt a hercegi király, aki ezenfelül uralkodó volt. Én meg hall
 - Egy maradt. A halálrakötelezett kalóznak a fia. Ezt néhány éve elfokták a Hollandiaok, a Hollandusok. Ő még igen picinyke volt a harcok idején. Benntszülöttek rejtegették, és később ő is nagy rabló lett. Amikor elfokták felnőt korában, akkormár neki is sok vaj volt a fején. Bob Warins fiatalember, de máris szép sikert ért el a rablógyilkosi pályán. Úgyhogy tizenöt évre büntették őt. Akkor megesküdött a főtárgyaláson, hogyha kiszabadul, megöli a sziget uralkodóját az összes St. Antoniót és minden Alvarezt, és ő lesz az uralkodó, de erre vajmi alig van ha, aligha van kilátás, mert jól ül a kényszermunkában.
 Ennyit mesélt és azt is, hogy Sir Egmont, a sziget miniszterelnöke, aki őt jól ismeri, mert az anyjának a fivére és jó ember. Ez nem jön Szingapurba persze, mert akkor nem lehetne a heccet csinálni. De ha szó van róla, tudjam, hogy ő a sziget örökös miniszterelnöke, apjának tanácsadója, ősz, magas úr, a homlokán egy régi kardvágásból kifolyó forradás képez. Ered. Forradt homlokán egy régivágású kardhely van. Ő nem megy el sohasem Almirából, ha beszélnek, akkor ezt tudjam.
 Akkor én ez megértem, és kikötött a hajó, viszont megfulladok a szűk ingben, ez rémes. (Folytatása következik.)
- 
+
 ÖTÖDIK FEJEZET
 1
 A rendőr szelíden megfogta a fiú karját.
@@ -1500,7 +1498,7 @@ Az ismeretlen cvikkeres a karjánál fogva vonszolta, de közben baráti bizalom
 Ujját tiltóan a szája elé tartotta. Őfelsége még mondott volna valamit, de az igazi Trebitsch ezt súgta:
 - Isten önnel... Szegény fiú... Igazán sajnálom... - rebegte, és belerúgott.
 ...A herceg csak azt érezte, hogy megnyílik alatta a föld... És zuhan.
- 
+
 HATODIK FEJEZET
 Fülig Jimmy naplója
 II
@@ -1544,7 +1542,7 @@ Tiltakoznék, de húsz rendőr áll ott feszesen, és mind rámnéz. Ilyent csak
 - Hová megyünk? - kérdezem én, a Fülig Jimmy.
 - A Yachtra. Megváltozott az eredeti program. Azonnal indulunk felségeddel Almirába, hogy elfoglalja a trónját.
 No most jól nézek ki. Eddiggis nagy baj van. De most (folytatása következik).
- 
+
 HETEDIK FEJEZET
 1
 Őfelsége nem esett keményre. Zizzenés csapott fel körülötte, és ernyedten, kábultan feküdt a szalmán, ahová lezuhant a magasból.
@@ -1719,7 +1717,7 @@ Csakugyan diplomatakülsejű, ősz ember volt, bagolyszemüveges, angol bajuszos
 A kegyelmes úr elgondolkozva nézte.
 - Ha ez mind így van - mondta azután csendesen -, akkor miért ütötte le a Tulipánt?
 ...És a szekrény mögül előlépett bekötött fejjel Tulipán. Csendben körülfogták a herceget.
- 
+
 NYOLCADIK FEJEZET
 Fülig Jimmy naplója
 III
@@ -1880,7 +1878,7 @@ Felnyomom a gombot, hogy a zseblámpa újra világítson.
 Ha lett volna bennem hang én sikoltok. De nem volt. Csak becsaptam az ajtót és futottam, de remegve, mintha maláriás roham rázna... futottam és reszkettem.
 Mert a zseblámpa fénye megmutatta a kabint és az asztalon egy nyitott koporsóban ott feküdt sárgán, szalmaszínű bajusszal, fekete szemgödörrel Mr. Gould!
 A Fernandez... Aki régen herceg, akit eddig kétszer a vízbe dobtak (folytatása következik.)
- 
+
 KILENCEDIK FEJEZET
 1
 Fenyegető alakok közeledtek lassan. Közöttük első sorban a bekötött fejű Tulipán, őfelsége tulajdonosa.
@@ -1961,7 +1959,7 @@ Nagy Bivaly szomorú, kegyetlen szemei egy pillanatnyi szünetet jeleztek.
 Piszkos Fred állt az ajtóban.
 A herceg agyában tótágast állt minden. Gyermekkori barátai letagadják, hogy ismerik. Piszkos Fred, akit sohasem látott, kijelenti, hogy jó ismerősök.
 De a Nagy Bivaly keze egy hajszálnyit sem engedett a szorításból. Úgy nézett Piszkos Fredre, hogy néhány gyengébb idegzetű rablógyilkos megborzadt. Zöldesfényű, vérszomjas gyűlölet izzott a tekintetében.
- 
+
 TIZEDIK FEJEZET
 Őfelségem I-ső Fülig Jimmy naplója
 V
@@ -2012,7 +2010,7 @@ Rövid habozás után mondta:
 A mindenit. Ez keszd meleg lenni a helyzet. De szőr Egmont nevet.
 - Azonban ez csak tréfa. Ugyebár tréfált felség? Ugyebár ön a mi királyunk?
 - Asz vagyok, - felelém csendesen és ő rám hagyott engem, magamra, hogy az inas feladja nekem a marsal nevű katonaruhámat, amellyel szép kis pác kezdődik itt. (Folytatása következik.)
- 
+
 TIZENEGYEDIK FEJEZET
 1
 A Nagy Bivaly szorította a herceg nyakát.
@@ -2167,7 +2165,7 @@ A herceg tántorogva lábra állt. Tüskés nyugodtan, hidegen, újra belevágot
 Harmadszor már csak nehezen emelkedett fel. De Tüskés Vanek gépies pontossággal lecsapott.
 Az eddigi kínok semmiségnek számítottak a harmadik kegyetlen ökölcsapás fájdalmához viszonyítva.
 Őfelsége félig agyonverten zuhant a földre, és egyetlen véres, égő húsdarab volt az arca. Elájult.
- 
+
 TIZENKETTEDIK FEJEZET
 Őfelségem, I-ső Fülig Jimmy naplója
 VI
@@ -2299,7 +2297,7 @@ Merénylövés!
 A katonák a bokrok közé nyargaltak, és én is üldözni akartam a gaszt, de Ekmont megfogott és a kocsi sebesen gördült tovább.
 - Ezért hiba felség, amit tett - monta Egmont.
 És most asz egyszer igaza volt. (Folytatása következik.)
- 
+
 TIZENHARMADIK FEJEZET
 1
 A sötét folyosón tért magához őfelsége. Ide röpítették ki Vanek és barátai, miután elájult.
@@ -2399,7 +2397,7 @@ A herceg körül félreálltak.
 - Igen.
 - A Hidegek Törvénye ítéletet fog hozni maga felett. Jól vigyázzon minden szavára.
 És a herceg tisztában volt vele, amikor ennek a leánynak a szemébe nézett, hogy élet-halálra megy a játék!
- 
+
 TIZENNEGYEDIK FEJEZET
 Őfelségem, I-ső Fülig Jimmy naplója
 VIII
@@ -2481,7 +2479,7 @@ llyen egy körmösfont ez asz Ekmont homlokán a feltünő ismeretjel dacára.
 - Akit maga bezárt huszonnégy órára. Piszkos Fred, a kapitány, a ládába.
 Most már tuttam, hogy milyen igasza volt, amikor elájult.
 Kelt mint, ma uralkodásunk annójában, Almira székestrónváros főlegvár által kézzel. Fojatás a következő:
- 
+
 TIZENÖTÖDIK FEJEZET
 1
 Az egész úgy hatott, mint valami torz álom. A kidülledt szemű, rémült Nagy Bivaly, Holdvilág Charley halálfejével, a bekötött homlokú Tulipán, az a részeges, rongyos, ősz hölgy, a diplomataszerűen elegáns Kegyelmes és Vöröskarom, a nagyvilági szépség, végül Piszkos Fred, a kapitány, amint sárgás szakállát morzsolgatja fekete szegélyű, hosszú karmai között, szinte valószínűtlenné tették az ijesztő képet.
@@ -2566,7 +2564,7 @@ Ez csakugyan valószínűtlennek látszott, és őfelsége kezdte rosszul érezn
 - Itt a perc - mondta a Kegyelmes -, amelyre évek óta várunk! Elmegyünk Almirába! Leleplezzük Fülig Jimmyt, és a zűrzavarban visszaállítjuk a köztársaságot. Akkor ti valamennyien nagy jutalmat kaptok az embereitekkel együtt.
 - És ez a kalózkölyök?
 - Végezzetek vele!
- 
+
 TIZENHATODIK FEJEZET
 Őfelségem, I-ső Fülig Jimmy naplója
 IX
@@ -2660,7 +2658,7 @@ Engem már mindenfelé kerestek és mind cipőben. És rémülten.
 - ltt van Warins - mondta rekedten a hídlakó.
 - Mi történt?
 - Ször Egmontot megölték. Ő volt a bosszú első áldozata. (Folytatása következik.)
- 
+
 TIZENHETEDIK FEJEZET
 1
 A herceget összekötözték. Nyugodtan tűrte. Jól tudta, hogy meg kell halnia. Akár Warins, akár St. Antonio, itt nem számíthat irgalomra.
@@ -2768,7 +2766,7 @@ A nő most már nevetett, és szó nélkül kiment, de nagyon bevágta az ajtót
 A Szárító egy gömbölyű üreg volt. Olyasféle, mint valami ókori sírbolt, sima kemény fallal körülvéve. Pedig nem emberi kéz formálta ezt az üreget. Kínai díszműkészítők laktak a kültelken, és itt hevítették a formált agyagot, földbe vájt kemencékben. Éjjel-nappal izzó, betapasztott gödrök fogták körül ezt a Szárítónak nevezett kavernát. Az amúgy is pokoli forróság itt elviselhetetlen volt.
 Sok mindent elmondtak már a Szárítóban, amit nem szántak közlésre. Őfelsége először azt hitte, hogy nyomban megfullad, amikor betaszították és a nyílást elzárták egy kővel.
 Azután elvesztette az eszméletét.
- 
+
 TIZENNYOLCADIK FEJEZET
 Őfelségem I-ső Fülig Jimmy naplója
 Én egy marha vagyok saját eszüleg! Ez a gyanú kelt mint bent asz agyamban, és ahogy a kirájok írják asz időt: ambó dominó mai dátum.
@@ -2831,7 +2829,7 @@ Puff neki.
 - Hát... ne fogadja... Én most gyengéskedem...
 - Parker Admirálist... nem fogadni?... Vége... Az angolok ilyesmiben nem ismernek tréfát.
 Itt nagy baj van. Aszt láttam. De mindegy. A kiskapun gyorsan kisurrantam, és vadászatra indultam az éjszakában... Semmit sem bánok, most csak meglássam valahol a tengerészruhás Warinst! Csak mekfoghassam a nyakát és akkor... (Megfojtása következik. )
- 
+
 TIZENKILENCEDIK FEJEZET
 1
 Hogyan változott meg rövid idő alatt annyira a helyzet: halálos ítélet helyett házasság?
@@ -2973,7 +2971,7 @@ Senki sem sietett szerencsekívánatait kifejezni az ifjú párnak.
 - Ez a pap - mondta a Kegyelmes - nem a Próféta volt. Az az alak elmászkált valamerre, és kénytelenek voltunk egy jezsuita atyáért küldeni a maláji misszióhoz.
 Őfelsége körül egyet fordult a világ. Ezek szerint neki most törvényes felesége a Vöröskarom!
 - És most elég volt ebből az utálatos játékból - mondta megvetően Anna Alvarez, és fogalma sem volt róla, hogy e pillanatban már a Boldogság Szigetek királynője.
- 
+
 HUSZADIK FEJEZET
 1
 A herceg kiszédelgett a nagy teremből. Uram, Atyám! Mit tett?!! Elvette a lázadó elnök polgári származású leányát... mert ha Warins Bob néven is eskették, jól tudta, hogy az álnéven kötött házasság érvényes.
@@ -3089,7 +3087,7 @@ Azután tisztelgett:
 - Jó éjszakát... Anna Alvarez.
 A nő arcán különös kín vonaglott át... "Gyilkos..." - mondta magában. "Kalóz... rabló..."
 Rémülten vette észre, hogy mindezek dacára képtelen arra, hogy utálja!
- 
+
 HUSZONEGYEDIK FEJEZET
 1
 Buzgó Mócsing már napok óta nem hagyta el a kajütjét. Félt a hercegtől. Ez a fiú ott kínozza, ahol éri. Különben mint írni és számolni tudó egyént az anyagraktárnál használták, irodavezetőnek. Ő könyvelte el, amit Piszkos Fred sikkasztott.
@@ -3239,7 +3237,7 @@ Eh! Hát mi van vele? Hogy áll itt égő arccal, könnyes szemmel egy gyilkos e
 Nehéz szívvel fogta a nő kezét. Istenem... Ő itt szép csendben beleszeretett a feleségébe. De hát ki gondol manapság ilyesmire? És megcsókolta a leányt, szokott alaposságával.
 ...Vöröskarom iszonyúan szégyenkezve, de némán tűrte. Azután ott állt egyedül a szobában, és a ködös fedélzet homályából még feléje villant az elmaradó alak nedves gumikabátja, tiszti sapkája...
 Keservesen sírt.
- 
+
 HUSZONKETTEDIK FEJEZET
 Őfelségem I-ső Fülig Jimmy naplója
 XI
@@ -3266,7 +3264,7 @@ Vállamra doptam az ájult alakot és vittem...
 Egyenesen a főlegvár titkos kisbejáratához sietek, ott fel a lépcsőn, végig a folyosón, be a lakosztályomba és odavágom a dögöt a padlóra, hogy csak úgy döng...
 Szent Isten!
 Esz akit én leütöttem, őfelségem az igazi St. Antonio herceg Szingapurból. És úgy vágtam fejbe, hogy alig van élet benne. (Vége következik.)
- 
+
 HUSZONHARMADIK FEJEZET
 1
 Őfelsége csónakja a fülledt, ködös óceánon a sziget felé igyekezett.
@@ -3319,7 +3317,7 @@ Hallgattak. A fülledt éjszakában egy kakadu rikoltott élesen.
 - De hát - kiáltott Buzgó Mócsing - azt is mondják meg végre, hogy mi voltam én ebben az ügyben?
 - Egy nagy ló - felelte Piszkos Fred rövid megfontolás után.
 ...És később őfelsége kíséret nélkül elindult, hogy visszatérjen ősei trónjára, a fellegvárba. Ám ebből az alkalomból Fülig Jimmy jól fejbe vágta.
- 
+
 HUSZONNEGYEDIK FEJEZET
 1
 A Kegyelmes az amerikai cirkálóval érkezett Almira kikötőjébe, és bevárta a Radzeert. Délután az admirális, Vöröskarom és a Kegyelmes látogatást tettek az angol hajón, és szívélyes tanácskozásra ültek össze Parker admirálissal.
@@ -3370,7 +3368,7 @@ Hallgatnak.
 Az asszony lehajtott fejjel a szőnyeget nézi...
 - Megbocsátottál nekem... Theodor?
 Csend... A királyné lassan felemeli a fejét, és egyedül van a szobában. Piszkos Fred, a kapitány, szép csendben elment, és nem látta többé soha.
- 
+
 HUSZONÖTÖDIK FEJEZET
 Fülig Jimmy levele az uralkodóhoz
 XII

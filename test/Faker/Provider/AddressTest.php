@@ -8,39 +8,39 @@ use PHPUnit\Framework\TestCase;
 
 final class AddressTest extends TestCase
 {
-    private $faker;
+    private Generator $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Address($faker));
         $this->faker = $faker;
     }
 
-    public function testLatitude()
+    public function testLatitude(): void
     {
         $latitude = $this->faker->latitude();
-        $this->assertInternalType('float', $latitude);
+        $this->assertIsFloat($latitude);
         $this->assertGreaterThanOrEqual(-90, $latitude);
         $this->assertLessThanOrEqual(90, $latitude);
     }
 
-    public function testLongitude()
+    public function testLongitude(): void
     {
         $longitude = $this->faker->longitude();
-        $this->assertInternalType('float', $longitude);
+        $this->assertIsFloat($longitude);
         $this->assertGreaterThanOrEqual(-180, $longitude);
         $this->assertLessThanOrEqual(180, $longitude);
     }
 
-    public function testCoordinate()
+    public function testCoordinate(): void
     {
         $coordinate = $this->faker->localCoordinates();
-        $this->assertInternalType('array', $coordinate);
-        $this->assertInternalType('float', $coordinate['latitude']);
+        $this->assertIsArray($coordinate);
+        $this->assertIsFloat($coordinate['latitude']);
         $this->assertGreaterThanOrEqual(-90, $coordinate['latitude']);
         $this->assertLessThanOrEqual(90, $coordinate['latitude']);
-        $this->assertInternalType('float', $coordinate['longitude']);
+        $this->assertIsFloat($coordinate['longitude']);
         $this->assertGreaterThanOrEqual(-180, $coordinate['longitude']);
         $this->assertLessThanOrEqual(180, $coordinate['longitude']);
     }

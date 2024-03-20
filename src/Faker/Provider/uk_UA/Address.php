@@ -4,14 +4,17 @@ namespace Faker\Provider\uk_UA;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $cityPrefix = array('місто');
-    protected static $regionSuffix = array('область');
-    protected static $streetPrefix = array(
-        'вул.', 'пров.', 'пл.', 'просп.'
-    );
-    protected static $buildingNumber = array('##');
-    protected static $postcode = array('#####');
-    protected static $country = array(
+    protected static array $cityPrefix = ['місто'];
+    protected static array $regionSuffix = ['область'];
+    protected static array $streetPrefix = [
+        'вул.',
+        'пров.',
+        'пл.',
+        'просп.',
+    ];
+    protected static array $buildingNumber = ['##'];
+    protected static array $postcode = ['#####'];
+    protected static array $country = [
         'Афганістан',
         'Албанія',
         'Алжир',
@@ -202,9 +205,9 @@ class Address extends \Faker\Provider\Address
         'Ємен',
         'Замбія',
         'Зімбабве',
-    );
+    ];
 
-    protected static $region = array(
+    protected static array $region = [
         'Вінницька',
         'Волинська',
         'Дніпропетровська',
@@ -228,10 +231,10 @@ class Address extends \Faker\Provider\Address
         'Хмельницька',
         'Черкаська',
         'Чернівецька',
-        'Чернігівська'
-    );
+        'Чернігівська',
+    ];
 
-    protected static $city = array(
+    protected static array $city = [
         'Вінниця',
         'Луцьк',
         'Дніпро',
@@ -255,13 +258,13 @@ class Address extends \Faker\Provider\Address
         'Хмельницький',
         'Черкаси',
         'Чернівці',
-        'Чернігів'
-    );
+        'Чернігів',
+    ];
 
     /**
      * @see list of Ukraine street (2017-08-08), source: http://ukrexport.gov.ua/ukr/useful_info/gov/
      */
-    protected static $street = array(
+    protected static array $street = [
         'Тараса Шевченка',
         'Лесі Українки',
         'Михайла Грушевського',
@@ -286,68 +289,68 @@ class Address extends \Faker\Provider\Address
         'Інститутська',
         'Пирогова',
         'М. Коцюбинського',
-        'Володимирська'
-    );
+        'Володимирська',
+    ];
 
-    protected static $addressFormats = array(
-        "{{postcode}}, {{cityAndRegion}}, {{streetPrefix}} {{streetName}}, {{buildingNumber}}",
-    );
+    protected static array $addressFormats = [
+        '{{postcode}}, {{cityAndRegion}}, {{streetPrefix}} {{streetName}}, {{buildingNumber}}',
+    ];
 
-    protected static $streetAddressFormats = array(
-        "{{streetPrefix}} {{streetName}}, {{buildingNumber}}"
-    );
+    protected static array $streetAddressFormats = [
+        '{{streetPrefix}} {{streetName}}, {{buildingNumber}}',
+    ];
 
-    public static function citySuffix()
+    public static function citySuffix(): string
     {
         // We don't use city suffix
         return '';
     }
 
-    public static function streetSuffix()
+    public static function streetSuffix(): string
     {
         // We don't use street suffix
         return '';
     }
 
-    public function streetName()
+    public function streetName(): string
     {
         return static::randomElement(static::$street);
     }
 
-    public static function postcode()
+    public static function postcode(): string
     {
         return static::toUpper(static::bothify(static::randomElement(static::$postcode)));
     }
 
-    public static function regionSuffix()
+    public static function regionSuffix(): string
     {
         return static::randomElement(static::$regionSuffix);
     }
 
-    public static function region()
+    public static function region(): string
     {
         return static::randomElement(static::$region);
     }
 
-    public static function cityPrefix()
+    public static function cityPrefix(): string
     {
         return static::randomElement(static::$cityPrefix);
     }
 
-    public function city()
+    public function city(): string
     {
         return static::randomElement(static::$city);
     }
 
     /**
      * Get city and region together
-     * We need it because city and region must comply each other in Ukraine
+     * We need it because city and region must comply each other in Ukraine.
+     *
      * @example 'Закарпатська область, місто Ужгород'
-     * @return string
      */
-    public function cityAndRegion()
+    public function cityAndRegion(): string
     {
-        $regionAndCityNumber = rand(0, count(static::$region) - 1);
+        $regionAndCityNumber = \rand(0, \count(static::$region) - 1);
         $region = static::$region[$regionAndCityNumber];
         $city = static::$city[$regionAndCityNumber];
         $format = "$region {{regionSuffix}}, {{cityPrefix}} $city";
@@ -355,7 +358,7 @@ class Address extends \Faker\Provider\Address
         return $this->generator->parse($format);
     }
 
-    public static function streetPrefix()
+    public static function streetPrefix(): string
     {
         return static::randomElement(static::$streetPrefix);
     }

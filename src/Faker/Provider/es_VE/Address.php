@@ -4,39 +4,66 @@ namespace Faker\Provider\es_VE;
 
 class Address extends \Faker\Provider\es_ES\Address
 {
-    protected static $cityPrefix = array('San', 'Santa', 'Puerto', 'Valle', 'Villa', 'Parroquia', 'El', 'Los', 'La', 'Las');
-    protected static $citySuffix = array('del Valle', 'de Mara', 'de Altagracia', 'de Asis', 'del Tuy', 'de Mata');
-    protected static $buildingNumber = array('###', '##', '#');
-    protected static $streetPrefix = array(
-        'Calle', 'Avenida', 'Av.', 'Cl.', 'Carretera', 'Callejón', 'Vereda'
-    );
-    protected static $streetSuffix = array('Norte', 'Este', ' Sur', ' Oeste');
-    protected static $postcode = array('####');
-    protected static $state = array(
-        'Amazonas', 'Anzoátegui', 'Apure', 'Aragua', 'Barinas', 'Bolívar', 'Carabobo', 'Cojedes', 'Delta Amacuro',
-        'Distrito Capital', 'Falcón', 'Guárico', 'Lara', 'Mérida', 'Miranda', 'Monagas', 'Nueva Esparta', 'Portuguesa',
-        'Sucre', 'Táchira', 'Trujillo', 'Vargas', 'Yaracuy', 'Zulia'
-    );
-    protected static $cityFormats = array(
+    protected static array $cityPrefix = ['San', 'Santa', 'Puerto', 'Valle', 'Villa', 'Parroquia', 'El', 'Los', 'La', 'Las'];
+    protected static array $citySuffix = ['del Valle', 'de Mara', 'de Altagracia', 'de Asis', 'del Tuy', 'de Mata'];
+    protected static array $buildingNumber = ['###', '##', '#'];
+    protected static array $streetPrefix = [
+        'Calle',
+        'Avenida',
+        'Av.',
+        'Cl.',
+        'Carretera',
+        'Callejón',
+        'Vereda',
+    ];
+    protected static array $streetSuffix = ['Norte', 'Este', ' Sur', ' Oeste'];
+    protected static array $postcode = ['####'];
+    protected static array $state = [
+        'Amazonas',
+        'Anzoátegui',
+        'Apure',
+        'Aragua',
+        'Barinas',
+        'Bolívar',
+        'Carabobo',
+        'Cojedes',
+        'Delta Amacuro',
+        'Distrito Capital',
+        'Falcón',
+        'Guárico',
+        'Lara',
+        'Mérida',
+        'Miranda',
+        'Monagas',
+        'Nueva Esparta',
+        'Portuguesa',
+        'Sucre',
+        'Táchira',
+        'Trujillo',
+        'Vargas',
+        'Yaracuy',
+        'Zulia',
+    ];
+    protected static array $cityFormats = [
         '{{cityPrefix}} {{firstName}}{{citySuffix}}',
         '{{cityPrefix}} {{firstName}}',
         '{{firstName}} {{citySuffix}}',
         '{{lastName}} {{citySuffix}}',
-    );
-    protected static $streetNameFormats = array(
+    ];
+    protected static array $streetNameFormats = [
         '{{streetPrefix}} {{firstName}}',
         '{{streetPrefix}} {{lastName}}',
-        '{{streetPrefix}} {{firstName}} {{lastName}}'
-    );
-    protected static $streetAddressFormats = array(
+        '{{streetPrefix}} {{firstName}} {{lastName}}',
+    ];
+    protected static array $streetAddressFormats = [
         '{{streetName}}, {{buildingNumber}}, {{secondaryAddress}}',
         '{{streetName}}, {{secondaryAddress}}',
-    );
-    protected static $addressFormats = array(
-        "{{streetAddress}}, {{city}} Edo. {{state}}",
-        "{{streetAddress}}, {{city}} Edo. {{state}}, {{postcode}}"
-    );
-    protected static $secondaryAddressFormats = array('Nro #', 'Piso #', 'Casa #', 'Hab. #', 'Apto #', 'Nro ##', 'Piso ##', 'Casa ##', 'Hab. ##', 'Apto ##');
+    ];
+    protected static array $addressFormats = [
+        '{{streetAddress}}, {{city}} Edo. {{state}}',
+        '{{streetAddress}}, {{city}} Edo. {{state}}, {{postcode}}',
+    ];
+    protected static array $secondaryAddressFormats = ['Nro #', 'Piso #', 'Casa #', 'Hab. #', 'Apto #', 'Nro ##', 'Piso ##', 'Casa ##', 'Hab. ##', 'Apto ##'];
 
     /**
      * @example 'Avenida'
@@ -49,7 +76,7 @@ class Address extends \Faker\Provider\es_ES\Address
     /**
      * @example 'Villa'
      */
-    public static function cityPrefix()
+    public static function cityPrefix(): string
     {
         return static::randomElement(static::$cityPrefix);
     }
@@ -57,7 +84,7 @@ class Address extends \Faker\Provider\es_ES\Address
     /**
      * @example 'Nro 3'
      */
-    public static function secondaryAddress()
+    public static function secondaryAddress(): string
     {
         return static::numerify(static::randomElement(static::$secondaryAddressFormats));
     }
@@ -65,7 +92,7 @@ class Address extends \Faker\Provider\es_ES\Address
     /**
      * @example 'Aragua'
      */
-    public static function state()
+    public static function state(): string
     {
         return static::randomElement(static::$state);
     }

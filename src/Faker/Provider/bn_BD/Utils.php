@@ -4,11 +4,11 @@ namespace Faker\Provider\bn_BD;
 
 class Utils
 {
-    public static function getBanglaNumber($number)
+    public static function getBanglaNumber($number): array|string
     {
-        $english = range(0, 10);
-        $bangla = array('০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯');
+        $english = \range(0, 10);
+        $bangla = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
 
-        return str_replace($english, $bangla, $number);
+        return \str_replace($english, $bangla, $number);
     }
 }

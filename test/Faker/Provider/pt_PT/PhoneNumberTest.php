@@ -8,19 +8,22 @@ use PHPUnit\Framework\TestCase;
 
 final class PhoneNumberTest extends TestCase
 {
-    protected function setUp()
+    protected Generator $faker;
+
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new PhoneNumber($faker));
         $this->faker = $faker;
     }
 
-    public function testPhoneNumberReturnsPhoneNumberWithOrWithoutPrefix()
+    public function testPhoneNumberReturnsPhoneNumberWithOrWithoutPrefix(): void
     {
-        $this->assertRegExp('/^(9[1,2,3,6][0-9]{7})|(2[0-9]{8})|(\+351 [2][0-9]{8})|(\+351 9[1,2,3,6][0-9]{7})/', $this->faker->phoneNumber());
+        $this->assertMatchesRegularExpression('/^(9[1,2,3,6][0-9]{7})|(2[0-9]{8})|(\+351 [2][0-9]{8})|(\+351 9[1,2,3,6][0-9]{7})/', $this->faker->phoneNumber());
     }
-    public function testMobileNumberReturnsMobileNumberWithOrWithoutPrefix()
+
+    public function testMobileNumberReturnsMobileNumberWithOrWithoutPrefix(): void
     {
-        $this->assertRegExp('/^(9[1,2,3,6][0-9]{7})/', $this->faker->mobileNumber());
+        $this->assertMatchesRegularExpression('/^(9[1,2,3,6][0-9]{7})/', $this->faker->mobileNumber());
     }
 }

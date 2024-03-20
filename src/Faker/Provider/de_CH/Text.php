@@ -6,7 +6,7 @@ class Text extends \Faker\Provider\Text
 {
     /**
      * The Project Gutenberg EBook of Die Leiden des jungen Werther--Buch 1, by
-     * Johann Wolfgang von Goethe
+     * Johann Wolfgang von Goethe.
      *
      * This eBook is for the use of anyone anywhere at no cost and with
      * almost no restrictions whatsoever.  You may copy it, give it away or
@@ -29,9 +29,8 @@ class Text extends \Faker\Provider\Text
      * mcicora@yahoo.com.
      *
      * @see http://www.gutenberg.org/cache/epub/2407/pg2407.txt
-     * @var string
      */
-    protected static $baseText = <<<'EOT'
+    protected static string $baseText = <<<'EOT'
 Am 4. Mai 1771
 
 Wie froh bin ich, dass ich weg bin! Bester Freund, was ist das Herz des

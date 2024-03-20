@@ -3,15 +3,15 @@
 namespace Faker\Test\Provider\en_ZA;
 
 use Faker\Generator;
-use Faker\Provider\en_ZA\Person;
 use Faker\Provider\DateTime;
+use Faker\Provider\en_ZA\Person;
 use PHPUnit\Framework\TestCase;
 
 final class PersonTest extends TestCase
 {
-    private $faker;
+    private Generator $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
@@ -19,50 +19,50 @@ final class PersonTest extends TestCase
         $this->faker = $faker;
     }
 
-    public function testIdNumberWithDefaults()
+    public function testIdNumberWithDefaults(): void
     {
         $idNumber = $this->faker->idNumber();
 
-        $this->assertEquals(13, strlen($idNumber));
-        $this->assertRegExp('#^\d{13}$#', $idNumber);
-        $this->assertInternalType('string', $idNumber);
+        $this->assertEquals(13, \strlen($idNumber));
+        $this->assertMatchesRegularExpression('#^\d{13}$#', $idNumber);
+        $this->assertIsString($idNumber);
     }
 
-    public function testIdNumberForMales()
+    public function testIdNumberForMales(): void
     {
         $idNumber = $this->faker->idNumber(new \DateTime(), true, 'male');
 
-        $genderDigit = substr($idNumber, 6, 1);
+        $genderDigit = \substr($idNumber, 6, 1);
 
-        $this->assertContains($genderDigit, array('5', '6', '7', '8', '9'));
+        $this->assertContains($genderDigit, ['5', '6', '7', '8', '9']);
     }
 
-    public function testIdNumberForFemales()
+    public function testIdNumberForFemales(): void
     {
         $idNumber = $this->faker->idNumber(new \DateTime(), true, 'female');
 
-        $genderDigit = substr($idNumber, 6, 1);
+        $genderDigit = \substr($idNumber, 6, 1);
 
-        $this->assertContains($genderDigit, array('0', '1', '2', '3', '4'));
+        $this->assertContains($genderDigit, ['0', '1', '2', '3', '4']);
     }
 
-    public function testLicenceCode()
+    public function testLicenceCode(): void
     {
-        $validLicenceCodes = array('A', 'A1', 'B', 'C', 'C1', 'C2', 'EB', 'EC', 'EC1', 'I', 'L', 'L1');
+        $validLicenceCodes = ['A', 'A1', 'B', 'C', 'C1', 'C2', 'EB', 'EC', 'EC1', 'I', 'L', 'L1'];
 
         $this->assertContains($this->faker->licenceCode, $validLicenceCodes);
     }
 
-    public function testMaleTitles()
+    public function testMaleTitles(): void
     {
-        $validMaleTitles = array('Mr.', 'Dr.', 'Prof.', 'Rev.', 'Hon.');
+        $validMaleTitles = ['Mr.', 'Dr.', 'Prof.', 'Rev.', 'Hon.'];
 
         $this->assertContains(Person::titleMale(), $validMaleTitles);
     }
 
-    public function testFemaleTitles()
+    public function testFemaleTitles(): void
     {
-        $validateFemaleTitles = array('Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.', 'Rev.', 'Hon.');
+        $validateFemaleTitles = ['Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.', 'Rev.', 'Hon.'];
 
         $this->assertContains(Person::titleFemale(), $validateFemaleTitles);
     }

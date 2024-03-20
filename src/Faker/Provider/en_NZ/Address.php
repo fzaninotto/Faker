@@ -4,74 +4,100 @@ namespace Faker\Provider\en_NZ;
 
 class Address extends \Faker\Provider\en_US\Address
 {
-
     /**
-     * An array of en_NZ (New Zealand) building number formats
-     * @var array
+     * An array of en_NZ (New Zealand) building number formats.
      */
-    protected static $buildingNumber = array('#', '##', '###');
+    protected static array $buildingNumber = ['#', '##', '###'];
 
     /**
-     * An array of en_NZ (New Zealand) street suffixes
-     * @var array
+     * An array of en_NZ (New Zealand) street suffixes.
      */
-    protected static $streetSuffix = array(
-        'Avenue', 'Close', 'Court', 'Crescent', 'Drive', 'Esplanade', 'Grove', 'Heights', 'Highway', 'Hill', 'Lane', 'Line', 'Mall', 'Parade', 'Place', 'Quay', 'Rise', 'Road', 'Square', 'Street', 'Terrace', 'Way'
-    );
+    protected static array $streetSuffix = [
+        'Avenue',
+        'Close',
+        'Court',
+        'Crescent',
+        'Drive',
+        'Esplanade',
+        'Grove',
+        'Heights',
+        'Highway',
+        'Hill',
+        'Lane',
+        'Line',
+        'Mall',
+        'Parade',
+        'Place',
+        'Quay',
+        'Rise',
+        'Road',
+        'Square',
+        'Street',
+        'Terrace',
+        'Way',
+    ];
 
     /**
-     * City suffixes
-     * @var array
+     * City suffixes.
      */
-    protected static $citySuffix = array('ville', 'ston');
+    protected static array $citySuffix = ['ville', 'ston'];
 
     /**
-     * City formats
-     * @var array
+     * City formats.
      */
-    protected static $cityFormats = array('{{firstName}}{{citySuffix}}');
+    protected static array $cityFormats = ['{{firstName}}{{citySuffix}}'];
 
     /**
-     * An array of en_NZ (New Zealand) regions
+     * An array of en_NZ (New Zealand) regions.
+     *
      * @see http://en.wikipedia.org/wiki/Regions_of_New_Zealand
-     * @var array
      */
-    protected static $region = array(
-        'Auckland', 'Bay of Plenty', 'Canterbury', 'Gisborne', 'Hawkes Bay', 'Manawatu-Whanganui', 'Marlborough', 'Nelson', 'Northland', 'Otago', 'Southland', 'Taranaki', 'Tasman', 'Waikato', 'Wellington', 'West Coast'
-    );
+    protected static array $region = [
+        'Auckland',
+        'Bay of Plenty',
+        'Canterbury',
+        'Gisborne',
+        'Hawkes Bay',
+        'Manawatu-Whanganui',
+        'Marlborough',
+        'Nelson',
+        'Northland',
+        'Otago',
+        'Southland',
+        'Taranaki',
+        'Tasman',
+        'Waikato',
+        'Wellington',
+        'West Coast',
+    ];
 
     /**
-     * An array of en_NZ (New Zealand) poscode formats
-     * @var array
+     * An array of en_NZ (New Zealand) poscode formats.
      */
-    protected static $postcode = array('####');
+    protected static array $postcode = ['####'];
 
     /**
-     * An array of en_NZ (New Zealand) address formats
-     * @var array
+     * An array of en_NZ (New Zealand) address formats.
      */
-    protected static $addressFormats = array('{{buildingNumber}} {{streetName}}, {{city}}, {{region}}, {{postcode}}');
+    protected static array $addressFormats = ['{{buildingNumber}} {{streetName}}, {{city}}, {{region}}, {{postcode}}'];
 
     /**
-     * An array of en_NZ (New Zealand) street address formats
-     * @var array
+     * An array of en_NZ (New Zealand) street address formats.
      */
-    protected static $streetAddressFormats = array('{{buildingNumber}} {{streetName}}');
+    protected static array $streetAddressFormats = ['{{buildingNumber}} {{streetName}}'];
 
     /**
-     * Return a en_NZ (New Zealand) postcode
-     * @return string
+     * Return a en_NZ (New Zealand) postcode.
      */
-    public static function postcode()
+    public static function postcode(): string
     {
         return static::numerify(static::randomElement(static::$postcode));
     }
 
     /**
-     * Return a en_NZ (New Zealand) region
-     * @return string
+     * Return a en_NZ (New Zealand) region.
      */
-    public static function region()
+    public static function region(): string
     {
         return static::randomElement(static::$region);
     }

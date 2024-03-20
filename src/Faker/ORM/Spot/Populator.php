@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Faker\ORM\Spot;
 
 use Spot\Locator;
@@ -10,17 +9,15 @@ use Spot\Locator;
  */
 class Populator
 {
-    protected $generator;
-    protected $locator;
-    protected $entities = array();
-    protected $quantities = array();
+    protected \Faker\Generator $generator;
+    protected ?Locator $locator;
+    protected array $entities = [];
+    protected array $quantities = [];
 
     /**
      * Populator constructor.
-     * @param \Faker\Generator $generator
-     * @param Locator|null $locator
      */
-    public function __construct(\Faker\Generator $generator, Locator $locator = null)
+    public function __construct(\Faker\Generator $generator, ?Locator $locator = null)
     {
         $this->generator = $generator;
         $this->locator = $locator;
@@ -29,22 +26,22 @@ class Populator
     /**
      * Add an order for the generation of $number records for $entity.
      *
-     * @param $entityName string Name of Entity object to generate
-     * @param $number int The number of entities to populate
+     * @param $entityName             string Name of Entity object to generate
+     * @param $number                 int The number of entities to populate
      * @param $customColumnFormatters array
-     * @param $customModifiers array
-     * @param $useExistingData bool Should we use existing rows (e.g. roles) to populate relations?
+     * @param $customModifiers        array
+     * @param $useExistingData        bool Should we use existing rows (e.g. roles) to populate relations?
      */
     public function addEntity(
-        $entityName,
-        $number,
-        $customColumnFormatters = array(),
-        $customModifiers = array(),
-        $useExistingData = false
-    ) {
+        string $entityName,
+        int $number,
+        array $customColumnFormatters = [],
+        array $customModifiers = [],
+        bool $useExistingData = false
+    ): void {
         $mapper = $this->locator->mapper($entityName);
         if (null === $mapper) {
-            throw new \InvalidArgumentException("No mapper can be found for entity " . $entityName);
+            throw new \InvalidArgumentException('No mapper can be found for entity '.$entityName);
         }
         $entity = new EntityPopulator($mapper, $this->locator, $useExistingData);
 
@@ -61,22 +58,22 @@ class Populator
     /**
      * Populate the database using all the Entity classes previously added.
      *
-     * @param Locator $locator A Spot locator
+     * @param Locator|null $locator A Spot locator
      *
      * @return array A list of the inserted PKs
      */
-    public function execute($locator = null)
+    public function execute(?Locator $locator = null): array
     {
         if (null === $locator) {
             $locator = $this->locator;
         }
         if (null === $locator) {
-            throw new \InvalidArgumentException("No entity manager passed to Spot Populator.");
+            throw new \InvalidArgumentException('No entity manager passed to Spot Populator.');
         }
 
-        $insertedEntities = array();
+        $insertedEntities = [];
         foreach ($this->quantities as $entityName => $number) {
-            for ($i = 0; $i < $number; $i++) {
+            for ($i = 0; $i < $number; ++$i) {
                 $insertedEntities[$entityName][] = $this->entities[$entityName]->execute(
                     $insertedEntities
                 );

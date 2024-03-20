@@ -2,36 +2,29 @@
 
 namespace Faker\ORM\Propel2;
 
-use \Propel\Generator\Model\PropelTypes;
-use \Propel\Runtime\Map\ColumnMap;
+use Propel\Generator\Model\PropelTypes;
+use Propel\Runtime\Map\ColumnMap;
 
 class ColumnTypeGuesser
 {
-    protected $generator;
+    protected \Faker\Generator $generator;
 
-    /**
-     * @param \Faker\Generator $generator
-     */
     public function __construct(\Faker\Generator $generator)
     {
         $this->generator = $generator;
     }
 
-    /**
-     * @param ColumnMap $column
-     * @return \Closure|null
-     */
-    public function guessFormat(ColumnMap $column)
+    public function guessFormat(ColumnMap $column): ?\Closure
     {
         $generator = $this->generator;
         if ($column->isTemporal()) {
-            if ($column->getType() == PropelTypes::BU_DATE || $column->getType() == PropelTypes::BU_TIMESTAMP) {
-                return function () use ($generator) {
+            if (PropelTypes::BU_DATE === $column->getType() || PropelTypes::BU_TIMESTAMP === $column->getType()) {
+                return static function() use ($generator) {
                     return $generator->dateTime;
                 };
             }
 
-            return function () use ($generator) {
+            return static function() use ($generator) {
                 return $generator->dateTimeAD;
             };
         }
@@ -39,40 +32,40 @@ class ColumnTypeGuesser
         switch ($type) {
             case PropelTypes::BOOLEAN:
             case PropelTypes::BOOLEAN_EMU:
-                return function () use ($generator) {
+                return static function() use ($generator) {
                     return $generator->boolean;
                 };
             case PropelTypes::NUMERIC:
             case PropelTypes::DECIMAL:
                 $size = $column->getSize();
 
-                return function () use ($generator, $size) {
+                return static function() use ($generator, $size) {
                     return $generator->randomNumber($size + 2) / 100;
                 };
             case PropelTypes::TINYINT:
-                return function () {
-                    return mt_rand(0, 127);
+                return static function() {
+                    return \random_int(0, 127);
                 };
             case PropelTypes::SMALLINT:
-                return function () {
-                    return mt_rand(0, 32767);
+                return static function() {
+                    return \random_int(0, 32767);
                 };
             case PropelTypes::INTEGER:
-                return function () {
-                    return mt_rand(0, intval('2147483647'));
+                return static function() {
+                    return \random_int(0, 2147483647);
                 };
             case PropelTypes::BIGINT:
-                return function () {
-                    return mt_rand(0, intval('9223372036854775807'));
+                return static function() {
+                    return \random_int(0, 9223372036854775807);
                 };
             case PropelTypes::FLOAT:
-                return function () {
-                    return mt_rand(0, intval('2147483647'))/mt_rand(1, intval('2147483647'));
+                return static function() {
+                    return \random_int(0, 2147483647) / \random_int(1, 2147483647);
                 };
             case PropelTypes::DOUBLE:
             case PropelTypes::REAL:
-                return function () {
-                    return mt_rand(0, intval('9223372036854775807'))/mt_rand(1, intval('9223372036854775807'));
+                return static function() {
+                    return \random_int(0, 9223372036854775807) / \random_int(1, 9223372036854775807);
                 };
             case PropelTypes::CHAR:
             case PropelTypes::VARCHAR:
@@ -80,7 +73,7 @@ class ColumnTypeGuesser
             case PropelTypes::VARBINARY:
                 $size = $column->getSize();
 
-                return function () use ($generator, $size) {
+                return static function() use ($generator, $size) {
                     return $generator->text($size);
                 };
             case PropelTypes::LONGVARCHAR:
@@ -88,19 +81,19 @@ class ColumnTypeGuesser
             case PropelTypes::CLOB:
             case PropelTypes::CLOB_EMU:
             case PropelTypes::BLOB:
-                return function () use ($generator) {
+                return static function() use ($generator) {
                     return $generator->text;
                 };
             case PropelTypes::ENUM:
                 $valueSet = $column->getValueSet();
 
-                return function () use ($generator, $valueSet) {
+                return static function() use ($generator, $valueSet) {
                     return $generator->randomElement($valueSet);
                 };
             case PropelTypes::OBJECT:
             case PropelTypes::PHP_ARRAY:
             default:
-            // no smart way to guess what the user expects here
+                // no smart way to guess what the user expects here
                 return null;
         }
     }

@@ -8,20 +8,20 @@ use PHPUnit\Framework\TestCase;
 
 final class CompanyTest extends TestCase
 {
-    private $faker;
+    private Generator $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Company($faker));
         $this->faker = $faker;
     }
 
-    public function testGenerateValidCompanyNumber()
+    public function testGenerateValidCompanyNumber(): void
     {
         $companyRegNo = $this->faker->companyNumber();
 
-        $this->assertEquals(14, strlen($companyRegNo));
-        $this->assertRegExp('#^\d{4}/\d{6}/\d{2}$#', $companyRegNo);
+        $this->assertEquals(14, \strlen($companyRegNo));
+        $this->assertMatchesRegularExpression('#^\d{4}/\d{6}/\d{2}$#', $companyRegNo);
     }
 }

@@ -5,9 +5,9 @@ namespace Faker\Provider\el_GR;
 class PhoneNumber extends \Faker\Provider\PhoneNumber
 {
     /**
-     * @link https://en.wikipedia.org/wiki/Telephone_numbers_in_Greece
+     * @see https://en.wikipedia.org/wiki/Telephone_numbers_in_Greece
      */
-    protected static $formats = array(
+    protected static array $formats = [
         // International formats
         '+30 2# ########',
         '+30 2## #######',
@@ -36,9 +36,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '69## ######',
         '69## ## ## ##',
         '69## ### ###',
-    );
+    ];
 
-    protected static $mobileFormats = array(
+    protected static array $mobileFormats = [
         // International formats
         '+3069########',
         '+30 69########',
@@ -57,14 +57,14 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '69## ######',
         '69## ## ## ##',
         '69## ### ###',
-    );
+    ];
 
-    public static function mobilePhoneNumber()
+    public static function mobilePhoneNumber(): string
     {
         return static::numerify(static::randomElement(static::$mobileFormats));
     }
 
-    protected static $tollFreeFormats = array(
+    protected static array $tollFreeFormats = [
         // International formats
         '+30 800#######',
         '+30 800 #######',
@@ -76,9 +76,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '800 #######',
         '800 ## #####',
         '800 ### ####',
-    );
+    ];
 
-    public static function tollFreeNumber()
+    public static function tollFreeNumber(): string
     {
         return static::numerify(static::randomElement(static::$tollFreeFormats));
     }

@@ -8,19 +8,16 @@ use PHPUnit\Framework\TestCase;
 
 final class TextTest extends TestCase
 {
-    /**
-     * @var Generator
-     */
-    private $faker;
+    private Generator $faker;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Text($faker));
         $this->faker = $faker;
     }
 
-    public function testText()
+    public function testText(): void
     {
         $this->assertNotSame('', $this->faker->realtext(200, 2));
     }

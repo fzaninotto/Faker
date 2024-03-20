@@ -2,26 +2,22 @@
 
 namespace Faker\Test\Provider\tr_TR;
 
-use Faker\Provider\tr_TR\Company;
 use Faker\Generator;
+use Faker\Provider\tr_TR\Company;
 use PHPUnit\Framework\TestCase;
 
 final class CompanyTest extends TestCase
 {
+    private Generator $faker;
 
-    /**
-     * @var Generator
-     */
-    private $faker;
-
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Company($faker));
         $this->faker = $faker;
     }
 
-    public function testCompany()
+    public function testCompany(): void
     {
         $company = $this->faker->companyField;
         $this->assertNotNull($company);

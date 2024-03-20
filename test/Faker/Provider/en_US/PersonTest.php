@@ -2,34 +2,30 @@
 
 namespace Faker\Test\Provider\en_US;
 
-use Faker\Provider\en_US\Person;
 use Faker\Generator;
+use Faker\Provider\en_US\Person;
 use PHPUnit\Framework\TestCase;
 
 final class PersonTest extends TestCase
 {
+    private Generator $faker;
 
-    /**
-     * @var Generator
-     */
-    private $faker;
-
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
         $this->faker = $faker;
     }
 
-    public function testSsn()
+    public function testSsn(): void
     {
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 100; ++$i) {
             $number = $this->faker->ssn;
 
             // should be in the format ###-##-####
-            $this->assertRegExp('/^[0-9]{3}-[0-9]{2}-[0-9]{4}$/', $number);
+            $this->assertMatchesRegularExpression('/^[0-9]{3}-[0-9]{2}-[0-9]{4}$/', $number);
 
-            $parts = explode("-", $number);
+            $parts = \explode('-', $number);
 
             // first part must be between 001 and 899, excluding 666
             $this->assertNotEquals(666, $parts[0]);

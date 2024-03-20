@@ -4,40 +4,104 @@ namespace Faker\Provider\es_AR;
 
 class Address extends \Faker\Provider\es_ES\Address
 {
-    protected static $cityPrefix = array('San', 'Puerto', 'Villa', 'Gral.', 'Don');
-    protected static $citySuffix = array('del Mar', 'del Norte', 'del Este', 'del Sur', 'del Oeste', 'del Mirador');
-    protected static $buildingNumber = array('#####', '####', '###', '##', '#');
-    protected static $streetSuffix = array('');
-    protected static $postcode = array('####', '#####');
-    protected static $state = array(
-        'Buenos Aires', 'Catamarca', 'Chaco', 'Chubut', 'Córdoba', 'Corrientes', 'Entre Ríos', 'Formosa', 'Jujuy', 'La Pampa', 'La Rioja', 'Mendoza', 'Misiones', 'Neuquén', 'Río Negro', 'Salta', 'San Juan', 'San Luis', 'Santa Cruz', 'Santa Fe', 'Santiago del Estero', 'Tierra del Fuego, Antártida e Islas del Atlántico Sur', 'Tucumán'
-    );
-    protected static $stateAbbr = array(
-        'AR-B', 'AR-K', 'AR-H', 'AR-U', 'AR-X', 'AR-W', 'AR-E', 'AR-P', 'AR-Y', 'AR-L', 'AR-F', 'AR-M', 'AR-N', 'AR-Q', 'AR-R', 'AR-A', 'AR-J', 'AR-D', 'AR-Z', 'AR-S', 'AR-G', 'AR-V', 'AR-T'
-    );
-    protected static $cityFormats = array(
+    protected static array $cityPrefix = ['San', 'Puerto', 'Villa', 'Gral.', 'Don'];
+    protected static array $citySuffix = ['del Mar', 'del Norte', 'del Este', 'del Sur', 'del Oeste', 'del Mirador'];
+    protected static array $buildingNumber = ['#####', '####', '###', '##', '#'];
+    protected static array $streetSuffix = [''];
+    protected static array $postcode = ['####', '#####'];
+    protected static array $state = [
+        'Buenos Aires',
+        'Catamarca',
+        'Chaco',
+        'Chubut',
+        'Córdoba',
+        'Corrientes',
+        'Entre Ríos',
+        'Formosa',
+        'Jujuy',
+        'La Pampa',
+        'La Rioja',
+        'Mendoza',
+        'Misiones',
+        'Neuquén',
+        'Río Negro',
+        'Salta',
+        'San Juan',
+        'San Luis',
+        'Santa Cruz',
+        'Santa Fe',
+        'Santiago del Estero',
+        'Tierra del Fuego, Antártida e Islas del Atlántico Sur',
+        'Tucumán',
+    ];
+    protected static array $stateAbbr = [
+        'AR-B',
+        'AR-K',
+        'AR-H',
+        'AR-U',
+        'AR-X',
+        'AR-W',
+        'AR-E',
+        'AR-P',
+        'AR-Y',
+        'AR-L',
+        'AR-F',
+        'AR-M',
+        'AR-N',
+        'AR-Q',
+        'AR-R',
+        'AR-A',
+        'AR-J',
+        'AR-D',
+        'AR-Z',
+        'AR-S',
+        'AR-G',
+        'AR-V',
+        'AR-T',
+    ];
+    protected static array $cityFormats = [
         '{{cityPrefix}} {{firstName}} {{citySuffix}}',
         '{{cityPrefix}} {{firstName}}',
         '{{firstName}} {{citySuffix}}',
         '{{lastName}} {{citySuffix}}',
-    );
-    protected static $streetNameFormats = array(
+    ];
+    protected static array $streetNameFormats = [
         '{{firstName}} {{streetSuffix}}',
-        '{{lastName}} {{streetSuffix}}'
-    );
-    protected static $streetAddressFormats = array(
+        '{{lastName}} {{streetSuffix}}',
+    ];
+    protected static array $streetAddressFormats = [
         '{{streetName}} {{buildingNumber}}',
         '{{streetName}} {{buildingNumber}} {{secondaryAddress}}',
-    );
-    protected static $addressFormats = array(
+    ];
+    protected static array $addressFormats = [
         "{{streetAddress}}\n{{city}}, {{stateAbbr}} {{postcode}}",
-    );
-    protected static $secondaryAddressFormats = array('Depto. ###', 'Hab. ###', 'Piso #', 'Piso ##', 'PB A', '# A', '# B', '# C', '# D', '# E', '# F', '## A', '## B', '## C', '## D', '## E', '## F', '# #', '## #');
+    ];
+    protected static array $secondaryAddressFormats = [
+        'Depto. ###',
+        'Hab. ###',
+        'Piso #',
+        'Piso ##',
+        'PB A',
+        '# A',
+        '# B',
+        '# C',
+        '# D',
+        '# E',
+        '# F',
+        '## A',
+        '## B',
+        '## C',
+        '## D',
+        '## E',
+        '## F',
+        '# #',
+        '## #',
+    ];
 
     /**
      * @example 'San'
      */
-    public static function cityPrefix()
+    public static function cityPrefix(): string
     {
         return static::randomElement(static::$cityPrefix);
     }
@@ -45,7 +109,7 @@ class Address extends \Faker\Provider\es_ES\Address
     /**
      * @example '3ºA'
      */
-    public static function secondaryAddress()
+    public static function secondaryAddress(): string
     {
         return static::numerify(static::randomElement(static::$secondaryAddressFormats));
     }
@@ -53,7 +117,7 @@ class Address extends \Faker\Provider\es_ES\Address
     /**
      * @example 'Buenos Aires'
      */
-    public static function state()
+    public static function state(): string
     {
         return static::randomElement(static::$state);
     }

@@ -5,7 +5,7 @@ namespace Faker\Provider\ko_KR;
 class Text extends \Faker\Provider\Text
 {
     /**
-     * From ko.wikisource.org
+     * From ko.wikisource.org.
      *
      * License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
      *
@@ -14,11 +14,11 @@ class Text extends \Faker\Provider\Text
      * Language: Korean
      *
      * @licence https://creativecommons.org/licenses/by-sa/3.0/deed.ko
+     *
      * @see     https://wikimediafoundation.org/wiki/Terms_of_Use/
-     * @link    https://ko.wikisource.org/wiki/유정
-     * @var string
+     * @see    https://ko.wikisource.org/wiki/유정
      */
-    protected static $baseText = <<<'EOT'
+    protected static string $baseText = <<<'EOT'
 최석(崔晳)으로부터 최후의 편지가 온 지가 벌써 일 년이 지났다. 그는 바이칼 호수에 몸을 던져 버렸는가. 또는 시베리아 어느 으슥한 곳에 숨어서 세상을 잊고 있는가. 또 최석의 뒤를 따라간다고 북으로 한정 없이 가 버린 남정임(南貞妊)도 어찌 되었는지, 이 글을 쓰기 시작할 이 때까지에는 아직 소식이 없다. 나는 이 두 사람의 일을 알아보려고 하얼빈, 치치하얼, 치타, 이르쿠츠크에 있는 친구들한테 편지를 부쳐 탐문도 해 보았으나 그 회답은 다 `모른다'는 것뿐이었다. 모스크바에도 두어 번 편지를 띄워 보았으나 역시 마찬가지로 모른다는 회답뿐이었다.
 이만하면, 나는 이 사람들(그들은 둘이 다 아까운 사람들이다.)은 이 세상에 없는 사람으로 인정할 수밖에 없다. 설사 이 세상에 살아 있다 하더라도 그들은 다시는 조선에 들어오지 아니할 것이다. 그렇다 하더라도 친구의 정에 남과 자별하게 친함을 가졌던 나로는 어디든지 살아 있기를 아니 바랄 수 없다. 그 두 사람이 죽어 버렸다고 어떻게 차마 생각하랴.
 나는 이 글을 다 쓰고 나서는 바이칼 호숫 가에 최석과 남정임 두 사람의 자취를 찾아서 떠나 보려고 한다. 다른 모든 사람이 다 못 찾더라도 나만은 그들을, 남달리 알아 주고 사랑하는 나만은 꼭 그들의 자취를 찾아낼 것만 같다. 만일 그들의 무덤이 있다고 하면 비록 패를 써 박은 것이 없다고 하더라도 나는 이것이 최석의 무덤, 이것이 남정임의 무덤이라고 알아 낼 것만 같다. 설사 그들이 시체가 되어 바이칼 호수의 물 밑에 잠겨 있더라도 내가 가서 그들의 혼을 부르면 반드시 그 시체가 떠올라서 내가 서서 목멘 소리로 부르짖고 있는 곳으로 모여들리라고 믿는다. 아아 세상에 저를 알아 주는 벗이 몇이나 된단 말인가. 서로 믿고 사랑하는 벗이 몇이나 된단 말인가. 내가 부를 때에 그들의 몸이나 혼이 우주 어느 구석에 있기로 아니 나타날 리가 있겠는가.

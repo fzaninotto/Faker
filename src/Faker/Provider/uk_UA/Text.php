@@ -5,7 +5,7 @@ namespace Faker\Provider\uk_UA;
 class Text extends \Faker\Provider\Text
 {
     /**
-     * From uk.wikisource.org
+     * From uk.wikisource.org.
      *
      * Текст доступний на умовах ліцензії Creative Commons Attribution/Share-Alike,
      * також можуть діяти додаткові умови. Детальніше див. Умови використання.
@@ -22,10 +22,9 @@ class Text extends \Faker\Provider\Text
      * Language: Ukrainian
      *
      * @see     https://wikimediafoundation.org/wiki/Terms_of_Use/
-     * @link    http://uk.wikisource.org/wiki/%D0%97%D0%B0%D1%85%D0%B0%D1%80_%D0%91%D0%B5%D1%80%D0%BA%D1%83%D1%82
-     * @var string
+     * @see    http://uk.wikisource.org/wiki/%D0%97%D0%B0%D1%85%D0%B0%D1%80_%D0%91%D0%B5%D1%80%D0%BA%D1%83%D1%82
      */
-    protected static $baseText = <<<'EOT'
+    protected static string $baseText = <<<'EOT'
 
 I
 

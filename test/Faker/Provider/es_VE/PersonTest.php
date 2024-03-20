@@ -8,13 +8,9 @@ use PHPUnit\Framework\TestCase;
 
 final class PersonTest extends TestCase
 {
+    private Generator $faker;
 
-    /**
-     * @var Generator
-     */
-    private $faker;
-
-    protected function setUp()
+    protected function setUp(): void
     {
         $faker = new Generator();
         $faker->seed(1);
@@ -23,16 +19,16 @@ final class PersonTest extends TestCase
     }
 
     /**
-     * national Id format validator
+     * national Id format validator.
      */
-    public function testNationalId()
+    public function testNationalId(): void
     {
         $pattern = '/(?:^V-?\d{5,9}$)|(?:^E-?\d{8,9}$)/';
 
         $cedula = $this->faker->nationalId;
-        $this->assertRegExp($pattern, $cedula);
+        $this->assertMatchesRegularExpression($pattern, $cedula);
 
         $cedula = $this->faker->nationalId('-');
-        $this->assertRegExp($pattern, $cedula);
+        $this->assertMatchesRegularExpression($pattern, $cedula);
     }
 }
